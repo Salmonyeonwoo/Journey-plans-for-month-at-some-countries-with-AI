@@ -1619,7 +1619,7 @@ const GLOBAL_DINING_DATA = [
     "city": "파리",
     "country": "프랑스",
     "dishName": "겉바속촉 오리 다리 콩피 (Confit de Canard)",
-    "photo": "https://images.unsplash.com/photo-1514944298352-7b24d77eb573?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
     "signature": "오리 기름에 천천히 저온 조리하여 껍질은 바삭하고 살코기는 입안에서 녹아내리는 콩피 요리",
     "seniorTip": "생제르맹 평지 보행로에 위치. 야외 테라스 좌석은 파리 풍경을 바라보며 식사하기 좋음",
     "hours": "매일 12:00~23:00",
@@ -1994,7 +1994,7 @@ const GLOBAL_DINING_DATA = [
     "city": "비엔나",
     "country": "오스트리아",
     "dishName": "접시를 넘치는 110년 전통 비너 슈니첼 (Wiener Schnitzel)",
-    "photo": "https://images.unsplash.com/photo-1599921841143-819025a2333b?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
     "signature": "접시보다 큰 30cm 대형 비너 슈니첼. 얇게 두드려 바삭하게 튀겨낸 송아지 고기",
     "seniorTip": "튀김이 얇아 부담스럽지 않으며 상큼한 오스트리아 감자 샐러드와 레몬을 곁들이면 찰떡궁합",
     "hours": "매일 11:30~22:30",
@@ -2084,7 +2084,7 @@ const GLOBAL_DINING_DATA = [
     "city": "인터라켄",
     "country": "스위스",
     "dishName": "바삭한 스위스 감자전 뢰스티 (Rösti & Sausage)",
-    "photo": "https://images.unsplash.com/photo-1599921841143-819025a2333b?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80",
     "signature": "채 썬 감자를 버터에 바삭하게 노릇노릇 부쳐낸 스위스 전통 뢰스티와 수제 송아지 소시지",
     "seniorTip": "한국의 감자전과 매우 비슷하여 어르신들이 가장 친숙하고 맛있게 드시는 메뉴",
     "hours": "매일 11:30~14:00, 18:00~22:00",
@@ -2491,7 +2491,7 @@ const GLOBAL_LANDMARKS_DATA = [
     "name": "사그라다 파밀리아 (Sagrada Família)",
     "region": "이베리아",
     "city": "스페인 바르셀로나",
-    "photo": "https://images.unsplash.com/photo-1583779457317-09f0bb1d0c41?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=800&q=80",
     "highlight": "가우디 필생의 역작. 숲을 형상화한 기둥과 스테인드글라스를 투과하는 환상적인 자연 채광",
     "seniorAccess": "완벽한 평지 실내 + 엘리베이터 완비. 타워 올라갈 땐 엘리베이터 탑승, 내려올 땐 완만한 나선계단",
     "hours": "매일 09:00~18:00 (사전 예약 시간대 입장)",
@@ -13006,7 +13006,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
-          <img src="${item.photo}" alt="${localizedTitle}" class="photo-thumb" loading="lazy" />
+          <img src="${item.photo}" alt="${localizedTitle}" class="photo-thumb" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';" />
           <span class="photo-badge">${cleanHangul(localizedBadge, currentLang)}</span>
         </div>
         <div class="photo-body">
@@ -13068,7 +13068,7 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
-          <img src="${item.photo}" alt="${localizedName}" class="photo-thumb" loading="lazy" />
+          <img src="${item.photo}" alt="${localizedName}" class="photo-thumb" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80';" />
           <span class="photo-badge photo-badge-orange">${cleanHangul(localizedBadge, currentLang)}</span>
         </div>
         <div class="photo-body">
