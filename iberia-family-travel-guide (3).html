@@ -76,10 +76,10 @@
 .photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px;margin-top:20px}
 .photo-card{background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;transition:all .25s ease}
 .photo-card:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(24,42,41,.12)}
-.photo-thumb-wrap{height:200px;width:100%;overflow:relative;background:#eae5da}
+.photo-thumb-wrap{position:relative;height:200px;width:100%;overflow:hidden;background:#eae5da}
 .photo-thumb{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
 .photo-card:hover .photo-thumb{transform:scale(1.05)}
-.photo-badge{position:absolute;top:12px;left:12px;background:rgba(23,79,70,.88);backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:8px}
+.photo-badge{position:absolute;top:12px;left:12px;background:rgba(23,79,70,.88);backdrop-filter:blur(4px);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:8px;z-index:2;pointer-events:none}
 .photo-badge-orange{background:rgba(220,119,79,.92)!important}
 .photo-body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
 .photo-title{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px;display:flex;justify-content:space-between;align-items:baseline}
