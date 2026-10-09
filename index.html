@@ -1,7 +1,7 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#f7f4ed"><title>가족과 함께, 한 달의 유럽 남쪽</title>
 <!-- PWA Manifest & CDNs (Leaflet Maps) -->
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="SlowTravel">
@@ -87,7 +87,7 @@
 <!-- 12. 꼭 먹어야 할 대표 미식 & 검증 맛집 -->
 <section class="section" id="dining">
 <div class="wrap">
-  <div class="section-head"><div><div class="kicker">12 / MUST-EAT DISHES & VERIFIED RESTAURANTS</div><h2 data-i18n="dining_title">꼭 먹고 가야 할 음식 & 검증 맛집 (사진 포함 60선)</h2></div><p class="sub" data-i18n="dining_sub">영국·프랑스·이탈리아·스페인·포르투갈·중유럽·중남미·미국의 대표 미식. 운영시간, 연락처 및 예약 링크 수록.</p></div>
+  <div class="section-head"><div><div class="kicker">12 / MUST-EAT DISHES & VERIFIED RESTAURANTS</div><h2 data-i18n="dining_title">꼭 먹고 가야 할 음식 & 검증 맛집 (사진 포함 95선)</h2></div><p class="sub" data-i18n="dining_sub">영국·프랑스·이탈리아·스페인·포르투갈·중유럽·중남미·미국의 대표 미식. 운영시간, 연락처 및 예약 링크 수록.</p></div>
   <div class="search-box-wrap">
     <div class="search-input-row">
       <div class="search-input-wrap"><input type="text" id="globalDiningSearch" class="search-input" placeholder="🔍 국가/도시(런던, 파리, 로마, 바르셀로나), 메뉴, 키워드 검색..." oninput="handleDiningSearchInput()" /><button id="btnDiningClear" class="search-clear-btn" onclick="clearDiningSearch()" title="검색어 초기화">✕</button></div>
@@ -96,7 +96,7 @@
     <div class="search-presets" id="diningPresetsBar"></div>
   </div>
   <div class="view-toggle-bar">
-    <div style="font-size:13px;font-weight:800;color:var(--muted)">📍 <span id="diningViewCountText">전 세계 65대 검증 맛집 리스트</span></div><div class="ctrl-btn-group"><button class="ctrl-btn active" id="btnDiningListView" onclick="setDiningView('list')">📋 리스트 뷰</button><button class="ctrl-btn" id="btnDiningMapView" onclick="setDiningView('map')">🗺 지도 뷰 (Leaflet Map)</button></div>
+    <div style="font-size:13px;font-weight:800;color:var(--muted)">📍 <span id="diningViewCountText">전 세계 95대 검증 맛집 리스트</span></div><div class="ctrl-btn-group"><button class="ctrl-btn active" id="btnDiningListView" onclick="setDiningView('list')">📋 리스트 뷰</button><button class="ctrl-btn" id="btnDiningMapView" onclick="setDiningView('map')">🗺 지도 뷰 (Leaflet Map)</button></div>
   </div>
   <div id="diningMapContainer" class="map-view-container" style="display:none;"></div>
   <div class="photo-grid" id="globalDiningGrid"></div>
@@ -108,7 +108,7 @@
   <div class="section-head"><div><div class="kicker">13 / MUST-VISIT LANDMARKS & ATTRACTIONS</div><h2 data-i18n="attractions_title">꼭 가봐야 할 핵심 명소 디렉토리 (사진 & 보행 가이드)</h2></div><p class="sub" data-i18n="attractions_sub">전 세계 랜드마크 고화질 사진, 부모님 무릎·보행 가이드, 엘리베이터/셔틀 정보, 공식 예매 링크.</p></div>
   <div class="filter-tabs" id="landmarkFilterBar"></div>
   <div class="view-toggle-bar">
-    <div style="font-size:13px;font-weight:800;color:var(--muted)">🏛 <span id="landmarkViewCountText">전 세계 30대 핵심 랜드마크</span></div><div class="ctrl-btn-group"><button class="ctrl-btn active" id="btnLandmarkListView" onclick="setLandmarkView('list')">📋 리스트 뷰</button><button class="ctrl-btn" id="btnLandmarkMapView" onclick="setLandmarkView('map')">🗺 지도 뷰 (Leaflet Map)</button></div>
+    <div style="font-size:13px;font-weight:800;color:var(--muted)">🏛 <span id="landmarkViewCountText">전 세계 80대 핵심 랜드마크</span></div><div class="ctrl-btn-group"><button class="ctrl-btn active" id="btnLandmarkListView" onclick="setLandmarkView('list')">📋 리스트 뷰</button><button class="ctrl-btn" id="btnLandmarkMapView" onclick="setLandmarkView('map')">🗺 지도 뷰 (Leaflet Map)</button></div>
   </div>
   <div id="landmarksMapContainer" class="map-view-container" style="display:none;"></div>
   <div class="photo-grid" id="globalLandmarksGrid"></div>
@@ -154,24 +154,25 @@
 <button id="btnBackToTop" class="back-to-top-btn" onclick="scrollToTop()" title="맨 위로 이동" aria-label="맨 위로 이동">⬆</button>
 <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 <nav class="bottom-mobile-nav">
-  <a href="#planner" class="bottom-nav-item"><span class="b-icon">📅</span><span>플래너</span></a><a href="#dining" class="bottom-nav-item"><span class="b-icon">🍽</span><span>미식</span></a><a href="#attractions" class="bottom-nav-item"><span class="b-icon">🏛</span><span>명소</span></a>
-  <a href="#phrases" class="bottom-nav-item"><span class="b-icon">🗣</span><span>회화</span></a><a href="javascript:void(0)" onclick="navigateToTransit()" class="bottom-nav-item"><span class="b-icon">🚇</span><span>교통</span></a><a href="javascript:void(0)" onclick="navigateToHotels()" class="bottom-nav-item"><span class="b-icon">🏨</span><span>호텔</span></a>
+  <a href="#planner" class="bottom-nav-item"><span class="b-icon">📅</span><span data-i18n="bnav_planner">플래너</span></a><a href="#dining" class="bottom-nav-item"><span class="b-icon">🍽</span><span data-i18n="bnav_dining">미식</span></a><a href="#attractions" class="bottom-nav-item"><span class="b-icon">🏛</span><span data-i18n="bnav_attractions">명소</span></a>
+  <a href="#phrases" class="bottom-nav-item"><span class="b-icon">🗣</span><span data-i18n="bnav_phrases">회화</span></a><a href="javascript:void(0)" onclick="navigateToTransit()" class="bottom-nav-item"><span class="b-icon">🚇</span><span data-i18n="bnav_transit">교통</span></a><a href="javascript:void(0)" onclick="navigateToHotels()" class="bottom-nav-item"><span class="b-icon">🏨</span><span data-i18n="bnav_hotels">호텔</span></a>
 </nav>
 <button id="btnChatToggle" class="chat-floating-btn" onclick="toggleChatWindow()" title="AI 여행 챗봇 열기" aria-label="AI 여행 챗봇">
   🤖<span class="chat-btn-pulse"></span><span class="chat-btn-badge">AI</span>
 </button>
-<div id="chatWindow" class="chat-window-container" style="display:none;">
+<div id="chatWindow" class="chat-window-container" style="display:none;" aria-hidden="true">
   <div class="chat-window-header">
     <div class="chat-header-profile">
       <div class="chat-bot-avatar">🤖<span class="chat-online-dot"></span></div>
       <div class="chat-header-info"><div class="chat-bot-title">이베리아 & 두바이 AI 메이트</div><div class="chat-bot-status"><span class="status-indicator"></span>실시간 로컬 AI (오프라인 지원)</div></div>
     </div>
-    <button class="chat-close-btn" onclick="toggleChatWindow()" title="닫기" aria-label="닫기">✕</button>
+    <button type="button" class="chat-close-btn" onclick="closeChatWindow()" title="닫기" aria-label="닫기">✕</button>
   </div>
   <div class="chat-quick-bar">
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('마드리드에서 리스본 어떻게 가?')">🚌 마드리드 ➔ 리스본 이동법</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 포르투갈 환전 어떻게 해? 유로 써?')">💶 스페인 포르투갈 환전/통화</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 ~ 포르투갈 가기에 11월 ~ 12월 중에 가장 안 추울 만한 적정한 시기는?')">📅 11~12월 추천 시기/날씨</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 맛집 추천해줘')">🍽️ 두바이 맛집</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘')">🦽 부모님 평지/휠체어</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('소매치기 예방법과 치안 안전 수칙 알려줘')">🚨 소매치기/치안 예방</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('렌페 기차 타는 법과 시내 택시/우버 이동 팁')">🚆 렌페/교통 팁</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('트래블로그 카드 결제랑 현금 환전 얼마나 필요해?')">💳 카드/환전/팁</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 공항 텍스리펀 절차 알려줘')">🛍️ 텍스리펀 방법</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('현재 여행 총 예상 경비와 예산 얼마야?')">💰 총 여행 예산</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('식당에서 소금 빼주세요 스페인어로 뭐야?')">🧂 소금 빼주세요</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 사막 사파리 부모님 주의사항과 복장')">🐪 사막 사파리 팁</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('에미레이트 항공 두바이 경유 24시간 스톱오버 추천 코스 &amp; 짐 보관 방법')">🐪 두바이 24h 스톱오버 팁</button>
   </div>
   <div id="chatMessages" class="chat-messages-container">
     <div class="chat-msg bot-msg"><div class="msg-avatar">🤖</div><div class="msg-bubble">안녕하세요! <strong>이베리아 & 두바이 가족 여행 전담 로컬 AI 가이드</strong>입니다. ✈️<br><br>외부 API 호출 없이 브라우저 내 실시간 데이터(58개 엄선 맛집, 23개 명소, 맞춤 플래너 예산)를 바탕으로 즉시 답변해 드립니다.<br><br>궁금하신 점을 편하게 질문해 보세요!<br><span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">💡 예: <em>"두바이 맛집 추천해줘", "부모님 휠체어 평지 명소", "여행 총 예산 얼마야?", "소금 빼주세요"</em></span></div></div>

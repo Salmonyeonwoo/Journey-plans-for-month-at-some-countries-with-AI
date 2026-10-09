@@ -1971,3 +1971,801 @@ body.dark-theme .sticky-header-container {
     max-height: calc(100vh - 140px) !important;
   }
 }
+
+/* ==========================================================================
+   ✨ [TOSS & APPLE ULTRA-MODERN MINIMALISM EDITION]
+   1. 보더 삭제 & 소프트 섀도우: 짙은 border를 투명(rgba(0,0,0,0.04)) 처리 & 0 20px 40px rgba(0,0,0,0.05) 부유 효과
+   2. 여백(Whitespace) 극대화: .section 상하 패딩 140px(+20%) & 카드 내부 패딩 36px 텍스트 호흡 공간
+   3. 타이포그래피 임팩트: h2(54px) & h3(24px) font-weight: 850+ & 자간 살짝 축소(-0.05em)로 세련미 극대화
+   4. 버튼 쫀득한 애니메이션: transition: cubic-bezier(0.16, 1, 0.3, 1) & active scale(0.95) & 네온 Glow 효과
+   ========================================================================== */
+
+/* --- 1. 여백(Whitespace) 극대화 (Breathing Room) --- */
+.section {
+  padding: 140px 0 !important;
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 95px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 72px 0 !important;
+  }
+}
+
+body {
+  line-height: 1.85 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lead, .sub, .photo-desc, .card p, .panel p, .routine-cell p, .phrase-meaning {
+  line-height: 1.85 !important;
+}
+
+/* 카드 내부 패딩 확장 (36px Breathing Room) */
+.card,
+.photo-card,
+.panel,
+.hotel-card,
+.transit-city-card,
+.phrase-card {
+  padding: 36px !important;
+}
+
+.photo-body {
+  padding: 26px 30px !important;
+}
+
+.photo-title {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  margin-bottom: 12px !important;
+  line-height: 1.35 !important;
+}
+
+.photo-region {
+  margin-bottom: 14px !important;
+}
+
+.photo-desc {
+  margin-bottom: 20px !important;
+}
+
+.card h3, .panel h3 {
+  margin-top: 10px !important;
+  margin-bottom: 16px !important;
+}
+
+.planner-control-box {
+  padding: 38px 42px !important;
+  border-radius: 28px !important;
+}
+
+@media (max-width: 600px) {
+  .card,
+  .photo-card,
+  .panel,
+  .hotel-card,
+  .transit-city-card,
+  .phrase-card {
+    padding: 24px 20px !important;
+  }
+  .photo-body {
+    padding: 20px 18px !important;
+  }
+  .planner-control-box {
+    padding: 26px 20px !important;
+  }
+}
+
+/* --- 2. 보더 삭제 & 소프트 섀도우 (Toss / Apple Floating Effect) --- */
+.card,
+.photo-card,
+.panel,
+.hotel-card,
+.transit-city-card,
+.phrase-card,
+.planner-kpi,
+.planner-control-box,
+.search-box-wrap,
+.budget div,
+.routine-cell {
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  border-radius: 24px !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+}
+
+.day-card {
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  border-radius: 24px !important;
+  padding: 32px 36px !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.day-card.transfer {
+  border-left: 6px solid var(--orange) !important;
+  background: #fffefb !important;
+}
+
+/* 부유하는 호버 리프트 (Floating Lift) */
+.card:hover,
+.photo-card:hover,
+.panel:hover,
+.hotel-card:hover,
+.transit-city-card:hover,
+.phrase-card:hover,
+.planner-kpi:hover,
+.day-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.09), 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(26, 82, 73, 0.15) !important;
+}
+
+/* 다크 테마 소프트 섀도우 & 보더 최소화 */
+body.dark-theme .card,
+body.dark-theme .photo-card,
+body.dark-theme .panel,
+body.dark-theme .hotel-card,
+body.dark-theme .transit-city-card,
+body.dark-theme .phrase-card,
+body.dark-theme .planner-kpi,
+body.dark-theme .planner-control-box,
+body.dark-theme .search-box-wrap,
+body.dark-theme .day-card,
+body.dark-theme .budget div,
+body.dark-theme .routine-cell {
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: rgba(24, 34, 31, 0.92) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-theme .card:hover,
+body.dark-theme .photo-card:hover,
+body.dark-theme .panel:hover,
+body.dark-theme .hotel-card:hover,
+body.dark-theme .transit-city-card:hover,
+body.dark-theme .phrase-card:hover,
+body.dark-theme .planner-kpi:hover,
+body.dark-theme .day-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.72) !important;
+  border-color: rgba(94, 234, 212, 0.25) !important;
+}
+
+/* --- 3. 타이포그래피 임팩트 (Toss & Apple Typography) --- */
+h2, .section h2 {
+  font-size: clamp(36px, 4.8vw, 54px) !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.05em !important;
+  line-height: 1.15 !important;
+  color: var(--green) !important;
+  margin-top: 10px !important;
+  margin-bottom: 8px !important;
+}
+
+body.dark-theme h2,
+body.dark-theme .section h2 {
+  color: #5eead4 !important;
+}
+
+h3, .card h3, .panel h3, .stop h3 {
+  font-size: clamp(20px, 2.2vw, 24px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.25 !important;
+}
+
+.kicker {
+  font-size: 12px !important;
+  letter-spacing: 0.18em !important;
+  color: var(--orange) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+}
+
+.sub {
+  color: #50615e !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  max-width: 700px !important;
+}
+
+body.dark-theme .sub {
+  color: #94a3b8 !important;
+}
+
+.lead {
+  color: #4a5c58 !important;
+  font-size: 18px !important;
+  line-height: 1.85 !important;
+}
+
+body.dark-theme .lead {
+  color: #cbd5e1 !important;
+}
+
+/* 히어로 섹션 임팩트 */
+.hero {
+  padding: 110px 0 95px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, rgba(248, 246, 240, 0.84) 0%, rgba(248, 246, 240, 0.96) 100%),
+              url('https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat !important;
+}
+
+body.dark-theme .hero {
+  background: linear-gradient(180deg, rgba(14, 20, 18, 0.86) 0%, rgba(14, 20, 18, 0.97) 100%),
+              url('https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat !important;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6.8vw, 84px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.06em !important;
+  font-weight: 900 !important;
+  color: var(--ink) !important;
+  margin: 20px 0 24px !important;
+}
+
+body.dark-theme .hero h1 {
+  color: #f1f5f9 !important;
+}
+
+.hero h1 em {
+  color: var(--green) !important;
+  text-shadow: 0 2px 20px rgba(26, 82, 73, 0.15);
+}
+
+body.dark-theme .hero h1 em {
+  color: #5eead4 !important;
+  text-shadow: 0 2px 20px rgba(94, 234, 212, 0.25);
+}
+
+.hero-art {
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 24px 60px rgba(24, 42, 41, 0.14) !important;
+}
+
+body.dark-theme .hero-art {
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5) !important;
+}
+
+@keyframes heroFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .eyebrow {
+  animation: heroFadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.hero h1 {
+  animation: heroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+
+.hero .lead {
+  animation: heroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.hero .tagrow {
+  animation: heroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.48s both;
+}
+
+.hero-art {
+  animation: heroFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* --- 4. 버튼 쫀득한 애니메이션 & 옅은 Glow 빛 번짐 효과 --- */
+.tab-chip,
+.ctrl-btn,
+.recalc-btn,
+.cal-action-btn,
+.print-action-btn,
+.action-btn,
+.preset-btn,
+.phrase-speak-btn,
+.chat-floating-btn,
+.chat-quick-chip,
+.chat-send-btn {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, box-shadow;
+}
+
+/* 호버 시 옅은 Glow 빛 번짐 효과 */
+.recalc-btn:hover {
+  background: #113832 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 0 28px rgba(26, 82, 73, 0.55), 0 10px 24px rgba(26, 82, 73, 0.32) !important;
+}
+
+.cal-action-btn:hover {
+  background: #bf5c34 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 0 26px rgba(216, 117, 77, 0.6), 0 10px 22px rgba(216, 117, 77, 0.35) !important;
+}
+
+.action-btn.primary:hover {
+  background: #113832 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 22px rgba(26, 82, 73, 0.48), 0 8px 20px rgba(26, 82, 73, 0.25) !important;
+}
+
+.tab-chip:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08) !important;
+}
+
+.tab-chip.active {
+  box-shadow: 0 0 20px rgba(26, 82, 73, 0.4), 0 6px 14px rgba(26, 82, 73, 0.25) !important;
+}
+
+.tab-chip.orange-chip.active {
+  box-shadow: 0 0 20px rgba(216, 117, 77, 0.45), 0 6px 14px rgba(216, 117, 77, 0.3) !important;
+}
+
+.tab-chip.blue-chip.active {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.45), 0 6px 14px rgba(37, 99, 235, 0.3) !important;
+}
+
+.ctrl-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-1px) !important;
+}
+
+.chat-floating-btn:hover {
+  box-shadow: 0 0 32px rgba(26, 82, 73, 0.6), 0 14px 30px rgba(26, 82, 73, 0.45) !important;
+  transform: translateY(-4px) scale(1.06) !important;
+}
+
+/* 쫀득한 햅틱 손맛 (Haptic Press) */
+.cal-action-btn:active,
+.tab-chip:active,
+.ctrl-btn:active,
+.recalc-btn:active,
+.print-action-btn:active,
+.action-btn:active,
+.preset-btn:active,
+.phrase-speak-btn:active,
+.chat-floating-btn:active,
+.chat-quick-chip:active,
+.chat-send-btn:active {
+  transform: scale(0.95) !important;
+}
+
+/* ==========================================================================
+   📱 [ULTIMATE MOBILE USER EXPERIENCE (SMARTPHONE & TABLET OPTIMIZATION)]
+   ========================================================================== */
+
+/* 1. Global Touch Ergonomics & Safe Area */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+button, a, select, input {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Responsive Breakpoint: Tablet & Mobile (< 768px) */
+@media (max-width: 768px) {
+  /* Layout & Whitespace */
+  .wrap {
+    padding: 0 16px !important;
+  }
+  .section {
+    padding: 64px 0 !important;
+  }
+  .section-head {
+    margin-bottom: 24px !important;
+  }
+
+  /* Headings & Typography */
+  h1, .hero h1 {
+    font-size: clamp(30px, 8vw, 44px) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.04em !important;
+    margin: 14px 0 16px !important;
+  }
+  h2, .section h2 {
+    font-size: clamp(23px, 5.8vw, 34px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.035em !important;
+    margin-top: 6px !important;
+    margin-bottom: 10px !important;
+  }
+  h3, .card h3, .panel h3, .stop h3, .photo-body h3 {
+    font-size: clamp(17px, 4.4vw, 21px) !important;
+    line-height: 1.3 !important;
+  }
+  .sub {
+    font-size: 14.5px !important;
+    line-height: 1.72 !important;
+  }
+  .lead {
+    font-size: 15.5px !important;
+    line-height: 1.75 !important;
+  }
+
+  /* Compact Sticky Header & One-row Horizontal Scroll */
+  .sticky-header-container {
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+  .sticky-header-container .wrap {
+    padding: 4px 14px !important;
+  }
+  .header-utility-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 0 5px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  }
+  .header-utility-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .util-group {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    gap: 4px !important;
+  }
+  .ctrl-btn {
+    padding: 3px 8px !important;
+    font-size: 11px !important;
+    min-height: 28px !important;
+  }
+
+  /* Global Nav row */
+  .global-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 0 6px !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+  .global-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .global-nav a {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 11.5px !important;
+    padding: 4px 10px !important;
+    border-radius: 12px !important;
+    background: rgba(0,0,0,0.03) !important;
+  }
+  body.dark-theme .global-nav a {
+    background: rgba(255,255,255,0.06) !important;
+  }
+
+  /* Smooth Horizontal Scroll Filter Bars */
+  .filter-tabs,
+  .hotel-filter-bar,
+  .search-presets,
+  .chat-quick-bar,
+  #transitHotelSubTabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 8px !important;
+    padding: 4px 2px 8px !important;
+    margin-bottom: 18px !important;
+    width: 100% !important;
+  }
+  .filter-tabs::-webkit-scrollbar,
+  .hotel-filter-bar::-webkit-scrollbar,
+  .search-presets::-webkit-scrollbar,
+  .chat-quick-bar::-webkit-scrollbar,
+  #transitHotelSubTabs::-webkit-scrollbar {
+    display: none;
+  }
+  .tab-chip,
+  .preset-btn,
+  .chat-quick-chip {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
+    font-size: 12.5px !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Interactive Planner Controls */
+  .planner-control-box {
+    padding: 22px 16px !important;
+    border-radius: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  .control-flex-row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .control-group label {
+    font-size: 12.5px !important;
+    margin-bottom: 5px !important;
+  }
+  .control-group select,
+  .control-group input[type="date"],
+  .search-box-wrap input[type="text"] {
+    width: 100% !important;
+    padding: 12px 14px !important;
+    font-size: 16px !important; /* Prevents iOS auto-zoom */
+    border-radius: 14px !important;
+    min-height: 46px !important;
+  }
+  .recalc-btn {
+    width: 100% !important;
+    padding: 13px 18px !important;
+    font-size: 14.5px !important;
+    border-radius: 14px !important;
+    justify-content: center !important;
+    margin-top: 4px !important;
+  }
+
+  /* Planner KPI Stat Cards */
+  .planner-kpi-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 20px !important;
+  }
+  .planner-kpi {
+    padding: 16px 14px !important;
+    border-radius: 18px !important;
+  }
+  .planner-kpi .val {
+    font-size: 18px !important;
+    margin: 4px 0 2px !important;
+  }
+  .planner-kpi .label {
+    font-size: 11.5px !important;
+  }
+  .planner-kpi .subtext {
+    font-size: 11px !important;
+  }
+
+  /* Day Timeline Cards */
+  .day-card {
+    grid-template-columns: 1fr !important;
+    padding: 22px 18px !important;
+    border-radius: 20px !important;
+    margin-bottom: 18px !important;
+    gap: 16px !important;
+  }
+  .day-meta {
+    border-right: none !important;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.08) !important;
+    padding-bottom: 14px !important;
+    margin-bottom: 0 !important;
+  }
+  body.dark-theme .day-meta {
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .routine-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .routine-cell {
+    padding: 14px 14px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Cards & Grids: 1-Column Responsive */
+  .cards,
+  .photo-cards,
+  .hotel-grid,
+  .transit-box-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .card,
+  .photo-card,
+  .panel,
+  .hotel-card,
+  .transit-city-card,
+  .phrase-card {
+    padding: 20px 16px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04) !important;
+  }
+  .photo-thumb-wrap {
+    height: 220px !important;
+    border-radius: 18px 18px 0 0 !important;
+  }
+  .photo-body {
+    padding: 20px 18px !important;
+  }
+  .photo-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    margin-top: 16px !important;
+  }
+  .photo-actions .action-btn {
+    padding: 10px 10px !important;
+    font-size: 12px !important;
+    min-height: 42px !important;
+    justify-content: center !important;
+  }
+  .photo-actions .action-btn.full-width {
+    grid-column: span 2 !important;
+  }
+
+  /* Budget & Comparison Grids */
+  .budget {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .budget div {
+    padding: 16px 14px !important;
+    border-radius: 16px !important;
+  }
+  .checklist {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .route {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .route .stop {
+    min-height: auto !important;
+    padding: 16px !important;
+  }
+
+  /* Responsive Tables */
+  .table-wrap,
+  .table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table th, .table td {
+    padding: 12px 10px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Bottom Navigation Bar with Safe Area Inset */
+  .bottom-mobile-nav {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: calc(58px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: 4px 6px env(safe-area-inset-bottom, 0px) !important;
+    background: rgba(255, 253, 248, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05) !important;
+    z-index: 950 !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+  }
+  body.dark-theme .bottom-mobile-nav {
+    background: rgba(18, 24, 22, 0.95) !important;
+    border-top-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45) !important;
+  }
+  .bottom-nav-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    color: var(--muted) !important;
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    padding: 4px 6px !important;
+    border-radius: 12px !important;
+    transition: all 0.2s ease !important;
+    min-width: 48px !important;
+  }
+  .bottom-nav-item .b-icon {
+    font-size: 18px !important;
+    margin-bottom: 2px !important;
+    line-height: 1 !important;
+  }
+  .bottom-nav-item:active {
+    transform: scale(0.9) !important;
+    color: var(--green) !important;
+  }
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* Floating Action Buttons Docking */
+  .chat-floating-btn {
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 14px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 18px !important;
+    z-index: 960 !important;
+  }
+  .back-to-top-btn {
+    bottom: calc(122px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 14px !important;
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 14px !important;
+    z-index: 960 !important;
+  }
+
+  /* Chatbot Window on Mobile */
+  .chat-window-container {
+    bottom: calc(66px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: auto !important;
+    height: calc(100vh - 120px - env(safe-area-inset-bottom, 0px)) !important;
+    max-height: 520px !important;
+    border-radius: 20px !important;
+    z-index: 998 !important;
+  }
+  .chat-input-field {
+    font-size: 16px !important; /* Prevents auto-zoom on mobile */
+  }
+}
+
+/* 3. Small Mobile Devices (< 480px) */
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0 14px !important;
+  }
+  .section {
+    padding: 50px 0 !important;
+  }
+  .hero {
+    padding: 44px 0 36px !important;
+  }
+  .hero-art {
+    height: 240px !important;
+  }
+  .planner-kpi-row {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+  .budget {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .photo-actions {
+    grid-template-columns: 1fr !important;
+  }
+  .photo-actions .action-btn.full-width {
+    grid-column: span 1 !important;
+  }
+  .cal-action-btn {
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+  }
+}

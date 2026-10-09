@@ -2367,14 +2367,38 @@ function formatMoney(krwAmount, curr = currentCurrency) {
     return `¥${cny.toLocaleString()} CNY`;
   } else {
     // KRW
-    if (krwAmount >= 100000000) {
-      const eok = (krwAmount / 100000000).toFixed(1);
-      return `${eok}억 원`;
-    } else if (krwAmount >= 10000) {
-      const man = Math.round(krwAmount / 10000);
-      return `${man.toLocaleString()}만 원`;
+    if (currentLang === 'en') {
+      return `₩${krwAmount.toLocaleString()} KRW`;
+    } else if (currentLang === 'ja') {
+      if (krwAmount >= 100000000) {
+        const oku = (krwAmount / 100000000).toFixed(1);
+        return `${oku}億ウォン (~₩${krwAmount.toLocaleString()})`;
+      } else if (krwAmount >= 10000) {
+        const man = Math.round(krwAmount / 10000);
+        return `${man.toLocaleString()}万ウォン (~₩${krwAmount.toLocaleString()})`;
+      } else {
+        return `₩${krwAmount.toLocaleString()}`;
+      }
+    } else if (currentLang === 'zh') {
+      if (krwAmount >= 100000000) {
+        const yi = (krwAmount / 100000000).toFixed(1);
+        return `${yi}亿韩元 (~₩${krwAmount.toLocaleString()})`;
+      } else if (krwAmount >= 10000) {
+        const man = Math.round(krwAmount / 10000);
+        return `${man.toLocaleString()}万韩元 (~₩${krwAmount.toLocaleString()})`;
+      } else {
+        return `₩${krwAmount.toLocaleString()}`;
+      }
     } else {
-      return `${krwAmount.toLocaleString()}원`;
+      if (krwAmount >= 100000000) {
+        const eok = (krwAmount / 100000000).toFixed(1);
+        return `${eok}억 원`;
+      } else if (krwAmount >= 10000) {
+        const man = Math.round(krwAmount / 10000);
+        return `${man.toLocaleString()}만 원`;
+      } else {
+        return `${krwAmount.toLocaleString()}원`;
+      }
     }
   }
 }
@@ -2382,14 +2406,22 @@ function formatMoney(krwAmount, curr = currentCurrency) {
 // 2-1. 개별 카드 목록 전용 (From) 가격 포맷터
 function formatCardPrice(baseKrw, curr = currentCurrency, isDining = false) {
   if (baseKrw === 0) {
-    return currentLang === 'en' ? 'Free (무료)' : (currentLang === 'ja' ? '無料 (Free)' : (currentLang === 'zh' ? '免费 (Free)' : '무료 (Free)'));
+    return currentLang === 'en' ? 'Free' : (currentLang === 'ja' ? '無料' : (currentLang === 'zh' ? '免费' : '무료 (Free)'));
   }
   const krw = typeof baseKrw === 'number' ? baseKrw : (isDining ? 30000 : 25000);
   const prefix = 'From ';
   if (curr === 'KRW') {
     if (krw >= 10000) {
       const man = (krw / 10000).toFixed(1).replace('.0', '');
-      return `${prefix}${man}만 원 (~₩${krw.toLocaleString()})`;
+      if (currentLang === 'en') {
+        return `${prefix}₩${krw.toLocaleString()} KRW`;
+      } else if (currentLang === 'ja') {
+        return `${prefix}${man}万ウォン (~₩${krw.toLocaleString()})`;
+      } else if (currentLang === 'zh') {
+        return `${prefix}${man}万韩元 (~₩${krw.toLocaleString()})`;
+      } else {
+        return `${prefix}${man}만 원 (~₩${krw.toLocaleString()})`;
+      }
     }
     return `${prefix}₩${krw.toLocaleString()}`;
   } else if (curr === 'USD') {
@@ -2584,7 +2616,8 @@ function renderCityFilterTabs() {
   
   container.innerHTML = cities.map(city => {
     const isAll = city === 'ALL';
-    const label = isAll ? (currentLang === 'en' ? '🌟 All Itinerary' : (currentLang === 'ja' ? '🌟 全日程' : (currentLang === 'zh' ? '🌟 全部行程' : '🌟 전체 일정'))) : `📍 ${city}`;
+    const localizedCity = cleanHangul(city, currentLang);
+    const label = isAll ? (currentLang === 'en' ? '🌟 All Itinerary' : (currentLang === 'ja' ? '🌟 全日程' : (currentLang === 'zh' ? '🌟 全部行程' : '🌟 전체 일정'))) : `📍 ${localizedCity}`;
     const activeClass = (window.currentCityFilter || 'ALL') === city ? 'active' : '';
     return `<button class="tab-chip ${activeClass}" onclick="filterTimelineCity('${city}', this)">${label}</button>`;
   }).join('');
@@ -2595,6 +2628,58 @@ function cleanHangul(text, lang) {
   if (lang === 'ko') return text;
   let t = text;
   const fallbackDict = {
+    '말라가·그라나다': { ja: 'マラガ・グラナダ', en: 'Málaga & Granada', zh: '马拉加·格拉纳达' },
+    '마데이라': { ja: 'マデイラ', en: 'Madeira', zh: '马德拉' },
+    '귀국': { ja: '帰国', en: 'Return Flight', zh: '回国' },
+    '로마·피렌체': { ja: 'ローマ・フィレンツェ', en: 'Rome & Florence', zh: '罗马·佛罗伦萨' },
+    '리마': { ja: 'リマ', en: 'Lima', zh: '利马' },
+    '쿠스코·마추픽추': { ja: 'クスコ・マチュピチュ', en: 'Cusco & Machu Picchu', zh: '库斯科·马丘比丘' },
+    '부에노스아이레스': { ja: 'ブエノスアイレス', en: 'Buenos Aires', zh: '布宜诺斯艾利斯' },
+    '그랜드캐니언·라스베이거스': { ja: 'グランドキャニオン・ラスベガス', en: 'Grand Canyon & Las Vegas', zh: '大峡谷·拉斯维加斯' },
+    '로스앤젤레스': { ja: 'ロサンゼルス', en: 'Los Angeles', zh: '洛杉矶' },
+    '하와이': { ja: 'ハワイ', en: 'Hawaii', zh: '夏威夷' },
+    '두바이': { ja: 'ドバイ', en: 'Dubai', zh: '迪拜' },
+    '아부다비': { ja: 'アブダビ', en: 'Abu Dhabi', zh: '阿布扎比' },
+    '신트라': { ja: 'シントラ', en: 'Sintra', zh: '辛特拉' },
+    '톨레도': { ja: 'トレド', en: 'Toledo', zh: '托莱多' },
+    '론다': { ja: 'ロンダ', en: 'Ronda', zh: '龙达' },
+    '코르도바': { ja: 'コルドバ', en: 'Córdoba', zh: '科尔多瓦' },
+    '스페인': { ja: 'スペイン', en: 'Spain', zh: '西班牙' },
+    '포르투갈': { ja: 'ポルトガル', en: 'Portugal', zh: '葡萄牙' },
+    '이탈리아': { ja: 'イタリア', en: 'Italy', zh: '意大利' },
+    '프랑스': { ja: 'フランス', en: 'France', zh: '法国' },
+    '영국': { ja: 'イギリス', en: 'United Kingdom', zh: '英国' },
+    '오스트리아': { ja: 'オーストリア', en: 'Austria', zh: '奥地利' },
+    '체코': { ja: 'チェコ', en: 'Czech Republic', zh: '捷克' },
+    '독일': { ja: 'ドイツ', en: 'Germany', zh: '德国' },
+    '스위스': { ja: 'スイス', en: 'Switzerland', zh: '瑞士' },
+    '낮음': { ja: '低（シニア安心）', en: 'Low (Senior-Friendly)', zh: '低（适老舒适）' },
+    '보통': { ja: '普通', en: 'Moderate', zh: '中等' },
+    '높음': { ja: '高', en: 'High', zh: '较高' },
+    '현지 미식': { ja: '地元グルメ', en: 'Local Dining', zh: '当地特色美食' },
+    '도시 간 기차 이동': { ja: '都市間鉄道の移動', en: 'Inter-city Rail Travel', zh: '城际铁路出行' },
+    '유로 환전 안내': { ja: 'ユーロ両替・決済', en: 'Euro Currency Info', zh: '欧元换汇指南' },
+    '유로 환전 및 결제': { ja: 'ユーロ両替・決済', en: 'Euro & Payment Guide', zh: '欧元换汇与支付' },
+    '소매치기 안전 수칙': { ja: 'スリ対策と安全', en: 'Pickpocket Safety Rules', zh: '防盗安全守则' },
+    '소매치기 안전': { ja: 'スリ対策', en: 'Pickpocket Safety', zh: '防盗安全' },
+    '스페인 맛집': { ja: 'スペイン名店', en: 'Spanish Dining', zh: '西班牙名店' },
+    '포르투갈 맛집': { ja: 'ポルトガル名店', en: 'Portuguese Dining', zh: '葡萄牙名店' },
+    '포르투갈 대표 음식': { ja: 'ポルトガル名物料理', en: 'Iconic Portuguese Food', zh: '葡萄牙代表美食' },
+    '두바이 ➔ 아부다비': { ja: 'ドバイ ➔ アブダビ', en: 'Dubai ➔ Abu Dhabi', zh: '迪拜 ➔ 阿布扎比' },
+    '부르즈 할리파 & 몰': { ja: 'ブルジュ・ハリファ＆モール', en: 'Burj Khalifa & Mall', zh: '哈利法塔与购物中心' },
+    '마드리드 ➔ 세비야 이동': { ja: 'マドリード ➔ セビリア移動', en: 'Madrid ➔ Seville Transit', zh: '马德里 ➔ 塞维利亚交通' },
+    '마드리드 ➔ 세비야': { ja: 'マドリード ➔ セビリア', en: 'Madrid ➔ Seville', zh: '马德里 ➔ 塞维利亚' },
+    '마드리드 ➔ 리스본 이동': { ja: 'マドリード ➔ リスボン移動', en: 'Madrid ➔ Lisbon Transit', zh: '马德里 ➔ 里斯本交通' },
+    '마드리드 ➔ 리스본': { ja: 'マドリード ➔ リスボン', en: 'Madrid ➔ Lisbon', zh: '马德里 ➔ 里斯本' },
+    '바르셀로나 ➔ 마드리드': { ja: 'バルセロナ ➔ マドリード', en: 'Barcelona ➔ Madrid', zh: '巴塞罗那 ➔ 马德里' },
+    '리스본 ➔ 포르투': { ja: 'リスボン ➔ ポルト', en: 'Lisbon ➔ Porto', zh: '里斯本 ➔ 波尔图' },
+    '택스리펀(DIVA)': { ja: '免税手続き（DIVA）', en: 'Tax Refund (DIVA)', zh: '退税办理（DIVA）' },
+    '스페인 쇼핑': { ja: 'スペインのお土産', en: 'Spain Souvenirs', zh: '西班牙伴手礼' },
+    '포르투갈 쇼핑': { ja: 'ポルトガルのお土産', en: 'Portugal Souvenirs', zh: '葡萄牙伴手礼' },
+    '부모님 안심 케어': { ja: 'ご両親安心ケア', en: 'Senior Care Tips', zh: '长辈舒心照护' },
+    '고속열차 이동 안전': { ja: '高速鉄道の移動と安全', en: 'High-speed Rail Safety', zh: '高铁出行与安全' },
+    '고속열차 렌페 이동': { ja: '高速鉄道Renfeの移動', en: 'Renfe High-Speed Train', zh: 'Renfe高铁出行' },
+    '싱겁게 주문하는 법': { ja: '薄味での注文方法', en: 'How to order less salt', zh: '少盐清淡点餐法' },
     '포르투': { ja: 'ポルト', 'en': 'Porto', 'zh': '波尔图' },
     '리스본': { ja: 'リスボン', 'en': 'Lisbon', 'zh': '里斯本' },
     '세비야': { ja: 'セビリア', 'en': 'Seville', 'zh': '塞维利亚' },
@@ -2785,6 +2870,38 @@ function renderPlannerDropdownOptions() {
     });
     pacSel.value = val;
   }
+
+  const partySel = document.getElementById('userPartySize');
+  if (partySel) {
+    const val = partySel.value;
+    const ptOpts = {
+      'ko': { '2': '2인 (부부 / 모녀)', '3': '3인 (부모님 + 자녀 1인)', '4': '4인 (가족 4인)', '5': '5인 (대가족 5인)' },
+      'ja': { '2': '2名（夫婦／母娘）', '3': '3名（ご両親＋子ども1名）', '4': '4名（家族4名）', '5': '5名（大家族5名）' },
+      'en': { '2': '2 People (Couple / Pair)', '3': '3 People (Parents + 1 Child)', '4': '4 People (Family of 4)', '5': '5 People (Large Family 5)' },
+      'zh': { '2': '2人（夫妻／母女）', '3': '3人（父母＋子女1人）', '4': '4人（家庭4人）', '5': '5人（大家庭5人）' }
+    };
+    const cPtOpts = ptOpts[currentLang] || ptOpts['ko'];
+    Array.from(partySel.options).forEach(opt => {
+      if (cPtOpts[opt.value]) opt.textContent = cPtOpts[opt.value];
+    });
+    partySel.value = val;
+  }
+
+  const tierSel = document.getElementById('userTierSelect');
+  if (tierSel) {
+    const val = tierSel.value;
+    const tOpts = {
+      'ko': { 'economy': '실속 알뜰형 (스마트 가성비)', 'standard': '편안한 4성급 (센트럴 패밀리)', 'luxury': '프리미엄 럭셔리 (5성급 & VIP투어)' },
+      'ja': { 'economy': 'スマート節約型（高コスパ重視）', 'standard': '快適な4つ星（セントラル・ファミリー）', 'luxury': 'プレミアム・ラグジュアリー（5つ星＆VIPツアー）' },
+      'en': { 'economy': 'Smart Budget (High Value)', 'standard': 'Comfortable 4-Star (Central Family)', 'luxury': 'Premium Luxury (5-Star & VIP Tours)' },
+      'zh': { 'economy': '经济实惠型（智能性价比）', 'standard': '舒适4星级（核心区家庭精选）', 'luxury': '尊享奢华型（5星级酒店＆VIP私享）' }
+    };
+    const cTOpts = tOpts[currentLang] || tOpts['ko'];
+    Array.from(tierSel.options).forEach(opt => {
+      if (cTOpts[opt.value]) opt.textContent = cTOpts[opt.value];
+    });
+    tierSel.value = val;
+  }
 }
 
 function renderGlobalDining(list = GLOBAL_DINING_DATA) {
@@ -2886,7 +3003,7 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
-          <img src="${item.photo}" alt="${localizedName}" class="photo-thumb" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80';" />
+          <img src="${item.photo}" alt="${localizedName}" class="photo-thumb" loading="lazy" onload="this.classList.add('loaded');this.parentElement.classList.add('loaded');" onerror="this.onerror=null;this.classList.add('loaded');this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80';" />
           <span class="photo-badge photo-badge-orange">${cleanHangul(localizedBadge, currentLang)}</span>
         </div>
         <div class="photo-body">
@@ -3202,7 +3319,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
         <div class="day-num">DAY ${slotIdx + 1}</div>
         <div class="day-date">${dateFormatted} (${dow})</div>
         <span class="city-tag">${cleanHangul(localizedCity, currentLang)}</span>
-        <div class="timeline-drag-handle" title="드래그하여 일정 순서 변경">⋮⋮ 드래그 이동</div>
+        <div class="timeline-drag-handle" title="${currentLang === 'en' ? 'Drag to reorder day schedule' : (currentLang === 'ja' ? 'ドラッグして日程の順序を変更' : (currentLang === 'zh' ? '拖拽调整日程顺序' : '드래그하여 일정 순서 변경'))}">${currentLang === 'en' ? '⋮⋮ Drag to reorder' : (currentLang === 'ja' ? '⋮⋮ ドラッグ移動' : (currentLang === 'zh' ? '⋮⋮ 拖拽排序' : '⋮⋮ 드래그 이동'))}</div>
         ${dItem.isTransfer ? `<div class="transfer-badge">${transferBadgeLabel}</div>` : ''}
       </div>
       <div class="day-body">
@@ -3318,19 +3435,50 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-function toggleChatWindow() {
+function openChatWindow() {
   const win = document.getElementById('chatWindow');
   const btn = document.getElementById('btnChatToggle');
   if (!win) return;
-  const isHidden = win.style.display === 'none' || !win.style.display;
-  win.style.display = isHidden ? 'flex' : 'none';
-  if (btn) btn.style.display = isHidden ? 'none' : 'flex';
-  if (isHidden) {
-    const input = document.getElementById('chatInput');
-    if (input) setTimeout(() => input.focus(), 150);
-    scrollChatToBottom();
+  win.classList.add('active');
+  win.style.setProperty('display', 'flex', 'important');
+  win.setAttribute('aria-hidden', 'false');
+  if (btn) {
+    btn.classList.add('hidden');
+    btn.style.setProperty('display', 'none', 'important');
+  }
+  const input = document.getElementById('chatInput');
+  if (input) setTimeout(() => input.focus(), 150);
+  scrollChatToBottom();
+}
+
+function closeChatWindow() {
+  const win = document.getElementById('chatWindow');
+  const btn = document.getElementById('btnChatToggle');
+  if (!win) return;
+  win.classList.remove('active');
+  win.style.setProperty('display', 'none', 'important');
+  win.setAttribute('aria-hidden', 'true');
+  if (btn) {
+    btn.classList.remove('hidden');
+    btn.style.setProperty('display', 'flex', 'important');
   }
 }
+
+function toggleChatWindow() {
+  const win = document.getElementById('chatWindow');
+  if (!win) return;
+  const isHidden = !win.classList.contains('active') && (win.style.display === 'none' || !win.style.display);
+  if (isHidden) {
+    openChatWindow();
+  } else {
+    closeChatWindow();
+  }
+}
+
+// Ensure global accessibility
+window.openChatWindow = openChatWindow;
+window.closeChatWindow = closeChatWindow;
+window.toggleChatWindow = toggleChatWindow;
 
 function handleQuickChatChip(query) {
   window.handleQuickChatChip = handleQuickChatChip;
@@ -3523,6 +3671,36 @@ function switchLanguage(lang, btn) {
   if (typeof updateChatbotLanguage === 'function') {
     updateChatbotLanguage(lang);
   }
+
+  // 14) View Toggle Buttons, Counts & Controls localization
+  const btnDList = document.getElementById('btnDiningListView');
+  const btnDMap = document.getElementById('btnDiningMapView');
+  const btnLList = document.getElementById('btnLandmarkListView');
+  const btnLMap = document.getElementById('btnLandmarkMapView');
+  const dCount = document.getElementById('diningViewCountText');
+  const lCount = document.getElementById('landmarkViewCountText');
+  const btnClear = document.getElementById('btnDiningClear');
+  const btnTop = document.getElementById('btnBackToTop');
+  const btnChat = document.getElementById('btnChatToggle');
+  const btnSend = document.getElementById('btnChatSend');
+
+  const vTexts = {
+    ko: { list: '📋 리스트 뷰', map: '🗺 지도 뷰 (Leaflet Map)', dCount: '전 세계 95대 검증 맛집 리스트', lCount: '전 세계 80대 핵심 랜드마크', clear: '검색어 초기화', top: '맨 위로 이동', chat: 'AI 여행 챗봇 열기', send: '전송' },
+    ja: { list: '📋 リスト表示', map: '🗺 地図表示 (Leaflet Map)', dCount: '世界95選 厳選グルメ＆名店リスト', lCount: '世界80選 必訪ランドマーク', clear: '検索ワードをクリア', top: 'トップへ戻る', chat: 'AI旅行コンシェルジュを開く', send: '送信' },
+    en: { list: '📋 List View', map: '🗺 Map View (Leaflet Map)', dCount: 'Global Curated 95 Dining Spots', lCount: 'Global Top 80 Essential Landmarks', clear: 'Clear search', top: 'Back to top', chat: 'Open AI Travel Assistant', send: 'Send' },
+    zh: { list: '📋 列表视图', map: '🗺 地图视图 (Leaflet Map)', dCount: '全球精选95家特色餐厅名录', lCount: '全球80处必游核心地标', clear: '清空搜索', top: '返回顶部', chat: '打开AI旅行助手', send: '发送' }
+  };
+  const vt = vTexts[lang] || vTexts['ko'];
+  if (btnDList) btnDList.textContent = vt.list;
+  if (btnDMap) btnDMap.textContent = vt.map;
+  if (btnLList) btnLList.textContent = vt.list;
+  if (btnLMap) btnLMap.textContent = vt.map;
+  if (dCount) dCount.textContent = vt.dCount;
+  if (lCount) lCount.textContent = vt.lCount;
+  if (btnClear) btnClear.title = vt.clear;
+  if (btnTop) { btnTop.title = vt.top; btnTop.setAttribute('aria-label', vt.top); }
+  if (btnChat) { btnChat.title = vt.chat; btnChat.setAttribute('aria-label', vt.chat); }
+  if (btnSend) { btnSend.title = vt.send; btnSend.setAttribute('aria-label', vt.send); }
 }
 
 function playVoice(text, locale) {
@@ -3659,8 +3837,10 @@ function handleLocalChat(query) {
     html += `<div style="font-size:11px;color:var(--muted);font-weight:700;margin-bottom:6px;">${label}</div>`;
     html += `<div style="display:flex;flex-wrap:wrap;gap:5px;">`;
     chips.forEach(c => {
-      const escaped = (c.query || '').replace(/'/g, "\\'");
-      html += `<button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('${escaped}')">${c.label}</button>`;
+      const qText = cleanHangul(c.query || '', lang);
+      const lText = cleanHangul(c.label || '', lang);
+      const escaped = qText.replace(/'/g, "\\'");
+      html += `<button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('${escaped}')">${lText}</button>`;
     });
     html += `</div></div>`;
     return html;
@@ -3694,16 +3874,22 @@ function handleLocalChat(query) {
       const tipLabel = lang === 'ja' ? 'シニア安心ポイント' : (lang === 'en' ? 'Senior Comfort Tip' : (lang === 'zh' ? '长辈无障碍贴士' : '어르신 안심 팁'));
       const mapLabel = lang === 'ja' ? 'Googleマップで見る' : (lang === 'en' ? 'View on Google Maps' : (lang === 'zh' ? '谷歌地图导航' : '구글 지도 길찾기'));
 
+      const dInfo = (typeof DINING_I18N_DATA !== 'undefined' && DINING_I18N_DATA[d.name]) || {};
+      const localizedName = (dInfo.displayName && dInfo.displayName[lang]) || d.name;
+      const localizedCity = cleanHangul(d.city, lang);
+      const localizedDish = (dInfo.dishTitle && dInfo.dishTitle[lang]) || cleanHangul(d.dishName || d.signature, lang);
+      const localizedSeniorTip = (dInfo.seniorTip && dInfo.seniorTip[lang]) || cleanHangul(d.seniorTip, lang);
+
       html += `
         <div class="chat-card-recommend" style="margin-top:8px;">
           <div class="chat-card-img" style="background-image:url('${d.photo || ''}')">
-            <span class="chat-card-tag">${d.city}</span>
+            <span class="chat-card-tag">${localizedCity}</span>
           </div>
           <div class="chat-card-content">
-            <div class="chat-card-title">${d.name}</div>
-            <div class="chat-card-dish">🍽️ ${d.dishName || d.signature}</div>
+            <div class="chat-card-title">${localizedName}</div>
+            <div class="chat-card-dish">🍽️ ${localizedDish}</div>
             <div class="chat-card-price">💵 ${price}</div>
-            <div class="chat-card-tip">👵 <strong>${tipLabel}:</strong> ${d.seniorTip}</div>
+            <div class="chat-card-tip">👵 <strong>${tipLabel}:</strong> ${localizedSeniorTip}</div>
             <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.mapQuery || d.name)}" target="_blank" rel="noopener" class="chat-card-link">📍 ${mapLabel}</a>
           </div>
         </div>
@@ -3993,69 +4179,80 @@ function handleLocalChat(query) {
   // ----------------------------------------------------
   // [SPECIAL ROUTE 3] MADRID ↔ LISBON (CROSS-BORDER)
   // ----------------------------------------------------
-  const isMadridToLisbonRoute = (hasMadrid && hasLisbon) || q.includes('alsa') || q.includes('omio') ||
+  const isMadridToLisbonRoute = (hasMadrid && hasLisbon) || (isSpain && isPortugal && (hasRouteKeyword || ['이동', '국경', '비행기', '버스', '기차', 'transit', 'cross', 'flight', 'bus', 'train'].some(w => q.includes(w)))) || q.includes('alsa') || q.includes('omio') ||
     ['마드리드에서 리스본', '마드리드 리스본', '리스본에서 마드리드', '국경 이동', '국경 이동법', 'madrid to lisbon', 'lisbon to madrid', 'マドリードからリスボン', '马德里到里斯本'].some(w => q.includes(w));
 
   if (isMadridToLisbonRoute) {
     let res = '';
     if (lang === 'ja') {
       res = `
-        ✈️ <strong>🇪🇸 マドリード ➔ 🇵🇹 リスボン 国境移動＆予約ガイド</strong>:<br><br>
-        1️⃣ <strong>飛行機（ご両親同伴ならイチ押し・最も推奨！ 🌟）:</strong><br>
-        • <strong>所要時間:</strong> 直行便で約1時間20分（EasyJet、Air Europaなど）<br>
-        • <strong>費用目安:</strong> 預け入れ荷物込みで1人あたり約10万ウォン（約€70）<br>
-        • <strong>おすすめ理由:</strong> 長時間の陸路移動による体力消耗がなく、シニア連れの旅に圧倒的に快適で安心です。<br><br>
-        2️⃣ <strong>高速バス（次善の策 - コスパ重視）:</strong><br>
-        • <strong>所要時間:</strong> 約8〜9時間<br>
-        • <strong>出発ターミナル:</strong> マドリード南バスターミナル（メンデス・アルバロ駅 / Estación Sur）<br>
-        • <strong>予約のコツ:</strong> <strong>ALSAアプリまたはOmioアプリでの事前予約が必須</strong>です！乗り心地のため座席間隔の広い<strong>前方プレミアム席（Supra）</strong>を強くおすすめします。<br><br>
-        3️⃣ <strong>鉄道・列車（非推奨 ⚠️）:</strong><br>
-        • 直行列車がなく、乗り換え2回以上で10時間以上要するためシニア旅行にはおすすめしません。<br><br>
-        💶 <strong>通貨のご案内:</strong> スペインとポルトガルは両国とも<strong>ユーロ（€）</strong>を通貨として使用しているため、国境を越えても追加の両替は一切不要です！
+        ✈️ <strong>🇪🇸 マドリード ➔ 🇵🇹 リスボン（国境移動・予約完全ガイド）</strong>:<br><br>
+        マドリード〜リスボン間の移動は<strong>飛行機（所要約1時間20分）が最もおすすめ</strong>です！<br><br>
+        1️⃣ <strong>飛行機（イチ押し・最も推奨！ 🌟）:</strong><br>
+        • <strong>所要時間:</strong> 約<strong>1時間20分</strong>直行便（エア・ヨーロッパ、ライアンエアー、イージージェット、TAPポルトガル航空）。<br>
+        • <strong>運賃のコツ:</strong> 航空券のみの基本料金は3〜5万ウォン（約3〜5千円）程度ですが、<strong>23kgの受託手荷物を追加すると1人あたり約8〜12万ウォン（約€60〜€85）</strong>になります。ご両親同伴なら長距離移動の疲労がなく圧倒的にお得で快適です！<br><br>
+        2️⃣ <strong>高速バス（次善の策・長距離）:</strong><br>
+        • <strong>所要時間:</strong> 約<strong>8〜9時間</strong>（マドリード「メンデス・アルバロ」バスターミナル発）。<br>
+        • <strong>予約のコツ:</strong> 9時間の長旅ですので、<strong>ALSA公式アプリ</strong>または<strong>Omioアプリ</strong>で前方の座席間隔が広い<strong>Supra（優等・プレミアム席）</strong>を必ず事前予約してください。（窓口当日購入は非推奨）<br><br>
+        3️⃣ <strong>鉄道・列車（絶対非推奨 ⚠️）:</strong><br>
+        • 直行便がなく乗り換え2回以上で<strong>10時間以上</strong>かかるため絶対におすすめしません。<br><br>
+        💱 <strong>通貨＆両替の注意点:</strong><br>
+        スペインとポルトガルは両国とも<strong>ユーロ（€）</strong>共通ですので、国境を越えても追加の両替は一切不要です！トラベルカードやユーロ現金をそのままご利用いただけます。<br><br>
+        🎒 <strong>荷物配送サービス:</strong> 重いスーツケースの移動が大変な場合は、スペイン郵便（Correos）等のホテル間手荷物配送サービスを利用すれば手ぶらで身軽に国境を越えられます！
       `;
     } else if (lang === 'en') {
       res = `
-        ✈️ <strong>🇪🇸 Madrid ➔ 🇵🇹 Lisbon Cross-Border Transit & Booking Guide</strong>:<br><br>
-        1️⃣ <strong>Flight (Strongly Recommended for Seniors! 🌟):</strong><br>
-        • <strong>Travel Time:</strong> Approx. 1 hr 20 min direct (EasyJet, Air Europa, TAP, etc.)<br>
-        • <strong>Estimated Cost:</strong> ~₩100,000 (€70) per person with checked baggage.<br>
-        • <strong>Why Recommended:</strong> Zero physical fatigue from long overland trips, saving energy for elderly parents.<br><br>
+        ✈️ <strong>🇪🇸 Madrid ➔ 🇵🇹 Lisbon (Cross-Border Transit & Booking Guide)</strong>:<br><br>
+        For traveling between Madrid and Lisbon, <strong>taking a flight (~1h 20m) is by far the best option</strong>!<br><br>
+        1️⃣ <strong>Flight (Highly Recommended! 🌟):</strong><br>
+        • <strong>Duration:</strong> Approx. <strong>1 hr 20 mins direct</strong> (Air Europa, Ryanair, easyJet, TAP).<br>
+        • <strong>Fare Tip:</strong> Base fare is cheap (~$30), but <strong>adding a 23kg checked bag brings it to ~$80–$120 (₩80,000–₩120,000)</strong> per person. Absolutely worth it to save elderly parents from a grueling bus ride!<br><br>
         2️⃣ <strong>Express Bus (Secondary Option - Budget Friendly):</strong><br>
-        • <strong>Travel Time:</strong> Approx. 8–9 hours from Madrid South Station (Estación Sur).<br>
-        • <strong>Booking Tip:</strong> Pre-book via the <strong>ALSA app or Omio app</strong>! Select the front premium <strong>'Supra' class seats</strong> for extra comfort.<br><br>
-        3️⃣ <strong>Train (Not Recommended ⚠️):</strong><br>
-        • No direct connection exists; requires 2+ transfers and takes over 10 hours.<br><br>
-        💶 <strong>Currency Tip:</strong> Both Spain and Portugal use the <strong>Euro (€)</strong>, so no additional currency exchange is needed!
+        • <strong>Duration:</strong> Approx. <strong>8–9 hours</strong> from Madrid 'Méndez Álvaro' Station.<br>
+        • <strong>Booking Tip:</strong> Long rides require comfort! Pre-book via the <strong>ALSA app or Omio app</strong> and select the wider, premium <strong>Supra seats</strong> in advance. (Walk-in booking not recommended)<br><br>
+        3️⃣ <strong>Train (Strictly Not Recommended ⚠️):</strong><br>
+        • There is no direct train between Madrid and Lisbon; requires 2+ transfers and takes <strong>over 10 hours</strong>.<br><br>
+        💱 <strong>Currency Notice:</strong><br>
+        Both Spain and Portugal use the <strong>Euro (€)</strong>. There is no need to exchange money when crossing the border; your travel cards and euros will work seamlessly!<br><br>
+        🎒 <strong>Luggage Forwarding:</strong> If dragging heavy suitcases is a concern, use services like Correos (Spanish Post) or private baggage forwarders to ship luggage between hotels door-to-door!
       `;
     } else if (lang === 'zh') {
       res = `
-        ✈️ <strong>🇪🇸 马德里 ➔ 🇵🇹 里斯本 跨境交通与预订指南</strong>:<br><br>
-        1️⃣ <strong>飞机航班（长辈同行强烈推荐 / 首选方案！ 🌟）：</strong><br>
-        • <strong>飞行耗时：</strong> 约1小时20分钟直飞（EasyJet、Air Europa、TAP等）<br>
-        • <strong>参考票价：</strong> 含托运行李单人约10万韩元（约€70）<br>
-        • <strong>推荐理由：</strong> 耗时最短、完全免去长途陆路颠簸疲劳，长辈出行最舒适省力。<br><br>
-        2️⃣ <strong>长途大巴（次选方案 - 追求经济实惠）：</strong><br>
-        • <strong>运行耗时：</strong> 约8~9小时（马德里南站 Estación Sur 发车）。<br>
-        • <strong>订票核心技巧：</strong> 务必提前通过 <strong>ALSA App 或 Omio App</strong> 在线预订豪华头等座（Supra座席）。<br><br>
-        3️⃣ <strong>火车（不推荐 ⚠️）：</strong> 目前无直达列车，需换乘2次以上且全程耗时10小时以上。<br><br>
-        💶 <strong>货币贴士：</strong> 西班牙与葡萄牙均通用<strong>欧元（€）</strong>，跨越国境时完全无需额外兑换货币！
+        ✈️ <strong>🇪🇸 马德里 ➔ 🇵🇹 里斯本（跨境交通与预订全攻略）</strong>:<br><br>
+        马德里与里斯本之间的跨境出行，<strong>搭乘飞机（耗时约1小时20分）是最为推荐的首选方案</strong>！<br><br>
+        1️⃣ <strong>飞机直飞（长辈同行最强烈推荐！ 🌟）：</strong><br>
+        • <strong>飞行耗时：</strong> 直飞仅需约<strong>1小时20分钟</strong>（欧罗巴航空、瑞安航空、易捷航空、葡萄牙航空TAP）。<br>
+        • <strong>票价贴士：</strong> 基础裸票仅需200~300元，但<strong>增加23kg托运行李后单人约400~600元（8~12万韩元）</strong>。长辈同行完全免除长途奔波体力消耗，极度推荐！<br><br>
+        2️⃣ <strong>长途大巴（次选方案 - 经济实惠）：</strong><br>
+        • <strong>运行耗时：</strong> 约<strong>8~9小时</strong>（从马德里门德斯·阿尔瓦罗 Méndez Álvaro 南站发车）。<br>
+        • <strong>订票技巧：</strong> 9小时长途较辛苦，请务必通过 <strong>ALSA官方App</strong> 或 <strong>Omio App</strong> 提前预订前排宽敞舒适的 <strong>Supra豪华头等座</strong>。（不推荐现场排队买票）<br><br>
+        3️⃣ <strong>火车直通（极不推荐 ⚠️）：</strong><br>
+        • 目前两地间无直达列车，需换乘2次以上且全程耗时<strong>超过10小时</strong>，家庭长辈出行绝不推荐。<br><br>
+        💱 <strong>货币贴士：</strong><br>
+        西班牙与葡萄牙均通用<strong>欧元（€）</strong>，跨越国境完全无需额外兑换货币！常用旅行卡与现金均可无缝直接使用。<br><br>
+        🎒 <strong>行李托运服务：</strong> 若携带大件行李不便，可通过西班牙邮政（Correos）或第三方行李寄送服务在酒店间门到门预先转运，轻装惬意过境！
       `;
     } else {
       res = `
-        ✈️ <strong>🇪🇸 마드리드 ➔ 🇵🇹 리스본 국경 이동 & 예매 가이드</strong>:<br><br>
-        1️⃣ <strong>비행기 항공편 (부모님 동행 시 가장 강력 추천! 🌟):</strong><br>
-        • <strong>소요 시간:</strong> 약 <strong>1시간 20분 직항</strong> (EasyJet, Air Europa, TAP 등)<br>
-        • <strong>예상 비용:</strong> 위탁 수하물 포함 1인 약 10만 원 (€70 내외)<br>
-        • <strong>추천 이유:</strong> 장거리 육로 이동에 따른 어르신 허리·체력 부담이 전혀 없어 가장 안전하고 편안합니다.<br><br>
+        ✈️ <strong>🇪🇸 마드리드 ➔ 🇵🇹 리스본 (국경 이동 & 예매 총정리 가이드)</strong>:<br><br>
+        마드리드-리스본 국경 이동은 <strong>비행기(약 1시간 20분)를 가장 추천</strong>하며 수하물 추가 시 인당 약 8~12만 원입니다! 🌟<br><br>
+        1️⃣ <strong>비행기 이동 (가장 강력 추천! 🌟):</strong><br>
+        • <strong>소요시간:</strong> 직항 약 <strong>1시간 20분</strong>.<br>
+        • <strong>추천 항공사:</strong> 에어유로파(Air Europa), 라이언에어(Ryanair), 이지젯(easyJet), 탭 포르투갈(TAP).<br>
+        • <strong>요금 팁:</strong> 비행기 깡통 요금은 3~5만 원이지만, <strong>23kg 수하물을 추가하면 인당 약 8~12만 원</strong>이 됩니다. 부모님 동행 시 체력 소모가 없어 압도적으로 이득입니다!<br><br>
         2️⃣ <strong>고속버스 (차선책 - 가성비 여행 시):</strong><br>
-        • <strong>소요 시간:</strong> 약 8~9시간 소요 (마드리드 남부터미널 Estación Sur 출발)<br>
-        • <strong>예매 필수 팁:</strong> 현장 발권은 매진 위험이 크므로 <strong>ALSA 앱 또는 Omio 앱</strong>으로 반드시 사전 예매하세요! 어르신 승차감을 위해 좌석 간격이 넓은 <strong>'앞쪽 우등석(Supra)' 좌석 필수 지정 예매</strong>를 강력 추천합니다.<br><br>
-        3️⃣ <strong>기차/철도 (비추천 ⚠️):</strong> 직행 열차가 없어 최소 2회 이상 환승해야 하며 10시간 이상 소요됩니다.<br><br>
-        💶 <strong>환전 안내:</strong> 스페인과 포르투갈 모두 동일하게 <strong>유로(€)</strong>를 사용하므로 국경을 넘어도 추가 환전이 전혀 필요 없습니다!
+        • <strong>소요시간:</strong> 약 <strong>8~9시간</strong>. 마드리드 '멘데스 알바로(Méndez Álvaro)' 남부터미널 출발.<br>
+        • <strong>예매 팁:</strong> 9시간 이동은 무리가 가므로, <strong>ALSA 공식 앱</strong>이나 <strong>Omio(오미오) 앱</strong>을 통해 반드시 앞쪽의 넓은 <strong>수프라(Supra) 우등석</strong>을 사전 예매하세요. (현장 발권 비추천)<br><br>
+        3️⃣ <strong>기차/철도 이동 (절대 비추천 ⚠️):</strong><br>
+        • 직행 열차가 없고 최소 2회 환승하며 <strong>10시간 이상</strong> 걸리므로 부모님 동행 시 절대 비추천합니다.<br><br>
+        💱 <strong>통화 및 환전 주의사항:</strong><br>
+        스페인과 포르투갈 모두 <strong>유로(€)</strong>를 사용합니다. 국경을 넘어도 화폐를 바꿀 필요 없이, 스페인에서 쓰던 트래블월렛/트래블로그 카드와 유로 현금을 그대로 사용하시면 됩니다!<br><br>
+        🎒 <strong>짐 배송 서비스 (Baggage Forwarding):</strong><br>
+        무거운 캐리어를 끌고 이동하는 것이 부담스럽다면, 스페인 우체국(Correos)이나 사설 수하물 배송 업체를 이용해 숙소 간 짐을 미리 보내버리세요. 두 손 가볍게 국경을 넘을 수 있습니다!
       `;
     }
     const chips = [
-      { query: '스페인 포르투갈 환전 어떻게 해?', label: '💶 유로 환전/통화 안내' },
+      { query: '스페인 포르투갈 환전 어떻게 해? 유로 써?', label: '💶 유로 환전/통화' },
       { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
       { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
     ];
@@ -4414,6 +4611,248 @@ function handleLocalChat(query) {
   // ----------------------------------------------------
   // 5. DISPATCH BY INTENT
   // ----------------------------------------------------
+
+  // ====================================================
+  // [NEW INTENT 1] IBERIA BORDER TRANSIT & BOOKING (스페인-포르투갈 이동/예매 질문)
+  // ====================================================
+  const isIberiaTransit = (
+    (['마드리드', 'madrid', 'マドリード', '马德里'].some(w => q.includes(w) || cleanQ.includes(w)) &&
+     ['리스본', 'lisbon', 'lisboa', 'リスボン', '里斯本'].some(w => q.includes(w) || cleanQ.includes(w))) ||
+    (['스페인', 'spain', 'スペイン', '西班牙', '이베리아', 'iberia'].some(w => q.includes(w) || cleanQ.includes(w)) &&
+     ['포르투갈', 'portugal', 'ポルトガル', '葡萄牙'].some(w => q.includes(w) || cleanQ.includes(w)) &&
+     ['이동', '국경', '교통', 'route', 'transit', 'border', 'cross', 'travel'].some(w => q.includes(w) || cleanQ.includes(w))) ||
+    ['국경 이동', '국경이동', '육로 이동', 'border crossing', '国境移動', '跨境交通'].some(w => q.includes(w) || cleanQ.includes(w)) ||
+    ['alsa', '알사', '오미오', 'omio', '이지젯', 'easyjet', '에어유로파', 'air europa'].some(w => q.includes(w) || cleanQ.includes(w))
+  ) && (
+    ['이동', '기차', '열차', '렌페', '버스', '비행기', '항공', 'alsa', 'omio', '오미오', '알사', '이지젯', 'easyjet', '에어유로파', 'air europa', '라이언에어', 'ryanair', 'tap', '예매', '티켓', '표', '수하물', '짐', '소요', '가는', '어떻게',
+     'transit', 'travel', 'train', 'bus', 'flight', 'ticket', 'booking', 'baggage', 'luggage', 'how to',
+     '移動', '電車', '列車', 'バス', '飛行機', '予約', 'チケット', '荷物', '行き方',
+     '交通', '火车', '大巴', '飞机', '订票', '行李', '怎么去', '如何前往'].some(w => q.includes(w) || cleanQ.includes(w))
+  );
+
+  if (isIberiaTransit) {
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        ✈️ <strong>🇪🇸 マドリード ➔ 🇵🇹 リスボン（国境移動・予約完全ガイド）</strong>:<br><br>
+        マドリード〜リスボン間の移動は<strong>飛行機（所要約1時間20分）が最もおすすめ</strong>です！<br><br>
+        1️⃣ <strong>飛行機（イチ押し・最も推奨！ 🌟）:</strong><br>
+        • <strong>所要時間:</strong> 約<strong>1時間20分</strong>直行便（エア・ヨーロッパ、ライアンエアー、イージージェット、TAPポルトガル航空）。<br>
+        • <strong>運賃のコツ:</strong> 航空券のみの基本料金は3〜5万ウォン（約3〜5千円）程度ですが、<strong>23kgの受託手荷物を追加すると1人あたり約8〜12万ウォン（約€60〜€85）</strong>になります。ご両親同伴なら長距離移動の疲労がなく圧倒的にお得で快適です！<br><br>
+        2️⃣ <strong>高速バス（次善の策・長距離）:</strong><br>
+        • <strong>所要時間:</strong> 約<strong>8〜9時間</strong>（マドリード「メンデス・アルバロ」バスターミナル発）。<br>
+        • <strong>予約のコツ:</strong> 9時間の長旅ですので、<strong>ALSA公式アプリ</strong>または<strong>Omioアプリ</strong>で前方の座席間隔が広い<strong>Supra（優等・プレミアム席）</strong>を必ず事前予約してください。（窓口当日購入は非推奨）<br><br>
+        3️⃣ <strong>鉄道・列車（絶対非推奨 ⚠️）:</strong><br>
+        • 現在直行便がなく最低2回以上の乗り換えで<strong>10時間以上</strong>かかるため絶対におすすめしません。<br><br>
+        💱 <strong>通貨＆両替の注意点:</strong><br>
+        スペインとポルトガルは両国とも<strong>ユーロ（€）</strong>を通貨として使用しています。国境を越えても追加の両替は一切不要で、スペインで利用していたトラベルカードやユーロ現金をそのままご利用いただけます！<br><br>
+        🎒 <strong>荷物配送サービス:</strong> 重いスーツケースの移動が心配な場合は、スペイン郵便（Correos）等のホテル間手荷物配送サービスを利用して身軽に手ぶらで国境を越えましょう！
+      `;
+    } else if (lang === 'en') {
+      res = `
+        ✈️ <strong>🇪🇸 Madrid ➔ 🇵🇹 Lisbon (Cross-Border Transit & Booking Guide)</strong>:<br><br>
+        For traveling between Madrid and Lisbon, <strong>taking a flight (~1h 20m) is by far the best option</strong>!<br><br>
+        1️⃣ <strong>Flight (Highly Recommended! 🌟):</strong><br>
+        • <strong>Duration:</strong> Approx. <strong>1 hr 20 mins direct</strong> (Air Europa, Ryanair, easyJet, TAP).<br>
+        • <strong>Fare Tip:</strong> Base fares start around $30, but <strong>adding a 23kg checked bag brings it to ~$80–$120 (₩80,000–₩120,000)</strong> per person. Absolutely worth it to save elderly parents from grueling overland fatigue!<br><br>
+        2️⃣ <strong>Express Bus (Secondary Option - Budget Friendly):</strong><br>
+        • <strong>Duration:</strong> Approx. <strong>8–9 hours</strong> from Madrid 'Méndez Álvaro' Station.<br>
+        • <strong>Booking Tip:</strong> Long rides require comfort! Pre-book via the <strong>ALSA app or Omio app</strong> and select the wider, premium <strong>Supra seats</strong> in advance. (Walk-in booking not recommended)<br><br>
+        3️⃣ <strong>Train (Strictly Not Recommended ⚠️):</strong><br>
+        • There is no direct train between Madrid and Lisbon; requires 2+ transfers and takes <strong>over 10 hours</strong>.<br><br>
+        💱 <strong>Currency Notice:</strong><br>
+        Both Spain and Portugal use the <strong>Euro (€)</strong>. There is no need to exchange money when crossing the border; your travel cards and euros will work seamlessly!<br><br>
+        🎒 <strong>Luggage Forwarding:</strong> If dragging heavy suitcases is a concern, use services like Correos (Spanish Post) or private baggage forwarders to ship luggage between hotels door-to-door!
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        ✈️ <strong>🇪🇸 马德里 ➔ 🇵🇹 里斯本（跨境交通与预订全攻略）</strong>:<br><br>
+        马德里与里斯本之间的跨境出行，<strong>搭乘飞机（耗时约1小时20分）是最为推荐的首选方案</strong>！<br><br>
+        1️⃣ <strong>飞机直飞（长辈同行最强烈推荐！ 🌟）：</strong><br>
+        • <strong>飞行耗时：</strong> 直飞仅需约<strong>1小时20分钟</strong>（欧罗巴航空、瑞安航空、易捷航空、葡萄牙航空TAP）。<br>
+        • <strong>票价贴士：</strong> 基础裸票仅需200~300元，但<strong>增加23kg托运行李后单人约400~600元（8~12万韩元）</strong>。长辈同行完全免除长途奔波体力消耗，极度推荐！<br><br>
+        2️⃣ <strong>长途大巴（次选方案 - 经济实惠）：</strong><br>
+        • <strong>运行耗时：</strong> 约<strong>8~9小时</strong>（从马德里门德斯·阿尔瓦罗 Méndez Álvaro 南站发车）。<br>
+        • <strong>订票技巧：</strong> 9小时长途较辛苦，请务必通过 <strong>ALSA官方App</strong> 或 <strong>Omio App</strong> 提前预订前排宽敞舒适的 <strong>Supra豪华头等座</strong>。（不推荐现场排队买票）<br><br>
+        3️⃣ <strong>火车直通（极不推荐 ⚠️）：</strong><br>
+        • 目前两地间无直达列车，需换乘2次以上且全程耗时<strong>超过10小时</strong>，家庭长辈出行绝不推荐。<br><br>
+        💱 <strong>货币贴士：</strong><br>
+        西班牙与葡萄牙均通用<strong>欧元（€）</strong>，跨越国境完全无需额外兑换货币！常用旅行卡与现金均可无缝直接使用。<br><br>
+        🎒 <strong>行李托运服务：</strong> 若携带大件行李不便，可通过西班牙邮政（Correos）或第三方行李寄送服务在酒店间门到门预先转运，轻装惬意过境！
+      `;
+    } else {
+      res = `
+        ✈️ <strong>🇪🇸 마드리드 ➔ 🇵🇹 리스본 (국경 이동 & 예매 총정리 가이드)</strong>:<br><br>
+        마드리드-리스본 국경 이동은 <strong>비행기(약 1시간 20분)를 가장 추천</strong>하며 수하물 추가 시 인당 약 8~12만 원입니다! 🌟<br><br>
+        1️⃣ <strong>비행기 이동 (가장 강력 추천! 🌟):</strong><br>
+        • <strong>소요시간:</strong> 직항 약 <strong>1시간 20분</strong>.<br>
+        • <strong>추천 항공사:</strong> 에어유로파(Air Europa), 라이언에어(Ryanair), 이지젯(easyJet), 탭 포르투갈(TAP).<br>
+        • <strong>요금 팁:</strong> 비행기 깡통 요금은 3~5만 원이지만, <strong>23kg 수하물을 추가하면 인당 약 8~12만 원</strong>이 됩니다. 부모님 동행 시 체력 소모가 없어 압도적으로 이득입니다!<br><br>
+        2️⃣ <strong>고속버스 (차선책 - 가성비 여행 시):</strong><br>
+        • <strong>소요시간:</strong> 약 <strong>8~9시간</strong>. 마드리드 '멘데스 알바로(Méndez Álvaro)' 남부터미널 출발.<br>
+        • <strong>예매 팁:</strong> 9시간 이동은 무리가 가므로, <strong>ALSA 공식 앱</strong>이나 <strong>Omio(오미오) 앱</strong>을 통해 반드시 앞쪽의 넓은 <strong>수프라(Supra) 우등석</strong>을 사전 예매하세요. (현장 발권 비추천)<br><br>
+        3️⃣ <strong>기차/철도 이동 (절대 비추천 ⚠️):</strong><br>
+        • 직행 열차가 없고 최소 2회 환승하며 <strong>10시간 이상</strong> 걸리므로 부모님 동행 시 절대 비추천합니다.<br><br>
+        💱 <strong>통화 및 환전 주의사항:</strong><br>
+        스페인과 포르투갈 모두 <strong>유로(€)</strong>를 사용합니다. 국경을 넘어도 화폐를 바꿀 필요 없이, 스페인에서 쓰던 트래블월렛/트래블로그 카드와 유로 현금을 그대로 사용하시면 됩니다!<br><br>
+        🎒 <strong>짐 배송 서비스 (Baggage Forwarding):</strong><br>
+        무거운 캐리어를 끌고 이동하는 것이 부담스럽다면, 스페인 우체국(Correos)이나 사설 수하물 배송 업체를 이용해 숙소 간 짐을 미리 보내버리세요. 두 손 가볍게 국경을 넘을 수 있습니다!
+      `;
+    }
+    const chips = [
+      { query: '스페인 포르투갈 환전 어떻게 해? 유로 써?', label: '💶 유로 환전/통화' },
+      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
+      { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
+    ];
+    return res + renderFollowupChips(chips);
+  }
+
+  // ====================================================
+  // [NEW INTENT 2] DUBAI 24H STOPOVER & LUGGAGE STORAGE (두바이 스톱오버 / 짐 보관 질문)
+  // ====================================================
+  const isDubaiStopover = (
+    ['에미레이트', '두바이', 'dubai', 'emirates', 'ドバイ', 'エミレーツ', '迪拜', '阿联酋'].some(w => q.includes(w) || cleanQ.includes(w))
+  ) && (
+    ['경유', '스톱오버', '스탑오버', '24시간', '24h', '짐 보관', '짐보관', '수하물', '보관소', '환승',
+     'stopover', 'layover', 'transit', '24 hour', '24hr', '24h', 'luggage', 'baggage', 'storage', 'left luggage',
+     '経由', '乗換', '乗り継ぎ', 'ストップオーバー', '24時間', '荷物預かり', '手荷物預かり',
+     '经停', '过境', '中转', '24小时', '行李寄存', '寄存'].some(w => q.includes(w) || cleanQ.includes(w))
+  );
+
+  if (isDubaiStopover) {
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🐪 <strong>エミレーツ航空 ドバイ経由 24時間ストップオーバー＆荷物預かり完全ガイド</strong>:<br><br>
+        エミレーツ航空を利用してドバイを経由されるなら本当に素晴らしい選択です！長時間のフライトの合間に近未来の魅惑的な都市を軽快に満喫できます。<br><br>
+        🧳 <strong>空港での荷物預かり（手荷物一時預かり所）:</strong><br>
+        • <strong>場所:</strong> ドバイ国際空港（DXB）<strong>第3ターミナル（Terminal 3）到着階（Arrivals）</strong>のエミレーツセキュリティ手荷物預かり所。<br>
+        • <strong>料金:</strong> 12時間あたり荷物1個につき約<strong>35〜40 AED（約1,400〜1,600円）</strong>で安全に利用可能。<br>
+        • <strong>利用のコツ:</strong> 重いスーツケースを空港に預けて身軽に市内観光へ出発できます。また、エミレーツ航空の公式ホテルストップオーバーサービスを利用するのも大変おすすめです。<br><br>
+        🏙️ <strong>シニア同伴におすすめの24時間ハイライト推奨コース:</strong><br>
+        1️⃣ <strong>ドバイ・フレーム（Dubai Frame）:</strong> ドバイの過去と未来をパノラマで一望できる黄金の巨大フレーム展望台（エレベーター完備）。<br>
+        2️⃣ <strong>ドバイ・モール＆噴水ショー（The Dubai Mall & Fountain）:</strong> 快適な冷房完備の巨大モールでゆったり散策＆夕暮れの華麗な音楽噴水ショー鑑賞。<br>
+        3️⃣ <strong>未来博物館（Museum of the Future）:</strong> 壮麗なアラビア書道の建築美を誇る人気フォトスポット＆先端技術体験。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🐪 <strong>Emirates Airlines Dubai 24h Stopover & Luggage Storage Guide</strong>:<br><br>
+        Choosing a Dubai stopover with Emirates Airlines is an exceptional choice! It perfectly breaks up the long journey while allowing you to explore a stunning modern oasis.<br><br>
+        🧳 <strong>Airport Luggage Storage:</strong><br>
+        • <strong>Location:</strong> Dubai International Airport (DXB) <strong>Terminal 3, Arrivals level</strong> (Emirates secure baggage storage facility).<br>
+        • <strong>Fee:</strong> Approx. <strong>35–40 AED (~$10–$11 USD)</strong> per bag for 12 hours.<br>
+        • <strong>Pro Tip:</strong> Store your heavy suitcases safely and explore the city hands-free, or make use of the Emirates Stopover Hotel program.<br><br>
+        🏙️ <strong>Recommended 24-Hour Senior-Friendly Route:</strong><br>
+        1️⃣ <strong>Dubai Frame:</strong> Iconic golden archway bridging historic Dubai and the futuristic skyline (fully elevator equipped).<br>
+        2️⃣ <strong>The Dubai Mall & Fountain Show:</strong> World-class indoor climate-controlled stroll followed by the magnificent evening outdoor musical fountain show.<br>
+        3️⃣ <strong>Museum of the Future:</strong> Breathtaking architectural landmark featuring Arabic calligraphy, perfect for photos and futuristic exhibits.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🐪 <strong>阿联酋航空 迪拜经停24小时过境游推荐路线与行李寄存全攻略</strong>:<br><br>
+        搭乘阿联酋航空选择在迪拜中转经停过境绝对是明智之选！不仅有效舒缓长途飞行疲劳，还能轻松领略这座奢华现代都市的非凡魅力。<br><br>
+        🧳 <strong>机场行李寄存（Luggage Storage）：</strong><br>
+        • <strong>位置：</strong> 迪拜国际机场（DXB）<strong>第3航站楼（Terminal 3）到达层（Arrivals）</strong>阿联酋航空安保行李寄存处。<br>
+        • <strong>费用：</strong> 12小时每件行李约<strong>35~40迪拉姆（AED，约合人民币70~80元）</strong>。<br>
+        • <strong>贴士：</strong> 寄存沉重大件行李后即可轻装进城游玩，也可以选择预订阿联酋航空官方酒店过境经停套餐。<br><br>
+        🏙️ <strong>适合长辈的24小时精选推荐路线：</strong><br>
+        1️⃣ <strong>迪拜相框（Dubai Frame）：</strong> 纵览老城与新城天际线的金色巨框观景台（全无障碍直梯直达顶部）。<br>
+        2️⃣ <strong>迪拜购物中心与音乐喷泉（Dubai Mall & Fountain）：</strong> 全程强力冷气舒适室内漫步，傍晚欣赏震撼迷人的户外音乐喷泉秀。<br>
+        3️⃣ <strong>未来博物馆（Museum of the Future）：</strong> 令人叹为观止的阿拉伯书法雕花建筑打卡与未来科技体验。
+      `;
+    } else {
+      res = `
+        🐪 <strong>에미레이트 항공 두바이 경유 24시간 스톱오버 & 짐 보관 추천 가이드</strong>:<br><br>
+        에미레이트 항공을 이용해 두바이를 경유하신다면 정말 탁월한 선택입니다! 짐 보관은 두바이 공항 제3터미널 도착층(Arrivals)의 에미레이트 보안 수하물 보관소에 유료(약 35~40 AED)로 맡기고 시내를 가볍게 둘러보실 수 있습니다. 또는 호텔 스톱오버 서비스를 이용하세요.<br><br>
+        🏙️ <strong>추천 코스:</strong><br>
+        '<strong>두바이 프레임 ➔ 두바이 몰(분수 쇼) ➔ 미래의 박물관</strong>' 순서입니다.
+      `;
+    }
+    const chips = [
+      { query: '두바이 맛집 추천해줘', label: '🍽️ 두바이 맛집' },
+      { query: '두바이 사막 사파리 부모님 주의사항과 복장', label: '🐪 사막 사파리 팁' },
+      { query: '두바이에서 아부다비 이동법', label: '🚕 두바이 ➔ 아부다비' }
+    ];
+    return res + renderFollowupChips(chips);
+  }
+
+  // ====================================================
+  // [NEW INTENT 3] MENÚ DEL DÍA / COST-EFFECTIVE DINING (식비 가성비 / 메누 델 디아 꿀팁)
+  // ====================================================
+  const isMenuDelDia = [
+    '식비', '절약', '가성비', '점심', '메누 델 디아', '메누델디아', '델 디아', '델디아', 'menu del dia', 'menú del día',
+    '점심 코스', '점심코스', '오늘의 메뉴', '가성비 점심', '점심 특선', '점심 식비', '식비 절약', '식비 아끼',
+    'lunch budget', 'daily menu', 'cheap lunch', 'lunch special', 'dining budget', 'save food',
+    'メニュ・デル・ディア', 'メニュデルディア', '食費節約', 'コスパランチ', '日替わり定食', 'ランチコース',
+    '每日套餐', '每日特选', '午餐套餐', '餐饮省钱', '省餐费', '性价比午餐'
+  ].some(w => q.includes(w) || cleanQ.includes(w)) || (
+    (['식비', '식사비', '음식값', '밥값', 'food budget', 'dining cost', '食費', '餐费'].some(w => q.includes(w) || cleanQ.includes(w))) &&
+    (['절약', '아끼', '가성비', '줄이', 'save', 'cheap', 'budget', '節約', '安く', '省钱', '划算'].some(w => q.includes(w) || cleanQ.includes(w)))
+  ) || (
+    (['점심', 'lunch', 'ランチ', '午餐'].some(w => q.includes(w) || cleanQ.includes(w))) &&
+    (['가성비', '코스', '절약', '메뉴', 'course', 'set', 'コスパ', '套餐'].some(w => q.includes(w) || cleanQ.includes(w)))
+  );
+
+  if (isMenuDelDia) {
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🥘 <strong>スペイン食費節約の決定版！「メニュ・デル・ディア（Menú del Día）」活用ガイド</strong>:<br><br>
+        スペイン旅行で食費を賢く節約する最大の秘訣は、まさに<strong>「メニュ・デル・ディア（Menú del Día＝本日の日替わりランチコース）」</strong>です！ 🍷<br><br>
+        • <strong>提供時間:</strong> スペインの一般的な昼食時間帯である<strong>13:30〜15:30</strong>に街中のレストランで提供されます。<br>
+        • <strong>驚きの価格:</strong> 1人あたりわずか<strong>€12〜€15（約1万8千〜2万2千ウォン / 約2,000〜2,500円）</strong>程度！<br>
+        • <strong>豪華なフルコース内容:</strong><br>
+          1️⃣ <strong>前菜（Primero）:</strong> 新鮮サラダ、パエリア、温かいスープ、ガスパチョなどから選択<br>
+          2️⃣ <strong>メイン（Segundo）:</strong> イベリコ豚ステーキ、白身魚のグリル、ローストチキンなどから選択<br>
+          3️⃣ <strong>デザート（Postre）:</strong> プリン（フラン）、アイスクリーム、またはコーヒー<br>
+          4️⃣ <strong>ドリンク＆パン付き:</strong> ハウスワイン1本（またはビール/水）とバゲットパンが無料セット！<br><br>
+        💡 <strong>食費節約の黄金ルール:</strong> お昼は「メニュ・デル・ディア」でしっかり温かいごちそうを食べ、夕食はAirbnbのキッチンやスーパーの生ハム・果物で軽めに済ませると<strong>食費を半分に節約</strong>でき、ご両親の胃腸の負担も減らせます！
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🥘 <strong>Spain Dining Budget Secret: The Iconic 'Menú del Día' (Daily Lunch Special)!</strong><br><br>
+        The ultimate secret to slashing dining expenses while enjoying authentic Spanish cuisine is the legendary <strong>'Menú del Día' (Menu of the Day)</strong>! 🍷<br><br>
+        • <strong>Service Hours:</strong> Served during traditional Spanish lunch hours, roughly <strong>1:30 PM to 3:30 PM</strong> at local restaurants.<br>
+        • <strong>Price:</strong> An unbelievable <strong>€12–€15 (~$13–$16 USD / ~₩18,000–₩22,000)</strong> per person!<br>
+        • <strong>Full Multi-Course Value:</strong><br>
+          1️⃣ <strong>First Course (Primero):</strong> Mixed fresh salad, paella, soup, or gazpacho.<br>
+          2️⃣ <strong>Second Course (Segundo):</strong> Grilled Iberian pork steak, tender roast chicken, or catch of the day.<br>
+          3️⃣ <strong>Dessert (Postre):</strong> Traditional flan (caramel custard), ice cream, or espresso.<br>
+          4️⃣ <strong>Drinks & Bread:</strong> A full bottle of house wine (or beer/water) and artisan baguette included!<br><br>
+        💡 <strong>Family Travel Budget Tip:</strong> Feast heartily on the Menú del Día for lunch, then prepare a light dinner with fresh Jamón, bread, and fruits at your Airbnb. You will <strong>cut your food budget in half</strong> while keeping meals comfortable and gentle on digestion for parents!
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🥘 <strong>西班牙餐饮省钱绝招！超高性价比午餐“每日特选套餐（Menú del Día）”秘籍</strong>:<br><br>
+        在西班牙旅行中大幅节省餐饮预算的核心秘诀，正是当地经典的<strong>“Menú del Día（每日午餐超值全套套餐）”</strong>！ 🍷<br><br>
+        • <strong>供应时段：</strong> 西班牙正统午餐时间 <strong>下午1:30至3:30</strong>，各大本地餐厅均有供应。<br>
+        • <strong>超高性价比：</strong> 人均仅需 <strong>€12 ~ €15（约合人民币95~120元 / 2万韩元）</strong>！<br>
+        • <strong>丰盛全套配置：</strong><br>
+          1️⃣ <strong>头盘前菜（Primero）：</strong> 海鲜饭、鲜蔬沙拉、热汤或西班牙冷汤。<br>
+          2️⃣ <strong>主菜（Segundo）：</strong> 现煎伊比利亚黑猪排、烤鸡腿或香煎当日鲜鱼排。<br>
+          3️⃣ <strong>甜品（Postre）：</strong> 手工焦糖布丁（Flan）、冰淇淋或浓缩咖啡。<br>
+          4️⃣ <strong>免费酒水与面包：</strong> 通常免费赠送整瓶佐餐红葡萄酒（或水/啤酒）及现烤法棍面包！<br><br>
+        💡 <strong>家庭省钱黄金法则：</strong> 中午在餐厅享用热腾腾且份量十足的 Menú del Día，晚餐在民宿轻食料理或搭配火腿水果沙拉，<strong>餐费能直接减半</strong>，长辈肠胃也更舒服无负担！
+      `;
+    } else {
+      res = `
+        🥘 <strong>스페인 식비 절약의 핵심은 바로 '메누 델 디아(Menú del Día)'입니다!</strong> 🍷<br><br>
+        점심(오후 1시 30분 ~ 3시 30분)에 식당에 가면 전식, 본식, 디저트, 와인까지 <strong>12~15유로(약 2만 원)</strong>에 푸짐한 코스 요리를 즐길 수 있습니다.<br><br>
+        • <strong>알찬 코스 구성:</strong><br>
+          1️⃣ <strong>전식(Primero):</strong> 신선한 샐러드, 파에야, 수프, 가스파초 중 택1<br>
+          2️⃣ <strong>본식(Segundo):</strong> 이베리코 돼지고기 스테이크, 생선 구이, 닭요리 등 든든한 메인 요리 중 택1<br>
+          3️⃣ <strong>디저트(Postre):</strong> 달콤한 플랑(푸딩), 아이스크림 또는 에스프레소 커피<br>
+          4️⃣ <strong>음료 무료 포함:</strong> 하우스 와인 1병(또는 물/맥주)과 바게트 빵 기본 제공!<br><br>
+        💡 점심을 든든히 드시고 저녁은 에어비앤비에서 가볍게 해 드시면 <strong>식비를 절반으로 줄일 수 있습니다</strong>. 부모님 소화에도 아주 좋습니다!
+      `;
+    }
+    const chips = [
+      { query: '스페인 맛집 추천해줘', label: '🥘 스페인 맛집' },
+      { query: '소금 빼주세요 스페인어로 뭐야?', label: '🧂 소금 빼기 표현' },
+      { query: '현재 여행 총 예상 경비와 예산 얼마야?', label: '💰 총 여행 예산' }
+    ];
+    return res + renderFollowupChips(chips);
+  }
 
   // [A] FOOD & CUISINE INTENT
   if (isFood) {
@@ -5068,6 +5507,25 @@ function handleLocalChat(query) {
 
 // Attach event listener for Chat Form on load
 window.addEventListener('DOMContentLoaded', () => {
+  // Outside-click & Escape key handlers to close chat when clicking outside or pressing Escape
+  document.addEventListener('click', (e) => {
+    const win = document.getElementById('chatWindow');
+    const btn = document.getElementById('btnChatToggle');
+    if (!win || !win.classList.contains('active')) return;
+    if (!win.contains(e.target) && !btn.contains(e.target)) {
+      closeChatWindow();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const win = document.getElementById('chatWindow');
+      if (win && win.classList.contains('active')) {
+        closeChatWindow();
+      }
+    }
+  });
+
   
   if (typeof updateChatbotLanguage === 'function') {
     updateChatbotLanguage(typeof currentLang !== 'undefined' ? currentLang : 'ko');

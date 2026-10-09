@@ -1556,66 +1556,66 @@ const TRANSIT_I18N_DATA = {
       "zh": "• 迪拜地铁车站全站配全封闭强力冷气、电梯与直梯设施，炎热气候下亦可清凉从容出行。"
     }
   }  ,
-  "madrid_to_lisbon": {
+  "iberia_border": {
     "city": {
-      "ko": "🇪🇸 마드리드 ➔ 🇵🇹 리스본 이동 가이드",
-      "en": "🇪🇸 Madrid ➔ 🇵🇹 Lisbon Transit Guide",
-      "ja": "🇪🇸 マドリード ➔ 🇵🇹 リスボン 移動ガイド",
-      "zh": "🇪🇸 马德里 ➔ 🇵🇹 里斯本 跨境交通指南"
+      "ko": "🇪🇸 마드리드 ➔ 🇵🇹 리스본 (국경 이동)",
+      "en": "🇪🇸 Madrid ➔ 🇵🇹 Lisbon (Border Crossing)",
+      "ja": "🇪🇸 マドリード ➔ 🇵🇹 リスボン（国境移動）",
+      "zh": "🇪🇸 马德里 ➔ 🇵🇹 里斯本（跨境交通）"
     },
     "cardName": {
-      "ko": "국경 이동 꿀팁",
-      "en": "Cross-Border Transit Tips",
-      "ja": "国境移動のコツ",
-      "zh": "跨境交通实用锦囊"
+      "ko": "비행기 vs 버스 예매 총정리",
+      "en": "Flights vs Bus Booking Guide",
+      "ja": "飛行機 vs 高速バス予約完全まとめ",
+      "zh": "飞机 vs 长途大巴预订全攻略"
     },
     "passTitle": {
-      "ko": "✈️ 비행기 이동 (강력 추천 / 1순위)",
-      "en": "✈️ Flight (Strongly Recommended / #1 Pick)",
-      "ja": "✈️ 飛行機移動（イチ押し・最優先）",
-      "zh": "✈️ 飞机航班（强烈推荐 / 首选方案）"
+      "ko": "✈️ 비행기 (가장 추천) & 짐 포함 요금",
+      "en": "✈️ Flight (Highly Recommended) & Baggage Fees",
+      "ja": "✈️ 飛行機（イチ押し・最も推奨）＆手荷物込み料金",
+      "zh": "✈️ 飞机航班（最强烈推荐）与托运行李票价"
     },
     "passDesc": {
-      "ko": "• <strong>약 1시간 20분 소요</strong>. EasyJet, Air Europa 등 직항 운항.<br>• 위탁 수하물 포함 1인 약 10만 원(€70).<br>• <strong>부모님 동행 시 체력 소모가 적어 가장 강력하게 추천</strong>합니다.",
-      "en": "• <strong>Takes approx. 1h 20m</strong>. Direct flights via EasyJet, Air Europa, etc.<br>• ~₩100,000 (€70) per person with checked baggage.<br>• <strong>Strongly recommended for seniors</strong> to minimize physical fatigue.",
-      "ja": "• <strong>所要時間約1時間20分</strong>。EasyJet、Air Europaなど直行便運航。<br>• 預け入れ荷物込みで1人あたり約10万ウォン（約€70）。<br>• <strong>高齢のご両親連れなら体力消耗が最も少なく一番おすすめ</strong>です。",
-      "zh": "• <strong>飞行时间约1小时20分钟</strong>。EasyJet、Air Europa等直飞航班。<br>• 含托运行李单人约10万韩元（约€70）。<br>• <strong>携带长辈出行最推荐此方案，耗时最短体力负担最轻</strong>。"
+      "ko": "• <strong>소요시간:</strong> 약 1시간 20분.<br>• <strong>추천 항공사:</strong> 에어유로파(Air Europa), 라이언에어(Ryanair), 이지젯(easyJet), 탭 포르투갈(TAP).<br>• <strong>요금 팁:</strong> 비행기 깡통 요금은 3~5만 원이지만, <strong>23kg 수하물을 추가하면 인당 약 8~12만 원</strong>이 됩니다. 부모님 동행 시 체력 소모가 없어 압도적으로 이득입니다!",
+      "en": "• <strong>Duration:</strong> ~1hr 20mins.<br>• <strong>Airlines:</strong> Air Europa, Ryanair, easyJet, TAP.<br>• <strong>Fare Tip:</strong> Base fare is cheap (~$30), but <strong>adding a 23kg checked bag brings it to ~$80–$120</strong>. Absolutely worth it to save elderly parents from a grueling bus ride!",
+      "ja": "• <strong>所要時間：</strong> 約1時間20分。<br>• <strong>おすすめ航空会社：</strong> エア・ヨーロッパ（Air Europa）、ライアンエアー（Ryanair）、イージージェット（easyJet）、TAPポルトガル航空（TAP）。<br>• <strong>運賃のコツ：</strong> 基本運賃は3〜5千円程度ですが、<strong>23kgの受託手荷物を追加すると1人あたり約8〜12万ウォン（約8千〜1万2千円）</strong>になります。ご両親同伴なら長距離移動の疲労がなく圧倒的にお得で快適です！",
+      "zh": "• <strong>运行时间：</strong> 约1小时20分钟。<br>• <strong>推荐航司：</strong> 欧罗巴航空（Air Europa）、瑞安航空（Ryanair）、易捷航空（easyJet）、葡萄牙航空（TAP）。<br>• <strong>票价贴士：</strong> 基础裸票价仅需约200~300元，但<strong>增加23kg托运行李后单人约400~600元（8~12万韩元）</strong>。长辈同行完全免除长途奔波体力消耗，极度推荐！"
     },
     "transferTitle": {
-      "ko": "💶 통화 & 국경 환전 안내",
-      "en": "💶 Currency & Cross-Border Exchange",
-      "ja": "💶 通貨＆両替案内",
-      "zh": "💶 货币与跨境换汇指南"
+      "ko": "🚌 고속버스 (차선책) & 예매 팁",
+      "en": "🚌 Express Bus (Alternative) & Booking Tips",
+      "ja": "🚌 高速バス（次善の策）＆予約のヒント",
+      "zh": "🚌 长途大巴（次选方案）与订票技巧"
     },
     "transferDesc": {
-      "ko": "• <strong>스페인과 포르투갈 모두 유로(€)를 동일하게 사용</strong>합니다.<br>• 국경을 넘을 때 <strong>별도의 추가 환전이나 통화 변경이 전혀 필요 없습니다</strong>.<br>• 현지 카드 결제(트래블로그/트래블월렛)도 두 나라 모두 수수료 없이 동일하게 사용 가능합니다.",
-      "en": "• <strong>Both Spain and Portugal use the Euro (€)</strong>.<br>• <strong>No currency exchange is needed</strong> when crossing the border.<br>• Travel cards (Wise, Revolut, TravelWallet) work seamlessly in both countries with zero extra fees.",
-      "ja": "• <strong>スペインとポルトガルは両国ともユーロ（€）を通貨として使用</strong>しています。<br>• 国境を越えても<strong>追加の両替や通貨変更は一切不要</strong>です。<br>• トラベルカードやクレカ決済も両国で手数料なく共通で利用できます。",
-      "zh": "• <strong>西班牙与葡萄牙均通用欧元（€）</strong>。<br>• 跨越国境时<strong>完全不需要进行任何额外货币兑换</strong>。<br>• 各类多币种旅行卡与感应信用卡在两国均可无缝直接刷卡消费。"
+      "ko": "• <strong>소요시간:</strong> 약 8~9시간. 마드리드 '멘데스 알바로' 터미널 출발.<br>• <strong>예매 팁:</strong> 9시간 이동은 무리가 가므로, **ALSA 공식 앱**이나 **Omio(오미오) 앱**을 통해 반드시 앞쪽의 넓은 **수프라(Supra) 우등석**을 사전 예매하세요. (현장 발권 비추천)",
+      "en": "• <strong>Duration:</strong> ~8-9 hours from Madrid 'Méndez Álvaro' Station.<br>• <strong>Booking Tip:</strong> Use the **ALSA or Omio app** to book the wider, more comfortable **Supra Premium seats** in advance. (Not recommended for seniors)",
+      "ja": "• <strong>所要時間：</strong> 約8〜9時間。マドリード「メンデス・アルバロ（Méndez Álvaro）」南ターミナル発。<br>• <strong>予約のコツ：</strong> 9時間の移動は負担が大きいため、**ALSA公式アプリ**または**Omioアプリ**で必ず前方の座席間隔が広い**Supra（優等・プレミアム席）**を事前予約してください。（窓口での当日購入は非推奨）",
+      "zh": "• <strong>运行时间：</strong> 约8~9小时。从马德里门德斯·阿尔瓦罗（Méndez Álvaro）南站发车。<br>• <strong>订票技巧：</strong> 9小时长途颠簸较辛苦，请务必通过 **ALSA官方App** 或 **Omio App** 提前预订前排宽敞的 **Supra豪华头等席**。（极不推荐现场临时买票）"
     },
     "airportTitle": {
-      "ko": "🚌 고속버스 (차선책 / 알사 & 오미오)",
-      "en": "🚌 Express Bus (Alternative / ALSA & Omio)",
-      "ja": "🚌 高速バス（次善の策 / ALSA ＆ Omio）",
-      "zh": "🚌 长途大巴（次选方案 / ALSA 与 Omio）"
+      "ko": "💱 통화 및 환전 주의사항",
+      "en": "💱 Currency & Exchange Notice",
+      "ja": "💱 通貨＆両替の注意点",
+      "zh": "💱 货币与换汇注意事项"
     },
     "airportDesc": {
-      "ko": "• <strong>약 8~9시간 소요</strong>. 마드리드 남부터미널(Estación Sur / 멘데스 알바로역) 출발.<br>• <strong>ALSA 앱 또는 Omio 앱 사전 예매 필수</strong> (현장 발권 비추천).<br>• <strong>'앞쪽 우등석(Supra)' 좌석을 반드시 지정 예매</strong>하여 승차감을 확보하세요.",
-      "en": "• <strong>Takes approx. 8–9 hours</strong>. Departs from Madrid South Terminal (Méndez Álvaro / Estación Sur).<br>• <strong>Pre-booking via ALSA or Omio app is essential</strong> (walk-in purchase not recommended).<br>• <strong>Always select front premium 'Supra' seats</strong> for maximum comfort.",
-      "ja": "• <strong>所要時間約8〜9時間</strong>。マドリード南バスターミナル（メンデス・アルバロ駅 / Estación Sur）発。<br>• <strong>ALSAアプリまたはOmioアプリで事前予約必須</strong>（窓口の当日購入は非推奨）。<br>• 乗り心地のため<strong>必ず前方プレミアム席（Supra）を指定予約</strong>してください。",
-      "zh": "• <strong>耗时约8~9小时</strong>。从马德里南站（Méndez Álvaro / Estación Sur）发车。<br>• <strong>务必提前通过 ALSA 或 Omio App 预订车票</strong>（不建议现场购票）。<br>• <strong>请务必选择前排豪华舱（Supra头等座）</strong>以保证长途舒适度。"
+      "ko": "스페인과 포르투갈 모두 <strong>유로(€)</strong>를 사용합니다. 국경을 넘어도 화폐를 바꿀 필요 없이, 스페인에서 쓰던 트래블월렛/트래블로그 카드와 유로 현금을 그대로 사용하시면 됩니다.",
+      "en": "Both Spain and Portugal use the <strong>Euro (€)</strong>. There is no need to exchange money when crossing the border; your travel cards and euros will work seamlessly.",
+      "ja": "スペインとポルトガルは両国とも**ユーロ（€）**を通貨として使用しています。国境を越えても両替の必要はなく、スペインで利用していたトラベルウォレット/各種決済カードやユーロ現金をそのままご利用いただけます。",
+      "zh": "西班牙与葡萄牙均统一使用**欧元（€）**。跨越国境时无需兑换外币，在西班牙使用的各类多币种旅行卡与欧元现金均可在葡萄牙直接无缝使用。"
     },
     "seniorTitle": {
-      "ko": "🚆 기차 이동 (비추천)",
-      "en": "🚆 Train (Not Recommended)",
-      "ja": "🚆 鉄道移動（非推奨）",
-      "zh": "🚆 火车直通（不推荐）"
+      "ko": "🎒 짐 배송 서비스 (Baggage Forwarding)",
+      "en": "🎒 Baggage Forwarding Service",
+      "ja": "🎒 荷物配送サービス（Baggage Forwarding）",
+      "zh": "🎒 行李托运寄送服务（Baggage Forwarding）"
     },
     "seniorDesc": {
-      "ko": "• <strong>마드리드-리스본 간 직행 열차가 없습니다</strong>.<br>• 최소 2회 이상 환승해야 하며 <strong>10시간 이상 소요</strong>됩니다.<br>• 부모님과 함께하는 가족 여행에는 환승 피로가 커서 추천하지 않습니다.",
-      "en": "• <strong>No direct train exists between Madrid and Lisbon</strong>.<br>• Requires 2+ transfers and takes <strong>over 10 hours</strong>.<br>• High transfer stress makes train travel not recommended for family trips with parents.",
-      "ja": "• <strong>マドリード〜リスボン間の直行列車はありません</strong>。<br>• 最低2回以上の乗り換えが必要で<strong>10時間以上かかります</strong>。<br>• 高齢者同伴の家族旅行には乗り換え負担が大きすぎるためおすすめしません。",
-      "zh": "• <strong>马德里与里斯本之间目前无直达列车</strong>。<br>• 需至少换乘2次以上，全程耗时<strong>超过10小时</strong>。<br>• 换乘繁琐体力消耗大，家庭长辈出行极不推荐搭乘火车。"
+      "ko": "무거운 캐리어를 끌고 이동하는 것이 부담스럽다면, 스페인 우체국(Correos)이나 사설 수하물 배송 업체를 이용해 숙소 간 짐을 미리 보내버리세요. 두 손 가볍게 국경을 넘을 수 있습니다!",
+      "en": "If dragging heavy suitcases is a concern, use services like Correos (Spanish Post) or private baggage forwarders to ship luggage between hotels door-to-door.",
+      "ja": "重いスーツケースを持ち運ぶのが大変な場合は、スペイン郵便（Correos）や民間の手荷物配送サービスを利用して宿泊先ホテルへ荷物を事前配送してしまいましょう。身軽に手ぶらで国境を越えられます！",
+      "zh": "如果携带沉重行李箱移动较为吃力，可通过西班牙邮政（Correos）或第三方行李寄送服务将行李直接在酒店间门到门预先转运，轻装惬意跨越国境！"
     }
   }
 };
@@ -14246,6 +14246,21 @@ const REGION_DESC_I18N = {
     "transit_hotels_title": "Smart Transit Master & Senior-Friendly Value Hotels (Top 24)",
     "transit_hotels_sub": "Optimal transit smart card guides, fare rules, airport routes, and flat-ground value hotels with elevators.",
     "lbl_currency_switch": "💱 Currency:",
+    "lbl_font_size": "🔤 Font Size:",
+    "btn_print": "Print/PDF",
+    "label_party_size": "👥 Party Size",
+    "label_tier": "🏨 Accommodation Tier",
+    "toast_plan_recalc": "✅ Itinerary successfully recalculated!",
+    "toast_cal_download": "📅 Custom calendar (.ics) downloaded!",
+    "toast_currency_changed": "Currency changed",
+    "toast_font_changed": "Font size adjusted",
+    "toast_font_reset": "Font size reset to default",
+    "bnav_planner": "Planner",
+    "bnav_dining": "Dining",
+    "bnav_attractions": "Attractions",
+    "bnav_phrases": "Phrases",
+    "bnav_top": "Top",
+    "lbl_currency_switch": "💱 Currency:",
     "lbl_font_size": "🔤 Text Size:",
     "btn_print": "Print/PDF",
     "label_party_size": "👥 Party Size",
@@ -14298,8 +14313,8 @@ const I18N_DICTIONARY = {
     "brand_title": "SLOW·TRAVEL",
     "brand_sub": "GLOBAL EDITION",
     "nav_planner": "📅 맞춤 플래너",
-    "nav_dining": "🍽 필수 미식·맛집 (60선)",
-    "nav_attractions": "🏛 핵심 명소 (30선)",
+    "nav_dining": "🍽 필수 미식·맛집 (95선)",
+    "nav_attractions": "🏛 핵심 명소 (80선)",
     "nav_phrases": "🗣 지역별 필수 여행 회화",
     "nav_search": "🔍 실시간 AI 검색",
     "nav_compare": "권역 비교",
@@ -14323,7 +14338,7 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "부모님 피로도 케어 지수",
     "kpi_senior_val": "1.5 스팟 / 일",
     "kpi_senior_sub": "13:00~15:30 온수 샤워 낮잠 슬롯",
-    "dining_title": "꼭 먹고 가야 할 음식 & 검증 맛집 (사진 포함 60선)",
+    "dining_title": "꼭 먹고 가야 할 음식 & 검증 맛집 (사진 포함 95선)",
     "dining_sub": "영국·프랑스·이탈리아·스페인·포르투갈·중유럽·중남미·미국의 대표 미식. 운영시간, 외국어 가능 여부, 연락처 및 예약 링크 수록.",
     "dining_search_ph": "🔍 국가/도시(런던, 파리, 로마, 바르셀로나, 뉴욕), 메뉴(피시앤칩스, 스테이크, 타코), 키워드 검색...",
     "btn_dining_search": "미식 검색",
@@ -14368,8 +14383,8 @@ const I18N_DICTIONARY = {
     "brand_title": "SLOW·TRAVEL",
     "brand_sub": "GLOBAL EDITION",
     "nav_planner": "📅 Custom Planner",
-    "nav_dining": "🍽 Must-Eat & Dining (60+)",
-    "nav_attractions": "🏛 Top Landmarks (30+)",
+    "nav_dining": "🍽 Must-Eat & Dining (95+)",
+    "nav_attractions": "🏛 Top Landmarks (80+)",
     "nav_phrases": "🗣 Essential Local Phrases",
     "nav_search": "🔍 Live AI Search",
     "nav_compare": "Regions",
@@ -14393,7 +14408,7 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "Senior Fatigue Care",
     "kpi_senior_val": "1.5 Spots / Day",
     "kpi_senior_sub": "13:00~15:30 Hot shower & nap slot",
-    "dining_title": "Must-Eat Local Dishes & Verified Restaurants (60 Curated Spots)",
+    "dining_title": "Must-Eat Local Dishes & Verified Restaurants (95 Curated Spots)",
     "dining_sub": "Iconic gastronomy across UK, France, Italy, Spain, Portugal, Central Europe, Latin America, and USA. Includes hours, language support, contacts, and booking links.",
     "dining_search_ph": "🔍 Search city (London, Paris, Rome, New York), dish (fish and chips, steak, taco), keyword...",
     "btn_dining_search": "Search Dining",
@@ -14455,7 +14470,7 @@ const I18N_DICTIONARY = {
     "brand_sub": "GLOBAL EDITION",
     "nav_planner": "📅 カスタムプランナー",
     "nav_dining": "🍽 厳選グルメ・名店 (60選)",
-    "nav_attractions": "🏛 定番名所 (30選)",
+    "nav_attractions": "🏛 定番名所 (80選)",
     "nav_phrases": "🗣 現地必須トラベル会話",
     "nav_search": "🔍 リアルタイムAI検索",
     "nav_compare": "地域比較",
@@ -14479,7 +14494,7 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "シニア疲労ケア指数",
     "kpi_senior_val": "1.5 スポット / 日",
     "kpi_senior_sub": "13:00~15:30 温水シャワー＆昼寝枠",
-    "dining_title": "必ず食べるべき名物料理＆検証済み名店 (厳選60選)",
+    "dining_title": "必ず食べるべき名物料理＆検証済み名店 (厳選95選)",
     "dining_sub": "イギリス・フランス・イタリア・スペイン・ポルトガル・中欧・中南米・アメリカの代表料理。営業時間、外国語対応、連絡先、予約リンクを完全収録。",
     "dining_search_ph": "🔍 都市（ロンドン、パリ、ローマ、ニューヨーク）、料理（フィッシュ＆チップス、ステーキ、タコス）、キーワード検索...",
     "btn_dining_search": "グルメ検索",
@@ -14540,8 +14555,8 @@ const I18N_DICTIONARY = {
     "brand_title": "SLOW·TRAVEL",
     "brand_sub": "GLOBAL EDITION",
     "nav_planner": "📅 定制行程单",
-    "nav_dining": "🍽 必吃美食与名店 (60选)",
-    "nav_attractions": "🏛 经典地标 (30选)",
+    "nav_dining": "🍽 必吃美食与名店 (95选)",
+    "nav_attractions": "🏛 经典地标 (80选)",
     "nav_phrases": "🗣 实用旅行短语",
     "nav_search": "🔍 实时AI搜索",
     "nav_compare": "区域对比",
@@ -14565,7 +14580,7 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "长辈体力照护指数",
     "kpi_senior_val": "1.5 景点 / 天",
     "kpi_senior_sub": "13:00~15:30 热水淋浴与午休插槽",
-    "dining_title": "必吃经典美食与验证餐厅 (高质照片 60选)",
+    "dining_title": "必吃经典美食与验证餐厅 (高质照片 95选)",
     "dining_sub": "汇集英国、法国、意大利、西班牙、葡萄牙、中欧、中南美及美国的经典美味。收录营业时间、外语沟通、电话及预订链接。",
     "dining_search_ph": "🔍 搜索城市（伦敦、巴黎、罗马、纽约）、菜肴（炸鱼薯条、牛排、塔可）、关键词...",
     "btn_dining_search": "搜索美食",
@@ -14627,7 +14642,8 @@ var CHATBOT_I18N = {
       { text: "🛍️ 텍스리펀 방법", q: "스페인 공항 텍스리펀 절차 알려줘" },
       { text: "💰 총 여행 예산", q: "현재 여행 총 예상 경비와 예산 얼마야?" },
       { text: "🧂 소금 빼주세요", q: "식당에서 소금 빼주세요 스페인어로 뭐야?" },
-      { text: "🐪 사막 사파리 팁", q: "두바이 사막 사파리 부모님 주의사항과 복장" }
+      { text: "🐪 사막 사파리 팁", q: "두바이 사막 사파리 부모님 주의사항과 복장" },
+      { text: "🐪 두바이 24h 스톱오버 팁", q: "에미레이트 항공 두바이 경유 24시간 스톱오버 추천 코스 & 짐 보관 방법" }
     ]
   },
   en: {
@@ -14655,7 +14671,8 @@ Feel free to ask any travel question!<br>
       { text: "🛍️ Airport Tax Refund", q: "how to get tax refund at Spain airports DIVA kiosk" },
       { text: "💰 Total Trip Budget", q: "what is the total budget for this trip?" },
       { text: "🧂 Less Salt (Sin Sal)", q: "how to say less salt please in Spanish and Portuguese?" },
-      { text: "🐪 Desert Safari Tips", q: "Dubai desert safari tips and dress code for seniors" }
+      { text: "🐪 Desert Safari Tips", q: "Dubai desert safari tips and dress code for seniors" },
+      { text: "🐪 Dubai 24h Stopover Tip", q: "Emirates Airlines Dubai 24h Stopover Itinerary & Luggage Storage" }
     ]
   },
   ja: {
@@ -14683,7 +14700,8 @@ Feel free to ask any travel question!<br>
       { text: "🛍️ 空港免税手続き", q: "スペイン空港でのタックスリファンド手続き方法" },
       { text: "💰 旅行予算の総額", q: "現在の旅行の総予算と費用の内訳は？" },
       { text: "🧂 塩分控えめ注文", q: "スペイン語で塩分控えめ・薄味はどう言う？" },
-      { text: "🐪 砂漠サファリ注意点", q: "ドバイの砂漠サファリの注意点と服装" }
+      { text: "🐪 砂漠サファリ注意点", q: "ドバイの砂漠サファリの注意点と服装" },
+      { text: "🐪 ドバイ24時間乗継ぎのコツ", q: "エミレーツ航空ドバイ経由 24時間ストップオーバー推奨コース＆荷物預かり" }
     ]
   },
   zh: {
@@ -14711,8 +14729,5207 @@ Feel free to ask any travel question!<br>
       { text: "🛍️ 机场退税流程", q: "西班牙机场DIVA自助退税办理流程" },
       { text: "💰 全程总预算", q: "当前旅行定制规划的总预算是多少？" },
       { text: "🧂 少盐点餐西语", q: "在西餐厅少放盐的西班牙语怎么说？" },
-      { text: "🐪 沙漠冲沙贴士", q: "迪拜沙漠冲沙长辈注意事项与着装要求" }
+      { text: "🐪 沙漠冲沙贴士", q: "迪拜沙漠冲沙长辈注意事项与着装要求" },
+      { text: "🐪 迪拜24小时过境游", q: "阿联酋航空迪拜经停 24小时过境游推荐路线与行李寄存" }
     ]
   }
 };
 
+
+// === EXTENDED LANDMARKS & DINING DATA (SPAIN, PORTUGAL, FRANCE, ITALY) ===
+(function() {
+  const _NEW_LANDMARKS = [
+  {
+    "name": "구엘 공원 (Park Güell)",
+    "region": "스페인",
+    "city": "스페인 바르셀로나",
+    "photo": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80",
+    "highlight": "가우디의 동화 같은 타일 모자이크 도마뱀과 돌기둥 회랑. 지중해와 바르셀로나 시내가 한눈에 펼쳐지는 파노라마",
+    "seniorAccess": "언덕 지형이므로 지하철 대신 카탈루냐 광장에서 24번 버스 탑승 권장 (후문 평지 진입). 주요 모뉴먼트 구역은 평탄하게 정비됨",
+    "hours": "매일 09:30~19:30 (계절별 상이)",
+    "ticketTip": "유네스코 보호 구역 타임슬롯 공식 사전 예매 필수. 모바일 티켓 QR 입장",
+    "officialUrl": "https://parkguell.barcelona/en",
+    "mapQuery": "Park Guell Barcelona",
+    "baseKrw": 22000
+  },
+  {
+    "name": "카사 바트요 (Casa Batlló)",
+    "region": "스페인",
+    "city": "스페인 바르셀로나",
+    "photo": "https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?auto=format&fit=crop&w=800&q=80",
+    "highlight": "바다와 용의 전설을 형상화한 가우디의 환상적 건축. 물결치는 창문과 생생한 색채의 스테인드글라스",
+    "seniorAccess": "실내 최신 엘리베이터 완비로 거동 불편한 부모님도 옥상 용의 등뼈까지 편안하게 관람 가능. 무료 휠체어 대여 지원",
+    "hours": "매일 09:00~20:00 (마지막 입장 19:15)",
+    "ticketTip": "증강현실(AR) 태블릿 가이드 포함 블루/골드 티켓 사전 예매 추천",
+    "officialUrl": "https://www.casabatllo.es/en/",
+    "mapQuery": "Casa Batllo Barcelona",
+    "baseKrw": 49000
+  },
+  {
+    "name": "카사 밀라 (Casa Milà / La Pedrera)",
+    "region": "스페인",
+    "city": "스페인 바르셀로나",
+    "photo": "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=80",
+    "highlight": "'채석장(라 페드레라)'이라 불린 혁신적 곡선 건축. 투구를 쓴 전사 형상의 옥상 굴뚝과 독창적인 다락방 아치",
+    "seniorAccess": "어르신 우선 엘리베이터 탑승 지원. 옥상 일부 계단 제외하고 전 층 평탄화 완료되어 안전함",
+    "hours": "매일 09:00~20:30 (야간 투어 별도 운영)",
+    "ticketTip": "오전 9시 첫 타임 사전 예약 시 인파 없이 고즈넉하게 관람 가능",
+    "officialUrl": "https://www.lapedrera.com/en",
+    "mapQuery": "Casa Mila Barcelona",
+    "baseKrw": 39000
+  },
+  {
+    "name": "바르셀로나 고딕 지구 & 대성당 (Gothic Quarter)",
+    "region": "스페인",
+    "city": "스페인 바르셀로나",
+    "photo": "https://images.unsplash.com/photo-1579282240050-352db0a14c21?auto=format&fit=crop&w=800&q=80",
+    "highlight": "로마 시대 성벽과 14세기 중세 고딕 골목의 신비로운 정취. 비스베 다리와 웅장한 바르셀로나 대성당",
+    "seniorAccess": "보행자 전용 평지 골목 위주. 바닥 돌길이 있으므로 편안한 운동화 필수. 곳곳에 노천카페와 벤치 휴식 공간 풍부",
+    "hours": "대성당 평일 09:30~18:30 (광장 및 골목 상시 개방)",
+    "ticketTip": "대성당 옥상 엘리베이터 관람 포함 티켓 현장 또는 온라인 예약 가능",
+    "officialUrl": "https://catedralbcn.org/en/",
+    "mapQuery": "Barcelona Cathedral Gothic Quarter",
+    "baseKrw": 16000
+  },
+  {
+    "name": "마드리드 왕궁 (Palacio Real de Madrid)",
+    "region": "스페인",
+    "city": "스페인 마드리드",
+    "photo": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
+    "highlight": "서유럽 최대 규모의 현역 왕실 궁전. 3,400개 방 중 왕좌의 방, 황실 연회장, 스트라디바리우스 현악 컬렉션의 찬란한 화려함",
+    "seniorAccess": "궁전 진입로 및 전 내부 전시관 100% 무장애 배리어프리. 어르신 전용 엘리베이터와 무료 휠체어 서비스 운영",
+    "hours": "월-토 10:00~18:00, 일 10:00~16:00 (동절기 기준)",
+    "ticketTip": "공식 사이트 타임슬롯 티켓 필수. 줄 서지 않는 패스트트랙 적극 권장",
+    "officialUrl": "https://www.patrimonionacional.es/en/visita/palacio-real-de-madrid",
+    "mapQuery": "Palacio Real de Madrid",
+    "baseKrw": 22000
+  },
+  {
+    "name": "프라도 미술관 (Museo Nacional del Prado)",
+    "region": "스페인",
+    "city": "스페인 마드리드",
+    "photo": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=800&q=80",
+    "highlight": "벨라스케스의 '시녀들(Las Meninas)', 고야의 '옷을 입은 마하', 엘 그레코의 걸작들이 모인 스페인 예술의 최고 정점",
+    "seniorAccess": "넓은 평지 복도와 전관 엘리베이터 연결. 전시장 곳곳에 푹신한 소파 벤치 완비. 한국어 오디오 가이드 대여 가능",
+    "hours": "월-토 10:00~20:00, 일·공휴일 10:00~19:00",
+    "ticketTip": "사전 온라인 시간 예매 시 현장 1시간 대기줄 생략. 월-토 18:00~20:00 무료입장은 대기열이 길어 비추천",
+    "officialUrl": "https://www.museodelprado.es/en",
+    "mapQuery": "Museo del Prado Madrid",
+    "baseKrw": 24000
+  },
+  {
+    "name": "레티로 공원 & 수정궁 (El Retiro Park)",
+    "region": "스페인",
+    "city": "스페인 마드리드",
+    "photo": "https://images.unsplash.com/photo-1563784462386-044fd95e9852?auto=format&fit=crop&w=800&q=80",
+    "highlight": "유네스코 세계유산 '빛의 풍경'에 빛나는 도심 속 거대 녹지. 호수 위 보트와 햇살을 반사하는 유리 건축물 수정궁(Palacio de Cristal)",
+    "seniorAccess": "완만한 평지 흙길과 아스팔트 포장로. 그늘 벤치가 촘촘하며 공원 내 카페테리아에서 편안한 티타임 가능",
+    "hours": "동절기 06:00~22:00, 하절기 06:00~24:00",
+    "ticketTip": "공원 및 수정궁 입장료 무료. 호수 노젓기 보트 현장 대여 약 6~8유로",
+    "officialUrl": "https://www.esmadrid.com/en/tourist-information/parque-del-retiro",
+    "mapQuery": "El Retiro Park Madrid",
+    "baseKrw": 0
+  },
+  {
+    "name": "마드리드 마요르 광장 & 솔 광장 (Plaza Mayor & Sol)",
+    "region": "스페인",
+    "city": "스페인 마드리드",
+    "photo": "https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=800&q=80",
+    "highlight": "붉은 벽돌 4층 회랑 건축과 펠리페 3세 기마상. 스페인 도로의 기점 킬로미터 제로(0km)와 곰과 딸기나무 동상",
+    "seniorAccess": "완전한 보행자 전용 평지 광장. 회랑 아래 그늘진 카페 좌석에서 여유롭게 카푸치노나 샹그리아를 즐기기 최적",
+    "hours": "24시간 상시 개방",
+    "ticketTip": "입장료 무료. 마요르 광장 주변 오징어 튀김 샌드위치(Bocadillo de Calamares) 시식 필수 코스",
+    "officialUrl": "https://www.esmadrid.com/en/tourist-information/plaza-mayor-madrid",
+    "mapQuery": "Plaza Mayor Madrid",
+    "baseKrw": 0
+  },
+  {
+    "name": "세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)",
+    "region": "스페인",
+    "city": "스페인 세비야",
+    "photo": "https://images.unsplash.com/photo-1558642084-fd07fae5282e?auto=format&fit=crop&w=800&q=80",
+    "highlight": "세계에서 3번째로 큰 성당이자 최대 고딕 건축물. 콜럼버스의 관을 멘 4대 왕 조각상과 황금빛 목조 제단",
+    "seniorAccess": "히랄다 탑 전망대는 계단이 아닌 나귀가 오르던 완만한 경사로(34구간)로 설계되어 어르신도 쉬어가며 등반 가능. 성당 본당은 완전 평지",
+    "hours": "월-토 10:45~17:00, 일 14:30~18:00",
+    "ticketTip": "공식 사이트 시간 지정 예매 필수. 살바도르 성당 통합권 구매 시 더 여유로움",
+    "officialUrl": "https://www.catedraldesevilla.es/",
+    "mapQuery": "Seville Cathedral Giralda",
+    "baseKrw": 19000
+  },
+  {
+    "name": "세비야 알카사르 왕궁 (Real Alcázar de Sevilla)",
+    "region": "스페인",
+    "city": "스페인 세비야",
+    "photo": "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80",
+    "highlight": "무데하르 양식의 진수 소녀들의 중정(Patio de las Doncellas)과 드라마 '왕좌의 게임' 도른 왕국의 배경이 된 환상적인 왕실 정원",
+    "seniorAccess": "지상 1층 궁전과 파티오는 평지. 울창한 오렌지 나무 정원 곳곳에 분수와 벤치가 있어 부모님 산책 코스로 최고",
+    "hours": "매일 09:30~17:00 (동절기 기준)",
+    "ticketTip": "티켓 매진이 매우 빠르므로 최소 3~4주 전 공식 홈페이지 직접 예약 필수",
+    "officialUrl": "https://www.alcazarsevilla.org/en/",
+    "mapQuery": "Real Alcazar de Sevilla",
+    "baseKrw": 22000
+  },
+  {
+    "name": "세비야 스페인 광장 (Plaza de España)",
+    "region": "스페인",
+    "city": "스페인 세비야",
+    "photo": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=800&q=80",
+    "highlight": "1929년 이베로-아메리카 박람회를 위해 건설된 반원형 대궁전. 스페인 48개 주를 묘사한 타일 벤치와 아치형 다리, 뱃놀이 운하",
+    "seniorAccess": "마리아 루이사 공원과 이어진 100% 완전 평지. 계단 없이 탁 트인 광장을 거닐 수 있으며 벤치가 매우 많음",
+    "hours": "매일 08:00~22:00",
+    "ticketTip": "입장료 무료. 해질녘 노을 골든아워 방문 강력 추천",
+    "officialUrl": "https://visita.sevilla.org/en/",
+    "mapQuery": "Plaza de Espana Seville",
+    "baseKrw": 0
+  },
+  {
+    "name": "코르도바 메스키타-대성당 (Mezquita-Catedral)",
+    "region": "스페인",
+    "city": "스페인 코르도바",
+    "photo": "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=800&q=80",
+    "highlight": "856개의 붉은색과 흰색 설화석고 줄무늬 아치가 끝없이 이어지는 기둥의 숲. 이슬람 사원과 가톨릭 대성당이 공존하는 인류 건축의 기적",
+    "seniorAccess": "사원 실내 전체가 문턱 없는 광활한 단층 평지로 어르신 보행 편의성 최고. 오렌지 정원(Patio de los Naranjos) 그늘 쉼터",
+    "hours": "월-토 10:00~19:00, 일 08:30~11:30 / 15:00~19:00",
+    "ticketTip": "공식 사이트에서 오디오 가이드 포함 시간 지정 티켓 사전 예매",
+    "officialUrl": "https://mezquita-catedraldecordoba.es/en/",
+    "mapQuery": "Mezquita Catedral de Cordoba",
+    "baseKrw": 20000
+  },
+  {
+    "name": "세고비아 로마 수도교 (Aqueduct of Segovia)",
+    "region": "스페인",
+    "city": "스페인 세고비아",
+    "photo": "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=800&q=80",
+    "highlight": "기원 1세기 시멘트나 모르타르 한 방울 없이 화강암 2만여 개를 오직 물리적 균형으로 쌓아 올린 28m 높이의 로마 토목 걸작",
+    "seniorAccess": "아소게호 광장(Plaza del Azoguejo) 평지에서 올려다보는 뷰가 가장 장관. 언덕 계단을 오르지 않아도 광장 벤치에서 완벽 조망",
+    "hours": "24시간 상시 개방",
+    "ticketTip": "관람 무료. 광장 바로 앞 전설의 식당 '메손 데 칸디도'에서 새끼돼지 구이(Cochinillo)와 함께 동선 연계",
+    "officialUrl": "https://turismodesegovia.com/en/",
+    "mapQuery": "Aqueduct of Segovia",
+    "baseKrw": 0
+  },
+  {
+    "name": "론다 누에보 다리 & 헤밍웨이 산책로 (Puente Nuevo)",
+    "region": "스페인",
+    "city": "스페인 론다",
+    "photo": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+    "highlight": "120m 깊이의 엘 타호(El Tajo) 협곡을 가로지르는 웅장한 18세기 석교. 헤밍웨이가 사랑한 파라도르 호텔 절벽 뷰",
+    "seniorAccess": "협곡 아래로 내려가는 트레킹은 가파르므로 지양하고, 다리 상부 평지 보도와 파라도르 옆 테라스 산책로에서 평온하게 조망",
+    "hours": "24시간 상시 개방",
+    "ticketTip": "다리 보행 및 전망대 무료. 다리 중앙 내부 전시실(소액 유료)은 계단이 있어 어르신 패스 권장",
+    "officialUrl": "https://turismoderonda.es/en/",
+    "mapQuery": "Puente Nuevo Ronda",
+    "baseKrw": 0
+  },
+  {
+    "name": "톨레도 대성당 & 알카사르 (Toledo Cathedral)",
+    "region": "스페인",
+    "city": "스페인 톨레도",
+    "photo": "https://images.unsplash.com/photo-1562674330-808773b48641?auto=format&fit=crop&w=800&q=80",
+    "highlight": "스페인 가톨릭의 총본산. 화려한 황금 제단화와 엘 그레코의 성화들이 가득한 성구실, 빛이 쏟아지는 투명 채광창 '엘 트란스파렌테'",
+    "seniorAccess": "톨레도 구시가지는 언덕이 많으나 조코도베르 광장에서 소코트렌(Zocotren 미니 관광열차) 탑승 시 편안하게 외곽 전망대까지 순환 관람",
+    "hours": "월-토 10:00~18:30, 일 14:00~18:30",
+    "ticketTip": "소코도베르 광장 인근 에스컬레이터를 이용해 구시가지 상부로 힘들이지 않고 진입",
+    "officialUrl": "https://www.catedralprimada.es/en/",
+    "mapQuery": "Toledo Cathedral Spain",
+    "baseKrw": 18000
+  },
+  {
+    "name": "산티아고 데 콤포스텔라 대성당 (Santiago Cathedral)",
+    "region": "스페인",
+    "city": "스페인 갈리시아",
+    "photo": "https://images.unsplash.com/photo-1588614959060-4d144f28b207?auto=format&fit=crop&w=800&q=80",
+    "highlight": "카미노 데 산티아고 800km 순례길의 종착역. 야고보 성인의 석관과 거대한 은제 향로를 공중으로 날리는 '보타푸메이로(Botafumeiro)' 의식",
+    "seniorAccess": "오브라도이로 광장은 넓고 평탄함. 대성당 내부 박물관 엘리베이터 설비 완료. 순례자 미사 시 좌석 선점 필수",
+    "hours": "매일 07:00~21:00",
+    "ticketTip": "대성당 본당 입장 무료. 지붕 테라스 및 박물관 통합 티켓 온라인 사전 예약",
+    "officialUrl": "https://catedraldesantiago.es/en/",
+    "mapQuery": "Santiago de Compostela Cathedral",
+    "baseKrw": 18000
+  },
+  {
+    "name": "상 조르즈 성 (Castelo de São Jorge)",
+    "region": "포르투갈",
+    "city": "포르투갈 리스본",
+    "photo": "https://images.unsplash.com/photo-1509803874385-db7c23652552?auto=format&fit=crop&w=800&q=80",
+    "highlight": "알파마 언덕 최고봉에 우뚝 솟은 천년 무어인 요새. 리스본의 주황색 지붕 바다와 테조강, 4월 25일 다리를 내려다보는 최고의 파노라마",
+    "seniorAccess": "언덕 경사가 심하므로 트램 대신 택시/우버로 성 정문 바로 앞까지 이동 필수. 성 안 성벽 안뜰은 고목 그늘과 평지 벤치 완비",
+    "hours": "매일 09:00~18:00 (동절기 기준)",
+    "ticketTip": "공식 사이트 모바일 티켓 구매 시 매표소 긴 대기줄 없이 바로 바코드 스캔 입장",
+    "officialUrl": "https://castelodesaojorge.pt/en/",
+    "mapQuery": "Castelo de Sao Jorge Lisbon",
+    "baseKrw": 22000
+  },
+  {
+    "name": "산타 주스타 엘리베이터 & 카르무 수녀원 (Santa Justa Lift)",
+    "region": "포르투갈",
+    "city": "포르투갈 리스본",
+    "photo": "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=800&q=80",
+    "highlight": "에펠의 제자 라울 메스니에르가 설계한 45m 높이의 네오고딕 철골 리프트. 바이샤 지구와 고지대 시아두를 잇는 리스본의 상징",
+    "seniorAccess": "목재 클래식 캐빈 내부 좌석 마련. 상부 전망대 좁은 나선계단은 패스하고 카르무 수녀원 광장 평지 보도로 바로 연결되어 편리",
+    "hours": "매일 07:00~22:45",
+    "ticketTip": "리스보아 카드(Lisboa Card) 또는 비바 비아젱 24시간권 소지 시 무료 탑승",
+    "officialUrl": "https://www.carris.pt/",
+    "mapQuery": "Santa Justa Lift Lisbon",
+    "baseKrw": 8000
+  },
+  {
+    "name": "코메르시우 광장 & 아우구스타 개선문 (Praça do Comércio)",
+    "region": "포르투갈",
+    "city": "포르투갈 리스본",
+    "photo": "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?auto=format&fit=crop&w=800&q=80",
+    "highlight": "테조강의 시원한 바람이 불어오는 노란색 대회랑 광장. 대지진 후 재건된 개선문과 주제 1세 기마상, 황금빛 일몰",
+    "seniorAccess": "계단과 턱이 전혀 없는 100% 완전 평지 광장. 회랑 아래 노천카페와 벤치가 많아 어르신 쉼터로 최고",
+    "hours": "24시간 상시 개방",
+    "ticketTip": "광장 산책 무료. 아우구스타 개선문 꼭대기 전망대 엘리베이터 탑승 약 3.5유로",
+    "officialUrl": "https://www.visitlisboa.com/en",
+    "mapQuery": "Praca do Comercio Lisbon",
+    "baseKrw": 0
+  },
+  {
+    "name": "발견기념비 & 벨렝 해안 (Padrão dos Descobrimentos)",
+    "region": "포르투갈",
+    "city": "포르투갈 리스본",
+    "photo": "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=800&q=80",
+    "highlight": "카라벨선 뱃머리 형상의 거대 기념비. 엔히크 항해왕자와 바스코 다 가마의 조각상, 바닥의 나침반 모자이크 세계지도",
+    "seniorAccess": "벨렝 해변 산책로는 완전 평지 포장도로. 제로니무스 수도원에서 도보 5분 거리 지하도(경사로) 완비",
+    "hours": "매일 10:00~19:00",
+    "ticketTip": "외관 및 바닥 나침도 관람 무료. 내부 전망대 엘리베이터 유료 탑승 가능",
+    "officialUrl": "https://padraodosdescobrimentos.pt/en/",
+    "mapQuery": "Padrao dos Descobrimentos Lisbon",
+    "baseKrw": 10000
+  },
+  {
+    "name": "렐루 서점 (Livraria Lello)",
+    "region": "포르투갈",
+    "city": "포르투갈 포르투",
+    "photo": "https://images.unsplash.com/photo-1526721940322-10fb6e3ae94a?auto=format&fit=crop&w=800&q=80",
+    "highlight": "'세상에서 가장 아름다운 서점'. 조앤 롤링이 해리포터 마법 서점의 영감을 얻었다고 전해지는 붉은 나선형 곡선 계단과 스테인드글라스 천장",
+    "seniorAccess": "실내가 다소 붐비므로 아침 첫 타임 예약 필수. 1층 평지 서가에서 웅장한 목조 계단과 천장을 편안히 올려다볼 수 있음",
+    "hours": "매일 09:00~19:00",
+    "ticketTip": "공식 사이트에서 도서 구매 시 바우처 할인되는 실버/골드 티켓 사전 예약 필수 (현장 구매 불가)",
+    "officialUrl": "https://www.livrarialello.pt/en-us/",
+    "mapQuery": "Livraria Lello Porto",
+    "baseKrw": 12000
+  },
+  {
+    "name": "클레리고스 탑 & 성당 (Torre dos Clérigos)",
+    "region": "포르투갈",
+    "city": "포르투갈 포르투",
+    "photo": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80",
+    "highlight": "포르투 시내 어디서나 보이는 75m 높이의 바로크 양식 종탑. 니콜라우 나소니가 설계한 포르투의 상징적 랜드마크",
+    "seniorAccess": "탑 등반(225계단)은 어르신 무릎 보호를 위해 생략하고, 1층 바로크 성당 내부(평지)와 바로 옆 올리브 정원 벤치 휴식 추천",
+    "hours": "매일 09:00~19:00",
+    "ticketTip": "성당 본당은 무료. 클레리고스 박물관 및 탑 전망대는 온라인 사전 예매",
+    "officialUrl": "https://www.torredosclerigos.pt/en/",
+    "mapQuery": "Torre dos Clerigos Porto",
+    "baseKrw": 12000
+  },
+  {
+    "name": "상 벤투 기차역 (São Bento Station)",
+    "region": "포르투갈",
+    "city": "포르투갈 포르투",
+    "photo": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
+    "highlight": "화가 조르즈 콜라수가 11년에 걸쳐 완성한 2만 장의 블루 아줄레주(Azulejo) 타일 대작. 포르투갈 역사 속 전투와 교통의 역사",
+    "seniorAccess": "현재 운행 중인 기차역 대합실로 완전 평지. 문턱 없이 휠체어나 노약자도 편안하게 거대한 벽화 감상 가능",
+    "hours": "매일 05:00~01:00 (기차 운행 시간)",
+    "ticketTip": "관람 무료. 낮 시간대 자연광이 들어올 때 아줄레주 색채가 가장 아름다움",
+    "officialUrl": "https://www.cp.pt/",
+    "mapQuery": "Sao Bento Station Porto",
+    "baseKrw": 0
+  },
+  {
+    "name": "빌라 노바 드 가이아 와인 카브 (Gaia Wine Lodges)",
+    "region": "포르투갈",
+    "city": "포르투갈 포르투",
+    "photo": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80",
+    "highlight": "도루강 상류에서 운반된 포트 와인이 숙성되는 유서 깊은 와이너리 거리(테일러, 샌드맨, 그레이엄 등). 오크통 향기와 강변 뷰",
+    "seniorAccess": "가이아 강변 보행로는 100% 완전 평지. 상층부 이동 시 가이아 케이블카 탑승으로 계단 완전 회피",
+    "hours": "와이너리별 10:00~18:30",
+    "ticketTip": "테일러(Taylor's) 정원 오디오 가이드 시음 투어 또는 샌드맨 사전 온라인 예약 추천",
+    "officialUrl": "https://www.taylor.pt/en",
+    "mapQuery": "Vila Nova de Gaia Wine Lodges",
+    "baseKrw": 28000
+  },
+  {
+    "name": "신트라 페나 국립 왕궁 (Palácio Nacional da Pena)",
+    "region": "포르투갈",
+    "city": "포르투갈 신트라",
+    "photo": "https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&w=800&q=80",
+    "highlight": "노랑, 빨강, 보라색이 어우러진 동화 속 낭만주의 궁전. 신트라 산 정상에서 대서양과 리스본까지 조망하는 환상적인 뷰",
+    "seniorAccess": "정문 매표소에서 궁전 입구까지 매우 가파르므로 '왕궁 정원 셔틀버스(왕복 3유로)' 필수 탑승. 궁전 테라스는 완만함",
+    "hours": "매일 09:30~18:30 (정원 09:00~19:00)",
+    "ticketTip": "방문 시간 지정 엄격. 공식 Parques de Sintra 사이트에서 최소 2주 전 사전 예매 필수",
+    "officialUrl": "https://www.parquesdesintra.pt/en/",
+    "mapQuery": "Pena Palace Sintra",
+    "baseKrw": 29000
+  },
+  {
+    "name": "헤갈레이라 별장 (Quinta da Regaleira)",
+    "region": "포르투갈",
+    "city": "포르투갈 신트라",
+    "photo": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80",
+    "highlight": "연금술과 프리메이슨의 신비주의가 깃든 마법의 저택. 27m 지하로 내려가는 나선형 '개시의 우물(Poço Iniciático)'과 폭포 동굴",
+    "seniorAccess": "우물 계단 하강은 미끄러울 수 있으므로 부모님은 상부 난간에서 내려다보시고, 본관 저택(엘리베이터 완비)과 평지 정원 위주 관람",
+    "hours": "매일 10:00~18:30",
+    "ticketTip": "신트라 역에서 우버나 435번 버스 탑승. 온라인 티켓 사전 구매 시 매표 대기 생략",
+    "officialUrl": "https://www.regaleira.pt/en/",
+    "mapQuery": "Quinta da Regaleira Sintra",
+    "baseKrw": 20000
+  },
+  {
+    "name": "호카 곶 (Cabo da Roca)",
+    "region": "포르투갈",
+    "city": "포르투갈 신트라/카스카이스",
+    "photo": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    "highlight": "유라시아 대륙의 최서단. 카몽이스의 시구 '여기서 땅이 끝나고 바다가 시작된다'가 새겨진 십자가 기념비와 140m 절벽 등대",
+    "seniorAccess": "주차장과 버스 정류장에서 십자가 기념비까지 평탄한 흙길/데크길 2~3분 도보. 바람이 강하므로 바람막이 외투 필수",
+    "hours": "24시간 상시 개방 (인포메이션 센터 09:00~18:30)",
+    "ticketTip": "입장 무료. 관광안내소에서 유럽 최서단 방문 인증서 유료 발급 가능",
+    "officialUrl": "https://www.visitportugal.com/en",
+    "mapQuery": "Cabo da Roca Portugal",
+    "baseKrw": 0
+  },
+  {
+    "name": "오비두스 중세 성곽 마을 (Óbidos)",
+    "region": "포르투갈",
+    "city": "포르투갈 오비두스",
+    "photo": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80",
+    "highlight": "왕비에게 바친 하얀 성곽 마을. 부겐빌레아 꽃이 만발한 골목과 초콜릿 잔에 담아 마시는 전통 체리주 '진지냐(Ginjinha)'",
+    "seniorAccess": "성벽 윗길은 난간이 없어 위험하므로 성벽 아래 중앙 메인 스트리트(Rua Direita, 완만한 평지) 산책 강력 추천",
+    "hours": "마을 상시 개방 (상점가 10:00~19:00)",
+    "ticketTip": "마을 입장 무료. 리스본 캄푸 그란드 역에서 직행 고속버스(Rede Expressos)로 1시간 소요",
+    "officialUrl": "https://www.obidos.pt/",
+    "mapQuery": "Obidos Castle Village Portugal",
+    "baseKrw": 0
+  },
+  {
+    "name": "폰타 다 피에다데 (Ponta da Piedade)",
+    "region": "포르투갈",
+    "city": "포르투갈 알가르베 라구스",
+    "photo": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+    "highlight": "수천만 년 파도가 깎아 만든 황금빛 석회암 기암괴석과 바다 아치. 코발트블루 지중해 바다가 어우러진 알가르베의 최고 절경",
+    "seniorAccess": "절벽 위를 따라 최근 조성된 '무장애 목재 데크 산책로(Boardwalk)' 완비. 계단 내려갈 필요 없이 휠체어/어르신도 편안하게 관람",
+    "hours": "24시간 상시 개방 (일몰 시간 강력 추천)",
+    "ticketTip": "데크 산책로 무료. 라구스 항구에서 출발하는 소형 보트 동굴 투어(약 20~25유로)도 좌석 착석형으로 추천",
+    "officialUrl": "https://www.visitalgarve.pt/en",
+    "mapQuery": "Ponta da Piedade Lagos Portugal",
+    "baseKrw": 0
+  },
+  {
+    "name": "베나길 해식 동굴 (Benagil Cave)",
+    "region": "포르투갈",
+    "city": "포르투갈 알가르베",
+    "photo": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
+    "highlight": "천장에 뚫린 원형 구멍 '알가르(Algar)'로 황금빛 햇살이 쏟아져 내리는 세계에서 가장 신비로운 천연 바다 돔 사원",
+    "seniorAccess": "카약이나 수영 대신 포르티망/알부페이라 항구에서 출발하는 대형 카타마란 모터보트 투어 탑승 시 흔들림 없이 편안히 내부 관람",
+    "hours": "보트 투어 09:00~18:00 (바다 기상 상황에 따름)",
+    "ticketTip": "파도가 높으면 동굴 진입이 통제되므로 날씨가 화창한 오전에 공식 크루즈 예약",
+    "officialUrl": "https://www.visitalgarve.pt/en",
+    "mapQuery": "Benagil Cave Portugal",
+    "baseKrw": 42000
+  },
+  {
+    "name": "몬테 팰리스 열대 정원 (Monte Palace Madeira)",
+    "region": "포르투갈",
+    "city": "포르투갈 마데이라 풍샬",
+    "photo": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+    "highlight": "풍샬 항구를 굽어보는 산 정상의 공중 낙원. 전 세계 희귀 식물, 비단잉어가 노니는 동양 정원, 포르투갈 최고 아줄레주 타일 컬렉션",
+    "seniorAccess": "풍샬 해변에서 몬테 케이블카(Teleférico do Funchal) 탑승해 정문 도착. 정원 내부 전기 골프카트 셔틀 서비스 이용 가능",
+    "hours": "매일 09:30~18:00",
+    "ticketTip": "케이블카 왕복 + 정원 입장 통합권 구매 권장",
+    "officialUrl": "https://montepalace.com/",
+    "mapQuery": "Monte Palace Tropical Garden Madeira",
+    "baseKrw": 24000
+  },
+  {
+    "name": "카보 지랑 유리 스카이워크 (Cabo Girão)",
+    "region": "포르투갈",
+    "city": "포르투갈 마데이라",
+    "photo": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    "highlight": "유럽에서 가장 높고 세계에서 두 번째로 높은 580m 수직 해안 절벽. 발아래 대서양 파도가 아찔하게 내려다보이는 투명 유리 전망대",
+    "seniorAccess": "주차장에서 스카이워크 플랫폼까지 100% 완전 평지 연결. 계단 없이 노약자도 안전 난간과 함께 관람 가능",
+    "hours": "매일 09:00~19:00",
+    "ticketTip": "입장료 약 2유로(카드 결제 전용). 날씨가 맑은 정오~오후 시간대 추천",
+    "officialUrl": "https://www.visitmadeira.com/en",
+    "mapQuery": "Cabo Girao Skywalk Madeira",
+    "baseKrw": 3500
+  },
+  {
+    "name": "개선문 & 샹젤리제 거리 (Arc de Triomphe)",
+    "region": "프랑스",
+    "city": "프랑스 파리",
+    "photo": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=800&q=80",
+    "highlight": "나폴레옹의 승전을 기리는 로마식 웅장한 개선문과 12개 방사형 대로. 샹젤리제 거리 끝에서 바라보는 파리의 심장부",
+    "seniorAccess": "지하도로 진입 시 계단 대신 휠체어/시니어 전용 엘리베이터 호출 가능. 옥상 전망대까지 직통 엘리베이터 완비",
+    "hours": "매일 10:00~22:30 (계절별 상이)",
+    "ticketTip": "뮤지엄 패스 사용 가능. 일몰 30분 전 입장 예약 시 파리 주경과 에펠탑 조명쇼를 동시에 감상",
+    "officialUrl": "https://www.paris-arc-de-triomphe.fr/en",
+    "mapQuery": "Arc de Triomphe Paris",
+    "baseKrw": 23000
+  },
+  {
+    "name": "생트샤펠 성당 (Sainte-Chapelle)",
+    "region": "프랑스",
+    "city": "프랑스 파리",
+    "photo": "https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=800&q=80",
+    "highlight": "13세기 루이 9세가 성유물을 보관하기 위해 지은 고딕의 보석함. 15m 높이의 벽면 전체를 감싼 1,113개 장면의 환상적인 스테인드글라스",
+    "seniorAccess": "1층에서 2층 상부 예배당으로 오르는 시니어 전용 엘리베이터 운영. 입장 시 안내 직원에게 요청",
+    "hours": "매일 09:00~17:00 (동절기 기준)",
+    "ticketTip": "사전 타임슬롯 예약 필수. 시테 섬 콩시에르주리와 통합권 구매 추천",
+    "officialUrl": "https://www.sainte-chapelle.fr/en",
+    "mapQuery": "Sainte Chapelle Paris",
+    "baseKrw": 19000
+  },
+  {
+    "name": "몽마르트르 사크레쾨르 대성당 (Sacré-Cœur)",
+    "region": "프랑스",
+    "city": "프랑스 파리",
+    "photo": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+    "highlight": "파리에서 가장 높은 언덕에 순백으로 빛나는 로마-비잔틴 양식 대성당. 파리 시내가 발아래로 내려다보이는 전망과 테르트르 광장 화가들",
+    "seniorAccess": "가파른 222개 계단을 오르지 말고, 지하철 티켓으로 탑승 가능한 '푸니쿨라(경사형 케이블카)'를 이용해 성당 정문 앞까지 수월하게 직행",
+    "hours": "성당 매일 06:30~22:30 (돔 전망대 별도)",
+    "ticketTip": "성당 본당 입장 무료. 돔 전망대는 계단만 있어 어르신 패스 권장",
+    "officialUrl": "https://www.sacre-coeur-montmartre.com/english/",
+    "mapQuery": "Sacre Coeur Basilica Paris",
+    "baseKrw": 0
+  },
+  {
+    "name": "베르사유 궁전 & 거울의 방 (Château de Versailles)",
+    "region": "프랑스",
+    "city": "프랑스 베르사유",
+    "photo": "https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&w=800&q=80",
+    "highlight": "태양왕 루이 14세의 절대 왕정을 상징하는 호화 궁전. 357개의 거울이 창문과 마주 보는 '거울의 방'과 끝없이 펼쳐진 분수 정원",
+    "seniorAccess": "궁전 내 엘리베이터 및 휠체어 완비. 광대한 정원 이동 시 무릎 보호를 위해 '꼬마기차(Petit Train)' 또는 골프카트 대여 필수",
+    "hours": "화-일 09:00~17:30 (월요일 휴관)",
+    "ticketTip": "공식 사이트 여권 티켓(Passeport) 사전 시간 지정 예매 필수. 아침 첫 타임 강력 추천",
+    "officialUrl": "https://en.chateauversailles.fr/",
+    "mapQuery": "Palace of Versailles France",
+    "baseKrw": 42000
+  },
+  {
+    "name": "지베르니 모네의 집 & 수련 정원 (Fondation Claude Monet)",
+    "region": "프랑스",
+    "city": "프랑스 지베르니",
+    "photo": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    "highlight": "인상주의 거장 클로드 모네가 43년간 가꾼 꽃의 정원과 일본식 다리가 놓인 물의 정원. 연못 위를 수놓는 실제 수련의 평화로운 풍경",
+    "seniorAccess": "평탄한 흙길과 목재 데크로 조성된 완만한 평지 정원. 계단이 거의 없어 부모님과 함께 느긋하게 산책하기에 최적",
+    "hours": "개장 기간(4월~11월 초) 매일 09:30~18:00",
+    "ticketTip": "현장 대기 줄이 매우 길므로 공식 웹사이트 사전 e-티켓 발권 필수",
+    "officialUrl": "https://fondation-monet.com/en/",
+    "mapQuery": "Fondation Claude Monet Giverny",
+    "baseKrw": 21000
+  },
+  {
+    "name": "몽생미셸 수도원 (Mont Saint-Michel)",
+    "region": "프랑스",
+    "city": "프랑스 노르망디",
+    "photo": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    "highlight": "조수 간만의 차로 바다 위에 떠오르는 신비로운 바위섬 천공 수도원. 천사 미카엘의 계시로 세워진 천년 유네스코 세계유산",
+    "seniorAccess": "주차장에서 섬 입구까지 무료 전기 셔틀버스(Passeur) 운행. 섬 정상 수도원 내부는 계단이 많으므로 무리하지 않고 천천히 관람",
+    "hours": "매일 09:30~18:00 (동절기 기준)",
+    "ticketTip": "수도원 내부 입장권 온라인 예약 필수. 일몰 무렵 야경 조명 감상 추천",
+    "officialUrl": "https://www.abbaye-mont-saint-michel.fr/en",
+    "mapQuery": "Mont Saint-Michel France",
+    "baseKrw": 20000
+  },
+  {
+    "name": "니스 프롬나드 데 장글레 (Promenade des Anglais)",
+    "region": "프랑스",
+    "city": "프랑스 니스",
+    "photo": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
+    "highlight": "지중해 에메랄드빛 천사의 만(Baie des Anges)을 따라 7km 동안 이어지는 야자수 해안 산책로. 푸른 바다와 상징적인 블루 체어(Chaise Bleue)",
+    "seniorAccess": "완벽한 포장 평지 산책로로 턱이나 계단이 없음. 해변을 따라 놓인 파란 벤치에서 언제든 편안히 휴식",
+    "hours": "24시간 상시 개방",
+    "ticketTip": "산책로 무료. 네그레스코 호텔 앞 포토스팟 및 해 질 녘 산책 추천",
+    "officialUrl": "https://www.explorenicecotedazur.org/en/",
+    "mapQuery": "Promenade des Anglais Nice",
+    "baseKrw": 0
+  },
+  {
+    "name": "에즈 빌라쥐 & 열대 정원 (Èze Village)",
+    "region": "프랑스",
+    "city": "프랑스 에즈",
+    "photo": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    "highlight": "지중해 절벽 위 429m 높이에 자리 잡은 독수리 둥지 중세 마을. 선인장 열대 정원에서 내려다보는 눈부신 코트다쥐르 해안선",
+    "seniorAccess": "마을 골목길이 자갈 돌길이므로 입구에서 스틱 사용 권장. 정상 정원 테라스까지 완만한 페이스로 쉬엄쉬엄 등반",
+    "hours": "매일 09:00~18:30",
+    "ticketTip": "마을 진입 무료, 정상 열대 정원(Jardin Exotique) 소액 입장료 현장/온라인 결제",
+    "officialUrl": "https://www.eze-tourisme.com/en/",
+    "mapQuery": "Eze Village France",
+    "baseKrw": 12000
+  },
+  {
+    "name": "퐁 뒤 가르 (Pont du Gard)",
+    "region": "프랑스",
+    "city": "프랑스 님",
+    "photo": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "highlight": "기원전 1세기 로마인이 가르동강 위에 건설한 3층 아치형 거대 수로교. 높이 48m의 완벽한 보존 상태를 자랑하는 유네스코 유적",
+    "seniorAccess": "방문자 센터에서 수도교 하부까지 평탄한 그늘 산책로 조성. 휠체어 및 어르신 보행 피로도 매우 낮음",
+    "hours": "매일 09:00~19:00",
+    "ticketTip": "수도교 1층 보행로 산책 무료 포함 주차/박물관 패스 사전 예매",
+    "officialUrl": "https://pontdugard.fr/en",
+    "mapQuery": "Pont du Gard France",
+    "baseKrw": 14000
+  },
+  {
+    "name": "로마 판테온 & 트레비 분수 (Pantheon & Trevi)",
+    "region": "이탈리아",
+    "city": "이탈리아 로마",
+    "photo": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+    "highlight": "2천 년 전 철근 없이 축조된 세계 최대 무근 콘크리트 돔 판테온과 동전을 던지며 재방문을 기원하는 바로크 예술의 극치 트레비 분수",
+    "seniorAccess": "로마 구도심 평지 보행 코스. 판테온 내부는 단층 완전 평지. 트레비 분수 광장은 인파가 붐비므로 아침 8~9시 한적한 시간대 산책 추천",
+    "hours": "판테온 매일 09:00~19:00 (트레비 분수 상시 개방)",
+    "ticketTip": "판테온은 5유로 유료 입장으로 변경됨. 공식 사이트 시간 지정 티켓 필수 예매",
+    "officialUrl": "https://www.pantheonroma.com/home/",
+    "mapQuery": "Pantheon Rome Italy",
+    "baseKrw": 8000
+  },
+  {
+    "name": "포로 로마노 & 팔라티노 언덕 (Roman Forum)",
+    "region": "이탈리아",
+    "city": "이탈리아 로마",
+    "photo": "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
+    "highlight": "고대 로마 제국의 정치, 종교, 상업의 중심지. 시저가 화장된 제단, 원로원, 바실리카 유적이 파노라마로 펼쳐지는 고고학의 성지",
+    "seniorAccess": "콜로세움 통합권으로 입장. 돌길이 거칠므로 콜로세움 방면 포룸 뷰 평지 테라스와 그늘 벤치 위주로 여유롭게 산책",
+    "hours": "매일 09:00~16:30 (동절기 기준)",
+    "ticketTip": "콜로세움-포로 로마노-팔라티노 언덕 통합권 필수. CoopCulture / 공식 플랫폼 예매",
+    "officialUrl": "https://parcocolosseo.it/en/",
+    "mapQuery": "Roman Forum Rome Italy",
+    "baseKrw": 26000
+  },
+  {
+    "name": "피렌체 우피치 미술관 (Gallerie degli Uffizi)",
+    "region": "이탈리아",
+    "city": "이탈리아 피렌체",
+    "photo": "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+    "highlight": "보티첼리의 '비너스의 탄생', '봄(프리마베라)', 레오나르도 다빈치의 '수태고지' 등 르네상스를 꽃피운 메디치 가문의 세계적 예술 보고",
+    "seniorAccess": "3층 갤러리 진입 전용 대형 엘리베이터 완비. 전 복도가 평탄하며 곳곳에 푹신한 벨벳 소파와 아르노강 뷰 카페 완비",
+    "hours": "화-일 08:15~18:30 (월요일 휴관)",
+    "ticketTip": "공식 예매 사이트 B-Ticket에서 시간 지정 예매 필수. 대기 줄 2~3시간 생략",
+    "officialUrl": "https://www.uffizi.it/en",
+    "mapQuery": "Uffizi Gallery Florence",
+    "baseKrw": 39000
+  },
+  {
+    "name": "피렌체 베키오 다리 & 아르노 강 (Ponte Vecchio)",
+    "region": "이탈리아",
+    "city": "이탈리아 피렌체",
+    "photo": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
+    "highlight": "1345년에 세워진 아르노강에서 가장 오래된 석조 다리. 다리 양편의 유서 깊은 금세공 보석상들과 상부의 비밀 통로 바사리 회랑",
+    "seniorAccess": "완벽한 평지 보행자 다리. 다리 중앙 테라스에서 아르노 강변을 감상하며 벤치에서 휴식하기 좋음",
+    "hours": "24시간 상시 개방",
+    "ticketTip": "관람 무료. 인근 산타 트리니타 다리에서 베키오 다리를 바라보는 일몰 뷰가 가장 아름다움",
+    "officialUrl": "https://www.feelflorence.it/en",
+    "mapQuery": "Ponte Vecchio Florence",
+    "baseKrw": 0
+  },
+  {
+    "name": "베네치아 두칼레 궁전 & 탄식의 다리 (Doge's Palace)",
+    "region": "이탈리아",
+    "city": "이탈리아 베네치아",
+    "photo": "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+    "highlight": "천년 베네치아 해상 공화국 총독의 궁전. 틴토레토의 거작 '천국'이 걸린 대평의원실과 죄수들이 건너던 대리석 탄식의 다리",
+    "seniorAccess": "궁전 안뜰 및 주요 회랑 엘리베이터 설비 완료. 산 마르코 광장 바포레토 정류장에서 도보 2분 평지 연결",
+    "hours": "매일 09:00~18:00",
+    "ticketTip": "산 마르코 광장 뮤지엄 패스 온라인 사전 예매로 긴 매표 대기줄 회피",
+    "officialUrl": "https://palazzoducale.visitmuve.it/en/",
+    "mapQuery": "Doge's Palace Venice",
+    "baseKrw": 42000
+  },
+  {
+    "name": "베네치아 무라노 & 부라노 섬 (Murano & Burano)",
+    "region": "이탈리아",
+    "city": "이탈리아 베네치아",
+    "photo": "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=800&q=80",
+    "highlight": "알록달록 파스텔톤 어촌 가옥과 레이스 공예의 부라노 섬, 천년 유리공예 명장들의 유리 불기 시연을 볼 수 있는 무라노 섬",
+    "seniorAccess": "바포레토(수상버스 12번) 탑승으로 편안한 수상 이동. 섬 내부는 돌다리 경사가 낮고 평지가 많아 사진 찍으며 천천히 걷기 좋음",
+    "hours": "상시 개방 (유리공방/상점 10:00~17:00)",
+    "ticketTip": "바포레토 24시간권(약 25유로) 구매 시 무제한 탑승 가능하여 가장 경제적",
+    "officialUrl": "https://www.veneziaunica.it/en",
+    "mapQuery": "Burano Island Venice",
+    "baseKrw": 0
+  },
+  {
+    "name": "밀라노 두오모 & 빅토리오 에마누엘레 2세 (Duomo di Milano)",
+    "region": "이탈리아",
+    "city": "이탈리아 밀라노",
+    "photo": "https://images.unsplash.com/photo-1513581166391-887a96ddeafd?auto=format&fit=crop&w=800&q=80",
+    "highlight": "135개의 뾰족한 첨탑과 3,400개의 조각상이 하늘을 찌르는 이탈리아 최대 고딕 대성당. 화려한 유리 돔 쇼핑 아케이드 갤러리아",
+    "seniorAccess": "두오모 테라스 옥상으로 직행하는 전용 엘리베이터(Fast-Track Lift) 완비. 옥상 보행로가 완만해 첨탑 숲을 눈앞에서 산책",
+    "hours": "매일 09:00~19:00",
+    "ticketTip": "엘리베이터 포함 두오모 패스(Duomo Pass Lift) 공식 온라인 예약 필수",
+    "officialUrl": "https://www.duomomilano.it/en/",
+    "mapQuery": "Duomo di Milano",
+    "baseKrw": 36000
+  },
+  {
+    "name": "피사 사탑 & 기적의 광장 (Piazza dei Miracoli)",
+    "region": "이탈리아",
+    "city": "이탈리아 피사",
+    "photo": "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+    "highlight": "푸른 잔디밭 위에 백색 대리석으로 빛나는 기적의 광장. 3.97도 기울어진 신비로운 8층 종탑 피사의 사탑과 웅장한 대성당",
+    "seniorAccess": "사탑 꼭대기(294계단) 등반은 어르신 무릎에 무리가 되므로, 푸른 잔디밭 평지에서 사탑을 손으로 받치는 유쾌한 가족 기념사진 촬영 강력 추천",
+    "hours": "매일 09:00~18:00 (동절기 기준)",
+    "ticketTip": "광장 잔디밭과 대성당 외관 감상 무료. 대성당 내부는 무료 티켓 발권 후 입장",
+    "officialUrl": "https://www.opapisa.it/en/",
+    "mapQuery": "Leaning Tower of Pisa",
+    "baseKrw": 0
+  },
+  {
+    "name": "아말피 해안 & 포지타노 (Amalfi Coast & Positano)",
+    "region": "이탈리아",
+    "city": "이탈리아 아말피",
+    "photo": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
+    "highlight": "내셔널 지오그래픽 선정 '죽기 전에 꼭 가봐야 할 낙원'. 깎아지른 절벽에 빼곡히 들어선 파스텔톤 집들과 레몬 향기 가득한 지중해 해안선",
+    "seniorAccess": "포지타노 골목 계단은 매우 가파르므로 차량 대신 살레르노나 소렌토에서 출발하는 '해상 페리'를 탑승해 바다 위에서 절경 조망 추천",
+    "hours": "24시간 상시 개방 (페리 운항 08:30~18:00)",
+    "ticketTip": "페리 티켓 현장 또는 온라인 사전 예매. 살레르노-아말피-포지타노 코스 추천",
+    "officialUrl": "https://www.amalficoast.com/",
+    "mapQuery": "Positano Amalfi Coast Italy",
+    "baseKrw": 22000
+  }
+];
+  const _NEW_LANDMARK_COORDS = {
+  "구엘 공원 (Park Güell)": [
+    41.4145,
+    2.1527
+  ],
+  "카사 바트요 (Casa Batlló)": [
+    41.3917,
+    2.1649
+  ],
+  "카사 밀라 (Casa Milà / La Pedrera)": [
+    41.3954,
+    2.1619
+  ],
+  "바르셀로나 고딕 지구 & 대성당 (Gothic Quarter)": [
+    41.3839,
+    2.1764
+  ],
+  "마드리드 왕궁 (Palacio Real de Madrid)": [
+    40.4179,
+    -3.7143
+  ],
+  "프라도 미술관 (Museo Nacional del Prado)": [
+    40.4138,
+    -3.6921
+  ],
+  "레티로 공원 & 수정궁 (El Retiro Park)": [
+    40.4153,
+    -3.6845
+  ],
+  "마드리드 마요르 광장 & 솔 광장 (Plaza Mayor & Sol)": [
+    40.4155,
+    -3.7074
+  ],
+  "세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)": [
+    37.3858,
+    -5.9931
+  ],
+  "세비야 알카사르 왕궁 (Real Alcázar de Sevilla)": [
+    37.3838,
+    -5.9902
+  ],
+  "세비야 스페인 광장 (Plaza de España)": [
+    37.3772,
+    -5.9869
+  ],
+  "코르도바 메스키타-대성당 (Mezquita-Catedral)": [
+    37.8789,
+    -4.7794
+  ],
+  "세고비아 로마 수도교 (Aqueduct of Segovia)": [
+    40.9481,
+    -4.1177
+  ],
+  "론다 누에보 다리 & 헤밍웨이 산책로 (Puente Nuevo)": [
+    36.7408,
+    -5.166
+  ],
+  "톨레도 대성당 & 알카사르 (Toledo Cathedral)": [
+    39.8571,
+    -4.0244
+  ],
+  "산티아고 데 콤포스텔라 대성당 (Santiago Cathedral)": [
+    42.8806,
+    -8.5446
+  ],
+  "상 조르즈 성 (Castelo de São Jorge)": [
+    38.7139,
+    -9.1334
+  ],
+  "산타 주스타 엘리베이터 & 카르무 수녀원 (Santa Justa Lift)": [
+    38.7121,
+    -9.1394
+  ],
+  "코메르시우 광장 & 아우구스타 개선문 (Praça do Comércio)": [
+    38.7075,
+    -9.1364
+  ],
+  "발견기념비 & 벨렝 해안 (Padrão dos Descobrimentos)": [
+    38.6936,
+    -9.2057
+  ],
+  "렐루 서점 (Livraria Lello)": [
+    41.1468,
+    -8.6148
+  ],
+  "클레리고스 탑 & 성당 (Torre dos Clérigos)": [
+    41.1458,
+    -8.6144
+  ],
+  "상 벤투 기차역 (São Bento Station)": [
+    41.1456,
+    -8.6103
+  ],
+  "빌라 노바 드 가이아 와인 카브 (Gaia Wine Lodges)": [
+    41.137,
+    -8.614
+  ],
+  "신트라 페나 국립 왕궁 (Palácio Nacional da Pena)": [
+    38.7876,
+    -9.3906
+  ],
+  "헤갈레이라 별장 (Quinta da Regaleira)": [
+    38.7963,
+    -9.396
+  ],
+  "호카 곶 (Cabo da Roca)": [
+    38.7804,
+    -9.4989
+  ],
+  "오비두스 중세 성곽 마을 (Óbidos)": [
+    39.3621,
+    -9.1573
+  ],
+  "폰타 다 피에다데 (Ponta da Piedade)": [
+    37.0805,
+    -8.6695
+  ],
+  "베나길 해식 동굴 (Benagil Cave)": [
+    37.0872,
+    -8.4238
+  ],
+  "몬테 팰리스 열대 정원 (Monte Palace Madeira)": [
+    32.6756,
+    -16.9025
+  ],
+  "카보 지랑 유리 스카이워크 (Cabo Girão)": [
+    32.6504,
+    -17.0044
+  ],
+  "개선문 & 샹젤리제 거리 (Arc de Triomphe)": [
+    48.8738,
+    2.295
+  ],
+  "생트샤펠 성당 (Sainte-Chapelle)": [
+    48.8554,
+    2.345
+  ],
+  "몽마르트르 사크레쾨르 대성당 (Sacré-Cœur)": [
+    48.8867,
+    2.3431
+  ],
+  "베르사유 궁전 & 거울의 방 (Château de Versailles)": [
+    48.8049,
+    2.1204
+  ],
+  "지베르니 모네의 집 & 수련 정원 (Fondation Claude Monet)": [
+    49.0753,
+    1.5337
+  ],
+  "몽생미셸 수도원 (Mont Saint-Michel)": [
+    48.636,
+    -1.5115
+  ],
+  "니스 프롬나드 데 장글레 (Promenade des Anglais)": [
+    43.6952,
+    7.2656
+  ],
+  "에즈 빌라쥐 & 열대 정원 (Èze Village)": [
+    43.7282,
+    7.3619
+  ],
+  "퐁 뒤 가르 (Pont du Gard)": [
+    43.9476,
+    4.535
+  ],
+  "로마 판테온 & 트레비 분수 (Pantheon & Trevi)": [
+    41.8986,
+    12.4769
+  ],
+  "포로 로마노 & 팔라티노 언덕 (Roman Forum)": [
+    41.8925,
+    12.4853
+  ],
+  "피렌체 우피치 미술관 (Gallerie degli Uffizi)": [
+    43.7678,
+    11.2553
+  ],
+  "피렌체 베키오 다리 & 아르노 강 (Ponte Vecchio)": [
+    43.768,
+    11.2532
+  ],
+  "베네치아 두칼레 궁전 & 탄식의 다리 (Doge's Palace)": [
+    45.4337,
+    12.3404
+  ],
+  "베네치아 무라노 & 부라노 섬 (Murano & Burano)": [
+    45.4854,
+    12.4167
+  ],
+  "밀라노 두오모 & 빅토리오 에마누엘레 2세 (Duomo di Milano)": [
+    45.4642,
+    9.1919
+  ],
+  "피사 사탑 & 기적의 광장 (Piazza dei Miracoli)": [
+    43.723,
+    10.3966
+  ],
+  "아말피 해안 & 포지타노 (Amalfi Coast & Positano)": [
+    40.6281,
+    14.485
+  ]
+};
+  const _ALL_NEW_LANDMARK_I18N = {
+  "구엘 공원 (Park Güell)": {
+    "displayName": {
+      "ko": "구엘 공원 (Park Güell)",
+      "ja": "グエル公園 (Park Güell)",
+      "en": "Park Güell",
+      "zh": "奎尔公园 (Park Güell)"
+    },
+    "badge": {
+      "ko": "스페인 바르셀로나",
+      "ja": "スペイン バルセロナ",
+      "en": "Spain Barcelona",
+      "zh": "西班牙 巴塞罗那"
+    },
+    "highlight": {
+      "ko": "가우디의 동화 같은 타일 모자이크 도마뱀과 돌기둥 회랑. 지중해와 바르셀로나 시내가 한눈에 펼쳐지는 파노라마",
+      "ja": "ガウディが手掛けた色鮮やかなモザイクタイルとトカゲの噴水。地中海とバルセロナ市街を一望できる幻想的なパノラマ庭園都市。",
+      "en": "Gaudí’s fairytale park featuring vibrant trencadís mosaic salamander, undulating benches, and sweeping panoramic Mediterranean vistas.",
+      "zh": "高迪倾心打造的童话马赛克变色龙喷泉与百柱大厅。俯瞰巴塞罗那城景与地中海全景的梦幻艺术公园。"
+    },
+    "seniorAccess": {
+      "ko": "언덕 지형이므로 지하철 대신 카탈루냐 광장에서 24번 버스 탑승 권장 (후문 평지 진입). 주요 모뉴먼트 구역은 평탄하게 정비됨",
+      "ja": "丘陵地帯のため地下鉄ではなくカタルーニャ広場から24番バスで後門（平坦ルート）からのアクセス推奨。記念碑エリアは整備され歩きやすいです。",
+      "en": "Hilly terrain; take Bus 24 directly from Plaça de Catalunya to the upper back gate for step-free flat entry into the monumental zone.",
+      "zh": "地势起伏，强烈建议从加泰罗尼亚广场乘坐24路公交直达后门平坦入口，免去陡峭爬坡。"
+    },
+    "hours": {
+      "ko": "매일 09:30~19:30 (계절별 상이)",
+      "ja": "毎日 09:30~19:30 (季節により変動)",
+      "en": "Daily 09:30~19:30 (Seasonal hours)",
+      "zh": "每日 09:30~19:30 (依季节微调)"
+    },
+    "ticketTip": {
+      "ko": "유네스코 보호 구역 타임슬롯 공식 사전 예매 필수. 모바일 티켓 QR 입장",
+      "ja": "保護区域の時間指定チケット事前予約必須。スマホQRコードでスムーズに入場。",
+      "en": "Timed-entry reservation strictly required online in advance; scan QR code directly at turnstiles.",
+      "zh": "保护核心区必须提前在官网预约分时段门票，出示手机二维码直接验票入园。"
+    }
+  },
+  "카사 바트요 (Casa Batlló)": {
+    "displayName": {
+      "ko": "카사 바트요 (Casa Batlló)",
+      "ja": "カサ・バトリョ (Casa Batlló)",
+      "en": "Casa Batlló",
+      "zh": "巴特罗之家 (Casa Batlló)"
+    },
+    "badge": {
+      "ko": "스페인 바르셀로나",
+      "ja": "スペイン バルセロナ",
+      "en": "Spain Barcelona",
+      "zh": "西班牙 巴塞罗那"
+    },
+    "highlight": {
+      "ko": "바다와 용의 전설을 형상화한 가우디의 환상적 건축. 물결치는 창문과 생생한 색채의 스테인드글라스",
+      "ja": "地中海の海とドラゴンの伝説をモチーフにしたガウディの最高傑作。波打つファサードと美しいステンドグラスの光彩空間。",
+      "en": "Gaudí’s fantastical modernist residence inspired by marine life and the legend of Saint George slaying the dragon, with organic curved balconies.",
+      "zh": "高迪以巨龙传说与海洋波澜为灵感铸造的奇幻建筑。波浪形窗框与斑斓彩绘玻璃交相辉映。"
+    },
+    "seniorAccess": {
+      "ko": "실내 최신 엘리베이터 완비로 거동 불편한 부모님도 옥상 용의 등뼈까지 편안하게 관람 가능. 무료 휠체어 대여 지원",
+      "ja": "館内に最新エレベーター完備。足腰に不安のあるご両親も屋上のドラゴンの背骨まで安心して見学できます。無料車椅子貸出あり。",
+      "en": "Modern interior elevator transports seniors effortlessly from the ground floor up to the dragon-back roof terrace. Free wheelchairs available.",
+      "zh": "全馆配备无障碍电梯，长辈可轻松直达龙脊屋顶露台。前台提供免费轮椅借用服务。"
+    },
+    "hours": {
+      "ko": "매일 09:00~20:00 (마지막 입장 19:15)",
+      "ja": "毎日 09:00~20:00 (最終入場 19:15)",
+      "en": "Daily 09:00~20:00 (Last entry 19:15)",
+      "zh": "每日 09:00~20:00 (最晚入场 19:15)"
+    },
+    "ticketTip": {
+      "ko": "증강현실(AR) 태블릿 가이드 포함 블루/골드 티켓 사전 예매 추천",
+      "ja": "AR拡張現実タブレットガイド付きのブルーまたはゴールドチケット事前予約推奨。",
+      "en": "Book Blue or Gold tickets online with immersive AR smart-guide tablet included.",
+      "zh": "建议提前在线购买含AR智能导览平板电脑的门票，现场感受动态还原。"
+    }
+  },
+  "카사 밀라 (Casa Milà / La Pedrera)": {
+    "displayName": {
+      "ko": "카사 밀라 (Casa Milà / La Pedrera)",
+      "ja": "カサ・ミラ (Casa Milà / La Pedrera)",
+      "en": "Casa Milà (La Pedrera)",
+      "zh": "米拉之家 (Casa Milà / La Pedrera)"
+    },
+    "badge": {
+      "ko": "스페인 바르셀로나",
+      "ja": "スペイン バルセロナ",
+      "en": "Spain Barcelona",
+      "zh": "西班牙 巴塞罗那"
+    },
+    "highlight": {
+      "ko": "'채석장(라 페드레라)'이라 불린 혁신적 곡선 건축. 투구를 쓴 전사 형상의 옥상 굴뚝과 독창적인 다락방 아치",
+      "ja": "「石切場」と呼ばれた波打つ石造ファサードと、甲冑の戦士を模した幻想的な屋上煙突群が特徴の世界遺産。",
+      "en": "Innovative UNESCO-listed stone quarry architecture featuring sweeping wave-like stone walls and sculptural warrior chimneys on the roof terrace.",
+      "zh": "俗称“采石场”的高迪代表作。波浪般连绵起伏的石灰石外墙与头盔武士造型的屋顶奇幻烟囱群。"
+    },
+    "seniorAccess": {
+      "ko": "어르신 우선 엘리베이터 탑승 지원. 옥상 일부 계단 제외하고 전 층 평탄화 완료되어 안전함",
+      "ja": "シニア優先エレベーターあり。屋上の一部ステップを除き、展示階・屋根裏は完全フラットで安全に見学できます。",
+      "en": "Priority elevators for seniors. Aside from a few steps on the contoured roof, interior exhibition levels are fully flat and accessible.",
+      "zh": "设有长辈优先直达电梯。除屋顶局部高低起伏台阶外，各楼层展厅全平缓无障碍。"
+    },
+    "hours": {
+      "ko": "매일 09:00~20:30 (야간 투어 별도 운영)",
+      "ja": "毎日 09:00~20:30 (夜間ツアー別途あり)",
+      "en": "Daily 09:00~20:30 (Night tour available)",
+      "zh": "每日 09:00~20:30 (夜游专场另设)"
+    },
+    "ticketTip": {
+      "ko": "오전 9시 첫 타임 사전 예약 시 인파 없이 고즈넉하게 관람 가능",
+      "ja": "朝一番の09:00枠を事前予約すると混雑を避けてゆったり鑑賞できます。",
+      "en": "Reserve the 09:00 early-morning time slot to enjoy tranquil, crowd-free photography.",
+      "zh": "建议提前预约早晨09:00首场入场，避开高峰人流，拍照游览从容清静。"
+    }
+  },
+  "바르셀로나 고딕 지구 & 대성당 (Gothic Quarter)": {
+    "displayName": {
+      "ko": "바르셀로나 고딕 지구 & 대성당 (Gothic Quarter)",
+      "ja": "ゴシック地区＆バルセロナ大聖堂 (Gothic Quarter)",
+      "en": "Gothic Quarter & Barcelona Cathedral",
+      "zh": "哥特区与巴塞罗那主教座堂 (Gothic Quarter)"
+    },
+    "badge": {
+      "ko": "스페인 바르셀로나",
+      "ja": "スペイン バルセロナ",
+      "en": "Spain Barcelona",
+      "zh": "西班牙 巴塞罗那"
+    },
+    "highlight": {
+      "ko": "로마 시대 성벽과 14세기 중세 고딕 골목의 신비로운 정취. 비스베 다리와 웅장한 바르셀로나 대성당",
+      "ja": "古代ローマの城壁と14世紀中世の石畳が残る情緒あふれる旧市街。ビズベ橋と壮麗なバルセロナ大聖堂。",
+      "en": "Atmospheric medieval heart of Barcelona with 14th-century gothic architecture, the ornate Bishop's Bridge, and the historic Santa Eulàlia Cathedral.",
+      "zh": "罗马古城墙与14世纪中世纪哥特街巷交织的历史核心区。叹息般的主教之桥与雄伟的大教堂。"
+    },
+    "seniorAccess": {
+      "ko": "보행자 전용 평지 골목 위주. 바닥 돌길이 있으므로 편안한 운동화 필수. 곳곳에 노천카페와 벤치 휴식 공간 풍부",
+      "ja": "歩行者天国の平坦な路地が中心。石畳のため歩きやすいスニーカー推奨。カフェやベンチが多く適宜休憩可能です。",
+      "en": "Flat pedestrian alleys throughout. Paved cobblestones require comfortable walking shoes; plenty of shaded plaza cafes for resting.",
+      "zh": "以平缓步行街为主。地面为复古石板路，建议穿着舒适运动鞋；广场周边露天咖啡座充足便于随歇随走。"
+    },
+    "hours": {
+      "ko": "대성당 평일 09:30~18:30 (광장 및 골목 상시 개방)",
+      "ja": "大聖堂 平日 09:30~18:30 (広場・路地は常時開放)",
+      "en": "Cathedral 09:30~18:30 (Quarter alleys open 24 hours)",
+      "zh": "大教堂 09:30~18:30 (街巷及广场全天开放)"
+    },
+    "ticketTip": {
+      "ko": "대성당 옥상 엘리베이터 관람 포함 티켓 현장 또는 온라인 예약 가능",
+      "ja": "大聖堂屋上エレベーター展望台付きチケットは公式オンライン購入推奨。",
+      "en": "Cathedral rooftop elevator tickets can be booked online for scenic historic center views.",
+      "zh": "大教堂屋顶观景电梯联票建议提前在线预订，登顶可纵览老城红顶。"
+    }
+  },
+  "마드리드 왕궁 (Palacio Real de Madrid)": {
+    "displayName": {
+      "ko": "마드리드 왕궁 (Palacio Real de Madrid)",
+      "ja": "マドリード王宮 (Palacio Real de Madrid)",
+      "en": "Royal Palace of Madrid",
+      "zh": "马德里王宫 (Palacio Real de Madrid)"
+    },
+    "badge": {
+      "ko": "스페인 마드리드",
+      "ja": "スペイン マドリード",
+      "en": "Spain Madrid",
+      "zh": "西班牙 马德里"
+    },
+    "highlight": {
+      "ko": "서유럽 최대 규모의 현역 왕실 궁전. 3,400개 방 중 왕좌의 방, 황실 연회장, 스트라디바리우스 현악 컬렉션의 찬란한 화려함",
+      "ja": "西欧最大級の現役王宮。豪華絢爛な玉座の間、大宴会場、ストラディバリウスの名器コレクションが圧巻。",
+      "en": "Largest active royal palace in Western Europe, featuring opulent Throne Room, grand gala banquet hall, and priceless Stradivarius royal strings.",
+      "zh": "西欧规模最大的现役王室宫殿。金碧辉煌的王座之室、豪华宴会厅与斯特拉迪瓦里皇家提琴稀世珍藏。"
+    },
+    "seniorAccess": {
+      "ko": "궁전 진입로 및 전 내부 전시관 100% 무장애 배리어프리. 어르신 전용 엘리베이터와 무료 휠체어 서비스 운영",
+      "ja": "宮殿敷地および館内は100%バリアフリー完備。シニア専用エレベーターや無料車椅子サービスが充実しています。",
+      "en": "100% barrier-free flat access throughout royal apartments. Dedicated elevators and complimentary wheelchair loans for seniors.",
+      "zh": "宫殿内外全程具备100%无障碍平缓通道。设有长辈专用直达电梯并提供免费轮椅借用服务。"
+    },
+    "hours": {
+      "ko": "월-토 10:00~18:00, 일 10:00~16:00 (동절기 기준)",
+      "ja": "月〜土 10:00~18:00, 日 10:00~16:00 (冬季スケジュール)",
+      "en": "Mon–Sat 10:00~18:00, Sun 10:00~16:00 (Winter hours)",
+      "zh": "周一至周六 10:00~18:00, 周日 10:00~16:00 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "공식 사이트 타임슬롯 티켓 필수. 줄 서지 않는 패스트트랙 적극 권장",
+      "ja": "公式サイトでの時間指定予約必須。並ばずに入場できるファストトラック推奨。",
+      "en": "Advance timed ticket booking essential on official website to skip ticket line.",
+      "zh": "必须在王室遗产官网提前预约分时段门票，免去排队长龙。"
+    }
+  },
+  "프라도 미술관 (Museo Nacional del Prado)": {
+    "displayName": {
+      "ko": "프라도 미술관 (Museo Nacional del Prado)",
+      "ja": "プラド美術館 (Museo Nacional del Prado)",
+      "en": "Prado National Museum",
+      "zh": "普拉多国家博物馆 (Museo Nacional del Prado)"
+    },
+    "badge": {
+      "ko": "스페인 마드리드",
+      "ja": "スペイン マドリード",
+      "en": "Spain Madrid",
+      "zh": "西班牙 马德里"
+    },
+    "highlight": {
+      "ko": "벨라스케스의 '시녀들(Las Meninas)', 고야의 '옷을 입은 마하', 엘 그레코의 걸작들이 모인 스페인 예술의 최고 정점",
+      "ja": "ベラスケスの『ラス・メニーナス』やゴヤ、エル・グレコなどスペイン絵画の最高傑作が揃う世界屈指の至宝美術館。",
+      "en": "World-class treasury of Spanish masters including Velázquez's 'Las Meninas', Goya's iconic masterworks, and masterpieces of El Greco and Titian.",
+      "zh": "汇聚委拉斯开兹《宫娥》、戈雅《裸体的玛哈》及格列柯巅峰杰作的世界级艺术圣殿。"
+    },
+    "seniorAccess": {
+      "ko": "넓은 평지 복도와 전관 엘리베이터 연결. 전시장 곳곳에 푹신한 소파 벤치 완비. 한국어 오디오 가이드 대여 가능",
+      "ja": "広々とした平坦通路とエレベーター完備。全館随所に座り心地の良い休憩ソファが設置されています。",
+      "en": "Wide step-free galleries connected by modern lifts. Generous upholstered rest benches placed throughout every hall.",
+      "zh": "展厅走廊宽敞平坦，各展区均设升降电梯。展室中央均配备舒适软垫休憩长椅。"
+    },
+    "hours": {
+      "ko": "월-토 10:00~20:00, 일·공휴일 10:00~19:00",
+      "ja": "月〜土 10:00~20:00, 日・祝 10:00~19:00",
+      "en": "Mon–Sat 10:00~20:00, Sun & Holidays 10:00~19:00",
+      "zh": "周一至周六 10:00~20:00, 周日及假日 10:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "사전 온라인 시간 예매 시 현장 1시간 대기줄 생략. 월-토 18:00~20:00 무료입장은 대기열이 길어 비추천",
+      "ja": "オンライン事前予約で現地の長い列を回避。夕方の無料入場枠は大行列のためシニアには事前購入がおすすめです。",
+      "en": "Pre-book timed tickets online to bypass the 1-hour ticket queue. Avoid crowded evening free-entry hours with parents.",
+      "zh": "提前在线预订分时段门票可免去现场长时间排队。傍晚免费入场时段排队长龙极为疲惫，建议避开。"
+    }
+  },
+  "레티로 공원 & 수정궁 (El Retiro Park)": {
+    "displayName": {
+      "ko": "레티로 공원 & 수정궁 (El Retiro Park)",
+      "ja": "レティーロ公園＆水晶宮 (El Retiro Park)",
+      "en": "El Retiro Park & Crystal Palace",
+      "zh": "丽池公园与水晶宫 (El Retiro Park)"
+    },
+    "badge": {
+      "ko": "스페인 마드리드",
+      "ja": "スペイン マドリード",
+      "en": "Spain Madrid",
+      "zh": "西班牙 马德里"
+    },
+    "highlight": {
+      "ko": "유네스코 세계유산 '빛의 풍경'에 빛나는 도심 속 거대 녹지. 호수 위 보트와 햇살을 반사하는 유리 건축물 수정궁(Palacio de Cristal)",
+      "ja": "世界遺産に登録されたマドリード中心部の緑豊かなオアシス。大池のボート遊びと光り輝くガラス建築の水晶宮。",
+      "en": "UNESCO World Heritage urban park oasis featuring the serene boating lake, lush rose gardens, and the radiant glass-and-iron Crystal Palace.",
+      "zh": "列入世界文化遗产的马德里市中心巨型绿色氧吧。游船泛舟的巨大人工湖与掩映在绿树中的通透玻璃水晶宫。"
+    },
+    "seniorAccess": {
+      "ko": "완만한 평지 흙길과 아스팔트 포장로. 그늘 벤치가 촘촘하며 공원 내 카페테리아에서 편안한 티타임 가능",
+      "ja": "平坦で歩きやすい舗装路と木陰のベンチが充実。園内のオープンカフェでゆったりお茶を楽しめます。",
+      "en": "Smooth, flat shaded avenues with ample park benches. Lakeside cafes provide relaxing rest stops for coffee and orange juice.",
+      "zh": "平坦开阔的林荫步道，沿途长椅密布。湖畔露天茶座非常适合长辈一边小憩一边呼吸清新空气。"
+    },
+    "hours": {
+      "ko": "동절기 06:00~22:00, 하절기 06:00~24:00",
+      "ja": "冬季 06:00~22:00, 夏季 06:00~24:00",
+      "en": "Winter 06:00~22:00, Summer 06:00~24:00",
+      "zh": "冬季 06:00~22:00, 夏季 06:00~24:00"
+    },
+    "ticketTip": {
+      "ko": "공원 및 수정궁 입장료 무료. 호수 노젓기 보트 현장 대여 약 6~8유로",
+      "ja": "公園および水晶宮の入場は無料。大池のボートは約6〜8ユーロで現地利用可能。",
+      "en": "Park grounds and Crystal Palace are free admission. Lake rowboats available for €6–€8.",
+      "zh": "公园及水晶宫全免费开放。大湖双人划船现场租借约6~8欧元。"
+    }
+  },
+  "마드리드 마요르 광장 & 솔 광장 (Plaza Mayor & Sol)": {
+    "displayName": {
+      "ko": "마드리드 마요르 광장 & 솔 광장 (Plaza Mayor & Sol)",
+      "ja": "マヨール広場＆プエルタ・デル・ソル (Plaza Mayor & Sol)",
+      "en": "Plaza Mayor & Puerta del Sol",
+      "zh": "马约尔广场与太阳门广场 (Plaza Mayor & Sol)"
+    },
+    "badge": {
+      "ko": "스페인 마드리드",
+      "ja": "スペイン マドリード",
+      "en": "Spain Madrid",
+      "zh": "西班牙 马德里"
+    },
+    "highlight": {
+      "ko": "붉은 벽돌 4층 회랑 건축과 펠리페 3세 기마상. 스페인 도로의 기점 킬로미터 제로(0km)와 곰과 딸기나무 동상",
+      "ja": "赤いレンガ造りの回廊に囲まれた歴史あるマヨール広場と、スペイン道路元標0km地点があるプエルタ・デル・ソル。",
+      "en": "Grand historic colonnaded central plaza surrounded by red-brick facades, paired with the bustling heart of Spain at Kilometer Zero.",
+      "zh": "由红砖四层拱廊建筑环抱的庄严马约尔广场，与地处西班牙公路零公里起点的太阳门广场。"
+    },
+    "seniorAccess": {
+      "ko": "완전한 보행자 전용 평지 광장. 회랑 아래 그늘진 카페 좌석에서 여유롭게 카푸치노나 샹그리아를 즐기기 최적",
+      "ja": "完全歩行者専用のフラットな広場。回廊下のカフェテラスで座って街の風情をゆっくり味わえます。",
+      "en": "Completely flat pedestrianized open plaza. Ample shaded terrace cafe chairs beneath the arches for relaxing over coffee.",
+      "zh": "完全平坦的步行广场。拱廊下设有众多遮阳咖啡露台座，极适宜静坐品尝咖啡与西班牙果酒。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방",
+      "ja": "24時間常時開放",
+      "en": "Open 24 hours daily",
+      "zh": "全天24小时开放"
+    },
+    "ticketTip": {
+      "ko": "입장료 무료. 마요르 광장 주변 오징어 튀김 샌드위치(Bocadillo de Calamares) 시식 필수 코스",
+      "ja": "入場無料。広場周辺の名物イカフライサンド（ボカディージョ）もおすすめの楽しみ方です。",
+      "en": "Free public plazas. Don't miss the local tradition of grabbing a crispy fried calamari sandwich nearby.",
+      "zh": "公共广场免费开放。广场周边小巷的招牌现炸鱿鱼三明治是当地经典打卡美味。"
+    }
+  },
+  "세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)": {
+    "displayName": {
+      "ko": "세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)",
+      "ja": "セビリア大聖堂＆ヒラルダの塔 (Catedral de Sevilla)",
+      "en": "Seville Cathedral & Giralda Tower",
+      "zh": "塞维利亚大教堂与希拉尔达塔 (Catedral de Sevilla)"
+    },
+    "badge": {
+      "ko": "스페인 세비야",
+      "ja": "スペイン セビリア",
+      "en": "Spain Seville",
+      "zh": "西班牙 塞维利亚"
+    },
+    "highlight": {
+      "ko": "세계에서 3번째로 큰 성당이자 최대 고딕 건축물. 콜럼버스의 관을 멘 4대 왕 조각상과 황금빛 목조 제단",
+      "ja": "世界最大級のゴシック大聖堂。コロンブスの遺骸を担ぐ4人の王の像と、眩い黄金の主祭壇レタブロ。",
+      "en": "The world's largest Gothic cathedral, housing the monumental tomb of Christopher Columbus and the breathtaking golden Main Altarpiece.",
+      "zh": "世界最大的哥特式主教座堂。四位国王雕像抬举的哥伦布灵柩与璀璨夺目的巨型纯金木雕主祭坛。"
+    },
+    "seniorAccess": {
+      "ko": "히랄다 탑 전망대는 계단이 아닌 나귀가 오르던 완만한 경사로(34구간)로 설계되어 어르신도 쉬어가며 등반 가능. 성당 본당은 완전 평지",
+      "ja": "ヒラルダの塔は階段ではなく騎馬用の緩やかなスロープ（34スロープ）設計で、休みながら登れます。大聖堂内は完全フラット。",
+      "en": "Giralda tower features 34 gentle inclined ramps instead of steps, allowing comfortable rest intervals. Cathedral interior is 100% flat.",
+      "zh": "希拉尔达塔采用当年马匹通行的34段平缓坡道而非台阶，长辈可沿途随时驻足喘息；教堂内部完全平坦。"
+    },
+    "hours": {
+      "ko": "월-토 10:45~17:00, 일 14:30~18:00",
+      "ja": "月〜土 10:45~17:00, 日 14:30~18:00",
+      "en": "Mon–Sat 10:45~17:00, Sun 14:30~18:00",
+      "zh": "周一至周六 10:45~17:00, 周日 14:30~18:00"
+    },
+    "ticketTip": {
+      "ko": "공식 사이트 시간 지정 예매 필수. 살바도르 성당 통합권 구매 시 더 여유로움",
+      "ja": "公式サイトでの事前時間指定予約必須。サルバドール教会との共通券購入も便利です。",
+      "en": "Official online timed reservation mandatory. Combined tickets with Church of El Salvador offer seamless entry.",
+      "zh": "必须在官网提前预订指定时段门票。购买包含救世主教堂的联票可有效分散排队压力。"
+    }
+  },
+  "세비야 알카사르 왕궁 (Real Alcázar de Sevilla)": {
+    "displayName": {
+      "ko": "세비야 알카사르 왕궁 (Real Alcázar de Sevilla)",
+      "ja": "セビリアのアルカサル宮殿 (Real Alcázar de Sevilla)",
+      "en": "Royal Alcázar of Seville",
+      "zh": "塞维利亚王宫 (Real Alcázar de Sevilla)"
+    },
+    "badge": {
+      "ko": "스페인 세비야",
+      "ja": "スペイン セビリア",
+      "en": "Spain Seville",
+      "zh": "西班牙 塞维利亚"
+    },
+    "highlight": {
+      "ko": "무데하르 양식의 진수 소녀들의 중정(Patio de las Doncellas)과 드라마 '왕좌의 게임' 도른 왕국의 배경이 된 환상적인 왕실 정원",
+      "ja": "ムデハル様式の極致である「乙女の中庭」と、ドラマ『ゲーム・オブ・スローンズ』の舞台となった壮麗な王宮庭園。",
+      "en": "Exquisite Mudéjar royal palace and gardens featured in Game of Thrones, featuring delicate plasterwork at Patio de las Doncellas and shaded courtyards.",
+      "zh": "穆德哈尔艺术巅峰之作少女中庭，以及美剧《权力的游戏》多恩流水花园拍摄地的华丽王宫花园与喷泉。"
+    },
+    "seniorAccess": {
+      "ko": "지상 1층 궁전과 파티오는 평지. 울창한 오렌지 나무 정원 곳곳에 분수와 벤치가 있어 부모님 산책 코스로 최고",
+      "ja": "1階宮殿と主要パティオは平坦。オレンジの木が茂る庭園各所に噴水とベンチがあり、散策に最適です。",
+      "en": "Ground-floor palace rooms and patios are step-free. The verdant orange-tree gardens feature plentiful shaded benches and fountains.",
+      "zh": "一层主要宫殿与内院均为平地。郁郁葱葱的柑橘树花园各处点缀着喷泉与长椅，漫步极为宜人惬意。"
+    },
+    "hours": {
+      "ko": "매일 09:30~17:00 (동절기 기준)",
+      "ja": "毎日 09:30~17:00 (冬季スケジュール)",
+      "en": "Daily 09:30~17:00 (Winter season)",
+      "zh": "每日 09:30~17:00 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "티켓 매진이 매우 빠르므로 최소 3~4주 전 공식 홈페이지 직접 예약 필수",
+      "ja": "売り切れが非常に早いため、最低3〜4週間前に公式ウェブサイトで直接事前予約必須。",
+      "en": "Sells out weeks in advance; strictly book official timed entry 3–4 weeks ahead.",
+      "zh": "门票极为抢手，务必提前3~4周在官网直接预订指定场次门票。"
+    }
+  },
+  "세비야 스페인 광장 (Plaza de España)": {
+    "displayName": {
+      "ko": "세비야 스페인 광장 (Plaza de España)",
+      "ja": "セビリア・スペイン広場 (Plaza de España)",
+      "en": "Plaza de España Seville",
+      "zh": "塞维利亚西班牙广场 (Plaza de España)"
+    },
+    "badge": {
+      "ko": "스페인 세비야",
+      "ja": "スペイン セビリア",
+      "en": "Spain Seville",
+      "zh": "西班牙 塞维利亚"
+    },
+    "highlight": {
+      "ko": "1929년 이베로-아메리카 박람회를 위해 건설된 반원형 대궁전. 스페인 48개 주를 묘사한 타일 벤치와 아치형 다리, 뱃놀이 운하",
+      "ja": "1929年万博のために建てられた壮大な半円形大広場。スペイン48県の歴史を描いたアズレージョベンチと優美な運河。",
+      "en": "Monumental semi-circular brick pavilion built for the 1929 Expo, adorned with 48 tiled provincial alcoves, ornate bridges, and rowing canal.",
+      "zh": "为1929年伊比利亚美洲博览会建造的半圆形巨型宫殿广场。绘有西班牙各省历史的彩绘瓷砖长椅与游船环形运河。"
+    },
+    "seniorAccess": {
+      "ko": "마리아 루이사 공원과 이어진 100% 완전 평지. 계단 없이 탁 트인 광장을 거닐 수 있으며 벤치가 매우 많음",
+      "ja": "マリア・ルイサ公園に隣接する100%完全平坦な広場。階段を使わずに広大な敷地をゆったり散歩できます。",
+      "en": "100% level ground directly adjoining Maria Luisa Park. Countless decorative tiled benches allow effortless resting at any moment.",
+      "zh": "连通玛丽亚路易莎公园的全平坦开阔广场。全程无台阶，瓷砖长椅极多，长辈随走随歇极为轻松。"
+    },
+    "hours": {
+      "ko": "매일 08:00~22:00",
+      "ja": "毎日 08:00~22:00",
+      "en": "Daily 08:00~22:00",
+      "zh": "每日 08:00~22:00"
+    },
+    "ticketTip": {
+      "ko": "입장료 무료. 해질녘 노을 골든아워 방문 강력 추천",
+      "ja": "入場無料。夕暮れの夕日に染まるゴールデンアワーの訪問が特におすすめです。",
+      "en": "Free public access. Visiting around golden hour sunset provides sublime lighting for family portraits.",
+      "zh": "免费对公众开放。强烈推荐在夕阳落日的黄金时刻前往，金色光芒洒在红砖建筑上美轮美奂。"
+    }
+  },
+  "코르도바 메스키타-대성당 (Mezquita-Catedral)": {
+    "displayName": {
+      "ko": "코르도바 메스키타-대성당 (Mezquita-Catedral)",
+      "ja": "コルドバのメスキータ大聖堂 (Mezquita-Catedral)",
+      "en": "Mosque-Cathedral of Córdoba (Mezquita)",
+      "zh": "科尔多瓦大清真寺主教座堂 (Mezquita-Catedral)"
+    },
+    "badge": {
+      "ko": "스페인 코르도바",
+      "ja": "スペイン コルドバ",
+      "en": "Spain Cordoba",
+      "zh": "西班牙 科尔多瓦"
+    },
+    "highlight": {
+      "ko": "856개의 붉은색과 흰색 설화석고 줄무늬 아치가 끝없이 이어지는 기둥의 숲. 이슬람 사원과 가톨릭 대성당이 공존하는 인류 건축의 기적",
+      "ja": "856本もの赤白ストライプの二重アーチが連なる柱の森。イスラム建築とキリスト教カテドラルが融合した奇跡のモスク大聖堂。",
+      "en": "Architectural wonder of the world featuring a hypnotic forest of 856 red-and-white striped bicolored arches, centered by a Renaissance cathedral.",
+      "zh": "由856根红白双色条纹石柱拱券交织而成的无垠柱林。伊斯兰清真寺与天主教大教堂融为一体的人类建筑奇迹。"
+    },
+    "seniorAccess": {
+      "ko": "사원 실내 전체가 문턱 없는 광활한 단층 평지로 어르신 보행 편의성 최고. 오렌지 정원(Patio de los Naranjos) 그늘 쉼터",
+      "ja": "寺院内は段差が一切ない広大な平坦なワンフロア構造。オレンジの中庭に木陰のベンチが多く歩行の負担が極めて少ないです。",
+      "en": "The entire interior is a vast, threshold-free, single-level expanse offering exceptional ease of walking for senior visitors.",
+      "zh": "寺内全域为无任何门槛台阶的单层平整地面，步履体验极佳。外围柑橘中庭树荫长椅充足。"
+    },
+    "hours": {
+      "ko": "월-토 10:00~19:00, 일 08:30~11:30 / 15:00~19:00",
+      "ja": "月〜土 10:00~19:00, 日 08:30~11:30 / 15:00~19:00",
+      "en": "Mon–Sat 10:00~19:00, Sun 08:30~11:30 / 15:00~19:00",
+      "zh": "周一至周六 10:00~19:00, 周日 08:30~11:30 / 15:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "공식 사이트에서 오디오 가이드 포함 시간 지정 티켓 사전 예매",
+      "ja": "公式サイトにてオーディオガイド付き時間指定チケットの事前購入推奨。",
+      "en": "Book timed-entry tickets with audio guide in advance via official website.",
+      "zh": "建议在官网提前预订包含语音导览器的指定时段电子门票。"
+    }
+  },
+  "세고비아 로마 수도교 (Aqueduct of Segovia)": {
+    "displayName": {
+      "ko": "세고비아 로마 수도교 (Aqueduct of Segovia)",
+      "ja": "セゴビアの古代ローマ水道橋 (Aqueduct of Segovia)",
+      "en": "Roman Aqueduct of Segovia",
+      "zh": "塞哥维亚罗马输水道 (Aqueduct of Segovia)"
+    },
+    "badge": {
+      "ko": "스페인 세고비아",
+      "ja": "スペイン セゴビア",
+      "en": "Spain Segovia",
+      "zh": "西班牙 塞哥维亚"
+    },
+    "highlight": {
+      "ko": "기원 1세기 시멘트나 모르타르 한 방울 없이 화강암 2만여 개를 오직 물리적 균형으로 쌓아 올린 28m 높이의 로마 토목 걸작",
+      "ja": "紀元1世紀建造、モルタルを一切使わず2万個以上の花崗岩を積み上げた高さ28mの古代ローマ土木工学の至宝。",
+      "en": "A 1st-century Roman engineering marvel standing 28m high, built with over 20,000 dry-stacked granite blocks without a drop of mortar.",
+      "zh": "建于公元1世纪、未使用一滴灰浆纯由2万余块花岗岩物理咬合叠砌而成的28米高古罗马土木工程巅峰杰作。"
+    },
+    "seniorAccess": {
+      "ko": "아소게호 광장(Plaza del Azoguejo) 평지에서 올려다보는 뷰가 가장 장관. 언덕 계단을 오르지 않아도 광장 벤치에서 완벽 조망",
+      "ja": "アソゲホ広場の平坦なベンチから見上げる景色が最も壮観。階段を登らずとも広場から完璧に鑑賞できます。",
+      "en": "Best viewed from the flat Plaza del Azoguejo below; seniors can appreciate the monumental arches comfortably from square benches.",
+      "zh": "阿索格霍广场平地长椅处仰望的视角最为震撼。完全无需攀爬陡峭石阶即可全览水道桥雄姿。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방",
+      "ja": "24時間常時開放",
+      "en": "Open 24 hours daily",
+      "zh": "全天24小时开放"
+    },
+    "ticketTip": {
+      "ko": "관람 무료. 광장 바로 앞 전설의 식당 '메손 데 칸디도'에서 새끼돼지 구이(Cochinillo)와 함께 동선 연계",
+      "ja": "観覧無料。広場前の老舗名店「メソン・デ・カンディド」の子豚の丸焼きランチとセットがおすすめです。",
+      "en": "Free to visit. Pair with a lunch of roast suckling pig (Cochinillo) at legendary Mesón de Cándido right beside the arches.",
+      "zh": "免费参观。推荐与水道桥脚下百年名店坎迪多烤乳猪(Cochinillo)无缝串联安排。"
+    }
+  },
+  "론다 누에보 다리 & 헤밍웨이 산책로 (Puente Nuevo)": {
+    "displayName": {
+      "ko": "론다 누에보 다리 & 헤밍웨이 산책로 (Puente Nuevo)",
+      "ja": "ロンダ・ヌエボ橋＆ヘミングウェイの散歩道 (Puente Nuevo)",
+      "en": "Puente Nuevo Bridge & Hemingway Walk Ronda",
+      "zh": "龙达新桥与海明威绝壁步道 (Puente Nuevo)"
+    },
+    "badge": {
+      "ko": "스페인 론다",
+      "ja": "スペイン ロンダ",
+      "en": "Spain Ronda",
+      "zh": "西班牙 龙达"
+    },
+    "highlight": {
+      "ko": "120m 깊이의 엘 타호(El Tajo) 협곡을 가로지르는 웅장한 18세기 석교. 헤밍웨이가 사랑한 파라도르 호텔 절벽 뷰",
+      "ja": "深さ120mのエル・タホ渓谷に架かる18世紀の壮大な石橋。ヘミングウェイが愛したパラドール展望テラスからの絶景。",
+      "en": "Dramatic 18th-century stone bridge spanning the 120m-deep El Tajo gorge, immortalized by Ernest Hemingway alongside the Parador clifftop terrace.",
+      "zh": "横跨120米深塔霍峡谷的18世纪壮丽石桥。海明威笔下挚爱的悬崖国营古堡酒店绝景与古朴小镇风情。"
+    },
+    "seniorAccess": {
+      "ko": "협곡 아래로 내려가는 트레킹은 가파르므로 지양하고, 다리 상부 평지 보도와 파라도르 옆 테라스 산책로에서 평온하게 조망",
+      "ja": "谷底への急な階段は避け、橋の上の平坦な歩道やパラドール横のテラス散歩道から安全に絶景を満喫するのが最適です。",
+      "en": "Avoid steep descents to the valley floor; admire breathtaking views safely and comfortably from the flat bridge walkway and Parador gardens.",
+      "zh": "峡谷底部的徒步山道非常陡峭，建议长辈留在桥面平缓人行道及国营酒店观景花园平台凭栏远眺。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방",
+      "ja": "24時間常時開放",
+      "en": "Open 24 hours daily",
+      "zh": "全天24小时开放"
+    },
+    "ticketTip": {
+      "ko": "다리 보행 및 전망대 무료. 다리 중앙 내부 전시실(소액 유료)은 계단이 있어 어르신 패스 권장",
+      "ja": "橋の歩行および展望台は無料。橋の中央展示室（有料）は狭い階段があるため無理せず外観を楽しむのがおすすめ。",
+      "en": "Bridge pedestrian crossing and viewpoints are free. Skip the cramped interior bridge museum stairs with elders.",
+      "zh": "桥面通行及各大观景台均免费。桥墩内部小展览室需下狭小阶梯，带长辈可直接跳过欣赏外部壮景。"
+    }
+  },
+  "톨레도 대성당 & 알카사르 (Toledo Cathedral)": {
+    "displayName": {
+      "ko": "톨레도 대성당 & 알카사르 (Toledo Cathedral)",
+      "ja": "トレド大聖堂＆アルカサル (Toledo Cathedral)",
+      "en": "Toledo Primate Cathedral & Alcázar",
+      "zh": "托莱多主教座堂与阿尔卡萨城堡 (Toledo Cathedral)"
+    },
+    "badge": {
+      "ko": "스페인 톨레도",
+      "ja": "スペイン トレド",
+      "en": "Spain Toledo",
+      "zh": "西班牙 托莱多"
+    },
+    "highlight": {
+      "ko": "스페인 가톨릭의 총본산. 화려한 황금 제단화와 엘 그레코의 성화들이 가득한 성구실, 빛이 쏟아지는 투명 채광창 '엘 트란스파렌테'",
+      "ja": "スペイン・カトリックの総本山。黄金に輝く巨大祭壇画、エル・グレコの名画が並ぶ聖具室、奇跡の採光窓トランスパレンテ。",
+      "en": "The Primate Cathedral of Spain, housing gold-leaf Gothic altarpieces, the famous El Greco sacristy gallery, and the baroque Transparente skylight.",
+      "zh": "西班牙天主教首席主教座堂。璀璨纯金祭坛浮雕、珍藏格列柯画作的圣器室与破顶而出的巴洛克透光天窗奇观。"
+    },
+    "seniorAccess": {
+      "ko": "톨레도 구시가지는 언덕이 많으나 조코도베르 광장에서 소코트렌(Zocotren 미니 관광열차) 탑승 시 편안하게 외곽 전망대까지 순환 관람",
+      "ja": "旧市街の坂道を歩く代わりに、ソコドベール広場発の観光ミニ列車（ソコトレン）に乗れば、座ったまま外郭展望台まで楽々周遊できます。",
+      "en": "Toledo's streets are steep; ride the Zocotren tourist road train from Plaza Zocodover to loop effortlessly around the scenic river overlooks.",
+      "zh": "托莱多老城多坡道，可在索科多维尔广场搭乘小火车(Zocotren)，平稳坐享环城全景观光。"
+    },
+    "hours": {
+      "ko": "월-토 10:00~18:30, 일 14:00~18:30",
+      "ja": "月〜土 10:00~18:30, 日 14:00~18:30",
+      "en": "Mon–Sat 10:00~18:30, Sun 14:00~18:30",
+      "zh": "周一至周六 10:00~18:30, 周日 14:00~18:30"
+    },
+    "ticketTip": {
+      "ko": "소코도베르 광장 인근 에스컬레이터를 이용해 구시가지 상부로 힘들이지 않고 진입",
+      "ja": "市街下からソコドベール広場へは無料の長い屋外エスカレーター（Recaredo）を利用すれば足腰の負担ゼロ。",
+      "en": "Take the city's public outdoor mechanical escalators up to the old town to eliminate uphill climbing completely.",
+      "zh": "城墙下设有直达旧城上方的免费大型室外自动扶梯，完全免去徒步攀爬山路。"
+    }
+  },
+  "산티아고 데 콤포스텔라 대성당 (Santiago Cathedral)": {
+    "displayName": {
+      "ko": "산티아고 데 콤포스텔라 대성당 (Santiago Cathedral)",
+      "ja": "サンティアゴ・デ・コンポステーラ大聖堂 (Santiago Cathedral)",
+      "en": "Santiago de Compostela Cathedral",
+      "zh": "圣地亚哥-德孔波斯特拉主教座堂 (Santiago Cathedral)"
+    },
+    "badge": {
+      "ko": "스페인 갈리시아",
+      "ja": "スペイン ガリシア",
+      "en": "Spain Galicia",
+      "zh": "西班牙 加利西亚"
+    },
+    "highlight": {
+      "ko": "카미노 데 산티아고 800km 순례길의 종착역. 야고보 성인의 석관과 거대한 은제 향로를 공중으로 날리는 '보타푸메이로(Botafumeiro)' 의식",
+      "ja": "800kmにおよぶサンティアゴ巡礼路の終着点。聖ヤコブの棺と、堂内をダイナミックに舞う巨大な振り香炉ボタフメイロの儀式。",
+      "en": "The historic culmination of the Camino de Santiago pilgrimage route, enshrining Saint James's relics and the spectacular swinging giant Botafumeiro thurible.",
+      "zh": "千禧朝圣之路终点。圣雅各使徒长眠之所，以及壮观无比在大堂上空飞掠荡动的巨型银香炉(Botafumeiro)神圣仪式。"
+    },
+    "seniorAccess": {
+      "ko": "오브라도이로 광장은 넓고 평탄함. 대성당 내부 박물관 엘리베이터 설비 완료. 순례자 미사 시 좌석 선점 필수",
+      "ja": "オブラドイロ広場は広くフラット。聖堂博物館にはエレベーターが完備されています。ミサの際は早めに席を確保してください。",
+      "en": "Plaza del Obradoiro is broad and level. Museum portions have modern elevators; arrive early to secure seating for the Pilgrim Mass.",
+      "zh": "大教堂前的奥夫拉多伊罗广场平坦宽阔。博物馆内部配有无障碍电梯，朝圣者弥撒建议提前入席就坐。"
+    },
+    "hours": {
+      "ko": "매일 07:00~21:00",
+      "ja": "毎日 07:00~21:00",
+      "en": "Daily 07:00~21:00",
+      "zh": "每日 07:00~21:00"
+    },
+    "ticketTip": {
+      "ko": "대성당 본당 입장 무료. 지붕 테라스 및 박물관 통합 티켓 온라인 사전 예약",
+      "ja": "大聖堂本堂の参拝は無料。屋上展望テラスおよび博物館はオンライン事前予約制です。",
+      "en": "Cathedral basilica entry is free. Rooftop panoramic tour and museum can be pre-booked online.",
+      "zh": "大教堂主殿免费对公众开放。屋顶全景露台与博物馆部分建议在官网提前订票。"
+    }
+  },
+  "상 조르즈 성 (Castelo de São Jorge)": {
+    "displayName": {
+      "ko": "상 조르즈 성 (Castelo de São Jorge)",
+      "ja": "サン・ジョルジェ城 (Castelo de São Jorge)",
+      "en": "São Jorge Castle",
+      "zh": "圣乔治城堡 (Castelo de São Jorge)"
+    },
+    "badge": {
+      "ko": "포르투갈 리스본",
+      "ja": "ポルトガル リスボン",
+      "en": "Portugal Lisbon",
+      "zh": "葡萄牙 里斯本"
+    },
+    "highlight": {
+      "ko": "알파마 언덕 최고봉에 우뚝 솟은 천년 무어인 요새. 리스본의 주황색 지붕 바다와 테조강, 4월 25일 다리를 내려다보는 최고의 파노라마",
+      "ja": "アルファマの丘の頂上にそびえるムーア人の古城。リスボンのオレンジ屋根の街並みとテージョ川を見渡す絶景パノラマ。",
+      "en": "Historic 11th-century Moorish hilltop citadel offering Lisbon's most breathtaking 360-degree panoramic vista over terracotta roofs and the Tagus.",
+      "zh": "高耸于阿尔法玛山顶的千年摩尔人城堡。俯瞰里斯本连绵橙红屋顶、特茹河与4月25日大桥的无双全景视野。"
+    },
+    "seniorAccess": {
+      "ko": "언덕 경사가 심하므로 트램 대신 택시/우버로 성 정문 바로 앞까지 이동 필수. 성 안 성벽 안뜰은 고목 그늘과 평지 벤치 완비",
+      "ja": "坂道が急なためトラムではなくタクシーやUberで城の正門前まで直行が鉄則。城内の中庭は木陰とベンチが豊富で平坦です。",
+      "en": "The hills are steep; take a taxi or Uber straight to the main ticket gate. Inside, pine-shaded courtyards offer abundant level resting benches.",
+      "zh": "山坡陡峭，强烈建议乘坐出租车或Uber直达正门售票处。城内松荫庭院平整宽阔，长椅充沛便于休憩。"
+    },
+    "hours": {
+      "ko": "매일 09:00~18:00 (동절기 기준)",
+      "ja": "毎日 09:00~18:00 (冬季スケジュール)",
+      "en": "Daily 09:00~18:00 (Winter season)",
+      "zh": "每日 09:00~18:00 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "공식 사이트 모바일 티켓 구매 시 매표소 긴 대기줄 없이 바로 바코드 스캔 입장",
+      "ja": "公式サイトでモバイルチケットを事前購入すれば、長蛇の窓口列をスキップして直接入場可能。",
+      "en": "Buy mobile e-tickets on the official website to bypass the ticketing queue at the entrance gate.",
+      "zh": "建议在官网提前购买电子门票，直接扫描手机二维码入园免去排队买票。"
+    }
+  },
+  "산타 주스타 엘리베이터 & 카르무 수녀원 (Santa Justa Lift)": {
+    "displayName": {
+      "ko": "산타 주스타 엘리베이터 & 카르무 수녀원 (Santa Justa Lift)",
+      "ja": "サンタ・ジュスタのリフト＆カルモ修道院 (Santa Justa Lift)",
+      "en": "Santa Justa Lift & Carmo Convent",
+      "zh": "圣胡斯塔升降机与卡尔莫修道院 (Santa Justa Lift)"
+    },
+    "badge": {
+      "ko": "포르투갈 리스본",
+      "ja": "ポルトガル リスボン",
+      "en": "Portugal Lisbon",
+      "zh": "葡萄牙 里斯本"
+    },
+    "highlight": {
+      "ko": "에펠의 제자 라울 메스니에르가 설계한 45m 높이의 네오고딕 철골 리프트. 바이샤 지구와 고지대 시아두를 잇는 리스본의 상징",
+      "ja": "エッフェルの弟子が手掛けた高さ45mのネオゴシック鉄骨リフト。下町バイシャと高台シアードを繋ぐリスボンのランドマーク。",
+      "en": "45m wrought-iron neo-Gothic elevator engineered by Raoul Mesnier de Ponsard, connecting Baixa lower streets with elevated Bairro Alto and Carmo ruins.",
+      "zh": "埃菲尔弟子设计的45米高新哥特铸铁电梯。连通低地庞巴尔下城与高地希亚多区，里斯本标志性工业艺术奇迹。"
+    },
+    "seniorAccess": {
+      "ko": "목재 클래식 캐빈 내부 좌석 마련. 상부 전망대 좁은 나선계단은 패스하고 카르무 수녀원 광장 평지 보도로 바로 연결되어 편리",
+      "ja": "クラシックな木製客室内には座席あり。最上階の狭い螺旋階段は無理せず、カルモ広場への平坦な歩道橋ルートへ直行が快適。",
+      "en": "Seated historic wooden cabins. Skip the tiny spiral stair crown and proceed directly across the flat footbridge into tranquil Carmo Square.",
+      "zh": "古董木制轿厢内配有实木长椅。可直接通过平缓天桥漫步至卡尔莫修道院广场，避开顶层逼仄旋转小梯。"
+    },
+    "hours": {
+      "ko": "매일 07:00~22:45",
+      "ja": "毎日 07:00~22:45",
+      "en": "Daily 07:00~22:45",
+      "zh": "每日 07:00~22:45"
+    },
+    "ticketTip": {
+      "ko": "리스보아 카드(Lisboa Card) 또는 비바 비아젱 24시간권 소지 시 무료 탑승",
+      "ja": "リスボアカードまたは交通24時間乗り放題チケット（Viva Viagem）所持で無料乗車可能。",
+      "en": "Included free with the 24-hour Carris transit pass or Lisboa Card.",
+      "zh": "持里斯本城市卡或交通24小时通票(Viva Viagem)可免费乘坐。"
+    }
+  },
+  "코메르시우 광장 & 아우구스타 개선문 (Praça do Comércio)": {
+    "displayName": {
+      "ko": "코메르시우 광장 & 아우구스타 개선문 (Praça do Comércio)",
+      "ja": "コメルシオ広場＆アウグスタ通り凱旋門 (Praça do Comércio)",
+      "en": "Praça do Comércio & Augusta Arch",
+      "zh": "商业广场与奥古斯塔凯旋门 (Praça do Comércio)"
+    },
+    "badge": {
+      "ko": "포르투갈 리스본",
+      "ja": "ポルトガル リスボン",
+      "en": "Portugal Lisbon",
+      "zh": "葡萄牙 里斯本"
+    },
+    "highlight": {
+      "ko": "테조강의 시원한 바람이 불어오는 노란색 대회랑 광장. 대지진 후 재건된 개선문과 주제 1세 기마상, 황금빛 일몰",
+      "ja": "テージョ川の爽やかな風が吹き抜ける黄色の巨大回廊広場。1755年大震災後に再建された凱旋門と黄金色の夕日。",
+      "en": "Grand yellow arcade plaza opening right onto the sparkling Tagus River, featuring King José I equestrian statue and triumphal arch.",
+      "zh": "面朝壮阔特茹河水面的明黄回廊宏伟广场。1755年大地震后重建的雄伟凯旋门与若泽一世骑马雕像。"
+    },
+    "seniorAccess": {
+      "ko": "계단과 턱이 전혀 없는 100% 완전 평지 광장. 회랑 아래 노천카페와 벤치가 많아 어르신 쉼터로 최고",
+      "ja": "段差や階段が一切ない100%完全フラットな広場。回廊下のオープンカフェやベンチが多く休憩に最適です。",
+      "en": "100% flat cobblestone-paved open riverfront esplanade with zero steps. Abundant arcade terrace cafes for relaxing.",
+      "zh": "全程毫无台阶起伏的100%全平坦河滨广阔空间。拱廊下露天咖啡馆与江风长椅是极佳的歇息点。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방",
+      "ja": "24時間常時開放",
+      "en": "Open 24 hours daily",
+      "zh": "全天24小时开放"
+    },
+    "ticketTip": {
+      "ko": "광장 산책 무료. 아우구스타 개선문 꼭대기 전망대 엘리베이터 탑승 약 3.5유로",
+      "ja": "広場の散策は無料。凱旋門最上階の展望台エレベーターは約3.5ユーロ。",
+      "en": "Square is free to stroll. Arch rooftop viewpoint elevator ticket is approx. €3.50.",
+      "zh": "广场全天免费漫步。登临奥古斯塔凯旋门顶层观景电梯票价约3.5欧元。"
+    }
+  },
+  "발견기념비 & 벨렝 해안 (Padrão dos Descobrimentos)": {
+    "displayName": {
+      "ko": "발견기념비 & 벨렝 해안 (Padrão dos Descobrimentos)",
+      "ja": "発見のモニュメント＆ベレン海岸 (Padrão dos Descobrimentos)",
+      "en": "Monument to the Discoveries (Padrão dos Descobrimentos)",
+      "zh": "发现者纪念碑与贝伦海岸 (Padrão dos Descobrimentos)"
+    },
+    "badge": {
+      "ko": "포르투갈 리스본",
+      "ja": "ポルトガル リスボン",
+      "en": "Portugal Lisbon",
+      "zh": "葡萄牙 里斯本"
+    },
+    "highlight": {
+      "ko": "카라벨선 뱃머리 형상의 거대 기념비. 엔히크 항해왕자와 바스코 다 가마의 조각상, 바닥의 나침반 모자이크 세계지도",
+      "ja": "大航海時代のキャラベル船を象った巨大記念碑。エンリケ航海王子らの群像と、足元の世界地図モザイク広場。",
+      "en": "Monumental ship-prow sculpture honoring Henry the Navigator and Age of Discovery explorers, flanked by a massive marble world map compass rose.",
+      "zh": "扬帆起航卡拉维尔帆船造型的雄伟纪念碑。恩里克航海王子引航的大航海先驱群雕与广场地面巨幅罗盘世界地图。"
+    },
+    "seniorAccess": {
+      "ko": "벨렝 해변 산책로는 완전 평지 포장도로. 제로니무스 수도원에서 도보 5분 거리 지하도(경사로) 완비",
+      "ja": "ベレンの海沿い遊歩道は完全な平坦舗装。ジェロニモス修道院からはスロープ付き地下道で安全にアクセスできます。",
+      "en": "Completely flat paved riverwalk promenade. Gentle ramp pedestrian underpass links directly from Jerónimos Monastery.",
+      "zh": "贝伦沿河滨海步道全程平整平坦。与热罗尼莫斯修道院之间设有坡道无障碍地下通道相连。"
+    },
+    "hours": {
+      "ko": "매일 10:00~19:00",
+      "ja": "毎日 10:00~19:00",
+      "en": "Daily 10:00~19:00",
+      "zh": "每日 10:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "외관 및 바닥 나침도 관람 무료. 내부 전망대 엘리베이터 유료 탑승 가능",
+      "ja": "外観と足元の世界地図の鑑賞は無料。内部展望台エレベーターは有料で利用可能。",
+      "en": "Exterior monument and giant marble compass rose are free to visit. Rooftop lift available for €10.",
+      "zh": "外部群雕与广场巨型大理石风向罗盘世界地图全免费参观。登顶观景电梯可按需购票。"
+    }
+  },
+  "렐루 서점 (Livraria Lello)": {
+    "displayName": {
+      "ko": "렐루 서점 (Livraria Lello)",
+      "ja": "レロ書店 (Livraria Lello)",
+      "en": "Livraria Lello Bookshop",
+      "zh": "莱罗书店 (Livraria Lello)"
+    },
+    "badge": {
+      "ko": "포르투갈 포르투",
+      "ja": "ポルトガル ポルト",
+      "en": "Portugal Porto",
+      "zh": "葡萄牙 波尔图"
+    },
+    "highlight": {
+      "ko": "'세상에서 가장 아름다운 서점'. 조앤 롤링이 해리포터 마법 서점의 영감을 얻었다고 전해지는 붉은 나선형 곡선 계단과 스테인드글라스 천장",
+      "ja": "「世界で最も美しい書店」。ハリー・ポッターの世界に着想を与えたとされる真紅の曲線木製階段とステンドグラス天井。",
+      "en": "Celebrated as one of the world's most beautiful bookstores, famed for its sweeping crimson-red wooden bifurcated staircase and stained-glass ceiling.",
+      "zh": "享有“世界最美书店”美誉的百年殿堂。相传启发《哈利·波特》霍格沃茨魔法书店的赤红弧形双旋木梯与彩绘天窗。"
+    },
+    "seniorAccess": {
+      "ko": "실내가 다소 붐비므로 아침 첫 타임 예약 필수. 1층 평지 서가에서 웅장한 목조 계단과 천장을 편안히 올려다볼 수 있음",
+      "ja": "日中は混雑するため朝一番枠の予約が必須。1階の平坦フロアから中央階段と天井を見上げるだけでも十分に楽しめます。",
+      "en": "Book the very first morning slot (09:00) to avoid crowds. The ground floor offers full step-free views of the famous staircase and ceiling.",
+      "zh": "日常客流密集，务必预约早晨09:00首场入场。一层平坦地面即可全景仰望壮丽双旋木梯与艺术穹顶。"
+    },
+    "hours": {
+      "ko": "매일 09:00~19:00",
+      "ja": "毎日 09:00~19:00",
+      "en": "Daily 09:00~19:00",
+      "zh": "每日 09:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "공식 사이트에서 도서 구매 시 바우처 할인되는 실버/골드 티켓 사전 예약 필수 (현장 구매 불가)",
+      "ja": "書籍購入時に割引となる事前バウチャーチケットを公式サイトで購入必須（現地当日券販売なし）。",
+      "en": "Strictly pre-book online ticket-vouchers (Silver/Gold); ticket cost is deductible against book purchases.",
+      "zh": "必须提前在官网购买电子兑换券门票（现场不设售票处），购书时可直接抵扣等额现金。"
+    }
+  },
+  "클레리고스 탑 & 성당 (Torre dos Clérigos)": {
+    "displayName": {
+      "ko": "클레리고스 탑 & 성당 (Torre dos Clérigos)",
+      "ja": "クレリゴスの塔＆教会 (Torre dos Clérigos)",
+      "en": "Clérigos Tower & Church",
+      "zh": "教士塔与圣殿 (Torre dos Clérigos)"
+    },
+    "badge": {
+      "ko": "포르투갈 포르투",
+      "ja": "ポルトガル ポルト",
+      "en": "Portugal Porto",
+      "zh": "葡萄牙 波尔图"
+    },
+    "highlight": {
+      "ko": "포르투 시내 어디서나 보이는 75m 높이의 바로크 양식 종탑. 니콜라우 나소니가 설계한 포르투의 상징적 랜드마크",
+      "ja": "ポルトの街の象徴である高さ75mのバロック様式鐘楼。建築家ナッソーニ設計による美しい教会建築。",
+      "en": "Porto's defining 75m baroque granite bell tower designed by Nicolau Nasoni, visible from across the city, paired with the oval baroque church.",
+      "zh": "波尔图全城可见的75米高巴洛克花岗岩钟楼与椭圆形圣殿。建筑大师纳索尼留给波尔图的天际线地标。"
+    },
+    "seniorAccess": {
+      "ko": "탑 등반(225계단)은 어르신 무릎 보호를 위해 생략하고, 1층 바로크 성당 내부(평지)와 바로 옆 올리브 정원 벤치 휴식 추천",
+      "ja": "225段の急な塔登りは無理せず、1階の平坦なバロック教会内部と隣接するオリーブ公園のベンチで優雅に鑑賞推奨。",
+      "en": "Skip the 225 narrow spiral steps with elders; enjoy the flat ground-floor baroque church interior and adjacent olive garden plaza.",
+      "zh": "为保护长辈膝关节建议免登225级窄梯；一层巴洛克圣殿内部平整华贵，紧邻橄榄树花园长椅极宜小憩。"
+    },
+    "hours": {
+      "ko": "매일 09:00~19:00",
+      "ja": "毎日 09:00~19:00",
+      "en": "Daily 09:00~19:00",
+      "zh": "每日 09:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "성당 본당은 무료. 클레리고스 박물관 및 탑 전망대는 온라인 사전 예매",
+      "ja": "教会本堂の参拝は無料。博物館および塔展望台はオンライン事前予約推奨。",
+      "en": "The church sanctuary is free. Museum and tower climb can be booked online.",
+      "zh": "大堂圣殿免费开放。教士博物馆与塔顶全景门票支持官网预订。"
+    }
+  },
+  "상 벤투 기차역 (São Bento Station)": {
+    "displayName": {
+      "ko": "상 벤투 기차역 (São Bento Station)",
+      "ja": "サン・ベント駅 (São Bento Station)",
+      "en": "São Bento Railway Station",
+      "zh": "圣本笃火车站 (São Bento Station)"
+    },
+    "badge": {
+      "ko": "포르투갈 포르투",
+      "ja": "ポルトガル ポルト",
+      "en": "Portugal Porto",
+      "zh": "葡萄牙 波尔图"
+    },
+    "highlight": {
+      "ko": "화가 조르즈 콜라수가 11년에 걸쳐 완성한 2만 장의 블루 아줄레주(Azulejo) 타일 대작. 포르투갈 역사 속 전투와 교통의 역사",
+      "ja": "画家ジョルジェ・コラソが11年を費やした2万枚の青いアズレージョ大壁画。ポルトガル史の英雄譚と伝統風俗を描いた芸術駅舎。",
+      "en": "One of the world's most glorious transit stations, adorned with 20,000 blue-and-white azulejo tiles depicting monumental Portuguese historical battles.",
+      "zh": "耗时11年纯手工绘制的2万片巨幅蓝白阿兹勒赫瓷砖壁画。生动再现葡萄牙历史战役与杜罗河谷风土民情的艺术车站。"
+    },
+    "seniorAccess": {
+      "ko": "현재 운행 중인 기차역 대합실로 완전 평지. 문턱 없이 휠체어나 노약자도 편안하게 거대한 벽화 감상 가능",
+      "ja": "現在も使用される鉄道駅のコンコースで完全平坦。車椅子やシニアも段差なしで自由に巨大壁画を鑑賞できます。",
+      "en": "Fully functional flat public train hall with zero steps. Completely step-free and effortless to admire at your own pace.",
+      "zh": "现役火车站平地大厅，完全平整无障碍无门槛，长辈与轮椅出行均可从容仰望巨幅瓷砖史诗。"
+    },
+    "hours": {
+      "ko": "매일 05:00~01:00 (기차 운행 시간)",
+      "ja": "毎日 05:00~01:00 (鉄道運行時間)",
+      "en": "Daily 05:00~01:00 (Train station operating hours)",
+      "zh": "每日 05:00~01:00 (车站列车运营全时段)"
+    },
+    "ticketTip": {
+      "ko": "관람 무료. 낮 시간대 자연광이 들어올 때 아줄레주 색채가 가장 아름다움",
+      "ja": "見学無料。日中の自然光が差し込む時間帯が最も青いタイルの色彩が映えます。",
+      "en": "Free public access. Visit during midday daylight when sunlight illuminates the blue tiles brilliantly.",
+      "zh": "全免费自由参观。建议在白昼自然光线透过天窗洒落时分拍摄，釉色蓝白尤为通透。"
+    }
+  },
+  "빌라 노바 드 가이아 와인 카브 (Gaia Wine Lodges)": {
+    "displayName": {
+      "ko": "빌라 노바 드 가이아 와인 카브 (Gaia Wine Lodges)",
+      "ja": "ヴィラ・ノヴァ・デ・ガイア ポートワインセラー (Gaia Wine Lodges)",
+      "en": "Vila Nova de Gaia Port Wine Lodges",
+      "zh": "加亚新城波特酒酒窖群 (Gaia Wine Lodges)"
+    },
+    "badge": {
+      "ko": "포르투갈 포르투",
+      "ja": "ポルトガル ポルト",
+      "en": "Portugal Porto",
+      "zh": "葡萄牙 波尔图"
+    },
+    "highlight": {
+      "ko": "도루강 상류에서 운반된 포트 와인이 숙성되는 유서 깊은 와이너리 거리(테일러, 샌드맨, 그레이엄 등). 오크통 향기와 강변 뷰",
+      "ja": "ドウロ川を挟んだ対岸に広がる伝統ポートワイン蔵群（テイラーズ、サンデマン等）。オーク樽の芳醇な香りと川沿い散策路。",
+      "en": "Centuries-old riverside wine lodges (Taylor's, Sandeman, Graham's) aging sweet fortified Port wine in giant oak casks overlooking the Douro River.",
+      "zh": "杜罗河南岸传承数世纪的著名波特酒庄集群（泰勒、桑德曼、葛兰姆等）。橡木桶沉香与开阔杜罗河岸旖旎风光。"
+    },
+    "seniorAccess": {
+      "ko": "가이아 강변 보행로는 100% 완전 평지. 상층부 이동 시 가이아 케이블카 탑승으로 계단 완전 회피",
+      "ja": "ガイア川沿いの遊歩道は完全フラット。上層ワイナリーへの移動はガイア・ケーブルカー利用で坂道ゼロ。",
+      "en": "The Gaia riverfront promenade is completely flat. Use the Gaia Cable Car (Teleférico) to reach high hill lodges without stairs.",
+      "zh": "加亚河滨步道全长完全平坦。前往高处酒庄可直接搭乘加亚观光缆车，彻底免除坡道阶梯。"
+    },
+    "hours": {
+      "ko": "와이너리별 10:00~18:30",
+      "ja": "ワイナリーにより異なる 10:00~18:30",
+      "en": "Lodges vary 10:00~18:30",
+      "zh": "各大酒庄通常为 10:00~18:30"
+    },
+    "ticketTip": {
+      "ko": "테일러(Taylor's) 정원 오디오 가이드 시음 투어 또는 샌드맨 사전 온라인 예약 추천",
+      "ja": "テイラーズ庭園付きセラーツアーやサンデマンの事前オンライン予約推奨。",
+      "en": "Pre-book cellar tasting tours at Taylor's or Sandeman online in advance.",
+      "zh": "推荐提前在泰勒(Taylor's)或桑德曼官网预约含花园品鉴的中文语音导览酒窖游览。"
+    }
+  },
+  "신트라 페나 국립 왕궁 (Palácio Nacional da Pena)": {
+    "displayName": {
+      "ko": "신트라 페나 국립 왕궁 (Palácio Nacional da Pena)",
+      "ja": "シントラ・ペーナ宮殿 (Palácio Nacional da Pena)",
+      "en": "Pena National Palace Sintra",
+      "zh": "佩纳宫 (Palácio Nacional da Pena)"
+    },
+    "badge": {
+      "ko": "포르투갈 신트라",
+      "ja": "ポルトガル シントラ",
+      "en": "Portugal Sintra",
+      "zh": "葡萄牙 辛特拉"
+    },
+    "highlight": {
+      "ko": "노랑, 빨강, 보라색이 어우러진 동화 속 낭만주의 궁전. 신트라 산 정상에서 대서양과 리스본까지 조망하는 환상적인 뷰",
+      "ja": "黄色と赤の鮮やかな色彩が童話の世界を思わせる19世紀ロマン主義宮殿。シントラ山頂から大西洋まで見渡す大パノラマ。",
+      "en": "Fairy-tale Romanticist crown atop Sintra mountain, blending vivid yellow and red towers, Manueline carvings, and vistas stretching to the ocean.",
+      "zh": "高居辛特拉山巅的19世纪浪漫主义童话城堡。明黄与赤红塔楼交织，俯瞰大西洋海平线与森林仙境。"
+    },
+    "seniorAccess": {
+      "ko": "정문 매표소에서 궁전 입구까지 매우 가파르므로 '왕궁 정원 셔틀버스(왕복 3유로)' 필수 탑승. 궁전 테라스는 완만함",
+      "ja": "入口ゲートから宮殿玄関までは急坂のため「園内シャトルバス（往復3ユーロ）」乗車必須。テラス自体は緩やかです。",
+      "en": "The hill from park entrance to palace is very steep; taking the €3 internal transfer shuttle bus is essential for senior parents.",
+      "zh": "公园大门至宫殿入口坡度极大，强烈建议为长辈购买往返3欧元的景区内部接驳车；露台内部较为平缓。"
+    },
+    "hours": {
+      "ko": "매일 09:30~18:30 (정원 09:00~19:00)",
+      "ja": "毎日 09:30~18:30 (庭園 09:00~19:00)",
+      "en": "Daily 09:30~18:30 (Park 09:00~19:00)",
+      "zh": "每日 09:30~18:30 (花园 09:00~19:00)"
+    },
+    "ticketTip": {
+      "ko": "방문 시간 지정 엄격. 공식 Parques de Sintra 사이트에서 최소 2주 전 사전 예매 필수",
+      "ja": "時間指定が厳格です。公式Parques de Sintraサイトで最低2週間前に事前購入必須。",
+      "en": "Strict timed entry slots enforced; reserve on the official Parques de Sintra portal 2 weeks ahead.",
+      "zh": "分时段入场规定严格，务必提前至少2周在Parques de Sintra官网预订门票。"
+    }
+  },
+  "헤갈레이라 별장 (Quinta da Regaleira)": {
+    "displayName": {
+      "ko": "헤갈레이라 별장 (Quinta da Regaleira)",
+      "ja": "キンタ・ダ・レガレイラ別荘 (Quinta da Regaleira)",
+      "en": "Quinta da Regaleira Estate",
+      "zh": "雷加莱拉庄园 (Quinta da Regaleira)"
+    },
+    "badge": {
+      "ko": "포르투갈 신트라",
+      "ja": "ポルトガル シントラ",
+      "en": "Portugal Sintra",
+      "zh": "葡萄牙 辛特拉"
+    },
+    "highlight": {
+      "ko": "연금술과 프리메이슨의 신비주의가 깃든 마법의 저택. 27m 지하로 내려가는 나선형 '개시의 우물(Poço Iniciático)'과 폭포 동굴",
+      "ja": "錬金術やフリーメイソンの象徴が散りばめられた神秘の庭園。地下27mへ螺旋状に潜る「イニシエーションの井戸」と洞窟回廊。",
+      "en": "Mystical neo-Manueline estate filled with Masonic symbolism, subterranean grottos, and the legendary 27-meter spiral Initiation Well.",
+      "zh": "深蕴炼金术与共济会神秘哲学的庄园。直通地下27米的逆十字旋转“启蒙之井”与隐藏地下洞穴水上栈道。"
+    },
+    "seniorAccess": {
+      "ko": "우물 계단 하강은 미끄러울 수 있으므로 부모님은 상부 난간에서 내려다보시고, 본관 저택(엘리베이터 완비)과 평지 정원 위주 관람",
+      "ja": "井戸の螺旋階段は滑りやすいためシニアは上部手すりから見下ろし、エレベーター完備の本館宮殿と平坦庭園中心の鑑賞が安全。",
+      "en": "The well spiral stairs are humid and steep; seniors should admire from the safe top balcony, then tour the elevator-equipped palace.",
+      "zh": "启蒙之井旋转石梯潮湿易滑，建议长辈在井口护栏处俯瞰全景，重点参观配备电梯的主楼宫殿与平地喷泉花园。"
+    },
+    "hours": {
+      "ko": "매일 10:00~18:30",
+      "ja": "毎日 10:00~18:30",
+      "en": "Daily 10:00~18:30",
+      "zh": "每日 10:00~18:30"
+    },
+    "ticketTip": {
+      "ko": "신트라 역에서 우버나 435번 버스 탑승. 온라인 티켓 사전 구매 시 매표 대기 생략",
+      "ja": "シントラ駅からUberまたは435番バス乗車。オンラインチケット事前購入で窓口列をスキップ。",
+      "en": "Take Uber or Bus 435 from Sintra station; book e-tickets online to bypass ticket booths.",
+      "zh": "从辛特拉火车站乘坐Uber或435路公交可直达正门，在线购票可免去购票排队。"
+    }
+  },
+  "호카 곶 (Cabo da Roca)": {
+    "displayName": {
+      "ko": "호카 곶 (Cabo da Roca)",
+      "ja": "ロカ岬 (Cabo da Roca)",
+      "en": "Cabo da Roca (Cape Roca)",
+      "zh": "罗卡角 (Cabo da Roca)"
+    },
+    "badge": {
+      "ko": "포르투갈 호카곶",
+      "ja": "ポルトガル ロカ岬",
+      "en": "Portugal Cabo da Roca",
+      "zh": "葡萄牙 罗卡角"
+    },
+    "highlight": {
+      "ko": "유라시아 대륙의 최서단. 카몽이스의 시구 '여기서 땅이 끝나고 바다가 시작된다'가 새겨진 십자가 기념비와 140m 절벽 등대",
+      "ja": "ユーラシア大陸最西端。「ここに地終わり海始まる」と刻まれた十字架碑と、140mの断崖に立つ白亜の灯台。",
+      "en": "The westernmost point of continental Europe, crowned by the stone monument engraved with Camões' line: 'Where the land ends and the sea begins'.",
+      "zh": "欧亚大陆的最西端尽头。镌刻着卡蒙斯诗句“陆止于此，海始于斯”的十字架石碑与高耸海岬悬崖灯塔。"
+    },
+    "seniorAccess": {
+      "ko": "주차장과 버스 정류장에서 십자가 기념비까지 평탄한 흙길/데크길 2~3분 도보. 바람이 강하므로 바람막이 외투 필수",
+      "ja": "駐車場から十字架碑までは平坦な遊歩道で徒歩2〜3分。海風が非常に強いためウィンドブレーカー等の上着必須。",
+      "en": "Gentle flat paved trail from the bus stop and car park to the monument (2–3 mins). Winds are strong; bring a windbreaker jacket.",
+      "zh": "停车场至十字架纪念碑全程为平缓木栈道及平路，步行仅需2~3分钟。海风强劲，务必为长辈携带防风外套。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방 (인포메이션 센터 09:00~18:30)",
+      "ja": "24時間常時開放 (観光案内所 09:00~18:30)",
+      "en": "Open 24 hours daily (Visitor center 09:00~18:30)",
+      "zh": "全天24小时开放 (游客中心 09:00~18:30)"
+    },
+    "ticketTip": {
+      "ko": "입장 무료. 관광안내소에서 유럽 최서단 방문 인증서 유료 발급 가능",
+      "ja": "入場無料。観光案内所にてヨーロッパ最西端到達証明書を発行可能（有料）。",
+      "en": "Free public access. Optional personalized certificate of arrival available at the tourist office.",
+      "zh": "免费参观。游客服务中心可付费申领印有个人姓名的欧亚大陆最西端到达证书。"
+    }
+  },
+  "오비두스 중세 성곽 마을 (Óbidos)": {
+    "displayName": {
+      "ko": "오비두스 중세 성곽 마을 (Óbidos)",
+      "ja": "オビドス中世城郭の街 (Óbidos)",
+      "en": "Óbidos Medieval Walled Town",
+      "zh": "奥比都斯中世纪古堡小镇 (Óbidos)"
+    },
+    "badge": {
+      "ko": "포르투갈 오비두스",
+      "ja": "ポルトガル オビドス",
+      "en": "Portugal Obidos",
+      "zh": "葡萄牙 奥比都斯"
+    },
+    "highlight": {
+      "ko": "왕비에게 바친 하얀 성곽 마을. 부겐빌레아 꽃이 만발한 골목과 초콜릿 잔에 담아 마시는 전통 체리주 '진지냐(Ginjinha)'",
+      "ja": "「谷間の真珠」と称された白壁と花々の中世城郭都市。チョコカップで飲む名物チェリー酒ジンジーニャ。",
+      "en": "Fairytale fortified medieval town gifted to Portuguese queens, laced with bougainvillea-covered whitewashed cottages and sour cherry Ginjinha in chocolate cups.",
+      "zh": "国王赠予王后的童话白墙中世纪古堡小镇。繁花盛开的窄巷与盛在黑巧克力小杯中的经典樱桃甜酒(Ginjinha)。"
+    },
+    "seniorAccess": {
+      "ko": "성벽 윗길은 난간이 없어 위험하므로 성벽 아래 중앙 메인 스트리트(Rua Direita, 완만한 평지) 산책 강력 추천",
+      "ja": "城壁の上は手すりがなく危険なため、城壁下のメインストリート（ディレイタ通り、平坦）を散策するのが絶対安全。",
+      "en": "Ramparts lack safety guardrails; seniors should stroll the picturesque flat cobblestone main street (Rua Direita) safely.",
+      "zh": "古城墙上方无安全护栏较为危险，强烈推荐长辈在城墙下方平缓的中央主街(Rua Direita)悠闲漫步赏景。"
+    },
+    "hours": {
+      "ko": "마을 상시 개방 (상점가 10:00~19:00)",
+      "ja": "街は常時開放 (商店 10:00~19:00)",
+      "en": "Town accessible 24 hours (Shops 10:00~19:00)",
+      "zh": "小镇全天开放 (商铺集市 10:00~19:00)"
+    },
+    "ticketTip": {
+      "ko": "마을 입장 무료. 리스본 캄푸 그란드 역에서 직행 고속버스(Rede Expressos)로 1시간 소요",
+      "ja": "入場無料。リスボンのカンポ・グランデ駅から高速直行バスで約1時間。",
+      "en": "Free admission. Direct express bus (Rodoviária do Oeste) departs from Lisbon Campo Grande (1 hr).",
+      "zh": "小镇免费开放。从里斯本大田站(Campo Grande)乘坐直达大巴仅需约1小时。"
+    }
+  },
+  "폰타 다 피에다데 (Ponta da Piedade)": {
+    "displayName": {
+      "ko": "폰타 다 피에다데 (Ponta da Piedade)",
+      "ja": "ポンタ・ダ・ピエダーデ岬 (Ponta da Piedade)",
+      "en": "Ponta da Piedade Headland",
+      "zh": "佩达德角石灰岩海蚀崖 (Ponta da Piedade)"
+    },
+    "badge": {
+      "ko": "포르투갈 라구스",
+      "ja": "ポルトガル ラゴス",
+      "en": "Portugal Lagos",
+      "zh": "葡萄牙 拉各斯"
+    },
+    "highlight": {
+      "ko": "수천만 년 파도가 깎아 만든 황금빛 석회암 기암괴석과 바다 아치. 코발트블루 지중해 바다가 어우러진 알가르베의 최고 절경",
+      "ja": "波が削り出した黄金色の石灰岩奇岩群と天然アーチ。エメラルドグリーンの大西洋が織りなすアルガルヴェ屈指の絶景岬。",
+      "en": "Breathtaking coastline of golden karst sea pillars, sea arches, and turquoise grottos sculpted by the Atlantic over millennia.",
+      "zh": "经千万年海浪雕琢而成的金黄喀斯特石灰岩海蚀天生拱桥与海蚀石柱，与翡翠碧海交织的阿尔加维绝景。"
+    },
+    "seniorAccess": {
+      "ko": "절벽 위를 따라 최근 조성된 '무장애 목재 데크 산책로(Boardwalk)' 완비. 계단 내려갈 필요 없이 휠체어/어르신도 편안하게 관람",
+      "ja": "断崖の上に整備されたバリアフリー木製デッキ遊歩道完備。急な階段を降りずとも、車椅子やシニアも安全にパノラマ絶景を堪能可能。",
+      "en": "Newly built barrier-free wooden boardwalk runs along the clifftops, giving seniors spectacular views without descending steep steps.",
+      "zh": "悬崖上方近年新建全平缓无障碍木栈道(Boardwalk)。长辈无需走下陡峭崖壁台阶即可平稳纵览壮阔海景。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방 (일몰 시간 강력 추천)",
+      "ja": "24時間常時開放 (日没時間帯が特に推奨)",
+      "en": "Open 24 hours daily (Sunset strongly recommended)",
+      "zh": "全天24小时开放 (强烈推荐日落时分前往)"
+    },
+    "ticketTip": {
+      "ko": "데크 산책로 무료. 라구스 항구에서 출발하는 소형 보트 동굴 투어(약 20~25유로)도 좌석 착석형으로 추천",
+      "ja": "遊歩道散策は無料。ラゴス港から出航する着席型の小型洞窟クルーズ（約20〜25ユーロ）もおすすめ。",
+      "en": "Boardwalk is free. Seated small-boat cave tours departing from Lagos marina (€20–€25) offer an effortless ocean-level perspective.",
+      "zh": "栈道全免费开放。亦可在拉各斯码头乘坐舒适坐席小型游船（约20~25欧元）穿梭于岩洞之间。"
+    }
+  },
+  "베나길 해식 동굴 (Benagil Cave)": {
+    "displayName": {
+      "ko": "베나길 해식 동굴 (Benagil Cave)",
+      "ja": "ベナギル洞窟 (Benagil Cave)",
+      "en": "Benagil Sea Cave",
+      "zh": "贝纳吉尔海蚀洞穴 (Benagil Cave)"
+    },
+    "badge": {
+      "ko": "포르투갈 알가르베",
+      "ja": "ポルトガル アルガルヴェ",
+      "en": "Portugal Algarve",
+      "zh": "葡萄牙 阿尔加维"
+    },
+    "highlight": {
+      "ko": "천장에 뚫린 원형 구멍 '알가르(Algar)'로 황금빛 햇살이 쏟아져 내리는 세계에서 가장 신비로운 천연 바다 돔 사원",
+      "ja": "ドーム状の天井にぽっかり空いた「天窓」から陽光が降り注ぐ、世界屈指の神秘的な天然海食洞窟。",
+      "en": "World-famous sea cathedral dome illuminated by golden sunbeams pouring through a circular ceiling skylight (Algar) over secluded sand.",
+      "zh": "穹顶天然圆形“天窗”倾泻万道金光的奇迹海蚀穹窿大教堂，世界最神秘海滨自然胜景。"
+    },
+    "seniorAccess": {
+      "ko": "카약이나 수영 대신 포르티망/알부페이라 항구에서 출발하는 대형 카타마란 모터보트 투어 탑승 시 흔들림 없이 편안히 내부 관람",
+      "ja": "カヤックや水泳ではなく、近隣港発の大型カタマランボートツアーに乗れば、揺れも少なく快適に着席して洞窟内を見学できます。",
+      "en": "Avoid kayaks or swimming; board stable motorboat or catamaran cruises from Portimão/Albufeira for smooth, seated interior sightseeing.",
+      "zh": "带长辈切勿尝试皮划艇或游泳，推荐在邻近港口选乘平稳舒适的双体巡航动力游船平稳入洞饱览。"
+    },
+    "hours": {
+      "ko": "보트 투어 09:00~18:00 (바다 기상 상황에 따름)",
+      "ja": "ボートツアー 09:00~18:00 (海況により変動)",
+      "en": "Boat tours 09:00~18:00 (Weather and swell dependent)",
+      "zh": "游船班次 09:00~18:00 (视海上风浪与潮汐而定)"
+    },
+    "ticketTip": {
+      "ko": "파도가 높으면 동굴 진입이 통제되므로 날씨가 화창한 오전에 공식 크루즈 예약",
+      "ja": "波が高い日は洞窟進入が制限されるため、天候が穏やかな午前中のクルーズ予約推奨。",
+      "en": "Rough swells prevent entry; book a morning cruise departure when ocean waters are typically calmest.",
+      "zh": "风浪较大时海事局会关闭洞口，建议优先预订风平浪静的晴朗上午航次。"
+    }
+  },
+  "몬테 팰리스 열대 정원 (Monte Palace Madeira)": {
+    "displayName": {
+      "ko": "몬테 팰리스 열대 정원 (Monte Palace Madeira)",
+      "ja": "モンテ・パレス熱帯庭園 (Monte Palace Madeira)",
+      "en": "Monte Palace Tropical Garden Madeira",
+      "zh": "蒙特宫热带花园 (Monte Palace Madeira)"
+    },
+    "badge": {
+      "ko": "포르투갈 풍샬",
+      "ja": "ポルトガル フンシャル",
+      "en": "Portugal Funchal",
+      "zh": "葡萄牙 丰沙尔"
+    },
+    "highlight": {
+      "ko": "풍샬 항구를 굽어보는 산 정상의 공중 낙원. 전 세계 희귀 식물, 비단잉어가 노니는 동양 정원, 포르투갈 최고 아줄레주 타일 컬렉션",
+      "ja": "フンシャルの海を見下ろす山頂の空中庭園。世界各国の希少植物、錦鯉が泳ぐ東洋庭園、ポルトガル屈指のアズレージョ名品集。",
+      "en": "Hilltop botanical paradise overlooking Funchal bay, housing 100,000 exotic plants, Japanese koi ponds, and an invaluable museum tile collection.",
+      "zh": "俯瞰丰沙尔海港的山巅空中伊甸园。荟萃全球稀世植物、游弋锦鲤的东方禅意园林与葡萄牙顶级阿兹勒赫瓷砖珍藏。"
+    },
+    "seniorAccess": {
+      "ko": "풍샬 해변에서 몬테 케이블카(Teleférico do Funchal) 탑승해 정문 도착. 정원 내부 전기 골프카트 셔틀 서비스 이용 가능",
+      "ja": "海岸からフンシャル・ロープウェイに乗れば山頂の正門に直着。園内にはシニア向けの有料電動カート移動サービスもあります。",
+      "en": "Ride the scenic Funchal Cable Car straight from the seafront to the entrance gate. Electric golf-cart shuttles available within gardens.",
+      "zh": "从丰沙尔海滨乘坐观光缆车直抵正门。园内为长辈配备收费电动观光高尔夫球车接驳服务。"
+    },
+    "hours": {
+      "ko": "매일 09:30~18:00",
+      "ja": "毎日 09:30~18:00",
+      "en": "Daily 09:30~18:00",
+      "zh": "每日 09:30~18:00"
+    },
+    "ticketTip": {
+      "ko": "케이블카 왕복 + 정원 입장 통합권 구매 권장",
+      "ja": "ロープウェイ往復と庭園入場がセットになった共通券購入が便利。",
+      "en": "Purchase the bundled combo pass covering both Cable Car return ride and garden entry.",
+      "zh": "建议购买包含往返缆车与花园门票的优惠联票。"
+    }
+  },
+  "카보 지랑 유리 스카이워크 (Cabo Girão)": {
+    "displayName": {
+      "ko": "카보 지랑 유리 스카이워크 (Cabo Girão)",
+      "ja": "カボ・ジラン ガラス展望台 (Cabo Girão Skywalk)",
+      "en": "Cabo Girão Cliff Skywalk",
+      "zh": "吉朗角悬崖玻璃观景台 (Cabo Girão)"
+    },
+    "badge": {
+      "ko": "포르투갈 마데이라",
+      "ja": "ポルトガル マデイラ",
+      "en": "Portugal Madeira",
+      "zh": "葡萄牙 马德拉"
+    },
+    "highlight": {
+      "ko": "유럽에서 가장 높고 세계에서 두 번째로 높은 580m 수직 해안 절벽. 발아래 대서양 파도가 아찔하게 내려다보이는 투명 유리 전망대",
+      "ja": "ヨーロッパで最も高く世界第2位の580m垂直海食崖。足下に大西洋の白波が広がる透明ガラス張りのスカイウォーク。",
+      "en": "Europe's highest ocean cliff (580m above sea level) featuring a suspended transparent glass-bottom skywalk jutting out into open sky.",
+      "zh": "欧洲最高、世界第二高的580米垂直临海悬崖。伸出绝壁凌空俯瞰蔚蓝大西洋惊涛骇浪的透明玻璃步道。"
+    },
+    "seniorAccess": {
+      "ko": "주차장에서 스카이워크 플랫폼까지 100% 완전 평지 연결. 계단 없이 노약자도 안전 난간과 함께 관람 가능",
+      "ja": "駐車場から展望台プラットフォームまで100%完全フラット。段差がなく頑丈な手すり付きでシニアも安全に鑑賞できます。",
+      "en": "Completely flat level walkway connecting the parking lot directly to the glass platform with sturdy safety handrails throughout.",
+      "zh": "停车场至玻璃观景平台全程100%全平坦路面连接。全程无台阶且配有坚固护栏，长辈游览安稳舒心。"
+    },
+    "hours": {
+      "ko": "매일 09:00~19:00",
+      "ja": "毎日 09:00~19:00",
+      "en": "Daily 09:00~19:00",
+      "zh": "每日 09:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "입장료 약 2유로(카드 결제 전용). 날씨가 맑은 정오~오후 시간대 추천",
+      "ja": "入場料約2ユーロ（クレジットカード専用）。視界が良好な正午〜午後の訪問がおすすめ。",
+      "en": "Admission approx. €2 (Credit card only). Visit around clear midday or afternoon for optimal visibility.",
+      "zh": "门票约2欧元（仅限刷卡）。推荐在万里无云的中午至午后时段前往以获最佳通透视野。"
+    }
+  },
+  "개선문 & 샹젤리제 거리 (Arc de Triomphe)": {
+    "displayName": {
+      "ko": "개선문 & 샹젤리제 거리 (Arc de Triomphe)",
+      "ja": "エトワール凱旋門＆シャンゼリゼ通り (Arc de Triomphe)",
+      "en": "Arc de Triomphe & Champs-Élysées",
+      "zh": "巴黎凯旋门与香榭丽舍大街 (Arc de Triomphe)"
+    },
+    "badge": {
+      "ko": "프랑스 파리",
+      "ja": "フランス パリ",
+      "en": "France Paris",
+      "zh": "法国 巴黎"
+    },
+    "highlight": {
+      "ko": "나폴레옹의 승전을 기리는 로마식 웅장한 개선문과 12개 방사형 대로. 샹젤리제 거리 끝에서 바라보는 파리의 심장부",
+      "ja": "ナポレオンの軍事的栄光を称える荘厳な凱旋門と、12本の放射状大通り。シャンゼリゼ通りの先端に立つパリの象徴。",
+      "en": "Napoléon's monumental triumphal arch anchoring twelve grand radiating avenues, crowning the world-famous Champs-Élysées boulevard.",
+      "zh": "纪念拿破仑奥斯特里茨战功的宏伟凯旋门与12条放射状林荫大道。巴黎香榭丽舍大街尽头的辉煌地标。"
+    },
+    "seniorAccess": {
+      "ko": "지하도로 진입 시 계단 대신 휠체어/시니어 전용 엘리베이터 호출 가능. 옥상 전망대까지 직통 엘리베이터 완비",
+      "ja": "地下通路の階段を使わずシニア・車椅子用リフトの利用が可能。屋上展望台へも直通エレベーターが完備されています。",
+      "en": "Ground-level accessibility lift provides step-free passage through the underpass, and an interior elevator ascends directly to the terrace.",
+      "zh": "地下通道入口配备长辈与无障碍专用升降梯，登顶观景台亦设有直达内部电梯。"
+    },
+    "hours": {
+      "ko": "매일 10:00~22:30 (계절별 상이)",
+      "ja": "毎日 10:00~22:30 (季節により変動)",
+      "en": "Daily 10:00~22:30 (Seasonal variation)",
+      "zh": "每日 10:00~22:30 (依季节微调)"
+    },
+    "ticketTip": {
+      "ko": "뮤지엄 패스 사용 가능. 일몰 30분 전 입장 예약 시 파리 주경과 에펠탑 조명쇼를 동시에 감상",
+      "ja": "パリ・ミュージアムパス利用可能。日没30分前の予約で昼景とエッフェル塔のシャンパンフラッシュを両方満喫。",
+      "en": "Museum Pass accepted. Reserve 30 minutes before dusk to experience daytime vistas transforming into the glittering Eiffel Tower light show.",
+      "zh": "适用巴黎博物馆通票。预约在日落前30分钟登顶，可同时饱览白昼全景与埃菲尔铁塔整点闪烁灯光秀。"
+    }
+  },
+  "생트샤펠 성당 (Sainte-Chapelle)": {
+    "displayName": {
+      "ko": "생트샤펠 성당 (Sainte-Chapelle)",
+      "ja": "サント・シャペル教会 (Sainte-Chapelle)",
+      "en": "Sainte-Chapelle Royal Chapel",
+      "zh": "圣礼拜堂 (Sainte-Chapelle)"
+    },
+    "badge": {
+      "ko": "프랑스 파리",
+      "ja": "フランス パリ",
+      "en": "France Paris",
+      "zh": "法国 巴黎"
+    },
+    "highlight": {
+      "ko": "13세기 루이 9세가 성유물을 보관하기 위해 지은 고딕의 보석함. 15m 높이의 벽면 전체를 감싼 1,113개 장면의 환상적인 스테인드글라스",
+      "ja": "13世紀ルイ9世が建立したゴシック建築の最高峰。高さ15mの壁面を覆い尽くす1,113場面のステンドグラスの光の宝石箱。",
+      "en": "13th-century Gothic jewel built by King Saint Louis to house Christ's Crown of Thorns, enveloped by 15m stained-glass depicting 1,113 biblical scenes.",
+      "zh": "13世纪法国国王路易九世为安放荆棘冠而建的哥特式璀璨宝盒。高15米、绘有1113幅圣经图景的摄人心魄巨幅彩绘玻璃天幕。"
+    },
+    "seniorAccess": {
+      "ko": "1층에서 2층 상부 예배당으로 오르는 시니어 전용 엘리베이터 운영. 입장 시 안내 직원에게 요청",
+      "ja": "1階からメインの2階礼拝堂へ上がるシニア優先エレベーターあり。入場時に係員に声をかけて利用できます。",
+      "en": "An accessible elevator connects the ground floor to the breathtaking upper chapel; simply request assistance from staff upon entry.",
+      "zh": "一层通往二层主圣殿设有长辈优先专用电梯，入场时向工作人员出示说明即可使用。"
+    },
+    "hours": {
+      "ko": "매일 09:00~17:00 (동절기 기준)",
+      "ja": "毎日 09:00~17:00 (冬季スケジュール)",
+      "en": "Daily 09:00~17:00 (Winter season)",
+      "zh": "每日 09:00~17:00 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "사전 타임슬롯 예약 필수. 시테 섬 콩시에르주리와 통합권 구매 추천",
+      "ja": "公式時間指定予約必須。シテ島のコンシェルジュリーとの共通券購入がスムーズでおすすめ。",
+      "en": "Strict advance timed reservation mandatory online; combo tickets with the Conciergerie offer seamless access.",
+      "zh": "必须在官网提前预约分时段门票。建议购买西岱岛古监狱联票一同从容游览。"
+    }
+  },
+  "몽마르트르 사크레쾨르 대성당 (Sacré-Cœur)": {
+    "displayName": {
+      "ko": "몽마르트르 사크레쾨르 대성당 (Sacré-Cœur)",
+      "ja": "モンマルトル・サクレ・クール寺院 (Sacré-Cœur)",
+      "en": "Sacré-Cœur Basilica & Montmartre",
+      "zh": "蒙马特圣心大教堂 (Sacré-Cœur)"
+    },
+    "badge": {
+      "ko": "프랑스 파리",
+      "ja": "フランス パリ",
+      "en": "France Paris",
+      "zh": "法国 巴黎"
+    },
+    "highlight": {
+      "ko": "파리에서 가장 높은 언덕에 순백으로 빛나는 로마-비잔틴 양식 대성당. 파리 시내가 발아래로 내려다보이는 전망과 테르트르 광장 화가들",
+      "ja": "パリ最高峰の丘に白く輝くロマネスク・ビザンチン様式寺院。足下に広がるパリの街並みとテルトル広場の芸術家たち。",
+      "en": "Gleaming white Romano-Byzantine basilica commanding the highest hill in Paris, paired with open terrace vistas and bohemian Place du Tertre.",
+      "zh": "矗立于巴黎最高山丘顶上的洁白罗马拜占庭大教堂。俯瞰整座巴黎市景的开阔全景露台与小丘广场街头画家村。"
+    },
+    "seniorAccess": {
+      "ko": "가파른 222개 계단을 오르지 말고, 지하철 티켓으로 탑승 가능한 '푸니쿨라(경사형 케이블카)'를 이용해 성당 정문 앞까지 수월하게 직행",
+      "ja": "222段の急階段を登らず、地下鉄チケットで乗れる斜行ケーブルカー（フニクレール）を使えば寺院前まで一気に上がれます。",
+      "en": "Bypass the 222 steep outdoor steps completely by taking the Montmartre Funicular (standard metro ticket) directly to the church gates.",
+      "zh": "切勿攀爬陡峭的222级台阶，直接使用巴黎地铁票刷卡乘坐地面缆车(Funiculaire)直达圣殿门前。"
+    },
+    "hours": {
+      "ko": "성당 매일 06:30~22:30 (돔 전망대 별도)",
+      "ja": "寺院 毎日 06:30~22:30 (ドーム展望台は別時間)",
+      "en": "Basilica daily 06:30~22:30 (Dome dome climb separate)",
+      "zh": "圣堂 每日 06:30~22:30 (穹顶登高另设)"
+    },
+    "ticketTip": {
+      "ko": "성당 본당 입장 무료. 돔 전망대는 계단만 있어 어르신 패스 권장",
+      "ja": "寺院本堂の入場は無料。ドーム展望台は階段のみのためシニアは無理せず外郭広場からの鑑賞がおすすめ。",
+      "en": "Basilica sanctuary is free entry. Skip the dome climb (steep spiral steps only) and savor the view from the front terrace.",
+      "zh": "圣堂主殿免费对公众开放。穹顶登高仅有狭窄螺旋台阶，带长辈在正门前全景露台观赏最佳。"
+    }
+  },
+  "베르사유 궁전 & 거울의 방 (Château de Versailles)": {
+    "displayName": {
+      "ko": "베르사유 궁전 & 거울의 방 (Château de Versailles)",
+      "ja": "ヴェルサイユ宮殿＆鏡の間 (Château de Versailles)",
+      "en": "Palace of Versailles & Hall of Mirrors",
+      "zh": "凡尔赛宫与镜厅 (Château de Versailles)"
+    },
+    "badge": {
+      "ko": "프랑스 베르사유",
+      "ja": "フランス ヴェルサイユ",
+      "en": "France Versailles",
+      "zh": "法国 凡尔赛"
+    },
+    "highlight": {
+      "ko": "태양왕 루이 14세의 절대 왕정을 상징하는 호화 궁전. 357개의 거울이 창문과 마주 보는 '거울의 방'과 끝없이 펼쳐진 분수 정원",
+      "ja": "太陽王ルイ14世の栄華を今に伝える豪壮な王宮。357枚の鏡がきらめく「鏡の間」と広大なフランス式大庭園。",
+      "en": "The zenith of French royal absolutism, celebrated for the radiant 73-meter Hall of Mirrors, King’s Grand Apartments, and infinite sculpted gardens.",
+      "zh": "太阳王路易十四绝对王权的荣耀殿堂。357面巨镜映照花园天光的镜厅与气势恢宏的皇家运河喷泉园林。"
+    },
+    "seniorAccess": {
+      "ko": "궁전 내 엘리베이터 및 휠체어 완비. 광대한 정원 이동 시 무릎 보호를 위해 '꼬마기차(Petit Train)' 또는 골프카트 대여 필수",
+      "ja": "宮殿内はエレベーター完備。広大な庭園の移動は足腰の疲労を防ぐため「プチトラン（観光小列車）」や電気カートの利用が必須。",
+      "en": "Elevators available throughout state rooms. For the immense gardens, taking the Petit Train road tram or renting an electric golf cart is essential.",
+      "zh": "宫殿主楼配有无障碍电梯。对于广袤浩大的皇家园林，务必为长辈乘坐观光小火车(Petit Train)或租用电动高尔夫球车。"
+    },
+    "hours": {
+      "ko": "화-일 09:00~17:30 (월요일 휴관)",
+      "ja": "火〜日 09:00~17:30 (月曜休館)",
+      "en": "Tue–Sun 09:00~17:30 (Closed Mon)",
+      "zh": "周二至周日 09:00~17:30 (周一闭馆)"
+    },
+    "ticketTip": {
+      "ko": "공식 사이트 여권 티켓(Passeport) 사전 시간 지정 예매 필수. 아침 첫 타임 강력 추천",
+      "ja": "公式サイトでパスポートチケットの時間指定事前予約必須。朝一番の09:00枠が最も快適です。",
+      "en": "Book 'Passport' timed tickets online in advance; the 09:00 earliest morning slot avoids crushing midday tour crowds.",
+      "zh": "必须提前在官网购买含分时段的通票(Passeport)。强烈建议选订早晨09:00首场入场以避开大型旅游团。"
+    }
+  },
+  "지베르니 모네의 집 & 수련 정원 (Fondation Claude Monet)": {
+    "displayName": {
+      "ko": "지베르니 모네의 집 & 수련 정원 (Fondation Claude Monet)",
+      "ja": "ジヴェルニー・モネの家＆睡蓮の庭 (Fondation Claude Monet)",
+      "en": "Claude Monet's House & Water Lilies Garden Giverny",
+      "zh": "吉维尼莫奈故居与睡莲花园 (Fondation Claude Monet)"
+    },
+    "badge": {
+      "ko": "프랑스 지베르니",
+      "ja": "フランス ジヴェルニー",
+      "en": "France Giverny",
+      "zh": "法国 吉维尼"
+    },
+    "highlight": {
+      "ko": "인상주의 거장 클로드 모네가 43년간 가꾼 꽃의 정원과 일본식 다리가 놓인 물의 정원. 연못 위를 수놓는 실제 수련의 평화로운 풍경",
+      "ja": "印象派の巨匠モネが晩年を過ごした花の庭と日本の太鼓橋が架かる水の庭。傑作『睡蓮』の舞台となった静寂と光の庭園。",
+      "en": "Impressionist master Claude Monet's country sanctuary where he painted for 43 years, featuring the Japanese footbridge and water lily pond.",
+      "zh": "印象派大师克劳德·莫奈生活创作43年的仙境故居。垂柳依依的日本木桥与水波粼粼的真实《睡莲》池塘。"
+    },
+    "seniorAccess": {
+      "ko": "평탄한 흙길과 목재 데크로 조성된 완만한 평지 정원. 계단이 거의 없어 부모님과 함께 느긋하게 산책하기에 최적",
+      "ja": "平坦な土道と木道で整備された緩やかな庭園。階段がほとんどなく、ご両親連れでのんびり散策するのに最適です。",
+      "en": "Gentle flat gravel pathways and wooden bridges with virtually no steps, making it an idyllic, restful stroll for elderly parents.",
+      "zh": "平坦的泥土花径与木质栈道，全程基本无台阶，花香扑鼻，非常适宜陪伴长辈悠然漫步。"
+    },
+    "hours": {
+      "ko": "개장 기간(4월~11월 초) 매일 09:30~18:00",
+      "ja": "開園期間（4月〜11月初旬）毎日 09:30~18:00",
+      "en": "Seasonal opening (Apr–Nov) daily 09:30~18:00",
+      "zh": "开放季节（4月至11月初）每日 09:30~18:00"
+    },
+    "ticketTip": {
+      "ko": "현장 대기 줄이 매우 길므로 공식 웹사이트 사전 e-티켓 발권 필수",
+      "ja": "窓口は非常に長い列ができるため、公式ウェブサイトで事前Eチケットの購入が必須。",
+      "en": "Ticket queues at the gate can exceed an hour; buying online e-tickets in advance is essential.",
+      "zh": "现场排队极为漫长，务必提前在官网购买电子门票，直接扫码走预约快速通道入园。"
+    }
+  },
+  "몽생미셸 수도원 (Mont Saint-Michel)": {
+    "displayName": {
+      "ko": "몽생미셸 수도원 (Mont Saint-Michel)",
+      "ja": "モン・サン・ミッシェル修道院 (Mont Saint-Michel)",
+      "en": "Mont Saint-Michel Abbey",
+      "zh": "圣米歇尔山修道院 (Mont Saint-Michel)"
+    },
+    "badge": {
+      "ko": "프랑스 노르망디",
+      "ja": "フランス ノルマンディー",
+      "en": "France Normandy",
+      "zh": "法国 诺曼底"
+    },
+    "highlight": {
+      "ko": "조수 간만의 차로 바다 위에 떠오르는 신비로운 바위섬 천공 수도원. 천사 미카엘의 계시로 세워진 천년 유네스코 세계유산",
+      "ja": "潮の干満により海上に浮かび上がる神秘の小島。大天使ミカエルの啓示により建立された千年を超える世界遺産修道院。",
+      "en": "Tidal island commune crowned by a dramatic medieval Benedictine abbey soaring above Atlantic mudflats, dedicated to Archangel Michael.",
+      "zh": "潮汐涨落之间宛若浮于海天之上的中世纪岩石修道院。因大天使米迦勒神启而建的千年世界文化遗产奇迹。"
+    },
+    "seniorAccess": {
+      "ko": "주차장에서 섬 입구까지 무료 전기 셔틀버스(Passeur) 운행. 섬 정상 수도원 내부는 계단이 많으므로 무리하지 않고 천천히 관람",
+      "ja": "駐車場から島入口までは無料シャトルバス（パッスール）が運行。頂上の修道院内部は階段が多いため、無理のないペースで鑑賞を。",
+      "en": "Free electric shuttles ('Le Passeur') link the parking center directly to the island foot. Take your time inside the abbey as stairs are steep.",
+      "zh": "大型停车场至海中岛屿入口全程运营免费穿梭摆渡车。山顶修道院内部阶梯较多，建议长辈从容缓步慢游。"
+    },
+    "hours": {
+      "ko": "매일 09:30~18:00 (동절기 기준)",
+      "ja": "毎日 09:30~18:00 (冬季スケジュール)",
+      "en": "Daily 09:30~18:00 (Winter season)",
+      "zh": "每日 09:30~18:00 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "수도원 내부 입장권 온라인 예약 필수. 일몰 무렵 야경 조명 감상 추천",
+      "ja": "修道院内部チケットはオンライン事前予約必須。日没前後のライトアップ鑑賞もおすすめです。",
+      "en": "Pre-book timed abbey entry tickets online. Staying until evening allows viewing the illuminated castle like a dream.",
+      "zh": "修道院门票必须在官方网站提前预约。推荐在傍晚时分守候亮灯夜景，梦幻如仙境。"
+    }
+  },
+  "니스 프롬나드 데 장글레 (Promenade des Anglais)": {
+    "displayName": {
+      "ko": "니스 프롬나드 데 장글레 (Promenade des Anglais)",
+      "ja": "プロムナード・デ・ザングレ海浜遊歩道 (Promenade des Anglais)",
+      "en": "Promenade des Anglais Nice",
+      "zh": "尼斯盎格鲁街英国人漫步大道 (Promenade des Anglais)"
+    },
+    "badge": {
+      "ko": "프랑스 니스",
+      "ja": "フランス ニース",
+      "en": "France Nice",
+      "zh": "法国 尼斯"
+    },
+    "highlight": {
+      "ko": "지중해 에메랄드빛 천사의 만(Baie des Anges)을 따라 7km 동안 이어지는 야자수 해안 산책로. 푸른 바다와 상징적인 블루 체어(Chaise Bleue)",
+      "ja": "天使の湾に沿って7km続くヤシの木の海岸プロムナード。紺碧の地中海と名物の「青い椅子（シェーズ・ブルー）」。",
+      "en": "Iconic 7km palm-fringed seaside promenade curving along the Azure coast's Baie des Anges, studded with famous blue chairs.",
+      "zh": "沿着蔚蓝天使湾绵延7公里的棕榈树海滨大道。标志性的蓝色躺椅与地中海醉人碧浪波光。"
+    },
+    "seniorAccess": {
+      "ko": "완벽한 포장 평지 산책로로 턱이나 계단이 없음. 해변을 따라 놓인 파란 벤치에서 언제든 편안히 휴식",
+      "ja": "段差や階段が一切ない完全に舗装された平坦な遊歩道。海沿いに並ぶ青いベンチでいつでもゆっくり休めます。",
+      "en": "100% wide, flat, barrier-free paved esplanade with zero steps. Free iconic blue chairs and benches offer restful sea-watching at every turn.",
+      "zh": "全程平坦宽阔、无任何台阶台坎的海滨大道。沿海设有成排专属蓝色长椅，长辈可随时静坐远眺蔚蓝海天。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방",
+      "ja": "24時間常時開放",
+      "en": "Open 24 hours daily",
+      "zh": "全天24小时开放"
+    },
+    "ticketTip": {
+      "ko": "산책로 무료. 네그레스코 호텔 앞 포토스팟 및 해 질 녘 산책 추천",
+      "ja": "散策無料。歴史的ネグレスコホテル前の撮影スポットや夕暮れ時の散歩が最高です。",
+      "en": "Free public access. Stroll in the late afternoon glow right in front of the historic Hotel Negresco.",
+      "zh": "全天免费漫步。推荐在夕阳斜照时分漫步至传奇内格雷斯科酒店前拍照留念。"
+    }
+  },
+  "에즈 빌라쥐 & 열대 정원 (Èze Village)": {
+    "displayName": {
+      "ko": "에즈 빌라쥐 & 열대 정원 (Èze Village)",
+      "ja": "エズ村＆エキゾチック熱帯庭園 (Èze Village)",
+      "en": "Èze Medieval Village & Exotic Garden",
+      "zh": "埃兹中世纪山顶鹰巢小镇与异域花园 (Èze Village)"
+    },
+    "badge": {
+      "ko": "프랑스 에즈",
+      "ja": "フランス エズ",
+      "en": "France Eze",
+      "zh": "法国 埃兹"
+    },
+    "highlight": {
+      "ko": "지중해 절벽 위 429m 높이에 자리 잡은 독수리 둥지 중세 마을. 선인장 열대 정원에서 내려다보는 눈부신 코트다쥐르 해안선",
+      "ja": "地中海を見下ろす標高429mの「鷹の巣村」。頂上のサボテン熱帯庭園から見渡すフレンチリビエラの絶景。",
+      "en": "Medieval clifftop eagle's-nest perched 429m over the French Riviera, topped by an exotic cactus botanical garden with sweeping coastal vistas.",
+      "zh": "盘踞在海拔429米地中海峭壁之上的中世纪鹰巢村。顶端仙人掌热带异域花园俯瞰蔚蓝海岸绝美海岸线。"
+    },
+    "seniorAccess": {
+      "ko": "마을 골목길이 자갈 돌길이므로 입구에서 스틱 사용 권장. 정상 정원 테라스까지 완만한 페이스로 쉬엄쉬엄 등반",
+      "ja": "石畳の坂道のため村の入口から歩行スティックの利用がおすすめ。頂上の庭園テラスまでゆっくり自分のペースで散策を。",
+      "en": "Cobblestone alleys wind uphill; using walking poles is recommended. Ascend at a leisurely pace to enjoy the garden terraces.",
+      "zh": "村内为古朴鹅卵石小道，建议携带手杖支撑辅助。缓步慢行至顶层花园观景台极度惬意。"
+    },
+    "hours": {
+      "ko": "매일 09:00~18:30",
+      "ja": "毎日 09:00~18:30",
+      "en": "Daily 09:00~18:30",
+      "zh": "每日 09:00~18:30"
+    },
+    "ticketTip": {
+      "ko": "마을 진입 무료, 정상 열대 정원(Jardin Exotique) 소액 입장료 현장/온라인 결제",
+      "ja": "村の入場は無料。頂上の熱帯庭園（Jardin Exotique）のみ少額の入場券が必要です。",
+      "en": "Village exploration is free; a small ticket fee is required for the summit Exotic Garden (Jardin Exotique).",
+      "zh": "小镇全免费漫游。顶层异域植物园(Jardin Exotique)仅收取少额门票，现场或线上均可支付。"
+    }
+  },
+  "퐁 뒤 가르 (Pont du Gard)": {
+    "displayName": {
+      "ko": "퐁 뒤 가르 (Pont du Gard)",
+      "ja": "ポン・デュ・ガール水道橋 (Pont du Gard)",
+      "en": "Pont du Gard Roman Aqueduct",
+      "zh": "加尔桥罗马水渠遗址 (Pont du Gard)"
+    },
+    "badge": {
+      "ko": "프랑스 님",
+      "ja": "フランス ニーム",
+      "en": "France Nimes",
+      "zh": "法国 尼姆"
+    },
+    "highlight": {
+      "ko": "기원전 1세기 로마인이 가르동강 위에 건설한 3층 아치형 거대 수로교. 높이 48m의 완벽한 보존 상태를 자랑하는 유네스코 유적",
+      "ja": "紀元前1世紀にガルドン川の上に建設された3層アーチの巨大水道橋。高さ48mの完全な保存状態を誇る世界遺産。",
+      "en": "Magnificent 3-tier Roman aqueduct bridge soaring 48m above the Gardon River, preserved in pristine condition since the 1st century AD.",
+      "zh": "公元1世纪古罗马人在加尔东河上架设的三层巨型拱券引水桥。高达48米且保存极其完好的联合国世界文化遗产。"
+    },
+    "seniorAccess": {
+      "ko": "방문자 센터에서 수도교 하부까지 평탄한 그늘 산책로 조성. 휠체어 및 어르신 보행 피로도 매우 낮음",
+      "ja": "ビジターセンターから水道橋直下までは平坦な木陰の遊歩道。車椅子やシニアの歩行負担が非常に少ないです。",
+      "en": "Wide, smooth paved paths lead directly from the visitor center through shaded olive trees to the bridge base with minimal walking fatigue.",
+      "zh": "访客中心至水桥桥墩全程为平缓林荫大道，轮椅无障碍设施齐备，长辈步履十分轻省。"
+    },
+    "hours": {
+      "ko": "매일 09:00~19:00",
+      "ja": "毎日 09:00~19:00",
+      "en": "Daily 09:00~19:00",
+      "zh": "每日 09:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "수도교 1층 보행로 산책 무료 포함 주차/박물관 패스 사전 예매",
+      "ja": "1階の歩道橋横断や博物館入場を含むチケットは公式オンライン購入推奨。",
+      "en": "Admission covers the historic bridge walkway, discovery museum, and cinema presentation.",
+      "zh": "门票包含水桥一层步行过桥、古罗马水利博物馆与全景影院，建议提前在线购买。"
+    }
+  },
+  "로마 판테온 & 트레비 분수 (Pantheon & Trevi)": {
+    "displayName": {
+      "ko": "로마 판테온 & 트레비 분수 (Pantheon & Trevi)",
+      "ja": "パンテオン神殿＆トレビの泉 (Pantheon & Trevi)",
+      "en": "Pantheon & Trevi Fountain Rome",
+      "zh": "万神殿与特莱维许愿池 (Pantheon & Trevi)"
+    },
+    "badge": {
+      "ko": "이탈리아 로마",
+      "ja": "イタリア ローマ",
+      "en": "Italy Rome",
+      "zh": "意大利 罗马"
+    },
+    "highlight": {
+      "ko": "2천 년 전 철근 없이 축조된 세계 최대 무근 콘크리트 돔 판테온과 동전을 던지며 재방문을 기원하는 바로크 예술의 극치 트레비 분수",
+      "ja": "2千年前の無筋コンクリート巨大ドーム建築パンテオンと、コインを投げ入れて再訪を願うバロックの傑作トレビの泉。",
+      "en": "Two Roman icons: the 2,000-year-old unreinforced concrete domed temple of the Pantheon, and the theatrical baroque waters of the Trevi Fountain.",
+      "zh": "两千年前无钢筋纯混凝土建造的万神殿旷世穹顶，与投掷硬币许愿重返永恒之城的巴洛克特莱维许愿池。"
+    },
+    "seniorAccess": {
+      "ko": "로마 구도심 평지 보행 코스. 판테온 내부는 단층 완전 평지. 트레비 분수 광장은 인파가 붐비므로 아침 8~9시 한적한 시간대 산책 추천",
+      "ja": "旧市街の平坦な散策コース。パンテオン内は段差なし。トレビの泉は昼間混雑するため朝08:00〜09:00の静かな時間帯が推奨。",
+      "en": "Gentle flat walking route through central Rome. Pantheon interior is 100% single-level; visit Trevi early morning (08:00–09:00) to avoid crowds.",
+      "zh": "老城核心区平坦步行路线。万神殿内部完全单层平地；特莱维喷泉推荐早晨08:00~09:00清净时分前往。"
+    },
+    "hours": {
+      "ko": "판테온 매일 09:00~19:00 (트레비 분수 상시 개방)",
+      "ja": "パンテオン 毎日 09:00~19:00 (トレビの泉は常時開放)",
+      "en": "Pantheon 09:00~19:00 (Trevi Fountain open 24 hours)",
+      "zh": "万神殿 09:00~19:00 (特莱维许愿池全天开放)"
+    },
+    "ticketTip": {
+      "ko": "판테온은 5유로 유료 입장으로 변경됨. 공식 사이트 시간 지정 티켓 필수 예매",
+      "ja": "パンテオンは事前有料入場制（5ユーロ）に変更されました。公式予約サイトでの時間指定チケット購入が必須。",
+      "en": "Pantheon entry requires a €5 timed-entry ticket; strictly book online on the official ministry portal in advance.",
+      "zh": "万神殿现已实行5欧元门票制，务必提前在官方网站预订指定时段电子票。"
+    }
+  },
+  "포로 로마노 & 팔라티노 언덕 (Roman Forum)": {
+    "displayName": {
+      "ko": "포로 로마노 & 팔라티노 언덕 (Roman Forum)",
+      "ja": "フォロ・ロマーノ＆パラティーノの丘 (Roman Forum)",
+      "en": "Roman Forum & Palatine Hill",
+      "zh": "古罗马广场与帕拉蒂尼山 (Roman Forum)"
+    },
+    "badge": {
+      "ko": "이탈리아 로마",
+      "ja": "イタリア ローマ",
+      "en": "Italy Rome",
+      "zh": "意大利 罗马"
+    },
+    "highlight": {
+      "ko": "고대 로마 제국의 정치, 종교, 상업의 중심지. 시저가 화장된 제단, 원로원, 바실리카 유적이 파노라마로 펼쳐지는 고고학의 성지",
+      "ja": "古代ローマ帝国の政治・経済・宗教の中心地。シーザーの祭壇や元老院、凱旋門が立ち並ぶ世界最高峰の考古学遺跡。",
+      "en": "The ancient epicenter of the Roman Empire, displaying triumphal arches, the Senate House (Curia), and temples where Julius Caesar was cremated.",
+      "zh": "古罗马帝国的政治、商业与信仰心脏。凯撒火葬神坛、元老院议事堂与凯旋门历经千年的宏大遗址全景。"
+    },
+    "seniorAccess": {
+      "ko": "콜로세움 통합권으로 입장. 돌길이 거칠므로 콜로세움 방면 포룸 뷰 평지 테라스와 그늘 벤치 위주로 여유롭게 산책",
+      "ja": "コロッセオ共通券で入場。石畳が不揃いな箇所があるため、無理に奥まで歩かず平坦なテラスと木陰ベンチを中心に鑑賞推奨。",
+      "en": "Ancient stones can be uneven; seniors should focus on the flat main avenues and scenic shaded terraces overlooking the Forum.",
+      "zh": "凭斗兽场联票入场。古石路面局部微凸，建议重点游览平缓平坦主道与树荫观景台，免过度劳累。"
+    },
+    "hours": {
+      "ko": "매일 09:00~16:30 (동절기 기준)",
+      "ja": "毎日 09:00~16:30 (冬季スケジュール)",
+      "en": "Daily 09:00~16:30 (Winter season)",
+      "zh": "每日 09:00~16:30 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "콜로세움-포로 로마노-팔라티노 언덕 통합권 필수. CoopCulture / 공식 플랫폼 예매",
+      "ja": "コロッセオ・フォロ・ロマーノ統合チケットが必須。公式プラットフォームで事前予約。",
+      "en": "Included with the Colosseum combo ticket; strictly reserve your entry time online in advance.",
+      "zh": "包含在罗马斗兽场联合门票中，需在官方售票平台提前预约指定入场时段。"
+    }
+  },
+  "피렌체 우피치 미술관 (Gallerie degli Uffizi)": {
+    "displayName": {
+      "ko": "피렌체 우피치 미술관 (Gallerie degli Uffizi)",
+      "ja": "ウフィツィ美術館 (Gallerie degli Uffizi)",
+      "en": "Uffizi Gallery Florence",
+      "zh": "乌菲兹美术馆 (Gallerie degli Uffizi)"
+    },
+    "badge": {
+      "ko": "이탈리아 피렌체",
+      "ja": "イタリア フィレンツェ",
+      "en": "Italy Florence",
+      "zh": "意大利 佛罗伦萨"
+    },
+    "highlight": {
+      "ko": "보티첼리의 '비너스의 탄생', '봄(프리마베라)', 레오나르도 다빈치의 '수태고지' 등 르네상스를 꽃피운 메디치 가문의 세계적 예술 보고",
+      "ja": "ボッティチェッリの『ヴィーナスの誕生』『プリマヴェーラ』やレオナルド・ダ・ヴィンチの傑作が輝くルネサンス芸術の最高峰。",
+      "en": "The cradle of Renaissance art built by the Medici dynasty, showcasing Botticelli's 'Birth of Venus', Leonardo's 'Annunciation', and Michelangelo.",
+      "zh": "美第奇家族留给人类的文艺复兴艺术殿堂。波提切利《维纳斯的诞生》《春》与达·芬奇《受胎告知》等无价珍宝。"
+    },
+    "seniorAccess": {
+      "ko": "3층 갤러리 진입 전용 대형 엘리베이터 완비. 전 복도가 평탄하며 곳곳에 푹신한 벨벳 소파와 아르노강 뷰 카페 완비",
+      "ja": "展示室へ直行できる大型エレベーター完備。全館フラットで、展示室ごとに休憩用ソファーやアルノ川を望むカフェがあります。",
+      "en": "Large accessible elevator takes seniors directly to the top gallery floor. Long corridors feature plush rest benches and a rooftop cafe.",
+      "zh": "配备直达三层展厅的大型无障碍电梯。各画廊走廊平整宽敞，均配有柔软长椅，顶层设有阿诺河观景咖啡厅。"
+    },
+    "hours": {
+      "ko": "화-일 08:15~18:30 (월요일 휴관)",
+      "ja": "火〜日 08:15~18:30 (月曜休館)",
+      "en": "Tue–Sun 08:15~18:30 (Closed Mon)",
+      "zh": "周二至周日 08:15~18:30 (周一闭馆)"
+    },
+    "ticketTip": {
+      "ko": "공식 예매 사이트 B-Ticket에서 시간 지정 예매 필수. 대기 줄 2~3시간 생략",
+      "ja": "公式予約サイト（B-Ticket）で時間指定チケット必須購入。2〜3時間の待ち列を回避可能。",
+      "en": "Booking timed tickets on official portal B-Ticket is essential to skip the 2-hour general queue.",
+      "zh": "务必在官方B-Ticket网站提前预约入场时间，免去现场长达2~3小时的排队等待。"
+    }
+  },
+  "피렌체 베키오 다리 & 아르노 강 (Ponte Vecchio)": {
+    "displayName": {
+      "ko": "피렌체 베키오 다리 & 아르노 강 (Ponte Vecchio)",
+      "ja": "ポンテ・ヴェッキオ橋＆アルノ川 (Ponte Vecchio)",
+      "en": "Ponte Vecchio Bridge & Arno River",
+      "zh": "老桥与阿诺河 (Ponte Vecchio)"
+    },
+    "badge": {
+      "ko": "이탈리아 피렌체",
+      "ja": "イタリア フィレンツェ",
+      "en": "Italy Florence",
+      "zh": "意大利 佛罗伦萨"
+    },
+    "highlight": {
+      "ko": "1345년에 세워진 아르노강에서 가장 오래된 석조 다리. 다리 양편의 유서 깊은 금세공 보석상들과 상부의 비밀 통로 바사리 회랑",
+      "ja": "1345年建造、アルノ川最古の石造り橋。金細工宝石店が軒を連ね、上部にはメディチ家の秘密通路ヴァザーリ回廊が通る。",
+      "en": "Historic 1345 medieval segmental stone arch bridge spanning the Arno, lined with glittering goldsmith jewelry shops beneath the Vasari Corridor.",
+      "zh": "始建于1345年、阿诺河上最古老的石造廊桥。桥上两侧金银首饰老字号作坊林立，上方贯通瓦萨里家族空中秘密走廊。"
+    },
+    "seniorAccess": {
+      "ko": "완벽한 평지 보행자 다리. 다리 중앙 테라스에서 아르노 강변을 감상하며 벤치에서 휴식하기 좋음",
+      "ja": "完全平坦な歩行者専用橋。橋の中央テラスから川の風景を眺めながら座って休むのに最適です。",
+      "en": "Completely flat pedestrian bridge with step-free crossing. The open middle terrace provides scenic views and fresh river breezes.",
+      "zh": "完全平坦的步行桥梁。桥中央开阔露台处配有石椅，临风凭栏眺望阿诺河波光极为舒心。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방",
+      "ja": "24時間常時開放",
+      "en": "Open 24 hours daily",
+      "zh": "全天24小时开放"
+    },
+    "ticketTip": {
+      "ko": "관람 무료. 인근 산타 트리니타 다리에서 베키오 다리를 바라보는 일몰 뷰가 가장 아름다움",
+      "ja": "通行無料。隣のサンタ・トリニタ橋からポンテ・ヴェッキオを望む夕暮れパノラマが最高の一枚になります。",
+      "en": "Free to cross. For the ultimate sunset photo, look back toward Ponte Vecchio from the neighboring Santa Trinita bridge.",
+      "zh": "全天免费漫步通行。从相邻的圣三一座桥回望老桥全景与阿诺河落日，是佛罗伦萨最著名的明信片机位。"
+    }
+  },
+  "베네치아 두칼레 궁전 & 탄식의 다리 (Doge's Palace)": {
+    "displayName": {
+      "ko": "베네치아 두칼레 궁전 & 탄식의 다리 (Doge's Palace)",
+      "ja": "ドゥカーレ宮殿＆ため息橋 (Doge's Palace)",
+      "en": "Doge's Palace & Bridge of Sighs Venice",
+      "zh": "总督宫与叹息桥 (Doge's Palace)"
+    },
+    "badge": {
+      "ko": "이탈리아 베네치아",
+      "ja": "イタリア ヴェネツィア",
+      "en": "Italy Venice",
+      "zh": "意大利 威尼斯"
+    },
+    "highlight": {
+      "ko": "천년 베네치아 해상 공화국 총독의 궁전. 틴토레토의 거작 '천국'이 걸린 대평의원실과 죄수들이 건너던 대리석 탄식의 다리",
+      "ja": "千年にわたり繁栄したヴェネツィア共和国総督のゴシック宮殿。大評議会の間を飾るティントレットの超大作『天国』と「ため息橋」。",
+      "en": "The seat of Venetian power for centuries, featuring gothic arcades, Tintoretto's immense oil painting 'Paradise', and the Bridge of Sighs.",
+      "zh": "威尼斯千年海上共和国总督府邸。大议会厅内丁托列托史诗巨幅油画《天国》，以及横跨水运河的著名大理石叹息桥。"
+    },
+    "seniorAccess": {
+      "ko": "궁전 안뜰 및 주요 회랑 엘리베이터 설비 완료. 산 마르코 광장 바포레토 정류장에서 도보 2분 평지 연결",
+      "ja": "宮殿中庭および主要フロアにエレベーター完備。サン・マルコ広場水上バス乗り場から徒歩2分の平坦アクセス。",
+      "en": "Courtyards and grand apartments are accessible via modern elevators. Located just 2 flat minutes from the San Marco vaporetto boat pier.",
+      "zh": "内院与主要展厅均配备现代化升降电梯。自圣马可广场水上巴士码头下船仅步行2分钟平地即达。"
+    },
+    "hours": {
+      "ko": "매일 09:00~18:00",
+      "ja": "毎日 09:00~18:00",
+      "en": "Daily 09:00~18:00",
+      "zh": "每日 09:00~18:00"
+    },
+    "ticketTip": {
+      "ko": "산 마르코 광장 뮤지엄 패스 온라인 사전 예매로 긴 매표 대기줄 회피",
+      "ja": "サン・マルコ広場ミュージアムパスの事前購入で窓口の行列をスキップ。",
+      "en": "Pre-purchase the St. Mark's Square Museums Pass online to bypass ticketing lines.",
+      "zh": "建议在官网提前购买圣马可广场博物馆通票，直接走预约快速通道入内。"
+    }
+  },
+  "베네치아 무라노 & 부라노 섬 (Murano & Burano)": {
+    "displayName": {
+      "ko": "베네치아 무라노 & 부라노 섬 (Murano & Burano)",
+      "ja": "ムラーノ島＆ブラーノ島 (Murano & Burano)",
+      "en": "Murano & Burano Islands Venice",
+      "zh": "穆拉诺岛与布拉诺彩色岛 (Murano & Burano)"
+    },
+    "badge": {
+      "ko": "이탈리아 베네치아",
+      "ja": "イタリア ヴェネツィア",
+      "en": "Italy Venice",
+      "zh": "意大利 威尼斯"
+    },
+    "highlight": {
+      "ko": "알록달록 파스텔톤 어촌 가옥과 레이스 공예의 부라노 섬, 천년 유리공예 명장들의 유리 불기 시연을 볼 수 있는 무라노 섬",
+      "ja": "パステルカラーのカラフルな漁師の家々とレース編みのブラーノ島、伝統ガラス工芸の職人技が光るムラーノ島。",
+      "en": "Lagoon islands: Burano's rainbow-hued fisherman cottages and lace artisans, combined with Murano's world-famous master glassblowers.",
+      "zh": "威尼斯泻湖双岛奇景：彩虹般斑斓明艳的布拉诺彩色蕾丝渔村，与拥有千年吹制玻璃工艺名匠的穆拉诺玻璃岛。"
+    },
+    "seniorAccess": {
+      "ko": "바포레토(수상버스 12번) 탑승으로 편안한 수상 이동. 섬 내부는 돌다리 경사가 낮고 평지가 많아 사진 찍으며 천천히 걷기 좋음",
+      "ja": "水上バス（ヴァポレット12番）で座ったまま快適に移動可能。島内は平坦な小道が多く、記念撮影しながらゆっくり散歩できます。",
+      "en": "Relaxing cruise via vaporetto Line 12 with indoor and outdoor seats. Flat footpaths across the islands allow gentle strolls.",
+      "zh": "乘坐12路水上巴士全程坐享水上美景。岛内小道平坦、拱桥坡度平缓，极适宜陪伴长辈走走停停拍照赏景。"
+    },
+    "hours": {
+      "ko": "상시 개방 (유리공방/상점 10:00~17:00)",
+      "ja": "島は常時開放 (工房・店舗 10:00~17:00)",
+      "en": "Islands open 24 hours (Shops & ateliers 10:00~17:00)",
+      "zh": "岛屿全天开放 (工坊与商铺通常为 10:00~17:00)"
+    },
+    "ticketTip": {
+      "ko": "바포레토 24시간권(약 25유로) 구매 시 무제한 탑승 가능하여 가장 경제적",
+      "ja": "ヴァポレット24時間券（約25ユーロ）の購入が乗り降り自由で最もお得です。",
+      "en": "Buy the 24-hour Vaporetto travel card (€25) for unlimited boat trips across the lagoon.",
+      "zh": "购买24小时水上巴士通票（约25欧元）可全日无限次往返各岛，最经济划算。"
+    }
+  },
+  "밀라노 두오모 & 빅토리오 에마누엘레 2세 (Duomo di Milano)": {
+    "displayName": {
+      "ko": "밀라노 두오모 & 빅토리오 에마누엘레 2세 (Duomo di Milano)",
+      "ja": "ミラノ大聖堂ドゥオーモ＆ヴィットーリオ回廊 (Duomo di Milano)",
+      "en": "Milan Cathedral (Duomo) & Galleria Vittorio Emanuele II",
+      "zh": "米兰大教堂与埃马努埃莱二世长廊 (Duomo di Milano)"
+    },
+    "badge": {
+      "ko": "이탈리아 밀라노",
+      "ja": "イタリア ミラノ",
+      "en": "Italy Milan",
+      "zh": "意大利 米兰"
+    },
+    "highlight": {
+      "ko": "135개의 뾰족한 첨탑과 3,400개의 조각상이 하늘을 찌르는 이탈리아 최대 고딕 대성당. 화려한 유리 돔 쇼핑 아케이드 갤러리아",
+      "ja": "135本の尖塔と3,400体の彫刻が天を突くイタリア屈指のゴシック大聖堂。華麗なガラス天井のガッレリア・ショッピングモール。",
+      "en": "Italy's grandest Gothic cathedral crowned with 135 spires and 3,400 statues, facing the grand glass-vaulted 19th-century Galleria shopping arcade.",
+      "zh": "拥有135座飞天大理石尖塔与3400尊雕像的意大利最大哥特式大教堂，与相邻的八角穹顶玻璃拱廊街商厦。"
+    },
+    "seniorAccess": {
+      "ko": "두오모 테라스 옥상으로 직행하는 전용 엘리베이터(Fast-Track Lift) 완비. 옥상 보행로가 완만해 첨탑 숲을 눈앞에서 산책",
+      "ja": "屋上テラス直行の専用エレベーター（リフト付きチケット）完備。屋上歩道は緩やかで、大理石尖塔の森を間近に鑑賞できます。",
+      "en": "Fast-track rooftop elevator takes seniors directly to the cathedral terrace, where gentle marble walkways weave among the spires.",
+      "zh": "配备直达大理石屋顶全景露台的高速升降电梯。屋顶步道平缓宽阔，可在尖塔雕塑森林中从容散步。"
+    },
+    "hours": {
+      "ko": "매일 09:00~19:00",
+      "ja": "毎日 09:00~19:00",
+      "en": "Daily 09:00~19:00",
+      "zh": "每日 09:00~19:00"
+    },
+    "ticketTip": {
+      "ko": "엘리베이터 포함 두오모 패스(Duomo Pass Lift) 공식 온라인 예약 필수",
+      "ja": "リフト利用付きドゥオーモパス（Duomo Pass Lift）の公式オンライン予約が必須。",
+      "en": "Strictly pre-book the 'Duomo Pass Lift' online covering both interior cathedral and elevator rooftop access.",
+      "zh": "务必在官方网站提前预订含电梯登顶的米兰大教堂通票(Duomo Pass Lift)。"
+    }
+  },
+  "피사 사탑 & 기적의 광장 (Piazza dei Miracoli)": {
+    "displayName": {
+      "ko": "피사 사탑 & 기적의 광장 (Piazza dei Miracoli)",
+      "ja": "ピサの斜塔＆ドゥオーモ広場・奇跡の広場 (Piazza dei Miracoli)",
+      "en": "Leaning Tower of Pisa & Piazza dei Miracoli",
+      "zh": "比萨斜塔与奇迹广场 (Piazza dei Miracoli)"
+    },
+    "badge": {
+      "ko": "이탈리아 피사",
+      "ja": "イタリア ピサ",
+      "en": "Italy Pisa",
+      "zh": "意大利 比萨"
+    },
+    "highlight": {
+      "ko": "푸른 잔디밭 위에 백색 대리석으로 빛나는 기적의 광장. 3.97도 기울어진 신비로운 8층 종탑 피사의 사탑과 웅장한 대성당",
+      "ja": "緑の芝生に白大理石が映える「奇跡の広場」。傾斜3.97度の不思議な8層鐘楼ピサの斜塔と壮麗な大聖堂。",
+      "en": "UNESCO Campo dei Miracoli green lawn showcasing the famous leaning Romanesque bell tower, Romanesque Cathedral, and Baptistery.",
+      "zh": "绿茵草坪上如奇迹般矗立的白色大理石建筑群。倾斜3.97度的8层世界著名独立钟楼比萨斜塔与比萨大教堂。"
+    },
+    "seniorAccess": {
+      "ko": "사탑 꼭대기(294계단) 등반은 어르신 무릎에 무리가 되므로, 푸른 잔디밭 평지에서 사탑을 손으로 받치는 유쾌한 가족 기념사진 촬영 강력 추천",
+      "ja": "294段の急な塔登りはシニアの足腰に負担が大きいため、広場の平坦な芝生から手で支えるポーズの楽しい記念撮影がおすすめ。",
+      "en": "Climbing the 294 steep leaning steps is physically taxing for elders; taking playful photos supporting the tower from the flat lawn is the highlight.",
+      "zh": "登顶需攀爬倾斜旋转台阶294级，强烈建议长辈在草坪平地上拍摄双手托举斜塔的经典趣味全家福纪念照。"
+    },
+    "hours": {
+      "ko": "매일 09:00~18:00 (동절기 기준)",
+      "ja": "毎日 09:00~18:00 (冬季スケジュール)",
+      "en": "Daily 09:00~18:00 (Winter season)",
+      "zh": "每日 09:00~18:00 (冬季时间)"
+    },
+    "ticketTip": {
+      "ko": "광장 잔디밭과 대성당 외관 감상 무료. 대성당 내부는 무료 티켓 발권 후 입장",
+      "ja": "広場と大聖堂外観の鑑賞は無料。大聖堂内部は無料整理券を発行して入場可能。",
+      "en": "Lawn and Cathedral exterior are free. Cathedral interior requires a free timed admission pass available on-site.",
+      "zh": "奇迹广场草坪及大教堂外观全免费欣赏。大教堂内部凭领取的免费入场券即可有序参观。"
+    }
+  },
+  "아말피 해안 & 포지타노 (Amalfi Coast & Positano)": {
+    "displayName": {
+      "ko": "아말피 해안 & 포지타노 (Amalfi Coast & Positano)",
+      "ja": "アマルフィ海岸＆ポジターノ (Amalfi Coast & Positano)",
+      "en": "Amalfi Coast & Positano Clifftop Village",
+      "zh": "阿马尔菲海岸与波西塔诺悬崖小镇 (Amalfi Coast & Positano)"
+    },
+    "badge": {
+      "ko": "이탈리아 아말피",
+      "ja": "イタリア アマルフィ",
+      "en": "Italy Amalfi",
+      "zh": "意大利 阿马尔菲"
+    },
+    "highlight": {
+      "ko": "내셔널 지오그래픽 선정 '죽기 전에 꼭 가봐야 할 낙원'. 깎아지른 절벽에 빼곡히 들어선 파스텔톤 집들과 레몬 향기 가득한 지중해 해안선",
+      "ja": "ナショナルジオグラフィック誌「死ぬまでに行きたい絶景」。垂直の断崖に張り付くパステルカラーの家々とレモンの薫る地中海。",
+      "en": "Legendary Mediterranean coastline of pastel vertical cliff villages, lemon groves, and sapphire water celebrated worldwide as paradise on earth.",
+      "zh": "被《国家地理》评为人生必去的五十个天堂之一。垂直峭壁上密布的梦幻糖果色小楼与满山柠檬飘香的南意海岸。"
+    },
+    "seniorAccess": {
+      "ko": "포지타노 골목 계단은 매우 가파르므로 차량 대신 살레르노나 소렌토에서 출발하는 '해상 페리'를 탑승해 바다 위에서 절경 조망 추천",
+      "ja": "ポジターノの路地は急階段が連続するため、ソレントやサレルノから「海上フェリー」に乗れば座ったまま快適に絶景を鑑賞できます。",
+      "en": "Cliff village steps are exceptionally steep; taking the high-speed passenger ferry from Salerno or Sorrento offers smooth, seated panoramic views.",
+      "zh": "小镇阶梯极其陡峭，强烈建议乘坐萨莱诺或索伦托出发的海上渡轮，在舒适坐席上尽览绝壁小镇全景。"
+    },
+    "hours": {
+      "ko": "24시간 상시 개방 (페리 운항 08:30~18:00)",
+      "ja": "24時間常時開放 (フェリー運航 08:30~18:00)",
+      "en": "Coast open 24 hours (Ferries run 08:30~18:00)",
+      "zh": "海岸小镇全天开放 (客运渡轮班次 08:30~18:00)"
+    },
+    "ticketTip": {
+      "ko": "페리 티켓 현장 또는 온라인 사전 예매. 살레르노-아말피-포지타노 코스 추천",
+      "ja": "フェリーチケットはオンライン事前予約推奨。サレルノ〜アマルフィ〜ポジターノの航路が便利。",
+      "en": "Book Travelmar ferry tickets online in advance; Salerno to Amalfi and Positano is the most relaxing route.",
+      "zh": "建议提前在线预订Travelmar渡轮船票，从萨莱诺经阿马尔菲抵波西塔诺航线最为平稳舒适。"
+    }
+  }
+};
+  const _NEW_DINING = [
+  {
+    "name": "Casa Lucio",
+    "region": "스페인",
+    "city": "마드리드",
+    "country": "스페인",
+    "dishName": "전설의 반숙 계란 감자 볶음 (Huevos Rotos)",
+    "photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    "signature": "스페인 국왕과 클린턴 대통령도 방문한 라 라티나의 전설. 바삭한 올리브유 감자튀김 위에 신선한 유정란 반숙을 터뜨려 비벼 먹는 최고의 별미",
+    "seniorTip": "부드러운 계란과 감자로 치아가 약한 어르신도 편안하게 즐기실 수 있으며, 클래식 1층 테이블 좌석이 편안함",
+    "hours": "매일 13:00~16:00, 20:30~24:00",
+    "language": "스페인어 & 영어 소통 가능 · 전통 유니폼 웨이터의 친절한 테이블 서빙",
+    "phone": "+34 913 65 32 52",
+    "booking": "전화 또는 공식 사이트(casalucio.es) 1~2주 전 예약 권장",
+    "mapQuery": "Casa Lucio Madrid",
+    "baseKrw": 38000
+  },
+  {
+    "name": "Mercado de San Miguel",
+    "region": "스페인",
+    "city": "마드리드",
+    "country": "스페인",
+    "dishName": "신선 해산물 타파스 & 올리브 반데리야 (Tapas Variadas)",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    "highlight": "1916년에 지어진 아름다운 붉은 철골과 통유리 건축의 마드리드 대표 미식 시장. 30여 개 전문 부스에서 최고급 하몽과 굴, 핀초스",
+    "seniorTip": "식사 피크 타임(14시, 21시)에는 붐비므로 오후 12시 오픈 직후 방문 시 중앙 스탠딩 테이블 대신 편안한 좌석 선점 가능",
+    "hours": "일-목 10:00~24:00, 금-토 10:00~01:00",
+    "language": "영어 주문 매우 원활 · 각 부스별 눈으로 보고 직접 고르는 직관적 주문",
+    "phone": "+34 915 42 49 01",
+    "booking": "예약 불필요 (현장 자율 주문)",
+    "mapQuery": "Mercado de San Miguel Madrid",
+    "baseKrw": 28000
+  },
+  {
+    "name": "El Xampanyet",
+    "region": "스페인",
+    "city": "바르셀로나",
+    "country": "스페인",
+    "dishName": "홈메이드 스파클링 와인 & 최상급 안초비 (Xampanyet & Anchoas)",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
+    "signature": "피카소 미술관 옆 1929년 오픈한 보른 지구의 터줏대감. 자체 양조 청량한 스파클링 와인과 비린 맛 전혀 없는 짭조름한 앤초비 토마토 빵",
+    "seniorTip": "매장이 아담하고 활기차므로 19:00 오픈 15분 전 대기하여 안쪽 테이블석 착석 추천",
+    "hours": "화-토 12:00~15:30, 19:00~23:00 (일·월 휴무)",
+    "language": "영어 친절 응대 · 카운터 직원들의 유쾌한 서비스",
+    "phone": "+34 933 19 70 03",
+    "booking": "예약 불가 (현장 선착순 입장)",
+    "mapQuery": "El Xampanyet Barcelona",
+    "baseKrw": 32000
+  },
+  {
+    "name": "Bar Cañete",
+    "region": "스페인",
+    "city": "바르셀로나",
+    "country": "스페인",
+    "dishName": "이베리코 돼지 안심 & 푸아그라 샌드위치 (Solomillo con Foie)",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "signature": "현지 셰프들과 미식가들이 입을 모아 극찬하는 롱 카운터 타파스 바. 갓 볶아낸 맛조개 구이와 입에서 살살 녹는 이베리코 솔로미요",
+    "seniorTip": "바 좌석 뒤편에 편안한 정규 다이닝 룸 테이블이 완비되어 있어 가족 단위 사전 예약 시 안락하게 식사 가능",
+    "hours": "매일 13:00~24:00 (연중무휴)",
+    "language": "영어 능통 · 세련된 서비스와 한국어/영어 메뉴 지원",
+    "phone": "+34 932 70 34 58",
+    "booking": "공식 홈페이지(barcanete.com) 필수 사전 예약 권장",
+    "mapQuery": "Bar Canete Barcelona",
+    "baseKrw": 65000
+  },
+  {
+    "name": "Ciudad Condal",
+    "region": "스페인",
+    "city": "바르셀로나",
+    "country": "스페인",
+    "dishName": "꿀 마요네즈 대구 구이 (Bacalao al Allioli de Miel)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "카탈루냐 광장 인근 람블라스의 최고 인기 타파스 명가. 달콤한 꿀과 알리올리 소스를 얹어 오븐에 구워낸 부드러운 대구요리의 환상적 조화",
+    "seniorTip": "달콤하고 부드러운 대구살 요리는 어르신과 부모님 입맛에 실패 없는 1등 메뉴. 브레이크 타임 없이 오후 3~5시 방문 시 쾌적",
+    "hours": "매일 08:30~01:00 (브레이크 타임 없음)",
+    "language": "영어 능통 · 사진 메뉴판 및 직관적인 쇼케이스 안내",
+    "phone": "+34 933 18 19 97",
+    "booking": "예약 불가 (도착 즉시 카운터에서 웨이팅 명단 등록)",
+    "mapQuery": "Ciudad Condal Barcelona",
+    "baseKrw": 35000
+  },
+  {
+    "name": "Eslava",
+    "region": "스페인",
+    "city": "세비야",
+    "country": "스페인",
+    "dishName": "꿀 소스 돼지 갈비 & 버섯 슬로에그 (Costillas a la Miel)",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    "signature": "세비야 타파스 챔피언십 우승 메뉴가 즐비한 산 로렌소 광장의 성지. 겉은 캐러멜처럼 바삭하고 속은 부드럽게 찢어지는 꿀 갈비 구이",
+    "seniorTip": "바 구역은 좁지만 바로 옆 레스토랑 구역(테이블석)은 예약제로 운영되어 부모님 모시고 편안하게 코스 다이닝 가능",
+    "hours": "화-토 12:30~16:30, 20:00~24:00 (일·월 휴무)",
+    "language": "영어 주문 원활 · 타파스 상패와 함께 메뉴 상세 설명",
+    "phone": "+34 954 90 65 68",
+    "booking": "레스토랑 좌석 공식 웹(espacioeslava.com) 사전 예약",
+    "mapQuery": "Eslava Sevilla Spain",
+    "baseKrw": 36000
+  },
+  {
+    "name": "Bodega Santa Cruz (Las Columnas)",
+    "region": "스페인",
+    "city": "세비야",
+    "country": "스페인",
+    "dishName": "시금치 병아리콩 요리 (Espinacas con Garbanzos)",
+    "photo": "https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=800&q=80",
+    "signature": "대성당 인근 기둥이 늘어선 정통 안달루시아 보데가. 마늘과 큐민 향이 은은한 전통 시금치 병아리콩 요리와 몬타디토 샌드위치",
+    "seniorTip": "스페인 남부 전통 가정식으로 담백하고 소화가 매우 잘 되어 어르신 속 편한 식사로 최고. 가격도 타파스당 3~4유로로 매우 착함",
+    "hours": "매일 08:00~24:00",
+    "language": "친절한 바텐더들이 분필로 바 테이블에 주문 금액을 적어주는 정겨운 분위기",
+    "phone": "+34 954 21 32 41",
+    "booking": "예약 불가 (현장 자율 착석)",
+    "mapQuery": "Bodega Santa Cruz Las Columnas Seville",
+    "baseKrw": 18000
+  },
+  {
+    "name": "Bodegas Castañeda",
+    "region": "스페인",
+    "city": "그라나다",
+    "country": "스페인",
+    "dishName": "전통 콤비네이션 타파스 & 카스타녜다 와인 (Tabla Caliente)",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
+    "signature": "그라나다 무료 타파스 전통의 살아있는 역사. 음료 한 잔 주문 시마다 푸짐한 따뜻한 안주 타파스가 무료로 함께 나오는 안달루시아 인심",
+    "seniorTip": "안쪽 테이블석에 앉아 모둠 온타파스 플래터(Tabla Caliente)를 주문하면 여러 가지 스페인 요리를 한 번에 편안히 시식 가능",
+    "hours": "매일 11:30~16:30, 19:30~24:00",
+    "language": "영어 메뉴판 구비 · 활기차고 푸근한 안달루시아 환대",
+    "phone": "+34 958 21 54 69",
+    "booking": "예약 불가 (식사 시간 20분 전 여유 있게 방문 권장)",
+    "mapQuery": "Bodegas Castaneda Granada",
+    "baseKrw": 24000
+  },
+  {
+    "name": "Casa Pepe de la Judería",
+    "region": "스페인",
+    "city": "코르도바",
+    "country": "스페인",
+    "dishName": "가지 꿀 튀김 & 살모레호 (Berenjenas con Miel & Salmorejo)",
+    "photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    "signature": "유대인 지구 메스키타 인근 아름다운 안달루시아 파티오 레스토랑. 얇고 바삭하게 튀겨 사탕수수 꿀을 뿌린 가지 튀김과 진한 토마토 냉수프 살모레호",
+    "seniorTip": "꽃으로 장식된 평지 안뜰 파티오 테이블이 매우 아늑함. 살모레호는 새콤달콤하여 여행 중 잃어버린 입맛을 돋우기에 최고",
+    "hours": "매일 13:00~16:00, 20:00~23:30",
+    "language": "영어 유창 · 미쉐린 가이드 추천 정중한 서빙",
+    "phone": "+34 957 20 07 44",
+    "booking": "공식 사이트(casapepedelajuderia.com) 사전 예약 권장",
+    "mapQuery": "Casa Pepe de la Juderia Cordoba",
+    "baseKrw": 42000
+  },
+  {
+    "name": "Casa Carmela",
+    "region": "스페인",
+    "city": "발렌시아",
+    "country": "스페인",
+    "dishName": "1922년 전통 장작불 원조 빠에야 (Paella Valenciana a la Leña)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "발렌시아 말바로사 해변 인근 100년 전통의 원조 빠에야 명가. 오렌지 나무 장작불 위에서 직접 끓여내어 누룽지(소카랏)가 일품인 전통 빠에야",
+    "seniorTip": "토끼고기, 닭고기, 리마콩이 어우러진 담백하고 깊은 육수. 해변 산책로와 가까워 식사 후 평지 바닷가 산책 코스로 완벽",
+    "hours": "화-일 13:30~16:00 (월요일 정기 휴무, 점심 전용)",
+    "language": "영어 소통 원활 · 전통 세라믹 식기 세팅과 품격 있는 서비스",
+    "phone": "+34 963 71 00 73",
+    "booking": "인기 식당으로 최소 2~3주 전 공식 웹 사전 예약 필수",
+    "mapQuery": "Casa Carmela Valencia",
+    "baseKrw": 48000
+  },
+  {
+    "name": "Time Out Market Lisboa",
+    "region": "포르투갈",
+    "city": "리스본",
+    "country": "포르투갈",
+    "dishName": "미쉐린 셰프 셀렉션 타파스 & 디저트 (Gourmet Food Hall)",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+    "signature": "히베이라 시장 안 리스본 최고의 셰프들과 유명 디저트점이 한자리에 모인 미식 홀. 포르투갈 최고 쇠고기 스테이크, 생선 타르타르, 와인",
+    "seniorTip": "넓은 단층 평지 공간에 엘리베이터와 넓은 통로가 확보되어 휠체어나 어르신 동행에 최적. 각자 취향에 맞는 메뉴를 골라 함께 식사 가능",
+    "hours": "매일 10:00~24:00 (금·토 01:00까지)",
+    "language": "영어 완벽 · 전 매장 키오스크 및 다국어 안내",
+    "phone": "+351 21 395 1274",
+    "booking": "예약 불필요 (대형 푸드홀 자율 착석)",
+    "mapQuery": "Time Out Market Lisbon",
+    "baseKrw": 32000
+  },
+  {
+    "name": "Taberna da Rua das Flores",
+    "region": "포르투갈",
+    "city": "리스본",
+    "country": "포르투갈",
+    "dishName": "칠판 메뉴 오늘의 제철 대서양 생선 요리 (Prato do Dia)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "시아두 언덕 아래 아담하고 따스한 감성의 정통 타베르나. 매일 아침 어시장에서 들여온 신선한 해산물과 바칼라우 크로켓, 제철 조림",
+    "seniorTip": "자극적이지 않고 재료 본연의 맛을 살린 포르투갈 집밥 스타일로 부모님 만족도가 매우 높음. 12시 점심 오픈 맞춰 방문 추천",
+    "hours": "월-토 12:00~23:30 (일요일 휴무)",
+    "language": "영어 매우 유창 · 직원이 칠판 메뉴판을 테이블로 가져와 상세 번역 설명",
+    "phone": "+351 21 347 9418",
+    "booking": "점심은 선착순, 저녁은 당일 현장 이름 등록",
+    "mapQuery": "Taberna da Rua das Flores Lisbon",
+    "baseKrw": 35000
+  },
+  {
+    "name": "O Trevo",
+    "region": "포르투갈",
+    "city": "리스본",
+    "country": "포르투갈",
+    "dishName": "원조 포르투갈식 돼지고기 샌드위치 (Bifana Tradicional)",
+    "photo": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80",
+    "signature": "안소니 부르댕의 방송 출연으로 유명해진 카몽이스 광장 앞 서민 스낵바. 화이트 와인과 마늘, 파프리카에 푹 끓여낸 촉촉한 돼지고기를 빵 사이에 넣은 비파나",
+    "seniorTip": "고기가 푹 삶아져 매우 부드럽고 기름지지 않음. 노란 머스터드와 피리피리 핫소스를 취향껏 뿌려 가볍고 든든한 간식으로 최고",
+    "hours": "월-토 07:00~22:00 (일요일 휴무)",
+    "language": "간단한 영어 주문 가능 · 즉석에서 철판 조리",
+    "phone": "+351 21 346 0578",
+    "booking": "예약 불가 (캐주얼 스탠딩 및 소형 테이블)",
+    "mapQuery": "O Trevo Lisbon",
+    "baseKrw": 8000
+  },
+  {
+    "name": "Manteigaria",
+    "region": "포르투갈",
+    "city": "리스본",
+    "country": "포르투갈",
+    "dishName": "갓 구운 버터 크런치 에그타르트 (Pastel de Nata Artesanal)",
+    "photo": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "signature": "에그타르트가 오븐에서 나올 때마다 은은한 종소리가 울려 퍼지는 장인 디저트 전문점. 얇고 바삭바삭한 페이스트리와 달콤하고 진한 커스터드 크림",
+    "seniorTip": "계피 가루(Canela)와 슈거 파우더를 살짝 털어 에스프레소(비카)와 함께 즐기면 단맛이 중화되어 어르신들도 2~3개씩 드시는 디저트",
+    "hours": "매일 08:00~24:00",
+    "language": "영어 능통 · 통유리 너머로 장인들의 타르트 반죽 직관 가능",
+    "phone": "+351 21 347 1492",
+    "booking": "포장 및 매장 취식 자율",
+    "mapQuery": "Manteigaria Chiado Lisbon",
+    "baseKrw": 3000
+  },
+  {
+    "name": "Cantinho do Avillez",
+    "region": "포르투갈",
+    "city": "포르투",
+    "country": "포르투갈",
+    "dishName": "저온 조리 부드러운 문어 구이 (Polvo Confitado)",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "signature": "포르투갈 최초 미쉐린 2스타 셰프 조제 아빌레즈의 감각적인 포르투 비스트로. 저온에서 장시간 조리해 입안에서 사르르 녹는 문어와 헤이즐넛 리조또",
+    "seniorTip": "문어가 전혀 질기지 않고 칼을 대는 순간 부드럽게 썰려 어르신 치아 부담이 전혀 없음. 세련된 단층 인테리어와 안락한 의자",
+    "hours": "매일 12:30~15:00, 19:30~23:00",
+    "language": "영어 완벽 · 전문 소믈리에의 와인 페어링 추천",
+    "phone": "+351 22 325 7000",
+    "booking": "공식 사이트(cantinhodoavillez.pt) 사전 예약 추천",
+    "mapQuery": "Cantinho do Avillez Porto",
+    "baseKrw": 52000
+  },
+  {
+    "name": "Taberna dos Mercadores",
+    "region": "포르투갈",
+    "city": "포르투",
+    "country": "포르투갈",
+    "dishName": "소금 불꽃 크러스트 도미 구이 (Peixe ao Sal Flamejado)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "히베이라 골목길의 전설적인 8개 테이블 작은 타베르나. 소금 반죽을 덮어 불꽃 쇼와 함께 테이블 앞에서 껍질을 벗겨주는 촉촉한 통도미 소금구이",
+    "seniorTip": "생선 살코기에 소금 간이 완벽히 배어들고 기름기 없이 촉촉하여 부모님 건강식으로 최상. 아늑하고 정겨운 패밀리 서비스",
+    "hours": "수-일 12:30~15:00, 19:30~22:30 (월·화 휴무)",
+    "language": "영어 친절 소통 · 생선 가시를 직접 발라주는 섬세한 테이블 서비스",
+    "phone": "+351 22 201 0510",
+    "booking": "좌석이 적으므로 방문 1~2주 전 예약 또는 오픈런 필수",
+    "mapQuery": "Taberna dos Mercadores Porto",
+    "baseKrw": 48000
+  },
+  {
+    "name": "Cervejaria Gazela",
+    "region": "포르투갈",
+    "city": "포르투",
+    "country": "포르투갈",
+    "dishName": "원조 포르투 명물 카샤오 (Cachorrinho Picante)",
+    "photo": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80",
+    "signature": "바삭하게 구운 바게트 빵에 훈제 소시지와 녹진한 치즈를 넣고 특제 매콤 버터 소스를 발라 먹기 좋게 한입 크기로 썰어주는 포르투식 핫도그",
+    "seniorTip": "안소니 부르댕이 생전 사랑한 스낵. 매운맛 조절(Sem Picante)이 가능하여 부모님 입맛에 맞춰 순하게 주문 가능",
+    "hours": "월-금 12:00~22:30, 토 12:00~18:00 (일요일 휴무)",
+    "language": "영어 주문 가능 · 오픈 키친 바 카운터 조리 직관",
+    "phone": "+351 22 332 4910",
+    "booking": "예약 불가 (회전율 빠름)",
+    "mapQuery": "Cervejaria Gazela Porto",
+    "baseKrw": 12000
+  },
+  {
+    "name": "Casa Piriquita",
+    "region": "포르투갈",
+    "city": "신트라",
+    "country": "포르투갈",
+    "dishName": "1862년 왕실 인증 아몬드 페이스트리 (Travesseiros de Sintra)",
+    "photo": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "signature": "포르투갈 왕실 카를루스 1세 국왕이 사랑했던 160년 전통의 신트라 베이커리. '베개'라는 뜻의 바삭한 아몬드 에그크림 페이스트리 트라베세이루와 치즈 타르트 케이자다",
+    "seniorTip": "페나 성 관람 후 지친 몸에 당을 충전하기 제격. 따뜻한 허브티나 카페 핑고(연한 라테)와 함께 안쪽 테이블에서 편안히 휴식",
+    "hours": "목-화 09:00~19:00 (수요일 정기 휴무)",
+    "language": "영어 능통 · 번호표 뽑고 주문하는 체계적 시스템",
+    "phone": "+351 21 923 0626",
+    "booking": "예약 불가 (번호표 순서 입장)",
+    "mapQuery": "Casa Piriquita Sintra Portugal",
+    "baseKrw": 6000
+  },
+  {
+    "name": "Restaurante O Camilo",
+    "region": "포르투갈",
+    "city": "라구스",
+    "country": "포르투갈",
+    "dishName": "알가르베 전통 구리 냄비 해산물 찜 (Cataplana de Marisco)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "카밀로 해변 절벽 위에 자리 잡아 대서양 에메랄드 오션뷰를 조망할 수 있는 남부 최고 명소. 조개 모양 구리 냄비(카타플라나)에 새우, 바지락, 생선을 넣고 쪄낸 감칠맛 폭발 요리",
+    "seniorTip": "국물이 진하고 시원하여 한국인 부모님 입맛에 해물탕처럼 친숙하고 만족도 100%. 주차장에서 식당까지 완전 평지 연결",
+    "hours": "화-일 12:30~16:00, 19:00~22:30 (월요일 휴무)",
+    "language": "영어 완벽 · 바다 전망 창가 테라스 좌석 완비",
+    "phone": "+351 282 763 848",
+    "booking": "성수기/주말 공식 사이트 사전 예약 권장",
+    "mapQuery": "Restaurante O Camilo Lagos Portugal",
+    "baseKrw": 55000
+  },
+  {
+    "name": "Quinta do Furão",
+    "region": "포르투갈",
+    "city": "마데이라",
+    "country": "포르투갈",
+    "dishName": "마데이라 와인 소스 안심 스테이크 & 전통 수프 (Bife com Vinho da Madeira)",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "signature": "산타나 해안 절벽 포도원 한가운데 위치한 절경의 전통 킨타 레스토랑. 마데이라 특산 주정강화 와인 소스를 곁들인 스테이크와 토종 야채 수프",
+    "seniorTip": "대서양 절벽과 포도밭이 어우러진 꿈같은 풍경 속에서 우아하고 여유로운 슬로 다이닝. 차량으로 정문 바로 앞까지 접근 가능",
+    "hours": "매일 12:00~16:00, 18:30~22:30",
+    "language": "영어 완벽 · 호텔 연계 품격 높은 서비스",
+    "phone": "+351 291 570 100",
+    "booking": "전망 테라스 좌석 사전 예약 필수",
+    "mapQuery": "Quinta do Furao Restaurant Santana Madeira",
+    "baseKrw": 58000
+  },
+  {
+    "name": "Le Relais de l'Entrecôte",
+    "region": "프랑스",
+    "city": "파리",
+    "country": "프랑스",
+    "dishName": "비법 허브 버터 소스 살치살 스테이크 (Steak-Frites Signature)",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "signature": "메뉴판 없이 오직 '굽기'만 물어보는 파리 최고 인기 단일 메뉴 식당. 식지 않도록 2번에 나누어 따뜻하게 서빙되는 비법 그린 소스 스테이크와 갓 튀긴 감자튀김",
+    "seniorTip": "고기가 부드럽고 호불호 없이 온 가족이 좋아하는 클래식한 맛. 저녁 오픈 15분 전 도착 시 바로 1차 입장 가능",
+    "hours": "매일 12:00~14:30, 18:45~23:00",
+    "language": "영어 주문 수월 · 일사불란하고 친절한 웨이트리스 서빙",
+    "phone": "+34 914 31 81 49",
+    "booking": "예약 불가 (선착순 입장)",
+    "mapQuery": "Le Relais de l'Entrecote Paris Saint-Germain",
+    "baseKrw": 48000
+  },
+  {
+    "name": "L'As du Fallafel",
+    "region": "프랑스",
+    "city": "파리",
+    "country": "프랑스",
+    "dishName": "마레 지구 원조 피타 팔라펠 샌드위치 (Fallafel Spécial)",
+    "photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    "signature": "마레 지구 로지에 거리에 위치한 레니 크라비츠 등 세계 스타들의 인생 맛집. 따끈한 피타 빵 속에 갓 튀긴 병아리콩 팔라펠, 구운 가지, 적채, 타히니 소스를 듬뿍 채운 샌드위치",
+    "seniorTip": "길거리 테이크아웃 대신 안쪽 실내 테이블 좌석에 앉아 주문하면 부모님 모시고 편안하게 식사 가능",
+    "hours": "일-목 11:00~23:00, 금 11:00~16:00 (토요일 안식일 휴무)",
+    "language": "영어 매우 능통 · 활기찬 서비스",
+    "phone": "+33 1 48 87 63 60",
+    "booking": "예약 불가 (실내 식사는 대기줄 분리 운영)",
+    "mapQuery": "L'As du Fallafel Paris Marais",
+    "baseKrw": 18000
+  },
+  {
+    "name": "Carette",
+    "region": "프랑스",
+    "city": "파리",
+    "country": "프랑스",
+    "dishName": "수제 휘핑크림 핫초콜릿 & 마카롱 (Chocolat Chaud & Chantilly)",
+    "photo": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "signature": "1927년 트로카데로 광장에 문을 연 파리지앵의 사랑방. 은제 주전자에 담긴 진한 핫초콜릿과 대형 볼에 넘치도록 담아주는 신선한 샹티이 생크림의 천상 조합",
+    "seniorTip": "에펠탑 관람 전후 광장 평지에서 우아한 티타임을 갖기에 최적. 푹신한 실내 벨벳 의자나 온열기 구비된 테라스 좌석 추천",
+    "hours": "매일 07:30~23:30",
+    "language": "영어 능통 · 고풍스러운 은식기 정통 프렌치 서비스",
+    "phone": "+33 1 47 27 98 85",
+    "booking": "예약 불가 (티타임 피크 시간 약간의 대기)",
+    "mapQuery": "Carette Place du Trocadero Paris",
+    "baseKrw": 28000
+  },
+  {
+    "name": "Café de Flore",
+    "region": "프랑스",
+    "city": "파리",
+    "country": "프랑스",
+    "dishName": "클래식 크로크무슈 & 카페 크렘 (Croque Monsieur Traditionnel)",
+    "photo": "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80",
+    "signature": "1887년 생제르맹 데 프레에 개업하여 사르트르, 보부아르, 카뮈가 사색을 나누던 지성의 요람. 고소한 에멘탈 치즈와 햄을 구워낸 원조 크로크무슈",
+    "seniorTip": "파리의 낭만을 느끼며 어르신과 함께 생제르맹 거리를 오가는 사람들을 구경하는 테라스 명당 좌석. 오전 브런치 타임이 여유로움",
+    "hours": "매일 07:30~01:30",
+    "language": "영어 완벽 · 전통 흰 앞치마를 두른 노련한 가르송 응대",
+    "phone": "+33 1 45 48 55 26",
+    "booking": "예약 불가 (현장 자율 착석)",
+    "mapQuery": "Cafe de Flore Paris",
+    "baseKrw": 34000
+  },
+  {
+    "name": "Du Pain et des Idées",
+    "region": "프랑스",
+    "city": "파리",
+    "country": "프랑스",
+    "dishName": "피스타치오 초콜릿 달팽이 빵 (Escargot Pistache Chocolat)",
+    "photo": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+    "signature": "1875년 전통 목조 매장을 그대로 간직한 생마르탱 운하 인근 파리 최고의 아티장 블랑제리. 고소한 피스타치오 크림과 초콜릿 칩이 소용돌이치는 명물 페이스트리",
+    "seniorTip": "운하 벤치나 매장 앞 목재 벤치에서 따뜻한 커피와 함께 아침 식사로 가볍게 즐기기 좋음. 겉바속촉 빵의 정점",
+    "hours": "월-금 07:15~19:30 (토·일 휴무)",
+    "language": "친절한 영어 주문 · 빵 굽는 고소한 버터 향 가득",
+    "phone": "+33 1 42 40 44 52",
+    "booking": "포장 전문 (테이크아웃)",
+    "mapQuery": "Du Pain et des Idees Paris",
+    "baseKrw": 8000
+  },
+  {
+    "name": "La Merenda",
+    "region": "프랑스",
+    "city": "니스",
+    "country": "프랑스",
+    "dishName": "남프랑스 정통 송아지 위 조림 & 뇨키 (Pâte au Pistou & Daube)",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    "signature": "미쉐린 2스타 호텔 셰프 도미니크 르 스탕케가 은퇴 후 차린 작고 소박한 니스 전통 가정식 식당. 바질 페스토 생면 파스타와 부드럽게 고아낸 소고기 도브 조림",
+    "seniorTip": "올리브유와 바질, 마늘 베이스의 건강한 지중해식 조리법으로 어르신 속이 편안함. 전화가 없으므로 온라인 사전 예약 필수",
+    "hours": "화-금 12:00~14:00, 19:00~21:30 (토-월 휴무)",
+    "language": "영어 친절 소통 · 아담한 원형 테이블 오픈 키친",
+    "phone": "온라인 예약 전용",
+    "booking": "공식 사이트(lamerenda.net) 온라인 사전 예약 필수",
+    "mapQuery": "La Merenda Nice France",
+    "baseKrw": 49000
+  },
+  {
+    "name": "Restaurant Le Miramar",
+    "region": "프랑스",
+    "city": "마르세유",
+    "country": "프랑스",
+    "dishName": "정통 마르세유 황금 생선 수프 부야베스 (Vraie Bouillabaisse)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "마르세유 구항구(Vieux-Port) 앞 '부야베스 헌장'을 준수하는 공인 최고봉 명가. 지중해 암초 생선 6종을 사프란과 함께 우려낸 황금빛 수프와 마늘 루유(Rouille) 소스 바게트",
+    "seniorTip": "먼저 걸쭉하고 따뜻한 어탕 수프를 마시고 이어서 통살 생선을 발라 먹는 2단계 코스로 부모님 보양식으로 최고",
+    "hours": "화-일 12:00~14:30, 19:00~22:30 (월요일 휴무)",
+    "language": "영어 완벽 · 신선한 오늘의 생선 트레이를 직접 보여주고 조리",
+    "phone": "+33 4 91 91 10 40",
+    "booking": "공식 사이트(lemiramar.fr) 필수 예약 권장",
+    "mapQuery": "Restaurant Le Miramar Marseille",
+    "baseKrw": 110000
+  },
+  {
+    "name": "Armando al Pantheon",
+    "region": "이탈리아",
+    "city": "로마",
+    "country": "이탈리아",
+    "dishName": "정통 로마식 아마트리치아나 & 어린 양고기 (Amatriciana & Abbacchio)",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    "signature": "1961년부터 판테온 신전 골목을 지켜온 로마 최고의 슬로푸드 전통 트라토리아. 바삭한 구안찰레와 산마르차노 토마토, 페코리노 로마노 치즈가 어우러진 교과서적 파스타",
+    "seniorTip": "판테온 바로 옆 평지 골목에 위치하여 이동이 편안하고, 예약제로 운영되어 복잡한 줄 서기 없이 우아하게 착석 가능",
+    "hours": "월-토 12:30~15:00, 19:30~23:00 (일요일 정기 휴무)",
+    "language": "영어 완벽 · 가르기올리 가문의 따뜻하고 품격 있는 패밀리 응대",
+    "phone": "+39 06 6880 3034",
+    "booking": "예약 필수 (공식 사이트 armandoalpantheon.it 최소 3~4주 전 오픈)",
+    "mapQuery": "Armando al Pantheon Rome",
+    "baseKrw": 46000
+  },
+  {
+    "name": "Osteria da Fortunata",
+    "region": "이탈리아",
+    "city": "로마",
+    "country": "이탈리아",
+    "dishName": "할머니 손반죽 생면 탈리아텔레 라구 (Tagliatelle al Ragù)",
+    "photo": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+    "signature": "캄포 데 피오리 광장 인근 유리창 너머로 이탈리아 할머니(Nonna)가 갓 뽑아내는 수제 생면 파스타. 쫄깃하고 탄력 넘치는 면발과 깊은 감칠맛의 소고기 볼로네제 라구",
+    "seniorTip": "건면과 달리 갓 뽑은 생면이라 부드럽고 소화가 월등히 잘 됨. 카르보나라와 라구 모두 어르신 호평 일색",
+    "hours": "매일 12:00~01:00 (브레이크 없음)",
+    "language": "영어 주문 수월 · 눈앞에서 펼쳐지는 생면 제조 시연 구경 재미",
+    "phone": "+39 06 6066 7391",
+    "booking": "예약 불가 (오후 3~5시 애매한 시간대 방문 시 대기 없이 착석)",
+    "mapQuery": "Osteria da Fortunata Rome",
+    "baseKrw": 32000
+  },
+  {
+    "name": "Trattoria Mario",
+    "region": "이탈리아",
+    "city": "피렌체",
+    "country": "이탈리아",
+    "dishName": "토스카나 야채 수프 립볼리타 & 오소부코 (Ribollita & Ossobuco)",
+    "photo": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
+    "signature": "1953년 산 로렌초 시장 옆에 개업한 피렌체의 살아있는 전설. 케일과 흰 콩, 빵을 넣고 푹 끓인 토스카나 영양 수프 립볼리타와 부드러운 송아지 정강이 찜 오소부코",
+    "seniorTip": "립볼리타는 따뜻하고 부드러운 야채 죽 같아서 기름진 서양식에 지친 부모님의 속을 편안하게 달래주는 효자 메뉴",
+    "hours": "월-토 12:00~15:00 (일요일 휴무, 점심 전용)",
+    "language": "영어 주문 가능 · 합석 문화가 있는 유쾌하고 시끌벅적한 현지 분위기",
+    "phone": "+39 055 218550",
+    "booking": "예약 불가 (11:45분 도착 대기 추천)",
+    "mapQuery": "Trattoria Mario Florence",
+    "baseKrw": 26000
+  },
+  {
+    "name": "Ristorante Buca Lapi",
+    "region": "이탈리아",
+    "city": "피렌체",
+    "country": "이탈리아",
+    "dishName": "1880년 피렌체 최고령 숯불 비스테카 (Bistecca alla Fiorentina 1.2kg)",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    "signature": "안티노리 궁전 지하 유서 깊은 와인 셀러에서 운영되는 피렌체에서 가장 오래된 식당. 참나무 숯불로 구워 겉은 크리스피하고 속은 육즙이 폭발하는 키아니나 암소 티본스테이크",
+    "seniorTip": "천장이 오래된 벽화와 포스터로 장식된 클래식한 공간. 어르신을 위해 고기를 얇게 썰어 테이블에 서빙해 주며 부드러운 감자 퓌레와 환상 조합",
+    "hours": "화-일 19:00~23:00 (월요일 휴무, 저녁 전용)",
+    "language": "영어 완벽 · 전통 정장 지배인의 최고급 하스피탈리티",
+    "phone": "+39 055 213768",
+    "booking": "공식 사이트(bucalapi.com) 최소 2주 전 필수 예약",
+    "mapQuery": "Buca Lapi Florence",
+    "baseKrw": 120000
+  },
+  {
+    "name": "Osteria alle Testiere",
+    "region": "이탈리아",
+    "city": "베네치아",
+    "country": "이탈리아",
+    "dishName": "리알토 어시장 직송 바지락 스파게티 (Spaghetti alle Vongole e Gò)",
+    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+    "signature": "테이블 단 9개의 미쉐린 빕 구르망 해산물 오스테리아. 루카와 브루노 두 친구가 매일 아침 리알토 시장에서 들여온 제철 바지락, 면도조개, 바닷가재로 완성하는 마법 같은 맛",
+    "seniorTip": "비린 맛이 전혀 없는 맑고 깊은 해산물 육수 파스타. 산 마르코 광장에서 도보 7분 거리의 조용한 골목 평지에 위치",
+    "hours": "화-토 12:30~14:30, 19:00~22:30 (일·월 휴무)",
+    "language": "영어 유창 · 그날의 해산물에 맞는 베네토 화이트 와인 추천",
+    "phone": "+39 041 522 7220",
+    "booking": "좌석이 극소수이므로 최소 3~4주 전 이메일/전화 예약 필수",
+    "mapQuery": "Osteria alle Testiere Venice",
+    "baseKrw": 68000
+  },
+  {
+    "name": "Trattoria Milanese",
+    "region": "이탈리아",
+    "city": "밀라노",
+    "country": "이탈리아",
+    "dishName": "황금 사프란 리조또 & 송아지 커틀릿 (Risotto allo Zafferano & Cotoletta)",
+    "photo": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80",
+    "signature": "1933년 개업 이래 밀라노 전통 요리의 정통성을 지켜온 나빌리오 인근 트라토리아. 진한 사프란 향이 밴 크리미한 황금 리조또와 맑은 버터에 튀긴 바삭한 송아지 갈비 커틀릿",
+    "seniorTip": "부드러운 사프란 리조또는 어르신 소화에 아주 좋고 풍미가 뛰어남. 클래식 목재 패널의 안락한 좌석과 단층 평지 구조",
+    "hours": "화-일 12:30~15:00, 19:30~23:00 (월요일 휴무)",
+    "language": "영어 소통 원활 · 밀라노 신사 지배인들의 정중한 서비스",
+    "phone": "+39 02 8645 1991",
+    "booking": "전화 또는 온라인 사전 예약 권장",
+    "mapQuery": "Trattoria Milanese Milano",
+    "baseKrw": 52000
+  },
+  {
+    "name": "L'Antica Pizzeria da Michele",
+    "region": "이탈리아",
+    "city": "나폴리",
+    "country": "이탈리아",
+    "dishName": "1870년 나폴리 원조 마르게리타 화덕 피자 (Pizza Margherita)",
+    "photo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+    "signature": "영화 '먹고 기도하고 사랑하라'에 나온 150년 전통 나폴리 피자의 성지. 장작 화덕에서 90초 만에 구워내는 신선한 캄파니아 버팔로 모차렐라와 산마르차노 토마토의 기적",
+    "seniorTip": "도우가 얇고 쫄깃하며 기름기 없이 소화가 매우 잘 됨. 피자 한 판에 5~7유로로 믿기지 않는 가성비",
+    "hours": "매일 11:00~23:00",
+    "language": "영어 주문 가능 · 번호표를 받고 매장 앞에서 대기하는 활기찬 시스템",
+    "phone": "+39 081 553 9204",
+    "booking": "예약 불가 (도착 즉시 매장 입구에서 번호표 수령)",
+    "mapQuery": "L'Antica Pizzeria da Michele Naples",
+    "baseKrw": 12000
+  }
+];
+  const _ALL_NEW_DINING_I18N = {
+  "Casa Lucio": {
+    "displayName": {
+      "ko": "Casa Lucio",
+      "ja": "Casa Lucio",
+      "en": "Casa Lucio",
+      "zh": "Casa Lucio"
+    },
+    "dishTitle": {
+      "ko": "전설의 반숙 계란 감자 볶음 (Huevos Rotos)",
+      "ja": "伝統の半熟卵とポテト炒め (Huevos Rotos)",
+      "en": "Legendary Broken Eggs with Fried Potatoes (Huevos Rotos)",
+      "zh": "马德里传奇流心溏心蛋炸土豆 (Huevos Rotos)"
+    },
+    "badge": {
+      "ko": "스페인 · 마드리드",
+      "ja": "スペイン・マドリード",
+      "en": "Spain · Madrid",
+      "zh": "西班牙 · 马德里"
+    },
+    "signature": {
+      "ko": "스페인 국왕과 클린턴 대통령도 방문한 라 라티나의 전설. 바삭한 올리브유 감자튀김 위에 신선한 유정란 반숙을 터뜨려 비벼 먹는 최고의 별미",
+      "ja": "スペイン国王やクリントン大統領も訪れたラ・ラティーナの伝説的名店。上質なオリーブ油で揚げたサクサクのポテトに新鮮な半熟卵を崩して絡める絶品名物。",
+      "en": "A La Latina institution visited by King Juan Carlos and Bill Clinton. Crisp olive-oil fried potatoes topped with runny free-range fried eggs broken tableside.",
+      "zh": "西班牙国王与克林顿总统曾光顾的拉拉蒂纳区传奇老店。特级橄榄油现炸金黄土豆条，覆以流心走地鸡蛋，在桌边趁热拌匀，香气四溢。"
+    },
+    "seniorTip": {
+      "ko": "부드러운 계란과 감자로 치아가 약한 어르신도 편안하게 즐기실 수 있으며, 클래식 1층 테이블 좌석이 편안함",
+      "ja": "柔らかい半熟卵とホクホクのポテトでシニアにも非常に食べやすく安心。1階のクラシックなテーブル席が平坦で快適です。",
+      "en": "Very soft and gentle on teeth, ideal for senior parents. Request ground-floor classic table seating to avoid stairs.",
+      "zh": "温润细腻的鸡蛋与软糯土豆极易咀嚼消化，非常适合长辈享用。建议预约一层平地经典餐桌避开阶梯。"
+    },
+    "hours": {
+      "ko": "매일 13:00~16:00, 20:30~24:00",
+      "ja": "毎日 13:00~16:00, 20:30~24:00",
+      "en": "Daily 13:00~16:00, 20:30~24:00",
+      "zh": "每日 13:00~16:00, 20:30~24:00"
+    },
+    "language": {
+      "ko": "스페인어 & 영어 소통 가능 · 전통 유니폼 웨이터의 친절한 테이블 서빙",
+      "ja": "スペイン語・英語対応可能・伝統正装ウェイターによる親切丁寧なテーブルサービス",
+      "en": "Spanish & English spoken · Courteous formal waiter service at table",
+      "zh": "支持西语与流利英语 · 传统制服侍者提供体贴周到的桌边服务"
+    },
+    "booking": {
+      "ko": "전화 또는 공식 사이트(casalucio.es) 1~2주 전 예약 권장",
+      "ja": "電話または公式サイト(casalucio.es) 1〜2週間前 予約推奨",
+      "en": "Phone or official website (casalucio.es) 1–2 weeks advance booking recommended",
+      "zh": "建议提前1~2周通过电话或官网(casalucio.es)预约"
+    }
+  },
+  "Mercado de San Miguel": {
+    "displayName": {
+      "ko": "Mercado de San Miguel",
+      "ja": "Mercado de San Miguel",
+      "en": "Mercado de San Miguel",
+      "zh": "Mercado de San Miguel"
+    },
+    "dishTitle": {
+      "ko": "신선 해산물 타파스 & 올리브 반데리야 (Tapas Variadas)",
+      "ja": "新鮮魚介タパス＆オリーブのピンチョス (Tapas Variadas)",
+      "en": "Fresh Seafood Tapas & Olive Skewers (Tapas Variadas)",
+      "zh": "精选新鲜海鲜塔帕斯与橄榄风味串 (Tapas Variadas)"
+    },
+    "badge": {
+      "ko": "스페인 · 마드리드",
+      "ja": "スペイン・マドリード",
+      "en": "Spain · Madrid",
+      "zh": "西班牙 · 马德里"
+    },
+    "signature": {
+      "ko": "1916년에 지어진 아름다운 붉은 철골과 통유리 건축의 마드리드 대표 미식 시장. 30여 개 전문 부스에서 최고급 하몽과 굴, 핀초스",
+      "ja": "1916年建造の美しい鉄骨ガラス造りの歴史的市場。最高級イベリコ生ハム、生牡蠣、タパスなど30以上の専門店が集う美食の殿堂。",
+      "en": "Historic 1916 iron-and-glass gourmet culinary market. Over 30 specialist stalls offering bellota Ibérico ham, pristine oysters, and creative pintxos.",
+      "zh": "始建于1916年的典雅铁艺玻璃建筑美食市集。汇聚30余家专业摊位，供应顶级橡果伊比利亚火腿、鲜活生蚝与精致拼盘。"
+    },
+    "seniorTip": {
+      "ko": "식사 피크 타임(14시, 21시)에는 붐비므로 오후 12시 오픈 직후 방문 시 중앙 스탠딩 테이블 대신 편안한 좌석 선점 가능",
+      "ja": "混雑する14時や21時を避け、正午12時頃の開店直後に訪れるとテーブル席をゆっくり確保できます。",
+      "en": "Peak hours are crowded; visit right at 12:00 noon for relaxed seating along the central counters.",
+      "zh": "高峰时段人流密集，建议中午12点开门前后前往，可轻松挑选舒适座位从容品尝。"
+    },
+    "hours": {
+      "ko": "일-목 10:00~24:00, 금-토 10:00~01:00",
+      "ja": "日〜木 10:00~24:00, 金〜土 10:00~01:00",
+      "en": "Sun–Thu 10:00~24:00, Fri–Sat 10:00~01:00",
+      "zh": "周日至周四 10:00~24:00, 周五至周六 10:00~01:00"
+    },
+    "language": {
+      "ko": "영어 주문 매우 원활 · 각 부스별 눈으로 보고 직접 고르는 직관적 주문",
+      "ja": "英語対応円滑・ショーケースを見て指差しで簡単に注文可能",
+      "en": "Fluent English widely spoken · Easy point-and-order display showcases",
+      "zh": "英语交流顺畅 · 各摊位展示柜直观清晰，支持指单点餐"
+    },
+    "booking": {
+      "ko": "예약 불필요 (현장 자율 주문)",
+      "ja": "予約不要 (店頭自由注文・着席)",
+      "en": "No reservation needed · Walk-in marketplace",
+      "zh": "无需预约 (现场自由点单入座)"
+    }
+  },
+  "El Xampanyet": {
+    "displayName": {
+      "ko": "El Xampanyet",
+      "ja": "El Xampanyet",
+      "en": "El Xampanyet",
+      "zh": "El Xampanyet"
+    },
+    "dishTitle": {
+      "ko": "홈메이드 스파클링 와인 & 최상급 안초비 (Xampanyet & Anchoas)",
+      "ja": "自家製スパークリングワイン＆特上アンチョビ (Xampanyet & Anchoas)",
+      "en": "House Sparkling Wine & Artisanal Salted Anchovies (Xampanyet & Anchoas)",
+      "zh": "自酿特色气泡酒配顶级腌制凤尾鱼 (Xampanyet & Anchoas)"
+    },
+    "badge": {
+      "ko": "스페인 · 바르셀로나",
+      "ja": "スペイン・バルセロナ",
+      "en": "Spain · Barcelona",
+      "zh": "西班牙 · 巴塞罗那"
+    },
+    "signature": {
+      "ko": "피카소 미술관 옆 1929년 오픈한 보른 지구의 터줏대감. 자체 양조 청량한 스파클링 와인과 비린 맛 전혀 없는 짭조름한 앤초비 토마토 빵",
+      "ja": "ピカソ美術館隣、1929年創業の老舗タパスバル。爽やかな自家製発泡ワインと、臭みが全くない上質なアンチョビ・パンコントマテ。",
+      "en": "Beloved Born quarter gem founded in 1929 next to Picasso Museum. Bubbly house sparkling wine paired with melt-in-the-mouth Cantabrian anchovies on tomato bread.",
+      "zh": "紧邻毕加索博物馆、创于1929年的波恩区老字号。清爽自酿特色气泡酒配毫无腥味的鲜美凤尾鱼与番茄烤面包。"
+    },
+    "seniorTip": {
+      "ko": "매장이 아담하고 활기차므로 19:00 오픈 15분 전 대기하여 안쪽 테이블석 착석 추천",
+      "ja": "店内がコンパクトなため、夜19:00の開店15分前に並んで奥のテーブル席に座るのがおすすめです。",
+      "en": "Cozy and bustling atmosphere; line up 15 minutes before 19:00 opening to secure comfortable back table seating.",
+      "zh": "店内小巧温馨，建议在傍晚19:00开门前15分钟到达，以便安排店内靠里平坦舒适餐桌。"
+    },
+    "hours": {
+      "ko": "화-토 12:00~15:30, 19:00~23:00 (일·월 휴무)",
+      "ja": "火〜土 12:00~15:30, 19:00~23:00 (日・月曜定休)",
+      "en": "Tue–Sat 12:00~15:30, 19:00~23:00 (Closed Sun/Mon)",
+      "zh": "周二至周六 12:00~15:30, 19:00~23:00 (周日及周一店休)"
+    },
+    "language": {
+      "ko": "영어 친절 응대 · 카운터 직원들의 유쾌한 서비스",
+      "ja": "英語対応親切・陽気でフレンドリーな接客サービス",
+      "en": "Friendly English spoken · Warm and hospitable bar staff",
+      "zh": "服务生英语热情亲切 · 气氛欢快活泼"
+    },
+    "booking": {
+      "ko": "예약 불가 (현장 선착순 입장)",
+      "ja": "予約不可 (来店順入店)",
+      "en": "No reservations · Walk-in queue only",
+      "zh": "不接受预约 (按到店顺序入座)"
+    }
+  },
+  "Bar Cañete": {
+    "displayName": {
+      "ko": "Bar Cañete",
+      "ja": "Bar Cañete",
+      "en": "Bar Cañete",
+      "zh": "Bar Cañete"
+    },
+    "dishTitle": {
+      "ko": "이베리코 돼지 안심 & 푸아그라 샌드위치 (Solomillo con Foie)",
+      "ja": "イベリコ豚フィレ肉＆フォアグラのタパス (Solomillo con Foie)",
+      "en": "Ibérico Pork Tenderloin with Seared Foie Gras (Solomillo con Foie)",
+      "zh": "伊比利亚黑猪里脊配香煎鹅肝 (Solomillo con Foie)"
+    },
+    "badge": {
+      "ko": "스페인 · 바르셀로나",
+      "ja": "スペイン・バルセロナ",
+      "en": "Spain · Barcelona",
+      "zh": "西班牙 · 巴塞罗那"
+    },
+    "signature": {
+      "ko": "현지 셰프들과 미식가들이 입을 모아 극찬하는 롱 카운터 타파스 바. 갓 볶아낸 맛조개 구이와 입에서 살살 녹는 이베리코 솔로미요",
+      "ja": "バルセロナの美食家やトップシェフが通う名門ロングカウンターバル。香ばしいマテ貝ソテーと口の中でとろけるイベリコ豚フィレ。",
+      "en": "A culinary benchmark acclaimed by Barcelona's top chefs. Sizzling razor clams, succulent steak tartare, and luscious Ibérico tenderloin with seared foie gras.",
+      "zh": "巴塞罗那当地名厨推崇备至的吧台风味名店。现炒蒜香竹蛏与入口即化的香煎鹅肝伊比利亚猪里脊。"
+    },
+    "seniorTip": {
+      "ko": "바 좌석 뒤편에 편안한 정규 다이닝 룸 테이블이 완비되어 있어 가족 단위 사전 예약 시 안락하게 식사 가능",
+      "ja": "カウンター奥にゆったりとしたテーブルダイニング席（Comedor）があり、家族連れの事前予約で落ち着いて食事できます。",
+      "en": "Spacious private dining room tables available behind the bar; reserve in advance for comfortable seated family dining.",
+      "zh": "吧台后方设有宽敞安静的独立餐厅座席区，提前预约即可享受从容适意家庭正餐。"
+    },
+    "hours": {
+      "ko": "매일 13:00~24:00 (연중무휴)",
+      "ja": "毎日 13:00~24:00 (年中無休)",
+      "en": "Daily 13:00~24:00 (Open 365 days)",
+      "zh": "每日 13:00~24:00 (全年无休)"
+    },
+    "language": {
+      "ko": "영어 능통 · 세련된 서비스와 한국어/영어 메뉴 지원",
+      "ja": "英語堪能・洗練されたサービスと多言語メニュー完備",
+      "en": "Fluent English · Professional service & English menu available",
+      "zh": "英语非常流利 · 优雅专业的侍餐服务与多语言菜单"
+    },
+    "booking": {
+      "ko": "공식 홈페이지(barcanete.com) 필수 사전 예약 권장",
+      "ja": "公式サイト(barcanete.com) 事前予約強く推奨",
+      "en": "Official website (barcanete.com) advance booking strongly recommended",
+      "zh": "强烈建议通过官网(barcanete.com)提前预约"
+    }
+  },
+  "Ciudad Condal": {
+    "displayName": {
+      "ko": "Ciudad Condal",
+      "ja": "Ciudad Condal",
+      "en": "Ciudad Condal",
+      "zh": "Ciudad Condal"
+    },
+    "dishTitle": {
+      "ko": "꿀 마요네즈 대구 구이 (Bacalao al Allioli de Miel)",
+      "ja": "ハニーマヨネーズ仕立ての焼きタラ (Bacalao al Allioli de Miel)",
+      "en": "Baked Cod with Honeyed Allioli (Bacalao al Allioli de Miel)",
+      "zh": "蜜汁蒜香蛋黄酱焗嫩鳕鱼 (Bacalao al Allioli de Miel)"
+    },
+    "badge": {
+      "ko": "스페인 · 바르셀로나",
+      "ja": "スペイン・バルセロナ",
+      "en": "Spain · Barcelona",
+      "zh": "西班牙 · 巴塞罗那"
+    },
+    "signature": {
+      "ko": "카탈루냐 광장 인근 람블라스의 최고 인기 타파스 명가. 달콤한 꿀과 알리올리 소스를 얹어 오븐에 구워낸 부드러운 대구요리의 환상적 조화",
+      "ja": "カタルーニャ広場至近の行列必至タパス名店。甘いハチミツとアリオリソースを重ねてふっくら焼き上げたタラ料理は絶品。",
+      "en": "Ever-popular tapas hallmark near Plaça de Catalunya. Flaky cod fillets baked under golden honey-infused garlicky allioli.",
+      "zh": "加泰罗尼亚广场附近的超人气经典名店。鲜嫩鳕鱼覆以金黄微甜蜂蜜蒜味蛋黄酱焗烤，咸甜交融细腻化渣。"
+    },
+    "seniorTip": {
+      "ko": "달콤하고 부드러운 대구살 요리는 어르신과 부모님 입맛에 실패 없는 1등 메뉴. 브레이크 타임 없이 오후 3~5시 방문 시 쾌적",
+      "ja": "柔らかく甘みのあるタラ料理はシニアの好みにぴったり。ブレイクなし通し営業のため、15:00〜17:00の閑散時間帯が快適です。",
+      "en": "The tender, sweet cod is universally adored by senior family members. Visit during non-peak hours (15:00–17:00) for no wait.",
+      "zh": "口感温润软嫩微甜的鳕鱼极为适口，深受长辈喜爱。全天营业，推荐下午15:00~17:00非高峰时段入座免排队。"
+    },
+    "hours": {
+      "ko": "매일 08:30~01:00 (브레이크 타임 없음)",
+      "ja": "毎日 08:30~01:00 (通し営業)",
+      "en": "Daily 08:30~01:00 (No afternoon break)",
+      "zh": "每日 08:30~01:00 (全天营业无午休)"
+    },
+    "language": {
+      "ko": "영어 능통 · 사진 메뉴판 및 직관적인 쇼케이스 안내",
+      "ja": "英語堪能・写真付きメニュー＆見やすいショーケース完備",
+      "en": "Fluent English · Visual showcase display and English menu available",
+      "zh": "英语沟通顺畅 · 提供图文菜单与直观菜品陈列柜"
+    },
+    "booking": {
+      "ko": "예약 불가 (도착 즉시 카운터에서 웨이팅 명단 등록)",
+      "ja": "予約不可 (到着後カウンターでウェイティング受付)",
+      "en": "No reservations · Register on the waiting list upon arrival",
+      "zh": "无需预约 (抵达后在前台登记候位)"
+    }
+  },
+  "Eslava": {
+    "displayName": {
+      "ko": "Eslava",
+      "ja": "Eslava",
+      "en": "Eslava",
+      "zh": "Eslava"
+    },
+    "dishTitle": {
+      "ko": "꿀 소스 돼지 갈비 & 버섯 슬로에그 (Costillas a la Miel)",
+      "ja": "ハニーソースのポークリブ＆温玉きのこタパス (Costillas a la Miel)",
+      "en": "Honey-Glazed Pork Ribs & Slow-Cooked Egg (Costillas a la Miel)",
+      "zh": "秘制蜜汁烤猪肋排与温玉菌菇塔帕斯 (Costillas a la Miel)"
+    },
+    "badge": {
+      "ko": "스페인 · 세비야",
+      "ja": "スペイン・セビリア",
+      "en": "Spain · Seville",
+      "zh": "西班牙 · 塞维利亚"
+    },
+    "signature": {
+      "ko": "세비야 타파스 챔피언십 우승 메뉴가 즐비한 산 로렌소 광장의 성지. 겉은 캐러멜처럼 바삭하고 속은 부드럽게 찢어지는 꿀 갈비 구이",
+      "ja": "セビリア・タパス選手権優勝メニューを誇る名店。外はキャラメリゼされ香ばしく、中はホロホロに柔らかいハニーポークリブ。",
+      "en": "Award-winning tapas benchmark in the San Lorenzo district. Irresistible caramelized honey-glazed pork ribs and delicate Boletus mushroom cake with egg yolk.",
+      "zh": "荣获塞维利亚塔帕斯大赛冠军的必吃名店。外层微焦酥脆、内里肉质细嫩脱骨的秘制蜂蜜烤猪肋排。"
+    },
+    "seniorTip": {
+      "ko": "바 구역은 좁지만 바로 옆 레스토랑 구역(테이블석)은 예약제로 운영되어 부모님 모시고 편안하게 코스 다이닝 가능",
+      "ja": "バル側は混み合いますが、隣接するレストラン席は事前予約制で、ご両親連れでも落ち着いて着席コースを楽しめます。",
+      "en": "While the tapas bar is compact, the adjacent sit-down restaurant section takes reservations for comfortable family dining.",
+      "zh": "立饮吧台区较为拥挤，但相邻的正餐座席区支持提前预约，带长辈就餐倍感惬意舒适。"
+    },
+    "hours": {
+      "ko": "화-토 12:30~16:30, 20:00~24:00 (일·월 휴무)",
+      "ja": "火〜土 12:30~16:30, 20:00~24:00 (日・月曜定休)",
+      "en": "Tue–Sat 12:30~16:30, 20:00~24:00 (Closed Sun/Mon)",
+      "zh": "周二至周六 12:30~16:30, 20:00~24:00 (周日及周一店休)"
+    },
+    "language": {
+      "ko": "영어 주문 원활 · 타파스 상패와 함께 메뉴 상세 설명",
+      "ja": "英語対応円滑・受賞歴のあるタパスメニューの丁寧な説明",
+      "en": "English spoken · Detailed friendly menu recommendations",
+      "zh": "英语交流顺畅 · 服务生热情细致介绍获奖招牌特色"
+    },
+    "booking": {
+      "ko": "레스토랑 좌석 공식 웹(espacioeslava.com) 사전 예약",
+      "ja": "レストラン席 公式サイト(espacioeslava.com) 事前予約推奨",
+      "en": "Restaurant table booking via official site (espacioeslava.com)",
+      "zh": "正餐席位可通过官网(espacioeslava.com)提前预约"
+    }
+  },
+  "Bodega Santa Cruz (Las Columnas)": {
+    "displayName": {
+      "ko": "Bodega Santa Cruz (Las Columnas)",
+      "ja": "Bodega Santa Cruz (Las Columnas)",
+      "en": "Bodega Santa Cruz (Las Columnas)",
+      "zh": "Bodega Santa Cruz (Las Columnas)"
+    },
+    "dishTitle": {
+      "ko": "시금치 병아리콩 요리 (Espinacas con Garbanzos)",
+      "ja": "アンダルシア伝統ほうれん草とヒヨコ豆の煮込み (Espinacas con Garbanzos)",
+      "en": "Andalusian Spinach & Chickpea Stew (Espinacas con Garbanzos)",
+      "zh": "安达卢西亚传统鹰嘴豆炖菠菜 (Espinacas con Garbanzos)"
+    },
+    "badge": {
+      "ko": "스페인 · 세비야",
+      "ja": "スペイン・セビリア",
+      "en": "Spain · Seville",
+      "zh": "西班牙 · 塞维利亚"
+    },
+    "signature": {
+      "ko": "대성당 인근 기둥이 늘어선 정통 안달루시아 보데가. 마늘과 큐민 향이 은은한 전통 시금치 병아리콩 요리와 몬타디토 샌드위치",
+      "ja": "セビリア大聖堂隣の伝統ボデガ。ニンニクとクミンがほのかに香る優しい伝統ほうれん草とヒヨコ豆の煮込みやモンタディート。",
+      "en": "Classic Andalusian bodega by the Cathedral. Richly spiced comforting spinach and chickpea stew, served with miniature crusty sandwiches.",
+      "zh": "紧邻塞维利亚大教堂的纯正传统酒馆。以大蒜与孜然温火慢炖的传统鹰嘴豆菠菜，滋味醇厚舒适。"
+    },
+    "seniorTip": {
+      "ko": "스페인 남부 전통 가정식으로 담백하고 소화가 매우 잘 되어 어르신 속 편한 식사로 최고. 가격도 타파스당 3~4유로로 매우 착함",
+      "ja": "南スペイン伝統の家庭料理で油分が少なく消化抜群。シニアの胃腸に優しく、小皿3〜4ユーロとリーズナブル。",
+      "en": "Nutritious and easily digestible home-style stew, ideal for elderly parents seeking light comforting food.",
+      "zh": "少油清润的安达卢西亚家常炖菜，极易消化养胃。每道小食仅3~4欧元，性价比极高。"
+    },
+    "hours": {
+      "ko": "매일 08:00~24:00",
+      "ja": "毎日 08:00~24:00",
+      "en": "Daily 08:00~24:00",
+      "zh": "每日 08:00~24:00"
+    },
+    "language": {
+      "ko": "친절한 바텐더들이 분필로 바 테이블에 주문 금액을 적어주는 정겨운 분위기",
+      "ja": "バーカウンターにチョークで注文額を書く情緒豊かな本場のサービス",
+      "en": "Charming traditional service with prices tallied in chalk on the bar counter",
+      "zh": "酒保在木制吧台上以粉笔手写记账，气氛古朴温馨亲切"
+    },
+    "booking": {
+      "ko": "예약 불가 (현장 자율 착석)",
+      "ja": "予約不可 (店頭直接入店)",
+      "en": "No reservations · Casual walk-in",
+      "zh": "无需预约 (现场自由就座)"
+    }
+  },
+  "Bodegas Castañeda": {
+    "displayName": {
+      "ko": "Bodegas Castañeda",
+      "ja": "Bodegas Castañeda",
+      "en": "Bodegas Castañeda",
+      "zh": "Bodegas Castañeda"
+    },
+    "dishTitle": {
+      "ko": "전통 콤비네이션 타파스 & 카스타녜다 와인 (Tabla Caliente)",
+      "ja": "グラナダ伝統ホットタパス盛り合わせ (Tabla Caliente)",
+      "en": "Traditional Hot Tapas Platter & House Vermouth (Tabla Caliente)",
+      "zh": "格拉纳达传统综合热塔帕斯拼盘配苦艾酒 (Tabla Caliente)"
+    },
+    "badge": {
+      "ko": "스페인 · 그라나다",
+      "ja": "スペイン・グラナダ",
+      "en": "Spain · Granada",
+      "zh": "西班牙 · 格拉纳达"
+    },
+    "signature": {
+      "ko": "그라나다 무료 타파스 전통의 살아있는 역사. 음료 한 잔 주문 시마다 푸짐한 따뜻한 안주 타파스가 무료로 함께 나오는 안달루시아 인심",
+      "ja": "ドリンク1杯ごとに温かい無料タパスがサービスされるグラナダ古き良き伝統ボデガ。名物の温製タパス盛り合わせとヴェルモット酒。",
+      "en": "Historic Granada landmark preserving the generous free tapas tradition. Drink orders come with hearty complimentary warm bites, alongside signature hot food platters.",
+      "zh": "恪守格拉纳达每点一杯饮品即赠免费热食塔帕斯传统的百年老店。特色传统热盘拼盘与自调草本苦艾酒。"
+    },
+    "seniorTip": {
+      "ko": "안쪽 테이블석에 앉아 모둠 온타파스 플래터(Tabla Caliente)를 주문하면 여러 가지 스페인 요리를 한 번에 편안히 시식 가능",
+      "ja": "奥のテーブル席に座り温製盛り合わせ（Tabla Caliente）を注文すれば、立ち飲みせずに多彩な料理をゆっくり味わえます。",
+      "en": "Take a table inside and order the hot sampler platter (Tabla Caliente) to comfortably taste diverse Spanish specialties seated.",
+      "zh": "建议选坐店内后方平坦桌位，点一份综合热拼盘，即可免去站立悠闲品尝多种经典佳肴。"
+    },
+    "hours": {
+      "ko": "매일 11:30~16:30, 19:30~24:00",
+      "ja": "毎日 11:30~16:30, 19:30~24:00",
+      "en": "Daily 11:30~16:30, 19:30~24:00",
+      "zh": "每日 11:30~16:30, 19:30~24:00"
+    },
+    "language": {
+      "ko": "영어 메뉴판 구비 · 활기차고 푸근한 안달루시아 환대",
+      "ja": "英語メニュー完備・温かく活気あふれるアンダルシアのホスピタリティ",
+      "en": "English menu available · Warm, spirited Andalusian hospitality",
+      "zh": "备有英文菜单 · 服务热情奔放洋溢安达卢西亚人情味"
+    },
+    "booking": {
+      "ko": "예약 불가 (식사 시간 20분 전 여유 있게 방문 권장)",
+      "ja": "予約不可 (ピーク時間の20分前の来店推奨)",
+      "en": "No reservations · Arrive 20 minutes before peak meal times",
+      "zh": "无需预约 (建议比用餐高峰提前20分钟抵达)"
+    }
+  },
+  "Casa Pepe de la Judería": {
+    "displayName": {
+      "ko": "Casa Pepe de la Judería",
+      "ja": "Casa Pepe de la Judería",
+      "en": "Casa Pepe de la Judería",
+      "zh": "Casa Pepe de la Judería"
+    },
+    "dishTitle": {
+      "ko": "가지 꿀 튀김 & 살모레호 (Berenjenas con Miel & Salmorejo)",
+      "ja": "ナスのサクサクハチミツ揚げ＆サルモレホ (Berenjenas con Miel & Salmorejo)",
+      "en": "Crispy Eggplant with Cane Honey & Salmorejo Cold Soup",
+      "zh": "酥脆甘蔗蜜汁炸茄子与科尔多瓦番茄冷汤 (Salmorejo)"
+    },
+    "badge": {
+      "ko": "스페인 · 코르도바",
+      "ja": "スペイン・コルドバ",
+      "en": "Spain · Cordoba",
+      "zh": "西班牙 · 科尔多瓦"
+    },
+    "signature": {
+      "ko": "유대인 지구 메스키타 인근 아름다운 안달루시아 파티오 레스토랑. 얇고 바삭하게 튀겨 사탕수수 꿀을 뿌린 가지 튀김과 진한 토마토 냉수프 살모레호",
+      "ja": "メスキータ近くの風情あるパティオ（中庭）レストラン。サクサクに揚げたナスにサトウキビの糖蜜をかけた名物と濃厚トマト冷製スープ。",
+      "en": "Enchanting patio restaurant in Córdoba's historic Jewish quarter. Featherlight crispy eggplant drizzled with sugarcane honey, and creamy Salmorejo soup.",
+      "zh": "邻近大清真寺的犹太区庭院风味餐厅。薄脆茄子淋上香甜甘蔗黑蜜，配以浓郁细腻的传统科尔多瓦番茄冷汤。"
+    },
+    "seniorTip": {
+      "ko": "꽃으로 장식된 평지 안뜰 파티오 테이블이 매우 아늑함. 살모레호는 새콤달콤하여 여행 중 잃어버린 입맛을 돋우기에 최고",
+      "ja": "花々に彩られた中庭パティオは段差がなく極めて快適。酸味と甘みのある冷製サルモレホは旅の疲れた食欲を心地よく刺激します。",
+      "en": "The ground-level flower-filled courtyard patio is peaceful and step-free. Refreshing Salmorejo helps stimulate tired appetites.",
+      "zh": "繁花掩映的单层中庭平坦静谧无台阶。酸甜顺滑的番茄冷汤能极好地唤醒长辈夏日旅行食欲。"
+    },
+    "hours": {
+      "ko": "매일 13:00~16:00, 20:00~23:30",
+      "ja": "毎日 13:00~16:00, 20:00~23:30",
+      "en": "Daily 13:00~16:00, 20:00~23:30",
+      "zh": "每日 13:00~16:00, 20:00~23:30"
+    },
+    "language": {
+      "ko": "영어 유창 · 미쉐린 가이드 추천 정중한 서빙",
+      "ja": "英語堪能・ミシュランガイド掲載の丁寧で品格あるサービス",
+      "en": "Fluent English · Michelin-recommended attentive service",
+      "zh": "流利英语交流 · 米其林指南推荐餐厅的彬彬有礼服务"
+    },
+    "booking": {
+      "ko": "공식 사이트(casapepedelajuderia.com) 사전 예약 권장",
+      "ja": "公式サイト(casapepedelajuderia.com) 事前予約推奨",
+      "en": "Online reservations recommended via casapepedelajuderia.com",
+      "zh": "建议通过官网(casapepedelajuderia.com)提前预约"
+    }
+  },
+  "Casa Carmela": {
+    "displayName": {
+      "ko": "Casa Carmela",
+      "ja": "Casa Carmela",
+      "en": "Casa Carmela",
+      "zh": "Casa Carmela"
+    },
+    "dishTitle": {
+      "ko": "1922년 전통 장작불 원조 빠에야 (Paella Valenciana a la Leña)",
+      "ja": "1922年創業 薪火で炊き上げる元祖バレンシアパエリア (Paella Valenciana)",
+      "en": "Original Wood-Fired Valencian Paella (Paella Valenciana a la Leña)",
+      "zh": "1922年老字号 柴火直烤正宗瓦伦西亚海鲜饭 (Paella Valenciana)"
+    },
+    "badge": {
+      "ko": "스페인 · 발렌시아",
+      "ja": "スペイン・バレンシア",
+      "en": "Spain · Valencia",
+      "zh": "西班牙 · 瓦伦西亚"
+    },
+    "signature": {
+      "ko": "발렌시아 말바로사 해변 인근 100년 전통의 원조 빠에야 명가. 오렌지 나무 장작불 위에서 직접 끓여내어 누룽지(소카랏)가 일품인 전통 빠에야",
+      "ja": "マルバロサ海岸近くの創業100年を超える名門。オレンジの薪火で大鍋直火炊きし、香ばしいおこげ（ソカラッ）が自慢の伝統パエリア。",
+      "en": "Centenary sanctuary of true Valencian paella near Malvarrosa beach. Cooked over orange-wood fire, yielding exquisite caramelized bottom rice (socarrat).",
+      "zh": "坐落于海滩附近的百年老字号。坚持使用香橙木明火大铁锅慢煨，底部微焦香脆的黄金锅巴是精髓所在。"
+    },
+    "seniorTip": {
+      "ko": "토끼고기, 닭고기, 리마콩이 어우러진 담백하고 깊은 육수. 해변 산책로와 가까워 식사 후 평지 바닷가 산책 코스로 완벽",
+      "ja": "鶏肉、ウサギ肉、大粒の白インゲン豆が調和した風味豊かなスープ。平坦な海岸通りに隣接し、食後の海辺の散策にも最適です。",
+      "en": "Savory, delicate broth infused with poultry and broad beans. Flat seaside promenade nearby offers an effortless post-lunch stroll.",
+      "zh": "以兔肉、鸡肉与白扁豆原汁慢熬，汤底浓醇不腻。紧邻平缓海滨步道，餐后散步观海极为舒适。"
+    },
+    "hours": {
+      "ko": "화-일 13:30~16:00 (월요일 정기 휴무, 점심 전용)",
+      "ja": "火〜日 13:30~16:00 (月曜定休、ランチのみ)",
+      "en": "Tue–Sun 13:30~16:00 (Closed Mon, Lunch Only)",
+      "zh": "周二至周日 13:30~16:00 (周一店休，仅限午餐)"
+    },
+    "language": {
+      "ko": "영어 소통 원활 · 전통 세라믹 식기 세팅과 품격 있는 서비스",
+      "ja": "英語対応円滑・伝統陶器食器と品格あるホスピタリティ",
+      "en": "English spoken · Professional dining service with classic ceramics",
+      "zh": "英语交流自如 · 传统瓦伦西亚彩陶餐具与周到侍餐"
+    },
+    "booking": {
+      "ko": "인기 식당으로 최소 2~3주 전 공식 웹 사전 예약 필수",
+      "ja": "超人気店のため 最低2〜3週間前 公式サイト必須予約",
+      "en": "Essential to book 2–3 weeks ahead via official website",
+      "zh": "超高人气，务必提前2~3周通过官方网站预约"
+    }
+  },
+  "Time Out Market Lisboa": {
+    "displayName": {
+      "ko": "Time Out Market Lisboa",
+      "ja": "Time Out Market Lisboa",
+      "en": "Time Out Market Lisboa",
+      "zh": "Time Out Market Lisboa"
+    },
+    "dishTitle": {
+      "ko": "미쉐린 셰프 셀렉션 타파스 & 디저트 (Gourmet Food Hall)",
+      "ja": "ミシュランシェフ厳選タパス＆名物スイーツ (Gourmet Food Hall)",
+      "en": "Michelin-Chef Curated Tapas & Gourmet Hall Dishes",
+      "zh": "米其林主厨精选风味塔帕斯与经典甜品 (美食集市)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 리스본",
+      "ja": "ポルトガル・リスボン",
+      "en": "Portugal · Lisbon",
+      "zh": "葡萄牙 · 里斯本"
+    },
+    "signature": {
+      "ko": "히베이라 시장 안 리스본 최고의 셰프들과 유명 디저트점이 한자리에 모인 미식 홀. 포르투갈 최고 쇠고기 스테이크, 생선 타르타르, 와인",
+      "ja": "リスボンのトップシェフや名物スイーツ店が一堂に会する大型グルメホール。上質なステーキ、鮮魚タルタル、厳選ワイン。",
+      "en": "Premier gastronomic hall inside Mercado da Ribeira, gathering Portugal's top Michelin chefs, regional steak specialists, and pastry masters under one roof.",
+      "zh": "汇聚里斯本顶尖名厨小档与传奇甜品屋的大型美食殿堂。提供优质葡式牛排、深海鲜鱼塔塔与精品葡萄酒。"
+    },
+    "seniorTip": {
+      "ko": "넓은 단층 평지 공간에 엘리베이터와 넓은 통로가 확보되어 휠체어나 어르신 동행에 최적. 각자 취향에 맞는 메뉴를 골라 함께 식사 가능",
+      "ja": "段差のない広々としたワンフロアで車椅子やシニアにも安心。各自好きなメニューを選んで同じテーブルでシェアできます。",
+      "en": "Completely level, step-free space with wide aisles. Family members can easily select different dishes according to dietary preferences.",
+      "zh": "全平坦单层大空间，无台阶无障碍通道宽敞。全家每位成员均可随心选择合心意菜品共聚一桌。"
+    },
+    "hours": {
+      "ko": "매일 10:00~24:00 (금·토 01:00까지)",
+      "ja": "毎日 10:00~24:00 (金・土は01:00まで)",
+      "en": "Daily 10:00~24:00 (Fri–Sat until 01:00)",
+      "zh": "每日 10:00~24:00 (周五周六营业至01:00)"
+    },
+    "language": {
+      "ko": "영어 완벽 · 전 매장 키오스크 및 다국어 안내",
+      "ja": "英語完全対応・全ブース多言語メニューおよび自動注文対応",
+      "en": "Fluent English everywhere · Multilingual menus at all stalls",
+      "zh": "全场流利英语沟通 · 各摊位均设清晰多语言菜单"
+    },
+    "booking": {
+      "ko": "예약 불필요 (대형 푸드홀 자율 착석)",
+      "ja": "予約不要 (大型フードホール 自由着席)",
+      "en": "No reservations needed · Walk-in communal seating",
+      "zh": "无需预约 (自由入座公共餐席)"
+    }
+  },
+  "Taberna da Rua das Flores": {
+    "displayName": {
+      "ko": "Taberna da Rua das Flores",
+      "ja": "Taberna da Rua das Flores",
+      "en": "Taberna da Rua das Flores",
+      "zh": "Taberna da Rua das Flores"
+    },
+    "dishTitle": {
+      "ko": "칠판 메뉴 오늘의 제철 대서양 생선 요리 (Prato do Dia)",
+      "ja": "本日の黒板メニュー・旬の大西洋鮮魚料理 (Prato do Dia)",
+      "en": "Chalkboard Daily Catch & Traditional Atlantic Fish (Prato do Dia)",
+      "zh": "黑板手写每日精选·大西洋鲜鱼料理 (Prato do Dia)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 리스본",
+      "ja": "ポルトガル・リスボン",
+      "en": "Portugal · Lisbon",
+      "zh": "葡萄牙 · 里斯本"
+    },
+    "signature": {
+      "ko": "시아두 언덕 아래 아담하고 따스한 감성의 정통 타베르나. 매일 아침 어시장에서 들여온 신선한 해산물과 바칼라우 크로켓, 제철 조림",
+      "ja": "シアード地区の温かみあふれる伝統居酒屋。毎朝市場から仕入れる鮮魚料理、バカリャウ（干し鱈）コロッケ、滋味豊かな煮込み。",
+      "en": "Intimate vintage tavern in the Chiado quarter. Daily handwritten chalkboard menu celebrating the morning's freshest Atlantic fish, cod fritters, and rustic petiscos.",
+      "zh": "希亚多区怀旧温润的传统小酒馆。每日依清晨鱼市直采手写黑板菜单，供应原汁大西洋海鲜与外酥里嫩鳕鱼可乐饼。"
+    },
+    "seniorTip": {
+      "ko": "자극적이지 않고 재료 본연의 맛을 살린 포르투갈 집밥 스타일로 부모님 만족도가 매우 높음. 12시 점심 오픈 맞춰 방문 추천",
+      "ja": "素材の旨みを活かした塩控えめの家庭的な味付けでシニアにも大好評。ランチ開店の12:00到着がおすすめです。",
+      "en": "Mild, wholesome, and low-sodium homestyle cooking that elderly parents love. Arrive promptly at 12:00 lunch opening.",
+      "zh": "少盐清润、注重食材本味的葡萄牙家常菜式，深受长辈喜爱。建议中午12:00开门准时前往入座。"
+    },
+    "hours": {
+      "ko": "월-토 12:00~23:30 (일요일 휴무)",
+      "ja": "月〜土 12:00~23:30 (日曜定休)",
+      "en": "Mon–Sat 12:00~23:30 (Closed Sun)",
+      "zh": "周一至周六 12:00~23:30 (周日店休)"
+    },
+    "language": {
+      "ko": "영어 매우 유창 · 직원이 칠판 메뉴판을 테이블로 가져와 상세 번역 설명",
+      "ja": "英語堪能・店員が黒板をテーブルに持参して親切に料理を解説",
+      "en": "Fluent English · Staff brings chalkboard to your table to explain each dish",
+      "zh": "英语流利周到 · 店员会将小黑板端至桌前耐心地逐一翻译说明"
+    },
+    "booking": {
+      "ko": "점심은 선착순, 저녁은 당일 현장 이름 등록",
+      "ja": "ランチは先着順、ディナーは当日店頭にて名前受付",
+      "en": "Lunch walk-ins only; dinner waiting list in person on the day",
+      "zh": "午餐先到先入座，晚餐需当天到店现场登记排号"
+    }
+  },
+  "O Trevo": {
+    "displayName": {
+      "ko": "O Trevo",
+      "ja": "O Trevo",
+      "en": "O Trevo",
+      "zh": "O Trevo"
+    },
+    "dishTitle": {
+      "ko": "원조 포르투갈식 돼지고기 샌드위치 (Bifana Tradicional)",
+      "ja": "元祖ポルトガル風ポークサンドイッチ・ビファーナ (Bifana Tradicional)",
+      "en": "Classic Portuguese Pork Sandwich (Bifana Tradicional)",
+      "zh": "葡萄牙正宗葡式肉汁猪排三明治 (Bifana Tradicional)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 리스본",
+      "ja": "ポルトガル・リスボン",
+      "en": "Portugal · Lisbon",
+      "zh": "葡萄牙 · 里斯本"
+    },
+    "signature": {
+      "ko": "안소니 부르댕의 방송 출연으로 유명해진 카몽이스 광장 앞 서민 스낵바. 화이트 와인과 마늘, 파프리카에 푹 끓여낸 촉촉한 돼지고기를 빵 사이에 넣은 비파나",
+      "ja": "アンソニー・ボーディンが絶賛した庶民派食堂。白ワイン、ニンニク、パプリカで柔らかく煮込んだ豚肉を挟んだポルトガル名物ビファーナ。",
+      "en": "Anthony Bourdain's favorite tasca by Praça Luís de Camões. Slow-simmered tender pork braised with garlic, white wine, and pimentão in a warm crusty bun.",
+      "zh": "安东尼·波登电视节目中盛赞的平民老街坊餐吧。白葡萄酒与蒜香炖煮入味的软嫩猪肉夹于香酥圆面包中。"
+    },
+    "seniorTip": {
+      "ko": "고기가 푹 삶아져 매우 부드럽고 기름지지 않음. 노란 머스터드와 피리피리 핫소스를 취향껏 뿌려 가볍고 든든한 간식으로 최고",
+      "ja": "肉が長時間じっくり煮込まれていて柔らかく脂っこくありません。マスタードをお好みで少し添えて軽食に最適。",
+      "en": "Meat is stewed until extremely tender and lean, effortless to chew for seniors. Great light meal option.",
+      "zh": "肉质慢炖得极为软嫩无油腻感，长辈咀嚼全无负担。可随喜好点缀少许黄芥末，是极佳的充能点心。"
+    },
+    "hours": {
+      "ko": "월-토 07:00~22:00 (일요일 휴무)",
+      "ja": "月〜土 07:00~22:00 (日曜定休)",
+      "en": "Mon–Sat 07:00~22:00 (Closed Sun)",
+      "zh": "周一至周六 07:00~22:00 (周日店休)"
+    },
+    "language": {
+      "ko": "간단한 영어 주문 가능 · 즉석에서 철판 조리",
+      "ja": "簡単な英語対応可能・カウンターで出来立てを素早く提供",
+      "en": "Simple English spoken · Freshly assembled hot sandwiches at the counter",
+      "zh": "简单英语沟通 · 铁板铁锅现烧现点现做"
+    },
+    "booking": {
+      "ko": "예약 불가 (캐주얼 스탠딩 및 소형 테이블)",
+      "ja": "予約不可 (カジュアルなカウンター＆小テーブル)",
+      "en": "No reservations · Casual quick counter & small tables",
+      "zh": "无需预约 (休闲便民小店随到随吃)"
+    }
+  },
+  "Manteigaria": {
+    "displayName": {
+      "ko": "Manteigaria",
+      "ja": "Manteigaria",
+      "en": "Manteigaria",
+      "zh": "Manteigaria"
+    },
+    "dishTitle": {
+      "ko": "갓 구운 버터 크런치 에그타르트 (Pastel de Nata Artesanal)",
+      "ja": "焼きたてサクサク・職人仕込みのエッグタルト (Pastel de Nata Artesanal)",
+      "en": "Freshly Baked Crispy Custard Tarts (Pastel de Nata Artesanal)",
+      "zh": "手工现烤酥脆葡式蛋挞 (Pastel de Nata Artesanal)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 리스본",
+      "ja": "ポルトガル・リスボン",
+      "en": "Portugal · Lisbon",
+      "zh": "葡萄牙 · 里斯本"
+    },
+    "signature": {
+      "ko": "에그타르트가 오븐에서 나올 때마다 은은한 종소리가 울려 퍼지는 장인 디저트 전문점. 얇고 바삭바삭한 페이스트리와 달콤하고 진한 커스터드 크림",
+      "ja": "タルトが焼き上がるたびに店内に鐘が鳴り響く名物専門店。薄く幾重にも重なるサクサクのパイ生地と、甘さ控えめな濃厚カスタード。",
+      "en": "Artisanal bakery where a bell rings whenever a piping-hot batch emerges from the oven. Unbelievably flaky laminated crust embracing luscious warm custard.",
+      "zh": "每当刚出炉一炉金黄蛋挞便会敲响清脆铜钟的职人专卖店。极薄酥脆多层的千层皮裹着温热浓醇香滑的卡仕达奶馅。"
+    },
+    "seniorTip": {
+      "ko": "계피 가루(Canela)와 슈거 파우더를 살짝 털어 에스프레소(비카)와 함께 즐기면 단맛이 중화되어 어르신들도 2~3개씩 드시는 디저트",
+      "ja": "シナモンパウダーを軽くふりかけ、温かいエスプレッソ（ビッカ）と一緒にいただけば甘すぎずご両親も大満足です。",
+      "en": "Dust lightly with cinnamon powder and enjoy with a hot bica espresso to balance the sweetness for senior family members.",
+      "zh": "稍撒少许天然肉桂粉，搭配一杯意式浓缩咖啡，甜而不腻，长辈也能连吃两三个赞不绝口。"
+    },
+    "hours": {
+      "ko": "매일 08:00~24:00",
+      "ja": "毎日 08:00~24:00",
+      "en": "Daily 08:00~24:00",
+      "zh": "每日 08:00~24:00"
+    },
+    "language": {
+      "ko": "영어 능통 · 통유리 너머로 장인들의 타르트 반죽 직관 가능",
+      "ja": "英語堪能・ガラス越しに職人の手作業を見学可能",
+      "en": "Fluent English spoken · Glass open kitchen displays dough rolling",
+      "zh": "英语沟通顺畅 · 可透过全透明玻璃窗欣赏面包师现场压皮"
+    },
+    "booking": {
+      "ko": "포장 및 매장 취식 자율",
+      "ja": "テイクアウト＆イートイン自由",
+      "en": "No reservations · Takeout and dine-in available",
+      "zh": "无需预约 (堂食或打包均十分便捷)"
+    }
+  },
+  "Cantinho do Avillez": {
+    "displayName": {
+      "ko": "Cantinho do Avillez",
+      "ja": "Cantinho do Avillez",
+      "en": "Cantinho do Avillez",
+      "zh": "Cantinho do Avillez"
+    },
+    "dishTitle": {
+      "ko": "저온 조리 부드러운 문어 구이 (Polvo Confitado)",
+      "ja": "低温調理の極上柔らかタコグリル (Polvo Confitado)",
+      "en": "Slow-Cooked Tender Octopus with Sweet Potato & Herbs (Polvo Confitado)",
+      "zh": "低温慢煮极嫩香烤章鱼配特色香草 (Polvo Confitado)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 포르투",
+      "ja": "ポルトガル・ポルト",
+      "en": "Portugal · Porto",
+      "zh": "葡萄牙 · 波尔图"
+    },
+    "signature": {
+      "ko": "포르투갈 최초 미쉐린 2스타 셰프 조제 아빌레즈의 감각적인 포르투 비스트로. 저온에서 장시간 조리해 입안에서 사르르 녹는 문어와 헤이즐넛 리조또",
+      "ja": "ポルトガル初ミシュラン2つ星シェフの洗練ビストロ。低温でじっくり火を通しナイフがスッと通る柔らかタコとヘーゼルナッツリゾット。",
+      "en": "Casual bistro by Portugal's star 2-Michelin-star chef José Avillez. Melt-in-your-mouth confit octopus served with sweet potato purée and hazelnut risotto.",
+      "zh": "葡萄牙首位米其林二星名厨若泽·阿维列兹在波尔图的时尚小馆。经低温慢烹、刀切即断的超嫩烤章鱼搭配榛果烩饭。"
+    },
+    "seniorTip": {
+      "ko": "문어가 전혀 질기지 않고 칼을 대는 순간 부드럽게 썰려 어르신 치아 부담이 전혀 없음. 세련된 단층 인테리어와 안락한 의자",
+      "ja": "タコ特有の硬さが一切なく、驚くほど柔らかいため歯の弱いシニアでも安心。段差のない落ち着いたテーブル席です。",
+      "en": "The octopus is exceptionally tender with zero chewiness, perfect for senior parents. Comfortable flat dining room.",
+      "zh": "章鱼经过特殊慢炖毫无韧劲阻齿感，极为酥嫩软熟，牙口不适的长辈亦可大快朵颐。一层平地无障碍座椅舒适。"
+    },
+    "hours": {
+      "ko": "매일 12:30~15:00, 19:30~23:00",
+      "ja": "毎日 12:30~15:00, 19:30~23:00",
+      "en": "Daily 12:30~15:00, 19:30~23:00",
+      "zh": "每日 12:30~15:00, 19:30~23:00"
+    },
+    "language": {
+      "ko": "영어 완벽 · 전문 소믈리에의 와인 페어링 추천",
+      "ja": "英語完全対応・ソムリエによる丁寧なワインペアリング提案",
+      "en": "Fluent English · Professional sommelier pairing recommendations",
+      "zh": "英语交流流利专业 · 侍酒师悉心推荐杜罗河谷特色餐酒搭配"
+    },
+    "booking": {
+      "ko": "공식 사이트(cantinhodoavillez.pt) 사전 예약 추천",
+      "ja": "公式サイト(cantinhodoavillez.pt) 事前予約推奨",
+      "en": "Advance booking recommended via cantinhodoavillez.pt",
+      "zh": "建议通过官网(cantinhodoavillez.pt)提前预约"
+    }
+  },
+  "Taberna dos Mercadores": {
+    "displayName": {
+      "ko": "Taberna dos Mercadores",
+      "ja": "Taberna dos Mercadores",
+      "en": "Taberna dos Mercadores",
+      "zh": "Taberna dos Mercadores"
+    },
+    "dishTitle": {
+      "ko": "소금 불꽃 크러스트 도미 구이 (Peixe ao Sal Flamejado)",
+      "ja": "塩釜包みフランベ鯛のオーブン焼き (Peixe ao Sal Flamejado)",
+      "en": "Salt-Crusted Flambéed Sea Bream (Peixe ao Sal Flamejado)",
+      "zh": "烈焰盐壳焗整尾海鲷鱼 (Peixe ao Sal Flamejado)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 포르투",
+      "ja": "ポルトガル・ポルト",
+      "en": "Portugal · Porto",
+      "zh": "葡萄牙 · 波尔图"
+    },
+    "signature": {
+      "ko": "히베이라 골목길의 전설적인 8개 테이블 작은 타베르나. 소금 반죽을 덮어 불꽃 쇼와 함께 테이블 앞에서 껍질을 벗겨주는 촉촉한 통도미 소금구이",
+      "ja": "リベイラ地区の隠れ家タヴェルナ。分厚い塩釜に包んで火を灯すフランベ演出の後、テーブルで丁寧に骨を外してくれる絶品鯛料理。",
+      "en": "Legendary 8-table Ribeira gem. Fresh whole sea bream baked under a thick dome of sea salt, flambéed tableside, and deboned expertly by the host.",
+      "zh": "杜罗河畔仅设8张桌的隐秘名店。大粒海盐完全包裹整鱼，上桌前引燃烈焰烘烤去壳，侍者在桌前细心剔除鱼骨。"
+    },
+    "seniorTip": {
+      "ko": "생선 살코기에 소금 간이 완벽히 배어들고 기름기 없이 촉촉하여 부모님 건강식으로 최상. 아늑하고 정겨운 패밀리 서비스",
+      "ja": "油っぽさがなくふっくら蒸し焼きにされた魚肉はシニアの体に優しく最高のご馳走。骨も取ってくれるので安心です。",
+      "en": "Steamed tenderly in its natural juices with zero greasiness; tableside deboning makes it completely effortless for seniors.",
+      "zh": "盐焖锁住天然鱼汁，肉质雪白多汁毫不油腻。服务生桌前细心剔骨，长辈吃得安心舒适。"
+    },
+    "hours": {
+      "ko": "수-일 12:30~15:00, 19:30~22:30 (월·화 휴무)",
+      "ja": "水〜日 12:30~15:00, 19:30~22:30 (月・火曜定休)",
+      "en": "Wed–Sun 12:30~15:00, 19:30~22:30 (Closed Mon/Tue)",
+      "zh": "周三至周日 12:30~15:00, 19:30~22:30 (周一及周二店休)"
+    },
+    "language": {
+      "ko": "영어 친절 소통 · 생선 가시를 직접 발라주는 섬세한 테이블 서비스",
+      "ja": "英語親切対応・魚の骨を目の前で取り除いてくれる家庭的サービス",
+      "en": "Warm English spoken · Dedicated tableside fish deboning service",
+      "zh": "英语沟通亲切体贴 · 提供细致桌边分鱼去刺服务"
+    },
+    "booking": {
+      "ko": "좌석이 적으므로 방문 1~2주 전 예약 또는 오픈런 필수",
+      "ja": "席数が極少のため 1〜2週間前 予約または開店時来店必須",
+      "en": "Very small space: reserve 1–2 weeks ahead or arrive at opening",
+      "zh": "席位极为稀缺，强烈建议提前1~2周预约或开门第一时间前往"
+    }
+  },
+  "Cervejaria Gazela": {
+    "displayName": {
+      "ko": "Cervejaria Gazela",
+      "ja": "Cervejaria Gazela",
+      "en": "Cervejaria Gazela",
+      "zh": "Cervejaria Gazela"
+    },
+    "dishTitle": {
+      "ko": "원조 포르투 명물 카샤오 (Cachorrinho Picante)",
+      "ja": "ポルト名物ピリ辛ソーセージトースト・カショリーニョ (Cachorrinho)",
+      "en": "Porto's Legendary Spicy Sausage Crusty Dog (Cachorrinho Picante)",
+      "zh": "波尔图传奇香辣酥脆肠仔包 (Cachorrinho Picante)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 포르투",
+      "ja": "ポルトガル・ポルト",
+      "en": "Portugal · Porto",
+      "zh": "葡萄牙 · 波尔图"
+    },
+    "signature": {
+      "ko": "바삭하게 구운 바게트 빵에 훈제 소시지와 녹진한 치즈를 넣고 특제 매콤 버터 소스를 발라 먹기 좋게 한입 크기로 썰어주는 포르투식 핫도그",
+      "ja": "香ばしい極薄バゲットに燻製ソーセージととろけるチーズを挟み、特製ピリ辛バタータレを塗って一口大にカットする名物スナック。",
+      "en": "Anthony Bourdain favorite. Ultra-crispy pressed thin baguette filled with artisanal smoked sausage and melted cheese, sliced into bite-sized finger pieces.",
+      "zh": "安东尼·波登力荐的波尔图特色名点。极薄香脆法棍压烤融化芝士与烟熏肉肠，刷特调辣黄油汁后精细切成小段。"
+    },
+    "seniorTip": {
+      "ko": "안소니 부르댕이 생전 사랑한 스낵. 매운맛 조절(Sem Picante)이 가능하여 부모님 입맛에 맞춰 순하게 주문 가능",
+      "ja": "辛さ抜き（Sem Picante）も注文可能で、一口大にカットされているためシニアでも手軽に食べられます。",
+      "en": "Can be ordered non-spicy ('Sem Picante'); pre-sliced into small pieces making it very easy to eat comfortably.",
+      "zh": "可点选免辣版本('Sem Picante')，且已切为整齐小块，长辈取食极为轻便省力。"
+    },
+    "hours": {
+      "ko": "월-금 12:00~22:30, 토 12:00~18:00 (일요일 휴무)",
+      "ja": "月〜金 12:00~22:30, 土 12:00~18:00 (日曜定休)",
+      "en": "Mon–Fri 12:00~22:30, Sat 12:00~18:00 (Closed Sun)",
+      "zh": "周一至周五 12:00~22:30, 周六 12:00~18:00 (周日店休)"
+    },
+    "language": {
+      "ko": "영어 주문 가능 · 오픈 키친 바 카운터 조리 직관",
+      "ja": "英語注文可能・オープンキッチンで手際良い職人技を見学",
+      "en": "English spoken · Open grill counter preparation in plain sight",
+      "zh": "支持简便英语点单 · 开放式吧台现烤直观利落"
+    },
+    "booking": {
+      "ko": "예약 불가 (회전율 빠름)",
+      "ja": "予約不可 (回転が速い)",
+      "en": "No reservations · Fast turnover",
+      "zh": "无需预约 (翻台速度极快)"
+    }
+  },
+  "Casa Piriquita": {
+    "displayName": {
+      "ko": "Casa Piriquita",
+      "ja": "Casa Piriquita",
+      "en": "Casa Piriquita",
+      "zh": "Casa Piriquita"
+    },
+    "dishTitle": {
+      "ko": "1862년 왕실 인증 아몬드 페이스트리 (Travesseiros de Sintra)",
+      "ja": "1862年王室御用達・シントラ名物アーモンドパイ (Travesseiros de Sintra)",
+      "en": "Royal 1862 Almond & Egg Cream Pastry (Travesseiros de Sintra)",
+      "zh": "1862年葡萄牙王室御用杏仁奶油千层酥 (Travesseiros de Sintra)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 신트라",
+      "ja": "ポルトガル・シントラ",
+      "en": "Portugal · Sintra",
+      "zh": "葡萄牙 · 辛特拉"
+    },
+    "signature": {
+      "ko": "포르투갈 왕실 카를루스 1세 국왕이 사랑했던 160년 전통의 신트라 베이커리. '베개'라는 뜻의 바삭한 아몬드 에그크림 페이스트리 트라베세이루와 치즈 타르트 케이자다",
+      "ja": "ポルトガル国王カルロス1世も愛した創業1862年の王室御用達菓子店。枕の形をしたサクサクのアーモンドパイ「トラヴェッセイロ」とチーズタルト。",
+      "en": "Historic 1862 royal confectionery favored by King Carlos I. Famous pillow-shaped puff pastry filled with almond egg cream (Travesseiro) and Queijadas cheese tarts.",
+      "zh": "葡萄牙国王卡洛斯一世曾赐予御用勋衔的1862年老字号。枕头造型酥脆杏仁蛋黄千层酥(Travesseiro)与传统干酪挞(Queijada)。"
+    },
+    "seniorTip": {
+      "ko": "페나 성 관람 후 지친 몸에 당을 충전하기 제격. 따뜻한 허브티나 카페 핑고(연한 라테)와 함께 안쪽 테이블에서 편안히 휴식",
+      "ja": "ペーナ宮殿観光の疲れを癒やすティータイムに最適。ハーブティーやカフェラテと一緒に奥のテーブル席でくつろげます。",
+      "en": "Ideal relaxing tea stop to recharge after touring Sintra palaces. Pair with herbal tea or warm café pingo.",
+      "zh": "游览完佩纳宫后极佳的恢复体力小憩点。搭配一杯热红茶或淡拿铁在店内安歇小坐。"
+    },
+    "hours": {
+      "ko": "목-화 09:00~19:00 (수요일 정기 휴무)",
+      "ja": "木〜火 09:00~19:00 (水曜定休)",
+      "en": "Thu–Tue 09:00~19:00 (Closed Wed)",
+      "zh": "周四至周二 09:00~19:00 (周三店休)"
+    },
+    "language": {
+      "ko": "영어 능통 · 번호표 뽑고 주문하는 체계적 시스템",
+      "ja": "英語堪能・発券機による番号順のわかりやすい注文システム",
+      "en": "Fluent English spoken · Clear electronic ticket queue system",
+      "zh": "英语交流流利 · 门口配有规范叫号排队系统"
+    },
+    "booking": {
+      "ko": "예약 불가 (번호표 순서 입장)",
+      "ja": "予約不可 (発券番号順)",
+      "en": "No reservations · Numbered ticket entry",
+      "zh": "无需预约 (按叫号顺序点餐)"
+    }
+  },
+  "Restaurante O Camilo": {
+    "displayName": {
+      "ko": "Restaurante O Camilo",
+      "ja": "Restaurante O Camilo",
+      "en": "Restaurante O Camilo",
+      "zh": "Restaurante O Camilo"
+    },
+    "dishTitle": {
+      "ko": "알가르베 전통 구리 냄비 해산물 찜 (Cataplana de Marisco)",
+      "ja": "アルガルヴェ伝統銅鍋カタプラーナ魚介蒸し (Cataplana de Marisco)",
+      "en": "Algarve Copper-Pot Seafood Stew (Cataplana de Marisco)",
+      "zh": "阿尔加维传统铜锅炖海鲜 (Cataplana de Marisco)"
+    },
+    "badge": {
+      "ko": "포르투갈 · 라구스",
+      "ja": "ポルトガル・ラゴス",
+      "en": "Portugal · Lagos",
+      "zh": "葡萄牙 · 拉各斯"
+    },
+    "signature": {
+      "ko": "카밀로 해변 절벽 위에 자리 잡아 대서양 에메랄드 오션뷰를 조망할 수 있는 남부 최고 명소. 조개 모양 구리 냄비(카타플라나)에 새우, 바지락, 생선을 넣고 쪄낸 감칠맛 폭발 요리",
+      "ja": "カミーロ岬の断崖絶壁に建つ絶景オーシャンビューの名店。伝統の貝殻型銅鍋（カタプラーナ）で海老やアサリ、白身魚を蒸し煮にした濃厚海鮮料理。",
+      "en": "Clifftop restaurant above Praia do Camilo overlooking the Atlantic. Stewed in a clam-shaped copper cataplana with jumbo prawns, clams, and fresh reef fish.",
+      "zh": "屹立于卡米洛海滩悬崖之上、俯瞰大西洋翡翠海景的南部胜地。用传统蛤蜊形球顶铜锅焖烧大虾、花蛤与鲜鱼，汤鲜味浓。"
+    },
+    "seniorTip": {
+      "ko": "국물이 진하고 시원하여 한국인 부모님 입맛에 해물탕처럼 친숙하고 만족도 100%. 주차장에서 식당까지 완전 평지 연결",
+      "ja": "魚介の旨みたっぷりの温かいスープは滋養に富みシニアに大好評。駐車場から店舗入口まで段差なしの平坦ルートです。",
+      "en": "The fragrant, comforting broth is universally praised by elder diners. Direct flat access from the parking lot to the restaurant entrance.",
+      "zh": "汤清鲜美如暖心海鲜靓汤，长辈适口度满分。停车场至餐厅大门全程平地无台阶。"
+    },
+    "hours": {
+      "ko": "화-일 12:30~16:00, 19:00~22:30 (월요일 휴무)",
+      "ja": "火〜日 12:30~16:00, 19:00~22:30 (月曜定休)",
+      "en": "Tue–Sun 12:30~16:00, 19:00~22:30 (Closed Mon)",
+      "zh": "周二至周日 12:30~16:00, 19:00~22:30 (周一店休)"
+    },
+    "language": {
+      "ko": "영어 완벽 · 바다 전망 창가 테라스 좌석 완비",
+      "ja": "英語完全対応・海を一望できるパノラマテラス席完備",
+      "en": "Fluent English · Panoramic ocean-view terrace seating",
+      "zh": "英语沟通顺畅流利 · 设有全景大西洋海景观景席位"
+    },
+    "booking": {
+      "ko": "성수기/주말 공식 사이트 사전 예약 권장",
+      "ja": "週末・ハイシーズンは公式サイトより事前予約推奨",
+      "en": "Advance booking recommended for peak season & weekends",
+      "zh": "旺季与周末建议提前通过官网预约观海座位"
+    }
+  },
+  "Quinta do Furão": {
+    "displayName": {
+      "ko": "Quinta do Furão",
+      "ja": "Quinta do Furão",
+      "en": "Quinta do Furão",
+      "zh": "Quinta do Furão"
+    },
+    "dishTitle": {
+      "ko": "마데이라 와인 소스 안심 스테이크 & 전통 수프 (Bife com Vinho da Madeira)",
+      "ja": "マデイラワインソースの牛フィレステーキ (Bife com Vinho da Madeira)",
+      "en": "Tenderloin Steak in Madeira Wine Reduction & Regional Soup",
+      "zh": "马德拉加烈红酒汁牛里脊牛排与传统鲜汤"
+    },
+    "badge": {
+      "ko": "포르투갈 · 마데이라",
+      "ja": "ポルトガル・マデイラ",
+      "en": "Portugal · Madeira",
+      "zh": "葡萄牙 · 马德拉"
+    },
+    "signature": {
+      "ko": "산타나 해안 절벽 포도원 한가운데 위치한 절경의 전통 킨타 레스토랑. 마데이라 특산 주정강화 와인 소스를 곁들인 스테이크와 토종 야채 수프",
+      "ja": "マデイラ島北部サンタナの断崖ブドウ畑に佇む絶景ワイナリーレストラン。芳醇なマデイラワインソースを纏った牛フィレ肉と郷土スープ。",
+      "en": "Breathtaking estate perched on seaside cliffs among cliffside vineyards in Santana. Tender beef tenderloin in rich fortified Madeira wine glaze with regional bread soup.",
+      "zh": "坐拥桑塔纳北部海岸绝壁葡萄园的隐世庄园餐厅。浇淋浓郁马德拉波特酒汁的香嫩牛柳与当地高山根茎蔬菜汤。"
+    },
+    "seniorTip": {
+      "ko": "대서양 절벽과 포도밭이 어우러진 꿈같은 풍경 속에서 우아하고 여유로운 슬로 다이닝. 차량으로 정문 바로 앞까지 접근 가능",
+      "ja": "大西洋の絶壁とブドウ畑を見渡しながら、ゆったりとした優雅なスローダイナーを満喫。車でエントランス直付け可能です。",
+      "en": "Serene, tranquil slow-dining experience overlooking cliffs and the Atlantic. Direct vehicle access right to the front door without hiking.",
+      "zh": "背山面海的大西洋壮丽景致，节奏舒缓适意。车辆可直接停至正门入口处，免除登山步履辛劳。"
+    },
+    "hours": {
+      "ko": "매일 12:00~16:00, 18:30~22:30",
+      "ja": "毎日 12:00~16:00, 18:30~22:30",
+      "en": "Daily 12:00~16:00, 18:30~22:30",
+      "zh": "每日 12:00~16:00, 18:30~22:30"
+    },
+    "language": {
+      "ko": "영어 완벽 · 호텔 연계 품격 높은 서비스",
+      "ja": "英語完全対応・ブティックホテル直営の格式高いサービス",
+      "en": "Fluent English · High-caliber boutique hotel hospitality",
+      "zh": "英语沟通流利专业 · 精品度假酒店级高雅服务"
+    },
+    "booking": {
+      "ko": "전망 테라스 좌석 사전 예약 필수",
+      "ja": "オーシャンビューテラス席 事前予約必須",
+      "en": "Advance booking essential for cliffside view terrace tables",
+      "zh": "景观露台座席必须提前预约"
+    }
+  },
+  "Le Relais de l'Entrecôte": {
+    "displayName": {
+      "ko": "Le Relais de l'Entrecôte",
+      "ja": "Le Relais de l'Entrecôte",
+      "en": "Le Relais de l'Entrecôte",
+      "zh": "Le Relais de l'Entrecôte"
+    },
+    "dishTitle": {
+      "ko": "비법 허브 버터 소스 살치살 스테이크 (Steak-Frites Signature)",
+      "ja": "秘伝ハーブバターソースの特製ステーキ＆フレンチフライ (Steak-Frites)",
+      "en": "Famous Secret Green Herb Butter Sirloin Steak & Frites",
+      "zh": "秘制香草牛油汁特选牛排配金黄细薯条 (Steak-Frites)"
+    },
+    "badge": {
+      "ko": "프랑스 · 파리",
+      "ja": "フランス・パリ",
+      "en": "France · Paris",
+      "zh": "法国 · 巴黎"
+    },
+    "signature": {
+      "ko": "메뉴판 없이 오직 '굽기'만 물어보는 파리 최고 인기 단일 메뉴 식당. 식지 않도록 2번에 나누어 따뜻하게 서빙되는 비법 그린 소스 스테이크와 갓 튀긴 감자튀김",
+      "ja": "メニューは焼き加減のみを尋ねるパリの名物ステーキ専門店。冷めないよう2回に分けて熱々で提供される秘伝グリーンソースのサーロインとポテトフライ。",
+      "en": "Iconic Parisian bistro serving only one dish: tender sirloin steak coated in legendary secret green herb-butter sauce, served in two hot portions with unlimited crispy frites.",
+      "zh": "只询问熟度、无繁琐菜单的巴黎人气单品名店。特色秘方绿草牛油酱汁牛排分两次温热呈递，搭配无限量热脆细薯条。"
+    },
+    "seniorTip": {
+      "ko": "고기가 부드럽고 호불호 없이 온 가족이 좋아하는 클래식한 맛. 저녁 오픈 15분 전 도착 시 바로 1차 입장 가능",
+      "ja": "お肉が柔らかく誰もが好む安心のクラシックな味付け。ディナー開店15分前の到着でスムーズに入店できます。",
+      "en": "Tender beef with a universally comforting flavor loved by all generations. Arrive 15 minutes before opening for immediate seating.",
+      "zh": "肉质鲜嫩易嚼无膻味，老少咸宜。建议晚餐开门前15分钟到达即可第一批入座。"
+    },
+    "hours": {
+      "ko": "매일 12:00~14:30, 18:45~23:00",
+      "ja": "毎日 12:00~14:30, 18:45~23:00",
+      "en": "Daily 12:00~14:30, 18:45~23:00",
+      "zh": "每日 12:00~14:30, 18:45~23:00"
+    },
+    "language": {
+      "ko": "영어 주문 수월 · 일사불란하고 친절한 웨이트리스 서빙",
+      "ja": "英語注文円滑・手際よく親切な老舗ウェイトレスによるサービス",
+      "en": "English spoken easily · Swift, efficient, friendly service",
+      "zh": "英语交流顺畅 · 老派制服侍者干练利落且亲切体贴"
+    },
+    "booking": {
+      "ko": "예약 불가 (선착순 입장)",
+      "ja": "予約不可 (来店順入店)",
+      "en": "No reservations · Walk-in queue only",
+      "zh": "不接受预约 (现场排队按序入座)"
+    }
+  },
+  "L'As du Fallafel": {
+    "displayName": {
+      "ko": "L'As du Fallafel",
+      "ja": "L'As du Fallafel",
+      "en": "L'As du Fallafel",
+      "zh": "L'As du Fallafel"
+    },
+    "dishTitle": {
+      "ko": "마레 지구 원조 피타 팔라펠 샌드위치 (Fallafel Spécial)",
+      "ja": "マレ地区元祖ピタパン・ファラフェルサンド (Fallafel Spécial)",
+      "en": "Marais Famous Pita Pocket Falafel with Fried Eggplant (Fallafel Spécial)",
+      "zh": "玛黑区传奇经典皮塔饼中东鹰嘴豆炸丸子配烤茄子 (Fallafel Spécial)"
+    },
+    "badge": {
+      "ko": "프랑스 · 파리",
+      "ja": "フランス・パリ",
+      "en": "France · Paris",
+      "zh": "法国 · 巴黎"
+    },
+    "signature": {
+      "ko": "마레 지구 로지에 거리에 위치한 레니 크라비츠 등 세계 스타들의 인생 맛집. 따끈한 피타 빵 속에 갓 튀긴 병아리콩 팔라펠, 구운 가지, 적채, 타히니 소스를 듬뿍 채운 샌드위치",
+      "ja": "マレ地区ロジエ通りの世界的名所。温かいピタパンに、揚げたてヒヨコ豆コロッケ、香ばしい焼きナス、赤キャベツ、濃厚タヒニソースがぎっしり詰まった名物。",
+      "en": "Legendary Rue des Rosiers institution. Warm fluffy pita stuffed with hot crispy chickpea falafels, tender fried eggplant, pickled red cabbage, and rich sesame tahini.",
+      "zh": "玛黑区玫瑰街的名流常客传奇名店。温热松软皮塔饼内满填现炸鹰嘴豆脆丸、香甜软烂烤茄子、爽脆红甘蓝与特调白芝麻酱。"
+    },
+    "seniorTip": {
+      "ko": "길거리 테이크아웃 대신 안쪽 실내 테이블 좌석에 앉아 주문하면 부모님 모시고 편안하게 식사 가능",
+      "ja": "テイクアウトの行列を避け、店内のテーブル席へ案内してもらえばシニア連れでも快適に着席して食事ができます。",
+      "en": "Avoid the standing takeout queue; request dine-in indoor seating to relax comfortably at table with family.",
+      "zh": "可避开外带长队直接选择堂食，入座店内餐桌从容享用更为适老舒适。"
+    },
+    "hours": {
+      "ko": "일-목 11:00~23:00, 금 11:00~16:00 (토요일 안식일 휴무)",
+      "ja": "日〜木 11:00~23:00, 金 11:00~16:00 (土曜安息日定休)",
+      "en": "Sun–Thu 11:00~23:00, Fri 11:00~16:00 (Closed Sat Sabbath)",
+      "zh": "周日至周四 11:00~23:00, 周五 11:00~16:00 (周六安息日店休)"
+    },
+    "language": {
+      "ko": "영어 매우 능통 · 활기찬 서비스",
+      "ja": "英語堪能・活気あふれる陽気な接客",
+      "en": "Fluent English spoken · Energetic and efficient staff",
+      "zh": "英语非常流利 · 服务生反应敏捷热情爽朗"
+    },
+    "booking": {
+      "ko": "예약 불가 (실내 식사는 대기줄 분리 운영)",
+      "ja": "予約不可 (イートイン専用レーンあり)",
+      "en": "No reservations · Separate queue for dine-in seating",
+      "zh": "无需预约 (设有单独堂食排队通道)"
+    }
+  },
+  "Carette": {
+    "displayName": {
+      "ko": "Carette",
+      "ja": "Carette",
+      "en": "Carette",
+      "zh": "Carette"
+    },
+    "dishTitle": {
+      "ko": "수제 휘핑크림 핫초콜릿 & 마카롱 (Chocolat Chaud & Chantilly)",
+      "ja": "特製シャンティイクリーム添え濃厚ホットチョコレート＆マカロン",
+      "en": "Artisanal Rich Hot Chocolate with Whipped Chantilly & Macarons",
+      "zh": "经典法式浓郁热巧克力配厚香缇鲜奶油与马卡龙"
+    },
+    "badge": {
+      "ko": "프랑스 · 파리",
+      "ja": "フランス・パリ",
+      "en": "France · Paris",
+      "zh": "法国 · 巴黎"
+    },
+    "signature": {
+      "ko": "1927년 트로카데로 광장에 문을 연 파리지앵의 사랑방. 은제 주전자에 담긴 진한 핫초콜릿과 대형 볼에 넘치도록 담아주는 신선한 샹티이 생크림의 천상 조합",
+      "ja": "1927年トロカデロ広場創業の格式あるサロン・ド・テ。銀器ポットで注ぐビターで濃厚なショコラ・ショーと、山盛りの手作り生クリーム。",
+      "en": "Elegant 1927 tearoom overlooking Place du Trocadéro. Decadent dark hot chocolate served in silver pots alongside clouds of house-whipped Chantilly cream and macarons.",
+      "zh": "始于1927年特罗卡德罗广场的典雅茶沙龙。银质茶壶倾倒出丝滑香浓纯巧饮品，搭配一大碗如浮云般的轻盈自制香缇鲜奶油。"
+    },
+    "seniorTip": {
+      "ko": "에펠탑 관람 전후 광장 평지에서 우아한 티타임을 갖기에 최적. 푹신한 실내 벨벳 의자나 온열기 구비된 테라스 좌석 추천",
+      "ja": "エッフェル塔観光の合間に広場平坦地で休むのに最適。暖房完備のテラス席または柔らかなベルベット室内席で優雅に休憩。",
+      "en": "Perfect flat resting spot before or after Eiffel Tower visits. Heated terrace or plush indoor velvet seating offers ultimate comfort.",
+      "zh": "埃菲尔铁塔观景前后平地歇脚的上佳之选。室内丝绒软椅或带取暖器的露台座席极为舒适。"
+    },
+    "hours": {
+      "ko": "매일 07:30~23:30",
+      "ja": "毎日 07:30~23:30",
+      "en": "Daily 07:30~23:30",
+      "zh": "每日 07:30~23:30"
+    },
+    "language": {
+      "ko": "영어 능통 · 고풍스러운 은식기 정통 프렌치 서비스",
+      "ja": "英語堪能・伝統銀食器とクラシカルなフランス式サービス",
+      "en": "Fluent English · Classical Parisian silver-service hospitality",
+      "zh": "英语沟通顺畅 · 传统法式银器餐具与绅士管家式服务"
+    },
+    "booking": {
+      "ko": "예약 불가 (티타임 피크 시간 약간의 대기)",
+      "ja": "予約不可 (ティータイムに若干の待ち時間あり)",
+      "en": "No reservations · Minor wait during afternoon tea peak",
+      "zh": "无需预约 (下午茶高峰略有短时候位)"
+    }
+  },
+  "Café de Flore": {
+    "displayName": {
+      "ko": "Café de Flore",
+      "ja": "Café de Flore",
+      "en": "Café de Flore",
+      "zh": "Café de Flore"
+    },
+    "dishTitle": {
+      "ko": "클래식 크로크무슈 & 카페 크렘 (Croque Monsieur Traditionnel)",
+      "ja": "伝統のクロックムッシュ＆カフェ・クレーム (Croque Monsieur)",
+      "en": "Classic Parisian Croque Monsieur & Café Crème",
+      "zh": "巴黎传统经典法式火腿热芝士三明治配白咖啡"
+    },
+    "badge": {
+      "ko": "프랑스 · 파리",
+      "ja": "フランス・パリ",
+      "en": "France · Paris",
+      "zh": "法国 · 巴黎"
+    },
+    "signature": {
+      "ko": "1887년 생제르맹 데 프레에 개업하여 사르트르, 보부아르, 카뮈가 사색을 나누던 지성의 요람. 고소한 에멘탈 치즈와 햄을 구워낸 원조 크로크무슈",
+      "ja": "1887年創業、サルトルやボーヴォワールら知識人が集ったサンジェルマンの歴史的カフェ。香ばしいエメンタールチーズと上質ハムの伝統クロックムッシュ。",
+      "en": "Historic 1887 Saint-Germain literary landmark frequented by Sartre and Camus. Toasted golden Emmental cheese and ham Croque Monsieur alongside hot Café Crème.",
+      "zh": "1887年创立于圣日耳曼德佩区、萨特与加缪曾常驻的思想摇篮。烤至微焦香脆的埃门塔尔奶酪法式经典火腿三明治配鲜奶咖啡。"
+    },
+    "seniorTip": {
+      "ko": "파리의 낭만을 느끼며 어르신과 함께 생제르맹 거리를 오가는 사람들을 구경하는 테라스 명당 좌석. 오전 브런치 타임이 여유로움",
+      "ja": "パリの街並みを眺めながらのんびり過ごせる特等席。午前中のブランチ時間帯が空いていてシニア連れに最適です。",
+      "en": "Delightful terrace people-watching spot with comfortable wicker chairs. Morning brunch hours are quieter and more relaxed.",
+      "zh": "在此点上一杯咖啡静坐街角露台、感受巴黎浪漫慢时光。上午早午餐时段更为静谧悠闲。"
+    },
+    "hours": {
+      "ko": "매일 07:30~01:30",
+      "ja": "毎日 07:30~01:30",
+      "en": "Daily 07:30~01:30",
+      "zh": "每日 07:30~01:30"
+    },
+    "language": {
+      "ko": "영어 완벽 · 전통 흰 앞치마를 두른 노련한 가르송 응대",
+      "ja": "英語完全対応・白エプロンを締めた熟練ギャルソンの親切な接客",
+      "en": "Fluent English · Professional apron-clad Parisian garçons",
+      "zh": "英语流利熟练 · 传统白色围裙老练侍者提供地道巴黎式款待"
+    },
+    "booking": {
+      "ko": "예약 불가 (현장 자율 착석)",
+      "ja": "予約不可 (自由着席)",
+      "en": "No reservations · Walk-in seating",
+      "zh": "无需预约 (现场自主入座)"
+    }
+  },
+  "Du Pain et des Idées": {
+    "displayName": {
+      "ko": "Du Pain et des Idées",
+      "ja": "Du Pain et des Idées",
+      "en": "Du Pain et des Idées",
+      "zh": "Du Pain et des Idées"
+    },
+    "dishTitle": {
+      "ko": "피스타치오 초콜릿 달팽이 빵 (Escargot Pistache Chocolat)",
+      "ja": "ピスタチオとチョコのエスカルゴ・デニッシュ (Escargot Pistache)",
+      "en": "Pistachio & Chocolate Snail Viennoiserie (Escargot Pistache Chocolat)",
+      "zh": "开心果巧克力螺旋蜗牛可颂面包 (Escargot Pistache Chocolat)"
+    },
+    "badge": {
+      "ko": "프랑스 · 파리",
+      "ja": "フランス・パリ",
+      "en": "France · Paris",
+      "zh": "法国 · 巴黎"
+    },
+    "signature": {
+      "ko": "1875년 전통 목조 매장을 그대로 간직한 생마르탱 운하 인근 파리 최고의 아티장 블랑제리. 고소한 피스타치오 크림과 초콜릿 칩이 소용돌이치는 명물 페이스트리",
+      "ja": "1875年当時の装飾が残るサン・マルタン運河近くの職人ブーランジェリー。ピスタチオの上品なペーストとビターチョコを巻き込んだ一番人気のエスカルゴ。",
+      "en": "Artisanal bakery dating back to 1875 near Canal Saint-Martin. Celebrated for its spiral 'Escargot' puff pastry layered with aromatic pistachio paste and chocolate drops.",
+      "zh": "保留1875年古董木雕门脸、位于圣马丁运河畔的殿堂级手作烘焙坊。名扬全城的招牌开心果浓酱巧克力脆皮蜗牛卷。"
+    },
+    "seniorTip": {
+      "ko": "운하 벤치나 매장 앞 목재 벤치에서 따뜻한 커피와 함께 아침 식사로 가볍게 즐기기 좋음. 겉바속촉 빵의 정점",
+      "ja": "店舗前の木製ベンチや運河沿いの平坦なベンチで朝の軽食にぴったり。外サクサク中しっとりで食べやすい名品です。",
+      "en": "Delightful morning breakfast on the wooden bench outside or flat canal benches. Ultra-flaky, soft, and easy to enjoy.",
+      "zh": "外皮层层酥脆而内芯绵软，搭配咖啡在店门口木椅或运河长椅慢品，是极佳的惬意晨间早餐。"
+    },
+    "hours": {
+      "ko": "월-금 07:15~19:30 (토·일 휴무)",
+      "ja": "月〜金 07:15~19:30 (土・日曜定休)",
+      "en": "Mon–Fri 07:15~19:30 (Closed Sat/Sun)",
+      "zh": "周一至周五 07:15~19:30 (周六及周日店休)"
+    },
+    "language": {
+      "ko": "친절한 영어 주문 · 빵 굽는 고소한 버터 향 가득",
+      "ja": "親切な英語対応・店内に漂う香ばしいバターの香り",
+      "en": "Friendly English spoken · Welcoming bakery staff",
+      "zh": "店员英语亲切体贴 · 满室麦香与黄油馥郁"
+    },
+    "booking": {
+      "ko": "포장 전문 (테이크아웃)",
+      "ja": "テイクアウト専門店",
+      "en": "Takeout bakery",
+      "zh": "外带烘焙专门店"
+    }
+  },
+  "La Merenda": {
+    "displayName": {
+      "ko": "La Merenda",
+      "ja": "La Merenda",
+      "en": "La Merenda",
+      "zh": "La Merenda"
+    },
+    "dishTitle": {
+      "ko": "남프랑스 정통 송아지 위 조림 & 뇨키 (Pâte au Pistou & Daube)",
+      "ja": "南仏伝統ドーブ牛肉煮込み＆バジルペースト手打ちパスタ",
+      "en": "Authentic Niçois Beef Daube Stew & Handmade Pistou Gnocchi",
+      "zh": "传统尼斯风味红酒炖牛肉与手工罗勒青酱意面"
+    },
+    "badge": {
+      "ko": "프랑스 · 니스",
+      "ja": "フランス・ニース",
+      "en": "France · Nice",
+      "zh": "法国 · 尼斯"
+    },
+    "signature": {
+      "ko": "미쉐린 2스타 호텔 셰프 도미니크 르 스탕케가 은퇴 후 차린 작고 소박한 니스 전통 가정식 식당. 바질 페스토 생면 파스타와 부드럽게 고아낸 소고기 도브 조림",
+      "ja": "名門ホテル総料理長が旧市街に開いた温もりある郷土食堂。フレッシュバジルたっぷりのピストゥパスタとトロトロに煮込んだドーブ（牛肉赤ワイン煮）。",
+      "en": "Legendary former luxury palace chef Dominique Le Stanc's authentic Niçois hideaway. Fragrant handmade pistou pasta alongside melt-in-your-mouth slow-braised beef daube stew.",
+      "zh": "原米其林二星主厨隐退尼斯老城后躬耕的质朴小馆。香气扑鼻的新鲜罗勒蒜泥青酱手工面与慢火细煨至极烂的红酒炖牛肉。"
+    },
+    "seniorTip": {
+      "ko": "올리브유와 바질, 마늘 베이스의 건강한 지중해식 조리법으로 어르신 속이 편안함. 전화가 없으므로 온라인 사전 예약 필수",
+      "ja": "上質なオリーブ油とハーブを使った地中海式健康調理で胃もたれしません。電話がないためウェブ事前予約が必須です。",
+      "en": "Healthy Mediterranean olive oil and herb-forward cooking, remarkably gentle on digestion. Book online as they have no telephone.",
+      "zh": "以特级橄榄油与新鲜香草为底色的地中海健康烹饪，清润养胃。店内不设电话，需提前在线预约。"
+    },
+    "hours": {
+      "ko": "화-금 12:00~14:00, 19:00~21:30 (토-월 휴무)",
+      "ja": "火〜金 12:00~14:00, 19:00~21:30 (土〜月曜定休)",
+      "en": "Tue–Fri 12:00~14:00, 19:00~21:30 (Closed Sat–Mon)",
+      "zh": "周二至周五 12:00~14:00, 19:00~21:30 (周六至周一店休)"
+    },
+    "language": {
+      "ko": "영어 친절 소통 · 아담한 원형 테이블 오픈 키친",
+      "ja": "英語親切対応・コンパクトでアットホームなオープンキッチン",
+      "en": "Friendly English spoken · Intimate open kitchen chalkboard bistro",
+      "zh": "英语交流亲切周详 · 温馨小巧开放式厨房家常氛围"
+    },
+    "booking": {
+      "ko": "공식 사이트(lamerenda.net) 온라인 사전 예약 필수",
+      "ja": "公式サイト(lamerenda.net) オンライン事前予約必須",
+      "en": "Online reservation required via lamerenda.net (no phone)",
+      "zh": "必须提前在官网(lamerenda.net)在线预约 (无电话)"
+    }
+  },
+  "Restaurant Le Miramar": {
+    "displayName": {
+      "ko": "Restaurant Le Miramar",
+      "ja": "Restaurant Le Miramar",
+      "en": "Restaurant Le Miramar",
+      "zh": "Restaurant Le Miramar"
+    },
+    "dishTitle": {
+      "ko": "정통 마르세유 황금 생선 수프 부야베스 (Vraie Bouillabaisse)",
+      "ja": "マルセイユ公認憲章・黄金のブイヤベース (Vraie Bouillabaisse)",
+      "en": "Authentic Marseille Rockfish Bouillabaisse with Rouille & Croutons",
+      "zh": "正统马赛金黄岩鱼海鲜浓汤 (Vraie Bouillabaisse)"
+    },
+    "badge": {
+      "ko": "프랑스 · 마르세유",
+      "ja": "フランス・マルセイユ",
+      "en": "France · Marseille",
+      "zh": "法国 · 马赛"
+    },
+    "signature": {
+      "ko": "마르세유 구항구(Vieux-Port) 앞 '부야베스 헌장'을 준수하는 공인 최고봉 명가. 지중해 암초 생선 6종을 사프란과 함께 우려낸 황금빛 수프와 마늘 루유(Rouille) 소스 바게트",
+      "ja": "マルセイユ旧港のブイヤベース憲章を守る名門。地中海で獲れた6種以上の岩礁魚とサフランで煮込んだ黄金スープと、ガーリックマヨネーズルイユ。",
+      "en": "The gold standard of Bouillabaisse by the Old Port adhering to the official Charter. A two-course ritual: intensely aromatic saffron rockfish broth with garlic rouille, followed by whole filleted reef fish.",
+      "zh": "马赛老港恪守正统《马赛鱼汤宪章》的代表殿堂。选用6种新鲜地中海岩礁海鱼配藏红花炖煮的金黄浓汤，涂抹大蒜红椒蛋黄酱香脆面包干。"
+    },
+    "seniorTip": {
+      "ko": "먼저 걸쭉하고 따뜻한 어탕 수프를 마시고 이어서 통살 생선을 발라 먹는 2단계 코스로 부모님 보양식으로 최고",
+      "ja": "温かい濃厚魚介スープを味わった後、骨を除いた柔らかい白身魚をいただく2段階コースで、ご両親の滋養強壮に最適です。",
+      "en": "A deeply nourishing 2-stage course: warm restorative broth first, followed by soft filleted fish. Supreme health tonic for parents.",
+      "zh": "先品热腾腾的鲜美鱼汤暖胃，再由侍者分食软嫩鱼肉，营养温补，极适宜长辈调养体力。"
+    },
+    "hours": {
+      "ko": "화-일 12:00~14:30, 19:00~22:30 (월요일 휴무)",
+      "ja": "火〜日 12:00~14:30, 19:00~22:30 (月曜定休)",
+      "en": "Tue–Sun 12:00~14:30, 19:00~22:30 (Closed Mon)",
+      "zh": "周二至周日 12:00~14:30, 19:00~22:30 (周一店休)"
+    },
+    "language": {
+      "ko": "영어 완벽 · 신선한 오늘의 생선 트레이를 직접 보여주고 조리",
+      "ja": "英語完全対応・調理前の新鮮魚トレイをテーブルで直接披露",
+      "en": "Fluent English · Fresh fish platter presented tableside prior to cooking",
+      "zh": "英语流利专业 · 烹调前侍者会端上当日冰鲜整鱼托盘向客人展示"
+    },
+    "booking": {
+      "ko": "공식 사이트(lemiramar.fr) 필수 예약 권장",
+      "ja": "公式サイト(lemiramar.fr) 事前予約強く推奨",
+      "en": "Advance booking recommended via lemiramar.fr",
+      "zh": "强烈建议提前通过官网(lemiramar.fr)预约"
+    }
+  },
+  "Armando al Pantheon": {
+    "displayName": {
+      "ko": "Armando al Pantheon",
+      "ja": "Armando al Pantheon",
+      "en": "Armando al Pantheon",
+      "zh": "Armando al Pantheon"
+    },
+    "dishTitle": {
+      "ko": "정통 로마식 아마트리치아나 & 어린 양고기 (Amatriciana & Abbacchio)",
+      "ja": "伝統のアマトリチャーナ＆ローマ風仔羊ロースト (Amatriciana & Abbacchio)",
+      "en": "Authentic Roman Rigatoni all'Amatriciana & Roasted Abbacchio Lamb",
+      "zh": "正统罗马风味腌肉番茄意面配嫩烤羊排 (Amatriciana & Abbacchio)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 로마",
+      "ja": "イタリア・ローマ",
+      "en": "Italy · Rome",
+      "zh": "意大利 · 罗马"
+    },
+    "signature": {
+      "ko": "1961년부터 판테온 신전 골목을 지켜온 로마 최고의 슬로푸드 전통 트라토리아. 바삭한 구안찰레와 산마르차노 토마토, 페코리노 로마노 치즈가 어우러진 교과서적 파스타",
+      "ja": "1961年以来パンテオン神殿隣で愛されるローマ屈指の伝統トラットリア。カリカリのグアンチャーレ、サンマルツァーノトマト、ペコリーノが調和する傑作パスタ。",
+      "en": "Slow Food temple steps from the Pantheon since 1961. Benchmark rigatoni all'amatriciana with crispy cured pork jowl guanciale, and tender Roman-style suckling lamb.",
+      "zh": "自1961年守护在万神殿旁的慢食运动代表餐馆。香脆风干猪面颊肉配圣马扎诺番茄与佩科里诺干酪的教课书级意面。"
+    },
+    "seniorTip": {
+      "ko": "판테온 바로 옆 평지 골목에 위치하여 이동이 편안하고, 예약제로 운영되어 복잡한 줄 서기 없이 우아하게 착석 가능",
+      "ja": "パンテオン真横の完全平坦路地に位置。完全予約制のため行列に並ぶ疲労がなく、落ち着いて食事できます。",
+      "en": "Located on a flat street next to the Pantheon. Strict reservation policy means zero queues and tranquil table dining.",
+      "zh": "紧邻万神殿平缓小巷步行极度轻松。全预约制免去排队站立之苦，入座安宁从容。"
+    },
+    "hours": {
+      "ko": "월-토 12:30~15:00, 19:30~23:00 (일요일 정기 휴무)",
+      "ja": "月〜土 12:30~15:00, 19:30~23:00 (日曜定休)",
+      "en": "Mon–Sat 12:30~15:00, 19:30~23:00 (Closed Sun)",
+      "zh": "周一至周六 12:30~15:00, 19:30~23:00 (周日店休)"
+    },
+    "language": {
+      "ko": "영어 완벽 · 가르기올리 가문의 따뜻하고 품격 있는 패밀리 응대",
+      "ja": "英語完全対応・ガルジョーリ家による温かく品格ある家族のもてなし",
+      "en": "Fluent English · Heartfelt, dignified hospitality by the Gargioli family",
+      "zh": "英语流利典雅 · 家族经营温馨细致、如沐春风的意式待客之道"
+    },
+    "booking": {
+      "ko": "예약 필수 (공식 사이트 armandoalpantheon.it 최소 3~4주 전 오픈)",
+      "ja": "予約必須 (公式サイト armandoalpantheon.it 最低3〜4週間前)",
+      "en": "Reservations essential via armandoalpantheon.it 3–4 weeks ahead",
+      "zh": "必须提前预约 (官网 armandoalpantheon.it 提前3~4周放位)"
+    }
+  },
+  "Osteria da Fortunata": {
+    "displayName": {
+      "ko": "Osteria da Fortunata",
+      "ja": "Osteria da Fortunata",
+      "en": "Osteria da Fortunata",
+      "zh": "Osteria da Fortunata"
+    },
+    "dishTitle": {
+      "ko": "할머니 손반죽 생면 탈리아텔레 라구 (Tagliatelle al Ragù)",
+      "ja": "マンマ直伝の手打ち生パスタ・タリアテッレ ボロネーゼ",
+      "en": "Handmade Fresh Tagliatelle Pasta with Rich Beef Ragù Bolognese",
+      "zh": "意大利老奶奶现揉手工宽面配慢炖牛肉肉酱 (Tagliatelle al Ragù)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 로마",
+      "ja": "イタリア・ローマ",
+      "en": "Italy · Rome",
+      "zh": "意大利 · 罗马"
+    },
+    "signature": {
+      "ko": "캄포 데 피오리 광장 인근 유리창 너머로 이탈리아 할머니(Nonna)가 갓 뽑아내는 수제 생면 파스타. 쫄깃하고 탄력 넘치는 면발과 깊은 감칠맛의 소고기 볼로네제 라구",
+      "ja": "職人マンマが窓際で手打ちする打ち立て生パスタ。驚くほど弾力ある手打ちタリアテッレに、じっくり煮込んだコク深い牛肉ボロネーゼラグー。",
+      "en": "Handmade pasta rolled fresh in the window by Roman Nonnas near Campo de' Fiori. Silky tender tagliatelle enveloped in rich slow-simmered beef ragù.",
+      "zh": "鲜花广场旁老奶奶临窗现揉现切的手工鸡蛋生面。筋道滑润的面条吸满慢炖数小时的浓郁牛肉番茄肉酱。"
+    },
+    "seniorTip": {
+      "ko": "건면과 달리 갓 뽑은 생면이라 부드럽고 소화가 월등히 잘 됨. 카르보나라와 라구 모두 어르신 호평 일색",
+      "ja": "乾麺と違い打ち立て生パスタは柔らかく消化にとても優れています。ラグーやカルボナーラ共にご両親から絶賛。",
+      "en": "Unlike dried hard pasta, fresh hand-rolled egg pasta is soft, tender, and easily digested by seniors.",
+      "zh": "不同于硬质干面，现揉手工生面质地细腻柔顺极易消化。肉酱面与培根蛋酱面均深受长辈赞赏。"
+    },
+    "hours": {
+      "ko": "매일 12:00~01:00 (브레이크 없음)",
+      "ja": "毎日 12:00~01:00 (通し営業)",
+      "en": "Daily 12:00~01:00 (No afternoon break)",
+      "zh": "每日 12:00~01:00 (全天营业无午休)"
+    },
+    "language": {
+      "ko": "영어 주문 수월 · 눈앞에서 펼쳐지는 생면 제조 시연 구경 재미",
+      "ja": "英語対応円滑・目の前で繰り広げられるパスタ作り実演",
+      "en": "English spoken · Enjoyable live view of nonnas crafting fresh pasta",
+      "zh": "英语交流轻松顺畅 · 边就餐边欣赏手工制面全过程趣味横生"
+    },
+    "booking": {
+      "ko": "예약 불가 (오후 3~5시 애매한 시간대 방문 시 대기 없이 착석)",
+      "ja": "予約不可 (15:00〜17:00のアイドルタイムは並ばず着席可能)",
+      "en": "No reservations · Visit between 15:00 and 17:00 for immediate seating",
+      "zh": "无需预约 (下午15:00~17:00非饭点到店可直接免排队入座)"
+    }
+  },
+  "Trattoria Mario": {
+    "displayName": {
+      "ko": "Trattoria Mario",
+      "ja": "Trattoria Mario",
+      "en": "Trattoria Mario",
+      "zh": "Trattoria Mario"
+    },
+    "dishTitle": {
+      "ko": "토스카나 야채 수프 립볼리타 & 오소부코 (Ribollita & Ossobuco)",
+      "ja": "トスカーナ風野菜スープ・リボッリータ＆オッソブーコ",
+      "en": "Tuscan Vegetable Bread Soup Ribollita & Braised Ossobuco",
+      "zh": "托斯卡纳传统蔬菜面包浓汤与红酒炖牛膝 (Ribollita & Ossobuco)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 피렌체",
+      "ja": "イタリア・フィレンツェ",
+      "en": "Italy · Florence",
+      "zh": "意大利 · 佛罗伦萨"
+    },
+    "signature": {
+      "ko": "1953년 산 로렌초 시장 옆에 개업한 피렌체의 살아있는 전설. 케일과 흰 콩, 빵을 넣고 푹 끓인 토스카나 영양 수프 립볼리타와 부드러운 송아지 정강이 찜 오소부코",
+      "ja": "1953年創業、サン・ロレンツォ市場隣のフィレンツェの生ける伝説。ケールと白インゲン豆を煮込んだ滋味豊かなリボッリータと柔らかい仔牛スネ肉のオッソブーコ。",
+      "en": "A living legend of Florence since 1953 next to San Lorenzo Market. Hearty Tuscan ribollita stew with kale and cannellini beans, and tender braised ossobuco veal shank.",
+      "zh": "自1953年开业于圣洛伦佐市场旁的佛罗伦萨老字号。慢熬羽衣甘蓝与白芸豆的传统蔬菜浓汤，搭配软烂入味的红酒炖牛膝。"
+    },
+    "seniorTip": {
+      "ko": "립볼리타는 따뜻하고 부드러운 야채 죽 같아서 기름진 서양식에 지친 부모님의 속을 편안하게 달래주는 효자 메뉴",
+      "ja": "温かく胃腸に優しい野菜スープで、脂っこい洋食に疲れたご両親のお腹を癒やす安心のヘルシーメニュー。段差のない快適なテーブル席。",
+      "en": "Comforting and gentle warm vegetable soup, perfect for resting senior parents' digestion after rich meals. Step-free welcoming setting.",
+      "zh": "温润养胃的慢炖蔬菜浓汤，如同舒心蔬菜粥，为长辈调理肠胃的最佳疗愈餐点。单层平坦座椅。"
+    },
+    "hours": {
+      "ko": "월-토 12:00~15:00 (일요일 휴무, 점심 전용)",
+      "ja": "月〜土 12:00~15:00 (日曜定休、ランチのみ)",
+      "en": "Mon–Sat 12:00~15:00 (Closed Sun, Lunch Only)",
+      "zh": "周一至周六 12:00~15:00 (周日店休，仅限午餐)"
+    },
+    "language": {
+      "ko": "영어 주문 가능 · 합석 문화가 있는 유쾌하고 시끌벅적한 현지 분위기",
+      "ja": "英語対応可能・活気あるアットホームな相席文化",
+      "en": "English friendly · Lively shared-table atmosphere",
+      "zh": "支持英语沟通 · 热闹温馨的传统拼桌用餐体验"
+    },
+    "booking": {
+      "ko": "예약 불가 (11:45분 도착 대기 추천)",
+      "ja": "予約不可 (11:45までの到着推奨)",
+      "en": "No reservation (Arrival before 11:45 recommended)",
+      "zh": "无需预约 (建议11:45前抵达排队)"
+    }
+  },
+  "Ristorante Buca Lapi": {
+    "displayName": {
+      "ko": "Ristorante Buca Lapi",
+      "ja": "Ristorante Buca Lapi",
+      "en": "Ristorante Buca Lapi",
+      "zh": "Ristorante Buca Lapi"
+    },
+    "dishTitle": {
+      "ko": "1880년 피렌체 최고령 숯불 비스테카 (Bistecca alla Fiorentina 1.2kg)",
+      "ja": "1880年創業 フィレンツェ最古の炭火ビステッカ (Bistecca alla Fiorentina 1.2kg)",
+      "en": "Historical Charcoal-Grilled Florentine T-Bone Steak 1.2kg",
+      "zh": "1880年佛罗伦萨最古老酒窖炭火T骨大牛排 (Bistecca alla Fiorentina 1.2kg)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 피렌체",
+      "ja": "イタリア・フィレンツェ",
+      "en": "Italy · Florence",
+      "zh": "意大利 · 佛罗伦萨"
+    },
+    "signature": {
+      "ko": "안티노리 궁전 지하 유서 깊은 와인 셀러에서 운영되는 피렌체에서 가장 오래된 식당. 참나무 숯불로 구워 겉은 크리스피하고 속은 육즙이 폭발하는 키아니나 암소 티본스테이크",
+      "ja": "アンティノリ宮殿地下の歴史的ワインセラーで味わう、フィレンツェ最古の炭火焼きキアニーナ牛Tボーンステーキ。外は香ばしく中はジューシー。",
+      "en": "Florence's oldest restaurant located in the Antinori cellar. Signature oak-charcoal grilled Chianina T-bone steak with crisp exterior and succulent meat.",
+      "zh": "位于安东尼奥宫殿地下古老酒窖内、佛罗伦萨历史最悠久的炭烤奎宁牛T骨大牛排，外焦里嫩肉香四溢。"
+    },
+    "seniorTip": {
+      "ko": "천장이 오래된 벽화와 포스터로 장식된 클래식한 공간. 어르신을 위해 고기를 얇게 썰어 테이블에 서빙해 주며 부드러운 감자 퓌레와 환상 조합",
+      "ja": "ご両親のためにテーブルで薄くスライスして提供され、滑らかなポテトピューレと相性抜群。段差の少ないクラシックな空間。",
+      "en": "Steak can be pre-sliced at table for elderly family members, pairing wonderfully with smooth velvety mashed potatoes.",
+      "zh": "服务员可在桌边为长辈将牛排细致切片，搭配丝滑土豆泥，酥香软嫩极易入口。"
+    },
+    "hours": {
+      "ko": "화-일 19:00~23:00 (월요일 휴무, 저녁 전용)",
+      "ja": "火〜日 19:00~23:00 (月曜定休、ディナーのみ)",
+      "en": "Tue–Sun 19:00~23:00 (Closed Mon, Dinner Only)",
+      "zh": "周二至周日 19:00~23:00 (周一店休，仅限晚餐)"
+    },
+    "language": {
+      "ko": "영어 완벽 · 전통 정장 지배인의 최고급 하스피탈리티",
+      "ja": "英語堪能・伝統スーツ服支配人の最高級ホスピタリティ",
+      "en": "Fluent English · Sophisticated formal dining service",
+      "zh": "流利英语服务 · 传统正装领班尊贵体贴款待"
+    },
+    "booking": {
+      "ko": "공식 사이트(bucalapi.com) 최소 2주 전 필수 예약",
+      "ja": "公式サイト(bucalapi.com) 最低2週間前 必須予約",
+      "en": "Official website (bucalapi.com) min. 2 weeks advance booking required",
+      "zh": "官方网站(bucalapi.com) 提前至少2周 必须预约"
+    }
+  },
+  "Osteria alle Testiere": {
+    "displayName": {
+      "ko": "Osteria alle Testiere",
+      "ja": "Osteria alle Testiere",
+      "en": "Osteria alle Testiere",
+      "zh": "Osteria alle Testiere"
+    },
+    "dishTitle": {
+      "ko": "리알토 어시장 직송 바지락 스파게티 (Spaghetti alle Vongole e Gò)",
+      "ja": "リアルト魚市場直送 あさりスパゲッティ (Spaghetti alle Vongole e Gò)",
+      "en": "Rialto Market Fresh Clam Spaghetti (Spaghetti alle Vongole e Gò)",
+      "zh": "里亚托鱼市直供鲜活蛤蜊意面 (Spaghetti alle Vongole e Gò)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 베네치아",
+      "ja": "イタリア・ヴェネツィア",
+      "en": "Italy · Venice",
+      "zh": "意大利 · 威尼斯"
+    },
+    "signature": {
+      "ko": "테이블 단 9개의 미쉐린 빕 구르망 해산물 오스테리아. 루카와 브루노 두 친구가 매일 아침 리알토 시장에서 들여온 제철 바지락, 면도조개, 바닷가재로 완성하는 마법 같은 맛",
+      "ja": "わずか9席のミシュラン・ビブグルマン。毎朝リアルト市場で仕入れる新鮮なアサリや甲殻類の極上出汁が絡む絶品シーフードパスタ。",
+      "en": "9-table Michelin Bib Gourmand gem. Extraordinary seafood pasta coated in rich broth from daily fresh Rialto market clams and lagoon fish.",
+      "zh": "仅设9张餐桌的米其林必比登海鲜名店。每日清晨直采鲜活蛤蜊与海鱼，浓郁鲜甜的原汁意面。"
+    },
+    "seniorTip": {
+      "ko": "비린 맛이 전혀 없는 맑고 깊은 해산물 육수 파스타. 산 마르코 광장에서 도보 7분 거리의 조용한 골목 평지에 위치",
+      "ja": "生臭さが全くない澄んだ濃厚な魚介出汁パスタ。サン・マルコ広場から徒歩7分の静かな平坦路地に位置しシニアに安心。",
+      "en": "Zero fishy taste with a clear, deeply flavorful clam broth that elders love. Flat quiet alleyway 7 minutes from St. Mark's.",
+      "zh": "毫无腥味、鲜香清甜的原汁贝类意面，深受长辈喜爱。位于圣马可广场步行7分钟的静谧平地小巷。"
+    },
+    "hours": {
+      "ko": "화-토 12:30~14:30, 19:00~22:30 (일·월 휴무)",
+      "ja": "火〜土 12:30~14:30, 19:00~22:30 (日・月曜定休)",
+      "en": "Tue–Sat 12:30~14:30, 19:00~22:30 (Closed Sun/Mon)",
+      "zh": "周二至周六 12:30~14:30, 19:00~22:30 (周日/周一店休)"
+    },
+    "language": {
+      "ko": "영어 유창 · 그날의 해산물에 맞는 베네토 화이트 와인 추천",
+      "ja": "英語流暢・料理に合わせたヴェネト産白ワインの親切な提案",
+      "en": "Fluent English · Friendly Veneto white wine pairing advice",
+      "zh": "英语流利热情 · 细致推荐搭配的威尼托特色白葡萄酒"
+    },
+    "booking": {
+      "ko": "좌석이 극소수이므로 최소 3~4주 전 이메일/전화 예약 필수",
+      "ja": "座席数が極少のため 最低3〜4週間前 メール/電話 必須予約",
+      "en": "Very limited seating · Email/phone booking 3–4 weeks in advance required",
+      "zh": "座位极少 · 提前至少3~4周 邮件/电话 必须预约"
+    }
+  },
+  "Trattoria Milanese": {
+    "displayName": {
+      "ko": "Trattoria Milanese",
+      "ja": "Trattoria Milanese",
+      "en": "Trattoria Milanese",
+      "zh": "Trattoria Milanese"
+    },
+    "dishTitle": {
+      "ko": "황금 사프란 리조또 & 송아지 커틀릿 (Risotto allo Zafferano & Cotoletta)",
+      "ja": "ミラノ名物サフランリゾット＆黄金カツレツ (Risotto & Cotoletta)",
+      "en": "Golden Saffron Risotto alla Milanese & Veal Cutlet (Cotoletta)",
+      "zh": "传统米兰藏红花黄金烩饭与黄油酥炸小牛排 (Risotto & Cotoletta)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 밀라노",
+      "ja": "イタリア・ミラノ",
+      "en": "Italy · Milan",
+      "zh": "意大利 · 米兰"
+    },
+    "signature": {
+      "ko": "1933년 개업 이래 밀라노 전통 요리의 정통성을 지켜온 나빌리오 인근 트라토리아. 진한 사프란 향이 밴 크리미한 황금 리조또와 맑은 버터에 튀긴 바삭한 송아지 갈비 커틀릿",
+      "ja": "1933年創業のミラノ正統派トラットリア。芳醇なサフランが香る黄金リゾットと、澄ましバターで香ばしく揚げた仔牛のミラノ風カツレツ。",
+      "en": "Historic 1933 trattoria preserving authentic Lombard classics. Rich creamy saffron-infused golden risotto paired with butter-fried crisp veal cutlet.",
+      "zh": "创于1933年的米兰纯正风味老字号。散发藏红花清香的金黄浓郁意式烩饭与澄清黄油炸至酥脆的鲜嫩小牛排。"
+    },
+    "seniorTip": {
+      "ko": "부드러운 사프란 리조또는 어르신 소화에 아주 좋고 풍미가 뛰어남. 클래식 목재 패널의 안락한 좌석과 단층 평지 구조",
+      "ja": "クリーミーなサフランリゾットは消化に優しくシニアにも極めて好評。段差のない落ち着いた木造クラシック空間です。",
+      "en": "Creamy saffron risotto is exceptionally gentle on digestion with exquisite flavor. Comfortable step-free ground-floor seating.",
+      "zh": "香滑温润的藏红花烩饭利于消化吸收，深受长辈喜爱。单层平地木质装潢静谧安舒。"
+    },
+    "hours": {
+      "ko": "화-일 12:30~15:00, 19:30~23:00 (월요일 휴무)",
+      "ja": "火〜日 12:30~15:00, 19:30~23:00 (月曜定休)",
+      "en": "Tue–Sun 12:30~15:00, 19:30~23:00 (Closed Mon)",
+      "zh": "周二至周日 12:30~15:00, 19:30~23:00 (周一店休)"
+    },
+    "language": {
+      "ko": "영어 소통 원활 · 밀라노 신사 지배인들의 정중한 서비스",
+      "ja": "英語対応円滑・ミラノ紳士支配人による丁寧で温かい接客",
+      "en": "Fluent English · Courteous old-school Milanese hospitality",
+      "zh": "英语沟通自如 · 绅士风范老派领班殷勤得体"
+    },
+    "booking": {
+      "ko": "전화 또는 온라인 사전 예약 권장",
+      "ja": "電話またはオンライン 事前予約推奨",
+      "en": "Phone or online advance booking recommended",
+      "zh": "建议通过电话或网络提前预约"
+    }
+  },
+  "L'Antica Pizzeria da Michele": {
+    "displayName": {
+      "ko": "L'Antica Pizzeria da Michele",
+      "ja": "L'Antica Pizzeria da Michele",
+      "en": "L'Antica Pizzeria da Michele",
+      "zh": "L'Antica Pizzeria da Michele"
+    },
+    "dishTitle": {
+      "ko": "1870년 나폴리 원조 마르게리타 화덕 피자 (Pizza Margherita)",
+      "ja": "1870年創業 ナポリ元祖薪窯マルゲリータピッツァ (Pizza Margherita)",
+      "en": "Historic 1870 Neapolitan Wood-Fired Pizza Margherita",
+      "zh": "1870年那不勒斯木柴窑烤玛格丽特披萨 (Pizza Margherita)"
+    },
+    "badge": {
+      "ko": "이탈리아 · 나폴리",
+      "ja": "イタリア・ナポリ",
+      "en": "Italy · Naples",
+      "zh": "意大利 · 罗马"
+    },
+    "signature": {
+      "ko": "영화 '먹고 기도하고 사랑하라'에 나온 150년 전통 나폴리 피자의 성지. 장작 화덕에서 90초 만에 구워내는 신선한 캄파니아 버팔로 모차렐라와 산마르차노 토마토의 기적",
+      "ja": "映画『食べて、祈って、恋をして』にも登場したナポリピッツァの聖地。薪窯で90秒焼き上げる新鮮モッツァレラとサンマルツァーノトマトの究極の味。",
+      "en": "The historic 1870 temple of pizza featured in 'Eat Pray Love'. Baked in 90 seconds in a blazing wood oven with creamy Campania mozzarella and sweet San Marzano tomatoes.",
+      "zh": "电影《美食、祈祷和恋爱》中主角钟爱的百年披萨圣殿。柴火窑炉90秒极速烤制、新鲜水牛奶酪与甜润圣马扎诺番茄汁的纯粹美味。"
+    },
+    "seniorTip": {
+      "ko": "도우가 얇고 쫄깃하며 기름기 없이 소화가 매우 잘 됨. 피자 한 판에 5~7유로로 믿기지 않는 가성비",
+      "ja": "生地が薄く油っこくないため消化が非常に良いです。1枚5〜7ユーロという本場ならではの驚くべきコストパフォーマンス。",
+      "en": "The crust is thin, light, and naturally fermented, remarkably easy to digest. Incredible local value at €5–€7 per pizza.",
+      "zh": "饼皮天然发酵薄软无油脂，极易消化。每张披萨仅需5~7欧元，性价比超高。"
+    },
+    "hours": {
+      "ko": "매일 11:00~23:00",
+      "ja": "毎日 11:00~23:00",
+      "en": "Daily 11:00~23:00",
+      "zh": "每日 11:00~23:00"
+    },
+    "language": {
+      "ko": "영어 주문 가능 · 번호표를 받고 매장 앞에서 대기하는 활기찬 시스템",
+      "ja": "英語注文可能・店頭で番号札を受け取る明快で活気あるシステム",
+      "en": "English spoken · Simple and lively numbered ticket system at door",
+      "zh": "支持简易英语点单 · 门口领取号码牌叫号入座秩序井然"
+    },
+    "booking": {
+      "ko": "예약 불가 (도착 즉시 매장 입구에서 번호표 수령)",
+      "ja": "予約不可 (到着時に店頭で番号札受取)",
+      "en": "No reservations · Take a ticket upon arrival",
+      "zh": "不接受预约 (到店即在门口领取号码牌)"
+    }
+  }
+};
+  const _NEW_CITY_COORDS = {
+  "산세바스티안": [
+    43.3183,
+    -1.9812
+  ],
+  "말라가": [
+    36.7213,
+    -4.4214
+  ],
+  "론다": [
+    36.7462,
+    -5.1612
+  ],
+  "톨레도": [
+    39.8628,
+    -4.0273
+  ],
+  "세고비아": [
+    40.9429,
+    -4.1088
+  ],
+  "발렌시아": [
+    39.4699,
+    -0.3763
+  ],
+  "신트라": [
+    38.7992,
+    -9.3879
+  ],
+  "카스카이스": [
+    38.6979,
+    -9.4215
+  ],
+  "오비두스": [
+    39.3621,
+    -9.1573
+  ],
+  "라구스": [
+    37.1028,
+    -8.673
+  ],
+  "알가르베": [
+    37.0194,
+    -7.9304
+  ],
+  "풍샬": [
+    32.6669,
+    -16.9241
+  ],
+  "마데이라": [
+    32.7607,
+    -16.9595
+  ],
+  "베르사유": [
+    48.8049,
+    2.1204
+  ],
+  "지베르니": [
+    49.0753,
+    1.5337
+  ],
+  "노르망디": [
+    48.636,
+    -1.5115
+  ],
+  "니스": [
+    43.7102,
+    7.262
+  ],
+  "에즈": [
+    43.7282,
+    7.3619
+  ],
+  "마르세유": [
+    43.2965,
+    5.3698
+  ],
+  "님": [
+    43.9476,
+    4.535
+  ],
+  "밀라노": [
+    45.4642,
+    9.19
+  ],
+  "피사": [
+    43.723,
+    10.3966
+  ],
+  "나폴리": [
+    40.8518,
+    14.2681
+  ],
+  "아말피": [
+    40.634,
+    14.6027
+  ],
+  "갈리시아": [
+    42.8806,
+    -8.5446
+  ],
+  "뮌헨": [
+    48.1351,
+    11.582
+  ],
+  "취리히": [
+    47.3769,
+    8.5417
+  ],
+  "부다페스트": [
+    47.4979,
+    19.0402
+  ],
+  "리마": [
+    -12.0464,
+    -77.0428
+  ],
+  "부에노스아이레스": [
+    -34.6037,
+    -58.3816
+  ],
+  "보고타": [
+    4.711,
+    -74.0721
+  ],
+  "시카고": [
+    41.8781,
+    -87.6298
+  ],
+  "하와이": [
+    19.8968,
+    -155.5828
+  ],
+  "로스앤젤레스": [
+    34.0522,
+    -118.2437
+  ]
+};
+
+  // 1. Update existing Iberian landmarks region for perfect tab filtering
+  if (typeof GLOBAL_LANDMARKS_DATA !== 'undefined') {
+    GLOBAL_LANDMARKS_DATA.forEach(lm => {
+      if (lm.city && lm.city.includes('스페인')) lm.region = '스페인';
+      if (lm.city && lm.city.includes('포르투갈')) lm.region = '포르투갈';
+    });
+
+    // Append new landmarks (avoiding duplicates)
+    _NEW_LANDMARKS.forEach(item => {
+      if (!GLOBAL_LANDMARKS_DATA.some(x => x.name === item.name)) {
+        GLOBAL_LANDMARKS_DATA.push(item);
+      }
+    });
+  }
+
+  // 2. Merge landmark coords
+  if (typeof LANDMARK_COORDS !== 'undefined') {
+    Object.assign(LANDMARK_COORDS, _NEW_LANDMARK_COORDS);
+  }
+
+  // 3. Merge landmark i18n
+  if (typeof LANDMARK_I18N_DATA !== 'undefined') {
+    Object.assign(LANDMARK_I18N_DATA, _ALL_NEW_LANDMARK_I18N);
+  }
+
+  // 4. Append new dining spots (avoiding duplicates)
+  if (typeof GLOBAL_DINING_DATA !== 'undefined') {
+    _NEW_DINING.forEach(item => {
+      if (!GLOBAL_DINING_DATA.some(x => x.name === item.name)) {
+        GLOBAL_DINING_DATA.push(item);
+      }
+    });
+  }
+
+  // 5. Merge dining i18n
+  if (typeof DINING_I18N_DATA !== 'undefined') {
+    Object.assign(DINING_I18N_DATA, _ALL_NEW_DINING_I18N);
+  }
+
+  // 6. Merge city coordinates
+  if (typeof CITY_DEFAULT_COORDS !== 'undefined') {
+    Object.assign(CITY_DEFAULT_COORDS, _NEW_CITY_COORDS);
+  }
+
+  // 7. Update LANDMARK_TABS_I18N 'ALL' label with new total count
+  if (typeof LANDMARK_TABS_I18N !== 'undefined') {
+    if (LANDMARK_TABS_I18N.ko && LANDMARK_TABS_I18N.ko[0]) LANDMARK_TABS_I18N.ko[0].label = '전체 보기 (80선)';
+    if (LANDMARK_TABS_I18N.ja && LANDMARK_TABS_I18N.ja[0]) LANDMARK_TABS_I18N.ja[0].label = 'すべて表示 (80カ所)';
+    if (LANDMARK_TABS_I18N.en && LANDMARK_TABS_I18N.en[0]) LANDMARK_TABS_I18N.en[0].label = 'All Landmarks (80 Spots)';
+    if (LANDMARK_TABS_I18N.zh && LANDMARK_TABS_I18N.zh[0]) LANDMARK_TABS_I18N.zh[0].label = '全部景观 (80处)';
+  }
+})();
