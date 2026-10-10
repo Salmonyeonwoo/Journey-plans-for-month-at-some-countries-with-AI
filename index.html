@@ -1,189 +1,717 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#f7f4ed"><title>가족과 함께, 한 달의 유럽 남쪽</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#faf8f5">
+<title>가족을 위한 한 달 남유럽 여행 플래너 · SlowTravel</title>
+<meta name="description" content="60대 부모님과 함께하는 여유로운 30일 남유럽 가족 여행 플래너. 스페인 남부 안달루시아, 포르투갈, 1일 1.5스팟 시에스타 루틴, 예산 및 일정 맞춤 조정.">
 <!-- PWA Manifest & CDNs (Leaflet Maps) -->
-<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="SlowTravel">
-<link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22SlowTravel%22%2C%22short_name%22%3A%22SlowTravel%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23f7f4ed%22%2C%22theme_color%22%3A%22%23174f46%22%7D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="SlowTravel">
+<link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22SlowTravel%22%2C%22short_name%22%3A%22SlowTravel%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23faf8f5%22%2C%22theme_color%22%3A%22%231b4332%22%7D">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNX1lvTlZBo=" crossorigin=""></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="sticky-header-container">
-  <div class="wrap" style="padding:4px 20px;">
-    <div class="header-utility-bar">
-      <div class="util-group">
-        <span class="util-label" id="langSwitchTitle" data-i18n="lang_switch_title">🌐 Language:</span>
-        <div class="ctrl-btn-group">
-          <button class="ctrl-btn active" id="btnLangKo" onclick="switchLanguage('ko', this)">한국어 (KO)</button><button class="ctrl-btn" id="btnLangEn" onclick="switchLanguage('en', this)">English (EN)</button><button class="ctrl-btn" id="btnLangJa" onclick="switchLanguage('ja', this)">日本語 (JA)</button><button class="ctrl-btn" id="btnLangZh" onclick="switchLanguage('zh', this)">中文 (ZH)</button>
-        </div>
-      </div>
-      <div class="util-group">
-        <span class="util-label" data-i18n="lbl_currency_switch">💱 통화 / Currency:</span>
-        <div class="ctrl-btn-group" style="flex-wrap:wrap;">
-          <button class="ctrl-btn currency-btn active" id="currBtnKRW" onclick="setCurrency('KRW', this)">₩ KRW</button><button class="ctrl-btn currency-btn" id="currBtnUSD" onclick="setCurrency('USD', this)">$ USD</button><button class="ctrl-btn currency-btn" id="currBtnEUR" onclick="setCurrency('EUR', this)">€ EUR</button><button class="ctrl-btn currency-btn" id="currBtnGBP" onclick="setCurrency('GBP', this)">£ GBP</button><button class="ctrl-btn currency-btn" id="currBtnCHF" onclick="setCurrency('CHF', this)">₣ CHF</button><button class="ctrl-btn currency-btn" id="currBtnAED" onclick="setCurrency('AED', this)">د.إ AED</button><button class="ctrl-btn currency-btn" id="currBtnJPY" onclick="setCurrency('JPY', this)">¥ JPY</button><button class="ctrl-btn currency-btn" id="currBtnCNY" onclick="setCurrency('CNY', this)">¥ CNY</button>
-        </div>
-      </div>
-      <div class="util-group">
-        <span class="util-label" data-i18n="lbl_font_size">🔤 글자 크기:</span>
-        <div class="ctrl-btn-group">
-          <button class="ctrl-btn" onclick="changeFontScale(-0.1)" title="글자 작게">A-</button><button class="ctrl-btn active" id="btnFontNormal" onclick="resetFontScale()" title="기본 크기">기본</button><button class="ctrl-btn" onclick="changeFontScale(0.15)" title="글자 크게 (+15%)">A+</button>
-        </div>
-      </div>
-      <div class="util-group">
-        <span class="util-label" data-i18n="lbl_theme_mode">🌓 테마:</span>
-        <button class="ctrl-btn" id="btnThemeToggle" onclick="toggleDarkTheme()" title="다크 모드 / 라이트 모드 전환">🌙 <span id="themeToggleText">다크 모드</span></button>
-      </div>
-      <div class="util-group">
-        <button onclick="window.print()" class="print-action-btn" title="A4 인쇄 또는 PDF 저장">🖨 <span data-i18n="btn_print">인쇄/PDF</span></button>
-      </div>
+
+<!-- 상단 헤더: 브랜드, 4대 핵심 메뉴, 설정 드롭다운 토글 -->
+<header class="sticky-header-container" id="mainHeader">
+  <div class="wrap header-inner-wrap">
+    <!-- 브랜드 로고 -->
+    <div class="brand">
+      <a href="#hero" class="brand-link">
+        <span class="brand-title">SLOW<span>·</span>TRAVEL</span>
+        <span class="brand-sub" data-i18n="brand_sub">남유럽 가족 여행 플래너</span>
+      </a>
     </div>
-    <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;padding:4px 0 3px;">
-      <div class="brand">SLOW<span>·</span>TRAVEL <span data-i18n="brand_sub">GLOBAL EDITION</span></div>
-      <nav class="global-nav">
-        <a href="#planner" class="nav-highlight-green" data-i18n="nav_planner">📅 맞춤 플래너</a><a href="#dining" class="nav-highlight-orange" data-i18n="nav_dining">🍽 필수 미식·맛집 (60선)</a><a href="#attractions" style="color:var(--green)" data-i18n="nav_attractions">🏛 핵심 명소 (30선)</a>
-        <a href="#phrases" style="color:#2563eb;font-weight:800" data-i18n="nav_phrases">🗣 여행 회화집</a><a href="javascript:void(0)" onclick="navigateToTransit()" style="color:#059669;font-weight:800" data-i18n="nav_transit">🚇 스마트 대중교통</a><a href="javascript:void(0)" onclick="navigateToHotels()" style="color:#d97706;font-weight:800" data-i18n="nav_hotels">🏨 추천 호텔 (24선)</a>
-        <a href="#ai-search" data-i18n="nav_search">🔍 실시간 AI 검색</a><a href="#compare" data-i18n="nav_compare">권역 비교</a><a href="#budget" data-i18n="nav_budget">예산</a><button onclick="downloadCustomCalendarIcs()" class="cal-action-btn" data-i18n="cal_download_btn">📅 캘린더(.ics) 다운로드</button>
-      </nav>
+
+    <!-- 4대 그룹 핵심 내비게이션 -->
+    <nav class="global-nav">
+      <a href="#planner" class="nav-link active" data-i18n="nav_planner">📅 맞춤 플래너</a>
+      <a href="#curated-options" class="nav-link" data-i18n="nav_routes">🧭 3대 코스 비교</a>
+      <a href="#travel-guide" class="nav-link" data-i18n="nav_guide">📖 여행 가이드</a>
+      <a href="#travel-tools" class="nav-link" data-i18n="nav_tools">🛠️ 여행 도구</a>
+    </nav>
+
+    <!-- 우측 헤더 액션: 설정 열기 + 캘린더 다운로드 -->
+    <div class="header-action-group">
+      <button type="button" class="ctrl-btn header-settings-btn" id="btnSettingsToggle" onclick="toggleSettingsPanel()" title="언어/통화/테마 설정 열기" aria-expanded="false" aria-controls="settingsDropdownPanel">
+        ⚙️ <span class="btn-text" data-i18n="btn_settings">설정</span>
+      </button>
+      <button type="button" onclick="downloadCustomCalendarIcs()" class="cal-action-btn header-cal-btn" data-i18n="cal_download_btn" title="캘린더 일정 파일(.ics) 다운로드">
+        📅 <span class="btn-text">캘린더 (.ics)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 접을 수 있는 설정 드롭다운 패널 -->
+  <div class="settings-dropdown-panel" id="settingsDropdownPanel" style="display:none;" aria-hidden="true">
+    <div class="wrap settings-panel-inner">
+      <div class="settings-panel-header">
+        <div class="settings-panel-title" data-i18n="settings_panel_title">⚙️ 맞춤 여행 환경 설정</div>
+        <button type="button" class="settings-close-btn" onclick="toggleSettingsPanel()" title="설정 닫기" aria-label="설정 닫기">✕</button>
+      </div>
+
+      <div class="settings-grid">
+        <!-- 1. 언어 선택 -->
+        <div class="setting-item-block">
+          <label class="setting-label" id="langSwitchTitle" data-i18n="lang_switch_title">🌐 Language / 언어:</label>
+          <div class="ctrl-btn-group">
+            <button class="ctrl-btn active" id="btnLangKo" onclick="switchLanguage('ko', this)">한국어 (KO)</button>
+            <button class="ctrl-btn" id="btnLangEn" onclick="switchLanguage('en', this)">English (EN)</button>
+            <button class="ctrl-btn" id="btnLangJa" onclick="switchLanguage('ja', this)">日本語 (JA)</button>
+            <button class="ctrl-btn" id="btnLangZh" onclick="switchLanguage('zh', this)">中文 (ZH)</button>
+          </div>
+        </div>
+
+        <!-- 2. 통화 선택 -->
+        <div class="setting-item-block">
+          <label class="setting-label" data-i18n="lbl_currency_switch">💱 통화 / Currency:</label>
+          <div class="ctrl-btn-group currency-grid">
+            <button class="ctrl-btn currency-btn active" id="currBtnKRW" onclick="setCurrency('KRW', this)">₩ KRW</button>
+            <button class="ctrl-btn currency-btn" id="currBtnUSD" onclick="setCurrency('USD', this)">$ USD</button>
+            <button class="ctrl-btn currency-btn" id="currBtnEUR" onclick="setCurrency('EUR', this)">€ EUR</button>
+            <button class="ctrl-btn currency-btn" id="currBtnGBP" onclick="setCurrency('GBP', this)">£ GBP</button>
+            <button class="ctrl-btn currency-btn" id="currBtnCHF" onclick="setCurrency('CHF', this)">₣ CHF</button>
+            <button class="ctrl-btn currency-btn" id="currBtnAED" onclick="setCurrency('AED', this)">د.إ AED</button>
+            <button class="ctrl-btn currency-btn" id="currBtnJPY" onclick="setCurrency('JPY', this)">¥ JPY</button>
+            <button class="ctrl-btn currency-btn" id="currBtnCNY" onclick="setCurrency('CNY', this)">¥ CNY</button>
+          </div>
+        </div>
+
+        <!-- 3. 글자 크기 & 테마 & 인쇄 -->
+        <div class="setting-item-block setting-tools-row">
+          <div class="sub-tool-group">
+            <label class="setting-label" data-i18n="lbl_font_size">🔤 글자 크기:</label>
+            <div class="ctrl-btn-group">
+              <button class="ctrl-btn" onclick="changeFontScale(-0.1)" title="글자 작게">A-</button>
+              <button class="ctrl-btn active" id="btnFontNormal" onclick="resetFontScale()" title="기본 크기" data-i18n="font_normal">기본</button>
+              <button class="ctrl-btn" onclick="changeFontScale(0.15)" title="글자 크게 (+15%)">A+</button>
+            </div>
+          </div>
+          <div class="sub-tool-group">
+            <label class="setting-label" data-i18n="lbl_theme_mode">🌓 테마:</label>
+            <button class="ctrl-btn" id="btnThemeToggle" onclick="toggleDarkTheme()" title="다크 모드 / 라이트 모드 전환">
+              🌙 <span id="themeToggleText" data-i18n="theme_dark">다크 모드</span>
+            </button>
+          </div>
+          <div class="sub-tool-group">
+            <label class="setting-label" data-i18n="lbl_export">🖨️ 내보내기:</label>
+            <button onclick="window.print()" class="print-action-btn" title="A4 인쇄 또는 PDF 저장">
+              🖨 <span data-i18n="btn_print">인쇄/PDF</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
+
 <main>
-<div id="editorialGuideContainer"></div>
-<!-- 11. 인터랙티브 맞춤 플래너 & 캘린더 연동 -->
-<section class="section" id="planner" style="background:#f4efe6">
-<div class="wrap">
-  <div class="section-head">
-    <div><div class="kicker">11 / GLOBAL INTERACTIVE PLANNER & CALENDAR</div><h2 data-i18n="planner_title">글로벌 맞춤 플래너 & 실시간 재조정</h2></div>
-    <div><button onclick="downloadCustomCalendarIcs()" class="cal-action-btn" id="customCalBtn" data-i18n="cal_download_btn">📅 맞춤 캘린더 (.ics) 다운로드</button></div>
-  </div>
-  <p class="sub" data-i18n="planner_sub">원하는 권역과 날짜를 세팅하면 1일 1.5스팟 시에스타 루틴과 캘린더가 실시간으로 재조정됩니다.</p>
-  <div class="planner-control-box">
-    <div class="control-flex-row" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-      <div class="control-group"><label data-i18n="label_region">🌍 여행 권역 선택</label>
-        <select id="userRegionSelect" onchange="applyPlanReconfiguration()">
-          <option value="IBERIA" selected>🇪🇸🇵🇹 남유럽 (이베리아 + 안달루시아 + 마데이라 30일)</option><option value="IBERIA_DUBAI">🇪🇸🇵🇹🇦🇪 이베리아 + 두바이 에미레이트 경유 결합 (30일 골든)</option><option value="DUBAI_STOPOVER">🇦🇪 두바이 경유 & 스톱오버 럭셔리 슬로우 (3~5일 핵심)</option>
-          <option value="WEST_CENTRAL_EU">🇬🇧🇫🇷🇮🇹🇦🇹🇨🇿 서·중유럽 (런던·파리·로마·비엔나·프라하 30일)</option><option value="LATIN_AMERICA">🇲🇽🇵🇪🇦🇷 중남미 (멕시코시티·오악사카·쿠스코·마추픽추 30일)</option><option value="USA_GRAND">🇺🇸 미국 전역 (샌프란시스코·그랜드캐니언·LA·뉴욕·하와이 30일)</option>
-        </select>
+  <!-- 0. 첫 화면 히어로 배너: 프로젝트 정체성을 한눈에 전달 -->
+  <section class="hero-banner" id="hero">
+    <div class="wrap hero-content-wrap">
+      <div class="hero-text-area">
+        <div class="hero-eyebrow" data-i18n="hero_eyebrow">A MONTH TOGETHER · SOUTHERN EUROPE &amp; IBERIA</div>
+        <h1 class="hero-title" data-i18n="hero_h1">가족을 위한 한 달 남유럽 여행 플래너</h1>
+        <p class="hero-lead" data-i18n="hero_lead">
+          60대 부모님과 함께하는 여유로운 30일 여정. 스페인 남부 안달루시아의 이국적인 감성과 포르투갈의 다채로운 풍경을
+          <strong>1일 1.5스팟, 오후 시에스타 휴식 루틴</strong>으로 편안하게 설계한 맞춤 슬로우 트래블 플래너입니다.
+        </p>
+        <div class="hero-tag-row">
+          <span class="hero-tag" data-i18n="hero_tag_party">👥 3인 가족 기준</span>
+          <span class="hero-tag" data-i18n="hero_tag_duration">🗓️ 29박 30일 완주형</span>
+          <span class="hero-tag" data-i18n="hero_tag_siesta">☕ 13:00~15:30 온수 샤워 낮잠 슬롯</span>
+          <span class="hero-tag" data-i18n="hero_tag_transit">🚆 대중교통·고속철 중심</span>
+          <span class="hero-tag" data-i18n="hero_tag_budget">💰 예산 2,000만~3,000만 원</span>
+        </div>
       </div>
-      <div class="control-group"><label data-i18n="label_start_date">📅 여행 시작일</label><input type="date" id="userStartDate" value="2026-11-20" onchange="applyPlanReconfiguration()" /></div>
-      <div class="control-group"><label data-i18n="label_duration">⏱ 여행 기간</label><select id="userDurationSelect" onchange="applyPlanReconfiguration()"><option value="30" selected>30일 (29박 여유 완주형)</option><option value="21">21일 (3주 핵심 거점형)</option><option value="14">14일 (2주 하이라이트형)</option></select></div>
-      <div class="control-group"><label data-i18n="label_party_size">👥 여행 인원수</label><select id="userPartySize" onchange="applyPlanReconfiguration()"><option value="2">2인 (부부 / 모녀)</option><option value="3" selected>3인 (부모님 + 자녀 1인)</option><option value="4">4인 (가족 4인)</option><option value="5">5인 (대가족 5인)</option></select></div>
-      <div class="control-group"><label data-i18n="label_tier">🏨 여행·숙소 등급</label><select id="userTierSelect" onchange="applyPlanReconfiguration()"><option value="economy">실속 알뜰형 (스마트 가성비)</option><option value="standard" selected>편안한 4성급 (센트럴 패밀리)</option><option value="luxury">프리미엄 럭셔리 (5성급 & VIP투어)</option></select></div>
-      <div class="control-group"><label data-i18n="label_pacing">👣 동행 페이스</label><select id="userPacingSelect" onchange="applyPlanReconfiguration()"><option value="relaxed" selected>부모님 동행 (오후 시에스타 필수)</option><option value="balanced">균형형 (시니어 친화 + 핵심 전망대)</option></select></div>
-      <div class="control-group"><button onclick="applyPlanReconfiguration(true)" class="recalc-btn" data-i18n="btn_recalc">⚡ 플랜 즉시 재조정</button></div>
+      <div class="hero-quick-links">
+        <a href="#planner" class="hero-quick-btn primary" data-i18n="hero_btn_plan">⚡ 플래너 세팅하기</a>
+        <a href="#curated-options" class="hero-quick-btn secondary" data-i18n="hero_btn_compare">🧭 3대 추천 코스 비교</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 인터랙티브 맞춤 플래너 & KPI -->
+  <section class="section planner-section" id="planner">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">01 / INTERACTIVE FAMILY PLANNER</div>
+          <h2 data-i18n="planner_title">남유럽 가족 맞춤 플래너 & 실시간 재조정</h2>
+        </div>
+        <div>
+          <button onclick="downloadCustomCalendarIcs()" class="cal-action-btn" id="customCalBtn" data-i18n="cal_download_btn">
+            📅 맞춤 캘린더 (.ics) 다운로드
+          </button>
+        </div>
+      </div>
+      <p class="sub" data-i18n="planner_sub">
+        여행 권역과 일정을 선택하면 60대 부모님을 위한 1일 1.5스팟 시에스타 루틴과 예상 예산이 실시간으로 재조정됩니다.
+      </p>
+
+      <!-- 플래너 컨트롤 카드 -->
+      <div class="planner-control-box">
+        <!-- 1차 핵심 필수 입력 (항상 노출) -->
+        <div class="control-flex-row primary-controls">
+          <div class="control-group">
+            <label data-i18n="label_region">🌍 여행 권역 선택</label>
+            <select id="userRegionSelect" onchange="applyPlanReconfiguration()">
+              <option value="IBERIA" selected data-i18n="opt_region_iberia">🇪🇸🇵🇹 남유럽 (이베리아 + 안달루시아 + 마데이라 30일)</option>
+              <option value="IBERIA_DUBAI" data-i18n="opt_region_iberia_dubai">🇪🇸🇵🇹🇦🇪 이베리아 + 두바이 에미레이트 경유 결합 (30일 골든)</option>
+              <option value="DUBAI_STOPOVER" data-i18n="opt_region_dubai_stopover">🇦🇪 두바이 경유 & 스톱오버 럭셔리 슬로우 (3~5일 핵심)</option>
+              <option value="WEST_CENTRAL_EU" data-i18n="opt_region_west_central">🇬🇧🇫🇷🇮🇹🇦🇹🇨🇿 서·중유럽 (런던·파리·로마·비엔나·프라하 30일)</option>
+              <option value="LATIN_AMERICA" data-i18n="opt_region_latin">🇲🇽🇵🇪🇦🇷 중남미 (멕시코시티·오악사카·쿠스코·마추픽추 30일)</option>
+              <option value="USA_GRAND" data-i18n="opt_region_usa">🇺🇸 미국 전역 (샌프란시스코·그랜드캐니언·LA·뉴욕·하와이 30일)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label data-i18n="label_start_date">📅 여행 시작일</label>
+            <input type="date" id="userStartDate" value="2026-11-20" onchange="applyPlanReconfiguration()" />
+          </div>
+          <div class="control-group">
+            <label data-i18n="label_duration">⏱ 여행 기간</label>
+            <select id="userDurationSelect" onchange="applyPlanReconfiguration()">
+              <option value="30" selected data-i18n="opt_dur_30">30일 (29박 여유 완주형)</option>
+              <option value="21" data-i18n="opt_dur_21">21일 (3주 핵심 거점형)</option>
+              <option value="14" data-i18n="opt_dur_14">14일 (2주 하이라이트형)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label data-i18n="label_party_size">👥 여행 인원수</label>
+            <select id="userPartySize" onchange="applyPlanReconfiguration()">
+              <option value="2" data-i18n="opt_party_2">2인 (부부 / 모녀)</option>
+              <option value="3" selected data-i18n="opt_party_3">3인 (부모님 + 자녀 1인)</option>
+              <option value="4" data-i18n="opt_party_4">4인 (가족 4인)</option>
+              <option value="5" data-i18n="opt_party_5">5인 (대가족 5인)</option>
+            </select>
+          </div>
+          <div class="control-group recalc-group">
+            <button onclick="applyPlanReconfiguration(true)" class="recalc-btn" data-i18n="btn_recalc">
+              ⚡ 플랜 즉시 재조정
+            </button>
+          </div>
+        </div>
+
+        <!-- 2차 부가 설정: 접기/펼치기 아코디언 토글 -->
+        <div class="advanced-options-toggle-bar">
+          <button type="button" class="toggle-advanced-btn" id="btnToggleAdvancedPlanner" onclick="toggleAdvancedPlannerOptions()">
+            ⚙️ <span data-i18n="planner_advanced_btn">상세 설정 (숙소 등급 · 동행 페이스)</span> <span id="advancedOptionsIcon" data-i18n="planner_adv_expand">▼ 펼치기</span>
+          </button>
+        </div>
+
+        <div class="advanced-controls-panel" id="advancedControlsPanel" style="display:none;">
+          <div class="control-flex-row">
+            <div class="control-group">
+              <label data-i18n="label_tier">🏨 여행·숙소 등급</label>
+              <select id="userTierSelect" onchange="applyPlanReconfiguration()">
+                <option value="economy" data-i18n="opt_tier_economy">실속 알뜰형 (스마트 가성비)</option>
+                <option value="standard" selected data-i18n="opt_tier_standard">편안한 4성급 (센트럴 패밀리)</option>
+                <option value="luxury" data-i18n="opt_tier_luxury">프리미엄 럭셔리 (5성급 & VIP투어)</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label data-i18n="label_pacing">👣 동행 페이스</label>
+              <select id="userPacingSelect" onchange="applyPlanReconfiguration()">
+                <option value="relaxed" selected data-i18n="opt_pacing_relaxed">부모님 동행 (오후 시에스타 필수)</option>
+                <option value="balanced" data-i18n="opt_pacing_balanced">균형형 (시니어 친화 + 핵심 전망대)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 플래너 KPI 요약 카드 4종 -->
+      <div class="planner-kpi-row">
+        <div class="planner-kpi">
+          <div class="label" data-i18n="kpi_score_label">시즌 판정 & 가성비 지수</div>
+          <div class="val" id="kpiScoreText">94점 (골든 창)</div>
+          <div class="subtext" id="kpiSeasonText">11월 숄더 시즌 · 대기열 짧고 쾌적</div>
+        </div>
+        <div class="planner-kpi">
+          <div class="label" data-i18n="kpi_budget_label">3인 가족 총 예상 예산</div>
+          <div class="val" id="kpiBudgetText">2,440만 원</div>
+          <div class="subtext" id="kpiBudgetSub" data-i18n="kpi_budget_sub">항공·숙소·식비·교통·예비비 올인원</div>
+        </div>
+        <div class="planner-kpi">
+          <div class="label" data-i18n="kpi_fest_label">동기화된 계절 축제</div>
+          <div class="val" id="kpiFestText">4개 축제 연계</div>
+          <div class="subtext" id="kpiFestSub">크리스마스 조명 & 전통 마켓 매칭</div>
+        </div>
+        <div class="planner-kpi">
+          <div class="label" data-i18n="kpi_senior_label">부모님 피로도 케어 지수</div>
+          <div class="val" id="kpiSeniorVal">1.5 스팟 / 일</div>
+          <div class="subtext" id="kpiSeniorSub">13:00~15:30 온수 샤워 낮잠 슬롯</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 핵심 부각: 가족 여행 3대 추천 코스 정밀 비교 (스페인 단독 vs 스페인+포르투갈 vs 남미 투어) -->
+  <section class="section curated-options-section" id="curated-options">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-i18n="curated_kicker">02 / CURATED ROUTE COMPARISON</div>
+          <h2 data-i18n="curated_title">가족 여행 3대 추천 코스 비교 분석</h2>
+        </div>
+        <p class="sub" data-i18n="curated_sub">
+          60대 중후반 부모님의 체력, 예산 범위(2,000만~3,000만 원), 아버님의 취향을 정밀 분석한 3대 핵심 비교 옵션입니다.
+        </p>
+      </div>
+
+      <div class="route-comparison-grid">
+        <!-- 옵션 1: 스페인 단독 (강력 추천 / 피로도 최소화) -->
+        <article class="route-compare-card recommended-card">
+          <div class="card-badge-top best-badge" data-i18n="c1_badge">⭐ 부모님 체력 최적화 추천</div>
+          <div class="route-card-header">
+            <h3 class="route-title" data-i18n="c1_title">1. 스페인 단독<br><span class="route-subtitle">(바르셀로나 + 남부 안달루시아)</span></h3>
+            <div class="route-price-box">
+              <span class="price-label" data-i18n="c1_price_label">예상 예산</span>
+              <span class="price-val" data-i18n="c1_price_val">약 1,700만 ~ 1,880만 원</span>
+              <span class="price-tag success" data-i18n="c1_price_tag">예산 여유 확보</span>
+            </div>
+          </div>
+          <div class="route-path-box">
+            <div class="path-title" data-i18n="c1_path_title">📍 추천 동선</div>
+            <div class="path-flow" data-i18n="c1_path_flow">바르셀로나 ➔ 그라나다 ➔ 말라가 / 론다 / 네르하 ➔ 세비야 / 코르도바</div>
+          </div>
+          <div class="route-merits-box">
+            <div class="merit-title" data-i18n="c1_merits_title">✨ 핵심 장점 &amp; 분석</div>
+            <ul class="merit-list" data-i18n="c1_merits_list"><li><strong>피로도 최소화:</strong> 한 도시당 4~8박씩 여유 있게 머물러 60대 중후반 부모님 체력 관리에 가장 이상적입니다.</li><li><strong>남미풍 감성 대체:</strong> 안달루시아(세비야, 그라나다)는 이슬람·무어 문화가 융합된 이국적 정취로 아버님의 남미 취향을 훌륭히 만족시켜 드립니다.</li><li><strong>예산 여유 &amp; 럭셔리:</strong> 2,000만 원 예산 중 잔여 금액으로 중심가 프리미엄 레지던스/호텔 숙박과 수준 높은 미식을 즐길 수 있습니다.</li></ul>
+          </div>
+          <div class="route-card-footer">
+            <button type="button" class="route-select-btn active-opt" onclick="selectCuratedPlan('IBERIA')" data-i18n="c1_btn">✓ 플래너에 스페인·안달루시아 적용</button>
+          </div>
+        </article>
+
+        <!-- 옵션 2: 스페인 남부/바르셀로나 + 포르투갈 (황금 밸런스) -->
+        <article class="route-compare-card balanced-card">
+          <div class="card-badge-top balance-badge" data-i18n="c2_badge">⚖️ 가성비 &amp; 다채로움 밸런스</div>
+          <div class="route-card-header">
+            <h3 class="route-title" data-i18n="c2_title">2. 스페인 남부 / 바르셀로나<br><span class="route-subtitle">+ 포르투갈</span></h3>
+            <div class="route-price-box">
+              <span class="price-label" data-i18n="c1_price_label">예상 예산</span>
+              <span class="price-val" data-i18n="c2_price_val">약 1,800만 ~ 1,980만 원</span>
+              <span class="price-tag match" data-i18n="c2_price_tag">2,000만 원 내 안착</span>
+            </div>
+          </div>
+          <div class="route-path-box">
+            <div class="path-title" data-i18n="c1_path_title">📍 추천 동선</div>
+            <div class="path-flow" data-i18n="c2_path_flow">바르셀로나 ➔ 스페인 남부(세비야/그라나다/말라가) ➔ 포르투갈(리스본/포르투/알가르브 해안)</div>
+          </div>
+          <div class="route-merits-box">
+            <div class="merit-title" data-i18n="c1_merits_title">✨ 핵심 장점 &amp; 분석</div>
+            <ul class="merit-list" data-i18n="c2_merits_list"><li><strong>가성비 &amp; 다채로움:</strong> 포르투갈은 서유럽 대비 물가가 저렴해 스페인과 포르투갈 두 국가를 다채롭게 경험하면서도 예산 범위를 엄수합니다.</li><li><strong>편리한 육로 연결:</strong> 세비야에서 포르투갈 남부(알가르브)나 리스본으로 이동하는 동선이 매우 매끄럽게 연결됩니다.</li><li><strong>풍부한 문화적 대비:</strong> 스페인의 열정적인 플라멩코와 포르투갈의 서정적인 파두(Fado), 대서양의 신선한 해산물을 고루 맛볼 수 있습니다.</li></ul>
+          </div>
+          <div class="route-card-footer">
+            <button type="button" class="route-select-btn" onclick="selectCuratedPlan('IBERIA')" data-i18n="c2_btn">✓ 플래너에 이베리아 2개국 적용</button>
+          </div>
+        </article>
+
+        <!-- 옵션 3: 남미 주요국 투어 (버킷리스트 vs 현실 제약) -->
+        <article class="route-compare-card caution-card">
+          <div class="card-badge-top alert-badge" data-i18n="c3_badge">⚠️ 버킷리스트 vs 체력·예산 제약</div>
+          <div class="route-card-header">
+            <h3 class="route-title" data-i18n="c3_title">3. 남미 주요국 투어<br><span class="route-subtitle">(페루 · 아르헨티나 · 브라질)</span></h3>
+            <div class="route-price-box">
+              <span class="price-label" data-i18n="c1_price_label">예상 예산</span>
+              <span class="price-val warn" data-i18n="c3_price_val">약 2,500만 ~ 3,000만 원</span>
+              <span class="price-tag exceed" data-i18n="c3_price_tag">예산 초과 주의</span>
+            </div>
+          </div>
+          <div class="route-path-box">
+            <div class="path-title" data-i18n="c3_path_title">📍 예상 동선</div>
+            <div class="path-flow" data-i18n="c3_path_flow">페루(리마/쿠스코/마추픽추) ➔ 아르헨티나(부에노스아이레스) ➔ 이과수 폭포 ➔ 브라질(리우데자네이루)</div>
+          </div>
+          <div class="route-merits-box">
+            <div class="merit-title" data-i18n="c3_merits_title">⚠️ 장점 및 주요 제약사항</div>
+            <ul class="merit-list" data-i18n="c3_merits_list"><li><strong>장점:</strong> 마추픽추, 이과수 폭포 등 아버님의 평생 버킷리스트를 직접 실현할 수 있습니다.</li><li><strong>체력 부담 극심:</strong> 왕복 25시간 이상의 초장거리 비행과 잦은 국가 간 항공 탑승으로 60대 부모님 체력에 매우 큰 무리가 따릅니다.</li><li><strong>고산지대 위험:</strong> 쿠스코 및 마추픽추(해발 2,400~3,400m) 고산병 리스크와 2,000만 원 기준 예산을 500만~1,000만 원가량 크게 초과합니다.</li></ul>
+          </div>
+          <div class="route-card-footer">
+            <button type="button" class="route-select-btn secondary-btn" onclick="selectCuratedPlan('LATIN_AMERICA')" data-i18n="c3_btn">남미 투어 세부 일정 비교하기</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 도시별 훑어보기 & 30일 인터랙티브 타임라인 -->
+  <section class="section timeline-section" id="route-itinerary">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker" data-i18n="timeline_kicker">03 / 30-DAY ITINERARY &amp; TIMELINE</div>
+          <h2 data-i18n="timeline_title">도시별 훑어보기 &amp; 30일 일자별 타임라인</h2>
+        </div>
+        <p class="sub" data-i18n="timeline_sub">
+          상단 탭을 눌러 주요 도시별 일정을 훑어보거나, 날짜 카드를 드래그하여 가족 맞춤 일정으로 재배치할 수 있습니다.
+        </p>
+      </div>
+
+      <!-- 도시별 필터 탭 -->
+      <div class="filter-tabs" id="dynamicCityFilterBar"></div>
+
+      <!-- 30일 일자별 카드 그리드 -->
+      <div class="day-timeline" id="timelineGrid"></div>
+    </div>
+  </section>
+
+  <!-- 4. 심층 가이드북 & 체크리스트 (접을 수 있는 아코디언 영역) -->
+  <section class="section editorial-accordion-section" id="editorial-guide">
+    <div class="wrap">
+      <div class="accordion-toggle-box">
+        <button type="button" class="editorial-accordion-btn" id="btnToggleEditorialGuide" onclick="toggleEditorialGuide()" aria-expanded="false" aria-controls="editorialGuideContainer">
+          <div class="acc-text-wrap">
+            <span class="acc-badge" data-i18n="editorial_acc_badge">심층 리포트</span>
+            <span class="acc-title" data-i18n="editorial_acc_title">📖 남유럽 가족 여행 전문 에디토리얼 가이드 &amp; 체크리스트</span>
+            <span class="acc-desc" data-i18n="editorial_acc_desc">방향 설정, 거점 이동 팁, 예산 세부 내역, 부모님 케어 수칙, 예약 순서 등 10대 핵심 가이드</span>
+          </div>
+          <span class="acc-arrow" id="editorialAccordionArrow" data-i18n="editorial_arrow_expand">펼쳐보기 ▼</span>
+        </button>
+      </div>
+
+      <!-- 기존 1~10번 심층 에디토리얼 콘텐츠 주입 컨테이너 (기본 접힘) -->
+      <div class="editorial-collapse-body" id="editorialCollapseBody" style="display:none;">
+        <div id="editorialGuideContainer">
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">A month together · Iberia & beyond</div><h1>가족과 함께,<br><em>한 달의 유럽 남쪽</em></h1><p class="lead">부모님과 여유롭게 머물며 스페인·포르투갈의 도시와 풍경을 즐기는 여행. 중남미의 웅장함, 카나리아의 온화한 겨울, 영국·프랑스의 연말 분위기까지 한눈에 비교해요.</p><div class="tagrow"><span class="tag">3인 가족</span><span class="tag">약 4주</span><span class="tag">대중교통 중심</span><span class="tag">예산 2,000~3,000만 원</span></div></div><div class="hero-art" aria-label="남유럽의 산과 해를 표현한 일러스트"><div class="sun"></div><div class="route-line"></div><div class="pin p1">🇪🇸 세비야</div><div class="pin p2">🇵🇹 리스본</div><div class="hill"></div><div class="hill2"></div></div></div></section>
+<section class="section" id="compare"><div class="wrap"><div class="section-head"><div><div class="kicker">01 / WHERE TO GO</div><h2>이번 여행의 방향을 고르기</h2></div><p class="sub">처음 가보는 곳의 특별함과 부모님 동행의 편안함을 함께 고려한 요약입니다.</p></div><div class="cards">
+<article class="card"><div class="num">BEST BALANCE</div><h3>스페인 남부 + 포르투갈</h3><p>도시 간 교통과 숙박 선택지가 비교적 다양하고, 역사·음식·풍경을 고루 즐길 수 있는 균형형 여정.</p><ul><li>세비야·그라나다·코르도바 + 리스본·포르투</li><li>11~12월은 한여름보다 걷기 편함. 비·쌀쌀한 밤 대비</li><li>구시가지 언덕과 돌길은 부모님 체력 고려</li></ul></article>
+<article class="card"><div class="num">WARM WINTER</div><h3>카나리아 제도 추가</h3><p>스페인 본토 여행에 화산 풍경과 겨울 햇살을 더하는 선택. 섬 안 이동은 버스만으로 다소 제한될 수 있어 투어·택시를 섞는 편이 현실적.</p><ul><li>테네리페 또는 그란카나리아 5~7박</li><li>해안과 고지대의 기온 차가 크며 날씨 변동 가능</li><li>섬 간 항공·페리, 공항 이동 비용을 따로 계산</li></ul></article>
+<article class="card"><div class="num">BIG NATURE</div><h3>중남미는 별도 여정으로</h3><p>이색적인 자연과 문화는 압도적이지만, 한 달 일정에 여러 나라를 넣으면 장거리 이동·고도·안전 변수가 커집니다.</p><ul><li>고산 도시 방문 전 건강 상태와 고도 적응 계획 확인</li><li>야간 장거리 버스 대신 항공·전용 이동 검토</li><li>국가·도시별 최신 안전 공지 및 여행자 보험 확인</li></ul></article>
+</div><div class="callout">영국·프랑스: 철도와 문화시설은 편리하지만, 11~12월은 낮이 짧고 춥고 비가 올 수 있으며 숙박비도 높을 수 있어요. 크리스마스 마켓이 목적이라면 짧게 덧붙이는 방식이 좋습니다.</div></div></section>
+
+<section class="section editorial-media-showcase" style="background:#fdfaf5;border-top:1px solid #e8e2d8;border-bottom:1px solid #e8e2d8;padding:44px 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="kicker">VISUAL INSPIRATION &amp; 4K VIDEO TOURS</div>
+        <h2>📸 남유럽 대표 풍경 갤러리 &amp; 4K 영상 가이드</h2>
+      </div>
+      <p class="sub">부모님과 함께 떠나기 전, 스페인·포르투갈의 압도적인 현지 분위기를 고화질 사진과 4K 영상으로 미리 감상해 보세요.</p>
+    </div>
+
+    <!-- 1. 대표 고화질 사진 갤러리 -->
+    <div class="ed-photo-gallery">
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="그라나다 알함브라 궁전" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇪🇸 그라나다 알함브라 궁전</strong>
+          <span>이슬람 건축의 정수, 나스르 궁전과 헤네랄리페 정원</span>
+        </div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="세비야 스페인 광장" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇪🇸 세비야 스페인 광장</strong>
+          <span>웅장한 반원형 회랑과 타일 벤치, 평지 산책로</span>
+        </div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="리스본 노란 트램과 골목길" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇵🇹 리스본 알파마 &amp; 노란 트램 28번</strong>
+          <span>대서양의 햇살을 머금은 언덕길과 유서 깊은 트램</span>
+        </div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="포르투 동 루이스 1세 다리" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇵🇹 포르투 도우루 강 &amp; 동 루이스 다리</strong>
+          <span>에펠의 제자가 설계한 아치교와 와인 저장고 풍경</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 추천 4K 현장 영상 가이드 카드 -->
+    <div style="margin-top:36px;">
+      <h3 style="font-size:18px;font-weight:800;color:#1b4332;margin-bottom:16px;">🎥 추천 4K 현장 영상 가이드 (랜선 투어)</h3>
+      <div class="ed-video-grid">
+        <a href="https://www.youtube.com/results?search_query=alhambra+granada+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80" alt="알함브라 궁전 영상">
+            <span class="video-play-badge">▶ 4K 영상</span>
+            <span class="video-tag">공식/랜선투어</span>
+          </div>
+          <div class="video-card-body">
+            <h4>그라나다 알함브라 궁전 4K 완벽 랜선 투어</h4>
+            <p>나스르 궁전 세부 타일 장식과 헤네랄리페 정원의 물소리를 4K 초고화질로 미리 둘러보세요.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="세비야 워킹 투어">
+            <span class="video-play-badge">▶ 4K 영상</span>
+            <span class="video-tag">안달루시아 감성</span>
+          </div>
+          <div class="video-card-body">
+            <h4>세비야 스페인 광장 &amp; 대성당 4K 도보 산책</h4>
+            <p>오렌지 나무 가득한 세비야 거리와 플라멩코 본고장의 따뜻한 오후 정취를 확인하세요.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=lisbon+portugal+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" alt="리스본 워킹 투어">
+            <span class="video-play-badge">▶ 4K 영상</span>
+            <span class="video-tag">포르투갈 낭만</span>
+          </div>
+          <div class="video-card-body">
+            <h4>리스본 벨렝탑 &amp; 28번 트램 코스 4K 투어</h4>
+            <p>파스텔톤 건축물과 에그타르트 원조 맛집이 있는 벨렝 지구를 편안하게 감상할 수 있습니다.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=renfe+train+spain+how+to+ride" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="스페인 렌페 고속열차">
+            <span class="video-play-badge">▶ 실전 팁</span>
+            <span class="video-tag">시니어 이동 팁</span>
+          </div>
+          <div class="video-card-body">
+            <h4>스페인 렌페(Renfe) 고속철도 &amp; 짐 보관 실전 탑승기</h4>
+            <p>부모님과 함께하는 열차 이동 시 짐 보관대 위치, 플랫폼 엘리베이터 이용법 안내 영상입니다.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
-  <div class="planner-kpi-row">
-    <div class="planner-kpi"><div class="label" data-i18n="kpi_score_label">시즌 판정 & 가성비 지수</div><div class="val" id="kpiScoreText">94점 (골든 창)</div><div class="subtext" id="kpiSeasonText">11월 숄더 시즌 · 대기열 짧고 쾌적</div></div><div class="planner-kpi"><div class="label" data-i18n="kpi_budget_label">3인 가족 총 예상 예산</div><div class="val" id="kpiBudgetText">2,440만 원</div><div class="subtext" id="kpiBudgetSub" data-i18n="kpi_budget_sub">항공·숙소·식비·교통·예비비 올인원</div></div>
-    <div class="planner-kpi"><div class="label" data-i18n="kpi_fest_label">동기화된 계절 축제</div><div class="val" id="kpiFestText">4개 축제 연계</div><div class="subtext" id="kpiFestSub">크리스마스 조명 & 전통 마켓 매칭</div></div><div class="planner-kpi"><div class="label" data-i18n="kpi_senior_label">부모님 피로도 케어 지수</div><div class="val" id="kpiSeniorVal">1.5 스팟 / 일</div><div class="subtext" id="kpiSeniorSub">13:00~15:30 온수 샤워 낮잠 슬롯</div></div>
-  </div>
-  <div class="filter-tabs" id="dynamicCityFilterBar"></div>
-  <div class="day-timeline" id="timelineGrid"></div>
-</div>
 </section>
-<!-- 12. 꼭 먹어야 할 대표 미식 & 검증 맛집 -->
-<section class="section" id="dining">
-<div class="wrap">
-  <div class="section-head"><div><div class="kicker">12 / MUST-EAT DISHES & VERIFIED RESTAURANTS</div><h2 data-i18n="dining_title">꼭 먹고 가야 할 음식 & 검증 맛집 (사진 포함 95선)</h2></div><p class="sub" data-i18n="dining_sub">영국·프랑스·이탈리아·스페인·포르투갈·중유럽·중남미·미국의 대표 미식. 운영시간, 연락처 및 예약 링크 수록.</p></div>
-  <div class="search-box-wrap">
-    <div class="search-input-row">
-      <div class="search-input-wrap"><input type="text" id="globalDiningSearch" class="search-input" placeholder="🔍 국가/도시(런던, 파리, 로마, 바르셀로나), 메뉴, 키워드 검색..." oninput="handleDiningSearchInput()" /><button id="btnDiningClear" class="search-clear-btn" onclick="clearDiningSearch()" title="검색어 초기화">✕</button></div>
-      <button onclick="filterGlobalDining()" class="cal-action-btn" style="white-space:nowrap" data-i18n="btn_dining_search">미식 검색</button>
+
+<section class="section dark" id="route"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / SUGGESTED ROUTE</div><h2>4주, 거점형으로 천천히</h2></div><p class="sub">도시를 자주 바꾸지 않고 3~6박씩 머무는 일정 예시예요. 실제 항공편과 기차 시간에 맞춰 순서를 조정하세요.</p></div><div class="route">
+<div class="stop"><small>DAY 1–5</small><h3>바르셀로나</h3><p>가우디, 고딕 지구, 몬세라트</p></div><div class="stop"><small>DAY 6–9</small><h3>마드리드</h3><p>미술관, 톨레도·세고비아</p></div><div class="stop"><small>DAY 10–11</small><h3>코르도바</h3><p>메스키타와 구시가지</p></div><div class="stop"><small>DAY 12–16</small><h3>세비야</h3><p>알카사르, 플라멩코, 론다</p></div><div class="stop"><small>DAY 17–19</small><h3>그라나다</h3><p>알함브라, 여유로운 휴식</p></div><div class="stop"><small>DAY 20–25</small><h3>리스본</h3><p>신트라 당일치기, 강변 산책</p></div><div class="stop"><small>DAY 26–30</small><h3>포르투</h3><p>도루강, 와이너리, 귀국</p></div></div><p class="route-note">※ 그라나다·세비야에서 리스본으로는 직행 대중교통이 오래 걸릴 수 있습니다. 항공편, 환승 열차·버스를 비교하고 이동일을 넉넉히 잡으세요. 카나리아를 넣는다면 본토 도시 1~2곳을 줄이고 5~7박을 배정하는 편이 무리 없습니다.</p></div></section>
+<section class="section" id="practical"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / GETTING AROUND</div><h2>교통과 예약, 핵심만</h2></div><p class="sub">컨택트리스가 된다고 모든 카드·모든 노선에서 통하는 것은 아닙니다. 여행 전에 도시 공식 교통 안내를 확인하세요.</p></div><div class="split"><div class="panel"><h3>기차·도시간 이동</h3><ul><li>스페인 고속철: Renfe(AVE/Avlo), iryo, OUIGO Spain을 날짜별로 비교</li><li>먼저 공식 앱·사이트에서 시간과 요금을 확인하고 직접 구매하면 변경·환불 규정을 확인하기 편함</li><li>비교 플랫폼(Trainline, Omio 등)은 탐색용으로 유용하나 수수료·운임 조건을 결제 전 확인</li><li>포르투갈 철도는 CP 공식 사이트·앱, 버스는 운행사별 공식 채널 확인</li><li>성수기·주말·인기 노선은 일정이 정해지면 미리 예약</li></ul></div><div class="panel"><h3>도시 교통·카드</h3><ul><li>Google Maps와 Citymapper(지원 도시)를 길찾기에 활용</li><li>Travel Wallet/Travelog 등 해외 결제 카드는 편리하지만, 현지 개찰구의 해외 발행 카드 수용 여부는 도시·노선별로 다름</li><li>교통 전용 카드·패스가 더 확실하거나 저렴할 수 있음: 바르셀로나 T-casual, 마드리드 Multi 등 최신 조건 확인</li><li>리스본 Navegante/비바 비아젬, 포르투 Andante 등은 구입·충전 방식과 구간을 확인</li><li>컨택트리스 탑승은 카드당 동승 인원·환승 할인·요금 상한 규칙이 다르니 각자 별도 카드 준비 권장</li></ul></div></div><table class="table"><thead><tr><th>상황</th><th>준비·확인할 것</th></tr></thead><tbody><tr><td>결제 카드</td><td>해외 결제 가능한 실물 카드 2장 이상, 카드사 해외 사용 설정, PIN 확인. 현금은 소액만 분산</td></tr><tr><td>대중교통</td><td>방문 도시 공식 교통 앱/웹사이트에서 접촉식 카드 허용 노선, 티켓 앱, 요금·환승 규칙 확인</td></tr><tr><td>택시 대안</td><td>Uber·Bolt·Cabify는 도시별 이용 가능성과 요금 차이가 있음. 공식 택시 승강장도 대안</td></tr><tr><td>기차 예약</td><td>Renfe·iryo·OUIGO Spain 및 CP 공식 채널. 수하물·좌석·변경/환불 조건 확인</td></tr></tbody></table><div class="notice"><b>중요:</b> Travel Wallet/Travelog 카드가 모든 대중교통 단말기에서 교통카드처럼 작동한다고 단정할 수 없습니다. 실제 지원 여부는 발급 카드의 비접촉 결제와 별개로 도시·운영사에서 결정됩니다. “안달루시아 버스” 등 지역 단위로 한꺼번에 일반화하지 말고 노선별 확인이 안전합니다.</div></div></section>
+<section class="section" style="background:#eee9dd" id="budget"><div class="wrap"><div class="section-head"><div><div class="kicker">04 / BUDGET & TIMING</div><h2>예산과 예약 시기</h2></div><p class="sub">3인·약 30박 기준으로, 항공료와 숙소 등급·도시 조합에 따라 차이가 큽니다. 아래는 계획을 세우기 위한 배분 예시예요.</p></div><div class="budget"><div><b>450~650만 원</b><span>항공권 3인, 경유/직항·수하물에 따라 변동</span></div><div><b>750~1,100만 원</b><span>숙박 30박, 아파트먼트/호텔 및 도시별 편차</span></div><div><b>450~650만 원</b><span>식비·현지 교통·일상 지출</span></div><div><b>350~600만 원</b><span>기차·투어·입장료·예비비</span></div></div><div class="callout"><b>총액 감각:</b> 2,000~3,000만 원은 가능한 계획 범위지만, 직항 3인·가족형 숙소·성수기·섬 이동을 모두 더하면 상단을 넘길 수 있어요. 항공권, 숙박, 도시 간 이동을 실제 날짜로 먼저 견적 내고 예산을 고정하세요.</div><div class="split" style="margin-top:22px"><div class="panel"><h3>항공권·숙소</h3><p>요일·환승·공항 조합을 열어 두고 가격 알림을 설정하세요. “출발 4~6개월 전이 항상 최저”라는 보장은 없습니다. 가격·수하물·취소 조건을 함께 비교하고, 숙박은 무료 취소 조건의 실제 총액을 확인해 일찍 확보하는 방식이 안전합니다.</p></div><div class="panel"><h3>가을·연말 분위기</h3><p>말라가의 조명, 마드리드·바르셀로나의 크리스마스 마켓, 12월 31일 마드리드 솔 광장의 새해맞이는 대표적인 계절 경험입니다. 행사 날짜와 운영은 매년 달라질 수 있고, 연말 숙소·식당은 조기 예약을 권합니다.</p></div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div><div class="kicker">05 / COMFORT & SAFETY</div><h2>부모님과 함께라면</h2></div><p class="sub">여행 만족도를 높이는 건 빡빡한 관광지 수보다 이동일과 휴식일의 여유입니다.</p></div><div class="cards"><article class="card"><div class="num">01 / COMFORT</div><h3>걷기와 숙소</h3><p>리스본·포르투 구시가지의 언덕과 돌길을 고려해 쿠션 좋은 신발을 준비하고, 숙소는 엘리베이터·계단·역까지 경사를 확인하세요. 하루에 핵심 일정 1~2개면 충분합니다.</p></article><article class="card"><div class="num">02 / SECURITY</div><h3>소지품과 이동</h3><p>관광지·환승역에서 휴대전화와 지갑을 몸 앞쪽에 보관하고, 여권 원본과 여분 카드는 따로 보관하세요. 밤늦은 한적한 길은 피하고 공식 택시나 신뢰 가능한 호출 앱을 이용하세요.</p></article><article class="card"><div class="num">03 / HEALTH</div><h3>식사·날씨·보험</h3><p>저녁 식사 시간이 늦은 지역에서는 점심·간식 계획을 세우세요. 겨울비와 밤 추위에 대비해 겹쳐 입을 옷과 편한 우비를 준비하고, 기존 질환·약·여행자 보험을 점검하세요.</p></article></div><div class="notice"><b>비자·입국:</b> 대한민국 일반여권의 솅겐 단기 무비자 체류는 일반적으로 90일/180일 규칙이 적용됩니다. 다만 2026년 말 여행의 ETIAS 시행 여부·신청 시점은 변동될 수 있으므로 출발 전 EU 공식 ETIAS 및 각국 외교부의 최신 안내를 확인하세요. 항공권 구매 시점에 “반드시 신청해야 한다”고 단정하지 않습니다.</div><div class="notice"><b>날씨:</b> “11~12월 평균 8~18°C” 같은 범위는 도시·고도·해안 여부에 따라 달라집니다. 안달루시아도 밤에는 쌀쌀하고, 포르투갈 북부는 비가 잦을 수 있습니다. 출발 직전 도시별 예보를 확인하세요.</div></div></section>
+<section class="section" style="padding-top:0"><div class="wrap"><div class="section-head"><div><div class="kicker">06 / BEFORE YOU BOOK</div><h2>예약 전 체크리스트</h2></div></div><div class="checklist"><div class="check"><strong>□ 일정</strong>　도시별 숙박일·휴식일·이동일 확정</div><div class="check"><strong>□ 항공</strong>　다구간(IN/OUT), 수하물, 환승 시간과 공항 확인</div><div class="check"><strong>□ 교통</strong>　기차 공식 사이트 요금·환불·짐 규정 확인</div><div class="check"><strong>□ 숙박</strong>　엘리베이터, 침대 구성, 역에서의 경사 확인</div><div class="check"><strong>□ 입국</strong>　여권 유효기간, 솅겐 체류일, ETIAS 최신 공지 확인</div><div class="check"><strong>□ 안전·건강</strong>　여행자 보험, 상비약, 긴급 연락처, 카드 분실 대비</div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div><div class="kicker">07 / ROUTE IDEAS FROM TRAVELERS</div><h2>여행자들이 자주 짜는 코스, 30일 버전</h2></div><p class="sub">여행 블로그·여행자 포럼·철도 루트 제안에서 공통으로 반복되는 거점을 바탕으로 재구성했어요. 블로거 코스는 개인 경험이지 공식 권고나 안전 보증은 아닙니다.</p></div><div class="cards"><article class="card"><div class="num">EUROPE · IBERIA CLASSIC</div><h3>스페인 + 포르투갈, 30일</h3><p><b>바르셀로나 5박 → 마드리드 4박 → 세비야 4박 → 그라나다 3박 → 리스본 5박 → 포르투 4박 → 이동·완충 5박</b></p><ul><li>블로거·기차 여행 루트에서 자주 보이는 바르셀로나·마드리드·안달루시아·리스본·포르투 조합</li><li>코르도바는 세비야/마드리드 사이 1박 또는 당일 방문으로 넣기</li><li>리스본–세비야를 육로로 잇는 구간은 시간이 오래 걸릴 수 있어 이동일을 따로 둠</li><li>부모님 동행이면 도시 수를 5~6곳으로 제한하고 쉬는 날 확보</li></ul></article><article class="card"><div class="num">EUROPE · SPAIN + PORTUGAL</div><h3>자연·소도시를 섞는 확장형</h3><p><b>마드리드 4박 → 포르투 4박 → 코임브라 2박 → 리스본 5박 → 알가르브(파루/라고스) 4박 → 세비야 4박 → 그라나다 3박 → 말라가 2박</b></p><ul><li>Interrail의 이베리아 철도 아이디어에서 포르투·코임브라·리스본·파루·세비야·카디스·그라나다 축을 참고</li><li>포르투갈–스페인 국경 횡단은 철도 연결이 제한적일 수 있어 버스/항공 포함 비교</li><li>가족 여행에는 8개 거점이 바쁠 수 있어 알가르브 또는 말라가를 선택적으로 제외</li></ul></article><article class="card"><div class="num">LATIN AMERICA · CENTRAL</div><h3>멕시코 남부 + 과테말라, 30일</h3><p><b>멕시코시티 4박 → 오악사카 4박 → 산크리스토발 3박 → 팔렌케 2박 → 메리다/바야돌리드 4박 → 안티구아 5박 → 아티틀란 호수 4박 → 완충·귀국 4박</b></p><ul><li>여행자 블로그에 흔한 멕시코–과테말라 문화·유적·호수 코스를 여유형으로 조정</li><li>장거리 구간은 낮 시간대의 신뢰도 높은 버스/항공 우선, 국경 이동은 여유 시간 확보</li><li>고원도로·긴 이동이 있어 부모님과는 산크리스토발 또는 팔렌케 중 하나를 줄이는 것을 고려</li></ul></article><article class="card"><div class="num">LATIN AMERICA · PERU</div><h3>페루 한 나라에 집중, 24~30일</h3><p><b>리마 2박 → 아레키파 3박 → 쿠스코 적응 3박 → 성스러운 계곡 4박 → 마추픽추 2박 → 쿠스코 2박 → 아마존 또는 푸노 4~5박 → 예비·이동 4~6박</b></p><ul><li>여행 블로그가 반복 추천하는 리마·쿠스코·성스러운 계곡·마추픽추 축에 적응일을 더한 구성</li><li>고산 구간은 건강상태 먼저 확인하고 무리한 일정·연속 등반 피하기</li><li>아마존·푸노는 둘 다 넣지 않고 한 곳만 골라 체력을 아끼기</li></ul></article><article class="card"><div class="num">LATIN AMERICA · SOUTHERN CONE</div><h3>칠레 + 아르헨티나, 자연 집중</h3><p><b>산티아고 3박 → 멘도사 3박 → 부에노스아이레스 4박 → 엘 칼라파테 4박 → 푸에르토 나탈레스/토레스 델 파이네 5박 → 이동·완충 6~8박</b></p><ul><li>여행자들이 추천하는 산티아고–멘도사 코스에 파타고니아를 확장</li><li>도시 간 거리가 매우 길어 국내선 항공과 버스를 섞고 지연 대비 완충일 필요</li><li>트레킹·국립공원은 날씨와 보행 난이도를 보고 선택. 부모님 체력에 맞춘 전망대·보트 투어 대안 확보</li></ul></article><article class="card"><div class="num">LATIN AMERICA · CENTRAL AMERICA</div><h3>과테말라 + 코스타리카 + 파나마</h3><p><b>안티구아 4박 → 아티틀란 4박 → 플로레스/티칼 3박 → 라 포르투나 4박 → 몬테베르데 3박 → 산호세 1박 → 보카스 델 토로 4박 → 파나마시티 3박 + 이동 완충</b></p><ul><li>투어 운영사가 제안하는 4주 중앙아메리카 루트의 거점을 참고한 요약</li><li>국경과 산악도로 이동이 잦고 여행 시간이 길어, 가족 자유여행에는 과테말라+코스타리카 등 2개국만 권장</li><li>보트·셔틀·항공을 사전 예약할 구간이 있어 각 운영사의 실제 시간표 확인</li></ul></article></div><div class="callout"><b>이번 가족여행의 현실적인 추천:</b> 이동 편의와 편안함은 이베리아가 가장 균형적이에요. 중남미를 꼭 경험하고 싶다면 ‘페루 한 나라’ 또는 ‘멕시코 남부+과테말라’처럼 한 권역을 고르고, 여정 중 며칠은 비워 두세요. 남미 3~4개국을 30일에 묶는 코스는 비행·고도·이동 피로가 커 부모님 동행에는 비추천입니다.</div></div></section>
+<section class="section" style="background:#eee9dd"><div class="wrap"><div class="section-head"><div><div class="kicker">08 / BOOKING ORDER</div><h2>사전 예약, 무엇부터 할까</h2></div><p class="sub">인기 입장권과 한정 좌석부터 잡고, 나머지는 일정 유연성에 따라 예약하는 순서가 안전해요.</p></div><div class="split"><div class="panel"><h3>우선 예약할 항목</h3><ol><li><b>항공권·숙소:</b> 날짜와 실제 총액을 비교하고, 이동일 주변 숙소부터 확보</li><li><b>알함브라:</b> 공식 사이트에서 날짜·나스르 궁전 입장 시간대를 확인. 매진 가능성이 있어 일정 확정 즉시 예약</li><li><b>마추픽추:</b> 방문 티켓과 열차표는 별도 구매. 공식 입장권 플랫폼과 PeruRail/Inca Rail에서 날짜·회로·기차 시간 교차 확인</li><li><b>장거리 기차·버스/항공:</b> 성수기·인기 출발 시간·국경 구간은 운행사 공식 채널에서 미리 확보</li><li><b>시간 지정 명소:</b> 사그라다 파밀리아, 주요 박물관, 플라멩코 공연 및 인기 투어는 공식 예약 조건 확인</li></ol></div><div class="panel"><h3>예약 우선순위 낮추기</h3><ul><li>도시 내 일반 대중교통은 현지 도착 후 교통카드/일회권 구매가 가능한 경우가 많음. 다만 공항 이동·컨택트리스 가능 여부는 확인</li><li>일정 변경 가능성이 있으면 환불·변경 가능한 운임을 선택하고 가격 차이를 비교</li><li>당일투어는 날씨·휴식 상태를 보고 예약할 수 있으나, 특정 날짜만 운영하는 투어는 사전 확인</li><li>연말·축제 기간은 레스토랑·숙박·공연이 빨리 차므로 도시별 날짜 발표 후 먼저 예약</li></ul><div class="callout">가격은 고정된 “몇 개월 전이 최저” 공식이 없습니다. 스페인 고속열차는 사전 구매가 유리할 수 있고, CP 포르투갈은 공식 온라인 판매가 통상 최대 60일 전 열립니다. 실제 판매 개시일·좌석·운임은 노선별로 확인하세요.</div></div></div></div></section>
+<section class="section" id="recommend"><div class="wrap"><div class="section-head"><div><div class="kicker">09 / BEST SEASON & FAMILY PICKS</div><h2>언제, 어디로 가는 게 잘 맞을까</h2></div><p class="sub">3명 가족·대중교통·예산 2,000~3,000만 원을 기준으로, 날씨가 극단적이지 않고 이동이 지나치게 복잡하지 않은 조합을 우선했습니다. 비용 등급은 항공권 제외 현지 체감의 대략적 비교이며 실제 견적이 아닙니다.</p></div><table class="table"><thead><tr><th>후보</th><th>날씨·가성비 감각</th><th>추천 여행창</th><th>축제·이벤트</th><th>가족 여행 적합도</th></tr></thead><tbody><tr><td><b>남부 스페인 + 포르투갈</b></td><td>늦가을은 대체로 온화, 비·밤 추위 대비. 현지 비용은 서북유럽보다 부담이 적은 편</td><td>11월 중순~12월 초: 비교적 한산하고 걷기 편한 기간</td><td>12월 크리스마스 조명·마켓. 말라가 조명 운영일은 매해 확인</td><td>★★★★★ 철도·도시 인프라와 명소가 잘 맞음</td></tr><tr><td><b>카나리아 제도 + 이베리아</b></td><td>겨울 유럽에서 따뜻한 편. 섬 내 산악지대는 춥고 바람·비 변동</td><td>11월~12월 초가 비교적 균형. 연말은 숙박·항공 수요 높음</td><td>12월 크리스마스 시즌, 섬별 새해 행사</td><td>★★★★☆ 따뜻함은 강점, 본토-섬 추가 이동·비용 있음</td></tr><tr><td><b>마데이라 + 포르투갈</b></td><td>겨울에도 온화한 해안, 산악 날씨·비 차이 큼. 섬 휴양·자연 중심</td><td>12월 1~20일 또는 새해 직후. 12/31 주간은 미리 예약</td><td>공식 관광청이 크리스마스·새해 축제 기간을 2026.12.1~2027.1.10로 안내</td><td>★★★★☆ 축제는 훌륭, 지형이 가파르고 트레일에 따라 체력 요구</td></tr><tr><td><b>중부 유럽 크리스마스 마켓</b></td><td>추위·짧은 낮·눈/비 가능. 현지 물가는 도시마다 다르고 숙소 수요 큼</td><td>12월 1~14일 평일 위주가 혼잡·가격 관리에 유리</td><td>독일·오스트리아·체코·프랑스 마켓은 대개 11월 중하순~12월 23/24일</td><td>★★★☆☆ 축제 경험은 최고, “안 춥게”가 우선이면 비추천</td></tr><tr><td><b>멕시코 고원 + 과테말라</b></td><td>건기 시작 구간으로 비가 줄 수 있음. 고원은 낮 쾌적해도 밤·새벽 쌀쌀, 저지대 더움</td><td>11월 하순~12월 초, 연말 성수기 직전</td><td>12월 전통 성탄 행사, 안티구아의 Las Posadas 등 현지 일정 확인</td><td>★★★☆☆ 문화·유적 다양, 국경과 장거리 셔틀/버스 피로 고려</td></tr><tr><td><b>콜롬비아 안데스 + 칼리</b></td><td>고도별 기온차 큼: 보고타는 서늘, 메데진은 온화, 칼리는 더 따뜻. 12월은 성수기</td><td>12월 중순~말(축제) 또는 1월(축제 후 가격·혼잡 완화 가능)</td><td>칼리 Feria de Cali는 2026.12.25~30로 시 정부 행사 캘린더에 등재</td><td>★★★☆☆ 살사 축제 매력 큼, 야간 군중·도시 간 비행/도로 계획 필요</td></tr></tbody></table><div class="callout"><b>가장 잘 맞는 결론:</b> “온화한 날씨 + 대중교통 + 부모님과의 편안함 + 예산” 균형은 남부 이베리아를 기본으로 하고, 따뜻함과 연말 이벤트를 원하면 마데이라 또는 카나리아를 5~7박 추가하는 방향이 유력해요. “특별한 라틴 문화”가 가장 중요하면 멕시코 고원+과테말라 또는 칼리 축제 일정으로 별도 설계하세요. 중남미는 대륙 내 이동비와 비행시간이 커서 유럽보다 자동으로 저렴해지는 것은 아닙니다.</div><div class="section-head" style="margin-top:40px"><div><div class="kicker">DATE-LOCKED PLAN · 2026</div><h2>11월 20일~12월 19일에 실제로 겹치는 것</h2></div><p class="sub">이 구간은 30일(29박)로 보고 일정에 맞춰 다시 짰습니다. 행사 날짜가 공식 확정된 것과 매년 반복되지만 아직 2026 세부 발표 전인 것을 구분했습니다.</p></div><div class="cards"><article class="card"><div class="num">EUROPE · 행사 중심, 따뜻한 루트</div><h3>포르투갈·안달루시아·마데이라</h3><p><b>11/20–24 포르투 4박 → 11/24–30 리스본 6박 → 11/30–12/6 세비야 6박 → 12/6–11 말라가 5박 → 12/11–18 마데이라 7박 → 12/18–19 리스본 1박/귀국</b></p><ul><li><b>11/27부터:</b> 리스본 Wonderland Lisboa가 2026년 11/27–2027년 1/3 개최로 안내됨. 개막 직후 방문 가능(행사 listing, 주최자 공지로 최종 확인)</li><li><b>12/1부터:</b> 마데이라 공식 크리스마스·새해 축제 시즌 시작, 2027년 1/10까지. 이 일정은 12/11–18에 축제 기간을 충분히 포함</li><li><b>12월:</b> 말라가 중심가 조명·음악 행사는 해마다 운영되며, 2026 점등일은 조사 당시 현지 가이드가 11/27 예상으로 표시했으나 확정이 아니므로 출발 전 확인</li><li>세비야 크리스마스 마켓은 안내처별 2026 일정이 달라 세부 개장일을 확정 일정으로 넣지 않음. 대신 대성당·알카사르·스페인 광장 등 상시 명소를 중심으로 설계</li><li>섬 이동은 리스본 경유 항공일 수 있어 항공편 시간·짐 비용·공항 이동을 먼저 확인. 더 경제적으로 하려면 마데이라를 빼고 세비야/그라나다 체류를 늘림</li></ul></article><article class="card"><div class="num">EUROPE · 크리스마스 마켓 집중 대안</div><h3>비엔나·프라하를 넣고 싶다면</h3><p><b>11/20–25 비엔나 5박 → 11/25–30 부다페스트 5박 → 11/30–12/6 프라하 6박 → 12/6–12 리스본 6박 → 12/12–16 세비야 4박 → 12/16–19 말라가 3박</b></p><ul><li>비엔나 주요 마켓은 11월 중순부터, 프라하 구시가지 마켓은 11/28–2027/1/6 일정으로 여행 안내에 게시됨</li><li>12/6–12/16 남부 이베리아 구간에 Wonderland·말라가 조명 시즌이 겹치는 구조</li><li>중부 유럽은 추운 겨울 일정이며 항공/철도 구간이 많아 “온화함·가성비” 우선순위는 첫 번째 루트보다 낮음</li><li>부다페스트 2026 마켓 날짜는 이번 조사에서 공식 확정 근거를 확인하지 못해, 확정 이벤트로 간주하지 말고 현지 공식 공지를 확인</li></ul></article><article class="card"><div class="num">LATIN AMERICA · 날짜 정합성 체크</div><h3>11/20–12/19에는 칼리 Feria가 안 열려요</h3><p><b>이 기간으로 콜롬비아를 간다면 Feria de Cali를 일정에 넣을 수 없습니다.</b></p><ul><li>칼리 시 정부는 Feria de Cali를 2026년 12/25–30으로 달력에 올렸으므로, 11/20–12/19 여행과는 날짜가 겹치지 않음</li><li>메데진 크리스마스 조명은 매년 연말 행사지만 EPM의 정확한 2026 날짜는 통상 11월에 발표. 현재 날짜로 확정 일정처럼 넣지 말 것</li><li>멕시코의 Las Posadas(12/16–24)는 12/16–19 일부만 겹치고, 오악사카 Noche de Rábanos(12/23)는 여행 종료 뒤라 이 기간만으로는 온전히 즐기기 어려움</li><li>중남미 행사 중심 일정이 목적이면 출발일을 12/20 이후로 바꾸고, 정확한 귀국일을 정한 뒤 다시 짜는 편이 맞음</li></ul></article></div><div class="notice"><b>두 번째 후보(“연말~2027년 새해 초”):</b> 정확한 시작·종료일이 아직 없으므로 날짜별 도시 배정은 보류했습니다. 확인된 주요 후보로는 마데이라 축제(12/1–1/10), 리스본 Wonderland(11/27–1/3), 프라하 마켓(11/28–1/6), 칼리 Feria(12/25–30)가 있습니다. 다만 서로 다른 대륙/도시에 있어 30일 안에 모두 묶는 일정은 장거리 이동이 과도합니다. 출발일과 귀국일을 확정해 주시면 해당 30일에 실제 열리는 행사만 남겨 itinerary를 다시 최적화하겠습니다.</div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div><div class="kicker">10 / SOURCES</div><h2>참고한 공식 안내와 여행자 코스</h2></div><p class="sub">공식 운행·티켓 정보는 운영기관을 우선하고, 루트 아이디어는 여행 매체·블로그·여행자 포럼을 참고했습니다.</p></div><div class="split"><div class="panel"><h3>공식 예약·교통 정보</h3><ul><li><a href="https://www.renfe.com/es/en" target="_blank" rel="noopener">Renfe</a> · 스페인 기차 운임·예약</li><li><a href="https://cp.pt/info/en/w/online-ticket-office" target="_blank" rel="noopener">CP Portugal</a> · 온라인 티켓 최대 60일 전 구매 안내</li><li><a href="https://tickets.alhambra-patronato.es/en" target="_blank" rel="noopener">알함브라 공식 티켓</a> · 직접 구매</li><li><a href="https://www.spain.info/en/top/how-to-buy-tickets-visit-alhambra/" target="_blank" rel="noopener">Spain.info</a> · 알함브라 사전 예약·방문 안내</li><li><a href="https://tuboleto.cultura.pe/" target="_blank" rel="noopener">페루 문화부 티켓 포털</a> · 마추픽추 입장권 공식 경로</li><li><a href="https://www.perurail.com/" target="_blank" rel="noopener">PeruRail</a> · 마추픽추행 열차 정보</li><li><a href="https://visitmadeira.com/en/whats-on/events/christmas-and-new-year-festivities" target="_blank" rel="noopener">Visit Madeira</a> · 2026 크리스마스·새해 축제 안내</li><li><a href="https://www.cali.gov.co/boletines/publicaciones/193104/cali-la-ciudad-de-los-grandes-eventos-se-prepara-para-vivir-un-segundo-semestre-historico/" target="_blank" rel="noopener">Cali 시 정부 행사 캘린더</a> · 2026년 Feria de Cali 날짜</li></ul></div><div class="panel"><h3>루트 영감·계절 정보 (비공식)</h3><ul><li><a href="https://www.interrail.com/en/plan-your-trip/trip-ideas/spain-and-portugal" target="_blank" rel="noopener">Interrail: Spain & Portugal by Train</a> · 포르투갈·안달루시아 열차 루트</li><li><a href="https://community.ricksteves.com/travel-forum/spain/itinerary-help-for-4-weeks-in-spain-and-1-week-in-portugal" target="_blank" rel="noopener">Rick Steves’ Europe Forum</a> · 4주 스페인+포르투갈 여행자 토론</li><li><a href="https://community.ricksteves.com/travel-forum/spain/a-month-in-spain-portugal-itinerary" target="_blank" rel="noopener">Rick Steves’ Europe Forum</a> · 한 달 이베리아 루트 토론</li><li><a href="https://www.earthtrekkers.com/peru-travel-guide" target="_blank" rel="noopener">Earth Trekkers: Peru Guide</a> · 쿠스코·성스러운 계곡·마추픽추·아마존</li><li><a href="https://caitypfohl.com/2019/10/30/mexico-belize-guatemala-itinerary/" target="_blank" rel="noopener">The Pamplemousse Papers</a> · 멕시코·벨리즈·과테말라 여행기</li><li><a href="https://www.tourradar.com/n/latin-america-4-week" target="_blank" rel="noopener">TourRadar 4-week routes</a> · 중앙아메리카 4주 코스 예시(투어 상품 편집 페이지)</li><li><a href="https://www.stippl.io/blog/warmest-places-in-europe-in-winter" target="_blank" rel="noopener">Stippl winter climate guide</a> · 카나리아·마데이라·남부 스페인 비교(2차 자료)</li><li><a href="https://www.audleytravel.com/central-america/best-time-to-visit" target="_blank" rel="noopener">Audley Travel</a> · 중앙아메리카 건기 참고</li><li><a href="https://www.jacadatravel.com/latin-america/mexico/travel-guides/best-time-go-mexico/" target="_blank" rel="noopener">Jacada Travel</a> · 멕시코 지역별 계절 참고</li><li><a href="https://www.kimkim.com/c/colombia-in-december" target="_blank" rel="noopener">kimkim Colombia in December</a> · 12월 콜롬비아 날씨·성수기 참고</li><li><a href="https://www.europeanbestdestinations.com/christmas-markets/lisbon/" target="_blank" rel="noopener">Wonderland Lisboa 2026 안내</a> · 11/27–2027/1/3 일정(행사 listing, 공식 공지 재확인)</li><li><a href="https://www.guidetomalaga.com/events-in-malaga/christmas-in-malaga/all-you-need-to-know-about-christmas-in-malaga/" target="_blank" rel="noopener">Guide to Malaga · 2026 Christmas update</a> · 점등일은 예상치로 표기, 확정 전 확인 필요</li><li><a href="https://www.pragueexperience.com/events/christmas-markets.asp" target="_blank" rel="noopener">Prague Christmas Markets 2026/27</a> · 일정·시간 안내(현지 공식 캘린더 대조 권장)</li><li><a href="https://www.visitingvienna.com/sights/christmasmarkets/when-open/" target="_blank" rel="noopener">Visiting Vienna · 2026 마켓 일정</a> · 공식 시장 페이지 확인 기반 지역 안내</li><li><a href="https://www.frommers.com/destinations/oaxaca-city/festivals/" target="_blank" rel="noopener">Frommer’s Oaxaca festival guide</a> · 12월 Noche de Rábanos 참고</li></ul></div></div></div></section>
+</div>
+      </div>
     </div>
-    <div class="search-presets" id="diningPresetsBar"></div>
+  </section>
+
+  <!-- ==================== 5. 여행 가이드 허브 (미식 · 명소 · 회화) ==================== -->
+  <div id="travel-guide" class="guide-hub-wrapper">
+    <!-- 5-1. 꼭 먹어야 할 대표 미식 & 검증 맛집 (92선) -->
+    <section class="section guide-section" id="dining">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">04 / MUST-EAT DISHES &amp; VERIFIED RESTAURANTS</div>
+            <h2 data-i18n="dining_title">꼭 먹고 가야 할 음식 &amp; 검증 맛집 (사진 포함 92선)</h2>
+          </div>
+          <p class="sub" data-i18n="dining_sub">스페인·포르투갈 및 주요 지역의 대표 미식. 운영시간, 부모님 배려 팁, 연락처 및 예약 링크 수록.</p>
+        </div>
+
+        <div class="search-box-wrap">
+          <div class="search-input-row">
+            <div class="search-input-wrap">
+              <input type="text" id="globalDiningSearch" class="search-input" placeholder="🔍 국가/도시(바르셀로나, 세비야, 리스본), 메뉴, 키워드 검색..." oninput="handleDiningSearchInput()" />
+              <button id="btnDiningClear" class="search-clear-btn" onclick="clearDiningSearch()" title="검색어 초기화">✕</button>
+            </div>
+            <button onclick="filterGlobalDining()" class="cal-action-btn" style="white-space:nowrap" data-i18n="btn_dining_search">미식 검색</button>
+          </div>
+          <div class="search-presets" id="diningPresetsBar"></div>
+        </div>
+
+        <div class="view-toggle-bar">
+          <div style="font-size:13px;font-weight:800;color:var(--muted)">
+            📍 <span id="diningViewCountText">전 세계 92대 검증 맛집 리스트</span>
+          </div>
+          <div class="ctrl-btn-group">
+            <button class="ctrl-btn active" id="btnDiningListView" onclick="setDiningView('list')" data-i18n="btn_list_view">📋 리스트 뷰</button>
+            <button class="ctrl-btn" id="btnDiningMapView" onclick="setDiningView('map')" data-i18n="btn_map_view">🗺 지도 뷰 (Leaflet Map)</button>
+          </div>
+        </div>
+
+        <div id="diningMapContainer" class="map-view-container" style="display:none;"></div>
+        <div class="photo-grid" id="globalDiningGrid"></div>
+      </div>
+    </section>
+
+    <!-- 5-2. 꼭 가봐야 할 핵심 명소 디렉토리 (73선) -->
+    <section class="section guide-section" id="attractions" style="background:#f4efe6">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">05 / MUST-VISIT LANDMARKS &amp; ATTRACTIONS</div>
+            <h2 data-i18n="attractions_title">꼭 가봐야 할 핵심 명소 디렉토리 (사진 &amp; 보행 가이드 73선)</h2>
+          </div>
+          <p class="sub" data-i18n="attractions_sub">고화질 사진, 부모님 무릎·보행 가이드, 엘리베이터/셔틀 정보, 공식 예매 링크.</p>
+        </div>
+
+        <div class="filter-tabs" id="landmarkFilterBar"></div>
+
+        <div class="view-toggle-bar">
+          <div style="font-size:13px;font-weight:800;color:var(--muted)">
+            🏛 <span id="landmarkViewCountText">전 세계 73대 핵심 랜드마크</span>
+          </div>
+          <div class="ctrl-btn-group">
+            <button class="ctrl-btn active" id="btnLandmarkListView" onclick="setLandmarkView('list')" data-i18n="btn_list_view">📋 리스트 뷰</button>
+            <button class="ctrl-btn" id="btnLandmarkMapView" onclick="setLandmarkView('map')" data-i18n="btn_map_view">🗺 지도 뷰 (Leaflet Map)</button>
+          </div>
+        </div>
+
+        <div id="landmarksMapContainer" class="map-view-container" style="display:none;"></div>
+        <div class="photo-grid" id="globalLandmarksGrid"></div>
+      </div>
+    </section>
+
+    <!-- 5-3. 지역별 필수 여행 회화 & 어르신 배려 표현집 -->
+    <section class="section guide-section" id="phrases" style="background:#fdfcf9">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">06 / ESSENTIAL LOCAL TRAVEL PHRASES &amp; AUDIO</div>
+            <h2 data-i18n="phrases_title">각 지역별 필수 여행 회화 &amp; 어르신 배려 표현집</h2>
+          </div>
+          <p class="sub" data-i18n="phrases_sub">현지 식당 저염식(소금 빼주세요) 요청, 생수 주문, 화장실/엘리베이터 위치, 응급 상황 회화.</p>
+        </div>
+        <div class="filter-tabs" id="phraseFilterBar"></div>
+        <div class="phrase-grid" id="localPhrasesGrid"></div>
+      </div>
+    </section>
   </div>
-  <div class="view-toggle-bar">
-    <div style="font-size:13px;font-weight:800;color:var(--muted)">📍 <span id="diningViewCountText">전 세계 95대 검증 맛집 리스트</span></div><div class="ctrl-btn-group"><button class="ctrl-btn active" id="btnDiningListView" onclick="setDiningView('list')">📋 리스트 뷰</button><button class="ctrl-btn" id="btnDiningMapView" onclick="setDiningView('map')">🗺 지도 뷰 (Leaflet Map)</button></div>
+
+  <!-- ==================== 6. 여행 도구 허브 (대중교통 · 숙소 · AI 검색) ==================== -->
+  <div id="travel-tools" class="tools-hub-wrapper">
+    <!-- 6-1. 스마트 대중교통 마스터 & 가성비·시니어 호텔 (24선) -->
+    <section class="section tools-section" id="transit-hotels" style="background:#f4efe6">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">07 / SMART TRANSIT &amp; SENIOR-FRIENDLY VALUE HOTELS</div>
+            <h2 id="transitSectionTitle" data-i18n="transit_hotels_title">스마트 대중교통 마스터 &amp; 가성비·시니어 호텔 (24선)</h2>
+          </div>
+          <p class="sub" id="transitSectionSub" data-i18n="transit_hotels_sub">도시별 최적 교통카드 준비법, 환승 규칙, 엘리베이터 완비 및 가성비 호텔 디렉토리.</p>
+        </div>
+        <div class="filter-tabs" style="margin-bottom:24px" id="transitHotelSubTabs">
+          <button class="tab-chip active" id="tabBtnTransitGuide" onclick="switchTransitHotelSubTab('transit')" data-i18n="tab_transit_guide">🚇 도시별 대중교통 &amp; 교통카드 완전 정복</button>
+          <button class="tab-chip" id="tabBtnHotelGuide" onclick="switchTransitHotelSubTab('hotels')" data-i18n="tab_hotel_guide">🏨 지역별 가성비·시니어 친화 호텔 (24선)</button>
+        </div>
+        <div id="transitGuidePanel" class="transit-guide-box">
+          <div class="transit-box-grid" id="transitCardsGrid"></div>
+          <div style="margin-top:28px" id="transitComparisonWrap"></div>
+        </div>
+        <div id="hotelGuidePanel" style="display:none;">
+          <div class="hotel-filter-bar" id="hotelFilterBar"></div>
+          <div class="hotel-grid" id="hotelCardsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6-2. 실시간 AI 검색 & 커넥터 -->
+    <section class="section tools-section" id="ai-search" style="background:#eee8dc">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="kicker">08 / SMART AI &amp; WEB SEARCH CONNECT</div>
+            <h2 data-i18n="ai_search_title">Dots AI &amp; 실시간 여행 검색 커넥터</h2>
+          </div>
+          <p class="sub" data-i18n="ai_search_sub">축제 날짜, 실시간 기차표 예매 오픈, 알함브라 티켓팅 등 실시간 검색 도구입니다.</p>
+        </div>
+        <div class="panel" style="padding:28px">
+          <div class="search-input-row">
+            <div class="search-input-wrap">
+              <input type="text" id="aiDirectSearchInput" class="search-input" placeholder="궁금한 사항을 입력하세요..." oninput="handleAiSearchInput()" onkeydown="if(event.key==='Enter') executeAiSearch('google')" />
+              <button id="btnAiClear" class="search-clear-btn" onclick="clearAiSearch()" title="검색어 초기화">✕</button>
+            </div>
+            <button onclick="executeAiSearch('google')" id="btnGoogleSearch" class="cal-action-btn" data-i18n="btn_google_search" style="background:var(--green)">구글 실시간 검색</button>
+            <button onclick="executeAiSearch('perplexity')" id="btnPerplexitySearch" class="cal-action-btn" data-i18n="btn_perplexity_search" style="background:#2b6cb0">Perplexity AI 분석</button>
+          </div>
+          <div class="search-presets" id="aiPresetsBar" style="margin-top:10px"></div>
+        </div>
+      </div>
+    </section>
   </div>
-  <div id="diningMapContainer" class="map-view-container" style="display:none;"></div>
-  <div class="photo-grid" id="globalDiningGrid"></div>
-</div>
-</section>
-<!-- 13. 꼭 가봐야 할 핵심 명소 디렉토리 -->
-<section class="section" id="attractions" style="background:#f4efe6">
-<div class="wrap">
-  <div class="section-head"><div><div class="kicker">13 / MUST-VISIT LANDMARKS & ATTRACTIONS</div><h2 data-i18n="attractions_title">꼭 가봐야 할 핵심 명소 디렉토리 (사진 & 보행 가이드)</h2></div><p class="sub" data-i18n="attractions_sub">전 세계 랜드마크 고화질 사진, 부모님 무릎·보행 가이드, 엘리베이터/셔틀 정보, 공식 예매 링크.</p></div>
-  <div class="filter-tabs" id="landmarkFilterBar"></div>
-  <div class="view-toggle-bar">
-    <div style="font-size:13px;font-weight:800;color:var(--muted)">🏛 <span id="landmarkViewCountText">전 세계 80대 핵심 랜드마크</span></div><div class="ctrl-btn-group"><button class="ctrl-btn active" id="btnLandmarkListView" onclick="setLandmarkView('list')">📋 리스트 뷰</button><button class="ctrl-btn" id="btnLandmarkMapView" onclick="setLandmarkView('map')">🗺 지도 뷰 (Leaflet Map)</button></div>
-  </div>
-  <div id="landmarksMapContainer" class="map-view-container" style="display:none;"></div>
-  <div class="photo-grid" id="globalLandmarksGrid"></div>
-</div>
-</section>
-<!-- 14. 지역별 필수 여행 회화 & 어르신 배려 표현집 -->
-<section class="section" id="phrases" style="background:#fdfcf9">
-<div class="wrap">
-  <div class="section-head"><div><div class="kicker">14 / ESSENTIAL LOCAL TRAVEL PHRASES & AUDIO</div><h2 data-i18n="phrases_title">각 지역별 필수 여행 회화 & 어르신 배려 표현집</h2></div><p class="sub" data-i18n="phrases_sub">현지 식당 저염식 요청, 생수 주문, 화장실/엘리베이터 위치, 응급 상황 회화.</p></div>
-  <div class="filter-tabs" id="phraseFilterBar"></div>
-  <div class="phrase-grid" id="localPhrasesGrid"></div>
-</div>
-</section>
-<!-- 15. 실시간 검색 & Dots AI 위젯 -->
-<section class="section" id="ai-search" style="background:#eee8dc">
-<div class="wrap">
-  <div class="section-head"><div><div class="kicker">15 / SMART AI & WEB SEARCH CONNECT</div><h2 data-i18n="ai_search_title">Dots AI & 실시간 여행 검색 커넥터</h2></div><p class="sub" data-i18n="ai_search_sub">축제 날짜, 실시간 기차표 예매 오픈, 알함브라 티켓팅 등 실시간 검색 도구입니다.</p></div>
-  <div class="panel" style="padding:28px">
-    <div class="search-input-row">
-      <div class="search-input-wrap"><input type="text" id="aiDirectSearchInput" class="search-input" placeholder="궁금한 사항을 입력하세요..." oninput="handleAiSearchInput()" onkeydown="if(event.key==='Enter') executeAiSearch('google')" /><button id="btnAiClear" class="search-clear-btn" onclick="clearAiSearch()" title="검색어 초기화">✕</button></div>
-      <button onclick="executeAiSearch('google')" id="btnGoogleSearch" class="cal-action-btn" data-i18n="btn_google_search" style="background:var(--green)">구글 실시간 검색</button><button onclick="executeAiSearch('perplexity')" id="btnPerplexitySearch" class="cal-action-btn" data-i18n="btn_perplexity_search" style="background:#2b6cb0">Perplexity AI 분석</button>
-    </div>
-    <div class="search-presets" id="aiPresetsBar" style="margin-top:10px"></div>
-  </div>
-</div>
-</section>
-<!-- 16. 스마트 대중교통 마스터 & 가성비·시니어 호텔 -->
-<section class="section" id="transit-hotels" style="background:#f4efe6">
-<div class="wrap">
-  <div class="section-head"><div><div class="kicker">16 / SMART TRANSIT & SENIOR-FRIENDLY VALUE HOTELS</div><h2 id="transitSectionTitle" data-i18n="transit_hotels_title">스마트 대중교통 마스터 & 가성비·시니어 호텔 (24선)</h2></div><p class="sub" id="transitSectionSub" data-i18n="transit_hotels_sub">도시별 최적 교통카드 준비법, 환승 규칙, 엘리베이터 완비 및 가성비 호텔 디렉토리.</p></div>
-  <div class="filter-tabs" style="margin-bottom:24px" id="transitHotelSubTabs">
-    <button class="tab-chip active" id="tabBtnTransitGuide" onclick="switchTransitHotelSubTab('transit')">🚇 도시별 대중교통 & 교통카드 완전 정복</button><button class="tab-chip" id="tabBtnHotelGuide" onclick="switchTransitHotelSubTab('hotels')">🏨 지역별 가성비·시니어 친화 호텔 (24선)</button>
-  </div>
-  <div id="transitGuidePanel" class="transit-guide-box">
-    <div class="transit-box-grid" id="transitCardsGrid"></div>
-    <div style="margin-top:28px" id="transitComparisonWrap"></div>
-  </div>
-  <div id="hotelGuidePanel" style="display:none;"><div class="hotel-filter-bar" id="hotelFilterBar"></div><div class="hotel-grid" id="hotelCardsGrid"></div></div>
-</div>
-</section>
 </main>
-<footer class="footer"><div class="wrap" id="mainFooterText">가족 여행 계획을 위한 편집 가이드 · 날짜·가격·운행·입국 규정은 바뀔 수 있으니 예약 전 공식 채널에서 최종 확인하세요.</div></footer>
+
+<!-- 푸터 -->
+<footer class="footer">
+  <div class="wrap" id="mainFooterText">
+    <span data-i18n="footer_text">가족 여행 계획을 위한 편집 가이드 · 날짜·가격·운행·입국 규정은 바뀔 수 있으니 예약 전 공식 채널에서 최종 확인하세요.</span>
+  </div>
+</footer>
+
+<!-- 상단으로 이동 버튼 & 토스트 알림 -->
 <button id="btnBackToTop" class="back-to-top-btn" onclick="scrollToTop()" title="맨 위로 이동" aria-label="맨 위로 이동">⬆</button>
 <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+<!-- 모바일 전용 하단 내비게이션 바 -->
 <nav class="bottom-mobile-nav">
-  <a href="#planner" class="bottom-nav-item"><span class="b-icon">📅</span><span data-i18n="bnav_planner">플래너</span></a><a href="#dining" class="bottom-nav-item"><span class="b-icon">🍽</span><span data-i18n="bnav_dining">미식</span></a><a href="#attractions" class="bottom-nav-item"><span class="b-icon">🏛</span><span data-i18n="bnav_attractions">명소</span></a>
-  <a href="#phrases" class="bottom-nav-item"><span class="b-icon">🗣</span><span data-i18n="bnav_phrases">회화</span></a><a href="javascript:void(0)" onclick="navigateToTransit()" class="bottom-nav-item"><span class="b-icon">🚇</span><span data-i18n="bnav_transit">교통</span></a><a href="javascript:void(0)" onclick="navigateToHotels()" class="bottom-nav-item"><span class="b-icon">🏨</span><span data-i18n="bnav_hotels">호텔</span></a>
+  <a href="#planner" class="bottom-nav-item"><span class="b-icon">📅</span><span data-i18n="bnav_planner">플래너</span></a>
+  <a href="#curated-options" class="bottom-nav-item"><span class="b-icon">🧭</span><span data-i18n="bnav_routes">3대코스</span></a>
+  <a href="#dining" class="bottom-nav-item"><span class="b-icon">🍽</span><span data-i18n="bnav_dining">미식</span></a>
+  <a href="#attractions" class="bottom-nav-item"><span class="b-icon">🏛</span><span data-i18n="bnav_attractions">명소</span></a>
+  <a href="javascript:void(0)" onclick="toggleSettingsPanel()" class="bottom-nav-item"><span class="b-icon">⚙️</span><span data-i18n="bnav_settings">설정</span></a>
 </nav>
+
+<!-- AI 여행 챗봇: 작고 깔끔한 플로팅 버튼과 오버레이 패널 -->
 <button id="btnChatToggle" class="chat-floating-btn" onclick="toggleChatWindow()" title="AI 여행 챗봇 열기" aria-label="AI 여행 챗봇">
   🤖<span class="chat-btn-pulse"></span><span class="chat-btn-badge">AI</span>
 </button>
+
 <div id="chatWindow" class="chat-window-container" style="display:none;" aria-hidden="true">
   <div class="chat-window-header">
     <div class="chat-header-profile">
       <div class="chat-bot-avatar">🤖<span class="chat-online-dot"></span></div>
-      <div class="chat-header-info"><div class="chat-bot-title">이베리아 & 두바이 AI 메이트</div><div class="chat-bot-status"><span class="status-indicator"></span>실시간 로컬 AI (오프라인 지원)</div></div>
+      <div class="chat-header-info">
+        <div class="chat-bot-title" data-i18n="chat_bot_title">남유럽 가족 여행 AI 가이드</div>
+        <div class="chat-bot-status" data-i18n="chat_bot_status"><span class="status-indicator"></span>실시간 온디바이스 AI (오프라인 지원)</div>
+      </div>
     </div>
     <button type="button" class="chat-close-btn" onclick="closeChatWindow()" title="닫기" aria-label="닫기">✕</button>
   </div>
   <div class="chat-quick-bar">
-    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('마드리드에서 리스본 어떻게 가?')">🚌 마드리드 ➔ 리스본 이동법</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 포르투갈 환전 어떻게 해? 유로 써?')">💶 스페인 포르투갈 환전/통화</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 ~ 포르투갈 가기에 11월 ~ 12월 중에 가장 안 추울 만한 적정한 시기는?')">📅 11~12월 추천 시기/날씨</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 맛집 추천해줘')">🍽️ 두바이 맛집</button>
-    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘')">🦽 부모님 평지/휠체어</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('소매치기 예방법과 치안 안전 수칙 알려줘')">🚨 소매치기/치안 예방</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('렌페 기차 타는 법과 시내 택시/우버 이동 팁')">🚆 렌페/교통 팁</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('트래블로그 카드 결제랑 현금 환전 얼마나 필요해?')">💳 카드/환전/팁</button>
-    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 공항 텍스리펀 절차 알려줘')">🛍️ 텍스리펀 방법</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('현재 여행 총 예상 경비와 예산 얼마야?')">💰 총 여행 예산</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('식당에서 소금 빼주세요 스페인어로 뭐야?')">🧂 소금 빼주세요</button><button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 사막 사파리 부모님 주의사항과 복장')">🐪 사막 사파리 팁</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('마드리드에서 리스본 어떻게 가?')">🚌 마드리드 ➔ 리스본 이동법</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 포르투갈 환전 어떻게 해? 유로 써?')">💶 스페인 포르투갈 환전/통화</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 ~ 포르투갈 가기에 11월 ~ 12월 중에 가장 안 추울 만한 적정한 시기는?')">📅 11~12월 추천 시기/날씨</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 맛집 추천해줘')">🍽️ 두바이 맛집</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘')">🦽 부모님 평지/휠체어</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('소매치기 예방법과 치안 안전 수칙 알려줘')">🚨 소매치기/치안 예방</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('렌페 기차 타는 법과 시내 택시/우버 이동 팁')">🚆 렌페/교통 팁</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('트래블로그 카드 결제랑 현금 환전 얼마나 필요해?')">💳 카드/환전/팁</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 공항 텍스리펀 절차 알려줘')">🛍️ 텍스리펀 방법</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('현재 여행 총 예상 경비와 예산 얼마야?')">💰 총 여행 예산</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('식당에서 소금 빼주세요 스페인어로 뭐야?')">🧂 소금 빼주세요</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 사막 사파리 부모님 주의사항과 복장')">🐪 사막 사파리 팁</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('에미레이트 항공 두바이 경유 24시간 스톱오버 추천 코스 &amp; 짐 보관 방법')">🐪 두바이 24h 스톱오버 팁</button>
   </div>
   <div id="chatMessages" class="chat-messages-container">
-    <div class="chat-msg bot-msg"><div class="msg-avatar">🤖</div><div class="msg-bubble">안녕하세요! <strong>이베리아 & 두바이 가족 여행 전담 로컬 AI 가이드</strong>입니다. ✈️<br><br>외부 API 호출 없이 브라우저 내 실시간 데이터(58개 엄선 맛집, 23개 명소, 맞춤 플래너 예산)를 바탕으로 즉시 답변해 드립니다.<br><br>궁금하신 점을 편하게 질문해 보세요!<br><span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">💡 예: <em>"두바이 맛집 추천해줘", "부모님 휠체어 평지 명소", "여행 총 예산 얼마야?", "소금 빼주세요"</em></span></div></div>
+    <div class="chat-msg bot-msg">
+      <div class="msg-avatar">🤖</div>
+      <div class="msg-bubble">
+        안녕하세요! <strong>남유럽 가족 여행 전담 AI 가이드</strong>입니다. ✈️<br><br>
+        브라우저 내 실시간 데이터(92개 엄선 맛집, 73개 명소, 맞춤 플래너 예산)를 바탕으로 즉시 답변해 드립니다.<br><br>
+        궁금하신 점을 편하게 질문해 보세요!<br>
+        <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
+          💡 예: <em>"스페인 단독과 포르투갈 포함 차이점", "부모님 휠체어 평지 명소", "소금 빼주세요 스페인어"</em>
+        </span>
+      </div>
+    </div>
   </div>
   <div class="chat-input-area">
     <form id="chatForm" onsubmit="event.preventDefault(); sendChatMessage(); return false;" style="display:flex;width:100%;gap:8px;align-items:center;">
       <input type="text" id="chatInput" class="chat-input-field" placeholder="질문을 입력하세요..." autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();sendChatMessage();}" />
-      <button type="button" id="btnChatSend" class="chat-send-btn" onclick="sendChatMessage()" title="전송" aria-label="전송"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+      <button type="button" id="btnChatSend" class="chat-send-btn" onclick="sendChatMessage()" title="전송" aria-label="전송">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
     </form>
   </div>
 </div>
+
 <!-- 모듈화 스크립트 연결: 데이터 -> 로직 순서 -->
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>

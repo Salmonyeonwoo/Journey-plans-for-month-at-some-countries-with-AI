@@ -5548,3 +5548,123 @@ const form = document.getElementById('chatForm');
     });
   }
 });
+
+
+// ==========================================
+// 2026 Redesign Helpers (Settings, Accordions, Curated Plan)
+// ==========================================
+
+function ensureEditorialGuideContent(lang) {
+  const current = lang || (typeof currentLang !== 'undefined' ? currentLang : 'ko');
+  const edContainer = document.getElementById('editorialGuideContainer');
+  if (edContainer && typeof EDITORIAL_SECTIONS_HTML !== 'undefined') {
+    const htmlToInject = EDITORIAL_SECTIONS_HTML[current] || EDITORIAL_SECTIONS_HTML['ko'];
+    if (htmlToInject) {
+      edContainer.innerHTML = htmlToInject;
+      if (typeof initInteractiveChecklist === 'function') {
+        initInteractiveChecklist();
+      }
+    }
+  }
+}
+
+function toggleSettingsPanel() {
+  const panel = document.getElementById('settingsDropdownPanel');
+  const btn = document.getElementById('btnSettingsToggle');
+  if (!panel) return;
+  const isHidden = panel.style.display === 'none' || !panel.style.display;
+  if (isHidden) {
+    panel.style.display = 'block';
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+  } else {
+    panel.style.display = 'none';
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}
+
+function closeSettingsPanel() {
+  const panel = document.getElementById('settingsDropdownPanel');
+  const btn = document.getElementById('btnSettingsToggle');
+  if (panel) panel.style.display = 'none';
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+
+function toggleAdvancedPlannerOptions() {
+  const panel = document.getElementById('advancedControlsPanel');
+  const icon = document.getElementById('advancedOptionsIcon');
+  if (!panel) return;
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
+  const isHidden = panel.style.display === 'none';
+  if (isHidden) {
+    panel.style.display = 'block';
+    if (icon) icon.textContent = dict['planner_adv_collapse'] || (currentLang === 'en' ? '▲ Collapse' : (currentLang === 'ja' ? '▲ 閉じる' : (currentLang === 'zh' ? '▲ 收起' : '▲ 접기')));
+  } else {
+    panel.style.display = 'none';
+    if (icon) icon.textContent = dict['planner_adv_expand'] || (currentLang === 'en' ? '▼ Expand' : (currentLang === 'ja' ? '▼ 開く' : (currentLang === 'zh' ? '▼ 展开' : '▼ 펼치기')));
+  }
+}
+
+function toggleEditorialGuide() {
+  const body = document.getElementById('editorialCollapseBody');
+  const arrow = document.getElementById('editorialAccordionArrow');
+  const btn = document.getElementById('btnToggleEditorialGuide');
+  const edContainer = document.getElementById('editorialGuideContainer');
+  if (!body) return;
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
+  const isHidden = body.style.display === 'none' || !body.style.display;
+  if (isHidden) {
+    body.style.display = 'block';
+    if (arrow) arrow.textContent = dict['editorial_arrow_collapse'] || (currentLang === 'en' ? 'Collapse ▲' : (currentLang === 'ja' ? '閉じる ▲' : (currentLang === 'zh' ? '收起 ▲' : '접기 ▲')));
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+    // Ensure content is loaded and ready
+    ensureEditorialGuideContent();
+  } else {
+    body.style.display = 'none';
+    if (arrow) arrow.textContent = dict['editorial_arrow_expand'] || (currentLang === 'en' ? 'Read More ▼' : (currentLang === 'ja' ? '詳しく見る ▼' : (currentLang === 'zh' ? '展开查看 ▼' : '펼쳐보기 ▼')));
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+}
+
+function selectCuratedPlan(regionCode) {
+  const select = document.getElementById('userRegionSelect');
+  if (select) {
+    select.value = regionCode;
+  }
+  if (typeof applyPlanReconfiguration === 'function') {
+    applyPlanReconfiguration(true);
+  }
+  const plannerEl = document.getElementById('planner');
+  if (plannerEl) {
+    plannerEl.scrollIntoView({ behavior: 'smooth' });
+  }
+  const titles = {
+    'IBERIA': {
+      ko: '스페인 & 포르투갈 남유럽 30일 여정이 플래너에 적용되었습니다!',
+      en: 'Spain & Portugal 30-Day Southern Europe itinerary applied to planner!',
+      ja: 'スペイン＆ポルトガル南欧30日日程がプランナーに適用されました！',
+      zh: '西班牙与葡萄牙南欧30天行程已成功应用至规划器！'
+    },
+    'LATIN_AMERICA': {
+      ko: '중남미 30일 탐험 여정이 플래너에 적용되었습니다!',
+      en: 'Latin America 30-Day exploration itinerary applied to planner!',
+      ja: '中南米30日間探訪日程がプランナーに適用されました！',
+      zh: '中南美洲30天探索行程已成功应用至规划器！'
+    }
+  };
+  const tMap = titles[regionCode] || {};
+  const msg = tMap[currentLang] || tMap.ko || (currentLang === 'en' ? 'Selected itinerary applied to planner!' : (currentLang === 'ja' ? '選択した日程がプランナーに適用されました！' : (currentLang === 'zh' ? '所选路线已成功应用至规划器！' : '선택한 코스가 플래너에 적용되었습니다!')));
+  if (typeof showToast === 'function') {
+    showToast(msg);
+  }
+}
+
+// Global click to close settings when clicking outside
+document.addEventListener('click', (e) => {
+  const panel = document.getElementById('settingsDropdownPanel');
+  const btn = document.getElementById('btnSettingsToggle');
+  if (panel && panel.style.display === 'block') {
+    if (!panel.contains(e.target) && (!btn || !btn.contains(e.target))) {
+      closeSettingsPanel();
+    }
+  }
+});

@@ -2022,6 +2022,109 @@ const EDITORIAL_SECTIONS_HTML = {
 <article class="card"><div class="num">WARM WINTER</div><h3>카나리아 제도 추가</h3><p>스페인 본토 여행에 화산 풍경과 겨울 햇살을 더하는 선택. 섬 안 이동은 버스만으로 다소 제한될 수 있어 투어·택시를 섞는 편이 현실적.</p><ul><li>테네리페 또는 그란카나리아 5~7박</li><li>해안과 고지대의 기온 차가 크며 날씨 변동 가능</li><li>섬 간 항공·페리, 공항 이동 비용을 따로 계산</li></ul></article>
 <article class="card"><div class="num">BIG NATURE</div><h3>중남미는 별도 여정으로</h3><p>이색적인 자연과 문화는 압도적이지만, 한 달 일정에 여러 나라를 넣으면 장거리 이동·고도·안전 변수가 커집니다.</p><ul><li>고산 도시 방문 전 건강 상태와 고도 적응 계획 확인</li><li>야간 장거리 버스 대신 항공·전용 이동 검토</li><li>국가·도시별 최신 안전 공지 및 여행자 보험 확인</li></ul></article>
 </div><div class="callout">영국·프랑스: 철도와 문화시설은 편리하지만, 11~12월은 낮이 짧고 춥고 비가 올 수 있으며 숙박비도 높을 수 있어요. 크리스마스 마켓이 목적이라면 짧게 덧붙이는 방식이 좋습니다.</div></div></section>
+
+<section class="section editorial-media-showcase" style="background:#fdfaf5;border-top:1px solid #e8e2d8;border-bottom:1px solid #e8e2d8;padding:44px 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="kicker">VISUAL INSPIRATION &amp; 4K VIDEO TOURS</div>
+        <h2>📸 남유럽 대표 풍경 갤러리 &amp; 4K 영상 가이드</h2>
+      </div>
+      <p class="sub">부모님과 함께 떠나기 전, 스페인·포르투갈의 압도적인 현지 분위기를 고화질 사진과 4K 영상으로 미리 감상해 보세요.</p>
+    </div>
+
+    <!-- 1. 대표 고화질 사진 갤러리 -->
+    <div class="ed-photo-gallery">
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="그라나다 알함브라 궁전" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇪🇸 그라나다 알함브라 궁전</strong>
+          <span>이슬람 건축의 정수, 나스르 궁전과 헤네랄리페 정원</span>
+        </div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="세비야 스페인 광장" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇪🇸 세비야 스페인 광장</strong>
+          <span>웅장한 반원형 회랑과 타일 벤치, 평지 산책로</span>
+        </div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="리스본 노란 트램과 골목길" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇵🇹 리스본 알파마 &amp; 노란 트램 28번</strong>
+          <span>대서양의 햇살을 머금은 언덕길과 유서 깊은 트램</span>
+        </div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="포르투 동 루이스 1세 다리" loading="lazy">
+        <div class="ed-photo-caption">
+          <strong>🇵🇹 포르투 도우루 강 &amp; 동 루이스 다리</strong>
+          <span>에펠의 제자가 설계한 아치교와 와인 저장고 풍경</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 추천 4K 현장 영상 가이드 카드 -->
+    <div style="margin-top:36px;">
+      <h3 style="font-size:18px;font-weight:800;color:#1b4332;margin-bottom:16px;">🎥 추천 4K 현장 영상 가이드 (랜선 투어)</h3>
+      <div class="ed-video-grid">
+        <a href="https://www.youtube.com/results?search_query=alhambra+granada+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80" alt="알함브라 궁전 영상">
+            <span class="video-play-badge">▶ 4K 영상</span>
+            <span class="video-tag">공식/랜선투어</span>
+          </div>
+          <div class="video-card-body">
+            <h4>그라나다 알함브라 궁전 4K 완벽 랜선 투어</h4>
+            <p>나스르 궁전 세부 타일 장식과 헤네랄리페 정원의 물소리를 4K 초고화질로 미리 둘러보세요.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="세비야 워킹 투어">
+            <span class="video-play-badge">▶ 4K 영상</span>
+            <span class="video-tag">안달루시아 감성</span>
+          </div>
+          <div class="video-card-body">
+            <h4>세비야 스페인 광장 &amp; 대성당 4K 도보 산책</h4>
+            <p>오렌지 나무 가득한 세비야 거리와 플라멩코 본고장의 따뜻한 오후 정취를 확인하세요.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=lisbon+portugal+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" alt="리스본 워킹 투어">
+            <span class="video-play-badge">▶ 4K 영상</span>
+            <span class="video-tag">포르투갈 낭만</span>
+          </div>
+          <div class="video-card-body">
+            <h4>리스본 벨렝탑 &amp; 28번 트램 코스 4K 투어</h4>
+            <p>파스텔톤 건축물과 에그타르트 원조 맛집이 있는 벨렝 지구를 편안하게 감상할 수 있습니다.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=renfe+train+spain+how+to+ride" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="스페인 렌페 고속열차">
+            <span class="video-play-badge">▶ 실전 팁</span>
+            <span class="video-tag">시니어 이동 팁</span>
+          </div>
+          <div class="video-card-body">
+            <h4>스페인 렌페(Renfe) 고속철도 &amp; 짐 보관 실전 탑승기</h4>
+            <p>부모님과 함께하는 열차 이동 시 짐 보관대 위치, 플랫폼 엘리베이터 이용법 안내 영상입니다.</p>
+            <span class="video-link-text">유튜브 영상 보러가기 ➔</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section dark" id="route"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / SUGGESTED ROUTE</div><h2>4주, 거점형으로 천천히</h2></div><p class="sub">도시를 자주 바꾸지 않고 3~6박씩 머무는 일정 예시예요. 실제 항공편과 기차 시간에 맞춰 순서를 조정하세요.</p></div><div class="route">
 <div class="stop"><small>DAY 1–5</small><h3>바르셀로나</h3><p>가우디, 고딕 지구, 몬세라트</p></div><div class="stop"><small>DAY 6–9</small><h3>마드리드</h3><p>미술관, 톨레도·세고비아</p></div><div class="stop"><small>DAY 10–11</small><h3>코르도바</h3><p>메스키타와 구시가지</p></div><div class="stop"><small>DAY 12–16</small><h3>세비야</h3><p>알카사르, 플라멩코, 론다</p></div><div class="stop"><small>DAY 17–19</small><h3>그라나다</h3><p>알함브라, 여유로운 휴식</p></div><div class="stop"><small>DAY 20–25</small><h3>리스본</h3><p>신트라 당일치기, 강변 산책</p></div><div class="stop"><small>DAY 26–30</small><h3>포르투</h3><p>도루강, 와이너리, 귀국</p></div></div><p class="route-note">※ 그라나다·세비야에서 리스본으로는 직행 대중교통이 오래 걸릴 수 있습니다. 항공편, 환승 열차·버스를 비교하고 이동일을 넉넉히 잡으세요. 카나리아를 넣는다면 본토 도시 1~2곳을 줄이고 5~7박을 배정하는 편이 무리 없습니다.</p></div></section>
 <section class="section" id="practical"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / GETTING AROUND</div><h2>교통과 예약, 핵심만</h2></div><p class="sub">컨택트리스가 된다고 모든 카드·모든 노선에서 통하는 것은 아닙니다. 여행 전에 도시 공식 교통 안내를 확인하세요.</p></div><div class="split"><div class="panel"><h3>기차·도시간 이동</h3><ul><li>스페인 고속철: Renfe(AVE/Avlo), iryo, OUIGO Spain을 날짜별로 비교</li><li>먼저 공식 앱·사이트에서 시간과 요금을 확인하고 직접 구매하면 변경·환불 규정을 확인하기 편함</li><li>비교 플랫폼(Trainline, Omio 등)은 탐색용으로 유용하나 수수료·운임 조건을 결제 전 확인</li><li>포르투갈 철도는 CP 공식 사이트·앱, 버스는 운행사별 공식 채널 확인</li><li>성수기·주말·인기 노선은 일정이 정해지면 미리 예약</li></ul></div><div class="panel"><h3>도시 교통·카드</h3><ul><li>Google Maps와 Citymapper(지원 도시)를 길찾기에 활용</li><li>Travel Wallet/Travelog 등 해외 결제 카드는 편리하지만, 현지 개찰구의 해외 발행 카드 수용 여부는 도시·노선별로 다름</li><li>교통 전용 카드·패스가 더 확실하거나 저렴할 수 있음: 바르셀로나 T-casual, 마드리드 Multi 등 최신 조건 확인</li><li>리스본 Navegante/비바 비아젬, 포르투 Andante 등은 구입·충전 방식과 구간을 확인</li><li>컨택트리스 탑승은 카드당 동승 인원·환승 할인·요금 상한 규칙이 다르니 각자 별도 카드 준비 권장</li></ul></div></div><table class="table"><thead><tr><th>상황</th><th>준비·확인할 것</th></tr></thead><tbody><tr><td>결제 카드</td><td>해외 결제 가능한 실물 카드 2장 이상, 카드사 해외 사용 설정, PIN 확인. 현금은 소액만 분산</td></tr><tr><td>대중교통</td><td>방문 도시 공식 교통 앱/웹사이트에서 접촉식 카드 허용 노선, 티켓 앱, 요금·환승 규칙 확인</td></tr><tr><td>택시 대안</td><td>Uber·Bolt·Cabify는 도시별 이용 가능성과 요금 차이가 있음. 공식 택시 승강장도 대안</td></tr><tr><td>기차 예약</td><td>Renfe·iryo·OUIGO Spain 및 CP 공식 채널. 수하물·좌석·변경/환불 조건 확인</td></tr></tbody></table><div class="notice"><b>중요:</b> Travel Wallet/Travelog 카드가 모든 대중교통 단말기에서 교통카드처럼 작동한다고 단정할 수 없습니다. 실제 지원 여부는 발급 카드의 비접촉 결제와 별개로 도시·운영사에서 결정됩니다. “안달루시아 버스” 등 지역 단위로 한꺼번에 일반화하지 말고 노선별 확인이 안전합니다.</div></div></section>
@@ -2038,6 +2141,95 @@ const EDITORIAL_SECTIONS_HTML = {
 <article class="card"><div class="num">WARM WINTER</div><h3>カナリア諸島を追加</h3><p>スペイン本土の旅に火山の大自然と冬の陽光を加える選択。島内の移動はバスだけでは限界があるためツアーやタクシー併用が現実的。</p><ul><li>テネリフェまたはグラン・カナリア島に5〜7泊</li><li>海岸部と高地で気温差が大きく天候の変化に注意</li><li>島間フライト・フェリー、空港移動の費用を別途試算</li></ul></article>
 <article class="card"><div class="num">BIG NATURE</div><h3>中南米は別の日程で</h3><p>異国情緒あふれる自然と文化は圧巻ですが、1ヶ月で複数国を巡ると長距離移動・高度・安全面のリスクが増加します。</p><ul><li>高山都市の訪問前に健康状態と高度順応計画を確認</li><li>夜行長距離バスは避け、飛行機や専用車チャーターを検討</li><li>国・都市別の最新安全情報と海外旅行保険の加入を確認</li></ul></article>
 </div><div class="callout">イギリス・フランス：鉄道や文化施設は極めて便利ですが、11〜12月は日照時間が短く寒冷で雨が多く、宿泊費も高騰します。クリスマスマーケットが主目的であれば、数日間の短い追加滞在にするのが賢明です。</div></div></section>
+
+<section class="section editorial-media-showcase" style="background:#fdfaf5;border-top:1px solid #e8e2d8;border-bottom:1px solid #e8e2d8;padding:44px 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="kicker">VISUAL INSPIRATION &amp; 4K VIDEO TOURS</div>
+        <h2>📸 南欧の絶景フォトギャラリー＆4K動画ガイド</h2>
+      </div>
+      <p class="sub">ご両親と旅立つ前に、スペイン・ポルトガルの素晴らしい現地の雰囲気を高画質写真と4K映像でお楽しみください。</p>
+    </div>
+
+    <div class="ed-photo-gallery">
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="アルハンブラ宮殿" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇪🇸 グラナダ・アルハンブラ宮殿</strong><span>イスラム建築の粋、ナスル朝宮殿とヘネラリフェ庭園</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="セビリア スペイン広場" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇪🇸 セビリア・スペイン広場</strong><span>壮大な半円形回廊と平坦な散策路</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="リスボン 市電" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇵🇹 リスボン・アルファマ＆黄色い市電28番</strong><span>大西洋の陽光きらめく歴史ある丘陵街</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="ポルト ドン・ルイス1世橋" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇵🇹 ポルト・ドウロ川とドン・ルイス1世橋</strong><span>名門ポートワインセラーと美しいアーチ橋</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <h3 style="font-size:18px;font-weight:800;color:#1b4332;margin-bottom:16px;">🎥 おすすめ4K現地映像ツアー</h3>
+      <div class="ed-video-grid">
+        <a href="https://www.youtube.com/results?search_query=alhambra+granada+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80" alt="アルハンブラ動画">
+            <span class="video-play-badge">▶ 4K映像</span>
+            <span class="video-tag">公式現地ツアー</span>
+          </div>
+          <div class="video-card-body">
+            <h4>グラナダ・アルハンブラ宮殿 4K散策ツアー</h4>
+            <p>ナスル宮殿の繊細な装飾美と庭園のせせらぎを4K超高画質で体験。</p>
+            <span class="video-link-text">YouTubeで動画を見る ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="セビリア動画">
+            <span class="video-play-badge">▶ 4K映像</span>
+            <span class="video-tag">アンダルシア情緒</span>
+          </div>
+          <div class="video-card-body">
+            <h4>セビリア スペイン広場＆大聖堂 4Kウォーキング</h4>
+            <p>オレンジの木が立ち並ぶ街並みとフラメンコの本場の温かな雰囲気を事前チェック。</p>
+            <span class="video-link-text">YouTubeで動画を見る ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=lisbon+portugal+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" alt="リスボン動画">
+            <span class="video-play-badge">▶ 4K映像</span>
+            <span class="video-tag">ポルトガルの旅情</span>
+          </div>
+          <div class="video-card-body">
+            <h4>リスボン ベレンの塔＆名物市電28番 4Kツアー</h4>
+            <p>パステルカラーの街並みと本場エッグタルトの名店があるベレン地区をのんびり鑑賞。</p>
+            <span class="video-link-text">YouTubeで動画を見る ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=renfe+train+spain+how+to+ride" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="スペイン列車乗車ガイド">
+            <span class="video-play-badge">▶ 実用ガイド</span>
+            <span class="video-tag">シニア移動の知恵</span>
+          </div>
+          <div class="video-card-body">
+            <h4>スペイン高速鉄道Renfe乗車＆荷物管理ガイド</h4>
+            <p>ご両親との列車の旅に役立つ荷物置き場の位置や駅エレベーターの利用法。</p>
+            <span class="video-link-text">YouTubeで動画を見る ➔</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section dark" id="route"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / SUGGESTED ROUTE</div><h2>4週間、拠点を絞ってゆったり巡る</h2></div><p class="sub">頻繁に宿を変えず、各都市3〜6泊ずつ連泊する理想的な日程例です。実際のフライトや列車の運行時刻に合わせて順序を調整してください。</p></div><div class="route">
 <div class="stop"><small>DAY 1–5</small><h3>バルセロナ</h3><p>ガウディ建築、ゴシック地区、モンセラット</p></div><div class="stop"><small>DAY 6–9</small><h3>マドリード</h3><p>名門美術館、トレド・セゴビア日帰り</p></div><div class="stop"><small>DAY 10–11</small><h3>コルドバ</h3><p>メスキータと歴史的旧市街</p></div><div class="stop"><small>DAY 12–16</small><h3>セビリア</h3><p>アルカサル、フラメンコ、ロンダ</p></div><div class="stop"><small>DAY 17–19</small><h3>グラナダ</h3><p>アルハンブラ宮殿、穏やかな休息</p></div><div class="stop"><small>DAY 20–25</small><h3>リスボン</h3><p>シントラ日帰り、テージョ川沿いの散歩</p></div><div class="stop"><small>DAY 26–30</small><h3>ポルト</h3><p>ドウロ川、老舗ワイナリー、帰国</p></div></div><p class="route-note">※ グラナダ・セビリアからリスボンへの直通公共交通は長時間を要する場合があります。フライトや乗り継ぎ列車・バスを比較し、移動日には余裕を持たせてください。カナリア諸島を加える場合は本土の都市を1〜2か所減らし、5〜7泊を充てると無理がありません。</p></div></section>
 <section class="section" id="practical"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / GETTING AROUND</div><h2>交通と予約、要点だけを整理</h2></div><p class="sub">コンタクトレス決済対応であっても、海外発行カードがすべての改札で利用できるとは限りません。事前に各都市の公式交通案内を確認しましょう。</p></div><div class="split"><div class="panel"><h3>鉄道・都市間移動</h3><ul><li>スペイン高速鉄道：Renfe（AVE/Avlo）、iryo、OUIGO Spainを日付ごとに比較</li><li>公式サイト・アプリで時刻と運賃を直接確認して予約すると、変更・払戻規定の確認が確実</li><li>比較プラットフォーム（Trainline、Omio等）は検索に便利ですが、決済前に手数料・条件を確認</li><li>ポルトガル鉄道はCP公式サイト・アプリ、都市間バスは運行各社の公式チャンネルを確認</li><li>ハイシーズン・週末・人気路線は日程が決まり次第早めに予約</li></ul></div><div class="panel"><h3>市内交通・ICカード</h3><ul><li>Google MapsとCitymapper（対応都市）をルート検索に活用</li><li>海外決済機能付きデビット・クレジットカードは便利ですが、現地の自動改札での受入可否は都市・路線により異なる</li><li>交通専用カード・パスのほうが確実かつ割安な場合あり：バルセロナT-casual、マドリードMulti等の最新条件を確認</li><li>リスボンNavegante/Viva Viagem、ポルトAndante等は購入・チャージ方法と有効区間を確認</li><li>コンタクトレス乗車はカード1枚あたりの同伴可能人数・乗換割引・上限運賃ルールが異なるため各自個別カードの携行を推奨</li></ul></div></div><table class="table"><thead><tr><th>利用場面</th><th>準備・確認事項</th></tr></thead><tbody><tr><td>決済カード</td><td>海外利用可能な現物カード2枚以上、カード会社での海外利用許可設定、暗証番号確認。現金は小額を分散携行</td></tr><tr><td>公共交通</td><td>訪問都市の公式交通アプリ/サイトでタッチ決済対応路線、モバイルチケット、運賃・乗換規定を確認</td></tr><tr><td>タクシー・配車</td><td>Uber・Bolt・Cabifyは都市ごとに利用可否と料金差あり。公式タクシー乗り場も有効な選択肢</td></tr><tr><td>列車予約</td><td>Renfe・iryo・OUIGO SpainおよびCP公式チャンネル。手荷物枠・座席指定・変更/払戻条件を確認</td></tr></tbody></table><div class="notice"><b>重要：</b> 旅行用海外決済カードがすべての公共交通改札機で交通カードとして機能するとは限りません。実際の対応可否はカードの非接触機能とは別に都市・運行会社側の改札システムにより決定されます。「アンダルシア全域のバス」のように大括りで判断せず、路線ごとに事前確認するのが確実です。</div></div></section>
@@ -2054,6 +2246,95 @@ const EDITORIAL_SECTIONS_HTML = {
 <article class="card"><div class="num">WARM WINTER</div><h3>Add the Canary Islands</h3><p>Pair mainland Spain with dramatic volcanic vistas and subtropical winter sunshine. Combine small-group tours and taxis as local buses can be limited.</p><ul><li>5–7 nights in Tenerife or Gran Canaria</li><li>Substantial temperature differences between coastal resorts and highland peaks</li><li>Budget separately for inter-island flights, ferries, and airport transfers</li></ul></article>
 <article class="card"><div class="num">BIG NATURE</div><h3>Latin America as a Separate Journey</h3><p>The nature and ancient cultures are awe-inspiring, but combining multiple countries in one month involves high altitudes, long distances, and safety considerations.</p><ul><li>Review health conditions and altitude acclimatization plans before high-altitude cities</li><li>Prioritize flights or private drivers over overnight long-distance buses</li><li>Verify current government travel advisories and comprehensive travel insurance coverage</li></ul></article>
 </div><div class="callout">United Kingdom & France: World-class museums and high-speed rail networks make travel effortless, but November and December bring short daylight hours, cold rain, and high holiday hotel rates. If traditional Christmas markets are your goal, consider a focused short addition rather than a full month.</div></div></section>
+
+<section class="section editorial-media-showcase" style="background:#fdfaf5;border-top:1px solid #e8e2d8;border-bottom:1px solid #e8e2d8;padding:44px 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="kicker">VISUAL INSPIRATION &amp; 4K VIDEO TOURS</div>
+        <h2>📸 Southern Europe Visual Gallery &amp; 4K Video Guides</h2>
+      </div>
+      <p class="sub">Explore breathtaking high-resolution photo highlights and immersive 4K field videos before embarking on your journey.</p>
+    </div>
+
+    <div class="ed-photo-gallery">
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="The Alhambra" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇪🇸 The Alhambra, Granada</strong><span>Masterpiece of Moorish art and lush Generalife gardens</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="Plaza de España" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇪🇸 Plaza de España, Seville</strong><span>Magnificent semicircular pavilion and flat promenade</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="Lisbon Tram" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇵🇹 Alfama &amp; Tram 28, Lisbon</strong><span>Iconic yellow tram navigating historic sunlit hills</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="Porto Douro River" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇵🇹 Douro River, Porto</strong><span>Historic wine lodges and scenic Dom Luís I Bridge</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <h3 style="font-size:18px;font-weight:800;color:#1b4332;margin-bottom:16px;">🎥 Recommended 4K Video Field Tours</h3>
+      <div class="ed-video-grid">
+        <a href="https://www.youtube.com/results?search_query=alhambra+granada+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80" alt="Alhambra Video">
+            <span class="video-play-badge">▶ 4K Video</span>
+            <span class="video-tag">Official Tour</span>
+          </div>
+          <div class="video-card-body">
+            <h4>Granada Alhambra 4K Immersive Walking Tour</h4>
+            <p>Experience the exquisite Nasrid Palace plasterwork and water features in crisp 4K.</p>
+            <span class="video-link-text">Watch on YouTube ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="Seville Video">
+            <span class="video-play-badge">▶ 4K Video</span>
+            <span class="video-tag">Andalusia Highlights</span>
+          </div>
+          <div class="video-card-body">
+            <h4>Seville Historic Center &amp; Plaza de España Walk</h4>
+            <p>A relaxing stroll through Seville's cobblestone avenues and vibrant squares.</p>
+            <span class="video-link-text">Watch on YouTube ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=lisbon+portugal+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" alt="Lisbon Video">
+            <span class="video-play-badge">▶ 4K Video</span>
+            <span class="video-tag">Portugal Charm</span>
+          </div>
+          <div class="video-card-body">
+            <h4>Lisbon Belém &amp; Historic Tram 28 Tour</h4>
+            <p>Pastel facades, pastel de nata bakeries, and grand Tagus riverbank views.</p>
+            <span class="video-link-text">Watch on YouTube ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=renfe+train+spain+how+to+ride" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="Renfe Train Video">
+            <span class="video-play-badge">▶ Practical</span>
+            <span class="video-tag">Transit Guide</span>
+          </div>
+          <div class="video-card-body">
+            <h4>Spain Renfe High-Speed Train &amp; Senior Luggage Tips</h4>
+            <p>Practical guide on boarding AVE trains, luggage racks, and station accessibility.</p>
+            <span class="video-link-text">Watch on YouTube ➔</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section dark" id="route"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / SUGGESTED ROUTE</div><h2>4 Weeks: Slow Hub-and-Spoke Travel</h2></div><p class="sub">A relaxed itinerary spending 3–6 nights in each primary hub to minimize packing and moving fatigue. Tailor the sequence to your actual flight and rail timetables.</p></div><div class="route">
 <div class="stop"><small>DAY 1–5</small><h3>Barcelona</h3><p>Gaudí Architecture, Gothic Quarter, Montserrat</p></div><div class="stop"><small>DAY 6–9</small><h3>Madrid</h3><p>Art Museums, Toledo & Segovia Day Trips</p></div><div class="stop"><small>DAY 10–11</small><h3>Córdoba</h3><p>Mezquita & Historic Old Town</p></div><div class="stop"><small>DAY 12–16</small><h3>Seville</h3><p>Real Alcázar, Flamenco, Ronda</p></div><div class="stop"><small>DAY 17–19</small><h3>Granada</h3><p>Alhambra & Generalife, Relaxed Rest</p></div><div class="stop"><small>DAY 20–25</small><h3>Lisbon</h3><p>Sintra Day Tour, Riverfront Promenades</p></div><div class="stop"><small>DAY 26–30</small><h3>Porto</h3><p>Douro River, Historic Wine Cellars, Return</p></div></div><p class="route-note">※ Overland transit directly from Granada or Seville to Lisbon can take considerable time. Compare direct short-haul flights against high-speed rail and coaches, and allocate a dedicated transit buffer day. If adding the Canaries, shorten 1–2 mainland hubs and allocate 5–7 nights comfortably.</p></div></section>
 <section class="section" id="practical"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / GETTING AROUND</div><h2>Transit & Bookings: Core Essentials</h2></div><p class="sub">Just because contactless payment is advertised does not guarantee international foreign bank cards are accepted at all transit turnstiles. Review official city transit guidelines before departure.</p></div><div class="split"><div class="panel"><h3>Trains & Intercity Travel</h3><ul><li>Spanish High-Speed Rail: Compare Renfe (AVE/Avlo), iryo, and OUIGO Spain across your exact dates</li><li>Check timetables and fares directly on official carrier sites to ensure clear refund and change conditions</li><li>Comparison platforms (Trainline, Omio) are handy for initial search, but check booking fees and terms before final payment</li><li>For Portugal, check CP's official website and mobile app; for buses, check official operator portals directly</li><li>Reserve high-speed rail seats early once dates are fixed, especially for peak holiday departures and weekend routes</li></ul></div><div class="panel"><h3>Urban Transit & Smart Cards</h3><ul><li>Use Google Maps and Citymapper for real-time station step-free routing</li><li>Prepaid multi-currency cards (Travel Wallet/Wise) are convenient, but transit gate acceptance varies by city and line</li><li>Dedicated local smart cards can be more reliable and cost-effective: e.g. T-casual in Barcelona, Multi in Madrid</li><li>For Lisbon Navegante/Viva Viagem and Porto Andante, confirm pass purchase stations, fare zones, and refill rules</li><li>Contactless bank card entry typically does not permit tapping multiple passengers on a single card; carry individual physical cards</li></ul></div></div><table class="table"><thead><tr><th>Scenario</th><th>Preparation & Verification</th></tr></thead><tbody><tr><td>Payment Cards</td><td>At least two physical international credit/debit cards, verify overseas transaction activation and PIN. Keep emergency cash split</td></tr><tr><td>Public Transit</td><td>Confirm contactless card acceptance, ticket apps, and transfer rules on the official municipal transport website</td></tr><tr><td>Taxis & Rideshare</td><td>Uber, Bolt, and Cabify vary in local availability and pricing. Official taxi ranks outside central stations are solid backups</td></tr><tr><td>Train Tickets</td><td>Book via Renfe, iryo, OUIGO Spain, and CP official portals. Check baggage allowances and change/cancellation terms</td></tr></tbody></table><div class="notice"><b>Important:</b> Never assume international contactless debit cards will seamlessly work as metro passes in every city. System compatibility is determined by local transit authorities and gate validators, not just card brand networks. Always confirm requirements on a line-by-line basis.</div></div></section>
@@ -2070,6 +2351,95 @@ const EDITORIAL_SECTIONS_HTML = {
 <article class="card"><div class="num">WARM WINTER</div><h3>增加加那利群岛</h3><p>在西班牙本土行程中叠加火山奇观与冬日暖阳。岛内仅靠公交略显不便，建议结合跟团与包车出租。</p><ul><li>特内里费或大加那利岛连住5~7晚</li><li>海岸与高山温差显著，天气变化多端</li><li>岛际航班、渡轮及机场往返费用须单独核算</li></ul></article>
 <article class="card"><div class="num">BIG NATURE</div><h3>中拉美建议作为独立行程</h3><p>异域自然与古代文明震撼人心，但若在一月内走访多国，长途奔波、高原反应及安全变数将大幅增加。</p><ul><li>探访高山城市前务必检查身体状况并规划适应期</li><li>避免搭乘夜间长途巴士，优先选择机票或专属包车</li><li>实时查询各国城市安全提示并购买完备境外旅游险</li></ul></article>
 </div><div class="callout">英国·法国：铁路网与文化场馆极为便捷，但11~12月昼短夜长、湿冷多雨且住宿成本高昂。若以圣诞市集为核心目的，建议作为短期停留的补充方案。</div></div></section>
+
+<section class="section editorial-media-showcase" style="background:#fdfaf5;border-top:1px solid #e8e2d8;border-bottom:1px solid #e8e2d8;padding:44px 0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="kicker">VISUAL INSPIRATION &amp; 4K VIDEO TOURS</div>
+        <h2>📸 南欧绝美风光画廊与4K实景视频导览</h2>
+      </div>
+      <p class="sub">与长辈出发前，通过高品质实景照片和4K超清漫步视频，抢先身临其境感受西班牙与葡萄牙的独特风情。</p>
+    </div>
+
+    <div class="ed-photo-gallery">
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="阿尔罕布拉宫" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇪🇸 格拉纳达·阿尔罕布拉宫</strong><span>摩尔艺术巅峰之作，纳斯里德宫与夏宫花园</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="塞维利亚西班牙广场" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇪🇸 塞维利亚·西班牙广场</strong><span>壮丽半圆形回廊，平坦步道与彩绘瓷砖长椅</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80" alt="里斯本电车" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇵🇹 里斯本·阿尔法玛老城与28路黄色电车</strong><span>沐浴大西洋暖阳的百年历史山城街景</span></div>
+      </div>
+      <div class="ed-photo-item">
+        <img src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80" alt="波尔图杜罗河" loading="lazy">
+        <div class="ed-photo-caption"><strong>🇵🇹 波尔图·杜罗河畔与路易一世大桥</strong><span>波特酒窖胜地与埃菲尔门徒设计的铁艺大桥</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <h3 style="font-size:18px;font-weight:800;color:#1b4332;margin-bottom:16px;">🎥 推荐4K实景漫步视频导览</h3>
+      <div class="ed-video-grid">
+        <a href="https://www.youtube.com/results?search_query=alhambra+granada+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=600&q=80" alt="阿尔罕布拉宫实景">
+            <span class="video-play-badge">▶ 4K视频</span>
+            <span class="video-tag">官方实景漫步</span>
+          </div>
+          <div class="video-card-body">
+            <h4>格拉纳达阿尔罕布拉宫4K全景云漫步</h4>
+            <p>超高清身临其境领略雕花石膏细部与微风泉水声。</p>
+            <span class="video-link-text">前往YouTube观看视频 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="塞维利亚实景">
+            <span class="video-play-badge">▶ 4K视频</span>
+            <span class="video-tag">安达卢西亚风情</span>
+          </div>
+          <div class="video-card-body">
+            <h4>塞维利亚西班牙广场与大教堂4K街景漫步</h4>
+            <p>感受橘子树夹道的安达卢西亚暖阳与弗拉门戈故乡魅力。</p>
+            <span class="video-link-text">前往YouTube观看视频 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=lisbon+portugal+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=600&q=80" alt="里斯本实景">
+            <span class="video-play-badge">▶ 4K视频</span>
+            <span class="video-tag">葡萄牙浪漫</span>
+          </div>
+          <div class="video-card-body">
+            <h4>里斯本贝伦塔与经典28路电车4K游览</h4>
+            <p>欣赏彩色瓷砖老建筑与正宗蛋挞老店所在的贝伦滨河区。</p>
+            <span class="video-link-text">前往YouTube观看视频 ➔</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=renfe+train+spain+how+to+ride" target="_blank" rel="noopener noreferrer" class="ed-video-card">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80" alt="西班牙火车乘坐">
+            <span class="video-play-badge">▶ 实用经验</span>
+            <span class="video-tag">长辈出行技巧</span>
+          </div>
+          <div class="video-card-body">
+            <h4>西班牙Renfe高铁乘车实拍与行李存放技巧</h4>
+            <p>专为陪伴父母定制：车厢大件行李架位置与车站无障碍电梯向导。</p>
+            <span class="video-link-text">前往YouTube观看视频 ➔</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section dark" id="route"><div class="wrap"><div class="section-head"><div><div class="kicker">02 / SUGGESTED ROUTE</div><h2>4周，以核心枢纽慢节奏漫游</h2></div><p class="sub">避免频繁更换酒店，每座核心城市连续入住3~6晚的理想示范日程。请根据实际航班与火车时刻微调次序。</p></div><div class="route">
 <div class="stop"><small>DAY 1–5</small><h3>巴塞罗那</h3><p>高迪建筑群、哥特区、蒙特塞拉特修道院</p></div><div class="stop"><small>DAY 6–9</small><h3>马德里</h3><p>顶级美术馆群、托莱多与塞哥维亚一日游</p></div><div class="stop"><small>DAY 10–11</small><h3>科尔多瓦</h3><p>大清真寺与历史犹太区</p></div><div class="stop"><small>DAY 12–16</small><h3>塞维利亚</h3><p>王宫、正宗弗拉门戈、龙达悬崖小镇</p></div><div class="stop"><small>DAY 17–19</small><h3>格拉纳达</h3><p>阿尔罕布拉宫、舒缓身心慢休养</p></div><div class="stop"><small>DAY 20–25</small><h3>里斯本</h3><p>辛特拉一日游、特茹河畔散步</p></div><div class="stop"><small>DAY 26–30</small><h3>波尔图</h3><p>杜罗河谷、百年酒庄品鉴、启程返程</p></div></div><p class="route-note">※ 从格拉纳达或塞维利亚直达里斯本的陆路交通耗时较长。建议对比直飞航班与换乘列车/巴士，预留充足转运日。若加入加那利群岛，建议删减1~2个本土城市并分配5~7晚，行程方能从容舒心。</p></div></section>
 <section class="section" id="practical"><div class="wrap"><div class="section-head"><div><div class="kicker">03 / GETTING AROUND</div><h2>交通与预约，核心要点梳理</h2></div><p class="sub">即使闸机标有感应闪付标志，海外发行银行卡也不保证在所有线路上通行。出发前请务必确认各城市官方交通指南。</p></div><div class="split"><div class="panel"><h3>铁路与城际交通</h3><ul><li>西班牙高铁：跨日期比对Renfe（AVE/Avlo）、iryo与OUIGO Spain</li><li>优先在官方App与网站核对班次票价并直接出票，便于掌握改签退票政策</li><li>比价平台（Trainline、Omio等）便于路线搜索，但支付前须核对手续费与票价条款</li><li>葡萄牙铁路认准CP官方网站与App，城际长途大巴查阅各运营公司官网渠道</li><li>旺季、周末及热门时段线路一旦确定日期建议及早锁票</li></ul></div><div class="panel"><h3>市内交通与公交卡</h3><ul><li>活用Google Maps与Citymapper（支持城市）规划无障碍换乘动线</li><li>境外多币种芯片卡虽便捷，但当地闸机对境外发卡行的接受度因城市线路而异</li><li>专职交通储值卡/通票往往更稳妥划算：巴塞罗那T-casual、马德里Multi等</li><li>里斯本Navegante/Viva Viagem、波尔图Andante须确认购卡充值与收费分区</li><li>非接触式刷卡进站通常无法一卡刷多人，建议随行家庭成员每人备独立实体卡</li></ul></div></div><table class="table"><thead><tr><th>出行场景</th><th>准备与核查事项</th></tr></thead><tbody><tr><td>支付卡片</td><td>至少2张境外芯片卡，确认开通境外交易与PIN密码。现金小额分散携带</td></tr><tr><td>公共交通</td><td>在城市交通官网核验非接触刷卡支持线路、乘车App、票价及换乘规则</td></tr><tr><td>出租与网约车</td><td>Uber、Bolt、Cabify在各城可用度与价格不同。车站正规出租候车点为可靠备选</td></tr><tr><td>火车预订</td><td>Renfe、iryo、OUIGO Spain及CP官方渠道。核对行李限额、选座及退改签细则</td></tr></tbody></table><div class="notice"><b>重要提示：</b> 绝不能预设境外卡可在所有公共交通闸机直接刷卡进站。实际兼容性由各城市公交运营商闸机系统决定。切勿将“安达卢西亚巴士”等区域一概而论，分线路确认最为稳妥。</div></div></section>
@@ -2090,10 +2460,10 @@ const FOOTER_TRANSLATIONS = {
 };
 
 const DOC_TITLES = {
-  ko: '가족과 함께, 한 달의 세계 여행 · 글로벌 에디션',
-  ja: '家族とともに、世界を巡る1ヶ月の旅 · グローバルエディション',
-  en: 'A Month Together Around the World · Global Family Edition',
-  zh: '全家同行，环游世界一个月 · 全球特别版'
+  ko: '가족을 위한 한 달 남유럽 여행 플래너',
+  ja: '家族のための南欧1ヶ月旅行プランナー',
+  en: 'One-Month Southern Europe Family Travel Planner',
+  zh: '全家畅游南欧一个月旅行规划师'
 };
 
 
@@ -14236,6 +14606,55 @@ const REGION_DESC_I18N = {
     "zh": "捷克（布拉格）、匈牙利及中欧邻近区域"
   },
   "en": {
+    "nav_routes": "🧭 3-Route Compare",
+    "nav_guide": "📖 Travel Guide",
+    "nav_tools": "🛠️ Travel Tools",
+    "bnav_routes": "Routes",
+    "bnav_settings": "Settings",
+    "btn_settings": "Settings",
+    "hero_btn_plan": "⚡ Configure Planner",
+    "hero_btn_compare": "🧭 Compare 3 Routes",
+    "curated_kicker": "02 / CURATED ROUTE COMPARISON",
+    "curated_title": "Comparison of 3 Recommended Family Routes",
+    "curated_sub": "A comprehensive evaluation of 3 key options based on parents' stamina in their late 60s, budget ($15k–$23k USD / 20M–30M KRW), and preferences.",
+    "c1_badge": "⭐ Best for Parents' Stamina",
+    "c1_title": "1. Spain Exclusive<br><span class=\"route-subtitle\">(Barcelona + Southern Andalusia)</span>",
+    "c1_price_label": "Est. Budget",
+    "c1_price_val": "~$13,000 – $14,500 USD (~17M–18.8M KRW)",
+    "c1_price_tag": "Surplus Budget Saved",
+    "c1_path_title": "📍 Suggested Route",
+    "c1_path_flow": "Barcelona ➔ Granada ➔ Malaga / Ronda / Nerja ➔ Seville / Cordoba",
+    "c1_merits_title": "✨ Key Advantages & Analysis",
+    "c1_merits_list": "<li><strong>Minimal Fatigue:</strong> Leisurely stays of 4–8 nights per hub city, ideal for parents in their late 60s.</li><li><strong>Exotic Culture Replacement:</strong> Moorish Islamic heritage in Andalusia (Seville, Granada) satisfies desires for rich, exotic culture.</li><li><strong>Budget Surplus &amp; Luxury:</strong> Remaining funds allow upscale apartments, central 4-star hotels, and fine dining.</li>",
+    "c1_btn": "✓ Apply Spain & Andalusia to Planner",
+    "c2_badge": "⚖️ Best Value & Variety Balance",
+    "c2_title": "2. S. Spain / Barcelona<br><span class=\"route-subtitle\">+ Portugal</span>",
+    "c2_price_label": "Est. Budget",
+    "c2_price_val": "~$13,800 – $15,200 USD (~18M–19.8M KRW)",
+    "c2_price_tag": "Fits Within Budget",
+    "c2_path_title": "📍 Suggested Route",
+    "c2_path_flow": "Barcelona ➔ S. Spain (Seville/Granada/Malaga) ➔ Portugal (Lisbon/Porto/Algarve)",
+    "c2_merits_title": "✨ Key Advantages & Analysis",
+    "c2_merits_list": "<li><strong>Cost-Effective Diversity:</strong> Portugal’s reasonable prices let you experience two distinct nations within the budget ceiling.</li><li><strong>Seamless Overland Transit:</strong> Smooth connections from Seville into southern Portugal (Algarve) or Lisbon.</li><li><strong>Rich Cultural Contrast:</strong> Contrast Spain's lively flamenco with Portugal's melancholic fado and Atlantic seafood.</li>",
+    "c2_btn": "✓ Apply Iberia 2-Country to Planner",
+    "c3_badge": "⚠️ Bucket List vs Fatigue & Budget",
+    "c3_title": "3. S. America Grand Tour<br><span class=\"route-subtitle\">(Peru · Argentina · Brazil)</span>",
+    "c3_price_label": "Est. Budget",
+    "c3_price_val": "~$19,000 – $23,000 USD (~25M–30M KRW)",
+    "c3_price_tag": "Significantly Exceeds Budget",
+    "c3_path_title": "📍 Anticipated Route",
+    "c3_path_flow": "Peru (Lima/Cusco/Machu Picchu) ➔ Argentina (Buenos Aires) ➔ Iguazu Falls ➔ Brazil (Rio)",
+    "c3_merits_title": "⚠️ Merits & Key Constraints",
+    "c3_merits_list": "<li><strong>Advantage:</strong> Realizes lifelong bucket-list dreams like Machu Picchu and Iguazu Falls.</li><li><strong>Severe Physical Strain:</strong> 25+ hours round-trip flights and frequent domestic/international flights place massive strain on seniors.</li><li><strong>High Altitude &amp; Cost:</strong> Altitude risks at Cusco (3,400m) and costs exceed budget by $5,000–$8,000 USD.</li>",
+    "c3_btn": "Compare Latin America Itinerary",
+    "timeline_kicker": "03 / 30-DAY ITINERARY & TIMELINE",
+    "timeline_title": "City Highlights & 30-Day Daily Timeline",
+    "timeline_sub": "Click tabs to filter by city stops, or drag & drop cards to reorder your custom family itinerary.",
+    "editorial_acc_badge": "In-Depth Report",
+    "editorial_acc_title": "📖 Southern Europe Family Travel Editorial Guide & Checklist",
+    "editorial_acc_desc": "10 key guides covering route choices, hub travel, detailed budgets, senior care, and booking orders",
+    "editorial_acc_expand": "Expand Guide ▼",
+    "editorial_acc_collapse": "Collapse ▲",
     "nav_transit": "🚇 Smart Transit",
     "nav_hotels": "🏨 Value Hotels (24)",
     "bnav_transit": "Transit",
@@ -14285,6 +14704,55 @@ const REGION_DESC_I18N = {
 
 const I18N_DICTIONARY = {
   "ko": {
+    "nav_routes": "🧭 3대 코스 비교",
+    "nav_guide": "📖 여행 가이드",
+    "nav_tools": "🛠️ 여행 도구",
+    "bnav_routes": "3대코스",
+    "bnav_settings": "설정",
+    "btn_settings": "설정",
+    "hero_btn_plan": "⚡ 플래너 세팅하기",
+    "hero_btn_compare": "🧭 3대 추천 코스 비교",
+    "curated_kicker": "02 / CURATED ROUTE COMPARISON",
+    "curated_title": "가족 여행 3대 추천 코스 비교 분석",
+    "curated_sub": "60대 중후반 부모님의 체력, 예산 범위(2,000만~3,000만 원), 아버님의 취향을 정밀 분석한 3대 핵심 비교 옵션입니다.",
+    "c1_badge": "⭐ 부모님 체력 최적화 추천",
+    "c1_title": "1. 스페인 단독<br><span class=\"route-subtitle\">(바르셀로나 + 남부 안달루시아)</span>",
+    "c1_price_label": "예상 예산",
+    "c1_price_val": "약 1,700만 ~ 1,880만 원",
+    "c1_price_tag": "예산 여유 확보",
+    "c1_path_title": "📍 추천 동선",
+    "c1_path_flow": "바르셀로나 ➔ 그라나다 ➔ 말라가 / 론다 / 네르하 ➔ 세비야 / 코르도바",
+    "c1_merits_title": "✨ 핵심 장점 & 분석",
+    "c1_merits_list": "<li><strong>피로도 최소화:</strong> 한 도시당 4~8박씩 여유 있게 머물러 60대 중후반 부모님 체력 관리에 가장 이상적입니다.</li><li><strong>남미풍 감성 대체:</strong> 안달루시아(세비야, 그라나다)는 이슬람·무어 문화가 융합된 이국적 정취로 아버님의 남미 취향을 훌륭히 만족시켜 드립니다.</li><li><strong>예산 여유 &amp; 럭셔리:</strong> 2,000만 원 예산 중 잔여 금액으로 중심가 프리미엄 레지던스/호텔 숙박과 수준 높은 미식을 즐길 수 있습니다.</li>",
+    "c1_btn": "✓ 플래너에 스페인·안달루시아 적용",
+    "c2_badge": "⚖️ 가성비 &amp; 다채로움 밸런스",
+    "c2_title": "2. 스페인 남부 / 바르셀로나<br><span class=\"route-subtitle\">+ 포르투갈</span>",
+    "c2_price_label": "예상 예산",
+    "c2_price_val": "약 1,800만 ~ 1,980만 원",
+    "c2_price_tag": "2,000만 원 내 안착",
+    "c2_path_title": "📍 추천 동선",
+    "c2_path_flow": "바르셀로나 ➔ 스페인 남부(세비야/그라나다/말라가) ➔ 포르투갈(리스본/포르투/알가르브 해안)",
+    "c2_merits_title": "✨ 핵심 장점 & 분석",
+    "c2_merits_list": "<li><strong>가성비 &amp; 다채로움:</strong> 포르투갈은 서유럽 대비 물가가 저렴해 스페인과 포르투갈 두 국가를 다채롭게 경험하면서도 예산 범위를 엄수합니다.</li><li><strong>편리한 육로 연결:</strong> 세비야에서 포르투갈 남부(알가르브)나 리스본으로 이동하는 동선이 매우 매끄럽게 연결됩니다.</li><li><strong>풍부한 문화적 대비:</strong> 스페인의 열정적인 플라멩코와 포르투갈의 서정적인 파두(Fado), 대서양의 신선한 해산물을 고루 맛볼 수 있습니다.</li>",
+    "c2_btn": "✓ 플래너에 이베리아 2개국 적용",
+    "c3_badge": "⚠️ 버킷리스트 vs 체력·예산 제약",
+    "c3_title": "3. 남미 주요국 투어<br><span class=\"route-subtitle\">(페루 · 아르헨티나 · 브라질)</span>",
+    "c3_price_label": "예상 예산",
+    "c3_price_val": "약 2,500만 ~ 3,000만 원",
+    "c3_price_tag": "예산 초과 주의",
+    "c3_path_title": "📍 예상 동선",
+    "c3_path_flow": "페루(리마/쿠스코/마추픽추) ➔ 아르헨티나(부에노스아이레스) ➔ 이과수 폭포 ➔ 브라질(리우데자네이루)",
+    "c3_merits_title": "⚠️ 장점 및 주요 제약사항",
+    "c3_merits_list": "<li><strong>장점:</strong> 마추픽추, 이과수 폭포 등 아버님의 평생 버킷리스트를 직접 실현할 수 있습니다.</li><li><strong>체력 부담 극심:</strong> 왕복 25시간 이상의 초장거리 비행과 잦은 국가 간 항공 탑승으로 60대 부모님 체력에 매우 큰 무리가 따릅니다.</li><li><strong>고산지대 위험:</strong> 쿠스코 및 마추픽추(해발 2,400~3,400m) 고산병 리스크와 2,000만 원 기준 예산을 500만~1,000만 원가량 크게 초과합니다.</li>",
+    "c3_btn": "남미 투어 세부 일정 비교하기",
+    "timeline_kicker": "03 / 30-DAY ITINERARY & TIMELINE",
+    "timeline_title": "도시별 훑어보기 & 30일 일자별 타임라인",
+    "timeline_sub": "상단 탭을 눌러 주요 도시별 일정을 훑어보거나, 날짜 카드를 드래그하여 가족 맞춤 일정으로 재배치할 수 있습니다.",
+    "editorial_acc_badge": "심층 리포트",
+    "editorial_acc_title": "📖 남유럽 가족 여행 전문 에디토리얼 가이드 & 체크리스트",
+    "editorial_acc_desc": "방향 설정, 거점 이동 팁, 예산 세부 내역, 부모님 케어 수칙, 예약 순서 등 10대 핵심 가이드",
+    "editorial_acc_expand": "펼쳐보기 ▼",
+    "editorial_acc_collapse": "접기 ▲",
     "nav_transit": "🚇 스마트 대중교통",
     "nav_hotels": "🏨 추천 호텔 (24선)",
     "bnav_transit": "대중교통",
@@ -14309,28 +14777,27 @@ const I18N_DICTIONARY = {
     "bnav_attractions": "명소",
     "bnav_phrases": "회화",
     "bnav_top": "위로",
-
     "brand_title": "SLOW·TRAVEL",
-    "brand_sub": "GLOBAL EDITION",
+    "brand_sub": "남유럽 가족 여행 플래너",
     "nav_planner": "📅 맞춤 플래너",
-    "nav_dining": "🍽 필수 미식·맛집 (95선)",
-    "nav_attractions": "🏛 핵심 명소 (80선)",
+    "nav_dining": "🍽 필수 미식·맛집 (92선)",
+    "nav_attractions": "🏛 핵심 명소 (73선)",
     "nav_phrases": "🗣 지역별 필수 여행 회화",
     "nav_search": "🔍 실시간 AI 검색",
     "nav_compare": "권역 비교",
     "nav_budget": "예산",
     "cal_download_btn": "📅 캘린더(.ics) 다운로드",
-    "hero_eyebrow": "A month together · Global Family Journey",
-    "hero_h1": "가족과 함께,<br><em>전 세계 한 달의 여정</em>",
-    "hero_lead": "부모님과 여유롭게 머물며 남유럽·서유럽·중남미·미국의 도시와 풍경을 즐기는 여행. 1일 1.5스팟과 오후 시에스타 휴식 원칙으로 편안하게 설계되었습니다.",
-    "planner_title": "글로벌 맞춤 플래너 & 실시간 재조정",
-    "planner_sub": "원하는 권역과 날짜를 세팅하면 1일 1.5스팟 시에스타 루틴과 캘린더가 실시간으로 재조정됩니다.",
+    "hero_eyebrow": "A Month Together · Southern Europe & Iberia",
+    "hero_h1": "가족을 위한 한 달 남유럽 여행 플래너",
+    "hero_lead": "60대 부모님과 함께하는 여유로운 30일 여정. 스페인 남부 안달루시아와 포르투갈의 정취를 1일 1.5스팟, 오후 시에스타 휴식 루틴으로 편안하게 설계한 맞춤 슬로우 트래블 플래너입니다.",
+    "planner_title": "남유럽 가족 맞춤 플래너 & 실시간 재조정",
+    "planner_sub": "여행 권역과 일정을 선택하면 60대 부모님을 위한 1일 1.5스팟 시에스타 루틴과 예상 예산이 실시간으로 재조정됩니다.",
     "label_region": "🌍 여행 권역 선택",
     "label_start_date": "📅 여행 시작일",
     "label_duration": "⏱ 여행 기간",
     "label_pacing": "👥 가족 동행 페이스",
     "btn_recalc": "⚡ 플랜 즉시 재조정",
-    "opt_pacing_relaxed": "부모님 동행 (오후 시에스타 의무 휴식)",
+    "opt_pacing_relaxed": "부모님 동행 (오후 시에스타 필수)",
     "opt_pacing_balanced": "균형형 (시니어 친화 + 핵심 전망대)",
     "kpi_score_label": "시즌 판정 & 가성비 지수",
     "kpi_budget_label": "3인 가족 총 예상 예산",
@@ -14338,7 +14805,7 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "부모님 피로도 케어 지수",
     "kpi_senior_val": "1.5 스팟 / 일",
     "kpi_senior_sub": "13:00~15:30 온수 샤워 낮잠 슬롯",
-    "dining_title": "꼭 먹고 가야 할 음식 & 검증 맛집 (사진 포함 95선)",
+    "dining_title": "꼭 먹고 가야 할 음식 & 검증 맛집 (92선)",
     "dining_sub": "영국·프랑스·이탈리아·스페인·포르투갈·중유럽·중남미·미국의 대표 미식. 운영시간, 외국어 가능 여부, 연락처 및 예약 링크 수록.",
     "dining_search_ph": "🔍 국가/도시(런던, 파리, 로마, 바르셀로나, 뉴욕), 메뉴(피시앤칩스, 스테이크, 타코), 키워드 검색...",
     "btn_dining_search": "미식 검색",
@@ -14350,7 +14817,7 @@ const I18N_DICTIONARY = {
     "lbl_booking": "예약방식",
     "btn_map": "지도",
     "btn_thefork": "🍴 TheFork 예약 확인",
-    "attractions_title": "꼭 가봐야 할 핵심 명소 디렉토리 (사진 & 보행 가이드)",
+    "attractions_title": "꼭 가봐야 할 핵심 명소 디렉토리 (사진 & 보행 가이드 73선)",
     "attractions_sub": "전 세계 랜드마크 고화질 사진, 부모님 무릎·보행 가이드, 엘리베이터/셔틀 정보, 공식 예매 링크.",
     "lbl_highlight": "핵심 포인트:",
     "lbl_senior_walk": "부모님 보행 가이드:",
@@ -14368,7 +14835,44 @@ const I18N_DICTIONARY = {
     "btn_perplexity_search": "Perplexity AI 분석",
     "btn_google_map": "Google 지도 보기",
     "btn_official_tickets": "공식 예매",
-    "ai_search_ph": "궁금한 사항을 입력하세요 (예: 런던 타워브리지 입장료 및 엘리베이터, 2026 말라가 조명쇼 점등일, 파리 루브르 박물관 화요일 휴관 대체 일정)..."
+    "ai_search_ph": "궁금한 사항을 입력하세요 (예: 런던 타워브리지 입장료 및 엘리베이터, 2026 말라가 조명쇼 점등일, 파리 루브르 박물관 화요일 휴관 대체 일정)...",
+    "kpi_budget_sub": "항공·숙소·식비·교통·예비비 올인원",
+    "settings_panel_title": "⚙️ 맞춤 여행 환경 설정",
+    "lbl_export": "🖨️ 내보내기:",
+    "hero_tag_party": "👥 3인 가족 기준",
+    "hero_tag_duration": "🗓️ 29박 30일 완주형",
+    "hero_tag_siesta": "☕ 13:00~15:30 온수 샤워 낮잠 슬롯",
+    "hero_tag_transit": "🚆 대중교통·고속철 중심",
+    "hero_tag_budget": "💰 예산 2,000만~3,000만 원",
+    "planner_advanced_btn": "상세 설정 (숙소 등급 · 동행 페이스)",
+    "btn_list_view": "📋 리스트 뷰",
+    "btn_map_view": "🗺 지도 뷰 (Leaflet Map)",
+    "tab_transit_guide": "🚇 도시별 대중교통 &amp; 교통카드 완전 정복",
+    "tab_hotel_guide": "🏨 지역별 가성비·시니어 친화 호텔 (24선)",
+    "chat_bot_title": "남유럽 가족 여행 AI 가이드",
+    "chat_bot_status": "<span class=\"status-indicator\"></span>실시간 온디바이스 AI (오프라인 지원)",
+    "dining_view_count": "전 세계 92대 검증 맛집 리스트",
+    "landmark_view_count": "전 세계 73대 핵심 랜드마크",
+    "kpi_score_val": "94점 (골든 창)",
+    "kpi_season_desc": "11월 숄더 시즌 · 대기열 짧고 쾌적",
+    "kpi_fest_val": "4개 축제 연계",
+    "kpi_fest_sub": "크리스마스 조명 & 전통 마켓 매칭",
+    "opt_region_iberia": "🇪🇸🇵🇹 남유럽 (이베리아 + 안달루시아 + 마데이라 30일)",
+    "opt_region_iberia_dubai": "🇪🇸🇵🇹🇦🇪 이베리아 + 두바이 에미레이트 경유 결합 (30일 골든)",
+    "opt_region_dubai_stopover": "🇦🇪 두바이 경유 & 스톱오버 럭셔리 슬로우 (3~5일 핵심)",
+    "opt_region_west_central": "🇬🇧🇫🇷🇮🇹🇦🇹🇨🇿 서·중유럽 (런던·파리·로마·비엔나·프라하 30일)",
+    "opt_region_latin": "🇲🇽🇵🇪🇦🇷 중남미 (멕시코시티·오악사카·쿠스코·마추픽추 30일)",
+    "opt_region_usa": "🇺🇸 미국 전역 (샌프란시스코·그랜드캐니언·LA·뉴욕·하와이 30일)",
+    "opt_dur_30": "30일 (29박 여유 완주형)",
+    "opt_dur_21": "21일 (3주 핵심 거점형)",
+    "opt_dur_14": "14일 (2주 하이라이트형)",
+    "opt_party_2": "2인 (부부 / 모녀)",
+    "opt_party_3": "3인 (부모님 + 자녀 1인)",
+    "opt_party_4": "4인 (가족 4인)",
+    "opt_party_5": "5인 (대가족 5인)",
+    "opt_tier_economy": "실속 알뜰형 (스마트 가성비)",
+    "opt_tier_standard": "편안한 4성급 (센트럴 패밀리)",
+    "opt_tier_luxury": "프리미엄 럭셔리 (5성급 & VIP투어)"
   },
   "en": {
     "nav_transit": "🚇 Smart Transit",
@@ -14381,34 +14885,34 @@ const I18N_DICTIONARY = {
     "transit_hotels_title": "Smart Transit Master & Senior-Friendly Value Hotels (Top 24)",
     "transit_hotels_sub": "Optimal transit smart card guides, fare rules, airport routes, and flat-ground value hotels with elevators.",
     "brand_title": "SLOW·TRAVEL",
-    "brand_sub": "GLOBAL EDITION",
+    "brand_sub": "남유럽 가족 여행 플래너",
     "nav_planner": "📅 Custom Planner",
-    "nav_dining": "🍽 Must-Eat & Dining (95+)",
-    "nav_attractions": "🏛 Top Landmarks (80+)",
+    "nav_dining": "🍽 Must-Eat & Dining (92 Curated)",
+    "nav_attractions": "🏛 Top Landmarks (73 Curated)",
     "nav_phrases": "🗣 Essential Local Phrases",
     "nav_search": "🔍 Live AI Search",
     "nav_compare": "Regions",
     "nav_budget": "Budget",
     "cal_download_btn": "📅 Download Calendar (.ics)",
-    "hero_eyebrow": "A month together · Global Family Journey",
+    "hero_eyebrow": "A Month Together · Southern Europe & Iberia",
     "hero_h1": "Together with Family,<br><em>A Month Journey Across the World</em>",
     "hero_lead": "A relaxed journey for families and seniors covering Southern & Western Europe, Latin America, and the USA. Specially designed with the 1.5 spots/day principle and afternoon siesta relaxation slots.",
-    "planner_title": "Global Custom Planner & Real-Time Adjustment",
+    "planner_title": "Southern Europe Family Custom Planner & Real-Time Sync",
     "planner_sub": "Select your desired region and departure date to dynamically adjust the 1.5 spots/day routine and sync your calendar in real-time.",
     "label_region": "🌍 Select Travel Region",
     "label_start_date": "📅 Departure Start Date",
     "label_duration": "⏱ Travel Duration",
     "label_pacing": "👥 Family Travel Pace",
     "btn_recalc": "⚡ Reconfigure Plan Now",
-    "opt_pacing_relaxed": "Senior-Friendly (Mandatory afternoon siesta)",
-    "opt_pacing_balanced": "Balanced (Senior care + Key viewpoints)",
+    "opt_pacing_relaxed": "Senior-Friendly (Mandatory Afternoon Siesta)",
+    "opt_pacing_balanced": "Balanced (Senior-Focused + Key Overlooks)",
     "kpi_score_label": "Season & Cost-Efficiency",
     "kpi_budget_label": "Est. Total Budget (3 Persons)",
     "kpi_fest_label": "Synchronized Festivals",
     "kpi_senior_label": "Senior Fatigue Care",
     "kpi_senior_val": "1.5 Spots / Day",
-    "kpi_senior_sub": "13:00~15:30 Hot shower & nap slot",
-    "dining_title": "Must-Eat Local Dishes & Verified Restaurants (95 Curated Spots)",
+    "kpi_senior_sub": "13:00–15:30 Hot Shower & Siesta Slot",
+    "dining_title": "Must-Eat Local Dishes & Verified Restaurants (92 Curated Spots)",
     "dining_sub": "Iconic gastronomy across UK, France, Italy, Spain, Portugal, Central Europe, Latin America, and USA. Includes hours, language support, contacts, and booking links.",
     "dining_search_ph": "🔍 Search city (London, Paris, Rome, New York), dish (fish and chips, steak, taco), keyword...",
     "btn_dining_search": "Search Dining",
@@ -14438,9 +14942,152 @@ const I18N_DICTIONARY = {
     "btn_perplexity_search": "Perplexity AI Analysis",
     "btn_google_map": "View on Google Maps",
     "btn_official_tickets": "Official Tickets",
-    "ai_search_ph": "Enter search topic (e.g. London Tower Bridge elevators, 2026 Malaga Christmas light show, Paris Louvre Tuesday closures)..."
+    "ai_search_ph": "Enter search topic (e.g. London Tower Bridge elevators, 2026 Malaga Christmas light show, Paris Louvre Tuesday closures)...",
+    "kpi_budget_sub": "All-in-one flights, lodging, meals, transit & contingency",
+    "nav_routes": "🧭 3-Route Compare",
+    "nav_guide": "📖 Travel Guide",
+    "nav_tools": "🛠️ Travel Tools",
+    "bnav_routes": "Routes",
+    "bnav_settings": "Settings",
+    "btn_settings": "Settings",
+    "hero_btn_plan": "⚡ Configure Planner",
+    "hero_btn_compare": "🧭 Compare 3 Routes",
+    "curated_kicker": "02 / CURATED ROUTE COMPARISON",
+    "curated_title": "Comparison of 3 Recommended Family Routes",
+    "curated_sub": "A comprehensive evaluation of 3 key options based on parents' stamina in their late 60s, budget ($15k–$23k USD / 20M–30M KRW), and preferences.",
+    "c1_badge": "⭐ Best for Parents' Stamina",
+    "c1_title": "1. Spain Exclusive<br><span class=\"route-subtitle\">(Barcelona + Southern Andalusia)</span>",
+    "c1_price_label": "Est. Budget",
+    "c1_price_val": "~$13,000 – $14,500 USD (~17M–18.8M KRW)",
+    "c1_price_tag": "Surplus Budget Saved",
+    "c1_path_title": "📍 Suggested Route",
+    "c1_path_flow": "Barcelona ➔ Granada ➔ Malaga / Ronda / Nerja ➔ Seville / Cordoba",
+    "c1_merits_title": "✨ Key Advantages & Analysis",
+    "c1_merits_list": "<li><strong>Minimal Fatigue:</strong> Leisurely stays of 4–8 nights per hub city, ideal for parents in their late 60s.</li><li><strong>Exotic Culture Replacement:</strong> Moorish Islamic heritage in Andalusia (Seville, Granada) satisfies desires for rich, exotic culture.</li><li><strong>Budget Surplus &amp; Luxury:</strong> Remaining funds allow upscale apartments, central 4-star hotels, and fine dining.</li>",
+    "c1_btn": "✓ Apply Spain & Andalusia to Planner",
+    "c2_badge": "⚖️ Best Value & Variety Balance",
+    "c2_title": "2. S. Spain / Barcelona<br><span class=\"route-subtitle\">+ Portugal</span>",
+    "c2_price_label": "Est. Budget",
+    "c2_price_val": "~$13,800 – $15,200 USD (~18M–19.8M KRW)",
+    "c2_price_tag": "Fits Within Budget",
+    "c2_path_title": "📍 Suggested Route",
+    "c2_path_flow": "Barcelona ➔ S. Spain (Seville/Granada/Malaga) ➔ Portugal (Lisbon/Porto/Algarve)",
+    "c2_merits_title": "✨ Key Advantages & Analysis",
+    "c2_merits_list": "<li><strong>Cost-Effective Diversity:</strong> Portugal’s reasonable prices let you experience two distinct nations within the budget ceiling.</li><li><strong>Seamless Overland Transit:</strong> Smooth connections from Seville into southern Portugal (Algarve) or Lisbon.</li><li><strong>Rich Cultural Contrast:</strong> Contrast Spain's lively flamenco with Portugal's melancholic fado and Atlantic seafood.</li>",
+    "c2_btn": "✓ Apply Iberia 2-Country to Planner",
+    "c3_badge": "⚠️ Bucket List vs Fatigue & Budget",
+    "c3_title": "3. S. America Grand Tour<br><span class=\"route-subtitle\">(Peru · Argentina · Brazil)</span>",
+    "c3_price_label": "Est. Budget",
+    "c3_price_val": "~$19,000 – $23,000 USD (~25M–30M KRW)",
+    "c3_price_tag": "Significantly Exceeds Budget",
+    "c3_path_title": "📍 Anticipated Route",
+    "c3_path_flow": "Peru (Lima/Cusco/Machu Picchu) ➔ Argentina (Buenos Aires) ➔ Iguazu Falls ➔ Brazil (Rio)",
+    "c3_merits_title": "⚠️ Merits & Key Constraints",
+    "c3_merits_list": "<li><strong>Advantage:</strong> Realizes lifelong bucket-list dreams like Machu Picchu and Iguazu Falls.</li><li><strong>Severe Physical Strain:</strong> 25+ hours round-trip flights and frequent domestic/international flights place massive strain on seniors.</li><li><strong>High Altitude &amp; Cost:</strong> Altitude risks at Cusco (3,400m) and costs exceed budget by $5,000–$8,000 USD.</li>",
+    "c3_btn": "Compare Latin America Itinerary",
+    "timeline_kicker": "03 / 30-DAY ITINERARY & TIMELINE",
+    "timeline_title": "City Highlights & 30-Day Daily Timeline",
+    "timeline_sub": "Click tabs to filter by city stops, or drag & drop cards to reorder your custom family itinerary.",
+    "editorial_acc_badge": "In-Depth Report",
+    "editorial_acc_title": "📖 Southern Europe Family Travel Editorial Guide & Checklist",
+    "editorial_acc_desc": "10 key guides covering route choices, hub travel, detailed budgets, senior care, and booking orders",
+    "editorial_acc_expand": "Expand Guide ▼",
+    "editorial_acc_collapse": "Collapse ▲",
+    "lbl_currency_switch": "💱 Currency:",
+    "lbl_font_size": "🔤 Font Size:",
+    "btn_print": "Print/PDF",
+    "label_party_size": "👥 Party Size",
+    "label_tier": "🏨 Lodging Tier",
+    "bnav_planner": "Planner",
+    "bnav_dining": "Dining",
+    "bnav_attractions": "Landmarks",
+    "settings_panel_title": "⚙️ Custom Travel Settings",
+    "lbl_export": "🖨️ Export:",
+    "hero_tag_party": "👥 3-Person Family",
+    "hero_tag_duration": "🗓️ 29 Nights / 30 Days",
+    "hero_tag_siesta": "☕ 13:00–15:30 Shower & Siesta",
+    "hero_tag_transit": "🚆 Rail & Transit Focused",
+    "hero_tag_budget": "💰 Budget $15k–$23k USD",
+    "planner_advanced_btn": "Advanced Settings (Lodging Tier · Pace)",
+    "btn_list_view": "📋 List View",
+    "btn_map_view": "🗺 Map View (Leaflet)",
+    "tab_transit_guide": "🚇 Urban Transit & Smart Cards Guide",
+    "tab_hotel_guide": "🏨 Senior-Friendly Value Hotels (24)",
+    "chat_bot_title": "Southern Europe Family AI Guide",
+    "chat_bot_status": "<span class=\"status-indicator\"></span>On-Device Real-Time AI (Offline Support)",
+    "dining_view_count": "92 Curated Verified Dining Spots Worldwide",
+    "landmark_view_count": "73 Must-Visit Landmarks Worldwide",
+    "kpi_score_val": "94 / 100 (Golden Window)",
+    "kpi_season_desc": "November Shoulder Season · Short Lines & Pleasant",
+    "kpi_fest_val": "4 Festivals Linked",
+    "kpi_fest_sub": "Christmas Lights & Festive Markets",
+    "opt_region_iberia": "🇪🇸🇵🇹 Southern Europe (Iberia + Andalusia + Madeira 30 Days)",
+    "opt_region_iberia_dubai": "🇪🇸🇵🇹🇦🇪 Iberia + Emirates Dubai Transit Combined (30 Days Golden)",
+    "opt_region_dubai_stopover": "🇦🇪 Dubai Transit & Luxury Stopover (3–5 Days Core)",
+    "opt_region_west_central": "🇬🇧🇫🇷🇮🇹🇦🇹🇨🇿 W. & Central Europe (London, Paris, Rome, Vienna, Prague 30D)",
+    "opt_region_latin": "🇲🇽🇵🇪🇦🇷 Latin America (Mexico City, Oaxaca, Cusco, Machu Picchu 30D)",
+    "opt_region_usa": "🇺🇸 USA Grand Tour (SF, Grand Canyon, LA, NYC, Hawaii 30D)",
+    "opt_dur_30": "30 Days (29 Nights Relaxed Complete)",
+    "opt_dur_21": "21 Days (3 Weeks Core Base)",
+    "opt_dur_14": "14 Days (2 Weeks Highlights)",
+    "opt_party_2": "2 People (Couple / Mother & Daughter)",
+    "opt_party_3": "3 People (Parents + 1 Adult Child)",
+    "opt_party_4": "4 People (Family of 4)",
+    "opt_party_5": "5 People (Extended Family of 5)",
+    "opt_tier_economy": "Smart Economy (Great Value)",
+    "opt_tier_standard": "Comfortable 4-Star (Central Family)",
+    "opt_tier_luxury": "Premium Luxury (5-Star & VIP Tours)"
   },
   "ja": {
+    "nav_routes": "🧭 3大コース比較",
+    "nav_guide": "📖 旅行ガイド",
+    "nav_tools": "🛠️ 旅行ツール",
+    "bnav_routes": "3大コース",
+    "bnav_settings": "設定",
+    "btn_settings": "設定",
+    "hero_btn_plan": "⚡ プランナーを設定する",
+    "hero_btn_compare": "🧭 厳選3大コースを比較",
+    "curated_kicker": "02 / 厳選3大コース徹底比較",
+    "curated_title": "家族旅行 厳選3大おすすめコース徹底比較",
+    "curated_sub": "60代後半のご両親の体力、予算目安（約2,000万〜3,000万ウォン／約220万〜330万円）、お父様の好みを綿密に分析した3大中核比較プランです。",
+    "c1_badge": "⭐ ご両親の体力負担最小・最適プラン",
+    "c1_title": "1. スペイン単独周遊<br><span class=\"route-subtitle\">（バルセロナ＋南部アンダルシア）</span>",
+    "c1_price_label": "予想予算",
+    "c1_price_val": "約1,700万〜1,880万ウォン（約190万〜210万円）",
+    "c1_price_tag": "予算に十分な余裕あり",
+    "c1_path_title": "📍 推奨ルート",
+    "c1_path_flow": "バルセロナ ➔ グラナダ ➔ マラガ／ロンダ／ネルハ ➔ セビリア／コルドバ",
+    "c1_merits_title": "✨ 主なメリット＆分析",
+    "c1_merits_list": "<li><strong>疲労の最小化：</strong>1都市あたり4〜8泊ずつゆったり滞在し、60代後半のご両親の体力管理に最も適しています。</li><li><strong>南米風エキゾチック情趣：</strong>イスラム・ムード漂うアンダルシア（セビリア、グラナダ）の異国情緒がお父様の好みを満たします。</li><li><strong>予算のゆとり：</strong>基準予算内で残った資金を高品位なレジデンス／ホテル滞在や美食に充てられます。</li>",
+    "c1_btn": "✓ プランナーにスペイン・アンダルシアを適用",
+    "c2_badge": "⚖️ コスパ＆多彩さの黄金バランス",
+    "c2_title": "2. スペイン南部・バルセロナ<br><span class=\"route-subtitle\">＋ ポルトガル</span>",
+    "c2_price_label": "予想予算",
+    "c2_price_val": "約1,800万〜1,980万ウォン（約200万〜220万円）",
+    "c2_price_tag": "予算枠内に余裕で着地",
+    "c2_path_title": "📍 推奨ルート",
+    "c2_path_flow": "バルセロナ ➔ スペイン南部（セビリア／グラナダ／マラガ） ➔ ポルトガル（リスボン／ポルト／アルガルヴェ）",
+    "c2_merits_title": "✨ 主なメリット＆分析",
+    "c2_merits_list": "<li><strong>コスパと多様性：</strong>ポルトガルは西欧に比べ物価が手頃で、2カ国を満喫しながらもしっかり予算内に収まります。</li><li><strong>スムーズな陸路移動：</strong>セビリアからポルトガル南部（アルガルヴェ）やリスボンへの陸路連絡が非常に快適です。</li><li><strong>豊かな文化の対比：</strong>スペインの情熱的なフラメンコとポルトガルの情緒あるファド、大西洋の新鮮な海の幸を堪能できます。</li>",
+    "c2_btn": "✓ プランナーにイベリア2カ国を適用",
+    "c3_badge": "⚠️ 夢の実現 vs 体力・予算の制約",
+    "c3_title": "3. 南米主要国周遊ツアー<br><span class=\"route-subtitle\">（ペルー・アルゼンチン・ブラジル）</span>",
+    "c3_price_label": "予想予算",
+    "c3_price_val": "約2,500万〜3,000万ウォン（約280万〜330万円）",
+    "c3_price_tag": "大幅な予算超過に注意",
+    "c3_path_title": "📍 予想ルート",
+    "c3_path_flow": "ペルー（リマ／クスコ／マチュピチュ） ➔ アルゼンチン（ブエノスアイレス） ➔ イグアスの滝 ➔ ブラジル（リオデジャネイロ）",
+    "c3_merits_title": "⚠️ メリットと重大な制約事項",
+    "c3_merits_list": "<li><strong>メリット：</strong>マチュピチュやイグアスの滝など、お父様の長年の夢をそのまま叶えられます。</li><li><strong>激しい体力消耗：</strong>往復25時間以上の超長距離フライトと頻繁な飛行機乗り継ぎは、60代のご両親には非常に過酷です。</li><li><strong>高山病と予算超過：</strong>クスコ（標高3,400m）の高山病リスク、および基準予算を500万〜1,000万ウォン大幅に超過します。</li>",
+    "c3_btn": "南米ツアー詳細日程を比較する",
+    "timeline_kicker": "03 / 30日間の旅程＆タイムライン",
+    "timeline_title": "都市別ハイライト＆30日デイリータイムライン",
+    "timeline_sub": "上部のタブをクリックして主要都市ごとの日程を確認したり、カードをドラッグして家族向けに日程を並び替えることができます。",
+    "editorial_acc_badge": "深掘りレポート",
+    "editorial_acc_title": "📖 南欧家族旅行 専門エディトリアルガイド＆チェックリスト",
+    "editorial_acc_desc": "旅の方向性、拠点移動、予算内訳、ご両親ケア、予約順序など10大重要ガイド",
+    "editorial_acc_expand": "ガイドを展開 ▼",
+    "editorial_acc_collapse": "折りたたむ ▲",
     "nav_transit": "🚇 公共交通ガイド",
     "nav_hotels": "🏨 おすすめホテル (24選)",
     "bnav_transit": "交通",
@@ -14465,12 +15112,11 @@ const I18N_DICTIONARY = {
     "bnav_attractions": "名所",
     "bnav_phrases": "会話",
     "bnav_top": "上へ",
-
     "brand_title": "SLOW·TRAVEL",
-    "brand_sub": "GLOBAL EDITION",
+    "brand_sub": "남유럽 가족 여행 플래너",
     "nav_planner": "📅 カスタムプランナー",
-    "nav_dining": "🍽 厳選グルメ・名店 (60選)",
-    "nav_attractions": "🏛 定番名所 (80選)",
+    "nav_dining": "🍽 厳選グルメ・名店 (92選)",
+    "nav_attractions": "🏛 定番名所 (73選)",
     "nav_phrases": "🗣 現地必須トラベル会話",
     "nav_search": "🔍 リアルタイムAI検索",
     "nav_compare": "地域比較",
@@ -14479,22 +15125,22 @@ const I18N_DICTIONARY = {
     "hero_eyebrow": "家族とともに · 世界を巡る1ヶ月の旅",
     "hero_h1": "家族とともに、<br><em>世界をめぐる1ヶ月の旅</em>",
     "hero_lead": "ご両親と一緒にゆったりと南欧・西欧・中南米・アメリカの都市と絶景を楽しむ旅。1日1.5スポットの原則と午後のシエスタ（休憩）時間を完備し、疲労を残さず快適に設計されています。",
-    "planner_title": "グローバル旅行プランナー＆リアルタイム調整",
+    "planner_title": "南欧家族旅行カスタムプランナー＆リアルタイム調整",
     "planner_sub": "希望する地域と出発日を設定すると、シエスタ休憩ルーティンとカレンダーがリアルタイムに再調整されます。",
     "label_region": "🌍 旅行地域を選択",
     "label_start_date": "📅 出発日",
     "label_duration": "⏱ 旅行期間",
     "label_pacing": "👥 家族同行ペース",
     "btn_recalc": "⚡ プランを今すぐ再調整",
-    "opt_pacing_relaxed": "シニア同伴（午後のシエスタ休憩義務化）",
+    "opt_pacing_relaxed": "ご両親同伴（午後のシエスタ必須）",
     "opt_pacing_balanced": "バランス型（シニア配慮＋定番展望台）",
     "kpi_score_label": "シーズン判定＆コスパ指数",
     "kpi_budget_label": "3人家族 総予算目安",
     "kpi_fest_label": "連動する季節の祭り",
     "kpi_senior_label": "シニア疲労ケア指数",
-    "kpi_senior_val": "1.5 スポット / 日",
-    "kpi_senior_sub": "13:00~15:30 温水シャワー＆昼寝枠",
-    "dining_title": "必ず食べるべき名物料理＆検証済み名店 (厳選95選)",
+    "kpi_senior_val": "1.5スポット／日",
+    "kpi_senior_sub": "13:00〜15:30 温水シャワー＆シエスタ枠",
+    "dining_title": "必ず食べるべき名物料理＆検証済み名店 (厳選92選)",
     "dining_sub": "イギリス・フランス・イタリア・スペイン・ポルトガル・中欧・中南米・アメリカの代表料理。営業時間、外国語対応、連絡先、予約リンクを完全収録。",
     "dining_search_ph": "🔍 都市（ロンドン、パリ、ローマ、ニューヨーク）、料理（フィッシュ＆チップス、ステーキ、タコス）、キーワード検索...",
     "btn_dining_search": "グルメ検索",
@@ -14524,9 +15170,95 @@ const I18N_DICTIONARY = {
     "btn_perplexity_search": "Perplexity AI 分析",
     "btn_google_map": "Googleマップで見る",
     "btn_official_tickets": "公式チケット予約",
-    "ai_search_ph": "調べたい内容を入力してください（例：ロンドン・タワーブリッジのエレベーター、2026 マラガのライトアップ日程、パリ・ルーヴルの火曜定休代替プラン）..."
+    "ai_search_ph": "調べたい内容を入力してください（例：ロンドン・タワーブリッジのエレベーター、2026 マラガのライトアップ日程、パリ・ルーヴルの火曜定休代替プラン）...",
+    "kpi_budget_sub": "航空・宿泊・食事・交通・予備費オールインワン",
+    "settings_panel_title": "⚙️ カスタム旅行環境設定",
+    "lbl_export": "🖨️ 出力・保存:",
+    "hero_tag_party": "👥 家族3名基準",
+    "hero_tag_duration": "🗓️ 29泊30日 完走型",
+    "hero_tag_siesta": "☕ 13:00〜15:30 シャワー＆シエスタ枠",
+    "hero_tag_transit": "🚆 公共交通・高速鉄道中心",
+    "hero_tag_budget": "💰 予算 2,000万〜3,000万ウォン",
+    "planner_advanced_btn": "詳細設定（宿泊等級・同行ペース）",
+    "btn_list_view": "📋 リスト表示",
+    "btn_map_view": "🗺 地図表示（Leaflet）",
+    "tab_transit_guide": "🚇 都市別公共交通＆交通カード完全攻略",
+    "tab_hotel_guide": "🏨 地域別シニア向け高コスパホテル（24選）",
+    "chat_bot_title": "南欧家族旅行AIガイド",
+    "chat_bot_status": "<span class=\"status-indicator\"></span>オンデバイス即時AI（オフライン対応）",
+    "dining_view_count": "全世界厳選92大名店リスト",
+    "landmark_view_count": "全世界73大定番ランドマーク",
+    "kpi_score_val": "94点（ゴールデン枠）",
+    "kpi_season_desc": "11月ショルダーシーズン・待ち時間短縮＆快適",
+    "kpi_fest_val": "4大フェス連動",
+    "kpi_fest_sub": "クリスマスイルミネーション＆伝統マーケット",
+    "opt_region_iberia": "🇪🇸🇵🇹 南欧（イベリア＋アンダルシア＋マデイラ 30日）",
+    "opt_region_iberia_dubai": "🇪🇸🇵🇹🇦🇪 イベリア＋ドバイ経由エミレーツ結合（30日ゴールデン）",
+    "opt_region_dubai_stopover": "🇦🇪 ドバイ経由＆ストップオーバーラグジュアリー（3〜5日厳選）",
+    "opt_region_west_central": "🇬🇧🇫🇷🇮🇹🇦🇹🇨🇿 西・中欧（ロンドン・パリ・ローマ・ウィーン・プラハ 30日）",
+    "opt_region_latin": "🇲🇽🇵🇪🇦🇷 中南米（メキシコ・オアハカ・クスコ・マチュピチュ 30日）",
+    "opt_region_usa": "🇺🇸 米国全土（サンフランシスコ・グランドキャニオン・LA・NY・ハワイ 30日）",
+    "opt_dur_30": "30日（29泊 ゆったり完走型）",
+    "opt_dur_21": "21日（3週間 拠点集中型）",
+    "opt_dur_14": "14日（2週間 ハイライト型）",
+    "opt_party_2": "2名（夫婦／母娘）",
+    "opt_party_3": "3名（ご両親＋子ども1名）",
+    "opt_party_4": "4名（家族4名）",
+    "opt_party_5": "5名（大家族5名）",
+    "opt_tier_economy": "実得エコノミー（高コスパ）",
+    "opt_tier_standard": "快適4つ星（セントラル・ファミリー）",
+    "opt_tier_luxury": "プレミアムラグジュアリー（5つ星＆VIPツアー）"
   },
   "zh": {
+    "nav_routes": "🧭 三大路线对比",
+    "nav_guide": "📖 旅行指南",
+    "nav_tools": "🛠️ 旅行工具",
+    "bnav_routes": "三大路线",
+    "bnav_settings": "设置",
+    "btn_settings": "设置",
+    "hero_btn_plan": "⚡ 配置旅行计划",
+    "hero_btn_compare": "🧭 对比三大精选路线",
+    "curated_kicker": "02 / 精选三大路线对比分析",
+    "curated_title": "全家同行三大精选推荐路线对比分析",
+    "curated_sub": "深度结合60多岁长辈的体力、预算范围（约2,000万~3,000万韩元）与长辈喜好精细制定的三大核心对比方案。",
+    "c1_badge": "⭐ 长辈体力减负首选推荐",
+    "c1_title": "1. 西班牙独享深度游<br><span class=\"route-subtitle\">（巴塞罗那 + 南部安达卢西亚）</span>",
+    "c1_price_label": "预估预算",
+    "c1_price_val": "约1,700万 ~ 1,880万韩元（约9万~10万元）",
+    "c1_price_tag": "预算充裕可支配",
+    "c1_path_title": "📍 推荐动线",
+    "c1_path_flow": "巴塞罗那 ➔ 格拉纳达 ➔ 马拉加 / 龙达 / 内尔哈 ➔ 塞维利亚 / 科尔多瓦",
+    "c1_merits_title": "✨ 核心优势与分析",
+    "c1_merits_list": "<li><strong>疲劳度降至最低：</strong>每座城市宽裕停留4~8晚，最适合60多岁长辈的体力节奏。</li><li><strong>异域风情平替：</strong>安达卢西亚（塞维利亚、格拉纳达）融合伊斯兰文化的浓郁异域风貌，完美契合对异国情调的向往。</li><li><strong>充裕预算享品质：</strong>结余预算可用于入住核心地段高品质公寓/酒店及享用精致地道美食。</li>",
+    "c1_btn": "✓ 在行程规划师中应用西班牙·安达卢西亚",
+    "c2_badge": "⚖️ 性价比与多样性绝佳平衡",
+    "c2_title": "2. 西班牙南部 / 巴塞罗那<br><span class=\"route-subtitle\">+ 葡萄牙</span>",
+    "c2_price_label": "预估预算",
+    "c2_price_val": "约1,800万 ~ 1,980万韩元（约9.5万~10.5万元）",
+    "c2_price_tag": "稳稳控制在预算内",
+    "c2_path_title": "📍 推荐动线",
+    "c2_path_flow": "巴塞罗那 ➔ 西班牙南部（塞维利亚/格拉纳达/马拉加） ➔ 葡萄牙（里斯本/波尔图/阿尔加维）",
+    "c2_merits_title": "✨ 核心优势与分析",
+    "c2_merits_list": "<li><strong>高性价比与多元体验：</strong>葡萄牙物价亲民，游览两国的同时严格守住预算红线。</li><li><strong>陆路交通顺畅：</strong>从塞维利亚前往葡萄牙南部（阿尔加维）或里斯本的跨国衔接极为顺畅。</li><li><strong>丰富的文化碰撞：</strong>既能感受西班牙热烈纯正的弗拉门戈，又能体会葡萄牙法朵（Fado）的悠扬抒情与大西洋肥美海鲜。</li>",
+    "c2_btn": "✓ 在行程规划师中应用伊比利亚两国",
+    "c3_badge": "⚠️ 终极心愿 vs 体力与预算限制",
+    "c3_title": "3. 南美主要国家巡礼<br><span class=\"route-subtitle\">（秘鲁 · 阿根廷 · 巴西）</span>",
+    "c3_price_label": "预估预算",
+    "c3_price_val": "约2,500万 ~ 3,000万韩元（约13万~16万元）",
+    "c3_price_tag": "注意严重超出预算",
+    "c3_path_title": "📍 预计动线",
+    "c3_path_flow": "秘鲁（利马/库斯科/马丘比丘） ➔ 阿根廷（布宜诺斯艾利斯） ➔ 伊瓜苏瀑布 ➔ 巴西（里约热内卢）",
+    "c3_merits_title": "⚠️ 优势与重大制约因素",
+    "c3_merits_list": "<li><strong>优势：</strong>可圆满实现长辈一生打卡马丘比丘、伊瓜苏大瀑布的心愿。</li><li><strong>体力负担过重：</strong>往返飞行超25小时且跨国转机频繁，对60多岁长辈的体能是极大考验。</li><li><strong>高原反应与超支风险：</strong>库斯科（海拔3,400米）高反风险高，且总费用超预算约500万~1,000万韩元。</li>",
+    "c3_btn": "比较南美巡礼详细日程",
+    "timeline_kicker": "03 / 30天全景行程与时间线",
+    "timeline_title": "各城市速览与30天每日时间线",
+    "timeline_sub": "点击上方标签可按主要城市筛选行程，或拖拽卡片重新编排专属于您的全家定制日程。",
+    "editorial_acc_badge": "深度报告",
+    "editorial_acc_title": "📖 南欧全家旅行 专业深度导览与行前清单",
+    "editorial_acc_desc": "行程方向、枢纽中转、预算明细、适老关怀、预约顺序等十大核心指南",
+    "editorial_acc_expand": "展开指南 ▼",
+    "editorial_acc_collapse": "收起指南 ▲",
     "nav_transit": "🚇 智慧公共交通",
     "nav_hotels": "🏨 精选酒店 (24选)",
     "bnav_transit": "公共交通",
@@ -14551,12 +15283,11 @@ const I18N_DICTIONARY = {
     "bnav_attractions": "名胜",
     "bnav_phrases": "会话",
     "bnav_top": "置顶",
-
     "brand_title": "SLOW·TRAVEL",
-    "brand_sub": "GLOBAL EDITION",
+    "brand_sub": "남유럽 가족 여행 플래너",
     "nav_planner": "📅 定制行程单",
-    "nav_dining": "🍽 必吃美食与名店 (95选)",
-    "nav_attractions": "🏛 经典地标 (80选)",
+    "nav_dining": "🍽 必吃美食与名店 (92选)",
+    "nav_attractions": "🏛 经典地标 (73选)",
     "nav_phrases": "🗣 实用旅行短语",
     "nav_search": "🔍 实时AI搜索",
     "nav_compare": "区域对比",
@@ -14565,22 +15296,22 @@ const I18N_DICTIONARY = {
     "hero_eyebrow": "全家共度 · 畅游全球一个月之旅",
     "hero_h1": "陪伴父母家人，<br><em>为期一个月的全球漫游之旅</em>",
     "hero_lead": "陪伴父母悠闲畅游南欧、西欧、中南美和美国各大城市与壮美风光。坚持每天1.5个核心景点原则与午后午休放松时间，告别疲惫与奔波。",
-    "planner_title": "全球定制旅行规划师与实时重新调整",
+    "planner_title": "南欧全家定制旅行规划师与实时调整",
     "planner_sub": "设置心仪的旅游区域和出发日期，每日午后午休日常与日历将实时自动重新计算与同步。",
     "label_region": "🌍 选择旅行区域",
     "label_start_date": "📅 出发日期",
     "label_duration": "⏱ 旅行时长",
     "label_pacing": "👥 随行家人节奏",
     "btn_recalc": "⚡ 立即重新生成行程",
-    "opt_pacing_relaxed": "长辈同伴特选（午后强制午休放松）",
-    "opt_pacing_balanced": "均衡型（关爱长辈＋核心观景台）",
+    "opt_pacing_relaxed": "长辈同行（午间午休强制保障）",
+    "opt_pacing_balanced": "均衡型（适老关怀 + 核心景观台）",
     "kpi_score_label": "季节适宜度与性价比指数",
     "kpi_budget_label": "3人家庭预估总预算",
     "kpi_fest_label": "联动季节节庆活动",
     "kpi_senior_label": "长辈体力照护指数",
-    "kpi_senior_val": "1.5 景点 / 天",
-    "kpi_senior_sub": "13:00~15:30 热水淋浴与午休插槽",
-    "dining_title": "必吃经典美食与验证餐厅 (高质照片 95选)",
+    "kpi_senior_val": "每日1.5个景点",
+    "kpi_senior_sub": "13:00~15:30 热水澡与午休时段",
+    "dining_title": "必吃经典美食与验证餐厅 (高质照片 92选)",
     "dining_sub": "汇集英国、法国、意大利、西班牙、葡萄牙、中欧、中南美及美国的经典美味。收录营业时间、外语沟通、电话及预订链接。",
     "dining_search_ph": "🔍 搜索城市（伦敦、巴黎、罗马、纽约）、菜肴（炸鱼薯条、牛排、塔可）、关键词...",
     "btn_dining_search": "搜索美食",
@@ -14610,11 +15341,46 @@ const I18N_DICTIONARY = {
     "btn_perplexity_search": "Perplexity AI 分析",
     "btn_google_map": "在谷歌地图查看",
     "btn_official_tickets": "官方订票",
-    "ai_search_ph": "输入查询内容（例如：伦敦塔桥电梯与无障碍设施、2026年马拉加灯光秀点亮日期、卢浮宫周二闭馆替代方案）..."
+    "ai_search_ph": "输入查询内容（例如：伦敦塔桥电梯与无障碍设施、2026年马拉加灯光秀点亮日期、卢浮宫周二闭馆替代方案）...",
+    "kpi_budget_sub": "机票、住宿、餐饮、交通与应急金全包",
+    "settings_panel_title": "⚙️ 个性化旅行环境设置",
+    "lbl_export": "🖨️ 导出/保存:",
+    "hero_tag_party": "👥 3人家庭标准",
+    "hero_tag_duration": "🗓️ 29晚30天 深度完赛型",
+    "hero_tag_siesta": "☕ 13:00~15:30 热水澡与午休时段",
+    "hero_tag_transit": "🚆 公共交通与高铁为主",
+    "hero_tag_budget": "💰 预算 2,000万~3,000万韩元",
+    "planner_advanced_btn": "详细设置（住宿等级 · 同行节奏）",
+    "btn_list_view": "📋 列表视图",
+    "btn_map_view": "🗺 地图视图（Leaflet）",
+    "tab_transit_guide": "🚇 各城市公共交通与交通卡完全通关",
+    "tab_hotel_guide": "🏨 各区域适老高性价比精选酒店（24选）",
+    "chat_bot_title": "南欧全家旅行AI向导",
+    "chat_bot_status": "<span class=\"status-indicator\"></span>端侧实时AI（支持离线运行）",
+    "dining_view_count": "全球92家验证美食精选清单",
+    "landmark_view_count": "全球73大核心经典地标",
+    "kpi_score_val": "94分（黄金时期）",
+    "kpi_season_desc": "11月平季 · 排队短且气候宜人",
+    "kpi_fest_val": "联动4大节庆",
+    "kpi_fest_sub": "圣诞彩灯与传统节日集市联动",
+    "opt_region_iberia": "🇪🇸🇵🇹 南欧（伊比利亚 + 安达卢西亚 + 马德拉 30天）",
+    "opt_region_iberia_dubai": "🇪🇸🇵🇹🇦🇪 伊比利亚 + 阿联酋迪拜经停结合（30天黄金）",
+    "opt_region_dubai_stopover": "🇦🇪 迪拜过境与轻奢中途停留（3~5天精选）",
+    "opt_region_west_central": "🇬🇧🇫🇷🇮🇹🇦🇹🇨🇿 西·中欧（伦敦·巴黎·罗马·维也纳·布拉格 30天）",
+    "opt_region_latin": "🇲🇽🇵🇪🇦🇷 中南美（墨西哥城·瓦哈卡·库斯科·马丘比丘 30天）",
+    "opt_region_usa": "🇺🇸 美国全境（旧金山·大峡谷·洛杉矶·纽约·夏威夷 30天）",
+    "opt_dur_30": "30天（29晚 宽裕完赛型）",
+    "opt_dur_21": "21天（3周 核心枢纽型）",
+    "opt_dur_14": "14天（2周 经典精华型）",
+    "opt_party_2": "2人（夫妻 / 母女）",
+    "opt_party_3": "3人（父母 + 1名成年子女）",
+    "opt_party_4": "4人（4口之家）",
+    "opt_party_5": "5人（大家庭5人）",
+    "opt_tier_economy": "实惠经济型（高性价比）",
+    "opt_tier_standard": "舒适四星级（市中心家庭房）",
+    "opt_tier_luxury": "尊贵奢华型（五星级与VIP私人游）"
   }
 };
-
-
 
 var CHATBOT_I18N = {
   ko: {
@@ -19931,5 +20697,154 @@ Feel free to ask any travel question!<br>
     if (LANDMARK_TABS_I18N.ja && LANDMARK_TABS_I18N.ja[0]) LANDMARK_TABS_I18N.ja[0].label = 'すべて表示 (80カ所)';
     if (LANDMARK_TABS_I18N.en && LANDMARK_TABS_I18N.en[0]) LANDMARK_TABS_I18N.en[0].label = 'All Landmarks (80 Spots)';
     if (LANDMARK_TABS_I18N.zh && LANDMARK_TABS_I18N.zh[0]) LANDMARK_TABS_I18N.zh[0].label = '全部景观 (80处)';
+  }
+})();
+
+
+// --- Merged Extended I18N Dictionary Entries ---
+(function() {
+  const extraDict = {
+  "ko": {
+    "brand_sub": "남유럽 가족 여행 플래너",
+    "nav_planner": "📅 맞춤 플래너",
+    "font_normal": "기본",
+    "theme_dark": "다크 모드",
+    "theme_light": "라이트 모드",
+    "planner_adv_expand": "▼ 펼치기",
+    "planner_adv_collapse": "▲ 접기",
+    "editorial_arrow_expand": "펼쳐보기 ▼",
+    "editorial_arrow_collapse": "접기 ▲",
+    "timeline_morning_title": "오전: 핵심 문화 산책 (피로도 낮음)",
+    "timeline_rest_title": "오후: 필수 휴식 (시에스타 충전)",
+    "timeline_evening_title": "저녁: 야경 감상 & 가벼운 식사",
+    "timeline_walk_burden": "보행 강도",
+    "timeline_transport": "이동 수단",
+    "timeline_recommended_meal": "추천 식사",
+    "lbl_transfer_day": "거점이동일",
+    "lbl_price_from": "예상 가격 (최저가)",
+    "lbl_admission_from": "입장료 (최저가)",
+    "btn_listen": "🗣 발음 듣기",
+    "footer_text": "가족 여행 계획을 위한 편집 가이드 · 날짜·가격·운행·입국 규정은 바뀔 수 있으니 예약 전 공식 채널에서 최종 확인하세요.",
+    "c1_price_label": "예상 예산",
+    "c1_path_title": "📍 추천 동선",
+    "c3_path_title": "📍 예상 동선",
+    "c1_merits_title": "✨ 핵심 장점 & 분석",
+    "c3_merits_title": "⚠️ 장점 및 주요 제약사항",
+    "toast_plan_recalc": "✅ 일정이 성공적으로 재조정되었습니다!",
+    "toast_cal_download": "📅 맞춤 캘린더(.ics) 다운로드가 완료되었습니다!",
+    "toast_currency_changed": "통화가 변경되었습니다",
+    "toast_font_changed": "글자 크기가 조절되었습니다",
+    "toast_font_reset": "글자 크기가 기본으로 복원되었습니다",
+    "bnav_phrases": "회화",
+    "bnav_top": "맨위로"
+  },
+  "en": {
+    "brand_sub": "Southern Europe Family Travel Planner",
+    "nav_planner": "📅 Custom Planner",
+    "font_normal": "Default",
+    "theme_dark": "Dark Mode",
+    "theme_light": "Light Mode",
+    "planner_adv_expand": "▼ Expand",
+    "planner_adv_collapse": "▲ Collapse",
+    "editorial_arrow_expand": "Read More ▼",
+    "editorial_arrow_collapse": "Collapse ▲",
+    "timeline_morning_title": "Morning: Core Cultural Walk (Low Fatigue)",
+    "timeline_rest_title": "Afternoon: Essential Rest (Siesta Recharge)",
+    "timeline_evening_title": "Evening: Scenic Night Views & Light Dining",
+    "timeline_walk_burden": "Walking Intensity",
+    "timeline_transport": "Transit Mode",
+    "timeline_recommended_meal": "Recommended Meal",
+    "lbl_transfer_day": "Transfer Day",
+    "lbl_price_from": "Est. Price (From)",
+    "lbl_admission_from": "Admission (From)",
+    "btn_listen": "🗣 Listen Audio",
+    "footer_text": "Editorial Guide for Family Travel Planning · Dates, prices, operations, and entry regulations are subject to change. Please verify through official channels before booking.",
+    "c1_price_label": "Estimated Budget",
+    "c1_path_title": "📍 Recommended Route",
+    "c3_path_title": "📍 Expected Route",
+    "c1_merits_title": "✨ Key Merits & Analysis",
+    "c3_merits_title": "⚠️ Merits & Key Constraints",
+    "toast_plan_recalc": "✅ Travel plan reconfigured successfully!",
+    "toast_cal_download": "📅 Custom calendar (.ics) download complete!",
+    "toast_currency_changed": "Currency converted",
+    "toast_font_changed": "Font size adjusted",
+    "toast_font_reset": "Font size reset to default",
+    "bnav_phrases": "Phrases",
+    "bnav_top": "Top"
+  },
+  "ja": {
+    "brand_sub": "南欧ファミリー旅行プランナー",
+    "nav_planner": "📅 カスタムプランナー",
+    "font_normal": "標準",
+    "theme_dark": "ダークモード",
+    "theme_light": "ライトモード",
+    "planner_adv_expand": "▼ 開く",
+    "planner_adv_collapse": "▲ 閉じる",
+    "editorial_arrow_expand": "詳しく見る ▼",
+    "editorial_arrow_collapse": "閉じる ▲",
+    "timeline_morning_title": "午前：主要文化散策（疲労度低）",
+    "timeline_rest_title": "午後：必須休憩（シエスタ休息）",
+    "timeline_evening_title": "夕方：夜景鑑賞＆軽めの夕食",
+    "timeline_walk_burden": "歩行強度",
+    "timeline_transport": "移動手段",
+    "timeline_recommended_meal": "おすすめの食事",
+    "lbl_transfer_day": "拠点移動日",
+    "lbl_price_from": "予想価格（最安）",
+    "lbl_admission_from": "入場料（最安）",
+    "btn_listen": "🗣 発音を聞く",
+    "footer_text": "家族旅行のための編集ガイド · 日程・料金・運行・入国規定は変更される場合がありますので、ご予約前に必ず公式チャンネルにてご確認ください。",
+    "c1_price_label": "予想予算",
+    "c1_path_title": "📍 おすすめ動線",
+    "c3_path_title": "📍 予想動線",
+    "c1_merits_title": "✨ 主なメリット＆分析",
+    "c3_merits_title": "⚠️ メリット＆主な制約事項",
+    "toast_plan_recalc": "✅ 日程が正常に再調整されました！",
+    "toast_cal_download": "📅 カスタムカレンダー（.ics）のダウンロードが完了しました！",
+    "toast_currency_changed": "通貨が変更されました",
+    "toast_font_changed": "文字サイズが調整されました",
+    "toast_font_reset": "文字サイズが標準に復元されました",
+    "bnav_phrases": "会話",
+    "bnav_top": "トップへ"
+  },
+  "zh": {
+    "brand_sub": "南欧家庭旅行规划师",
+    "nav_planner": "📅 定制规划器",
+    "font_normal": "默认",
+    "theme_dark": "深色模式",
+    "theme_light": "浅色模式",
+    "planner_adv_expand": "▼ 展开",
+    "planner_adv_collapse": "▲ 收起",
+    "editorial_arrow_expand": "展开查看 ▼",
+    "editorial_arrow_collapse": "收起 ▲",
+    "timeline_morning_title": "上午：核心文化漫步（低疲劳度）",
+    "timeline_rest_title": "下午：必要休整（西斯塔午休）",
+    "timeline_evening_title": "傍晚：夜景欣赏与轻松晚餐",
+    "timeline_walk_burden": "步行强度",
+    "timeline_transport": "交通方式",
+    "timeline_recommended_meal": "推荐餐饮",
+    "lbl_transfer_day": "枢纽转移日",
+    "lbl_price_from": "参考价位（起）",
+    "lbl_admission_from": "门票（起）",
+    "btn_listen": "🗣 聆听发音",
+    "footer_text": "家庭旅行策划编辑指南 · 日期、价格、运营班次及入境规定可能发生变动，请在预订前通过官方渠道进行最终确认。",
+    "c1_price_label": "预计预算",
+    "c1_path_title": "📍 推荐路线",
+    "c3_path_title": "📍 预计路线",
+    "c1_merits_title": "✨ 核心优势与分析",
+    "c3_merits_title": "⚠️ 核心优势与主要约束",
+    "toast_plan_recalc": "✅ 行程已成功重新调整！",
+    "toast_cal_download": "📅 定制日历文件（.ics）下载完成！",
+    "toast_currency_changed": "币种已切换",
+    "toast_font_changed": "字体大小已调整",
+    "toast_font_reset": "字体大小已恢复默认",
+    "bnav_phrases": "会话",
+    "bnav_top": "回到顶部"
+  }
+};
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], extraDict[lang] || {});
+    });
   }
 })();
