@@ -2982,13 +2982,10 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
 function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
   window.currentFilteredLandmarksList = list;
   if (currentLandmarkView === "map") renderLandmarksMap();
-  const grid = document.getElementById('globalLandmarksGrid');
-  if (!grid) return;
-  grid.innerHTML = '';
-
+  
   const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
 
-  list.forEach(item => {
+  const createCard = (item) => {
     const card = document.createElement('div');
     card.className = 'photo-card';
 
@@ -3016,15 +3013,15 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
           </div>
           <div class="dining-meta-list">
             <div class="dining-meta-item">
-              <span class="meta-label">🎟 ${dict['lbl_admission_from'] || (currentLang === 'en' ? 'Admission (From)' : (currentLang === 'ja' ? '入場料 (From)' : (currentLang === 'zh' ? '门票 (From)' : '입장료 (From)')))}</span>
+              <span class="meta-label">🎟 ${dict['lbl_admission_from'] || '입장료 (From)'}</span>
               <span style="font-weight:700;color:var(--accent);">${formatCardPrice(item.baseKrw, currentCurrency, false)}</span>
             </div>
             <div class="dining-meta-item">
-              <span class="meta-label">⏰ ${dict['lbl_hours'] || '営業時間'}</span>
+              <span class="meta-label">⏰ ${dict['lbl_hours'] || '관람 시간'}</span>
               <span>${cleanHangul(localizedHours, currentLang)}</span>
             </div>
             <div class="dining-meta-item">
-              <span class="meta-label">🎟 ${dict['lbl_ticket_tip'] || '予約のヒント'}</span>
+              <span class="meta-label">🎟 ${dict['lbl_ticket_tip'] || '예약 팁'}</span>
               <span>${cleanHangul(localizedTicketTip, currentLang)}</span>
             </div>
           </div>
@@ -3032,15 +3029,46 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
       </div>
       <div class="dining-footer" style="display:flex;gap:8px;">
         <a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn" style="flex:1;text-align:center;background:var(--accent);color:white;border-color:var(--accent)">
-          🎟 ${dict['btn_official_tickets'] || '公式チケット予約'}
+          🎟 ${dict['btn_official_tickets'] || (currentLang === 'en' ? 'Official Tickets' : (currentLang === 'ja' ? '公式チケット予約' : (currentLang === 'zh' ? '官方门票预订' : '공식 예매처')))}
         </a>
-        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer" class="map-link-btn" style="flex:1;text-align:center;">
-          📍 ${dict['btn_map'] || 'マップ'}
+        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery || item.name)}" target="_blank" rel="noopener noreferrer" class="map-link-btn" style="flex:1;text-align:center;">
+          📍 ${dict['btn_map'] || 'Google Map'}
         </a>
       </div>
     `;
-    grid.appendChild(card);
-  });
+    return card;
+  };
+
+  // Populate Spain Grid (18 items)
+  const spainGrid = document.getElementById('landmarksSpainGrid');
+  if (spainGrid) {
+    spainGrid.innerHTML = '';
+    const spainItems = list.filter(x => x.region === '스페인');
+    spainItems.forEach(item => spainGrid.appendChild(createCard(item)));
+  }
+
+  // Populate Portugal Grid (18 items)
+  const portGrid = document.getElementById('landmarksPortugalGrid');
+  if (portGrid) {
+    portGrid.innerHTML = '';
+    const portItems = list.filter(x => x.region === '포르투갈');
+    portItems.forEach(item => portGrid.appendChild(createCard(item)));
+  }
+
+  // Populate Europe/Other Grid (37 items)
+  const europeGrid = document.getElementById('landmarksEuropeGrid');
+  if (europeGrid) {
+    europeGrid.innerHTML = '';
+    const europeItems = list.filter(x => x.region !== '스페인' && x.region !== '포르투갈');
+    europeItems.forEach(item => europeGrid.appendChild(createCard(item)));
+  }
+
+  // Fallback for globalLandmarksGrid
+  const grid = document.getElementById('globalLandmarksGrid');
+  if (grid) {
+    grid.innerHTML = '';
+    list.forEach(item => grid.appendChild(createCard(item)));
+  }
 }
 
 function renderLocalPhrases(filterLang = currentPhraseFilter) {
@@ -3202,6 +3230,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
   // 동적 예산 실시간 계산
   const budgetData = calculateDynamicBudget(currentActiveRegion, currentDurationDays, partySize, tier);
   const formattedGrandTotal = formatMoney(budgetData.total, currentCurrency);
+  if (typeof renderFestivalsAndNightViews === "function") renderFestivalsAndNightViews();
 
   // 도시 필터 탭 바 갱신
   renderCityFilterTabs();
@@ -3252,6 +3281,13 @@ function applyPlanReconfiguration(isUserTriggered = false) {
   const timelineGrid = document.getElementById('timelineGrid') || document.getElementById('dynamicTimelineContainer');
   if (!timelineGrid) return;
   timelineGrid.innerHTML = '';
+    const g1 = document.getElementById('timelineGrid1');
+    const g2 = document.getElementById('timelineGrid2');
+    const g3 = document.getElementById('timelineGrid3');
+    if (g1) g1.innerHTML = '';
+    if (g2) g2.innerHTML = '';
+    if (g3) g3.innerHTML = '';
+
 
   const rawDays = planMeta.days || [];
   const totalDays = Math.min(currentDurationDays, rawDays.length);
@@ -3314,6 +3350,11 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     const restTitle = dict['timeline_rest_title'] || '오후: 필수 휴식 (시에스타 충전)';
     const eveningTitle = dict['timeline_evening_title'] || '저녁: 야경 감상 & 가벼운 식사';
 
+        const isInitiallyExpanded = window.allTimelineDaysExpanded || false;
+    const expandBtnLabel = isInitiallyExpanded
+      ? (dict['timeline_collapse_detail'] || '세부 일정 접기 ▲')
+      : (dict['timeline_expand_detail'] || '세부 일정 펼치기 ▼');
+
     card.innerHTML = `
       <div class="day-meta">
         <div class="day-num">DAY ${slotIdx + 1}</div>
@@ -3323,38 +3364,58 @@ function applyPlanReconfiguration(isUserTriggered = false) {
         ${dItem.isTransfer ? `<div class="transfer-badge">${transferBadgeLabel}</div>` : ''}
       </div>
       <div class="day-body">
-        <h3>${cleanHangul(localizedTheme, currentLang)} ${eventBadges}</h3>
-        <div class="routine-grid">
-          <div class="routine-cell cell-morning">
-            <div class="cell-title">${morningTitle}</div>
-            <p>${cleanHangul(localizedMorning, currentLang)}</p>
-          </div>
-          <div class="routine-cell cell-rest">
-            <div class="cell-title">${restTitle}</div>
-            <p>${cleanHangul(localizedRest, currentLang)}</p>
-          </div>
-          <div class="routine-cell cell-evening">
-            <div class="cell-title">${eveningTitle}</div>
-            <p>${cleanHangul(localizedEvening, currentLang)}</p>
-          </div>
+        <div class="day-header-summary">
+          <h3>${cleanHangul(localizedTheme, currentLang)} ${eventBadges}</h3>
+          <button type="button" class="btn-toggle-day-detail" id="btnToggleDay-${slotIdx}" onclick="toggleDayDetail(${slotIdx}, this)" aria-expanded="${isInitiallyExpanded}" title="1일 1.5스팟 시에스타 세부 일정 확인">
+            <span class="toggle-text">${expandBtnLabel}</span>
+          </button>
         </div>
-        <div class="meta-bottom">
-          <div class="meta-item">
-            <span class="meta-label">🚶 ${dict['timeline_walk_burden'] || '보행 강도'}</span>
-            <span>${cleanHangul(localizedWalk, currentLang)}</span>
+        <div class="day-detail-collapse" id="dayDetail-${slotIdx}" style="display:${isInitiallyExpanded ? 'block' : 'none'};">
+          <div class="routine-grid">
+            <div class="routine-cell cell-morning">
+              <div class="cell-title">${morningTitle}</div>
+              <p>${cleanHangul(localizedMorning, currentLang)}</p>
+            </div>
+            <div class="routine-cell cell-rest">
+              <div class="cell-title">${restTitle}</div>
+              <p>${cleanHangul(localizedRest, currentLang)}</p>
+            </div>
+            <div class="routine-cell cell-evening">
+              <div class="cell-title">${eveningTitle}</div>
+              <p>${cleanHangul(localizedEvening, currentLang)}</p>
+            </div>
           </div>
-          <div class="meta-item">
-            <span class="meta-label">🚗 ${dict['timeline_transport'] || '이동 수단'}</span>
-            <span>${cleanHangul(localizedTransport, currentLang)}</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">🍽 ${dict['timeline_recommended_meal'] || '추천 식사'}</span>
-            <span>${cleanHangul(localizedMeal, currentLang)}</span>
+          <div class="meta-bottom">
+            <div class="meta-item">
+              <span class="meta-label">🚶 ${dict['timeline_walk_burden'] || '보행 강도'}</span>
+              <span>${cleanHangul(localizedWalk, currentLang)}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">🚗 ${dict['timeline_transport'] || '이동 수단'}</span>
+              <span>${cleanHangul(localizedTransport, currentLang)}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">🍽 ${dict['timeline_recommended_meal'] || '추천 식사'}</span>
+              <span>${cleanHangul(localizedMeal, currentLang)}</span>
+            </div>
           </div>
         </div>
       </div>
     `;
     timelineGrid.appendChild(card);
+      // Distribute to 10-day book pages
+      const dayNum = idx + 1;
+      const g1 = document.getElementById('timelineGrid1');
+      const g2 = document.getElementById('timelineGrid2');
+      const g3 = document.getElementById('timelineGrid3');
+      if (dayNum <= 10 && g1) {
+        g1.appendChild(card.cloneNode(true));
+      } else if (dayNum > 10 && dayNum <= 20 && g2) {
+        g2.appendChild(card.cloneNode(true));
+      } else if (dayNum > 20 && g3) {
+        g3.appendChild(card.cloneNode(true));
+      }
+
   }
 }
 
@@ -5666,5 +5727,808 @@ document.addEventListener('click', (e) => {
     if (!panel.contains(e.target) && (!btn || !btn.contains(e.target))) {
       closeSettingsPanel();
     }
+  }
+});
+
+
+// ==========================================================================
+// 📅 일정 세부사항 펼치기/접기 (시니어 보행 친화 아코디언)
+// ==========================================================================
+window.allTimelineDaysExpanded = false;
+
+function toggleDayDetail(slotIdx, btn) {
+  const detail = document.getElementById(`dayDetail-${slotIdx}`);
+  if (!detail) return;
+  const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
+  const isHidden = detail.style.display === 'none' || !detail.style.display;
+  if (isHidden) {
+    detail.style.display = 'block';
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'true');
+      const txt = btn.querySelector('.toggle-text') || btn;
+      txt.textContent = dict['timeline_collapse_detail'] || '세부 일정 접기 ▲';
+    }
+  } else {
+    detail.style.display = 'none';
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      const txt = btn.querySelector('.toggle-text') || btn;
+      txt.textContent = dict['timeline_expand_detail'] || '세부 일정 펼치기 ▼';
+    }
+  }
+}
+window.toggleDayDetail = toggleDayDetail;
+
+function toggleAllTimelineDays() {
+  window.allTimelineDaysExpanded = !window.allTimelineDaysExpanded;
+  const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
+  const details = document.querySelectorAll('.day-detail-collapse');
+  const buttons = document.querySelectorAll('.btn-toggle-day-detail');
+  
+  details.forEach(d => {
+    d.style.display = window.allTimelineDaysExpanded ? 'block' : 'none';
+  });
+  
+  buttons.forEach(b => {
+    b.setAttribute('aria-expanded', String(window.allTimelineDaysExpanded));
+    const txt = b.querySelector('.toggle-text') || b;
+    txt.textContent = window.allTimelineDaysExpanded
+      ? (dict['timeline_collapse_detail'] || '세부 일정 접기 ▲')
+      : (dict['timeline_expand_detail'] || '세부 일정 펼치기 ▼');
+  });
+
+  const icon = document.getElementById('toggleAllTimelineIcon');
+  const text = document.getElementById('toggleAllTimelineText');
+  if (icon) icon.textContent = window.allTimelineDaysExpanded ? '▲' : '▼';
+  if (text) {
+    text.textContent = window.allTimelineDaysExpanded
+      ? (dict['timeline_collapse_all'] || '모든 날짜 세부일정 접기 ▲')
+      : (dict['timeline_expand_all'] || '모든 날짜 세부일정 펼치기 ▼');
+  }
+}
+window.toggleAllTimelineDays = toggleAllTimelineDays;
+
+// ==========================================================================
+// 🎪 지역별 공식 축제 & 🌃 파노라마 야경 명소 인터랙티브 로직
+// ==========================================================================
+let currentFestNightSubTab = 'festivals'; // 'festivals', 'nightviews', 'saved'
+let currentFestRegionFilter = 'ALL';      // 'ALL', 'EU', 'LATIN'
+let currentFestSeasonFilter = 'ALL';      // 'ALL', 'spring_summer', 'autumn_winter'
+
+function switchFestNightSubTab(tab) {
+  currentFestNightSubTab = tab;
+  document.querySelectorAll('#festNightSubTabs .tab-chip').forEach(btn => btn.classList.remove('active'));
+  
+  const targetBtn = document.getElementById(
+    tab === 'festivals' ? 'tabBtnFestivals' : (tab === 'nightviews' ? 'tabBtnNightviews' : 'tabBtnSavedCandidates')
+  );
+  if (targetBtn) targetBtn.classList.add('active');
+
+  const pFest = document.getElementById('festivalsPanel');
+  const pNight = document.getElementById('nightviewsPanel');
+  const pSaved = document.getElementById('savedCandidatesPanel');
+
+  if (pFest) pFest.style.display = tab === 'festivals' ? 'block' : 'none';
+  if (pNight) pNight.style.display = tab === 'nightviews' ? 'block' : 'none';
+  if (pSaved) pSaved.style.display = tab === 'saved' ? 'block' : 'none';
+
+  renderFestivalsAndNightViews();
+}
+window.switchFestNightSubTab = switchFestNightSubTab;
+
+function setFestRegionFilter(region, btn) {
+  currentFestRegionFilter = region;
+  document.querySelectorAll('#festRegionFilterGroup .ctrl-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderFestivalsAndNightViews();
+}
+window.setFestRegionFilter = setFestRegionFilter;
+
+function setFestSeasonFilter(season, btn) {
+  currentFestSeasonFilter = season;
+  document.querySelectorAll('#festSeasonFilterGroup .ctrl-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderFestivalsAndNightViews();
+}
+window.setFestSeasonFilter = setFestSeasonFilter;
+
+// 여행 후보 저장소 유틸리티
+function getSavedCandidates() {
+  try {
+    const raw = localStorage.getItem('slowtravel_saved_candidates');
+    return raw ? JSON.parse(raw) : [];
+  } catch(e) {
+    return [];
+  }
+}
+
+function updateSavedCandidatesCount() {
+  const list = getSavedCandidates();
+  const badge = document.getElementById('savedCandidatesCount');
+  if (badge) badge.textContent = String(list.length);
+}
+
+function toggleSaveCandidate(type, id) {
+  let list = getSavedCandidates();
+  const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
+  const existsIndex = list.findIndex(item => item.id === id);
+
+  if (existsIndex >= 0) {
+    list.splice(existsIndex, 1);
+    localStorage.setItem('slowtravel_saved_candidates', JSON.stringify(list));
+    updateSavedCandidatesCount();
+    showToast(dict['toast_candidate_removed'] || '🗑️ 여행 후보에서 삭제되었습니다.');
+  } else {
+    list.push({ type, id, savedAt: new Date().toISOString() });
+    localStorage.setItem('slowtravel_saved_candidates', JSON.stringify(list));
+    updateSavedCandidatesCount();
+    showToast(dict['toast_candidate_saved'] || '⭐ 여행 후보로 저장되었습니다! (후보 목록에서 확인 가능)');
+  }
+
+  renderFestivalsAndNightViews();
+}
+window.toggleSaveCandidate = toggleSaveCandidate;
+
+function clearAllSavedCandidates() {
+  const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
+  localStorage.removeItem('slowtravel_saved_candidates');
+  updateSavedCandidatesCount();
+  showToast(dict['toast_candidate_removed'] || '🗑️ 모든 저장 목록이 비워졌습니다.');
+  renderFestivalsAndNightViews();
+}
+window.clearAllSavedCandidates = clearAllSavedCandidates;
+
+// 축제 및 야경 명소 렌더링 코어
+function renderFestivalsAndNightViews() {
+  const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
+  updateSavedCandidatesCount();
+
+  const festData = window.FESTIVALS_GUIDE_DATA || [];
+  const nightData = window.NIGHTVIEWS_GUIDE_DATA || [];
+  const savedCandidates = getSavedCandidates();
+
+  // 사용자 현재 여행 기간 계산 (현재 날짜 기준: 2026-10-11)
+  const userStartDate = new Date(currentStartDateStr || '2026-11-20');
+  const userEndDate = new Date(userStartDate);
+  userEndDate.setDate(userStartDate.getDate() + (currentDurationDays || 30));
+
+  const startFormatted = `${userStartDate.getFullYear()}.${String(userStartDate.getMonth() + 1).padStart(2, '0')}.${String(userStartDate.getDate()).padStart(2, '0')}`;
+  const endFormatted = `${userEndDate.getFullYear()}.${String(userEndDate.getMonth() + 1).padStart(2, '0')}.${String(userEndDate.getDate()).padStart(2, '0')}`;
+
+  // 1. 기간 매칭 축제 계산
+  let matchedFestCount = 0;
+  const matchedFestNames = [];
+  festData.forEach(item => {
+    if (item.statusType === 'confirmed' && item.officialConfirmedDates) {
+      const fStart = new Date(item.officialConfirmedDates.start);
+      const fEnd = new Date(item.officialConfirmedDates.end);
+      if (fStart <= userEndDate && fEnd >= userStartDate) {
+        matchedFestCount++;
+        const i18n = (item.i18n && item.i18n[currentLang]) || {};
+        const localizedName = i18n.name || item.name;
+        matchedFestNames.push(localizedName.split('(')[0].trim());
+      }
+    }
+  });
+
+  const getIndicatorHtml = () => {
+    if (matchedFestCount > 0) {
+      if (currentLang === 'en') {
+        return `🎯 <strong>Selected Trip Dates (${startFormatted} - ${endFormatted}, ${currentDurationDays} days)</strong>: <strong>${matchedFestCount} official festival(s)</strong> coincide (${matchedFestNames.join(', ')})`;
+      } else if (currentLang === 'ja') {
+        return `🎯 <strong>選択した旅行期間（${startFormatted}〜${endFormatted}、${currentDurationDays}日間）</strong>内に公式確定フェスティバル<strong>${matchedFestCount}件</strong>が重なります（${matchedFestNames.join(', ')}）`;
+      } else if (currentLang === 'zh') {
+        return `🎯 <strong>所选出行期间（${startFormatted} ~ ${endFormatted}，共${currentDurationDays}天）</strong>内有<strong>${matchedFestCount}个</strong>官方确认节庆活动重合（${matchedFestNames.join(', ')}）`;
+      } else {
+        return `🎯 <strong>선택된 여행 기간(${startFormatted} ~ ${endFormatted}, ${currentDurationDays}일)</strong> 내 공식 확정 축제 <strong>${matchedFestCount}개</strong> 연계 가능 (${matchedFestNames.join(', ')})`;
+      }
+    } else {
+      if (currentLang === 'en') {
+        return `🗓️ <strong>Selected Trip Dates: ${startFormatted} - ${endFormatted} (${currentDurationDays} days)</strong> · No official festivals overlap with these dates. Permanent viewpoints & historic sites recommended.`;
+      } else if (currentLang === 'ja') {
+        return `🗓️ <strong>選択した旅行期間：${startFormatted}〜${endFormatted}（${currentDurationDays}日間）</strong> · 公式確定祭典と重複しないため、常設名所や夜景ビュースポットの訪問をおすすめします。`;
+      } else if (currentLang === 'zh') {
+        return `🗓️ <strong>所选出行期间：${startFormatted} ~ ${endFormatted}（共${currentDurationDays}天）</strong> · 暂无重合的官方确定节庆，建议游览常设景点与全景夜景观景台。`;
+      } else {
+        return `🗓️ <strong>선택된 여행 기간: ${startFormatted} ~ ${endFormatted} (${currentDurationDays}일간)</strong> · 공식 확정 축제와 날짜가 겹치지 않으므로 상시 명소 및 야경 뷰포인트 방문을 권장합니다.`;
+      }
+    }
+  };
+
+  const indHtml = getIndicatorHtml();
+  ['festMatchIndicatorText', 'festMatchIndicatorTextSpring', 'festMatchIndicatorTextAutumn'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = indHtml;
+  });
+
+  const renderFestCard = (item) => {
+    const i18n = (item.i18n && item.i18n[currentLang]) || {};
+    const localizedCountry = i18n.country || item.country;
+    const localizedCity = i18n.city || item.city;
+    const localizedName = i18n.name || item.name;
+    const localizedTiming = i18n.typicalTiming || item.typicalTiming;
+    const localizedStatus = i18n.statusLabel || item.statusLabel;
+    const localizedVenue = i18n.venue || item.venue;
+    const localizedDesc = i18n.description || item.description;
+    const localizedCrowd = i18n.crowdsBooking || item.crowdsBooking;
+    const localizedDiff = i18n.difficultyDesc || item.difficultyDesc;
+    const localizedPrice = (item.priceInfo && item.priceInfo[currentLang]) || (item.priceInfo && item.priceInfo.ko) || '무료';
+    const localizedNecessity = (item.bookingNecessity && item.bookingNecessity[currentLang]) || (item.bookingNecessity && item.bookingNecessity.ko) || '예매 불필요';
+
+    let isOverlap = false;
+    if (item.statusType === 'confirmed' && item.officialConfirmedDates) {
+      const fStart = new Date(item.officialConfirmedDates.start);
+      const fEnd = new Date(item.officialConfirmedDates.end);
+      isOverlap = (fStart <= userEndDate && fEnd >= userStartDate);
+    }
+
+    const isSaved = savedCandidates.some(c => c.id === item.id);
+    const saveBtnText = isSaved ? (dict['btn_saved_candidate'] || '✓ 저장됨') : (dict['btn_save_candidate'] || '⭐ 후보 저장');
+
+    let statusBadgeClass = item.statusType === 'confirmed' ? 'confirmed' : (item.statusType === 'concluded_2026' ? 'concluded' : 'unconfirmed');
+
+    let bookingBadgeText = dict['badge_booking_free'] || '🆓 무료 관람 · 예매 불필요';
+    if (item.bookingBadge === 'required') {
+      bookingBadgeText = dict['badge_booking_required'] || '🎟️ 사전 예매 필수 · 매진 주의';
+    } else if (item.bookingBadge === 'optional') {
+      bookingBadgeText = dict['badge_booking_optional'] || '🎫 부분 유료 · 선택 예매';
+    }
+
+    return `
+      <article class="photo-card fest-card" id="card-${item.id}">
+        <div class="photo-thumb-wrap loaded">
+          <img src="${item.image}" alt="${localizedName}" class="photo-thumb loaded" loading="lazy"
+               onload="this.classList.add('loaded');if(this.parentElement)this.parentElement.classList.add('loaded');"
+               onerror="this.onerror=null;this.classList.add('loaded');if(this.parentElement)this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80';" />
+          <span class="photo-badge">${localizedCountry} · ${localizedCity}</span>
+        </div>
+        <div class="photo-body">
+          ${isOverlap ? `<div class="badge-overlap-match">${dict['badge_overlap_match'] || '🎯 선택한 여행 기간과 겹침 (방문 가능)'}</div>` : ''}
+          <div class="badge-fest-status ${statusBadgeClass}">${localizedStatus}</div>
+          <h3 class="photo-title" style="margin-top:6px">${localizedName}</h3>
+          <div class="photo-region">📍 ${localizedVenue}</div>
+          <p class="photo-desc">${localizedDesc}</p>
+          
+          <div class="photo-highlight">
+            <strong>📅 ${dict['lbl_typical_timing'] || '통상 시기'}:</strong> ${localizedTiming}<br>
+            <strong>📌 ${dict['lbl_confirmed_dates'] || '확정 일정'}:</strong> ${item.confirmedDateRangeStr}
+          </div>
+
+          <!-- 티켓 가격 & 예매 필요성 안내 박스 -->
+          <div class="fest-price-box">
+            <div class="badge-booking ${item.bookingBadge || 'free'}">${bookingBadgeText}</div>
+            <div class="price-row">
+              <strong>💰 ${dict['lbl_price'] || '티켓 요금'}:</strong>
+              <span>${localizedPrice}</span>
+            </div>
+            <div class="price-row">
+              <strong>🎟️ ${dict['lbl_booking_need'] || '예매 필요성'}:</strong>
+              <span>${localizedNecessity}</span>
+            </div>
+          </div>
+
+          <div class="photo-meta-list">
+            <div>
+              <strong>👥 ${dict['lbl_crowd_booking'] || '혼잡/예약'}:</strong>
+              <span>${localizedCrowd}</span>
+            </div>
+            <div style="margin-top:4px">
+              <span class="badge-difficulty ${item.difficultyLevel || 'warning'}">${item.difficultyBadge}</span>
+            </div>
+            <div>
+              <strong>👣 ${dict['lbl_walking_difficulty'] || '보행 가이드'}:</strong>
+              <span>${localizedDiff}</span>
+            </div>
+          </div>
+
+          <div class="card-action-bar">
+            <a href="${item.bookingUrl || item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="btn-booking-site" title="공식 예매 및 축제 사이트 이동">
+              ${dict['btn_booking_portal'] || '🎫 공식 예매처 ↗'}
+            </a>
+            <a href="${item.videoUrl}" target="_blank" rel="noopener noreferrer" class="btn-video-preview" title="4K 현장 영상 및 랜선 투어 보기">
+              ${dict['btn_watch_4k_video'] || '🎥 4K 현장 영상 ↗'}
+            </a>
+            <button type="button" class="btn-candidate-save ${isSaved ? 'saved' : ''}" onclick="toggleSaveCandidate('fest', '${item.id}')">
+              ${saveBtnText}
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  };
+
+  // 2. 분할 그리드 렌더링 (봄/여름 4선 vs 가을/겨울 5선)
+  const springFests = festData.filter(item => item.season === 'spring' || item.season === 'summer');
+  const autumnFests = festData.filter(item => item.season === 'autumn' || item.season === 'winter');
+
+  const springGrid = document.getElementById('festivalsSpringGrid');
+  if (springGrid) {
+    springGrid.innerHTML = springFests.map(renderFestCard).join('');
+  }
+
+  const autumnGrid = document.getElementById('festivalsAutumnGrid');
+  if (autumnGrid) {
+    autumnGrid.innerHTML = autumnFests.map(renderFestCard).join('');
+  }
+
+  // 기존 전체 그리드 호환
+  const festGrid = document.getElementById('festivalsCardsGrid');
+  if (festGrid) {
+    festGrid.innerHTML = festData.map(renderFestCard).join('');
+  }
+
+  // 3. 야경 명소 카드 그리드 렌더링
+  const nightGrid = document.getElementById('nightviewsCardsGrid');
+  if (nightGrid) {
+    nightGrid.innerHTML = nightData.map(item => {
+      const i18n = (item.i18n && item.i18n[currentLang]) || {};
+      const localizedCountry = i18n.country || item.country;
+      const localizedCity = i18n.city || item.city;
+      const localizedSpot = i18n.spot || item.spot;
+      const localizedViewType = i18n.viewType || item.viewType;
+      const localizedTime = i18n.recommendedTime || item.recommendedTime;
+      const localizedTicket = i18n.operatingAndTicket || item.operatingAndTicket;
+      const localizedDiff = i18n.difficultyDesc || item.difficultyDesc;
+      const localizedNightReturn = i18n.nightReturnNotes || item.nightReturnNotes;
+      const localizedPrice = (item.priceInfo && item.priceInfo[currentLang]) || (item.priceInfo && item.priceInfo.ko) || localizedTicket;
+      const localizedNecessity = (item.bookingNecessity && item.bookingNecessity[currentLang]) || (item.bookingNecessity && item.bookingNecessity.ko) || '예매 불필요';
+
+      const isSaved = savedCandidates.some(c => c.id === item.id);
+      const saveBtnText = isSaved ? (dict['btn_saved_candidate'] || '✓ 저장됨') : (dict['btn_save_candidate'] || '⭐ 후보 저장');
+
+      let bookingBadgeText = dict['badge_booking_free'] || '🆓 무료 관람 · 예매 불필요';
+      if (item.bookingBadge === 'required') {
+        bookingBadgeText = dict['badge_booking_required'] || '🎟️ 사전 예매 필수 · 매진 주의';
+      } else if (item.bookingBadge === 'optional') {
+        bookingBadgeText = dict['badge_booking_optional'] || '🎫 부분 유료 · 선택 예매';
+      }
+
+      return `
+        <article class="photo-card night-card" id="card-${item.id}">
+          <div class="photo-thumb-wrap loaded">
+            <img src="${item.image}" alt="${localizedSpot}" class="photo-thumb loaded" loading="lazy"
+                 onload="this.classList.add('loaded');if(this.parentElement)this.parentElement.classList.add('loaded');"
+                 onerror="this.onerror=null;this.classList.add('loaded');if(this.parentElement)this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80';" />
+            <span class="photo-badge photo-badge-orange">${localizedCountry} · ${localizedCity}</span>
+          </div>
+          <div class="photo-body">
+            <h3 class="photo-title">${localizedSpot}</h3>
+            <div class="photo-region">🌃 ${dict['lbl_view_type'] || '전망 유형'}: ${localizedViewType}</div>
+            <div class="photo-highlight">
+              <strong>⏰ ${dict['lbl_best_view_time'] || '추천 조망 시간'}:</strong> ${localizedTime}<br>
+              <strong>🎫 ${dict['lbl_admission_hours'] || '입장 & 요금'}:</strong> ${localizedTicket}
+            </div>
+
+            <!-- 티켓 요금 & 예매 필요성 안내 박스 -->
+            <div class="fest-price-box">
+              <div class="badge-booking ${item.bookingBadge || 'free'}">${bookingBadgeText}</div>
+              <div class="price-row">
+                <strong>💰 ${dict['lbl_price'] || '티켓 요금'}:</strong>
+                <span>${localizedPrice}</span>
+              </div>
+              <div class="price-row">
+                <strong>🎟️ ${dict['lbl_booking_need'] || '예매 필요성'}:</strong>
+                <span>${localizedNecessity}</span>
+              </div>
+            </div>
+
+            <div class="photo-meta-list">
+              <div>
+                <span class="badge-difficulty ${item.difficultyLevel || 'warning'}">${item.difficultyBadge}</span>
+              </div>
+              <div style="margin-top:4px">
+                <strong>👣 ${dict['lbl_walking_difficulty'] || '보행 가이드'}:</strong>
+                <span>${localizedDiff}</span>
+              </div>
+              <div style="margin-top:4px">
+                <strong>🚕 ${dict['lbl_night_return_safety'] || '야간 안전 귀가 팁'}:</strong>
+                <span style="color:#b91c1c">${localizedNightReturn}</span>
+              </div>
+            </div>
+
+            <div class="card-action-bar">
+              <a href="${item.bookingUrl || item.sourceUrl}" target="_blank" rel="noopener noreferrer" class="btn-booking-site" title="공식 예매 및 관광청 사이트 이동">
+                ${dict['lbl_official_booking_site'] || '🎟️ 공식 예매처 ↗'}
+              </a>
+              <a href="${item.videoUrl}" target="_blank" rel="noopener noreferrer" class="btn-video-preview" title="4K 노을 및 야경 영상 보기">
+                ${dict['lbl_watch_4k_video'] || '🎥 4K 현장 영상 ↗'}
+              </a>
+              <button type="button" class="btn-candidate-save ${isSaved ? 'saved' : ''}" onclick="toggleSaveCandidate('night', '${item.id}')">
+                ${saveBtnText}
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  // 4. 저장된 후보 목록 렌더링
+  const savedGrid = document.getElementById('savedCandidatesGrid');
+  if (savedGrid) {
+    if (savedCandidates.length === 0) {
+      savedGrid.innerHTML = `
+        <div style="grid-column:1/-1;text-align:center;padding:48px 20px;background:#ffffff;border:1px dashed #d8cebe;border-radius:16px;">
+          <div style="font-size:32px;margin-bottom:8px">⭐</div>
+          <div style="font-weight:700;color:var(--primary);font-size:16px;">${dict['saved_empty_title'] || '아직 저장된 여행 후보가 없습니다.'}</div>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">
+            ${dict['saved_empty_desc'] || '축제 및 야경 카드의 [⭐ 후보 저장] 버튼을 누르면 이 페이지에 모아서 한눈에 공부하고 비교할 수 있습니다.'}
+          </p>
+        </div>
+      `;
+    } else {
+      savedGrid.innerHTML = savedCandidates.map(c => {
+        if (c.type === 'fest') {
+          const item = festData.find(x => x.id === c.id);
+          return item ? renderFestCard(item) : '';
+        } else {
+          const item = nightData.find(x => x.id === c.id);
+          if (!item) return '';
+          const i18n = (item.i18n && item.i18n[currentLang]) || {};
+          const localizedCountry = i18n.country || item.country;
+          const localizedCity = i18n.city || item.city;
+          const localizedSpot = i18n.spot || item.spot;
+          const localizedTime = i18n.recommendedTime || item.recommendedTime;
+          const localizedDiff = i18n.difficultyDesc || item.difficultyDesc;
+          const localizedPrice = (item.priceInfo && item.priceInfo[currentLang]) || (item.priceInfo && item.priceInfo.ko) || '무료';
+
+          return `
+            <article class="photo-card night-card" id="saved-card-${item.id}">
+              <div class="photo-thumb-wrap loaded">
+                <img src="${item.image}" alt="${localizedSpot}" class="photo-thumb loaded" loading="lazy" />
+                <span class="photo-badge photo-badge-orange">${localizedCountry} · ${localizedCity}</span>
+              </div>
+              <div class="photo-body">
+                <h3 class="photo-title">${localizedSpot}</h3>
+                <div class="photo-highlight">
+                  <strong>⏰ ${dict['lbl_best_view_time'] || '추천 조망 시간'}:</strong> ${localizedTime}<br>
+                  <strong>💰 ${dict['lbl_price'] || '티켓 요금'}:</strong> ${localizedPrice}
+                </div>
+                <div class="photo-meta-list">
+                  <div>${localizedDiff}</div>
+                </div>
+                <div class="card-action-bar">
+                  <a href="${item.videoUrl}" target="_blank" rel="noopener noreferrer" class="btn-video-preview">
+                    ${dict['lbl_watch_4k_video'] || '🎥 4K 영상 ↗'}
+                  </a>
+                  <button type="button" class="btn-candidate-save saved" onclick="toggleSaveCandidate('night', '${item.id}')">
+                    ${dict['btn_saved_candidate'] || '✓ 저장됨 (제거)'}
+                  </button>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+      }).join('');
+    }
+  }
+}
+
+window.renderFestivalsAndNightViews = renderFestivalsAndNightViews;
+
+// Initialize festivals and night views on initial script execution
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof renderFestivalsAndNightViews === 'function') renderFestivalsAndNightViews();
+  });
+} else {
+  setTimeout(() => {
+    if (typeof renderFestivalsAndNightViews === 'function') renderFestivalsAndNightViews();
+  }, 100);
+}
+
+
+// ==========================================================================
+// 📚 디지털 여행 가이드북 (Digital Travel Guidebook) 장별(Chapter) 전환 시스템
+// ==========================================================================
+window.currentActiveChapter = 'chapter-overview';
+
+const GUIDEBOOK_CHAPTERS = [
+  'chapter-overview',
+  'chapter-planner',
+  'chapter-guide',
+  'chapter-festivals',
+  'chapter-practical'
+];
+
+function switchGuidebookChapter(chapterId, shouldScroll = true) {
+  if (!GUIDEBOOK_CHAPTERS.includes(chapterId)) {
+    chapterId = 'chapter-overview';
+  }
+  
+  window.currentActiveChapter = chapterId;
+
+  // 1. 본문 챕터 표시 전환
+  document.querySelectorAll('.guidebook-chapter').forEach(ch => {
+    if (ch.id === chapterId) {
+      ch.classList.add('active');
+    } else {
+      ch.classList.remove('active');
+    }
+  });
+
+  // 2. 좌측 목차 사이드바(데스크톱) 활성 상태 동기화
+  document.querySelectorAll('#sidebarChapterNav .sidebar-nav-item').forEach(item => {
+    const isTarget = item.getAttribute('data-chapter') === chapterId;
+    item.classList.toggle('active', isTarget);
+    item.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+  });
+
+  // 3. 모바일 하단 메뉴 활성 상태 동기화
+  document.querySelectorAll('#mobileBottomNav .mobile-nav-btn').forEach(btn => {
+    const isTarget = btn.getAttribute('data-chapter') === chapterId;
+    btn.classList.toggle('active', isTarget);
+  });
+
+  // 4. 상단 헤더 내비게이션 활성 상태 동기화
+  document.querySelectorAll('#globalNav .nav-link').forEach(link => {
+    const isTarget = link.getAttribute('data-chapter') === chapterId;
+    link.classList.toggle('active', isTarget);
+  });
+
+  // 5. URL 해시 동기화 (#planner, #guide, #festivals, #practical, #overview)
+  const hashSlug = chapterId.replace('chapter-', '');
+  if (window.location.hash !== '#' + hashSlug) {
+    history.replaceState(null, '', '#' + hashSlug);
+  }
+
+  // 6. 페이지 상단 스크롤
+  if (shouldScroll) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // 7. 챕터별 데이터 렌더러 보장 및 Leaflet 지도 리사이즈
+  try {
+    if (chapterId === 'chapter-planner') {
+      if (typeof applyPlanReconfiguration === 'function') {
+        applyPlanReconfiguration(false);
+      }
+    } else if (chapterId === 'chapter-guide') {
+      if (typeof renderGlobalLandmarks === 'function') {
+        renderGlobalLandmarks();
+      }
+      setTimeout(() => {
+        if (window.landmarksMap && typeof window.landmarksMap.invalidateSize === 'function') {
+          window.landmarksMap.invalidateSize();
+        }
+      }, 100);
+    } else if (chapterId === 'chapter-festivals') {
+      if (typeof renderFestivalsAndNightViews === 'function') {
+        renderFestivalsAndNightViews();
+      }
+    } else if (chapterId === 'chapter-practical') {
+      if (typeof renderGlobalDining === 'function') {
+        renderGlobalDining();
+      }
+      if (typeof renderLocalPhrases === 'function') {
+        renderLocalPhrases();
+      }
+      if (typeof renderTransitGuide === 'function') {
+        renderTransitGuide();
+      }
+      if (typeof renderHotelsGrid === 'function') {
+        renderHotelsGrid();
+      }
+      setTimeout(() => {
+        if (window.diningMap && typeof window.diningMap.invalidateSize === 'function') {
+          window.diningMap.invalidateSize();
+        }
+      }, 100);
+    }
+  } catch (err) {
+    console.error('Error during chapter renderer activation:', err);
+  }
+}
+window.switchGuidebookChapter = switchGuidebookChapter;
+
+// 해시 기반 챕터 라우팅 (외부 링크, 즐겨찾기, #planner 호환)
+function handleGuidebookHashRouting(scrollIntoElement = false) {
+  const hash = (window.location.hash || '').toLowerCase();
+  let targetChapter = 'chapter-overview';
+  let targetElementId = null;
+
+  if (hash === '#planner' || hash === '#route-itinerary' || hash === '#budget' || hash === '#timelinegrid') {
+    targetChapter = 'chapter-planner';
+    targetElementId = hash.replace('#', '');
+  } else if (hash === '#festivals' || hash === '#festivals-nightviews' || hash === '#nightviews') {
+    targetChapter = 'chapter-festivals';
+    targetElementId = 'festivals-nightviews';
+  } else if (hash === '#guide' || hash === '#attractions' || hash === '#route' || hash === '#recommend' || hash === '#travel-guide') {
+    targetChapter = 'chapter-guide';
+    targetElementId = hash.replace('#', '');
+  } else if (hash === '#practical' || hash === '#dining' || hash === '#phrases' || hash === '#transit-hotels' || hash === '#ai-search' || hash === '#travel-tools') {
+    targetChapter = 'chapter-practical';
+    targetElementId = hash.replace('#', '');
+  } else if (hash === '#overview' || hash === '#hero' || hash === '#editorial-guide' || hash === '#curated-options' || hash === '#compare') {
+    targetChapter = 'chapter-overview';
+    targetElementId = hash.replace('#', '');
+  }
+
+  switchGuidebookChapter(targetChapter, !targetElementId);
+
+  if (targetElementId && scrollIntoElement) {
+    setTimeout(() => {
+      const el = document.getElementById(targetElementId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+}
+window.handleGuidebookHashRouting = handleGuidebookHashRouting;
+
+// 키보드 단축키로 장 전환 ([ / ] 또는 1~5)
+document.addEventListener('keydown', (e) => {
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+
+  const currentIdx = GUIDEBOOK_CHAPTERS.indexOf(window.currentActiveChapter);
+
+  if (e.key === '[' || e.key === 'ArrowLeft') {
+    if (currentIdx > 0) {
+      switchGuidebookChapter(GUIDEBOOK_CHAPTERS[currentIdx - 1]);
+    }
+  } else if (e.key === ']' || e.key === 'ArrowRight') {
+    if (currentIdx < GUIDEBOOK_CHAPTERS.length - 1) {
+      switchGuidebookChapter(GUIDEBOOK_CHAPTERS[currentIdx + 1]);
+    }
+  } else if (['1', '2', '3', '4', '5'].includes(e.key)) {
+    const idx = parseInt(e.key, 10) - 1;
+    if (GUIDEBOOK_CHAPTERS[idx]) {
+      switchGuidebookChapter(GUIDEBOOK_CHAPTERS[idx]);
+    }
+  }
+});
+
+// 해시 변경 이벤트 리스너
+window.addEventListener('hashchange', () => {
+  handleGuidebookHashRouting(true);
+});
+
+// 초기 실행 시 해시 라우팅 적용
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    handleGuidebookHashRouting(false);
+  });
+} else {
+  handleGuidebookHashRouting(false);
+}
+
+
+// ==========================================================================
+// 📖 디지털 가이드북 책장 넘기기 (Book Page Flip & Turn) 시스템
+// ==========================================================================
+window.currentBookPage = {
+  'chapter-overview': 0,
+  'chapter-planner': 0,
+  'chapter-guide': 0,
+  'chapter-festivals': 0,
+  'chapter-practical': 0
+};
+
+const CHAPTER_PAGE_COUNTS = {
+  'chapter-overview': 3,
+  'chapter-planner': 4,
+  'chapter-guide': 4,
+  'chapter-festivals': 4,
+  'chapter-practical': 4
+};
+
+function goToBookPage(chapterId, pageIndex, shouldScroll = true) {
+  const maxPages = CHAPTER_PAGE_COUNTS[chapterId] || 1;
+  if (pageIndex < 0) pageIndex = 0;
+  if (pageIndex >= maxPages) pageIndex = maxPages - 1;
+
+  if (!window.currentBookPage) window.currentBookPage = {};
+  window.currentBookPage[chapterId] = pageIndex;
+  window.currentActiveChapter = chapterId;
+
+  // 1. 해당 챕터 내 book-page 클래스 활성화 전환
+  const chapterEl = document.getElementById(chapterId);
+  if (chapterEl) {
+    const pages = chapterEl.querySelectorAll('.book-page');
+    pages.forEach((p, idx) => {
+      const isTarget = idx === pageIndex;
+      p.classList.toggle('active', isTarget);
+    });
+
+    // 2. 북마크 탭 활성 상태 동기화
+    const tabContainer = document.getElementById('tabs-' + chapterId);
+    if (tabContainer) {
+      tabContainer.querySelectorAll('.bookmark-chip').forEach((chip, idx) => {
+        chip.classList.toggle('active', idx === pageIndex);
+      });
+    }
+
+    // 3. 페이지 카운터 갱신 (P. 1 / 4)
+    const counterEl = document.getElementById('counter-' + chapterId);
+    if (counterEl) {
+      counterEl.textContent = 'P. ' + (pageIndex + 1) + ' / ' + maxPages;
+    }
+
+    // 4. 하단 플로팅 북 리더 뱃지 갱신
+    const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
+    const chapNames = {
+      'chapter-overview': dict['chapter_name_overview'] || '01. 여행 개요',
+      'chapter-planner': dict['chapter_name_planner'] || '02. 일정 플래너',
+      'chapter-guide': dict['chapter_name_guide'] || '03. 지역 가이드',
+      'chapter-festivals': dict['chapter_name_festivals'] || '04. 축제 & 야경',
+      'chapter-practical': dict['chapter_name_practical'] || '05. 여행 실용정보'
+    };
+    const floatEl = document.getElementById('floatBookBadge');
+    if (floatEl) {
+      const shortName = chapNames[chapterId] || '';
+      floatEl.textContent = '📖 ' + shortName + ' · P. ' + (pageIndex + 1) + ' / ' + maxPages;
+    }
+
+    // 5. Chapter 3의 경우 4페이지(index 3) 대형 지도 뷰 활성화
+    if (chapterId === 'chapter-guide' && pageIndex === 3) {
+      setTimeout(() => {
+        if (typeof renderBigLandmarksMap === 'function') {
+          renderBigLandmarksMap();
+        } else if (window.landmarksMapInstance && typeof window.landmarksMapInstance.invalidateSize === 'function') {
+          window.landmarksMapInstance.invalidateSize();
+        }
+      }, 150);
+    }
+
+    // 6. Chapter 4의 경우 렌더링 갱신
+    if (chapterId === 'chapter-festivals') {
+      if (typeof renderFestivalsAndNightViews === 'function') {
+        renderFestivalsAndNightViews();
+      }
+    }
+  }
+
+  if (shouldScroll) {
+    const barEl = document.getElementById('bookBar-' + chapterId);
+    if (barEl) {
+      barEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+}
+window.goToBookPage = goToBookPage;
+
+function turnBookPage(chapterId, delta) {
+  const currentIdx = window.currentBookPage[chapterId] || 0;
+  const maxPages = CHAPTER_PAGE_COUNTS[chapterId] || 1;
+  const nextIdx = currentIdx + delta;
+
+  if (nextIdx >= 0 && nextIdx < maxPages) {
+    goToBookPage(chapterId, nextIdx, true);
+  } else if (nextIdx >= maxPages) {
+    // 다음 장으로 넘어가기
+    const chapList = GUIDEBOOK_CHAPTERS;
+    const currentChapIdx = chapList.indexOf(chapterId);
+    if (currentChapIdx < chapList.length - 1) {
+      const nextChap = chapList[currentChapIdx + 1];
+      switchGuidebookChapter(nextChap, true);
+      goToBookPage(nextChap, 0, true);
+    }
+  } else if (nextIdx < 0) {
+    // 이전 장의 마지막 페이지로 넘어가기
+    const chapList = GUIDEBOOK_CHAPTERS;
+    const currentChapIdx = chapList.indexOf(chapterId);
+    if (currentChapIdx > 0) {
+      const prevChap = chapList[currentChapIdx - 1];
+      switchGuidebookChapter(prevChap, true);
+      goToBookPage(prevChap, (CHAPTER_PAGE_COUNTS[prevChap] || 1) - 1, true);
+    }
+  }
+}
+window.turnBookPage = turnBookPage;
+
+// 키보드 PageUp / PageDown 책 넘기기 연동
+document.addEventListener('keydown', (e) => {
+  const tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea' || tag === 'select' || e.target.isContentEditable) return;
+
+  if (e.key === 'PageDown' || (e.shiftKey && e.key === 'ArrowRight')) {
+    e.preventDefault();
+    turnBookPage(window.currentActiveChapter, 1);
+  } else if (e.key === 'PageUp' || (e.shiftKey && e.key === 'ArrowLeft')) {
+    e.preventDefault();
+    turnBookPage(window.currentActiveChapter, -1);
   }
 });

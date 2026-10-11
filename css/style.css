@@ -1262,12 +1262,13 @@ body.dark-theme .phrase-card:hover {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.85);
   box-shadow: 0 16px 48px rgba(24, 42, 41, 0.18), 0 2px 10px rgba(0, 0, 0, 0.05);
-  display: flex;
+  display: none !important;
   flex-direction: column;
   overflow: hidden;
   z-index: 996;
   animation: chatSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.chat-window-container.active { display: flex !important; }
 @keyframes chatSlideUp {
   from { opacity: 0; transform: translateY(16px) scale(0.96); }
   to { opacity: 1; transform: translateY(0) scale(1); }
@@ -1852,12 +1853,13 @@ body.dark-theme .sticky-header-container {
   -webkit-backdrop-filter: blur(20px) !important;
   border: 1px solid rgba(255, 255, 255, 0.85) !important;
   box-shadow: 0 16px 45px rgba(24, 42, 41, 0.18), 0 2px 10px rgba(0, 0, 0, 0.05) !important;
-  display: flex !important;
+  display: none !important;
   flex-direction: column !important;
   overflow: hidden !important;
   z-index: 996 !important;
   animation: chatSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
+.chat-window-container.active { display: flex !important; }
 
 .chat-window-header {
   flex-shrink: 0 !important;
@@ -3537,11 +3539,12 @@ html, body {
   border: 1px solid var(--theme-sand-border);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
   z-index: 1060;
-  display: flex;
+  display: none !important;
   flex-direction: column;
   overflow: hidden;
   animation: slideDownFade 0.25s ease-out forwards;
 }
+.chat-window-container.active { display: flex !important; }
 
 /* --- 8. Responsive Adjustments for Mobile & Tablet --- */
 @media (max-width: 992px) {
@@ -3800,5 +3803,1547 @@ html, body {
   }
   .ed-video-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================================
+   🎯 2026 가족 여행 플래너 UI/UX 완성 & 반응형 레이아웃 강화
+   ========================================================================== */
+
+/* 1. AI 챗봇 창: 기본 상태 접힘 엄격 보장 & 반응형 모바일 하단 패널 */
+.chat-window-container {
+  display: none !important;
+  position: fixed !important;
+  bottom: 84px !important;
+  right: 24px !important;
+  width: 380px !important;
+  max-width: calc(100vw - 32px) !important;
+  height: 520px !important;
+  max-height: min(520px, calc(100vh - 120px)) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(22, 60, 48, 0.12) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.18), 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+  z-index: 1060 !important;
+  overflow: hidden !important;
+}
+
+.chat-window-container.active {
+  display: flex !important;
+  flex-direction: column !important;
+  animation: chatSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.chat-floating-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: var(--green, #1a5249) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(27, 67, 50, 0.35) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+  z-index: 1050 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.chat-floating-btn:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 12px 28px rgba(27, 67, 50, 0.45) !important;
+}
+
+/* 모바일 화면에서 AI 챗봇: 화면 가림 없는 하단 슬라이드 패널 */
+@media (max-width: 768px) {
+  .chat-floating-btn {
+    bottom: 74px !important; /* 모바일 하단 네비게이션 위에 안착 */
+    right: 16px !important;
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 20px !important;
+  }
+
+  .chat-window-container.active {
+    bottom: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    height: 52vh !important;
+    max-height: 420px !important;
+    border-radius: 20px 20px 14px 14px !important;
+    box-shadow: 0 -10px 36px rgba(0, 0, 0, 0.22) !important;
+  }
+}
+
+/* 2. 플래너 입력 영역 반응형 그리드: 데스크톱 4열 / 태블릿 2열 / 모바일 1열 */
+.primary-controls {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  align-items: flex-end !important;
+}
+
+.primary-controls .control-group {
+  min-width: 0 !important;
+}
+
+.primary-controls .recalc-group {
+  grid-column: 1 / -1 !important;
+  margin-top: 6px !important;
+}
+
+.recalc-btn {
+  height: 48px !important;
+  min-height: 44px !important;
+  font-size: 15px !important;
+  border-radius: 12px !important;
+}
+
+@media (max-width: 992px) {
+  .primary-controls {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+  .primary-controls .recalc-group {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .primary-controls {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .primary-controls .recalc-group {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* 3. 긴 일정 접기/펼치기 아코디언 & 시니어 보행 친화 버튼 */
+.timeline-controls-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  margin: 16px 0 20px !important;
+  padding: 12px 18px !important;
+  background: var(--white, #fffdf8) !important;
+  border: 1px solid var(--line, #e4ded1) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.timeline-hint-text {
+  font-size: 13px !important;
+  color: var(--muted, #637370) !important;
+  font-weight: 500 !important;
+}
+
+.day-card {
+  position: relative !important;
+  transition: all 0.25s ease !important;
+}
+
+.day-header-summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 8px !important;
+}
+
+.day-header-summary h3 {
+  margin: 0 !important;
+  font-size: 16.5px !important;
+  font-weight: 800 !important;
+  color: var(--ink, #1c2e2c) !important;
+  line-height: 1.4 !important;
+  flex: 1 !important;
+  min-width: 240px !important;
+}
+
+.btn-toggle-day-detail {
+  background: #f4efe6 !important;
+  color: var(--green, #1a5249) !important;
+  border: 1px solid #dcd4c5 !important;
+  padding: 8px 16px !important;
+  min-height: 44px !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.btn-toggle-day-detail:hover {
+  background: var(--green, #1a5249) !important;
+  color: #ffffff !important;
+  border-color: var(--green, #1a5249) !important;
+}
+
+.btn-toggle-day-detail:focus-visible {
+  outline: 2px solid var(--orange, #d8754d) !important;
+  outline-offset: 2px !important;
+}
+
+.day-detail-collapse {
+  margin-top: 14px !important;
+  padding-top: 14px !important;
+  border-top: 1px dashed var(--line, #e4ded1) !important;
+  animation: fadeInDown 0.25s ease-out forwards !important;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. 지역별 축제 & 야경 명소 가이드 스타일 */
+.fest-filter-control-box {
+  background: var(--white, #fffdf8) !important;
+  border: 1px solid var(--line, #e4ded1) !important;
+  border-radius: 18px !important;
+  padding: 20px 24px !important;
+  box-shadow: var(--shadow) !important;
+  margin-bottom: 24px !important;
+}
+
+.fest-filter-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 28px !important;
+  flex-wrap: wrap !important;
+}
+
+.fest-filter-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.fest-filter-label {
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  color: var(--muted, #637370) !important;
+}
+
+.fest-match-indicator-bar {
+  margin-top: 14px !important;
+  padding: 10px 14px !important;
+  background: #f6fcf8 !important;
+  border-left: 4px solid var(--green, #1a5249) !important;
+  border-radius: 0 10px 10px 0 !important;
+  font-size: 12.5px !important;
+  color: #1b4332 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* 축제 및 야경 카드 전용 뱃지 */
+.badge-overlap-match {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: #10b981 !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 8px !important;
+  margin-bottom: 8px !important;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.28) !important;
+}
+
+.badge-fest-status {
+  display: inline-block !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.badge-fest-status.confirmed {
+  background: #e6f4ea !important;
+  color: #137333 !important;
+  border: 1px solid #b7e1cd !important;
+}
+
+.badge-fest-status.unconfirmed {
+  background: #fef7e0 !important;
+  color: #b06000 !important;
+  border: 1px solid #fce8b2 !important;
+}
+
+.badge-fest-status.concluded {
+  background: #f1f3f4 !important;
+  color: #5f6368 !important;
+  border: 1px solid #dadce0 !important;
+}
+
+.badge-difficulty {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  padding: 4px 9px !important;
+  border-radius: 6px !important;
+  margin: 4px 0 !important;
+}
+
+.badge-difficulty.alert {
+  background: #fde8e8 !important;
+  color: #c81e1e !important;
+  border: 1px solid #f8b4b4 !important;
+}
+
+.badge-difficulty.warning {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+}
+
+.badge-difficulty.easy {
+  background: #def7ec !important;
+  color: #03543f !important;
+  border: 1px solid #bcf0da !important;
+}
+
+.card-source-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  color: var(--orange, #d8754d) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+}
+
+.card-source-link:hover {
+  color: #b85c36 !important;
+}
+
+.btn-candidate-save {
+  background: #fff8f0 !important;
+  color: var(--orange, #d8754d) !important;
+  border: 1.5px solid var(--orange, #d8754d) !important;
+  padding: 8px 14px !important;
+  min-height: 44px !important;
+  border-radius: 12px !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-candidate-save:hover {
+  background: var(--orange, #d8754d) !important;
+  color: #ffffff !important;
+}
+
+.btn-candidate-save.saved {
+  background: var(--orange, #d8754d) !important;
+  color: #ffffff !important;
+}
+
+.saved-candidates-header {
+  background: var(--white, #fffdf8) !important;
+  border: 1px solid var(--line, #e4ded1) !important;
+  border-radius: 18px !important;
+  padding: 24px !important;
+  margin-bottom: 20px !important;
+}
+
+.saved-candidates-header h3 {
+  margin: 0 0 6px !important;
+  font-size: 18px !important;
+  color: var(--ink, #1c2e2c) !important;
+}
+
+.saved-candidates-header p {
+  margin: 0 !important;
+  font-size: 13.5px !important;
+  color: var(--muted, #637370) !important;
+}
+
+/* 5. 모바일 360~390px 화면 완벽 최적화 (가로 스크롤 방지 & 시니어 큰 터치 영역) */
+@media (max-width: 480px) {
+  .wrap {
+    padding: 0 16px !important;
+  }
+
+  .day-card {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 18px 16px !important;
+  }
+
+  .day-meta {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line, #e4ded1) !important;
+    padding-right: 0 !important;
+    padding-bottom: 12px !important;
+  }
+
+  .routine-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .fest-filter-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .ctrl-btn-group {
+    flex-wrap: wrap !important;
+  }
+
+  .ctrl-btn {
+    min-height: 44px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+
+  .select, input, select {
+    font-size: 16px !important; /* iOS 자동 줌 방지 */
+  }
+}
+
+
+/* ==========================================================================
+   🖼️ 이미지 로딩 100% 보장 & 스켈레톤 가림 방지
+   ========================================================================== */
+.photo-thumb {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.photo-thumb-wrap::before {
+  display: none !important;
+}
+
+.ed-photo-item img, .video-thumb-wrap img {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* 축제 & 야경 예매/가격/영상 UI 전용 스타일 */
+.fest-price-box {
+  background: #fdfaf3 !important;
+  border: 1px solid #eadfc9 !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  margin: 10px 0 !important;
+  font-size: 12.5px !important;
+  color: var(--ink, #1c2e2c) !important;
+  line-height: 1.55 !important;
+}
+
+.fest-price-box .price-row {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 6px !important;
+  margin-bottom: 4px !important;
+}
+
+.fest-price-box .price-row strong {
+  color: var(--green, #1a5249) !important;
+  min-width: 65px !important;
+}
+
+.badge-booking {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.badge-booking.free {
+  background: #e6f4ea !important;
+  color: #137333 !important;
+  border: 1px solid #ceead6 !important;
+}
+
+.badge-booking.required {
+  background: #fce8e6 !important;
+  color: #c5221f !important;
+  border: 1px solid #fad2cf !important;
+}
+
+.badge-booking.optional {
+  background: #e8f0fe !important;
+  color: #1a73e8 !important;
+  border: 1px solid #d2e3fc !important;
+}
+
+.card-action-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+  gap: 8px !important;
+  border-top: 1px solid var(--line, #e4ded1) !important;
+  padding-top: 14px !important;
+  margin-top: auto !important;
+}
+
+.btn-video-preview {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  background: #fff0f0 !important;
+  color: #c5221f !important;
+  border: 1px solid #f8b4b4 !important;
+  padding: 7px 12px !important;
+  min-height: 42px !important;
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.btn-video-preview:hover {
+  background: #c5221f !important;
+  color: #ffffff !important;
+  border-color: #c5221f !important;
+}
+
+.btn-booking-site {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  background: #eaf1fb !important;
+  color: #1a73e8 !important;
+  border: 1px solid #bed3f7 !important;
+  padding: 7px 12px !important;
+  min-height: 42px !important;
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.btn-booking-site:hover {
+  background: #1a73e8 !important;
+  color: #ffffff !important;
+  border-color: #1a73e8 !important;
+}
+
+
+/* ==========================================================================
+   📚 디지털 여행 가이드북 (Digital Travel Guidebook) 장별(Chapter) 레이아웃 시스템
+   ========================================================================== */
+
+/* 기본 래퍼 & 오버플로 방지 */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 2열 가이드북 데스크톱 레이아웃 (좌측 고정 목차 + 우측 본문 장) */
+.guidebook-layout {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (min-width: 1080px) {
+  .guidebook-layout {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    gap: 36px;
+    max-width: 1560px;
+    padding: 24px 24px 60px;
+  }
+}
+
+@media (max-width: 1079px) {
+  .guidebook-layout {
+    padding: 12px 12px calc(80px + env(safe-area-inset-bottom, 16px));
+  }
+}
+
+/* 데스크톱 좌측 고정 목차 사이드바 */
+.guidebook-sidebar {
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .guidebook-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 84px;
+    height: calc(100vh - 108px);
+    background: #ffffff;
+    border-radius: 22px;
+    border: 1px solid var(--line, #e2dacd);
+    box-shadow: 0 10px 32px rgba(24, 42, 41, 0.06);
+    padding: 22px 16px;
+    z-index: 80;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d1c7b7 transparent;
+  }
+}
+
+.sidebar-header {
+  padding: 4px 8px 16px;
+  border-bottom: 1px solid var(--line, #e2dacd);
+  margin-bottom: 16px;
+}
+
+.sidebar-badge {
+  display: inline-block;
+  background: var(--light-green, #e3ede3);
+  color: var(--primary, #182a29);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.sidebar-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary, #182a29);
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.sidebar-sub {
+  font-size: 12px;
+  color: var(--muted, #666);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  font-family: inherit;
+}
+
+.sidebar-nav-item:hover {
+  background: #f7f4ed;
+  border-color: #e8e2d6;
+  transform: translateX(2px);
+}
+
+.sidebar-nav-item.active {
+  background: var(--primary, #182a29);
+  border-color: var(--primary, #182a29);
+  box-shadow: 0 6px 18px rgba(24, 42, 41, 0.16);
+  transform: translateX(4px);
+}
+
+.chapter-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #eee8dc;
+  color: var(--primary, #182a29);
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav-item.active .chapter-num {
+  background: #ffffff;
+  color: var(--primary, #182a29);
+}
+
+.chapter-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.chapter-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary, #182a29);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-nav-item.active .chapter-name {
+  color: #ffffff;
+}
+
+.chapter-desc {
+  display: block;
+  font-size: 11px;
+  color: var(--muted, #666);
+  margin-top: 2px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-nav-item.active .chapter-desc {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.chapter-arrow {
+  color: #c4baa9;
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-nav-item:hover .chapter-arrow,
+.sidebar-nav-item.active .chapter-arrow {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.sidebar-footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--line, #e2dacd);
+  margin-top: auto;
+}
+
+.shortcut-tip {
+  display: block;
+  font-size: 11px;
+  color: #8c8273;
+  line-height: 1.4;
+  background: #faf7f2;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px dashed #ded6c9;
+}
+
+/* 본문 영역 및 장(Chapter) 전환 */
+.guidebook-content {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.guidebook-chapter {
+  display: none !important;
+  opacity: 0;
+}
+
+.guidebook-chapter.active {
+  display: block !important;
+  opacity: 1 !important;
+  animation: chapterFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes chapterFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 챕터 상단 웰컴 배너 */
+.chapter-header-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #faf6ef 100%);
+  border: 1px solid var(--line, #e2dacd);
+  border-radius: 20px;
+  padding: 22px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(24, 42, 41, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.chapter-header-text h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary, #182a29);
+  margin: 0 0 4px;
+  letter-spacing: -0.02em;
+}
+
+.chapter-header-text p {
+  font-size: 13px;
+  color: var(--muted, #666);
+  margin: 0;
+}
+
+.chapter-header-badge {
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* 챕터 하단 이전/다음 장 내비게이션 바 */
+.chapter-nav-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 48px;
+  padding: 24px 20px;
+  background: #ffffff;
+  border: 1px solid var(--line, #e2dacd);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(24, 42, 41, 0.04);
+}
+
+.btn-chapter-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+  border: 1px solid var(--line, #e2dacd);
+  background: #fdfbf7;
+  color: var(--primary, #182a29);
+}
+
+.btn-chapter-step:hover {
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  border-color: var(--primary, #182a29);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(24, 42, 41, 0.12);
+}
+
+.btn-chapter-step.next {
+  margin-left: auto;
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  border-color: var(--primary, #182a29);
+}
+
+.btn-chapter-step.next:hover {
+  background: #233b3a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(24, 42, 41, 0.18);
+}
+
+/* 모바일 전용 고정 하단 내비게이션 바 */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 1079px) {
+  .mobile-bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 64px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid rgba(226, 218, 205, 0.85);
+    box-shadow: 0 -4px 20px rgba(24, 42, 41, 0.08);
+    z-index: 995;
+    touch-action: manipulation;
+  }
+
+  .mobile-nav-btn {
+    flex: 1;
+    height: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    color: #6b6459;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 6px 2px;
+    transition: all 0.15s ease;
+  }
+
+  .mobile-nav-btn .m-icon {
+    font-size: 17px;
+    line-height: 1;
+    transition: transform 0.15s ease;
+  }
+
+  .mobile-nav-btn.active {
+    color: var(--primary, #182a29);
+  }
+
+  .mobile-nav-btn.active .m-icon {
+    transform: scale(1.18);
+  }
+
+  .mobile-nav-btn.active .m-label {
+    color: var(--primary, #182a29);
+    font-weight: 800;
+  }
+}
+
+/* AI 챗봇 위치 및 반응형 안전 여백 */
+@media (max-width: 1079px) {
+  .chat-floating-btn {
+    bottom: calc(76px + env(safe-area-inset-bottom, 12px)) !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 20px !important;
+    z-index: 992 !important;
+  }
+
+  .chat-window-container {
+    bottom: calc(76px + env(safe-area-inset-bottom, 12px)) !important;
+    right: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: min(480px, 70vh) !important;
+    z-index: 996 !important;
+  }
+
+  /* 모바일 360px ~ 390px 화면 최적화 */
+  body {
+    padding-bottom: calc(74px + env(safe-area-inset-bottom, 12px)) !important;
+  }
+  
+  .chapter-nav-footer {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+    padding: 16px 14px;
+  }
+
+  .btn-chapter-step {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .btn-chapter-step.next {
+    margin-left: 0;
+  }
+}
+
+
+/* ==========================================================================
+   📖 가이드북 책장 넘기기 (Book Reader & Page Turn) 스타일
+   ========================================================================== */
+.book-page-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line, #e2dacd);
+  border-radius: 18px;
+  padding: 12px 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(24, 42, 41, 0.04);
+  position: sticky;
+  top: 76px;
+  z-index: 75;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.book-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-chapter-badge {
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  letter-spacing: -0.01em;
+}
+
+.book-page-counter {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary, #182a29);
+  background: #f7f4ed;
+  border: 1px solid #e8e2d6;
+  padding: 5px 12px;
+  border-radius: 10px;
+}
+
+.book-bookmark-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.bookmark-chip {
+  background: #fcfbf9;
+  border: 1px solid #e8e2d6;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary, #182a29);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bookmark-chip:hover {
+  background: #f4eee3;
+  border-color: #d8cebe;
+  transform: translateY(-1px);
+}
+
+.bookmark-chip.active {
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  border-color: var(--primary, #182a29);
+  box-shadow: 0 4px 12px rgba(24, 42, 41, 0.16);
+}
+
+.book-flip-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-book-flip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fdfbf7;
+  border: 1px solid var(--line, #e2dacd);
+  border-radius: 10px;
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary, #182a29);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+}
+
+.btn-book-flip:hover {
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  border-color: var(--primary, #182a29);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 42, 41, 0.1);
+}
+
+/* 개별 책 페이지 */
+.book-page {
+  display: none !important;
+  opacity: 0;
+  transform: translateX(12px);
+  transition: opacity 0.22s ease-out, transform 0.22s ease-out;
+}
+
+.book-page.active {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateX(0);
+}
+
+/* 하단 페이지 넘기기 바 */
+.page-turner-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 36px;
+  padding: 18px 20px;
+  background: #ffffff;
+  border: 1px solid var(--line, #e2dacd);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(24, 42, 41, 0.04);
+}
+
+.btn-turn-page-bottom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--line, #e2dacd);
+  background: #fcfbf9;
+  color: var(--primary, #182a29);
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.btn-turn-page-bottom:hover {
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  border-color: var(--primary, #182a29);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 42, 41, 0.12);
+}
+
+.btn-turn-page-bottom.next {
+  margin-left: auto;
+  background: var(--primary, #182a29);
+  color: #ffffff;
+  border-color: var(--primary, #182a29);
+}
+
+.btn-turn-page-bottom.next:hover {
+  background: #233b3a;
+}
+
+
+/* ==========================================================================
+   📖 디지털 가이드북 북 리더 & 플로팅 네비게이터 스타일
+   ========================================================================== */
+.floating-book-bar {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(24, 42, 41, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 8px 18px;
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-book-bar:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.36);
+  background: rgba(20, 36, 35, 0.98);
+}
+
+.float-book-badge {
+  font-size: 13px;
+  font-weight: 800;
+  color: #faebd7;
+  padding: 0 6px;
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+
+.btn-float-flip {
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-float-flip:hover {
+  background: #ffffff;
+  color: #182a29;
+  border-color: #ffffff;
+  transform: scale(1.04);
+}
+
+.book-page-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.book-page-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d8cebe;
+  transition: all 0.25s ease;
+}
+
+.book-page-dot.active {
+  background: var(--primary, #182a29);
+  width: 22px;
+  border-radius: 10px;
+}
+
+/* 책 페이지 전환 애니메이션 */
+.book-page {
+  display: none !important;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.book-page.active {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0);
+}
+
+/* 북 리더 상단 고정 바 */
+.book-page-bar {
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 18px;
+  border-radius: 16px;
+  border: 1px solid var(--line, #e2dacd);
+  box-shadow: 0 4px 16px rgba(24, 42, 41, 0.05);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .book-page-bar {
+    top: 50px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .floating-book-bar {
+    bottom: 74px; /* avoid mobile bottom navigation overlap */
+    padding: 6px 12px;
+    gap: 6px;
+  }
+  .float-book-badge {
+    font-size: 11.5px;
+  }
+  .btn-float-flip {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+}
+
+
+/* ==========================================================================
+   📱 모바일 & 데스크톱 완벽 반응형 북 리더 UX 강화 (Mobile & Desktop Polish)
+   ========================================================================== */
+
+/* 1. 데스크톱 와이드 화면 (1080px 이상) */
+@media (min-width: 1080px) {
+  .guidebook-layout {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    gap: 36px;
+    max-width: 1560px;
+    padding: 24px 28px 80px;
+  }
+  
+  .floating-book-bar {
+    left: calc(50% + 145px); /* 사이드바 고려 우측 본문 정중앙 정렬 */
+    bottom: 26px;
+    padding: 10px 22px;
+  }
+  
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* 2. 태블릿 화면 (769px ~ 1079px) */
+@media (min-width: 769px) and (max-width: 1079px) {
+  .floating-book-bar {
+    left: 50% !important;
+    bottom: calc(76px + env(safe-area-inset-bottom, 8px)) !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* 3. 모바일 화면 (1079px 이하 공통) */
+@media (max-width: 1079px) {
+  /* 플로팅 북 리더 바를 모바일 하단 탭 위에 안전하게 배치 */
+  .floating-book-bar {
+    left: 50% !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 8px)) !important;
+    transform: translateX(-50%) !important;
+    max-width: calc(100vw - 28px);
+    padding: 7px 14px;
+    gap: 8px;
+    border-radius: 36px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  /* 본문 최하단 콘텐츠가 하단 바에 가려지지 않도록 안전 여백 확보 */
+  body {
+    padding-bottom: calc(134px + env(safe-area-inset-bottom, 16px)) !important;
+  }
+}
+
+/* 4. 모바일 스마트폰 화면 (768px 이하) */
+@media (max-width: 768px) {
+  /* 상단 고정 북 리더 바 컴팩트화 */
+  .book-page-bar {
+    top: 56px;
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+  }
+
+  .book-page-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .book-chapter-badge {
+    font-size: 13px;
+  }
+
+  .book-page-counter {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  /* 북마크 탭: 모바일 가로 스와이프 칩 스타일 */
+  .book-bookmark-tabs {
+    width: 100%;
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 6px !important;
+    padding: 3px 0 6px !important;
+  }
+
+  .book-bookmark-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .bookmark-chip {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    border-radius: 9px !important;
+  }
+
+  .book-flip-controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+
+  .btn-book-flip {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* 카드 그리드 1열 최적화 */
+  .photo-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .photo-card {
+    border-radius: 16px !important;
+  }
+
+  /* 카드 하단 액션 버튼 모바일 터치 최적화 */
+  .card-action-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .btn-booking-site,
+  .btn-video-preview {
+    flex: 1 1 calc(50% - 4px) !important;
+    min-height: 40px !important;
+    padding: 8px 10px !important;
+    font-size: 11.5px !important;
+    text-align: center !important;
+  }
+
+  .btn-candidate-save {
+    flex: 1 1 100% !important;
+    min-height: 38px !important;
+  }
+
+  /* 하단 페이지 터너 모바일 최적화 */
+  .page-turner-bar {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 16px 14px !important;
+    margin-top: 24px !important;
+    border-radius: 16px !important;
+  }
+
+  .btn-turn-page-bottom {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .btn-turn-page-bottom.next {
+    margin-left: 0 !important;
+  }
+
+  .book-page-dots {
+    order: -1;
+    margin-bottom: 2px;
+  }
+
+  /* 플래너 입력창 모바일 1열 */
+  .planner-grid-inputs {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .planner-kpi-row {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* 헤더 섹션 타이틀 컴팩트화 */
+  .section-head h2 {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+  }
+
+  .section-head .sub {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* 5. 소형 스마트폰 화면 (420px 이하) */
+@media (max-width: 420px) {
+  .float-book-badge {
+    font-size: 11px !important;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .btn-float-flip {
+    padding: 5px 9px !important;
+    font-size: 11px !important;
+  }
+
+  .btn-booking-site,
+  .btn-video-preview {
+    flex: 1 1 100% !important;
   }
 }

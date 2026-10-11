@@ -714,7 +714,7 @@ const FULL_HOTELS_DATA = [
       "zh": "4星级"
     },
     "basePriceKrw": 220000,
-    "photo": "https://images.unsplash.com/photo-1529290130-4ca3753254ae?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
     "station": {
       "ko": "호시우(Rossio)역 도보 2분, 바이샤-시아두역 도보 4분",
       "en": "2 min walk from Rossio Station, 4 min from Baixa-Chiado",
@@ -2043,7 +2043,7 @@ const EDITORIAL_SECTIONS_HTML = {
         </div>
       </div>
       <div class="ed-photo-item">
-        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="세비야 스페인 광장" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" alt="세비야 스페인 광장" loading="lazy">
         <div class="ed-photo-caption">
           <strong>🇪🇸 세비야 스페인 광장</strong>
           <span>웅장한 반원형 회랑과 타일 벤치, 평지 산책로</span>
@@ -2084,7 +2084,7 @@ const EDITORIAL_SECTIONS_HTML = {
 
         <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
           <div class="video-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="세비야 워킹 투어">
+            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="세비야 워킹 투어">
             <span class="video-play-badge">▶ 4K 영상</span>
             <span class="video-tag">안달루시아 감성</span>
           </div>
@@ -2158,7 +2158,7 @@ const EDITORIAL_SECTIONS_HTML = {
         <div class="ed-photo-caption"><strong>🇪🇸 グラナダ・アルハンブラ宮殿</strong><span>イスラム建築の粋、ナスル朝宮殿とヘネラリフェ庭園</span></div>
       </div>
       <div class="ed-photo-item">
-        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="セビリア スペイン広場" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" alt="セビリア スペイン広場" loading="lazy">
         <div class="ed-photo-caption"><strong>🇪🇸 セビリア・スペイン広場</strong><span>壮大な半円形回廊と平坦な散策路</span></div>
       </div>
       <div class="ed-photo-item">
@@ -2189,7 +2189,7 @@ const EDITORIAL_SECTIONS_HTML = {
 
         <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
           <div class="video-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="セビリア動画">
+            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="セビリア動画">
             <span class="video-play-badge">▶ 4K映像</span>
             <span class="video-tag">アンダルシア情緒</span>
           </div>
@@ -2263,7 +2263,7 @@ const EDITORIAL_SECTIONS_HTML = {
         <div class="ed-photo-caption"><strong>🇪🇸 The Alhambra, Granada</strong><span>Masterpiece of Moorish art and lush Generalife gardens</span></div>
       </div>
       <div class="ed-photo-item">
-        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="Plaza de España" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" alt="Plaza de España" loading="lazy">
         <div class="ed-photo-caption"><strong>🇪🇸 Plaza de España, Seville</strong><span>Magnificent semicircular pavilion and flat promenade</span></div>
       </div>
       <div class="ed-photo-item">
@@ -2294,7 +2294,7 @@ const EDITORIAL_SECTIONS_HTML = {
 
         <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
           <div class="video-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="Seville Video">
+            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="Seville Video">
             <span class="video-play-badge">▶ 4K Video</span>
             <span class="video-tag">Andalusia Highlights</span>
           </div>
@@ -2368,7 +2368,7 @@ const EDITORIAL_SECTIONS_HTML = {
         <div class="ed-photo-caption"><strong>🇪🇸 格拉纳达·阿尔罕布拉宫</strong><span>摩尔艺术巅峰之作，纳斯里德宫与夏宫花园</span></div>
       </div>
       <div class="ed-photo-item">
-        <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=800&q=80" alt="塞维利亚西班牙广场" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" alt="塞维利亚西班牙广场" loading="lazy">
         <div class="ed-photo-caption"><strong>🇪🇸 塞维利亚·西班牙广场</strong><span>壮丽半圆形回廊，平坦步道与彩绘瓷砖长椅</span></div>
       </div>
       <div class="ed-photo-item">
@@ -2399,7 +2399,7 @@ const EDITORIAL_SECTIONS_HTML = {
 
         <a href="https://www.youtube.com/results?search_query=seville+spain+4k+walking+tour" target="_blank" rel="noopener noreferrer" class="ed-video-card">
           <div class="video-thumb-wrap">
-            <img src="https://images.unsplash.com/photo-1583779457094-0cef7bad53cb?auto=format&fit=crop&w=600&q=80" alt="塞维利亚实景">
+            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" alt="塞维利亚实景">
             <span class="video-play-badge">▶ 4K视频</span>
             <span class="video-tag">安达卢西亚风情</span>
           </div>
@@ -15691,7 +15691,7 @@ Feel free to ask any travel question!<br>
     "name": "톨레도 대성당 & 알카사르 (Toledo Cathedral)",
     "region": "스페인",
     "city": "스페인 톨레도",
-    "photo": "https://images.unsplash.com/photo-1562674330-808773b48641?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?auto=format&fit=crop&w=800&q=80",
     "highlight": "스페인 가톨릭의 총본산. 화려한 황금 제단화와 엘 그레코의 성화들이 가득한 성구실, 빛이 쏟아지는 투명 채광창 '엘 트란스파렌테'",
     "seniorAccess": "톨레도 구시가지는 언덕이 많으나 조코도베르 광장에서 소코트렌(Zocotren 미니 관광열차) 탑승 시 편안하게 외곽 전망대까지 순환 관람",
     "hours": "월-토 10:00~18:30, 일 14:00~18:30",
@@ -15821,7 +15821,7 @@ Feel free to ask any travel question!<br>
     "name": "신트라 페나 국립 왕궁 (Palácio Nacional da Pena)",
     "region": "포르투갈",
     "city": "포르투갈 신트라",
-    "photo": "https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=800&q=80",
     "highlight": "노랑, 빨강, 보라색이 어우러진 동화 속 낭만주의 궁전. 신트라 산 정상에서 대서양과 리스본까지 조망하는 환상적인 뷰",
     "seniorAccess": "정문 매표소에서 궁전 입구까지 매우 가파르므로 '왕궁 정원 셔틀버스(왕복 3유로)' 필수 탑승. 궁전 테라스는 완만함",
     "hours": "매일 09:30~18:30 (정원 09:00~19:00)",
@@ -15964,7 +15964,7 @@ Feel free to ask any travel question!<br>
     "name": "베르사유 궁전 & 거울의 방 (Château de Versailles)",
     "region": "프랑스",
     "city": "프랑스 베르사유",
-    "photo": "https://images.unsplash.com/photo-1583037189850-1921ae7c6c34?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?auto=format&fit=crop&w=800&q=80",
     "highlight": "태양왕 루이 14세의 절대 왕정을 상징하는 호화 궁전. 357개의 거울이 창문과 마주 보는 '거울의 방'과 끝없이 펼쳐진 분수 정원",
     "seniorAccess": "궁전 내 엘리베이터 및 휠체어 완비. 광대한 정원 이동 시 무릎 보호를 위해 '꼬마기차(Petit Train)' 또는 골프카트 대여 필수",
     "hours": "화-일 09:00~17:30 (월요일 휴관)",
@@ -20845,6 +20845,1988 @@ Feel free to ask any travel question!<br>
     ['ko', 'en', 'ja', 'zh'].forEach(lang => {
       if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
       Object.assign(I18N_DICTIONARY[lang], extraDict[lang] || {});
+    });
+  }
+})();
+
+
+// ==========================================================================
+
+
+// ==========================================================================
+// 🎪 지역별 공식 축제 & 🌃 파노라마 야경 명소 데이터 (공식 예매처·가격·영상·보행 가이드)
+// 기준일: 2026년 10월 11일 (2026-10-11)
+// ==========================================================================
+
+const FESTIVALS_GUIDE_DATA = [
+  {
+    id: "fest_edinburgh",
+    region: "EU",
+    country: "영국 (UK)",
+    city: "에든버러 (Edinburgh)",
+    name: "에든버러 페스티벌 프린지 (Edinburgh Festival Fringe)",
+    season: "summer",
+    month: "8월",
+    typicalTiming: "매년 8월 중 3주간 (통상 시기)",
+    statusType: "concluded_2026",
+    statusLabel: "2026년 행사 종료 · 2027년 8월 차기 공식 일정 확인",
+    officialConfirmedDates: null,
+    confirmedDateRangeStr: "다음 일정 공식 확인 (2026년 여름 완료)",
+    venue: "로열 마일, 프린지 허브 등 에든버러 시내 전역",
+    description: "세계 최대의 공연 예술 축제. 거리 버스킹, 코미디, 연극이 에든버러 전역 유네스코 역사 지구와 어우러집니다.",
+    crowdsBooking: "8월 도시 전체 극심한 혼잡, 숙소 4~6개월 전 조기 매진. 티켓 공식 앱 예매 권장.",
+    difficultyLevel: "warning",
+    difficultyBadge: "⚠️ 자갈길 경사 주의",
+    difficultyDesc: "구시가지 유네스코 조약돌(Cobblestone) 길과 가파른 계단·오르막이 많아 셔틀버스 및 평지 코스 우선 이용 권장.",
+    sourceUrl: "https://www.edfringe.com/",
+    sourceName: "Edinburgh Fringe 공식 웹사이트",
+    bookingUrl: "https://www.edfringe.com/",
+    bookingBadge: "optional",
+    priceInfo: {
+      ko: "거리 공연 및 무료 쇼(Free Fringe) 무료 / 극장 유료 공연 편당 약 £5 ~ £20 (약 9,000원 ~ 35,000원)",
+      en: "Street shows & Free Fringe are Free / Ticketed indoor shows approx. £5 - £20 (approx. $7 - $26)",
+      ja: "ストリート公演＆フリーフリンジ無料 / 劇場有料公演 1回あたり約 £5〜£20（約950円〜3,800円）",
+      zh: "街头演出及Free Fringe免票 / 剧场收费剧目每场约 £5 ~ £20（约45 ~ 180元人民币）"
+    },
+    bookingNecessity: {
+      ko: "거리 버스킹은 예매 불필요(현장 자유 관람). 인기 극장 쇼 및 코미디는 공식 웹사이트/앱에서 사전 예매 필수.",
+      en: "No booking needed for street busking. Popular indoor theatre/comedy shows strictly require advance online booking.",
+      ja: "路上パフォーマンスは予約不要（自由観覧）。人気劇場公演・コメディは公式ウェブ/アプリで事前予約必須。",
+      zh: "街头艺术巡游免预订。热门剧院戏剧与脱口秀必须提前在官方网站或App预订电子票。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=edinburgh+fringe+festival+4k+walking+tour",
+    videoTitle: {
+      ko: "에든버러 프린지 축제 4K 현장 랜선 투어",
+      en: "Edinburgh Fringe Festival 4K Walking Tour",
+      ja: "エディンバラ・フリンジ 4K現地ツアー",
+      zh: "爱丁堡艺穗节 4K现场漫步实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "United Kingdom (UK)",
+        city: "Edinburgh",
+        name: "Edinburgh Festival Fringe",
+        typicalTiming: "Annually in August for 3 weeks (Typical)",
+        statusLabel: "2026 Edition Concluded · Next August 2027 Dates to be Announced",
+        venue: "Royal Mile & throughout Edinburgh",
+        description: "The world's largest arts and performance festival featuring theatre, comedy, and street artists.",
+        crowdsBooking: "Heavy crowd congestion in August; accommodation books up months in advance. Official app booking recommended.",
+        difficultyDesc: "Cobblestone streets and steep inclines in Old Town; recommend taking shuttles and taxis to avoid steep stairs."
+      },
+      ja: {
+        country: "イギリス (UK)",
+        city: "エディンバラ (Edinburgh)",
+        name: "エディンバラ・フェスティバル・フリンジ",
+        typicalTiming: "毎年8月中の3週間（通例時期）",
+        statusLabel: "2026年開催終了・2027年8月公式日程要確認",
+        venue: "ロイヤルマイル等エディンバラ市内全域",
+        description: "世界最大の舞台芸術祭。演劇やコメディ、ストリートパフォーマンスが街頭を彩ります。",
+        crowdsBooking: "8月は市内全域で極めて混雑、宿泊施設は数ヶ月前に満室。公式アプリ事前予約を推奨。",
+        difficultyDesc: "旧市街の石畳と急坂が多いため、シニア同伴時はシャトルバスやタクシーの併用を強く推奨。"
+      },
+      zh: {
+        country: "英国 (UK)",
+        city: "爱丁堡 (Edinburgh)",
+        name: "爱丁堡艺穗节 (Edinburgh Festival Fringe)",
+        typicalTiming: "每年8月中旬持续3周（通常时期）",
+        statusLabel: "2026届活动已结束 · 2027年8月下届官方日程待公布",
+        venue: "皇家一英里及爱丁堡全城主要剧场",
+        description: "全球最大综合艺术与戏剧节，汇聚话剧、脱口秀及街头盛大艺术表演。",
+        crowdsBooking: "8月全城人流极度密集，住宿需提前数月预订，建议使用官方App购票。",
+        difficultyDesc: "老城区多石板坡道与台阶，长辈同行建议多借助接驳车与出租车出行。"
+      }
+    }
+  },
+  {
+    id: "fest_sevilla_april",
+    region: "EU",
+    country: "스페인 (Spain)",
+    city: "세비야 (Seville)",
+    name: "세비야 4월 축제 (Feria de Abril de Sevilla)",
+    season: "spring",
+    month: "4월/5월",
+    typicalTiming: "부활절 2주 후 (통상 4월 하순 ~ 5월 초)",
+    statusType: "concluded_2026",
+    statusLabel: "2026년 봄 행사 종료 · 2027년 차기 공식 일정 확인",
+    officialConfirmedDates: null,
+    confirmedDateRangeStr: "2027년 봄 일정 공식 확인 (2026년 완료)",
+    venue: "레알 데 라 페리아 특설 단지 (Los Remedios 구역)",
+    description: "안달루시아 전통 플라멩코 의상, 화려한 마차 행렬, 밤새 울려 퍼지는 세비야나스 춤과 음악의 대향연.",
+    crowdsBooking: "야간 인파 극심. 대부분의 카세타(천막)는 프라이빗이므로 시청 공식 '공공 카세타(Casetas Públicas)' 위치 확인 필수.",
+    difficultyLevel: "warning",
+    difficultyBadge: "⚠️ 장거리 보행 & 모랫길",
+    difficultyDesc: "평지이나 축제 부지가 광활해 장거리 보행 필수이며 바닥이 흙모래입니다. 편안한 워킹화 필수.",
+    sourceUrl: "https://www.spain.info/en/calendar/april-fair/",
+    sourceName: "스페인 관광청 (Spain.info) 공식 캘린더",
+    bookingUrl: "https://www.spain.info/en/calendar/april-fair/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "축제장 및 공공 카세타(Casetas Públicas) 입장 무료 / 현장 음식·음료 별도 구매 (레부히토 피처 10~15유로)",
+      en: "Fairground & Public Tents Admission Free / Food & drinks paid locally (Rebujito pitcher approx. €10 - €15)",
+      ja: "会場入場および市営公開カセタ入場無料 / 現地飲食代別（レブヒート1水差し 約10〜15ユーロ）",
+      zh: "集市全区及市政公开帐篷免门票入场 / 餐饮自选按需付费（传统雪莉鸡尾酒每扎约 10~15 欧元）"
+    },
+    bookingNecessity: {
+      ko: "축제장 입장 예매 불필요 (누구나 자유 입장). 마차 투어(Paseo de Caballos) 탑승만 현장/사전 개별 예약(약 80~120유로).",
+      en: "No reservation required to enter the fairgrounds (Free open access). Horse carriage tours booked on site.",
+      ja: "祭り会場への入場予約不要（自由入場）。馬車乗車体験のみ現地/事前予約（約80〜120ユーロ）。",
+      zh: "入场游览无需预订（全开放自由出入）。若需体验传统马车巡游可在现场或提前单独预约（约80~120欧）。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=feria+de+abril+sevilla+4k+walking+tour",
+    videoTitle: {
+      ko: "세비야 4월 축제 전통 마차 & 플라멩코 4K 현장",
+      en: "Seville April Fair 4K Walking Tour & Horse Carriages",
+      ja: "セビリア4月祭 4K伝統馬車＆フラメンコ映像",
+      zh: "塞维利亚四月节 4K传统马车与弗拉门戈实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Spain",
+        city: "Seville",
+        name: "Seville April Fair (Feria de Abril)",
+        typicalTiming: "Two weeks after Easter (Typically late April - early May)",
+        statusLabel: "2026 Edition Concluded · Next Spring 2027 Dates to be Confirmed",
+        venue: "Real de la Feria (Los Remedios area)",
+        description: "Andalusian traditional flamenco dresses, horse-drawn carriages, and lively Sevillanas folk dancing all night long.",
+        crowdsBooking: "Extremely crowded at night; private tents dominate, so identify official Public Casitas in advance.",
+        difficultyDesc: "Flat fairground but vast distances on sandy gravel ground; comfortable walking shoes essential for seniors."
+      },
+      ja: {
+        country: "スペイン",
+        city: "セビリア (Seville)",
+        name: "セビリア4月祭 (フェリア・デ・アブリル)",
+        typicalTiming: "復活祭2週間後（通常4月下旬〜5月上旬）",
+        statusLabel: "2026年春季開催終了・2027年春公式日程要確認",
+        venue: "レアル・デ・ラ・フェリア特設会場",
+        description: "アンダルシア伝統のフラメンコ衣装と馬車パレード、セビジャーナスの歌と踊りが夜通し繰り広げられます。",
+        crowdsBooking: "夜間は極めて混雑。私設テント（カセタ）が多いため、市営の「公開カセタ」の位置を事前確認要。",
+        difficultyDesc: "敷地は平坦ですが非常に広大で砂利道が続くため、歩きやすいクッション靴が必須。"
+      },
+      zh: {
+        country: "西班牙",
+        city: "塞维利亚 (Seville)",
+        name: "塞维利亚四月节 (Feria de Abril)",
+        typicalTiming: "复活节后两周（通常4月下旬至5月初）",
+        statusLabel: "2026年春季活动已结束 · 2027年春季官方日程待确认",
+        venue: "皇家集市特设区域 (Los Remedios)",
+        description: "安达卢西亚传统弗拉门戈盛装、马车游行以及彻夜欢腾的塞维利亚纳斯民俗舞蹈盛宴。",
+        crowdsBooking: "夜间人流极为庞大，大多帐篷为私人会员制，需提前查阅市政公共帐篷位置。",
+        difficultyDesc: "场地地势平坦但占地极广且为砂石土路，长辈需备舒适平底健步鞋。"
+      }
+    }
+  },
+  {
+    id: "fest_inti_raymi",
+    region: "LATIN",
+    country: "페루 (Peru)",
+    city: "쿠스코 (Cusco)",
+    name: "페루 인티 라이미 태양제 (Inti Raymi)",
+    season: "summer",
+    month: "6월",
+    typicalTiming: "매년 6월 24일 동지 전후 (통상 시기)",
+    statusType: "concluded_2026",
+    statusLabel: "2026년 행사 종료 · 2027년 6월 24일 개최 예정",
+    officialConfirmedDates: null,
+    confirmedDateRangeStr: "2027년 6월 24일 예정 (2026년 완료)",
+    venue: "코리칸차, 아르마스 광장, 삭사이와만 요새 유적",
+    description: "잉카 제국의 태양신 인티(Inti)를 기리는 남아메리카 3대 고대 문명 의식. 수백 명의 제사장과 전사 복식 행렬 재현.",
+    crowdsBooking: "삭사이와만 야외 관람석 공식 유료 티켓 조기 마감. 전 세계 관광객 집중으로 공식 여행사 예매 권장.",
+    difficultyLevel: "alert",
+    difficultyBadge: "🚨 극심한 고산 지대 (해발 3,400~3,700m)",
+    difficultyDesc: "쿠스코 해발 3,399m, 삭사이와만 3,700m의 고지대입니다. 60대 부모님 동행 시 도착 후 2~3일간 안정 적응 기간과 의사 처방 고산병 약 필수.",
+    sourceUrl: "https://www.peru.travel/events/inti-raymi",
+    sourceName: "페루 관광청 (Peru.travel) 공식 이벤트",
+    bookingUrl: "https://tuboleto.cultura.pe/",
+    bookingBadge: "required",
+    priceInfo: {
+      ko: "오전 코리칸차/아르마스 광장 입석 무료 / 핵심 무대 삭사이와만 지정석 유료 USD 150 ~ 260 (약 20만~35만 원)",
+      en: "Morning Plaza standing Free / Sacsayhuamán reserved grandstand seats USD $150 - $260",
+      ja: "午前広場立ち見無料 / サクサイワマン指定観覧席 有料 USD 150〜260（約23,000円〜40,000円）",
+      zh: "上午武器广场站立观礼免费 / 核心萨克塞瓦曼看台指定座席收费 150 ~ 260 美元"
+    },
+    bookingNecessity: {
+      ko: "삭사이와만 관람석 공식 예매 필수 (공식 티켓팅 포털 tuboleto.cultura.pe 또는 EMUFEC에서 수개월 전 조기 마감).",
+      en: "Sacsayhuamán grandstand requires mandatory advance booking through official portal (sells out months ahead).",
+      ja: "サクサイワマン観覧席は公式予約ポータルでの事前予約が必須（数ヶ月前に完売）。",
+      zh: "萨克塞瓦曼主会场座席必须提前在秘鲁文化部官方票务平台预订（通常提前数月售罄）。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=inti+raymi+cusco+4k",
+    videoTitle: {
+      ko: "쿠스코 인티 라이미 태양제 4K 고화질 실황",
+      en: "Inti Raymi Sun Festival Cusco 4K Ceremony",
+      ja: "インティ・ライミ 太陽の祭り 4K高画質映像",
+      zh: "秘鲁库斯科太阳祭 4K高清祭典实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Peru",
+        city: "Cusco",
+        name: "Inti Raymi (Festival of the Sun)",
+        typicalTiming: "Annually on June 24 (Winter Solstice)",
+        statusLabel: "2026 Edition Concluded · Next Scheduled for June 24, 2027",
+        venue: "Qorikancha, Plaza de Armas & Sacsayhuamán Fortress",
+        description: "One of South America's greatest ancient Inca ceremonies honoring the Sun God Inti with hundreds of ceremonial actors.",
+        crowdsBooking: "Sacsayhuamán official grandstand tickets sell out quickly; book well ahead through certified official channels.",
+        difficultyDesc: "High altitude (3,400m - 3,700m); essential for seniors to acclimate 2-3 days in advance with physician-prescribed altitude medication."
+      },
+      ja: {
+        country: "ペルー",
+        city: "クスコ (Cusco)",
+        name: "インティ・ライミ（太陽の祭り）",
+        typicalTiming: "毎年6月24日（南半球の冬至）",
+        statusLabel: "2026年開催終了・次回2027年6月24日予定",
+        venue: "コリカンチャ、アルマス広場、サクサイワマン要塞",
+        description: "インカ帝国の太陽神インティを讃える南米3大祭りの一つ。古代インカの儀式と豪華な衣装が再現されます。",
+        crowdsBooking: "サクサイワマン遺跡の公式観覧席チケットは早期完売。公式旅行代理店経由での事前予約を推奨。",
+        difficultyDesc: "標高3,400〜3,700mの極めて高所です。シニア同伴時は現地到着後2〜3日の高山順応と高山病薬の準備が必須。"
+      },
+      zh: {
+        country: "秘鲁",
+        city: "库斯科 (Cusco)",
+        name: "太阳祭 (Inti Raymi)",
+        typicalTiming: "每年6月24日（南半球冬至）",
+        statusLabel: "2026届活动已结束 · 下届定于2027年6月24日",
+        venue: "太阳神殿、武器广场及萨克塞瓦曼堡垒遗址",
+        description: "南美三大古文明祭典之一，重现印加帝国祭祀太阳神的宏大盛典与数千名传统服饰祭司巡游。",
+        crowdsBooking: "萨克塞瓦曼看台官方指定坐席需提前预订，谨防黄牛假票。",
+        difficultyDesc: "海拔高达3400至3700米，长辈必须提前安排2~3天低海拔适应期并随身携带抗高反药物。"
+      }
+    }
+  },
+  {
+    id: "fest_dia_muertos",
+    region: "LATIN",
+    country: "멕시코 (Mexico)",
+    city: "멕시코시티 / 오악사카 (Mexico City / Oaxaca)",
+    name: "멕시코 죽은 자의 날 (Día de los Muertos)",
+    season: "autumn",
+    month: "11월",
+    typicalTiming: "매년 11월 1일 ~ 11월 2일 (준비 및 퍼레이드 10월 말부터)",
+    statusType: "confirmed",
+    statusLabel: "2026.11.01 ~ 2026.11.02 공식 행사 기간 (UNESCO 무형유산)",
+    officialConfirmedDates: { start: "2026-11-01", end: "2026-11-02" },
+    confirmedDateRangeStr: "2026.11.01 ~ 2026.11.02 (UNESCO 공식 등재)",
+    venue: "소칼로 광장, 레포르마 대로 대퍼레이드, 오악사카 구시가지",
+    description: "조상과 먼저 떠난 가족의 영혼을 마리골드(금잔화) 꽃길과 촛불, 제단(Ofrenda), 해골 분장으로 따뜻하게 맞이하는 유네스코 무형문화유산 전통 축제.",
+    crowdsBooking: "소칼로 및 레포르마 대로 퍼레이드 당일 극심한 인파. 시내 중심 호텔 최소 3~4개월 전 예약 필수.",
+    difficultyLevel: "normal",
+    difficultyBadge: "👣 완만한 고원 (해발 2,240m) & 도보 군중",
+    difficultyDesc: "멕시코시티는 해발 2,240m의 고원 도시이므로 첫날 무리한 도보를 피하고 수분을 섭취하세요. 퍼레이드 관람 시 장시간 기립 주의.",
+    sourceUrl: "https://ich.unesco.org/en/RL/indigenous-festivity-dedicated-to-the-dead-00054",
+    sourceName: "UNESCO 무형문화유산 공식 등재 자료",
+    bookingUrl: "https://mexicocity.cdmx.gob.mx/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "도심 레포르마 대로 퍼레이드 및 소칼로 광장 제단 관람 완전 무료 / 소치밀코 야간 보트 투어 등 개별 선택 시 약 300~600 MXN",
+      en: "Public Parades & Zócalo Altar Exhibits Free / Optional boat tours approx. 300 - 600 MXN (approx. $15 - $30)",
+      ja: "大通りパレード＆広場祭壇見学 完全無料 / ソチミルコ夜間ボートツアー等個別参加時 約300〜600 MXN",
+      zh: "改革大道大游行及索卡洛广场祭坛参观全免费 / 霍奇米尔科夜间游船等自选项目约 300~600 墨西哥比索"
+    },
+    bookingNecessity: {
+      ko: "거리 퍼레이드 관람 예매 불필요 (누구나 자유 관람). 호텔 숙소 및 묘지 가이드 투어만 조기 예약 권장.",
+      en: "No tickets needed for street parades. Only hotels and specific cemetery night tours need advance booking.",
+      ja: "街頭パレード見学は予約不要（自由観覧）。宿泊施設および夜間ガイドツアーのみ早期予約推奨。",
+      zh: "街头大游行无需门票免费参观。仅市中心酒店住宿与特色夜游项目建议提前预订。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=dia+de+los+muertos+mexico+city+parade+4k",
+    videoTitle: {
+      ko: "멕시코시티 죽은 자의 날 대형 퍼레이드 4K 현장",
+      en: "Mexico City Day of the Dead Grand Parade 4K",
+      ja: "メキシコシティ死者の日大パレード 4K映像",
+      zh: "墨西哥城亡灵节盛装大游行 4K实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Mexico",
+        city: "Mexico City / Oaxaca",
+        name: "Day of the Dead (Día de los Muertos)",
+        typicalTiming: "Annually Nov 1 - Nov 2 (Parades start late October)",
+        statusLabel: "2026.11.01 - 2026.11.02 Official Dates (UNESCO Inscribed)",
+        venue: "Zócalo, Paseo de la Reforma Parade & Oaxaca Centro",
+        description: "UNESCO Intangible Cultural Heritage honoring departed ancestors with vibrant marigolds, candlelit altars, and joyful Catrina parades.",
+        crowdsBooking: "Very heavy crowds along Reforma and Zócalo during parade days; book central lodging months in advance.",
+        difficultyDesc: "Mild altitude (2,240m); stay well-hydrated and avoid standing continuously for hours during long parades."
+      },
+      ja: {
+        country: "メキシコ",
+        city: "メキシコシティ / オアハカ",
+        name: "死者の日 (Día de los Muertos)",
+        typicalTiming: "毎年11月1日〜11月2日（10月下旬よりパレード開催）",
+        statusLabel: "2026.11.01〜11.02 公式開催期間（ユネスコ無形文化遺産）",
+        venue: "ソカロ広場、レフォルマ通り大パレード、オアハカ旧市街",
+        description: "マリーゴールドの花とキャンドル、祭壇（オフレンダ）、骸骨メイクで先祖の魂を温かく迎えるユネスコ世界無形遺産。",
+        crowdsBooking: "パレード当日は中心部が大変混雑。中心部のホテルは数ヶ月前の早期予約が必須です。",
+        difficultyDesc: "メキシコシティは標高2,240mの高原都市のため、初日は無理な徒歩を控え十分な水分補給を推奨。"
+      },
+      zh: {
+        country: "墨西哥",
+        city: "墨西哥城 / 瓦哈卡",
+        name: "亡灵节 (Día de los Muertos)",
+        typicalTiming: "每年11月1日至11月2日（10月下旬起大游行）",
+        statusLabel: "2026.11.01 ~ 11.02 官方既定节日（联合国教科文组织非遗）",
+        venue: "索卡洛广场、改革大道大游行及瓦哈卡老城公墓",
+        description: "列入联合国教科文组织人类非物质文化遗产，以万寿菊小径、蜡烛祭坛与骷髅盛装温暖迎接逝者重回人间团聚。",
+        crowdsBooking: "改革大道与索卡洛游行日人流极度拥挤，市中心酒店需提前3~4个月预定。",
+        difficultyDesc: "墨西哥城地处海拔2240米高原，首日需充分补水并避免在游行现场长时间连续站立。"
+      }
+    }
+  },
+  {
+    id: "fest_madeira_christmas",
+    region: "EU",
+    country: "포르투갈 (Portugal)",
+    city: "마데이라 푼샬 (Funchal, Madeira)",
+    name: "마데이라 크리스마스 & 새해 축제 (Madeira Christmas & New Year)",
+    season: "winter",
+    month: "12월~1월",
+    typicalTiming: "매년 12월 1일 ~ 이듬해 1월 초 (통상 시기)",
+    statusType: "confirmed",
+    statusLabel: "2026.12.01 ~ 2027.01.10 공식 확정 일정",
+    officialConfirmedDates: { start: "2026-12-01", end: "2027-01-10" },
+    confirmedDateRangeStr: "2026.12.01 ~ 2027.01.10 (Visit Madeira 공식 발표)",
+    venue: "푼샬 도심 아베니다 아리아가 (Avenida Arriaga) 및 원형항구 전역",
+    description: "온화한 아열대 대서양 섬 푼샬 항구를 수놓는 수백만 개의 성탄 조명과 기네스북 등재 12월 31일 새해 전야 불꽃놀이 쇼.",
+    crowdsBooking: "12/31 새해 불꽃놀이 주간 크루즈 선상 투어 및 푼샬 호텔 조기 매진. 3~4개월 전 사전 확보 필수.",
+    difficultyLevel: "normal",
+    difficultyBadge: "🌊 해안 평지 & 언덕 이동 시 택시 권장",
+    difficultyDesc: "푼샬 중심가 해안 산책로는 평지로 쾌적하며, 몬테 언덕 등 고지대 이동 시에는 케이블카와 택시 이용이 편리합니다.",
+    sourceUrl: "https://visitmadeira.com/en/whats-on/events/christmas-and-new-year-festivities",
+    sourceName: "마데이라 공식 관광청 (Visit Madeira)",
+    bookingUrl: "https://visitmadeira.com/en/whats-on/events/christmas-and-new-year-festivities",
+    bookingBadge: "optional",
+    priceInfo: {
+      ko: "도심 성탄 조명 및 마켓, 항구 불꽃 관람 완전 무료 / 12/31 새해 전야 유람선 선상 크루즈 투어 유료(1인 약 €120~€200)",
+      en: "Town lights & harbour fireworks viewing Free / Dec 31 Catamaran Fireworks Cruise approx. €120 - €200",
+      ja: "市街地イルミネーション＆港での花火観覧 無料 / 12月31日カウントダウン花火クルーズ 有料（約120〜200ユーロ）",
+      zh: "市中心灯光秀及港口烟火公开展区免费 / 12月31日跨年夜海上观景游船收费（每人约 120~200 欧元）"
+    },
+    bookingNecessity: {
+      ko: "시내 조명 관람 예매 불필요. 12/31 카타마란 선상 불꽃 크루즈만 3~4개월 전 조기 매진되므로 사전 예매 필수.",
+      en: "No booking needed for town festivities. Dec 31 fireworks boat cruises strictly require advance reservation.",
+      ja: "市内見学は予約不要。12/31の大晦日花火クルーズのみ3〜4ヶ月前の事前予約必須。",
+      zh: "街区漫步无需预订。仅12月31日跨年夜出海烟花游船位极少，必须提前数月预订。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=funchal+madeira+new+year+fireworks+4k",
+    videoTitle: {
+      ko: "마데이라 푼샬 기네스북 새해 불꽃쇼 & 조명 4K",
+      en: "Madeira Funchal New Year Fireworks & Christmas Lights 4K",
+      ja: "マデイラ・フンシャル大晦日花火＆イルミネーション 4K",
+      zh: "马德拉群岛丰沙尔跨年烟火秀与圣诞灯饰 4K"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Portugal",
+        city: "Funchal, Madeira",
+        name: "Madeira Christmas & New Year Festivities",
+        typicalTiming: "Annually Dec 1 to early January",
+        statusLabel: "2026.12.01 - 2027.01.10 Officially Confirmed",
+        venue: "Avenida Arriaga & Funchal Amphitheatre Harbor",
+        description: "Millions of dazzling holiday lights across subtropical Madeira and the world-famous Guinness-record New Year's Eve fireworks.",
+        crowdsBooking: "New Year's Eve week (Dec 31) lodging and harbor cruises book up months early.",
+        difficultyDesc: "Funchal seaside promenade is flat and easy; use cable car and taxis for upper hill attractions."
+      },
+      ja: {
+        country: "ポルトガル",
+        city: "マデイラ島 フンシャル",
+        name: "マデイラ・クリスマス＆新年フェスティバル",
+        typicalTiming: "毎年12月1日〜翌年1月上旬",
+        statusLabel: "2026.12.01〜2027.01.10 公式確定日程",
+        venue: "フンシャル中心部アヴェニーダ・アリアガ及び港湾一帯",
+        description: "温暖な大西洋の島を照らす数百万個のイルミネーションとギネス認定の大晦日カウントダウン花火大会。",
+        crowdsBooking: "12月31日の大晦日週はホテルやクルーズ船が早期完売。3〜4ヶ月前の事前予約が必須。",
+        difficultyDesc: "海岸沿いのプロムナードは平坦で快適。モンテなど高台への移動はロープウェイやタクシーを利用。"
+      },
+      zh: {
+        country: "葡萄牙",
+        city: "马德拉群岛 丰沙尔",
+        name: "马德拉圣诞与新年庆典",
+        typicalTiming: "每年12月1日至次年1月上旬",
+        statusLabel: "2026.12.01 ~ 2027.01.10 官方确定日程",
+        venue: "丰沙尔阿里亚加滨海大道及全城剧场式港湾",
+        description: "大西洋温和海岛上的数百万盏璀璨圣诞灯饰，以及荣登吉尼斯世界纪录的12月31日跨年夜盛大烟火秀。",
+        crowdsBooking: "12月31日跨年夜当周酒店与观景游船极易售罄，需提前数月预订。",
+        difficultyDesc: "滨海核心步行区地势平缓，前往蒙特山顶观景建议乘坐缆车与出租车。"
+      }
+    }
+  },
+  {
+    id: "fest_wonderland_lisboa",
+    region: "EU",
+    country: "포르투갈 (Portugal)",
+    city: "리스본 (Lisbon)",
+    name: "원더랜드 리스본 (Wonderland Lisboa)",
+    season: "winter",
+    month: "11월~1월",
+    typicalTiming: "매년 11월 말 ~ 이듬해 1월 초 (통상 시기)",
+    statusType: "confirmed",
+    statusLabel: "2026.11.27 ~ 2027.01.03 공식 확정 일정",
+    officialConfirmedDates: { start: "2026-11-27", end: "2027-01-03" },
+    confirmedDateRangeStr: "2026.11.27 ~ 2027.01.03 (리스본 관광공사 안내)",
+    venue: "에두아르두 7세 공원 (Parque Eduardo VII)",
+    description: "도심 한가운데 대관람차, 아이스링크, 따뜻한 진자(Ginjinha) 체리주와 포르투갈 전통 수공예품이 가득한 겨울 축제.",
+    crowdsBooking: "주말 저녁 대관람차 대기 시간 20~30분 소요. 평일 15~17시경 방문 시 쾌적한 관람 가능.",
+    difficultyLevel: "easy",
+    difficultyBadge: "✅ 완만한 경사 & 엘리베이터 지하철 연결",
+    difficultyDesc: "공원 내 포장 산책로가 완만하며, 마르케스 드 퐁발 역 엘리베이터를 통해 무장애 동선으로 연결됩니다.",
+    sourceUrl: "https://www.visitlisboa.com/",
+    sourceName: "리스본 공식 관광청 (Visit Lisboa)",
+    bookingUrl: "https://www.visitlisboa.com/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "에두아르두 7세 공원 축제 구역 입장료 완전 무료 / 대관람차 약 €4~€5, 아이스링크 20분 약 €4~€6",
+      en: "Park Festival grounds admission Free / Ferris Wheel & Ice Rink approx. €4 - €6 each",
+      ja: "公園内フェスティバルエリア入場無料 / 観覧車・スケートリンク 各約4〜6ユーロ",
+      zh: "爱德华七世公园节庆主会场免门票入场 / 巨型摩天轮与滑冰场单项约 4~6 欧元"
+    },
+    bookingNecessity: {
+      ko: "축제장 입장 예매 불필요 (현장 자유 입장). 놀이기구 티켓은 공원 내 무인 발권기/매표소에서 현장 구매.",
+      en: "No entrance tickets needed. Ride tickets purchased directly on-site at park booths.",
+      ja: "会場入場予約不要（自由入場）。アトラクション券は現地の券売所で購入可能。",
+      zh: "入园游览免预约。摩天轮等游乐设施门票直接在现场自动售票机或票亭即买即用。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=wonderland+lisboa+4k+christmas",
+    videoTitle: {
+      ko: "원더랜드 리스본 겨울 축제 4K 현장 랜선 투어",
+      en: "Wonderland Lisboa Christmas Festival 4K Tour",
+      ja: "ワンダーランド・リスボン 4Kクリスマスツアー",
+      zh: "里斯本冬季仙境圣诞嘉年华 4K现场"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1513326738677-b964603b136d?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Portugal",
+        city: "Lisbon",
+        name: "Wonderland Lisboa",
+        typicalTiming: "Late November to early January annually",
+        statusLabel: "2026.11.27 - 2027.01.03 Officially Confirmed",
+        venue: "Parque Eduardo VII",
+        description: "Giant ferris wheel, ice rink, artisanal winter markets, and warm traditional pastries in central Lisbon.",
+        crowdsBooking: "Weekend evenings see line-ups for the ferris wheel; weekday afternoons offer relaxed visits.",
+        difficultyDesc: "Paved gentle park inclines; elevator access available directly from Marquês de Pombal metro station."
+      },
+      ja: {
+        country: "ポルトガル",
+        city: "リスボン",
+        name: "ワンダーランド・リスボン",
+        typicalTiming: "毎年11月下旬〜翌年1月上旬",
+        statusLabel: "2026.11.27〜2027.01.03 公式確定日程",
+        venue: "エドゥアルド7世公園",
+        description: "大観覧車、アイススケートリンク、温かいジンジーニャ（さくらんぼ酒）と手作り雑貨が揃う冬の風物詩。",
+        crowdsBooking: "週末の夕方は観覧車の待ち時間が発生するため、平日の15〜17時頃の訪問がおすすめ。",
+        difficultyDesc: "公園内は緩やかな舗装路で、ポンバル侯爵広場駅からエレベーターでバリアフリー移動可能。"
+      },
+      zh: {
+        country: "葡萄牙",
+        city: "里斯本",
+        name: "里斯本冬季仙境 (Wonderland Lisboa)",
+        typicalTiming: "每年11月下旬至次年1月上旬",
+        statusLabel: "2026.11.27 ~ 2027.01.03 官方确定日程",
+        venue: "爱德华七世公园 (Parque Eduardo VII)",
+        description: "市中心巨型摩天轮、滑冰场、热樱桃酒（Ginjinha）与传统手工市集构成的圣诞冬日盛典。",
+        crowdsBooking: "周末晚间摩天轮排队较长，建议工作日下午15~17点前往轻松游览。",
+        difficultyDesc: "公园铺装坡道平缓，庞巴尔侯爵广场地铁站配有无障碍直梯直达。"
+      }
+    }
+  },
+  {
+    id: "fest_malaga_lights",
+    region: "EU",
+    country: "스페인 (Spain)",
+    city: "말라가 (Málaga)",
+    name: "말라가 카예 라리오스 크리스마스 조명 쇼 (Calle Larios Christmas Lights)",
+    season: "winter",
+    month: "11월~1월",
+    typicalTiming: "11월 마지막 주 금요일 ~ 1월 6일 (통상 시기)",
+    statusType: "unconfirmed",
+    statusLabel: "통상 시기: 11월 말 ~ 1월 초 (2026 점등일 공식 발표 대기)",
+    officialConfirmedDates: null,
+    confirmedDateRangeStr: "통상 11월 하순 점등 (공식 발표 대기)",
+    venue: "카예 마르케스 데 라리오스 보행자 전용가",
+    description: "거대한 고딕 대성당 아치형 빛의 터널 아래 캐럴과 클래식 음악에 맞추어 빛이 춤추는 남유럽 최고의 라이팅 쇼.",
+    crowdsBooking: "매일 저녁 점등 시간(18:30, 20:00, 22:00) 메인 거리 인파 집중. 30분 전 인근 카페 테라스 착석 추천.",
+    difficultyLevel: "easy",
+    difficultyBadge: "✅ 100% 완전 평지 대리석 보행로",
+    difficultyDesc: "완전 평지 대리석 보행자 전용 거리로 계단이나 턱이 없어 휠체어와 부모님 보행에 최적화되어 있습니다.",
+    sourceUrl: "https://www.malagaturismo.com/",
+    sourceName: "말라가 시 관광청 (Málaga Turismo)",
+    bookingUrl: "https://www.malagaturismo.com/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "완전 무료 개방 (티켓 불필요). 공공 보행자 도로에서 매일 3회 무료 음악 라이팅 쇼 진행",
+      en: "100% Free Public Street Event (No tickets needed). Shows run 3 times nightly.",
+      ja: "完全無料（チケット不要）。公共の歩行者天国で毎晩3回無料音楽ライトショー開催",
+      zh: "完全免费免票（公共步行街露天开放）。每晚举行三场经典交响乐灯光秀"
+    },
+    bookingNecessity: {
+      ko: "예매 불필요 (누구나 자유 관람). 편안한 관람을 위해 쇼 시작 30분 전 인근 카페 테라스 착석 권장.",
+      en: "No reservations required. Securing an outdoor cafe terrace table 30 mins prior is recommended.",
+      ja: "予約不要（自由観覧）。点灯30分前に近隣のカフェテラス席を確保するとシニアも快適。",
+      zh: "无需预订即可免费观看。建议在亮灯前30分钟落座周边露天咖啡馆，长辈无需久站。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=malaga+calle+larios+christmas+lights+show+4k",
+    videoTitle: {
+      ko: "말라가 라리오스 대성당 조명 음악쇼 4K 실황",
+      en: "Malaga Calle Larios Christmas Light Show 4K",
+      ja: "マラガ・ラリオス通り クリスマスライトショー 4K",
+      zh: "马拉加拉里奥斯街圣诞音乐灯光秀 4K实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1562883676-8c7feb83f09b?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Spain",
+        city: "Málaga",
+        name: "Calle Larios Christmas Light Show",
+        typicalTiming: "Last Friday of November to Jan 6 (Typically)",
+        statusLabel: "Typical timing: Late Nov - Early Jan (Awaiting 2026 official date)",
+        venue: "Calle Marqués de Larios (Pedestrian Street)",
+        description: "Spectacular cathedral-like arched light tunnels synchronized with musical shows three times every evening.",
+        crowdsBooking: "High density during show hours (18:30, 20:00, 22:00); secure outdoor cafe seating 30 mins ahead.",
+        difficultyDesc: "100% flat marble pedestrian avenue with no stairs, ideal and comfortable for seniors."
+      },
+      ja: {
+        country: "スペイン",
+        city: "マラガ (Málaga)",
+        name: "カジェ・ラリオス クリスマスイルミネーション",
+        typicalTiming: "11月最終金曜日〜1月6日（通例）",
+        statusLabel: "通例時期：11月下旬〜1月上旬（2026年点灯日公式発表待ち）",
+        venue: "カジェ・マルケス・デ・ラリオス歩行者専用街",
+        description: "巨大な大聖堂風の光のアーチの下、クラシック音楽に合わせて光が踊る南欧屈指のライトショー。",
+        crowdsBooking: "ショー時間帯（18:30、20:00、22:00）は混雑。30分前に近隣のカフェテラス席確保が快適。",
+        difficultyDesc: "大理石で整備された完全平坦な歩行者専用道路で段差がなく、シニアも極めて歩きやすい環境。"
+      },
+      zh: {
+        country: "西班牙",
+        city: "马拉加 (Málaga)",
+        name: "拉里奥斯街圣诞音乐灯光秀",
+        typicalTiming: "11月最后一个周五至1月6日（通常时期）",
+        statusLabel: "通常时期：11月下旬至1月上旬（等待2026官方亮灯日公布）",
+        venue: "拉里奥斯侯爵街步行街 (Calle Marqués de Larios)",
+        description: "巨型大教堂穹顶灯廊下，经典交响乐与颂歌律动辉映的南欧最震撼夜间灯光音乐秀。",
+        crowdsBooking: "每晚三场亮灯秀（18:30/20:00/22:00）人潮拥挤，建议提前30分钟在周边露天咖啡馆落座。",
+        difficultyDesc: "100%大理石纯平坦步行街，无任何台阶障碍，极为适合长辈安心漫步。"
+      }
+    }
+  },
+  {
+    id: "fest_prague_market",
+    region: "EU",
+    country: "체코 (Czech Republic)",
+    city: "프라하 (Prague)",
+    name: "프라하 구시가지 크리스마스 마켓 (Prague Old Town Christmas Market)",
+    season: "winter",
+    month: "11월~1월",
+    typicalTiming: "매년 11월 말 ~ 이듬해 1월 6일 (통상 시기)",
+    statusType: "confirmed",
+    statusLabel: "2026.11.28 ~ 2027.01.06 공식 확정 일정",
+    officialConfirmedDates: { start: "2026-11-28", end: "2027-01-06" },
+    confirmedDateRangeStr: "2026.11.28 ~ 2027.01.06 (Prague.eu 공식 확정)",
+    venue: "프라하 구시가지 광장 (Staroměstské náměstí)",
+    description: "틴 성당과 천문시계를 배경으로 펼쳐지는 거대한 성탄 트리와 중세 목조 가판대 마켓, 따뜻한 뱅쇼(Svařák).",
+    crowdsBooking: "주말 저녁 트리 점등 시 광장 인파 밀집. 평일 14~16시 낮 시간대 방문 시 쾌적.",
+    difficultyLevel: "warning",
+    difficultyBadge: "⚠️ 중세 조약돌 바닥 & 방한 필수",
+    difficultyDesc: "광장 전체가 울퉁불퉁한 돌바닥이므로 발목을 감싸는 방한 부츠와 쿠션 신발 착용 필수.",
+    sourceUrl: "https://www.prague.eu/",
+    sourceName: "프라하 시 관광청 (Prague City Tourism)",
+    bookingUrl: "https://www.prague.eu/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "구시가지 광장 마켓 입장 완전 무료 (티켓 불필요) / 전통 굴뚝빵(Trdelník) 80~120 CZK, 뱅쇼 약 90 CZK",
+      en: "Old Town Market Admission Free / Traditional Trdelník approx. 80 - 120 CZK, Mulled Wine approx. 90 CZK",
+      ja: "旧市街広場マーケット入場完全無料（チケット不要） / 名物トゥルデルニーク 80〜120 CZK、ホットワイン 90 CZK",
+      zh: "老城广场圣诞市集全区免门票 / 传统肉桂卷约 80~120 捷克克朗，热红酒约 90 克朗"
+    },
+    bookingNecessity: {
+      ko: "예매 불필요 (누구나 자유 입장). 광장 중심부 성탄 트리 점등은 매일 16:30부터 매시 정각 진행.",
+      en: "No reservations required. Free open plaza. Tree lighting displays take place hourly from 16:30.",
+      ja: "予約不要（自由入場）。広場中央の巨大ツリー点灯は16:30より毎正時に実施。",
+      zh: "无需预约自由步入。广场巨型主圣诞树点灯仪式每日16:30起整点循环举行。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=prague+old+town+square+christmas+market+4k+walking+tour",
+    videoTitle: {
+      ko: "프라하 구시가지 크리스마스 마켓 4K 워킹 투어",
+      en: "Prague Old Town Square Christmas Market 4K Tour",
+      ja: "プラハ旧市街クリスマスマーケット 4K散策映像",
+      zh: "布拉格老城广场圣诞市集 4K漫步实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Czech Republic",
+        city: "Prague",
+        name: "Prague Old Town Christmas Market",
+        typicalTiming: "Late November to Jan 6 annually",
+        statusLabel: "2026.11.28 - 2027.01.06 Officially Confirmed",
+        venue: "Old Town Square (Staroměstské náměstí)",
+        description: "Postcard-perfect market set against the Church of Our Lady before Týn with festive trdelník and mulled wine.",
+        crowdsBooking: "Crowded around dusk on weekends; visit during mid-afternoon on weekdays for comfortable strolls.",
+        difficultyDesc: "Historic uneven cobblestones throughout the square; insulated cushioned walking boots required."
+      },
+      ja: {
+        country: "チェコ",
+        city: "プラハ",
+        name: "プラハ旧市街クリスマスマーケット",
+        typicalTiming: "毎年11月下旬〜翌年1月6日",
+        statusLabel: "2026.11.28〜2027.01.06 公式確定日程",
+        venue: "旧市街広場 (Staroměstské náměstí)",
+        description: "ティーン教会と天文時計を望む巨大なツリーと木造小屋が並ぶ、おとぎ話のような名物マーケット。",
+        crowdsBooking: "週末夕方の点灯時は広場が混雑。平日の14〜16時頃ならゆったりと楽しめます。",
+        difficultyDesc: "広場全体が凹凸のある石畳のため、足首を保護する防寒ブーツとクッション靴が必須。"
+      },
+      zh: {
+        country: "捷克",
+        city: "布拉格",
+        name: "布拉格老城广场圣诞市集",
+        typicalTiming: "每年11月下旬至次年1月6日",
+        statusLabel: "2026.11.28 ~ 2027.01.06 官方确定日程",
+        venue: "老城广场 (Staroměstské náměstí)",
+        description: "以泰恩教堂与天文钟为壮丽背景的巨型圣诞树、木屋市集、香脆肉桂卷与热红酒。",
+        crowdsBooking: "周末黄昏亮灯时段人流密集，建议工作日下午14~16点前往闲适漫步。",
+        difficultyDesc: "广场全域为中世纪凹凸石板路，长辈需备保暖抗震步行鞋防滑防崴。"
+      }
+    }
+  },
+  {
+    id: "fest_feria_cali",
+    region: "LATIN",
+    country: "콜롬비아 (Colombia)",
+    city: "칼리 (Cali)",
+    name: "콜롬비아 칼리 페리아 (Feria de Cali)",
+    season: "winter",
+    month: "12월",
+    typicalTiming: "매년 12월 25일 ~ 12월 30일 (통상 시기)",
+    statusType: "confirmed",
+    statusLabel: "2026.12.25 ~ 2026.12.30 공식 확정 일정",
+    officialConfirmedDates: { start: "2026-12-25", end: "2026-12-30" },
+    confirmedDateRangeStr: "2026.12.25 ~ 2026.12.30 (칼리 시정부 캘린더 등재)",
+    venue: "살소드로모 (Salsódromo) 전용 퍼레이드 구간",
+    description: "세계 살사의 수도에서 수천 명의 댄서가 펼치는 초대형 살사 댄스 카니발과 야간 콘서트.",
+    crowdsBooking: "살소드로모 관람석(Graderías) 사전 공식 티켓 필수 구매. 귀중품 소지 최소화.",
+    difficultyLevel: "warning",
+    difficultyBadge: "⚠️ 열기 및 장시간 기립 주의",
+    difficultyDesc: "낮 기온이 30도에 달하고 군중이 밀집하므로 지정 좌석 스탠드(Palcos) 착석 관람 필수.",
+    sourceUrl: "https://www.cali.gov.co/boletines/publicaciones/193104/cali-la-ciudad-de-los-grandes-eventos-se-prepara-para-vivir-un-segundo-semestre-historico/",
+    sourceName: "칼리 시정부 (Alcaldía de Cali) 공식 공지",
+    bookingUrl: "https://feriadecali.com.co/",
+    bookingBadge: "required",
+    priceInfo: {
+      ko: "길거리 퍼레이드 입석 무료 / 살소드로모(Salsódromo) 공식 지정석 약 70,000 ~ 150,000 COP (약 2.5만 ~ 5만 원)",
+      en: "Street parade standing Free / Salsódromo reserved grandstand approx. 70,000 - 150,000 COP (approx. $18 - $38)",
+      ja: "路上立ち見無料 / サルソドロモ公式指定席 約70,000〜150,000 COP（約2,800円〜6,000円）",
+      zh: "街头站立免费观礼 / 萨尔索多罗莫看台指定座席约 70,000 ~ 150,000 哥伦比亚比索"
+    },
+    bookingNecessity: {
+      ko: "살소드로모 지정 관람석 공식 사이트(Tuboleta 등) 사전 예매 필수. 어르신 동행 시 차양막 있는 지정석 필수.",
+      en: "Mandatory advance booking for Salsódromo bleachers on official portal; shaded seating essential for seniors.",
+      ja: "サルソドロモ指定席は公式ポータルでの事前予約必須。シニア同伴時は日除け付きスタンド席を確保。",
+      zh: "萨尔索多罗莫巡游看台必须通过官方合作票务平台提前订票，长辈务必选择遮阳指定坐席。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=feria+de+cali+salsodromo+4k",
+    videoTitle: {
+      ko: "칼리 페리아 살소드로모 퍼레이드 4K 실황",
+      en: "Feria de Cali Salsódromo Carnival 4K",
+      ja: "フェリア・デ・カリ サルソドロモ 4K映像",
+      zh: "卡利莎莎节盛装巡游 4K狂欢现场"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Colombia",
+        city: "Cali",
+        name: "Feria de Cali (Cali Salsa Fair)",
+        typicalTiming: "Annually Dec 25 - Dec 30",
+        statusLabel: "2026.12.25 - 2026.12.30 Officially Confirmed",
+        venue: "Salsódromo Parade Corridor",
+        description: "The world salsa capital's explosive carnival featuring world-champion dancers and vibrant music parades.",
+        crowdsBooking: "Designated grandstand tickets essential; keep valuables secure during large events.",
+        difficultyDesc: "Warm temperatures and high energy; reserved seating bleachers strongly recommended for seniors."
+      },
+      ja: {
+        country: "コロンビア",
+        city: "カリ (Cali)",
+        name: "フェリア・デ・カリ（カリ・サルサ祭）",
+        typicalTiming: "毎年12月25日〜12月30日",
+        statusLabel: "2026.12.25〜12.30 公式確定日程",
+        venue: "サルソドロモ特設パレード通り",
+        description: "世界サルサの首都で数千人のダンサーが熱狂の舞を披露するラテン最大級のダンスカーニバル。",
+        crowdsBooking: "指定観覧席（Graderías）チケットの事前購入が必須。貴重品の携帯は最小限に。",
+        difficultyDesc: "日中の気温が高く熱気があるため、シニア同伴時は必ず指定席スタンドを確保して鑑賞。"
+      },
+      zh: {
+        country: "哥伦比亚",
+        city: "卡利 (Cali)",
+        name: "卡利莎莎狂欢节 (Feria de Cali)",
+        typicalTiming: "每年12月25日至12月30日",
+        statusLabel: "2026.12.25 ~ 12.30 官方确定日程",
+        venue: "Salsódromo 专属游行景观大道",
+        description: "全球莎莎舞之都最具活力的狂欢节，数千名世界冠军舞者带来的震撼舞蹈游行盛典。",
+        crowdsBooking: "看台指定坐席门票需提前官方订购，严禁携带贵重物品。",
+        difficultyDesc: "热带气候气温较高，长辈出行务必预定遮阳指定座席看台并注意防暑补水。"
+      }
+    }
+  }
+];
+
+const NIGHTVIEWS_GUIDE_DATA = [
+  {
+    id: "nv_lisbon_senhora",
+    region: "EU",
+    country: "포르투갈 (Portugal)",
+    city: "리스본 (Lisbon)",
+    spot: "세뇨라 두 몬트 전망대 (Miradouro da Senhora do Monte)",
+    viewType: "파노라마 자연 언덕 전망대 (리스본 최고봉)",
+    recommendedTime: "일몰 40분 전 ~ 매직아워 (18:30 ~ 20:00)",
+    operatingAndTicket: "상시 개방 · 입장료 무료 (No Ticket)",
+    difficultyLevel: "alert",
+    difficultyBadge: "🚨 가파른 경사로 (우버 직행 필수)",
+    difficultyDesc: "리스본에서 가장 높은 언덕입니다. 가파른 계단과 경사로로 도보 등반은 부모님 무릎에 큰 무리가 되므로 우버(Uber) 또는 툭툭을 타고 전망대 앞까지 직행하세요.",
+    nightReturnNotes: "전망대에 가로등과 벤치가 있으나 밤 21시 이후 골목길이 어두워집니다. 절대 도보로 하산하지 마시고 전망대 앞 탑승지에서 우버를 호출해 숙소로 안전하게 복귀하세요.",
+    sourceUrl: "https://www.visitlisboa.com/en/places/miradouro-da-senhora-do-monte",
+    sourceName: "리스본 공식 관광청 (Visit Lisboa)",
+    bookingUrl: "https://www.visitlisboa.com/en/places/miradouro-da-senhora-do-monte",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "완전 무료 개방 (입장료 및 티켓 없음)",
+      en: "100% Free Public Viewpoint (No tickets required)",
+      ja: "完全無料開放（入場料・チケット不要）",
+      zh: "全天免费开放（无门票要求）"
+    },
+    bookingNecessity: {
+      ko: "예매 불필요 (누구나 상시 방문 가능). 일몰 30분 전 벤치 선점을 추천.",
+      en: "No reservations needed. Arriving 30 mins before sunset recommended to secure seating.",
+      ja: "予約不要（常時訪問可能）。夕暮れ30分前に到着してベンチ席確保推奨。",
+      zh: "无需预订随时前往。建议日落前30分钟到达落座观景台长凳。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=miradouro+da+senhora+do+monte+lisbon+sunset+4k",
+    videoTitle: {
+      ko: "세뇨라 두 몬트 전망대 4K 노을 & 야경",
+      en: "Senhora do Monte Lisbon Sunset 4K",
+      ja: "セニョーラ・ド・モンテ展望台 4K夕景＆夜景",
+      zh: "圣母观景台里斯本夕阳与夜景 4K"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Portugal",
+        city: "Lisbon",
+        spot: "Miradouro da Senhora do Monte",
+        viewType: "Highest Natural Panoramic Hilltop Viewpoint",
+        recommendedTime: "40 min before sunset to magic hour (18:30 - 20:00)",
+        operatingAndTicket: "Open 24/7 · Free admission",
+        difficultyDesc: "Steepest hill in Lisbon; walking uphill causes knee fatigue for seniors. Take an Uber or Tuk-Tuk directly to the viewpoint summit.",
+        nightReturnNotes: "Avoid walking down narrow dim alleys after 21:00; hail an Uber or Bolt directly from the summit."
+      },
+      ja: {
+        country: "ポルトガル",
+        city: "リスボン",
+        spot: "セニョーラ・ド・モンテ展望台",
+        viewType: "リスボン最高峰のパノラマ自然展望テラス",
+        recommendedTime: "日没40分前〜マジックアワー (18:30〜20:00)",
+        operatingAndTicket: "常時開放・入場無料",
+        difficultyDesc: "市内最高峰の急坂です。徒歩登頂はシニアの膝に大きな負担となるため、ウーバー（Uber）やトゥクトゥクで山頂まで直行推奨。",
+        nightReturnNotes: "21時以降の路地は暗くなるため、徒歩で降りず山頂から配車アプリでホテルへ直行するのが安全。"
+      },
+      zh: {
+        country: "葡萄牙",
+        city: "里斯本",
+        spot: "恩宠山顶圣母观景台 (Senhora do Monte)",
+        viewType: "里斯本最高制高点全景自然山丘",
+        recommendedTime: "日落前40分钟至蓝调时分 (18:30 ~ 20:00)",
+        operatingAndTicket: "全天开放 · 免费免票",
+        difficultyDesc: "为里斯本最高坡度观景点，步行攀登极耗体力伤膝盖，请务必乘坐Uber或TukTuk直达山顶观景台。",
+        nightReturnNotes: "晚21点后老城巷道光线昏暗，切勿步行下山，请在山顶直接呼叫Uber安全乘车返回住所。"
+      }
+    }
+  },
+  {
+    id: "nv_rio_sugarloaf",
+    region: "LATIN",
+    country: "브라질 (Brazil)",
+    city: "리우데자네이루 (Rio de Janeiro)",
+    spot: "슈가로프 마운틴 케이블카 (Bondinho Pão de Açúcar)",
+    viewType: "396m 암벽 정상 360도 해안 & 코파카바나 파노라마 야경",
+    recommendedTime: "17:00 ~ 19:30 (대서양 선셋 및 도시 조명 점등)",
+    operatingAndTicket: "매일 08:30~20:00 (마지막 상행 18:30) · 유료 티켓 (공식 사이트 패스트트랙 권장)",
+    difficultyLevel: "easy",
+    difficultyBadge: "✅ 케이블카 & 엘리베이터 데크 완비",
+    difficultyDesc: "케이블카 2구간(우르카 언덕 + 슈가로프 정상)으로 편안하게 이동하며 각 정류장에 엘리베이터와 평평한 나무 데크가 완비되어 보행이 매우 편안합니다.",
+    nightReturnNotes: "탑승장은 안전한 우르카(Urca) 주거지에 위치합니다. 출구 앞 공식 택시 승강장 또는 Uber 전용 픽업 존에서 바로 탑승하세요.",
+    sourceUrl: "https://www.bondinho.com.br/en",
+    sourceName: "Bondinho Pão de Açúcar 공식 웹사이트",
+    bookingUrl: "https://www.bondinho.com.br/en",
+    bookingBadge: "required",
+    priceInfo: {
+      ko: "일반 케이블카 왕복 티켓 성인 R$ 160 ~ R$ 180 (약 4만~4.5만 원) / 패스트패스 R$ 260~, 시니어 할인(60세 이상) 50% 현장 적용",
+      en: "Standard Round-trip Cable Car approx. R$ 160 - 180 / Fast Pass R$ 260~ / Senior 50% discount available",
+      ja: "往復ロープウェイチケット 約 R$ 160〜180（約4,200円〜4,800円）/ ファストパス R$ 260〜 / シニア半額割引あり",
+      zh: "往返高空缆车全票约 160 ~ 180 巴西雷亚尔（约200~230元）/ 快速通关票 260雷亚尔 / 60岁以上长辈半价"
+    },
+    bookingNecessity: {
+      ko: "공식 사이트(bondinho.com.br) 사전 시간지정 예매 필수. 선셋 타임 대기열을 피하기 위해 패스트패스(Fast Pass) 강력 추천.",
+      en: "Advance timed ticket booking essential on official website to skip ticket office lines.",
+      ja: "公式サイトでの事前時間指定予約が必須。日没時間帯の行列回避のためファストパス推奨。",
+      zh: "强烈建议在官网提前预约分时段门票，黄昏时段推荐购买快速通关票避开排队。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=sugarloaf+mountain+rio+de+janeiro+sunset+4k",
+    videoTitle: {
+      ko: "리우데자네이루 슈가로프 케이블카 & 석양 4K",
+      en: "Rio de Janeiro Sugarloaf Cable Car Sunset 4K",
+      ja: "リオデジャネイロ・ポン・ジ・アスーカル 4K夕景",
+      zh: "里约热内卢面包山缆车与绝美日落 4K"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Brazil",
+        city: "Rio de Janeiro",
+        spot: "Sugarloaf Mountain Cable Car (Bondinho)",
+        viewType: "360-degree Coastal & Copacabana Peak Panorama",
+        recommendedTime: "17:00 - 19:30 (Sunset & city lights)",
+        operatingAndTicket: "Daily 08:30 - 20:00 (Last ride 18:30) · Ticketed (Fast pass recommended)",
+        difficultyDesc: "Two-stage modern cable cars with elevators and flat wooden walkways at both summits; wheelchair and senior friendly.",
+        nightReturnNotes: "Located in the quiet Urca district; take official taxis or Uber directly from the station gate."
+      },
+      ja: {
+        country: "ブラジル",
+        city: "リオデジャネイロ",
+        spot: "ポン・ジ・アスーカル ロープウェイ (シュガーローフ)",
+        viewType: "標高396m岩峰山頂からの360度海岸＆夜景パノラマ",
+        recommendedTime: "17:00〜19:30（大西洋の夕日と街の点灯）",
+        operatingAndTicket: "毎日 08:30〜20:00（最終上り 18:30）· 有料チケット",
+        difficultyDesc: "2区間のロープウェイ移動で、山頂駅にはエレベーターと平坦な木製デッキが完備され足腰に負担がありません。",
+        nightReturnNotes: "治安が良好なウルカ地区に所在。駅出口前の公式タクシー乗り場またはUberピックアップゾーンを利用。"
+      },
+      zh: {
+        country: "巴西",
+        city: "里约热内卢",
+        spot: "面包山空中缆车 (Bondinho Pão de Açúcar)",
+        viewType: "396米巨石之巅360度大西洋海岸与科帕卡巴纳夜景",
+        recommendedTime: "17:00 ~ 19:30 (大西洋日落与万家灯火)",
+        operatingAndTicket: "每日 08:30~20:00 (最晚登顶 18:30) · 需购门票 (建议官网快速通道)",
+        difficultyDesc: "分两段乘坐高空无障碍缆车，两座山顶均配备直梯与平整木质栈道，长辈游览极为省力舒适。",
+        nightReturnNotes: "缆车站位于宁静安全的乌尔卡军区居住区，出站口即设官方出租车点与Uber上客区。"
+      }
+    }
+  },
+  {
+    id: "nv_mexico_torre",
+    region: "LATIN",
+    country: "멕시코 (Mexico)",
+    city: "멕시코시티 (Mexico City)",
+    spot: "토레 라티노아메리카나 44층 전망대 (Torre Latinoamericana)",
+    viewType: "44층 도심 스카이라인 360도 루프탑 야경",
+    recommendedTime: "18:30 ~ 20:30 (예술궁전 및 도심 조명 점등)",
+    operatingAndTicket: "매일 09:00~22:00 · 유료 티켓 (Turibus 또는 공식 매표소)",
+    difficultyLevel: "easy",
+    difficultyBadge: "✅ 초고속 엘리베이터 (44층 직행)",
+    difficultyDesc: "로비에서 44층까지 초고속 엘리베이터로 직행합니다. 최상층 오픈 테라스로 가는 마지막 1개 층에 계단이 있으나 42~43층 실내에서도 통유리로 동일한 뷰를 편안히 감상 가능.",
+    nightReturnNotes: "센트로 이스토리코 중심가 대로변에 위치합니다. 밤 21시 이후 주변 어두운 뒷골목 도보는 피하시고 타워 로비 현관 안쪽에서 Uber를 호출하여 탑승하세요.",
+    sourceUrl: "https://www.turibus.com.mx/en/cdmx/admissions/torre-latinoamericana-viewpoint",
+    sourceName: "Turibus / Torre Latinoamericana 공식 파트너",
+    bookingUrl: "https://www.turibus.com.mx/en/cdmx/admissions/torre-latinoamericana-viewpoint",
+    bookingBadge: "optional",
+    priceInfo: {
+      ko: "전망대 입장권 성인 약 180 MXN (약 13,000원) / 60세 이상 시니어 할인 약 140 MXN / 박물관 통합권 250 MXN",
+      en: "Adult Admission approx. 180 MXN (approx. $9 USD) / Senior 60+ approx. 140 MXN / Combo pass 250 MXN",
+      ja: "大人入場料 約180 MXN（約1,400円）/ 60歳以上シニア 約140 MXN / 博物館共通券 250 MXN",
+      zh: "成人观景台门票约 180 墨西哥比索（约68元人民币）/ 60岁以上长辈优惠价 140比索 / 博物馆通票 250比索"
+    },
+    bookingNecessity: {
+      ko: "Turibus 사이트 또는 타워 1층 현장 매표소 구매 가능. 평일 일몰 45분 전 현장 방문 시 대기 없이 빠른 입장 가능.",
+      en: "Tickets available online via Turibus or at the 1st floor desk. Short queues on weekday sunsets.",
+      ja: "Turibusサイトまたはタワー1階の窓口で購入可能。平日の日没45分前なら待ち時間少なく入場可能。",
+      zh: "可通过Turibus官网提前购票或大厦一楼售票处购买，工作日日落前45分钟到场基本无需排长队。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=torre+latinoamericana+viewpoint+mexico+city+4k+night",
+    videoTitle: {
+      ko: "토레 라티노아메리카나 44층 파노라마 야경 4K",
+      en: "Torre Latinoamericana 44th Floor 4K Night View",
+      ja: "トレ・ラティノアメリカーナ 44階パノラマ夜景 4K",
+      zh: "拉丁美洲塔44层俯瞰墨西哥城全景夜景 4K"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Mexico",
+        city: "Mexico City",
+        spot: "Torre Latinoamericana 44th Floor Viewpoint",
+        viewType: "44th Floor 360-degree Rooftop Skyline Night View",
+        recommendedTime: "18:30 - 20:30 (City and Bellas Artes illuminations)",
+        operatingAndTicket: "Daily 09:00 - 22:00 · Ticketed viewpoint",
+        difficultyDesc: "High-speed elevator directly to the 44th floor. Glass lounges on floors 42-43 allow complete panoramic views without climbing upper stairs.",
+        nightReturnNotes: "Wait inside the secure tower lobby for Uber rather than walking through dim side streets late at night."
+      },
+      ja: {
+        country: "メキシコ",
+        city: "メキシコシティ",
+        spot: "トレ・ラティノアメリカーナ 44階展望台",
+        viewType: "44階から見渡す360度の大都会スカイライン夜景",
+        recommendedTime: "18:30〜20:30（芸術宮殿のライトアップ点灯時）",
+        operatingAndTicket: "毎日 09:00〜22:00 · 有料入場チケット",
+        difficultyDesc: "ロビーから44階まで高速エレベーターで直行。42〜43階の屋内ラウンジからもガラス越しに同等の絶景を楽しめます。",
+        nightReturnNotes: "夜間21時以降は路地を歩かず、タワーの正面ロビー内側からUberを配車して安全に乗車。"
+      },
+      zh: {
+        country: "墨西哥",
+        city: "墨西哥城",
+        spot: "拉丁美洲塔44层观景台 (Torre Latinoamericana)",
+        viewType: "44层高空360度俯瞰大都市天际线与美术宫夜景",
+        recommendedTime: "18:30 ~ 20:30 (市中心各大建筑璀璨点灯时分)",
+        operatingAndTicket: "每日 09:00~22:00 · 需购门票 (Turibus联合票或现场票)",
+        difficultyDesc: "大堂乘高速直梯直达44层，42~43层配备宽敞全景玻璃室内休憩区，无需登顶楼最后一段台阶即可全景尽收眼底。",
+        nightReturnNotes: "地处历史中心主干道，晚间请勿穿行昏暗小巷，在大厦一楼大厅内等候并搭乘Uber返回酒店。"
+      }
+    }
+  },
+  {
+    id: "nv_granada_san_nicolas",
+    region: "EU",
+    country: "스페인 (Spain)",
+    city: "그라나다 (Granada)",
+    spot: "산 니콜라스 전망대 (Mirador de San Nicolás)",
+    viewType: "알함브라 궁전 전경 & 시에라 네바다 설산 배경 조명 야경",
+    recommendedTime: "일몰 직전 18:30 ~ 20:30 (궁전 황금빛 야간 조명)",
+    operatingAndTicket: "상시 개방 · 입장료 무료 (No Ticket)",
+    difficultyLevel: "alert",
+    difficultyBadge: "🚨 가파른 알바이신 언덕 (미니버스 필수)",
+    difficultyDesc: "알바이신 구시가지 가파른 언덕길과 미끄러운 조약돌 바닥으로 도보 등반은 부모님께 무리입니다. 누에바 광장에서 C31/C32 미니버스 또는 택시를 타고 전망대 바로 앞까지 이동하세요.",
+    nightReturnNotes: "전망대 광장에는 버스킹과 관광객이 많아 활기차나, 내려올 때 골목은 어둡습니다. 광장 앞 버스 정류장에서 C31 미니버스를 타고 누에바 광장으로 안전하게 하산하세요.",
+    sourceUrl: "https://www.granadatur.com/",
+    sourceName: "그라나다 시 관광청 (Granada Turismo)",
+    bookingUrl: "https://www.granadatur.com/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "완전 무료 개방 (입장료 및 티켓 없음) / 시내 미니버스(C31, C32) 탑승 요금 1회 약 €1.40",
+      en: "100% Free Public Viewpoint / City Minibus fare approx. €1.40 each way",
+      ja: "完全無料（チケット不要） / 市内ミニバス（C31、C32）片道 約1.40ユーロ",
+      zh: "全天免费开放（无门票） / 市区C31/C32小巴单程票价约 1.40 欧元"
+    },
+    bookingNecessity: {
+      ko: "예매 불필요 (자유 방문). 일몰 30분 전 광장 전망대 테라스 명당 착석 권장.",
+      en: "No booking needed. Arrive 30 minutes before dusk to find a spot along the stone ledge.",
+      ja: "予約不要（自由観覧）。日没30分前に到着してテラスの好位置を確保推奨。",
+      zh: "无需预订随时自由参观。建议日落前30分钟到达占取石墙最佳机位。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=mirador+de+san+nicolas+granada+alhambra+night+4k",
+    videoTitle: {
+      ko: "그라나다 산 니콜라스 알함브라 야경 4K",
+      en: "Granada Mirador de San Nicolás Alhambra Night 4K",
+      ja: "グラナダ サン・ニコラス展望台 アルハンブラ宮殿夜景 4K",
+      zh: "格拉纳达圣尼古拉斯阿尔罕布拉宫金光夜照 4K"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Spain",
+        city: "Granada",
+        spot: "Mirador de San Nicolás",
+        viewType: "Illuminated Alhambra Palace with Sierra Nevada Backdrop",
+        recommendedTime: "Sunset 18:30 - 20:30 (Golden floodlights on the palace)",
+        operatingAndTicket: "Open 24/7 · Free admission",
+        difficultyDesc: "Albaicín has steep slippery cobblestone slopes. Take the C31 or C32 minibus from Plaza Nueva right to the viewpoint plaza.",
+        nightReturnNotes: "Lively square, but descending through dark alleyways is not advised for seniors; take the returning minibus back down."
+      },
+      ja: {
+        country: "スペイン",
+        city: "グラナダ (Granada)",
+        spot: "サン・ニコラス展望台",
+        viewType: "ライトアップされたアルハンブラ宮殿とシエラネバダ山脈",
+        recommendedTime: "日没直前 18:30〜20:30（黄金の宮殿ライトアップ）",
+        operatingAndTicket: "常時開放・入場無料",
+        difficultyDesc: "アルバイシンの石畳の急坂を歩くのは危険です。ヌエバ広場からC31/C32番ミニバスかタクシーで広場直前まで移動推奨。",
+        nightReturnNotes: "夜の細い下り坂は暗いため、広場前のバス停からミニバスで安全にヌエバ広場へ戻ることを推奨。"
+      },
+      zh: {
+        country: "西班牙",
+        city: "格拉纳达 (Granada)",
+        spot: "圣尼古拉斯观景台 (Mirador de San Nicolás)",
+        viewType: "阿尔罕布拉宫金光夜照与内华达雪山全景",
+        recommendedTime: "日落前 18:30 ~ 20:30 (宫殿通体点亮金辉时分)",
+        operatingAndTicket: "全天开放 · 免费免票",
+        difficultyDesc: "阿尔拜辛区多陡峭光滑石板路，徒步攀登极易滑倒，请务必在新广场搭乘C31/C32小巴或出租车直达观景台广场。",
+        nightReturnNotes: "广场上有弗拉门戈吉他艺人常驻但巷道较暗，下山请在广场原站搭乘C31小巴舒适返回新广场。"
+      }
+    }
+  },
+  {
+    id: "nv_porto_serra_pilar",
+    region: "EU",
+    country: "포르투갈 (Portugal)",
+    city: "포르투 (Porto / Vila Nova de Gaia)",
+    spot: "세하 두 필라르 수도원 광장 (Mosteiro da Serra do Pilar)",
+    viewType: "도루 강, 동 루이스 다리 & 유네스코 포르투 전경 황금빛 야경",
+    recommendedTime: "19:00 ~ 21:00 (다리와 강변 가로등 황금빛 반사)",
+    operatingAndTicket: "야외 원형 테라스 상시 개방 · 무료 (No Ticket)",
+    difficultyLevel: "easy",
+    difficultyBadge: "✅ 메트로 직결 평지 이동 (도보 2분)",
+    difficultyDesc: "메트로 D선 Jardim do Morro 역에서 하차하면 수도원 테라스 입구까지 완만한 아스팔트 길로 도보 2~3분 내에 도달할 수 있어 걷기 난이도가 매우 낮고 편안합니다.",
+    nightReturnNotes: "역 주변과 다리 상층 보행로에 가로등과 조명이 밝고 사람들의 왕래가 많아 야간에도 안전합니다. 메트로를 이용해 상벤투역 방면으로 바로 복귀 가능.",
+    sourceUrl: "https://visitporto.travel/",
+    sourceName: "포르투 공식 관광청 (Visit Porto)",
+    bookingUrl: "https://visitporto.travel/",
+    bookingBadge: "free",
+    priceInfo: {
+      ko: "수도원 야외 테라스 전망대 완전 무료 / 메트로 1회권(Andante Z2) 약 €1.40",
+      en: "Outdoor terrace viewpoint 100% Free / Metro single ride approx. €1.40",
+      ja: "修道院屋外展望テラス 完全無料 / メトロ片道券 約1.40ユーロ",
+      zh: "室外圆形观景平台全天免费 / 地铁单程票约 1.40 欧元"
+    },
+    bookingNecessity: {
+      ko: "예매 불필요 (자유 방문). 메트로 D선 Jardim do Morro 역 출구 도보 2분 평지 동선.",
+      en: "No reservations required. Open panoramic terrace 2 mins flat walk from Metro.",
+      ja: "予約不要（自由観覧）。メトロJardim do Morro駅から平坦徒歩2分。",
+      zh: "无需预订自由造访。从地铁D线Jardim do Morro站步行2分钟即达。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=mosteiro+da+serra+do+pilar+porto+sunset+4k",
+    videoTitle: {
+      ko: "포르투 세하 두 필라르 수도원 4K 노을 & 야경",
+      en: "Porto Serra do Pilar Sunset & Dom Luis Bridge 4K",
+      ja: "ポルト セラ・ド・ピラール修道院 4K夕景＆夜景",
+      zh: "波尔图皮拉尔修道院与路易一世大桥 4K夜景实况"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "Portugal",
+        city: "Porto",
+        spot: "Monastery of Serra do Pilar Terrace",
+        viewType: "Douro River, Dom Luís I Bridge & Historic Porto Skyline",
+        recommendedTime: "19:00 - 21:00 (Golden bridge reflections)",
+        operatingAndTicket: "Open terrace · Free admission",
+        difficultyDesc: "Just a gentle 2-minute flat walk from the Jardim do Morro Metro station (Line D); very comfortable for seniors.",
+        nightReturnNotes: "Well-lit metro and pedestrian bridge area with constant foot traffic; return smoothly via metro to São Bento."
+      },
+      ja: {
+        country: "ポルトガル",
+        city: "ポルト",
+        spot: "セラ・ド・ピラール修道院前テラス",
+        viewType: "ドウロ川、ドン・ルイス1世橋、世界遺産ポルト市街の黄金夜景",
+        recommendedTime: "19:00〜21:00（橋と川面の美しいイルミネーション）",
+        operatingAndTicket: "展望テラス常時開放・入場無料",
+        difficultyDesc: "メトロD線ジャルディン・ド・モロ駅から平坦な道を徒歩わずか2分で到着でき、足腰への負担がほぼありません。",
+        nightReturnNotes: "駅前や橋の上層階は照明が明るく人通りも多いため夜間も安心。メトロでサン・ベント駅方面へ直通帰還可能。"
+      },
+      zh: {
+        country: "葡萄牙",
+        city: "波尔图",
+        spot: "皮拉尔修道院观景台 (Serra do Pilar)",
+        viewType: "杜罗河、路易一世大桥与波尔图世界遗产全景夜景",
+        recommendedTime: "19:00 ~ 21:00 (大桥金芒与河面倒影)",
+        operatingAndTicket: "室外圆形观景平台常年开放 · 免费免票",
+        difficultyDesc: "乘地铁D线至Jardim do Morro站出站，经平缓步道仅需步行2分钟即可抵达，极其省力。",
+        nightReturnNotes: "地铁站周边与大桥上层照明通明、行人众多安全有保障，可直接乘地铁返回圣本托方向。"
+      }
+    }
+  },
+  {
+    id: "nv_dubai_burj",
+    region: "EU",
+    country: "아랍에미리트 (UAE)",
+    city: "두바이 (Dubai)",
+    spot: "버즈 칼리파 124·125층 전망대 (At the Top, Burj Khalifa)",
+    viewType: "세계 최고층 360도 도심 스카이라인 & 분수 쇼 야경",
+    recommendedTime: "18:00 ~ 20:30 (일몰 및 30분 간격 분수 쇼)",
+    operatingAndTicket: "매일 운영 · 공식 사이트 사전 시간 지정 티켓 필수",
+    difficultyLevel: "easy",
+    difficultyBadge: "✅ 100% 실내 무장애 배리어프리",
+    difficultyDesc: "두바이 몰 내부에서 연결되며 초고속 엘리베이터와 무빙워크가 완비되어 휠체어와 유모차도 100% 이동 가능한 최고 수준의 무장애 편의 시설을 갖추고 있습니다.",
+    nightReturnNotes: "두바이 몰 내부 실내 통로를 통해 택시 승강장 또는 메트로 연결 통로로 쾌적하게 이동하므로 한밤중에도 완벽히 안전합니다.",
+    sourceUrl: "https://www.burjkhalifa.ae/",
+    sourceName: "Burj Khalifa 공식 웹사이트",
+    bookingUrl: "https://www.burjkhalifa.ae/en/index.aspx",
+    bookingBadge: "required",
+    priceInfo: {
+      ko: "일반 124·125층 전망대 시간대별 약 179 ~ 259 AED (약 6.5만 ~ 9.5만 원) / 148층 스카이라운지 약 399~550 AED",
+      en: "Levels 124 & 125 approx. 179 - 259 AED (approx. $48 - $70 USD) / Level 148 Sky approx. 399 - 550 AED",
+      ja: "124・125階 一般展望台 約179〜259 AED（約7,400円〜10,700円）/ 148階 SKY 約399〜550 AED",
+      zh: "124及125层标准观景台约 179 ~ 259 迪拉姆（约350~500元人民币）/ 148层VIP天际休息室约 399~550 迪拉姆"
+    },
+    bookingNecessity: {
+      ko: "공식 사이트(burjkhalifa.ae) 사전 시간지정 예매 필수. 선셋 및 분수쇼 프라임 타임(17:30~19:30)은 수일 전 조기 매진.",
+      en: "Strict advance timed reservation required on official website; prime sunset slots sell out days ahead.",
+      ja: "公式サイトでの事前時間指定予約が必須。夕暮れ〜噴水ショー時間帯（17:30〜19:30）は数日前に満席。",
+      zh: "必须在官网提前预约分时段门票，日落与喷泉高峰时段（17:30~19:30）需提前数天锁定。"
+    },
+    videoUrl: "https://www.youtube.com/results?search_query=burj+khalifa+at+the+top+fountain+show+4k+night",
+    videoTitle: {
+      ko: "버즈 칼리파 전망대 & 두바이 분수 쇼 4K 야경",
+      en: "Burj Khalifa At the Top & Dubai Fountain 4K Night Show",
+      ja: "バール・ハリファ＆ドバイ・ファウンテン 4K夜景ショー",
+      zh: "哈利法塔观景台与迪拜音乐喷泉 4K高空夜景"
+    },
+    lastVerified: "2026-10",
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+    i18n: {
+      en: {
+        country: "United Arab Emirates (UAE)",
+        city: "Dubai",
+        spot: "At the Top, Burj Khalifa (Levels 124 & 125)",
+        viewType: "World's Highest 360-degree Skyline & Fountain Show",
+        recommendedTime: "18:00 - 20:30 (Sunset & 30-min fountain choreography)",
+        operatingAndTicket: "Daily · Timed entry ticket required in advance",
+        difficultyDesc: "100% barrier-free indoor accessibility with high-speed double-decker elevators and flat corridors.",
+        nightReturnNotes: "Direct indoor connection to Dubai Mall taxi ranks and air-conditioned metro links; perfectly safe."
+      },
+      ja: {
+        country: "アラブ首長国連邦 (UAE)",
+        city: "ドバイ",
+        spot: "バール・ハリファ 展望台（アット・ザ・トップ）",
+        viewType: "世界最高層からの360度未来都市スカイライン＆噴水ショー",
+        recommendedTime: "18:00〜20:30（日没と30分おきのファウンテンショー）",
+        operatingAndTicket: "毎日営業・事前時間指定チケット必須",
+        difficultyDesc: "ドバイモール直結で全館100%バリアフリー。超高速エレベーター完備で段差が全くありません。",
+        nightReturnNotes: "モール内から直結でタクシー乗り場やメトロ通路へ移動できるため、夜間も安全快適。"
+      },
+      zh: {
+        country: "阿拉伯联合酋长国 (UAE)",
+        city: "迪拜",
+        spot: "哈利法塔124/125层观景台 (At the Top, Burj Khalifa)",
+        viewType: "全球最高摩天楼360度俯瞰未来都市天际线与音乐喷泉秀",
+        recommendedTime: "18:00 ~ 20:30 (日落与每30分钟一场的喷泉秀)",
+        operatingAndTicket: "每日运营 · 需提前官网预约分时段门票",
+        difficultyDesc: "迪拜购物中心室内直连，双层高速电梯与纯平通道，100%无障碍轮椅友好设施。",
+        nightReturnNotes: "全室内通道直通迪拜Mall官方空调出租车候车厅与地铁连廊，深夜出行无懈可击。"
+      }
+    }
+  }
+];
+
+if (typeof window !== 'undefined') {
+  window.FESTIVALS_GUIDE_DATA = FESTIVALS_GUIDE_DATA;
+  window.NIGHTVIEWS_GUIDE_DATA = NIGHTVIEWS_GUIDE_DATA;
+}
+
+// 🌐 사전 다국어 레이블 보강 (KO, EN, JA, ZH)
+(function() {
+  const extraDictEntries = {
+    ko: {
+      lbl_ticket_price: "티켓 요금",
+      lbl_booking_necessity: "예매 필요성",
+      btn_booking_portal: "🎫 공식 예매처 바로가기 ↗",
+      btn_watch_4k_video: "🎥 4K 현장 영상 ↗",
+      btn_delete_candidate: "🗑️ 삭제",
+      badge_booking_free: "🆓 무료 관람 · 예매 불필요",
+      badge_booking_required: "🎟️ 사전 예매 필수 · 매진 주의",
+      badge_booking_optional: "🎫 부분 유료 · 선택 예매",
+      lbl_price: "티켓 요금",
+      lbl_booking_need: "예매 필요성"
+    },
+    en: {
+      lbl_ticket_price: "Ticket Price",
+      lbl_booking_necessity: "Booking Requirement",
+      btn_booking_portal: "🎫 Official Booking Site ↗",
+      btn_watch_4k_video: "🎥 4K Video Tour ↗",
+      btn_delete_candidate: "🗑️ Remove",
+      badge_booking_free: "🆓 Free Admission · No Booking",
+      badge_booking_required: "🎟️ Advance Booking Required",
+      badge_booking_optional: "🎫 Optional Booking / Paid Extras",
+      lbl_price: "Ticket Price",
+      lbl_booking_need: "Booking Need"
+    },
+    ja: {
+      lbl_ticket_price: "チケット料金",
+      lbl_booking_necessity: "予約の必要性",
+      btn_booking_portal: "🎫 公式予約サイト ↗",
+      btn_watch_4k_video: "🎥 4K現地映像 ↗",
+      btn_delete_candidate: "🗑️ 削除",
+      badge_booking_free: "🆓 入場無料・予約不要",
+      badge_booking_required: "🎟️ 事前予約必須・完売注意",
+      badge_booking_optional: "🎫 一部有料・選択予約",
+      lbl_price: "チケット料金",
+      lbl_booking_need: "予約の必要性"
+    },
+    zh: {
+      lbl_ticket_price: "门票价格",
+      lbl_booking_necessity: "预订必要性",
+      btn_booking_portal: "🎫 官方预订入口 ↗",
+      btn_watch_4k_video: "🎥 4K现场实况 ↗",
+      btn_delete_candidate: "🗑️ 删除",
+      badge_booking_free: "🆓 免费观礼 · 无需预订",
+      badge_booking_required: "🎟️ 必须提前预订 · 谨防售罄",
+      badge_booking_optional: "🎫 部分收费 · 自选预订",
+      lbl_price: "门票价格",
+      lbl_booking_need: "预订必要性"
+    }
+  };
+
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], extraDictEntries[lang] || {});
+    });
+  }
+})();
+
+if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICTIONARY; }
+
+
+// ==========================================================================
+// 📚 디지털 가이드북 챕터 시스템 다국어 사전 (KO, EN, JA, ZH)
+// ==========================================================================
+(function() {
+  const chapterDict = {
+    ko: {
+      guidebook_edition: "2026 디지털 에디션",
+      guidebook_toc_title: "가이드북 목차",
+      guidebook_toc_sub: "5대 챕터별 맞춤 탐색",
+      chapter_name_overview: "여행 개요",
+      chapter_desc_overview: "철학 · 4대 플랜 비교",
+      chapter_name_planner: "일정 플래너",
+      chapter_desc_planner: "맞춤 일정 · 30일 타임라인",
+      chapter_name_guide: "지역 가이드",
+      chapter_desc_guide: "권역별 명소 · 이동 루트",
+      chapter_name_festivals: "축제 & 야경",
+      chapter_desc_festivals: "엄선 축제 · 파노라마 뷰",
+      chapter_name_practical: "여행 실용정보",
+      chapter_desc_practical: "맛집 · 회화 · 교통 · 숙소",
+      m_nav_overview: "개요",
+      m_nav_planner: "플래너",
+      m_nav_guide: "가이드",
+      m_nav_festivals: "축제·야경",
+      m_nav_practical: "실용정보",
+      shortcut_hint: "⌨️ 단축키: [ / ] 또는 숫자 1~5로 장 이동",
+      prev_chapter_prefix: "이전 장",
+      next_chapter_prefix: "다음 장"
+    },
+    en: {
+      guidebook_edition: "2026 DIGITAL EDITION",
+      guidebook_toc_title: "Table of Contents",
+      guidebook_toc_sub: "5 Curated Chapters",
+      chapter_name_overview: "Trip Overview",
+      chapter_desc_overview: "Philosophy & 4 Plans",
+      chapter_name_planner: "Itinerary Planner",
+      chapter_desc_planner: "Custom 30-Day Timeline",
+      chapter_name_guide: "Regional Guide",
+      chapter_desc_guide: "Landmarks & Train Routes",
+      chapter_name_festivals: "Festivals & Night Views",
+      chapter_desc_festivals: "Curated Festivals & Views",
+      chapter_name_practical: "Practical Travel Info",
+      chapter_desc_practical: "Dining, Phrases, Hotels",
+      m_nav_overview: "Overview",
+      m_nav_planner: "Planner",
+      m_nav_guide: "Guide",
+      m_nav_festivals: "Festivals",
+      m_nav_practical: "Practical",
+      shortcut_hint: "⌨️ Shortcuts: [ / ] or 1-5 keys to switch chapters",
+      prev_chapter_prefix: "Prev Chapter",
+      next_chapter_prefix: "Next Chapter"
+    },
+    ja: {
+      guidebook_edition: "2026 デジタルエディション",
+      guidebook_toc_title: "ガイドブック目次",
+      guidebook_toc_sub: "5大章別スマート案内",
+      chapter_name_overview: "旅行概要",
+      chapter_desc_overview: "哲学・4大プラン比較",
+      chapter_name_planner: "日程プランナー",
+      chapter_desc_planner: "カスタム30日タイムライン",
+      chapter_name_guide: "地域ガイド",
+      chapter_desc_guide: "名所＆移動ルート",
+      chapter_name_festivals: "祭典＆夜景",
+      chapter_desc_festivals: "厳選フェス＆絶景夜景",
+      chapter_name_practical: "旅行実用情報",
+      chapter_desc_practical: "グルメ・会話・交通・宿",
+      m_nav_overview: "概要",
+      m_nav_planner: "プラン",
+      m_nav_guide: "ガイド",
+      m_nav_festivals: "祭典・夜景",
+      m_nav_practical: "実用情報",
+      shortcut_hint: "⌨️ ショートカット: [ / ] または 1〜5キーで移動",
+      prev_chapter_prefix: "前の章",
+      next_chapter_prefix: "次の章"
+    },
+    zh: {
+      guidebook_edition: "2026 数字典藏版",
+      guidebook_toc_title: "指南目录",
+      guidebook_toc_sub: "五大章节专属导览",
+      chapter_name_overview: "旅行概览",
+      chapter_desc_overview: "慢游哲学与四大路线对比",
+      chapter_name_planner: "行程规划师",
+      chapter_desc_planner: "定制30日时间线",
+      chapter_name_guide: "地区指南",
+      chapter_desc_guide: "核心名胜与城际交通",
+      chapter_name_festivals: "节庆与夜景",
+      chapter_desc_festivals: "精选节庆与全景夜景",
+      chapter_name_practical: "实用旅行信息",
+      chapter_desc_practical: "美食·会话·交通·精选住宿",
+      m_nav_overview: "概览",
+      m_nav_planner: "规划",
+      m_nav_guide: "指南",
+      m_nav_festivals: "节庆·夜景",
+      m_nav_practical: "实用",
+      shortcut_hint: "⌨️ 快捷键: [ / ] 或按 1~5 键快速切换章节",
+      prev_chapter_prefix: "上一章",
+      next_chapter_prefix: "下一章"
+    }
+  };
+
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], chapterDict[lang] || {});
+    });
+  }
+})();
+
+
+// ==========================================================================
+// 🌐 전체 18개 누락 사전 키 및 책 페이지 넘기기 다국어 완벽 보강 (KO, EN, JA, ZH)
+// ==========================================================================
+(function() {
+  const completeMissingEntries = {
+    ko: {
+      fest_night_title: "지역별 축제 & 야경 명소 가이드 (공식 인증 및 시니어 보행 가이드)",
+      fest_night_sub: "공식 관광기관에서 검증된 주요 축제와 안전한 파노라마 야경 명소. 60대 부모님을 위한 고산·경사·계단 난이도와 야간 안전 귀가 팁 수록.",
+      tab_festivals: "🎪 지역별 엄선 축제 가이드",
+      tab_nightviews: "🌃 파노라마 야경 명소 가이드",
+      tab_saved_candidates: "⭐ 여행 후보 저장 목록",
+      lbl_fest_region_filter: "🌍 권역 필터:",
+      filter_all: "전체",
+      filter_eu: "🇪🇺 유럽",
+      filter_latin: "🌎 중남미 (선별 추천)",
+      lbl_fest_season_filter: "🗓️ 기간·계절 필터:",
+      filter_all_seasons: "전체 시기",
+      filter_spring_summer: "🌸 봄·여름 (3~8월)",
+      filter_autumn_winter: "🍁 가을·연말 (9~2월)",
+      saved_candidates_title: "⭐ 내가 저장한 여행 후보 목록",
+      saved_candidates_desc: "기존 30일 추천 일정과 별도로, 마음에 드는 축제나 야경 명소를 후보로 보관하는 나만의 위시리스트입니다.",
+      btn_clear_saved: "전체 비우기",
+      timeline_expand_all: "모든 날짜 세부일정 펼치기 ▼",
+      timeline_hint_click_to_view: "💡 날짜 카드의 [세부 일정 펼치기]를 눌러 1일 1.5스팟 시에스타 루틴을 확인하세요.",
+      btn_prev_page: "이전 쪽",
+      btn_next_page: "다음 쪽",
+      page_prefix: "쪽",
+      book_guide_study_mode: "📖 북 리더 모드 (페이지 넘기기)"
+    },
+    en: {
+      fest_night_title: "Regional Festivals & Panoramic Night Views (Official & Senior Guide)",
+      fest_night_sub: "Verified major festivals and panoramic evening viewpoints from official tourism boards, with senior-tailored terrain, stairs, and night safety tips.",
+      tab_festivals: "🎪 Curated Festivals Guide",
+      tab_nightviews: "🌃 Panoramic Night Views",
+      tab_saved_candidates: "⭐ Saved Wishlist",
+      lbl_fest_region_filter: "🌍 Region Filter:",
+      filter_all: "All",
+      filter_eu: "🇪🇺 Europe",
+      filter_latin: "🌎 Latin America (Curated)",
+      lbl_fest_season_filter: "🗓️ Season Filter:",
+      filter_all_seasons: "All Seasons",
+      filter_spring_summer: "🌸 Spring / Summer (Mar-Aug)",
+      filter_autumn_winter: "🍁 Autumn / Winter (Sep-Feb)",
+      saved_candidates_title: "⭐ My Saved Travel Candidates",
+      saved_candidates_desc: "Your personal wishlist of curated festivals and night viewpoints, kept separate from the core itinerary.",
+      btn_clear_saved: "Clear All",
+      timeline_expand_all: "Expand All Day Schedules ▼",
+      timeline_hint_click_to_view: "💡 Click [Expand Details] on any day card to inspect the 1.5 spots/day siesta routine.",
+      btn_prev_page: "Prev Page",
+      btn_next_page: "Next Page",
+      page_prefix: "Page",
+      book_guide_study_mode: "📖 Book Reader Mode (Page Flip)"
+    },
+    ja: {
+      fest_night_title: "地域別フェスティバル＆絶景夜景ガイド（公式認定・シニア歩行ガイド）",
+      fest_night_sub: "公的観光機関から検証された主要フェスティバルと安心のパノラマ夜景スポット。60代のご両親のための高山・坂道・階段難易度と夜間の安全帰還のコツを収録。",
+      tab_festivals: "🎪 地域別厳選フェスガイド",
+      tab_nightviews: "🌃 パノラマ夜景スポット",
+      tab_saved_candidates: "⭐ 保存した旅行候補リスト",
+      lbl_fest_region_filter: "🌍 地域フィルター:",
+      filter_all: "すべて",
+      filter_eu: "🇪🇺 ヨーロッパ",
+      filter_latin: "🌎 中南米（厳選推薦）",
+      lbl_fest_season_filter: "🗓️ 時期・季節フィルター:",
+      filter_all_seasons: "全時期",
+      filter_spring_summer: "🌸 春・夏 (3〜8月)",
+      filter_autumn_winter: "🍁 秋・年末 (9〜2月)",
+      saved_candidates_title: "⭐ 保存した旅行候補リスト",
+      saved_candidates_desc: "基本の30日推薦日程とは別に、お気に入りの祭典や夜景スポットを保存しておくウィッシュリストです。",
+      btn_clear_saved: "すべて削除",
+      timeline_expand_all: "全日程の詳細を展開 ▼",
+      timeline_hint_click_to_view: "💡 日程カードの［詳細日程を展開］を押して、1日1.5スポットのシエスタ休息プランを確認してください。",
+      btn_prev_page: "前のページ",
+      btn_next_page: "次のページ",
+      page_prefix: "ページ",
+      book_guide_study_mode: "📖 ブックリーダー（ページめくり）"
+    },
+    zh: {
+      fest_night_title: "地区特色节庆与全景夜景指南（官方认证与长辈无障碍导览）",
+      fest_night_sub: "收录来自官方旅游局权威认证的重大节庆与安全全景夜景观景台，详载高原、坡道与台阶难度及夜间安全返程贴士。",
+      tab_festivals: "🎪 精选地区节庆指南",
+      tab_nightviews: "🌃 全景夜景名胜指南",
+      tab_saved_candidates: "⭐ 旅行心愿候选列表",
+      lbl_fest_region_filter: "🌍 区域筛选:",
+      filter_all: "全部",
+      filter_eu: "🇪🇺 欧洲",
+      filter_latin: "🌎 中南美洲（精选推荐）",
+      lbl_fest_season_filter: "🗓️ 季节时段筛选:",
+      filter_all_seasons: "全部时期",
+      filter_spring_summer: "🌸 春夏季 (3~8月)",
+      filter_autumn_winter: "🍁 秋季与年末 (9~2月)",
+      saved_candidates_title: "⭐ 我保存的旅行备选清单",
+      saved_candidates_desc: "独立于核心30日行程之外，随心收藏心仪节日庆典与夜景观景台的专属心愿单。",
+      btn_clear_saved: "清空全部",
+      timeline_expand_all: "展开所有每日详细日程 ▼",
+      timeline_hint_click_to_view: "💡 点击日程卡片上的［展开详细行程］查看每日1.5个景点及西斯塔午休规划。",
+      btn_prev_page: "上一页",
+      btn_next_page: "下一页",
+      page_prefix: "页",
+      book_guide_study_mode: "📖 翻页阅读模式 (像书本一样翻阅)"
+    }
+  };
+
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], completeMissingEntries[lang] || {});
+    });
+  }
+})();
+
+
+// ==========================================================================
+// 📖 디지털 가이드북 책장 넘기기(Book Reader) 다국어 사전 키 보강
+// ==========================================================================
+(function() {
+  const pageEntries = {
+    ko: {
+      page_overview_1: "1. 여행 철학 & 개요",
+      page_overview_2: "2. 3대 추천 코스 비교",
+      page_overview_3: "3. 에디토리얼 심층 가이드",
+      page_planner_1: "1. 맞춤 조건 & 예산",
+      page_planner_2: "2. 30일 타임라인 & 캘린더",
+      page_guide_1: "1. 핵심 명소 73선 (리스트 뷰)",
+      page_guide_2: "2. 대형 인터랙티브 지도 뷰",
+      page_guide_map_title: "대형 랜드마크 인터랙티브 지도",
+      page_guide_map_sub: "유럽 및 중남미 73대 핵심 명소의 위치와 동선을 지도상에서 한눈에 탐색하세요.",
+      page_practical_1: "1. 대표 미식 & 맛집",
+      page_practical_2: "2. 필수 회화 & 오디오",
+      page_practical_3: "3. 스마트 교통 & 안심 숙소",
+      page_practical_4: "4. 실시간 AI 검색",
+      first_chapter_prefix: "첫 장으로"
+    },
+    en: {
+      page_overview_1: "1. Travel Philosophy",
+      page_overview_2: "2. 3 Routes Comparison",
+      page_overview_3: "3. Deep Dive Editorial",
+      page_planner_1: "1. Settings & Budget",
+      page_planner_2: "2. 30-Day Timeline",
+      page_guide_1: "1. Landmarks 73 (List View)",
+      page_guide_2: "2. Interactive Map View",
+      page_guide_map_title: "Interactive Landmarks Map",
+      page_guide_map_sub: "Explore coordinates and pacing for 73 global landmarks across Europe and the Americas.",
+      page_practical_1: "1. Dining Guide 92",
+      page_practical_2: "2. Travel Phrases",
+      page_practical_3: "3. Transit & Hotels",
+      page_practical_4: "4. Live AI Search",
+      first_chapter_prefix: "Back to Start"
+    },
+    ja: {
+      page_overview_1: "1. 旅行哲学＆概要",
+      page_overview_2: "2. 3大プラン比較",
+      page_overview_3: "3. 深層エディトリアル",
+      page_planner_1: "1. 条件設定＆予算",
+      page_planner_2: "2. 30日タイムライン",
+      page_guide_1: "1. 必訪名所73選（リスト表示）",
+      page_guide_2: "2. インタラクティブ地図表示",
+      page_guide_map_title: "大型ランドマーク・インタラクティブ地図",
+      page_guide_map_sub: "ヨーロッパおよび中南米の73大名所の位置と動線を地図上で一目で探索できます。",
+      page_practical_1: "1. グルメ＆名店92選",
+      page_practical_2: "2. 必須会話＆音声",
+      page_practical_3: "3. 交通＆シニア宿",
+      page_practical_4: "4. AI検索コネクタ",
+      first_chapter_prefix: "最初の章へ"
+    },
+    zh: {
+      page_overview_1: "1. 旅行哲学与概览",
+      page_overview_2: "2. 三大路线深度对比",
+      page_overview_3: "3. 深度编辑指南",
+      page_planner_1: "1. 定制条件与预算",
+      page_planner_2: "2. 30日时间线与日历",
+      page_guide_1: "1. 核心名胜73选（列表视图）",
+      page_guide_2: "2. 全景交互地图视图",
+      page_guide_map_title: "全景地标交互式地图",
+      page_guide_map_sub: "在全屏地图上直观探索欧洲与美洲73处核心名胜的地理位置与游览动线。",
+      page_practical_1: "1. 美食与精选名店",
+      page_practical_2: "2. 实用会话与发音",
+      page_practical_3: "3. 城际交通与精选住宿",
+      page_practical_4: "4. AI实时搜索连接器",
+      first_chapter_prefix: "返回第一章"
+    }
+  };
+
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], pageEntries[lang] || {});
+    });
+  }
+})();
+
+
+// ==========================================================================
+// 📖 디지털 북 리더 & 다국어 완벽 사전 (KO, EN, JA, ZH)
+// ==========================================================================
+(function() {
+  const ext = {
+  "ko": {
+    "fest_night_kicker": "04 / REGIONAL FESTIVALS & PANORAMIC NIGHT VIEWS",
+    "fest_night_title": "지역별 축제 & 야경 명소 가이드 (공식 인증 및 시니어 보행 가이드)",
+    "fest_night_sub": "공식 관광기관에서 검증된 주요 축제와 안전한 파노라마 야경 명소. 60대 부모님을 위한 고산·경사·계단 난이도와 야간 안전 귀가 팁 수록.",
+    "tab_festivals": "🎪 지역별 엄선 축제 가이드",
+    "tab_nightviews": "🌃 파노라마 야경 명소 가이드",
+    "tab_saved_candidates": "⭐ 여행 후보 저장 목록",
+    "lbl_fest_region_filter": "🌍 권역 필터:",
+    "filter_all": "전체",
+    "filter_eu": "🇪🇺 유럽",
+    "filter_latin": "🌎 중남미 (선별 추천)",
+    "lbl_fest_season_filter": "🗓️ 기간·계절 필터:",
+    "filter_all_seasons": "전체 시기",
+    "filter_spring_summer": "🌸 봄·여름 (3~8월)",
+    "filter_autumn_winter": "🍁 가을·연말 (9~2월)",
+    "saved_candidates_title": "⭐ 내가 저장한 여행 후보 목록 (위시리스트 & 공부 노트)",
+    "saved_candidates_desc": "기존 30일 추천 일정과 별도로, 마음에 드는 축제나 야경 명소를 후보로 보관하는 나만의 위시리스트입니다.",
+    "btn_clear_saved": "🗑️ 저장 목록 전체 비우기",
+    "timeline_expand_all": "모든 날짜 세부일정 펼치기 ▼",
+    "timeline_hint_click_to_view": "💡 날짜 카드의 [세부 일정 펼치기]를 눌러 1일 1.5스팟 시에스타 루틴을 확인하세요.",
+    "btn_prev_page": "이전 쪽",
+    "btn_next_page": "다음 쪽",
+    "btn_prev_chapter_page": "이전 쪽 / 이전 장",
+    "btn_next_chapter_page": "다음 쪽 / 다음 장",
+    "page_prefix": "쪽",
+    "book_guide_study_mode": "📖 디지털 북 리더 모드 (쪽 넘기기)",
+    "chapter_name_overview": "01. 여행 개요 & 철학",
+    "chapter_name_planner": "02. 맞춤 일정 플래너",
+    "chapter_name_guide": "03. 지역별 명소 가이드",
+    "chapter_name_festivals": "04. 축제 & 파노라마 야경",
+    "chapter_name_practical": "05. 여행 실용 정보",
+    "page_overview_1": "1. 여행 철학 & 4대 루트 비교",
+    "page_overview_2": "2. 현지 포토 & 4K 투어 영상",
+    "page_overview_3": "3. 전문가 심층 에디토리얼 가이드",
+    "page_planner_1": "1. 조건 설정 & 동적 예산",
+    "page_planner_2": "2. 1~10일차: 카탈루냐 & 마드리드",
+    "page_planner_3": "3. 11~20일차: 안달루시아 로드",
+    "page_planner_4": "4. 21~30일차: 포르투갈 & 캘린더",
+    "page_guide_1": "1. 🇪🇸 바르셀로나 & 카탈루냐",
+    "page_guide_2": "2. 🏰 안달루시아 (세비야·그라나다)",
+    "page_guide_3": "3. 👑 마드리드 & 중부 고도",
+    "page_guide_4": "4. 🇵🇹 포르투갈 (리스본·포르투)",
+    "page_guide_5": "5. 🗺️ 대형 인터랙티브 지도 뷰",
+    "page_festivals_1": "1. 🌸 봄·여름 대표 축제 4선",
+    "page_festivals_2": "2. 🍁 가을·겨울 & 스페셜 축제 5선",
+    "page_festivals_3": "3. 🌃 파노라마 야경 명소 6선",
+    "page_festivals_4": "4. ⭐ 나의 여행 후보 위시리스트",
+    "page_practical_1": "1. 🥘 대표 미식 & 맛집 92선",
+    "page_practical_2": "2. 🗣️ 필수 회화 & 원어민 음성",
+    "page_practical_3": "3. 🚆 스마트 교통 & 안심 숙소",
+    "page_practical_4": "4. 🤖 실시간 AI 스마트 여행 비서",
+    "fest_spring_sub_title": "🌸 봄 & 여름 이베리아 4대 대표 축제 (3~8월)",
+    "fest_spring_sub_desc": "스페인 안달루시아의 전통 마차 행렬, 코르도바 꽃 파티오, 리스본의 정어리 축제까지. 인파와 예매 팁을 확인하세요.",
+    "fest_autumn_sub_title": "🍁 가을 & 연말 & 특별 축제 5선 (9~2월 / 글로벌 추천)",
+    "fest_autumn_sub_desc": "바르셀로나의 거인 행렬과 말라가 크리스마스 일루미네이션, 테네리페 카니발 및 남미 대축제 비교 정보 수록.",
+    "nightview_sub_title": "🌃 6대 파노라마 야경 & 일몰 뷰포인트",
+    "nightview_sub_desc": "알함브라의 붉은 노을부터 동루이스 1세 다리의 황금빛 야경까지. 부모님 동행 시 엘리베이터 유무와 안전 귀가 교통편 필수 수록.",
+    "badge_booking_free": "🆓 무료 관람 · 예매 불필요",
+    "badge_booking_required": "🎟️ 사전 예매 필수 · 매진 주의",
+    "badge_booking_optional": "🎫 현장 티켓 / 선택 예매",
+    "btn_save_candidate": "⭐ 후보 저장",
+    "btn_saved_candidate": "✓ 저장됨",
+    "lbl_best_view_time": "⏰ 추천 조망 시간",
+    "lbl_night_return_safety": "🚕 야간 안전 귀가 팁",
+    "lbl_official_booking_site": "🎟️ 공식 예매처 바로가기",
+    "lbl_watch_4k_video": "🎥 4K 현장 영상 보기"
+  },
+  "en": {
+    "fest_night_kicker": "04 / REGIONAL FESTIVALS & PANORAMIC NIGHT VIEWS",
+    "fest_night_title": "Regional Festivals & Panoramic Night Views (Official & Senior Guide)",
+    "fest_night_sub": "Verified major festivals and panoramic evening viewpoints from official tourism boards, with senior-tailored terrain, stairs, and night safety tips.",
+    "tab_festivals": "🎪 Curated Festivals Guide",
+    "tab_nightviews": "🌃 Panoramic Night Views",
+    "tab_saved_candidates": "⭐ Saved Wishlist",
+    "lbl_fest_region_filter": "🌍 Region Filter:",
+    "filter_all": "All",
+    "filter_eu": "🇪🇺 Europe",
+    "filter_latin": "🌎 Latin America (Curated)",
+    "lbl_fest_season_filter": "🗓️ Season Filter:",
+    "filter_all_seasons": "All Seasons",
+    "filter_spring_summer": "🌸 Spring / Summer (Mar-Aug)",
+    "filter_autumn_winter": "🍁 Autumn / Winter (Sep-Feb)",
+    "saved_candidates_title": "⭐ My Saved Travel Candidates (Wishlist & Study Notes)",
+    "saved_candidates_desc": "Your personal wishlist of curated festivals and night viewpoints, kept separate from the core 30-day itinerary.",
+    "btn_clear_saved": "🗑️ Clear All Wishlist",
+    "timeline_expand_all": "Expand All Day Schedules ▼",
+    "timeline_hint_click_to_view": "💡 Click [Expand Details] on any day card to inspect the 1.5 spots/day siesta routine.",
+    "btn_prev_page": "Prev Page",
+    "btn_next_page": "Next Page",
+    "btn_prev_chapter_page": "Prev Page / Prev Chapter",
+    "btn_next_chapter_page": "Next Page / Next Chapter",
+    "page_prefix": "Page",
+    "book_guide_study_mode": "📖 Digital Book Reader (Page Flip)",
+    "chapter_name_overview": "01. Travel Overview & Philosophy",
+    "chapter_name_planner": "02. Custom Itinerary Planner",
+    "chapter_name_guide": "03. Regional Landmarks Guide",
+    "chapter_name_festivals": "04. Festivals & Night Views",
+    "chapter_name_practical": "05. Practical Travel Info",
+    "page_overview_1": "1. Philosophy & 4 Routes",
+    "page_overview_2": "2. Photos & 4K Video Tours",
+    "page_overview_3": "3. Expert Editorial Deep Dive",
+    "page_planner_1": "1. Preferences & Dynamic Budget",
+    "page_planner_2": "2. Days 1-10: Catalonia & Madrid",
+    "page_planner_3": "3. Days 11-20: Andalusia Road",
+    "page_planner_4": "4. Days 21-30: Portugal & Calendar",
+    "page_guide_1": "1. 🇪🇸 Barcelona & Catalonia",
+    "page_guide_2": "2. 🏰 Andalusia Highlights",
+    "page_guide_3": "3. 👑 Madrid & Central Historic Cities",
+    "page_guide_4": "4. 🇵🇹 Portugal (Lisbon & Porto)",
+    "page_guide_5": "5. 🗺️ Full Interactive Map View",
+    "page_festivals_1": "1. 🌸 Spring & Summer Festivals (4)",
+    "page_festivals_2": "2. 🍁 Autumn & Winter Specials (5)",
+    "page_festivals_3": "3. 🌃 Panoramic Night Views (6)",
+    "page_festivals_4": "4. ⭐ My Saved Wishlist",
+    "page_practical_1": "1. 🥘 Verified Food & 92 Restaurants",
+    "page_practical_2": "2. 🗣️ Essential Phrases & Native Audio",
+    "page_practical_3": "3. 🚆 Smart Transit & 24 Senior Hotels",
+    "page_practical_4": "4. 🤖 Live AI Smart Travel Assistant",
+    "fest_spring_sub_title": "🌸 Spring & Summer Curated Festivals (Mar-Aug)",
+    "fest_spring_sub_desc": "From Andalusian carriage parades and Cordoba flower patios to Lisbon's Sardine festival. Check crowd and booking tips.",
+    "fest_autumn_sub_title": "🍁 Autumn, Winter & Special Festivals (Sep-Feb / Global Picks)",
+    "fest_autumn_sub_desc": "Barcelona giant parades, Malaga Christmas lights, Tenerife Carnival, plus Latin American celebration highlights.",
+    "nightview_sub_title": "🌃 6 Curated Panoramic Night & Sunset Viewpoints",
+    "nightview_sub_desc": "From Alhambra sunsets to Dom Luís I Bridge golden reflections. Senior-accessible taxis and viewpoints verified.",
+    "badge_booking_free": "🆓 Free Admission · No Booking",
+    "badge_booking_required": "🎟️ Advance Booking Required",
+    "badge_booking_optional": "🎫 On-site Ticket / Optional",
+    "btn_save_candidate": "⭐ Save to Wishlist",
+    "btn_saved_candidate": "✓ Saved",
+    "lbl_best_view_time": "⏰ Best Viewing Time",
+    "lbl_night_return_safety": "🚕 Safe Night Return Tip",
+    "lbl_official_booking_site": "🎟️ Official Tickets Link",
+    "lbl_watch_4k_video": "🎥 Watch 4K Video Tour"
+  },
+  "ja": {
+    "fest_night_kicker": "04 / REGIONAL FESTIVALS & PANORAMIC NIGHT VIEWS",
+    "fest_night_title": "地域別フェスティバル＆絶景夜景ガイド（公式認定・シニア歩行ガイド）",
+    "fest_night_sub": "公的観光機関から検証された主要フェスティバルと安心のパノラマ夜景スポット。60代のご両親のための高山・坂道・階段難易度と夜間の安全帰還のコツを収録。",
+    "tab_festivals": "🎪 地域別厳選フェスガイド",
+    "tab_nightviews": "🌃 パノラマ夜景スポット",
+    "tab_saved_candidates": "⭐ 保存した旅行候補リスト",
+    "lbl_fest_region_filter": "🌍 地域フィルター:",
+    "filter_all": "すべて",
+    "filter_eu": "🇪🇺 ヨーロッパ",
+    "filter_latin": "🌎 中南米（厳選推薦）",
+    "lbl_fest_season_filter": "🗓️ 時期・季節フィルター:",
+    "filter_all_seasons": "全時期",
+    "filter_spring_summer": "🌸 春・夏 (3〜8月)",
+    "filter_autumn_winter": "🍁 秋・年末 (9〜2月)",
+    "saved_candidates_title": "⭐ 保存した旅行候補リスト（ウィッシュリスト＆学習ノート）",
+    "saved_candidates_desc": "基本の30日推薦日程とは別に、お気に入りの祭典や夜景スポットを保存しておく自分だけのウィッシュリストです。",
+    "btn_clear_saved": "🗑️ 保存リストをすべて削除",
+    "timeline_expand_all": "全日程の詳細を展開 ▼",
+    "timeline_hint_click_to_view": "💡 日程カードの［詳細日程を展開］を押して、1日1.5スポットのシエスタ休息プランを確認してください。",
+    "btn_prev_page": "前のページ",
+    "btn_next_page": "次のページ",
+    "btn_prev_chapter_page": "前のページ／前の章",
+    "btn_next_chapter_page": "次のページ／次の章",
+    "page_prefix": "ページ",
+    "book_guide_study_mode": "📖 デジタルブックリーダー（ページめくり）",
+    "chapter_name_overview": "01. 旅行概要＆哲学",
+    "chapter_name_planner": "02. 日程プランナー",
+    "chapter_name_guide": "03. 地域別名所ガイド",
+    "chapter_name_festivals": "04. 祭典＆パノラマ夜景",
+    "chapter_name_practical": "05. 旅行実用情報",
+    "page_overview_1": "1. 旅行哲学＆4大ルート比較",
+    "page_overview_2": "2. 現地フォト＆4Kツアー動画",
+    "page_overview_3": "3. 専門家深層エディトリアルガイド",
+    "page_planner_1": "1. 条件設定＆動的予算",
+    "page_planner_2": "2. 1〜10日目：カタルーニャ＆マドリード",
+    "page_planner_3": "3. 11〜20日目：アンダルシア周遊",
+    "page_planner_4": "4. 21〜30日目：ポルトガル＆カレンダー",
+    "page_guide_1": "1. 🇪🇸 バルセロナ＆カタルーニャ名所",
+    "page_guide_2": "2. 🏰 アンダルシア名所（セビリア・グラナダ）",
+    "page_guide_3": "3. 👑 マドリード＆中部古都（トレド）",
+    "page_guide_4": "4. 🇵🇹 ポルトガル名所（リスボン・ポルト）",
+    "page_guide_5": "5. 🗺️ 大型インタラクティブ地図",
+    "page_festivals_1": "1. 🌸 春・夏の代表祭典4選",
+    "page_festivals_2": "2. 🍁 秋・冬＆特別祭典5選",
+    "page_festivals_3": "3. 🌃 パノラマ夜景＆夕日名所6選",
+    "page_festivals_4": "4. ⭐ 保存した旅行候補リスト",
+    "page_practical_1": "1. 🥘 代表グルメ＆厳選名店92選",
+    "page_practical_2": "2. 🗣️ 旅行基本会話＆ネイティブ音声",
+    "page_practical_3": "3. 🚆 スマート交通＆安心宿泊24選",
+    "page_practical_4": "4. 🤖 リアルタイムAI旅行アシスタント",
+    "fest_spring_sub_title": "🌸 春・夏のイベリア4大フェスティバル（3〜8月）",
+    "fest_spring_sub_desc": "アンダルシアの伝統馬車パレード、コルドバの花のパティオ、リスボンのイワシ祭りまで。混雑度と予約のコツを確認。",
+    "fest_autumn_sub_title": "🍁 秋・年末＆特別フェスティバル5選（9〜2月／特別推薦）",
+    "fest_autumn_sub_desc": "バルセロナの巨人パレード、マラガのクリスマスイルミネーション、テネリフェカーニバル及び南米大祭典の比較情報。",
+    "nightview_sub_title": "🌃 厳選6大パノラマ夜景＆夕日ビュースポット",
+    "nightview_sub_desc": "アルハンブラの茜色の夕日からドン・ルイス1世橋の黄金夜景まで。シニア向けのタクシー・エレベーター情報完備。",
+    "badge_booking_free": "🆓 無料観覧・予約不要",
+    "badge_booking_required": "🎟️ 事前予約必須・完売注意",
+    "badge_booking_optional": "🎫 現地購入・選択予約",
+    "btn_save_candidate": "⭐ 候補に保存",
+    "btn_saved_candidate": "✓ 保存済み",
+    "lbl_best_view_time": "⏰ おすすめ観賞時間",
+    "lbl_night_return_safety": "🚕 夜間の安全帰還のコツ",
+    "lbl_official_booking_site": "🎟️ 公式予約サイトへ",
+    "lbl_watch_4k_video": "🎥 4Kツアー動画を視聴"
+  },
+  "zh": {
+    "fest_night_kicker": "04 / REGIONAL FESTIVALS & PANORAMIC NIGHT VIEWS",
+    "fest_night_title": "地区特色节庆与全景夜景指南（官方认证与长辈无障碍导览）",
+    "fest_night_sub": "收录来自官方旅游局权威认证的重大节庆与安全全景夜景观景台，详载高原、坡道与台阶难度及夜间安全返程贴士。",
+    "tab_festivals": "🎪 精选地区节庆指南",
+    "tab_nightviews": "🌃 全景夜景名胜指南",
+    "tab_saved_candidates": "⭐ 旅行心愿候选列表",
+    "lbl_fest_region_filter": "🌍 区域筛选:",
+    "filter_all": "全部",
+    "filter_eu": "🇪🇺 欧洲",
+    "filter_latin": "🌎 中南美洲（精选推荐）",
+    "lbl_fest_season_filter": "🗓️ 季节时段筛选:",
+    "filter_all_seasons": "全部时期",
+    "filter_spring_summer": "🌸 春夏季 (3~8月)",
+    "filter_autumn_winter": "🍁 秋季与年末 (9~2月)",
+    "saved_candidates_title": "⭐ 我保存的旅行备选清单（心愿单与学习笔记）",
+    "saved_candidates_desc": "独立于核心30日行程之外，随心收藏心仪节日庆典与夜景观景台的专属心愿单。",
+    "btn_clear_saved": "🗑️ 清空心愿单列表",
+    "timeline_expand_all": "展开所有每日详细日程 ▼",
+    "timeline_hint_click_to_view": "💡 点击日程卡片上的［展开详细行程］查看每日1.5个景点及西斯塔午休规划。",
+    "btn_prev_page": "上一页",
+    "btn_next_page": "下一页",
+    "btn_prev_chapter_page": "上一页 / 上一章",
+    "btn_next_chapter_page": "下一页 / 下一章",
+    "page_prefix": "页码",
+    "book_guide_study_mode": "📖 数字指南书阅读模式（翻页导览）",
+    "chapter_name_overview": "01. 旅行概要与理念",
+    "chapter_name_planner": "02. 定制行程规划",
+    "chapter_name_guide": "03. 地区名胜指南",
+    "chapter_name_festivals": "04. 节日盛典与全景夜景",
+    "chapter_name_practical": "05. 旅行实用信息",
+    "page_overview_1": "1. 旅行理念与四大路线比较",
+    "page_overview_2": "2. 实景照片与4K视频导览",
+    "page_overview_3": "3. 专家深度编辑指南",
+    "page_planner_1": "1. 出行设定与动态预算",
+    "page_planner_2": "2. 第1~10天：加泰罗尼亚与马德里",
+    "page_planner_3": "3. 第11~20天：安达卢西亚漫游",
+    "page_planner_4": "4. 第21~30天：葡萄牙与日历导出",
+    "page_guide_1": "1. 🇪🇸 巴塞罗那与加泰罗尼亚名胜",
+    "page_guide_2": "2. 🏰 安达卢西亚名胜（塞维利亚·格拉纳达）",
+    "page_guide_3": "3. 👑 马德里与中部古城（托莱多）",
+    "page_guide_4": "4. 🇵🇹 葡萄牙名胜（里斯本·波尔图）",
+    "page_guide_5": "5. 🗺️ 全屏交互式地图探索",
+    "page_festivals_1": "1. 🌸 春夏季四大代表节庆",
+    "page_festivals_2": "2. 🍁 秋冬与特别节庆5选",
+    "page_festivals_3": "3. 🌃 6大全景夜景与日落胜地",
+    "page_festivals_4": "4. ⭐ 我的旅行备选心愿单",
+    "page_practical_1": "1. 🥘 代表美食与精选名店92选",
+    "page_practical_2": "2. 🗣️ 常用旅行会话与母语发音",
+    "page_practical_3": "3. 🚆 便捷交通与长辈安心酒店24选",
+    "page_practical_4": "4. 🤖 实时AI智能旅行助手",
+    "fest_spring_sub_title": "🌸 春夏季伊比利亚四大代表节庆（3~8月）",
+    "fest_spring_sub_desc": "从安达卢西亚传统马车游行、科尔多瓦鲜花庭院到里斯本沙丁鱼节，详尽解析人流与订票技巧。",
+    "fest_autumn_sub_title": "🍁 秋冬与年末及精选特别节庆5选（9~2月 / 全球精选）",
+    "fest_autumn_sub_desc": "巴塞罗那巨大人偶游行、马拉加圣诞灯光秀、特内里费狂欢节及南美盛典对比导览。",
+    "nightview_sub_title": "🌃 六大精选全景夜景与日落胜地",
+    "nightview_sub_desc": "从阿尔罕布拉宫的绯红落日到路易一世大桥的金辉夜景，全面收录长辈适用的电梯与安全返程出租车资讯。",
+    "badge_booking_free": "🆓 免费参观 · 无需购票",
+    "badge_booking_required": "🎟️ 须提前预订 · 提防售罄",
+    "badge_booking_optional": "🎫 现场购票 / 可选预订",
+    "btn_save_candidate": "⭐ 收藏为备选",
+    "btn_saved_candidate": "✓ 已收藏",
+    "lbl_best_view_time": "⏰ 推荐观景时间",
+    "lbl_night_return_safety": "🚕 夜间安全返程贴士",
+    "lbl_official_booking_site": "🎟️ 前往官方订票通道",
+    "lbl_watch_4k_video": "🎥 观看4K现场视频导览"
+  }
+};
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    Object.keys(ext).forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], ext[lang]);
+    });
+  }
+})();
+
+
+// ==========================================================================
+// 🌐 14개 신규 북 리더 키 추가 (KO, EN, JA, ZH)
+// ==========================================================================
+(function() {
+  const ext = {
+  "ko": {
+    "planner_kicker": "01 / INTERACTIVE FAMILY PLANNER",
+    "timeline_part1_title": "📅 1~10일차: 바르셀로나 & 마드리드 (카탈루냐·중부)",
+    "timeline_part1_sub": "장거리 비행 시차 적응, 가우디 건축 산책, 프라도 미술관 평지 관람 및 1일 1.5스팟 시에스타 루틴.",
+    "timeline_part2_title": "📅 11~20일차: 안달루시아 낭만 로드 (세비야·그라나다·코르도바)",
+    "timeline_part2_sub": "스페인 남부의 따스한 햇살, 알함브라 나스르 궁전, 세비야 플라멩코 및 온화한 11월 숄더 시즌 여정.",
+    "timeline_part3_title": "📅 21~30일차: 포르투갈 대서양 로드 (리스본·포르투) & 캘린더",
+    "timeline_part3_sub": "노란 트램 28번, 에그타르트 원조 맛집, 도루강 와이너리와 완성된 30일 캘린더(.ics) 다운로드.",
+    "btn_export_ics_full": "30일 전체 일정 캘린더 파일(.ics) 내보내기 (구글·애플 캘린더 동기화)",
+    "page_guide_spain_title": "🇪🇸 스페인 대표 명소 컬렉션 (18선)",
+    "page_guide_spain_sub": "바르셀로나의 가우디 걸작부터 세비야·그라나다의 이슬람 유산, 마드리드 프라도 미술관까지.",
+    "page_guide_portugal_title": "🇵🇹 포르투갈 대표 명소 컬렉션 (18선)",
+    "page_guide_portugal_sub": "대항해시대의 영광 리스본 제로니무스 수도원, 동화 속 신트라 페나 성, 도루강의 낭만 포르투 동루이스 1세 다리.",
+    "page_guide_europe_title": "🌍 주변 유럽 & 연계 추천 명소 (37선)",
+    "page_guide_europe_sub": "파리·로마·런던 등 경유지 및 연계 여행지 명소 모음. 시니어 보행 친화도와 필수 예약 정보 수록.",
+    "page_guide_map_title": "대형 랜드마크 인터랙티브 지도 (73선 전 지점)",
+    "page_guide_map_sub": "유럽 및 중남미 73대 핵심 명소의 위치와 동선을 지도상에서 한눈에 클릭하여 탐색하세요."
+  },
+  "en": {
+    "planner_kicker": "01 / INTERACTIVE FAMILY PLANNER",
+    "timeline_part1_title": "📅 Days 01 - 10: Barcelona & Madrid (Catalonia & Central)",
+    "timeline_part1_sub": "Long-haul flight jet lag recovery, Gaudi architecture, Prado Museum flat walking, and 1.5 spots/day siesta routine.",
+    "timeline_part2_title": "📅 Days 11 - 20: Andalusia Romantic Road (Seville, Granada, Cordoba)",
+    "timeline_part2_sub": "Warm southern Spain sun, Alhambra Nasrid Palaces, Seville Flamenco, and pleasant November shoulder season travel.",
+    "timeline_part3_title": "📅 Days 21 - 30: Portugal Atlantic Road (Lisbon & Porto) & Calendar",
+    "timeline_part3_sub": "Historic yellow Tram 28, authentic pastel de nata, Douro River wineries, and 30-day calendar (.ics) download.",
+    "btn_export_ics_full": "Export 30-Day Complete Itinerary Calendar (.ics) (Sync with Google / Apple Calendar)",
+    "page_guide_spain_title": "🇪🇸 Spain Top Landmarks Collection (18 Sites)",
+    "page_guide_spain_sub": "From Gaudi masterpieces in Barcelona to Moorish palaces in Seville & Granada and Prado Museum in Madrid.",
+    "page_guide_portugal_title": "🇵🇹 Portugal Top Landmarks Collection (18 Sites)",
+    "page_guide_portugal_sub": "Age of Discovery glory at Jeronimos Monastery, fairytale Pena Palace in Sintra, and romantic Dom Luis I Bridge in Porto.",
+    "page_guide_europe_title": "🌍 Adjacent Europe & Extended Sites (37 Sites)",
+    "page_guide_europe_sub": "Curated stopovers and connected highlights across Paris, Rome, London. Senior accessibility & booking tips verified.",
+    "page_guide_map_title": "Interactive Full Geographic Map Explorer (All 73 Sites)",
+    "page_guide_map_sub": "Explore locations and routes across 73 iconic landmarks in Europe and beyond on an interactive map."
+  },
+  "ja": {
+    "planner_kicker": "01 / INTERACTIVE FAMILY PLANNER",
+    "timeline_part1_title": "📅 1〜10日目：バルセロナ＆マドリード（カタルーニャ・中部）",
+    "timeline_part1_sub": "時差ボケ回復、ガウディ建築散策、プラド美術館の平坦歩行、1日1.5スポットのシエスタ休息プラン。",
+    "timeline_part2_title": "📅 11〜20日目：アンダルシア浪漫ロード（セビリア・グラナダ・コルドバ）",
+    "timeline_part2_sub": "スペイン南部の温かな日差し、アルハンブラ宮殿、セビリアのフラメンコ、快適な11月ショルダーシーズン周遊。",
+    "timeline_part3_title": "📅 21〜30日目：ポルトガル大西洋ロード（リスボン・ポルト）＆カレンダー",
+    "timeline_part3_sub": "黄色い路面電車28番、元祖エッグタルト、ドウロ川ワイナリーと完成した30日カレンダー（.ics）出力。",
+    "btn_export_ics_full": "30日全日程カレンダーファイル（.ics）を出力（Google・Appleカレンダー同期）",
+    "page_guide_spain_title": "🇪🇸 スペイン代表名所コレクション（厳選18選）",
+    "page_guide_spain_sub": "バルセロナのガウディ傑作からセビリア・グラナダのイスラム建築遺産、マドリードのプラド美術館まで。",
+    "page_guide_portugal_title": "🇵🇹 ポルトガル代表名所コレクション（厳選18選）",
+    "page_guide_portugal_sub": "大航海時代の栄光ジェロニモス修道院、おとぎ話のようなシントラ・ペーナ宮殿、ポルトのドン・ルイス1世橋。",
+    "page_guide_europe_title": "🌍 周辺ヨーロッパ＆連携推薦名所（厳選37選）",
+    "page_guide_europe_sub": "パリ・ローマ・ロンドン等の経由地や連携名所。シニア歩行難易度と公式予約情報を完備。",
+    "page_guide_map_title": "大型名所インタラクティブ地図（全73地点）",
+    "page_guide_map_sub": "ヨーロッパおよび世界の73大名所の位置と動線を地図上でクリックして直感的に探索できます。"
+  },
+  "zh": {
+    "planner_kicker": "01 / INTERACTIVE FAMILY PLANNER",
+    "timeline_part1_title": "📅 第1~10天：巴塞罗那与马德里（加泰罗尼亚与中部）",
+    "timeline_part1_sub": "长途飞行时差恢复、高迪建筑散步、普拉多博物馆平坦步道与每日1.5景点西斯塔午休规划。",
+    "timeline_part2_title": "📅 第11~20天：安达卢西亚浪漫漫游（塞维利亚·格拉纳达·科尔多瓦）",
+    "timeline_part2_sub": "西班牙南部温暖阳光、阿尔罕布拉宫纳斯瑞德宫殿、塞维利亚弗拉门戈与舒适宜人的11月金秋之旅。",
+    "timeline_part3_title": "📅 第21~30天：葡萄牙大西洋之路（里斯本·波尔图）与日历",
+    "timeline_part3_sub": "怀旧黄色28路有轨电车、正宗葡式蛋挞、杜罗河酒庄品鉴及完整30天日程日历（.ics）导出。",
+    "btn_export_ics_full": "导出30天完整行程日历文件(.ics)（同步至谷歌/苹果日历）",
+    "page_guide_spain_title": "🇪🇸 西班牙代表性名胜精选（18选）",
+    "page_guide_spain_sub": "从巴塞罗那的高迪旷世杰作到塞维利亚、格拉纳达的摩尔宫殿遗产及普拉多博物馆。",
+    "page_guide_portugal_title": "🇵🇹 葡萄牙代表性名胜精选（18选）",
+    "page_guide_portugal_sub": "大航海时代辉煌热罗尼莫斯修道院、童话梦境辛特拉佩纳宫及波尔图路易一世大桥。",
+    "page_guide_europe_title": "🌍 欧洲周边及延展精选名胜（37选）",
+    "page_guide_europe_sub": "精选巴黎、罗马、伦敦等中转与延展目的地。收录长辈友好度及官方预约贴士。",
+    "page_guide_map_title": "全景地标交互式地图探索（全73处胜地）",
+    "page_guide_map_sub": "在交互地图上直观点击探索欧洲及全球73大代表地标的地理方位与游览动线。"
+  }
+};
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    Object.keys(ext).forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], ext[lang]);
+    });
+  }
+})();
+
+
+// ==========================================================================
+// 🎨 Chapter 1 사진 갤러리 및 명소 다국어 추가
+// ==========================================================================
+(function() {
+  const ext = {
+  "ko": {
+    "ch1_hero_badge": "1일 1.5스팟, 오후 시에스타 휴식 루틴",
+    "gallery_title": "📸 남유럽 대표 풍경 갤러리 & 4K 영상 가이드",
+    "gallery_sub": "부모님과 함께 떠나기 전, 스페인·포르투갈의 압도적인 현지 분위기를 고화질 사진과 4K 영상으로 미리 감상해 보세요.",
+    "gallery_alhambra_title": "🇪🇸 그라나다 알함브라 궁전",
+    "gallery_alhambra_desc": "이슬람 건축의 정수, 나스르 궁전과 헤네랄리페 정원",
+    "gallery_sevilla_title": "🇪🇸 세비야 스페인 광장",
+    "gallery_sevilla_desc": "웅장한 반원형 회랑과 타일 벤치, 평지 산책로",
+    "gallery_lisbon_title": "🇵🇹 리스본 알파마 & 노란 트램 28번",
+    "gallery_lisbon_desc": "대서양의 햇살을 머금은 언덕길과 유서 깊은 트램",
+    "gallery_porto_title": "🇵🇹 포르투 동루이스 1세 다리",
+    "gallery_porto_desc": "도루강 위로 펼쳐지는 에펠의 제자가 설계한 2층 철교",
+    "gallery_sagrada_title": "🇪🇸 바르셀로나 사그라다 파밀리아",
+    "gallery_sagrada_desc": "빛의 숲을 연상시키는 가우디의 미완성 대성당 스테인드글라스",
+    "gallery_ronda_title": "🇪🇸 론다 누에보 다리",
+    "gallery_ronda_desc": "120m 아찔한 타호 협곡을 잇는 석조 다리와 절벽 마을 풍경"
+  },
+  "en": {
+    "ch1_hero_badge": "1.5 Spots/Day, Afternoon Siesta Recharge Routine",
+    "gallery_title": "📸 Southern Europe Scenic Gallery & 4K Video Guide",
+    "gallery_sub": "Before embarking with parents, experience the atmosphere of Spain and Portugal with HD photos and 4K walking tours.",
+    "gallery_alhambra_title": "🇪🇸 Granada Alhambra Palace",
+    "gallery_alhambra_desc": "Pinnacle of Islamic architecture: Nasrid Palaces & Generalife Gardens",
+    "gallery_sevilla_title": "🇪🇸 Seville Plaza de España",
+    "gallery_sevilla_desc": "Magnificent semicircular pavilion, tiled bridges, and flat promenades",
+    "gallery_lisbon_title": "🇵🇹 Lisbon Alfama & Yellow Tram 28",
+    "gallery_lisbon_desc": "Atlantic sunlit historic hills and iconic heritage tram rides",
+    "gallery_porto_title": "🇵🇹 Porto Dom Luís I Bridge",
+    "gallery_porto_desc": "Double-deck metal bridge over Douro River designed by Eiffel’s disciple",
+    "gallery_sagrada_title": "🇪🇸 Barcelona Sagrada Família",
+    "gallery_sagrada_desc": "Gaudí’s masterwork cathedral like a forest of light with stained glass",
+    "gallery_ronda_title": "🇪🇸 Ronda Puente Nuevo",
+    "gallery_ronda_desc": "Spectacular stone bridge spanning 120m El Tajo gorge and cliffside white town"
+  },
+  "ja": {
+    "ch1_hero_badge": "1日1.5スポット、午後のシエスタ休息ルーティン",
+    "gallery_title": "📸 南欧代表風景ギャラリー＆4K動画ガイド",
+    "gallery_sub": "ご両親と出発する前に、スペイン・ポルトガルの現地の雰囲気を高画質写真と4K動画でお楽しみください。",
+    "gallery_alhambra_title": "🇪🇸 グラナダ アルハンブラ宮殿",
+    "gallery_alhambra_desc": "イスラム建築の粋、ナスル朝宮殿とヘネラリフェ庭園",
+    "gallery_sevilla_title": "🇪🇸 セビリア スペイン広場",
+    "gallery_sevilla_desc": "荘厳な半円形回廊とタイルのベンチ、平坦な散策路",
+    "gallery_lisbon_title": "🇵🇹 リスボン アルファマ＆黄色いトラム28番",
+    "gallery_lisbon_desc": "大西洋の日差しあふれる坂道と歴史ある名物トラム",
+    "gallery_porto_title": "🇵🇹 ポルト ドン・ルイス1世橋",
+    "gallery_porto_desc": "ドウロ川に架かるエッフェルの弟子が設計した2層式鉄橋",
+    "gallery_sagrada_title": "🇪🇸 バルセロナ サグラダ・ファミリア",
+    "gallery_sagrada_desc": "光の森を思わせるガウディの未完の大聖堂ステンドグラス",
+    "gallery_ronda_title": "🇪🇸 ロンダ ヌエボ橋",
+    "gallery_ronda_desc": "120mの深峡谷を結ぶ石造橋と断崖絶壁の白い街の絶景"
+  },
+  "zh": {
+    "ch1_hero_badge": "每日1.5个景点，午后西斯塔小憩充电",
+    "gallery_title": "📸 南欧代表性风景画廊与4K实景视频导览",
+    "gallery_sub": "携父母启程前，通过高清精选美图与4K实景漫步视频预先领略西班牙与葡萄牙的震撼风貌。",
+    "gallery_alhambra_title": "🇪🇸 格拉纳达阿尔罕布拉宫",
+    "gallery_alhambra_desc": "伊斯兰建筑艺术巅峰：纳斯瑞德宫殿与赫内拉利费夏宫花园",
+    "gallery_sevilla_title": "🇪🇸 塞维利亚西班牙广场",
+    "gallery_sevilla_desc": "气势恢宏的半圆形回廊、彩色瓷砖长凳与完全平坦的漫步大道",
+    "gallery_lisbon_title": "🇵🇹 里斯本阿尔法玛与黄色28路有轨电车",
+    "gallery_lisbon_desc": "沐浴大西洋暖阳的历史老城山道与标志性复古有轨电车",
+    "gallery_porto_title": "🇵🇹 波尔图路易一世大桥",
+    "gallery_porto_desc": "横跨杜罗河两岸、由埃菲尔弟子设计的双层宏伟钢铁拱桥",
+    "gallery_sagrada_title": "🇪🇸 巴塞罗那圣家堂",
+    "gallery_sagrada_desc": "如光之森林般梦幻绚烂的高迪传世大教堂与彩色玻璃花窗",
+    "gallery_ronda_title": "🇪🇸 龙达新桥",
+    "gallery_ronda_desc": "跨越120米塔霍深峡的石砌拱桥与悬崖峭壁白色小镇绝景"
+  }
+};
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    Object.keys(ext).forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], ext[lang]);
     });
   }
 })();
