@@ -541,10 +541,11 @@
                   <div class="form-group">
                     <label data-i18n="label_region">🌍 여행 권역</label>
                     <select id="userRegionSelect" onchange="applyPlanReconfiguration(true)">
-                      <option value="IBERIA" selected>🇪🇸🇵🇹 스페인 남부 + 포르투갈 (30일 완결)</option>
-                      <option value="CANARY">🇮🇨 스페인 + 카나리아 제도 (온화한 겨울 휴양)</option>
-                      <option value="LATIN">🌎 중남미 대륙 (페루·볼리비아·아르헨티나)</option>
-                      <option value="UK_FRANCE">🇬🇧🇫🇷 영국 &amp; 프랑스 (문화·박물관 집중)</option>
+                      <option value="IBERIA" selected data-i18n="opt_region_iberia">🇪🇸🇵🇹 스페인 남부 + 포르투갈 (30일 완결)</option>
+                      <option value="DUBAI_STOPOVER" data-i18n="opt_region_dubai">🇦🇪🇪🇸 두바이 경유 + 스페인·포르투갈 (에미레이트 33일)</option>
+                      <option value="WEST_CENTRAL_EU" data-i18n="opt_region_west_central_eu">🇬🇧🇫🇷🇮🇹 서유럽 &amp; 중부유럽 문화 대장정 (30일)</option>
+                      <option value="LATIN_AMERICA" data-i18n="opt_region_latin_america">🌎 중남미 안데스 &amp; 잉카 문명 대장정 (페루·볼리비아·아르헨티나)</option>
+                      <option value="CANARY" data-i18n="opt_region_canary">🇮🇨 스페인 본토 + 카나리아 제도 (온화한 겨울 휴양)</option>
                     </select>
                   </div>
 
@@ -880,6 +881,27 @@
               </div>
               <p class="sub" data-i18n="page_guide_map_sub">유럽 및 중남미 73대 핵심 명소의 위치와 동선을 지도상에서 한눈에 클릭하여 탐색하세요.</p>
             </div>
+            <!-- Map Region Filter Controls Bar -->
+            <div class="map-filter-toolbar" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center;">
+              <button type="button" class="bookmark-chip active" id="btnBigMapAll" onclick="filterBigLandmarksMap('ALL')">
+                <span>🌐</span> <span data-i18n="map_filter_all">전체 보기 (73+선)</span>
+              </button>
+              <button type="button" class="bookmark-chip" id="btnBigMapIberia" onclick="filterBigLandmarksMap('IBERIA')">
+                <span>🇪🇸🇵🇹</span> <span data-i18n="map_filter_iberia">이베리아 (스페인·포르투갈)</span>
+              </button>
+              <button type="button" class="bookmark-chip" id="btnBigMapEurope" onclick="filterBigLandmarksMap('EUROPE')">
+                <span>🇪🇺</span> <span data-i18n="map_filter_europe">서·중부 유럽</span>
+              </button>
+              <button type="button" class="bookmark-chip" id="btnBigMapLatin" onclick="filterBigLandmarksMap('LATIN')">
+                <span>🌎</span> <span data-i18n="map_filter_latin">중남미 대륙</span>
+              </button>
+              <button type="button" class="bookmark-chip" id="btnBigMapDubai" onclick="filterBigLandmarksMap('DUBAI')">
+                <span>🇦🇪</span> <span data-i18n="map_filter_dubai">두바이 경유 코스</span>
+              </button>
+              <button type="button" class="bookmark-chip" style="margin-left:auto;background:var(--bg-card, #fff);border:1px solid var(--line, #e2e8f0);" onclick="resetBigLandmarksMapView()">
+                <span>🎯</span> <span data-i18n="map_btn_reset_view">시야 맞춤</span>
+              </button>
+            </div>
             <div id="landmarksBigMapContainer" class="map-view-container" style="display:block;height:550px;border-radius:18px;"></div>
             <div class="page-turner-bar">
               <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 2)">
@@ -913,13 +935,13 @@
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-festivals">
             <button type="button" class="bookmark-chip active" onclick="goToBookPage('chapter-festivals', 0)">
-              <span>🌸</span> <span data-i18n="page_festivals_1">1. 봄·여름 대표 축제 4선</span>
+              <span>🌸</span> <span data-i18n="page_festivals_1">1. 봄·여름 대표 축제</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-festivals', 1)">
-              <span>🍁</span> <span data-i18n="page_festivals_2">2. 가을·겨울 &amp; 특별 축제 5선</span>
+              <span>🍁</span> <span data-i18n="page_festivals_2">2. 가을·겨울 &amp; 특별 축제</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-festivals', 2)">
-              <span>🌃</span> <span data-i18n="page_festivals_3">3. 파노라마 야경 명소 6선</span>
+              <span>🌃</span> <span data-i18n="page_festivals_3">3. 파노라마 야경 명소 전 지점</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-festivals', 3)">
               <span>⭐</span> <span data-i18n="page_festivals_4">4. 나의 저장 후보 위시리스트</span>

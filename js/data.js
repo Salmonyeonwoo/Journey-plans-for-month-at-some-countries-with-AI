@@ -22830,3 +22830,4728 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
     });
   }
 })();
+
+// === 2026 EXPANDED TRAVEL DATA PATCH (EUROPE, LATIN AMERICA, DUBAI) ===
+(function() {
+  // 1. Merge Extra Coords
+  const EXTRA_COORDS = {
+  "미래의 박물관 (Museum of the Future)": [
+    25.2253,
+    55.2818
+  ],
+  "두바이 사막 보존 지구 사파리 (Dubai Desert Safari)": [
+    24.8333,
+    55.6667
+  ],
+  "팜 주메이라 & 더 뷰 (Palm Jumeirah & The View)": [
+    25.1124,
+    55.139
+  ],
+  "두바이 마리나 워크 (Dubai Marina Walk)": [
+    25.0784,
+    55.1403
+  ],
+  "발렌시아 불꽃 & 파야스 축제 (Las Fallas)": [
+    39.4699,
+    -0.3763
+  ],
+  "포르투 상 주앙 축제 (Festa de São João)": [
+    41.1403,
+    -8.6133
+  ],
+  "니스 카니발 (Carnaval de Nice)": [
+    43.6961,
+    7.2718
+  ],
+  "베네치아 가면 카니발 (Carnevale di Venezia)": [
+    45.4342,
+    12.3388
+  ],
+  "뮌헨 옥토버페스트 (Oktoberfest München)": [
+    48.1314,
+    11.5496
+  ],
+  "비엔나 시청사 크리스마스 마켓 (Rathausplatz)": [
+    48.2109,
+    16.3575
+  ],
+  "리우데자네이루 카니발 삼바드로메 (Sambódromo)": [
+    -22.9122,
+    -43.1964
+  ],
+  "볼리비아 오루로 카니발 (Carnaval de Oruro)": [
+    -17.9647,
+    -67.106
+  ],
+  "부에노스아이레스 세계 탱고 축제 (Tango Mundial)": [
+    -34.6341,
+    -58.363
+  ],
+  "칠레 발파라이소 새해 해상 불꽃축제 (Valparaíso)": [
+    -33.0472,
+    -71.6127
+  ],
+  "세비야 스페인 광장 황금 조명 야경": [
+    37.3772,
+    -5.9869
+  ],
+  "바르셀로나 벙커스 델 카르멜 야경": [
+    41.4193,
+    2.1619
+  ],
+  "마드리드 시벨레스 궁전 전망대 야경": [
+    40.419,
+    -3.6922
+  ],
+  "파리 샤요 궁 에펠탑 야경": [
+    48.8624,
+    2.2875
+  ],
+  "런던 더 샤드 72층 전망대 야경": [
+    51.5045,
+    -0.0865
+  ],
+  "피렌체 미켈란젤로 언덕 석양 야경": [
+    43.7631,
+    11.2652
+  ],
+  "부다페스트 어부의 요새 국회의사당 야경": [
+    47.5022,
+    19.0348
+  ],
+  "프라하 카를교 & 프라하 성 야경": [
+    50.0865,
+    14.4114
+  ],
+  "쿠스코 아르마스 광장 야경": [
+    -13.516,
+    -71.9789
+  ],
+  "부에노스아이레스 푸에르토 마데로 여인의 다리": [
+    -34.6083,
+    -58.3644
+  ],
+  "산티아고 스카이 코스타네라 360도 야경": [
+    -33.4173,
+    -70.6065
+  ]
+};
+  if (typeof LANDMARK_COORDS !== 'undefined') {
+    Object.assign(LANDMARK_COORDS, EXTRA_COORDS);
+  }
+
+  // 2. Add New Festivals
+  const NEW_FESTS = [
+  {
+    "id": "fest_valencia",
+    "region": "EU",
+    "country": "스페인 (Spain)",
+    "city": "발렌시아 (Valencia)",
+    "name": "발렌시아 불꽃 & 파야스 축제 (Las Fallas de Valencia)",
+    "season": "spring",
+    "month": "3월",
+    "typicalTiming": "매년 3월 15일 ~ 3월 19일 (연례 고정)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 개최 확정 · 3월 15~19일 유네스코 무형유산",
+    "officialConfirmedDates": {
+      "start": "2027-03-15",
+      "end": "2027-03-19"
+    },
+    "confirmedDateRangeStr": "2027.03.15 ~ 2027.03.19 (매년 3월 중순)",
+    "venue": "발렌시아 시청 광장(Plaza del Ayuntamiento) 및 시내 전역",
+    "description": "도시 곳곳에 거대한 조형물(Falla)을 세우고 정오의 폭죽쇼(Mascletà)와 마지막 밤 화형식(La Cremà)으로 봄을 맞이하는 스페인 3대 축제.",
+    "crowdsBooking": "시청 광장 마스클레타(14시) 극심한 인파. 광장 인근 호텔 3개월 전 조기 예약 필수.",
+    "difficultyLevel": "alert",
+    "difficultyBadge": "🚨 청각 보호 및 보행 혼잡 주의",
+    "difficultyDesc": "대포 소리와 같은 강한 폭죽 굉음이 울리므로 귀마개 지참 필수. 시내 중심부 도로 통제로 도보 이동량 많음.",
+    "sourceUrl": "https://www.fallas.com/",
+    "sourceName": "Valencia Fallas 공식 위원회",
+    "bookingUrl": "https://www.visitvalencia.com/en/events-valencia/festivities/the-fallas",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "거리 마스클레타 및 야간 화형식 전 구역 무료 관람 / 시청 발코니 특별 관람석 약 €50~€120",
+      "en": "Street Mascletà & Cremà are Free to public / Private balcony view seats approx. €50 - €120",
+      "ja": "ストリート花火・火祭り無料観覧 / 市庁舎バルコニー特別鑑賞席 約 €50〜€120",
+      "zh": "街头爆竹秀与火祭焚烧免费自由观赏 / 市政厅景观阳台收费观景席约 €50 ~ €120"
+    },
+    "bookingNecessity": {
+      "ko": "거리 관람은 예매 불필요(무료). 마스클레타 명당 선점은 정오 13시 전 도착 권장. 발코니석은 공식 관광청 사전 예매.",
+      "en": "Public viewing is 100% Free (no tickets needed). Arrive by 13:00 for square spots. Balcony passes require online booking.",
+      "ja": "路上観覧は予約不要・無料。正午13時前の場所取りを推奨。バルコニー席は公式事前予約必須。",
+      "zh": "公众街头观赏免门票免预约。建议13:00前抵达广场占位。阳台尊享席需提前在线抢订。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=valencia+las+fallas+mascleta+crema+4k",
+    "videoTitle": {
+      "ko": "발렌시아 파야스 불꽃축제 마스클레타 & 화형식 4K",
+      "en": "Valencia Las Fallas Mascletà & Cremà Spectacular 4K",
+      "ja": "バレンシア・火祭り マスクレタ＆クレマ 4K",
+      "zh": "瓦伦西亚法雅节 震撼爆竹秀与焚烧盛典 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Spain",
+        "city": "Valencia",
+        "name": "Valencia Las Fallas & Fire Festival",
+        "typicalTiming": "March 15 - 19 Annually",
+        "statusLabel": "Official Dates Confirmed · UNESCO Intangible Heritage",
+        "venue": "Plaza del Ayuntamiento & Valencia Citywide",
+        "description": "Spain's grand fire fiesta featuring monumental sculptures, deafening daily midday fireworks (Mascletà), and midnight effigy burning (Cremà).",
+        "crowdsBooking": "Extreme crowds at City Hall square. Book hotels 3 months ahead.",
+        "difficultyDesc": "Loud artillery explosions; ear protection recommended for seniors and kids."
+      },
+      "ja": {
+        "country": "スペイン",
+        "city": "バレンシア",
+        "name": "バレンシア・火祭り（ラス・ファジャス）",
+        "typicalTiming": "毎年3月15日〜19日",
+        "statusLabel": "公式開催確定 · ユネスコ無形文化遺産",
+        "venue": "市庁舎前広場およびバレンシア市内全域",
+        "description": "巨大な風刺人形が街中に並び、正午の轟音花火と最終夜の炎の点火式で春の訪れを祝うスペイン三大祭り。",
+        "crowdsBooking": "市庁舎広場は大変な混雑。ホテルは3ヶ月前の予約必須。",
+        "difficultyDesc": "大きな爆発音が鳴り響くため耳栓の持参を推奨。徒歩移動多め。"
+      },
+      "zh": {
+        "country": "西班牙",
+        "city": "瓦伦西亚",
+        "name": "瓦伦西亚法雅火祭 (Las Fallas)",
+        "typicalTiming": "每年3月15日 ~ 19日",
+        "statusLabel": "官方日程已确认 · 联合国教科文组织非遗",
+        "venue": "瓦伦西亚市政厅广场及全城街巷",
+        "description": "西班牙三大传统节日之一，满城竖立精美巨型纸浆玩偶，每日正午燃放震耳欲聋的爆竹秀并在终夜燃起壮观篝火。",
+        "crowdsBooking": "市政厅广场人潮拥挤，建议提前3个月预订周边酒店。",
+        "difficultyDesc": "爆竹音量极大，建议备好防噪耳塞；全城交通管制步行较多。"
+      }
+    }
+  },
+  {
+    "id": "fest_porto",
+    "region": "EU",
+    "country": "포르투갈 (Portugal)",
+    "city": "포르투 (Porto)",
+    "name": "포르투 상 주앙 축제 (Festa de São João do Porto)",
+    "season": "summer",
+    "month": "6월",
+    "typicalTiming": "매년 6월 23일 저녁 ~ 6월 24일 새벽",
+    "statusType": "confirmed",
+    "statusLabel": "공식 개최 확정 · 6월 23일 도루강 불꽃축제",
+    "officialConfirmedDates": {
+      "start": "2027-06-23",
+      "end": "2027-06-24"
+    },
+    "confirmedDateRangeStr": "2027.06.23 ~ 2027.06.24 (매년 하지 시즌)",
+    "venue": "포르투 히베이라 강변 및 동 루이스 1세 다리 일대",
+    "description": "플라스틱 장난감 망치로 서로 머리를 가볍게 두드리며 행운을 빌고, 정어리 구이를 나누어 먹으며 도루강 불꽃놀이를 즐기는 포르투 최고의 거리 축제.",
+    "crowdsBooking": "도루 강변 히베이라 지구 극심한 인파. 강변 야외 테라스 식당 사전 예약 필수.",
+    "difficultyLevel": "warning",
+    "difficultyBadge": "⚠️ 경사로 및 인파 밀집",
+    "difficultyDesc": "강변 일대 조약돌 골목길과 계단이 많으므로 미끄럼 방지 신발 착용. 야간 도보 복귀 동선 사전 점검.",
+    "sourceUrl": "https://www.visitporto.travel/",
+    "sourceName": "Porto 관광청 공식 웹사이트",
+    "bookingUrl": "https://www.visitporto.travel/en-US/events/sao-joao-festival",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "거리 축제 및 도루강 자정 불꽃놀이 전 구역 무료 관람 / 도루강 유람선 특별 크루즈 약 €60~€150",
+      "en": "Street festival & Douro river midnight fireworks Free / Special Party Cruise approx. €60 - €150",
+      "ja": "路上フェスティバル＆ドウロ川深夜花火 無料 / 特別花火クルーズ 約 €60〜€150",
+      "zh": "街头狂欢派对与杜罗河午夜花火免费观赏 / 烟花游船观赏票约 €60 ~ €150"
+    },
+    "bookingNecessity": {
+      "ko": "거리 축제는 예매 불필요. 플라스틱 망치는 길거리 상점에서 현장 구입(약 €2~€3). 강변 디너 크루즈는 사전 예약 필수.",
+      "en": "Street access is 100% Free. Buy plastic hammers on street (€2-€3). River dinner cruise requires early booking.",
+      "ja": "街頭入場無料。ピコピコハンマーは現地露店で購入（約€2〜3）。ディナークルーズは事前予約必須。",
+      "zh": "街头全域免票免预约。充气小锤街头现买（约€2~3）。杜罗河烟花晚宴游船需提前预订。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=porto+sao+joao+festival+fireworks+douro+4k",
+    "videoTitle": {
+      "ko": "포르투 상 주앙 축제 도루강 자정 불꽃놀이 4K",
+      "en": "Porto São João Festival Midnight Fireworks 4K",
+      "ja": "ポルト・サン・ジョアン祭 ドウロ川花火 4K",
+      "zh": "波尔图圣若昂节 杜罗河午夜璀璨烟火 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Portugal",
+        "city": "Porto",
+        "name": "Festa de São João do Porto (St. John's Festival)",
+        "typicalTiming": "June 23 - 24 Annually",
+        "statusLabel": "Official Dates Confirmed · Midsummer Celebration",
+        "venue": "Ribeira Waterfront & Dom Luís I Bridge",
+        "description": "Porto's liveliest night where people tap each other on the head with plastic squeaky hammers, eat grilled sardines, and watch fireworks over the Douro.",
+        "crowdsBooking": "Very dense crowds along Ribeira riverfront. Book restaurants early.",
+        "difficultyDesc": "Steep cobblestone slopes down to the river; wear comfortable sturdy footwear."
+      },
+      "ja": {
+        "country": "ポルトガル",
+        "city": "ポルト",
+        "name": "ポルト・サン・ジョアン祭（聖ヨハネ祭）",
+        "typicalTiming": "毎年6月23日夕方〜24日未明",
+        "statusLabel": "公式開催確定 · ドウロ川大花火大会",
+        "venue": "リベイラ河岸地区およびドン・ルイス1世橋周辺",
+        "description": "おもちゃのピコピコハンマーで頭を叩き合って幸福を祈り、焼きイワシとドウロ川の美しい花火で夜を明かすポルト最大の夏祭り。",
+        "crowdsBooking": "リベイラ地区は大変な混雑。テラス席レストランは早めの予約を推奨。",
+        "difficultyDesc": "河岸への石畳の坂道・階段が多いため、歩きやすい靴でご参加ください。"
+      },
+      "zh": {
+        "country": "葡萄牙",
+        "city": "波尔图",
+        "name": "波尔图圣若昂节 (São João Festival)",
+        "typicalTiming": "每年6月23日傍晚 ~ 24日凌晨",
+        "statusLabel": "官方日程已确认 · 仲夏夜花火狂欢",
+        "venue": "利贝拉河畔及路易一世大桥全线",
+        "description": "波尔图最盛大的节日，人们手持充气发声小塑料锤互敲头部祈福，品尝炭烤沙丁鱼并观赏杜罗河上空的壮丽午夜花火。",
+        "crowdsBooking": "河畔利贝拉极度拥挤，建议尽早预订景观餐厅席位。",
+        "difficultyDesc": "通往河畔有多处坡道与石阶，请穿着平底防滑鞋。"
+      }
+    }
+  },
+  {
+    "id": "fest_nice",
+    "region": "EU",
+    "country": "프랑스 (France)",
+    "city": "니스 (Nice)",
+    "name": "니스 카니발 & 꽃의 전쟁 (Carnaval de Nice)",
+    "season": "spring",
+    "month": "2월",
+    "typicalTiming": "매년 2월 중순 ~ 3월 초 (약 2주간)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 프랑스 리비에라 최대 축제",
+    "officialConfirmedDates": {
+      "start": "2027-02-13",
+      "end": "2027-02-28"
+    },
+    "confirmedDateRangeStr": "2027.02.13 ~ 2027.02.28 (매년 2월)",
+    "venue": "마세나 광장(Place Masséna) 및 프롬나드 데 쟝글레",
+    "description": "세계 3대 카니발 중 하나로, 거대한 인형 퍼레이드와 꽃마차에서 수만 송이의 꽃을 관객에게 던져주는 '꽃의 전쟁(Bataille de Fleurs)'이 하이라이트.",
+    "crowdsBooking": "마세나 광장 유료 관람석 및 스탠드 조기 매진. 공식 홈페이지에서 티켓 필수 예매.",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 평지 관람 및 좌석 완비",
+    "difficultyDesc": "프롬나드 해변과 마세나 광장은 평탄한 평지 동선이며, 지정 좌석 스탠드가 마련되어 있어 어르신 동반 관람에 매우 적합.",
+    "sourceUrl": "https://www.nicecarnaval.com/",
+    "sourceName": "Nice Carnaval 공식 홈페이지",
+    "bookingUrl": "https://www.nicecarnaval.com/en/tickets/",
+    "bookingBadge": "required",
+    "priceInfo": {
+      "ko": "입석 구역 약 €7 ~ €14 / 지정 좌석 스탠드(Tribune) 약 €25 ~ €32 (어린이 및 의상 착용자 할인)",
+      "en": "Standing zone approx. €7 - €14 / Reserved Tribune Seats approx. €25 - €32",
+      "ja": "立ち見エリア 約 €7〜€14 / 指定席スタンド（トリビューン） 約 €25〜€32",
+      "zh": "站票观赏区约 €7 ~ €14 / 看台指定坐席约 €25 ~ €32（穿Cosplay全套盛装者有特别优惠）"
+    },
+    "bookingNecessity": {
+      "ko": "행사장 입장 및 좌석 관람을 위해 공식 사이트에서 사전 티켓 예매 필수 (현장 매표소 대기열 김).",
+      "en": "Advance online ticket booking strictly required for seated tribunes and secure enclosures.",
+      "ja": "スタンド指定席および入場には公式ウェブサイトでの事前チケット購入が必須。",
+      "zh": "看台坐席及安全封闭区必须提前在官方网站预订电子票（现场售票处排队较长）。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=nice+carnaval+bataille+de+fleurs+parade+4k",
+    "videoTitle": {
+      "ko": "프랑스 니스 카니발 꽃의 전쟁 퍼레이드 4K",
+      "en": "Nice Carnival Battle of the Flowers Parade 4K",
+      "ja": "ニース・カーニバル 花合戦パレード 4K",
+      "zh": "法国尼斯狂欢节 鲜花大战盛装巡游 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "France",
+        "city": "Nice",
+        "name": "Nice Carnival & Flower Parade (Carnaval de Nice)",
+        "typicalTiming": "Mid to Late February (2 Weeks)",
+        "statusLabel": "Official Dates Confirmed · French Riviera Icon",
+        "venue": "Place Masséna & Promenade des Anglais",
+        "description": "One of the world's premier winter carnivals, renowned for illuminated float parades and the magnificent 'Battle of the Flowers'.",
+        "crowdsBooking": "Grandstand seats sell out quickly. Book tickets online in advance.",
+        "difficultyDesc": "Flat paved terrain along Promenade with reserved grandstand seating available."
+      },
+      "ja": {
+        "country": "フランス",
+        "city": "ニース",
+        "name": "ニース・カーニバル＆花合戦",
+        "typicalTiming": "毎年2月中旬〜下旬（約2週間）",
+        "statusLabel": "公式日程確定 · フレンチ・リヴィエラ最大の祭典",
+        "venue": "マセナ広場およびプロムナード・デ・ザングレ",
+        "description": "世界三大カーニバルの一つ。巨大山車のイルミネーションパレードと、花車から花束が投げられる『花合戦』が最大の見どころ。",
+        "crowdsBooking": "スタンド席は早期完売。公式サイトで事前予約必須。",
+        "difficultyDesc": "海岸通りと広場は平坦な舗装路で、着席可能なスタンド席がありシニアにも安心。"
+      },
+      "zh": {
+        "country": "法国",
+        "city": "尼斯",
+        "name": "尼斯狂欢节与鲜花大战 (Carnaval de Nice)",
+        "typicalTiming": "每年2月中下旬（持续约2周）",
+        "statusLabel": "官方日期已确定 · 法国蔚蓝海岸冬季盛事",
+        "venue": "马塞纳广场与盎格鲁街海滨大道",
+        "description": "世界著名的冬季狂欢盛会，以气势恢宏的巨型彩车夜光巡游和向观众抛洒成千上万鲜花的“鲜花大战”闻名遐迩。",
+        "crowdsBooking": "看台坐席非常热门，请务必提前在官网购票预留好位置。",
+        "difficultyDesc": "海滨漫步大道地势平坦，看台坐席舒适，非常适合家庭与长辈出行。"
+      }
+    }
+  },
+  {
+    "id": "fest_venice",
+    "region": "EU",
+    "country": "이탈리아 (Italy)",
+    "city": "베네치아 (Venice)",
+    "name": "베네치아 가면 카니발 (Carnevale di Venezia)",
+    "season": "spring",
+    "month": "2월",
+    "typicalTiming": "사순절 전 2월 중 2~3주간",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 산 마르코 광장 가면 무도회",
+    "officialConfirmedDates": {
+      "start": "2027-02-06",
+      "end": "2027-02-23"
+    },
+    "confirmedDateRangeStr": "2027.02.06 ~ 2027.02.23 (매년 2월)",
+    "venue": "산 마르코 광장(Piazza San Marco) 및 대운하 전역",
+    "description": "세계에서 가장 우아하고 신비로운 축제. 18세기 바로크 양식의 화려한 의상과 정교한 마스크를 쓴 귀족들이 물의 도시를 가득 메웁니다.",
+    "crowdsBooking": "산 마르코 광장 주변 인파 극심. 바포레토(수상버스) 혼잡. 가면 무도회 갈라는 수개월 전 조기 마감.",
+    "difficultyLevel": "warning",
+    "difficultyBadge": "⚠️ 다리와 계단 이동 주의",
+    "difficultyDesc": "베네치아 섬 특성상 수많은 아치형 다리와 계단을 오르내려야 하므로 수상택시 및 바포레토 적극 활용 권장.",
+    "sourceUrl": "https://www.carnevale.venezia.it/",
+    "sourceName": "Carnevale di Venezia 공식 사이트",
+    "bookingUrl": "https://www.carnevale.venezia.it/en/tickets-and-events/",
+    "bookingBadge": "optional",
+    "priceInfo": {
+      "ko": "산 마르코 광장 거리 퍼레이드 무료 관람 / 공식 궁전 가면 무도회(Grand Gala) 약 €450 ~ €1,200",
+      "en": "Public St. Mark's square costume shows Free / Palace Masked Grand Ball approx. €450 - €1,200",
+      "ja": "サン・マルコ広場衣装パレード 無料観覧 / 宮殿仮面舞踏会ガラ 約 €450〜€1,200",
+      "zh": "圣马可广场盛装巡游公众免费 / 历史宫殿假面舞会盛典晚宴约 €450 ~ €1,200"
+    },
+    "bookingNecessity": {
+      "ko": "광장 산책 및 거리 사진 촬영은 예매 불필요(자유). 고궁 실내 가면 무도회나 특별 콘서트는 사전 온라인 예매 필수.",
+      "en": "Free to wander and photograph around Venice canals. Palace masked balls require strict formal reservation.",
+      "ja": "広場や運河沿いの散策・撮影は予約不要。宮殿舞踏会への参加は事前予約とドレスコード必須。",
+      "zh": "水城街巷巡游拍摄完全免费免预约。贵族宫殿假面舞会需提前数月预约并严格遵循着装要求。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=venice+carnival+costumes+san+marco+4k",
+    "videoTitle": {
+      "ko": "베네치아 가면 카니발 산 마르코 광장 4K",
+      "en": "Venice Carnival Spectacular Costumes 4K",
+      "ja": "ヴェネツィア・カーニバル サンマルコ広場 4K",
+      "zh": "威尼斯面具狂欢节 圣马可广场华服巡礼 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Italy",
+        "city": "Venice",
+        "name": "Venice Carnival (Carnevale di Venezia)",
+        "typicalTiming": "February annually (approx. 2 weeks)",
+        "statusLabel": "Official Dates Confirmed · World's Most Elegant Masquerade",
+        "venue": "Piazza San Marco & Grand Canal",
+        "description": "The world's most enchanting masked carnival. Lavish 18th-century baroque costumes and porcelain masks illuminate Venice's canals.",
+        "crowdsBooking": "Extremely crowded near St. Mark's Square. Private galas book months ahead.",
+        "difficultyDesc": "Numerous footbridges with steps across canals; utilize Vaporetto water buses."
+      },
+      "ja": {
+        "country": "イタリア",
+        "city": "ヴェネツィア",
+        "name": "ヴェネツィア・仮面カーニバル",
+        "typicalTiming": "毎年2月中（約2〜3週間）",
+        "statusLabel": "公式日程確定 · サン・マルコ広場の仮面舞踏",
+        "venue": "サン・マルコ広場および大運河全域",
+        "description": "世界で最も優雅で神秘的な祭典。18世紀の豪華絢爛なバロック調ドレスと精巧な仮面をまとった貴族たちが水の都を行き交います。",
+        "crowdsBooking": "サン・マルコ広場周辺は混雑。宮殿舞踏会は数ヶ月前の早期予約が必要。",
+        "difficultyDesc": "運河にかかる無数の橋と階段を歩くため、水上バス（ヴァポレット）の併用を推奨。"
+      },
+      "zh": {
+        "country": "意大利",
+        "city": "威尼斯",
+        "name": "威尼斯假面狂欢节 (Carnevale di Venezia)",
+        "typicalTiming": "每年2月中下旬（持续约2~3周）",
+        "statusLabel": "官方日程已确认 · 圣马可水上华美假面秀",
+        "venue": "圣马可广场与大运河沿线",
+        "description": "世界上最具贵族风尚与神秘感的盛会。身着18世纪巴洛克华服、佩戴精工面具的游人信步于水巷贡多拉之间。",
+        "crowdsBooking": "圣马可广场极其拥挤，水上巴士人多。私人晚宴舞会需提前数月预约。",
+        "difficultyDesc": "水城桥梁众多台阶起伏，长辈出行建议搭乘水上出租或定期客运船。"
+      }
+    }
+  },
+  {
+    "id": "fest_munich",
+    "region": "EU",
+    "country": "독일 (Germany)",
+    "city": "뮌헨 (Munich)",
+    "name": "뮌헨 옥토버페스트 맥주 축제 (Oktoberfest München)",
+    "season": "autumn",
+    "month": "9~10월",
+    "typicalTiming": "매년 9월 셋째 토요일 ~ 10월 첫째 일요일",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 세계 최대 민속 맥주 축제",
+    "officialConfirmedDates": {
+      "start": "2027-09-18",
+      "end": "2027-10-03"
+    },
+    "confirmedDateRangeStr": "2027.09.18 ~ 2027.10.03 (매년 가을)",
+    "venue": "테레지엔비제(Theresienwiese), 뮌헨",
+    "description": "세계 최대 규모의 맥주 축제. 14개 대형 천막에서 바이에른 전통 관악 연주와 함께 1리터 마스(Maß) 맥주와 바이에른 바비큐를 즐기는 축제.",
+    "crowdsBooking": "주말 천막 내 좌석 매진 빠름. 대형 텐트 테이블은 6개월 전 공식 예약 권장.",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 평지 행사장 & 지하철 직결",
+    "difficultyDesc": "테레지엔비제 행사장 바닥은 완전 평지이며 지하철역(U-Bahn Theresienwiese)과 바로 연결되어 접근성 우수.",
+    "sourceUrl": "https://www.oktoberfest.de/",
+    "sourceName": "Oktoberfest 공식 포털",
+    "bookingUrl": "https://www.oktoberfest.de/en/information/reservations",
+    "bookingBadge": "optional",
+    "priceInfo": {
+      "ko": "행사장 입장료 무료 / 1리터 맥주(Maß) 약 €14.5 ~ €15.5 / 텐트 테이블 예약(맥주+식사 바우처 포함) 인당 약 €35 ~ €60",
+      "en": "Festival grounds entry is 100% Free / 1L Beer Maß approx. €14.5 - €15.5 / Table reservation package approx. €35 - €60",
+      "ja": "会場入場料 無料 / 1Lビール『マス』 約 €14.5〜€15.5 / テント内座席予約（食事券付き） 約 €35〜€60",
+      "zh": "啤酒节广场免门票入场 / 1升大扎啤酒约 €14.5 ~ €15.5 / 大棚长桌预订套餐（含餐券与酒水）人均约 €35 ~ €60"
+    },
+    "bookingNecessity": {
+      "ko": "행사장 입장은 무료 및 예약 불필요. 평일 낮에는 텐트 자유 착석 가능. 주말 저녁 단체 방문 시 텐트 테이블 사전 예약 필수.",
+      "en": "Free grounds access. Weekdays allow walk-in tent seating. Weekend evenings strongly require table reservations.",
+      "ja": "入場無料・予約不要。平日の昼間は予約なしでテント着席可能。週末夜はテーブル予約を推奨。",
+      "zh": "广场自由免票出入。工作日白天大棚可自由拼桌入座；周末晚高峰强力建议提前预约酒棚桌位。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=munich+oktoberfest+theresienwiese+beer+tents+4k",
+    "videoTitle": {
+      "ko": "뮌헨 옥토버페스트 테레지엔비제 대형 천막 현장 4K",
+      "en": "Munich Oktoberfest Beer Tents Atmosphere 4K",
+      "ja": "ミュンヘン・オクトーバーフェスト 巨大テント 4K",
+      "zh": "慕尼黑十月啤酒节 特蕾西娅草坪巨型狂欢酒棚 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Germany",
+        "city": "Munich",
+        "name": "Munich Oktoberfest (Oktoberfest München)",
+        "typicalTiming": "Mid-September to First Sunday of October",
+        "statusLabel": "Official Dates Confirmed · World's Largest Beer Fiesta",
+        "venue": "Theresienwiese Grounds, Munich",
+        "description": "The world's biggest folk festival, serving pure Bavarian beer in traditional 1-litre Maß glasses with brass bands and roasted delicacies.",
+        "crowdsBooking": "Over 6 million visitors. Weekends busy. Reserve tables early.",
+        "difficultyDesc": "Spacious flat asphalt paths with direct U-Bahn subway escalator access."
+      },
+      "ja": {
+        "country": "ドイツ",
+        "city": "ミュンヘン",
+        "name": "ミュンヘン・オクトーバーフェスト",
+        "typicalTiming": "9月中旬〜10月第1日曜日",
+        "statusLabel": "公式日程確定 · 世界最大のビールと民俗の祭典",
+        "venue": "テレージエンヴィーゼ広場（ミュンヘン）",
+        "description": "世界最大のビール祭り。14の巨大テントでバイエルン伝統の金管楽器生演奏を聴きながら、1Lジョッキビールと名物ローストチキンを満喫。",
+        "crowdsBooking": "週末夜のテントは超満員。大人数テーブルは公式サイトより早めの予約推奨。",
+        "difficultyDesc": "会場内は平坦な舗装路で、地下鉄駅直結のためシニアも歩きやすい。"
+      },
+      "zh": {
+        "country": "德国",
+        "city": "慕尼黑",
+        "name": "慕尼黑十月啤酒节 (Oktoberfest)",
+        "typicalTiming": "9月中旬 ~ 10月首个周日",
+        "statusLabel": "官方日程已确认 · 全球最大民间传统啤酒盛宴",
+        "venue": "慕尼黑特蕾西娅草坪 (Theresienwiese)",
+        "description": "享誉全球的民间啤酒盛会，在14座巨型酒棚中伴随巴伐利亚管乐团现场演奏，畅饮1升重的大扎鲜啤与脆皮烤鸡烤猪肘。",
+        "crowdsBooking": "每年接待超600万游客，周末高峰强烈建议提前在各啤酒棚官网预约长桌。",
+        "difficultyDesc": "草坪主干道均为平整步道，地铁站电梯直通出入口，无复杂台阶。"
+      }
+    }
+  },
+  {
+    "id": "fest_vienna",
+    "region": "EU",
+    "country": "오스트리아 (Austria)",
+    "city": "비엔나 (Vienna)",
+    "name": "비엔나 시청사 광장 크리스마스 마켓 (Wiener Christkindlmarkt am Rathausplatz)",
+    "season": "winter",
+    "month": "11~12월",
+    "typicalTiming": "11월 중순 ~ 12월 26일 (매년 연말)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 유럽 최고의 동화 속 성탄 마켓",
+    "officialConfirmedDates": {
+      "start": "2026-11-14",
+      "end": "2026-12-26"
+    },
+    "confirmedDateRangeStr": "2026.11.14 ~ 2026.12.26 (11~12월)",
+    "venue": "비엔나 시청사 앞 광장 및 시청 공원 (Rathausplatz, Vienna)",
+    "description": "네오고딕 양식의 웅장한 비엔나 시청사를 배경으로 반짝이는 거대한 크리스마스트리와 150여 개의 나무 오두막 샬레, 낭만적인 아이스 드림 스케이트 코스.",
+    "crowdsBooking": "일몰 직후 17:00~19:00 인파 집중. 따뜻한 글뤼바인(Punsch) 머그잔 보증금 환급 시스템 운영.",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 완벽한 평지 보행 & 벤치 휴식",
+    "difficultyDesc": "시청 광장 및 공원 전 구역이 휠체어 대응 평지이며, 곳곳에 온열 히터 쉼터와 벤치가 마련되어 있어 편안하게 관람 가능.",
+    "sourceUrl": "https://www.christkindlmarkt.at/",
+    "sourceName": "Wiener Christkindlmarkt 공식 사이트",
+    "bookingUrl": "https://www.wien.info/en/see-do/christmas-markets",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "광장 마켓 전 구역 무료 입장 / 글뤼바인(Punsch) 잔당 약 €4.5 ~ €6 (머그잔 보증금 약 €4 별도) / 아이스링크 스케이트 약 €9",
+      "en": "Market entrance is 100% Free / Warm Punsch/Glühwein approx. €4.5 - €6 (Mug deposit €4) / Ice skating approx. €9",
+      "ja": "マーケット入場無料 / ホットワイン（プンシュ） 1杯約 €4.5〜€6（マグカップデポジット約€4） / アイススケート 約 €9",
+      "zh": "集市广场全天免票入场 / 热红酒普恩施约 €4.5 ~ €6（特色纪念马克杯押金约€4） / 冰道滑冰门票约 €9"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요 (누구나 상시 자유 방문). 아이스 드림 스케이트 대여 및 티켓은 현장 키오스크 또는 온라인 구매 가능.",
+      "en": "No reservations needed for the market. Ice skating tickets can be bought on-site or online.",
+      "ja": "予約不要（常時自由入場）。スケートリンク利用は現地発券機またはオンラインで購入可能。",
+      "zh": "无需预订自由出入漫步。如体验树林梦幻冰道，可在现场自助机或官网购票租鞋。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=vienna+rathausplatz+christmas+market+4k",
+    "videoTitle": {
+      "ko": "비엔나 시청사 크리스마스 마켓 낭만 랜선 투어 4K",
+      "en": "Vienna Rathausplatz Christmas Market Walking Tour 4K",
+      "ja": "ウィーン市庁舎前 クリスマスマーケット 4K",
+      "zh": "维也纳市政厅广场 唯美童话圣诞集市漫步 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Austria",
+        "city": "Vienna",
+        "name": "Vienna City Hall Christmas Market (Rathausplatz Christkindlmarkt)",
+        "typicalTiming": "Mid-November to December 26",
+        "statusLabel": "Official Dates Confirmed · Europe's Premier Fairy-Tale Market",
+        "venue": "Rathausplatz & Rathauspark, Vienna",
+        "description": "Set against the neo-Gothic City Hall, featuring a radiant giant tree, 150 festive wooden chalets, aromatic Austrian punch, and an ice-skating trail.",
+        "crowdsBooking": "Busiest around dusk (17:00-19:00). Cash and cards accepted.",
+        "difficultyDesc": "Fully paved flat paths with resting areas and heating spots."
+      },
+      "ja": {
+        "country": "オーストリア",
+        "city": "ウィーン",
+        "name": "ウィーン市庁舎前クリスマスマーケット",
+        "typicalTiming": "毎年11月中旬〜12月26日",
+        "statusLabel": "公式日程確定 · ヨーロッパ屈指のおとぎ話の世界",
+        "venue": "市庁舎前広場および市庁舎公園（ウィーン）",
+        "description": "ネオ・ゴシック様式の壮麗な市庁舎を背に、巨大なツリーと150軒の木造山小屋が立ち並び、温かいプンシュと幻想的なイルミネーションが輝く名所。",
+        "crowdsBooking": "夕暮れ時（17〜19時）が最も賑わいます。記念マグカップは返却または持ち帰り可能。",
+        "difficultyDesc": "広場・公園全体が平坦でベンチも多く、シニア連れでも快適に散策可能。"
+      },
+      "zh": {
+        "country": "奥地利",
+        "city": "维也纳",
+        "name": "维也纳市政厅圣诞集市 (Christkindlmarkt)",
+        "typicalTiming": "每年11月中旬至12月26日",
+        "statusLabel": "官方日程已确认 · 欧洲顶级童话圣诞胜景",
+        "venue": "维也纳市政厅前广场与公园",
+        "description": "以雄伟的新哥特式市政厅为背景，高耸入云的巨型圣诞树下汇聚150多间传统木屋摊位，空气中弥漫着肉桂暖酒香气与穿梭树林的梦幻冰道。",
+        "crowdsBooking": "傍晚华灯初上时人潮最为密集，暖心热饮马克杯可退还押金或留作纪念。",
+        "difficultyDesc": "全区地面开阔平整，设有暖炉休憩区，适合阖家漫步慢游。"
+      }
+    }
+  },
+  {
+    "id": "fest_dubai_dsf",
+    "region": "ME",
+    "country": "아랍에미리트 (UAE)",
+    "city": "두바이 (Dubai)",
+    "name": "두바이 쇼핑 페스티벌 & 드론 라이트 쇼 (Dubai Shopping Festival - DSF)",
+    "season": "winter",
+    "month": "12~1월",
+    "typicalTiming": "매년 12월 초 ~ 다음 해 1월 중순 (약 38일간)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 두바이 최대 메가 쇼 & 드론 쇼",
+    "officialConfirmedDates": {
+      "start": "2026-12-06",
+      "end": "2027-01-14"
+    },
+    "confirmedDateRangeStr": "2026.12.06 ~ 2027.01.14 (겨울 성수기)",
+    "venue": "더 비치(JBR), 블루워터스 아일랜드, 두바이 페스티벌 시티, 두바이 몰 일대",
+    "description": "겨울철 온화한 두바이 전역에서 펼쳐지는 세계 최대 쇼핑 & 엔터테인먼트 페스티벌. 밤마다 페르시아만 상공을 수놓는 첨단 3D 드론 라이트 쇼와 초대형 불꽃놀이가 매일 무료로 펼쳐집니다.",
+    "crowdsBooking": "JBR 더 비치 드론 쇼(매일 19:00, 22:00 2회) 명당 자리는 일몰 후 혼잡. 해변 레스토랑 예약 추천.",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 현대식 평지 보행로 & 쾌적한 시설",
+    "difficultyDesc": "JBR 더 비치 산책로와 블루워터스는 완전 평지 보행로로 유모차와 휠체어가 매우 편안하게 이동 가능.",
+    "sourceUrl": "https://www.visitdubai.com/en/whats-on/dubai-events-calendar/dubai-shopping-festival",
+    "sourceName": "두바이 관광청 (Visit Dubai) 공식 포털",
+    "bookingUrl": "https://www.visitdubai.com/en/whats-on/dubai-events-calendar/dubai-shopping-festival",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "해변 드론 라이트 쇼 및 불꽃놀이 전 구역 무료 관람 / 해변 비치프런트 디너 코스 약 150 AED ~ 350 AED (약 55,000원 ~ 130,000원)",
+      "en": "Public Drone light shows & Fireworks are 100% Free / Beachfront restaurant dinner approx. 150 - 350 AED",
+      "ja": "夜間ドローンショー＆花火大会 完全無料観覧 / ビーチサイドディナー 約 150〜350 AED",
+      "zh": "海滨无人机光影秀与烟花大会完全免票观赏 / 景观海鲜晚宴人均约 150 ~ 350 阿联酋迪拉姆"
+    },
+    "bookingNecessity": {
+      "ko": "드론 쇼 및 거리 축제 관람은 예매 불필요 (해변 산책로에서 자유 관람). 명당 테라스 석 식사는 사전 예약 권장.",
+      "en": "No tickets needed for outdoor drone and firework shows. Book beachside restaurants in advance.",
+      "ja": "路上・ビーチでのドローンショー観覧は予約不要。ビーチ沿いテラス席は事前予約を推奨。",
+      "zh": "户外沙滩无人机表演与烟花秀免票自由驻足。临海露台景观餐厅建议提前预订。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=dubai+shopping+festival+drone+show+jbr+4k",
+    "videoTitle": {
+      "ko": "두바이 쇼핑 페스티벌 JBR 해변 3D 드론 라이트 쇼 4K",
+      "en": "Dubai Shopping Festival JBR Drone Light Show 4K",
+      "ja": "ドバイ・ショッピング・フェスティバル ドローンショー 4K",
+      "zh": "迪拜购物节 JBR海滩巨幅3D无人机光影秀 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "UAE",
+        "city": "Dubai",
+        "name": "Dubai Shopping Festival & Drone Light Show (DSF)",
+        "typicalTiming": "Early December to Mid January (approx. 38 days)",
+        "statusLabel": "Official Dates Confirmed · World's Grandest Shopping Fiesta",
+        "venue": "The Beach (JBR), Bluewaters & Downtown Dubai",
+        "description": "Dubai's flagship winter festival featuring daily synchronised 3D drone shows lighting up the Arabian Gulf, massive discounts, and fireworks.",
+        "crowdsBooking": "Popular seaside spots get busy at 19:00 & 22:00 show times.",
+        "difficultyDesc": "Completely flat boardwalks with ultra-modern amenities and accessibility."
+      },
+      "ja": {
+        "country": "アラブ首長国連邦",
+        "city": "ドバイ",
+        "name": "ドバイ・ショッピング・フェスティバル＆ドローンショー（DSF）",
+        "typicalTiming": "毎年12月上旬〜翌年1月中旬（約38日間）",
+        "statusLabel": "公式日程確定 · 毎日開催される近未来ドローンショー",
+        "venue": "JBRザ・ビーチ、ブルーウォーターズ、ダウンタウン・ドバイ",
+        "description": "温暖な冬のドバイを舞台にした世界最高峰のフェスティバル。ペルシャ湾上空を彩る幻想的な3Dドローンショーと花火が連夜無料で開催。",
+        "crowdsBooking": "夜のショー（19時・22時）はビーチが賑わいます。テラス席予約推奨。",
+        "difficultyDesc": "ボードウォークは完全バリアフリーの平坦路で、歩きやすく快適。"
+      },
+      "zh": {
+        "country": "阿联酋",
+        "city": "迪拜",
+        "name": "迪拜购物节与无人机光影盛典 (DSF)",
+        "typicalTiming": "每年12月上旬至次年1月中旬（持续约38天）",
+        "statusLabel": "官方日程已确认 · 每日震撼无人机天幕光影秀",
+        "venue": "JBR沙滩海滨、蓝水岛及哈利法塔周边",
+        "description": "迪拜最具盛名的冬季狂欢季。阿拉伯湾上空每晚上演前沿3D无人机编队灯光秀，全城商厦优惠与盛大焰火夜夜交相辉映。",
+        "crowdsBooking": "每晚两场（19:00和22:00）沙滩人流较多，临海海鲜餐吧建议提前订座。",
+        "difficultyDesc": "海滨步道全程无障碍纯平地基，长辈推车漫步极为惬意。"
+      }
+    }
+  },
+  {
+    "id": "fest_dubai_nye",
+    "region": "ME",
+    "country": "아랍에미리트 (UAE)",
+    "city": "두바이 (Dubai)",
+    "name": "두바이 버즈 칼리파 신년 카운트다운 레이저·불꽃쇼 (Burj Khalifa NYE)",
+    "season": "winter",
+    "month": "12월",
+    "typicalTiming": "매년 12월 31일 저녁 ~ 1월 1일 자정",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 세계 최고층 828m 레이저 파사드 쇼",
+    "officialConfirmedDates": {
+      "start": "2026-12-31",
+      "end": "2027-01-01"
+    },
+    "confirmedDateRangeStr": "2026.12.31 ~ 2027.01.01 (12월 31일)",
+    "venue": "다운타운 두바이, 버즈 파크(Burj Park) 및 두바이 몰 일대",
+    "description": "세계에서 가장 유명한 신년 카운트다운 중 하나. 세계 최고층 828m 버즈 칼리파 타워 전면 LED와 음악 분수, 타워 전체에서 뿜어져 나오는 화려한 불꽃놀이의 장관.",
+    "crowdsBooking": "12월 31일 오후부터 다운타운 두바이 일대 도로 전면 통제. 무료 구역은 오후 16시 이전 입장 권장. 버즈 파크 유료 존(약 300~580 AED) 사전 예매 추천.",
+    "difficultyLevel": "alert",
+    "difficultyBadge": "🚨 교통 통제 및 조기 입장 필수",
+    "difficultyDesc": "대중교통 지하철역이 조기 폐쇄되므로 도보 복귀가 길어질 수 있음. 다운타운 인근 도보권 숙소 예약 또는 버즈 파크 지정 구역 예매 필수 권장.",
+    "sourceUrl": "https://www.mydubainewyear.emaar.com/",
+    "sourceName": "Emaar 공식 신년 카운트다운 포털",
+    "bookingUrl": "https://www.mydubainewyear.emaar.com/",
+    "bookingBadge": "optional",
+    "priceInfo": {
+      "ko": "두바이 몰 야외 및 주변 거리 무료 구역(선착순) 무료 / 에마르 공식 버즈 파크(Burj Park) 지정 티켓 약 300 AED ~ 580 AED (식음료 바우처 포함)",
+      "en": "Public perimeter street areas Free (first-come) / Official Burj Park Emaar Ticket approx. 300 - 580 AED",
+      "ja": "ドバイ・モール周辺通り 無料エリア 無料（先着順） / 公式バージ・パーク指定入場券 約 300〜580 AED",
+      "zh": "迪拜购物中心外围公众免费区免门票（先到先入） / 官方Burj Park景观专区门票约 300 ~ 580 迪拉姆（含餐券）"
+    },
+    "bookingNecessity": {
+      "ko": "무료 구역은 티켓 없이 입장 가능하나 오후 16시 전 자리 선점 필수. 혼잡을 피해 쾌적한 화장실과 좌석을 이용하려면 에마르 공식 버즈 파크 티켓 예매 권장.",
+      "en": "Free areas require arrival before 16:00. Burj Park official tickets guarantee hassle-free viewing with seats & restrooms.",
+      "ja": "無料エリアは16時前の到着が必須。快適な鑑賞とトイレ確保には公式バージ・パークチケットの購入を推奨。",
+      "zh": "公共免费区需16:00前占位。为保障长辈洗手间与座椅舒适度，强力推荐提前预订Emaar官方景观坐席票。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=burj+khalifa+new+year+eve+fireworks+laser+4k",
+    "videoTitle": {
+      "ko": "두바이 버즈 칼리파 신년 카운트다운 불꽃 & 레이저쇼 4K",
+      "en": "Burj Khalifa New Year's Eve Fireworks & Laser Show 4K",
+      "ja": "ドバイ・ブルジュハリファ 新年カウントダウン花火 4K",
+      "zh": "迪拜哈利法塔 跨年倒计时极光烟花与激光秀 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "UAE",
+        "city": "Dubai",
+        "name": "Burj Khalifa New Year's Eve Fireworks & Laser Show",
+        "typicalTiming": "December 31st annually",
+        "statusLabel": "Official Event Confirmed · 828m Tower Laser Spectacle",
+        "venue": "Downtown Dubai & Burj Park",
+        "description": "The globe's most iconic New Year countdown. Towering 828 meters into the sky, Burj Khalifa erupts with record-breaking fireworks and music fountain lasers.",
+        "crowdsBooking": "Downtown roads close early on Dec 31. Burj Park tickets recommended for comfort.",
+        "difficultyDesc": "Extensive walking due to metro station closures; booking hotels within walking distance is advised."
+      },
+      "ja": {
+        "country": "アラブ首長国連邦",
+        "city": "ドバイ",
+        "name": "バージ・カリファ 新年カウントダウン花火＆レーザーショー",
+        "typicalTiming": "毎年12月31日夜〜1月1日未明",
+        "statusLabel": "公式開催確定 · 世界最高峰828mタワーの壮大な光の祭典",
+        "venue": "ダウンタウン・ドバイおよびバージ・パーク",
+        "description": "世界中が注目する新年カウントダウン。高さ828mのバージ・カリファ全面を使ったLED演出、ドバイ・ファウンテン、そしてタワーから放たれる花火の絶景。",
+        "crowdsBooking": "12月31日午後から道路閉鎖。快適な鑑賞にはバージ・パーク有料チケットを推奨。",
+        "difficultyDesc": "交通規制で徒歩距離が長くなるため、ダウンタウン徒歩圏のホテル宿泊がベスト。"
+      },
+      "zh": {
+        "country": "阿联酋",
+        "city": "迪拜",
+        "name": "哈利法塔跨年倒计时激光焰火盛典 (Burj Khalifa NYE)",
+        "typicalTiming": "每年12月31日夜至次年元旦凌晨",
+        "statusLabel": "官方日程已确认 · 828米全球最高建筑激光秀",
+        "venue": "迪拜市中心哈利法塔与Burj Park绿茵公园",
+        "description": "全球瞩目的跨年倒计时地标。828米巨塔全屏LED激光秀、喷泉交响乐与自塔身层层绽放的跨年焰火将夜空点缀得璀璨夺目。",
+        "crowdsBooking": "12月31日下午起全城主干道交通管制，推荐提前预订Burj Park尊享景观坐席票。",
+        "difficultyDesc": "散场步行距离较长，长辈同行建议下榻市中心可步行往返的高星级酒店。"
+      }
+    }
+  },
+  {
+    "id": "fest_rio_carnival",
+    "region": "LATIN",
+    "country": "브라질 (Brazil)",
+    "city": "리우데자네이루 (Rio de Janeiro)",
+    "name": "리우데자네이루 카니발 삼바드로메 (Carnaval do Rio de Janeiro)",
+    "season": "spring",
+    "month": "2월",
+    "typicalTiming": "사순절 직전 2월 중순 (약 5일간)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 지구 최대의 삼바 페스티벌",
+    "officialConfirmedDates": {
+      "start": "2027-02-05",
+      "end": "2027-02-10"
+    },
+    "confirmedDateRangeStr": "2027.02.05 ~ 2027.02.10 (매년 2월)",
+    "venue": "삼바드로무 마르케스 지 사푸카이 (Sambódromo da Marquês de Sapucaí)",
+    "description": "지구상 최대의 축제. 화려한 깃털과 보석으로 치장한 특급 삼바 스쿨들이 700m 전용 활주로 삼바드로모를 행진하며 폭발적인 리듬과 열정을 선보입니다.",
+    "crowdsBooking": "삼바드로메 좌석 전 세계 조기 매진. 카마로치(VIP 박스석) 또는 프란가스(Front Frisas) 사전 예약 필수.",
+    "difficultyLevel": "warning",
+    "difficultyBadge": "⚠️ 야간 장시간 관람 및 치안 주의",
+    "difficultyDesc": "공식 셔틀버스 및 호텔 픽업 패키지 이용 필수. 축제장 밖 개인 도보 이동 자제하고 귀중품 소지 최소화.",
+    "sourceUrl": "https://www.carnaval.rio/",
+    "sourceName": "Rio Carnaval 공식 사이트",
+    "bookingUrl": "https://www.riocarnaval.org/rio-carnival/tickets",
+    "bookingBadge": "required",
+    "priceInfo": {
+      "ko": "일반 스탠드(Arquibancadas) 약 $60 ~ $180 / 1열 프란가스(Frisas) 약 $250 ~ $650 / 올인클루시브 VIP 카마로치 약 $800 ~ $1,500",
+      "en": "Grandstand seats approx. $60 - $180 / Front row Frisas approx. $250 - $650 / VIP Camarote box approx. $800 - $1,500",
+      "ja": "一般スタンド席 約 $60〜$180 / 最前列フリザス席 約 $250〜$650 / VIPカマロチ席 約 $800〜$1,500",
+      "zh": "看台普通坐席约 $60 ~ $180 / 首排露天包厢席(Frisas)约 $250 ~ $650 / 全包式尊贵VIP包厢(Camarote)约 $800 ~ $1,500"
+    },
+    "bookingNecessity": {
+      "ko": "삼바드로모 경기장 관람을 위해 공식 지정 티켓 사전 예매 필수 (호텔 왕복 셔틀이 포함된 공식 티켓 패키지 강력 추천).",
+      "en": "Strictly requires advance ticket booking. Safe official hotel transfer packages are strongly recommended.",
+      "ja": "サンボードロモでの観覧には事前チケット購入が必須。ホテル送迎付きの公式パッケージを強く推奨。",
+      "zh": "桑巴大道入场必须提前在线实名预订电子票；强力建议购买包含酒店豪华大巴接送的安全套票。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=rio+carnival+sambadrome+parade+special+group+4k",
+    "videoTitle": {
+      "ko": "브라질 리우 카니발 삼바드로메 특급 퍼레이드 4K",
+      "en": "Rio Carnival Sambadrome Parade Special Group 4K",
+      "ja": "リオ・デ・ジャネイロ カーニバル サンボードロモ 4K",
+      "zh": "巴西里约狂欢节 桑巴大道特级方阵巡游 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Brazil",
+        "city": "Rio de Janeiro",
+        "name": "Rio Carnival Sambadrome Parade (Carnaval do Rio)",
+        "typicalTiming": "Mid February (before Lent)",
+        "statusLabel": "Official Dates Confirmed · The Greatest Show on Earth",
+        "venue": "Sambadrome Marquês de Sapucaí, Rio",
+        "description": "The world's undisputed carnival capital. Top-tier samba schools parade along the 700-meter Sambadrome track with mesmerizing floats, beats, and vibrant costumes.",
+        "crowdsBooking": "Tickets sell out globally months ahead. Book official tickets with safe hotel shuttles.",
+        "difficultyDesc": "Night shows last until dawn; use official tourist transport directly to your seat."
+      },
+      "ja": {
+        "country": "ブラジル",
+        "city": "リオ・デ・ジャネイロ",
+        "name": "リオ・デ・ジャネイロ カーニバル サンボードロモ",
+        "typicalTiming": "毎年2月中旬（四旬節前）",
+        "statusLabel": "公式日程確定 · 地球最大のサンバの祭典",
+        "venue": "サンボードロモ（サンバ専用スタジアム）",
+        "description": "世界最大のメガフェスティバル。豪華絢爛な山車と一流サンバチームが700mの専用コースを練り歩き、情熱とリズムが炸裂します。",
+        "crowdsBooking": "チケットは世界中から早期予約殺到。送迎付きVIPチケットが安全かつ快適。",
+        "difficultyDesc": "夜通し開催されるため、会場とホテル間は公式観光シャトルバス利用を徹底してください。"
+      },
+      "zh": {
+        "country": "巴西",
+        "city": "里约热内卢",
+        "name": "里约狂欢节桑巴大道巡游 (Rio Carnival)",
+        "typicalTiming": "每年2月中旬（四旬斋前夕）",
+        "statusLabel": "官方日程已确认 · 举世瞩目的桑巴王者盛典",
+        "venue": "萨普卡伊侯爵桑巴大道 (Sambódromo)",
+        "description": "地球上最壮丽的狂欢盛宴。顶级特级桑巴学校携数千名盛装舞者与宏伟彩车在700米长跑道上演绎充满激情的节奏旋风。",
+        "crowdsBooking": "全球门票数月前售罄，推荐选购包含五星酒店接送与餐饮的VIP包厢票。",
+        "difficultyDesc": "巡游持续至次日清晨，务必乘坐官方指定接驳车，勿在场馆外单独步行。"
+      }
+    }
+  },
+  {
+    "id": "fest_oruro",
+    "region": "LATIN",
+    "country": "볼리비아 (Bolivia)",
+    "city": "오루로 (Oruro)",
+    "name": "볼리비아 오루로 카니발 (Carnaval de Oruro)",
+    "season": "spring",
+    "month": "2월",
+    "typicalTiming": "매년 2월 중순 (약 6일간)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 유네스코 인류구전무형유산 걸작",
+    "officialConfirmedDates": {
+      "start": "2027-02-06",
+      "end": "2027-02-09"
+    },
+    "confirmedDateRangeStr": "2027.02.06 ~ 2027.02.09 (매년 2월)",
+    "venue": "오루로 소카본 성당(Santuario del Socavón) 앞 대로",
+    "description": "남미 대륙 3대 카니발 중 하나. 악마의 춤(La Diablada)과 모레나다 등 안데스 원주민 토착 신앙과 가톨릭이 결합된 화려하고 영적인 민속 춤 퍼레이드.",
+    "crowdsBooking": "오루로 시내 호텔 숙소가 극히 부족하여 라파스(La Paz)에서 당일치기 투어로 다녀오는 편이 안전하고 쾌적.",
+    "difficultyLevel": "alert",
+    "difficultyBadge": "🚨 해발 3,700m 고산 적응 필수",
+    "difficultyDesc": "해발 3,700m 고지대이므로 고산병 완화제 복용 및 무리한 도보 이동 금지. 충분한 휴식과 따뜻한 방한복 필수.",
+    "sourceUrl": "https://www.bolivia.travel/",
+    "sourceName": "볼리비아 관광청 공식 포털",
+    "bookingUrl": "https://www.bolivia.travel/carnaval-de-oruro",
+    "bookingBadge": "optional",
+    "priceInfo": {
+      "ko": "거리 일반 관람 무료 / 대로변 지정 좌석 관람석 약 $40 ~ $90 / 라파스 출발 왕복 전용 차량 및 가이드 투어 약 $120 ~ $220",
+      "en": "Street sidewalk Free / Reserved Grandstand seat approx. $40 - $90 / Day tour from La Paz with transport approx. $120 - $220",
+      "ja": "路上観覧 無料 / 大通り指定席 約 $40〜$90 / ラパス発着往復ツアー 約 $120〜$220",
+      "zh": "街沿自由站立免票 / 景观长廊指定看台席约 $40 ~ $90 / 拉巴斯往返全包当日游约 $120 ~ $220"
+    },
+    "bookingNecessity": {
+      "ko": "지정 관람석과 안전한 왕복 교통편을 위해 라파스 출발 전용 데이 투어 사전 예약 권장.",
+      "en": "Booking an organized day tour with reserved seating from La Paz is strongly recommended.",
+      "ja": "安全な移動と着席確保のため、ラパス発着の日帰りツアー事前予約を強く推奨。",
+      "zh": "由于当地住宿紧俏且地处高原，强烈建议提前在拉巴斯预订包含往返包车与指定看台的旅行团。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=oruro+carnival+diablada+bolivia+4k",
+    "videoTitle": {
+      "ko": "볼리비아 오루로 카니발 디아블라다 춤 4K",
+      "en": "Bolivia Oruro Carnival Diablada Dance 4K",
+      "ja": "ボリビア・オルーロ カーニバル 悪魔の踊り 4K",
+      "zh": "玻利维亚奥鲁罗狂欢节 恶魔之舞与印第安民俗 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Bolivia",
+        "city": "Oruro",
+        "name": "Oruro Carnival (Carnaval de Oruro)",
+        "typicalTiming": "Mid February annually",
+        "statusLabel": "Official Dates Confirmed · UNESCO Masterpiece Heritage",
+        "venue": "Santuario del Socavón Boulevard, Oruro",
+        "description": "South America's mystical Andean festival, renowned for 'La Diablada' (Dance of the Devils), uniting Catholic and indigenous Aymara beliefs.",
+        "crowdsBooking": "Book organized day trips from La Paz due to high hotel scarcity.",
+        "difficultyDesc": "Altitude of 3,700m requires proper acclimatization and warm windbreaker clothing."
+      },
+      "ja": {
+        "country": "ボリビア",
+        "city": "オルーロ",
+        "name": "オルーロ・カーニバル",
+        "typicalTiming": "毎年2月中旬（約6日間）",
+        "statusLabel": "公式開催確定 · ユネスコ無形文化遺産",
+        "venue": "ソカボン教会前大通り（オルーロ）",
+        "description": "南米三大祭りの一つ。アンデス先住民の信仰とキリスト教が融合した『悪魔の踊り（ディアブラダ）』など、豪華な仮面と衣装の踊り手が練り歩きます。",
+        "crowdsBooking": "現地の宿不足のため、ラパスからの日帰りツアー利用が快適でおすすめ。",
+        "difficultyDesc": "標高3,700mの高所のため、高山病対策と防寒着の着用が必須。"
+      },
+      "zh": {
+        "country": "玻利维亚",
+        "city": "奥鲁罗",
+        "name": "奥鲁罗狂欢节 (Carnaval de Oruro)",
+        "typicalTiming": "每年2月中旬（持续约6天）",
+        "statusLabel": "官方日程已确认 · 联合国教科文组织非遗名录",
+        "venue": "索卡翁圣母教堂大道 (Santuario del Socavón)",
+        "description": "南美三大嘉年华之一，以神秘的“恶魔之舞(La Diablada)”和莫雷纳达著称，将天主教圣母信仰与安第斯山神图腾完美交融。",
+        "crowdsBooking": "奥鲁罗城内住宿极其短缺，建议以拉巴斯为枢纽报团当日往返。",
+        "difficultyDesc": "海拔高达3,700米，务必提前做好抗高原反应准备并防寒保暖。"
+      }
+    }
+  },
+  {
+    "id": "fest_tango_ba",
+    "region": "LATIN",
+    "country": "아르헨티나 (Argentina)",
+    "city": "부에노스아이레스 (Buenos Aires)",
+    "name": "부에노스아이레스 세계 탱고 축제 & 챔피언십 (Tango Buenos Aires Mundial)",
+    "season": "autumn",
+    "month": "8~9월",
+    "typicalTiming": "매년 8월 하순 ~ 9월 초 (약 2주간)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 유네스코 탱고 세계 대회",
+    "officialConfirmedDates": {
+      "start": "2027-08-18",
+      "end": "2027-08-31"
+    },
+    "confirmedDateRangeStr": "2027.08.18 ~ 2027.08.31 (매년 8월)",
+    "venue": "우시나 델 아르테(Usina del Arte) 및 모비스타 아레나",
+    "description": "전 세계 수백 쌍의 정상급 탱고 댄서들이 모여 살롱 탱고와 무대 탱고 세계 챔피언을 가리는 축제. 시내 광장 밀롱가와 무료 마스터클래스 진행.",
+    "crowdsBooking": "결승전(Finals) 티켓은 공식 시청 웹사이트에서 선착순 무료 배포되며 조기 마감.",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 현대식 실내 극장 & 평지 동선",
+    "difficultyDesc": "주요 경연 장소는 모두 엘리베이터와 좌석이 완비된 현대식 예술 극장으로 시니어 친화적 환경.",
+    "sourceUrl": "https://turismo.buenosaires.gob.ar/en/article/tango-buenos-aires-festival-and-world-cup",
+    "sourceName": "부에노스아이레스 관광청 공식 포털",
+    "bookingUrl": "https://festivalesba.org/",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "예선 및 시내 밀롱가 공연 전 구역 무료 / 결승전 공식 티켓 무료 (공식 온라인 사전 신청제)",
+      "en": "All preliminary rounds, concerts & milongas Free / Grand Finals Free via official online registration",
+      "ja": "予選・ストリートミロンガ無料観覧 / 決勝戦チケット無料（公式オンライン事前申請制）",
+      "zh": "预赛巡回演出及街头舞会全部免费 / 巅峰总决赛门票官方在线免费预约（先到先得）"
+    },
+    "bookingNecessity": {
+      "ko": "모든 공연과 결승전은 무료이나, 입장권 사전 온라인 신청 필수 (행사 3일 전 공식 사이트 오픈).",
+      "en": "Free admission, but tickets must be reserved online 3 days before each event.",
+      "ja": "入場無料ですが、各イベントの3日前から公式ウェブサイトでの事前登録が必須。",
+      "zh": "全程免费观赏，但观赛门票需提前3天在布宜诺斯艾利斯艺术节官网实名登记抢票。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=tango+buenos+aires+mundial+final+4k",
+    "videoTitle": {
+      "ko": "부에노스아이레스 세계 탱고 축제 결승전 4K",
+      "en": "Buenos Aires World Tango Championship Finals 4K",
+      "ja": "ブエノスアイレス 世界タンゴ選手権 決勝 4K",
+      "zh": "布宜诺斯艾利斯 全球探戈锦标赛总决赛 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Argentina",
+        "city": "Buenos Aires",
+        "name": "Buenos Aires Tango Festival & World Cup",
+        "typicalTiming": "Late August annually (approx. 2 weeks)",
+        "statusLabel": "Official Event Confirmed · UNESCO World Tango Summit",
+        "venue": "Usina del Arte & Movistar Arena, Buenos Aires",
+        "description": "The global epicentre of Argentine Tango. Hundreds of international dancer pairs compete in Salon & Stage categories alongside free open-air milongas.",
+        "crowdsBooking": "Free tickets are released online 72 hours prior; book quickly.",
+        "difficultyDesc": "Comfortable seated modern concert halls with full wheelchair access."
+      },
+      "ja": {
+        "country": "アルゼンチン",
+        "city": "ブエノスアイレス",
+        "name": "ブエノスアイレス・世界タンゴ選手権＆フェスティバル",
+        "typicalTiming": "毎年8月下旬〜9月上旬（約2週間）",
+        "statusLabel": "公式開催確定 · ユネスコ無形文化遺産タンゴの頂点",
+        "venue": "ウシナ・デル・アルテおよび市内各所",
+        "description": "世界中から超一流のタンゴダンサーが集結し、サロン部門・ステージ部門の世界王者を決定。街角のミロンガや無料コンサートが満載。",
+        "crowdsBooking": "決勝戦のチケットはオンライン事前受付。早期完売注意。",
+        "difficultyDesc": "近代的で冷暖房完備のホールで開催され、全席着席可能でシニアも快適。"
+      },
+      "zh": {
+        "country": "阿根廷",
+        "city": "布宜诺斯艾利斯",
+        "name": "布宜诺斯艾利斯世界探戈节暨锦标赛 (Tango Mundial)",
+        "typicalTiming": "每年8月下旬至9月初（持续约2周）",
+        "statusLabel": "官方日程已确认 · 联合国教科文组织探戈巅峰赛事",
+        "venue": "乌西纳艺术中心 (Usina del Arte) 及各大剧场",
+        "description": "全球探戈殿堂级赛事。汇聚全世界顶尖探戈舞者角逐沙龙与舞台组世界冠军，满城露天米隆加舞会与大师展演异彩纷呈。",
+        "crowdsBooking": "所有赛事实行官方免费抢票机制，提前72小时准时线上开抢。",
+        "difficultyDesc": "赛场均为现代化舒适剧院，全程配备电梯与舒适坐席，十分适合长辈观摩。"
+      }
+    }
+  },
+  {
+    "id": "fest_valparaiso",
+    "region": "LATIN",
+    "country": "칠레 (Chile)",
+    "city": "발파라이소 (Valparaíso)",
+    "name": "칠레 발파라이소 새해 해상 불꽃축제 (Año Nuevo en el Mar Valparaíso)",
+    "season": "winter",
+    "month": "12~1월",
+    "typicalTiming": "매년 12월 31일 자정 (새해맞이)",
+    "statusType": "confirmed",
+    "statusLabel": "공식 일정 확정 · 남태평양 최대의 해상 불꽃쇼",
+    "officialConfirmedDates": {
+      "start": "2026-12-31",
+      "end": "2027-01-01"
+    },
+    "confirmedDateRangeStr": "2026.12.31 ~ 2027.01.01 (새해 카운트다운)",
+    "venue": "발파라이소만 해상 바지선 및 콘셉시온 언덕 일대",
+    "description": "남미 남태평양 연안 최대의 신년 맞이 축제. 발파라이소 만 바다 위 수십 대의 바지선에서 동시에 발사되는 화려한 불꽃놀이가 알록달록한 언덕 도시 전체를 비춥니다.",
+    "crowdsBooking": "언덕 전망대 호텔과 테라스 레스토랑 3~4개월 전 조기 예약 필수.",
+    "difficultyLevel": "warning",
+    "difficultyBadge": "⚠️ 가파른 언덕길 및 계단 주의",
+    "difficultyDesc": "유네스코 언덕길은 경사가 가파르므로 아센소르(경사형 푸니쿨라 엘리베이터) 또는 우버 차량 이용 필수.",
+    "sourceUrl": "https://chile.travel/en/",
+    "sourceName": "칠레 관광청 공식 웹사이트",
+    "bookingUrl": "https://chile.travel/en/events-in-chile/",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "해변 산책로 및 공공 전망대 무료 관람 / 언덕 테라스 레스토랑 새해 디너 약 $80 ~ $200 / 해상 요트 크루즈 관람 약 $150 ~ $300",
+      "en": "Public hill viewpoints & coastal boulevard Free / Hillside terrace NYE dinner approx. $80 - $200 / Boat tour approx. $150 - $300",
+      "ja": "展望台・海岸通り無料観覧 / 丘の上テラスレストラン新春ディナー 約 $80〜$200 / 海上クルーズ 約 $150〜$300",
+      "zh": "海滨漫步道与公共山丘观景台免费 / 彩色山丘海景露台跨年晚宴约 $80 ~ $200 / 海上游艇跨年船票约 $150 ~ $300"
+    },
+    "bookingNecessity": {
+      "ko": "거리 관람은 예매 불필요. 언덕 테라스 석이나 해상 유람선은 11월 전 조기 예약 권장.",
+      "en": "Public viewpoints are open and free. Book terrace dinners or boat tours by November.",
+      "ja": "路上観覧は予約不要。テラス席やクルーズは11月前の予約を強く推奨。",
+      "zh": "街头与公共观景台完全免费。海景全景露台坐席或观礼游艇建议11月前预订。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=valparaiso+fireworks+new+year+eve+chile+4k",
+    "videoTitle": {
+      "ko": "칠레 발파라이소 새해 해상 불꽃축제 4K",
+      "en": "Valparaíso New Year's Eve Ocean Fireworks 4K",
+      "ja": "チリ・バルパライソ 新年海上花火大会 4K",
+      "zh": "智利瓦尔帕莱索 太平洋跨年海上音乐焰火 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Chile",
+        "city": "Valparaíso",
+        "name": "Valparaíso New Year at Sea Fireworks (Año Nuevo en el Mar)",
+        "typicalTiming": "December 31st midnight",
+        "statusLabel": "Official Dates Confirmed · South Pacific's Largest Fireworks",
+        "venue": "Bay of Valparaíso & Cerro Concepción, Chile",
+        "description": "The premier South American oceanfront countdown. Giant pyrotechnic displays launch simultaneously from offshore barges across the colorful hillside city.",
+        "crowdsBooking": "Hilltop terrace restaurants book out months ahead.",
+        "difficultyDesc": "Steep UNESCO hills; utilize historic funicular elevators (Ascensores) or Uber."
+      },
+      "ja": {
+        "country": "チリ",
+        "city": "バルパライソ",
+        "name": "バルパライソ・新年海上花火大会",
+        "typicalTiming": "毎年12月31日深夜〜1月1日未明",
+        "statusLabel": "公式開催確定 · 南太平洋最大の新春海上花火",
+        "venue": "バルパライソ湾およびコンセプシオンの丘周辺",
+        "description": "南米屈指の年越しイベント。太平洋の沖合に浮かぶ台船から一斉に打ち上げられる豪快な花火が、カラフルな世界遺産の港町を染め上げます。",
+        "crowdsBooking": "丘の上の展望レストランやホテルは数ヶ月前からの予約が必須。",
+        "difficultyDesc": "坂道や階段が多いため、伝統のアセンソール（ケーブルカー）やタクシーを利用してください。"
+      },
+      "zh": {
+        "country": "智利",
+        "city": "瓦尔帕莱索",
+        "name": "瓦尔帕莱索海上跨年音乐焰火节",
+        "typicalTiming": "每年12月31日午夜跨年",
+        "statusLabel": "官方日程已确认 · 南太平洋最大海上烟花秀",
+        "venue": "瓦尔帕莱索海湾与康塞普西翁山丘",
+        "description": "南美洲极具盛名的海湾跨年倒计时。数十艘海上驳船齐射璀璨礼花，照亮整座联合国教科文组织彩色山城与太平洋波光。",
+        "crowdsBooking": "山顶景观餐厅与海景酒店极其抢手，建议提前3个月锁定席位。",
+        "difficultyDesc": "山丘街巷陡峭多阶梯，强烈建议乘坐古老升降缆车(Ascensores)或打车往返。"
+      }
+    }
+  }
+];
+  if (typeof FESTIVALS_GUIDE_DATA !== 'undefined') {
+    NEW_FESTS.forEach(nf => {
+      if (!FESTIVALS_GUIDE_DATA.some(x => x.id === nf.id)) {
+        FESTIVALS_GUIDE_DATA.push(nf);
+      }
+    });
+  }
+
+  // 3. Add New Night Views
+  const NEW_NIGHTS = [
+  {
+    "id": "nv_seville_plaza_espana",
+    "region": "EU",
+    "country": "스페인 (Spain)",
+    "city": "세비야 (Seville)",
+    "spot": "세비야 스페인 광장 황금 조명 야경 (Plaza de España Seville)",
+    "viewType": "웅장한 반원형 바로크·무데하르 광장 & 수로 반영 야경",
+    "recommendedTime": "일몰 30분 후 ~ 22:00 (황금빛 가로등 점등)",
+    "operatingAndTicket": "22:00까지 무료 개방 · 티켓 불필요 (Free Entry)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 완전 평지 & 벤치 휴식 완비",
+    "difficultyDesc": "마리아 루이사 공원과 광장 내부는 완전한 평지 포장도로이며, 곳곳에 벤치가 많아 어르신 산책에 최적화.",
+    "nightReturnNotes": "밤 22시 이후 광장 출입문이 닫힙니다. 광장 정문 택시 승강장에서 택시나 우버를 탑승하여 숙소로 귀가하세요.",
+    "sourceUrl": "https://www.visitasevilla.es/en",
+    "sourceName": "세비야 시 공식 관광청 (Visit Sevilla)",
+    "bookingUrl": "https://www.visitasevilla.es/en/places-interest/plaza-de-espana",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "완전 무료 개방 (입장료 및 티켓 없음)",
+      "en": "100% Free Public Access (No admission fee)",
+      "ja": "完全無料開放（入場料・チケット不要）",
+      "zh": "全天免费对外开放（无门票要求）"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요 (상시 개방). 황금 조명이 켜지는 일몰 직후 방문 시 가장 아름다운 사진 촬영 가능.",
+      "en": "No reservation needed. Best visited at dusk when the golden illumination reflects on the moat.",
+      "ja": "予約不要（常時開放）。黄昏時のライトアップ点灯直後の散策が最も幻想的でおすすめ。",
+      "zh": "无需预约自由漫步。华灯初上水渠倒映金色宫殿与喷泉，是最佳摄影时段。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=plaza+de+espana+seville+night+walking+tour+4k",
+    "videoTitle": {
+      "ko": "세비야 스페인 광장 로맨틱 황금 야경 산책 4K",
+      "en": "Seville Plaza de España Romantic Night Walk 4K",
+      "ja": "セビリア・スペイン広場 黄金の夜景 4K",
+      "zh": "塞维利亚西班牙广场 唯美水渠倒影夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Spain",
+        "city": "Seville",
+        "spot": "Plaza de España Seville Illuminated Night View",
+        "viewType": "Monumental Semi-Circular Palace & Water Moat Reflection",
+        "recommendedTime": "Dusk to 22:00 (Warm golden lighting)",
+        "difficultyDesc": "Completely flat paved pedestrian paths with numerous tiled resting benches.",
+        "nightReturnNotes": "Gates close at 22:00. Official taxi ranks located at the North entrance."
+      },
+      "ja": {
+        "country": "スペイン",
+        "city": "セビリア",
+        "spot": "セビリア・スペイン広場 黄金の夜景",
+        "viewType": "壮麗な半円形宮殿と運河の水面リフレクション",
+        "recommendedTime": "日没30分後〜22:00（ライトアップ点灯）",
+        "difficultyDesc": "完全な平坦路で階段がなく、陶器タイルのベンチも多くシニアも安心。",
+        "nightReturnNotes": "広場は22時に閉門します。正門前のタクシー乗り場から安全にご帰着ください。"
+      },
+      "zh": {
+        "country": "西班牙",
+        "city": "塞维利亚",
+        "spot": "塞维利亚西班牙广场 璀璨金色夜景",
+        "viewType": "宏伟半圆形宫殿楼阁与水渠喷泉倒影",
+        "recommendedTime": "日落后30分钟至22:00（暖金灯光点亮）",
+        "difficultyDesc": "纯平整地面无上下阶梯，沿途设有大量精美瓷砖长椅可随时休憩。",
+        "nightReturnNotes": "公园铁门通常22:00关闭，北门设有正规出租车乘车点可直接打车返程。"
+      }
+    }
+  },
+  {
+    "id": "nv_barcelona_bunkers",
+    "region": "EU",
+    "country": "스페인 (Spain)",
+    "city": "바르셀로나 (Barcelona)",
+    "spot": "벙커스 델 카르멜 & 티비다보 야경 (Bunkers del Carmel & Tibidabo)",
+    "viewType": "360도 탁 트인 바르셀로나 시내 & 사그라다 파밀리아 조망",
+    "recommendedTime": "일몰 40분 전 ~ 매직아워 (19:00 ~ 20:30)",
+    "operatingAndTicket": "상시 개방 · 입장료 무료 (야간 통제 시간 확인)",
+    "difficultyLevel": "alert",
+    "difficultyBadge": "🚨 언덕 경사로 (택시 탑승 필수)",
+    "difficultyDesc": "정상 부근 완만한 비포장 오르막과 약간의 계단이 있으므로 편안한 운동화 착용 필수.",
+    "nightReturnNotes": "하산 시 어두운 숲길 도보 이동을 피하고, 정상 입구 로터리에서 우버나 카비파이(Cabify)를 호출하세요.",
+    "sourceUrl": "https://www.barcelonaturisme.com/",
+    "sourceName": "바르셀로나 관광청 공식 포털",
+    "bookingUrl": "https://www.barcelonaturisme.com/wv3/en/page/493/turo-de-la-rovira.html",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "완전 무료 공공 전망대 (입장료 및 티켓 없음)",
+      "en": "100% Free Public Viewpoint (No tickets)",
+      "ja": "完全無料公共展望台（入場料不要）",
+      "zh": "全天免费公共观景台（免门票免预约）"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요. 일몰 1시간 전 도착하여 탁 트인 지중해와 바르셀로나 격자망 도시 야경 감상 추천.",
+      "en": "No booking needed. Arrive before sunset for panoramic Mediterranean vistas.",
+      "ja": "予約不要。日没1時間前に到着し、サグラダ・ファミリアと地中海の絶景を楽しむのがおすすめ。",
+      "zh": "无需门票预约。建议日落前1小时抵达俯瞰圣家堂与棋盘格街区全貌。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=bunkers+del+carmel+barcelona+sunset+night+4k",
+    "videoTitle": {
+      "ko": "바르셀로나 벙커스 델 카르멜 360도 노을 & 야경 4K",
+      "en": "Barcelona Bunkers del Carmel 360 Sunset & Night View 4K",
+      "ja": "バルセロナ・カルメルの防空壕 夕景＆夜景 4K",
+      "zh": "巴塞罗那卡梅尔碉堡 360度圣家堂日落天际线夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Spain",
+        "city": "Barcelona",
+        "spot": "Bunkers del Carmel Panoramic Viewpoint",
+        "viewType": "360-Degree Panoramic View of Sagrada Família & Mediterranean",
+        "recommendedTime": "Sunset to Magic Hour (19:00 - 20:30)",
+        "difficultyDesc": "Uphill approach; take taxi to base and walk comfortable sneakers required.",
+        "nightReturnNotes": "Call Uber/Cabify at the entrance turnaround for a safe ride back."
+      },
+      "ja": {
+        "country": "スペイン",
+        "city": "バルセロナ",
+        "spot": "カルメルの防空壕（バンカーズ）パノラマ夜景",
+        "viewType": "サグラダ・ファミリアと地中海を見渡す360度大パノラマ",
+        "recommendedTime": "日没前〜マジックアワー（19:00〜20:30）",
+        "difficultyDesc": "頂上付近に坂道があるため、タクシーで入口までアクセスし歩きやすい靴で登頂。",
+        "nightReturnNotes": "暗くなる前の下山を推奨。ロータリーでタクシーを呼んで帰着。"
+      },
+      "zh": {
+        "country": "西班牙",
+        "city": "巴塞罗那",
+        "spot": "卡梅尔碉堡 360度城市夜景观景台",
+        "viewType": "360度远眺圣家族大教堂与地中海蔚蓝海岸",
+        "recommendedTime": "日落前40分钟至蓝调时刻（19:00 ~ 20:30）",
+        "difficultyDesc": "山顶附近有缓坡与土路，建议打车至山脚落客平台并穿防滑运动鞋。",
+        "nightReturnNotes": "下山请在回车道使用打车软件呼叫出租车，避免步行穿过暗光小径。"
+      }
+    }
+  },
+  {
+    "id": "nv_madrid_cibeles",
+    "region": "EU",
+    "country": "스페인 (Spain)",
+    "city": "마드리드 (Madrid)",
+    "spot": "시벨레스 궁전 8층 전망대 & 그란 비아 (Mirador Madrid Palacio de Cibeles)",
+    "viewType": "도심 중심부 360도 루프탑 & 알칼라 문·그란 비아 야경",
+    "recommendedTime": "20:00 ~ 21:30 (화려한 네온사인 & 대로 조명)",
+    "operatingAndTicket": "화~일 10:30~14:00, 16:00~19:30 개방 · 티켓 약 €3",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 초고속 엘리베이터 & 평지 동선",
+    "difficultyDesc": "궁전 로비에서 6층까지 엘리베이터 직행 후 짧은 계단 또는 리프트로 8층 타워 도착.",
+    "nightReturnNotes": "시벨레스 광장 중앙에 시내버스 및 택시 정류장이 밀집하여 심야에도 안전하게 복귀 가능.",
+    "sourceUrl": "https://www.centrocentro.org/mirador",
+    "sourceName": "CentroCentro Cibeles 공식 포털",
+    "bookingUrl": "https://www.centrocentro.org/mirador",
+    "bookingBadge": "required",
+    "priceInfo": {
+      "ko": "전망대 입장료 약 €3 (65세 이상 시니어 우대 €1.5)",
+      "en": "Tower Mirador ticket approx. €3 (Senior 65+ discount €1.5)",
+      "ja": "展望タワー入場料 約 €3（65歳以上シニア割引 €1.5）",
+      "zh": "观景台登顶门票约 €3（65岁以上长辈优惠票 €1.5）"
+    },
+    "bookingNecessity": {
+      "ko": "타워 수용 인원이 제한되어 있으므로 공식 웹사이트 사전 시간 지정 예매 필수.",
+      "en": "Strictly limited capacity per 30-min slot. Online booking required.",
+      "ja": "定員制のため、公式サイトで30分ごとの時間枠事前予約が必須。",
+      "zh": "每30分钟限制登顶人数，请务必提前在官方网站选定游览时段预订。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=palacio+de+cibeles+madrid+rooftop+night+view+4k",
+    "videoTitle": {
+      "ko": "마드리드 시벨레스 궁전 360도 루프탑 야경 4K",
+      "en": "Palacio de Cibeles Madrid Rooftop Panoramic Night View 4K",
+      "ja": "マドリード・シベーレス宮殿 ルーフトップ夜景 4K",
+      "zh": "马德里西贝莱斯宫 360度天台格兰大道璀璨夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Spain",
+        "city": "Madrid",
+        "spot": "Palacio de Cibeles 8th Floor Mirador & Gran Vía",
+        "viewType": "360-Degree Historic Skyline & Boulevard Grandeur",
+        "recommendedTime": "20:00 - 21:30 (Illuminated avenues)",
+        "difficultyDesc": "High-speed elevator up to 6th floor, gentle steps or lift to observation cupola.",
+        "nightReturnNotes": "Bustling central plaza with constant taxis and well-lit boulevards."
+      },
+      "ja": {
+        "country": "スペイン",
+        "city": "マドリード",
+        "spot": "シベーレス宮殿8階展望タワー＆グラン・ビア",
+        "viewType": "マドリード中心部を見渡す360度パノラマ夜景",
+        "recommendedTime": "20:00〜21:30（大通りの美しいライトアップ）",
+        "difficultyDesc": "6階まで高速エレベーター完備。シニア割引あり快適。",
+        "nightReturnNotes": "広場周辺は夜間も人通りが多くタクシー乗り場至近で安心。"
+      },
+      "zh": {
+        "country": "西班牙",
+        "city": "马德里",
+        "spot": "西贝莱斯宫8层观景塔与格兰大道夜景",
+        "viewType": "360度俯瞰阿尔卡拉门与格兰大道繁华车流",
+        "recommendedTime": "20:00 ~ 21:30（大道华丽夜灯点亮）",
+        "difficultyDesc": "直升电梯直达6层，配有辅助无障碍升降机，长辈优惠票齐全。",
+        "nightReturnNotes": "广场中央即为枢纽车站与出租车常驻点，深夜依然灯火通明安全可靠。"
+      }
+    }
+  },
+  {
+    "id": "nv_paris_trocadero",
+    "region": "EU",
+    "country": "프랑스 (France)",
+    "city": "파리 (Paris)",
+    "spot": "샤요 궁 트로카데로 광장 & 센 강 에펠탑 야경 (Trocadéro & Eiffel Tower)",
+    "viewType": "에펠탑 정면 파노라마 & 매시 정각 5분간 반짝이는 화이트 플래시(Scintillement)",
+    "recommendedTime": "일몰 후 ~ 23:00 (매시 정각 조명 쇼)",
+    "operatingAndTicket": "상시 무료 개방 · 티켓 불필요 (센 강 유람선은 티켓 약 €17)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 완만한 광장 테라스 동선",
+    "difficultyDesc": "트로카데로 광장은 평탄한 석조 테라스이며, 지하철역(Trocadéro 6·9호선)에서 계단 없이 광장 진입 가능.",
+    "nightReturnNotes": "광장 주변 노점상과 소매치기 주의. 귀중품은 가방 안쪽에 넣고 관람 후 대로변 택시 이용.",
+    "sourceUrl": "https://www.toureiffel.paris/en",
+    "sourceName": "Eiffel Tower 공식 포털",
+    "bookingUrl": "https://www.toureiffel.paris/en",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "트로카데로 광장 조망 완전 무료 / 센 강 바토무슈 유람선 약 €16 ~ €18",
+      "en": "Trocadéro esplanade is 100% Free / Seine Bateaux-Mouches cruise approx. €16 - €18",
+      "ja": "トロカデロ広場からの眺望 完全無料 / セーヌ川クルーズ船 約 €16〜€18",
+      "zh": "夏乐宫特洛卡德罗广场全天免费观赏 / 塞纳河游船船票约 €16 ~ €18"
+    },
+    "bookingNecessity": {
+      "ko": "광장 관람은 예매 불필요 (자유 관람). 정각 10분 전에 도착하여 5분간 펼쳐지는 화이트 플래시 감상.",
+      "en": "Free public access. Arrive 10 minutes before the top of the hour for the 5-min sparkle.",
+      "ja": "予約不要（常時自由）。毎正時10分前に広場へ到着し、5分間のダイヤモンドフラッシュを満喫。",
+      "zh": "广场完全免费自由漫步。建议于整点前10分钟到达占位观赏持续5分钟的闪烁钻石灯光秀。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=eiffel+tower+trocadero+sparkle+night+view+4k",
+    "videoTitle": {
+      "ko": "파리 에펠탑 화이트 플래시 조명 쇼 & 트로카데로 4K",
+      "en": "Paris Eiffel Tower Sparkle Light Show from Trocadéro 4K",
+      "ja": "パリ・エッフェル塔 シャンパンフラッシュ 4K",
+      "zh": "巴黎埃菲尔铁塔 夏乐宫正对白金璀璨灯光秀 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "France",
+        "city": "Paris",
+        "spot": "Trocadéro Esplanade & Eiffel Tower Sparkle",
+        "viewType": "Frontal Iconic Vista & Hourly 5-Min Diamond Sparkle",
+        "recommendedTime": "Nightfall to 23:00 (Hourly at :00)",
+        "difficultyDesc": "Spacious flat marble esplanade directly outside Trocadéro metro exit.",
+        "nightReturnNotes": "Stay mindful of personal belongings in crowded areas. Official taxis nearby."
+      },
+      "ja": {
+        "country": "フランス",
+        "city": "パリ",
+        "spot": "シャイヨー宮トロカデロ広場＆エッフェル塔夜景",
+        "viewType": "エッフェル塔の正面パノラマ＆毎正時5分間のシャンパンフラッシュ",
+        "recommendedTime": "日没後〜23:00（毎時00分の点灯ショー）",
+        "difficultyDesc": "広場は平坦な大理石テラスで、地下鉄駅からのアクセスも容易。",
+        "nightReturnNotes": "貴重品の管理に注意し、大通り沿いの正規タクシーで帰着してください。"
+      },
+      "zh": {
+        "country": "法国",
+        "city": "巴黎",
+        "spot": "夏乐宫特洛卡德罗广场与铁塔钻石闪灯夜景",
+        "viewType": "正对埃菲尔铁塔全景与每小时整点5分钟白金闪光秀",
+        "recommendedTime": "入夜后至23:00（每小时整点璀璨点亮）",
+        "difficultyDesc": "广场地面平坦开阔，出地铁站即可直通大理石观景露台。",
+        "nightReturnNotes": "人流聚集处请保管好贵重物品，游览完毕后可在大道旁叫正规出租车。"
+      }
+    }
+  },
+  {
+    "id": "nv_london_shard",
+    "region": "EU",
+    "country": "영국 (UK)",
+    "city": "런던 (London)",
+    "spot": "더 샤드 72층 전망대 & 타워 브리지 템스강 야경 (The View from The Shard)",
+    "viewType": "서유럽 최고층 310m에서 내려다보는 템스강 & 타워 브리지 360도 야경",
+    "recommendedTime": "일몰 직후 ~ 21:30 (런던 야간 스카이라인)",
+    "operatingAndTicket": "목~토 10:00~22:00 (요일별 상이) · 티켓 약 £28 ~ £37",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 초고속 엘리베이터 & 실내 라운지",
+    "difficultyDesc": "초고속 더블데크 엘리베이터로 68층 및 72층까지 60초 만에 직행. 휠체어 전 구역 경사로 완비.",
+    "nightReturnNotes": "런던 브리지 역(London Bridge Station) 지하철·기차 복합 터미널과 바로 연결되어 밤에도 매우 안전.",
+    "sourceUrl": "https://www.theviewfromtheshard.com/",
+    "sourceName": "The View from The Shard 공식 사이트",
+    "bookingUrl": "https://www.theviewfromtheshard.com/book-tickets/",
+    "bookingBadge": "required",
+    "priceInfo": {
+      "ko": "스탠다드 온라인 티켓 약 £28.5 ~ £37 (약 50,000원 ~ 65,000원)",
+      "en": "Standard entry ticket online approx. £28.5 - £37",
+      "ja": "標準入場チケット（オンライン） 約 £28.5〜£37",
+      "zh": "标准在线提前预订门票约 £28.5 ~ £37（约250 ~ 330元人民币）"
+    },
+    "bookingNecessity": {
+      "ko": "현장 매표소는 가격이 비싸고 매진이 빈번하므로 공식 웹사이트 사전 시간 지정 예매 필수.",
+      "en": "Online advance booking strictly required to secure timeslots and discount.",
+      "ja": "現地購入は高額で完売も多いため、公式サイトでの事前予約必須。",
+      "zh": "现场窗口票价高昂且常需排队，请务必提前在官方网站选定游览时段预订。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=the+view+from+the+shard+london+night+view+4k",
+    "videoTitle": {
+      "ko": "런던 더 샤드 72층 360도 템스강 환상 야경 4K",
+      "en": "The View from The Shard London 360 Night Skyline 4K",
+      "ja": "ロンドン・ザ・シャード 72階 展望台夜景 4K",
+      "zh": "伦敦碎片大厦 72层全景俯瞰泰晤士河与塔桥 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "UK",
+        "city": "London",
+        "spot": "The View from The Shard 72nd Floor & Tower Bridge",
+        "viewType": "Western Europe's Highest 310m 360-Degree Panoramic River Thames Vista",
+        "recommendedTime": "Twilight to 21:30 (Thames illumination)",
+        "difficultyDesc": "High-speed lifts whisk guests to Level 72 in 60 seconds with full step-free access.",
+        "nightReturnNotes": "Direct covered connection into London Bridge Station terminal."
+      },
+      "ja": {
+        "country": "イギリス",
+        "city": "ロンドン",
+        "spot": "ザ・シャード72階展望台＆タワーブリッジ",
+        "viewType": "西欧最高峰310mから見下ろすテムズ川とタワーブリッジの360度夜景",
+        "recommendedTime": "日没直後〜21:30（ロンドンのスカイライン）",
+        "difficultyDesc": "高速エレベーターで60秒で最上階へ。完全バリアフリーで安心。",
+        "nightReturnNotes": "ロンドン・ブリッジ駅直結のため、夜間も安全に地下鉄に乗車可能。"
+      },
+      "zh": {
+        "country": "英国",
+        "city": "伦敦",
+        "spot": "碎片大厦72层天台展望台与塔桥夜景",
+        "viewType": "西欧最高310米全景俯瞰泰晤士河与伦敦塔桥金光车流",
+        "recommendedTime": "日落后至21:30（伦敦城市天际线）",
+        "difficultyDesc": "双层高速电梯60秒直达云端，全程无台阶纯无障碍适老设计。",
+        "nightReturnNotes": "直接连通伦敦桥大型轨道交通枢纽站，夜间返程十分安全便捷。"
+      }
+    }
+  },
+  {
+    "id": "nv_florence_michelangelo",
+    "region": "EU",
+    "country": "이탈리아 (Italy)",
+    "city": "피렌체 (Florence)",
+    "spot": "미켈란젤로 언덕 석양 & 아르노 강 두오모 야경 (Piazzale Michelangelo)",
+    "viewType": "꽃의 도시 피렌체 붉은 지붕과 두오모 쿠폴라 파노라마 일몰 & 황혼",
+    "recommendedTime": "일몰 45분 전 ~ 매직아워 (18:30 ~ 20:00)",
+    "operatingAndTicket": "상시 개방 · 입장료 무료 (Free Public Terrace)",
+    "difficultyLevel": "alert",
+    "difficultyBadge": "🚨 언덕 오르막 (12·13번 버스 or 택시 필수)",
+    "difficultyDesc": "시내에서 걸어 올라갈 경우 가파른 계단이 길게 이어지므로 반드시 산타 마리아 노벨라 역에서 12/13번 시내버스나 택시 탑승 권장.",
+    "nightReturnNotes": "광장 테라스에 상시 택시 승강장이 있으며, 버스 정류장이 바로 앞에 위치하여 어르신도 무리 없이 귀가 가능.",
+    "sourceUrl": "https://www.feelflorence.it/en",
+    "sourceName": "Feel Florence 피렌체 공식 관광청",
+    "bookingUrl": "https://www.feelflorence.it/en/node/1218",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "완전 무료 개방 (입장료 및 티켓 없음) / 시내버스 티켓 편도 €1.5",
+      "en": "100% Free Public Terrace / City bus 12/13 one-way €1.5",
+      "ja": "完全無料公共広場 / 市内バス12/13番 片道 €1.5",
+      "zh": "露天观景广场全天免费开放 / 城市公交12/13路单程 €1.5"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요. 일몰 40분 전 계단 테라스 또는 난간에 자리 잡고 라이브 버스킹 음악과 함께 감상.",
+      "en": "No reservation needed. Arrive 40 mins before sunset to secure front rail views.",
+      "ja": "予約不要。日没40分前に到着し、生演奏のストリートライブとともに黄昏の街並みを満喫。",
+      "zh": "无需门票预约。建议日落前40分钟到达扶手栏杆处落座，伴随街头吉他旋律静候晚霞。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=piazzale+michelangelo+florence+sunset+night+4k",
+    "videoTitle": {
+      "ko": "피렌체 미켈란젤로 언덕 낭만 노을 & 두오모 야경 4K",
+      "en": "Piazzale Michelangelo Florence Sunset & Night Panorama 4K",
+      "ja": "フィレンツェ・ミケランジェロ広場 夕景＆夜景 4K",
+      "zh": "佛罗伦萨米开朗基罗广场 圣母百花圣殿晚霞夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Italy",
+        "city": "Florence",
+        "spot": "Piazzale Michelangelo Sunset & Duomo Night View",
+        "viewType": "Panoramic Vista of the Duomo, Ponte Vecchio & Arno River",
+        "recommendedTime": "Sunset to Magic Hour (18:30 - 20:00)",
+        "difficultyDesc": "Steep pedestrian hill; take Bus 12/13 or taxi directly up to the square.",
+        "nightReturnNotes": "Taxi stand and bus stop located directly on the square terrace."
+      },
+      "ja": {
+        "country": "イタリア",
+        "city": "フィレンツェ",
+        "spot": "ミケランジェロ広場 夕景＆ドゥオーモ夜景",
+        "viewType": "花の都フィレンツェの赤い屋根とドゥオーモを一望する大パノラマ",
+        "recommendedTime": "日没45分前〜マジックアワー（18:30〜20:00）",
+        "difficultyDesc": "徒歩は急勾配のため、12/13番バスまたはタクシーで広場直行を推奨。",
+        "nightReturnNotes": "広場すぐ目の前にバス停とタクシー乗り場があり安全。"
+      },
+      "zh": {
+        "country": "意大利",
+        "city": "佛罗伦萨",
+        "spot": "米开朗基罗广场日落与圣母百花大教堂夜景",
+        "viewType": "翡冷翠红顶古城、阿诺河老桥与圣母百花大穹顶全景",
+        "recommendedTime": "日落前45分钟至蓝调时分（18:30 ~ 20:00）",
+        "difficultyDesc": "徒步登山阶梯陡峭，长辈同行强烈建议乘12/13路公车或打车直达广场。",
+        "nightReturnNotes": "观景平台后方设有出租车扬招点与公交始发站，夜间下山十分从容。"
+      }
+    }
+  },
+  {
+    "id": "nv_budapest_fishermans",
+    "region": "EU",
+    "country": "헝가리 (Hungary)",
+    "city": "부다페스트 (Budapest)",
+    "spot": "어부의 요새 & 헝가리 국회의사당 다뉴브 야경 (Fisherman's Bastion)",
+    "viewType": "도나우강 건너편 황금빛으로 빛나는 국회의사당과 세체니 다리 조망",
+    "recommendedTime": "일몰 후 ~ 22:00 (국회의사당 황금 조명 점등)",
+    "operatingAndTicket": "하부 발코니 24시간 무료 개방 · 티켓 불필요 (상부 타워 낮시간 유료/밤 무료)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 16번 버스 직행 & 평지 요새 테라스",
+    "difficultyDesc": "데아크 광장에서 16번 부다성 버스를 타면 어부의 요새 바로 앞까지 환승 없이 평지 이동 가능.",
+    "nightReturnNotes": "부다 지구 16번 버스가 밤 23시 이후까지 운행하며, 우버(볼트 Bolt) 호출 용이.",
+    "sourceUrl": "https://www.budapestinfo.hu/",
+    "sourceName": "Budapestinfo 공식 관광 포털",
+    "bookingUrl": "https://fishermansbastion.com/",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "야간 발코니 전 구역 완전 무료 (밤 20시 이후 상부 타워 포함 전면 무료)",
+      "en": "Night balconies 100% Free (Upper towers free after 20:00)",
+      "ja": "夜間バルコニー完全無料（夜20時以降は上層塔も無料開放）",
+      "zh": "夜间全外观景露台完全免门票（晚20:00后上层拱塔亦全面免费）"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요 (상시 자유 입장). 백색 요새 회랑 아치 사이로 국회의사당을 프레임에 담는 사진 명당.",
+      "en": "No reservations needed. Perfect architectural stone arches framing the Parliament.",
+      "ja": "予約不要（常時自由）。白い回廊のアーチ越しに黄金の国会議事堂を撮影するのが定番。",
+      "zh": "免门票免预约。白色童话拱廊如同天然画框，定格多瑙河对岸金碧辉煌的国会大厦。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=fishermans+bastion+budapest+parliament+night+view+4k",
+    "videoTitle": {
+      "ko": "부다페스트 어부의 요새 & 국회의사당 황금빛 야경 4K",
+      "en": "Budapest Fisherman's Bastion & Golden Parliament Night 4K",
+      "ja": "ブダペスト・漁夫の砦＆国会議事堂 黄金の夜景 4K",
+      "zh": "布达佩斯渔人堡与多瑙河国会大厦金色天际线 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Hungary",
+        "city": "Budapest",
+        "spot": "Fisherman's Bastion & Hungarian Parliament Night View",
+        "viewType": "Golden Illuminated Parliament Across the Danube River",
+        "recommendedTime": "Dusk to 22:00 (Golden façade lights)",
+        "difficultyDesc": "Castle Bus 16 drops off right beside the bastion without stair climbing.",
+        "nightReturnNotes": "Bus 16 and Bolt taxis operate frequently from the Castle District."
+      },
+      "ja": {
+        "country": "ハンガリー",
+        "city": "ブダペスト",
+        "spot": "漁夫の砦＆ハンガリー国会議事堂の夜景",
+        "viewType": "ドナウ川を挟んで金色に輝く壮麗な国会議事堂のパノラマ",
+        "recommendedTime": "日没後〜22:00（国会議事堂ライトアップ）",
+        "difficultyDesc": "16番バスが砦の目の前まで直通運行しており、階段なしで楽々アクセス。",
+        "nightReturnNotes": "夜間も16番バスおよび配車アプリ（Bolt）で安全にホテルへ帰着可能。"
+      },
+      "zh": {
+        "country": "匈牙利",
+        "city": "布达佩斯",
+        "spot": "渔人堡与匈牙利国会大厦多瑙河金色夜景",
+        "viewType": "隔多瑙河远眺金色璀璨的国会大厦与链子桥倒影",
+        "recommendedTime": "入夜后至22:00（国会大厦金碧辉煌亮灯）",
+        "difficultyDesc": "乘坐16路城堡巴士可直接在渔人堡前下车，无需攀爬台阶。",
+        "nightReturnNotes": "城堡区16路车运营至深夜，使用Bolt打车软件随叫随到十分安心。"
+      }
+    }
+  },
+  {
+    "id": "nv_prague_charles_bridge",
+    "region": "EU",
+    "country": "체코 (Czech Republic)",
+    "city": "프라하 (Prague)",
+    "spot": "카를교 & 블타바 강 프라하 성 야경 (Charles Bridge & Prague Castle)",
+    "viewType": "600년 역사 조약돌 다리와 언덕 위 프라하 성의 보헤미안 가스등 야경",
+    "recommendedTime": "일몰 직후 ~ 22:00 (은은한 나트륨 가스등 점등)",
+    "operatingAndTicket": "다리 보행 24시간 상시 무료 · 구시가 교탑 등탑 티켓 약 190 CZK (약 11,000원)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 완전 평지 보행자 전용 다리",
+    "difficultyDesc": "카를교는 차량이 다니지 않는 평탄한 보행자 전용 다리이며 조약돌이 매끄럽게 포장되어 있음.",
+    "nightReturnNotes": "구시가지 광장까지 도보 5~10분 거리이며, 트램 정류장(Staroměstská)이 바로 인접.",
+    "sourceUrl": "https://www.prague.eu/en",
+    "sourceName": "Prague.eu 공식 관광청",
+    "bookingUrl": "https://www.prague.eu/en/object/places/93/charles-bridge-karluv-most",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "카를교 다리 보행 전 구역 완전 무료 / 구시가 교탑(Old Town Bridge Tower) 약 190 CZK (시니어 130 CZK)",
+      "en": "Charles Bridge walk 100% Free / Bridge Tower ticket approx. 190 CZK (Senior 130 CZK)",
+      "ja": "カレル橋通行 完全無料 / 旧市街側橋塔 約 190 CZK（シニア割引 130 CZK）",
+      "zh": "查理大桥漫步全天完全免票 / 老城桥塔登顶票约 190 捷克克朗（长辈优惠 130 CZK）"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요 (다리는 상시 자유 산책). 구시가 교탑 전망대는 현장 무인 발권기 또는 온라인 예매 가능.",
+      "en": "No reservation needed for the bridge. Bridge tower tickets can be bought on-site.",
+      "ja": "予約不要（常時自由）。橋塔展望台は現地券売機またはオンラインで購入可能。",
+      "zh": "大桥漫步无需预订。如登古桥塔俯瞰全景，可在现场自助机或官网购票。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=charles+bridge+prague+castle+night+walk+4k",
+    "videoTitle": {
+      "ko": "프라하 카를교 & 블타바 강 프라하 성 로맨틱 야경 4K",
+      "en": "Prague Charles Bridge & Castle Romantic Night Walking Tour 4K",
+      "ja": "プラハ・カレル橋＆プラハ城 ロマンチック夜景 4K",
+      "zh": "布拉格查理大桥 伏尔塔瓦河与布拉格城堡浪漫夜色 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Czech Republic",
+        "city": "Prague",
+        "spot": "Charles Bridge & Prague Castle Night View",
+        "viewType": "600-Year-Old Historic Bridge & Hilltop Castle Illumination",
+        "recommendedTime": "Twilight to 22:00 (Warm romantic lanterns)",
+        "difficultyDesc": "Completely pedestrianized flat cobblestone bridge with romantic river views.",
+        "nightReturnNotes": "Safe, bustling Old Town area with frequent night trams."
+      },
+      "ja": {
+        "country": "チェコ",
+        "city": "プラハ",
+        "spot": "カレル橋＆ヴルタヴァ川プラハ城夜景",
+        "viewType": "600年の歴史を持つ石橋と丘の上のプラハ城が輝くボヘミアンの夜景",
+        "recommendedTime": "日没後〜22:00（ガス灯の温かな明かり）",
+        "difficultyDesc": "完全歩行者専用の平坦な橋で車道なし。ゆっくり散策可能。",
+        "nightReturnNotes": "旧市街広場まで徒歩数分、トラム停留所至近で夜間も安全。"
+      },
+      "zh": {
+        "country": "捷克",
+        "city": "布拉格",
+        "spot": "查理大桥与伏尔塔瓦河布拉格城堡夜景",
+        "viewType": "600年历史古桥石雕与伏尔塔瓦河波光映照布拉格城堡",
+        "recommendedTime": "日落后至22:00（暖黄色典雅瓦斯街灯点亮）",
+        "difficultyDesc": "无机动车辆通行的纯步行景观桥，地面平缓无台阶起伏。",
+        "nightReturnNotes": "距离老城广场仅数分钟步程，有轨电车Staroměstská站近在咫尺。"
+      }
+    }
+  },
+  {
+    "id": "nv_dubai_marina_walk",
+    "region": "ME",
+    "country": "아랍에미리트 (UAE)",
+    "city": "두바이 (Dubai)",
+    "spot": "두바이 마리나 워크 & 요트 하버 스카이라인 (Dubai Marina Walk)",
+    "viewType": "세계 최대 인공 마리나를 둘러싼 200여 채 초고층 빌딩 숲과 럭셔리 요트 야경",
+    "recommendedTime": "19:30 ~ 22:30 (수변 네온사인 & 디너 크루즈 조명)",
+    "operatingAndTicket": "상시 개방 · 입장료 무료 (마리나 요트 디너 크루즈 약 120~280 AED)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 7km 완전 평지 수변 산책로",
+    "difficultyDesc": "마리나를 따라 조성된 7km 산책로는 완전한 평지 우레탄/석조 포장길로 유모차와 휠체어가 매우 편안함.",
+    "nightReturnNotes": "마리나 몰(Dubai Marina Mall) 및 트램·메트로역(DMCC Station)이 인접하여 심야 귀가 매우 쾌적.",
+    "sourceUrl": "https://www.visitdubai.com/en/places-to-visit/dubai-marina",
+    "sourceName": "Visit Dubai 공식 포털",
+    "bookingUrl": "https://www.visitdubai.com/en/places-to-visit/dubai-marina",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "마리나 워크 수변 산책 전 구역 무료 / 마리나 다우 요트 디너 크루즈 약 120 AED ~ 250 AED (약 45,000원 ~ 95,000원)",
+      "en": "Waterfront boardwalk Free / Marina Dhow Dinner Cruise approx. 120 - 250 AED",
+      "ja": "マリーナ遊歩道 完全無料 / ディナークルーズ 約 120〜250 AED",
+      "zh": "滨水漫步道完全免费自由游览 / 游艇晚餐巡游约 120 ~ 250 迪拉姆（约230 ~ 480元人民币）"
+    },
+    "bookingNecessity": {
+      "ko": "산책은 예매 불필요 (누구나 상시 방문 가능). 마리나 요트 디너 크루즈는 공식 온라인 사전 예매 권장.",
+      "en": "Boardwalk is free to wander anytime. Yacht dinner cruises require advance online booking.",
+      "ja": "散策は予約不要（いつでも訪問可能）。ディナークルーズ船は事前オンライン予約推奨。",
+      "zh": "长廊漫步无需门票预约。如体验游艇海鲜自助晚餐巡游，建议提前在官网订票。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=dubai+marina+walk+night+skyline+4k",
+    "videoTitle": {
+      "ko": "두바이 마리나 워크 초고층 빌딩 숲 & 요트 하버 야경 4K",
+      "en": "Dubai Marina Walk Night Walk & Superyacht Skyline 4K",
+      "ja": "ドバイ・マリーナ ウォーク 摩天楼の夜景 4K",
+      "zh": "迪拜滨海大道 摩天巨厦天际线与豪华游艇港夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "UAE",
+        "city": "Dubai",
+        "spot": "Dubai Marina Walk & Yacht Harbour Skyline",
+        "viewType": "Glittering Skyscrapers & Luxury Marina Yacht Canal",
+        "recommendedTime": "19:30 - 22:30 (Pleasant sea breeze)",
+        "difficultyDesc": "7km continuous flat waterfront promenade with zero stairs.",
+        "nightReturnNotes": "Extremely safe with direct Dubai Metro and Tram connections."
+      },
+      "ja": {
+        "country": "アラブ首長国連邦",
+        "city": "ドバイ",
+        "spot": "ドバイ・マリーナ ウォーク＆ヨットハーバー夜景",
+        "viewType": "世界最大の人工マリーナを取り囲む超高層ビル群と豪華ヨットの絶景",
+        "recommendedTime": "19:30〜22:30（心地よい夜風とライトアップ）",
+        "difficultyDesc": "7kmに及ぶ遊歩道は完全な平坦路で段差なし。シニアも安心して散策可能。",
+        "nightReturnNotes": "治安が極めて良好で、トラム・メトロ駅至近で夜間移動も快適。"
+      },
+      "zh": {
+        "country": "阿联酋",
+        "city": "迪拜",
+        "spot": "迪拜游艇港滨海步道与摩天大楼天际线",
+        "viewType": "环绕全球最大人造运河的200多座摩天华厦与私家游艇光影",
+        "recommendedTime": "19:30 ~ 22:30（海风轻拂与水岸繁华）",
+        "difficultyDesc": "长达7公里的滨水长廊全程纯平坦无障碍，适合阖家推车漫步。",
+        "nightReturnNotes": "治安极佳且近距离直达迪拜轻轨电车与地铁DMCC站，出行无忧。"
+      }
+    }
+  },
+  {
+    "id": "nv_cusco_plaza",
+    "region": "LATIN",
+    "country": "페루 (Peru)",
+    "city": "쿠스코 (Cusco)",
+    "spot": "쿠스코 아르마스 광장 & 크리스토 블랑코 야경 (Plaza de Armas Cusco)",
+    "viewType": "안데스 산비탈 주황빛 등불과 스페인 식민지 시대 석조 대성당 황금 야경",
+    "recommendedTime": "18:30 ~ 20:30 (매직아워 & 가로등 점등)",
+    "operatingAndTicket": "상시 개방 · 입장료 무료 (광장 발코니 카페 이용 추천)",
+    "difficultyLevel": "alert",
+    "difficultyBadge": "🚨 해발 3,400m 고산 적응 필수",
+    "difficultyDesc": "쿠스코는 해발 3,400m 고지대이므로 계단 오르기나 빠른 걸음을 피하고, 광장 2층 발코니 카페에 앉아 여유롭게 감상 권장.",
+    "nightReturnNotes": "광장 주변에는 관광경찰이 상주하여 치안이 양호하며, 숙소 복귀 시 공인 택시 탑승.",
+    "sourceUrl": "https://www.peru.travel/en",
+    "sourceName": "PromPerú 페루 공식 관광청",
+    "bookingUrl": "https://www.peru.travel/en/destinations/cusco",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "광장 산책 완전 무료 / 2층 발코니 카페 따뜻한 코카 차(Mate de Coca) 약 10~15 PEN (약 3,500원 ~ 5,500원)",
+      "en": "Square access 100% Free / Balcony Cafe Coca Tea approx. 10 - 15 PEN",
+      "ja": "広場散策 完全無料 / 2階バルコニーカフェのコカ茶 約 10〜15 PEN",
+      "zh": "露天历史广场全天免费漫步 / 二楼观景露台古柯茶热饮约 10 ~ 15 秘鲁索尔"
+    },
+    "bookingNecessity": {
+      "ko": "예매 불필요. 광장 2층 목조 발코니가 있는 카페나 식당 테라스 석에 앉아 감상하면 가장 편안함.",
+      "en": "No tickets needed. Secure a 2nd-floor colonial wooden balcony table for dinner.",
+      "ja": "予約不要。広場を囲む2階の木造バルコニー席があるカフェから眺めるのが最も快適。",
+      "zh": "无需预约自由漫步。推荐选一家环绕广场二楼木质雕花阳台的餐厅，坐看群山灯火。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=cusco+plaza+de+armas+night+walking+tour+4k",
+    "videoTitle": {
+      "ko": "페루 쿠스코 아르마스 광장 잉카 & 식민지 야경 산책 4K",
+      "en": "Cusco Plaza de Armas Night Walk Peru 4K",
+      "ja": "ペルー・クスコ アルマス広場 幻想的な夜景 4K",
+      "zh": "秘鲁库斯科武器广场 璀璨殖民大教堂与安第斯山城夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Peru",
+        "city": "Cusco",
+        "spot": "Cusco Plaza de Armas & Cristo Blanco Night Panorama",
+        "viewType": "Andean Hillside Orange Lights & Colonial Cathedral Glow",
+        "recommendedTime": "18:30 - 20:30 (Magic hour twilight)",
+        "difficultyDesc": "High altitude (3,400m); relax at flat square level or balcony cafes without climbing.",
+        "nightReturnNotes": "Tourist police patrol the historic center; safe to stroll."
+      },
+      "ja": {
+        "country": "ペルー",
+        "city": "クスコ",
+        "spot": "クスコ・アルマス広場＆キリスト像夜景",
+        "viewType": "アンデスの山肌に広がる無数の灯火と歴史的大聖堂のライトアップ",
+        "recommendedTime": "18:30〜20:30（黄昏時と街灯の輝き）",
+        "difficultyDesc": "標高3,400mのため、急な階段は避け広場周辺の平坦なエリアで散策を推奨。",
+        "nightReturnNotes": "観光警察が常駐しており治安良好。タクシーで安全にホテルへご帰着ください。"
+      },
+      "zh": {
+        "country": "秘鲁",
+        "city": "库斯科",
+        "spot": "库斯科武器广场与白色基督像山城夜景",
+        "viewType": "安第斯群山千家灯火与巴洛克巨石大教堂金光辉映",
+        "recommendedTime": "18:30 ~ 20:30（蓝调夜幕降临）",
+        "difficultyDesc": "地处海拔3,400米，请缓步慢行，推荐在广场二层咖啡馆静坐品茗。",
+        "nightReturnNotes": "中心区域有旅游警察常态巡逻，治安稳定，返程请搭乘正规酒店叫车。"
+      }
+    }
+  },
+  {
+    "id": "nv_ba_puerto_madero",
+    "region": "LATIN",
+    "country": "아르헨티나 (Argentina)",
+    "city": "부에노스아이레스 (Buenos Aires)",
+    "spot": "푸에르토 마데로 여인의 다리 & 오벨리스크 야경 (Puente de la Mujer)",
+    "viewType": "칼라트라바 건축의 여인의 다리와 수변 붉은 벽돌 부두, 7월 9일 대로 오벨리스크",
+    "recommendedTime": "20:00 ~ 22:30 (수변 네온 조명 & 활기찬 스테이크 디너)",
+    "operatingAndTicket": "상시 개방 · 입장료 무료 (Free Public Waterfront)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 완벽한 평지 수변 산책로 & 치안 우수",
+    "difficultyDesc": "푸에르토 마데로는 부에노스아이레스에서 가장 안전하고 현대적인 구역으로, 넓은 보행자 전용 평지 수변 데크길 완비.",
+    "nightReturnNotes": "부에노스아이레스 최고급 주거/외교 지구로 밤에도 매우 안전하며 식당 앞 택시 항시 대기.",
+    "sourceUrl": "https://turismo.buenosaires.gob.ar/en",
+    "sourceName": "부에노스아이레스 관광청 공식 포털",
+    "bookingUrl": "https://turismo.buenosaires.gob.ar/en/attractions-items/puente-de-la-mujer",
+    "bookingBadge": "free",
+    "priceInfo": {
+      "ko": "수변 산책로 완전 무료 / 유명 아르헨티나 아사도 스테이크 디너 1인 약 $25 ~ $55",
+      "en": "Waterfront dock walk 100% Free / Premium Asado steakhouse dinner approx. $25 - $55",
+      "ja": "ウォーターフロント遊歩道 完全無料 / アルゼンチン本場アサードディナー 約 $25〜$55",
+      "zh": "水岸木栈道完全免费漫步 / 阿根廷顶级安格斯炭烤牛排晚宴人均约 $25 ~ $55"
+    },
+    "bookingNecessity": {
+      "ko": "산책은 예매 불필요. 여인의 다리 조명과 수변 레스토랑 테라스에서 아사도(소고기 바비큐) 식사 권장.",
+      "en": "No reservations needed for the walk. Book waterfront steakhouse tables in advance.",
+      "ja": "散策は予約不要。水辺のテラス席で本場アルゼンチン牛ステーキを味わうのが醍醐味。",
+      "zh": "无需门票预约。强烈建议在运河景观露台餐厅享用正宗阿根廷炭烤牛排。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=puerto+madero+buenos+aires+night+walking+tour+4k",
+    "videoTitle": {
+      "ko": "부에노스아이레스 푸에르토 마데로 여인의 다리 로맨틱 야경 4K",
+      "en": "Buenos Aires Puerto Madero Puente de la Mujer Night Walk 4K",
+      "ja": "ブエノスアイレス プエルト・マデロ 女性の橋 夜景 4K",
+      "zh": "布宜诺斯艾利斯马德罗港 女人桥与七月九日大道夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Argentina",
+        "city": "Buenos Aires",
+        "spot": "Puerto Madero Woman's Bridge & Obelisk Night View",
+        "viewType": "Santiago Calatrava's Puente de la Mujer & Restored Redbrick Docks",
+        "recommendedTime": "20:00 - 22:30 (Vibrant dining atmosphere)",
+        "difficultyDesc": "Wide, step-free wooden boardwalks with highest safety standards.",
+        "nightReturnNotes": "Safest upscale waterfront district in the city with abundant taxis."
+      },
+      "ja": {
+        "country": "アルゼンチン",
+        "city": "ブエノスアイレス",
+        "spot": "プエルト・マデロ『女性の橋』＆オベリスコ夜景",
+        "viewType": "カラトラバ設計の優美な橋と赤レンガ倉庫街のリバーサイド夜景",
+        "recommendedTime": "20:00〜22:30（活気あるディナータイム）",
+        "difficultyDesc": "完全に段差のない広々としたウッドデッキ遊歩道でシニアに最適。",
+        "nightReturnNotes": "市内屈指の高級安全エリアで、夜間もタクシーが豊富で安心。"
+      },
+      "zh": {
+        "country": "阿根廷",
+        "city": "布宜诺斯艾利斯",
+        "spot": "马德罗港女人桥与方尖碑城市夜景",
+        "viewType": "卡拉特拉瓦大师设计的女人桥与红砖复古码头倒影",
+        "recommendedTime": "20:00 ~ 22:30（水岸美食街华灯齐放）",
+        "difficultyDesc": "全平整防滑实木步道，全程零台阶起伏，长辈出行极度舒适。",
+        "nightReturnNotes": "全市治安最优越的高端滨水街区，餐馆门口出租车随叫随到。"
+      }
+    }
+  },
+  {
+    "id": "nv_santiago_sky_costanera",
+    "region": "LATIN",
+    "country": "칠레 (Chile)",
+    "city": "산티아고 (Santiago)",
+    "spot": "스카이 코스타네라 61·62층 전망대 (Sky Costanera 300m)",
+    "viewType": "남미 최고층 300m 타워에서 바라보는 설산 안데스산맥과 산티아고 360도 메가시티 야경",
+    "recommendedTime": "일몰 40분 전 ~ 20:30 (안데스 산맥 석양 & 도심 불빛)",
+    "operatingAndTicket": "월~일 10:00~21:00 개방 · 티켓 약 18,000 CLP (약 25,000원)",
+    "difficultyLevel": "normal",
+    "difficultyBadge": "✅ 초고속 엘리베이터 & 실내 360도 라운지",
+    "difficultyDesc": "초고속 엘리베이터로 50초 만에 61층 전망대 직행. 62층 야외 오픈에어 데크는 에스컬레이터 완비.",
+    "nightReturnNotes": "남미 최대 쇼핑몰 코스타네라 센터와 지하철역(Tobalaba Station) 직결로 가장 안전하고 쾌적.",
+    "sourceUrl": "https://www.skycostanera.cl/",
+    "sourceName": "Sky Costanera 공식 웹사이트",
+    "bookingUrl": "https://www.skycostanera.cl/en/buy-tickets/",
+    "bookingBadge": "required",
+    "priceInfo": {
+      "ko": "성인 일반 입장권 약 18,000 CLP / 시니어(65세 이상) 할인 약 13,000 CLP (약 18,000원)",
+      "en": "Standard adult ticket approx. 18,000 CLP / Senior (65+) discount approx. 13,000 CLP",
+      "ja": "大人一般入場券 約 18,000 CLP / シニア（65歳以上）割引 約 13,000 CLP",
+      "zh": "成人常规门票约 18,000 智利比索 / 65岁以上长辈优惠票约 13,000 CLP（约90元人民币）"
+    },
+    "bookingNecessity": {
+      "ko": "석양 시간대 대기열이 길어지므로 공식 홈페이지 온라인 티켓 사전 예매 권장.",
+      "en": "Sunset timeslots have longer queues; advance online booking recommended.",
+      "ja": "夕暮れ時は混雑するため、公式サイトでの事前オンライン購入を推奨。",
+      "zh": "日落黄金时段排队较长，强烈建议提前在官方网站预订电子门票。"
+    },
+    "videoUrl": "https://www.youtube.com/results?search_query=sky+costanera+santiago+sunset+night+view+4k",
+    "videoTitle": {
+      "ko": "산티아고 스카이 코스타네라 300m 안데스 석양 & 360도 야경 4K",
+      "en": "Santiago Sky Costanera 300m Sunset & Night Skyline 4K",
+      "ja": "サンティアゴ・スカイ・コスタネラ 展望台夜景 4K",
+      "zh": "圣地亚哥天空科斯塔内拉 300米南美之巅安第斯黄昏夜景 4K"
+    },
+    "lastVerified": "2026-10",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+    "i18n": {
+      "en": {
+        "country": "Chile",
+        "city": "Santiago",
+        "spot": "Sky Costanera 61st & 62nd Floor 360° Observation Deck",
+        "viewType": "South America's Tallest 300m Tower: Andes Mountain Range & Santiago Megacity",
+        "recommendedTime": "Sunset to 20:30 (Pink Andes twilight)",
+        "difficultyDesc": "High-speed elevator reaches Level 61 in 50 seconds; modern indoor lounges.",
+        "nightReturnNotes": "Directly connected to Costanera Center megamall and Tobalaba Metro."
+      },
+      "ja": {
+        "country": "チリ",
+        "city": "サンティアゴ",
+        "spot": "スカイ・コスタネラ61・62階 360度展望台",
+        "viewType": "南米最高峰300mタワーから望む雄大なアンデス山脈と大都会の夜景",
+        "recommendedTime": "日没前〜20:30（夕焼けに染まるアンデスと街の灯）",
+        "difficultyDesc": "50秒で61階へ直行する高速エレベーター完備。全天候型ラウンジで快適。",
+        "nightReturnNotes": "南米最大のショッピングモール直結、地下鉄トバラバ駅直結で安全安心。"
+      },
+      "zh": {
+        "country": "智利",
+        "city": "圣地亚哥",
+        "spot": "天空科斯塔内拉61与62层360度云端观景台",
+        "viewType": "南美最高300米巨塔俯瞰白雪安第斯山脉与大都会璀璨夜光",
+        "recommendedTime": "日落前40分钟至20:30（玫瑰金安第斯晚霞）",
+        "difficultyDesc": "高速电梯50秒平稳直升61层，全落地玻璃暖气景观廊，长辈出行极度舒适。",
+        "nightReturnNotes": "直连南美最大Costanera Center大型购物广场与地铁站，交通极其便利。"
+      }
+    }
+  }
+];
+  if (typeof NIGHTVIEWS_GUIDE_DATA !== 'undefined') {
+    NEW_NIGHTS.forEach(nn => {
+      if (!NIGHTVIEWS_GUIDE_DATA.some(x => x.id === nn.id)) {
+        NIGHTVIEWS_GUIDE_DATA.push(nn);
+      }
+    });
+  }
+
+  // 4. Add DUBAI_STOPOVER Plan & Aliases to REGIONAL_PLANS
+  if (typeof REGIONAL_PLANS !== 'undefined') {
+    REGIONAL_PLANS["DUBAI_STOPOVER"] = {
+  "title": "🇦🇪🇪🇸 두바이 3일 무료 스탑오버 + 스페인·포르투갈 33일 그랜드 투어",
+  "score": "96점 (최고 추천 가성비)",
+  "season": "11월~12월 쾌적한 겨울 사막 & 온화한 지중해 시즌",
+  "budget": "2,680만 원",
+  "festivals": "5개 축제 (두바이 쇼핑 페스티벌, 말라가 조명쇼, 리스본 원더랜드 등)",
+  "festSub": "사막의 미래 드론 라이트쇼와 남유럽 크리스마스 마켓 동시 만끽",
+  "cities": [
+    "두바이",
+    "바르셀로나",
+    "마드리드",
+    "세비야·그라나다",
+    "리스본·포르투",
+    "귀국"
+  ],
+  "days": [
+    {
+      "city": "두바이",
+      "isTransfer": true,
+      "theme": "인천 출발 ✈️ 두바이 도착, 다운타운 & 버즈 칼리파 음악 분수",
+      "morning": "인천(ICN) 에미레이트 항공 A380 출발, 두바이(DXB) 도착 후 전용 리무진으로 다운타운 호텔 체크인",
+      "rest": "비행 피로 회복 온수 샤워, 객실에서 다운타운 스카이라인 감상하며 2시간 휴식",
+      "evening": "두바이 몰 야외 테라스 이동, 버즈 칼리파 124·125층 전망대 관람 및 두바이 분수 음악 레이저 쇼 감상",
+      "walk": "낮음",
+      "transport": "공항 전용 픽업 차량 및 두바이 몰 평지 보행",
+      "meal": "아라비안 그릴 & 후무스 플래터",
+      "events": [
+        "두바이 도착일",
+        "버즈 칼리파 음악분수"
+      ]
+    },
+    {
+      "city": "두바이",
+      "isTransfer": false,
+      "theme": "올드 두바이 역사 지구 탐방 & 붉은 사막 선셋 BBQ 사파리",
+      "morning": "알 파히디 역사 보존 지구 산책, 아브라 전통 수상택시 탑승, 금 & 향신료 수크 탐방",
+      "rest": "호텔 복귀 점심 식사 후 충분한 휴식 및 체력 충전 (오후 15시 픽업 전까지)",
+      "evening": "4륜구동 랜드크루저 붉은 사막 사파리, 낙타 체험, 사막 일몰 감상 및 베두인 캠프 바비큐 디너",
+      "walk": "보통",
+      "transport": "아브라 수상택시 및 전용 4WD 사파리 지프",
+      "meal": "사막 캠프 숯불 바비큐 뷔페",
+      "events": [
+        "올드 두바이 아브라",
+        "사막 선셋 사파리"
+      ]
+    },
+    {
+      "city": "두바이/바르셀로나",
+      "isTransfer": true,
+      "theme": "미래의 박물관 & 팜 주메이라, 두바이 출발 ✈️ 바르셀로나 도착",
+      "morning": "두바이의 랜드마크 미래의 박물관(Museum of the Future) 내부 관람 및 팜 주메이라 모노레일",
+      "rest": "공항 이동 전 호텔 레이트 체크아웃 후 라운지 휴식, DXB 공항 이동",
+      "evening": "에미레이트 항공 탑승, 바르셀로나(BCN) 도착 후 카탈루냐 광장 호텔 체크인 및 가벼운 타파스 저녁",
+      "walk": "낮음",
+      "transport": "두바이 메트로/택시 및 에미레이트 직항 항공편",
+      "meal": "바르셀로나 고딕 지구 하몽 & 판 콘 토마테 타파스",
+      "events": [
+        "미래의 박물관",
+        "바르셀로나 이동일"
+      ]
+    },
+    {
+      "city": "바르셀로나",
+      "isTransfer": false,
+      "theme": "사그라다 파밀리아 성당 내부 감상과 가우디 건축 기행",
+      "morning": "사그라다 파밀리아 엘리베이터 타워 탑승 및 스테인드글라스 빛의 향연 감상 (평지 동선)",
+      "rest": "성당 앞 공원 카페에서 따뜻한 코코아 휴식 후 호텔 시에스타",
+      "evening": "그라시아 거리 카사 바트요, 카사 밀라 외관 산책 및 카탈루냐 광장 일몰",
+      "walk": "보통",
+      "transport": "지하철 2호선 평지 엘리베이터 역세권 또는 우버",
+      "meal": "해산물 빠에야(Paella de Marisco)",
+      "events": [
+        "사그라다 파밀리아"
+      ]
+    },
+    {
+      "city": "바르셀로나",
+      "isTransfer": false,
+      "theme": "구엘 공원 지중해 파노라마와 고딕 지구 역사 골목 산책",
+      "morning": "24번 버스로 구엘 공원 후문 평지 진입, 도마뱀 분수대 및 회랑 산책",
+      "rest": "바르셀로네타 해변 카페에서 바닷바람 쐬며 여유로운 점심",
+      "evening": "바르셀로나 대성당 광장 및 왕의 광장 고딕 지구 산책",
+      "walk": "낮음",
+      "transport": "24번 버스 및 택시 직행",
+      "meal": "지중해식 농어 구이(Lubina al Horno)",
+      "events": [
+        "구엘 공원"
+      ]
+    },
+    {
+      "city": "바르셀로나",
+      "isTransfer": false,
+      "theme": "몬주익 언덕 케이블카와 카탈루냐 미술관 분수 야경",
+      "morning": "몬주익 케이블카 탑승, 지중해 항구와 바르셀로나 시내 360도 조망",
+      "rest": "미술관 카페 테라스에서 커피 휴식",
+      "evening": "에스파냐 광장 몬주익 마법의 분수쇼 감상",
+      "walk": "낮음",
+      "transport": "몬주익 케이블카 및 푸니쿨라",
+      "meal": "감바스 알 아히요 & 상그리아",
+      "events": [
+        "몬주익 케이블카"
+      ]
+    },
+    {
+      "city": "마드리드",
+      "isTransfer": true,
+      "theme": "초고속열차 AVE 탑승, 스페인의 심장 마드리드 입성",
+      "morning": "바르셀로나 산츠 역에서 마드리드 아토차행 AVE 1등석 탑승 (2시간 30분 소요)",
+      "rest": "열차 차창 스페인 평원 감상, 아토차 역 도착 후 호텔 체크인 및 휴식",
+      "evening": "솔 광장 곰 동상 및 마요르 광장 아케이드 산책",
+      "walk": "낮음",
+      "transport": "고속열차 AVE 및 시내 택시",
+      "meal": "마드리드식 코시도(Cocido Madrileño)",
+      "events": [
+        "마드리드 이동일"
+      ]
+    },
+    {
+      "city": "마드리드",
+      "isTransfer": false,
+      "theme": "프라도 미술관 3대 거장 걸작과 레티로 공원 수정궁",
+      "morning": "세계 3대 미술관 프라도 미술관 벨라스케스 & 고야 명작 감상 (엘리베이터 완비)",
+      "rest": "미술관 내부 카페 휴식 후 호텔 낮잠",
+      "evening": "유네스코 세계유산 레티로 공원 산책 및 유리 수정궁(Palacio de Cristal) 관람",
+      "walk": "보통",
+      "transport": "도보 및 평지 산책로",
+      "meal": "스페인 전통 또르띠야(Tortilla de Patatas)",
+      "events": [
+        "프라도 미술관",
+        "레티로 공원"
+      ]
+    },
+    {
+      "city": "마드리드",
+      "isTransfer": false,
+      "theme": "마드리드 왕궁 웅장한 내부와 사바티니 정원",
+      "morning": "유럽 최대 규모 마드리드 왕궁 화려한 왕실 홀 관람",
+      "rest": "오페라 광장 유서 깊은 카페에서 츄러스 & 초콜릿 간식",
+      "evening": "시벨레스 궁전 전망대에서 그란 비아 대로 황금빛 야경 감상",
+      "walk": "낮음",
+      "transport": "시내 지하철 및 택시",
+      "meal": "마드리드 전통 추로스(Churros con Chocolate)",
+      "events": [
+        "마드리드 왕궁",
+        "시벨레스 야경"
+      ]
+    },
+    {
+      "city": "톨레도/마드리드",
+      "isTransfer": false,
+      "theme": "천년 고도 톨레도 중세 도시 당일치기 힐링 투어",
+      "morning": "AVE 고속열차 30분으로 톨레도 도착, 미라도르 델 바예 전망대에서 타호강 파노라마 감상",
+      "rest": "파라도르 테라스에서 중세 스카이라인 바라보며 점심 식사",
+      "evening": "톨레도 대성당 관람 후 마드리드 귀환",
+      "walk": "보통",
+      "transport": "고속열차 및 톨레도 소코트렌(Zocotren) 관광열차",
+      "meal": "톨레도 마지팬 과자 & 전통 양고기 구이",
+      "events": [
+        "톨레도 중세 파노라마"
+      ]
+    },
+    {
+      "city": "세비야",
+      "isTransfer": true,
+      "theme": "안달루시아의 열정 세비야 이동 및 과달키비르 강변",
+      "morning": "아토차 역에서 세비야 산타 후스타 역행 AVE 1등석 탑승",
+      "rest": "호텔 체크인 후 시에스타 낮잠",
+      "evening": "황금의 탑 및 과달키비르 강변 평지 석양 산책",
+      "walk": "낮음",
+      "transport": "고속열차 AVE 및 택시",
+      "meal": "세비야식 소꼬리찜(Rabo de Toro)",
+      "events": [
+        "세비야 이동일"
+      ]
+    },
+    {
+      "city": "세비야",
+      "isTransfer": false,
+      "theme": "세비야 대성당 히랄다 탑과 알카사르 왕궁 아랍 정원",
+      "morning": "세계 3대 성당 세비야 대성당 콜럼버스 묘 및 완만한 나선 경사로 히랄다 탑 관람",
+      "rest": "산타 크루즈 지구 파티오 카페에서 레몬 맥주 클라라 한잔",
+      "evening": "왕궁 알카사르 오렌지 정원 산책",
+      "walk": "보통",
+      "transport": "트램 T1 및 도보 평지길",
+      "meal": "가스파초 & 이베리코 하몽 베요타",
+      "events": [
+        "세비야 대성당",
+        "알카사르"
+      ]
+    },
+    {
+      "city": "세비야",
+      "isTransfer": false,
+      "theme": "스페인 광장 반원형 수로 산책과 전통 플라멩코 공연",
+      "morning": "스페인 광장 48개 주 타일 벤치와 수로 다리 산책",
+      "rest": "마리아 루이사 공원 그늘 벤치 휴식",
+      "evening": "유서 깊은 바리오 산타 크루즈 극장에서 정통 플라멩코 기타 & 무용 관람",
+      "walk": "낮음",
+      "transport": "마차 투어 또는 도보 평지길",
+      "meal": "정통 안달루시아식 타파스 코스",
+      "events": [
+        "스페인 광장",
+        "플라멩코 공연"
+      ]
+    },
+    {
+      "city": "코르도바/세비야",
+      "isTransfer": false,
+      "theme": "이슬람 문화의 정수 코르도바 메스키타 당일 여행",
+      "morning": "AVE 열차 40분으로 코르도바 이동, 850개 원주 기둥 숲 메스키타 사원 내부 관람",
+      "rest": "꽃의 골목(Calleja de las Flores) 테라스 식사",
+      "evening": "로마교 다리 석양 감상 후 세비야 복귀",
+      "walk": "낮음",
+      "transport": "고속열차 AVE",
+      "meal": "살모레호(Salmorejo) 냉수프",
+      "events": [
+        "코르도바 메스키타"
+      ]
+    },
+    {
+      "city": "그라나다",
+      "isTransfer": true,
+      "theme": "나스르 왕조의 마지막 보석 그라나다 입성",
+      "morning": "기차로 그라나다 이동, 시내 호텔 체크인",
+      "rest": "호텔 온수 사우나 및 휴식",
+      "evening": "누에바 광장 인근 골목에서 무료 타파스 문화 체험",
+      "walk": "낮음",
+      "transport": "중거리 열차 및 택시",
+      "meal": "무료 타파스가 나오는 그라나다 와인바",
+      "events": [
+        "그라나다 이동일"
+      ]
+    },
+    {
+      "city": "그라나다",
+      "isTransfer": false,
+      "theme": "알함브라 궁전 아라베스크 나스르 궁과 헤네랄리페 정원",
+      "morning": "사전 타임슬롯 지정으로 알함브라 나스르 궁전 세밀한 석고 조각 관람",
+      "rest": "헤네랄리페 분수 정원 벤치에서 분수 소리 들으며 휴식",
+      "evening": "호텔 복귀 후 시에스타",
+      "walk": "보통",
+      "transport": "C30 미니버스 (언덕 직행)",
+      "meal": "안달루시아 농어 요리",
+      "events": [
+        "알함브라 궁전"
+      ]
+    },
+    {
+      "city": "그라나다",
+      "isTransfer": false,
+      "theme": "산 니콜라스 전망대 알함브라 궁전 붉은 석양 & 야경",
+      "morning": "그라나다 왕실 예배당 이사벨 여왕 묘 관람",
+      "rest": "아랍거리 차집(Tetería)에서 민트 차와 바클라바 휴식",
+      "evening": "산 니콜라스 전망대에서 눈 덮인 시에라네바다 산맥과 알함브라 야경 감상",
+      "walk": "보통",
+      "transport": "C31 미니버스 및 택시",
+      "meal": "그라나다 전통 파바다",
+      "events": [
+        "산 니콜라스 야경"
+      ]
+    },
+    {
+      "city": "말라가",
+      "isTransfer": true,
+      "theme": "피카소의 고향 온화한 지중해 코스타 델 솔 말라가",
+      "morning": "열차로 말라가 이동, 지중해 항구 호텔 체크인",
+      "rest": "항구 산책로 Muelle Uno 벤치 휴식",
+      "evening": "라리오스 거리(Calle Larios) 크리스마스 조명 쇼 관람",
+      "walk": "낮음",
+      "transport": "열차 및 시내 평지 보행",
+      "meal": "말라가식 정어리 꼬치구이(Espeto de Sardinas)",
+      "events": [
+        "말라가 조명쇼"
+      ]
+    },
+    {
+      "city": "론다/말라가",
+      "isTransfer": false,
+      "theme": "120m 협곡 위의 아찔한 누에보 다리 론다 당일 투어",
+      "morning": "전용 밴 차량으로 론다 이동, 헤밍웨이가 사랑한 누에보 다리 관람",
+      "rest": "파라도르 테라스 카페에서 협곡 뷰 차 한잔",
+      "evening": "스페인 최고(最古) 투우장 외관 감상 후 말라가 복귀",
+      "walk": "보통",
+      "transport": "전용 밴 차량 투어",
+      "meal": "론다식 도토리 먹인 이베리코 돼지 스테이크",
+      "events": [
+        "론다 누에보 다리"
+      ]
+    },
+    {
+      "city": "리스본",
+      "isTransfer": true,
+      "theme": "대서양의 바람 포르투갈 수도 리스본 입성",
+      "morning": "말라가 공항 출발 ✈️ 리스본 포르텔라 공항 도착",
+      "rest": "호텔 체크인 후 온수 샤워 및 충분한 수면",
+      "evening": "바이샤 지구 아우구스타 거리 평지 산책 및 테주 강변 노을",
+      "walk": "낮음",
+      "transport": "직항 항공편 및 공항 택시",
+      "meal": "포르투갈 전통 해물밥(Arroz de Marisco)",
+      "events": [
+        "리스본 이동일"
+      ]
+    },
+    {
+      "city": "리스본",
+      "isTransfer": false,
+      "theme": "대항해시대의 영광 벨렝탑과 원조 에그타르트 파스테이스",
+      "morning": "유네스코 제로니무스 수도원 회랑 관람 및 발견기념비 산책 (완전 평지)",
+      "rest": "1837년 개업 원조 에그타르트 파스테이스 드 벨렝에서 따뜻한 타르트와 커피",
+      "evening": "벨렝탑 외관 석양 감상",
+      "walk": "낮음",
+      "transport": "15E 저상 트램 또는 우버",
+      "meal": "바칼라우 아 브라스(Bacalhau à Brás)",
+      "events": [
+        "벨렝탑 & 수도원",
+        "원조 에그타르트"
+      ]
+    },
+    {
+      "city": "신트라/리스본",
+      "isTransfer": false,
+      "theme": "동화 속 알록달록 페나 성과 신트라 왕궁 당일 투어",
+      "morning": "호시우 역에서 기차 40분으로 신트라 이동, 페나 궁전 동화 같은 외관 관람",
+      "rest": "궁전 카페 테라스에서 대서양 수평선 조망",
+      "evening": "호카 곶(Cabo da Roca) 유라시아 대륙 서쪽 끝 바다 절벽 감상 후 리스본 귀환",
+      "walk": "보통",
+      "transport": "기차 및 434번 순환 버스",
+      "meal": "신트라 전통 케이자다 과자",
+      "events": [
+        "신트라 페나 성",
+        "호카 곶"
+      ]
+    },
+    {
+      "city": "리스본",
+      "isTransfer": false,
+      "theme": "에두아르두 7세 공원 원더랜드 리스본 겨울 축제",
+      "morning": "에두아르두 7세 공원 상부 전망대에서 테주 강까지 이어지는 축선 감상",
+      "rest": "공원 온실(Estufa Fria) 아열대 식물원 피톤치드 산책",
+      "evening": "원더랜드 리스본 크리스마스 빌리지 회전관람차와 성탄 마켓",
+      "walk": "낮음",
+      "transport": "메트로 블루라인 평지 이동",
+      "meal": "포르투갈 전통 정어리 파테 & 올리브",
+      "events": [
+        "원더랜드 리스본 축제"
+      ]
+    },
+    {
+      "city": "리스본",
+      "isTransfer": false,
+      "theme": "세뇨라 두 몬트 전망대 파노라마와 전통 파두의 밤",
+      "morning": "상 조르즈 성 외관 및 알파마 지구 평지 산책로",
+      "rest": "숙소에서 여유로운 낮잠 휴식",
+      "evening": "우버 타고 세뇨라 두 몬트 전망대 직행 석양 감상 후 전통 파두(Fado) 디너쇼",
+      "walk": "낮음",
+      "transport": "우버 직행 (가파른 골목길 회피)",
+      "meal": "파두 하우스 디너 코스 & 포르투갈 와인",
+      "events": [
+        "세뇨라 두 몬트",
+        "파두 공연"
+      ]
+    },
+    {
+      "city": "포르투",
+      "isTransfer": true,
+      "theme": "고속열차로 낭만의 항구 도시 포르투 이동",
+      "morning": "산타 아폴로니아 역에서 Alfa Pendular 1등석 열차 탑승 (3시간 소요)",
+      "rest": "포르투 캄파냐 역 도착 후 알리아두스 호텔 체크인 및 휴식",
+      "evening": "상벤투 역 푸른 아줄레주 타일 벽화 평지 감상",
+      "walk": "낮음",
+      "transport": "고속열차 및 택시",
+      "meal": "따뜻한 채소 수프(Caldo Verde)",
+      "events": [
+        "포르투 이동일"
+      ]
+    },
+    {
+      "city": "포르투",
+      "isTransfer": false,
+      "theme": "동 루이스 1세 다리와 도루강 전통 와인 셀러 투어",
+      "morning": "도루 강변 히베이라 광장 카페 산책 및 목조 유람선 탑승",
+      "rest": "가이아 지구 유명 테일러(Taylor's) 와이너리 정원 카페 휴식",
+      "evening": "세하 두 필라르 수도원 광장에서 동 루이스 1세 다리 노을 & 야경",
+      "walk": "낮음",
+      "transport": "가이아 케이블카 및 우버",
+      "meal": "문어 스테이크(Polvo à Lagareiro)",
+      "events": [
+        "동 루이스 1세 다리",
+        "와이너리 투어"
+      ]
+    },
+    {
+      "city": "포르투",
+      "isTransfer": false,
+      "theme": "크리스탈 궁전 정원과 클레리고스 타워 산책",
+      "morning": "크리스탈 궁전 정원 공작새와 도루강 하구 파노라마 산책 (완전 평지)",
+      "rest": "공원 뷰 베이커리에서 커피와 나타 휴식",
+      "evening": "볼량 시장(Mercado do Bolhão) 리노베이션 현대식 시장 특산품 쇼핑",
+      "walk": "낮음",
+      "transport": "메트로 D라인 및 우버",
+      "meal": "전통 샌드위치 프란세지냐(Francesinha)",
+      "events": [
+        "볼량 시장",
+        "크리스탈 정원"
+      ]
+    },
+    {
+      "city": "브라가/포르투",
+      "isTransfer": false,
+      "theme": "종교의 수도 브라가 봄 제주스 성당 당일 힐링",
+      "morning": "교외선 기차로 브라가 이동, 봄 제주스 성당 유압식 케이블카 탑승",
+      "rest": "성당 위 정원 벤치에서 분수와 녹음 감상",
+      "evening": "브라가 구시가지 보행자 전용도로 산책 후 포르투 복귀",
+      "walk": "낮음",
+      "transport": "통근 기차 및 수압식 푸니쿨라",
+      "meal": "북부식 오리밥(Arroz de Pato)",
+      "events": [
+        "봄 제주스 성당"
+      ]
+    },
+    {
+      "city": "포르투",
+      "isTransfer": false,
+      "theme": "마토지뉴시 대서양 해변과 신선한 수산 시장",
+      "morning": "메트로 500번 버스로 마토지뉴시 해변 직행, 대서양 백사장 산책",
+      "rest": "바다 전망 레스토랑에서 숯불 생선구이 점심",
+      "evening": "포르투 복귀 후 마지막 기념품 쇼핑 (비누, 통조림, 와인)",
+      "walk": "낮음",
+      "transport": "500번 2층 버스 (해안선 뷰)",
+      "meal": "참숯 그릴 농어 & 도미 구이",
+      "events": [
+        "마토지뉴시 해변"
+      ]
+    },
+    {
+      "city": "포르투",
+      "isTransfer": false,
+      "theme": "포르투 힐링 데이 & 짐 정리, 여행의 추억 정리",
+      "morning": "알리아두스 대로 여유로운 브런치 및 호텔 주변 산책",
+      "rest": "호텔 룸에서 짐 패킹 및 온수 족욕 휴식",
+      "evening": "도루 강변 마지막 석양 산책과 고별 디너",
+      "walk": "낮음",
+      "transport": "도보 평지길",
+      "meal": "특선 해산물 카타플라나(Cataplana)",
+      "events": [
+        "마지막 고별 만찬"
+      ]
+    },
+    {
+      "city": "포르투/두바이",
+      "isTransfer": true,
+      "theme": "포르투 공항 출발 ✈️ 두바이 도착, 환승 스탑오버 힐링 휴식",
+      "morning": "포르투 공항(OPO) 전용 픽업 차량 이동, 에미레이트 항공 체크인 후 두바이(DXB) 이동",
+      "rest": "두바이 공항 인근 5성급 호텔 체크인 및 온수 스파 휴식",
+      "evening": "두바이 페스티벌 시티 또는 마리나 워크 가벼운 수변 산책",
+      "walk": "낮음",
+      "transport": "항공편 및 공항 리무진",
+      "meal": "두바이 인터내셔널 뷔페",
+      "events": [
+        "두바이 환승 스탑오버"
+      ]
+    },
+    {
+      "city": "두바이/인천",
+      "isTransfer": true,
+      "theme": "두바이 공항 면세점 쇼핑 ✈️ 에미레이트 A380 탑승",
+      "morning": "두바이 시내 마지막 기념품 쇼핑 (대추야자 데이츠, 낙타유 비누)",
+      "rest": "에미레이트 공항 라운지 샤워 및 휴식",
+      "evening": "인천행 A380 밤 비행기 탑승 및 기내 숙면",
+      "walk": "낮음",
+      "transport": "에미레이트 항공 A380",
+      "meal": "기내식 서비스",
+      "events": [
+        "귀국 비행일"
+      ]
+    },
+    {
+      "city": "귀국",
+      "isTransfer": false,
+      "theme": "인천 국제공항 안전한 귀국, 33일간의 여정 마무리",
+      "morning": "인천 국제공항(ICN) 아침 도착, 입국 수속 및 수하물 수령",
+      "rest": "공항 리무진 탑승, 귀가 후 온수 샤워 및 충분한 수면",
+      "evening": "가족과 함께 두바이·스페인·포르투갈 33일간의 사진과 기념품 정리",
+      "walk": "낮음",
+      "transport": "공항 리무진 / 자택 귀가",
+      "meal": "따뜻한 한식 된장찌개 & 김치찌개 만찬",
+      "events": [
+        "인천 도착 완료",
+        "33일 여정 완결"
+      ]
+    }
+  ]
+};
+    REGIONAL_PLANS["IBERIA_DUBAI"] = REGIONAL_PLANS["DUBAI_STOPOVER"];
+    if (REGIONAL_PLANS["LATIN_AMERICA"]) {
+      REGIONAL_PLANS["LATIN"] = REGIONAL_PLANS["LATIN_AMERICA"];
+    }
+    if (REGIONAL_PLANS["WEST_CENTRAL_EU"]) {
+      REGIONAL_PLANS["UK_FRANCE"] = REGIONAL_PLANS["WEST_CENTRAL_EU"];
+    }
+  }
+
+  // 5. Add DUBAI_STOPOVER to PLANS_DAYS_I18N_DATA
+  if (typeof PLANS_DAYS_I18N_DATA !== 'undefined') {
+    PLANS_DAYS_I18N_DATA["DUBAI_STOPOVER"] = [
+  {
+    "city": {
+      "ko": "두바이",
+      "en": "Dubai",
+      "ja": "ドバイ",
+      "zh": "迪拜"
+    },
+    "theme": {
+      "ko": "인천 출발 ✈️ 두바이 도착, 다운타운 & 버즈 칼리파 음악 분수",
+      "en": "Depart Seoul ✈️ Arrive Dubai: Downtown & Burj Khalifa Fountain",
+      "ja": "ソウル出発 ✈️ ドバイ到着：ダウンタウン＆噴水ショー",
+      "zh": "首尔出发 ✈️ 抵达迪拜：市中心与哈利法塔音乐喷泉"
+    },
+    "morning": {
+      "ko": "인천(ICN) 에미레이트 항공 A380 출발, 두바이(DXB) 도착 후 전용 리무진으로 다운타운 호텔 체크인",
+      "en": "Morning: 인천(ICN) 에미레이트 항공 A380 출발, 두바이(DXB) 도착 후 전용 리무진으로 다운타운 호텔 체크인",
+      "ja": "午前：인천(ICN) 에미레이트 항공 A380 출발, 두바이(DXB) 도착 후 전용 리무진으로 다운타운 호텔 체크인",
+      "zh": "上午：인천(ICN) 에미레이트 항공 A380 출발, 두바이(DXB) 도착 후 전용 리무진으로 다운타운 호텔 체크인"
+    },
+    "rest": {
+      "ko": "비행 피로 회복 온수 샤워, 객실에서 다운타운 스카이라인 감상하며 2시간 휴식",
+      "en": "Afternoon Rest: 비행 피로 회복 온수 샤워, 객실에서 다운타운 스카이라인 감상하며 2시간 휴식",
+      "ja": "午後休憩：비행 피로 회복 온수 샤워, 객실에서 다운타운 스카이라인 감상하며 2시간 휴식",
+      "zh": "午后休整：비행 피로 회복 온수 샤워, 객실에서 다운타운 스카이라인 감상하며 2시간 휴식"
+    },
+    "evening": {
+      "ko": "두바이 몰 야외 테라스 이동, 버즈 칼리파 124·125층 전망대 관람 및 두바이 분수 음악 레이저 쇼 감상",
+      "en": "Evening: 두바이 몰 야외 테라스 이동, 버즈 칼리파 124·125층 전망대 관람 및 두바이 분수 음악 레이저 쇼 감상",
+      "ja": "夕方・夜：두바이 몰 야외 테라스 이동, 버즈 칼리파 124·125층 전망대 관람 및 두바이 분수 음악 레이저 쇼 감상",
+      "zh": "傍晚夜游：두바이 몰 야외 테라스 이동, 버즈 칼리파 124·125층 전망대 관람 및 두바이 분수 음악 레이저 쇼 감상"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "공항 전용 픽업 차량 및 두바이 몰 평지 보행",
+      "en": "공항 전용 픽업 차량 및 두바이 몰 평지 보행",
+      "ja": "공항 전용 픽업 차량 및 두바이 몰 평지 보행",
+      "zh": "공항 전용 픽업 차량 및 두바이 몰 평지 보행"
+    },
+    "meal": {
+      "ko": "아라비안 그릴 & 후무스 플래터",
+      "en": "아라비안 그릴 & 후무스 플래터",
+      "ja": "아라비안 그릴 & 후무스 플래터",
+      "zh": "아라비안 그릴 & 후무스 플래터"
+    },
+    "events": {
+      "ko": [
+        "두바이 도착일",
+        "버즈 칼리파 음악분수"
+      ],
+      "en": [
+        "두바이 도착일 (EN)",
+        "버즈 칼리파 음악분수 (EN)"
+      ],
+      "ja": [
+        "두바이 도착일 (JA)",
+        "버즈 칼리파 음악분수 (JA)"
+      ],
+      "zh": [
+        "두바이 도착일 (ZH)",
+        "버즈 칼리파 음악분수 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "두바이",
+      "en": "Dubai",
+      "ja": "ドバイ",
+      "zh": "迪拜"
+    },
+    "theme": {
+      "ko": "올드 두바이 역사 지구 탐방 & 붉은 사막 선셋 BBQ 사파리",
+      "en": "Old Dubai Heritage & Red Desert Sunset BBQ Safari",
+      "ja": "オールド・ドバイ歴史地区散策＆砂漠サンセットBBQサファリ",
+      "zh": "老迪拜历史风貌街区与红沙晚霞BBQ冲沙体验"
+    },
+    "morning": {
+      "ko": "알 파히디 역사 보존 지구 산책, 아브라 전통 수상택시 탑승, 금 & 향신료 수크 탐방",
+      "en": "Morning: 알 파히디 역사 보존 지구 산책, 아브라 전통 수상택시 탑승, 금 & 향신료 수크 탐방",
+      "ja": "午前：알 파히디 역사 보존 지구 산책, 아브라 전통 수상택시 탑승, 금 & 향신료 수크 탐방",
+      "zh": "上午：알 파히디 역사 보존 지구 산책, 아브라 전통 수상택시 탑승, 금 & 향신료 수크 탐방"
+    },
+    "rest": {
+      "ko": "호텔 복귀 점심 식사 후 충분한 휴식 및 체력 충전 (오후 15시 픽업 전까지)",
+      "en": "Afternoon Rest: 호텔 복귀 점심 식사 후 충분한 휴식 및 체력 충전 (오후 15시 픽업 전까지)",
+      "ja": "午後休憩：호텔 복귀 점심 식사 후 충분한 휴식 및 체력 충전 (오후 15시 픽업 전까지)",
+      "zh": "午后休整：호텔 복귀 점심 식사 후 충분한 휴식 및 체력 충전 (오후 15시 픽업 전까지)"
+    },
+    "evening": {
+      "ko": "4륜구동 랜드크루저 붉은 사막 사파리, 낙타 체험, 사막 일몰 감상 및 베두인 캠프 바비큐 디너",
+      "en": "Evening: 4륜구동 랜드크루저 붉은 사막 사파리, 낙타 체험, 사막 일몰 감상 및 베두인 캠프 바비큐 디너",
+      "ja": "夕方・夜：4륜구동 랜드크루저 붉은 사막 사파리, 낙타 체험, 사막 일몰 감상 및 베두인 캠프 바비큐 디너",
+      "zh": "傍晚夜游：4륜구동 랜드크루저 붉은 사막 사파리, 낙타 체험, 사막 일몰 감상 및 베두인 캠프 바비큐 디너"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "아브라 수상택시 및 전용 4WD 사파리 지프",
+      "en": "아브라 수상택시 및 전용 4WD 사파리 지프",
+      "ja": "아브라 수상택시 및 전용 4WD 사파리 지프",
+      "zh": "아브라 수상택시 및 전용 4WD 사파리 지프"
+    },
+    "meal": {
+      "ko": "사막 캠프 숯불 바비큐 뷔페",
+      "en": "사막 캠프 숯불 바비큐 뷔페",
+      "ja": "사막 캠프 숯불 바비큐 뷔페",
+      "zh": "사막 캠프 숯불 바비큐 뷔페"
+    },
+    "events": {
+      "ko": [
+        "올드 두바이 아브라",
+        "사막 선셋 사파리"
+      ],
+      "en": [
+        "올드 두바이 아브라 (EN)",
+        "사막 선셋 사파리 (EN)"
+      ],
+      "ja": [
+        "올드 두바이 아브라 (JA)",
+        "사막 선셋 사파리 (JA)"
+      ],
+      "zh": [
+        "올드 두바이 아브라 (ZH)",
+        "사막 선셋 사파리 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "두바이/바르셀로나",
+      "en": "Dubai / Barcelona",
+      "ja": "ドバイ／バルセロナ",
+      "zh": "迪拜 / 巴塞罗那"
+    },
+    "theme": {
+      "ko": "미래의 박물관 & 팜 주메이라, 두바이 출발 ✈️ 바르셀로나 도착",
+      "en": "Museum of the Future & Palm Jumeirah ✈️ Flight to Barcelona",
+      "ja": "未来の博物館＆パーム・ジュメイラ ✈️ バルセロナへ移動",
+      "zh": "未来博物馆与朱美拉棕榈岛 ✈️ 飞赴巴塞罗那"
+    },
+    "morning": {
+      "ko": "두바이의 랜드마크 미래의 박물관(Museum of the Future) 내부 관람 및 팜 주메이라 모노레일",
+      "en": "Morning: 두바이의 랜드마크 미래의 박물관(Museum of the Future) 내부 관람 및 팜 주메이라 모노레일",
+      "ja": "午前：두바이의 랜드마크 미래의 박물관(Museum of the Future) 내부 관람 및 팜 주메이라 모노레일",
+      "zh": "上午：두바이의 랜드마크 미래의 박물관(Museum of the Future) 내부 관람 및 팜 주메이라 모노레일"
+    },
+    "rest": {
+      "ko": "공항 이동 전 호텔 레이트 체크아웃 후 라운지 휴식, DXB 공항 이동",
+      "en": "Afternoon Rest: 공항 이동 전 호텔 레이트 체크아웃 후 라운지 휴식, DXB 공항 이동",
+      "ja": "午後休憩：공항 이동 전 호텔 레이트 체크아웃 후 라운지 휴식, DXB 공항 이동",
+      "zh": "午后休整：공항 이동 전 호텔 레이트 체크아웃 후 라운지 휴식, DXB 공항 이동"
+    },
+    "evening": {
+      "ko": "에미레이트 항공 탑승, 바르셀로나(BCN) 도착 후 카탈루냐 광장 호텔 체크인 및 가벼운 타파스 저녁",
+      "en": "Evening: 에미레이트 항공 탑승, 바르셀로나(BCN) 도착 후 카탈루냐 광장 호텔 체크인 및 가벼운 타파스 저녁",
+      "ja": "夕方・夜：에미레이트 항공 탑승, 바르셀로나(BCN) 도착 후 카탈루냐 광장 호텔 체크인 및 가벼운 타파스 저녁",
+      "zh": "傍晚夜游：에미레이트 항공 탑승, 바르셀로나(BCN) 도착 후 카탈루냐 광장 호텔 체크인 및 가벼운 타파스 저녁"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "두바이 메트로/택시 및 에미레이트 직항 항공편",
+      "en": "두바이 메트로/택시 및 에미레이트 직항 항공편",
+      "ja": "두바이 메트로/택시 및 에미레이트 직항 항공편",
+      "zh": "두바이 메트로/택시 및 에미레이트 직항 항공편"
+    },
+    "meal": {
+      "ko": "바르셀로나 고딕 지구 하몽 & 판 콘 토마테 타파스",
+      "en": "바르셀로나 고딕 지구 하몽 & 판 콘 토마테 타파스",
+      "ja": "바르셀로나 고딕 지구 하몽 & 판 콘 토마테 타파스",
+      "zh": "바르셀로나 고딕 지구 하몽 & 판 콘 토마테 타파스"
+    },
+    "events": {
+      "ko": [
+        "미래의 박물관",
+        "바르셀로나 이동일"
+      ],
+      "en": [
+        "미래의 박물관 (EN)",
+        "바르셀로나 이동일 (EN)"
+      ],
+      "ja": [
+        "미래의 박물관 (JA)",
+        "바르셀로나 이동일 (JA)"
+      ],
+      "zh": [
+        "미래의 박물관 (ZH)",
+        "바르셀로나 이동일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "사그라다 파밀리아 성당 내부 감상과 가우디 건축 기행",
+      "en": "사그라다 파밀리아 성당 내부 감상과 가우디 건축 기행",
+      "ja": "사그라다 파밀리아 성당 내부 감상과 가우디 건축 기행",
+      "zh": "사그라다 파밀리아 성당 내부 감상과 가우디 건축 기행"
+    },
+    "morning": {
+      "ko": "사그라다 파밀리아 엘리베이터 타워 탑승 및 스테인드글라스 빛의 향연 감상 (평지 동선)",
+      "en": "Morning: 사그라다 파밀리아 엘리베이터 타워 탑승 및 스테인드글라스 빛의 향연 감상 (평지 동선)",
+      "ja": "午前：사그라다 파밀리아 엘리베이터 타워 탑승 및 스테인드글라스 빛의 향연 감상 (평지 동선)",
+      "zh": "上午：사그라다 파밀리아 엘리베이터 타워 탑승 및 스테인드글라스 빛의 향연 감상 (평지 동선)"
+    },
+    "rest": {
+      "ko": "성당 앞 공원 카페에서 따뜻한 코코아 휴식 후 호텔 시에스타",
+      "en": "Afternoon Rest: 성당 앞 공원 카페에서 따뜻한 코코아 휴식 후 호텔 시에스타",
+      "ja": "午後休憩：성당 앞 공원 카페에서 따뜻한 코코아 휴식 후 호텔 시에스타",
+      "zh": "午后休整：성당 앞 공원 카페에서 따뜻한 코코아 휴식 후 호텔 시에스타"
+    },
+    "evening": {
+      "ko": "그라시아 거리 카사 바트요, 카사 밀라 외관 산책 및 카탈루냐 광장 일몰",
+      "en": "Evening: 그라시아 거리 카사 바트요, 카사 밀라 외관 산책 및 카탈루냐 광장 일몰",
+      "ja": "夕方・夜：그라시아 거리 카사 바트요, 카사 밀라 외관 산책 및 카탈루냐 광장 일몰",
+      "zh": "傍晚夜游：그라시아 거리 카사 바트요, 카사 밀라 외관 산책 및 카탈루냐 광장 일몰"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "지하철 2호선 평지 엘리베이터 역세권 또는 우버",
+      "en": "지하철 2호선 평지 엘리베이터 역세권 또는 우버",
+      "ja": "지하철 2호선 평지 엘리베이터 역세권 또는 우버",
+      "zh": "지하철 2호선 평지 엘리베이터 역세권 또는 우버"
+    },
+    "meal": {
+      "ko": "해산물 빠에야(Paella de Marisco)",
+      "en": "해산물 빠에야(Paella de Marisco)",
+      "ja": "해산물 빠에야(Paella de Marisco)",
+      "zh": "해산물 빠에야(Paella de Marisco)"
+    },
+    "events": {
+      "ko": [
+        "사그라다 파밀리아"
+      ],
+      "en": [
+        "사그라다 파밀리아 (EN)"
+      ],
+      "ja": [
+        "사그라다 파밀리아 (JA)"
+      ],
+      "zh": [
+        "사그라다 파밀리아 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "구엘 공원 지중해 파노라마와 고딕 지구 역사 골목 산책",
+      "en": "구엘 공원 지중해 파노라마와 고딕 지구 역사 골목 산책",
+      "ja": "구엘 공원 지중해 파노라마와 고딕 지구 역사 골목 산책",
+      "zh": "구엘 공원 지중해 파노라마와 고딕 지구 역사 골목 산책"
+    },
+    "morning": {
+      "ko": "24번 버스로 구엘 공원 후문 평지 진입, 도마뱀 분수대 및 회랑 산책",
+      "en": "Morning: 24번 버스로 구엘 공원 후문 평지 진입, 도마뱀 분수대 및 회랑 산책",
+      "ja": "午前：24번 버스로 구엘 공원 후문 평지 진입, 도마뱀 분수대 및 회랑 산책",
+      "zh": "上午：24번 버스로 구엘 공원 후문 평지 진입, 도마뱀 분수대 및 회랑 산책"
+    },
+    "rest": {
+      "ko": "바르셀로네타 해변 카페에서 바닷바람 쐬며 여유로운 점심",
+      "en": "Afternoon Rest: 바르셀로네타 해변 카페에서 바닷바람 쐬며 여유로운 점심",
+      "ja": "午後休憩：바르셀로네타 해변 카페에서 바닷바람 쐬며 여유로운 점심",
+      "zh": "午后休整：바르셀로네타 해변 카페에서 바닷바람 쐬며 여유로운 점심"
+    },
+    "evening": {
+      "ko": "바르셀로나 대성당 광장 및 왕의 광장 고딕 지구 산책",
+      "en": "Evening: 바르셀로나 대성당 광장 및 왕의 광장 고딕 지구 산책",
+      "ja": "夕方・夜：바르셀로나 대성당 광장 및 왕의 광장 고딕 지구 산책",
+      "zh": "傍晚夜游：바르셀로나 대성당 광장 및 왕의 광장 고딕 지구 산책"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "24번 버스 및 택시 직행",
+      "en": "24번 버스 및 택시 직행",
+      "ja": "24번 버스 및 택시 직행",
+      "zh": "24번 버스 및 택시 직행"
+    },
+    "meal": {
+      "ko": "지중해식 농어 구이(Lubina al Horno)",
+      "en": "지중해식 농어 구이(Lubina al Horno)",
+      "ja": "지중해식 농어 구이(Lubina al Horno)",
+      "zh": "지중해식 농어 구이(Lubina al Horno)"
+    },
+    "events": {
+      "ko": [
+        "구엘 공원"
+      ],
+      "en": [
+        "구엘 공원 (EN)"
+      ],
+      "ja": [
+        "구엘 공원 (JA)"
+      ],
+      "zh": [
+        "구엘 공원 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "몬주익 언덕 케이블카와 카탈루냐 미술관 분수 야경",
+      "en": "몬주익 언덕 케이블카와 카탈루냐 미술관 분수 야경",
+      "ja": "몬주익 언덕 케이블카와 카탈루냐 미술관 분수 야경",
+      "zh": "몬주익 언덕 케이블카와 카탈루냐 미술관 분수 야경"
+    },
+    "morning": {
+      "ko": "몬주익 케이블카 탑승, 지중해 항구와 바르셀로나 시내 360도 조망",
+      "en": "Morning: 몬주익 케이블카 탑승, 지중해 항구와 바르셀로나 시내 360도 조망",
+      "ja": "午前：몬주익 케이블카 탑승, 지중해 항구와 바르셀로나 시내 360도 조망",
+      "zh": "上午：몬주익 케이블카 탑승, 지중해 항구와 바르셀로나 시내 360도 조망"
+    },
+    "rest": {
+      "ko": "미술관 카페 테라스에서 커피 휴식",
+      "en": "Afternoon Rest: 미술관 카페 테라스에서 커피 휴식",
+      "ja": "午後休憩：미술관 카페 테라스에서 커피 휴식",
+      "zh": "午后休整：미술관 카페 테라스에서 커피 휴식"
+    },
+    "evening": {
+      "ko": "에스파냐 광장 몬주익 마법의 분수쇼 감상",
+      "en": "Evening: 에스파냐 광장 몬주익 마법의 분수쇼 감상",
+      "ja": "夕方・夜：에스파냐 광장 몬주익 마법의 분수쇼 감상",
+      "zh": "傍晚夜游：에스파냐 광장 몬주익 마법의 분수쇼 감상"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "몬주익 케이블카 및 푸니쿨라",
+      "en": "몬주익 케이블카 및 푸니쿨라",
+      "ja": "몬주익 케이블카 및 푸니쿨라",
+      "zh": "몬주익 케이블카 및 푸니쿨라"
+    },
+    "meal": {
+      "ko": "감바스 알 아히요 & 상그리아",
+      "en": "감바스 알 아히요 & 상그리아",
+      "ja": "감바스 알 아히요 & 상그리아",
+      "zh": "감바스 알 아히요 & 상그리아"
+    },
+    "events": {
+      "ko": [
+        "몬주익 케이블카"
+      ],
+      "en": [
+        "몬주익 케이블카 (EN)"
+      ],
+      "ja": [
+        "몬주익 케이블카 (JA)"
+      ],
+      "zh": [
+        "몬주익 케이블카 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "마드리드",
+      "en": "Madrid",
+      "ja": "マドリード",
+      "zh": "马德里"
+    },
+    "theme": {
+      "ko": "초고속열차 AVE 탑승, 스페인의 심장 마드리드 입성",
+      "en": "초고속열차 AVE 탑승, 스페인의 심장 마드리드 입성",
+      "ja": "초고속열차 AVE 탑승, 스페인의 심장 마드리드 입성",
+      "zh": "초고속열차 AVE 탑승, 스페인의 심장 마드리드 입성"
+    },
+    "morning": {
+      "ko": "바르셀로나 산츠 역에서 마드리드 아토차행 AVE 1등석 탑승 (2시간 30분 소요)",
+      "en": "Morning: 바르셀로나 산츠 역에서 마드리드 아토차행 AVE 1등석 탑승 (2시간 30분 소요)",
+      "ja": "午前：바르셀로나 산츠 역에서 마드리드 아토차행 AVE 1등석 탑승 (2시간 30분 소요)",
+      "zh": "上午：바르셀로나 산츠 역에서 마드리드 아토차행 AVE 1등석 탑승 (2시간 30분 소요)"
+    },
+    "rest": {
+      "ko": "열차 차창 스페인 평원 감상, 아토차 역 도착 후 호텔 체크인 및 휴식",
+      "en": "Afternoon Rest: 열차 차창 스페인 평원 감상, 아토차 역 도착 후 호텔 체크인 및 휴식",
+      "ja": "午後休憩：열차 차창 스페인 평원 감상, 아토차 역 도착 후 호텔 체크인 및 휴식",
+      "zh": "午后休整：열차 차창 스페인 평원 감상, 아토차 역 도착 후 호텔 체크인 및 휴식"
+    },
+    "evening": {
+      "ko": "솔 광장 곰 동상 및 마요르 광장 아케이드 산책",
+      "en": "Evening: 솔 광장 곰 동상 및 마요르 광장 아케이드 산책",
+      "ja": "夕方・夜：솔 광장 곰 동상 및 마요르 광장 아케이드 산책",
+      "zh": "傍晚夜游：솔 광장 곰 동상 및 마요르 광장 아케이드 산책"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "고속열차 AVE 및 시내 택시",
+      "en": "고속열차 AVE 및 시내 택시",
+      "ja": "고속열차 AVE 및 시내 택시",
+      "zh": "고속열차 AVE 및 시내 택시"
+    },
+    "meal": {
+      "ko": "마드리드식 코시도(Cocido Madrileño)",
+      "en": "마드리드식 코시도(Cocido Madrileño)",
+      "ja": "마드리드식 코시도(Cocido Madrileño)",
+      "zh": "마드리드식 코시도(Cocido Madrileño)"
+    },
+    "events": {
+      "ko": [
+        "마드리드 이동일"
+      ],
+      "en": [
+        "마드리드 이동일 (EN)"
+      ],
+      "ja": [
+        "마드리드 이동일 (JA)"
+      ],
+      "zh": [
+        "마드리드 이동일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "마드리드",
+      "en": "Madrid",
+      "ja": "マドリード",
+      "zh": "马德里"
+    },
+    "theme": {
+      "ko": "프라도 미술관 3대 거장 걸작과 레티로 공원 수정궁",
+      "en": "프라도 미술관 3대 거장 걸작과 레티로 공원 수정궁",
+      "ja": "프라도 미술관 3대 거장 걸작과 레티로 공원 수정궁",
+      "zh": "프라도 미술관 3대 거장 걸작과 레티로 공원 수정궁"
+    },
+    "morning": {
+      "ko": "세계 3대 미술관 프라도 미술관 벨라스케스 & 고야 명작 감상 (엘리베이터 완비)",
+      "en": "Morning: 세계 3대 미술관 프라도 미술관 벨라스케스 & 고야 명작 감상 (엘리베이터 완비)",
+      "ja": "午前：세계 3대 미술관 프라도 미술관 벨라스케스 & 고야 명작 감상 (엘리베이터 완비)",
+      "zh": "上午：세계 3대 미술관 프라도 미술관 벨라스케스 & 고야 명작 감상 (엘리베이터 완비)"
+    },
+    "rest": {
+      "ko": "미술관 내부 카페 휴식 후 호텔 낮잠",
+      "en": "Afternoon Rest: 미술관 내부 카페 휴식 후 호텔 낮잠",
+      "ja": "午後休憩：미술관 내부 카페 휴식 후 호텔 낮잠",
+      "zh": "午后休整：미술관 내부 카페 휴식 후 호텔 낮잠"
+    },
+    "evening": {
+      "ko": "유네스코 세계유산 레티로 공원 산책 및 유리 수정궁(Palacio de Cristal) 관람",
+      "en": "Evening: 유네스코 세계유산 레티로 공원 산책 및 유리 수정궁(Palacio de Cristal) 관람",
+      "ja": "夕方・夜：유네스코 세계유산 레티로 공원 산책 및 유리 수정궁(Palacio de Cristal) 관람",
+      "zh": "傍晚夜游：유네스코 세계유산 레티로 공원 산책 및 유리 수정궁(Palacio de Cristal) 관람"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "도보 및 평지 산책로",
+      "en": "도보 및 평지 산책로",
+      "ja": "도보 및 평지 산책로",
+      "zh": "도보 및 평지 산책로"
+    },
+    "meal": {
+      "ko": "스페인 전통 또르띠야(Tortilla de Patatas)",
+      "en": "스페인 전통 또르띠야(Tortilla de Patatas)",
+      "ja": "스페인 전통 또르띠야(Tortilla de Patatas)",
+      "zh": "스페인 전통 또르띠야(Tortilla de Patatas)"
+    },
+    "events": {
+      "ko": [
+        "프라도 미술관",
+        "레티로 공원"
+      ],
+      "en": [
+        "프라도 미술관 (EN)",
+        "레티로 공원 (EN)"
+      ],
+      "ja": [
+        "프라도 미술관 (JA)",
+        "레티로 공원 (JA)"
+      ],
+      "zh": [
+        "프라도 미술관 (ZH)",
+        "레티로 공원 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "마드리드",
+      "en": "Madrid",
+      "ja": "マドリード",
+      "zh": "马德里"
+    },
+    "theme": {
+      "ko": "마드리드 왕궁 웅장한 내부와 사바티니 정원",
+      "en": "마드리드 왕궁 웅장한 내부와 사바티니 정원",
+      "ja": "마드리드 왕궁 웅장한 내부와 사바티니 정원",
+      "zh": "마드리드 왕궁 웅장한 내부와 사바티니 정원"
+    },
+    "morning": {
+      "ko": "유럽 최대 규모 마드리드 왕궁 화려한 왕실 홀 관람",
+      "en": "Morning: 유럽 최대 규모 마드리드 왕궁 화려한 왕실 홀 관람",
+      "ja": "午前：유럽 최대 규모 마드리드 왕궁 화려한 왕실 홀 관람",
+      "zh": "上午：유럽 최대 규모 마드리드 왕궁 화려한 왕실 홀 관람"
+    },
+    "rest": {
+      "ko": "오페라 광장 유서 깊은 카페에서 츄러스 & 초콜릿 간식",
+      "en": "Afternoon Rest: 오페라 광장 유서 깊은 카페에서 츄러스 & 초콜릿 간식",
+      "ja": "午後休憩：오페라 광장 유서 깊은 카페에서 츄러스 & 초콜릿 간식",
+      "zh": "午后休整：오페라 광장 유서 깊은 카페에서 츄러스 & 초콜릿 간식"
+    },
+    "evening": {
+      "ko": "시벨레스 궁전 전망대에서 그란 비아 대로 황금빛 야경 감상",
+      "en": "Evening: 시벨레스 궁전 전망대에서 그란 비아 대로 황금빛 야경 감상",
+      "ja": "夕方・夜：시벨레스 궁전 전망대에서 그란 비아 대로 황금빛 야경 감상",
+      "zh": "傍晚夜游：시벨레스 궁전 전망대에서 그란 비아 대로 황금빛 야경 감상"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "시내 지하철 및 택시",
+      "en": "시내 지하철 및 택시",
+      "ja": "시내 지하철 및 택시",
+      "zh": "시내 지하철 및 택시"
+    },
+    "meal": {
+      "ko": "마드리드 전통 추로스(Churros con Chocolate)",
+      "en": "마드리드 전통 추로스(Churros con Chocolate)",
+      "ja": "마드리드 전통 추로스(Churros con Chocolate)",
+      "zh": "마드리드 전통 추로스(Churros con Chocolate)"
+    },
+    "events": {
+      "ko": [
+        "마드리드 왕궁",
+        "시벨레스 야경"
+      ],
+      "en": [
+        "마드리드 왕궁 (EN)",
+        "시벨레스 야경 (EN)"
+      ],
+      "ja": [
+        "마드리드 왕궁 (JA)",
+        "시벨레스 야경 (JA)"
+      ],
+      "zh": [
+        "마드리드 왕궁 (ZH)",
+        "시벨레스 야경 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "톨레도/마드리드",
+      "en": "Toledo / Madrid",
+      "ja": "トレド／マドリード",
+      "zh": "托莱多 / 马德里"
+    },
+    "theme": {
+      "ko": "천년 고도 톨레도 중세 도시 당일치기 힐링 투어",
+      "en": "천년 고도 톨레도 중세 도시 당일치기 힐링 투어",
+      "ja": "천년 고도 톨레도 중세 도시 당일치기 힐링 투어",
+      "zh": "천년 고도 톨레도 중세 도시 당일치기 힐링 투어"
+    },
+    "morning": {
+      "ko": "AVE 고속열차 30분으로 톨레도 도착, 미라도르 델 바예 전망대에서 타호강 파노라마 감상",
+      "en": "Morning: AVE 고속열차 30분으로 톨레도 도착, 미라도르 델 바예 전망대에서 타호강 파노라마 감상",
+      "ja": "午前：AVE 고속열차 30분으로 톨레도 도착, 미라도르 델 바예 전망대에서 타호강 파노라마 감상",
+      "zh": "上午：AVE 고속열차 30분으로 톨레도 도착, 미라도르 델 바예 전망대에서 타호강 파노라마 감상"
+    },
+    "rest": {
+      "ko": "파라도르 테라스에서 중세 스카이라인 바라보며 점심 식사",
+      "en": "Afternoon Rest: 파라도르 테라스에서 중세 스카이라인 바라보며 점심 식사",
+      "ja": "午後休憩：파라도르 테라스에서 중세 스카이라인 바라보며 점심 식사",
+      "zh": "午后休整：파라도르 테라스에서 중세 스카이라인 바라보며 점심 식사"
+    },
+    "evening": {
+      "ko": "톨레도 대성당 관람 후 마드리드 귀환",
+      "en": "Evening: 톨레도 대성당 관람 후 마드리드 귀환",
+      "ja": "夕方・夜：톨레도 대성당 관람 후 마드리드 귀환",
+      "zh": "傍晚夜游：톨레도 대성당 관람 후 마드리드 귀환"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "고속열차 및 톨레도 소코트렌(Zocotren) 관광열차",
+      "en": "고속열차 및 톨레도 소코트렌(Zocotren) 관광열차",
+      "ja": "고속열차 및 톨레도 소코트렌(Zocotren) 관광열차",
+      "zh": "고속열차 및 톨레도 소코트렌(Zocotren) 관광열차"
+    },
+    "meal": {
+      "ko": "톨레도 마지팬 과자 & 전통 양고기 구이",
+      "en": "톨레도 마지팬 과자 & 전통 양고기 구이",
+      "ja": "톨레도 마지팬 과자 & 전통 양고기 구이",
+      "zh": "톨레도 마지팬 과자 & 전통 양고기 구이"
+    },
+    "events": {
+      "ko": [
+        "톨레도 중세 파노라마"
+      ],
+      "en": [
+        "톨레도 중세 파노라마 (EN)"
+      ],
+      "ja": [
+        "톨레도 중세 파노라마 (JA)"
+      ],
+      "zh": [
+        "톨레도 중세 파노라마 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "안달루시아의 열정 세비야 이동 및 과달키비르 강변",
+      "en": "안달루시아의 열정 세비야 이동 및 과달키비르 강변",
+      "ja": "안달루시아의 열정 세비야 이동 및 과달키비르 강변",
+      "zh": "안달루시아의 열정 세비야 이동 및 과달키비르 강변"
+    },
+    "morning": {
+      "ko": "아토차 역에서 세비야 산타 후스타 역행 AVE 1등석 탑승",
+      "en": "Morning: 아토차 역에서 세비야 산타 후스타 역행 AVE 1등석 탑승",
+      "ja": "午前：아토차 역에서 세비야 산타 후스타 역행 AVE 1등석 탑승",
+      "zh": "上午：아토차 역에서 세비야 산타 후스타 역행 AVE 1등석 탑승"
+    },
+    "rest": {
+      "ko": "호텔 체크인 후 시에스타 낮잠",
+      "en": "Afternoon Rest: 호텔 체크인 후 시에스타 낮잠",
+      "ja": "午後休憩：호텔 체크인 후 시에스타 낮잠",
+      "zh": "午后休整：호텔 체크인 후 시에스타 낮잠"
+    },
+    "evening": {
+      "ko": "황금의 탑 및 과달키비르 강변 평지 석양 산책",
+      "en": "Evening: 황금의 탑 및 과달키비르 강변 평지 석양 산책",
+      "ja": "夕方・夜：황금의 탑 및 과달키비르 강변 평지 석양 산책",
+      "zh": "傍晚夜游：황금의 탑 및 과달키비르 강변 평지 석양 산책"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "고속열차 AVE 및 택시",
+      "en": "고속열차 AVE 및 택시",
+      "ja": "고속열차 AVE 및 택시",
+      "zh": "고속열차 AVE 및 택시"
+    },
+    "meal": {
+      "ko": "세비야식 소꼬리찜(Rabo de Toro)",
+      "en": "세비야식 소꼬리찜(Rabo de Toro)",
+      "ja": "세비야식 소꼬리찜(Rabo de Toro)",
+      "zh": "세비야식 소꼬리찜(Rabo de Toro)"
+    },
+    "events": {
+      "ko": [
+        "세비야 이동일"
+      ],
+      "en": [
+        "세비야 이동일 (EN)"
+      ],
+      "ja": [
+        "세비야 이동일 (JA)"
+      ],
+      "zh": [
+        "세비야 이동일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "세비야 대성당 히랄다 탑과 알카사르 왕궁 아랍 정원",
+      "en": "세비야 대성당 히랄다 탑과 알카사르 왕궁 아랍 정원",
+      "ja": "세비야 대성당 히랄다 탑과 알카사르 왕궁 아랍 정원",
+      "zh": "세비야 대성당 히랄다 탑과 알카사르 왕궁 아랍 정원"
+    },
+    "morning": {
+      "ko": "세계 3대 성당 세비야 대성당 콜럼버스 묘 및 완만한 나선 경사로 히랄다 탑 관람",
+      "en": "Morning: 세계 3대 성당 세비야 대성당 콜럼버스 묘 및 완만한 나선 경사로 히랄다 탑 관람",
+      "ja": "午前：세계 3대 성당 세비야 대성당 콜럼버스 묘 및 완만한 나선 경사로 히랄다 탑 관람",
+      "zh": "上午：세계 3대 성당 세비야 대성당 콜럼버스 묘 및 완만한 나선 경사로 히랄다 탑 관람"
+    },
+    "rest": {
+      "ko": "산타 크루즈 지구 파티오 카페에서 레몬 맥주 클라라 한잔",
+      "en": "Afternoon Rest: 산타 크루즈 지구 파티오 카페에서 레몬 맥주 클라라 한잔",
+      "ja": "午後休憩：산타 크루즈 지구 파티오 카페에서 레몬 맥주 클라라 한잔",
+      "zh": "午后休整：산타 크루즈 지구 파티오 카페에서 레몬 맥주 클라라 한잔"
+    },
+    "evening": {
+      "ko": "왕궁 알카사르 오렌지 정원 산책",
+      "en": "Evening: 왕궁 알카사르 오렌지 정원 산책",
+      "ja": "夕方・夜：왕궁 알카사르 오렌지 정원 산책",
+      "zh": "傍晚夜游：왕궁 알카사르 오렌지 정원 산책"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "트램 T1 및 도보 평지길",
+      "en": "트램 T1 및 도보 평지길",
+      "ja": "트램 T1 및 도보 평지길",
+      "zh": "트램 T1 및 도보 평지길"
+    },
+    "meal": {
+      "ko": "가스파초 & 이베리코 하몽 베요타",
+      "en": "가스파초 & 이베리코 하몽 베요타",
+      "ja": "가스파초 & 이베리코 하몽 베요타",
+      "zh": "가스파초 & 이베리코 하몽 베요타"
+    },
+    "events": {
+      "ko": [
+        "세비야 대성당",
+        "알카사르"
+      ],
+      "en": [
+        "세비야 대성당 (EN)",
+        "알카사르 (EN)"
+      ],
+      "ja": [
+        "세비야 대성당 (JA)",
+        "알카사르 (JA)"
+      ],
+      "zh": [
+        "세비야 대성당 (ZH)",
+        "알카사르 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "스페인 광장 반원형 수로 산책과 전통 플라멩코 공연",
+      "en": "스페인 광장 반원형 수로 산책과 전통 플라멩코 공연",
+      "ja": "스페인 광장 반원형 수로 산책과 전통 플라멩코 공연",
+      "zh": "스페인 광장 반원형 수로 산책과 전통 플라멩코 공연"
+    },
+    "morning": {
+      "ko": "스페인 광장 48개 주 타일 벤치와 수로 다리 산책",
+      "en": "Morning: 스페인 광장 48개 주 타일 벤치와 수로 다리 산책",
+      "ja": "午前：스페인 광장 48개 주 타일 벤치와 수로 다리 산책",
+      "zh": "上午：스페인 광장 48개 주 타일 벤치와 수로 다리 산책"
+    },
+    "rest": {
+      "ko": "마리아 루이사 공원 그늘 벤치 휴식",
+      "en": "Afternoon Rest: 마리아 루이사 공원 그늘 벤치 휴식",
+      "ja": "午後休憩：마리아 루이사 공원 그늘 벤치 휴식",
+      "zh": "午后休整：마리아 루이사 공원 그늘 벤치 휴식"
+    },
+    "evening": {
+      "ko": "유서 깊은 바리오 산타 크루즈 극장에서 정통 플라멩코 기타 & 무용 관람",
+      "en": "Evening: 유서 깊은 바리오 산타 크루즈 극장에서 정통 플라멩코 기타 & 무용 관람",
+      "ja": "夕方・夜：유서 깊은 바리오 산타 크루즈 극장에서 정통 플라멩코 기타 & 무용 관람",
+      "zh": "傍晚夜游：유서 깊은 바리오 산타 크루즈 극장에서 정통 플라멩코 기타 & 무용 관람"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "마차 투어 또는 도보 평지길",
+      "en": "마차 투어 또는 도보 평지길",
+      "ja": "마차 투어 또는 도보 평지길",
+      "zh": "마차 투어 또는 도보 평지길"
+    },
+    "meal": {
+      "ko": "정통 안달루시아식 타파스 코스",
+      "en": "정통 안달루시아식 타파스 코스",
+      "ja": "정통 안달루시아식 타파스 코스",
+      "zh": "정통 안달루시아식 타파스 코스"
+    },
+    "events": {
+      "ko": [
+        "스페인 광장",
+        "플라멩코 공연"
+      ],
+      "en": [
+        "스페인 광장 (EN)",
+        "플라멩코 공연 (EN)"
+      ],
+      "ja": [
+        "스페인 광장 (JA)",
+        "플라멩코 공연 (JA)"
+      ],
+      "zh": [
+        "스페인 광장 (ZH)",
+        "플라멩코 공연 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "코르도바/세비야",
+      "en": "Cordoba / Seville",
+      "ja": "コルドバ／セビリア",
+      "zh": "科尔多瓦 / 塞维利亚"
+    },
+    "theme": {
+      "ko": "이슬람 문화의 정수 코르도바 메스키타 당일 여행",
+      "en": "이슬람 문화의 정수 코르도바 메스키타 당일 여행",
+      "ja": "이슬람 문화의 정수 코르도바 메스키타 당일 여행",
+      "zh": "이슬람 문화의 정수 코르도바 메스키타 당일 여행"
+    },
+    "morning": {
+      "ko": "AVE 열차 40분으로 코르도바 이동, 850개 원주 기둥 숲 메스키타 사원 내부 관람",
+      "en": "Morning: AVE 열차 40분으로 코르도바 이동, 850개 원주 기둥 숲 메스키타 사원 내부 관람",
+      "ja": "午前：AVE 열차 40분으로 코르도바 이동, 850개 원주 기둥 숲 메스키타 사원 내부 관람",
+      "zh": "上午：AVE 열차 40분으로 코르도바 이동, 850개 원주 기둥 숲 메스키타 사원 내부 관람"
+    },
+    "rest": {
+      "ko": "꽃의 골목(Calleja de las Flores) 테라스 식사",
+      "en": "Afternoon Rest: 꽃의 골목(Calleja de las Flores) 테라스 식사",
+      "ja": "午後休憩：꽃의 골목(Calleja de las Flores) 테라스 식사",
+      "zh": "午后休整：꽃의 골목(Calleja de las Flores) 테라스 식사"
+    },
+    "evening": {
+      "ko": "로마교 다리 석양 감상 후 세비야 복귀",
+      "en": "Evening: 로마교 다리 석양 감상 후 세비야 복귀",
+      "ja": "夕方・夜：로마교 다리 석양 감상 후 세비야 복귀",
+      "zh": "傍晚夜游：로마교 다리 석양 감상 후 세비야 복귀"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "고속열차 AVE",
+      "en": "고속열차 AVE",
+      "ja": "고속열차 AVE",
+      "zh": "고속열차 AVE"
+    },
+    "meal": {
+      "ko": "살모레호(Salmorejo) 냉수프",
+      "en": "살모레호(Salmorejo) 냉수프",
+      "ja": "살모레호(Salmorejo) 냉수프",
+      "zh": "살모레호(Salmorejo) 냉수프"
+    },
+    "events": {
+      "ko": [
+        "코르도바 메스키타"
+      ],
+      "en": [
+        "코르도바 메스키타 (EN)"
+      ],
+      "ja": [
+        "코르도바 메스키타 (JA)"
+      ],
+      "zh": [
+        "코르도바 메스키타 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "그라나다",
+      "en": "Granada",
+      "ja": "グラナダ",
+      "zh": "格拉纳达"
+    },
+    "theme": {
+      "ko": "나스르 왕조의 마지막 보석 그라나다 입성",
+      "en": "나스르 왕조의 마지막 보석 그라나다 입성",
+      "ja": "나스르 왕조의 마지막 보석 그라나다 입성",
+      "zh": "나스르 왕조의 마지막 보석 그라나다 입성"
+    },
+    "morning": {
+      "ko": "기차로 그라나다 이동, 시내 호텔 체크인",
+      "en": "Morning: 기차로 그라나다 이동, 시내 호텔 체크인",
+      "ja": "午前：기차로 그라나다 이동, 시내 호텔 체크인",
+      "zh": "上午：기차로 그라나다 이동, 시내 호텔 체크인"
+    },
+    "rest": {
+      "ko": "호텔 온수 사우나 및 휴식",
+      "en": "Afternoon Rest: 호텔 온수 사우나 및 휴식",
+      "ja": "午後休憩：호텔 온수 사우나 및 휴식",
+      "zh": "午后休整：호텔 온수 사우나 및 휴식"
+    },
+    "evening": {
+      "ko": "누에바 광장 인근 골목에서 무료 타파스 문화 체험",
+      "en": "Evening: 누에바 광장 인근 골목에서 무료 타파스 문화 체험",
+      "ja": "夕方・夜：누에바 광장 인근 골목에서 무료 타파스 문화 체험",
+      "zh": "傍晚夜游：누에바 광장 인근 골목에서 무료 타파스 문화 체험"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "중거리 열차 및 택시",
+      "en": "중거리 열차 및 택시",
+      "ja": "중거리 열차 및 택시",
+      "zh": "중거리 열차 및 택시"
+    },
+    "meal": {
+      "ko": "무료 타파스가 나오는 그라나다 와인바",
+      "en": "무료 타파스가 나오는 그라나다 와인바",
+      "ja": "무료 타파스가 나오는 그라나다 와인바",
+      "zh": "무료 타파스가 나오는 그라나다 와인바"
+    },
+    "events": {
+      "ko": [
+        "그라나다 이동일"
+      ],
+      "en": [
+        "그라나다 이동일 (EN)"
+      ],
+      "ja": [
+        "그라나다 이동일 (JA)"
+      ],
+      "zh": [
+        "그라나다 이동일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "그라나다",
+      "en": "Granada",
+      "ja": "グラナダ",
+      "zh": "格拉纳达"
+    },
+    "theme": {
+      "ko": "알함브라 궁전 아라베스크 나스르 궁과 헤네랄리페 정원",
+      "en": "알함브라 궁전 아라베스크 나스르 궁과 헤네랄리페 정원",
+      "ja": "알함브라 궁전 아라베스크 나스르 궁과 헤네랄리페 정원",
+      "zh": "알함브라 궁전 아라베스크 나스르 궁과 헤네랄리페 정원"
+    },
+    "morning": {
+      "ko": "사전 타임슬롯 지정으로 알함브라 나스르 궁전 세밀한 석고 조각 관람",
+      "en": "Morning: 사전 타임슬롯 지정으로 알함브라 나스르 궁전 세밀한 석고 조각 관람",
+      "ja": "午前：사전 타임슬롯 지정으로 알함브라 나스르 궁전 세밀한 석고 조각 관람",
+      "zh": "上午：사전 타임슬롯 지정으로 알함브라 나스르 궁전 세밀한 석고 조각 관람"
+    },
+    "rest": {
+      "ko": "헤네랄리페 분수 정원 벤치에서 분수 소리 들으며 휴식",
+      "en": "Afternoon Rest: 헤네랄리페 분수 정원 벤치에서 분수 소리 들으며 휴식",
+      "ja": "午後休憩：헤네랄리페 분수 정원 벤치에서 분수 소리 들으며 휴식",
+      "zh": "午后休整：헤네랄리페 분수 정원 벤치에서 분수 소리 들으며 휴식"
+    },
+    "evening": {
+      "ko": "호텔 복귀 후 시에스타",
+      "en": "Evening: 호텔 복귀 후 시에스타",
+      "ja": "夕方・夜：호텔 복귀 후 시에스타",
+      "zh": "傍晚夜游：호텔 복귀 후 시에스타"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "C30 미니버스 (언덕 직행)",
+      "en": "C30 미니버스 (언덕 직행)",
+      "ja": "C30 미니버스 (언덕 직행)",
+      "zh": "C30 미니버스 (언덕 직행)"
+    },
+    "meal": {
+      "ko": "안달루시아 농어 요리",
+      "en": "안달루시아 농어 요리",
+      "ja": "안달루시아 농어 요리",
+      "zh": "안달루시아 농어 요리"
+    },
+    "events": {
+      "ko": [
+        "알함브라 궁전"
+      ],
+      "en": [
+        "알함브라 궁전 (EN)"
+      ],
+      "ja": [
+        "알함브라 궁전 (JA)"
+      ],
+      "zh": [
+        "알함브라 궁전 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "그라나다",
+      "en": "Granada",
+      "ja": "グラナダ",
+      "zh": "格拉纳达"
+    },
+    "theme": {
+      "ko": "산 니콜라스 전망대 알함브라 궁전 붉은 석양 & 야경",
+      "en": "산 니콜라스 전망대 알함브라 궁전 붉은 석양 & 야경",
+      "ja": "산 니콜라스 전망대 알함브라 궁전 붉은 석양 & 야경",
+      "zh": "산 니콜라스 전망대 알함브라 궁전 붉은 석양 & 야경"
+    },
+    "morning": {
+      "ko": "그라나다 왕실 예배당 이사벨 여왕 묘 관람",
+      "en": "Morning: 그라나다 왕실 예배당 이사벨 여왕 묘 관람",
+      "ja": "午前：그라나다 왕실 예배당 이사벨 여왕 묘 관람",
+      "zh": "上午：그라나다 왕실 예배당 이사벨 여왕 묘 관람"
+    },
+    "rest": {
+      "ko": "아랍거리 차집(Tetería)에서 민트 차와 바클라바 휴식",
+      "en": "Afternoon Rest: 아랍거리 차집(Tetería)에서 민트 차와 바클라바 휴식",
+      "ja": "午後休憩：아랍거리 차집(Tetería)에서 민트 차와 바클라바 휴식",
+      "zh": "午后休整：아랍거리 차집(Tetería)에서 민트 차와 바클라바 휴식"
+    },
+    "evening": {
+      "ko": "산 니콜라스 전망대에서 눈 덮인 시에라네바다 산맥과 알함브라 야경 감상",
+      "en": "Evening: 산 니콜라스 전망대에서 눈 덮인 시에라네바다 산맥과 알함브라 야경 감상",
+      "ja": "夕方・夜：산 니콜라스 전망대에서 눈 덮인 시에라네바다 산맥과 알함브라 야경 감상",
+      "zh": "傍晚夜游：산 니콜라스 전망대에서 눈 덮인 시에라네바다 산맥과 알함브라 야경 감상"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "C31 미니버스 및 택시",
+      "en": "C31 미니버스 및 택시",
+      "ja": "C31 미니버스 및 택시",
+      "zh": "C31 미니버스 및 택시"
+    },
+    "meal": {
+      "ko": "그라나다 전통 파바다",
+      "en": "그라나다 전통 파바다",
+      "ja": "그라나다 전통 파바다",
+      "zh": "그라나다 전통 파바다"
+    },
+    "events": {
+      "ko": [
+        "산 니콜라스 야경"
+      ],
+      "en": [
+        "산 니콜라스 야경 (EN)"
+      ],
+      "ja": [
+        "산 니콜라스 야경 (JA)"
+      ],
+      "zh": [
+        "산 니콜라스 야경 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "말라가",
+      "en": "Malaga",
+      "ja": "マラガ",
+      "zh": "马拉加"
+    },
+    "theme": {
+      "ko": "피카소의 고향 온화한 지중해 코스타 델 솔 말라가",
+      "en": "피카소의 고향 온화한 지중해 코스타 델 솔 말라가",
+      "ja": "피카소의 고향 온화한 지중해 코스타 델 솔 말라가",
+      "zh": "피카소의 고향 온화한 지중해 코스타 델 솔 말라가"
+    },
+    "morning": {
+      "ko": "열차로 말라가 이동, 지중해 항구 호텔 체크인",
+      "en": "Morning: 열차로 말라가 이동, 지중해 항구 호텔 체크인",
+      "ja": "午前：열차로 말라가 이동, 지중해 항구 호텔 체크인",
+      "zh": "上午：열차로 말라가 이동, 지중해 항구 호텔 체크인"
+    },
+    "rest": {
+      "ko": "항구 산책로 Muelle Uno 벤치 휴식",
+      "en": "Afternoon Rest: 항구 산책로 Muelle Uno 벤치 휴식",
+      "ja": "午後休憩：항구 산책로 Muelle Uno 벤치 휴식",
+      "zh": "午后休整：항구 산책로 Muelle Uno 벤치 휴식"
+    },
+    "evening": {
+      "ko": "라리오스 거리(Calle Larios) 크리스마스 조명 쇼 관람",
+      "en": "Evening: 라리오스 거리(Calle Larios) 크리스마스 조명 쇼 관람",
+      "ja": "夕方・夜：라리오스 거리(Calle Larios) 크리스마스 조명 쇼 관람",
+      "zh": "傍晚夜游：라리오스 거리(Calle Larios) 크리스마스 조명 쇼 관람"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "열차 및 시내 평지 보행",
+      "en": "열차 및 시내 평지 보행",
+      "ja": "열차 및 시내 평지 보행",
+      "zh": "열차 및 시내 평지 보행"
+    },
+    "meal": {
+      "ko": "말라가식 정어리 꼬치구이(Espeto de Sardinas)",
+      "en": "말라가식 정어리 꼬치구이(Espeto de Sardinas)",
+      "ja": "말라가식 정어리 꼬치구이(Espeto de Sardinas)",
+      "zh": "말라가식 정어리 꼬치구이(Espeto de Sardinas)"
+    },
+    "events": {
+      "ko": [
+        "말라가 조명쇼"
+      ],
+      "en": [
+        "말라가 조명쇼 (EN)"
+      ],
+      "ja": [
+        "말라가 조명쇼 (JA)"
+      ],
+      "zh": [
+        "말라가 조명쇼 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "론다/말라가",
+      "en": "Ronda / Malaga",
+      "ja": "ロンダ／マラガ",
+      "zh": "龙达 / 马拉加"
+    },
+    "theme": {
+      "ko": "120m 협곡 위의 아찔한 누에보 다리 론다 당일 투어",
+      "en": "120m 협곡 위의 아찔한 누에보 다리 론다 당일 투어",
+      "ja": "120m 협곡 위의 아찔한 누에보 다리 론다 당일 투어",
+      "zh": "120m 협곡 위의 아찔한 누에보 다리 론다 당일 투어"
+    },
+    "morning": {
+      "ko": "전용 밴 차량으로 론다 이동, 헤밍웨이가 사랑한 누에보 다리 관람",
+      "en": "Morning: 전용 밴 차량으로 론다 이동, 헤밍웨이가 사랑한 누에보 다리 관람",
+      "ja": "午前：전용 밴 차량으로 론다 이동, 헤밍웨이가 사랑한 누에보 다리 관람",
+      "zh": "上午：전용 밴 차량으로 론다 이동, 헤밍웨이가 사랑한 누에보 다리 관람"
+    },
+    "rest": {
+      "ko": "파라도르 테라스 카페에서 협곡 뷰 차 한잔",
+      "en": "Afternoon Rest: 파라도르 테라스 카페에서 협곡 뷰 차 한잔",
+      "ja": "午後休憩：파라도르 테라스 카페에서 협곡 뷰 차 한잔",
+      "zh": "午后休整：파라도르 테라스 카페에서 협곡 뷰 차 한잔"
+    },
+    "evening": {
+      "ko": "스페인 최고(最古) 투우장 외관 감상 후 말라가 복귀",
+      "en": "Evening: 스페인 최고(最古) 투우장 외관 감상 후 말라가 복귀",
+      "ja": "夕方・夜：스페인 최고(最古) 투우장 외관 감상 후 말라가 복귀",
+      "zh": "傍晚夜游：스페인 최고(最古) 투우장 외관 감상 후 말라가 복귀"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "전용 밴 차량 투어",
+      "en": "전용 밴 차량 투어",
+      "ja": "전용 밴 차량 투어",
+      "zh": "전용 밴 차량 투어"
+    },
+    "meal": {
+      "ko": "론다식 도토리 먹인 이베리코 돼지 스테이크",
+      "en": "론다식 도토리 먹인 이베리코 돼지 스테이크",
+      "ja": "론다식 도토리 먹인 이베리코 돼지 스테이크",
+      "zh": "론다식 도토리 먹인 이베리코 돼지 스테이크"
+    },
+    "events": {
+      "ko": [
+        "론다 누에보 다리"
+      ],
+      "en": [
+        "론다 누에보 다리 (EN)"
+      ],
+      "ja": [
+        "론다 누에보 다리 (JA)"
+      ],
+      "zh": [
+        "론다 누에보 다리 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "리스본",
+      "en": "Lisbon",
+      "ja": "リスボン",
+      "zh": "里斯本"
+    },
+    "theme": {
+      "ko": "대서양의 바람 포르투갈 수도 리스본 입성",
+      "en": "대서양의 바람 포르투갈 수도 리스본 입성",
+      "ja": "대서양의 바람 포르투갈 수도 리스본 입성",
+      "zh": "대서양의 바람 포르투갈 수도 리스본 입성"
+    },
+    "morning": {
+      "ko": "말라가 공항 출발 ✈️ 리스본 포르텔라 공항 도착",
+      "en": "Morning: 말라가 공항 출발 ✈️ 리스본 포르텔라 공항 도착",
+      "ja": "午前：말라가 공항 출발 ✈️ 리스본 포르텔라 공항 도착",
+      "zh": "上午：말라가 공항 출발 ✈️ 리스본 포르텔라 공항 도착"
+    },
+    "rest": {
+      "ko": "호텔 체크인 후 온수 샤워 및 충분한 수면",
+      "en": "Afternoon Rest: 호텔 체크인 후 온수 샤워 및 충분한 수면",
+      "ja": "午後休憩：호텔 체크인 후 온수 샤워 및 충분한 수면",
+      "zh": "午后休整：호텔 체크인 후 온수 샤워 및 충분한 수면"
+    },
+    "evening": {
+      "ko": "바이샤 지구 아우구스타 거리 평지 산책 및 테주 강변 노을",
+      "en": "Evening: 바이샤 지구 아우구스타 거리 평지 산책 및 테주 강변 노을",
+      "ja": "夕方・夜：바이샤 지구 아우구스타 거리 평지 산책 및 테주 강변 노을",
+      "zh": "傍晚夜游：바이샤 지구 아우구스타 거리 평지 산책 및 테주 강변 노을"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "직항 항공편 및 공항 택시",
+      "en": "직항 항공편 및 공항 택시",
+      "ja": "직항 항공편 및 공항 택시",
+      "zh": "직항 항공편 및 공항 택시"
+    },
+    "meal": {
+      "ko": "포르투갈 전통 해물밥(Arroz de Marisco)",
+      "en": "포르투갈 전통 해물밥(Arroz de Marisco)",
+      "ja": "포르투갈 전통 해물밥(Arroz de Marisco)",
+      "zh": "포르투갈 전통 해물밥(Arroz de Marisco)"
+    },
+    "events": {
+      "ko": [
+        "리스본 이동일"
+      ],
+      "en": [
+        "리스본 이동일 (EN)"
+      ],
+      "ja": [
+        "리스본 이동일 (JA)"
+      ],
+      "zh": [
+        "리스본 이동일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "리스본",
+      "en": "Lisbon",
+      "ja": "リスボン",
+      "zh": "里斯本"
+    },
+    "theme": {
+      "ko": "대항해시대의 영광 벨렝탑과 원조 에그타르트 파스테이스",
+      "en": "대항해시대의 영광 벨렝탑과 원조 에그타르트 파스테이스",
+      "ja": "대항해시대의 영광 벨렝탑과 원조 에그타르트 파스테이스",
+      "zh": "대항해시대의 영광 벨렝탑과 원조 에그타르트 파스테이스"
+    },
+    "morning": {
+      "ko": "유네스코 제로니무스 수도원 회랑 관람 및 발견기념비 산책 (완전 평지)",
+      "en": "Morning: 유네스코 제로니무스 수도원 회랑 관람 및 발견기념비 산책 (완전 평지)",
+      "ja": "午前：유네스코 제로니무스 수도원 회랑 관람 및 발견기념비 산책 (완전 평지)",
+      "zh": "上午：유네스코 제로니무스 수도원 회랑 관람 및 발견기념비 산책 (완전 평지)"
+    },
+    "rest": {
+      "ko": "1837년 개업 원조 에그타르트 파스테이스 드 벨렝에서 따뜻한 타르트와 커피",
+      "en": "Afternoon Rest: 1837년 개업 원조 에그타르트 파스테이스 드 벨렝에서 따뜻한 타르트와 커피",
+      "ja": "午後休憩：1837년 개업 원조 에그타르트 파스테이스 드 벨렝에서 따뜻한 타르트와 커피",
+      "zh": "午后休整：1837년 개업 원조 에그타르트 파스테이스 드 벨렝에서 따뜻한 타르트와 커피"
+    },
+    "evening": {
+      "ko": "벨렝탑 외관 석양 감상",
+      "en": "Evening: 벨렝탑 외관 석양 감상",
+      "ja": "夕方・夜：벨렝탑 외관 석양 감상",
+      "zh": "傍晚夜游：벨렝탑 외관 석양 감상"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "15E 저상 트램 또는 우버",
+      "en": "15E 저상 트램 또는 우버",
+      "ja": "15E 저상 트램 또는 우버",
+      "zh": "15E 저상 트램 또는 우버"
+    },
+    "meal": {
+      "ko": "바칼라우 아 브라스(Bacalhau à Brás)",
+      "en": "바칼라우 아 브라스(Bacalhau à Brás)",
+      "ja": "바칼라우 아 브라스(Bacalhau à Brás)",
+      "zh": "바칼라우 아 브라스(Bacalhau à Brás)"
+    },
+    "events": {
+      "ko": [
+        "벨렝탑 & 수도원",
+        "원조 에그타르트"
+      ],
+      "en": [
+        "벨렝탑 & 수도원 (EN)",
+        "원조 에그타르트 (EN)"
+      ],
+      "ja": [
+        "벨렝탑 & 수도원 (JA)",
+        "원조 에그타르트 (JA)"
+      ],
+      "zh": [
+        "벨렝탑 & 수도원 (ZH)",
+        "원조 에그타르트 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "신트라/리스본",
+      "en": "Sintra / Lisbon",
+      "ja": "シントラ／リスボン",
+      "zh": "辛特拉 / 里斯本"
+    },
+    "theme": {
+      "ko": "동화 속 알록달록 페나 성과 신트라 왕궁 당일 투어",
+      "en": "동화 속 알록달록 페나 성과 신트라 왕궁 당일 투어",
+      "ja": "동화 속 알록달록 페나 성과 신트라 왕궁 당일 투어",
+      "zh": "동화 속 알록달록 페나 성과 신트라 왕궁 당일 투어"
+    },
+    "morning": {
+      "ko": "호시우 역에서 기차 40분으로 신트라 이동, 페나 궁전 동화 같은 외관 관람",
+      "en": "Morning: 호시우 역에서 기차 40분으로 신트라 이동, 페나 궁전 동화 같은 외관 관람",
+      "ja": "午前：호시우 역에서 기차 40분으로 신트라 이동, 페나 궁전 동화 같은 외관 관람",
+      "zh": "上午：호시우 역에서 기차 40분으로 신트라 이동, 페나 궁전 동화 같은 외관 관람"
+    },
+    "rest": {
+      "ko": "궁전 카페 테라스에서 대서양 수평선 조망",
+      "en": "Afternoon Rest: 궁전 카페 테라스에서 대서양 수평선 조망",
+      "ja": "午後休憩：궁전 카페 테라스에서 대서양 수평선 조망",
+      "zh": "午后休整：궁전 카페 테라스에서 대서양 수평선 조망"
+    },
+    "evening": {
+      "ko": "호카 곶(Cabo da Roca) 유라시아 대륙 서쪽 끝 바다 절벽 감상 후 리스본 귀환",
+      "en": "Evening: 호카 곶(Cabo da Roca) 유라시아 대륙 서쪽 끝 바다 절벽 감상 후 리스본 귀환",
+      "ja": "夕方・夜：호카 곶(Cabo da Roca) 유라시아 대륙 서쪽 끝 바다 절벽 감상 후 리스본 귀환",
+      "zh": "傍晚夜游：호카 곶(Cabo da Roca) 유라시아 대륙 서쪽 끝 바다 절벽 감상 후 리스본 귀환"
+    },
+    "walk": {
+      "ko": "보통",
+      "en": "Moderate",
+      "ja": "普通",
+      "zh": "适中"
+    },
+    "transport": {
+      "ko": "기차 및 434번 순환 버스",
+      "en": "기차 및 434번 순환 버스",
+      "ja": "기차 및 434번 순환 버스",
+      "zh": "기차 및 434번 순환 버스"
+    },
+    "meal": {
+      "ko": "신트라 전통 케이자다 과자",
+      "en": "신트라 전통 케이자다 과자",
+      "ja": "신트라 전통 케이자다 과자",
+      "zh": "신트라 전통 케이자다 과자"
+    },
+    "events": {
+      "ko": [
+        "신트라 페나 성",
+        "호카 곶"
+      ],
+      "en": [
+        "신트라 페나 성 (EN)",
+        "호카 곶 (EN)"
+      ],
+      "ja": [
+        "신트라 페나 성 (JA)",
+        "호카 곶 (JA)"
+      ],
+      "zh": [
+        "신트라 페나 성 (ZH)",
+        "호카 곶 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "리스본",
+      "en": "Lisbon",
+      "ja": "リスボン",
+      "zh": "里斯本"
+    },
+    "theme": {
+      "ko": "에두아르두 7세 공원 원더랜드 리스본 겨울 축제",
+      "en": "에두아르두 7세 공원 원더랜드 리스본 겨울 축제",
+      "ja": "에두아르두 7세 공원 원더랜드 리스본 겨울 축제",
+      "zh": "에두아르두 7세 공원 원더랜드 리스본 겨울 축제"
+    },
+    "morning": {
+      "ko": "에두아르두 7세 공원 상부 전망대에서 테주 강까지 이어지는 축선 감상",
+      "en": "Morning: 에두아르두 7세 공원 상부 전망대에서 테주 강까지 이어지는 축선 감상",
+      "ja": "午前：에두아르두 7세 공원 상부 전망대에서 테주 강까지 이어지는 축선 감상",
+      "zh": "上午：에두아르두 7세 공원 상부 전망대에서 테주 강까지 이어지는 축선 감상"
+    },
+    "rest": {
+      "ko": "공원 온실(Estufa Fria) 아열대 식물원 피톤치드 산책",
+      "en": "Afternoon Rest: 공원 온실(Estufa Fria) 아열대 식물원 피톤치드 산책",
+      "ja": "午後休憩：공원 온실(Estufa Fria) 아열대 식물원 피톤치드 산책",
+      "zh": "午后休整：공원 온실(Estufa Fria) 아열대 식물원 피톤치드 산책"
+    },
+    "evening": {
+      "ko": "원더랜드 리스본 크리스마스 빌리지 회전관람차와 성탄 마켓",
+      "en": "Evening: 원더랜드 리스본 크리스마스 빌리지 회전관람차와 성탄 마켓",
+      "ja": "夕方・夜：원더랜드 리스본 크리스마스 빌리지 회전관람차와 성탄 마켓",
+      "zh": "傍晚夜游：원더랜드 리스본 크리스마스 빌리지 회전관람차와 성탄 마켓"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "메트로 블루라인 평지 이동",
+      "en": "메트로 블루라인 평지 이동",
+      "ja": "메트로 블루라인 평지 이동",
+      "zh": "메트로 블루라인 평지 이동"
+    },
+    "meal": {
+      "ko": "포르투갈 전통 정어리 파테 & 올리브",
+      "en": "포르투갈 전통 정어리 파테 & 올리브",
+      "ja": "포르투갈 전통 정어리 파테 & 올리브",
+      "zh": "포르투갈 전통 정어리 파테 & 올리브"
+    },
+    "events": {
+      "ko": [
+        "원더랜드 리스본 축제"
+      ],
+      "en": [
+        "원더랜드 리스본 축제 (EN)"
+      ],
+      "ja": [
+        "원더랜드 리스본 축제 (JA)"
+      ],
+      "zh": [
+        "원더랜드 리스본 축제 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "리스본",
+      "en": "Lisbon",
+      "ja": "リスボン",
+      "zh": "里斯本"
+    },
+    "theme": {
+      "ko": "세뇨라 두 몬트 전망대 파노라마와 전통 파두의 밤",
+      "en": "세뇨라 두 몬트 전망대 파노라마와 전통 파두의 밤",
+      "ja": "세뇨라 두 몬트 전망대 파노라마와 전통 파두의 밤",
+      "zh": "세뇨라 두 몬트 전망대 파노라마와 전통 파두의 밤"
+    },
+    "morning": {
+      "ko": "상 조르즈 성 외관 및 알파마 지구 평지 산책로",
+      "en": "Morning: 상 조르즈 성 외관 및 알파마 지구 평지 산책로",
+      "ja": "午前：상 조르즈 성 외관 및 알파마 지구 평지 산책로",
+      "zh": "上午：상 조르즈 성 외관 및 알파마 지구 평지 산책로"
+    },
+    "rest": {
+      "ko": "숙소에서 여유로운 낮잠 휴식",
+      "en": "Afternoon Rest: 숙소에서 여유로운 낮잠 휴식",
+      "ja": "午後休憩：숙소에서 여유로운 낮잠 휴식",
+      "zh": "午后休整：숙소에서 여유로운 낮잠 휴식"
+    },
+    "evening": {
+      "ko": "우버 타고 세뇨라 두 몬트 전망대 직행 석양 감상 후 전통 파두(Fado) 디너쇼",
+      "en": "Evening: 우버 타고 세뇨라 두 몬트 전망대 직행 석양 감상 후 전통 파두(Fado) 디너쇼",
+      "ja": "夕方・夜：우버 타고 세뇨라 두 몬트 전망대 직행 석양 감상 후 전통 파두(Fado) 디너쇼",
+      "zh": "傍晚夜游：우버 타고 세뇨라 두 몬트 전망대 직행 석양 감상 후 전통 파두(Fado) 디너쇼"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "우버 직행 (가파른 골목길 회피)",
+      "en": "우버 직행 (가파른 골목길 회피)",
+      "ja": "우버 직행 (가파른 골목길 회피)",
+      "zh": "우버 직행 (가파른 골목길 회피)"
+    },
+    "meal": {
+      "ko": "파두 하우스 디너 코스 & 포르투갈 와인",
+      "en": "파두 하우스 디너 코스 & 포르투갈 와인",
+      "ja": "파두 하우스 디너 코스 & 포르투갈 와인",
+      "zh": "파두 하우스 디너 코스 & 포르투갈 와인"
+    },
+    "events": {
+      "ko": [
+        "세뇨라 두 몬트",
+        "파두 공연"
+      ],
+      "en": [
+        "세뇨라 두 몬트 (EN)",
+        "파두 공연 (EN)"
+      ],
+      "ja": [
+        "세뇨라 두 몬트 (JA)",
+        "파두 공연 (JA)"
+      ],
+      "zh": [
+        "세뇨라 두 몬트 (ZH)",
+        "파두 공연 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "포르투",
+      "en": "Porto",
+      "ja": "ポルト",
+      "zh": "波尔图"
+    },
+    "theme": {
+      "ko": "고속열차로 낭만의 항구 도시 포르투 이동",
+      "en": "고속열차로 낭만의 항구 도시 포르투 이동",
+      "ja": "고속열차로 낭만의 항구 도시 포르투 이동",
+      "zh": "고속열차로 낭만의 항구 도시 포르투 이동"
+    },
+    "morning": {
+      "ko": "산타 아폴로니아 역에서 Alfa Pendular 1등석 열차 탑승 (3시간 소요)",
+      "en": "Morning: 산타 아폴로니아 역에서 Alfa Pendular 1등석 열차 탑승 (3시간 소요)",
+      "ja": "午前：산타 아폴로니아 역에서 Alfa Pendular 1등석 열차 탑승 (3시간 소요)",
+      "zh": "上午：산타 아폴로니아 역에서 Alfa Pendular 1등석 열차 탑승 (3시간 소요)"
+    },
+    "rest": {
+      "ko": "포르투 캄파냐 역 도착 후 알리아두스 호텔 체크인 및 휴식",
+      "en": "Afternoon Rest: 포르투 캄파냐 역 도착 후 알리아두스 호텔 체크인 및 휴식",
+      "ja": "午後休憩：포르투 캄파냐 역 도착 후 알리아두스 호텔 체크인 및 휴식",
+      "zh": "午后休整：포르투 캄파냐 역 도착 후 알리아두스 호텔 체크인 및 휴식"
+    },
+    "evening": {
+      "ko": "상벤투 역 푸른 아줄레주 타일 벽화 평지 감상",
+      "en": "Evening: 상벤투 역 푸른 아줄레주 타일 벽화 평지 감상",
+      "ja": "夕方・夜：상벤투 역 푸른 아줄레주 타일 벽화 평지 감상",
+      "zh": "傍晚夜游：상벤투 역 푸른 아줄레주 타일 벽화 평지 감상"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "고속열차 및 택시",
+      "en": "고속열차 및 택시",
+      "ja": "고속열차 및 택시",
+      "zh": "고속열차 및 택시"
+    },
+    "meal": {
+      "ko": "따뜻한 채소 수프(Caldo Verde)",
+      "en": "따뜻한 채소 수프(Caldo Verde)",
+      "ja": "따뜻한 채소 수프(Caldo Verde)",
+      "zh": "따뜻한 채소 수프(Caldo Verde)"
+    },
+    "events": {
+      "ko": [
+        "포르투 이동일"
+      ],
+      "en": [
+        "포르투 이동일 (EN)"
+      ],
+      "ja": [
+        "포르투 이동일 (JA)"
+      ],
+      "zh": [
+        "포르투 이동일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "포르투",
+      "en": "Porto",
+      "ja": "ポルト",
+      "zh": "波尔图"
+    },
+    "theme": {
+      "ko": "동 루이스 1세 다리와 도루강 전통 와인 셀러 투어",
+      "en": "동 루이스 1세 다리와 도루강 전통 와인 셀러 투어",
+      "ja": "동 루이스 1세 다리와 도루강 전통 와인 셀러 투어",
+      "zh": "동 루이스 1세 다리와 도루강 전통 와인 셀러 투어"
+    },
+    "morning": {
+      "ko": "도루 강변 히베이라 광장 카페 산책 및 목조 유람선 탑승",
+      "en": "Morning: 도루 강변 히베이라 광장 카페 산책 및 목조 유람선 탑승",
+      "ja": "午前：도루 강변 히베이라 광장 카페 산책 및 목조 유람선 탑승",
+      "zh": "上午：도루 강변 히베이라 광장 카페 산책 및 목조 유람선 탑승"
+    },
+    "rest": {
+      "ko": "가이아 지구 유명 테일러(Taylor's) 와이너리 정원 카페 휴식",
+      "en": "Afternoon Rest: 가이아 지구 유명 테일러(Taylor's) 와이너리 정원 카페 휴식",
+      "ja": "午後休憩：가이아 지구 유명 테일러(Taylor's) 와이너리 정원 카페 휴식",
+      "zh": "午后休整：가이아 지구 유명 테일러(Taylor's) 와이너리 정원 카페 휴식"
+    },
+    "evening": {
+      "ko": "세하 두 필라르 수도원 광장에서 동 루이스 1세 다리 노을 & 야경",
+      "en": "Evening: 세하 두 필라르 수도원 광장에서 동 루이스 1세 다리 노을 & 야경",
+      "ja": "夕方・夜：세하 두 필라르 수도원 광장에서 동 루이스 1세 다리 노을 & 야경",
+      "zh": "傍晚夜游：세하 두 필라르 수도원 광장에서 동 루이스 1세 다리 노을 & 야경"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "가이아 케이블카 및 우버",
+      "en": "가이아 케이블카 및 우버",
+      "ja": "가이아 케이블카 및 우버",
+      "zh": "가이아 케이블카 및 우버"
+    },
+    "meal": {
+      "ko": "문어 스테이크(Polvo à Lagareiro)",
+      "en": "문어 스테이크(Polvo à Lagareiro)",
+      "ja": "문어 스테이크(Polvo à Lagareiro)",
+      "zh": "문어 스테이크(Polvo à Lagareiro)"
+    },
+    "events": {
+      "ko": [
+        "동 루이스 1세 다리",
+        "와이너리 투어"
+      ],
+      "en": [
+        "동 루이스 1세 다리 (EN)",
+        "와이너리 투어 (EN)"
+      ],
+      "ja": [
+        "동 루이스 1세 다리 (JA)",
+        "와이너리 투어 (JA)"
+      ],
+      "zh": [
+        "동 루이스 1세 다리 (ZH)",
+        "와이너리 투어 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "포르투",
+      "en": "Porto",
+      "ja": "ポルト",
+      "zh": "波尔图"
+    },
+    "theme": {
+      "ko": "크리스탈 궁전 정원과 클레리고스 타워 산책",
+      "en": "크리스탈 궁전 정원과 클레리고스 타워 산책",
+      "ja": "크리스탈 궁전 정원과 클레리고스 타워 산책",
+      "zh": "크리스탈 궁전 정원과 클레리고스 타워 산책"
+    },
+    "morning": {
+      "ko": "크리스탈 궁전 정원 공작새와 도루강 하구 파노라마 산책 (완전 평지)",
+      "en": "Morning: 크리스탈 궁전 정원 공작새와 도루강 하구 파노라마 산책 (완전 평지)",
+      "ja": "午前：크리스탈 궁전 정원 공작새와 도루강 하구 파노라마 산책 (완전 평지)",
+      "zh": "上午：크리스탈 궁전 정원 공작새와 도루강 하구 파노라마 산책 (완전 평지)"
+    },
+    "rest": {
+      "ko": "공원 뷰 베이커리에서 커피와 나타 휴식",
+      "en": "Afternoon Rest: 공원 뷰 베이커리에서 커피와 나타 휴식",
+      "ja": "午後休憩：공원 뷰 베이커리에서 커피와 나타 휴식",
+      "zh": "午后休整：공원 뷰 베이커리에서 커피와 나타 휴식"
+    },
+    "evening": {
+      "ko": "볼량 시장(Mercado do Bolhão) 리노베이션 현대식 시장 특산품 쇼핑",
+      "en": "Evening: 볼량 시장(Mercado do Bolhão) 리노베이션 현대식 시장 특산품 쇼핑",
+      "ja": "夕方・夜：볼량 시장(Mercado do Bolhão) 리노베이션 현대식 시장 특산품 쇼핑",
+      "zh": "傍晚夜游：볼량 시장(Mercado do Bolhão) 리노베이션 현대식 시장 특산품 쇼핑"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "메트로 D라인 및 우버",
+      "en": "메트로 D라인 및 우버",
+      "ja": "메트로 D라인 및 우버",
+      "zh": "메트로 D라인 및 우버"
+    },
+    "meal": {
+      "ko": "전통 샌드위치 프란세지냐(Francesinha)",
+      "en": "전통 샌드위치 프란세지냐(Francesinha)",
+      "ja": "전통 샌드위치 프란세지냐(Francesinha)",
+      "zh": "전통 샌드위치 프란세지냐(Francesinha)"
+    },
+    "events": {
+      "ko": [
+        "볼량 시장",
+        "크리스탈 정원"
+      ],
+      "en": [
+        "볼량 시장 (EN)",
+        "크리스탈 정원 (EN)"
+      ],
+      "ja": [
+        "볼량 시장 (JA)",
+        "크리스탈 정원 (JA)"
+      ],
+      "zh": [
+        "볼량 시장 (ZH)",
+        "크리스탈 정원 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "브라가/포르투",
+      "en": "Braga / Porto",
+      "ja": "ブラガ／ポルト",
+      "zh": "布拉加 / 波尔图"
+    },
+    "theme": {
+      "ko": "종교의 수도 브라가 봄 제주스 성당 당일 힐링",
+      "en": "종교의 수도 브라가 봄 제주스 성당 당일 힐링",
+      "ja": "종교의 수도 브라가 봄 제주스 성당 당일 힐링",
+      "zh": "종교의 수도 브라가 봄 제주스 성당 당일 힐링"
+    },
+    "morning": {
+      "ko": "교외선 기차로 브라가 이동, 봄 제주스 성당 유압식 케이블카 탑승",
+      "en": "Morning: 교외선 기차로 브라가 이동, 봄 제주스 성당 유압식 케이블카 탑승",
+      "ja": "午前：교외선 기차로 브라가 이동, 봄 제주스 성당 유압식 케이블카 탑승",
+      "zh": "上午：교외선 기차로 브라가 이동, 봄 제주스 성당 유압식 케이블카 탑승"
+    },
+    "rest": {
+      "ko": "성당 위 정원 벤치에서 분수와 녹음 감상",
+      "en": "Afternoon Rest: 성당 위 정원 벤치에서 분수와 녹음 감상",
+      "ja": "午後休憩：성당 위 정원 벤치에서 분수와 녹음 감상",
+      "zh": "午后休整：성당 위 정원 벤치에서 분수와 녹음 감상"
+    },
+    "evening": {
+      "ko": "브라가 구시가지 보행자 전용도로 산책 후 포르투 복귀",
+      "en": "Evening: 브라가 구시가지 보행자 전용도로 산책 후 포르투 복귀",
+      "ja": "夕方・夜：브라가 구시가지 보행자 전용도로 산책 후 포르투 복귀",
+      "zh": "傍晚夜游：브라가 구시가지 보행자 전용도로 산책 후 포르투 복귀"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "통근 기차 및 수압식 푸니쿨라",
+      "en": "통근 기차 및 수압식 푸니쿨라",
+      "ja": "통근 기차 및 수압식 푸니쿨라",
+      "zh": "통근 기차 및 수압식 푸니쿨라"
+    },
+    "meal": {
+      "ko": "북부식 오리밥(Arroz de Pato)",
+      "en": "북부식 오리밥(Arroz de Pato)",
+      "ja": "북부식 오리밥(Arroz de Pato)",
+      "zh": "북부식 오리밥(Arroz de Pato)"
+    },
+    "events": {
+      "ko": [
+        "봄 제주스 성당"
+      ],
+      "en": [
+        "봄 제주스 성당 (EN)"
+      ],
+      "ja": [
+        "봄 제주스 성당 (JA)"
+      ],
+      "zh": [
+        "봄 제주스 성당 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "포르투",
+      "en": "Porto",
+      "ja": "ポルト",
+      "zh": "波尔图"
+    },
+    "theme": {
+      "ko": "마토지뉴시 대서양 해변과 신선한 수산 시장",
+      "en": "마토지뉴시 대서양 해변과 신선한 수산 시장",
+      "ja": "마토지뉴시 대서양 해변과 신선한 수산 시장",
+      "zh": "마토지뉴시 대서양 해변과 신선한 수산 시장"
+    },
+    "morning": {
+      "ko": "메트로 500번 버스로 마토지뉴시 해변 직행, 대서양 백사장 산책",
+      "en": "Morning: 메트로 500번 버스로 마토지뉴시 해변 직행, 대서양 백사장 산책",
+      "ja": "午前：메트로 500번 버스로 마토지뉴시 해변 직행, 대서양 백사장 산책",
+      "zh": "上午：메트로 500번 버스로 마토지뉴시 해변 직행, 대서양 백사장 산책"
+    },
+    "rest": {
+      "ko": "바다 전망 레스토랑에서 숯불 생선구이 점심",
+      "en": "Afternoon Rest: 바다 전망 레스토랑에서 숯불 생선구이 점심",
+      "ja": "午後休憩：바다 전망 레스토랑에서 숯불 생선구이 점심",
+      "zh": "午后休整：바다 전망 레스토랑에서 숯불 생선구이 점심"
+    },
+    "evening": {
+      "ko": "포르투 복귀 후 마지막 기념품 쇼핑 (비누, 통조림, 와인)",
+      "en": "Evening: 포르투 복귀 후 마지막 기념품 쇼핑 (비누, 통조림, 와인)",
+      "ja": "夕方・夜：포르투 복귀 후 마지막 기념품 쇼핑 (비누, 통조림, 와인)",
+      "zh": "傍晚夜游：포르투 복귀 후 마지막 기념품 쇼핑 (비누, 통조림, 와인)"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "500번 2층 버스 (해안선 뷰)",
+      "en": "500번 2층 버스 (해안선 뷰)",
+      "ja": "500번 2층 버스 (해안선 뷰)",
+      "zh": "500번 2층 버스 (해안선 뷰)"
+    },
+    "meal": {
+      "ko": "참숯 그릴 농어 & 도미 구이",
+      "en": "참숯 그릴 농어 & 도미 구이",
+      "ja": "참숯 그릴 농어 & 도미 구이",
+      "zh": "참숯 그릴 농어 & 도미 구이"
+    },
+    "events": {
+      "ko": [
+        "마토지뉴시 해변"
+      ],
+      "en": [
+        "마토지뉴시 해변 (EN)"
+      ],
+      "ja": [
+        "마토지뉴시 해변 (JA)"
+      ],
+      "zh": [
+        "마토지뉴시 해변 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "포르투",
+      "en": "Porto",
+      "ja": "ポルト",
+      "zh": "波尔图"
+    },
+    "theme": {
+      "ko": "포르투 힐링 데이 & 짐 정리, 여행의 추억 정리",
+      "en": "포르투 힐링 데이 & 짐 정리, 여행의 추억 정리",
+      "ja": "포르투 힐링 데이 & 짐 정리, 여행의 추억 정리",
+      "zh": "포르투 힐링 데이 & 짐 정리, 여행의 추억 정리"
+    },
+    "morning": {
+      "ko": "알리아두스 대로 여유로운 브런치 및 호텔 주변 산책",
+      "en": "Morning: 알리아두스 대로 여유로운 브런치 및 호텔 주변 산책",
+      "ja": "午前：알리아두스 대로 여유로운 브런치 및 호텔 주변 산책",
+      "zh": "上午：알리아두스 대로 여유로운 브런치 및 호텔 주변 산책"
+    },
+    "rest": {
+      "ko": "호텔 룸에서 짐 패킹 및 온수 족욕 휴식",
+      "en": "Afternoon Rest: 호텔 룸에서 짐 패킹 및 온수 족욕 휴식",
+      "ja": "午後休憩：호텔 룸에서 짐 패킹 및 온수 족욕 휴식",
+      "zh": "午后休整：호텔 룸에서 짐 패킹 및 온수 족욕 휴식"
+    },
+    "evening": {
+      "ko": "도루 강변 마지막 석양 산책과 고별 디너",
+      "en": "Evening: 도루 강변 마지막 석양 산책과 고별 디너",
+      "ja": "夕方・夜：도루 강변 마지막 석양 산책과 고별 디너",
+      "zh": "傍晚夜游：도루 강변 마지막 석양 산책과 고별 디너"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "도보 평지길",
+      "en": "도보 평지길",
+      "ja": "도보 평지길",
+      "zh": "도보 평지길"
+    },
+    "meal": {
+      "ko": "특선 해산물 카타플라나(Cataplana)",
+      "en": "특선 해산물 카타플라나(Cataplana)",
+      "ja": "특선 해산물 카타플라나(Cataplana)",
+      "zh": "특선 해산물 카타플라나(Cataplana)"
+    },
+    "events": {
+      "ko": [
+        "마지막 고별 만찬"
+      ],
+      "en": [
+        "마지막 고별 만찬 (EN)"
+      ],
+      "ja": [
+        "마지막 고별 만찬 (JA)"
+      ],
+      "zh": [
+        "마지막 고별 만찬 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "포르투/두바이",
+      "en": "포르투/두바이",
+      "ja": "포르투/두바이",
+      "zh": "포르투/두바이"
+    },
+    "theme": {
+      "ko": "포르투 공항 출발 ✈️ 두바이 도착, 환승 스탑오버 힐링 휴식",
+      "en": "포르투 공항 출발 ✈️ 두바이 도착, 환승 스탑오버 힐링 휴식",
+      "ja": "포르투 공항 출발 ✈️ 두바이 도착, 환승 스탑오버 힐링 휴식",
+      "zh": "포르투 공항 출발 ✈️ 두바이 도착, 환승 스탑오버 힐링 휴식"
+    },
+    "morning": {
+      "ko": "포르투 공항(OPO) 전용 픽업 차량 이동, 에미레이트 항공 체크인 후 두바이(DXB) 이동",
+      "en": "Morning: 포르투 공항(OPO) 전용 픽업 차량 이동, 에미레이트 항공 체크인 후 두바이(DXB) 이동",
+      "ja": "午前：포르투 공항(OPO) 전용 픽업 차량 이동, 에미레이트 항공 체크인 후 두바이(DXB) 이동",
+      "zh": "上午：포르투 공항(OPO) 전용 픽업 차량 이동, 에미레이트 항공 체크인 후 두바이(DXB) 이동"
+    },
+    "rest": {
+      "ko": "두바이 공항 인근 5성급 호텔 체크인 및 온수 스파 휴식",
+      "en": "Afternoon Rest: 두바이 공항 인근 5성급 호텔 체크인 및 온수 스파 휴식",
+      "ja": "午後休憩：두바이 공항 인근 5성급 호텔 체크인 및 온수 스파 휴식",
+      "zh": "午后休整：두바이 공항 인근 5성급 호텔 체크인 및 온수 스파 휴식"
+    },
+    "evening": {
+      "ko": "두바이 페스티벌 시티 또는 마리나 워크 가벼운 수변 산책",
+      "en": "Evening: 두바이 페스티벌 시티 또는 마리나 워크 가벼운 수변 산책",
+      "ja": "夕方・夜：두바이 페스티벌 시티 또는 마리나 워크 가벼운 수변 산책",
+      "zh": "傍晚夜游：두바이 페스티벌 시티 또는 마리나 워크 가벼운 수변 산책"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "항공편 및 공항 리무진",
+      "en": "항공편 및 공항 리무진",
+      "ja": "항공편 및 공항 리무진",
+      "zh": "항공편 및 공항 리무진"
+    },
+    "meal": {
+      "ko": "두바이 인터내셔널 뷔페",
+      "en": "두바이 인터내셔널 뷔페",
+      "ja": "두바이 인터내셔널 뷔페",
+      "zh": "두바이 인터내셔널 뷔페"
+    },
+    "events": {
+      "ko": [
+        "두바이 환승 스탑오버"
+      ],
+      "en": [
+        "두바이 환승 스탑오버 (EN)"
+      ],
+      "ja": [
+        "두바이 환승 스탑오버 (JA)"
+      ],
+      "zh": [
+        "두바이 환승 스탑오버 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "두바이/인천",
+      "en": "두바이/인천",
+      "ja": "두바이/인천",
+      "zh": "두바이/인천"
+    },
+    "theme": {
+      "ko": "두바이 공항 면세점 쇼핑 ✈️ 에미레이트 A380 탑승",
+      "en": "두바이 공항 면세점 쇼핑 ✈️ 에미레이트 A380 탑승",
+      "ja": "두바이 공항 면세점 쇼핑 ✈️ 에미레이트 A380 탑승",
+      "zh": "두바이 공항 면세점 쇼핑 ✈️ 에미레이트 A380 탑승"
+    },
+    "morning": {
+      "ko": "두바이 시내 마지막 기념품 쇼핑 (대추야자 데이츠, 낙타유 비누)",
+      "en": "Morning: 두바이 시내 마지막 기념품 쇼핑 (대추야자 데이츠, 낙타유 비누)",
+      "ja": "午前：두바이 시내 마지막 기념품 쇼핑 (대추야자 데이츠, 낙타유 비누)",
+      "zh": "上午：두바이 시내 마지막 기념품 쇼핑 (대추야자 데이츠, 낙타유 비누)"
+    },
+    "rest": {
+      "ko": "에미레이트 공항 라운지 샤워 및 휴식",
+      "en": "Afternoon Rest: 에미레이트 공항 라운지 샤워 및 휴식",
+      "ja": "午後休憩：에미레이트 공항 라운지 샤워 및 휴식",
+      "zh": "午后休整：에미레이트 공항 라운지 샤워 및 휴식"
+    },
+    "evening": {
+      "ko": "인천행 A380 밤 비행기 탑승 및 기내 숙면",
+      "en": "Evening: 인천행 A380 밤 비행기 탑승 및 기내 숙면",
+      "ja": "夕方・夜：인천행 A380 밤 비행기 탑승 및 기내 숙면",
+      "zh": "傍晚夜游：인천행 A380 밤 비행기 탑승 및 기내 숙면"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "에미레이트 항공 A380",
+      "en": "에미레이트 항공 A380",
+      "ja": "에미레이트 항공 A380",
+      "zh": "에미레이트 항공 A380"
+    },
+    "meal": {
+      "ko": "기내식 서비스",
+      "en": "기내식 서비스",
+      "ja": "기내식 서비스",
+      "zh": "기내식 서비스"
+    },
+    "events": {
+      "ko": [
+        "귀국 비행일"
+      ],
+      "en": [
+        "귀국 비행일 (EN)"
+      ],
+      "ja": [
+        "귀국 비행일 (JA)"
+      ],
+      "zh": [
+        "귀국 비행일 (ZH)"
+      ]
+    }
+  },
+  {
+    "city": {
+      "ko": "귀국",
+      "en": "Departure / Return",
+      "ja": "帰国",
+      "zh": "返程归国"
+    },
+    "theme": {
+      "ko": "인천 국제공항 안전한 귀국, 33일간의 여정 마무리",
+      "en": "인천 국제공항 안전한 귀국, 33일간의 여정 마무리",
+      "ja": "인천 국제공항 안전한 귀국, 33일간의 여정 마무리",
+      "zh": "인천 국제공항 안전한 귀국, 33일간의 여정 마무리"
+    },
+    "morning": {
+      "ko": "인천 국제공항(ICN) 아침 도착, 입국 수속 및 수하물 수령",
+      "en": "Morning: 인천 국제공항(ICN) 아침 도착, 입국 수속 및 수하물 수령",
+      "ja": "午前：인천 국제공항(ICN) 아침 도착, 입국 수속 및 수하물 수령",
+      "zh": "上午：인천 국제공항(ICN) 아침 도착, 입국 수속 및 수하물 수령"
+    },
+    "rest": {
+      "ko": "공항 리무진 탑승, 귀가 후 온수 샤워 및 충분한 수면",
+      "en": "Afternoon Rest: 공항 리무진 탑승, 귀가 후 온수 샤워 및 충분한 수면",
+      "ja": "午後休憩：공항 리무진 탑승, 귀가 후 온수 샤워 및 충분한 수면",
+      "zh": "午后休整：공항 리무진 탑승, 귀가 후 온수 샤워 및 충분한 수면"
+    },
+    "evening": {
+      "ko": "가족과 함께 두바이·스페인·포르투갈 33일간의 사진과 기념품 정리",
+      "en": "Evening: 가족과 함께 두바이·스페인·포르투갈 33일간의 사진과 기념품 정리",
+      "ja": "夕方・夜：가족과 함께 두바이·스페인·포르투갈 33일간의 사진과 기념품 정리",
+      "zh": "傍晚夜游：가족과 함께 두바이·스페인·포르투갈 33일간의 사진과 기념품 정리"
+    },
+    "walk": {
+      "ko": "낮음",
+      "en": "Low",
+      "ja": "軽め",
+      "zh": "平缓"
+    },
+    "transport": {
+      "ko": "공항 리무진 / 자택 귀가",
+      "en": "공항 리무진 / 자택 귀가",
+      "ja": "공항 리무진 / 자택 귀가",
+      "zh": "공항 리무진 / 자택 귀가"
+    },
+    "meal": {
+      "ko": "따뜻한 한식 된장찌개 & 김치찌개 만찬",
+      "en": "따뜻한 한식 된장찌개 & 김치찌개 만찬",
+      "ja": "따뜻한 한식 된장찌개 & 김치찌개 만찬",
+      "zh": "따뜻한 한식 된장찌개 & 김치찌개 만찬"
+    },
+    "events": {
+      "ko": [
+        "인천 도착 완료",
+        "33일 여정 완결"
+      ],
+      "en": [
+        "인천 도착 완료 (EN)",
+        "33일 여정 완결 (EN)"
+      ],
+      "ja": [
+        "인천 도착 완료 (JA)",
+        "33일 여정 완결 (JA)"
+      ],
+      "zh": [
+        "인천 도착 완료 (ZH)",
+        "33일 여정 완결 (ZH)"
+      ]
+    }
+  }
+];
+    PLANS_DAYS_I18N_DATA["IBERIA_DUBAI"] = PLANS_DAYS_I18N_DATA["DUBAI_STOPOVER"];
+    if (PLANS_DAYS_I18N_DATA["LATIN_AMERICA"]) {
+      PLANS_DAYS_I18N_DATA["LATIN"] = PLANS_DAYS_I18N_DATA["LATIN_AMERICA"];
+    }
+    if (PLANS_DAYS_I18N_DATA["WEST_CENTRAL_EU"]) {
+      PLANS_DAYS_I18N_DATA["UK_FRANCE"] = PLANS_DAYS_I18N_DATA["WEST_CENTRAL_EU"];
+    }
+  }
+
+  // 6. Add comprehensive I18N dictionary keys for all 4 languages
+  const NEW_I18N_KEYS = {
+    ko: {
+      opt_region_iberia: "🇪🇸🇵🇹 스페인 남부 + 포르투갈 (30일 완결)",
+      opt_region_dubai: "🇦🇪🇪🇸 두바이 경유 + 스페인·포르투갈 (에미레이트 33일)",
+      opt_region_west_central_eu: "🇬🇧🇫🇷🇮🇹 서유럽 & 중부유럽 문화 대장정 (30일)",
+      opt_region_latin_america: "🌎 중남미 안데스 & 잉카 문명 대장정 (페루·볼리비아·아르헨티나)",
+      opt_region_canary: "🇮🇨 스페인 본토 + 카나리아 제도 (온화한 겨울 휴양)",
+      page_guide_map_title: "대형 랜드마크 인터랙티브 지도 (73선 전 지점)",
+      page_guide_map_sub: "유럽 및 중남미, 두바이 경유 핵심 명소의 위치와 동선을 지도상에서 한눈에 클릭하여 탐색하세요.",
+      map_filter_all: "전체 보기 (73+선)",
+      map_filter_iberia: "🇪🇸🇵🇹 이베리아 (스페인·포르투갈)",
+      map_filter_europe: "🇪🇺 서·중부 유럽 (영국·프랑스·이탈리아 등)",
+      map_filter_latin: "🌎 중남미 (페루·볼리비아·아르헨티나 등)",
+      map_filter_dubai: "🇦🇪 두바이 경유 코스 (Burj Khalifa 등)",
+      map_btn_reset_view: "시야 맞춤",
+      map_official_ticket: "공식 예매처 ↗",
+      map_google_directions: "길찾기",
+      map_senior_note: "시니어 접근성",
+      page_festivals_1: "1. 봄·여름 대표 축제",
+      page_festivals_2: "2. 가을·겨울 & 특별 축제",
+      page_festivals_3: "3. 파노라마 야경 명소 전 지점",
+      page_festivals_4: "4. 나의 저장 후보 위시리스트"
+    },
+    en: {
+      opt_region_iberia: "🇪🇸🇵🇹 Southern Spain + Portugal (30 Days Complete)",
+      opt_region_dubai: "🇦🇪🇪🇸 Dubai Stopover + Spain & Portugal (Emirates 33 Days)",
+      opt_region_west_central_eu: "🇬🇧🇫🇷🇮🇹 West & Central Europe Grand Cultural Tour (30 Days)",
+      opt_region_latin_america: "🌎 Latin America Andes & Inca Trail (Peru, Bolivia, Argentina)",
+      opt_region_canary: "🇮🇨 Mainland Spain + Canary Islands (Gentle Winter Retreat)",
+      page_guide_map_title: "Interactive Big Landmark Map (All 73+ Key Sites)",
+      page_guide_map_sub: "Explore key landmarks across Europe, Latin America, and Dubai stopover visually on the map with one click.",
+      map_filter_all: "View All (73+ Sites)",
+      map_filter_iberia: "🇪🇸🇵🇹 Iberia (Spain & Portugal)",
+      map_filter_europe: "🇪🇺 West & Central Europe",
+      map_filter_latin: "🌎 Latin America",
+      map_filter_dubai: "🇦🇪 Dubai Stopover",
+      map_btn_reset_view: "Reset View",
+      map_official_ticket: "Official Booking Site ↗",
+      map_google_directions: "Directions",
+      map_senior_note: "Senior Accessibility",
+      page_festivals_1: "1. Spring & Summer Festivals",
+      page_festivals_2: "2. Autumn, Winter & Special Festivals",
+      page_festivals_3: "3. Panoramic Night Views (All Sites)",
+      page_festivals_4: "4. My Saved Wishlist"
+    },
+    ja: {
+      opt_region_iberia: "🇪🇸🇵🇹 スペイン南部＋ポルトガル（30日間完結）",
+      opt_region_dubai: "🇦🇪🇪🇸 ドバイ経由＋スペイン・ポルトガル（エミレーツ33日間）",
+      opt_region_west_central_eu: "🇬🇧🇫🇷🇮🇹 西欧・中欧クラシック文化大周遊（30日間）",
+      opt_region_latin_america: "🌎 中南米アンデス・インカ文明探訪（ペルー・ボリビア・アルゼンチン）",
+      opt_region_canary: "🇮🇨 スペイン本土＋カナリア諸島（温暖な冬のリゾート）",
+      page_guide_map_title: "大型ランドマーク・インタラクティブ地図（全73+拠点）",
+      page_guide_map_sub: "ヨーロッパ、中南米、ドバイ経由の厳選ランドマークの位置と周遊動線を地図上で一目で確認・探索できます。",
+      map_filter_all: "すべて表示（73+箇所）",
+      map_filter_iberia: "🇪🇸🇵🇹 イベリア（スペイン・ポルトガル）",
+      map_filter_europe: "🇪🇺 西・中欧（英・仏・伊・中欧）",
+      map_filter_latin: "🌎 中南米（ペルー・ボリビア・アルゼンチン等）",
+      map_filter_dubai: "🇦🇪 ドバイ経由（バージ・カリファ等）",
+      map_btn_reset_view: "全体表示",
+      map_official_ticket: "公式予約・詳細 ↗",
+      map_google_directions: "経路案内",
+      map_senior_note: "シニア移動利便性",
+      page_festivals_1: "1. 春夏シーズン代表祭典",
+      page_festivals_2: "2. 秋冬・特別フェスティバル",
+      page_festivals_3: "3. パノラマ夜景スポット全拠点",
+      page_festivals_4: "4. 保存済みウィッシュリスト"
+    },
+    zh: {
+      opt_region_iberia: "🇪🇸🇵🇹 西班牙南部＋葡萄牙（30天完整行程）",
+      opt_region_dubai: "🇦🇪🇪🇸 迪拜中转过境＋西班牙·葡萄牙（阿联酋航空33天）",
+      opt_region_west_central_eu: "🇬🇧🇫🇷🇮🇹 西欧与中欧文化大环线（30天经典之旅）",
+      opt_region_latin_america: "🌎 拉美安第斯与印加秘境大探险（秘鲁·玻利维亚·阿根廷）",
+      opt_region_canary: "🇮🇨 西班牙本土＋加那利群岛（温暖冬日避寒度假）",
+      page_guide_map_title: "全景地标互动大地图（全境73+核心坐标）",
+      page_guide_map_sub: "一键在全景交互地图上探索欧洲、拉美及迪拜过境核心地标与顺滑游览动线。",
+      map_filter_all: "查看全部（73+坐标）",
+      map_filter_iberia: "🇪🇸🇵🇹 伊比利亚（西班牙·葡萄牙）",
+      map_filter_europe: "🇪🇺 西欧与中欧（英法意德捷等）",
+      map_filter_latin: "🌎 拉丁美洲（秘鲁玻利维亚阿根廷等）",
+      map_filter_dubai: "🇦🇪 迪拜过境线（哈利法塔等）",
+      map_btn_reset_view: "视角居中",
+      map_official_ticket: "官方预订网站 ↗",
+      map_google_directions: "路线导航",
+      map_senior_note: "适老无障碍出行",
+      page_festivals_1: "1. 春夏标志性节日盛典",
+      page_festivals_2: "2. 秋冬及跨年特别狂欢",
+      page_festivals_3: "3. 全景观赏夜景坐标全收录",
+      page_festivals_4: "4. 我的愿望清单"
+    }
+  };
+
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(l => {
+      if (I18N_DICTIONARY[l] && NEW_I18N_KEYS[l]) {
+        Object.assign(I18N_DICTIONARY[l], NEW_I18N_KEYS[l]);
+      }
+    });
+  }
+})();

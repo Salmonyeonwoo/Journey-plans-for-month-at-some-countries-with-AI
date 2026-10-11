@@ -1,3 +1,181 @@
+
+// ========================================================
+// BIG LANDMARKS INTERACTIVE MAP (CHAPTER 3 PAGE 4)
+// ========================================================
+let landmarksBigMapInstance = null;
+let landmarksBigMapMarkerLayer = null;
+let currentBigMapFilter = 'ALL';
+
+function filterBigLandmarksMap(category) {
+  currentBigMapFilter = category;
+  ['btnBigMapAll', 'btnBigMapIberia', 'btnBigMapEurope', 'btnBigMapLatin', 'btnBigMapDubai'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('active');
+  });
+
+  const activeBtnId = {
+    'ALL': 'btnBigMapAll',
+    'IBERIA': 'btnBigMapIberia',
+    'EUROPE': 'btnBigMapEurope',
+    'LATIN': 'btnBigMapLatin',
+    'DUBAI': 'btnBigMapDubai'
+  }[category] || 'btnBigMapAll';
+
+  const activeBtn = document.getElementById(activeBtnId);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  renderBigLandmarksMap();
+}
+
+function resetBigLandmarksMapView() {
+  if (landmarksBigMapInstance && landmarksBigMapMarkerLayer) {
+    const bounds = L.latLngBounds();
+    landmarksBigMapMarkerLayer.eachLayer(layer => {
+      if (layer.getLatLng) bounds.extend(layer.getLatLng());
+    });
+    if (bounds.isValid()) {
+      landmarksBigMapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 12 });
+    }
+  }
+}
+
+function renderBigLandmarksMap() {
+  if (typeof L === 'undefined') return;
+  const container = document.getElementById('landmarksBigMapContainer');
+  if (!container) return;
+
+  if (!landmarksBigMapInstance) {
+    landmarksBigMapInstance = L.map('landmarksBigMapContainer', {
+      zoomControl: true,
+      scrollWheelZoom: false,
+      tap: true
+    }).setView([32.0, -10.0], 3);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 18
+    }).addTo(landmarksBigMapInstance);
+
+    landmarksBigMapMarkerLayer = L.layerGroup().addTo(landmarksBigMapInstance);
+  }
+
+  landmarksBigMapMarkerLayer.clearLayers();
+
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) ? I18N_DICTIONARY[currentLang] : (I18N_DICTIONARY ? I18N_DICTIONARY['ko'] : {});
+  const allItems = (typeof GLOBAL_LANDMARKS_DATA !== 'undefined' ? [...GLOBAL_LANDMARKS_DATA] : []);
+  
+  if (typeof DUBAI_LANDMARKS !== 'undefined') {
+    DUBAI_LANDMARKS.forEach(dlm => {
+      if (!allItems.some(x => x.name === dlm.name)) {
+        allItems.push(dlm);
+      }
+    });
+  }
+
+  // Filter by currentBigMapFilter
+  let filteredItems = allItems;
+  if (currentBigMapFilter === 'IBERIA') {
+    filteredItems = allItems.filter(x => x.region === '스페인' || x.region === '포르투갈' || x.group === '이베리아');
+  } else if (currentBigMapFilter === 'EUROPE') {
+    filteredItems = allItems.filter(x => 
+      x.region !== '스페인' && x.region !== '포르투갈' && 
+      x.region !== '중남미' && x.region !== '두바이' && x.region !== '미국' &&
+      !x.city.includes('두바이') && !x.city.includes('Dubai') &&
+      !x.city.includes('페루') && !x.city.includes('브라질') && !x.city.includes('아르헨티나') && !x.city.includes('멕시코')
+    );
+  } else if (currentBigMapFilter === 'LATIN') {
+    filteredItems = allItems.filter(x => 
+      x.region === '중남미' || x.region === '페루' || x.region === '볼리비아' || 
+      x.region === '아르헨티나' || x.region === '브라질' || x.region === '멕시코' || x.region === '칠레' ||
+      x.city.includes('페루') || x.city.includes('브라질') || x.city.includes('아르헨티나') || x.city.includes('멕시코') || x.city.includes('쿠스코')
+    );
+  } else if (currentBigMapFilter === 'DUBAI') {
+    filteredItems = allItems.filter(x => 
+      x.region === '두바이' || x.city.includes('두바이') || x.city.includes('Dubai') || 
+      x.name.includes('버즈') || x.name.includes('Burj') || x.name.includes('미래의 박물관')
+    );
+  }
+
+  const bounds = L.latLngBounds();
+
+  filteredItems.forEach(item => {
+    let coords = (typeof LANDMARK_COORDS !== 'undefined' && LANDMARK_COORDS[item.name]) ? LANDMARK_COORDS[item.name] : null;
+    if (!coords) {
+      if (item.city.includes('두바이') || item.city.includes('Dubai')) coords = [25.1972, 55.2744];
+      else if (item.region === '스페인') coords = [40.4168, -3.7038];
+      else if (item.region === '포르투갈') coords = [38.7223, -9.1393];
+      else if (item.city.includes('페루') || item.city.includes('쿠스코')) coords = [-13.5160, -71.9789];
+      else if (item.city.includes('브라질') || item.city.includes('리우')) coords = [-22.9519, -43.2105];
+      else if (item.city.includes('아르헨티나') || item.city.includes('부에노스')) coords = [-34.6037, -58.3816];
+      else if (item.city.includes('멕시코')) coords = [19.4326, -99.1332];
+      else coords = [46.2276, 2.2137];
+    }
+
+    const latLng = L.latLng(coords[0], coords[1]);
+    bounds.extend(latLng);
+
+    const info = (typeof LANDMARK_I18N_DATA !== 'undefined' && LANDMARK_I18N_DATA[item.name]) ? LANDMARK_I18N_DATA[item.name] : {};
+    const localizedName = (info.displayName && info.displayName[currentLang]) || item.name;
+    const localizedBadge = (info.badge && info.badge[currentLang]) || item.city;
+    const localizedHighlight = (info.highlight && info.highlight[currentLang]) || item.highlight || '';
+    const localizedSenior = (info.seniorAccess && info.seniorAccess[currentLang]) || item.seniorAccess || '';
+    const priceText = item.baseKrw ? formatCardPrice(item.baseKrw, currentCurrency, false) : (dict['badge_booking_free'] || '무료');
+
+    // Category pin color
+    let pinColor = '#10b981'; // Iberia green
+    if (item.region === '두바이' || item.city.includes('두바이') || item.city.includes('Dubai')) pinColor = '#f59e0b'; // Gold
+    else if (item.region === '중남미' || item.city.includes('페루') || item.city.includes('멕시코') || item.city.includes('브라질')) pinColor = '#ef4444'; // Red
+    else if (item.region !== '스페인' && item.region !== '포르투갈') pinColor = '#3b82f6'; // Blue
+
+    const customIcon = L.divIcon({
+      className: 'custom-map-pin',
+      html: `<div style="background:${pinColor};width:24px;height:24px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:900;">📍</div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 12]
+    });
+
+    const popupHtml = `
+      <div class="map-popup-card">
+        <img src="${item.photo}" class="map-popup-img" alt="${localizedName}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=400&q=80';" />
+        <div class="map-popup-region" style="color:${pinColor};font-weight:800;font-size:11px;margin-top:2px;">${cleanHangul(localizedBadge, currentLang)}</div>
+        <div class="map-popup-title" style="font-size:14px;font-weight:800;line-height:1.3;margin:2px 0;">${cleanHangul(localizedName, currentLang)}</div>
+        <div class="map-popup-price" style="font-weight:700;color:var(--accent,#0d5c3a);font-size:12.5px;">🎟 ${dict['lbl_price'] || '입장료'}: ${priceText}</div>
+        ${localizedHighlight ? `<p style="font-size:11.5px;color:#475569;margin:3px 0 6px;line-height:1.4;">${cleanHangul(localizedHighlight, currentLang).slice(0, 85)}...</p>` : ''}
+        ${localizedSenior ? `<div style="font-size:11px;background:#e0f2fe;color:#0369a1;padding:4px 6px;border-radius:6px;margin-bottom:6px;">♿ ${cleanHangul(localizedSenior, currentLang).slice(0, 60)}</div>` : ''}
+        <div style="display:flex;gap:6px;margin-top:4px;">
+          <a href="${item.officialUrl || '#'}" target="_blank" rel="noopener noreferrer" class="map-popup-btn" style="flex:1;background:var(--accent, #0d5c3a);text-align:center;padding:6px 8px;border-radius:8px;color:#fff;text-decoration:none;font-size:11px;font-weight:700;">
+            ${dict['map_official_ticket'] || '공식 예매처 ↗'}
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery || item.name)}" target="_blank" rel="noopener noreferrer" class="map-popup-btn" style="flex:1;background:#334155;text-align:center;padding:6px 8px;border-radius:8px;color:#fff;text-decoration:none;font-size:11px;font-weight:700;">
+            📍 ${dict['map_google_directions'] || '길찾기'}
+          </a>
+        </div>
+      </div>
+    `;
+
+    L.marker(latLng, { icon: customIcon }).bindPopup(popupHtml, { maxWidth: 280 }).addTo(landmarksBigMapMarkerLayer);
+  });
+
+  if (filteredItems.length > 0 && bounds.isValid()) {
+    setTimeout(() => {
+      if (landmarksBigMapInstance) {
+        landmarksBigMapInstance.invalidateSize();
+        landmarksBigMapInstance.fitBounds(bounds, { padding: [50, 50], maxZoom: 12 });
+      }
+    }, 120);
+    setTimeout(() => {
+      if (landmarksBigMapInstance) {
+        landmarksBigMapInstance.invalidateSize();
+      }
+    }, 300);
+  }
+}
+
+window.renderBigLandmarksMap = renderBigLandmarksMap;
+window.filterBigLandmarksMap = filterBigLandmarksMap;
+window.resetBigLandmarksMapView = resetBigLandmarksMapView;
+
 // ========================================================
 // SLOW TRAVEL IBERIA & DUBAI - APPLICATION LOGIC & CONTROLLER
 // ========================================================

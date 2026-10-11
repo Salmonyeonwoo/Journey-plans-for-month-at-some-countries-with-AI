@@ -5347,3 +5347,38 @@ html, body {
     flex: 1 1 100% !important;
   }
 }
+
+
+/* Map Filter Toolbar & Custom Map Pin */
+.map-filter-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+.custom-map-pin {
+  background: transparent !important;
+  border: none !important;
+}
+.map-view-container {
+  height: 550px !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid var(--line, #e2e8f0) !important;
+}
+@media (max-width: 768px) {
+  .map-view-container {
+    height: 420px !important;
+  }
+  .map-filter-toolbar {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .map-filter-toolbar .bookmark-chip {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
