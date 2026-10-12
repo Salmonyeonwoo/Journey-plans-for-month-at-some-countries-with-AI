@@ -1450,18 +1450,43 @@
                       <div class="water-header">
                         <span class="water-badge still-badge" data-i18n="water_sin_gas_title">🔵 일반 생수 (우리가 아는 맹물) ➔ Agua sin gas</span>
                         <div class="spanish-term">Agua sin gas</div>
-                        <div class="pronounce-tag">발음: [아구아 신 가스]</div>
+                        <div class="pronounce-tag" data-i18n="water_pronounce_sin">발음: [아구아 신 가스]</div>
                       </div>
                       <div class="water-body">
                         <p class="water-memo" data-i18n="water_sin_gas_desc">
-                          발음: [아구아 신 가스] / 💡 암기 꿀팁: 가스가 없다(sin = Without) = 맹물! 마트 페트병 라벨에서 <strong>'sin gas'</strong>를 꼭 확인하세요.
+                          💡 암기 꿀팁: 가스가 없다(sin = Without) = 맹물! 마트 페트병 라벨에서 <strong>'sin gas'</strong>를 꼭 확인하세요.
                         </p>
                         <div class="water-interactive-box">
-                          <button type="button" class="ctrl-btn test-water-btn" onclick="testWaterSqueeze('still')">
-                            🤏 페트병 눌러보기 시뮬레이션
+                          <!-- 시각화 병 시뮬레이션 스테이지 -->
+                          <div class="bottle-sim-stage" id="simStageStill">
+                            <div class="bottle-pressure-gauge zero-gauge">
+                              <span class="gauge-dot green-dot"></span>
+                              <span class="gauge-text" data-i18n="lbl_pressure_zero">내부 압력: 0.0 bar (무압력 · 부드러움)</span>
+                            </div>
+                            <div class="bottle-visual-wrapper" onclick="testWaterSqueeze('still')" title="클릭해서 페트병 눌러보기">
+                              <div class="bottle-graphic still-bottle" id="bottleGraphicStill">
+                                <div class="bottle-cap blue-cap"></div>
+                                <div class="bottle-neck"></div>
+                                <div class="bottle-shoulder"></div>
+                                <div class="bottle-waist still-waist" id="waistStill">
+                                  <div class="waist-dent-mark left-dent"></div>
+                                  <div class="waist-dent-mark right-dent"></div>
+                                  <span class="bottle-label-mini">SIN GAS</span>
+                                </div>
+                                <div class="bottle-base"></div>
+                              </div>
+                              <div class="sim-finger-pointer" id="fingerStill">👉</div>
+                              <div class="sim-dent-feedback" id="dentFeedbackStill">
+                                <span class="dent-badge" data-i18n="lbl_dent_soft">💧 푹- 쑥 들어감! (-15mm 굴곡)</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <button type="button" class="ctrl-btn test-water-btn" id="btnSqueezeStill" onclick="testWaterSqueeze('still')" data-i18n="btn_squeeze_still">
+                            🤏 페트병 허리 꾹 눌러보기 (시뮬레이션)
                           </button>
-                          <div class="squeeze-result-pill still-res" id="resStillBottle">
-                            💧 쑥 들어감 (부드러운 삼다수 느낌)
+                          <div class="squeeze-result-pill still-res" id="resStillBottle" data-i18n="res_squeeze_still">
+                            💧 쑥 들어감! (가스 압력 없음 · 부드러운 맹물)
                           </div>
                         </div>
                       </div>
@@ -1472,18 +1497,44 @@
                       <div class="water-header">
                         <span class="water-badge spark-badge" data-i18n="water_con_gas_title">🔴 탄산수 (톡 쏘는 가스물) ➔ Agua con gas</span>
                         <div class="spanish-term">Agua con gas</div>
-                        <div class="pronounce-tag">발음: [아구아 꼰 가스]</div>
+                        <div class="pronounce-tag" data-i18n="water_pronounce_con">발음: [아구아 꼰 가스]</div>
                       </div>
                       <div class="water-body">
                         <p class="water-memo" data-i18n="water_con_gas_desc">
-                          발음: [아구아 꼰 가스] / 💡 암기 꿀팁: 가스가 있다(con = With) = 탄산수! 톡 쏘는 탄산가스가 충전되어 있습니다.
+                          💡 암기 꿀팁: 가스가 있다(con = With) = 탄산수! 톡 쏘는 탄산가스가 충전되어 있습니다.
                         </p>
                         <div class="water-interactive-box">
-                          <button type="button" class="ctrl-btn test-water-btn" onclick="testWaterSqueeze('spark')">
-                            🤏 페트병 눌러보기 시뮬레이션
+                          <!-- 시각화 병 시뮬레이션 스테이지 -->
+                          <div class="bottle-sim-stage" id="simStageSpark">
+                            <div class="bottle-pressure-gauge high-gauge">
+                              <span class="gauge-dot red-dot"></span>
+                              <span class="gauge-text" data-i18n="lbl_pressure_high">내부 압력: 3.8 bar (고압 가스 충전 · 팽팽함)</span>
+                            </div>
+                            <div class="bottle-visual-wrapper" onclick="testWaterSqueeze('spark')" title="클릭해서 페트병 눌러보기">
+                              <div class="bottle-graphic spark-bottle" id="bottleGraphicSpark">
+                                <div class="bottle-cap red-cap"></div>
+                                <div class="bottle-neck"></div>
+                                <div class="bottle-shoulder"></div>
+                                <div class="bottle-waist spark-waist" id="waistSpark">
+                                  <span class="bubble b1">🫧</span>
+                                  <span class="bubble b2">🫧</span>
+                                  <span class="bubble b3">🫧</span>
+                                  <span class="bottle-label-mini spark-label">CON GAS</span>
+                                </div>
+                                <div class="bottle-base"></div>
+                              </div>
+                              <div class="sim-finger-pointer" id="fingerSpark">👉</div>
+                              <div class="sim-dent-feedback repel-feedback" id="dentFeedbackSpark">
+                                <span class="dent-badge repel-badge" data-i18n="lbl_dent_hard">💥 팅! 튕겨냄 (0mm 변형 · 돌덩이)</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <button type="button" class="ctrl-btn test-water-btn" id="btnSqueezeSpark" onclick="testWaterSqueeze('spark')" data-i18n="btn_squeeze_spark">
+                            🤏 페트병 허리 꾹 눌러보기 (시뮬레이션)
                           </button>
-                          <div class="squeeze-result-pill spark-res" id="resSparkBottle">
-                            ⚡ 돌덩이처럼 팽팽함 (가스 압력!)
+                          <div class="squeeze-result-pill spark-res" id="resSparkBottle" data-i18n="res_squeeze_spark">
+                            ⚡ 팅! 튕겨냄 (고압 탄산 가스 · 돌덩이처럼 팽팽)
                           </div>
                         </div>
                       </div>

@@ -6852,32 +6852,63 @@ function filterSafetyWaterSection(mode) {
 window.filterSafetyWaterSection = filterSafetyWaterSection;
 
 function testWaterSqueeze(type) {
-  const pillStill = document.getElementById('resStillBottle');
-  const pillSpark = document.getElementById('resSparkBottle');
   const lang = window.currentLang || 'ko';
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
 
   if (type === 'still') {
-    if (pillStill) {
-      pillStill.classList.add('pulse-anim');
-      setTimeout(() => pillStill.classList.remove('pulse-anim'), 800);
+    const waist = document.getElementById('waistStill');
+    const finger = document.getElementById('fingerStill');
+    const feedback = document.getElementById('dentFeedbackStill');
+    const pill = document.getElementById('resStillBottle');
+
+    if (waist) waist.classList.add('is-squished');
+    if (finger) finger.classList.add('finger-push');
+    if (feedback) feedback.classList.add('show-feedback');
+    if (pill) {
+      pill.classList.add('pulse-anim');
+      pill.innerHTML = dict['res_squeeze_still'] || '💧 쑥 들어감! (가스 압력 없음 · 부드러운 맹물)';
     }
+
+    setTimeout(() => {
+      if (waist) waist.classList.remove('is-squished');
+      if (finger) finger.classList.remove('finger-push');
+      if (feedback) feedback.classList.remove('show-feedback');
+      if (pill) pill.classList.remove('pulse-anim');
+    }, 1300);
+
     const msgs = {
-      ko: '🟢 일반 생수 (Agua sin gas): 쑥 들어감! 삼다수처럼 부드럽습니다.',
-      en: '🟢 Still Water (Agua sin gas): Easily squeezable! Normal smooth bottle.',
-      ja: '🟢 普通の水（Agua sin gas）: ペコペコと柔らかくへこみます！',
-      zh: '🟢 普通饮用水（Agua sin gas）：瓶身柔软凹陷，日常饮用首选！'
+      ko: '🟢 일반 생수 (Agua sin gas): 손으로 꾹 누르면 말랑말랑하게 쑥 들어갑니다! (압력 0.0 bar)',
+      en: '🟢 Still Water (Agua sin gas): Squeezes smoothly inward! Zero internal gas pressure (0.0 bar).',
+      ja: '🟢 普通の水（Agua sin gas）: 指で押すとペコペコと柔らかくへこみます！（ガス圧 0.0 bar）',
+      zh: '🟢 普通饮用水（Agua sin gas）：手指按压轻松捏瘪凹陷！无内部气体压力（0.0 bar）。'
     };
     if (typeof showToast === 'function') showToast(msgs[lang] || msgs.ko);
   } else {
-    if (pillSpark) {
-      pillSpark.classList.add('pulse-anim');
-      setTimeout(() => pillSpark.classList.remove('pulse-anim'), 800);
+    const bottle = document.getElementById('bottleGraphicSpark');
+    const finger = document.getElementById('fingerSpark');
+    const feedback = document.getElementById('dentFeedbackSpark');
+    const pill = document.getElementById('resSparkBottle');
+
+    if (bottle) bottle.classList.add('is-deflecting');
+    if (finger) finger.classList.add('finger-repelled');
+    if (feedback) feedback.classList.add('show-feedback');
+    if (pill) {
+      pill.classList.add('pulse-anim');
+      pill.innerHTML = dict['res_squeeze_spark'] || '⚡ 팅! 튕겨냄 (고압 탄산 가스 · 돌덩이처럼 팽팽)';
     }
+
+    setTimeout(() => {
+      if (bottle) bottle.classList.remove('is-deflecting');
+      if (finger) finger.classList.remove('finger-repelled');
+      if (feedback) feedback.classList.remove('show-feedback');
+      if (pill) pill.classList.remove('pulse-anim');
+    }, 1300);
+
     const msgs = {
-      ko: '🔴 탄산수 (Agua con gas): 팽팽하고 딱딱함! 가스 압력이 가득 차 있습니다.',
-      en: '🔴 Sparkling Water (Agua con gas): Rock-hard! Filled with dense gas pressure.',
-      ja: '🔴 炭酸水（Agua con gas）: 石のようにカチカチ！炭酸ガスが充満しています。',
-      zh: '🔴 气泡水（Agua con gas）：坚硬如石无法捏动，内充高压碳酸！'
+      ko: '🔴 탄산수 (Agua con gas): 빵빵한 탄산가스 압력(3.8 bar) 때문에 돌덩이처럼 팽팽하게 손을 튕겨냅니다!',
+      en: '🔴 Sparkling Water (Agua con gas): High carbonation pressure (3.8 bar) makes it rock-hard, deflecting fingers!',
+      ja: '🔴 炭酸水（Agua con gas）: 強い炭酸ガス内圧（3.8 bar）のため石のように硬く、指を跳ね返します！',
+      zh: '🔴 气泡水（Agua con gas）：内部高压碳酸气体（3.8 bar）如磐石般坚硬紧绷，瞬间弹开手指！'
     };
     if (typeof showToast === 'function') showToast(msgs[lang] || msgs.ko);
   }

@@ -27824,3 +27824,75 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
     });
   }
 })();
+
+
+// ========================================================
+// REFINED WATER SIMULATION & MULTILINGUAL LABELS EXTENSION
+// ========================================================
+(function() {
+  const REFINED_WATER_I18N = {
+    ko: {
+      water_pronounce_sin: "발음: [아구아 신 가스]",
+      water_pronounce_con: "발음: [아구아 꼰 가스]",
+      water_sin_gas_desc: "💡 암기 꿀팁: 가스가 없다(sin = Without) = 맹물! 마트 페트병 라벨에서 <strong>'sin gas'</strong>를 꼭 확인하세요.",
+      water_con_gas_desc: "💡 암기 꿀팁: 가스가 있다(con = With) = 탄산수! 톡 쏘는 탄산가스가 충전되어 있습니다.",
+      btn_squeeze_still: "🤏 페트병 허리 꾹 눌러보기 (시뮬레이션)",
+      btn_squeeze_spark: "🤏 페트병 허리 꾹 눌러보기 (시뮬레이션)",
+      res_squeeze_still: "💧 쑥 들어감! (가스 압력 없음 · 부드러운 맹물)",
+      res_squeeze_spark: "⚡ 팅! 튕겨냄 (고압 탄산 가스 · 돌덩이처럼 팽팽)",
+      lbl_pressure_zero: "내부 압력: 0.0 bar (무압력 · 부드러움)",
+      lbl_pressure_high: "내부 압력: 3.8 bar (고압 가스 충전 · 팽팽함)",
+      lbl_dent_soft: "💧 푹- 쑥 들어감! (-15mm 굴곡)",
+      lbl_dent_hard: "💥 팅! 튕겨냄 (0mm 변형 · 돌덩이)"
+    },
+    en: {
+      water_pronounce_sin: "",
+      water_pronounce_con: "",
+      water_sin_gas_desc: "💡 <strong>Memory trick:</strong> 'sin' means <strong>WITHOUT</strong> gas = Still Water! Look for the keyword <strong>'sin gas'</strong> on the bottle label.",
+      water_con_gas_desc: "💡 <strong>Memory trick:</strong> 'con' means <strong>WITH</strong> gas = Sparkling Water! Contains effervescent fizz & bubbles.",
+      btn_squeeze_still: "🤏 Squeeze Bottle Waist (Test Simulation)",
+      btn_squeeze_spark: "🤏 Squeeze Bottle Waist (Test Simulation)",
+      res_squeeze_still: "💧 Easily Indents! (Zero Gas Pressure · Soft & Flexible)",
+      res_squeeze_spark: "⚡ Deflects Rigidly! (High Carbonation · Rock-Hard)",
+      lbl_pressure_zero: "Internal Pressure: 0.0 bar (Zero Gas · Soft)",
+      lbl_pressure_high: "Internal Pressure: 3.8 bar (High Tension)",
+      lbl_dent_soft: "💧 Indents deeply! (-15mm soft dent)",
+      lbl_dent_hard: "💥 Rebounds rigidly! (0mm dent · Rock Hard)"
+    },
+    ja: {
+      water_pronounce_sin: "",
+      water_pronounce_con: "",
+      water_sin_gas_desc: "💡 <strong>記憶のコツ:</strong> ガスが無い（sin＝〜なし）＝ 普通の水！ボトルラベルで<strong>「sin gas」</strong>を必ず探してください。",
+      water_con_gas_desc: "💡 <strong>記憶のコツ:</strong> ガスが有る（con＝〜あり）＝ 炭酸水！強い炭酸ガスが充填されています。",
+      btn_squeeze_still: "🤏 ボトルの胴体を押してみる（シミュレーション）",
+      btn_squeeze_spark: "🤏 ボトルの胴体を押してみる（シミュレーション）",
+      res_squeeze_still: "💧 柔らかくへこむ！（ガス圧ゼロ・軟水）",
+      res_squeeze_spark: "⚡ ガチガチ！弾き返す（高圧炭酸・石のように硬い）",
+      lbl_pressure_zero: "内部圧力: 0.0 bar (無圧・柔らかい)",
+      lbl_pressure_high: "内部圧力: 3.8 bar (高圧充填・カチカチ)",
+      lbl_dent_soft: "💧 ペコッとへこむ！（-15mm変形）",
+      lbl_dent_hard: "💥 ガチッと弾く！（0mm変形・岩のように硬い）"
+    },
+    zh: {
+      water_pronounce_sin: "",
+      water_pronounce_con: "",
+      water_sin_gas_desc: "💡 <strong>记忆秘诀：</strong>sin在西语中表示“无”（Without），无气=纯净水！请在货架上认准<strong>“sin gas”</strong>字样。",
+      water_con_gas_desc: "💡 <strong>记忆秘诀：</strong>con在西语中表示“带/含”（With），有气=气泡水！口感清冽带刺。",
+      btn_squeeze_still: "🤏 捏一捏塑料瓶腰部（触感模拟）",
+      btn_squeeze_spark: "🤏 捏一捏塑料瓶腰部（触感模拟）",
+      res_squeeze_still: "💧 轻松捏瘪凹陷！（无内部气压·轻柔纯净水）",
+      res_squeeze_spark: "⚡ 坚硬紧绷反弹！（高压碳酸气体·坚硬如石）",
+      lbl_pressure_zero: "内部压力：0.0 bar（无气压·轻柔）",
+      lbl_pressure_high: "内部压力：3.8 bar（高压充盈·极硬）",
+      lbl_dent_soft: "💧 轻松捏瘪凹陷！（-15mm形变）",
+      lbl_dent_hard: "💥 紧绷弹开手指！（0mm形变·坚硬如石）"
+    }
+  };
+
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], REFINED_WATER_I18N[lang]);
+    });
+  }
+})();
