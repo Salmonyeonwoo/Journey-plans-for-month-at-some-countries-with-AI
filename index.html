@@ -1114,7 +1114,7 @@
         <div class="book-page-bar" id="bookBar-chapter-practical">
           <div class="book-page-meta">
             <span class="book-chapter-badge" data-i18n="chapter_name_practical">💡 제5장. 여행 실용정보</span>
-            <span class="book-page-counter" id="counter-chapter-practical">P. 1 / 4</span>
+            <span class="book-page-counter" id="counter-chapter-practical">P. 1 / 5</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-practical">
             <button type="button" class="bookmark-chip active" onclick="goToBookPage('chapter-practical', 0)">
@@ -1127,7 +1127,10 @@
               <span>🚆</span> <span data-i18n="page_practical_3">3. 스마트 교통 &amp; 안심 숙소</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-practical', 3)">
-              <span>🤖</span> <span data-i18n="page_practical_4">4. 실시간 AI 검색</span>
+              <span>🚨</span> <span data-i18n="page_practical_4">4. 소매치기 예방 &amp; 마트 생수</span>
+            </button>
+            <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-practical', 4)">
+              <span>🤖</span> <span data-i18n="page_practical_5">5. 실시간 AI 검색</span>
             </button>
           </div>
           <div class="book-flip-controls">
@@ -1237,18 +1240,342 @@
         </div>
       </div>
     </section>
-          <div class="page-turner-bar">
+                    <div class="page-turner-bar">
             <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">
               ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_2">2. 필수 회화 &amp; 오디오</strong>
             </button>
             <button type="button" class="btn-turn-page-bottom next" onclick="turnBookPage('chapter-practical', 1)">
-              <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_practical_4">4. 실시간 AI 검색</strong> ▶
+              <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_practical_4">4. 소매치기 예방 &amp; 마트 생수</strong> ▶
             </button>
           </div>
         </div>
 
-        <!-- Page 3: 실시간 AI & 검색 커넥터 -->
+        <!-- Page 3: 소매치기 예방 실전 가이드 & 마트 생수(가스물 vs 맹물) 구별법 -->
         <div class="book-page" id="page-practical-3">
+          <section class="section tools-section safety-water-section" id="safety-water" style="background:#fdfcf9;padding:24px 0 36px;">
+            <div class="wrap">
+              <div class="section-head">
+                <div>
+                  <div class="kicker" data-i18n="safety_water_kicker">07-SAFETY &amp; WATER / SPANISH PRACTICAL RULES</div>
+                  <h2 data-i18n="safety_water_title">🚨 스페인 여행 소매치기 예방 &amp; 💧 마트 생수 구매 실전 가이드</h2>
+                </div>
+                <p class="sub" data-i18n="safety_water_sub">
+                  부모님 동행 시 필수 체크! 사진 촬영 수칙, 소지품 방어 3계명, 맹물(Sin gas) vs 탄산수(Con gas) 구별법 완벽 정리.
+                </p>
+              </div>
+
+              <!-- 서브 탭 필터 바 -->
+              <div class="filter-tabs" style="margin-bottom:24px" id="safetyWaterSubTabs">
+                <button type="button" class="tab-chip active" id="tabBtnSafetyAll" onclick="filterSafetyWaterSection('all')" data-i18n="tab_safety_water_all">✨ 전체 실전 가이드 보기</button>
+                <button type="button" class="tab-chip" id="tabBtnSafetyOnly" onclick="filterSafetyWaterSection('safety')" data-i18n="tab_safety_guide">🚨 1. 소매치기 예방 &amp; 소지품 방어</button>
+                <button type="button" class="tab-chip" id="tabBtnWaterOnly" onclick="filterSafetyWaterSection('water')" data-i18n="tab_water_guide">💧 2. 마트 생수(가스물 vs 맹물) 구별법</button>
+              </div>
+
+              <!-- PART 1: 🚨 소매치기 예방 실전 가이드 -->
+              <div class="protocol-card-block" id="blockSafetyProtocol">
+                <div class="safety-alert-banner">
+                  <div class="alert-banner-icon">🚨</div>
+                  <div class="alert-banner-text" data-i18n="pickpocket_intro_banner">
+                    스페인(특히 바르셀로나, 마드리드, 세비야 주요 관광지)은 흉기를 드는 강력 범죄는 거의 없지만, 관광객의 물건을 훔쳐 가는 <strong>'소매치기'</strong>와 <strong>'잡범'</strong>이 매우 많습니다. 부모님과 함께 안전하고 즐거운 여행을 위해 아래의 실전 수칙을 꼭 숙지해 주세요.
+                  </div>
+                </div>
+
+                <!-- 1. 사진 촬영 시 주의사항 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num">RULE 01</span>
+                    <h3 class="card-main-title" data-i18n="safety_sec1_title">📸 1. 사진 촬영 시 주의사항: "모르는 사람에게 폰을 줘도 될까?"</h3>
+                  </div>
+                  <p class="card-lead-text" data-i18n="safety_sec1_desc">가족 사진을 남기고 싶을 때 현지인에게 휴대폰을 건네는 것은 매우 위험한 행동입니다.</p>
+
+                  <div class="comparison-dual-grid">
+                    <!-- 절대 부탁하면 안 되는 대상 -->
+                    <div class="comp-box danger-box">
+                      <div class="comp-box-header">
+                        <span class="comp-icon">❌</span>
+                        <strong data-i18n="safety_danger_title">절대 부탁하면 안 되는 대상</strong>
+                      </div>
+                      <ul class="comp-list">
+                        <li>
+                          <span class="bullet-tag red">위험</span>
+                          <span data-i18n="safety_danger_item1">관광지 주변을 서성거리며 할 일 없어 보이는 현지인 (가장 위험)</span>
+                        </li>
+                        <li>
+                          <span class="bullet-tag red">100% 사기</span>
+                          <span data-i18n="safety_danger_item2">먼저 다가와서 "사진 찍어줄까?"라고 묻는 사람 (100% 휴대폰을 들고 튀려는 수법입니다)</span>
+                        </li>
+                        <li>
+                          <span class="bullet-tag red">주의</span>
+                          <span data-i18n="safety_danger_item3">집시풍의 옷차림을 한 무리</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- 안전하게 부탁할 수 있는 대상 -->
+                    <div class="comp-box safe-box">
+                      <div class="comp-box-header">
+                        <span class="comp-icon">⭕</span>
+                        <strong data-i18n="safety_safe_title">안전하게 부탁할 수 있는 대상</strong>
+                      </div>
+                      <ul class="comp-list">
+                        <li>
+                          <span class="bullet-tag green">1순위</span>
+                          <span data-i18n="safety_safe_item1">한국인 관광객: (가장 1순위! 사진도 세계에서 제일 잘 찍어줍니다.)</span>
+                        </li>
+                        <li>
+                          <span class="bullet-tag green">안심</span>
+                          <span data-i18n="safety_safe_item2">동양인 관광객: (일본인, 중국인 등 관광 온 아시아인들.)</span>
+                        </li>
+                        <li>
+                          <span class="bullet-tag green">안전 100%</span>
+                          <span data-i18n="safety_safe_item3">대포 카메라(비싼 DSLR)를 목에 걸고 있는 서양인 관광객: (자기 카메라가 더 비싸기 때문에 남의 폰을 훔쳐 달아날 확률이 0%입니다.)</span>
+                        </li>
+                        <li>
+                          <span class="bullet-tag green">신뢰</span>
+                          <span data-i18n="safety_safe_item4">유모차를 끌고 온 가족 단위 관광객: (가족 여행객은 범죄자일 확률이 극히 낮습니다.)</span>
+                        </li>
+                        <li>
+                          <span class="bullet-tag green">공식</span>
+                          <span data-i18n="safety_safe_item5">식당 종업원이나 관광지 제복을 입은 경비원.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 셀카봉 vs 삼각대 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num">RULE 02</span>
+                    <h3 class="card-main-title" data-i18n="safety_sec2_title">🤳 2. 셀카봉 vs 삼각대, 무엇이 안전할까?</h3>
+                  </div>
+
+                  <div class="vs-dual-container">
+                    <!-- 셀카봉 추천 -->
+                    <div class="vs-card vs-recommend">
+                      <div class="vs-card-top">
+                        <span class="vs-status-badge success" data-i18n="selfie_stick_title">✅ 셀카봉 (추천)</span>
+                      </div>
+                      <div class="vs-card-body">
+                        <p class="vs-text-main" data-i18n="selfie_stick_desc1">손에 꽉 쥐고 사용하는 형태이므로 소매치기가 낚아채서 도망가기 어렵습니다.</p>
+                        <div class="vs-tip-callout">
+                          💡 <span data-i18n="selfie_stick_desc2">가족 3명이 화면에 다 나오게 찍기 가장 안전하고 편리한 도구입니다. 단, 길을 걸어갈 때 덜렁덜렁 들고 다니지 말고, 찍을 때만 펴서 사용하세요.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 삼각대 절대 금지 -->
+                    <div class="vs-card vs-forbidden">
+                      <div class="vs-card-top">
+                        <span class="vs-status-badge danger" data-i18n="tripod_title">❌ 삼각대 (절대 금지)</span>
+                      </div>
+                      <div class="vs-card-body">
+                        <p class="vs-text-main" data-i18n="tripod_desc1">광장이나 길거리에 삼각대를 세워두고 타이머를 맞춘 뒤 뒤로 물러나서 포즈를 취하는 순간, 옆에서 자전거 구경꾼인 척하던 소매치기가 폰만 쏙 뽑아서 그대로 달아납니다.</p>
+                        <div class="vs-warning-callout">
+                          ⚠️ <span data-i18n="tripod_desc2">스페인에서는 내 몸에서 1미터 이상 떨어진 물건은 "내 것이 아니다"라고 생각하셔야 합니다. (숙소 내부나 사람이 아예 없는 외곽 통제 구역이 아니면 절대 사용 금지)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. 소지품 방어 3계명 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num">RULE 03</span>
+                    <h3 class="card-main-title" data-i18n="safety_sec3_title">🎒 3. 부모님과 함께 지켜야 할 '소지품 방어 3계명'</h3>
+                  </div>
+
+                  <div class="defense-triad-grid">
+                    <div class="triad-card">
+                      <div class="triad-icon-badge">①</div>
+                      <h4 class="triad-title" data-i18n="rule1_title">① 가방은 무조건 '앞으로', 손은 '지퍼 위에'</h4>
+                      <p class="triad-desc" data-i18n="rule1_desc">
+                        백팩(뒤로 매는 가방)은 스페인에서 "내 물건 좀 가져가세요" 하는 것과 같습니다. 부모님과 본인 모두 크로스백(앞으로 매는 가방)을 메셔야 합니다. 지하철을 탈 때나 사람이 붐비는 횡단보도, 명소 앞에서는 크로스백을 배 앞으로 당기고 손을 가방 지퍼 위에 올려두는 습관을 들이세요.
+                      </p>
+                    </div>
+
+                    <div class="triad-card">
+                      <div class="triad-icon-badge">②</div>
+                      <h4 class="triad-title" data-i18n="rule2_title">② 카페/식당 테이블 위에 '휴대폰' 절대 올려두지 않기</h4>
+                      <p class="triad-desc" data-i18n="rule2_desc">
+                        유럽 소매치기들의 흔한 수법 중 하나입니다. 야외 테라스나 식당 테이블 위에 휴대폰이나 지갑을 올려두면 안 됩니다. 집시나 잡상인이 다가와 지도나 신문을 테이블 위에 쓱 펼치며 길을 묻거나 구걸을 합니다. 거절하고 종이를 치우는 순간, 그 종이 밑에 있던 휴대폰도 감쪽같이 사라집니다.
+                      </p>
+                    </div>
+
+                    <div class="triad-card wide-triad">
+                      <div class="triad-icon-badge">③</div>
+                      <h4 class="triad-title" data-i18n="rule3_title">③ 시선을 뺏는 '산만하게 만들기(Distraction)' 3대 수법 주의</h4>
+                      <p class="triad-desc" style="margin-bottom:12px;" data-i18n="rule3_desc">
+                        소매치기들은 보통 2~3인 1조로 움직이며 관광객의 시선을 빼앗습니다.
+                      </p>
+                      <div class="scam-trio-box">
+                        <div class="scam-mini-item">
+                          <strong data-i18n="distraction_scam1_title">🕊️ 오물 투척 수법:</strong>
+                          <span data-i18n="distraction_scam1_desc">갑자기 새똥이나 케첩 같은 것을 옷에 뿌리고, 지나가던 행인인 척 "어머, 옷에 뭐 묻었어요 닦아줄게요" 하며 휴지로 닦아주면서 주머니를 텁니다. ➔ 대처법: 무조건 "NO!"라고 소리치며 몸을 피하세요.</span>
+                        </div>
+                        <div class="scam-mini-item">
+                          <strong data-i18n="distraction_scam2_title">📋 설문조사/서명 수법:</strong>
+                          <span data-i18n="distraction_scam2_desc">귀가 들리지 않는 척하며 기부금 서명판을 들이밉니다. 당황해서 쳐다보거나 서명하는 동안 다른 일행이 가방을 엽니다.</span>
+                        </div>
+                        <div class="scam-mini-item">
+                          <strong data-i18n="distraction_scam3_title">🚶‍♂️ 병목 현상 만들기:</strong>
+                          <span data-i18n="distraction_scam3_desc">지하철을 타거나 에스컬레이터를 탈 때, 앞사람(일행)이 갑자기 동전이나 짐을 쏟으며 길을 막습니다. 뒤로 밀착한 다른 일행이 지갑을 빼갑니다.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PART 2: 💧 스페인 마트 생수 구매 실전 가이드 -->
+              <div class="protocol-card-block" id="blockWaterProtocol" style="margin-top:28px;">
+                <div class="water-alert-banner">
+                  <div class="alert-banner-icon">💧</div>
+                  <div class="alert-banner-text" data-i18n="water_intro_banner">
+                    스페인 여행 시 한국에서 무겁게 생수를 챙겨가실 필요가 전혀 없습니다. 스페인 현지 대형 마트(메르까도나, 까르푸 등)의 생수 가격은 한국과 비슷하거나 오히려 더 저렴합니다. (1.5L 기준 약 600원~1,000원 선 / €0.40~€0.70) 하지만 스페인을 비롯한 유럽 국가들은 식당이나 마트에서 <strong>'탄산수(가스가 있는 물)'</strong>를 즐겨 마시기 때문에, 우리가 평소 마시는 <strong>'일반 생수(맹물)'</strong>를 정확히 구별해서 사는 것이 아주 중요합니다.
+                  </div>
+                </div>
+
+                <!-- 1. 라벨(글자)로 구별하는 방법 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num blue-badge">WATER 01</span>
+                    <h3 class="card-main-title" data-i18n="water_sec1_title">🔍 1. 라벨(글자)로 구별하는 방법: 스페인어 단어 2개만 기억!</h3>
+                  </div>
+
+                  <div class="water-label-dual-grid">
+                    <!-- 일반 생수 -->
+                    <div class="water-card still-water-card">
+                      <div class="water-header">
+                        <span class="water-badge still-badge" data-i18n="water_sin_gas_title">🔵 일반 생수 (우리가 아는 맹물) ➔ Agua sin gas</span>
+                        <div class="spanish-term">Agua sin gas</div>
+                        <div class="pronounce-tag">발음: [아구아 신 가스]</div>
+                      </div>
+                      <div class="water-body">
+                        <p class="water-memo" data-i18n="water_sin_gas_desc">
+                          발음: [아구아 신 가스] / 💡 암기 꿀팁: 가스가 없다(sin = Without) = 맹물! 마트 페트병 라벨에서 <strong>'sin gas'</strong>를 꼭 확인하세요.
+                        </p>
+                        <div class="water-interactive-box">
+                          <button type="button" class="ctrl-btn test-water-btn" onclick="testWaterSqueeze('still')">
+                            🤏 페트병 눌러보기 시뮬레이션
+                          </button>
+                          <div class="squeeze-result-pill still-res" id="resStillBottle">
+                            💧 쑥 들어감 (부드러운 삼다수 느낌)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 탄산수 -->
+                    <div class="water-card spark-water-card">
+                      <div class="water-header">
+                        <span class="water-badge spark-badge" data-i18n="water_con_gas_title">🔴 탄산수 (톡 쏘는 가스물) ➔ Agua con gas</span>
+                        <div class="spanish-term">Agua con gas</div>
+                        <div class="pronounce-tag">발음: [아구아 꼰 가스]</div>
+                      </div>
+                      <div class="water-body">
+                        <p class="water-memo" data-i18n="water_con_gas_desc">
+                          발음: [아구아 꼰 가스] / 💡 암기 꿀팁: 가스가 있다(con = With) = 탄산수! 톡 쏘는 탄산가스가 충전되어 있습니다.
+                        </p>
+                        <div class="water-interactive-box">
+                          <button type="button" class="ctrl-btn test-water-btn" onclick="testWaterSqueeze('spark')">
+                            🤏 페트병 눌러보기 시뮬레이션
+                          </button>
+                          <div class="squeeze-result-pill spark-res" id="resSparkBottle">
+                            ⚡ 돌덩이처럼 팽팽함 (가스 압력!)
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dining-order-callout" style="margin-top:16px;">
+                    <span class="callout-icon">🍽️</span>
+                    <span data-i18n="water_restaurant_tip">식당 주문 꿀팁: 식당에서 물을 주문할 때도 종업원이 "Sin gas? Con gas?"라고 물어보는 경우가 많습니다. 이때 당황하지 마시고 <strong>"신 가스(Sin gas)!"</strong>라고 명확하게 대답하시면 됩니다.</span>
+                  </div>
+                </div>
+
+                <!-- 2. 촉각 구별법 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num blue-badge">WATER 02</span>
+                    <h3 class="card-main-title" data-i18n="water_sec2_title">🤏 2. 글씨가 안 보일 때 쓰는 '촉각' 구별법 (특급 꿀팁)</h3>
+                  </div>
+                  <p class="card-lead-text" data-i18n="water_squeeze_desc">
+                    라벨 글씨가 너무 작거나 스페인어가 헷갈린다면, 페트병의 허리 부분을 손으로 살짝 꾹 눌러보세요!
+                  </p>
+
+                  <div class="tactile-comp-grid">
+                    <div class="tactile-item soft-item">
+                      <div class="tactile-icon">🟢</div>
+                      <div class="tactile-content">
+                        <h4 data-i18n="water_squeeze_soft_title">말랑말랑하게 쑥 들어가면 ➔ 일반 생수 (Sin gas)</h4>
+                        <p data-i18n="water_squeeze_soft_desc">한국의 삼다수나 백산수 페트병을 누를 때처럼 부드럽게 쑥 들어갑니다. (가스 압력이 없으므로 안심하고 구매하세요)</p>
+                      </div>
+                    </div>
+                    <div class="tactile-item hard-item">
+                      <div class="tactile-icon">🔴</div>
+                      <div class="tactile-content">
+                        <h4 data-i18n="water_squeeze_hard_title">돌덩이처럼 팽팽하고 딱딱하면 ➔ 탄산수 (Con gas)</h4>
+                        <p data-i18n="water_squeeze_hard_desc">내부에 빵빵하게 찬 탄산가스 압력 때문에 페트병이 거의 눌리지 않습니다. 톡 쏘는 탄산수를 원하시는 게 아니라면 내려놓으세요!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. 물 구매 추천 전략 & 추천 마트 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num blue-badge">WATER 03</span>
+                    <h3 class="card-main-title" data-i18n="water_sec3_title">🛒 3. 부모님 동행 시 물 구매 추천 전략</h3>
+                  </div>
+
+                  <div class="water-strategy-grid">
+                    <div class="strategy-card">
+                      <div class="strategy-badge">숙소용 대용량</div>
+                      <h4 data-i18n="water_strategy1_title">5L~8L 초대용량 생수 (Garrafa)</h4>
+                      <p data-i18n="water_strategy1_desc">
+                        에어비앤비나 취사가 가능한 아파트먼트 숙소(바르셀로나, 세비야 베이스캠프)에 머무실 때는, 마트에서 <strong>5L~8L짜리 초대용량 생수(Garrafa)</strong>를 한 통 사서 숙소 주방에 두고 드시는 것이 가장 저렴하고 편합니다. (약 1유로대면 구매 가능)
+                      </p>
+                    </div>
+
+                    <div class="strategy-card">
+                      <div class="strategy-badge">외출용 소용량</div>
+                      <h4 data-i18n="water_strategy2_title">500ml 빈 페트병 / 개인 텀블러 소분</h4>
+                      <p data-i18n="water_strategy2_desc">
+                        숙소에 있는 대용량 물을 외출 전에 작은 500ml 빈 페트병이나 개인 텀블러에 덜어서 들고 나가시면 매번 밖에서 비싼 관광지 물(€1.5~€2.5)을 사지 않으셔도 됩니다.
+                      </p>
+                    </div>
+
+                    <div class="strategy-card mart-card wide-strategy">
+                      <div class="strategy-badge yellow-badge">추천 현지 마트</div>
+                      <h4 data-i18n="water_strategy3_title">노란색/빨간색 간판을 찾으세요!</h4>
+                      <p data-i18n="water_strategy3_desc">
+                        • <strong>Mercadona (메르까도나):</strong> 현지인들이 가장 사랑하는 가성비 마트, 품질과 가격 최고.<br>
+                        • <strong>Carrefour (까르푸):</strong> 도심 Carrefour Express부터 대형 하이퍼마켓까지 친숙한 매장.<br>
+                        • <strong>DIA (디아):</strong> 동네 골목마다 있는 친근한 슈퍼마켓.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 하단 페이지 전환 바 -->
+              <div class="page-turner-bar">
+                <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">
+                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_3">3. 스마트 교통 &amp; 안심 숙소</strong>
+                </button>
+                <button type="button" class="btn-turn-page-bottom next" onclick="turnBookPage('chapter-practical', 1)">
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_practical_5">5. 실시간 AI 검색</strong> ▶
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Page 4: 실시간 AI & 검색 커넥터 -->
+        <div class="book-page" id="page-practical-4">
           <section class="section tools-section" id="ai-search" style="background:#eee8dc">
       <div class="wrap">
         <div class="section-head">
@@ -1273,7 +1600,7 @@
     </section>
           <div class="page-turner-bar">
             <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">
-              ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_3">3. 스마트 교통 &amp; 안심 숙소</strong>
+              ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_4">4. 소매치기 예방 &amp; 마트 생수</strong>
             </button>
             <button type="button" class="btn-turn-page-bottom next" onclick="switchGuidebookChapter('chapter-overview'); goToBookPage('chapter-overview', 0);">
               <span data-i18n="first_chapter_prefix">첫 장으로</span>: <strong data-i18n="chapter_name_overview">01. 여행 개요</strong> ↺
@@ -1354,6 +1681,7 @@
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('두바이 맛집 추천해줘')">🍽️ 두바이 맛집</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘')">🦽 부모님 평지/휠체어</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('소매치기 예방법과 치안 안전 수칙 알려줘')">🚨 소매치기/치안 예방</button>
+    <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 마트 생수 구별법 알려줘 (sin gas vs con gas)')">💧 마트 생수(가스물 vs 맹물)</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('렌페 기차 타는 법과 시내 택시/우버 이동 팁')">🚆 렌페/교통 팁</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('트래블로그 카드 결제랑 현금 환전 얼마나 필요해?')">💳 카드/환전/팁</button>
     <button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('스페인 공항 텍스리펀 절차 알려줘')">🛍️ 텍스리펀 방법</button>

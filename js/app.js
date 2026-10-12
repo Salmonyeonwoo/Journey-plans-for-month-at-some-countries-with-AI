@@ -4799,6 +4799,14 @@ function handleLocalChat(query) {
     '天气', '气温', '气候', '穿衣', '带什么衣服', '最佳季节', '最佳时间', '下雨'
   ].some(w => q.includes(w) || cleanQ.includes(w));
 
+  // 4-4b. Supermarket Water (생수 / 마트 물 / 탄산수 / sin gas / con gas)
+  const isWater = [
+    '물', '생수', '가스물', '맹물', '탄산수', 'sin gas', 'con gas', '신 가스', '꼰 가스', '메르까도나', '까르푸', 'garrafa',
+    'water', 'still water', 'sparkling water', 'mineral water', 'supermarket water', 'bottle', 'tap water',
+    '水', '飲料水', '炭酸水', 'ミネラルウォーター', 'シンガス', 'コンガス', '軟水', 'スーパーの水',
+    '买水', '水', '饮用水', '气泡水', '纯净水', '矿泉水', '超市买水', '加斯'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
   // 4-5. Safety & Pickpockets (치안 / 소매치기 / 안전)
   const isSafety = [
     '치안', '소매치기', '안전', '위험', '도난', '주의',
@@ -5227,6 +5235,81 @@ function handleLocalChat(query) {
     }
   }
 
+  // [E-1] SUPERMARKET WATER GUIDE (가스물 vs 맹물 구별법)
+  if (isWater) {
+    const chips = [
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' },
+      { query: '식당에서 소금 빼주세요 스페인어로 뭐야?', label: '🧂 소금 빼주세요' },
+      { query: '트래블로그 카드 결제랑 현금 환전 얼마나 필요해?', label: '💳 카드/환전 비율' }
+    ];
+    if (lang === 'ja') {
+      return `
+        💧 <strong>スペインのスーパー飲料水・失敗しない購入ガイド（炭酸水 vs 普通の水）</strong>:<br><br>
+        🔍 <strong>1. ラベルの単語で見分ける:</strong><br>
+        • 🔵 <strong>Agua sin gas（シン・ガス）:</strong> ガスの無い「普通の水（軟水・ミネラルウォーター）」。この単語を必ず確認！<br>
+        • 🔴 <strong>Agua con gas（コン・ガス）:</strong> ガスの有る「炭酸水（シュワシュワする水）」。<br>
+        ※ レストランで注文する際、店員から「Sin gas? Con gas?」と聞かれたら<strong>「Sin gas（シン・ガス）!」</strong>と答えればOKです。<br><br>
+        🤏 <strong>2. 文字が見えない時の「触覚」判別法:</strong><br>
+        ペットボトルの胴体部分を軽く指で押してみてください。<br>
+        • <strong>柔らかくペコペコ凹む ➔ 普通の水（Sin gas）</strong><br>
+        • <strong>石のようにカチカチで張っている ➔ 炭酸水（Con gas）</strong><br><br>
+        🛒 <strong>3. ご両親同伴時の飲料水戦略:</strong><br>
+        • <strong>宿用:</strong> アパート滞在時はスーパーで<strong>5L〜8Lの特大ボトル（Garrafa）</strong>を約1ユーロで購入し、キッチンに常備。<br>
+        • <strong>外出用:</strong> 毎朝500mlの空ボトルや水筒に小分けして携帯（観光地の割高な水を買わずに済みます）。<br>
+        • <strong>おすすめスーパー:</strong> <strong>Mercadona（メルカドーナ）</strong>、Carrefour（カルフール）、DIA（ディア）など黄・赤の看板が目印です！
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        💧 <strong>Spain Supermarket Bottled Water Guide (Still vs Sparkling)</strong>:<br><br>
+        🔍 <strong>1. Label Keyword Check:</strong><br>
+        • 🔵 <strong>Agua sin gas:</strong> Still water (plain drinking water, no carbonation). Always look for "sin gas"!<br>
+        • 🔴 <strong>Agua con gas:</strong> Sparkling water (carbonated fizzy water).<br>
+        ※ At restaurants, when waiters ask *"Sin gas? Con gas?"*, simply answer clearly: <strong>"Sin gas!"</strong>.<br><br>
+        🤏 <strong>2. Tactile "Squeeze Test" (Pro-Tip):</strong><br>
+        Gently squeeze the waist of the plastic bottle:<br>
+        • <strong>Soft & easily squeezable ➔ Still water (Agua sin gas)</strong><br>
+        • <strong>Rigid & rock-hard ➔ Sparkling water (Agua con gas)</strong> due to high carbonation pressure!<br><br>
+        🛒 <strong>3. Family Trip Strategy:</strong><br>
+        • <strong>Accommodation:</strong> Buy a huge <strong>5L–8L bulk jug (Garrafa)</strong> for around ~€1 at supermarkets for apartment kitchens.<br>
+        • <strong>Outings:</strong> Refill 500ml travel bottles or tumblers each morning.<br>
+        • <strong>Supermarkets:</strong> <strong>Mercadona</strong> (best quality & value), Carrefour, DIA (look for yellow and red signs).
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      return `
+        💧 <strong>西班牙超市饮用水选购指南（纯净水 vs 气泡水精准区分）</strong>:<br><br>
+        🔍 <strong>1. 认准西语标签关键词：</strong><br>
+        • 🔵 <strong>Agua sin gas:</strong> 普通纯净水（矿泉水，无气泡）。sin = 无，认准此词！<br>
+        • 🔴 <strong>Agua con gas:</strong> 气泡水（碳酸水）。con = 含气泡。<br>
+        ※ 在餐厅点水时，侍应生常问“Sin gas? Con gas?”，直接回答<strong>“Sin gas!”</strong>即可。<br><br>
+        🤏 <strong>2. 看不清标签时的“按压触感”绝招：</strong><br>
+        用手指按压塑料瓶腰部：<br>
+        • <strong>柔软易捏瘪 ➔ 普通饮用水（Sin gas）</strong><br>
+        • <strong>紧绷坚硬按不动 ➔ 气泡水（Con gas）</strong>（内部充身高压气体）！<br><br>
+        🛒 <strong>3. 陪伴长辈购水策略：</strong><br>
+        • <strong>住所自用：</strong> 入住公寓时，在超市直接采购一桶<strong>5L~8L超大桶纯净水（Garrafa）</strong>（约1欧元左右），置于厨房烧水泡茶。<br>
+        • <strong>日常外出：</strong> 每日出门前分装入500ml轻便小水瓶或保温杯，免去景区高价买水。<br>
+        • <strong>推荐平价超市：</strong> <strong>Mercadona</strong>（国民第一高性价比）、Carrefour、DIA（认准黄红色招牌）。
+      ` + renderFollowupChips(chips);
+    } else {
+      return `
+        💧 <strong>스페인 마트 생수 구매 실전 가이드 (가스물 vs 맹물 구별법)</strong>:<br><br>
+        🔍 <strong>1. 라벨 단어 2개로 구별:</strong><br>
+        • 🔵 <strong>Agua sin gas (아구아 신 가스):</strong> 가스가 없는 <strong>'일반 생수(맹물)'</strong>! (sin = 없다. 이 단어를 꼭 찾으세요)<br>
+        • 🔴 <strong>Agua con gas (아구아 꼰 가스):</strong> 가스가 있는 <strong>'탄산수(가스물)'</strong>! (con = 있다)<br>
+        ※ 식당에서 물 주문 시 종업원이 *"Sin gas? Con gas?"*라고 물어보면 <strong>"신 가스 (Sin gas)!"</strong>라고 답하시면 됩니다.<br><br>
+        🤏 <strong>2. 글씨 안 보일 때 쓰는 '촉각' 구별법:</strong><br>
+        페트병 허리를 손으로 살짝 꾹 눌러보세요.<br>
+        • <strong>말랑말랑하게 쑥 들어가면 ➔ 일반 생수 (Sin gas)</strong> (삼다수처럼 부드러움)<br>
+        • <strong>돌덩이처럼 팽팽하고 딱딱하면 ➔ 탄산수 (Con gas)</strong> (탄산가스 압력 때문)<br><br>
+        🛒 <strong>3. 부모님 동행 시 물 구매 추천 전략:</strong><br>
+        • <strong>숙소용:</strong> 아파트먼트 숙소 머무실 때 마트에서 <strong>5L~8L 초대용량 생수(Garrafa)</strong>를 한 통 사서 숙소 주방에 두고 드시면 가장 저렴합니다 (약 1유로 안팎).<br>
+        • <strong>외출용:</strong> 숙소 대용량 물을 외출 전 작은 500ml 빈 페트병이나 텀블러에 덜어서 나가세요.<br>
+        • <strong>추천 마트:</strong> <strong>Mercadona (메르까도나)</strong>, Carrefour (까르푸), DIA (디아) 노란색/빨간색 간판 마트에서 구매하시면 됩니다!
+      ` + renderFollowupChips(chips);
+    }
+  }
+
+  
   // [B] SHOPPING & SOUVENIR INTENT
   if (isShopping) {
     if (isPortugal) {
@@ -5450,44 +5533,72 @@ function handleLocalChat(query) {
     }
   }
 
-  // [E] SAFETY & PICKPOCKET INTENT
+  // [E-2] SAFETY & PICKPOCKETS (사진 촬영 & 소지품 주의사항 완벽 수칙)
   if (isSafety) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 고속열차 이동 안전' },
-      { query: '스페인 포르투갈 환전 어떻게 해?', label: '💶 현금 소지 주의/환전' },
-      { query: '부모님 동행 시 주의할 점', label: '👵 부모님 안심 케어' }
+      { query: '스페인 마트 생수 구별법 알려줘 (sin gas vs con gas)', label: '💧 마트 생수 구별법' },
+      { query: '부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘', label: '🦽 부모님 평지 코스' },
+      { query: '트래블로그 카드 결제랑 현금 환전 얼마나 필요해?', label: '💳 카드/환전 비율' }
     ];
     if (lang === 'ja') {
       return `
-        🚨 <strong>欧州旅行スリ対策＆安全の鉄則 TOP 4</strong>:<br><br>
-        1️⃣ <strong>高警戒エリア:</strong> バルセロナのランブラス通り・地下鉄、マドリードのソル広場、リスボンのトラム28番線ではスマートフォンや財布の出し入れに最大の注意を払ってください。<br>
-        2️⃣ <strong>持ち歩き方:</strong> リュックは体の前で抱え、パスポートやクレジットカードは<strong>衣服の内側のセキュリティポーチ</strong>に保管しましょう。<br>
-        3️⃣ <strong>親切な声かけに注意:</strong> 署名運動、服が汚れていると知らせる人、写真を撮ってあげると近づく人には「No, gracias」と毅然と断り立ち去りましょう。<br>
-        4️⃣ <strong>シニア移動の知恵:</strong> 混雑した公共交通機関を避け、駅や観光地間の移動には<strong>Uberや正規タクシー</strong>を活用するのが最も安全です！
+        🚨 <strong>スペイン旅行スリ予防・実践ガイド（写真撮影＆所持品注意点）</strong>:<br><br>
+        📸 <strong>1. 写真撮影の注意（見知らぬ人にスマホを渡しても大丈夫？）:</strong><br>
+        • ❌ <strong>絶対に頼んではいけない相手:</strong> 観光地周辺を暇そうにうろつく現地人、先に「写真を撮ってあげようか？」と声をかけてくる人（100%持ち去り手口）、ジプシー風の集団。<br>
+        • ⭕ <strong>安全に頼める相手:</strong> 日本人・韓国人観光客、望遠一眼レフを首に提げた欧米人観光客（自分の機材が高価なため逃走リスク0%）、ベビーカーを押すファミリー、レストラン店員や警備員。<br><br>
+        🤳 <strong>2. 自撮り棒（推奨） vs 三脚（絶対厳禁）:</strong><br>
+        • ✅ <strong>自撮り棒:</strong> 手にしっかり握れるためひったくられにくく安全。<br>
+        • ❌ <strong>三脚:</strong> 立ててポーズを取った瞬間、自転車に乗ったスリにスマホを抜き取られます。「体から1m以上離れたものは自分のものではない」とお考えください。<br><br>
+        🎒 <strong>3. ご両親と守る「所持品防御の3箇条」:</strong><br>
+        ① <strong>カバンは必ず「前」、手は「ファスナーの上」:</strong> リュックは厳禁。斜め掛けバッグを前に掛け、ファスナーに手を添えましょう。<br>
+        ② <strong>飲食店のテーブルにスマホを置かない:</strong> 地図や新聞紙を広げて視界を遮り、紙の下のスマホを盗み取ります。<br>
+        ③ <strong>3大陽動手口に注意:</strong> 汚れ付着手口（服にケチャップ等をかけ拭くふりをしてスリ ➔ 断固「NO!」）、署名ボード手口、改札やエスカレーターでの足止め手口。<br><br>
+        🚖 <strong>シニア移動の知恵:</strong> 駅や観光地間の移動には<strong>Uber・Boltタクシー</strong>を利用すれば、階段の昇降とスリの危険を100%回避できます！
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
       return `
-        🚨 <strong>Essential Pickpocket Prevention & Safety Rules</strong>:<br><br>
-        1️⃣ <strong>High-Alert Hotspots:</strong> Barcelona's Las Ramblas & metro, Madrid's Puerta del Sol, and Lisbon's historic Tram 28. Keep phones and wallets secured inside zipped compartments.<br>
-        2️⃣ <strong>Carry Gear Safely:</strong> Wear backpacks in front in crowded areas or use an RFID-blocking neck pouch worn beneath your shirt.<br>
-        3️⃣ <strong>Beware Common Distraction Scams:</strong> Petition clipboards, people alerting you to bird droppings or spilled sauce, or overly eager photo-takers. Say firmly: *"No, thank you"* and keep moving.<br>
-        4️⃣ <strong>Elderly Protection:</strong> Taking **Uber / Bolt rides** door-to-door between hotels and attractions completely avoids crowded metro station stairs and pickpocket risks!
+        🚨 <strong>Spain Travel Pickpocket Prevention & Safety Guide</strong>:<br><br>
+        📸 <strong>1. Photo Rules: Can I Hand My Phone to Strangers?</strong><br>
+        • ❌ <strong>NEVER ask:</strong> Idly loitering locals near tourist spots; people approaching first asking *"Take a picture?"* (100% snatch & run scam); Romani/gypsy dressed groups.<br>
+        • ⭕ <strong>Safe to ask:</strong> Korean & Asian tourists; Western travelers carrying expensive telephoto DSLR cameras (their gear is worth way more, 0% flight risk); family travelers with baby strollers; restaurant servers or uniformed guards.<br><br>
+        🤳 <strong>2. Selfie Stick (Recommended) vs Tripod (Strictly Forbidden):</strong><br>
+        • ✅ <strong>Selfie stick:</strong> Held firmly in hand, making it hard to snatch. Great for 3-person family shots.<br>
+        • ❌ <strong>Tripod:</strong> Setting up and backing away invites cyclists to pluck your phone in an instant. Remember: *In Spain, anything over 1 meter away from you is no longer yours!*<br><br>
+        🎒 <strong>3. Three Golden Belonging Rules with Parents:</strong><br>
+        ① <strong>Wear bags in front, rest hand on the zipper:</strong> Backpacks on your back scream "help yourself". Wear crossbody bags in front.<br>
+        ② <strong>NEVER rest phones on cafe/restaurant tables:</strong> Thieves spread maps or newspapers over tables and snatch phones underneath.<br>
+        ③ <strong>Beware the 3 Distraction Scams:</strong> Fake stain scam (squirt ketchup, offer to wipe while picking pockets ➔ shout *"NO!"*), fake petition clipboard, bottleneck obstruction at metro gates.<br><br>
+        🚖 <strong>Senior mobility tip:</strong> Use **Uber / Bolt rides** door-to-door to completely bypass crowded metro stairs and pickpocket hotspots!
       ` + renderFollowupChips(chips);
     } else if (lang === 'zh') {
       return `
-        🚨 <strong>欧洲家庭旅行四大核心防盗防偷铁律</strong>:<br><br>
-        1️⃣ <strong>高度戒备区域：</strong> 巴塞罗那兰布拉大道及地铁、马德里太阳门广场、里斯本28路复古电车内，切勿将手机随意放置在外侧口袋。<br>
-        2️⃣ <strong>随身物品管理：</strong> 人多时双肩包务必前背，护照和备用信用卡建议放置于贴身防盗隐形腰包中。<br>
-        3️⃣ <strong>警惕搭讪分心陷阱：</strong> 签名请愿纸板、假意提醒衣服脏了、主动要求帮您拍照等均属典型套路，请果断回答“No, gracias”并迅速离开。<br>
-        4️⃣ <strong>长辈安全防护：</strong> 往返景点建议优先使用**Uber、Bolt打车**，点对点直达，彻底规避拥挤地铁与扒手隐患！
+        🚨 <strong>西班牙旅行防盗防骗实战指南（拍照安全与随身防护）</strong>:<br><br>
+        📸 <strong>1. 拍照注意事项：能否将手机交给路人拍照？</strong><br>
+        • ❌ <strong>绝对不可求助的对象：</strong> 在景区周边游手好闲闲逛的当地游民；主动上前问“要不要帮你们拍合影”的人（100%是伺机抢夺手机飞奔逃离）；吉普赛打扮成群结伙者。<br>
+        • ⭕ <strong>可以放心求助的对象：</strong> 中国及亚洲游客（拍照审美技术好）；脖子上挂着昂贵单反长焦镜头的欧美游客（自身器材远比手机贵，逃跑概率为0）；推着婴儿车的家庭游客；正规餐厅服务员或制服安保。<br><br>
+        🤳 <strong>2. 自拍杆（推荐） vs 三脚架（严禁使用）：</strong><br>
+        • ✅ <strong>自拍杆：</strong> 牢握手中，扒手极难抢夺，3人家庭合影最安全。<br>
+        • ❌ <strong>三脚架：</strong> 立起三脚架后退拍照的瞬间，假装看热闹的小偷会拔走手机狂奔。请牢记：*在西班牙，距离身体1米以上的物品已不再属于你！*<br><br>
+        🎒 <strong>3. 随身物品防盗三铁律：</strong><br>
+        ① <strong>背包必须“挂在身前”，右手“放在拉链上”：</strong> 坚决不背双肩包，父母与您均佩戴前跨斜挎包。<br>
+        ② <strong>露天餐桌上“绝不放手机”：</strong> 警惕拿报纸、地图假装问路盖在桌上顺走手机的把戏。<br>
+        ③ <strong>警惕三大分心套路：</strong> 泼洒污物擦拭骗局（坚决大喊“NO！”迅速退开）、慈善签名板掩护偷包、在地铁闸机口故意掉硬币制造拥堵。<br><br>
+        🚖 <strong>长辈防护秘诀：</strong> 市内景点往返优先使用**Uber、Bolt打车**，点对点直达，规避拥挤地铁与扒手隐患！
       ` + renderFollowupChips(chips);
     } else {
       return `
-        🚨 <strong>유럽 가족 여행 소매치기 예방 4대 철칙</strong>:<br><br>
-        1️⃣ <strong>집중 주의 구역:</strong> 바르셀로나 람블라스 거리·지하철역, 마드리드 솔 광장, 리스본 28번 트램 내부에서는 스마트폰과 지갑 노출을 최소화하세요.<br>
-        2️⃣ <strong>소지품 보관법:</strong> 백팩은 사람이 많은 곳에서 반드시 앞으로 메시고, 여권과 비상 카드는 옷 안쪽 <strong>복대(시큐리티 파우치)</strong>에 보관하세요.<br>
-        3️⃣ <strong>친절한 접근 주의:</strong> 서명 요구, 옷에 오물이 묻었다고 닦아주는 척하는 사람, 사진을 찍어주겠다고 다가오는 사람은 단호하게 "No"라고 거절하고 지나치세요.<br>
-        4️⃣ <strong>어르신 보호 꿀팁:</strong> 혼잡한 지하철 대신 도심 이동 시 <strong>우버(Uber) 택시</strong>를 이용하시면 소매치기 위험과 계단 오르내림을 100% 원천 차단할 수 있습니다!
+        🚨 <strong>스페인 여행 소매치기 예방 실전 가이드 (사진 촬영 & 소지품 주의사항)</strong>:<br><br>
+        📸 <strong>1. 사진 촬영 시 주의사항: 모르는 사람에게 폰을 줘도 될까?</strong><br>
+        • ❌ <strong>절대 부탁하면 안 되는 대상:</strong> 관광지 주변을 서성거리며 할 일 없어 보이는 현지인, 먼저 다가와서 "사진 찍어줄까?"라고 묻는 사람 (100% 들고 튀려는 수법), 집시풍 옷차림 무리.<br>
+        • ⭕ <strong>안전하게 부탁할 수 있는 대상:</strong> 한국인 관광객 (1순위! 구도도 최고), 동양인 관광객, 대포 카메라(비싼 DSLR)를 목에 건 서양인 관광객 (자기 카메라가 더 비싸 훔칠 확률 0%), 유모차를 끈 가족 관광객, 식당 종업원이나 제복 경비원.<br><br>
+        🤳 <strong>2. 셀카봉 (추천) vs 삼각대 (절대 금지):</strong><br>
+        • ✅ <strong>셀카봉:</strong> 손에 꽉 쥐고 사용하므로 낚아채기 어렵고 가족 3명 촬영에 가장 안전합니다 (이동 시 접어서 보관).<br>
+        • ❌ <strong>삼각대:</strong> 세워두고 뒤로 물러나는 순간 자전거 구경꾼인 척하던 소매치기가 폰만 뽑아 달아납니다. <em>"스페인에서는 내 몸에서 1m 이상 떨어진 물건은 내 것이 아니다"</em>라고 생각하세요!<br><br>
+        🎒 <strong>3. 부모님과 함께 지켜야 할 '소지품 방어 3계명':</strong><br>
+        ① <strong>가방은 무조건 '앞으로', 손은 '지퍼 위에':</strong> 백팩은 금물! 크로스백을 배 앞으로 당기고 지퍼 위에 손을 올려두세요.<br>
+        ② <strong>카페/식당 테이블 위에 '휴대폰' 절대 올려두지 않기:</strong> 지도나 신문을 쓱 펼치며 길을 묻는 척 종이 밑의 폰을 훔쳐 갑니다.<br>
+        ③ <strong>시선을 뺏는 '산만하게 만들기' 3대 수법:</strong> 오물 투척(새똥/케첩 뿌리고 닦아주는 척 ➔ 단호하게 "NO!" 외치기), 서명판 들이밀기, 지하철/에스컬레이터 앞 병목 현상 만들기.<br><br>
+        🚖 <strong>부모님 보호 팁:</strong> 도심 이동 시 <strong>우버(Uber) 택시</strong>를 타시면 소매치기 위험과 지하철 계단을 원천 차단할 수 있습니다!
       ` + renderFollowupChips(chips);
     }
   }
@@ -6588,7 +6699,7 @@ const CHAPTER_PAGE_COUNTS = {
   'chapter-planner': 4,
   'chapter-guide': 4,
   'chapter-festivals': 4,
-  'chapter-practical': 4
+  'chapter-practical': 5
 };
 
 function goToBookPage(chapterId, pageIndex, shouldScroll = true) {
@@ -6710,3 +6821,65 @@ document.addEventListener('keydown', (e) => {
     turnBookPage(window.currentActiveChapter, -1);
   }
 });
+
+
+// ========================================================
+// SAFETY & WATER INTERACTIVE CONTROLS
+// ========================================================
+function filterSafetyWaterSection(mode) {
+  const blockSafety = document.getElementById('blockSafetyProtocol');
+  const blockWater = document.getElementById('blockWaterProtocol');
+  const btnAll = document.getElementById('tabBtnSafetyAll');
+  const btnSafety = document.getElementById('tabBtnSafetyOnly');
+  const btnWater = document.getElementById('tabBtnWaterOnly');
+
+  [btnAll, btnSafety, btnWater].forEach(b => { if (b) b.classList.remove('active'); });
+
+  if (mode === 'safety') {
+    if (blockSafety) blockSafety.style.display = 'flex';
+    if (blockWater) blockWater.style.display = 'none';
+    if (btnSafety) btnSafety.classList.add('active');
+  } else if (mode === 'water') {
+    if (blockSafety) blockSafety.style.display = 'none';
+    if (blockWater) blockWater.style.display = 'flex';
+    if (btnWater) btnWater.classList.add('active');
+  } else {
+    if (blockSafety) blockSafety.style.display = 'flex';
+    if (blockWater) blockWater.style.display = 'flex';
+    if (btnAll) btnAll.classList.add('active');
+  }
+}
+window.filterSafetyWaterSection = filterSafetyWaterSection;
+
+function testWaterSqueeze(type) {
+  const pillStill = document.getElementById('resStillBottle');
+  const pillSpark = document.getElementById('resSparkBottle');
+  const lang = window.currentLang || 'ko';
+
+  if (type === 'still') {
+    if (pillStill) {
+      pillStill.classList.add('pulse-anim');
+      setTimeout(() => pillStill.classList.remove('pulse-anim'), 800);
+    }
+    const msgs = {
+      ko: '🟢 일반 생수 (Agua sin gas): 쑥 들어감! 삼다수처럼 부드럽습니다.',
+      en: '🟢 Still Water (Agua sin gas): Easily squeezable! Normal smooth bottle.',
+      ja: '🟢 普通の水（Agua sin gas）: ペコペコと柔らかくへこみます！',
+      zh: '🟢 普通饮用水（Agua sin gas）：瓶身柔软凹陷，日常饮用首选！'
+    };
+    if (typeof showToast === 'function') showToast(msgs[lang] || msgs.ko);
+  } else {
+    if (pillSpark) {
+      pillSpark.classList.add('pulse-anim');
+      setTimeout(() => pillSpark.classList.remove('pulse-anim'), 800);
+    }
+    const msgs = {
+      ko: '🔴 탄산수 (Agua con gas): 팽팽하고 딱딱함! 가스 압력이 가득 차 있습니다.',
+      en: '🔴 Sparkling Water (Agua con gas): Rock-hard! Filled with dense gas pressure.',
+      ja: '🔴 炭酸水（Agua con gas）: 石のようにカチカチ！炭酸ガスが充満しています。',
+      zh: '🔴 气泡水（Agua con gas）：坚硬如石无法捏动，内充高压碳酸！'
+    };
+    if (typeof showToast === 'function') showToast(msgs[lang] || msgs.ko);
+  }
+}
+window.testWaterSqueeze = testWaterSqueeze;
