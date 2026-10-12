@@ -27829,6 +27829,8 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
 // ========================================================
 // REFINED WATER SIMULATION & MULTILINGUAL LABELS EXTENSION
 // ========================================================
+// REFINED_WATER_I18N & MULTILINGUAL BADGES EXTENSION
+// ========================================================
 (function() {
   const REFINED_WATER_I18N = {
     ko: {
@@ -27843,7 +27845,19 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       lbl_pressure_zero: "내부 압력: 0.0 bar (무압력 · 부드러움)",
       lbl_pressure_high: "내부 압력: 3.8 bar (고압 가스 충전 · 팽팽함)",
       lbl_dent_soft: "💧 푹- 쑥 들어감! (-15mm 굴곡)",
-      lbl_dent_hard: "💥 팅! 튕겨냄 (0mm 변형 · 돌덩이)"
+      lbl_dent_hard: "💥 팅! 튕겨냄 (0mm 변형 · 돌덩이)",
+      tip_click_bottle: "클릭해서 페트병 눌러보기 (촉감 시뮬레이션)",
+      badge_danger: "위험",
+      badge_100_scam: "100% 사기",
+      badge_caution: "주의",
+      badge_priority1: "1순위",
+      badge_reassured: "안심",
+      badge_safe100: "안전 100%",
+      badge_trusted: "신뢰",
+      badge_official: "공식",
+      badge_strat_large: "숙소용 대용량",
+      badge_strat_portable: "외출용 소용량",
+      badge_strat_mart: "추천 현지 마트"
     },
     en: {
       water_pronounce_sin: "",
@@ -27857,11 +27871,23 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       lbl_pressure_zero: "Internal Pressure: 0.0 bar (Zero Gas · Soft)",
       lbl_pressure_high: "Internal Pressure: 3.8 bar (High Tension)",
       lbl_dent_soft: "💧 Indents deeply! (-15mm soft dent)",
-      lbl_dent_hard: "💥 Rebounds rigidly! (0mm dent · Rock Hard)"
+      lbl_dent_hard: "💥 Rebounds rigidly! (0mm dent · Rock Hard)",
+      tip_click_bottle: "Click to squeeze the bottle (Tactile Simulation)",
+      badge_danger: "DANGER",
+      badge_100_scam: "100% SCAM",
+      badge_caution: "CAUTION",
+      badge_priority1: "Top Pick",
+      badge_reassured: "Safe",
+      badge_safe100: "100% Safe",
+      badge_trusted: "Trusted",
+      badge_official: "Official",
+      badge_strat_large: "Bulk for Lodging (5L~8L)",
+      badge_strat_portable: "Daily Outing Refill (500ml)",
+      badge_strat_mart: "Recommended Supermarkets"
     },
     ja: {
-      water_pronounce_sin: "",
-      water_pronounce_con: "",
+      water_pronounce_sin: "発音: [アグア・シン・ガス]",
+      water_pronounce_con: "発音: [アグア・コン・ガス]",
       water_sin_gas_desc: "💡 <strong>記憶のコツ:</strong> ガスが無い（sin＝〜なし）＝ 普通の水！ボトルラベルで<strong>「sin gas」</strong>を必ず探してください。",
       water_con_gas_desc: "💡 <strong>記憶のコツ:</strong> ガスが有る（con＝〜あり）＝ 炭酸水！強い炭酸ガスが充填されています。",
       btn_squeeze_still: "🤏 ボトルの胴体を押してみる（シミュレーション）",
@@ -27871,11 +27897,23 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       lbl_pressure_zero: "内部圧力: 0.0 bar (無圧・柔らかい)",
       lbl_pressure_high: "内部圧力: 3.8 bar (高圧充填・カチカチ)",
       lbl_dent_soft: "💧 ペコッとへこむ！（-15mm変形）",
-      lbl_dent_hard: "💥 ガチッと弾く！（0mm変形・岩のように硬い）"
+      lbl_dent_hard: "💥 ガチッと弾く！（0mm変形・岩のように硬い）",
+      tip_click_bottle: "クリックしてボトルを押してみる（触感シミュレーション）",
+      badge_danger: "危険",
+      badge_100_scam: "100% 詐欺",
+      badge_caution: "注意",
+      badge_priority1: "第1候補",
+      badge_reassured: "安心",
+      badge_safe100: "安全 100%",
+      badge_trusted: "信頼",
+      badge_official: "公式",
+      badge_strat_large: "宿用・大容量（5L〜8L）",
+      badge_strat_portable: "外出用・小分け（500ml）",
+      badge_strat_mart: "おすすめ現地スーパー"
     },
     zh: {
-      water_pronounce_sin: "",
-      water_pronounce_con: "",
+      water_pronounce_sin: "发音：[阿瓜·辛·加斯]",
+      water_pronounce_con: "发音：[阿瓜·孔·加斯]",
       water_sin_gas_desc: "💡 <strong>记忆秘诀：</strong>sin在西语中表示“无”（Without），无气=纯净水！请在货架上认准<strong>“sin gas”</strong>字样。",
       water_con_gas_desc: "💡 <strong>记忆秘诀：</strong>con在西语中表示“带/含”（With），有气=气泡水！口感清冽带刺。",
       btn_squeeze_still: "🤏 捏一捏塑料瓶腰部（触感模拟）",
@@ -27885,7 +27923,19 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       lbl_pressure_zero: "内部压力：0.0 bar（无气压·轻柔）",
       lbl_pressure_high: "内部压力：3.8 bar（高压充盈·极硬）",
       lbl_dent_soft: "💧 轻松捏瘪凹陷！（-15mm形变）",
-      lbl_dent_hard: "💥 紧绷弹开手指！（0mm形变·坚硬如石）"
+      lbl_dent_hard: "💥 紧绷弹开手指！（0mm形变·坚硬如石）",
+      tip_click_bottle: "点击挤捏塑料瓶（触感模拟）",
+      badge_danger: "危险",
+      badge_100_scam: "100% 诈骗",
+      badge_caution: "注意",
+      badge_priority1: "首选",
+      badge_reassured: "安心",
+      badge_safe100: "安全 100%",
+      badge_trusted: "信赖",
+      badge_official: "官方",
+      badge_strat_large: "住宿用大容量（5L~8L）",
+      badge_strat_portable: "外出便携装（500ml分装）",
+      badge_strat_mart: "推荐本土超市"
     }
   };
 

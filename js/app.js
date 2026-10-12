@@ -882,6 +882,7 @@ function loadUserPreferences() {
 
 
 let currentLang = 'ko';
+window.currentLang = 'ko';
 let currentPhraseFilter = 'ALL';
 
 
@@ -3845,8 +3846,16 @@ function switchLanguage(lang, btn) {
   const dict = I18N_DICTIONARY[lang] || I18N_DICTIONARY['ko'];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (dict[key]) {
+    if (dict[key] !== undefined) {
       el.innerHTML = dict[key];
+    }
+  });
+
+  // data-i18n-title 요소 툴팁 속성 갱신
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (dict[key] !== undefined) {
+      el.setAttribute('title', dict[key]);
     }
   });
 
@@ -6852,7 +6861,7 @@ function filterSafetyWaterSection(mode) {
 window.filterSafetyWaterSection = filterSafetyWaterSection;
 
 function testWaterSqueeze(type) {
-  const lang = window.currentLang || 'ko';
+  const lang = (typeof currentLang !== 'undefined' ? currentLang : window.currentLang) || document.documentElement.lang || 'ko';
   const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
 
   if (type === 'still') {
@@ -6866,7 +6875,8 @@ function testWaterSqueeze(type) {
     if (feedback) feedback.classList.add('show-feedback');
     if (pill) {
       pill.classList.add('pulse-anim');
-      pill.innerHTML = dict['res_squeeze_still'] || '💧 쑥 들어감! (가스 압력 없음 · 부드러운 맹물)';
+      const fallbackStill = (lang === 'en' ? '💧 Easily Indents! (Zero Gas Pressure · Soft & Flexible)' : (lang === 'ja' ? '💧 柔らかくへこむ！（ガス圧ゼロ・軟水）' : (lang === 'zh' ? '💧 轻松捏瘪凹陷！（无内部气压·轻柔纯净水）' : '💧 쑥 들어감! (가스 압력 없음 · 부드러운 맹물)')));
+      pill.innerHTML = (dict && dict['res_squeeze_still']) || fallbackStill;
     }
 
     setTimeout(() => {
@@ -6894,7 +6904,8 @@ function testWaterSqueeze(type) {
     if (feedback) feedback.classList.add('show-feedback');
     if (pill) {
       pill.classList.add('pulse-anim');
-      pill.innerHTML = dict['res_squeeze_spark'] || '⚡ 팅! 튕겨냄 (고압 탄산 가스 · 돌덩이처럼 팽팽)';
+      const fallbackSpark = (lang === 'en' ? '⚡ Deflects Rigidly! (High Carbonation · Rock-Hard)' : (lang === 'ja' ? '⚡ ガチガチ！弾き返す（高圧炭酸・石のように硬い）' : (lang === 'zh' ? '⚡ 坚硬紧绷反弹！（高压碳酸气体·坚硬如石）' : '⚡ 팅! 튕겨냄 (고압 탄산 가스 · 돌덩이처럼 팽팽)')));
+      pill.innerHTML = (dict && dict['res_squeeze_spark']) || fallbackSpark;
     }
 
     setTimeout(() => {
