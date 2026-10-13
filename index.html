@@ -20,6 +20,39 @@
   <!-- [컴포넌트 1] 상단 글로벌 헤더 & 맞춤 환경 설정 모듈 -->
   <header class="sticky-header-container" id="mainHeader"></header>
 
+  <!-- [컴포넌트 1-B] 모바일 전용 접이식 목차 토글 바 -->
+  <div class="mobile-toc-bar" id="mobileTocBar">
+    <button type="button" class="mobile-toc-toggle-btn" id="mobileTocToggleBtn" onclick="toggleMobileToc()" aria-expanded="false" aria-controls="mobileTocDropdown">
+      <span class="toc-badge-icon">📑</span>
+      <span class="toc-title-text" id="mobileTocTitleText">가이드북 목차: 제1장 여행 개요</span>
+      <span class="toc-arrow" id="mobileTocArrow">▼</span>
+    </button>
+    <div class="mobile-toc-dropdown" id="mobileTocDropdown" style="display:none;" aria-hidden="true">
+      <nav class="mobile-toc-links" aria-label="모바일 가이드북 목차 목록">
+        <button type="button" class="mobile-toc-link-item active" data-chapter="chapter-overview" onclick="switchGuidebookChapter('chapter-overview'); toggleMobileToc(false);">
+          <span class="m-num">01</span>
+          <div class="m-info"><strong data-i18n="toc_ch1_title">여행 개요</strong><span data-i18n="toc_ch1_sub">일정 맥락 · 팩트체크 · 3대 플랜</span></div>
+        </button>
+        <button type="button" class="mobile-toc-link-item" data-chapter="chapter-planner" onclick="switchGuidebookChapter('chapter-planner'); toggleMobileToc(false);">
+          <span class="m-num">02</span>
+          <div class="m-info"><strong data-i18n="toc_ch2_title">일정 플래너</strong><span data-i18n="toc_ch2_sub">맞춤 일정 · 30일 타임라인</span></div>
+        </button>
+        <button type="button" class="mobile-toc-link-item" data-chapter="chapter-guide" onclick="switchGuidebookChapter('chapter-guide'); toggleMobileToc(false);">
+          <span class="m-num">03</span>
+          <div class="m-info"><strong data-i18n="toc_ch3_title">지역 가이드</strong><span data-i18n="toc_ch3_sub">부모님 동행 루트 · 스페인 18선</span></div>
+        </button>
+        <button type="button" class="mobile-toc-link-item" data-chapter="chapter-festivals" onclick="switchGuidebookChapter('chapter-festivals'); toggleMobileToc(false);">
+          <span class="m-num">04</span>
+          <div class="m-info"><strong data-i18n="toc_ch4_title">축제 &amp; 야경</strong><span data-i18n="toc_ch4_sub">엄선 축제 · 파노라마 뷰</span></div>
+        </button>
+        <button type="button" class="mobile-toc-link-item" data-chapter="chapter-practical" onclick="switchGuidebookChapter('chapter-practical'); toggleMobileToc(false);">
+          <span class="m-num">05</span>
+          <div class="m-info"><strong data-i18n="toc_ch5_title">여행 실용정보</strong><span data-i18n="toc_ch5_sub">맛집 · 회화 · 교통 · 숙소</span></div>
+        </button>
+      </nav>
+    </div>
+  </div>
+
   <!-- 가이드북 메인 레이아웃: 목차 사이드바 & 5대 챕터 본문 -->
   <main>
     <div class="guidebook-layout" id="guidebookLayout">
@@ -111,14 +144,7 @@
   <button id="btnBackToTop" class="back-to-top-btn" onclick="scrollToTop()" title="맨 위로 이동" aria-label="맨 위로 이동">⬆</button>
   <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
-  <!-- [컴포넌트 6] 모바일 바텀 시트 퀵 내비게이션 -->
-  <nav class="bottom-mobile-nav">
-    <a href="#planner" class="bottom-nav-item"><span class="b-icon">📅</span><span data-i18n="bnav_planner">플래너</span></a>
-    <a href="#curated-options" class="bottom-nav-item"><span class="b-icon">🧭</span><span data-i18n="bnav_routes">3대코스</span></a>
-    <a href="#dining" class="bottom-nav-item"><span class="b-icon">🍽</span><span data-i18n="bnav_dining">미식</span></a>
-    <a href="#attractions" class="bottom-nav-item"><span class="b-icon">🏛</span><span data-i18n="bnav_attractions">명소</span></a>
-    <a href="javascript:void(0)" onclick="toggleSettingsPanel()" class="bottom-nav-item"><span class="b-icon">⚙️</span><span data-i18n="bnav_settings">설정</span></a>
-  </nav>
+  <!-- [컴포넌트 6] 중복 내비게이션 제거 및 mobileBottomNav 통합 완료 -->
 
   <!-- [컴포넌트 7] AI 여행 챗봇 위젯 마운트 지점 -->
   <div id="chatWidgetMount"></div>

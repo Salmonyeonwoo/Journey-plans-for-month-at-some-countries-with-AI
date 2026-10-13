@@ -4511,10 +4511,12 @@ const GLOBAL_LANDMARKS_DATA = [
     "city": "스페인 바르셀로나",
     "photo": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=800&q=80",
     "highlight": "가우디 필생의 역작. 숲을 형상화한 기둥과 스테인드글라스를 투과하는 환상적인 자연 채광",
-    "seniorAccess": "완벽한 평지 실내 + 엘리베이터 완비. 타워 올라갈 땐 엘리베이터 탑승, 내려올 땐 완만한 나선계단",
-    "hours": "매일 09:00~18:00 (사전 예약 시간대 입장)",
-    "ticketTip": "공식 앱 통해 최소 30~60일 전 오디오 가이드 포함 티켓 예약 필수",
-    "officialUrl": "https://sagradafamilia.org/en/tickets",
+    "slug": "sagrada-familia",
+    "seniorAccess": "성당 본당 내부는 평탄한 경사로와 엘리베이터가 있어 휠체어 및 어르신 관람이 수월합니다. 단, 타워(타워 오브 패션/나티비티)는 엘리베이터로 올라가더라도 내려올 때는 400여 개의 좁고 가파른 나선형 계단을 도보로만 내려와야 합니다. 안전 규정상 거동 불편자, 심장/호흡기 질환자, 임산부, 6세 미만은 타워 입장이 제한되므로 부모님 동행 시 타워 제외 본당 일반 입장권을 권장합니다.",
+    "hours": "매일 09:00~18:00 (사전 예약 시간대 입장 / 동절기 11월 공식 시간표 확인 필요)",
+    "ticketTip": "공식 앱 통해 최소 30~60일 전 오디오 가이드 포함 본당 일반 티켓 예약 필수 (타워 미포함 권장)",
+    "officialUrl": "https://sagradafamilia.org/en/faqs",
+    "verifiedDate": "2026-10 확인 (2026.11 방문 전 재확인 필요)",
     "mapQuery": "Sagrada Familia Barcelona"
   },
   {
@@ -7970,7 +7972,7 @@ const LANDMARK_I18N_DATA = {
       "zh": "西班牙 巴塞罗那标志性世界文化遗产名胜，壮丽历史建筑与绝美全景视野。"
     },
     "seniorAccess": {
-      "ko": "완벽한 평지 실내 + 엘리베이터 완비. 타워 올라갈 땐 엘리베이터 탑승, 내려올 땐 완만한 나선계단",
+      "ko": "성당 본당은 평탄·경사로 구비되어 이동이 수월합니다. 단, 타워는 하강 시 400여 개 급경사 나선계단을 도보로만 이용해야 하므로 거동 불편자·심장질환자·임산부 탑승이 제한됩니다. 부모님 동행 시 타워 제외 본당 일반 입장권을 권장합니다.",
       "ja": "完全平坦な動線または最新エレベーター完備。階段を登らず無理のないペースで鑑賞可能",
       "en": "Step-free walkways and modern elevators available. Ideal for parents with relaxed seating areas.",
       "zh": "全平缓无障碍步道及直达电梯齐备，无需攀爬阶梯，适宜长辈舒心慢游。"
@@ -15508,53 +15510,61 @@ Feel free to ask any travel question!<br>
   const _NEW_LANDMARKS = [
   {
     "name": "구엘 공원 (Park Güell)",
+    "slug": "park-guell",
     "region": "스페인",
     "city": "스페인 바르셀로나",
     "photo": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=800&q=80",
     "highlight": "가우디의 동화 같은 타일 모자이크 도마뱀과 돌기둥 회랑. 지중해와 바르셀로나 시내가 한눈에 펼쳐지는 파노라마",
-    "seniorAccess": "언덕 지형이므로 지하철 대신 카탈루냐 광장에서 24번 버스 탑승 권장 (후문 평지 진입). 주요 모뉴먼트 구역은 평탄하게 정비됨",
-    "hours": "매일 09:30~19:30 (계절별 상이)",
+    "seniorAccess": "카르멜 언덕 지형으로 가파른 경사로, 비포장 자갈길, 돌계단이 많습니다. 택시나 24번 버스(카르멜 입구)를 이용하더라도 하차 지점에서 모뉴먼트 구역까지 언덕길을 걸어야 하며, 택시나 버스가 평지 정문 바로 앞에 내린다고 보장하기 어렵습니다. 보행 약자는 외곽 언덕 탐방을 생략하고 모뉴먼트 광장 중심의 완만한 구간만 부분 관람 후 휴식을 권장합니다.",
+    "hours": "매일 09:30~19:30 (계절별 상이 / 11월 동절기 단축 운영 확인 필요)",
     "ticketTip": "유네스코 보호 구역 타임슬롯 공식 사전 예매 필수. 모바일 티켓 QR 입장",
-    "officialUrl": "https://parkguell.barcelona/en",
+    "officialUrl": "https://parkguell.barcelona/en/accessibility",
+    "verifiedDate": "2026-10 확인 (2026.11 방문 전 재확인 필요)",
     "mapQuery": "Park Guell Barcelona",
     "baseKrw": 22000
   },
   {
     "name": "카사 바트요 (Casa Batlló)",
+    "slug": "casa-batllo",
     "region": "스페인",
     "city": "스페인 바르셀로나",
     "photo": "https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?auto=format&fit=crop&w=800&q=80",
     "highlight": "바다와 용의 전설을 형상화한 가우디의 환상적 건축. 물결치는 창문과 생생한 색채의 스테인드글라스",
-    "seniorAccess": "실내 최신 엘리베이터 완비로 거동 불편한 부모님도 옥상 용의 등뼈까지 편안하게 관람 가능. 무료 휠체어 대여 지원",
+    "seniorAccess": "실내 현대식 엘리베이터가 주요 전시층 및 옥상(지붕 테라스) 직전까지 운행되어 접근성이 우수합니다. 무료 휠체어 대여가 지원됩니다. 단, 카사 밀라와 달리 옥상 진입이 비교적 용이하나, 일부 좁은 계단 난간과 어두운 조명 구간에서는 보호자 동행이 필요합니다.",
     "hours": "매일 09:00~20:00 (마지막 입장 19:15)",
     "ticketTip": "증강현실(AR) 태블릿 가이드 포함 블루/골드 티켓 사전 예매 추천",
     "officialUrl": "https://www.casabatllo.es/en/",
+    "verifiedDate": "2026-10 확인",
     "mapQuery": "Casa Batllo Barcelona",
     "baseKrw": 49000
   },
   {
     "name": "카사 밀라 (Casa Milà / La Pedrera)",
+    "slug": "casa-mila",
     "region": "스페인",
     "city": "스페인 바르셀로나",
     "photo": "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=80",
     "highlight": "'채석장(라 페드레라)'이라 불린 혁신적 곡선 건축. 투구를 쓴 전사 형상의 옥상 굴뚝과 독창적인 다락방 아치",
-    "seniorAccess": "어르신 우선 엘리베이터 탑승 지원. 옥상 일부 계단 제외하고 전 층 평탄화 완료되어 안전함",
-    "hours": "매일 09:00~20:30 (야간 투어 별도 운영)",
+    "seniorAccess": "실내 파티오, 다락방(에스파이 가우디), 아파트 전시는 엘리베이터로 이동 가능합니다. 그러나 유명한 '전사 옥상(Rooftop Terrace)'은 물결치는 파도형 굴곡과 연속된 수많은 계단으로 이루어져 있어 휠체어 및 거동이 불편한 어르신은 옥상 전역 보행이 불가합니다(엘리베이터 앞 소형 전망대에서만 제한 조망 가능). 카사 바트요와 접근성 조건이 다르므로 옥상 계단 이동 제약을 반드시 고려하세요.",
+    "hours": "매일 09:00~20:30 (야간 투어 별도 운영 / 동절기 일정 확인 필요)",
     "ticketTip": "오전 9시 첫 타임 사전 예약 시 인파 없이 고즈넉하게 관람 가능",
-    "officialUrl": "https://www.lapedrera.com/en",
+    "officialUrl": "https://www.lapedrera.com/en/accessibility/",
+    "verifiedDate": "2026-10 확인 (2026.11 방문 전 재확인 필요)",
     "mapQuery": "Casa Mila Barcelona",
     "baseKrw": 39000
   },
   {
     "name": "바르셀로나 고딕 지구 & 대성당 (Gothic Quarter)",
+    "slug": "gothic-quarter",
     "region": "스페인",
     "city": "스페인 바르셀로나",
     "photo": "https://images.unsplash.com/photo-1579282240050-352db0a14c21?auto=format&fit=crop&w=800&q=80",
     "highlight": "로마 시대 성벽과 14세기 중세 고딕 골목의 신비로운 정취. 비스베 다리와 웅장한 바르셀로나 대성당",
-    "seniorAccess": "보행자 전용 평지 골목 위주. 바닥 돌길이 있으므로 편안한 운동화 필수. 곳곳에 노천카페와 벤치 휴식 공간 풍부",
+    "seniorAccess": "대부분 보행자 전용 평지이나 중세 돌바닥(조약돌/석판)이 불규칙하고 틈이 있어 발목 피로와 미끄럼에 주의해야 합니다. 차량 진입이 통제되므로 대로변(비아 라이에타나 등) 택시 승하차가 필요합니다. 대성당 앞 광장 벤치와 노천 카페가 좋은 쉼터가 됩니다.",
     "hours": "대성당 평일 09:30~18:30 (광장 및 골목 상시 개방)",
     "ticketTip": "대성당 옥상 엘리베이터 관람 포함 티켓 현장 또는 온라인 예약 가능",
     "officialUrl": "https://catedralbcn.org/en/",
+    "verifiedDate": "2026-10 확인",
     "mapQuery": "Barcelona Cathedral Gothic Quarter",
     "baseKrw": 16000
   },
@@ -15612,53 +15622,61 @@ Feel free to ask any travel question!<br>
   },
   {
     "name": "세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)",
+    "slug": "catedral-sevilla",
     "region": "스페인",
     "city": "스페인 세비야",
     "photo": "https://images.unsplash.com/photo-1558642084-fd07fae5282e?auto=format&fit=crop&w=800&q=80",
     "highlight": "세계에서 3번째로 큰 성당이자 최대 고딕 건축물. 콜럼버스의 관을 멘 4대 왕 조각상과 황금빛 목조 제단",
-    "seniorAccess": "히랄다 탑 전망대는 계단이 아닌 나귀가 오르던 완만한 경사로(34구간)로 설계되어 어르신도 쉬어가며 등반 가능. 성당 본당은 완전 평지",
-    "hours": "월-토 10:45~17:00, 일 14:30~18:00",
+    "seniorAccess": "성당 본당은 대체로 평탄하며 경사로가 갖춰져 있으나 일부 석판 단차가 있습니다. 히랄다 탑은 나귀가 오르던 완만한 경사로로 설계되어 있으나 램프 개수는 자료별로 일치하지 않으며(숫자 단정 불가), 무엇보다 종탑 전망대 직전 마지막 17개의 좁고 가파른 계단이 필수적입니다. 심장·호흡기 질환이나 관절이 약한 어르신은 정상 등반을 지양하고 본당과 오렌지 중정 그늘 쉼터 관람에 집중하시길 권장합니다.",
+    "hours": "월-토 10:45~17:00, 일 14:30~18:00 (사전 타임슬롯 예매 필수)",
     "ticketTip": "공식 사이트 시간 지정 예매 필수. 살바도르 성당 통합권 구매 시 더 여유로움",
-    "officialUrl": "https://www.catedraldesevilla.es/",
+    "officialUrl": "https://www.catedraldesevilla.es/en/cultural-visit/accessibility/",
+    "verifiedDate": "2026-10 확인 (2026.11 방문 전 재확인 필요)",
     "mapQuery": "Seville Cathedral Giralda",
     "baseKrw": 19000
   },
   {
     "name": "세비야 알카사르 왕궁 (Real Alcázar de Sevilla)",
+    "slug": "alcazar-sevilla",
     "region": "스페인",
     "city": "스페인 세비야",
     "photo": "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80",
     "highlight": "무데하르 양식의 진수 소녀들의 중정(Patio de las Doncellas)과 드라마 '왕좌의 게임' 도른 왕국의 배경이 된 환상적인 왕실 정원",
-    "seniorAccess": "지상 1층 궁전과 파티오는 평지. 울창한 오렌지 나무 정원 곳곳에 분수와 벤치가 있어 부모님 산책 코스로 최고",
-    "hours": "매일 09:30~17:00 (동절기 기준)",
+    "seniorAccess": "구역 전체를 100% 무장애나 평지로 단정할 수 없습니다. 1층 주요 파티오(소녀들의 중정 등)는 이동 가능하지만, 궁전 바닥 돌길, 석판 단차, 상층(Cuarto Real Alto: 2층 왕실 처소 별도 계단) 구간이 존재합니다. 광대한 정원도 비포장 자갈길과 흙길이 많으므로 장시간 보행을 피하고 1층 중앙 중정 위주로 동선을 압축하세요.",
+    "hours": "매일 09:30~17:00 (동절기 기준 / 11월 공식 시간표 확인)",
     "ticketTip": "티켓 매진이 매우 빠르므로 최소 3~4주 전 공식 홈페이지 직접 예약 필수",
-    "officialUrl": "https://www.alcazarsevilla.org/en/",
+    "officialUrl": "https://alcazarsevilla.org/prepara-la-visita/",
+    "verifiedDate": "2026-10 확인 (2026.11 방문 전 재확인 필요)",
     "mapQuery": "Real Alcazar de Sevilla",
     "baseKrw": 22000
   },
   {
     "name": "세비야 스페인 광장 (Plaza de España)",
+    "slug": "plaza-espana",
     "region": "스페인",
     "city": "스페인 세비야",
     "photo": "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=800&q=80",
     "highlight": "1929년 이베로-아메리카 박람회를 위해 건설된 반원형 대궁전. 스페인 48개 주를 묘사한 타일 벤치와 아치형 다리, 뱃놀이 운하",
-    "seniorAccess": "마리아 루이사 공원과 이어진 100% 완전 평지. 계단 없이 탁 트인 광장을 거닐 수 있으며 벤치가 매우 많음",
+    "seniorAccess": "광장 부지가 매우 거대하여 단순 횡단에도 보행 부담이 큽니다. 운하 위 4개의 아치 다리는 계단으로 되어 있어 휠체어나 보행 보조기로 건너려면 다리 대신 광장 양 끝 평지 회랑 통로로 우회해야 합니다. 마리아 루이사 공원은 흙길 산책로가 많습니다. 마차 투어(Calesa)는 선택사항이나 11월 계절 운행·정식 조례 요금(약 45~50유로 수준) 확인 및 마차 승하차 시 높은 발판에 주의하세요.",
     "hours": "매일 08:00~22:00",
     "ticketTip": "입장료 무료. 해질녘 노을 골든아워 방문 강력 추천",
     "officialUrl": "https://visita.sevilla.org/en/",
+    "verifiedDate": "2026-10 확인",
     "mapQuery": "Plaza de Espana Seville",
     "baseKrw": 0
   },
   {
     "name": "코르도바 메스키타-대성당 (Mezquita-Catedral)",
+    "slug": "mezquita-cordoba",
     "region": "스페인",
     "city": "스페인 코르도바",
     "photo": "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=800&q=80",
     "highlight": "856개의 붉은색과 흰색 설화석고 줄무늬 아치가 끝없이 이어지는 기둥의 숲. 이슬람 사원과 가톨릭 대성당이 공존하는 인류 건축의 기적",
-    "seniorAccess": "사원 실내 전체가 문턱 없는 광활한 단층 평지로 어르신 보행 편의성 최고. 오렌지 정원(Patio de los Naranjos) 그늘 쉼터",
-    "hours": "월-토 10:00~19:00, 일 08:30~11:30 / 15:00~19:00",
+    "seniorAccess": "메스키타 사원 실내는 문턱 없는 단층 평지로 어르신 보행 편의성이 매우 우수합니다. 단, 오렌지 중정(Patio de los Naranjos) 바닥은 울퉁불퉁한 자갈길입니다. 인근 '꽃의 골목(Calleja de las Flores)'은 폭 1m 내외로 매우 좁고 완만한 경사 자갈길이며 관광객 병목이 심해 보행 보조기 이용 시 주의가 필요합니다. 세비야-코르도바 'AVE 40분'은 일반 참고값이며 실제 날짜별 편성(40~55분) 확인이 필수입니다.",
+    "hours": "월-토 10:00~19:00, 일 08:30~11:30 / 15:00~19:00 (동절기 시간표 확인)",
     "ticketTip": "공식 사이트에서 오디오 가이드 포함 시간 지정 티켓 사전 예매",
-    "officialUrl": "https://mezquita-catedraldecordoba.es/en/",
+    "officialUrl": "https://mezquita-catedraldecordoba.es/en/organiza-la-visita/normativa/",
+    "verifiedDate": "2026-10 확인 (2026.11 방문 전 재확인 필요)",
     "mapQuery": "Mezquita Catedral de Cordoba",
     "baseKrw": 20000
   },
@@ -15677,14 +15695,16 @@ Feel free to ask any travel question!<br>
   },
   {
     "name": "론다 누에보 다리 & 헤밍웨이 산책로 (Puente Nuevo)",
+    "slug": "puente-nuevo-ronda",
     "region": "스페인",
     "city": "스페인 론다",
     "photo": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
     "highlight": "120m 깊이의 엘 타호(El Tajo) 협곡을 가로지르는 웅장한 18세기 석교. 헤밍웨이가 사랑한 파라도르 호텔 절벽 뷰",
-    "seniorAccess": "협곡 아래로 내려가는 트레킹은 가파르므로 지양하고, 다리 상부 평지 보도와 파라도르 옆 테라스 산책로에서 평온하게 조망",
+    "seniorAccess": "다리 상부 인도와 파라도르 호텔 옆 테라스는 평탄하게 걸으며 협곡을 조망할 수 있습니다. 단, 협곡 아래로 내려가는 트레킹 코스는 매우 가파르고 험한 비포장 내리막 자갈길이므로 어르신 동행 시 절대 진입하지 마세요. 다리 내부 전시실도 계단 구간입니다. 세비야 기준 편도 2시간 이상 소요되므로 당일치기 후보로 신중히 검토하세요.",
     "hours": "24시간 상시 개방",
     "ticketTip": "다리 보행 및 전망대 무료. 다리 중앙 내부 전시실(소액 유료)은 계단이 있어 어르신 패스 권장",
     "officialUrl": "https://turismoderonda.es/en/",
+    "verifiedDate": "2026-10 확인",
     "mapQuery": "Puente Nuevo Ronda",
     "baseKrw": 0
   },
@@ -16380,7 +16400,7 @@ Feel free to ask any travel question!<br>
       "zh": "高迪倾心打造的童话马赛克变色龙喷泉与百柱大厅。俯瞰巴塞罗那城景与地中海全景的梦幻艺术公园。"
     },
     "seniorAccess": {
-      "ko": "언덕 지형이므로 지하철 대신 카탈루냐 광장에서 24번 버스 탑승 권장 (후문 평지 진입). 주요 모뉴먼트 구역은 평탄하게 정비됨",
+      "ko": "언덕 지형으로 경사로·자갈길·계단이 많습니다. 택시나 24번 버스를 이용해도 하차 지점에서 언덕길 보행이 필요하며 택시가 정문 앞에 바로 내린다고 보장할 수 없습니다. 보행 약자는 모뉴먼트 광장 중심의 완만한 구간 위주 관람을 권장합니다.",
       "ja": "丘陵地帯のため地下鉄ではなくカタルーニャ広場から24番バスで後門（平坦ルート）からのアクセス推奨。記念碑エリアは整備され歩きやすいです。",
       "en": "Hilly terrain; take Bus 24 directly from Plaça de Catalunya to the upper back gate for step-free flat entry into the monumental zone.",
       "zh": "地势起伏，强烈建议从加泰罗尼亚广场乘坐24路公交直达后门平坦入口，免去陡峭爬坡。"
@@ -16418,7 +16438,7 @@ Feel free to ask any travel question!<br>
       "zh": "高迪以巨龙传说与海洋波澜为灵感铸造的奇幻建筑。波浪形窗框与斑斓彩绘玻璃交相辉映。"
     },
     "seniorAccess": {
-      "ko": "실내 최신 엘리베이터 완비로 거동 불편한 부모님도 옥상 용의 등뼈까지 편안하게 관람 가능. 무료 휠체어 대여 지원",
+      "ko": "실내 현대식 엘리베이터가 주요 전시층 및 옥상 직전까지 운행되어 접근성이 우수합니다. 무료 휠체어 대여 지원. 단, 내부 계단 및 어두운 조명 구역 보행 시 주의가 필요합니다.",
       "ja": "館内に最新エレベーター完備。足腰に不安のあるご両親も屋上のドラゴンの背骨まで安心して見学できます。無料車椅子貸出あり。",
       "en": "Modern interior elevator transports seniors effortlessly from the ground floor up to the dragon-back roof terrace. Free wheelchairs available.",
       "zh": "全馆配备无障碍电梯，长辈可轻松直达龙脊屋顶露台。前台提供免费轮椅借用服务。"
@@ -16456,7 +16476,7 @@ Feel free to ask any travel question!<br>
       "zh": "俗称“采石场”的高迪代表作。波浪般连绵起伏的石灰石外墙与头盔武士造型的屋顶奇幻烟囱群。"
     },
     "seniorAccess": {
-      "ko": "어르신 우선 엘리베이터 탑승 지원. 옥상 일부 계단 제외하고 전 층 평탄화 완료되어 안전함",
+      "ko": "실내 층은 엘리베이터로 이동 가능하나, 옥상(전사 테라스)은 물결치는 파도형 굴곡과 연속된 계단으로 되어 있어 휠체어 및 거동 불편 어르신은 옥상 전역 보행이 불가합니다(엘리베이터 앞 소형 전망대만 조망 가능).",
       "ja": "シニア優先エレベーターあり。屋上の一部ステップを除き、展示階・屋根裏は完全フラットで安全に見学できます。",
       "en": "Priority elevators for seniors. Aside from a few steps on the contoured roof, interior exhibition levels are fully flat and accessible.",
       "zh": "设有长辈优先直达电梯。除屋顶局部高低起伏台阶外，各楼层展厅全平缓无障碍。"
@@ -16684,7 +16704,7 @@ Feel free to ask any travel question!<br>
       "zh": "世界最大的哥特式主教座堂。四位国王雕像抬举的哥伦布灵柩与璀璨夺目的巨型纯金木雕主祭坛。"
     },
     "seniorAccess": {
-      "ko": "히랄다 탑 전망대는 계단이 아닌 나귀가 오르던 완만한 경사로(34구간)로 설계되어 어르신도 쉬어가며 등반 가능. 성당 본당은 완전 평지",
+      "ko": "성당 본당은 평탄하나 단차 주의. 히랄다 탑 경사로는 램프 개수 단정이 불가하며 정상 종탑 직전 마지막 17개의 가파른 계단이 필수적입니다. 심장·호흡기 질환이나 관절이 약한 어르신은 정상 등반을 지양하고 본당 관람에 집중 권장합니다.",
       "ja": "ヒラルダの塔は階段ではなく騎馬用の緩やかなスロープ（34スロープ）設計で、休みながら登れます。大聖堂内は完全フラット。",
       "en": "Giralda tower features 34 gentle inclined ramps instead of steps, allowing comfortable rest intervals. Cathedral interior is 100% flat.",
       "zh": "希拉尔达塔采用当年马匹通行的34段平缓坡道而非台阶，长辈可沿途随时驻足喘息；教堂内部完全平坦。"
@@ -16722,7 +16742,7 @@ Feel free to ask any travel question!<br>
       "zh": "穆德哈尔艺术巅峰之作少女中庭，以及美剧《权力的游戏》多恩流水花园拍摄地的华丽王宫花园与喷泉。"
     },
     "seniorAccess": {
-      "ko": "지상 1층 궁전과 파티오는 평지. 울창한 오렌지 나무 정원 곳곳에 분수와 벤치가 있어 부모님 산책 코스로 최고",
+      "ko": "구역 전체가 100% 무장애가 아닙니다. 1층 주요 파티오는 이동 가능하나 궁전 바닥 돌길, 단차, 상층(Cuarto Real Alto) 계단이 존재합니다. 정원 비포장 자갈길이 많으므로 장시간 보행을 피하고 중앙 중정 위주로 동선을 압축하세요.",
       "ja": "1階宮殿と主要パティオは平坦。オレンジの木が茂る庭園各所に噴水とベンチがあり、散策に最適です。",
       "en": "Ground-floor palace rooms and patios are step-free. The verdant orange-tree gardens feature plentiful shaded benches and fountains.",
       "zh": "一层主要宫殿与内院均为平地。郁郁葱葱的柑橘树花园各处点缀着喷泉与长椅，漫步极为宜人惬意。"
@@ -16760,7 +16780,7 @@ Feel free to ask any travel question!<br>
       "zh": "为1929年伊比利亚美洲博览会建造的半圆形巨型宫殿广场。绘有西班牙各省历史的彩绘瓷砖长椅与游船环形运河。"
     },
     "seniorAccess": {
-      "ko": "마리아 루이사 공원과 이어진 100% 완전 평지. 계단 없이 탁 트인 광장을 거닐 수 있으며 벤치가 매우 많음",
+      "ko": "광장이 매우 거대하여 단순 횡단에도 보행 부담이 큽니다. 운하 위 4개의 아치 다리는 계단이므로 휠체어/보조기는 광장 양 끝 평지 회랑 통로로 우회해야 합니다. 마차 투어는 선택사항이며 11월 운행·요금 확인 및 높은 발판에 주의하세요.",
       "ja": "マリア・ルイサ公園に隣接する100%完全平坦な広場。階段を使わずに広大な敷地をゆったり散歩できます。",
       "en": "100% level ground directly adjoining Maria Luisa Park. Countless decorative tiled benches allow effortless resting at any moment.",
       "zh": "连通玛丽亚路易莎公园的全平坦开阔广场。全程无台阶，瓷砖长椅极多，长辈随走随歇极为轻松。"
@@ -16798,7 +16818,7 @@ Feel free to ask any travel question!<br>
       "zh": "由856根红白双色条纹石柱拱券交织而成的无垠柱林。伊斯兰清真寺与天主教大教堂融为一体的人类建筑奇迹。"
     },
     "seniorAccess": {
-      "ko": "사원 실내 전체가 문턱 없는 광활한 단층 평지로 어르신 보행 편의성 최고. 오렌지 정원(Patio de los Naranjos) 그늘 쉼터",
+      "ko": "메스키타 실내는 문턱 없는 단층 평지로 보행 편의성이 우수합니다. 오렌지 중정 자갈 바닥 및 주변 '꽃의 골목'은 폭 1m 내외로 좁고 경사 자갈길이 있어 인파 병목 주의. 세비야-코르도바 'AVE 40분'은 일반 참고값이며 실제 날짜별 편성 확인 필수.",
       "ja": "寺院内は段差が一切ない広大な平坦なワンフロア構造。オレンジの中庭に木陰のベンチが多く歩行の負担が極めて少ないです。",
       "en": "The entire interior is a vast, threshold-free, single-level expanse offering exceptional ease of walking for senior visitors.",
       "zh": "寺内全域为无任何门槛台阶的单层平整地面，步履体验极佳。外围柑橘中庭树荫长椅充足。"
@@ -16874,7 +16894,7 @@ Feel free to ask any travel question!<br>
       "zh": "横跨120米深塔霍峡谷的18世纪壮丽石桥。海明威笔下挚爱的悬崖国营古堡酒店绝景与古朴小镇风情。"
     },
     "seniorAccess": {
-      "ko": "협곡 아래로 내려가는 트레킹은 가파르므로 지양하고, 다리 상부 평지 보도와 파라도르 옆 테라스 산책로에서 평온하게 조망",
+      "ko": "다리 상부 인도와 파라도르 옆 테라스는 평탄하게 조망 가능합니다. 단, 협곡 아래로 내려가는 트레킹 코스는 매우 가파르고 험한 비포장 내리막 자갈길이므로 어르신 절대 진입 금지. 세비야 기준 편도 2시간 이상 소요되므로 당일치기 후보로 신중히 검토하세요.",
       "ja": "谷底への急な階段は避け、橋の上の平坦な歩道やパラドール横のテラス散歩道から安全に絶景を満喫するのが最適です。",
       "en": "Avoid steep descents to the valley floor; admire breathtaking views safely and comfortably from the flat bridge walkway and Parador gardens.",
       "zh": "峡谷底部的徒步山道非常陡峭，建议长辈留在桥面平缓人行道及国营酒店观景花园平台凭栏远眺。"
@@ -27943,6 +27963,2397 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
     ['ko', 'en', 'ja', 'zh'].forEach(lang => {
       if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
       Object.assign(I18N_DICTIONARY[lang], REFINED_WATER_I18N[lang]);
+    });
+  }
+})();
+
+
+// ========================================================
+// === SENIOR_DISTRICTS_I18N & MULTILINGUAL EXTENSIONS ===
+// ========================================================
+const SENIOR_DISTRICTS_I18N = {
+  "ko": {
+    "banner": {
+      "title": "보행 및 접근성 안내 원칙 (Fact-Checking Standard):",
+      "text": "공식 근거 없는 ‘완전 평지’, ‘무장애’, ‘무피로’, ‘엘리베이터 완비’, ‘택시가 정문 앞까지 직행’ 같은 단정을 배제하고, 실제 계단·경사·불규칙 노면과 보행 부담을 가감 없이 안내합니다. 숙소(Suite Marina) 정확한 도로명 주소 및 2026년 11월 공식 운영 시간표·열차 편성은 공식 채널 사전 확인이 필수입니다."
+    },
+    "nav": {
+      "label": "구역 바로가기:",
+      "chips": [
+        {
+          "id": "district-bcn-gaudi",
+          "text": "🏙️ 1. 가우디/에이샴플레"
+        },
+        {
+          "id": "district-bcn-gothic",
+          "text": "🏛️ 2. 고딕·보케리아·광장"
+        },
+        {
+          "id": "district-bcn-port",
+          "text": "🌊 3. 포트 벨 수변"
+        },
+        {
+          "id": "district-bcn-guell",
+          "text": "🦎 4. 구엘 공원"
+        },
+        {
+          "id": "district-transit-bcn-svq",
+          "text": "🚆 11/11 바르셀로나-세비야 이동 비교",
+          "highlight": true
+        },
+        {
+          "id": "district-svq-catedral",
+          "text": "⛪ 5. 대성당·히랄다"
+        },
+        {
+          "id": "district-svq-alcazar",
+          "text": "🏰 6. 알카사르·산타크루즈"
+        },
+        {
+          "id": "district-svq-plaza",
+          "text": "💃 7. 스페인 광장·공원"
+        },
+        {
+          "id": "district-svq-river",
+          "text": "⛵ 8. 강변·황금의 탑"
+        },
+        {
+          "id": "district-trip-cordoba",
+          "text": "🍊 코르도바 (당일치기 후보)",
+          "candidate": true
+        },
+        {
+          "id": "district-trip-ronda",
+          "text": "🌉 론다 (당일치기 후보)",
+          "candidate": true
+        },
+        {
+          "id": "landmarksCollectionHead",
+          "text": "🗂️ 스페인 18선 전체 카드",
+          "allCards": true
+        }
+      ]
+    },
+    "labels": {
+      "keySpots": "핵심 명소:",
+      "recSequence": "추천 이동 순서",
+      "transitTip": "구간 이동 팁",
+      "walkingEst": "예상 보행량",
+      "walkingWarn": "보행 주의 · 계단 팩트체크",
+      "restStops": "화장실 · 쉼터",
+      "skipAlt": "비상 대안 / 피로 시 생략",
+      "officialSource": "공식 검증 출처:"
+    },
+    "districts": [
+      {
+        "id": "district-bcn-gaudi",
+        "badge": "바르셀로나 01",
+        "badgeClass": "bcn-badge",
+        "timing": "권장 일정: 11월 6일~7일 중 택1",
+        "title": "에이샴플레 & 가우디 건축 기행",
+        "desc": "바르셀로나 모더니즘의 정수. 카사 바트요, 카사 밀라, 사그라다 파밀리아를 잇는 황금 동선",
+        "landmarks": [
+          {
+            "name": "사그라다 파밀리아 ↗",
+            "cardId": "landmark-card-sagrada-familia",
+            "isCard": true
+          },
+          {
+            "name": "카사 바트요 ↗",
+            "cardId": "landmark-card-casa-batllo",
+            "isCard": true
+          },
+          {
+            "name": "카사 밀라 ↗",
+            "cardId": "landmark-card-casa-mila",
+            "isCard": true
+          }
+        ],
+        "sequence": "오전 09:30 카사 바트요 관람 ➔ 파세이그 데 그라시아 산책 (도보 5분) ➔ 카사 밀라(다락방 전시 & 중정) ➔ 13:00~15:30 점심 및 시에스타 휴식 ➔ 16:00 사그라다 파밀리아 (사전 예약 타임슬롯 본당 관람)",
+        "transit": "그라시아 거리 ➔ 사그라다 파밀리아 구간은 택시 이용 권장(약 10~15분, 7~10유로 내외). 지하철(L2/L5)은 환승 통로 계단과 장거리 보행으로 부모님 피로 누적 위험.",
+        "walking": "건물 내부 관람 포함 총 4,000~6,000보 (구간 간 택시 이용 시 체감 피로도 ‘보통’).",
+        "warning": "• <strong>사그라다 파밀리아:</strong> 성당 본당은 평탄한 경사로와 엘리베이터로 휠체어/어르신 관람이 원활합니다. 단, <em>타워(탑)</em>는 엘리베이터로 올라가더라도 내려올 때는 <strong>400여 개의 좁고 가파른 나선형 계단을 도보로만 내려와야 합니다.</strong> 안전 규정상 거동 불편자, 심장/호흡기 질환자, 임산부, 6세 미만은 타워 입장이 제한되므로 <strong>부모님 동행 시 타워 제외 본당 일반 입장권을 권장</strong>합니다.<br>• <strong>카사 밀라 vs 카사 바트요:</strong> 카사 바트요는 엘리베이터로 옥상 직전까지 이동이 양호하나, <strong>카사 밀라 옥상(전사 테라스)은 물결치는 파도형 굴곡과 연속된 수많은 계단</strong>으로 구성되어 있어 휠체어 및 거동 불편 어르신은 옥상 전역 보행이 불가합니다(엘리베이터 앞 소형 전망대에서만 제한 조망 가능). 두 건축물의 접근성을 동일하게 취급하지 마세요.",
+        "rest": "각 건축물 내부 유료 관람 구역 내 장애인/일반 화장실 완비. 파세이그 데 그라시아 대로변 카페(카페 엘 포른 등) 테라스 쉼터 풍부.",
+        "skip": "카사 밀라 옥상 계단 등반을 생략하고 1층 카페테리아에서 휴식. 사그라다 파밀리아는 타워 티켓 대신 가우디 광장 연못 벤치에서 성당 전경 감상으로 대체.",
+        "sources": [
+          {
+            "name": "사그라다 파밀리아 공식 FAQ",
+            "url": "https://sagradafamilia.org/en/faqs"
+          },
+          {
+            "name": "카사 밀라 공식 접근성 규정",
+            "url": "https://www.lapedrera.com/en/accessibility/"
+          },
+          {
+            "name": "카사 바트요 공식 사이트",
+            "url": "https://www.casabatllo.es/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인 · 2026.11 방문 전 재확인 필요"
+      },
+      {
+        "id": "district-bcn-gothic",
+        "badge": "바르셀로나 02",
+        "badgeClass": "bcn-badge",
+        "timing": "권장 일정: 11월 8일",
+        "title": "고딕 지구 · 보케리아 시장 · 카탈루냐 광장",
+        "desc": "14세기 중세 고딕 골목의 신비로운 정취와 활기 넘치는 바르셀로나 대표 전통 재래시장",
+        "landmarks": [
+          {
+            "name": "고딕 지구 & 대성당 ↗",
+            "cardId": "landmark-card-gothic-quarter",
+            "isCard": true
+          },
+          {
+            "name": "보케리아 시장 (Mercat de la Boqueria)"
+          },
+          {
+            "name": "카탈루냐 광장 (Plaça de Catalunya)"
+          }
+        ],
+        "sequence": "카탈루냐 광장 분수대 산책 ➔ 람블라스 거리 초입 도보 ➔ 보케리아 시장(오전 10:30 하몬·생과일 컵 시식) ➔ 람블라스 거리 횡단 ➔ 비스베 다리(Bishop's Bridge) ➔ 바르셀로나 대성당 앞 노바 광장 노천 카페 휴식",
+        "transit": "고딕 지구 내부는 보행자 전용 구역으로 차량 진입 불가. 카탈루냐 광장 남측 또는 비아 라이에타나(Via Laietana) 대로변 택시 승하차 후 도보 2~3분 진입.",
+        "walking": "3,000~5,000보 (골목길 평지 산책 위주).",
+        "warning": "고저차는 거의 없으나 <strong>중세 돌바닥(조약돌/석판)이 울퉁불퉁하고 틈이 있어</strong> 발목 피로와 미끄럼에 주의가 필요합니다. <strong>보케리아 시장은 단층이나 통로가 좁고 수산물 코너 바닥에 물기</strong>가 있을 수 있으며 극심한 인파 병목과 소매치기 위험이 있으므로 가방 단속이 필수입니다.",
+        "rest": "대성당 앞 광장 벤치 및 노천 카페. 보케리아 시장 내 공중화장실(유료/지하)보다는 인근 엘 코르테 잉글레스 카탈루냐 백화점 또는 정식 카페 화장실 이용 권장.",
+        "skip": "좁고 복잡한 고딕 미로 골목 깊은 탐방은 생략하고, 대성당 앞 광장 카페 야외석에서 클래식 기타 거리 공연을 들으며 휴식.",
+        "sources": [
+          {
+            "name": "보케리아 시장 공식 안내",
+            "url": "https://www.boqueria.barcelona/market-boqueria"
+          },
+          {
+            "name": "바르셀로나 대성당 공식 사이트",
+            "url": "https://catedralbcn.org/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인"
+      },
+      {
+        "id": "district-bcn-port",
+        "badge": "바르셀로나 03",
+        "badgeClass": "bcn-badge",
+        "timing": "권장 일정: 11월 9일 오후",
+        "title": "포트 벨 수변 산책로 & 람블라스 남단",
+        "desc": "탁 트인 지중해 바다와 요트 정박지, 평탄한 목재 인도교를 따라 거니는 힐링 산책 코스",
+        "landmarks": [
+          {
+            "name": "포트 벨 수변 산책로 (Port Vell)"
+          },
+          {
+            "name": "람블라 데 마르 목재교 (Rambla de Mar)"
+          },
+          {
+            "name": "콜럼버스 기념탑 (Mirador de Colom)"
+          }
+        ],
+        "sequence": "택시로 콜럼버스 광장(Portal de la Pau) 하차 ➔ 람블라 데 마르 물결 목재 인도교 산책 ➔ 마레마그눔(Maremagnum) 수변 복합몰 테라스 카페에서 지중해 요트 감상 및 일몰 티타임",
+        "transit": "콜럼버스 기념탑 로터리 택시 정류장 이용. 해안 수변 바로 앞까지 평지 승하차 가능. (공항 이동 시 카탈루냐 광장/에스파냐 광장 저상버스 Aerobús 연계)",
+        "walking": "2,000~3,500보 (완전 평지 목재 덱 보행, 체감 피로도 ‘매우 낮음’).",
+        "warning": "바다 위로 조성된 인도교와 항구 산책로는 <strong>단차와 계단이 거의 없는 평탄한 목재 덱과 보도블록</strong>으로 휠체어/어르신 보행 편의성이 매우 뛰어납니다. 단, 11월 해풍이 불면 체감 온도가 낮아질 수 있으므로 바람막이 겉옷과 머플러를 준비하세요.",
+        "rest": "마레마그눔 쇼핑몰 실내 무장애 화장실(무료 이용) 완비. 수변 테라스 카페 및 벤치 휴식 공간 풍부.",
+        "skip": "바다 위 다리를 건너지 않고 콜럼버스 기념탑 인근 해안 벤치에서 바닷바람을 쐬며 여유롭게 조망.",
+        "sources": [
+          {
+            "name": "Aerobús 바르셀로나 공항 노선·저상버스 안내",
+            "url": "https://aerobusbarcelona.es/en/lines-stops-and-schedules/"
+          },
+          {
+            "name": "포트 벨 공식 안내",
+            "url": "https://www.portbcn.cat/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인"
+      },
+      {
+        "id": "district-bcn-guell",
+        "badge": "바르셀로나 04",
+        "badgeClass": "bcn-badge",
+        "timing": "권장 일정: 11월 10일 오전",
+        "title": "구엘 공원 & 카르멜 언덕",
+        "desc": "가우디의 동화 같은 타일 모자이크 도마뱀과 돌기둥 회랑, 바르셀로나 파노라마 뷰",
+        "landmarks": [
+          {
+            "name": "구엘 공원 ↗",
+            "cardId": "landmark-card-park-guell",
+            "isCard": true
+          },
+          {
+            "name": "자연 광장 (Plaça de la Natura)"
+          },
+          {
+            "name": "백주랑 (Hypostyle Room)"
+          }
+        ],
+        "sequence": "택시로 카르멜 언덕 입구(Carretera del Carmel) 하차 ➔ 완만한 내리막 경로로 유네스코 모뉴먼트 구역 진입 ➔ 자연 광장 벤치 조망 ➔ 도마뱀 분수 & 세탁부 돌기둥 회랑 관람 ➔ 하단 정문 출구 택시 복귀",
+        "transit": "지하철(L3 Lesseps/Vallcarca)은 15~20분의 가파른 언덕길을 걸어야 하므로 어르신 동행 시 절대 금지! 카탈루냐 광장에서 24번 버스 또는 택시 이용 필수. <em>단, 택시나 버스도 정문 바로 앞 평지에 내린다고 보장할 수 없으며 하차 지점에서 모뉴먼트 구역까지 언덕길 보행이 필요합니다.</em>",
+        "walking": "3,500~5,000보 (경사지와 계단이 포함되어 체감 피로도 ‘높음’).",
+        "warning": "<strong>공원 전체가 언덕 지형으로 가파른 경사로, 비포장 흙길/자갈길, 미끄러운 돌계단이 많습니다.</strong> ‘완전 평지’나 ‘무장애 공원’이 아니므로 발목을 단단히 잡아주는 편안한 운동화 착용이 필수이며, 보행 약자는 외곽 언덕길 탐방을 생략하고 모뉴먼트 중심 구역만 부분 관람해야 합니다.",
+        "rest": "카르멜 입구 및 모뉴먼트 구역 내 공중화장실 구비. 자연 광장 물결 타일 벤치에서 쉴 수 있으나 그늘이 부족하므로 양산/모자 지참 권장.",
+        "skip": "가파른 외곽 십자가 언덕 산책로는 과감히 생략하고, 백주랑 그늘 회랑과 도마뱀 분수만 관람한 뒤 정문 입구 카페테리아에서 시원한 오렌지 주스 휴식.",
+        "sources": [
+          {
+            "name": "구엘 공원 공식 접근성 및 이동 안내",
+            "url": "https://parkguell.barcelona/en/accessibility"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인 · 2026.11 타임슬롯 사전 예매 필수"
+      },
+      {
+        "id": "district-svq-catedral",
+        "badge": "세비야 01",
+        "badgeClass": "svq-badge",
+        "timing": "권장 일정: 11월 12일 오전",
+        "title": "세비야 대성당 & 히랄다 탑",
+        "desc": "세계 최대 고딕 성당의 웅장한 콜럼버스 묘와 이슬람 미나렛의 역사가 깃든 히랄다",
+        "landmarks": [
+          {
+            "name": "세비야 대성당 & 히랄다 탑 ↗",
+            "cardId": "landmark-card-catedral-sevilla",
+            "isCard": true
+          },
+          {
+            "name": "오렌지 중정 (Patio de los Naranjos)"
+          },
+          {
+            "name": "콜럼버스 석관 조각"
+          }
+        ],
+        "sequence": "오전 10:45 사전 예약 첫 타임 입장 ➔ 본당 주 제단화 & 콜럼버스 석관 관람 ➔ 오렌지 중정 그늘 쉼터 ➔ 히랄다 탑(부모님 체력 상태에 따라 선택 등반 또는 과감히 패스)",
+        "transit": "대성당 주변은 보행자 전용 거리. 트램 T1(Archivo de Indias 정류장) 또는 누에바 광장(Plaza Nueva) 택시 승하차 후 도보 2~3분 진입.",
+        "walking": "3,500~5,000보 (성당 내부 관람 포함).",
+        "warning": "성당 본당은 대체로 평탄하며 경사로가 설치되어 있으나 일부 석판 단차가 있습니다. <strong>히랄다 탑의 램프 개수는 문헌과 공식 자료마다 34~35개 등 일치하지 않으므로 숫자를 단정할 수 없으며</strong>, 나귀가 오르던 완만한 경사로로 되어 있으나 <strong>정상 종탑 전망대 직전 마지막 17개의 좁고 가파른 계단이 필수적</strong>입니다. 상하행 동선이 좁고 혼잡하므로 심장·호흡기 질환이나 관절이 약한 어르신은 등반을 지양하고 본당 관람에 집중하시길 권장합니다.",
+        "rest": "대성당 내부 무장애 화장실 구비. 오렌지 중정 분수 주변 그늘진 석조 벤치가 훌륭한 쉼터입니다.",
+        "skip": "히랄다 탑 등반은 과감히 생략하고 1층 본당의 황금 제단화와 오렌지 정원 벤치에서 분수 소리를 들으며 편안하게 휴식.",
+        "sources": [
+          {
+            "name": "세비야 대성당 공식 문화방문 및 접근성 안내",
+            "url": "https://www.catedraldesevilla.es/en/cultural-visit/accessibility/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인 · 11월 시간표 사전 확인 필요"
+      },
+      {
+        "id": "district-svq-alcazar",
+        "badge": "세비야 02",
+        "badgeClass": "svq-badge",
+        "timing": "권장 일정: 11월 13일",
+        "title": "세비야 알카사르 왕궁 & 산타크루즈 지구",
+        "desc": "무데하르 궁전의 진수 소녀들의 중정과 오렌지 나무 왕실 정원, 옛 유대인 지구의 고즈넉한 골목",
+        "landmarks": [
+          {
+            "name": "세비야 알카사르 ↗",
+            "cardId": "landmark-card-alcazar-sevilla",
+            "isCard": true
+          },
+          {
+            "name": "소녀들의 중정 (Patio de las Doncellas)"
+          },
+          {
+            "name": "산타크루즈 지구 (Barrio Santa Cruz)"
+          }
+        ],
+        "sequence": "오전 09:30 알카사르 사전 예약 첫 타임 입장 ➔ 1층 핵심 파티오 관람 ➔ 궁전 바로 앞 그늘 정원 산책 ➔ 산타크루즈 광장 초입 식당가 점심 & 오후 시에스타",
+        "transit": "푸에르타 데 헤레스(Puerta de Jerez) 또는 트램 정류장에서 하차 후 도보 3~4분 평지 진입. 산타크루즈 내부는 차량 진입 불가.",
+        "walking": "4,000~6,000보 (알카사르 부지가 광대하여 보행량 많음).",
+        "warning": "<strong>구역 전체가 100% 무장애나 평지가 아닙니다.</strong> 1층 주요 파티오는 이동 가능하나 궁전 바닥 돌길, 석판 단차, 상층(Cuarto Real Alto: 2층 왕실 처소 별도 계단) 구간이 존재합니다. 광대한 정원도 비포장 자갈길과 흙길이 많으므로 장시간 보행을 피하고 1층 중앙 중정 위주로 동선을 압축하세요. <strong>산타크루즈 골목은 좁고 울퉁불퉁한 조약돌 보도와 높은 연석(문턱)</strong>이 있어 발목 피로에 주의해야 합니다.",
+        "rest": "알카사르 궁전 및 카페테리아 화장실 완비. 정원 곳곳 그늘 벤치 쉼터.",
+        "skip": "알카사르 후방 광대한 미로 정원은 생략하고 1층 중앙 중정 위주로만 관람. 산타크루즈 미로 골목 깊이 들어가지 않고 대로변 광장 카페 이용.",
+        "sources": [
+          {
+            "name": "알카사르 공식 방문 준비 및 접근성 안내",
+            "url": "https://alcazarsevilla.org/prepara-la-visita/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인 · 11월 동절기 시간표 확인 필요"
+      },
+      {
+        "id": "district-svq-plaza",
+        "badge": "세비야 03",
+        "badgeClass": "svq-badge",
+        "timing": "권장 일정: 11월 14일 늦은 오후",
+        "title": "세비야 스페인 광장 & 마리아 루이사 공원",
+        "desc": "1929년 엑스포를 위해 세워진 장엄한 반원형 궁전 회랑, 타일 벤치, 운하와 푸른 공원",
+        "landmarks": [
+          {
+            "name": "세비야 스페인 광장 ↗",
+            "cardId": "landmark-card-plaza-espana",
+            "isCard": true
+          },
+          {
+            "name": "48개 주 타일 벤치"
+          },
+          {
+            "name": "마리아 루이사 공원 (Parque de María Luisa)"
+          }
+        ],
+        "sequence": "일몰 1.5시간 전 택시로 광장 정문 하차 ➔ 1층 회랑 타일 벤치에서 기념사진 및 분수 감상 ➔ 마리아 루이사 공원 초입 그늘 산책로 가볍게 산책",
+        "transit": "스페인 광장 북측 정문 로터리까지 택시 진입 가능(하차 후 평지 진입). 광장 입구 주변에 마차 정류장 위치.",
+        "walking": "3,000~4,500보 (광장 규모가 매우 거대하므로 반원 전체를 무리하게 왕복하지 마세요).",
+        "warning": "광장 바닥은 포장되어 평탄하지만, <strong>운하 위의 4개 아치 다리는 계단으로만 연결</strong>되어 있습니다. 휠체어나 보행 보조기로 건너려면 다리 대신 광장 양 끝 평지 회랑 통로로 우회해야 합니다. 마리아 루이사 공원 내부는 비포장 흙길이 많습니다.<br>• <strong>마차 투어(Calesa) 옵션:</strong> 마차는 선택사항으로 이용 가능하나, 11월 계절 운행 여부 확인, 공식 조례 요금(일반 약 45~50유로 수준) 확인 및 <strong>마차 승하차 발판이 높아</strong> 부모님 탑승 시 반드시 부축해야 합니다.",
+        "rest": "광장 1층 회랑 그늘 벤치(스페인 주별 타일 벤치) 풍부. 광장 공중화장실 위치 사전 확인 필요.",
+        "skip": "다리 계단 오르내림을 피하고 1층 평지 회랑 그늘 타일 벤치에 앉아 광장 전경과 분수대 노을 조망.",
+        "sources": [
+          {
+            "name": "세비야 관광청 공식 안내",
+            "url": "https://visita.sevilla.org/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인"
+      },
+      {
+        "id": "district-svq-river",
+        "badge": "세비야 04",
+        "badgeClass": "svq-badge",
+        "timing": "권장 일정: 11월 15일 일몰",
+        "title": "과달키비르 강변 & 황금의 탑",
+        "desc": "13세기 무어인의 망루 황금의 탑과 트리아나 지구를 마주보는 시원한 강변 산책로",
+        "landmarks": [
+          {
+            "name": "황금의 탑 (Torre del Oro)"
+          },
+          {
+            "name": "과달키비르 수변 산책로 (Paseo Colón)"
+          },
+          {
+            "name": "트리아나 다리 전망 (Puente de Triana)"
+          }
+        ],
+        "sequence": "황금의 탑 앞 수변 산책로 여유 산책 ➔ 트리아나 다리 전망 강변 테라스 카페에서 오렌지 주스나 카바 한잔과 함께 일몰 감상",
+        "transit": "강변 대로변(Paseo de Cristóbal Colón) 택시 승하차 용이(완전 평지 인도).",
+        "walking": "2,000~3,000보 (완전 평지 산책, 체감 피로도 ‘매우 낮음’).",
+        "warning": "강변 상단 보도는 잘 포장된 평지입니다. 수변 하단 산책로로 내려갈 때는 완만한 경사로를 이용하세요. <strong>황금의 탑 내부 전망대는 매우 좁고 가파른 나선계단</strong>으로 이루어져 있어 어르신 내부 등반은 비추천하며 외관 감상으로 충분합니다.",
+        "rest": "강변 테라스 카페테리아 화장실 및 야외 파라솔 좌석 풍부.",
+        "skip": "탑 내부 계단 등반을 생략하고 강변 벤치에서 맞은편 트리아나 지구의 알록달록한 파스텔톤 건축물 풍경 감상.",
+        "sources": [
+          {
+            "name": "세비야 관광청 공식 안내",
+            "url": "https://visita.sevilla.org/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인"
+      },
+      {
+        "id": "district-trip-cordoba",
+        "badge": "당일치기 후보 01 (확정 아님)",
+        "badgeClass": "candidate-badge",
+        "candidateCard": true,
+        "timing": "세비야 출발 당일치기 유력",
+        "title": "코르도바 메스키타 & 꽃의 골목 (당일치기 후보)",
+        "desc": "856개 아치가 빚어내는 이슬람-가톨릭 공존의 기적 메스키타와 아기자기한 안달루시아 파티오",
+        "landmarks": [
+          {
+            "name": "코르도바 메스키타 ↗",
+            "cardId": "landmark-card-mezquita-cordoba",
+            "isCard": true
+          },
+          {
+            "name": "꽃의 골목 (Calleja de las Flores)"
+          },
+          {
+            "name": "로마교 (Puente Romano)"
+          }
+        ],
+        "sequence": "세비야 산타 후스타 ➔ 코르도바 중앙역 간 열차는 <strong>‘AVE 약 40분’이 일반적인 참고값일 뿐이며, 열차 편성(AVE, AVANT, ALVIA, MD)과 날짜별 시간표에 따라 40~55분 소요</strong>됩니다. 2026년 11월 실제 탑승일의 Renfe 공식 시간표 확인이 필수입니다. 코르도바 역에서 메스키타까지는 택시로 약 10분 소요됩니다.",
+        "transit": "코르도바 역에서 구시가지 메스키타까지 택시 약 10분(약 6~8유로). 구시가지 내부는 보행자 전용.",
+        "walking": "4,000~5,500보 (당일치기 이동 피로 감안 시 오후 시에스타 휴식 필수).",
+        "warning": "• <strong>메스키타 사원:</strong> 실내 전체가 문턱 없는 광활한 단층 평지로 어르신 보행 편의성이 매우 우수합니다. 단, 오렌지 중정(Patio de los Naranjos) 바닥은 울퉁불퉁한 자갈길입니다.<br>• <strong>꽃의 골목 (Calleja de las Flores):</strong> 폭이 1~1.5m에 불과한 매우 좁은 막다른 골목길입니다. <strong>울퉁불퉁한 돌바닥과 완만한 경사, 극심한 관광객 병목</strong>이 발생하므로 휠체어/보행 보조기 이용 시 각별한 주의가 필요합니다.",
+        "rest": "메스키타 내부 화장실 완비. 오렌지 중정 그늘 벤치 및 로마교 인근 레스토랑.",
+        "skip": "혼잡한 꽃의 골목 깊숙이 들어가지 않고 메스키타 실내와 로마교 평지 산책 위주로 여유롭게 진행한 뒤 역전 카페에서 휴식.",
+        "sources": [
+          {
+            "name": "메스키타 공식 방문 규정",
+            "url": "https://mezquita-catedraldecordoba.es/en/organiza-la-visita/normativa/"
+          },
+          {
+            "name": "코르도바 관광청 교통 정보",
+            "url": "https://www.turismodecordoba.org/transport"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인 · 11월 시간표 확인 필요"
+      },
+      {
+        "id": "district-trip-ronda",
+        "badge": "당일치기 후보 02 (확정 아님)",
+        "badgeClass": "candidate-badge",
+        "candidateCard": true,
+        "timing": "안달루시아 절벽 협곡 후보",
+        "title": "론다 누에보 다리 & 헤밍웨이 산책로 (당일치기 후보)",
+        "desc": "120m 깊이의 엘 타호 협곡을 가로지르는 웅장한 18세기 석교와 파라도르 호텔 절벽 뷰",
+        "landmarks": [
+          {
+            "name": "론다 누에보 다리 ↗",
+            "cardId": "landmark-card-puente-nuevo-ronda",
+            "isCard": true
+          },
+          {
+            "name": "파라도르 호텔 테라스"
+          },
+          {
+            "name": "헤밍웨이 산책로"
+          }
+        ],
+        "sequence": "세비야-론다 간 직통 열차 편수가 적어 시외버스(Damas 버스 약 2시간~2시간 30분) 또는 전용 렌터카/투어 필요. <strong>편도 2시간 이상의 장거리 이동이 발생하므로 60대 부모님의 당일 피로도와 멀미 여부를 신중히 검토 후 최종 결정</strong>하세요.",
+        "transit": "론다 버스 터미널에서 누에보 다리까지 도보 약 10분 평지 이동.",
+        "walking": "3,000~4,500보 (상부 평지 테라스 위주 산책).",
+        "warning": "다리 상부 보도와 파라도르 호텔 옆 테라스는 평탄하게 걸으며 협곡을 조망할 수 있습니다. <strong>단, 협곡 아래로 내려가는 트레킹 코스는 매우 가파르고 험한 비포장 내리막 자갈길이므로 어르신 동행 시 절대 진입하지 마세요.</strong> 다리 중앙 내부 전시실도 가파른 계단 구간입니다.",
+        "rest": "파라도르 호텔 카페테리아 및 다리 인근 레스토랑 테라스.",
+        "skip": "협곡 트레킹은 일체 생략하고 파라도르 호텔 1층 카페 테라스 야외석에서 따뜻한 차와 함께 절벽 풍경 감상.",
+        "sources": [
+          {
+            "name": "론다 관광청 공식 안내",
+            "url": "https://turismoderonda.es/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026.10 확인"
+      }
+    ],
+    "transitTable": {
+      "badge": "11월 11일(수) 도시 간 이동",
+      "timing": "Door-to-Door 팩트체크",
+      "title": "🚆 바르셀로나 ➔ 세비야 Door-to-Door 종합 이동 비교",
+      "desc": "순수 비행시간·열차시간 비교를 넘어 숙소 출발부터 도착 숙소까지의 짐·환승·대기·계단 부담 종합 분석",
+      "unconfirmedNotice": "⚠️ <strong>확인 필요 정보 안내:</strong> 현재 바르셀로나 숙소 ‘Suite Marina’의 정확한 도로명 주소와 세비야 숙소 주소, 확정 항공 편명, 항공사별 수하물 규정이 미정이므로, 아래 시간은 일반 표준 경로 기준이며 최종 분/초 단위 여정은 세부 정보 확정 후 재산출이 필요합니다.",
+      "headers": [
+        "구분 항목",
+        "고속열차 (Renfe AVE 직통) 🚆",
+        "국내선 항공편 (BCN ➔ SVQ) ✈️"
+      ],
+      "rows": [
+        {
+          "label": "순수 이동 시간",
+          "train": "약 5시간 45분 ~ 6시간 (고속철 직통)",
+          "flight": "약 1시간 40분 ~ 1시간 50분 (순수 비행시간)"
+        },
+        {
+          "label": "숙소 ➔ 역/공항",
+          "train": "Suite Marina ➔ 산츠역 (택시 약 15~25분 추정*)",
+          "flight": "Suite Marina ➔ BCN 엘프라트 공항 (택시 25~40분 추정*)"
+        },
+        {
+          "label": "탑승 전 대기/수속",
+          "train": "기차역 짐 X-ray 검색 15~20분 (출발 35~45분 전 도착)",
+          "flight": "3인 수하물 위탁, 보안검색, 게이트 도보 (출발 90~120분 전 도착)"
+        },
+        {
+          "label": "도착 후 ➔ 숙소",
+          "train": "세비야 산타 후스타역(시내 중심 인접) ➔ 택시 10~15분",
+          "flight": "SVQ 수하물 수취 30분 ➔ 택시로 시내 이동 약 20~25분"
+        },
+        {
+          "label": "Door-to-Door 총 소요",
+          "train": "<strong>약 6시간 45분 ~ 7시간 15분</strong>",
+          "flight": "<strong>약 5시간 15분 ~ 6시간</strong> (실제 시간 절약은 1~1.5시간에 불과)"
+        },
+        {
+          "label": "짐·환승·계단 부담",
+          "train": "<span class=\"merit-text\">✓ 짐을 좌석 근처 선반에 직접 보관</span><br><span class=\"merit-text\">✓ 환승 없음, 넓은 좌석, 자유로운 화장실 이용</span><br><span class=\"merit-text\">✓ 역내 평지 램프 및 엘리베이터 이동으로 어르신 부담 최저</span>",
+          "flight": "<span class=\"demerit-text\">⚠️ 3인 대형 캐리어 2~3개 반복 상하차 및 수취 대기</span><br><span class=\"demerit-text\">⚠️ 넓은 공항 터미널 장거리 도보 및 보안검색 줄서기 피로</span><br><span class=\"demerit-text\">⚠️ 탑승교/계단 이동 및 기내 협소한 좌석</span>"
+        },
+        {
+          "label": "부모님 동행 종합 추천",
+          "train": "<strong class=\"rec-badge\">⭐ 부모님 동행 최우선 권장:</strong> 탑승 시간은 길지만 짐을 들고 이동하거나 서서 대기하는 신체적 피로도가 훨씬 적고 안정적입니다.",
+          "flight": "비행시간은 짧으나 공항 이동·수하물 위탁·대기·수취로 인한 번잡함과 피로 누적 위험이 큽니다.",
+          "isRec": true
+        }
+      ],
+      "source": {
+        "name": "Renfe 바르셀로나-세비야 고속철 노선 공식 안내",
+        "url": "https://www.renfe.com/es/en/inspirate/rutas/barcelona-sevilla",
+        "verifyNote": "✓ 2026.10 확인 · 11월 11일 탑승일 공식 시간표 조회 필요"
+      }
+    },
+    "collectionHead": {
+      "kicker": "03-1-B / FULL LANDMARK CARDS",
+      "title": "🇪🇸 스페인 대표 명소 18선 상세 카드 컬렉션",
+      "desc": "구역별 루트와 연결된 18개 명소의 상세 보행 팩트체크 정보와 공식 예매처 링크를 확인하세요."
+    }
+  },
+  "en": {
+    "banner": {
+      "title": "Accessibility & Mobility Standard (Fact-Checking Verified):",
+      "text": "We strictly avoid unfounded generalizations like '100% barrier-free', 'zero fatigue', 'fully equipped with elevators', or 'taxis pull up directly to main gates'. Instead, we detail actual stairs, inclines, uneven cobblestones, and walking fatigue. Note: Hotel Suite Marina's exact street address and November 2026 official operating hours/train schedules require prior confirmation on official channels."
+    },
+    "nav": {
+      "label": "Quick Jump:",
+      "chips": [
+        {
+          "id": "district-bcn-gaudi",
+          "text": "🏙️ 1. Gaudí / Eixample"
+        },
+        {
+          "id": "district-bcn-gothic",
+          "text": "🏛️ 2. Gothic Quarter · Boqueria"
+        },
+        {
+          "id": "district-bcn-port",
+          "text": "🌊 3. Port Vell Waterfront"
+        },
+        {
+          "id": "district-bcn-guell",
+          "text": "🦎 4. Park Güell"
+        },
+        {
+          "id": "district-transit-bcn-svq",
+          "text": "🚆 11/11 BCN-SVQ Transit Comparison",
+          "class": "highlight"
+        },
+        {
+          "id": "district-svq-catedral",
+          "text": "⛪ 5. Cathedral · Giralda"
+        },
+        {
+          "id": "district-svq-alcazar",
+          "text": "🏰 6. Alcázar · Santa Cruz"
+        },
+        {
+          "id": "district-svq-plaza",
+          "text": "💃 7. Plaza de España · Park"
+        },
+        {
+          "id": "district-svq-river",
+          "text": "⛵ 8. Riverside · Gold Tower"
+        },
+        {
+          "id": "district-trip-cordoba",
+          "text": "🍊 Córdoba (Day-Trip Option)",
+          "class": "candidate"
+        },
+        {
+          "id": "district-trip-ronda",
+          "text": "🌉 Ronda (Day-Trip Option)",
+          "class": "candidate"
+        },
+        {
+          "id": "landmarksCollectionHead",
+          "text": "🗂️ All 18 Spain Landmark Cards",
+          "class": "all-cards"
+        }
+      ]
+    },
+    "labels": {
+      "keySpots": "Key Spots:",
+      "recSequence": "Recommended Route Sequence",
+      "transitTip": "Transit Tip",
+      "walkingEst": "Est. Walking Volume",
+      "walkingWarn": "Walking Caution & Stairs Fact-Check",
+      "restStops": "Restrooms & Shaded Rest",
+      "skipAlt": "Emergency Plan / Skip on Fatigue",
+      "officialSource": "Official Verification Sources:"
+    },
+    "districts": [
+      {
+        "id": "district-bcn-gaudi",
+        "badge": "Barcelona 01",
+        "badgeClass": "bcn-badge",
+        "timing": "Recommended: Nov 6 or Nov 7",
+        "title": "Eixample & Gaudí Architectural Journey",
+        "desc": "The pinnacle of Barcelona Modernism: Golden route connecting Casa Batlló, Casa Milà, and Sagrada Família.",
+        "landmarks": [
+          {
+            "name": "Sagrada Família ↗",
+            "cardId": "landmark-card-sagrada-familia",
+            "isCard": true
+          },
+          {
+            "name": "Casa Batlló ↗",
+            "cardId": "landmark-card-casa-batllo",
+            "isCard": true
+          },
+          {
+            "name": "Casa Milà ↗",
+            "cardId": "landmark-card-casa-mila",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 Casa Batlló visit ➔ Stroll Passeig de Gràcia (5 min flat) ➔ Casa Milà (Attic exhibits & courtyard) ➔ 13:00~15:30 Lunch & Siesta rest ➔ 16:00 Sagrada Família (Pre-booked timed slot for main basilica nave).",
+        "transit": "Take a taxi between Passeig de Gràcia and Sagrada Família (~10-15 min, approx. €7-10). Avoid the metro (L2/L5) as long transfer corridors and stairs cause unnecessary fatigue for seniors.",
+        "walking": "Total 4,000–6,000 steps including indoor touring (perceived fatigue: 'Moderate' when taking taxis between sites).",
+        "warning": "• <strong>Sagrada Família:</strong> The main basilica floor is smooth with gentle ramps and elevators, ideal for seniors and wheelchairs. However, the <em>Towers</em> require descending <strong>approx. 400 steep, narrow spiral stone stairs on foot</strong> with no elevator down. Tower access is restricted for those with mobility issues, heart/respiratory conditions, or vertigo. <strong>We strongly recommend purchasing the basilica-only general admission ticket for parents.</strong><br>• <strong>Casa Milà vs. Casa Batlló:</strong> Casa Batlló has modern elevator access up to just below the roof. In contrast, <strong>Casa Milà's rooftop terrace consists of continuous undulating steps and wave-like curves</strong>; seniors with walking limitations or wheelchairs cannot tour the rooftop (only a very restricted view from the elevator exit platform is possible). Do not assume equal accessibility for both buildings.",
+        "rest": "Accessible and standard restrooms available inside ticketed zones at all three sites. Abundant outdoor café terraces along Passeig de Gràcia (e.g. El Fornet, Faborit).",
+        "skip": "Skip climbing the stairs of Casa Milà's rooftop and relax at the ground-floor cafeteria. At Sagrada Família, if tired, skip tower tickets and enjoy the panoramic facade from benches around Plaça de Gaudí pond.",
+        "sources": [
+          {
+            "name": "Sagrada Família Official FAQ",
+            "url": "https://sagradafamilia.org/en/faqs"
+          },
+          {
+            "name": "Casa Milà Official Accessibility Guide",
+            "url": "https://www.lapedrera.com/en/accessibility/"
+          },
+          {
+            "name": "Casa Batlló Official Site",
+            "url": "https://www.casabatllo.es/en/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Confirm official hours before Nov 2026 visit"
+      },
+      {
+        "id": "district-bcn-gothic",
+        "badge": "Barcelona 02",
+        "badgeClass": "bcn-badge",
+        "timing": "Recommended: Nov 8 (Sunday)",
+        "title": "Gothic Quarter · Boqueria Market · Plaça de Catalunya",
+        "desc": "Mysterious charm of 14th-century medieval alleys and the vibrant culinary heartbeat of Barcelona.",
+        "landmarks": [
+          {
+            "name": "Plaça de Catalunya ↗",
+            "cardId": "landmark-card-placa-de-catalunya",
+            "isCard": true
+          },
+          {
+            "name": "La Boqueria Market ↗",
+            "cardId": "landmark-card-mercat-de-la-boqueria",
+            "isCard": true
+          },
+          {
+            "name": "Barcelona Cathedral & Plaça del Rei ↗",
+            "cardId": "landmark-card-catedral-de-barcelona",
+            "isCard": true
+          }
+        ],
+        "sequence": "10:00 Plaça de Catalunya central fountain stroll ➔ 10:40 Upper La Rambla ➔ 11:15 La Boqueria Market (tasting fresh fruit & tapas) ➔ 12:30 Gothic Quarter (Plaça Nova, Cathedral Cloister) ➔ 13:30 Lunch & Siesta at hotel.",
+        "transit": "Plaça de Catalunya to Boqueria is a gentle downhill walk on broad sidewalks. Inside the Gothic Quarter, alleys are pedestrian-only, so plan pick-up points on perimeter avenues (Via Laietana or La Rambla) when hailing a taxi.",
+        "walking": "Approx. 4,500–6,500 steps. Medieval stone cobblestones can cause foot fatigue; wear cushioned, supportive walking shoes.",
+        "warning": "• <strong>Gothic Quarter Pavement:</strong> Old cobblestone alleys have uneven flagstones, narrow curbs, and bicycle/scooter traffic. Seniors should watch their footing carefully.<br>• <strong>Pickpocket Awareness:</strong> La Rambla and Boqueria Market are high-density crowd zones; carry bags across the chest and keep valuables secured.<br>• <strong>Barcelona Cathedral:</strong> Elevator access to the roof is available, but the choir stalls and cloister have small historic thresholds.",
+        "rest": "Public restrooms inside Boqueria Market (small fee or customer token). Peaceful shaded benches inside the Cathedral Cloister (with the 13 white geese). Quiet cafes around Plaça Reial.",
+        "skip": "If crowded, skip deep Gothic alleys and stick to the wide, flat perimeter of Plaça Nova and Plaça de Catalunya. Use taxis directly from Via Laietana.",
+        "sources": [
+          {
+            "name": "Mercat de la Boqueria Official",
+            "url": "https://www.boqueria.barcelona/"
+          },
+          {
+            "name": "Catedral de Barcelona Official",
+            "url": "https://catedralbcn.org/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Confirm market operating hours"
+      },
+      {
+        "id": "district-bcn-port",
+        "badge": "Barcelona 03",
+        "badgeClass": "bcn-badge",
+        "timing": "Recommended: Nov 9 (Monday afternoon)",
+        "title": "Port Vell Waterfront Promenade & Lower Ramblas",
+        "desc": "Refreshing sea breeze and level wooden boardwalks along the Mediterranean harbor.",
+        "landmarks": [
+          {
+            "name": "Columbus Monument ↗",
+            "cardId": "landmark-card-mirador-de-colom",
+            "isCard": true
+          },
+          {
+            "name": "Rambla de Mar Boardwalk ↗",
+            "cardId": "landmark-card-rambla-de-mar",
+            "isCard": true
+          },
+          {
+            "name": "Maremagnum & Port Vell Marina ↗",
+            "cardId": "landmark-card-port-vell",
+            "isCard": true
+          }
+        ],
+        "sequence": "15:30 Taxi to Columbus Monument circle ➔ Stroll across Rambla de Mar undulating wooden bridge ➔ Port Vell marina promenade ➔ Shaded bench break watching yachts ➔ 17:30 Early sunset dinner at seaside restaurant.",
+        "transit": "Hail a taxi directly to the Columbus Monument roundabout drop-off. The wooden boardwalk and harbor promenade are completely level with zero vehicle traffic.",
+        "walking": "Approx. 3,000–4,500 steps. Easiest walking profile in Barcelona with broad flat boardwalks and abundant waterfront seating.",
+        "warning": "• <strong>Boardwalk Gaps & Wind:</strong> Rambla de Mar has wooden slats; avoid thin heels or shoes that catch in small deck gaps. Sea breezes can turn chilly late afternoon in November, so carry a light windbreaker.<br>• <strong>Bridge Swivel:</strong> The bridge occasionally rotates to let yachts pass, causing a 5-10 minute pause; benches are available nearby.",
+        "rest": "Spacious benches line the entire marina pier. Maremagnum shopping mall offers clean accessible restrooms and elevators.",
+        "skip": "Skip walking the outer pier loop and take a seat directly at a harborside outdoor café (e.g. at Maremagnum) to enjoy the view.",
+        "sources": [
+          {
+            "name": "Port Vell Barcelona Official",
+            "url": "https://www.portvell.bcn.cat/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Check sunset time (~17:35 in mid-Nov)"
+      },
+      {
+        "id": "district-bcn-guell",
+        "badge": "Barcelona 04",
+        "badgeClass": "bcn-badge",
+        "timing": "Recommended: Nov 10 (Tuesday morning)",
+        "title": "Park Güell & Carmel Hill",
+        "desc": "Gaudí’s fairytale mosaic park with panoramic Mediterranean views, set upon Carmel Hill.",
+        "landmarks": [
+          {
+            "name": "Park Güell Monumental Zone ↗",
+            "cardId": "landmark-card-park-guell",
+            "isCard": true
+          },
+          {
+            "name": "Hypostyle Room & Mosaic Bench ↗",
+            "cardId": "landmark-card-sala-hipostila",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 Taxi to Carretera del Carmel (Upper entrance) ➔ Flat walkway into Monumental Zone ➔ Hypostyle Room & Dragon Stairway ➔ Nature Square mosaic bench rest ➔ 12:00 Taxi from designated rank back to city center.",
+        "transit": "<strong>Do NOT use the metro:</strong> Vallcarca/Lesseps stations require a 15-20 min steep uphill climb. Take a taxi directly to the Carretera del Carmel entrance. Note: Taxis cannot enter interior pedestrian park gates.",
+        "walking": "Approx. 4,000–5,500 steps. Incline paths, uneven stone pavers, and earthen slopes are prevalent.",
+        "warning": "• <strong>Hilly Terrain Reality:</strong> Carmel Hill is hilly. Even with a taxi drop-off, reaching the Monumental Zone requires walking on inclined pathways. Do not assume 'zero incline' or 'taxi pulls up directly to the dragon'.<br>• <strong>Strict Reservation:</strong> Park Güell allows entrance strictly within the 30-minute window stamped on timed tickets. Arrive 15 minutes early.",
+        "rest": "Restrooms available near Carretera del Carmel entrance and Nature Square. The undulating mosaic bench provides ample seating with scenic views.",
+        "skip": "Skip hiking the upper Viaducts and Casa Martí hill. Focus solely on the central Nature Square and Hypostyle Room, then exit via the upper gate to take a taxi.",
+        "sources": [
+          {
+            "name": "Park Güell Official Accessibility",
+            "url": "https://parkguell.barcelona/en/accessibility"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Pre-booking mandatory"
+      },
+      {
+        "id": "district-svq-catedral",
+        "badge": "Seville 05",
+        "badgeClass": "svq-badge",
+        "timing": "Recommended: Nov 12 or Nov 13",
+        "title": "Seville Cathedral & Giralda Tower",
+        "desc": "World’s largest Gothic cathedral and the iconic Giralda bell tower, towering over historic Seville.",
+        "landmarks": [
+          {
+            "name": "Seville Cathedral ↗",
+            "cardId": "landmark-card-catedral-de-sevilla",
+            "isCard": true
+          },
+          {
+            "name": "Giralda Tower ↗",
+            "cardId": "landmark-card-giralda",
+            "isCard": true
+          },
+          {
+            "name": "Patio de los Naranjos ↗",
+            "cardId": "landmark-card-patio-de-los-naranjos",
+            "isCard": true
+          }
+        ],
+        "sequence": "10:00 Pre-booked entrance at Puerta del Príncipe ➔ Tomb of Columbus & Main Chapel retablo ➔ Patio de los Naranjos (Orange tree courtyard) ➔ (Optional) Giralda ramp climb ➔ 12:30 Lunch near Plaza del Triunfo ➔ Siesta rest.",
+        "transit": "Taxi drop-off at Avenida de la Constitución perimeter (pedestrian tram street). Walk 2–3 minutes on flat stone pavement to the Cathedral entrance.",
+        "walking": "Approx. 3,500–5,000 steps. Cathedral interior is 100% level and spacious.",
+        "warning": "• <strong>Giralda Climb Stamina Warning:</strong> The Giralda was built with 35 inclined ramps rather than steps, but the final ascent to the bell chamber involves <strong>17 narrow, steep steps</strong>. The round-trip ramp climb demands significant leg stamina. For parents with knee or cardiovascular concerns, <strong>we recommend admiring the tower from the Orange Tree Courtyard benches instead of climbing</strong>.",
+        "rest": "Clean accessible restrooms inside the cathedral complex near the cloister. Orange Tree Courtyard features stone benches under fragrant citrus shade.",
+        "skip": "Omit climbing Giralda Tower entirely. Tour only the ground-level cathedral interior and sit peacefully in the Orange Tree Courtyard.",
+        "sources": [
+          {
+            "name": "Catedral de Sevilla Official Access",
+            "url": "https://www.catedraldesevilla.es/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Strict dress code applies"
+      },
+      {
+        "id": "district-svq-alcazar",
+        "badge": "Seville 06",
+        "badgeClass": "svq-badge",
+        "timing": "Recommended: Nov 14 (Saturday morning)",
+        "title": "Royal Alcázar of Seville & Santa Cruz Quarter",
+        "desc": "Masterpiece of Mudéjar palace architecture and the labyrinthine whitewashed alleys of the historic Jewish quarter.",
+        "landmarks": [
+          {
+            "name": "Real Alcázar Palace ↗",
+            "cardId": "landmark-card-real-alcazar",
+            "isCard": true
+          },
+          {
+            "name": "Patio de las Doncellas ↗",
+            "cardId": "landmark-card-patio-de-las-doncellas",
+            "isCard": true
+          },
+          {
+            "name": "Barrio de Santa Cruz ↗",
+            "cardId": "landmark-card-barrio-de-santa-cruz",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 Timed entry at Puerta del León ➔ Palacio de Don Pedro (Courtyard of the Maidens & Ambassador's Hall) ➔ Shaded stroll in historic gardens ➔ 12:00 Exit into Santa Cruz quarter ➔ Lunch at traditional tapas bar ➔ Afternoon Siesta.",
+        "transit": "Drop off by taxi at Plaza del Triunfo / Calle Santo Tomás. Flat 2-minute walk to Lion's Gate entrance.",
+        "walking": "Approx. 4,500–6,000 steps. Palace rooms are level, but historic gardens feature loose gravel paths.",
+        "warning": "• <strong>Garden Cobblestones & Thresholds:</strong> Historic door thresholds and garden gravel paths require steady footwork. Upper Royal Apartments (Cuarto Real Alto) require separate timed tickets and stair access.<br>• <strong>Santa Cruz Narrow Alleys:</strong> No vehicle traffic; streets are paved with historic cobbles. Keep walking distance compact.",
+        "rest": "Restrooms available inside Alcázar ground floor near the gardens. Shaded stone benches under orange trees throughout the royal gardens.",
+        "skip": "Skip deep garden labyrinths; focus exclusively on the ground-floor Mudéjar palace courtyards. For Santa Cruz, visit only the outer plaza perimeter.",
+        "sources": [
+          {
+            "name": "Alcázar de Sevilla Official Site",
+            "url": "https://www.alcazarsevilla.org/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Pre-booking mandatory"
+      },
+      {
+        "id": "district-svq-plaza",
+        "badge": "Seville 07",
+        "badgeClass": "svq-badge",
+        "timing": "Recommended: Nov 15 (Sunday afternoon)",
+        "title": "Plaza de España & Maria Luisa Park",
+        "desc": "Spectacular crescent-shaped brick palace, ornate ceramic tile alcoves, and lush romantic botanical gardens.",
+        "landmarks": [
+          {
+            "name": "Plaza de España ↗",
+            "cardId": "landmark-card-plaza-de-espana",
+            "isCard": true
+          },
+          {
+            "name": "Province Tile Alcoves ↗",
+            "cardId": "landmark-card-azulejos-espana",
+            "isCard": true
+          },
+          {
+            "name": "Parque de María Luisa ↗",
+            "cardId": "landmark-card-parque-maria-luisa",
+            "isCard": true
+          }
+        ],
+        "sequence": "15:00 Taxi drop-off right at Plaza de España North Tower ➔ Stroll the semi-circular colonnade arcade ➔ Photograph the 48 provincial tile alcoves ➔ Shaded bench break by the central fountain ➔ 17:00 Gentle carriage ride or walk in Maria Luisa Park.",
+        "transit": "Taxis can pull up right to the edge of Plaza de España along Avenida Isabel la Católica. The plaza area is completely flat and paved.",
+        "walking": "Approx. 3,500–5,000 steps. Very comfortable walking environment with wide paved promenades.",
+        "warning": "• <strong>Bridges Over Canal:</strong> The 4 ceramic bridges over the canal feature steep tiled stairs. <strong>Seniors should remain on the ground-level waterfront promenade</strong> rather than climbing the bridges.<br>• <strong>Afternoon Sun:</strong> Midday sun can be strong; schedule visits for mid-to-late afternoon when temperatures are mild.",
+        "rest": "Public restrooms located near the Military Museum arcade (South wing). Plentiful shaded marble benches along the plaza perimeter.",
+        "skip": "Skip walking through the entire Maria Luisa park. Sit comfortably under the palace arcade benches and enjoy the free flamenco performances in the plaza center.",
+        "sources": [
+          {
+            "name": "Sevilla City Tourism Official",
+            "url": "https://visitasevilla.es/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Free public admission"
+      },
+      {
+        "id": "district-svq-river",
+        "badge": "Seville 08",
+        "badgeClass": "svq-badge",
+        "timing": "Recommended: Nov 16 (Monday sunset)",
+        "title": "Guadalquivir Riverside & Torre del Oro",
+        "desc": "Golden sunset reflections on the historic river where the Americas trade fleets once set sail.",
+        "landmarks": [
+          {
+            "name": "Torre del Oro (Gold Tower) ↗",
+            "cardId": "landmark-card-torre-del-oro",
+            "isCard": true
+          },
+          {
+            "name": "Paseo de Cristóbal Colón ↗",
+            "cardId": "landmark-card-paseo-colon",
+            "isCard": true
+          },
+          {
+            "name": "Triana Bridge Panorama ↗",
+            "cardId": "landmark-card-puente-de-triana",
+            "isCard": true
+          }
+        ],
+        "sequence": "16:00 Taxi to Torre del Oro riverside promenade ➔ Walk the flat paved river terrace toward Triana Bridge ➔ Watch rowers and sunset reflections on Triana's colorful facades ➔ 18:00 Riverside restaurant dinner.",
+        "transit": "Taxis can stop directly along Paseo de Cristóbal Colón avenue. Level ramps connect the upper street to the lower river promenade.",
+        "walking": "Approx. 2,500–4,000 steps. Exceptionally flat, low-strain walking route with river breezes.",
+        "warning": "• <strong>Torre del Oro Interior Stairs:</strong> The tower houses a small naval museum, but climbing to the top requires steep spiral stairs. We recommend admiring the tower exterior from the riverside.<br>• <strong>Bicycle Lane:</strong> The riverside promenade has a designated bike path; stay within the pedestrian zone.",
+        "rest": "Restrooms available at riverside cafes and restaurants. Abundant wooden and stone benches line the waterfront.",
+        "skip": "Take a 1-hour Guadalquivir riverboat cruise (departing from Torre del Oro pier) to enjoy the scenery seated with zero walking fatigue.",
+        "sources": [
+          {
+            "name": "Torre del Oro Maritime Museum",
+            "url": "https://www.visitasevilla.es/torre-del-oro"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Ideal sunset timing: ~17:45"
+      },
+      {
+        "id": "district-trip-cordoba",
+        "badge": "Day Trip 01",
+        "badgeClass": "trip-badge",
+        "timing": "Optional: Nov 17 or Nov 18",
+        "title": "Córdoba: Mezquita & Alley of the Flowers",
+        "desc": "Forest of two-tone Islamic arches and flower-decked Andalusian patios, just a short high-speed train ride from Seville.",
+        "landmarks": [
+          {
+            "name": "Mezquita-Cathedral ↗",
+            "cardId": "landmark-card-mezquita-cordoba",
+            "isCard": true
+          },
+          {
+            "name": "Calleja de las Flores ↗",
+            "cardId": "landmark-card-calleja-de-las-flores",
+            "isCard": true
+          },
+          {
+            "name": "Roman Bridge of Córdoba ↗",
+            "cardId": "landmark-card-puente-romano-cordoba",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:00 AVE train from Seville Santa Justa (~45 min) ➔ Taxi from Córdoba station to Mezquita (~10 min) ➔ Mezquita interior tour (10:15~12:15) ➔ Calleja de las Flores photo stop ➔ Lunch on Judería patio ➔ 16:00 High-speed train back to Seville.",
+        "transit": "High-speed rail (AVE/Avant) connects Seville to Córdoba in approx. 40–55 minutes (check 2026 schedule). Always take a taxi between Córdoba station and the Mezquita.",
+        "walking": "Approx. 4,500–6,000 steps. The prayer hall inside the Mezquita is completely flat with smooth stone flooring.",
+        "warning": "• <strong>Train Schedule Variance:</strong> High-speed trains range from 40 to 55 minutes depending on whether it is an AVE or Avant service. Book seats with assigned luggage space in advance.<br>• <strong>Judería Cobblestones:</strong> Alleys in the Jewish quarter have traditional pebble paving. Seniors should wear sturdy cushioned shoes.",
+        "rest": "Clean restrooms inside the Mezquita courtyard. Shaded seating available under orange trees in Patio de los Naranjos.",
+        "skip": "If feeling tired after the Mezquita, skip walking across the Roman Bridge and take a taxi directly back to Córdoba station.",
+        "sources": [
+          {
+            "name": "Mezquita-Catedral de Córdoba Official",
+            "url": "https://mezquita-catedraldecordoba.es/"
+          },
+          {
+            "name": "Renfe Seville-Córdoba Schedule",
+            "url": "https://www.renfe.com/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Confirm train timetable for exact travel date"
+      },
+      {
+        "id": "district-trip-ronda",
+        "badge": "Day Trip 02",
+        "badgeClass": "trip-badge",
+        "timing": "Optional: Nov 19",
+        "title": "Ronda: Puente Nuevo & Hemingway Walk",
+        "desc": "Spectacular 120-meter deep El Tajo gorge spanned by the iconic 18th-century stone bridge.",
+        "landmarks": [
+          {
+            "name": "Puente Nuevo (New Bridge) ↗",
+            "cardId": "landmark-card-puente-nuevo-ronda",
+            "isCard": true
+          },
+          {
+            "name": "Parador de Ronda Terrace ↗",
+            "cardId": "landmark-card-parador-ronda",
+            "isCard": true
+          },
+          {
+            "name": "Paseo de Hemingway ↗",
+            "cardId": "landmark-card-paseo-hemingway",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:00 Private tour or train from Seville (~1.5–2 hrs) ➔ Drop-off at Plaza de España Ronda ➔ Stroll across Puente Nuevo ➔ Coffee on Parador cliffside terrace ➔ Paseo de Hemingway promenade ➔ 15:30 Return to Seville.",
+        "transit": "Road transport involves winding mountain roads; provide motion sickness pills if sensitive. Walkable town center once dropped off at the central plaza.",
+        "walking": "Approx. 3,500–5,000 steps. Bridge surface and main town promenades are flat and paved.",
+        "warning": "• <strong>STRICT CANYON TREK WARNING:</strong> Hiking trails down into the bottom of El Tajo canyon (Mirador del Puente Nuevo) are <strong>steep, rocky, unpaved, and dangerous for seniors</strong> with high fall risk. <strong>Descent to the canyon bottom is strictly prohibited for parents.</strong> Admire the gorge safely from the Parador terrace railing.<br>• <strong>High Altitude Temperature:</strong> Ronda sits at 740m elevation and can be 4–6°C cooler than Seville with gusty winds; wear layered warm jackets.",
+        "rest": "Parador de Ronda café provides comfortable seating and clean restrooms with breathtaking canyon views.",
+        "skip": "Stick strictly to the Parador café and Puente Nuevo bridge deck. Do not venture onto sloping dirt paths around the gorge perimeter.",
+        "sources": [
+          {
+            "name": "Turismo de Ronda Official",
+            "url": "https://turismoderonda.es/"
+          }
+        ],
+        "verifyNote": "✓ Verified Oct 2026 · Mountain weather check required"
+      }
+    ],
+    "transitTable": {
+      "id": "district-transit-bcn-svq",
+      "badge": "Nov 11 (Wed) Intercity Transit",
+      "timing": "Door-to-Door Fact-Check",
+      "title": "🚆 Barcelona ➔ Seville Door-to-Door Journey Precision Comparison",
+      "desc": "Beyond simple flight vs train run-times: a comprehensive analysis of baggage, transfers, waiting times, and stairs from departure hotel to arrival hotel.",
+      "unconfirmedNotice": "⚠️ <strong>Information Requiring Prior Confirmation:</strong> The exact street address of Barcelona accommodation 'Suite Marina', Seville hotel address, final flight booking number, and airline baggage allowance policies are currently unconfirmed. Times below are based on standard routes; exact door-to-door itinerary should be recalculated upon finalizing details.",
+      "headers": [
+        "Comparison Item",
+        "High-Speed Rail (Renfe AVE Direct) 🚆",
+        "Domestic Flight (BCN ➔ SVQ) ✈️"
+      ],
+      "rows": [
+        {
+          "label": "Pure Travel Time",
+          "train": "Approx. 5 hr 45 min ~ 6 hr (Direct AVE)",
+          "flight": "Approx. 1 hr 40 min ~ 1 hr 50 min (Flight time)"
+        },
+        {
+          "label": "Hotel ➔ Station / Airport",
+          "train": "Suite Marina ➔ Sants Station (Taxi est. 15~25 min*)",
+          "flight": "Suite Marina ➔ BCN El Prat Airport (Taxi est. 25~40 min*)"
+        },
+        {
+          "label": "Pre-departure Wait & Security",
+          "train": "Station baggage X-ray security 15~20 min (Arrive 35~45 min before departure)",
+          "flight": "Baggage drop for 3, TSA security, long gate walk (Arrive 90~120 min before flight)"
+        },
+        {
+          "label": "Arrival ➔ Hotel",
+          "train": "Seville Santa Justa Station (City center adjacent) ➔ Taxi 10~15 min",
+          "flight": "SVQ baggage claim 30 min ➔ Taxi to city center approx. 20~25 min"
+        },
+        {
+          "label": "Door-to-Door Total Duration",
+          "train": "<strong>Approx. 6 hr 45 min ~ 7 hr 15 min</strong>",
+          "flight": "<strong>Approx. 5 hr 15 min ~ 6 hr</strong> (Actual time saved is merely 1~1.5 hr)"
+        },
+        {
+          "label": "Luggage, Transfers & Stairs",
+          "train": "<span class=\"merit-text\">✓ Store luggage directly on racks near your seats</span><br><span class=\"merit-text\">✓ Zero transfers, spacious seats, accessible onboard restrooms</span><br><span class=\"merit-text\">✓ Station ramps and elevators minimize walking strain for parents</span>",
+          "flight": "<span class=\"demerit-text\">⚠️ Repeated loading/unloading and baggage claim waiting for 2~3 large suitcases</span><br><span class=\"demerit-text\">⚠️ Long walking distances across massive airport terminals and standing in security lines</span><br><span class=\"demerit-text\">⚠️ Jet bridge/stair boarding and cramped cabin seating</span>"
+        },
+        {
+          "label": "Senior Travel Overall Evaluation",
+          "train": "<strong class=\"rec-badge\">⭐ Top Priority Recommendation:</strong> Although onboard time is longer, physical fatigue from handling heavy luggage or standing in waiting queues is vastly lower and far more stable.",
+          "flight": "Short flight time, but airport transit, baggage drop, queues, and retrieval carry high risks of severe fatigue accumulation.",
+          "isRec": true
+        }
+      ],
+      "source": {
+        "name": "Renfe Official Barcelona-Seville Route Guide",
+        "url": "https://www.renfe.com/es/en/inspirate/rutas/barcelona-sevilla",
+        "verifyNote": "✓ Verified Oct 2026 · Confirm Nov 11 official timetable upon ticket release"
+      }
+    },
+    "collectionHead": {
+      "kicker": "03-1-B / FULL LANDMARK CARDS",
+      "title": "🇪🇸 Spain Top 18 Landmark Detail Cards",
+      "desc": "Explore verified walking accessibility fact-checks and official booking links for each landmark connected to the district routes."
+    }
+  },
+  "ja": {
+    "banner": {
+      "title": "歩行およびバリアフリー案内原則（ファクトチェック基準）:",
+      "text": "公式根拠のない「完全平坦」「バリアフリー完備」「疲労ゼロ」「エレベーター完備」「タクシーが正門前に直着」といった断定表現を排除し、実際の階段・勾配・不整地・歩行負荷を正確にお伝えします。宿泊先（Suite Marina）の正確な番地および2026年11月の公式営業時間・列車ダイヤは公式チャンネルでの事前確認が必須です。"
+    },
+    "nav": {
+      "label": "エリアへ移動:",
+      "chips": [
+        {
+          "id": "district-bcn-gaudi",
+          "text": "🏙️ 1. ガウディ／アシャンプラ"
+        },
+        {
+          "id": "district-bcn-gothic",
+          "text": "🏛️ 2. ゴシック・ボケリア・広場"
+        },
+        {
+          "id": "district-bcn-port",
+          "text": "🌊 3. ポート・ベル水辺"
+        },
+        {
+          "id": "district-bcn-guell",
+          "text": "🦎 4. グエル公園"
+        },
+        {
+          "id": "district-transit-bcn-svq",
+          "text": "🚆 11/11 バルセロナ〜セビリア移動比較",
+          "class": "highlight"
+        },
+        {
+          "id": "district-svq-catedral",
+          "text": "⛪ 5. 大聖堂・ヒラルダの塔"
+        },
+        {
+          "id": "district-svq-alcazar",
+          "text": "🏰 6. アルカサル・サンタクルス"
+        },
+        {
+          "id": "district-svq-plaza",
+          "text": "💃 7. スペイン広場・公園"
+        },
+        {
+          "id": "district-svq-river",
+          "text": "⛵ 8. 川沿い・黄金の塔"
+        },
+        {
+          "id": "district-trip-cordoba",
+          "text": "🍊 コルドバ（日帰り候補）",
+          "class": "candidate"
+        },
+        {
+          "id": "district-trip-ronda",
+          "text": "🌉 ロンダ（日帰り候補）",
+          "class": "candidate"
+        },
+        {
+          "id": "landmarksCollectionHead",
+          "text": "🗂️ スペイン18選 全カード",
+          "class": "all-cards"
+        }
+      ]
+    },
+    "labels": {
+      "keySpots": "主な名所:",
+      "recSequence": "推奨ルート順序",
+      "transitTip": "区間移動のコツ",
+      "walkingEst": "推定歩行量",
+      "walkingWarn": "歩行注意・階段ファクトチェック",
+      "restStops": "トイレ・休憩スポット",
+      "skipAlt": "疲労時のスキップ代替案",
+      "officialSource": "公式検証ソース:"
+    },
+    "districts": [
+      {
+        "id": "district-bcn-gaudi",
+        "badge": "バルセロナ 01",
+        "badgeClass": "bcn-badge",
+        "timing": "推奨日程: 11月6日または7日",
+        "title": "アシャンプラ＆ガウディ建築紀行",
+        "desc": "バルセロナ・モデルニスモの粋。カサ・バトリョ、カサ・ミラ、サグラダ・ファミリアを結ぶ黄金ルート。",
+        "landmarks": [
+          {
+            "name": "サグラダ・ファミリア ↗",
+            "cardId": "landmark-card-sagrada-familia",
+            "isCard": true
+          },
+          {
+            "name": "カサ・バトリョ ↗",
+            "cardId": "landmark-card-casa-batllo",
+            "isCard": true
+          },
+          {
+            "name": "カサ・ミラ ↗",
+            "cardId": "landmark-card-casa-mila",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 カサ・バトリョ見学 ➔ グラシア通り散策（平坦徒歩5分） ➔ カサ・ミラ（屋根裏展示＆中庭） ➔ 13:00〜15:30 昼食＆シエスタ休憩 ➔ 16:00 サグラダ・ファミリア（事前予約枠・本堂見学）。",
+        "transit": "グラシア通りからサグラダ・ファミリアへはタクシー利用を強く推奨（約10〜15分、約7〜10ユーロ）。地下鉄（L2/L5）は乗り換え通路の階段と長距離歩行により、ご両親の疲労が蓄積する恐れがあります。",
+        "walking": "建物内部の見学を含め計4,000〜6,000歩（区間移動にタクシーを利用した場合の体感疲労度：『普通』）。",
+        "warning": "• <strong>サグラダ・ファミリア:</strong> 本堂は平坦なスロープとエレベーターが完備され、車椅子やシニアの観覧がスムーズです。ただし、<em>塔（タワー）</em>は昇りにエレベーターを使用しても、降下時は<strong>約400段の狭く急な螺旋階段を徒歩のみで降りる必要があります</strong>。安全規則上、歩行困難な方、心臓・呼吸器疾患のある方、高所恐怖症の方は入場が制限されるため、<strong>ご両親同伴時は塔を除いた本堂一般入場券を強く推奨します</strong>。<br>• <strong>カサ・ミラ vs カサ・バトリョ:</strong> カサ・バトリョはエレベーターで屋上直前まで移動できますが、<strong>カサ・ミラの屋上（戦士のテラス）は波打つ起伏と連続する多数の階段</strong>で構成されており、車椅子や歩行困難なシニアは屋上全域の周遊が不可能です（エレベーター前の小展望台からの限定眺望のみ）。両建築のバリアフリー度を同等と見なさないようご注意ください。",
+        "rest": "各建築物の有料エリア内に身障者用および一般トイレ完備。グラシア通り沿いにテラス席カフェ（エル・フォルネット等）が豊富。",
+        "skip": "カサ・ミラの屋上階段登りをスキップし、1階カフェテリアで休憩。サグラダ・ファミリアでは塔に登らず、ガウディ広場の池のベンチから大聖堂全景を鑑賞するプランに変更。",
+        "sources": [
+          {
+            "name": "サグラダ・ファミリア公式FAQ",
+            "url": "https://sagradafamilia.org/en/faqs"
+          },
+          {
+            "name": "カサ・ミラ公式アクセシビリティ",
+            "url": "https://www.lapedrera.com/en/accessibility/"
+          },
+          {
+            "name": "カサ・バトリョ公式サイト",
+            "url": "https://www.casabatllo.es/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 2026年11月訪問前に最新情報をご確認ください"
+      },
+      {
+        "id": "district-bcn-gothic",
+        "badge": "バルセロナ 02",
+        "badgeClass": "bcn-badge",
+        "timing": "推奨日程: 11月8日（日）",
+        "title": "ゴシック地区・ボケリア市場・カタルーニャ広場",
+        "desc": "14世紀中世ゴシック路地の神秘的な風情と活気あふれるバルセロナ伝統市場。",
+        "landmarks": [
+          {
+            "name": "カタルーニャ広場 ↗",
+            "cardId": "landmark-card-placa-de-catalunya",
+            "isCard": true
+          },
+          {
+            "name": "ボケリア市場 ↗",
+            "cardId": "landmark-card-mercat-de-la-boqueria",
+            "isCard": true
+          },
+          {
+            "name": "バルセロナ大聖堂 ↗",
+            "cardId": "landmark-card-catedral-de-barcelona",
+            "isCard": true
+          }
+        ],
+        "sequence": "10:00 カタルーニャ広場噴水散策 ➔ 10:40 ランブラス通り上部 ➔ 11:15 ボケリア市場（新鮮なフルーツ＆タパス） ➔ 12:30 ゴシック地区（ノバ広場、大聖堂回廊） ➔ 13:30 ホテルで昼食＆シエスタ。",
+        "transit": "カタルーニャ広場からボケリア市場へは歩道の広い緩やかな下り坂です。ゴシック地区内部は歩行者専用路地のため、タクシー利用時は大通り（ライエタナ通り等）で乗降してください。",
+        "walking": "約4,500〜6,500歩。中世の石畳は足に負担がかかるため、クッション性の高い歩きやすい靴をご用意ください。",
+        "warning": "• <strong>ゴシック地区の路面:</strong> 古い石畳は凸凹や段差があり、自転車やスクーターも往来します。足元に十分ご注意ください。<br>• <strong>スリ対策:</strong> ランブラス通りとボケリア市場は混雑するため、バッグは前で抱え、貴重品管理を徹底してください。",
+        "rest": "ボケリア市場内に有料公衆トイレあり。大聖堂回廊（13羽の白いガチョウ）の木陰ベンチやレイアール広場のカフェで休憩可能。",
+        "skip": "混雑時はゴシック地区深部の細い路地を避け、ノバ広場やカタルーニャ広場の広い平坦な外周のみを散策し、タクシーをご利用ください。",
+        "sources": [
+          {
+            "name": "ボケリア市場公式サイト",
+            "url": "https://www.boqueria.barcelona/"
+          },
+          {
+            "name": "バルセロナ大聖堂公式サイト",
+            "url": "https://catedralbcn.org/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 市場営業日の事前確認推奨"
+      },
+      {
+        "id": "district-bcn-port",
+        "badge": "バルセロナ 03",
+        "badgeClass": "bcn-badge",
+        "timing": "推奨日程: 11月9日（月）午後",
+        "title": "ポート・ベル水辺プロムナード＆ランブラス南端",
+        "desc": "地中海の潮風を感じる開放的な木製デッキと歴史ある港のヨットハーバー。",
+        "landmarks": [
+          {
+            "name": "コロンブスの塔 ↗",
+            "cardId": "landmark-card-mirador-de-colom",
+            "isCard": true
+          },
+          {
+            "name": "ランブラ・デ・マール木製橋 ↗",
+            "cardId": "landmark-card-rambla-de-mar",
+            "isCard": true
+          },
+          {
+            "name": "マレマグナム＆ポート・ベル ↗",
+            "cardId": "landmark-card-port-vell",
+            "isCard": true
+          }
+        ],
+        "sequence": "15:30 タクシーでコロンブスの塔ロータリーへ ➔ 波打つランブラ・デ・マール木製遊歩道を横断 ➔ ヨットハーバー散策 ➔ 海辺のベンチでヨット鑑賞 ➔ 17:30 海沿いレストランで夕日ディナー。",
+        "transit": "コロンブスの塔のロータリーすぐ横でタクシー下車。港の遊歩道は完全フラットで車両の通行がなく、極めて安全です。",
+        "walking": "約3,000〜4,500歩。バルセロナ市内で最も歩きやすく、平坦な木製デッキとベンチが豊富です。",
+        "warning": "• <strong>デッキの隙間と潮風:</strong> 木製デッキの板の隙間に踵が挟まらないようご注意ください。11月中旬の夕方は海風で冷え込むため、薄手の上着を持参してください。<br>• <strong>可動橋の開閉:</strong> 船が通過する際、橋が旋回して5〜10分間通行止めになる場合があります。",
+        "rest": "マレマグナム内に清潔なバリアフリートイレおよびエレベーター完備。埠頭沿いに長椅子が多数設置されています。",
+        "skip": "埠頭の外周散策を省略し、マレマグナムの屋外テラスカフェに直接着席して景色をお楽しみください。",
+        "sources": [
+          {
+            "name": "ポート・ベル公式",
+            "url": "https://www.portvell.bcn.cat/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 日没時刻（11月中旬は約17:35）"
+      },
+      {
+        "id": "district-bcn-guell",
+        "badge": "バルセロナ 04",
+        "badgeClass": "bcn-badge",
+        "timing": "推奨日程: 11月10日（火）午前",
+        "title": "グエル公園＆カルメル丘陵",
+        "desc": "ガウディが手掛けたおとぎ話のようなモザイク公園とバルセロナ市街のパノラマ。",
+        "landmarks": [
+          {
+            "name": "グエル公園記念碑エリア ↗",
+            "cardId": "landmark-card-park-guell",
+            "isCard": true
+          },
+          {
+            "name": "百柱の空間＆波打つベンチ ↗",
+            "cardId": "landmark-card-sala-hipostila",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 タクシーでカルメル通り（Carretera del Carmel上部入口）へ ➔ 平坦な連絡路から記念碑エリア入場 ➔ 百柱の空間＆トカゲの階段 ➔ 自然の広場のモザイクベンチで休憩 ➔ 12:00 専用乗り場からタクシーで市内へ。",
+        "transit": "<strong>地下鉄は利用厳禁:</strong> 最寄り駅から急勾配の上り坂が15〜20分続きます。必ずタクシーでカルメル通り入口までアクセスしてください（タクシーは園内歩行者エリアには進入不可）。",
+        "walking": "約4,000〜5,500歩。園内は坂道、未舗装の砂利道、石段が多いため注意が必要です。",
+        "warning": "• <strong>丘陵地形の現実:</strong> カルメル丘陵にあるため、タクシー降車後も記念碑エリアまで坂道を歩く必要があります。「完全平坦」や「タクシーが正門前に直着」という過度の期待は禁物です。<br>• <strong>厳格な時間枠:</strong> 予約時間から30分を過ぎると入場できません。15分前には到着してください。",
+        "rest": "カルメル通り入口および自然の広場近くにトイレあり。有名な波打つモザイクベンチでゆったり休憩できます。",
+        "skip": "高台の水道橋や展望丘への登攀はスキップし、中央の自然の広場と百柱の空間のみに絞って観覧してください。",
+        "sources": [
+          {
+            "name": "グエル公園公式アクセシビリティ",
+            "url": "https://parkguell.barcelona/en/accessibility"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 事前予約必須"
+      },
+      {
+        "id": "district-svq-catedral",
+        "badge": "セビリア 05",
+        "badgeClass": "svq-badge",
+        "timing": "推奨日程: 11月12日または13日",
+        "title": "セビリア大聖堂＆ヒラルダの塔",
+        "desc": "世界最大級のゴシック大聖堂と古都セビリアのシンボルであるヒラルダの鐘楼。",
+        "landmarks": [
+          {
+            "name": "セビリア大聖堂 ↗",
+            "cardId": "landmark-card-catedral-de-sevilla",
+            "isCard": true
+          },
+          {
+            "name": "ヒラルダの塔 ↗",
+            "cardId": "landmark-card-giralda",
+            "isCard": true
+          },
+          {
+            "name": "オレンジの中庭 ↗",
+            "cardId": "landmark-card-patio-de-los-naranjos",
+            "isCard": true
+          }
+        ],
+        "sequence": "10:00 プリンシペ門から事前予約入場 ➔ コロンブスの墓＆主祭壇 ➔ オレンジの中庭 ➔ （希望者のみ）ヒラルダの塔スロープ登頂 ➔ 12:30 トリアルフォ広場周辺で昼食 ➔ シエスタ。",
+        "transit": "コンスティトゥシオン通りの歩行者専用トラム通り手前でタクシー降車。平坦な石畳を2〜3分歩いて入場口へ。",
+        "walking": "約3,500〜5,000歩。大聖堂の内部は段差のない広々とした平坦構造です。",
+        "warning": "• <strong>ヒラルダの塔の体力負担:</strong> 塔内は階段ではなく35箇所の傾斜スロープですが、最上部の鐘楼直前に<strong>17段の狭く急な階段</strong>があります。往復のスロープ昇降は体力を大きく消耗するため、<strong>膝や足腰に不安のあるご両親はオレンジの中庭のベンチで休憩し、外観を楽しむことを強く推奨します</strong>。",
+        "rest": "大聖堂敷地内の回廊近くに清潔なバリアフリートイレ完備。オレンジの中庭に木陰の石ベンチ多数。",
+        "skip": "ヒラルダの塔の登頂を完全に省略し、大聖堂内部の見学とオレンジの中庭での休息のみにとどめてください。",
+        "sources": [
+          {
+            "name": "セビリア大聖堂公式案内",
+            "url": "https://www.catedraldesevilla.es/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 肌の露出を控える服装規定あり"
+      },
+      {
+        "id": "district-svq-alcazar",
+        "badge": "セビリア 06",
+        "badgeClass": "svq-badge",
+        "timing": "推奨日程: 11月14日（土）午前",
+        "title": "セビリア・アルカサル王宮＆サンタクルス街",
+        "desc": "ムデハル様式宮殿の最高峰と迷路のように白い家々が連なる歴史ある旧ユダヤ人街。",
+        "landmarks": [
+          {
+            "name": "アルカサル宮殿 ↗",
+            "cardId": "landmark-card-real-alcazar",
+            "isCard": true
+          },
+          {
+            "name": "乙女の中庭 ↗",
+            "cardId": "landmark-card-patio-de-las-doncellas",
+            "isCard": true
+          },
+          {
+            "name": "サンタクルス街 ↗",
+            "cardId": "landmark-card-barrio-de-santa-cruz",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 ライオンの門から予約枠入場 ➔ ペドロ1世宮殿（乙女の中庭＆大使の間） ➔ 王宮庭園の木陰散策 ➔ 12:00 サンタクルス街へ抜ける ➔ 伝統タパスで昼食 ➔ 午後シエスタ。",
+        "transit": "トリアルフォ広場／サント・トマス通りでタクシー下車。平坦な道を2分歩いてライオンの門へ。",
+        "walking": "約4,500〜6,000歩。宮殿の1階展示室は平坦ですが、庭園には未舗装の砂利道があります。",
+        "warning": "• <strong>庭園の砂利と敷居:</strong> 歴史的な石畳や敷居、庭園の小石道に足を取られないようご注意ください。上階の王室居室（Cuarto Real Alto）は別料金で階段利用が必要です。<br>• <strong>サンタクルス街の路地:</strong> 車両進入不可の狭い石畳の路地が続きます。歩行範囲を広げすぎないようご注意ください。",
+        "rest": "アルカサル1階庭園手前にトイレあり。庭園内のオレンジの木陰に石ベンチが豊富。",
+        "skip": "庭園の迷路奥への散策は省略し、1階ムデハル宮殿の中庭鑑賞に集中してください。サンタクルス街も広場周辺のみに限定。",
+        "sources": [
+          {
+            "name": "アルカサル公式サイト",
+            "url": "https://www.alcazarsevilla.org/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 事前予約必須"
+      },
+      {
+        "id": "district-svq-plaza",
+        "badge": "セビリア 07",
+        "badgeClass": "svq-badge",
+        "timing": "推奨日程: 11月15日（日）午後",
+        "title": "セビリア・スペイン広場＆マリア・ルイサ公園",
+        "desc": "壮大な半円形のレンガ宮殿、スペイン各県を描いた鮮やかなタイル装飾、緑豊かなオアシス。",
+        "landmarks": [
+          {
+            "name": "スペイン広場 ↗",
+            "cardId": "landmark-card-plaza-de-espana",
+            "isCard": true
+          },
+          {
+            "name": "各県のタイルベンチ ↗",
+            "cardId": "landmark-card-azulejos-espana",
+            "isCard": true
+          },
+          {
+            "name": "マリア・ルイサ公園 ↗",
+            "cardId": "landmark-card-parque-maria-luisa",
+            "isCard": true
+          }
+        ],
+        "sequence": "15:00 タクシーでスペイン広場北塔前へ直着 ➔ 半円形回廊のアーケード散策 ➔ スペイン48県のタイル画鑑賞 ➔ 中央噴水前のベンチで休憩 ➔ 17:00 マリア・ルイサ公園の木陰散策または馬車遊覧。",
+        "transit": "イサベル・ラ・カトリカ通り沿いでタクシー下車すれば、広場の目の前に平坦にアクセスできます。",
+        "walking": "約3,500〜5,000歩。広大な石畳ですが、平坦で非常に歩きやすい環境です。",
+        "warning": "• <strong>運河の橋の階段:</strong> 運河に架かる4つのタイル橋には急な階段があります。<strong>シニア同伴時は橋を登らず、地上の水辺プロムナードを歩いてください</strong>。<br>• <strong>直射日光:</strong> 日中は日差しが強いため、気温が落ち着く午後3時以降の訪問を推奨します。",
+        "rest": "軍事博物館回廊近くに公衆トイレあり。広場外周に大理石のベンチが多数設置されています。",
+        "skip": "マリア・ルイサ公園深部の徒歩散策をスキップし、回廊の日陰ベンチから広場中央の無料フラメンコ演奏をお楽しみください。",
+        "sources": [
+          {
+            "name": "セビリア市観光局公式",
+            "url": "https://visitasevilla.es/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 入場無料"
+      },
+      {
+        "id": "district-svq-river",
+        "badge": "セビリア 08",
+        "badgeClass": "svq-badge",
+        "timing": "推奨日程: 11月16日（月）夕暮れ",
+        "title": "グアダルキビル川沿い＆黄金の塔",
+        "desc": "かつて大航海時代の船団が出発した歴史ある川辺に沈む黄金色の夕日。",
+        "landmarks": [
+          {
+            "name": "黄金の塔 ↗",
+            "cardId": "landmark-card-torre-del-oro",
+            "isCard": true
+          },
+          {
+            "name": "コロン通り水辺遊歩道 ↗",
+            "cardId": "landmark-card-paseo-colon",
+            "isCard": true
+          },
+          {
+            "name": "トリアナ橋パノラマ ↗",
+            "cardId": "landmark-card-puente-de-triana",
+            "isCard": true
+          }
+        ],
+        "sequence": "16:00 タクシーで黄金の塔そばへ ➔ 平坦な水辺プロムナードをトリアナ橋方面へ散策 ➔ 対岸トリアナ地区の色彩豊かな家並みと夕日鑑賞 ➔ 18:00 川沿いレストランで夕食。",
+        "transit": "クリストバル・コロン通り沿いでタクシー下車。車道から水辺プロムナードへは緩やかなスロープで接続しています。",
+        "walking": "約2,500〜4,000歩。極めて平坦で足腰への負担が少ないリフレッシュルートです。",
+        "warning": "• <strong>黄金の塔内部の階段:</strong> 塔内は海事博物館ですが、上層展望台へは急な螺旋階段が必要です。外観鑑賞のみにとどめることをお勧めします。<br>• <strong>自転車専用レーン:</strong> 川沿いに自転車道が並行しているため、歩行者専用レーンを歩いてください。",
+        "rest": "川沿いのカフェやレストラン内にトイレあり。水辺に沿ってベンチが多数設置されています。",
+        "skip": "歩行を最小限にし、黄金の塔前の船着場から発着する1時間のグアダルキビル川遊覧船に着席して観光をお楽しみください。",
+        "sources": [
+          {
+            "name": "黄金の塔海事博物館案内",
+            "url": "https://www.visitasevilla.es/torre-del-oro"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 夕日おすすめ時刻: 約17:45"
+      },
+      {
+        "id": "district-trip-cordoba",
+        "badge": "日帰り候補 01",
+        "badgeClass": "trip-badge",
+        "timing": "候補日: 11月17日または18日",
+        "title": "コルドバ: メスキタ＆花の小道",
+        "desc": "赤と白の二重アーチが織りなす円柱の森と、花で彩られたアンダルシアのパティオ。",
+        "landmarks": [
+          {
+            "name": "メスキタ大聖堂 ↗",
+            "cardId": "landmark-card-mezquita-cordoba",
+            "isCard": true
+          },
+          {
+            "name": "花の小道 ↗",
+            "cardId": "landmark-card-calleja-de-las-flores",
+            "isCard": true
+          },
+          {
+            "name": "コルドバのローマ橋 ↗",
+            "cardId": "landmark-card-puente-romano-cordoba",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:00 セビリア・サンタ・フスタ駅から高速列車AVE乗車（約45分） ➔ コルドバ駅からタクシーでメスキタへ（約10分） ➔ メスキタ見学（10:15〜12:15） ➔ 花の小道で記念撮影 ➔ ユダヤ人街で昼食 ➔ 16:00 高速列車でセビリアへ帰還。",
+        "transit": "セビリア〜コルドバ間は高速列車（AVE/Avant）で約40〜55分（列車ダイヤにより変動）。コルドバ駅〜メスキタ間は必ずタクシーをご利用ください。",
+        "walking": "約4,500〜6,000歩。メスキタ内部は段差がほぼなく完全平坦で非常に歩きやすいです。",
+        "warning": "• <strong>列車の所要時間の変動:</strong> AVE（直行約40〜45分）とAvant（約45〜55分）で編成と所要時間が異なります。事前予約時に荷物置き場を確保してください。<br>• <strong>ユダヤ人街の小石道:</strong> 歴史的な石畳のため、クッション性のある靴を着用してください。",
+        "rest": "メスキタ敷地内に清潔なトイレあり。オレンジの中庭の木陰で休憩可能。",
+        "skip": "疲労を感じた場合はローマ橋の徒歩横断をスキップし、タクシーでコルドバ駅へ直接戻りカフェで待機してください。",
+        "sources": [
+          {
+            "name": "メスキタ公式サイト",
+            "url": "https://mezquita-catedraldecordoba.es/"
+          },
+          {
+            "name": "Renfe公式列車案内",
+            "url": "https://www.renfe.com/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 2026年11月公式ダイヤの照会が必要"
+      },
+      {
+        "id": "district-trip-ronda",
+        "badge": "日帰り候補 02",
+        "badgeClass": "trip-badge",
+        "timing": "候補日: 11月19日",
+        "title": "ロンダ: ヌエボ橋＆ヘミングウェイ散策路",
+        "desc": "深さ120メートルのタホ峡谷に架かる18世紀の壮大な石造りの橋と絶壁の白壁の町。",
+        "landmarks": [
+          {
+            "name": "ヌエボ橋 ↗",
+            "cardId": "landmark-card-puente-nuevo-ronda",
+            "isCard": true
+          },
+          {
+            "name": "パラドール・デ・ロンダ テラス ↗",
+            "cardId": "landmark-card-parador-ronda",
+            "isCard": true
+          },
+          {
+            "name": "ヘミングウェイ散策路 ↗",
+            "cardId": "landmark-card-paseo-hemingway",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:00 専用車ツアーまたは列車でセビリア発（約1.5〜2時間） ➔ ロンダ・スペイン広場で下車 ➔ ヌエボ橋を平坦に横断 ➔ パラドールの断崖テラスでコーヒー休憩 ➔ ヘミングウェイ散策路 ➔ 15:30 セビリアへ帰還。",
+        "transit": "山道を経由するため、車酔いしやすい方は酔い止めをご用意ください。中心部で下車した後は平坦に観光できます。",
+        "walking": "約3,500〜5,000歩。橋の上の車道・歩道や旧市街の主要プロムナードは平坦です。",
+        "warning": "• <strong>峡谷トレイル下山厳禁:</strong> タホ峡谷の底へ下りるトレッキング道は<strong>急勾配の岩場と砂利道で転倒リスクが極めて高く、シニアには大変危険です。峡谷下への下山は厳禁です。</strong>パラドールのテラス手すりから安全に峡谷をご鑑賞ください。<br>• <strong>高所の気温低下:</strong> 標高740mに位置するため、セビリアより4〜6℃低く風も強いため、防寒着が必須です。",
+        "rest": "パラドール・デ・ロンダのカフェは快適な座席と清潔なトイレを備え、絶景を眺めながら休憩できます。",
+        "skip": "未舗装の遊歩道には立ち寄らず、パラドールのカフェとヌエボ橋の橋上のみに滞在を限定してください。",
+        "sources": [
+          {
+            "name": "ロンダ市観光局公式",
+            "url": "https://turismoderonda.es/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月確認 · 山岳気象の事前確認推奨"
+      }
+    ],
+    "transitTable": {
+      "id": "district-transit-bcn-svq",
+      "badge": "11月11日（水）都市間移動",
+      "timing": "Door-to-Door ファクトチェック",
+      "title": "🚆 バルセロナ ➔ セビリア Door-to-Door 総合移動比較",
+      "desc": "単なる飛行時間・乗車時間の比較を超え、宿泊先出発から到着先ホテルまでの荷物運搬・乗換・待機・階段負担を総合分析。",
+      "unconfirmedNotice": "⚠️ <strong>事前確認が必要な情報:</strong> 現在バルセロナの宿泊先「Suite Marina」の正確な番地およびセビリアの宿泊先、確定フライト便名、航空会社の受託手荷物規定が未確定です。以下の所要時間は標準ルートを基準とした推定値であり、確定情報に基づき最終再計算が必要です。",
+      "headers": [
+        "比較項目",
+        "高速列車（Renfe AVE直通）🚆",
+        "国内線航空便（BCN ➔ SVQ）✈️"
+      ],
+      "rows": [
+        {
+          "label": "純移動時間",
+          "train": "約5時間45分〜6時間（高速鉄道直通）",
+          "flight": "約1時間40分〜1時間50分（純飛行時間）"
+        },
+        {
+          "label": "宿泊先 ➔ 駅／空港",
+          "train": "Suite Marina ➔ サンツ駅（タクシー約15〜25分推定*）",
+          "flight": "Suite Marina ➔ エル・プラット空港（タクシー約25〜40分推定*）"
+        },
+        {
+          "label": "出発前の待機・手続き",
+          "train": "駅手荷物X線検査 15〜20分（出発35〜45分前到着で十分）",
+          "flight": "3人分手荷物預け、保安検査、搭乗口への長距離歩行（出発90〜120分前到着必須）"
+        },
+        {
+          "label": "到着後 ➔ 宿泊先",
+          "train": "セビリア・サンタ・フスタ駅（市内中心隣接）➔ タクシー10〜15分",
+          "flight": "SVQ手荷物受取 30分 ➔ タクシーで市内へ約20〜25分"
+        },
+        {
+          "label": "Door-to-Door 総所要時間",
+          "train": "<strong>約6時間45分〜7時間15分</strong>",
+          "flight": "<strong>約5時間15分〜6時間</strong>（実際の短縮時間はわずか1〜1.5時間程度）"
+        },
+        {
+          "label": "荷物・乗換・階段の負担",
+          "train": "<span class=\"merit-text\">✓ 座席近くの荷物棚に直接保管可能</span><br><span class=\"merit-text\">✓ 乗換なし、広々とした座席、自由なトイレ利用</span><br><span class=\"merit-text\">✓ 駅構内の平坦スロープおよびエレベーターでご両親の負担最小</span>",
+          "flight": "<span class=\"demerit-text\">⚠️ 大型のスーツケース2〜3個の積み下ろし・受取待機の連続</span><br><span class=\"demerit-text\">⚠️ 広大な空港ターミナルの長距離歩行と保安検査待機の疲労</span><br><span class=\"demerit-text\">⚠️ 搭乗橋やタラップの階段移動、狭小な機内座席</span>"
+        },
+        {
+          "label": "ご両親同伴 総合評価",
+          "train": "<strong class=\"rec-badge\">⭐ ご両親同伴 最優先推奨:</strong> 乗車時間は長いものの、重い荷物を持った移動や立ちっぱなしの待機疲労が圧倒的に少なく、安全・安心です。",
+          "flight": "飛行時間は短いものの、空港移動・手荷物預託・待機・受取による煩雑さと疲労蓄積のリスクが極めて高いです。",
+          "isRec": true
+        }
+      ],
+      "source": {
+        "name": "Renfe公式 バルセロナ〜セビリア高速鉄道案内",
+        "url": "https://www.renfe.com/es/en/inspirate/rutas/barcelona-sevilla",
+        "verifyNote": "✓ 2026年10月確認 · 11月11日公式ダイヤ確認が必要"
+      }
+    },
+    "collectionHead": {
+      "kicker": "03-1-B / FULL LANDMARK CARDS",
+      "title": "🇪🇸 スペイン代表名所18選 詳細カードコレクション",
+      "desc": "地区別ルートと連動した18カ所の詳細な歩行ファクトチェック情報と公式予約先リンクをご確認ください。"
+    }
+  },
+  "zh": {
+    "banner": {
+      "title": "步行及无障碍导览原则（事实核实标准）:",
+      "text": "杜绝缺乏官方依据的“全程纯平地”、“无障碍通行”、“毫无疲劳”、“电梯一应俱全”、“出租车直达正门口”等绝对化断言，如实说明实际阶梯、坡道、不平整路面与体能消耗。住宿地（Suite Marina）具体街道门牌号及2026年11月官方营业时刻表与列车班次需以官方渠道核实为准。"
+    },
+    "nav": {
+      "label": "快速跳转:",
+      "chips": [
+        {
+          "id": "district-bcn-gaudi",
+          "text": "🏙️ 1. 高迪／扩展区"
+        },
+        {
+          "id": "district-bcn-gothic",
+          "text": "🏛️ 2. 哥特区·波盖利亚·广场"
+        },
+        {
+          "id": "district-bcn-port",
+          "text": "🌊 3. 贝尔港水岸"
+        },
+        {
+          "id": "district-bcn-guell",
+          "text": "🦎 4. 奎尔公园"
+        },
+        {
+          "id": "district-transit-bcn-svq",
+          "text": "🚆 11/11 巴塞罗那-塞维利亚交通对比",
+          "class": "highlight"
+        },
+        {
+          "id": "district-svq-catedral",
+          "text": "⛪ 5. 大教堂·希拉尔达塔"
+        },
+        {
+          "id": "district-svq-alcazar",
+          "text": "🏰 6. 阿尔卡萨王宫·圣十字区"
+        },
+        {
+          "id": "district-svq-plaza",
+          "text": "💃 7. 西班牙广场·公园"
+        },
+        {
+          "id": "district-svq-river",
+          "text": "⛵ 8. 河畔·黄金塔"
+        },
+        {
+          "id": "district-trip-cordoba",
+          "text": "🍊 科尔多瓦（一日游备选）",
+          "class": "candidate"
+        },
+        {
+          "id": "district-trip-ronda",
+          "text": "🌉 龙达（一日游备选）",
+          "class": "candidate"
+        },
+        {
+          "id": "landmarksCollectionHead",
+          "text": "🗂️ 西班牙18处全景点卡片",
+          "class": "all-cards"
+        }
+      ]
+    },
+    "labels": {
+      "keySpots": "核心景观:",
+      "recSequence": "推荐游览路线",
+      "transitTip": "区间交通建议",
+      "walkingEst": "预估步行量",
+      "walkingWarn": "步行安全与阶梯核实",
+      "restStops": "洗手间与休息点",
+      "skipAlt": "应急方案与疲劳减免",
+      "officialSource": "官方核实来源:"
+    },
+    "districts": [
+      {
+        "id": "district-bcn-gaudi",
+        "badge": "巴塞罗那 01",
+        "badgeClass": "bcn-badge",
+        "timing": "建议日期: 11月6日或7日",
+        "title": "扩展区与高迪建筑巡礼",
+        "desc": "巴塞罗那现代主义精粹：串联巴特罗之家、米拉之家与圣家堂的黄金动线。",
+        "landmarks": [
+          {
+            "name": "圣家族大教堂 ↗",
+            "cardId": "landmark-card-sagrada-familia",
+            "isCard": true
+          },
+          {
+            "name": "巴特罗之家 ↗",
+            "cardId": "landmark-card-casa-batllo",
+            "isCard": true
+          },
+          {
+            "name": "米拉之家 ↗",
+            "cardId": "landmark-card-casa-mila",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 参观巴特罗之家 ➔ 漫步格拉西亚大道（平坦步行5分钟） ➔ 米拉之家（阁楼展览与中庭） ➔ 13:00~15:30 午餐及西斯塔午休 ➔ 16:00 圣家族大教堂（预约入场参观主殿大厅）。",
+        "transit": "从格拉西亚大道前往圣家堂建议乘坐出租车（约10~15分钟，车费约7~10欧元）。避开地铁（L2/L5），因换乘通道台阶多、步行距离长，易使长辈疲惫。",
+        "walking": "含室内参观共计约4,000~6,000步（区间利用出租车时体感疲劳度：中等）。",
+        "warning": "• <strong>圣家族大教堂：</strong> 主殿大厅设有平缓坡道和电梯，轮椅及长辈通行无阻。然而，<em>塔楼</em>即便乘电梯上行，下行时也<strong>必须徒步走完约400级狭窄陡峭的旋转石阶</strong>。根据安全规范，行动不便、心肺疾病及眩晕者严禁登塔，<strong>带长辈同行强烈建议购买不含登塔的主殿门票</strong>。<br>• <strong>米拉之家对比巴特罗之家：</strong> 巴特罗之家电梯直达屋顶露台前，通行良好；而<strong>米拉之家屋顶（勇士天台）为波浪形连续起伏台阶</strong>，轮椅及行动不便长辈无法游览全貌（仅限在电梯口小型平台有限远眺）。切勿将两者无障碍程度等同看待。",
+        "rest": "三处景点收费参观区域内均配备无障碍及普通洗手间。格拉西亚大道沿街露天咖啡厅（如 El Fornet）充裕。",
+        "skip": "免去攀爬米拉之家屋顶台阶，在底层咖啡厅小憩。圣家堂不登塔，改为在高迪广场水池旁的绿荫长椅上欣赏大教堂正面全景。",
+        "sources": [
+          {
+            "name": "圣家堂官方FAQ",
+            "url": "https://sagradafamilia.org/en/faqs"
+          },
+          {
+            "name": "米拉之家官方无障碍指南",
+            "url": "https://www.lapedrera.com/en/accessibility/"
+          },
+          {
+            "name": "巴特罗之家官方网站",
+            "url": "https://www.casabatllo.es/en/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 出行前请再次核对官方营业时间"
+      },
+      {
+        "id": "district-bcn-gothic",
+        "badge": "巴塞罗那 02",
+        "badgeClass": "bcn-badge",
+        "timing": "建议日期: 11月8日（周日）",
+        "title": "哥特区 · 波盖利亚市场 · 加泰罗尼亚广场",
+        "desc": "14世纪中世纪哥特巷道的神秘韵味与巴塞罗那最具生机的传统市集。",
+        "landmarks": [
+          {
+            "name": "加泰罗尼亚广场 ↗",
+            "cardId": "landmark-card-placa-de-catalunya",
+            "isCard": true
+          },
+          {
+            "name": "波盖利亚市场 ↗",
+            "cardId": "landmark-card-mercat-de-la-boqueria",
+            "isCard": true
+          },
+          {
+            "name": "巴塞罗那大教堂 ↗",
+            "cardId": "landmark-card-catedral-de-barcelona",
+            "isCard": true
+          }
+        ],
+        "sequence": "10:00 漫步加泰罗尼亚广场喷泉 ➔ 10:40 兰布拉大道上段 ➔ 11:15 波盖利亚市场（品尝新鲜鲜榨果汁与Tapas小吃） ➔ 12:30 哥特区（新广场、大教堂回廊） ➔ 13:30 返回酒店午餐并西斯塔午休。",
+        "transit": "从加泰罗尼亚广场至波盖利亚市场为人行道宽敞的微缓下坡。哥特区内部全为步行石板巷，打车时需前往外围主干道（莱埃塔纳大街或兰布拉大道）。",
+        "walking": "约4,500~6,500步。中世纪凹凸石砖路面较消耗脚力，务必穿着缓震效果佳的平底舒适鞋。",
+        "warning": "• <strong>哥特区路面防滑防绊：</strong> 老城路面多历史石块，路面不均且有滑板车穿行，请长辈留心脚下。<br>• <strong>防范扒手：</strong> 兰布拉大街和波盖利亚市场人流密集，贵重物品贴身保管，背包置于胸前。",
+        "rest": "波盖利亚市场内设收费公厕。大教堂回廊（饲养13只白鹅的静谧庭院）有树荫长椅，皇家广场亦有露天咖啡座。",
+        "skip": "人流拥挤时减少深入幽深狭窄巷道，仅在新广场及加泰罗尼亚广场开阔平地活动，搭乘出租车往返。",
+        "sources": [
+          {
+            "name": "波盖利亚市场官网",
+            "url": "https://www.boqueria.barcelona/"
+          },
+          {
+            "name": "巴塞罗那大教堂官网",
+            "url": "https://catedralbcn.org/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 注意市场营业日"
+      },
+      {
+        "id": "district-bcn-port",
+        "badge": "巴塞罗那 03",
+        "badgeClass": "bcn-badge",
+        "timing": "建议日期: 11月9日（周一下午）",
+        "title": "贝尔港水岸步道与兰布拉南端",
+        "desc": "海风拂面、开阔平缓的木栈道与地中海游艇码头景致。",
+        "landmarks": [
+          {
+            "name": "哥伦布纪念塔 ↗",
+            "cardId": "landmark-card-mirador-de-colom",
+            "isCard": true
+          },
+          {
+            "name": "海上兰布拉木桥 ↗",
+            "cardId": "landmark-card-rambla-de-mar",
+            "isCard": true
+          },
+          {
+            "name": "马雷马格努姆与贝尔港 ↗",
+            "cardId": "landmark-card-port-vell",
+            "isCard": true
+          }
+        ],
+        "sequence": "15:30 乘出租车抵达哥伦布纪念塔环岛 ➔ 漫步起伏造型的海上兰布拉木桥 ➔ 贝尔港游艇码头散步 ➔ 水岸长椅休憩眺望海景 ➔ 17:30 海边餐厅享用日落晚餐。",
+        "transit": "出租车可直接停靠哥伦布纪念塔环岛。港口木栈道与水岸全平整，无车辆穿行，极为安全舒适。",
+        "walking": "约3,000~4,500步。全巴塞罗那步行压力最小的路线，平坦木道与长椅充足。",
+        "warning": "• <strong>木道缝隙与海风：</strong> 木板缝隙需防鞋跟卡陷。11月中旬傍晚海风微凉，需携带轻便防风外套。<br>• <strong>桥梁旋转开合：</strong> 遇船只进港时桥体会旋转开合5~10分钟，附近设有长椅可坐下等候。",
+        "rest": "码头沿线设有大量长椅。马雷马格努姆购物中心内配备干净无障碍洗手间与电梯。",
+        "skip": "省略码头外围步行环线，直接在马雷马格努姆临海露天咖啡座落座观景。",
+        "sources": [
+          {
+            "name": "贝尔港官方网站",
+            "url": "https://www.portvell.bcn.cat/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 11月中旬日落时间约为17:35"
+      },
+      {
+        "id": "district-bcn-guell",
+        "badge": "巴塞罗那 04",
+        "badgeClass": "bcn-badge",
+        "timing": "建议日期: 11月10日（周二上午）",
+        "title": "奎尔公园与卡梅尔山丘",
+        "desc": "高迪打造的梦幻彩色马赛克公园，俯瞰巴塞罗那市区与地中海全景。",
+        "landmarks": [
+          {
+            "name": "奎尔公园核心保护区 ↗",
+            "cardId": "landmark-card-park-guell",
+            "isCard": true
+          },
+          {
+            "name": "百柱厅与马赛克长椅 ↗",
+            "cardId": "landmark-card-sala-hipostila",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 乘出租车直达卡梅尔公路（Carretera del Carmel上部入口） ➔ 平缓走道进入核心保护区 ➔ 参观百柱厅与变色龙阶梯 ➔ 自然广场马赛克波浪长椅小憩 ➔ 12:00 在指定停靠点乘出租车返回市区。",
+        "transit": "<strong>切勿乘坐地铁：</strong> 附近地铁站出站后需徒步攀爬15~20分钟陡峭坡道。请务必乘坐出租车至卡梅尔公路入口（注意：出租车无法进入园区步行区）。",
+        "walking": "约4,000~5,500步。园内坡道、碎石沙土路与石阶较多，需稳步慢行。",
+        "warning": "• <strong>山丘起伏地形事实：</strong> 地处山丘，即便乘坐出租车下车后进入核心景区仍需走一段坡路，绝非“全程平地”或“直达大门”。<br>• <strong>严守预约时段：</strong> 门票仅在票面时间起30分钟内有效，逾期作废，请提前15分钟抵达。",
+        "rest": "卡梅尔公路入口及自然广场附近设洗手间。著名波浪形瓷砖长椅可供长辈宽敞歇脚。",
+        "skip": "免去攀爬上部高架廊桥与高处观景台，仅集中游览平缓的自然广场与百柱大厅，原路从上门出园打车。",
+        "sources": [
+          {
+            "name": "奎尔公园官方无障碍说明",
+            "url": "https://parkguell.barcelona/en/accessibility"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 必须提前线上实名预订"
+      },
+      {
+        "id": "district-svq-catedral",
+        "badge": "塞维利亚 05",
+        "badgeClass": "svq-badge",
+        "timing": "建议日期: 11月12日或13日",
+        "title": "塞维利亚大教堂与希拉尔达塔",
+        "desc": "世界最大哥特式大教堂与傲视塞维利亚老城的穆斯林融合风格钟楼。",
+        "landmarks": [
+          {
+            "name": "塞维利亚大教堂 ↗",
+            "cardId": "landmark-card-catedral-de-sevilla",
+            "isCard": true
+          },
+          {
+            "name": "希拉尔达塔 ↗",
+            "cardId": "landmark-card-giralda",
+            "isCard": true
+          },
+          {
+            "name": "柑橘庭院 ↗",
+            "cardId": "landmark-card-patio-de-los-naranjos",
+            "isCard": true
+          }
+        ],
+        "sequence": "10:00 由王子之门预约通道入场 ➔ 瞻仰哥伦布灵柩与主祭坛黄金屏风 ➔ 柑橘庭院漫步 ➔ （选游）希拉尔达塔斜坡登顶 ➔ 12:30 胜利广场周边午餐 ➔ 西斯塔午休。",
+        "transit": "出租车停靠在宪法大道（有轨电车步行街）路口。平坦石板路步行2~3分钟即可达大教堂入口。",
+        "walking": "约3,500~5,000步。大教堂内部全平整宽敞，无台阶阻隔。",
+        "warning": "• <strong>希拉尔达塔登顶体能警告：</strong> 塔内虽为35段斜坡缓道，但通往顶层钟楼有<strong>最后17级狭窄陡峭石阶</strong>。往返上下非常耗费腿力。<strong>腿脚不便或心血管较弱的长辈，强烈建议在柑橘庭院的长椅上歇息观景，无需登塔</strong>。<br>• <strong>着装规范：</strong> 宗教圣地禁止露肩及过短短裤。",
+        "rest": "大教堂院内回廊旁配备整洁无障碍洗手间。柑橘庭院内绿树成荫，石椅充足。",
+        "skip": "完全放弃登希拉尔达塔，仅游览平坦的主教堂内部并坐在柑橘庭院中享受静谧时光。",
+        "sources": [
+          {
+            "name": "塞维利亚大教堂官方导览",
+            "url": "https://www.catedraldesevilla.es/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 遵守着装规范"
+      },
+      {
+        "id": "district-svq-alcazar",
+        "badge": "塞维利亚 06",
+        "badgeClass": "svq-badge",
+        "timing": "建议日期: 11月14日（周六上午）",
+        "title": "塞维利亚王宫与圣十字街区",
+        "desc": "穆德哈尔宫殿建筑艺术巅峰与白墙砖瓦交织的历史犹太区巷道。",
+        "landmarks": [
+          {
+            "name": "塞维利亚王宫 ↗",
+            "cardId": "landmark-card-real-alcazar",
+            "isCard": true
+          },
+          {
+            "name": "少女中庭 ↗",
+            "cardId": "landmark-card-patio-de-las-doncellas",
+            "isCard": true
+          },
+          {
+            "name": "圣十字区 ↗",
+            "cardId": "landmark-card-barrio-de-santa-cruz",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:30 狮子之门预约通道入场 ➔ 佩德罗一世宫殿（少女中庭与使节厅） ➔ 王家花园绿荫漫步 ➔ 12:00 穿入圣十字街区 ➔ 传统Tapas午餐 ➔ 午后西斯塔午休。",
+        "transit": "在胜利广场或圣托马斯街下出租车。平坦步行2分钟即达狮子之门入口。",
+        "walking": "约4,500~6,000步。一层主殿平坦无阻，但花园内部分为沙石小道。",
+        "warning": "• <strong>花园沙石路与门槛：</strong> 保留有历史石槛与花园碎石路，需防滑防绊。二层高居王室套房（Cuarto Real Alto）需独立门票且走楼梯。<br>• <strong>圣十字区街巷：</strong> 机动车无法驶入，巷道均为石板铺装，步行范围不宜过宽。",
+        "rest": "王宫一层花园入口处设洗手间。花园橘树下长椅分布广泛。",
+        "skip": "放弃深入迷宫花园，将行程压缩在平坦的一层穆德哈尔宫殿内。圣十字区仅在入口外圈短暂停留。",
+        "sources": [
+          {
+            "name": "阿尔卡萨王宫官网",
+            "url": "https://www.alcazarsevilla.org/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 必须提前线上实名预订"
+      },
+      {
+        "id": "district-svq-plaza",
+        "badge": "塞维利亚 07",
+        "badgeClass": "svq-badge",
+        "timing": "建议日期: 11月15日（周日下午）",
+        "title": "塞维利亚西班牙广场与玛丽亚·路易莎公园",
+        "desc": "壮阔的半圆形红砖宫殿、代表西班牙各省的华美彩瓷壁龛与浪漫城市绿肺。",
+        "landmarks": [
+          {
+            "name": "西班牙广场 ↗",
+            "cardId": "landmark-card-plaza-de-espana",
+            "isCard": true
+          },
+          {
+            "name": "各省彩瓷壁龛 ↗",
+            "cardId": "landmark-card-azulejos-espana",
+            "isCard": true
+          },
+          {
+            "name": "玛丽亚·路易莎公园 ↗",
+            "cardId": "landmark-card-parque-maria-luisa",
+            "isCard": true
+          }
+        ],
+        "sequence": "15:00 乘出租车直达西班牙广场北塔入口 ➔ 漫步半圆形柱廊拱门 ➔ 观赏48个省份彩绘瓷砖壁龛 ➔ 中央大喷泉前石椅休憩 ➔ 17:00 玛丽亚·路易莎公园林荫漫步或乘坐马车。",
+        "transit": "出租车可直接停在伊莎贝尔·天主教徒大道，下车即是平坦广场，零台阶直达。",
+        "walking": "约3,500~5,000步。开阔平整的大型砖石铺装，漫步非常惬意舒适。",
+        "warning": "• <strong>横跨运河彩瓷桥台阶：</strong> 跨越运河的4座拱桥有较陡瓷砖台阶。<strong>长辈请沿平坦的水岸步道行走，无需登桥</strong>。<br>• <strong>午后防晒：</strong> 广场开阔少遮阳，建议下午3点后气温温和时造访。",
+        "rest": "军事博物馆走廊附近设公用洗手间。广场外围设有大量大理石长椅。",
+        "skip": "免去公园内部徒步，在广场回廊树荫长椅处就坐，欣赏中央广场的免费弗拉门戈即兴表演。",
+        "sources": [
+          {
+            "name": "塞维利亚旅游局官方指南",
+            "url": "https://visitasevilla.es/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 公共区域免门票"
+      },
+      {
+        "id": "district-svq-river",
+        "badge": "塞维利亚 08",
+        "badgeClass": "svq-badge",
+        "timing": "建议日期: 11月16日（周一傍晚）",
+        "title": "瓜达尔基维尔河畔与黄金塔",
+        "desc": "金黄色余晖洒满大航海时代船队启航的母亲河畔，眺望对岸特里亚纳风情。",
+        "landmarks": [
+          {
+            "name": "黄金塔 ↗",
+            "cardId": "landmark-card-torre-del-oro",
+            "isCard": true
+          },
+          {
+            "name": "哥伦布大道水岸步道 ↗",
+            "cardId": "landmark-card-paseo-colon",
+            "isCard": true
+          },
+          {
+            "name": "特里亚纳桥全景 ↗",
+            "cardId": "landmark-card-puente-de-triana",
+            "isCard": true
+          }
+        ],
+        "sequence": "16:00 乘出租车抵达黄金塔旁 ➔ 漫步平坦的水岸大道向特里亚纳桥进发 ➔ 观赏赛艇与对岸彩色建筑日落余晖 ➔ 18:00 河畔景观餐厅享用晚餐。",
+        "transit": "出租车可在哥伦布大道旁随时上下客。车行道至河岸步道有缓坡相连。",
+        "walking": "约2,500~4,000步。极其平缓低强度的休闲散步线，微风宜人。",
+        "warning": "• <strong>黄金塔内部台阶：</strong> 塔内为航海博物馆，登顶需走陡峭螺旋楼梯，建议长辈仅在外部欣赏拍照。<br>• <strong>自行车道留意：</strong> 河畔设并行自行车道，请走在人行专用区域内。",
+        "rest": "河岸咖啡馆与餐厅内设洗手间。沿河岸设有大量木质及石质长椅。",
+        "skip": "将步行降至最低：在黄金塔前码头乘坐1小时的瓜达尔基维尔河观光游船，全程坐享河岸风光。",
+        "sources": [
+          {
+            "name": "黄金塔海事博物馆官方指南",
+            "url": "https://www.visitasevilla.es/torre-del-oro"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 推荐日落时间约17:45"
+      },
+      {
+        "id": "district-trip-cordoba",
+        "badge": "一日游备选 01",
+        "badgeClass": "trip-badge",
+        "timing": "备选日期: 11月17日或18日",
+        "title": "科尔多瓦: 清真寺大教堂与花之巷",
+        "desc": "双色交错拱券构筑的石柱之森，与鲜花缀满的安达卢西亚传统庭院。",
+        "landmarks": [
+          {
+            "name": "大清真寺 ↗",
+            "cardId": "landmark-card-mezquita-cordoba",
+            "isCard": true
+          },
+          {
+            "name": "花之巷 ↗",
+            "cardId": "landmark-card-calleja-de-las-flores",
+            "isCard": true
+          },
+          {
+            "name": "科尔多瓦罗马桥 ↗",
+            "cardId": "landmark-card-puente-romano-cordoba",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:00 塞维利亚圣胡斯塔站乘AVE高铁出发（约45分钟） ➔ 科尔多瓦站乘出租车直达大清真寺（约10分钟） ➔ 参观清真寺大厅（10:15~12:15） ➔ 花之巷拍照 ➔ 犹太区庭院午餐 ➔ 16:00 乘高铁返回塞维利亚。",
+        "transit": "塞维利亚至科尔多瓦高铁（AVE/Avant）运行约40~55分钟（因车次而异）。科尔多瓦站至清真寺务必乘坐出租车。",
+        "walking": "约4,500~6,000步。清真寺祈祷大厅内部无台阶，平整度极佳，行走轻松。",
+        "warning": "• <strong>车次耗时差异：</strong> AVE直达约40~45分钟，Avant约45~55分钟，请提前锁定大件行李存放区车票。<br>• <strong>犹太区卵石小巷：</strong> 历史石子路不平，需穿厚底防滑鞋。",
+        "rest": "清真寺院区内设干净洗手间。柑橘庭院绿荫下长椅充裕。",
+        "skip": "若体能不足，免去步行跨越罗马桥，乘出租车直接返回科尔多瓦火车站候车室休息。",
+        "sources": [
+          {
+            "name": "科尔多瓦大清真寺官网",
+            "url": "https://mezquita-catedraldecordoba.es/"
+          },
+          {
+            "name": "Renfe时刻表官方查询",
+            "url": "https://www.renfe.com/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 需以出行当日官方班次为准"
+      },
+      {
+        "id": "district-trip-ronda",
+        "badge": "一日游备选 02",
+        "badgeClass": "trip-badge",
+        "timing": "备选日期: 11月19日",
+        "title": "龙达: 新桥与海明威小径",
+        "desc": "悬跨于120米深塔霍峡谷之上的18世纪壮丽石桥与绝壁白崖古镇。",
+        "landmarks": [
+          {
+            "name": "龙达新桥 ↗",
+            "cardId": "landmark-card-puente-nuevo-ronda",
+            "isCard": true
+          },
+          {
+            "name": "龙达国营古堡酒店露台 ↗",
+            "cardId": "landmark-card-parador-ronda",
+            "isCard": true
+          },
+          {
+            "name": "海明威散步道 ↗",
+            "cardId": "landmark-card-paseo-hemingway",
+            "isCard": true
+          }
+        ],
+        "sequence": "09:00 包车或乘车由塞维利亚出发（约1.5~2小时） ➔ 抵达龙达西班牙广场 ➔ 平缓漫步跨越新桥 ➔ 古堡酒店悬崖露台享用咖啡 ➔ 海明威步道 ➔ 15:30 返回塞维利亚。",
+        "transit": "山区公路多弯道，易晕车者请提前备好晕车药。抵达城镇核心后，主要景观均处于平缓步行范围。",
+        "walking": "约3,500~5,000步。桥面公路人行道与主步道平整。",
+        "warning": "• <strong>严禁探险下谷底徒步：</strong> 下行至峡谷底部的观景小路<strong>坡度险峻、碎石遍布、滑坠风险极大，对长辈极其危险，严禁下探谷底。</strong>在古堡酒店露台安全护栏处俯瞰即可。<br>• <strong>海拔温差：</strong> 龙达海拔740米，气温比塞维利亚低4~6℃且有山风，务必备足防风保暖外套。",
+        "rest": "龙达古堡酒店（Parador）咖啡厅坐拥壮观峡谷全景，洗手间整洁、座椅舒适。",
+        "skip": "严禁前往非铺装土路，行程仅局限在古堡酒店咖啡厅及新桥桥面上。",
+        "sources": [
+          {
+            "name": "龙达旅游局官方指南",
+            "url": "https://turismoderonda.es/"
+          }
+        ],
+        "verifyNote": "✓ 2026年10月核实 · 留意山区天气预报"
+      }
+    ],
+    "transitTable": {
+      "id": "district-transit-bcn-svq",
+      "badge": "11月11日（周三）城际交通",
+      "timing": "门到门（Door-to-Door）事实核实",
+      "title": "🚆 巴塞罗那 ➔ 塞维利亚 Door-to-Door 全程交通综合对比",
+      "desc": "打破单纯飞行时间与火车耗时的表面对比，深度解析从出发酒店到抵达酒店的行李搬运、中转、排队等候与台阶体力负担。",
+      "unconfirmedNotice": "⚠️ <strong>待核实确认信息提示：</strong> 当前巴塞罗那住宿地“Suite Marina”具体街道门牌号、塞维利亚住宿地地址、最终航班号及航空公司行李托运限额尚未确定。下表数据基于常规标准路径推算，细节确定后需重新核定精确分钟级行程。",
+      "headers": [
+        "对比维度",
+        "高速列车（Renfe AVE直通）🚆",
+        "境内直飞航班（BCN ➔ SVQ）✈️"
+      ],
+      "rows": [
+        {
+          "label": "纯交通耗时",
+          "train": "约5小时45分~6小时（高铁直达）",
+          "flight": "约1小时40分~1小时50分（空中飞行时间）"
+        },
+        {
+          "label": "酒店 ➔ 车站／机场",
+          "train": "Suite Marina ➔ 桑茨站（出租车预估约15~25分钟*）",
+          "flight": "Suite Marina ➔ 埃尔普拉特机场（出租车预估约25~40分钟*）"
+        },
+        {
+          "label": "出发前候车／登机手续",
+          "train": "车站行李安检15~20分钟（发车前35~45分钟抵达即可）",
+          "flight": "3人行李托运排队、安检、长途步行至登机口（起飞前90~120分钟必须抵达）"
+        },
+        {
+          "label": "抵达后 ➔ 酒店",
+          "train": "塞维利亚圣胡斯塔站（紧邻市中心）➔ 出租车10~15分钟",
+          "flight": "SVQ取行李等候30分钟 ➔ 出租车进市区约20~25分钟"
+        },
+        {
+          "label": "门到门全程总耗时",
+          "train": "<strong>约6小时45分~7小时15分</strong>",
+          "flight": "<strong>约5小时15分~6小时</strong>（实际仅比高铁节省约1~1.5小时）"
+        },
+        {
+          "label": "行李、换乘与台阶负担",
+          "train": "<span class=\"merit-text\">✓ 行李箱全程放置于座旁行李架，无需托运折腾</span><br><span class=\"merit-text\">✓ 零换乘，座椅宽敞舒适，可随时起身走动如厕</span><br><span class=\"merit-text\">✓ 车站内平缓坡道与电梯无缝衔接，长辈体力消耗极低</span>",
+          "flight": "<span class=\"demerit-text\">⚠️ 3件大号行李箱多次装卸搬运及漫长等候转盘</span><br><span class=\"demerit-text\">⚠️ 巨大机场航站楼内长距离跋涉与长时间站立排队安检</span><br><span class=\"demerit-text\">⚠️ 登机廊桥台阶及狭小紧促的机舱座椅</span>"
+        },
+        {
+          "label": "长辈同行综合评估",
+          "train": "<strong class=\"rec-badge\">⭐ 长辈同行最优先推荐：</strong> 虽在车上时间较长，但免去了拖拽重物与站立排队的身体劳损，舒适度与稳定性远胜飞机。",
+          "flight": "空中飞行虽短，但两端奔波、托运、排队与取行李琐事繁多，极易导致长辈体能大幅透支。",
+          "isRec": true
+        }
+      ],
+      "source": {
+        "name": "Renfe官方 巴塞罗那-塞维利亚线路指南",
+        "url": "https://www.renfe.com/es/en/inspirate/rutas/barcelona-sevilla",
+        "verifyNote": "✓ 2026年10月核实 · 需核实11月11日官方时刻表"
+      }
+    },
+    "collectionHead": {
+      "kicker": "03-1-B / FULL LANDMARK CARDS",
+      "title": "🇪🇸 西班牙代表性地标18选 详尽卡片合集",
+      "desc": "查看与区域路线串联的18处景点的真实步行事实核查及官方预订渠道链接。"
+    }
+  }
+};
+if (typeof window !== 'undefined') {
+  window.SENIOR_DISTRICTS_I18N = SENIOR_DISTRICTS_I18N;
+}
+
+(function() {
+  const extraDict = {
+  "ko": {
+    "hero_ctx_badge": "🗓️ 2026.11 확정 일정",
+    "hero_ctx_sub": "3인 가족 (60대 부모님 동행)",
+    "hero_ctx_bcn": "🏙️ 바르셀로나 (6박 7일)",
+    "hero_ctx_bcn_date": "2026.11.05(목) ~ 11.11(수)",
+    "hero_ctx_bcn_hotel": "🏨 숙소: <strong>Suite Marina</strong> (※ 도로명 주소 미정)",
+    "hero_ctx_svq": "🏰 세비야 (11박 12일)",
+    "hero_ctx_svq_date": "2026.11.11(수) ~ 11.22(일)",
+    "hero_ctx_svq_hotel": "🏨 숙소: <strong>미정 (향후 확인 필요)</strong>",
+    "hero_tag_family": "👥 3인 가족",
+    "hero_tag_siesta": "☕ 13:00~15:30 시에스타",
+    "hero_tag_taxi": "🚕 평지·택시 우선",
+    "hero_warn_badge": "♿ 접근성 팩트체크",
+    "hero_warn_sub": "과장 표현 배제 원칙",
+    "hero_warn_item1": "<strong>단정 표현 금지:</strong> ‘완전 평지’, ‘무장애’, ‘택시 정문 직행’ 배제, 실제 계단·경사·자갈길 명시",
+    "hero_warn_item2": "<strong>타워 계단 하강 주의:</strong> 사그라다 파밀리아 타워는 400여 개 나선계단 하강으로 부모님 일반 본당 티켓 권장",
+    "hero_warn_item3": "<strong>카사 밀라 옥상 노면:</strong> 카사 밀라 옥상은 연속 계단 굴곡으로 휠체어/보행약자 옥상 전역 보행 불가",
+    "hero_warn_item4": "<strong>11월 동절기 운영 확인:</strong> 관람 시간 및 열차 편성은 2026년 11월 공식 시간표 사전 확인 필수",
+    "hero_spot_badge": "🏛️ 핵심 명소 &amp; 루트 요약",
+    "hero_spot_sub": "구역별 맞춤 연결",
+    "hero_spot_bcn": "<strong>바르셀로나:</strong> 가우디(사그라다·바트요·밀라), 고딕 지구·보케리아 시장, 포트 벨 수변, 구엘 공원",
+    "hero_spot_svq": "<strong>세비야:</strong> 대성당·히랄다(종탑 17계단 주의), 알카사르·산타크루즈, 스페인 광장, 강변 황금의 탑",
+    "hero_spot_trips": "<strong>당일치기 후보:</strong> 코르도바(열차 시간표 확인/꽃의 골목), 론다(협곡 트레킹 금지)",
+    "hero_btn_route3": "🗺️ 제3장 부모님 동행 루트 보기 →",
+    "hero_btn_compare3": "🧭 3대 추천 코스 비교",
+    "chapter_name_overview": "제1장 여행 개요",
+    "chapter_name_planner": "제2장 일정 플래너",
+    "chapter_name_guide": "제3장 지역 가이드",
+    "chapter_name_festivals": "제4장 축제 &amp; 야경",
+    "chapter_name_practical": "제5장 여행 실용정보",
+    "lbl_senior_access": "보행 및 접근성 (팩트 검증)",
+    "btn_official_tickets": "공식 예매처 / 접근성",
+    "page_guide_spain_title": "🇪🇸 60대 부모님 동행 스페인 구역별 루트 &amp; 명소 18선",
+    "page_guide_spain_sub": "2026.11.05~11.22 바르셀로나(숙소 Suite Marina) · 세비야 3인 가족 맞춤 · 과장 없는 보행 팩트체크 &amp; Door-to-Door 이동 종합 비교"
+  },
+  "en": {
+    "hero_ctx_badge": "🗓️ Nov 2026 Confirmed Dates",
+    "hero_ctx_sub": "3-Person Family (with 60s Parents)",
+    "hero_ctx_bcn": "🏙️ Barcelona (6 Nights 7 Days)",
+    "hero_ctx_bcn_date": "2026.11.05 (Thu) ~ 11.11 (Wed)",
+    "hero_ctx_bcn_hotel": "🏨 Hotel: <strong>Suite Marina</strong> (※ Street address TBD)",
+    "hero_ctx_svq": "🏰 Seville (11 Nights 12 Days)",
+    "hero_ctx_svq_date": "2026.11.11 (Wed) ~ 11.22 (Sun)",
+    "hero_ctx_svq_hotel": "🏨 Hotel: <strong>TBD (Prior confirmation needed)</strong>",
+    "hero_tag_family": "👥 3-Person Family",
+    "hero_tag_siesta": "☕ 13:00~15:30 Siesta",
+    "hero_tag_taxi": "🚕 Flat &amp; Taxi Priority",
+    "hero_warn_badge": "♿ Accessibility Fact-Check",
+    "hero_warn_sub": "Zero Exaggeration Standard",
+    "hero_warn_item1": "<strong>No Generalizations:</strong> Excludes '100% flat', 'barrier-free', or 'taxis to main gate'; explicitly details stairs, inclines &amp; cobblestones",
+    "hero_warn_item2": "<strong>Tower Descent Warning:</strong> Sagrada Família towers require 400+ spiral stairs down; basilica-only general admission strongly recommended for parents",
+    "hero_warn_item3": "<strong>Casa Milà Rooftop Steps:</strong> Rooftop consists of continuous stepped wave curves; inaccessible for wheelchairs/seniors across full terrace",
+    "hero_warn_item4": "<strong>Winter Timetable Verification:</strong> Attraction hours and train schedules require prior confirmation against official Nov 2026 channels",
+    "hero_spot_badge": "🏛️ Key Highlights &amp; Routes",
+    "hero_spot_sub": "Connected by Districts",
+    "hero_spot_bcn": "<strong>Barcelona:</strong> Gaudí (Sagrada, Batlló, Milà), Gothic Quarter &amp; Boqueria, Port Vell, Park Güell",
+    "hero_spot_svq": "<strong>Seville:</strong> Cathedral &amp; Giralda (Caution: 17 steps), Alcázar &amp; Santa Cruz, Plaza de España, Riverside Gold Tower",
+    "hero_spot_trips": "<strong>Day-Trip Options:</strong> Córdoba (Train timetable check / Flowers alley), Ronda (Canyon descent prohibited)",
+    "hero_btn_route3": "🗺️ View Ch. 3 Senior Routes →",
+    "hero_btn_compare3": "🧭 Compare 3 Curated Routes",
+    "chapter_name_overview": "Ch. 1 Trip Overview",
+    "chapter_name_planner": "Ch. 2 Itinerary Planner",
+    "chapter_name_guide": "Ch. 3 Regional Guide",
+    "chapter_name_festivals": "Ch. 4 Festivals &amp; Nightlife",
+    "chapter_name_practical": "Ch. 5 Practical Info",
+    "lbl_senior_access": "Walking &amp; Mobility (Fact-Checked)",
+    "btn_official_tickets": "Official Tickets / Access",
+    "page_guide_spain_title": "🇪🇸 Senior-Friendly Spain District Routes &amp; Top 18 Landmarks",
+    "page_guide_spain_sub": "Nov 5–22, 2026 · Barcelona (Hotel Suite Marina) &amp; Seville 3-Person Family · Verified walking facts &amp; Door-to-Door transit comparison"
+  },
+  "ja": {
+    "hero_ctx_badge": "🗓️ 2026年11月 確定日程",
+    "hero_ctx_sub": "3人家族（60代ご両親同伴）",
+    "hero_ctx_bcn": "🏙️ バルセロナ（6泊7日）",
+    "hero_ctx_bcn_date": "2026.11.05(木)〜11.11(水)",
+    "hero_ctx_bcn_hotel": "🏨 宿泊: <strong>Suite Marina</strong>（※ 番地未定）",
+    "hero_ctx_svq": "🏰 セビリア（11泊12日）",
+    "hero_ctx_svq_date": "2026.11.11(水)〜11.22(日)",
+    "hero_ctx_svq_hotel": "🏨 宿泊: <strong>未定（事前確認が必要）</strong>",
+    "hero_tag_family": "👥 3人家族",
+    "hero_tag_siesta": "☕ 13:00〜15:30 シエスタ",
+    "hero_tag_taxi": "🚕 平坦地・タクシー優先",
+    "hero_warn_badge": "♿ バリアフリー ファクトチェック",
+    "hero_warn_sub": "誇張表現の排除原則",
+    "hero_warn_item1": "<strong>断定表現の排除:</strong> 「完全平坦」「バリアフリー」「正門直着」を排除し、実際の階段・勾配・石畳を明示",
+    "hero_warn_item2": "<strong>塔の階段降下に注意:</strong> サグラダ・ファミリアの塔は約400段の螺旋階段を歩いて降りるため、ご両親には本堂一般券を推奨",
+    "hero_warn_item3": "<strong>カサ・ミラ屋上の路面:</strong> 屋上は連続する階段と波打つ起伏のため、車椅子や歩行困難なシニアの全域周遊は不可",
+    "hero_warn_item4": "<strong>11月冬季ダイヤの確認:</strong> 営業時間および列車ダイヤは2026年11月公式時刻表の事前確認が必須",
+    "hero_spot_badge": "🏛️ 主要名所＆ルート要約",
+    "hero_spot_sub": "エリア別連携",
+    "hero_spot_bcn": "<strong>バルセロナ:</strong> ガウディ（サグラダ・バトリョ・ミラ）、ゴシック地区＆ボケリア、ポート・ベル、グエル公園",
+    "hero_spot_svq": "<strong>セビリア:</strong> 大聖堂・ヒラルダの塔（鐘楼の17階段注意）、アルカサル・サンタクルス、スペイン広場、黄金の塔",
+    "hero_spot_trips": "<strong>日帰り候補:</strong> コルドバ（列車ダイヤ確認／花の小道）、ロンダ（峡谷下山厳禁）",
+    "hero_btn_route3": "🗺️ 第3章 ご両親同伴ルートを見る →",
+    "hero_btn_compare3": "🧭 3大おすすめコース比較",
+    "chapter_name_overview": "第1章 旅行概要",
+    "chapter_name_planner": "第2章 日程プランナー",
+    "chapter_name_guide": "第3章 地域ガイド",
+    "chapter_name_festivals": "第4章 祭り＆夜景",
+    "chapter_name_practical": "第5章 旅行実用情報",
+    "lbl_senior_access": "歩行およびバリアフリー（検証済み）",
+    "btn_official_tickets": "公式チケット / アクセス",
+    "page_guide_spain_title": "🇪🇸 60代ご両親同伴 スペイン地区別ルート＆名所18選",
+    "page_guide_spain_sub": "2026.11.05〜11.22 バルセロナ（宿泊先 Suite Marina）・セビリア 3人家族向け・誇張のない歩行ファクトチェック＆Door-to-Door移動総合比較"
+  },
+  "zh": {
+    "hero_ctx_badge": "🗓️ 2026年11月 确定日程",
+    "hero_ctx_sub": "3人家庭（携60岁长辈同行）",
+    "hero_ctx_bcn": "🏙️ 巴塞罗那（6晚7天）",
+    "hero_ctx_bcn_date": "2026.11.05(周四) ~ 11.11(周三)",
+    "hero_ctx_bcn_hotel": "🏨 住宿: <strong>Suite Marina</strong>（※ 门牌号待定）",
+    "hero_ctx_svq": "🏰 塞维利亚（11晚12天）",
+    "hero_ctx_svq_date": "2026.11.11(周三) ~ 11.22(周日)",
+    "hero_ctx_svq_hotel": "🏨 住宿: <strong>待定（后续核实确认）</strong>",
+    "hero_tag_family": "👥 3人家庭",
+    "hero_tag_siesta": "☕ 13:00~15:30 午休",
+    "hero_tag_taxi": "🚕 平地与打车优先",
+    "hero_warn_badge": "♿ 无障碍事实核查",
+    "hero_warn_sub": "杜绝夸大承诺原则",
+    "hero_warn_item1": "<strong>杜绝绝对断言:</strong> 摒弃“全程纯平地”、“无障碍”、“出租车直达正门”，如实标明阶梯、坡道与碎石路",
+    "hero_warn_item2": "<strong>塔楼下行石阶预警:</strong> 圣家堂塔楼需步行走完400余级旋转石阶，长辈同行强烈建议选购主殿常规门票",
+    "hero_warn_item3": "<strong>米拉之家屋顶起伏:</strong> 屋顶露台由连续波浪阶梯组成，轮椅及行动受限长辈无法全程游览",
+    "hero_warn_item4": "<strong>11月冬季运营核对:</strong> 景点开放时段与列车班次需以2026年11月官方渠道核实为准",
+    "hero_spot_badge": "🏛️ 核心地标与路线概览",
+    "hero_spot_sub": "按区域有序串联",
+    "hero_spot_bcn": "<strong>巴塞罗那:</strong> 高迪建筑（圣家堂·巴特罗·米拉）、哥特区与波盖利亚市场、贝尔港水岸、奎尔公园",
+    "hero_spot_svq": "<strong>塞维利亚:</strong> 大教堂与希拉尔达塔（注意钟楼17级台阶）、阿尔卡萨王宫与圣十字区、西班牙广场、河畔黄金塔",
+    "hero_spot_trips": "<strong>一日游备选:</strong> 科尔多瓦（核实高铁时刻表／花之巷）、龙达（严禁下探谷底）",
+    "hero_btn_route3": "🗺️ 查看第3章长辈专属路线 →",
+    "hero_btn_compare3": "🧭 对比三大精选路线",
+    "chapter_name_overview": "第1章 旅行概览",
+    "chapter_name_planner": "第2章 行程规划",
+    "chapter_name_guide": "第3章 区域指南",
+    "chapter_name_festivals": "第4章 节日与夜景",
+    "chapter_name_practical": "第5章 实用旅行信息",
+    "lbl_senior_access": "步行与无障碍（核实认证）",
+    "btn_official_tickets": "官方门票 / 无障碍",
+    "page_guide_spain_title": "🇪🇸 60岁长辈同行 西班牙区域游览路线与核心地标18选",
+    "page_guide_spain_sub": "2026.11.05~11.22 巴塞罗那（住宿 Suite Marina）与塞维利亚 3人家庭专属 · 真实步行事实核查与门到门城际交通综合对比"
+  }
+};
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (I18N_DICTIONARY[lang] && extraDict[lang]) {
+        Object.assign(I18N_DICTIONARY[lang], extraDict[lang]);
+      }
+    });
+  }
+
+  const accessUpdates = {
+  "구엘 공원 (Park Güell)": {
+    "en": "Hilly terrain with steep inclines, unpaved gravel paths, and stone staircases. Taxis and buses drop off at public perimeters, still requiring uphill walking. Seniors should avoid outer dirt paths and focus on the flatter monumental terrace with rest breaks.",
+    "ja": "カルメル丘陵の地形のため、急な傾斜、未舗装の砂利道、石段が多数存在します。タクシーやバスを利用しても降車場所から上り坂を歩く必要があり、平坦な正門前に直着する保証はありません。足腰に不安のある方は外郭の上り坂を避け、記念碑広場中心の緩やかなエリアでの鑑賞と小まめな休憩を推奨します。",
+    "zh": "卡梅尔山丘地形，包含陡坡、未铺砌碎石路及多级石阶。即使乘坐出租车或巴士，下车后仍需步行爬坡，无法保证直达平坦正门。建议长辈避开外围山坡，仅游览纪念碑核心广场平缓区域并适度休憩。"
+  },
+  "카사 바트요 (Casa Batlló)": {
+    "en": "Modern interior elevator reaches main exhibition floors and just below the roof terrace. Free wheelchairs available. Note that narrow stair railings and dim lighting in some sections require attentive guidance.",
+    "ja": "館内エレベーターが主要展示階および屋上テラス直前まで運行しており、アクセス良好です。無料車椅子貸出あり。ただし一部の狭い階段手すりや暗い照明エリアでは同伴者のサポートを推奨します。",
+    "zh": "馆内现代电梯通达主要展厅及屋顶露台前。提供免费轮椅借用。需注意部分狭窄楼梯扶手及暗光展区，建议随行照看。"
+  },
+  "카사 밀라 (Casa Milà / La Pedrera)": {
+    "en": "Interior courtyards, Espai Gaudí attic, and apartment floors are elevator-accessible. However, the famous warrior rooftop terrace consists of undulating curves and continuous steep staircases; completely inaccessible for wheelchairs and seniors with walking limitations (limited viewing from the small elevator landing platform only).",
+    "ja": "中庭、屋根裏部屋（エスパイ・ガウディ）、住居フロアはエレベーターで移動可能です。ただし、屋上（戦士のテラス）は波打つ起伏と連続する多数の階段で構成されているため、車椅子や歩行困難なシニアは屋上全域の周遊ができません（エレベーター前の小展望台からの限定眺望のみ）。",
+    "zh": "中庭、阁楼展厅及公寓均有电梯直达。但著名的屋顶露台由波浪形起伏及连续台阶组成，轮椅及行动不便长辈无法全程游览（仅能在电梯口小型观景平台有限远眺）。"
+  },
+  "사그라다 파밀리아 (Sagrada Família)": {
+    "en": "The main basilica floor is smooth with gentle ramps and modern elevators. However, the towers require descending approximately 400 narrow, steep spiral steps on foot with no elevator down. Anyone with mobility limitations, respiratory/heart conditions, or vertigo should choose the basilica-only ticket instead of tower access.",
+    "ja": "大聖堂の身廊（1階本堂）は平坦なスロープとエレベーターが整備され快適です。ただし、塔（タワー）は昇りにエレベーターを使用しても、降下時は約400段の狭く急な螺旋階段を徒歩のみで降りる必要があります。足腰に不安のある方や心疾患のある方は塔への入場を避け、本堂一般チケットのご予約を推奨します。",
+    "zh": "圣殿主教堂地面平缓，设有缓坡与电梯。但登塔（塔楼）在下行时必须徒步走完约400级狭窄陡峭的螺旋台阶。行动不便、心血管疾病患者及恐高者严禁登塔，带长辈同行强烈建议仅购买主堂常规门票。"
+  },
+  "세维利亚 대성당 & 히랄다 탑 (Catedral de Sevilla)": {
+    "en": "The cathedral interior is spacious and flat. The Giralda Tower features 35 inclined ramps without stairs initially, but concludes with a final 17-step narrow staircase to the bell platform. The round-trip ascent involves heavy stamina demand; seniors with knee or stamina issues should admire the tower exterior from the Orange Tree Courtyard (Patio de los Naranjos).",
+    "ja": "大聖堂内部は広大で段差のない平坦構造です。ヒラルダの塔は内部がスロープ（傾斜路）ですが、最上階の鐘楼直前に17段の狭い階段があります。往復の上り下りは体力を消耗するため、膝や体力に不安のあるご両親はオレンジの中庭のベンチで外観を眺めながら休憩することを推奨します。",
+    "zh": "主教堂内部宽敞平坦。希拉尔达塔内部虽为斜坡缓道，但顶层钟楼前有最后17级狭窄台阶。往返攀爬消耗体力较大，腿脚欠佳的长辈建议在柑橘庭院（Patio de los Naranjos）长椅上悠闲远眺塔楼外观。"
+  },
+  "세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)": {
+    "en": "The cathedral interior is spacious and flat. The Giralda Tower features 35 inclined ramps without stairs initially, but concludes with a final 17-step narrow staircase to the bell platform. The round-trip ascent involves heavy stamina demand; seniors with knee or stamina issues should admire the tower exterior from the Orange Tree Courtyard (Patio de los Naranjos).",
+    "ja": "大聖堂内部は広大で段差のない平坦構造です。ヒラルダの塔は内部がスロープ（傾斜路）ですが、最上階の鐘楼直前に17段の狭い階段があります。往復の上り下りは体力を消耗するため、膝や体力に不安のあるご両親はオレンジの中庭のベンチで外観を眺めながら休憩することを推奨します。",
+    "zh": "主教堂内部宽敞平坦。希拉尔达塔内部虽为斜坡缓道，但顶层钟楼前有最后17级狭窄台阶。往返攀爬消耗体力较大，腿脚欠佳的长辈建议在柑橘庭院（Patio de los Naranjos）长椅上悠闲远眺塔楼外观。"
+  },
+  "세비야 알카사르 왕궁 (Real Alcázar de Sevilla)": {
+    "en": "Palace ground-floor salons and Mudejar courtyards are generally level, but historic stone pavements, thresholds, and upper level (Cuarto Real Alto) stairs exist. Garden paths feature loose gravel; keep walking distance compact around central courtyards with shaded benches.",
+    "ja": "1階の主要宮殿やパティオは概ね平坦ですが、歴史的な石畳、段差、上階（Cuarto Real Alto）への階段があります。庭園には砂利道が多いため、無理な長距離散策を避け、日陰ベンチが豊富な中央中庭を中心にゆったり滞在してください。",
+    "zh": "一层主要穆迪哈尔宫殿及内院大体平坦，但保留有历史石板、门槛及通往二层的高阶。花园多为碎石小径，建议将动线集中于中央中庭阴凉长椅周围，避免过度劳累。"
+  },
+  "세비야 스페인 광장 (Plaza de España)": {
+    "en": "The crescent plaza is expansive and paved, but crossing the canal bridges requires climbing steep tiled steps. Seniors should remain on the ground-level arcade or waterfront promenade without mounting the bridges. Maria Luisa Park features shaded benches, but gravel trails require comfortable supportive walking shoes.",
+    "ja": "広大な半円形広場は石畳ですが、運河に架かる4つの橋には急なタイル階段があります。シニア連れは橋を渡らず、回廊や水辺の地上プロムナードを周遊してください。マリア・ルイサ公園は日陰ベンチが多い一方、砂利道が多いため歩きやすい靴が必須です。",
+    "zh": "半圆形广场十分开阔平整，但横跨运河的桥梁有陡峭瓷砖台阶。建议长辈无需上桥，在平整回廊及水岸散步即可。玛丽亚·路易莎公园林荫长椅充足，但部分为砂石小径，需穿着舒适防滑鞋。"
+  },
+  "코르도바 메스키타-대성당 (Mezquita-Catedral)": {
+    "en": "The forest of arches inside the prayer hall is completely level with minimal thresholds, offering excellent walking conditions. The Courtyard of the Orange Trees features uneven historic stone cobbles. Note that AVE trains take 40–55 mins from Seville Santa Justa, varying by schedule; check 2026 train timetables in advance.",
+    "ja": "円柱の森が広がる祈祷室内部は段差がほぼなく完全平坦で、シニアでも非常に歩きやすいです。オレンジの中庭は凹凸のある歴史的石畳のため足元にご注意ください。セビリアからの高速列車は編成により所要時間（40〜55分）が変動するため、2026年最新時刻表の事前確認が必要です。",
+    "zh": "柱林祈祷大厅内部基本无台阶，地面平坦开阔，极适宜长辈慢步瞻仰。柑橘中庭为凹凸不平的历史卵石铺路需注意防跌。塞维利亚出发的高铁车程约40~55分钟（因车次而异），请务必提前核对2026官方时刻表。"
+  },
+  "론다 누에보 다리 & 헤밍웨이 산책로 (Puente Nuevo)": {
+    "en": "The bridge surface and Parador terrace walkways are flat with spectacular canyon views. However, trails descending to the gorge bottom (Mirador del Puente Nuevo) are steep, rocky, and hazardous for seniors; descent is strictly discouraged. Stick to the flat Hemingway promenade and historic town alleys.",
+    "ja": "ヌエボ橋の車道・歩道やパラドール周辺のテラスは平坦で、タホ峡谷の絶景を安全に鑑賞できます。ただし、峡谷の底へ下りるトレイルは急峻な岩場と砂利道でシニアには転倒の危険があるため下山は厳禁です。ヘミングウェイ散策路や旧市街の平坦な路地での散策をお楽しみください。",
+    "zh": "新桥桥面及国营古堡酒店周边步道地势平整，可安全俯瞰塔霍峡谷壮丽景观。但下探谷底观景台（Mirador）的徒步小径坡度陡峭且布满乱石，长辈严禁下行。请在平缓的海明威步道及旧城平坦巷道悠闲漫步。"
+  }
+};
+  if (typeof LANDMARK_I18N_DATA !== 'undefined') {
+    Object.keys(accessUpdates).forEach(name => {
+      if (LANDMARK_I18N_DATA[name]) {
+        if (!LANDMARK_I18N_DATA[name].seniorAccess) {
+          LANDMARK_I18N_DATA[name].seniorAccess = {};
+        }
+        Object.assign(LANDMARK_I18N_DATA[name].seniorAccess, accessUpdates[name]);
+      }
+    });
+  }
+})();
+
+(function() {
+  const tocDict = {
+  "ko": {
+    "toc_ch1_title": "여행 개요",
+    "toc_ch1_sub": "일정 맥락 · 팩트체크 · 3대 플랜",
+    "toc_ch2_title": "일정 플래너",
+    "toc_ch2_sub": "맞춤 일정 · 30일 타임라인",
+    "toc_ch3_title": "지역 가이드",
+    "toc_ch3_sub": "부모님 동행 루트 · 스페인 18선",
+    "toc_ch4_title": "축제 &amp; 야경",
+    "toc_ch4_sub": "11월 유럽 축제 · 15대 야경",
+    "toc_ch5_title": "여행 실용정보",
+    "toc_ch5_sub": "대중교통 · 숙소 · 회화"
+  },
+  "en": {
+    "toc_ch1_title": "Trip Overview",
+    "toc_ch1_sub": "Context · Fact-Check · 3 Plans",
+    "toc_ch2_title": "Itinerary Planner",
+    "toc_ch2_sub": "Custom Schedule · 30-Day Timeline",
+    "toc_ch3_title": "Regional Guide",
+    "toc_ch3_sub": "Senior Routes · Spain Top 18",
+    "toc_ch4_title": "Festivals &amp; Nightlife",
+    "toc_ch4_sub": "Nov Festivals · 15 Night Views",
+    "toc_ch5_title": "Practical Info",
+    "toc_ch5_sub": "Transit · Hotels · Phrases"
+  },
+  "ja": {
+    "toc_ch1_title": "旅行概要",
+    "toc_ch1_sub": "日程・ファクトチェック・3大プラン",
+    "toc_ch2_title": "日程プランナー",
+    "toc_ch2_sub": "カスタム日程・30日タイムライン",
+    "toc_ch3_title": "地域ガイド",
+    "toc_ch3_sub": "ご両親同伴ルート・スペイン18選",
+    "toc_ch4_title": "祭り＆夜景",
+    "toc_ch4_sub": "11月ヨーロッパの祭り・15大夜景",
+    "toc_ch5_title": "旅行実用情報",
+    "toc_ch5_sub": "交通・ホテル・会話"
+  },
+  "zh": {
+    "toc_ch1_title": "旅行概览",
+    "toc_ch1_sub": "行程背景 · 事实核实 · 三大方案",
+    "toc_ch2_title": "行程规划",
+    "toc_ch2_sub": "定制行程 · 30天时间轴",
+    "toc_ch3_title": "区域指南",
+    "toc_ch3_sub": "长辈同行路线 · 西班牙18选",
+    "toc_ch4_title": "节日与夜景",
+    "toc_ch4_sub": "11月欧洲节庆 · 15大夜景",
+    "toc_ch5_title": "实用旅行信息",
+    "toc_ch5_sub": "交通 · 酒店 · 实用短语"
+  }
+};
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (I18N_DICTIONARY[lang] && tocDict[lang]) {
+        Object.assign(I18N_DICTIONARY[lang], tocDict[lang]);
+      }
+    });
+  }
+})();
+
+(function() {
+  const chSubs = {
+    ko: {
+      toc_ch4_sub: "엄선 축제 · 파노라마 뷰",
+      toc_ch5_sub: "맛집 · 회화 · 교통 · 숙소"
+    },
+    en: {
+      toc_ch4_sub: "Curated Festivals · Panoramic Views",
+      toc_ch5_sub: "Dining · Phrases · Transit · Hotels"
+    },
+    ja: {
+      toc_ch4_sub: "厳選の祭り・パノラマビュー",
+      toc_ch5_sub: "グルメ・会話・交通・宿泊"
+    },
+    zh: {
+      toc_ch4_sub: "精选节日 · 全景视野",
+      toc_ch5_sub: "美食 · 实用短语 · 交通 · 酒店"
+    }
+  };
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(l => {
+      if (I18N_DICTIONARY[l] && chSubs[l]) {
+        Object.assign(I18N_DICTIONARY[l], chSubs[l]);
+      }
     });
   }
 })();

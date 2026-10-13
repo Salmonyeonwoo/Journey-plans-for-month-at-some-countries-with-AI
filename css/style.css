@@ -6215,3 +6215,908 @@ html, body {
 .pronounce-tag:empty {
   display: none !important;
 }
+
+
+/* ==========================================================================
+   🧭 부모님 동행 루트, 압축 퍼스트 스크린 & 모바일 목차 고도화 스타일
+   ========================================================================== */
+
+/* 1. 압축 퍼스트 스크린 (Compact Hero Banner) */
+.compact-hero-banner {
+  padding: 18px 0 24px !important;
+  background: linear-gradient(180deg, #f7f3ec 0%, #faf8f5 100%) !important;
+  border-bottom: 1px solid var(--theme-sand-border, #e2dacd) !important;
+}
+
+.compact-hero-banner .hero-header-row {
+  margin-bottom: 14px;
+}
+
+.compact-hero-banner .hero-eyebrow {
+  font-size: 11.5px !important;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--theme-green-accent, #2d6a4f);
+  margin-bottom: 4px !important;
+}
+
+.compact-hero-banner .hero-title {
+  font-size: clamp(22px, 2.6vw, 28px) !important;
+  line-height: 1.25 !important;
+  margin: 0 0 8px !important;
+  color: var(--primary, #182a29);
+  letter-spacing: -0.02em;
+}
+
+.compact-hero-banner .hero-lead {
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #4b5563;
+  margin: 0 !important;
+  max-width: 900px;
+}
+
+/* 3대 핵심 대시보드 그리드 */
+.hero-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.hero-card {
+  background: #ffffff;
+  border: 1px solid var(--theme-sand-border, #e2dacd);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 16px rgba(24, 42, 41, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(24, 42, 41, 0.08);
+}
+
+.hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1ece4;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.h-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: -0.2px;
+}
+
+.h-badge-date {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.h-badge-warn {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.h-badge-spot {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.h-sub {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.hero-card-body {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #374151;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.context-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed #f3eee7;
+}
+
+.context-detail-item:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.c-city {
+  font-weight: 800;
+  color: var(--primary, #182a29);
+  font-size: 13px;
+}
+
+.c-date {
+  color: #0369a1;
+  font-weight: 600;
+  font-size: 11.5px;
+}
+
+.c-hotel {
+  color: #4b5563;
+  font-size: 11.5px;
+}
+
+.context-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+
+.c-tag {
+  background: #f4efe6;
+  color: #4a5568;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.fact-check-list {
+  margin: 0;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.fact-check-list li {
+  line-height: 1.45;
+}
+
+.spot-summary-block {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.spot-summary-block strong {
+  color: var(--primary, #182a29);
+}
+
+.hero-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.btn-hero-action {
+  flex: 1;
+  min-height: 40px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-hero-action.primary {
+  background: var(--accent, #c25b3a);
+  color: #ffffff;
+}
+
+.btn-hero-action.primary:hover {
+  background: #a94b2e;
+}
+
+.btn-hero-action.secondary {
+  background: #ffffff;
+  color: var(--primary, #182a29);
+  border-color: #d1c7b7;
+}
+
+.btn-hero-action.secondary:hover {
+  background: #f7f3ec;
+}
+
+/* 2. 모바일 접이식 목차 토글 바 (Mobile Collapsible TOC Bar) */
+.mobile-toc-bar {
+  display: none;
+}
+
+@media (max-width: 1079px) {
+  .mobile-toc-bar {
+    display: block;
+    position: sticky;
+    top: 56px;
+    z-index: 850;
+    background: #ffffff;
+    border-bottom: 1px solid var(--theme-sand-border, #e2dacd);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .mobile-toc-toggle-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary, #182a29);
+    cursor: pointer;
+  }
+
+  .toc-badge-icon {
+    margin-right: 6px;
+    font-size: 15px;
+  }
+
+  .toc-title-text {
+    flex: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .toc-arrow {
+    font-size: 11px;
+    color: #6b7280;
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-toc-dropdown {
+    background: #faf8f5;
+    border-top: 1px solid #eae2d5;
+    padding: 6px 10px 10px;
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-toc-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobile-toc-link-item {
+    min-height: 44px;
+    padding: 8px 12px;
+    background: #ffffff;
+    border: 1px solid #e7ded0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .mobile-toc-link-item.active {
+    background: #eef5ee;
+    border-color: #8bb18b;
+    box-shadow: 0 1px 4px rgba(45, 106, 79, 0.12);
+  }
+
+  .m-num {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--accent, #c25b3a);
+    background: #fdf2ee;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .m-info strong {
+    display: block;
+    font-size: 13px;
+    color: var(--primary, #182a29);
+  }
+
+  .m-info span {
+    display: block;
+    font-size: 11px;
+    color: #6b7280;
+  }
+}
+
+/* 3. 데스크톱 목차 사이드바 압축 및 여백 최적화 */
+@media (min-width: 1080px) {
+  .guidebook-layout {
+    grid-template-columns: 250px minmax(0, 1fr) !important;
+    gap: 22px !important;
+    padding: 16px 20px 40px !important;
+  }
+
+  .guidebook-sidebar {
+    padding: 14px 12px !important;
+    top: 76px !important;
+    height: calc(100vh - 96px) !important;
+    border-radius: 16px !important;
+  }
+
+  .sidebar-header {
+    padding: 2px 4px 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .sidebar-title {
+    font-size: 15px !important;
+    margin: 4px 0 2px !important;
+  }
+
+  .sidebar-nav-item {
+    min-height: 44px;
+    padding: 7px 10px !important;
+    border-radius: 9px !important;
+  }
+
+  .sidebar-nav-item .chapter-name {
+    font-size: 13px !important;
+  }
+
+  .sidebar-nav-item .chapter-desc {
+    font-size: 10.5px !important;
+  }
+}
+
+/* 4. 부모님 동행 구역별 루트 컴포넌트 */
+.verified-principle-banner {
+  background: #fef9ee;
+  border: 1px solid #f2deaf;
+  border-left: 4px solid #b45309;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.05);
+}
+
+.verified-principle-banner .vp-icon {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.verified-principle-banner .vp-content {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #78350f;
+}
+
+.verified-principle-banner .vp-content strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #92400e;
+}
+
+/* 구역별 퀵 점프 칩 바 */
+.district-nav-bar {
+  background: #ffffff;
+  border: 1px solid var(--theme-sand-border, #e2dacd);
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.d-nav-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--primary, #182a29);
+  white-space: nowrap;
+}
+
+.d-nav-chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+}
+
+.d-chip {
+  min-height: 34px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #374151;
+  background: #f7f3ec;
+  border: 1px solid #e2dacd;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+
+.d-chip:hover {
+  background: var(--accent, #c25b3a);
+  color: #ffffff;
+  border-color: var(--accent, #c25b3a);
+}
+
+.d-chip.highlight {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+
+.d-chip.highlight:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.d-chip.candidate {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.d-chip.candidate:hover {
+  background: #d97706;
+  color: #ffffff;
+}
+
+.d-chip.all-cards {
+  background: #eef5ee;
+  color: #2d6a4f;
+  border-color: #c0d8c0;
+}
+
+/* 구역별 루트 카드 컨테이너 */
+.district-routes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.district-route-card {
+  background: #ffffff;
+  border: 1px solid var(--theme-sand-border, #e2dacd);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 16px rgba(24, 42, 41, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.district-route-card:hover {
+  box-shadow: 0 8px 24px rgba(24, 42, 41, 0.09);
+}
+
+.district-route-card.candidate-card {
+  border: 2px dashed #d1c7b7;
+  background: #faf7f2;
+}
+
+.district-route-card.transit-comparison-card {
+  grid-column: 1 / -1;
+  background: #ffffff;
+  border: 2px solid #8bb18b;
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.08);
+}
+
+.district-card-header {
+  border-bottom: 1px solid #f1ece4;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.d-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.d-badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  letter-spacing: -0.2px;
+}
+
+.bcn-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.svq-badge {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.transit-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.candidate-badge {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.d-time-badge {
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.district-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--primary, #182a29);
+  margin: 2px 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.district-desc {
+  font-size: 12.5px;
+  color: #6b7280;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.district-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #374151;
+}
+
+.d-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 7px;
+  border-bottom: 1px dashed #f2ece3;
+}
+
+.d-row:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.d-row-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--primary, #182a29);
+}
+
+.d-row-text {
+  font-size: 12.5px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.d-row.warning {
+  background: #fffdfa;
+  border-left: 3px solid #d97706;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-bottom: none;
+}
+
+.d-row.warning .d-row-label {
+  color: #b45309;
+}
+
+.d-row.warning .d-row-text {
+  color: #92400e;
+}
+
+.d-landmarks-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.d-lm-pill {
+  min-height: 32px;
+  padding: 3px 9px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--accent, #c25b3a);
+  border: 1px solid var(--accent, #c25b3a);
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.15s ease;
+}
+
+.d-lm-pill:hover {
+  background: #a94b2e;
+  transform: translateY(-1px);
+}
+
+.d-lm-tag {
+  min-height: 32px;
+  padding: 3px 9px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #374151;
+  background: #f3eee6;
+  border: 1px solid #e5dcce;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.d-row.sources a {
+  color: #0369a1;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.verify-pill {
+  display: inline-block;
+  font-size: 10.5px;
+  background: #eef5ee;
+  color: #2d6a4f;
+  border: 1px solid #c0d8c0;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+/* 5. 바르셀로나-세비야 Door-to-Door 종합 이동 비교 테이블 */
+.transit-unconfirmed-notice {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #92400e;
+  margin-bottom: 12px;
+}
+
+.transit-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 10px;
+}
+
+.transit-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  min-width: 580px;
+}
+
+.transit-compare-table th,
+.transit-compare-table td {
+  padding: 10px 12px;
+  border: 1px solid #e7ded0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.transit-compare-table thead th {
+  background: #f7f3ec;
+  color: var(--primary, #182a29);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.transit-compare-table .col-train {
+  background: #eef7ee;
+  color: #1e3a2f;
+}
+
+.transit-compare-table .col-flight {
+  background: #f0f7fb;
+  color: #0c4a6e;
+}
+
+.merit-text {
+  color: #15803d;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.demerit-text {
+  color: #b91c1c;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.rec-cell {
+  background: #f4faf4;
+}
+
+.rec-badge {
+  color: #15803d;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* 6. 카드 내 검증된 접근성 박스 */
+.senior-access-block {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #0284c7;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 6px 0 10px;
+}
+
+.senior-access-block .access-head {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  color: #0369a1;
+  margin-bottom: 3px;
+}
+
+.senior-access-block .access-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #334155;
+  margin: 0;
+}
+
+.verified-source-tag {
+  margin-top: 5px;
+  font-size: 10.5px;
+  color: #166534;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* 7. 카드 하이라이트 펄스 애니메이션 */
+@keyframes pulseCardHighlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(194, 91, 58, 0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(194, 91, 58, 0.3);
+    transform: scale(1.02);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(194, 91, 58, 0);
+    transform: scale(1);
+  }
+}
+
+.highlight-card-pulse {
+  animation: pulseCardHighlight 2.5s ease-in-out !important;
+  border-color: var(--accent, #c25b3a) !important;
+  scroll-margin-top: 90px;
+}
+
+/* 8. 모바일 하단 내비게이션 및 플로팅 도구 충돌 해결 */
+@media (max-width: 1079px) {
+  /* 중복 바텀 내비 완전 제거 보장 */
+  .bottom-mobile-nav {
+    display: none !important;
+  }
+
+  /* 모바일 화면에서 플로팅 북 바 숨김 (본문 내 페이지 넘김 및 mobileBottomNav 사용) */
+  .floating-book-bar {
+    display: none !important;
+  }
+
+  /* 모바일 하단 바 높이 및 z-index */
+  .mobile-bottom-nav {
+    height: 56px !important;
+    z-index: 920 !important;
+  }
+
+  /* 플로팅 탑버튼과 AI 챗봇 버튼 위치 조정 (모바일 하단 바와 겹치지 않도록 위로 배치) */
+  #btnBackToTop {
+    bottom: calc(66px + env(safe-area-inset-bottom, 8px)) !important;
+    right: 14px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    z-index: 930 !important;
+  }
+
+  #chatWidgetMount .chat-floating-btn,
+  .chat-floating-btn {
+    bottom: calc(66px + env(safe-area-inset-bottom, 8px)) !important;
+    right: 68px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    z-index: 930 !important;
+  }
+
+  /* 1열 카드 레이아웃 강제 */
+  .district-routes-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 본문 하단 여백 확보 (하단 버튼 가림 방지) */
+  .guidebook-layout {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 16px)) !important;
+  }
+}
+
+/* 데스크톱 카드 그리드 2~3열 정렬 */
+@media (min-width: 1080px) {
+  .district-routes-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)) !important;
+    gap: 22px !important;
+  }
+}
+
+/* 포커스 아웃라인 키보드 탐색 보장 */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent, #c25b3a) !important;
+  outline-offset: 2px !important;
+}
+
+/* 가로 넘침 방지 */
+body, html {
+  overflow-x: hidden !important;
+}

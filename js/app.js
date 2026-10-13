@@ -3168,6 +3168,9 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
     const card = document.createElement('div');
     card.className = 'photo-card';
 
+    const slug = item.slug || (item.name ? item.name.toLowerCase().replace(/[^a-z0-9가-힣]+/g, '-').replace(/^-|-$/g, '') : '');
+    card.id = 'landmark-card-' + slug;
+
     const info = LANDMARK_I18N_DATA[item.name] || {};
     const localizedName = (info.displayName && info.displayName[currentLang]) || item.name;
     const localizedBadge = (info.badge && info.badge[currentLang]) || item.city;
@@ -3185,10 +3188,13 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
         <div class="photo-body">
           <div class="photo-title">${cleanHangul(localizedName, currentLang)}</div>
           <div class="photo-desc">${cleanHangul(localizedHighlight, currentLang)}</div>
-          <div class="dining-features">
-            <span class="dining-feature-pill" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd">
-              ♿ ${cleanHangul(localizedSeniorAccess, currentLang)}
-            </span>
+          <div class="senior-access-block">
+            <div class="access-head">
+              <span class="access-icon">♿</span>
+              <strong>${dict['lbl_senior_access'] || '보행 및 접근성 (팩트 검증)'}</strong>
+            </div>
+            <p class="access-desc">${cleanHangul(localizedSeniorAccess, currentLang)}</p>
+            ${item.verifiedDate ? `<div class="verified-source-tag"><span class="verify-check">✓</span> <span>${item.verifiedDate}</span></div>` : ''}
           </div>
           <div class="dining-meta-list">
             <div class="dining-meta-item">
@@ -3207,8 +3213,8 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
         </div>
       </div>
       <div class="dining-footer" style="display:flex;gap:8px;">
-        <a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn" style="flex:1;text-align:center;background:var(--accent);color:white;border-color:var(--accent)">
-          🎟 ${dict['btn_official_tickets'] || (currentLang === 'en' ? 'Official Tickets' : (currentLang === 'ja' ? '公式チケット予約' : (currentLang === 'zh' ? '官方门票预订' : '공식 예매처')))}
+        <a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn" style="flex:1;text-align:center;background:var(--accent);color:white;border-color:var(--accent)" title="공식 티켓 및 최신 시간표 확인">
+          🎟 ${dict['btn_official_tickets'] || (currentLang === 'en' ? 'Official Tickets / Access' : (currentLang === 'ja' ? '公式チケット / アクセス' : (currentLang === 'zh' ? '官方门票 / 无障碍' : '공식 예매처 / 접근성')))}
         </a>
         <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery || item.name)}" target="_blank" rel="noopener noreferrer" class="map-link-btn" style="flex:1;text-align:center;">
           📍 ${dict['btn_map'] || 'Google Map'}
@@ -3891,6 +3897,32 @@ function switchLanguage(lang, btn) {
   applyPlanReconfiguration(false);
   renderGlobalDining();
   renderGlobalLandmarks();
+  if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(lang);
+  
+  // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
+  const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
+  const pageIdx = (typeof window !== "undefined" && window.currentBookPage && window.currentBookPage[actChap]) || 0;
+  if (typeof goToBookPage === 'function') {
+    goToBookPage(actChap, pageIdx, false);
+  }
+  const curDict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
+  const curChapNames = {
+    'chapter-overview': curDict['chapter_name_overview'] || (lang === 'en' ? 'Ch. 1 Trip Overview' : (lang === 'ja' ? '第1章 旅行概要' : (lang === 'zh' ? '第1章 旅行概览' : '01. 여행 개요'))),
+    'chapter-planner': curDict['chapter_name_planner'] || (lang === 'en' ? 'Ch. 2 Itinerary Planner' : (lang === 'ja' ? '第2章 日程プランナー' : (lang === 'zh' ? '第2章 行程规划' : '02. 일정 플래너'))),
+    'chapter-guide': curDict['chapter_name_guide'] || (lang === 'en' ? 'Ch. 3 Regional Guide' : (lang === 'ja' ? '第3章 地域ガイド' : (lang === 'zh' ? '第3章 区域指南' : '03. 지역 가이드'))),
+    'chapter-festivals': curDict['chapter_name_festivals'] || (lang === 'en' ? 'Ch. 4 Festivals & Nightlife' : (lang === 'ja' ? '第4章 祭り＆夜景' : (lang === 'zh' ? '第4章 节日与夜景' : '04. 축제 & 야경'))),
+    'chapter-practical': curDict['chapter_name_practical'] || (lang === 'en' ? 'Ch. 5 Practical Info' : (lang === 'ja' ? '第5章 旅行実用情報' : (lang === 'zh' ? '第5章 实用旅行信息' : '05. 여행 실용정보')))
+  };
+  const tocTitleEl = document.getElementById('mobileTocTitleText');
+  if (tocTitleEl) {
+    const prefix = (lang === 'en' ? 'Guidebook TOC: ' : (lang === 'ja' ? 'ガイドブック目次: ' : (lang === 'zh' ? '指南目录: ' : '가이드북 목차: ')));
+    tocTitleEl.textContent = prefix + (curChapNames[actChap] || '');
+  }
+  const floatBadgeEl = document.getElementById('floatBookBadge');
+  if (floatBadgeEl) {
+    const maxP = (typeof CHAPTER_PAGE_COUNTS !== 'undefined' && CHAPTER_PAGE_COUNTS[actChap]) || 3;
+    floatBadgeEl.textContent = '📖 ' + (curChapNames[actChap] || '') + ' · P. ' + (pageIdx + 1) + ' / ' + maxP;
+  }
   renderLocalPhrases();
   renderTransitGuide();
   renderHotelFilterBar();
@@ -3950,6 +3982,8 @@ function switchLanguage(lang, btn) {
   if (btnChat) { btnChat.title = vt.chat; btnChat.setAttribute('aria-label', vt.chat); }
   if (btnSend) { btnSend.title = vt.send; btnSend.setAttribute('aria-label', vt.send); }
 }
+
+if (typeof window !== 'undefined') { window.switchLanguage = switchLanguage; }
 
 function playVoice(text, locale) {
   if ('speechSynthesis' in window) {
@@ -4050,6 +4084,7 @@ window.addEventListener('DOMContentLoaded', () => {
   applyPlanReconfiguration(false);
   renderGlobalDining();
   renderGlobalLandmarks();
+  if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(currentLang);
   renderLocalPhrases();
   renderTransitGuide();
   renderHotelFilterBar();
@@ -6558,6 +6593,25 @@ function switchGuidebookChapter(chapterId, shouldScroll = true) {
     btn.classList.toggle('active', isTarget);
   });
 
+  // 3-B. 모바일 접이식 목차 토글 바 상태 및 라벨 동기화
+  document.querySelectorAll('#mobileTocDropdown .mobile-toc-link-item').forEach(item => {
+    const isTarget = item.getAttribute('data-chapter') === chapterId;
+    item.classList.toggle('active', isTarget);
+  });
+  const tocLabelEl = document.getElementById('mobileTocTitleText');
+  if (tocLabelEl) {
+    const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
+    const chapterNamesMap = {
+      'chapter-overview': dict['chapter_name_overview'] || '제1장 여행 개요',
+      'chapter-planner': dict['chapter_name_planner'] || '제2장 일정 플래너',
+      'chapter-guide': dict['chapter_name_guide'] || '제3장 지역 가이드',
+      'chapter-festivals': dict['chapter_name_festivals'] || '제4장 축제 & 야경',
+      'chapter-practical': dict['chapter_name_practical'] || '제5장 여행 실용정보'
+    };
+    const prefix = (currentLang === 'en' ? 'Guidebook TOC: ' : (currentLang === 'ja' ? 'ガイドブック目次: ' : (currentLang === 'zh' ? '指南目录: ' : '가이드북 목차: ')));
+    tocLabelEl.textContent = prefix + (chapterNamesMap[chapterId] || '');
+  }
+
   // 4. 상단 헤더 내비게이션 활성 상태 동기화
   document.querySelectorAll('#globalNav .nav-link').forEach(link => {
     const isTarget = link.getAttribute('data-chapter') === chapterId;
@@ -6746,12 +6800,17 @@ function goToBookPage(chapterId, pageIndex, shouldScroll = true) {
     // 4. 하단 플로팅 북 리더 뱃지 갱신
     const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
     const chapNames = {
-      'chapter-overview': dict['chapter_name_overview'] || '01. 여행 개요',
-      'chapter-planner': dict['chapter_name_planner'] || '02. 일정 플래너',
-      'chapter-guide': dict['chapter_name_guide'] || '03. 지역 가이드',
-      'chapter-festivals': dict['chapter_name_festivals'] || '04. 축제 & 야경',
-      'chapter-practical': dict['chapter_name_practical'] || '05. 여행 실용정보'
+      'chapter-overview': dict['chapter_name_overview'] || (currentLang === 'en' ? 'Ch. 1 Trip Overview' : (currentLang === 'ja' ? '第1章 旅行概要' : (currentLang === 'zh' ? '第1章 旅行概览' : '01. 여행 개요'))),
+      'chapter-planner': dict['chapter_name_planner'] || (currentLang === 'en' ? 'Ch. 2 Itinerary Planner' : (currentLang === 'ja' ? '第2章 日程プランナー' : (currentLang === 'zh' ? '第2章 行程规划' : '02. 일정 플래너'))),
+      'chapter-guide': dict['chapter_name_guide'] || (currentLang === 'en' ? 'Ch. 3 Regional Guide' : (currentLang === 'ja' ? '第3章 地域ガイド' : (currentLang === 'zh' ? '第3章 区域指南' : '03. 지역 가이드'))),
+      'chapter-festivals': dict['chapter_name_festivals'] || (currentLang === 'en' ? 'Ch. 4 Festivals & Nightlife' : (currentLang === 'ja' ? '第4章 祭り＆夜景' : (currentLang === 'zh' ? '第4章 节日与夜景' : '04. 축제 & 야경'))),
+      'chapter-practical': dict['chapter_name_practical'] || (currentLang === 'en' ? 'Ch. 5 Practical Info' : (currentLang === 'ja' ? '第5章 旅行実用情報' : (currentLang === 'zh' ? '第5章 实用旅行信息' : '05. 여행 실용정보')))
     };
+    const tocLabelEl = document.getElementById('mobileTocTitleText');
+    if (tocLabelEl) {
+      const prefix = (currentLang === 'en' ? 'Guidebook TOC: ' : (currentLang === 'ja' ? 'ガイドブック目次: ' : (currentLang === 'zh' ? '指南目录: ' : '가이드북 목차: ')));
+      tocLabelEl.textContent = prefix + (chapNames[chapterId] || '');
+    }
     const floatEl = document.getElementById('floatBookBadge');
     if (floatEl) {
       const shortName = chapNames[chapterId] || '';
@@ -6925,3 +6984,229 @@ function testWaterSqueeze(type) {
   }
 }
 window.testWaterSqueeze = testWaterSqueeze;
+
+
+// ==========================================================================
+// 🧭 부모님 동행 루트 & 명소 카드 연계 및 모바일 목차 내비게이션 헬퍼
+// ==========================================================================
+function scrollToLandmarkCard(cardId) {
+  if (window.currentActiveChapter !== 'chapter-guide') {
+    switchGuidebookChapter('chapter-guide', false);
+  }
+  goToBookPage('chapter-guide', 0, false);
+  
+  setTimeout(() => {
+    const el = document.getElementById(cardId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('highlight-card-pulse');
+      setTimeout(() => el.classList.remove('highlight-card-pulse'), 3000);
+    }
+  }, 150);
+}
+window.scrollToLandmarkCard = scrollToLandmarkCard;
+
+function scrollToDistrict(districtId) {
+  if (window.currentActiveChapter !== 'chapter-guide') {
+    switchGuidebookChapter('chapter-guide', false);
+  }
+  goToBookPage('chapter-guide', 0, false);
+
+  setTimeout(() => {
+    const el = document.getElementById(districtId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.add('highlight-card-pulse');
+      setTimeout(() => el.classList.remove('highlight-card-pulse'), 2500);
+    }
+  }, 150);
+}
+window.scrollToDistrict = scrollToDistrict;
+
+// ==========================================================================
+// 🇪🇸 60대 부모님 동행 스페인 구역별 루트 & 이동 비교 동적 다국어 렌더러
+// ==========================================================================
+function renderSeniorDistrictRoutes(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
+  const allData = (typeof SENIOR_DISTRICTS_I18N !== 'undefined' ? SENIOR_DISTRICTS_I18N : (typeof window !== 'undefined' ? window.SENIOR_DISTRICTS_I18N : null));
+  if (!allData) return;
+  const data = allData[lang] || allData['ko'];
+  if (!data) return;
+
+  // 1. Fact-checking principle banner
+  const bannerEl = document.getElementById('verifiedPrincipleBanner');
+  if (bannerEl && data.banner) {
+    bannerEl.innerHTML = `
+      <div class="vp-icon">⚠️</div>
+      <div class="vp-content">
+        <strong>${data.banner.title}</strong>
+        <span>${data.banner.text}</span>
+      </div>
+    `;
+  }
+
+  // 2. District Nav Bar
+  const navEl = document.getElementById('districtNavBar');
+  if (navEl && data.nav) {
+    navEl.innerHTML = `
+      <span class="d-nav-label">${data.nav.label}</span>
+      <div class="d-nav-chips">
+        ${(data.nav.chips || []).map(c => `
+          <button type="button" class="d-chip ${c.class || ''}" onclick="${c.id === 'landmarksCollectionHead' ? "document.getElementById('landmarksCollectionHead').scrollIntoView({behavior:'smooth'})" : "scrollToDistrict('" + c.id + "')"}">${c.text}</button>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  // 3. District Routes Container
+  const containerEl = document.getElementById('districtRoutesContainer');
+  if (containerEl && data.districts) {
+    const lbl = data.labels || {};
+    let html = '';
+
+    // First 4 Barcelona districts
+    data.districts.slice(0, 4).forEach(d => {
+      html += renderSingleDistrictCardHtml(d, lbl);
+    });
+
+    // Transit Table Card
+    if (data.transitTable) {
+      html += renderTransitTableCardHtml(data.transitTable, lbl);
+    }
+
+    // Remaining 4 Seville districts & 2 Candidate day trips
+    data.districts.slice(4).forEach(d => {
+      html += renderSingleDistrictCardHtml(d, lbl);
+    });
+
+    containerEl.innerHTML = html;
+  }
+
+  // 4. Landmarks Collection Head
+  const headEl = document.getElementById('landmarksCollectionHead');
+  if (headEl && data.collectionHead) {
+    headEl.innerHTML = `
+      <div class="kicker">${data.collectionHead.kicker}</div>
+      <h3 style="font-size:22px;color:var(--primary);margin:4px 0 8px;">${data.collectionHead.title}</h3>
+      <p style="font-size:14px;color:#555;margin:0 0 20px;">${data.collectionHead.desc}</p>
+    `;
+  }
+}
+window.renderSeniorDistrictRoutes = renderSeniorDistrictRoutes;
+
+function renderSingleDistrictCardHtml(d, lbl) {
+  return `
+    <article class="district-route-card" id="${d.id}">
+      <div class="district-card-header">
+        <div class="d-badge-row">
+          <span class="d-badge ${d.badgeClass || ''}">${d.badge}</span>
+          <span class="d-time-badge">${d.timing}</span>
+        </div>
+        <h3 class="district-title">${d.title}</h3>
+        <p class="district-desc">${d.desc}</p>
+      </div>
+      <div class="district-card-body">
+        <div class="d-row">
+          <span class="d-row-label">🏛️ ${lbl.keySpots || '핵심 명소:'}</span>
+          <div class="d-landmarks-pills">
+            ${(d.landmarks || []).map(lm => `
+              <button type="button" class="d-lm-pill" onclick="scrollToLandmarkCard('${lm.cardId}')">${lm.name}</button>
+            `).join('')}
+          </div>
+        </div>
+        <div class="d-row">
+          <span class="d-row-label">🚶 ${lbl.recSequence || '추천 순서:'}</span>
+          <span class="d-row-text">${d.sequence}</span>
+        </div>
+        <div class="d-row">
+          <span class="d-row-label">🚕 ${lbl.transitTip || '구간 이동 팁:'}</span>
+          <span class="d-row-text">${d.transit}</span>
+        </div>
+        <div class="d-row">
+          <span class="d-row-label">👟 ${lbl.walkingEst || '예상 보행 부담:'}</span>
+          <span class="d-row-text">${d.walking}</span>
+        </div>
+        <div class="d-row warning">
+          <span class="d-row-label">⚠️ ${lbl.walkingWarn || '계단·경사·노면:'}</span>
+          <div class="d-row-text">${d.warning}</div>
+        </div>
+        <div class="d-row">
+          <span class="d-row-label">🚻 ${lbl.restStops || '화장실·쉼터:'}</span>
+          <span class="d-row-text">${d.rest}</span>
+        </div>
+        <div class="d-row">
+          <span class="d-row-label">🛑 ${lbl.skipAlt || '피로 시 생략/대안:'}</span>
+          <span class="d-row-text">${d.skip}</span>
+        </div>
+        <div class="district-card-footer">
+          <span class="d-source-label">✓ ${lbl.officialSource || '공식 검증 출처:'}</span>
+          <div class="d-source-links">
+            ${(d.sources || []).map(s => `
+              <a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name} ↗</a>
+            `).join('')}
+            <span class="d-verify-date">${d.verifyNote || ''}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderTransitTableCardHtml(t, lbl) {
+  return `
+    <article class="district-route-card transit-comparison-card" id="${t.id || 'district-transit-bcn-svq'}">
+      <div class="district-card-header">
+        <div class="d-badge-row">
+          <span class="d-badge transit-badge">${t.badge}</span>
+          <span class="d-time-badge">${t.timing}</span>
+        </div>
+        <h3 class="district-title">${t.title}</h3>
+        <p class="district-desc">${t.desc}</p>
+      </div>
+      <div class="district-card-body">
+        <div class="transit-unconfirmed-notice">
+          ${t.unconfirmedNotice}
+        </div>
+        <div class="transit-table-wrapper">
+          <table class="transit-compare-table">
+            <thead>
+              <tr>
+                <th>${t.headers[0]}</th>
+                <th class="col-train">${t.headers[1]}</th>
+                <th class="col-flight">${t.headers[2]}</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${t.rows.map(r => `
+                <tr>
+                  <td><strong>${r.label}</strong></td>
+                  <td class="${r.isRec ? 'rec-cell' : ''}">${r.train}</td>
+                  <td>${r.flight}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+        <div class="district-card-footer" style="margin-top:12px;">
+          <span class="d-source-label">✓ ${lbl.officialSource || '공식 검증 출처:'}</span>
+          <div class="d-source-links">
+            <a href="${t.source.url}" target="_blank" rel="noopener noreferrer">${t.source.name} ↗</a>
+            <span class="d-verify-date">${t.source.verifyNote}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function toggleMobileToc(force) {
+  const dropdown = document.getElementById('mobileTocDropdown');
+  const btn = document.getElementById('mobileTocToggleBtn');
+  const arrow = document.getElementById('mobileTocArrow');
+  if (!dropdown) return;
+  const isCurrentlyOpen = dropdown.style.display !== 'none';
+  const shouldOpen = force !== undefined ? force : !isCurrentlyOpen;
+  dropdown.style.display = shouldOpen ? 'block' : 'none';
+  if (btn) btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+  if (arrow) arrow.textContent = shouldOpen ? '▲' : '▼';
+}
+window.toggleMobileToc = toggleMobileToc;

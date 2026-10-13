@@ -122,31 +122,90 @@
           </div>
         </div>
 
-        <!-- Page 0: 여행 철학 & 슬로우 트래블 -->
+        <!-- Page 0: 여행 철학 & 슬로우 트래블 (컴팩트 퍼스트 스크린) -->
         <div class="book-page active" id="page-overview-0">
-          <section class="hero-banner" id="hero">
-    <div class="wrap hero-content-wrap">
-      <div class="hero-text-area">
-        <div class="hero-eyebrow" data-i18n="hero_eyebrow">A MONTH TOGETHER · SOUTHERN EUROPE &amp; IBERIA</div>
-        <h1 class="hero-title" data-i18n="hero_h1">가족을 위한 한 달 남유럽 여행 플래너</h1>
-        <p class="hero-lead" data-i18n="hero_lead">
-          60대 부모님과 함께하는 여유로운 30일 여정. 스페인 남부 안달루시아의 이국적인 감성과 포르투갈의 다채로운 풍경을
-          <strong data-i18n="ch1_hero_badge">1일 1.5스팟, 오후 시에스타 휴식 루틴</strong>으로 편안하게 설계한 맞춤 슬로우 트래블 플래너입니다.
-        </p>
-        <div class="hero-tag-row">
-          <span class="hero-tag" data-i18n="hero_tag_party">👥 3인 가족 기준</span>
-          <span class="hero-tag" data-i18n="hero_tag_duration">🗓️ 29박 30일 완주형</span>
-          <span class="hero-tag" data-i18n="hero_tag_siesta">☕ 13:00~15:30 온수 샤워 낮잠 슬롯</span>
-          <span class="hero-tag" data-i18n="hero_tag_transit">🚆 대중교통·고속철 중심</span>
-          <span class="hero-tag" data-i18n="hero_tag_budget">💰 예산 2,000만~3,000만 원</span>
-        </div>
-      </div>
-      <div class="hero-quick-links">
-        <a href="#planner" class="hero-quick-btn primary" data-i18n="hero_btn_plan">⚡ 플래너 세팅하기</a>
-        <a href="#curated-options" class="hero-quick-btn secondary" data-i18n="hero_btn_compare">🧭 3대 추천 코스 비교</a>
-      </div>
-    </div>
-  </section>
+          <section class="hero-banner compact-hero-banner" id="hero">
+            <div class="wrap hero-content-wrap">
+              <div class="hero-header-row">
+                <div class="hero-eyebrow" data-i18n="hero_eyebrow">✈️ 2026 AUTUMN SLOW TRAVEL · 60대 부모님 동행 3인 가족 맞춤 가이드</div>
+                <h1 class="hero-title" data-i18n="hero_h1">가족을 위한 스페인 슬로우 트래블 플래너</h1>
+                <p class="hero-lead" data-i18n="hero_lead">
+                  60대 부모님의 체력에 맞춘 <strong>1일 1.5스팟, 오후 시에스타 휴식 루틴</strong>. 과장된 ‘완전 평지·무장애’ 표현을 걷어내고 실제 계단·경사·노면 보행 정보를 꼼꼼히 검증한 3인 가족 맞춤 디지털 가이드북입니다.
+                </p>
+              </div>
+
+              <!-- 첫 화면 압축 대시보드 그리드: 일정/가족 조건 · 팩트체크 주의사항 · 첫 명소 요약 -->
+              <div class="hero-dashboard-grid">
+                <!-- 1. 여행 일정 및 가족·숙소 조건 -->
+                <div class="hero-card hero-context-card">
+                  <div class="hero-card-header">
+                    <span class="h-badge h-badge-date" data-i18n="hero_ctx_badge">🗓️ 2026.11 확정 일정</span>
+                    <span class="h-sub" data-i18n="hero_ctx_sub">3인 가족 (60대 부모님 동행)</span>
+                  </div>
+                  <div class="hero-card-body">
+                    <div class="context-detail-item">
+                      <span class="c-city" data-i18n="hero_ctx_bcn">🏙️ 바르셀로나 (6박 7일)</span>
+                      <span class="c-date" data-i18n="hero_ctx_bcn_date">2026.11.05(목) ~ 11.11(수)</span>
+                      <span class="c-hotel" data-i18n="hero_ctx_bcn_hotel">🏨 숙소: <strong>Suite Marina</strong> (※ 도로명 주소 미정)</span>
+                    </div>
+                    <div class="context-detail-item">
+                      <span class="c-city" data-i18n="hero_ctx_svq">🏰 세비야 (11박 12일)</span>
+                      <span class="c-date" data-i18n="hero_ctx_svq_date">2026.11.11(수) ~ 11.22(일)</span>
+                      <span class="c-hotel" data-i18n="hero_ctx_svq_hotel">🏨 숙소: <strong>미정 (향후 확인 필요)</strong></span>
+                    </div>
+                    <div class="context-tag-row">
+                      <span class="c-tag" data-i18n="hero_tag_family">👥 3인 가족</span>
+                      <span class="c-tag" data-i18n="hero_tag_siesta">☕ 13:00~15:30 시에스타</span>
+                      <span class="c-tag" data-i18n="hero_tag_taxi">🚕 평지·택시 우선</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 보행 및 접근성 사실 검증 안내 (Fact-Check) -->
+                <div class="hero-card hero-warning-card">
+                  <div class="hero-card-header">
+                    <span class="h-badge h-badge-warn" data-i18n="hero_warn_badge">♿ 접근성 팩트체크</span>
+                    <span class="h-sub" data-i18n="hero_warn_sub">과장 표현 배제 원칙</span>
+                  </div>
+                  <div class="hero-card-body">
+                    <ul class="fact-check-list">
+                      <li data-i18n="hero_warn_item1"><strong>단정 표현 금지:</strong> ‘완전 평지’, ‘무장애’, ‘택시 정문 직행’ 배제, 실제 계단·경사·자갈길 명시</li>
+                      <li data-i18n="hero_warn_item2"><strong>타워 계단 하강 주의:</strong> 사그라다 파밀리아 타워는 400여 개 나선계단 하강으로 부모님 일반 본당 티켓 권장</li>
+                      <li data-i18n="hero_warn_item3"><strong>카사 밀라 옥상 노면:</strong> 카사 밀라 옥상은 연속 계단 굴곡으로 휠체어/보행약자 옥상 전역 보행 불가</li>
+                      <li data-i18n="hero_warn_item4"><strong>11월 동절기 운영 확인:</strong> 관람 시간 및 열차 편성은 2026년 11월 공식 시간표 사전 확인 필수</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 3. 핵심 구역 요약 및 바로가기 -->
+                <div class="hero-card hero-highlights-card">
+                  <div class="hero-card-header">
+                    <span class="h-badge h-badge-spot" data-i18n="hero_spot_badge">🏛️ 핵심 명소 &amp; 루트 요약</span>
+                    <span class="h-sub" data-i18n="hero_spot_sub">구역별 맞춤 연결</span>
+                  </div>
+                  <div class="hero-card-body">
+                    <div class="spot-summary-block" data-i18n="hero_spot_bcn">
+                      <strong>바르셀로나:</strong> 가우디(사그라다·바트요·밀라), 고딕 지구·보케리아 시장, 포트 벨 수변, 구엘 공원
+                    </div>
+                    <div class="spot-summary-block" data-i18n="hero_spot_svq">
+                      <strong>세비야:</strong> 대성당·히랄다(종탑 17계단 주의), 알카사르·산타크루즈, 스페인 광장, 강변 황금의 탑
+                    </div>
+                    <div class="spot-summary-block" data-i18n="hero_spot_trips">
+                      <strong>당일치기 후보:</strong> 코르도바(열차 시간표 확인/꽃의 골목), 론다(협곡 트레킹 금지)
+                    </div>
+                    <div class="hero-action-buttons">
+                      <button type="button" class="btn-hero-action primary" onclick="switchGuidebookChapter('chapter-guide'); goToBookPage('chapter-guide', 0);" data-i18n="hero_btn_route3">
+                        🗺️ 제3장 부모님 동행 루트 보기 →
+                      </button>
+                      <button type="button" class="btn-hero-action secondary" onclick="goToBookPage('chapter-overview', 1);" data-i18n="hero_btn_compare3">
+                        🧭 3대 추천 코스 비교
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
           <div class="page-turner-bar">
             <button type="button" class="btn-turn-page-bottom next" onclick="turnBookPage('chapter-overview', 1)">
               <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_overview_2">2. 3대 추천 코스 비교</strong> ▶
@@ -680,19 +739,33 @@
           </div>
         </div>
 
-        <!-- Page 0: 스페인 핵심 명소 18선 -->
+        <!-- Page 0: 60대 부모님 동행 스페인 구역별 루트 & 명소 18선 -->
         <div class="book-page active" id="page-guide-0">
-          <section class="section guide-section" style="background:#f4efe6;padding:24px 0 36px;">
+          <section class="section guide-section" style="background:#f4efe6;padding:20px 0 36px;">
             <div class="wrap">
-              <div class="section-head">
+              <div class="section-head" style="margin-bottom:16px;">
                 <div>
-                  <div class="kicker">03-1 / SPAIN HIGHLIGHTS</div>
-                  <h2 data-i18n="page_guide_spain_title">🇪🇸 스페인 대표 명소 컬렉션 (18선)</h2>
+                  <div class="kicker">03-1 / SENIOR-FRIENDLY SPAIN ROUTE &amp; HIGHLIGHTS</div>
+                  <h2 data-i18n="page_guide_spain_title">🇪🇸 60대 부모님 동행 스페인 구역별 루트 &amp; 명소 18선</h2>
                 </div>
                 <p class="sub" data-i18n="page_guide_spain_sub">
-                  바르셀로나의 가우디 걸작부터 세비야·그라나다의 이슬람 유산, 마드리드 프라도 미술관까지.
+                  2026.11.05~11.22 바르셀로나(숙소 Suite Marina) · 세비야 3인 가족 맞춤 · 과장 없는 보행 팩트체크 &amp; Door-to-Door 이동 종합 비교
                 </p>
               </div>
+
+              <!-- [A] 접근성 사실 검증 원칙 배너 (동적 다국어 렌더링) -->
+              <div class="verified-principle-banner" id="verifiedPrincipleBanner"></div>
+
+              <!-- [B] 구역별 퀵 점프 내비게이터 바 (동적 다국어 렌더링) -->
+              <div class="district-nav-bar" id="districtNavBar"></div>
+
+              <!-- [C] 구역별 부모님 동행 루트 카드 & 11/11 이동 비교 컨테이너 (동적 다국어 렌더링) -->
+              <div class="district-routes-container" id="districtRoutesContainer"></div>
+
+              <!-- [D] 스페인 대표 명소 18선 상세 카드 컬렉션 헤더 (동적 다국어 렌더링) -->
+              <div class="landmarks-collection-head" id="landmarksCollectionHead" style="margin-top:40px;padding-top:24px;border-top:1px dashed #d6cebe;"></div>
+
+              <!-- [E] 기존 스페인 18선 그리드 마운트 지점 -->
               <div class="photo-grid" id="landmarksSpainGrid"></div>
               <div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 3);">
