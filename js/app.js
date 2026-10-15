@@ -6624,7 +6624,11 @@ function switchGuidebookChapter(chapterId, shouldScroll = true) {
     history.replaceState(null, '', '#' + hashSlug);
   }
 
-  // 6. 페이지 상단 스크롤
+  // 6. 페이지 상태 및 플로팅 배지 동기화
+  const activePageIdx = (window.currentBookPage && window.currentBookPage[chapterId]) || 0;
+  goToBookPage(chapterId, activePageIdx, false);
+
+  // 6-B. 페이지 상단 스크롤
   if (shouldScroll) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -6638,6 +6642,9 @@ function switchGuidebookChapter(chapterId, shouldScroll = true) {
     } else if (chapterId === 'chapter-guide') {
       if (typeof renderGlobalLandmarks === 'function') {
         renderGlobalLandmarks();
+      }
+      if (typeof renderSeniorDistrictRoutes === 'function') {
+        renderSeniorDistrictRoutes();
       }
       setTimeout(() => {
         if (window.landmarksMap && typeof window.landmarksMap.invalidateSize === 'function') {
@@ -6797,6 +6804,22 @@ function goToBookPage(chapterId, pageIndex, shouldScroll = true) {
       counterEl.textContent = 'P. ' + (pageIndex + 1) + ' / ' + maxPages;
     }
 
+    // 3-B. 상단 글로벌 헤더 메뉴 및 목차 사이드바 동기화
+    document.querySelectorAll('#globalNav .nav-link').forEach(link => {
+      link.classList.toggle('active', link.getAttribute('data-chapter') === chapterId);
+    });
+    document.querySelectorAll('#sidebarChapterNav .sidebar-nav-item').forEach(item => {
+      const isTarget = item.getAttribute('data-chapter') === chapterId;
+      item.classList.toggle('active', isTarget);
+      item.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+    });
+    document.querySelectorAll('#mobileBottomNav .mobile-nav-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-chapter') === chapterId);
+    });
+    document.querySelectorAll('#mobileTocDropdown .mobile-toc-link-item').forEach(item => {
+      item.classList.toggle('active', item.getAttribute('data-chapter') === chapterId);
+    });
+
     // 4. 하단 플로팅 북 리더 뱃지 갱신
     const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
     const chapNames = {
@@ -6897,26 +6920,56 @@ document.addEventListener('keydown', (e) => {
 function filterSafetyWaterSection(mode) {
   const blockSafety = document.getElementById('blockSafetyProtocol');
   const blockWater = document.getElementById('blockWaterProtocol');
+  const blockDress = document.getElementById('blockDressProtocol');
   const btnAll = document.getElementById('tabBtnSafetyAll');
   const btnSafety = document.getElementById('tabBtnSafetyOnly');
   const btnWater = document.getElementById('tabBtnWaterOnly');
+  const btnDress = document.getElementById('tabBtnDressOnly');
 
-  [btnAll, btnSafety, btnWater].forEach(b => { if (b) b.classList.remove('active'); });
+  [btnAll, btnSafety, btnWater, btnDress].forEach(b => { if (b) b.classList.remove('active'); });
 
   if (mode === 'safety') {
     if (blockSafety) blockSafety.style.display = 'flex';
     if (blockWater) blockWater.style.display = 'none';
+    if (blockDress) blockDress.style.display = 'none';
     if (btnSafety) btnSafety.classList.add('active');
   } else if (mode === 'water') {
     if (blockSafety) blockSafety.style.display = 'none';
     if (blockWater) blockWater.style.display = 'flex';
+    if (blockDress) blockDress.style.display = 'none';
     if (btnWater) btnWater.classList.add('active');
+  } else if (mode === 'dress') {
+    if (blockSafety) blockSafety.style.display = 'none';
+    if (blockWater) blockWater.style.display = 'none';
+    if (blockDress) blockDress.style.display = 'flex';
+    if (btnDress) btnDress.classList.add('active');
   } else {
     if (blockSafety) blockSafety.style.display = 'flex';
     if (blockWater) blockWater.style.display = 'flex';
+    if (blockDress) blockDress.style.display = 'flex';
     if (btnAll) btnAll.classList.add('active');
   }
 }
+
+function toggleDressChecklist() {
+  const content = document.getElementById('dressChecklistContent');
+  const btn = document.getElementById('btnToggleDressChecklist');
+  const label = document.getElementById('dressToggleLabel');
+  if (!content) return;
+  const isHidden = content.style.display === 'none';
+  content.style.display = isHidden ? 'block' : 'none';
+  if (btn) btn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+  if (label) {
+    const lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko');
+    const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
+    if (isHidden) {
+      label.textContent = dict['btn_collapse'] || (lang === 'en' ? 'Collapse ▲' : (lang === 'ja' ? '折りたたむ ▲' : (lang === 'zh' ? '收起 ▲' : '접어두기 ▲')));
+    } else {
+      label.textContent = dict['btn_expand'] || (lang === 'en' ? 'Expand ▼' : (lang === 'ja' ? '展開する ▼' : (lang === 'zh' ? '展开 ▼' : '펼쳐보기 ▼')));
+    }
+  }
+}
+window.toggleDressChecklist = toggleDressChecklist;
 window.filterSafetyWaterSection = filterSafetyWaterSection;
 
 function testWaterSqueeze(type) {
@@ -7078,6 +7131,11 @@ function renderSeniorDistrictRoutes(lang = (typeof currentLang !== 'undefined' ?
       html += renderSingleDistrictCardHtml(d, lbl);
     });
 
+    // 5. Rome 12-Day Extension Section
+    if (data.romeSection) {
+      html += renderRomeExtensionSectionHtml(data.romeSection, lbl);
+    }
+
     containerEl.innerHTML = html;
   }
 
@@ -7210,3 +7268,120 @@ function toggleMobileToc(force) {
   if (arrow) arrow.textContent = shouldOpen ? '▲' : '▼';
 }
 window.toggleMobileToc = toggleMobileToc;
+
+
+// ==========================================================================
+// 🏛️ 로마 12일 연장 섹션 동적 렌더러 (도시 간 타임라인, 대표 사진 카드, 2열 명소 카드)
+// ==========================================================================
+function renderRomeExtensionSectionHtml(rome, lbl) {
+  if (!rome) return '';
+  return '<section class="district-route-card rome-extension-card" id="district-rome-extension">' +
+    '<div class="district-card-header rome-header">' +
+      '<div class="d-badge-row">' +
+        '<span class="d-badge rome-badge">' + (rome.badge || '로마 12일 연장') + '</span>' +
+        '<span class="d-time-badge rome-time-badge">' + (rome.statusBadge || '세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요') + '</span>' +
+      '</div>' +
+      '<h3 class="district-title rome-main-title">' + (rome.title || '') + '</h3>' +
+      '<p class="district-desc rome-main-desc">' + (rome.desc || '') + '</p>' +
+    '</div>' +
+    '<div class="district-card-body">' +
+      '<!-- 1. 도시 간 이동 타임라인 -->' +
+      '<div class="rome-transit-box">' +
+        '<div class="r-transit-head">' +
+          '<span class="r-t-icon">🚆</span>' +
+          '<div>' +
+            '<h4 class="r-t-title">' + (rome.transit ? rome.transit.title : '') + '</h4>' +
+            '<span class="r-t-sub">' + (rome.transit ? rome.transit.sub : '') + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="transit-unconfirmed-notice">' +
+          (rome.transit ? rome.transit.notice : '') +
+        '</div>' +
+        '<div class="r-steps-grid">' +
+          ((rome.transit && rome.transit.steps) || []).map((st, idx) => 
+            '<div class="r-step-item">' +
+              '<div class="r-step-badge">' + (idx + 1) + '</div>' +
+              '<div class="r-step-body">' +
+                '<strong class="r-step-h">' + st.title + '</strong>' +
+                '<p class="r-step-p">' + st.desc + '</p>' +
+                (st.tip ? '<div class="r-step-tip">💡 ' + st.tip + '</div>' : '') +
+              '</div>' +
+            '</div>'
+          ).join('') +
+        '</div>' +
+      '</div>' +
+
+      '<!-- 2. 대표 사진 카드 -->' +
+      '<div class="rome-hero-feature-card">' +
+        '<div class="r-hero-img-wrap">' +
+          '<img src="' + rome.hero.photo + '" alt="' + rome.hero.alt + '" loading="lazy" />' +
+          '<span class="r-hero-badge-tag">' + rome.hero.badge + '</span>' +
+        '</div>' +
+        '<div class="r-hero-text-wrap">' +
+          '<h4 class="r-hero-title">' + rome.hero.title + '</h4>' +
+          '<p class="r-hero-desc">' + rome.hero.desc + '</p>' +
+          '<div class="r-badges-row">' +
+            (rome.hero.badges || []).map(b => '<span class="r-pill-badge ' + (b.class || '') + '">' + b.text + '</span>').join('') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<!-- 3. 2열 명소 카드 컬렉션 (4대 핵심 테마 · 모바일 1열 스택) -->' +
+      '<div class="rome-cards-2col-grid">' +
+        (rome.cards || []).map(c => 
+          '<div class="rome-theme-card" id="' + c.id + '">' +
+            '<div class="r-card-img-wrap">' +
+              '<img src="' + c.photo + '" alt="' + c.alt + '" loading="lazy" />' +
+              '<span class="r-card-tag">' + c.themeTag + '</span>' +
+            '</div>' +
+            '<div class="r-card-content">' +
+              '<div class="r-card-pill-row">' +
+                (c.badges || []).map(b => '<span class="r-sub-pill ' + (b.class || '') + '">' + b.text + '</span>').join('') +
+              '</div>' +
+              '<h4 class="r-card-h4">' + c.title + '</h4>' +
+              '<p class="r-card-lead">' + c.desc + '</p>' +
+
+              '<div class="d-row">' +
+                '<span class="d-row-label">🏛️ ' + (lbl.keySpots || '핵심 명소:') + '</span>' +
+                '<span class="d-row-text">' + c.spots + '</span>' +
+              '</div>' +
+              '<div class="d-row">' +
+                '<span class="d-row-label">🚶 ' + (lbl.recSequence || '추천 동선:') + '</span>' +
+                '<span class="d-row-text">' + c.sequence + '</span>' +
+              '</div>' +
+              '<div class="d-row warning">' +
+                '<span class="d-row-label">👟 ' + (lbl.walkingEst || '보행 및 노면:') + '</span>' +
+                '<div class="d-row-text">' + c.walking + '</div>' +
+              '</div>' +
+              '<div class="d-row">' +
+                '<span class="d-row-label">☕ ' + (lbl.restStops || '휴식 안내:') + '</span>' +
+                '<span class="d-row-text">' + c.rest + '</span>' +
+              '</div>' +
+              '<div class="d-row official-check-row">' +
+                '<span class="d-row-label">✓ ' + (lbl.officialSource || '공식 확인:') + '</span>' +
+                '<div class="d-row-text">' + c.officialCheck + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>'
+        ).join('') +
+      '</div>' +
+    '</div>' +
+  '</section>';
+}
+window.renderRomeExtensionSectionHtml = renderRomeExtensionSectionHtml;
+
+// 하단 플로팅 북 바 스마트 스크롤 제어: 스크롤 시 선명, 2.5초 유휴 시 은은하게 페이드
+(function() {
+  let floatBarTimer = null;
+  window.addEventListener('scroll', function() {
+    const bar = document.getElementById('floatingBookBar');
+    if (!bar) return;
+    bar.classList.remove('bar-idle');
+    clearTimeout(floatBarTimer);
+    floatBarTimer = setTimeout(function() {
+      if (!bar.matches(':hover')) {
+        bar.classList.add('bar-idle');
+      }
+    }, 2500);
+  }, { passive: true });
+})();

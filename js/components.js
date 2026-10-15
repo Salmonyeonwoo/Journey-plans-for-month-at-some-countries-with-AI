@@ -134,6 +134,18 @@
                 </p>
               </div>
 
+              <!-- 3대 도시 경로 요약 바 (바르셀로나 -> 세비야 -> 로마 12일 연장) -->
+              <div class="hero-route-summary-bar">
+                <span class="r-flow-badge" data-i18n="route_summary_badge">🗺️ 전체 경로 요약</span>
+                <div class="r-flow-track">
+                  <span class="r-step confirmed">🇪🇸 바르셀로나 (11.05~11.11)</span>
+                  <span class="r-arrow">➔</span>
+                  <span class="r-step confirmed">🇪🇸 세비야 (11.11~11.22)</span>
+                  <span class="r-arrow">➔</span>
+                  <span class="r-step unconfirmed" data-i18n="hero_ctx_rome_date">🇮🇹 로마 (세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요)</span>
+                </div>
+              </div>
+
               <!-- 첫 화면 압축 대시보드 그리드: 일정/가족 조건 · 팩트체크 주의사항 · 첫 명소 요약 -->
               <div class="hero-dashboard-grid">
                 <!-- 1. 여행 일정 및 가족·숙소 조건 -->
@@ -153,10 +165,16 @@
                       <span class="c-date" data-i18n="hero_ctx_svq_date">2026.11.11(수) ~ 11.22(일)</span>
                       <span class="c-hotel" data-i18n="hero_ctx_svq_hotel">🏨 숙소: <strong>미정 (향후 확인 필요)</strong></span>
                     </div>
+                    <div class="context-detail-item rome-leg-item">
+                      <span class="c-city" data-i18n="hero_ctx_rome">🇮🇹 로마 (12일 연장)</span>
+                      <span class="c-date unconfirmed-date-badge" data-i18n="hero_ctx_rome_date">세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요</span>
+                      <span class="c-hotel" data-i18n="hero_ctx_rome_hotel">🏨 숙소·항공: <strong>미정 (일정 확정 후 예약 필요)</strong></span>
+                    </div>
                     <div class="context-tag-row">
                       <span class="c-tag" data-i18n="hero_tag_family">👥 3인 가족</span>
                       <span class="c-tag" data-i18n="hero_tag_siesta">☕ 13:00~15:30 시에스타</span>
                       <span class="c-tag" data-i18n="hero_tag_taxi">🚕 평지·택시 우선</span>
+                      <span class="c-tag unconfirmed-tag" data-i18n="hero_tag_rome_tbd">📍 로마 구간 날짜 미정</span>
                     </div>
                   </div>
                 </div>
@@ -192,6 +210,9 @@
                     </div>
                     <div class="spot-summary-block" data-i18n="hero_spot_trips">
                       <strong>당일치기 후보:</strong> 코르도바(열차 시간표 확인/꽃의 골목), 론다(협곡 트레킹 금지)
+                    </div>
+                    <div class="spot-summary-block rome-spot-block" data-i18n="hero_spot_rome">
+                      <strong>로마 (12일 연장 · 미정):</strong> 판테온·스페인광장·트레비 분수 산책, 바티칸 분산 관람, 피렌체/오르비에토 당일치기 후보, 조국의 제단 전망대 엘리베이터
                     </div>
                     <div class="hero-action-buttons">
                       <button type="button" class="btn-hero-action primary" onclick="switchGuidebookChapter('chapter-guide'); goToBookPage('chapter-guide', 0);" data-i18n="hero_btn_route3">
@@ -584,6 +605,62 @@
                   <div class="label" data-i18n="kpi_senior_label">부모님 피로도 케어 지수</div>
                   <div class="val" id="kpiSeniorVal">1.5 스팟 / 일</div>
                   <div class="subtext" id="kpiSeniorSub">13:00~15:30 온수 샤워 낮잠 슬롯</div>
+                </div>
+              </div>
+
+              <!-- 🇮🇹 로마 12일 유연 연장 모듈 (날짜 미정 전제 · 4대 유연 페이싱 가이드) -->
+              <div class="planner-rome-extension-card" id="plannerRomeExtension">
+                <div class="p-rome-header">
+                  <div class="p-rome-badge-row">
+                    <span class="p-rome-badge" data-i18n="planner_rome_badge">🇮🇹 12일 연장 여정</span>
+                    <span class="p-rome-status" data-i18n="hero_ctx_rome_date">세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요</span>
+                  </div>
+                  <h3 class="p-rome-title" data-i18n="planner_rome_title">로마 12일 유연 연장 모듈 (세비야 이후 · 유연 페이싱 가이드)</h3>
+                  <p class="p-rome-desc" data-i18n="planner_rome_sub">
+                    로마는 세비야 이후 12일 연장으로 계획 중이며, 정확한 시작·종료일(12일/12박), 항공편 및 이동시간이 미정입니다. 날짜를 임의로 추측한 일자별 표 대신, 부모님 체력 안배에 최적화된 4대 권역별 유연 페이싱 가이드로 운영됩니다.
+                  </p>
+                </div>
+                <div class="p-rome-clusters-grid">
+                  <div class="p-cluster-card">
+                    <div class="p-cluster-num">CLUSTER 01</div>
+                    <h4 data-i18n="cluster1_title">🏛️ 역사 지구 슬로우 산책 (2~3일 배정)</h4>
+                    <p data-i18n="cluster1_desc">판테온, 스페인 광장, 트레비 분수, 나보나 광장. 오전 1곳 관람 ➔ 로툰다 광장 테라스 카페 및 지올리티 젤라토 휴식 ➔ 오후 숙소 시에스타 루틴.</p>
+                    <div class="p-cluster-badges">
+                      <span class="p-cbadge" data-i18n="badge_cobble">돌길 발목 주의</span>
+                      <span class="p-cbadge" data-i18n="badge_cushion">쿠션 운동화 필수</span>
+                      <span class="p-cbadge" data-i18n="badge_pantheon_chk">판테온 티켓 확인</span>
+                    </div>
+                  </div>
+                  <div class="p-cluster-card">
+                    <div class="p-cluster-num">CLUSTER 02</div>
+                    <h4 data-i18n="cluster2_title">⛪ 바티칸 박물관 &amp; 대성당 분산 관람 (2일 배정)</h4>
+                    <p data-i18n="cluster2_desc">박물관(수 km 복도)과 성 베드로 대성당(장시간 보안 검색 대기)을 하루에 몰아보지 않고 서로 다른 날로 나누어 부모님 보행 피로를 최소화합니다.</p>
+                    <div class="p-cluster-badges">
+                      <span class="p-cbadge" data-i18n="badge_split_rec">격일 분산 권장</span>
+                      <span class="p-cbadge" data-i18n="badge_dress_rule">어깨·무릎 복장 규정</span>
+                      <span class="p-cbadge" data-i18n="badge_vatican_book">공식 사전 예매</span>
+                    </div>
+                  </div>
+                  <div class="p-cluster-card">
+                    <div class="p-cluster-num">CLUSTER 03</div>
+                    <h4 data-i18n="cluster3_title">🏛️ 파노라마 전망 &amp; 고대 유적 힐링 (2~3일 배정)</h4>
+                    <p data-i18n="cluster3_desc">비토리오 에마누엘레 2세 기념관(조국의 제단) 파노라마 엘리베이터로 360도 전경 감상, 콜로세움 2층 전용 엘리베이터 관람, 테르미니역 주변 여유로운 미식.</p>
+                    <div class="p-cluster-badges">
+                      <span class="p-cbadge" data-i18n="badge_lift_ok">전망대 엘리베이터</span>
+                      <span class="p-cbadge" data-i18n="badge_no_stairs">계단 부담 최소화</span>
+                      <span class="p-cbadge" data-i18n="badge_colosseo_book">콜로세움 사전 예매</span>
+                    </div>
+                  </div>
+                  <div class="p-cluster-card">
+                    <div class="p-cluster-num">CLUSTER 04</div>
+                    <h4 data-i18n="cluster4_title">🚆 근교 슬로우 당일치기 &amp; 완충 휴식일 (3~4일 배정)</h4>
+                    <p data-i18n="cluster4_desc">푸니쿨라로 편안히 연결되는 슬로우시티 오르비에토 또는 고속열차 1시간 30분 피렌체 중 1곳 선택. 일정 중간에 온전한 무일정 휴식일(Buffer Days) 2일 확보.</p>
+                    <div class="p-cluster-badges">
+                      <span class="p-cbadge" data-i18n="badge_funicular">오르비에토 푸니쿨라</span>
+                      <span class="p-cbadge" data-i18n="badge_buffer_days">중간 완충 휴식일</span>
+                      <span class="p-cbadge" data-i18n="badge_train_check">열차 시간표 확인</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1233,6 +1310,7 @@
                 <button type="button" class="tab-chip active" id="tabBtnSafetyAll" onclick="filterSafetyWaterSection('all')" data-i18n="tab_safety_water_all">✨ 전체 실전 가이드 보기</button>
                 <button type="button" class="tab-chip" id="tabBtnSafetyOnly" onclick="filterSafetyWaterSection('safety')" data-i18n="tab_safety_guide">🚨 1. 소매치기 예방 &amp; 소지품 방어</button>
                 <button type="button" class="tab-chip" id="tabBtnWaterOnly" onclick="filterSafetyWaterSection('water')" data-i18n="tab_water_guide">💧 2. 마트 생수(가스물 vs 맹물) 구별법</button>
+                <button type="button" class="tab-chip" id="tabBtnDressOnly" onclick="filterSafetyWaterSection('dress')" data-i18n="tab_dress_guide">⛪ 3. 성당 복장 규정 &amp; 부모님 케어</button>
               </div>
 
               <!-- PART 1: 🚨 소매치기 예방 실전 가이드 -->
@@ -1571,6 +1649,121 @@
                         • <strong>Carrefour (까르푸):</strong> 도심 Carrefour Express부터 대형 하이퍼마켓까지 친숙한 매장.<br>
                         • <strong>DIA (디아):</strong> 동네 골목마다 있는 친근한 슈퍼마켓.
                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PART 3: ⛪ 바티칸·스페인 대성당 복장 규정 & 부모님 동행 실전 가이드 -->
+              <div class="protocol-card-block" id="blockDressProtocol" style="margin-top:28px;">
+                <div class="dress-alert-banner">
+                  <div class="alert-banner-icon">⛪</div>
+                  <div class="alert-banner-text" data-i18n="dress_intro_banner">
+                    바티칸 성 베드로 대성당, 스페인 세비야·바르셀로나 대성당은 가톨릭 종교 성지로 <strong>엄격한 복장 규정(어깨·무릎 가리기)</strong>을 운영합니다. 규정 위반 시 현장 보안 검색대에서 입장이 불허되므로 아래 체크리스트를 꼭 확인하세요.
+                  </div>
+                </div>
+
+                <!-- 1. 성당 복장 접이식 체크리스트 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num green-badge">DRESS 01</span>
+                    <h3 class="card-main-title" data-i18n="dress_chk_title">📋 바티칸 &amp; 스페인 성당 복장 체크리스트 (접기/펼치기)</h3>
+                    <button type="button" class="dress-collapse-toggle-btn" id="btnToggleDressChecklist" onclick="toggleDressChecklist()" aria-expanded="true">
+                      <span id="dressToggleLabel" data-i18n="btn_collapse">접어두기 ▲</span>
+                    </button>
+                  </div>
+                  <div id="dressChecklistContent" class="dress-checklist-container">
+                    <div class="dress-rules-grid">
+                      <div class="dress-rule-item">
+                        <div class="rule-icon">🛡️</div>
+                        <div class="rule-text">
+                          <strong data-i18n="dress_rule1_title">1. 어깨 완전히 가리기</strong>
+                          <span data-i18n="dress_rule1_desc">민소매(나시), 탱크탑, 오프숄더, 홀터넥 금지. ➔ 반팔 티셔츠 착용 또는 가벼운 숄/스카프로 어깨를 완전히 덮어야 합니다.</span>
+                        </div>
+                      </div>
+                      <div class="dress-rule-item">
+                        <div class="rule-icon">👖</div>
+                        <div class="rule-text">
+                          <strong data-i18n="dress_rule2_title">2. 무릎 아래까지 덮기</strong>
+                          <span data-i18n="dress_rule2_desc">무릎 위로 올라오는 반바지, 미니스커트, 찢어진 청바지 제한. ➔ 무릎을 완전히 덮는 긴바지 또는 롱스커트 필수.</span>
+                        </div>
+                      </div>
+                      <div class="dress-rule-item">
+                        <div class="rule-icon">🧢</div>
+                        <div class="rule-text">
+                          <strong data-i18n="dress_rule3_title">3. 성당 내부 모자 탈의</strong>
+                          <span data-i18n="dress_rule3_desc">성당 내부 입장 시 남성은 반드시 모자(캡 모자, 벙거지)를 벗어야 합니다. (종교적 예의 수칙)</span>
+                        </div>
+                      </div>
+                      <div class="dress-rule-item">
+                        <div class="rule-icon">👟</div>
+                        <div class="rule-text">
+                          <strong data-i18n="dress_rule4_title">4. 단정한 신발 착용</strong>
+                          <span data-i18n="dress_rule4_desc">슬리퍼, 쪼리(플립플롭), 비치 샌들은 미끄럼 위험 및 복장 단속 대상이 될 수 있어 지양. 쿠션 있는 단정한 운동화 권장.</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dress-tip-callout">
+                      💡 <strong data-i18n="dress_callout_title">부모님 동행 필수 준비물:</strong> <span data-i18n="dress_callout_desc">유럽 날씨는 낮에 따뜻하더라도 성당 내부는 대리석 냉기가 돌고 복장 단속이 엄격하므로, 가방에 <em>‘가벼운 스카프나 숄 1장’</em>을 항상 넣어 다니시면 완벽히 대비할 수 있습니다.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 천사의 성(산탄젤로 성) 구분 안내 카드 -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num green-badge">PLACE 02</span>
+                    <h3 class="card-main-title" data-i18n="santangelo_card_title">🏰 장소 구분 안내: 천사의 성(산탄젤로 성)은 성당이 아닙니다</h3>
+                  </div>
+                  <div class="santangelo-notice-body">
+                    <div class="st-distinction-grid">
+                      <div class="st-dist-item good-item">
+                        <div class="st-dist-icon">⭕</div>
+                        <div class="st-dist-info">
+                          <strong data-i18n="st_dress_rule_title">성당 복장 규정 비적용 (요새 &amp; 국립박물관)</strong>
+                          <p data-i18n="st_dress_rule_desc">천사의 성(Castel Sant'Angelo)은 하드리아누스 황제의 영묘이자 교황의 군사 요새로 쓰였던 국립박물관입니다. 가톨릭 종교 성당이 아니므로 어깨/무릎 가리기 복장 규정은 적용되지 않습니다.</p>
+                        </div>
+                      </div>
+                      <div class="st-dist-item warn-item">
+                        <div class="st-dist-icon">⚠️</div>
+                        <div class="st-dist-info">
+                          <strong data-i18n="st_walk_rule_title">보행 주의: 나선형 경사로 &amp; 고대 돌길</strong>
+                          <p data-i18n="st_walk_rule_desc">요새 정상 테라스까지 나선형 오르막 통로와 울퉁불퉁한 고대 벽돌/돌길이 길게 이어집니다. 발목 보호를 위해 <strong>쿠션감 좋은 편안한 운동화 착용이 필수</strong>이며, 최상층 테라스 계단 이용 시 난간을 잡아야 합니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="st-official-note">
+                      ✓ <strong data-i18n="lbl_visit_verify">방문 전 확인:</strong> <span data-i18n="santangelo_verify_note">운영시간 및 입장권 예매 조건은 방문 전 이탈리아 문화부/천사의 성 공식 웹사이트에서 사전 확인 필요.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. 부모님 동행 시니어 케어 4대 실전 팁 (배지 & 짧은 안내) -->
+                <div class="safety-sub-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num green-badge">CARE 03</span>
+                    <h3 class="card-main-title" data-i18n="senior_care_sec_title">👴 60대 부모님 동행 시니어 케어 4대 실전 팁</h3>
+                  </div>
+                  <div class="senior-care-quad-grid">
+                    <div class="care-quad-card">
+                      <span class="care-badge rest-badge" data-i18n="care_badge_rest">🛋️ 휴식 권장</span>
+                      <h4 data-i18n="care_rest_title">오후 13:00~15:30 시에스타 루틴</h4>
+                      <p data-i18n="care_rest_desc">한낮 가장 피로한 시간대에는 무리한 야외 관광을 중단하고 숙소로 복귀하여 온수 샤워와 1시간 낮잠을 취하거나, 광장 그늘진 테라스 카페에서 30분 이상 여유 있게 머무세요.</p>
+                    </div>
+                    <div class="care-quad-card">
+                      <span class="care-badge walk-badge" data-i18n="care_badge_walk">🚶‍♂️ 보행 부담 완화</span>
+                      <h4 data-i18n="care_walk_title">1일 1.5스팟 &amp; 8,000보 제한</h4>
+                      <p data-i18n="care_walk_desc">오전 핵심 명소 1곳, 오후 가벼운 산책 1곳이면 충분합니다. 지하철 환승 통로의 깊은 계단 대신, 도심 구간 이동 시 공식 택시(FreeNow/Uber) 환승을 우선 배치하세요.</p>
+                    </div>
+                    <div class="care-quad-card">
+                      <span class="care-badge shoes-badge" data-i18n="care_badge_shoes">👟 편한 신발</span>
+                      <h4 data-i18n="care_shoes_title">충격 흡수 에어·쿠션 워킹화 필수</h4>
+                      <p data-i18n="care_shoes_desc">유럽 구시가지는 특유의 울퉁불퉁한 돌바닥(Sampietrini)으로 인해 일반 단화나 플랫슈즈 착용 시 무릎과 발바닥 통증이 극심합니다. 바닥이 두껍고 푹신한 운동화와 도톰한 양말을 준비하세요.</p>
+                    </div>
+                    <div class="care-quad-card">
+                      <span class="care-badge layer-badge" data-i18n="care_badge_layer">🧥 겹쳐 입기</span>
+                      <h4 data-i18n="care_layer_title">일교차 대비 가벼운 레이어링</h4>
+                      <p data-i18n="care_layer_desc">11월 남유럽은 낮에는 햇살이 따스하지만 아침·저녁과 성당 내부는 쌀쌀합니다. 두꺼운 외투 1벌보다 경량 패딩·가디건·머플러를 여러 겹 겹쳐 입어 수시로 체온을 조절하는 것이 감기 예방에 효과적입니다.</p>
                     </div>
                   </div>
                 </div>

@@ -30357,3 +30357,730 @@ if (typeof window !== 'undefined') {
     });
   }
 })();
+
+
+// ========================================================
+// === ROME 12-DAY EXTENSION DATA & MULTILINGUAL PACK ===
+// ========================================================
+(function() {
+  const ROME_SECTION_I18N = {
+    ko: {
+      badge: "이탈리아 로마 12일 연장",
+      statusBadge: "세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요",
+      title: "천년의 역사 로마: 60대 부모님 맞춤 12일 슬로우 가이드",
+      desc: "세비야 이후 이어지는 로마 12일 연장 여정. 과장된 ‘완전 평지’ 환상을 지양하고, 거친 고대 자갈길(Sampietrini) 특성을 고려한 1일 1.5스팟과 시에스타 휴식 루틴을 적용한 4대 핵심 테마 가이드입니다.",
+      transit: {
+        title: "세비야(SVQ) ➔ 로마(FCO/CIA) 도시 간 이동 타임라인",
+        sub: "세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요",
+        notice: "⚠️ <strong>항공편 및 날짜 미정 안내:</strong> 세비야에서 로마로의 이동은 직항 항공편(약 2시간 30분 소요 예상) 또는 1회 경유편으로 예상되며, 정확한 이동 날짜, 편명, 출발·도착 시각 및 소요시간은 현재 미정입니다. 날짜를 임의로 확정하지 않으며, 출발 2~3개월 전 항공사 공식 웹사이트(Vueling, Iberia, Ryanair 등)에서 수하물 규정(대형 위탁 수하물 3개)과 운항 스케줄을 사전 확인해야 합니다.",
+        steps: [
+          {
+            title: "1. 세비야 숙소 체크아웃 & 공항 이동",
+            desc: "세비야 구시가지 숙소 앞에서 공식 택시(FreeNow 앱 또는 호텔 리셉션 호출)를 이용해 세비야 산 파블로 공항(SVQ)으로 이동 (약 20~25분 소요 예상).",
+            tip: "부모님 체력 안배를 위해 무거운 짐을 들고 버스를 타기보다 택시 이용을 강력 권장합니다."
+          },
+          {
+            title: "2. 세비야 공항 탑승 수속 & 위탁 수하물 확인",
+            desc: "유럽 저비용 항공사는 기내 수하물 규격과 위탁 수하물 무게 제한이 엄격하므로 사전 구매한 23kg 수하물 규정을 준수합니다.",
+            tip: "출발 최소 2시간 전 공항 도착 권장."
+          },
+          {
+            title: "3. 로마 피우미치노(FCO) 공항 도착",
+            desc: "비행 시간 약 2시간 30분 (직항 기준). 공항 입국장 수하물 수취대에서 짐을 찾고 엘리베이터를 이용해 지상 교통 구역으로 이동합니다.",
+            tip: "항공사별 운항 요일 및 직항 여부는 항공권 예매 시점에 최종 확인 필요."
+          },
+          {
+            title: "4. 로마 피우미치노 공항 ➔ 도심 숙소 이동 (2대 옵션)",
+            desc: "• <strong>옵션 A (가장 추천 · 도어 투 도어):</strong> 공항 공식 승강장에서 흰색 공항 정액 택시 이용 (로마 오렐리아 성벽 안쪽 기준 공식 정액 요금 약 €55 / 3인+짐 3개 적재 트렁크 확인).<br>• <strong>옵션 B (고속철도):</strong> 공항역 ➔ 테르미니역 무정차 직행열차 레오나르도 익스프레스 (약 32분 소요 / 1인 €14 / 단차 없는 전용 플랫폼 탑승).",
+            tip: "비공식 호객꾼 차량은 바가지요금 위험이 있으므로 절대 탑승하지 말고, 공식 택시 승강장의 번호판 달린 택시만 이용하세요."
+          }
+        ]
+      },
+      hero: {
+        photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+        alt: "로마 콜로세움 및 고대 로마 유적 전경",
+        badge: "🏛️ 12일 연장 추천 여정 · 세비야 이후 (날짜/항공편 확인 필요)",
+        title: "로마 대표 전경 & 60대 부모님 맞춤 슬로우 보행 원칙",
+        desc: "로마는 수천 년의 역사를 간직한 야외 박물관이지만, 구시가지 전역이 거친 삼피에트리니(Sampietrini) 자갈길과 좁은 보도로 이루어져 있어 발목 피로가 매우 큽니다. ‘완벽한 평지’는 없으므로, 하루 1.5스팟을 원칙으로 오후 13:00~15:30에는 반드시 숙소 낮잠이나 카페 휴식을 배치해야 합니다.",
+        badges: [
+          { text: "보행: 자갈길·발목 주의", class: "warn" },
+          { text: "1일 1.5스팟 슬로우 페이스", class: "good" },
+          { text: "오후 시에스타 필수", class: "info" },
+          { text: "날짜/항공편 확인 필요", class: "tbd" }
+        ]
+      },
+      cards: [
+        {
+          id: "rome-card-historic",
+          photo: "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
+          alt: "로마 역사 지구 판테온 광장 및 트레비 분수 전경",
+          themeTag: "THEME 01 · 역사 지구 산책",
+          badges: [
+            { text: "보행: 보통", class: "info" },
+            { text: "자갈길 발목 주의", class: "warn" },
+            { text: "카페·젤라토 휴식 필수", class: "good" }
+          ],
+          title: "역사 지구의 여유로운 산책: 판테온 · 스페인 광장 · 트레비 분수",
+          desc: "고대 로마 콘크리트 돔 건축의 기적 판테온부터, 영화 <로마의 휴일>의 낭만이 깃든 스페인 광장, 동전을 던지며 재방문을 기원하는 바로크 예술의 정점 트레비 분수를 여유롭게 잇는 산책로입니다.",
+          spots: "판테온 (Pantheon) ➔ 로툰다 광장 ➔ 지올리티 (Giolitti) ➔ 트레비 분수 ➔ 스페인 광장 (바르카차 분수)",
+          sequence: "오전 10:00 판테온 평지 내부 관람 ➔ 로툰다 광장 야외 테라스 에스프레소 휴식 ➔ 지올리티 젤라토 시식 ➔ 13:00~15:30 점심 및 숙소 시에스타 ➔ 16:30 트레비 분수 산책 ➔ 스페인 광장 분수대 휴식",
+          walking: "약 4,000~6,000보. 로마 구시가지는 자갈길(Sampietrini) 요철이 심하므로 바닥 쿠션이 두꺼운 운동화 필수. 택시는 광장 중앙까지 진입 불가(주변 대로 하차 후 도보 3~5분 이동).",
+          rest: "판테온 앞 로툰다 광장 테라스 카페 및 지올리티 안쪽 티룸 착석 공간. 트레비 분수 주변 벤치 및 스페인 광장 주변 카페 다수 완비.",
+          officialCheck: "판테온 일반 입장권(€5, 시간 지정제)은 공식 예약 사이트(www.pantheonroma.com)에서 방문 전 사전 예매 필수. 트레비 분수와 스페인 광장은 상시 개방."
+        },
+        {
+          id: "rome-card-vatican",
+          photo: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+          alt: "바티칸 성 베드로 대성당 및 광장 전경",
+          themeTag: "THEME 02 · 바티칸 분산 방문",
+          badges: [
+            { text: "격일 분산 방문 강력 권장", class: "good" },
+            { text: "성당 복장 규정 필수", class: "warn" },
+            { text: "공식 예매 필수", class: "info" }
+          ],
+          title: "바티칸 박물관/시스티나 성당과 성 베드로 대성당 '서로 다른 날' 분산 방문 선택지",
+          desc: "바티칸 박물관(수 km 복도와 계단)과 성 베드로 대성당(장시간 보안 검색 대기)을 같은 날 한꺼번에 소화하면 부모님 체력이 완전히 소진됩니다. 이틀로 나누어 방문하는 분산 일정을 강력 추천합니다.",
+          spots: "Day A: 바티칸 박물관 & 시스티나 성당 (천장화) / Day B: 성 베드로 대성당 & 성 베드로 광장",
+          sequence: "• <strong>Day A (박물관):</strong> 공식 사이트 오전 타임슬롯 예매 ➔ 시스티나 성당 및 회랑 집중 관람 (내부 승강기 동선 활용) ➔ 관람 후 바로 숙소 복귀 휴식.<br>• <strong>Day B (대성당):</strong> 이른 아침(07:30~08:30) 성 베드로 광장 도착 ➔ 대기열 짧은 시간대에 보안 검색 통과 ➔ 대성당 내부 피에타 및 발다키노 평지 관람.",
+          walking: "박물관 관람일 약 6,000~8,000보 (계단 및 긴 복도 보행). 대성당 관람일 약 3,000~4,000보 (평지 위주이나 서서 대기하는 시간 주의).",
+          rest: "바티칸 박물관 내부 카페테리아 및 안뜰(솔방울 정원) 벤치. 성 베드로 광장 회랑 그늘 쉼터.",
+          officialCheck: "바티칸 박물관 공식 티켓(museivaticani.va) 60일 전 오픈 시 사전 예매 필수. 성 베드로 대성당은 무료이나 보안 검색 필수. <strong>엄격한 복장 규정(어깨·무릎 가리기)</strong> 미준수 시 입장 거부."
+        },
+        {
+          id: "rome-card-daytrips",
+          photo: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+          alt: "피렌체 두오모 전경 및 오르비에토 풍경",
+          themeTag: "THEME 03 · 근교 당일치기 후보",
+          badges: [
+            { text: "고속열차 이동", class: "info" },
+            { text: "오르비에토 푸니쿨라 연결", class: "good" },
+            { text: "슬로우시티 힐링", class: "good" }
+          ],
+          title: "근교 당일치기 후보: 슬로우시티 오르비에토 & 르네상스 피렌체",
+          desc: "로마에 머무는 동안 무리하지 않는 선에서 다녀올 수 있는 2대 근교 후보입니다. 절벽 위 중세 슬로우시티 오르비에토의 고즈넉한 힐링 또는 고속열차로 1시간 30분 거리인 피렌체 예술 기행을 비교해 선택하세요.",
+          spots: "후보 1: 오르비에토 (Orvieto - 푸니쿨라 케이블카 & 두오모) / 후보 2: 피렌체 (Firenze - 산타 마리아 노벨라 & 두오모)",
+          sequence: "• <strong>오르비에토 (부모님 힐링 추천):</strong> 테르미니역 기차(약 1시간 10분) ➔ 역 앞 푸니쿨라 탑승하여 절벽 위 구시가지 이동 ➔ 평지 골목 산책 및 장엄한 두오모 감상.<br>• <strong>피렌체 (예술 기행):</strong> 테르미니역 이탈로/프레차로사 고속열차(약 1시간 30분) ➔ 두오모 광장 산책 ➔ 점심 티본스테이크 ➔ 우피치 미술관 1곳 집중 관람.",
+          walking: "오르비에토는 푸니쿨라 연결로 언덕 오르막 부담이 없으며 구시가지는 약 3,000~5,000보 평지 산책. 피렌체는 중심가 도보 6,000~8,000보.",
+          rest: "오르비에토 구시가지 광장 카페 벤치. 피렌체 아르노 강변 및 산타 마리아 노벨라 역 주변 라운지.",
+          officialCheck: "이탈리아 고속철도(Trenitalia / Italo) 공식 사이트에서 사전 좌석 예약 필수. 당일치기 다음 날은 반드시 숙소 주변 무일정 휴식일을 배정하세요."
+        },
+        {
+          id: "rome-card-vittorio",
+          photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+          alt: "베네치아 광장 비토리오 에마누엘레 2세 기념관 조국의 제단 파노라마",
+          themeTag: "THEME 04 · 전망대 엘리베이터",
+          badges: [
+            { text: "통유리 파노라마 엘리베이터", class: "good" },
+            { text: "360도 전경 파노라마", class: "info" },
+            { text: "계단 등반 불필요", class: "good" }
+          ],
+          title: "비토리오 에마누엘레 2세 기념관 전망대 엘리베이터 (조국의 제단)",
+          desc: "베네치아 광장에 우뚝 솟은 웅장한 흰색 대리석 국립기념관(조국의 제단). 가파른 수백 개의 계단을 직접 오를 필요 없이, 투명 파노라마 엘리베이터(Ascensori Panoramici)를 타고 로마 최고 높이의 테라스에서 360도 전경을 즐길 수 있습니다.",
+          spots: "베네치아 광장 ➔ 조국의 제단 내부 경사로 ➔ 파노라마 엘리베이터 탑승장 ➔ 옥상 테라스 (Terrazza delle Quadrighe)",
+          sequence: "오전 10:30 베네치아 광장 도착 ➔ 기념관 입구 경사로 및 실내 승강기로 테라스 층 이동 ➔ 통유리 파노라마 엘리베이터 탑승 ➔ 옥상에서 콜로세움, 포로 로마노, 판테온, 퀴리날레 언덕 조망 ➔ 엘리베이터 하강 후 인근 카페 휴식",
+          walking: "약 2,500~3,500보 (하부에서 엘리베이터 승강장까지 완만한 슬로프 및 실내 리프트 연결되어 있어 보행 부담 최소화).",
+          rest: "기념관 테라스 층에 카페테리아 및 실내 쉼터, 깨끗한 장애인/일반 화장실 완비.",
+          officialCheck: "옥상 전망대 엘리베이터 탑승은 유료 티켓(약 €15~€17, 만 65세 이상 시니어 할인 여부 현장 확인) 필요. 강풍이나 악천후 시 운행이 중단될 수 있으므로 방문 전 공식 사이트(vive.cultura.gov.it) 확인 필요."
+        }
+      ]
+    },
+    en: {
+      badge: "Rome 12-Day Extension",
+      statusBadge: "After Seville · 12-day extension · Dates/flights confirmation required",
+      title: "Rome: 12-Day Senior-Friendly Slow Travel Guide",
+      desc: "Following Seville, extend the journey to Rome for 12 days. Instead of unrealistic '100% barrier-free' assumptions, this guide implements a 1.5-spot daily rhythm, mandatory afternoon siestas, and careful cobblestone (Sampietrini) navigation across 4 curated themes.",
+      transit: {
+        title: "Intercity Transit Timeline: Seville (SVQ) ➔ Rome (FCO/CIA)",
+        sub: "After Seville · 12-day extension · Dates/flights confirmation required",
+        notice: "⚠️ <strong>Unconfirmed Flights & Dates Notice:</strong> Travel from Seville to Rome is anticipated via direct flight (~2h 30m) or 1-stop connection. Exact departure dates, flight numbers, schedules, and duration are currently unconfirmed. Prior to booking, check official airline portals (Vueling, Iberia, Ryanair) 2–3 months before travel for 3 check-in bags allowance and exact schedules.",
+        steps: [
+          {
+            title: "1. Seville Lodging Checkout & Taxi Transfer",
+            desc: "Take an official taxi from your Seville accommodation to Seville San Pablo Airport (SVQ) (~20–25 mins).",
+            tip: "Strongly recommend taxis over crowded buses when traveling with elderly parents and multiple heavy suitcases."
+          },
+          {
+            title: "2. Seville Airport Check-in & Luggage Bag Drop",
+            desc: "European carriers strictly enforce baggage limits; confirm pre-purchased 23kg check-in luggage allowances.",
+            tip: "Arrive at least 2 hours before scheduled departure."
+          },
+          {
+            title: "3. Arrival at Rome Fiumicino (FCO) Airport",
+            desc: "Flight duration approx. 2h 30m (direct). Collect luggage from baggage claim and take elevators to ground transportation level.",
+            tip: "Flight days and direct routing must be verified upon actual ticket purchasing."
+          },
+          {
+            title: "4. Rome Fiumicino Airport ➔ Downtown Hotel (2 Options)",
+            desc: "• <strong>Option A (Top Recommended · Door-to-Door):</strong> Take an official white airport taxi from official ranks (flat rate approx. €55 within Aurelian Walls / confirm sedan/van trunk fits 3 large bags).<br>• <strong>Option B (Express Rail):</strong> Leonardo Express nonstop train from airport station to Roma Termini (~32 mins / €14 per person / step-free level boarding).",
+            tip: "Never accept rides from unofficial touts in arrival halls; only queue at designated municipal taxi stands."
+          }
+        ]
+      },
+      hero: {
+        photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+        alt: "Panoramic view of Colosseum and ancient Roman Forum in Rome, Italy",
+        badge: "🏛️ 12-Day Extension · Post-Seville (Dates & Flights TBD)",
+        title: "Rome Panorama & Senior Slow Walking Principles",
+        desc: "Rome is an open-air historical museum, but its historic center consists of uneven ancient cobblestones (Sampietrini) and high curbs. Avoid claims of '100% flat walk'; pace each day with a maximum of 1.5 spots and mandatory 13:00~15:30 hotel rests or shaded terrace breaks.",
+        badges: [
+          { text: "Cobblestone & Incline Caution", class: "warn" },
+          { text: "1.5 Spots Daily Slow Pace", class: "good" },
+          { text: "Afternoon Siesta Required", class: "info" },
+          { text: "Dates/Flights Confirmation Needed", class: "tbd" }
+        ]
+      },
+      cards: [
+        {
+          id: "rome-card-historic",
+          photo: "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
+          alt: "Pantheon Piazza della Rotonda and Trevi Fountain in Rome",
+          themeTag: "THEME 01 · Historic Center Stroll",
+          badges: [
+            { text: "Walking: Moderate", class: "info" },
+            { text: "Cobblestones Caution", class: "warn" },
+            { text: "Café/Gelato Breaks", class: "good" }
+          ],
+          title: "Historic Center Gentle Stroll: Pantheon, Spanish Steps & Trevi Fountain",
+          desc: "A relaxed promenade connecting the ancient unreinforced concrete dome of the Pantheon, the cinematic elegance of Piazza di Spagna, and the baroque grandeur of the Trevi Fountain.",
+          spots: "Pantheon ➔ Piazza della Rotonda ➔ Giolitti Gelato ➔ Trevi Fountain ➔ Piazza di Spagna",
+          sequence: "10:00 Morning Pantheon level visit ➔ Rotonda terrace coffee break ➔ Giolitti gelato break ➔ 13:00~15:30 Lunch & hotel siesta ➔ 16:30 Trevi Fountain stroll ➔ Spanish Steps fountain rest",
+          walking: "Approx. 4,000–6,000 steps. Uneven Sampietrini cobblestones require cushioned supportive sneakers. Taxis cannot stop right in front of fountains/Pantheon (drop-off on main perimeter avenue).",
+          rest: "Shaded terrace cafes at Piazza della Rotonda, indoor tearoom seating at Giolitti, and public benches around Trevi & Spanish Steps.",
+          officialCheck: "Pantheon timed admission (€5) requires prior booking via official site (www.pantheonroma.com). Trevi Fountain and Spanish Steps are open 24/7."
+        },
+        {
+          id: "rome-card-vatican",
+          photo: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+          alt: "St. Peter's Basilica and Vatican Square in Vatican City, Rome",
+          themeTag: "THEME 02 · Vatican Split Visit",
+          badges: [
+            { text: "Split-Visit Strongly Recommended", class: "good" },
+            { text: "Strict Dress Code", class: "warn" },
+            { text: "Advance Booking Required", class: "info" }
+          ],
+          title: "Vatican Museums / Sistine Chapel & St. Peter's Basilica 'Split-Day' Strategy",
+          desc: "Visiting both the Vatican Museums (miles of corridors and staircases) and St. Peter's Basilica (long security lines) on the same day causes extreme fatigue for seniors. We strongly recommend splitting them over two separate days.",
+          spots: "Day A: Vatican Museums & Sistine Chapel / Day B: St. Peter's Basilica & St. Peter's Square",
+          sequence: "• <strong>Day A (Museums):</strong> Official morning reservation ➔ Focus on Sistine Chapel and accessible elevator routes ➔ Return straight to hotel for rest.<br>• <strong>Day B (Basilica):</strong> Arrive early (07:30–08:30) ➔ Pass security line quickly ➔ Level walk inside Basilica to see Pieta & Baldachin.",
+          walking: "Museums day: 6,000–8,000 steps (stairs and extended halls). Basilica day: 3,000–4,000 steps (mostly flat but note standing security line).",
+          rest: "Museum courtyards (Pinecone Courtyard) benches & cafeteria. Shaded portico at St. Peter's Square.",
+          officialCheck: "Museum tickets must be reserved 60 days in advance via museivaticani.va. St. Peter's Basilica entry is free but security check is mandatory. <strong>Strict dress code (shoulders and knees covered)</strong> strictly enforced."
+        },
+        {
+          id: "rome-card-daytrips",
+          photo: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+          alt: "Florence Duomo panorama and Orvieto hill town",
+          themeTag: "THEME 03 · Day Trip Options",
+          badges: [
+            { text: "High-Speed Rail", class: "info" },
+            { text: "Orvieto Funicular Link", class: "good" },
+            { text: "Cittaslow Healing", class: "good" }
+          ],
+          title: "Day Trip Candidates: Cittaslow Orvieto & Renaissance Florence",
+          desc: "Two manageable day excursions from Rome. Choose between the peaceful cliff-top medieval charm of Orvieto (effortless funicular access) or the cultural splendour of Florence (1.5h high-speed rail).",
+          spots: "Option 1: Orvieto (Funicular & Gothic Duomo) / Option 2: Florence (Duomo & Uffizi)",
+          sequence: "• <strong>Orvieto (Senior Healing Pick):</strong> Regional train from Termini (~1h 10m) ➔ Board funicular outside station to cliff top ➔ Relaxed level stroll through peaceful alleys & Duomo.<br>• <strong>Florence (Art Excursion):</strong> High-speed train from Termini (~1h 30m) ➔ Stroll Piazza del Duomo ➔ Florentine steak lunch ➔ Focus on 1 museum (Uffizi).",
+          walking: "Orvieto funicular eliminates uphill climbs, with 3,000–5,000 steps on gentle streets. Florence involves 6,000–8,000 steps across cobblestone center.",
+          rest: "Orvieto town square outdoor benches. Florence riverside promenades and Termini/SMN station executive lounges.",
+          officialCheck: "Book high-speed train tickets in advance on Trenitalia or Italo. Always schedule a zero-activity rest day following any day trip."
+        },
+        {
+          id: "rome-card-vittorio",
+          photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+          alt: "Altare della Patria panoramic view in Rome",
+          themeTag: "THEME 04 · Panoramic Elevator",
+          badges: [
+            { text: "Panoramic Glass Lift", class: "good" },
+            { text: "360° Rome Panorama", class: "info" },
+            { text: "Zero Stair Climbing", class: "good" }
+          ],
+          title: "Altare della Patria (Vittorio Emanuele II) Panoramic Terrace Elevator",
+          desc: "The monumental white marble landmark towering over Piazza Venezia. Instead of tackling hundreds of steep marble steps, ride the glass panoramic elevator (Ascensori Panoramici) directly to the highest rooftop terrace for a breathtaking 360-degree vista of ancient Rome.",
+          spots: "Piazza Venezia ➔ Internal monument ramps ➔ Panoramic elevator station ➔ Quadrighe Rooftop Terrace",
+          sequence: "10:30 Arrive at Piazza Venezia ➔ Follow gentle ramps and internal escalators to elevator ticket lobby ➔ Board glass lift to rooftop ➔ View Colosseum, Roman Forum, Pantheon, and Quirinal Hill ➔ Descend and enjoy coffee at nearby terrace café",
+          walking: "Approx. 2,500–3,500 steps (gentle interior slopes and level platforms minimize physical strain).",
+          rest: "Terrace-level cafeteria with panoramic views, climate-controlled seating, and accessible restrooms.",
+          officialCheck: "Rooftop terrace lift requires ticket (approx. €15–€17, check senior discounts on-site). Operations may suspend during high winds or severe weather; check official portal (vive.cultura.gov.it) prior to visiting."
+        }
+      ]
+    },
+    ja: {
+      badge: "ローマ12日延長",
+      statusBadge: "セビリアの後・12日延長・日程／航空便の確認が必要",
+      title: "悠久の歴史ローマ：60代ご両親向け12日ゆったりガイド",
+      desc: "セビリアの後に続くローマ12日間の延長旅。誇張された「完全平坦」の先入観を排し、古都特有の粗い石畳（サンピエトリーニ）に配慮した1日1.5スポットとシエスタ休憩ルーティンを徹底した4大テーマガイドです。",
+      transit: {
+        title: "都市間移動タイムライン：セビリア（SVQ）➔ ローマ（FCO/CIA）",
+        sub: "セビリアの後・12日延長・日程／航空便の確認が必要",
+        notice: "⚠️ <strong>航空便および日程未定の案内:</strong> セビリアからローマへの移動は直行便（所要約2時間30分）または経由便を想定していますが、正確な運航曜日、便名、発着時刻および所要時間は未定です。日程確定前には固定時刻として扱わず、出発の2〜3ヶ月前に航空会社公式ポータル（Vueling、Iberiaなど）で受託手荷物枠と運航スケジュールを必ずご確認ください。",
+        steps: [
+          {
+            title: "1. セビリア宿泊先チェックアウト＆空港移動",
+            desc: "セビリア旧市街から公式タクシー（FreeNowアプリまたはフロント手配）でセビリア空港（SVQ）へ移動（約20〜25分想定）。",
+            tip: "重いスーツケースを持ってバスに乗るより、ご両親の体力を温存できるタクシーの利用を強く推奨します。"
+          },
+          {
+            title: "2. セビリア空港搭乗手続き＆受託手荷物確認",
+            desc: "欧州路線は手荷物重量規定が厳格なため、事前購入した23kg手荷物枠を厳守してください。",
+            tip: "出発予定時刻の2時間前までに空港へ到着することを推奨します。"
+          },
+          {
+            title: "3. ローマ・フィウミチーノ（FCO）空港到着",
+            desc: "飛行時間約2時間30分（直行便基準）。手荷物受取所で荷物をピックアップし、エレベーターで地上交通フロアへ移動します。",
+            tip: "航空会社の運航状況および直行便の有無は航空券予約時に最終確認が必要です。"
+          },
+          {
+            title: "4. ローマ空港 ➔ 市内宿泊先への移動（2大オプション）",
+            desc: "• <strong>オプションA（最優先推奨・ドアツードア）:</strong> 空港公式タクシー乗り場から定額タクシー利用（アウレリアヌス城壁内一律約55ユーロ／大型荷物積載確認）。<br>• <strong>オプションB（直通特急）:</strong> 空港駅 ➔ テルミニ駅直行「レオナルド・エクスプレス」（所要約32分／1人14ユーロ／段差なしフラット乗車）。",
+            tip: "到着ロビーの非公認客引き車は法外な料金トラブルの恐れがあるため絶対に乗らず、公式タクシー乗り場の正規車両のみ利用してください。"
+          }
+        ]
+      },
+      hero: {
+        photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+        alt: "ローマ コロッセオおよび古代遺跡の景観",
+        badge: "🏛️ 12日延長推奨ルート・セビリア後（日程/航空便要確認）",
+        title: "ローマ代表パノラマ＆シニア向け歩行原則",
+        desc: "ローマは数千年の歴史を誇る野外博物館ですが、旧市街全体が凹凸の激しい石畳（サンピエトリーニ）と狭い歩道で構成されているため、足腰への負担が非常に大きいです。「完全平坦」は存在しないため、1日1.5スポットを原則とし、13:00〜15:30にはホテルでの昼寝やカフェ休憩を必ず確保してください。",
+        badges: [
+          { text: "石畳・足首注意", class: "warn" },
+          { text: "1日1.5スポットのゆったりペース", class: "good" },
+          { text: "午後シエスタ必須", class: "info" },
+          { text: "日程/航空便の確認が必要", class: "tbd" }
+        ]
+      },
+      cards: [
+        {
+          id: "rome-card-historic",
+          photo: "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
+          alt: "パンテオン ロトンダ広場とトレビの泉",
+          themeTag: "THEME 01 · 歴史地区の散策",
+          badges: [
+            { text: "歩行：普通", class: "info" },
+            { text: "石畳足元注意", class: "warn" },
+            { text: "カフェ・ジェラート休憩必須", class: "good" }
+          ],
+          title: "歴史地区のゆったり散策：パンテオン・スペイン広場・トレビの泉",
+          desc: "古代コンクリート建築の奇跡パンテオンから、映画のロマンが漂うスペイン広場、再訪を願ってコインを投げるバロック芸術の精華トレビの泉をのんびり結ぶ散策路です。",
+          spots: "パンテオン ➔ ロトンダ広場 ➔ ジョリッティ ➔ トレビの泉 ➔ スペイン広場（バルカッチャの噴水）",
+          sequence: "午前10:00 パンテオン平坦内部見学 ➔ ロトンダ広場のテラスでエスプレッソ休憩 ➔ ジョリッティでジェラート ➔ 13:00〜15:30 昼食＆ホテルでシエスタ ➔ 16:30 トレビの泉散策 ➔ スペイン広場で休憩",
+          walking: "約4,000〜6,000歩。サンピエトリーニ石畳の凹凸が激しいため、厚底クッションスニーカーが必須。タクシーは広場中心部への乗り入れ不可。",
+          rest: "ロトンダ広場のテラス席、ジョリッティ奥のティールーム着席スペース、トレビの泉周辺のベンチ等多数完備。",
+          officialCheck: "パンテオン一般入場券（5ユーロ・時間指定）は公式サイト（www.pantheonroma.com）での事前予約が必須。トレビの泉とスペイン広場は終日開放。"
+        },
+        {
+          id: "rome-card-vatican",
+          photo: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+          alt: "バチカン サン・ピエトロ大聖堂および広場",
+          themeTag: "THEME 02 · バチカン分散見学",
+          badges: [
+            { text: "別日分散見学を強く推奨", class: "good" },
+            { text: "大聖堂服装規定厳守", class: "warn" },
+            { text: "公式事前予約必須", class: "info" }
+          ],
+          title: "バチカン美術館／システィーナ礼拝堂とサン・ピエトロ大聖堂の「別日分散」見学法",
+          desc: "美術館（数キロに及ぶ廊下と階段）と大聖堂（長時間の荷物検査待機列）を同日に詰め込むとシニアの体力は限界に達します。必ず2日に分けて分散して訪れる日程を強く推奨します。",
+          spots: "Day A: バチカン美術館＆システィーナ礼拝堂 / Day B: サン・ピエトロ大聖堂＆広場",
+          sequence: "• <strong>Day A（美術館）:</strong> 公式サイトで午前予約 ➔ システィーナ礼拝堂とエレベーター動線を重点周遊 ➔ 終了後直ちにホテルへ戻り休養。<br>• <strong>Day B（大聖堂）:</strong> 早朝（07:30〜08:30）到着 ➔ 短い待機列で保安検査通過 ➔ 大聖堂内部のピエタ像などを平坦見学。",
+          walking: "美術館の日：約6,000〜8,000歩（階段・長い廊下）。大聖堂の日：約3,000〜4,000歩（平坦だが立ち並び時間に注意）。",
+          rest: "美術館内カフェテリアや松ぼっくりの中庭ベンチ。サン・ピエトロ大聖堂の回廊日陰ベンチ。",
+          officialCheck: "美術館は60日前オープンの公式サイト（museivaticani.va）で事前予約必須。大聖堂は入場無料ですが手荷物検査必須。<strong>厳格な服装規定（肩と膝の露出禁止）</strong>あり。"
+        },
+        {
+          id: "rome-card-daytrips",
+          photo: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+          alt: "フィレンツェ ドゥオモおよびオルヴィエートの景観",
+          themeTag: "THEME 03 · 郊外日帰り候補",
+          badges: [
+            { text: "高速列車移動", class: "info" },
+            { text: "オルヴィエート ケーブルカー直結", class: "good" },
+            { text: "スローシティ癒やし", class: "good" }
+          ],
+          title: "郊外日帰り候補：スローシティ・オルヴィエート＆ルネサンス・フィレンツェ",
+          desc: "ローマ滞在中に無理なく訪問できる2大近郊候補地です。崖の上の静寂なスローシティ・オルヴィエートでの癒やし、または高速列車で1時間30分のフィレンツェ芸術探訪から選択できます。",
+          spots: "候補1: オルヴィエート（ケーブルカー＆大聖堂） / 候補2: フィレンツェ（ドゥオモ広場＆ウフィツィ）",
+          sequence: "• <strong>オルヴィエート（ご両親の癒やしに最適）:</strong> テルミニ駅から列車（約1時間10分） ➔ 駅前からフニコラーレ（ケーブルカー）で崖上の旧市街へ ➔ 平坦な路地散策と荘厳なドゥオモ鑑賞。<br>• <strong>フィレンツェ（芸術の都）:</strong> テルミニ駅から高速列車（約1時間30分） ➔ ドゥオモ広場散策 ➔ ビステッカ昼食 ➔ ウフィツィ美術館1箇所に絞って鑑賞。",
+          walking: "オルヴィエートはケーブルカーで坂道負担ゼロ、旧市街は約3,000〜5,000歩の穏やかな散策。フィレンツェは中心部徒歩約6,000〜8,000歩。",
+          rest: "オルヴィエート広場のオープンカフェベンチ。フィレンツェのアルノ川沿いおよび駅ラウンジ。",
+          officialCheck: "イタリア高速鉄道（Trenitalia / Italo）公式サイトで事前座席指定が必須。日帰り移動の翌日は必ず宿泊先周辺での完全休養日を設定してください。"
+        },
+        {
+          id: "rome-card-vittorio",
+          photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+          alt: "ヴェネツィア広場 ヴィットーリオ・エマヌエーレ2世記念堂 祖国の祭壇",
+          themeTag: "THEME 04 · 展望エレベーター",
+          badges: [
+            { text: "ガラス張りパノラマエレベーター", class: "good" },
+            { text: "360度大パノラマ眺望", class: "info" },
+            { text: "階段の登攀不要", class: "good" }
+          ],
+          title: "ヴィットーリオ・エマヌエーレ2世記念堂 展望エレベーター（祖国の祭壇）",
+          desc: "ヴェネツィア広場にそびえる白亜の巨大記念堂。何百段もの急階段を自力で登ることなく、透明パノラマエレベーター（Ascensori Panoramici）で最上階テラスへ直行し、ローマ市街を360度一望できます。",
+          spots: "ヴェネツィア広場 ➔ 記念堂内部スロープ ➔ パノラマエレベーター乗り場 ➔ 屋上テラス（Terrazza delle Quadrighe）",
+          sequence: "午前10:30 ヴェネツィア広場到着 ➔ 記念堂入口のスロープと館内リフトで乗り場へ移動 ➔ ガラス張りエレベーターで屋上へ直行 ➔ コロッセオ、フォロ・ロマーノ、バチカンのドームなどを一望 ➔ 下降後テラスカフェで休憩",
+          walking: "約2,500〜3,500歩（乗り場まで緩やかなスロープと館内昇降機が完備されており歩行負荷は極めて軽微）。",
+          rest: "テラス階にカフェテリア、屋内休憩所、清潔な多目的トイレ完備。",
+          officialCheck: "展望エレベーター利用にはチケット（約15〜17ユーロ）が必要。強風や悪天候時は運行が停止される場合があるため、訪問前に公式サイト（vive.cultura.gov.it）でご確認ください。"
+        }
+      ]
+    },
+    zh: {
+      badge: "意大利罗马12天延展",
+      statusBadge: "塞维利亚之后 · 12天延展 · 日期/航班待核实确认",
+      title: "千年古都罗马：专为60岁长辈定制的12天慢游指南",
+      desc: "接续塞维利亚之后的罗马12天延展行程。摒弃“全程纯平地”的虚幻宣传，针对古城凹凸不平的粗糙石砖路（Sampietrini）与高台阶特性，坚持每日1.5景点与下午午休节奏的四大核心主题指南。",
+      transit: {
+        title: "城际接驳时间线：塞维利亚（SVQ）➔ 罗马（FCO/CIA）",
+        sub: "塞维利亚之后 · 12天延展 · 日期/航班待核实确认",
+        notice: "⚠️ <strong>航班与日期待定提醒:</strong> 塞维利亚至罗马交通预计为直飞航班（飞行约2小时30分钟）或中转航班，具体起止日期、航班号、起降时间及耗时目前尚未确定。在日期确定前不作确定性标注，出行前2~3个月请务必登录航空公司官网（Vueling、Iberia等）核查3件托运行李额度与最新排班。",
+        steps: [
+          {
+            title: "1. 塞维利亚住宿退房并前往机场",
+            desc: "在塞维利亚旧城住宿前乘坐正规出租车（FreeNow打车软件或酒店前台叫车）直达圣巴勃罗机场（SVQ）（耗时预计约20~25分钟）。",
+            tip: "携带多件沉重大号行李箱时长辈极易体力透支，强烈建议包车/打车直达机场，切勿挤乘公交。"
+          },
+          {
+            title: "2. 塞维利亚机场办理登机与行李托运",
+            desc: "欧洲境内航司对行李尺寸与重量要求极为严苛，请务必提前购买并核对23kg大件托运行李额度。",
+            tip: "建议至少提前2小时抵达机场。"
+          },
+          {
+            title: "3. 抵达罗马菲乌米奇诺（FCO）机场",
+            desc: "空中飞行约2小时30分钟（直飞）。在行李提取处取回行李，乘电梯前往地面交通集散厅。",
+            tip: "航司执飞日期及直飞班次需在订票时最终核定。"
+          },
+          {
+            title: "4. 罗马机场 ➔ 市区酒店接驳（两大方案）",
+            desc: "• <strong>方案A（最优先推荐 · 门到门）:</strong> 在机场正规出租车乘车点乘坐白色官方出租车（奥勒良城墙内官方统一定价约55欧元 / 需确认后备箱容纳3个大行李箱）。<br>• <strong>方案B（直达快线）:</strong> 机场火车站直达特米尼站的Leonardo Express直通列车（约32分钟 / 每人14欧元 / 零高差平步登车）。",
+            tip: "到达大厅非法拉客黑车存在漫天要价风险，严禁搭乘，务必认准官方站点规范车辆。"
+          }
+        ]
+      },
+      hero: {
+        photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+        alt: "意大利罗马斗兽场与古罗马广场全景",
+        badge: "🏛️ 12天延展推荐路线 · 塞维利亚之后（日期/航班待核实）",
+        title: "罗马标志性全景与长辈慢步护膝原则",
+        desc: "罗马虽是震撼人心的露天博物馆，但旧城普遍铺设凹凸不平的历史黑玄武石块（Sampietrini），路面极易引起脚踝疲惫与膝盖磨损。切勿轻信“全程平坦”，必须严守每日1.5景点的慢节奏，下午13:00~15:30务必安排酒店小憩或遮阳露台咖啡修整。",
+        badges: [
+          { text: "石路不平·注意足踝", class: "warn" },
+          { text: "每日1.5景点慢节奏", class: "good" },
+          { text: "午后休整必不可少", class: "info" },
+          { text: "日期与航班待核实确认", class: "tbd" }
+        ]
+      },
+      cards: [
+        {
+          id: "rome-card-historic",
+          photo: "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
+          alt: "万神殿罗通达广场与特莱维喷泉全景",
+          themeTag: "THEME 01 · 历史核心区漫步",
+          badges: [
+            { text: "步行强度：适中", class: "info" },
+            { text: "凹凸黑石路防跌", class: "warn" },
+            { text: "咖啡与冰淇淋休整", class: "good" }
+          ],
+          title: "历史核心区从容漫步：万神殿 · 西班牙广场 · 特莱维喷泉",
+          desc: "从两千年前古罗马无筋混凝土穹顶奇迹万神殿出发，漫步至蕴含《罗马假日》浪漫情致的西班牙广场，再到投掷硬币祈福重访的巴洛克巅峰特莱维喷泉，串联为一条悠然舒缓的步行线路。",
+          spots: "万神殿 ➔ 罗通达广场 ➔ Giolitti百年冰淇淋 ➔ 特莱维喷泉 ➔ 西班牙广场（破船喷泉）",
+          sequence: "上午10:00 万神殿平地参拜 ➔ 罗通达广场户外露台意式浓缩咖啡休整 ➔ 品尝Giolitti经典冰淇淋 ➔ 13:00~15:30 午餐及酒店午休 ➔ 16:30 傍晚漫步特莱维喷泉 ➔ 西班牙广场阶梯喷泉驻足",
+          walking: "约4,000~6,000步。旧城区黑石路缝隙较深，必须穿着鞋底厚实且缓震优良的软底运动鞋。出租车无法直接开进喷泉核心广场。",
+          rest: "万神殿前罗通达广场露台咖啡座、Giolitti店内雅座、特莱维喷泉周边长椅及西班牙广场沿街餐馆均可休憩。",
+          officialCheck: "万神殿常规门票（5欧元，分时段）需提前在官方预约系统（www.pantheonroma.com）核实并预订。特莱维喷泉与西班牙广场全天候开放。"
+        },
+        {
+          id: "rome-card-vatican",
+          photo: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+          alt: "梵蒂冈圣伯多禄大殿及广场全貌",
+          themeTag: "THEME 02 · 梵蒂冈分日错峰",
+          badges: [
+            { text: "强烈建议分日错峰参观", class: "good" },
+            { text: "大教堂严格着装禁忌", class: "warn" },
+            { text: "必须提前官方预约", class: "info" }
+          ],
+          title: "梵蒂冈博物馆／西斯廷礼拜堂与圣伯多禄大殿“分日错峰”游览法",
+          desc: "梵蒂冈博物馆展线长达数公里且台阶密集，而圣伯多禄大殿需长时间排队安检。若在同一天连续参观，极易造成长辈体能崩溃。强烈推荐分为两天错峰从容游览。",
+          spots: "Day A: 梵蒂冈博物馆与西斯廷礼拜堂 / Day B: 圣伯多禄大殿与圣伯多禄广场",
+          sequence: "• <strong>Day A（博物馆）:</strong> 提前官方预定上午场次 ➔ 集中观摩西斯廷穹顶画并善用无障碍直梯 ➔ 结束后直接回酒店休养生息。<br>• <strong>Day B（大殿）:</strong> 清晨（07:30~08:30）抵达广场 ➔ 避开长队快速完成安检 ➔ 纯平地瞻仰大殿内部《圣伤》雕塑与青铜华盖。",
+          walking: "博物馆日：约6,000~8,000步（台阶多且走廊极长）。大教堂日：约3,000~4,000步（殿内纯平，但需留意排队站立耗力）。",
+          rest: "博物馆内设咖啡厅及松果中庭座椅。圣伯多禄广场环形柱廊下有大片阴凉石座。",
+          officialCheck: "博物馆门票须提前60天在官网（museivaticani.va）抢订。大教堂免费参观但安检排队漫长。<strong>严苛着装标准（必须遮盖双肩与膝盖）</strong>，违规直接拒入。"
+        },
+        {
+          id: "rome-card-daytrips",
+          photo: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+          alt: "佛罗伦萨圣母百花大教堂与奥尔维耶托风光",
+          themeTag: "THEME 03 · 周边一日游备选",
+          badges: [
+            { text: "高铁便捷通达", class: "info" },
+            { text: "奥尔维耶托缆车直连", class: "good" },
+            { text: "慢城疗愈身心", class: "good" }
+          ],
+          title: "周边一日游精选：慢城奥尔维耶托与文艺复兴之都佛罗伦萨",
+          desc: "在罗马逗留期间可从容安排的两大一日游备选。可在悬崖上的中世纪国际慢城奥尔维耶托享受静谧时光，或搭乘1.5小时高铁探访文艺复兴艺术圣地佛罗伦萨。",
+          spots: "备选1: 奥尔维耶托（缆车直达古城 & 哥特大教堂） / 备选2: 佛罗伦萨（圣母百花大教堂 & 乌菲齐）",
+          sequence: "• <strong>奥尔维耶托（长辈康养首选）:</strong> 特米尼站乘坐火车（约1小时10分） ➔ 出站乘登山缆车直达悬崖古城 ➔ 漫步静谧平缓巷道并赞叹大教堂。<br>• <strong>佛罗伦萨（艺术探索）:</strong> 特米尼站乘高速列车（约1小时30分） ➔ 漫步大教堂广场 ➔ 享用托斯卡纳炭烤牛排 ➔ 专注游览乌菲齐美术馆。",
+          walking: "奥尔维耶托有缆车直达完全免去爬坡苦累，古城约3,000~5,000步悠闲漫步。佛罗伦萨历史中心步行约6,000~8,000步。",
+          rest: "奥尔维耶托广场长椅静谧舒适。佛罗伦萨阿诺河畔及特米尼/SMN火车站休息室。",
+          officialCheck: "意大利高铁（Trenitalia / Italo）须提前在官方网站预订座位。一日游次日务必全天安排在住宿周边无行程静养。"
+        },
+        {
+          id: "rome-card-vittorio",
+          photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+          alt: "威尼斯广场维托里奥·埃马努埃莱二世纪念堂祖国祭坛全景",
+          themeTag: "THEME 04 · 全景观光直梯",
+          badges: [
+            { text: "全景观光玻璃直梯", class: "good" },
+            { text: "360度罗马俯瞰视角", class: "info" },
+            { text: "全程免登险峻石阶", class: "good" }
+          ],
+          title: "维托里奥·埃马努埃莱二世纪念堂观光电梯（祖国祭坛）",
+          desc: "矗立于威尼斯广场的宏伟白大理石国家纪念堂。长辈无需攀登数以百计的陡峭大理石阶梯，乘坐全景玻璃直梯（Ascensori Panoramici）即可直抵罗马最高观景台，轻松饱览360度古城壮美天际线。",
+          spots: "威尼斯广场 ➔ 纪念堂平缓室内坡道 ➔ 观光电梯乘梯厅 ➔ 顶层四马战车露台（Terrazza delle Quadrighe）",
+          sequence: "上午10:30 抵达威尼斯广场 ➔ 经坡道与内部垂直电梯抵达露台购票厅 ➔ 搭乘透明观光直梯登顶 ➔ 俯瞰斗兽场、古罗马广场、万神殿穹顶及梵蒂冈 ➔ 乘梯下行并在周边咖啡馆休憩",
+          walking: "约2,500~3,500步（自广场至乘梯处设有室内平缓坡道与电梯，极大减轻长辈腿脚负担）。",
+          rest: "露台层设有景观咖啡吧、室内舒适座椅及无障碍卫生间。",
+          officialCheck: "顶层观光直梯需购票（约15~17欧元，现场咨询65岁以上长者优待）。如遇大风或雷暴天气电梯可能临时停运，请出行前登录官方主页（vive.cultura.gov.it）查询。"
+        }
+      ]
+    }
+  };
+
+  // Inject into SENIOR_DISTRICTS_I18N
+  const globalDistricts = (typeof window !== 'undefined' && window.SENIOR_DISTRICTS_I18N) || (typeof SENIOR_DISTRICTS_I18N !== 'undefined' ? SENIOR_DISTRICTS_I18N : null);
+  if (globalDistricts) {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (globalDistricts[lang]) {
+        // 1. Add nav chip if not present
+        if (globalDistricts[lang].nav && globalDistricts[lang].nav.chips) {
+          const hasRomeChip = globalDistricts[lang].nav.chips.some(c => c.id === 'district-rome-extension');
+          if (!hasRomeChip) {
+            const chipTexts = {
+              ko: "🏛️ 5. 로마 12일 연장 (세비야 이후)",
+              en: "🏛️ 5. Rome 12-Day Extension",
+              ja: "🏛️ 5. ローマ12日延長（セビリア後）",
+              zh: "🏛️ 5. 罗马12天延展（塞维利亚后）"
+            };
+            // Insert before the last chip (landmarksCollectionHead)
+            const insertIdx = globalDistricts[lang].nav.chips.length - 1;
+            globalDistricts[lang].nav.chips.splice(insertIdx, 0, {
+              id: "district-rome-extension",
+              text: chipTexts[lang] || chipTexts.ko,
+              highlight: true
+            });
+          }
+        }
+        // 2. Attach romeSection
+        globalDistricts[lang].romeSection = ROME_SECTION_I18N[lang] || ROME_SECTION_I18N.ko;
+      }
+    });
+  }
+
+
+const ROME_EXTRA_I18N = {
+  ko: {
+    hero_ctx_rome: "🇮🇹 로마 (12일 연장)",
+    hero_ctx_rome_date: "세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요",
+    hero_ctx_rome_hotel: "🏨 숙소·항공: <strong>미정 (일정 확정 후 예약 필요)</strong>",
+    hero_tag_rome_tbd: "📍 로마 구간 날짜 미정",
+    route_flow_title: "🗺️ 전체 여행 3개 도시 연결 경로 (스페인 ➔ 이탈리아 연장)",
+    route_step_1_title: "1차 거점: 바르셀로나",
+    route_step_1_sub: "2026.11.05 ~ 11.11 (6박 7일)",
+    route_step_2_title: "2차 거점: 세비야",
+    route_step_2_sub: "2026.11.11 ~ 11.22 (11박 12일)",
+    route_step_3_title: "3차 연장: 로마",
+    route_step_3_sub: "세비야 이후 · 12일 연장 (날짜/항공편 확인 필요)",
+    route_step_3_badge: "날짜 미정",
+    planner_rome_ext_title: "🏛️ 로마 12일 연장 유연 일정 가이드",
+    planner_rome_ext_sub: "세비야 이후 연장 일정 · 날짜 및 항공편 미정 상태 · 무리 없는 권역별 체류 중심",
+    lbl_status_unconfirmed: "⚠️ 날짜/항공편 확인 필요",
+    lbl_flexible_plan: "📅 유연 일정 (일자별 확정표 아님)",
+    badge_verified_only: "방문 전 확인",
+    planner_rome_block1_title: "🏛️ 역사 지구 여유로운 산책 클러스터 (3~4일)",
+    planner_rome_block1_desc: "판테온, 스페인 광장, 트레비 분수를 한 번에 몰아보지 않고, 카페 테라스 휴식과 함께 오전/오후로 분산 방문합니다. 돌바닥 완충을 위한 편한 신발 착용 권장.",
+    planner_rome_block2_title: "⛪ 바티칸 분리 방문 추천 (2일)",
+    planner_rome_block2_desc: "바티칸 박물관/시스티나 성당과 성 베드로 대성당을 같은 날 몰아서 보면 보행 피로가 과중됩니다. 서로 다른 날에 여유 있게 나누어 방문하는 것을 권장합니다.",
+    planner_rome_block3_title: "🚅 근교 당일치기 후보 (피렌체 / 오르비에토)",
+    planner_rome_block3_desc: "고속열차 이동으로 피렌체 또는 평화로운 언덕 도시 오르비에토 당일 방문이 가능합니다. 부모님 컨디션을 살펴 12일 중 1~2회 선택적으로 진행.",
+    planner_rome_block4_title: "🛗 파노라마 전망 엘리베이터 (비토리오 에마누엘레 2세)",
+    planner_rome_block4_desc: "계단을 오르지 않고 유리 엘리베이터(유료)로 옥상 테라스에 도달해 로마 전경을 편안하게 조망할 수 있습니다. 기상 악화 시 운행 변동 가능.",
+    planner_rome_ext_note: "ℹ️ <strong>일정 기획 유의사항:</strong> 로마 12일 연장 구간은 세비야 이후의 유연 일정이며, 정확한 시작/종료일 및 12일/12박 여부는 항공편 예약 확정 시 결정됩니다. 특정 일자에 일정을 고정하지 마시고 현지 날씨와 부모님 컨디션에 맞춰 유연하게 순서를 조율하세요.",
+    tab_btn_dress: "⛪ 성당 복장 규정 & 시니어 배려",
+    dress_alert_text: "바티칸(성 베드로 대성당, 시스티나 성당) 및 스페인 주요 성당(세비야 대성당 등)은 엄격한 복장 규정이 적용되며, 규정 미준수 시 입장이 거부될 수 있습니다.",
+    dress_checklist_title: "📋 [접이식 체크리스트] 바티칸 & 스페인 주요 성당 입장 필수 복장 가이드",
+    dress_rule_strict_title: "🚫 엄격 금지 복장 (입장 거부 사유)",
+    dress_rule_ok_title: "✅ 권장 및 통과 복장 기준",
+    dress_chk_title: "출발 전 부모님 복장 자가 점검표",
+    santangelo_card_title: "🏰 장소 구분 안내: 천사의 성(산탄젤로 성)은 성당이 아닙니다",
+    st_distinction_title: "천사의 성(Castel Sant'Angelo) vs 성당 복장 규정 구분",
+    st_dress_rule_desc: "천사의 성(Castel Sant'Angelo)은 하드리아누스 황제의 영묘이자 교황의 군사 요새로 쓰였던 국립박물관입니다. 가톨릭 종교 성당이 아니므로 어깨/무릎 가리기 복장 규정은 적용되지 않습니다.",
+    st_terrain_desc: "성당 복장 규정은 없으나, 내부가 고대 요새 경사로와 울퉁불퉁한 돌바닥, 계단으로 이루어져 있어 발목을 지지하는 편안한 운동화가 필수적입니다.",
+    lbl_visit_verify: "방문 전 확인",
+    santangelo_verify_note: "운영시간 및 입장권 예매 조건은 방문 전 이탈리아 문화부/천사의 성 공식 웹사이트에서 사전 확인 필요.",
+    senior_care_title: "👵 60대 부모님 동행 필수 4대 케어 가이드",
+    senior_care_rest_title: "충분한 휴식 & 시에스타",
+    senior_care_rest_desc: "하루 1.5스팟 원칙. 오후 1시~3시 30분에는 카페나 숙소에서 휴식하여 피로 누적을 방지합니다.",
+    senior_care_walk_title: "걷기 부담 최소화",
+    senior_care_walk_desc: "유럽 역사 지구는 돌바닥이 많으므로 1회 보행 15분 이내로 제한하고 택시(FreeNow/Uber)를 적극 활용합니다.",
+    senior_care_shoes_title: "두꺼운 쿠션 신발",
+    senior_care_shoes_desc: "단단한 바닥면의 피로를 흡수해 줄 쿠션감 있는 워킹화와 여분의 양말을 준비합니다.",
+    senior_care_layers_title: "가벼운 겹쳐 입기",
+    senior_care_layers_desc: "실내 성당과 야외의 일교차에 대비해 얇은 카디건, 스카프, 경량 패딩을 겹쳐 입습니다."
+  },
+  en: {
+    hero_ctx_rome: "🇮🇹 Rome (12-Day Extension)",
+    hero_ctx_rome_date: "Post-Seville · 12-Day Extension · Dates/Flights TBD",
+    hero_ctx_rome_hotel: "🏨 Hotel & Flight: <strong>TBD (Book after dates confirmed)</strong>",
+    hero_tag_rome_tbd: "📍 Rome Dates TBD",
+    route_flow_title: "🗺️ 3-City Route Overview (Spain ➔ Italy Extension)",
+    route_step_1_title: "Base 1: Barcelona",
+    route_step_1_sub: "2026.11.05 - 11.11 (6 nights)",
+    route_step_2_title: "Base 2: Seville",
+    route_step_2_sub: "2026.11.11 - 11.22 (11 nights)",
+    route_step_3_title: "Base 3: Rome (Extension)",
+    route_step_3_sub: "Post-Seville · 12-Day Extension (Dates/Flights TBD)",
+    route_step_3_badge: "Dates TBD",
+    planner_rome_ext_title: "🏛️ Rome 12-Day Extension Flexible Pacing Guide",
+    planner_rome_ext_sub: "Extension after Seville · Dates & Flights TBD · Paced stay by district",
+    lbl_status_unconfirmed: "⚠️ Dates/Flights TBD",
+    lbl_flexible_plan: "📅 Flexible Schedule (Not a fixed calendar)",
+    badge_verified_only: "Verify Before Visit",
+    planner_rome_block1_title: "🏛️ Historic Center Gentle Stroll Cluster (3-4 Days)",
+    planner_rome_block1_desc: "Spread Pantheon, Spanish Steps, and Trevi Fountain across separate morning/afternoon strolls with cafe breaks. Cushioned shoes recommended on cobbles.",
+    planner_rome_block2_title: "⛪ Vatican Split-Visit Strategy (2 Days)",
+    planner_rome_block2_desc: "Combining Vatican Museums/Sistine Chapel and St. Peter's Basilica on the same day causes extreme fatigue. Visiting on separate days is strongly advised.",
+    planner_rome_block3_title: "🚅 Day Trip Candidates (Florence / Orvieto)",
+    planner_rome_block3_desc: "High-speed rail enables day trips to Florence or the hilltop town of Orvieto. Choose 1-2 excursions depending on family stamina.",
+    planner_rome_block4_title: "🛗 Panoramic Lift (Vittorio Emanuele II)",
+    planner_rome_block4_desc: "Reach the rooftop terrace via glass lift without climbing stairs for panoramic Rome views. Subject to weather conditions.",
+    planner_rome_ext_note: "ℹ️ <strong>Planning Note:</strong> The Rome 12-day extension follows Seville and is flexible; exact start/end dates and day/night count will be finalized after flight booking. Keep schedule fluid rather than fixing calendar days.",
+    tab_btn_dress: "⛪ Cathedral Dress Code & Senior Care",
+    dress_alert_text: "Strict dress codes apply at the Vatican (St. Peter's Basilica, Sistine Chapel) and major Spanish cathedrals (Seville Cathedral, etc.). Entry will be denied if non-compliant.",
+    dress_checklist_title: "📋 [Checklist] Vatican & Spain Major Cathedrals Mandatory Dress Code",
+    dress_rule_strict_title: "🚫 Strictly Prohibited Attire (Entry Denied)",
+    dress_rule_ok_title: "✅ Recommended & Compliant Attire",
+    dress_chk_title: "Pre-Departure Senior Attire Self-Check",
+    santangelo_card_title: "🏰 Location Note: Castel Sant'Angelo is NOT a Church",
+    st_distinction_title: "Castel Sant'Angelo vs. Cathedral Dress Code Distinction",
+    st_dress_rule_desc: "Castel Sant'Angelo is a national museum, formerly Emperor Hadrian's mausoleum and papal fortress. It is not an active church, so cathedral modesty dress codes do not apply.",
+    st_terrain_desc: "While church dress codes do not apply, the terrain features uneven stone ramps and cobbles; supportive cushioned footwear is essential.",
+    lbl_visit_verify: "Verify Before Visit",
+    santangelo_verify_note: "Operating hours and ticketing requirements must be verified on the official Italian Ministry of Culture / Castel Sant'Angelo website prior to visiting.",
+    senior_care_title: "👵 Essential 4-Point Care Guide for Seniors",
+    senior_care_rest_title: "Ample Rest & Afternoon Siesta",
+    senior_care_rest_desc: "1.5 spots/day principle. Rest at cafes or hotel between 13:00-15:30 to prevent cumulative fatigue.",
+    senior_care_walk_title: "Minimize Walking Burden",
+    senior_care_walk_desc: "European historic centers feature cobblestones; limit continuous walking to under 15 mins and use taxis actively.",
+    senior_care_shoes_title: "Cushioned Walking Shoes",
+    senior_care_shoes_desc: "Prepare cushioned walking shoes and spare breathable socks to absorb cobblestone impact.",
+    senior_care_layers_title: "Layered Clothing",
+    senior_care_layers_desc: "Pack light cardigans, scarves, and packable down vests to handle temperature shifts between churches and outdoors."
+  },
+  ja: {
+    hero_ctx_rome: "🇮🇹 ローマ（12日延長）",
+    hero_ctx_rome_date: "セビリア後・12日延長・日程・便名要確認",
+    hero_ctx_rome_hotel: "🏨 宿泊・航空便：<strong>未定（日程確定後に予約必要）</strong>",
+    hero_tag_rome_tbd: "📍 ローマ区間日程未定",
+    route_flow_title: "🗺️ 全体日程 3都市接続ルート（スペイン ➔ イタリア延長）",
+    route_step_1_title: "第1拠点：バルセロナ",
+    route_step_1_sub: "2026.11.05 - 11.11（6泊7日）",
+    route_step_2_title: "第2拠点：セビリア",
+    route_step_2_sub: "2026.11.11 - 11.22（11泊12日）",
+    route_step_3_title: "第3拠点：ローマ（延長）",
+    route_step_3_sub: "セビリア後・12日延長（日程・便名要確認）",
+    route_step_3_badge: "日程未定",
+    planner_rome_ext_title: "🏛️ ローマ12日延長 柔軟日程ガイド",
+    planner_rome_ext_sub: "セビリア後の延長日程・日付および航空便未定・無理のないエリア別滞在",
+    lbl_status_unconfirmed: "⚠️ 日程・航空便要確認",
+    lbl_flexible_plan: "📅 柔軟日程（確定日程表ではありません）",
+    badge_verified_only: "訪問前確認",
+    planner_rome_block1_title: "🏛️ 歴史地区 ゆったり散策クラスター（3〜4日）",
+    planner_rome_block1_desc: "パンテオン、スペイン広場、トレビの泉を1度に詰め込まず、カフェ休憩を挟みながら分散訪問。石畳対策のクッション靴を推奨。",
+    planner_rome_block2_title: "⛪ バチカン 分散訪問のススメ（2日）",
+    planner_rome_block2_desc: "バチカン美術館/システィーナ礼拝堂とサン・ピエトロ大聖堂を同日に回すと歩行疲労が重なります。別々の日に分けて訪れることを推奨。",
+    planner_rome_block3_title: "🚅 近郊日帰り候補（フィレンツェ / オルヴィエート）",
+    planner_rome_block3_desc: "高速列車でフィレンツェや丘の街オルヴィエートへ日帰り可能。ご両親の体調に合わせて12日間のうち1〜2回選択して実施。",
+    planner_rome_block4_title: "🛗 パノラマ展望エレベーター（ヴィットーリオ・エマヌエーレ2世）",
+    planner_rome_block4_desc: "階段を使わずガラス製エレベーターで屋上テラスへ直行し、ローマ市街を一望。悪天候時は運行状況の確認が必要。",
+    planner_rome_ext_note: "ℹ️ <strong>計画上の留意事項：</strong> ローマ12日延長区間はセビリア後の柔軟な日程であり、正確な日程や便名は予約確定後に確定します。特定の日付に縛られず、体調や天候に合わせて柔軟に順序を調整してください。",
+    tab_btn_dress: "⛪ 聖堂服装規定・シニア配慮",
+    dress_alert_text: "バチカン（サン・ピエトロ大聖堂、システィーナ礼拝堂）およびスペイン主要大聖堂は厳格な服装規定があり、違反時は入場拒否されます。",
+    dress_checklist_title: "📋 [折りたたみ式チェックリスト] バチカン・スペイン主要聖堂 必須服装ガイド",
+    dress_rule_strict_title: "🚫 厳格禁止服装（入場拒否対象）",
+    dress_rule_ok_title: "✅ 推奨・通過基準服装",
+    dress_chk_title: "出発前 ご両親の服装セルフチェック",
+    santangelo_card_title: "🏰 場所区分のご案内：サンタンジェロ城は聖堂ではありません",
+    st_distinction_title: "サンタンジェロ城 vs 聖堂服装規定の区分",
+    st_dress_rule_desc: "サンタンジェロ城はハドリアヌス帝の霊廟であり教皇の要塞だった国立博物館です。宗教聖堂ではないため、肩や膝を隠す服装規定は適用されません。",
+    st_terrain_desc: "服装規定はありませんが、内部は傾斜路や石畳、階段が多いため、足首をしっかり支える歩きやすい靴が必須です。",
+    lbl_visit_verify: "訪問前確認",
+    santangelo_verify_note: "開館時間および入場券予約条件は、訪問前にイタリア文化省/サンタンジェロ城公式サイトにて事前確認が必要です。",
+    senior_care_title: "👵 60代のご両親同伴 必須4大ケアガイド",
+    senior_care_rest_title: "十分な休息＆シエスタ",
+    senior_care_rest_desc: "1日1.5スポットの原則。午後1時〜3時30分はカフェや宿泊先で休息を取り疲労蓄積を防止。",
+    senior_care_walk_title: "歩行負担の最小化",
+    senior_care_walk_desc: "ヨーロッパ歴史地区は石畳が多いため1回の連続歩行を15分以内に抑え、タクシーを積極活用。",
+    senior_care_shoes_title: "厚底クッションシューズ",
+    senior_care_shoes_desc: "硬い石畳の衝撃を吸収する厚底ウォーキングシューズと替えの靴下を用意。",
+    senior_care_layers_title: "軽量な重ね着",
+    senior_care_layers_desc: "聖堂内と屋外の寒暖差に備え、薄手のカーディガンやストール、軽量ダウンの重ね着を準備。"
+  },
+  zh: {
+    hero_ctx_rome: "🇮🇹 罗马（12天延展）",
+    hero_ctx_rome_date: "塞维利亚之后 · 12天延展 · 日期/航班待确认",
+    hero_ctx_rome_hotel: "🏨 住宿与航班：<strong>待定（行程确定后预订）</strong>",
+    hero_tag_rome_tbd: "📍 罗马区段日期未定",
+    route_flow_title: "🗺️ 总体行程 3城市连接路线（西班牙 ➔ 意大利延展）",
+    route_step_1_title: "第1枢纽：巴塞罗那",
+    route_step_1_sub: "2026.11.05 - 11.11（6晚7天）",
+    route_step_2_title: "第2枢纽：塞维利亚",
+    route_step_2_sub: "2026.11.11 - 11.22（11晚12天）",
+    route_step_3_title: "第3延展：罗马",
+    route_step_3_sub: "塞维利亚之后 · 12天延展（日期/航班待确认）",
+    route_step_3_badge: "日期待定",
+    planner_rome_ext_title: "🏛️ 罗马12天延展灵活行程指南",
+    planner_rome_ext_sub: "塞维利亚后延展行程 · 日期与航班待定 · 轻松按区域深度漫游",
+    lbl_status_unconfirmed: "⚠️ 日期/航班待确认",
+    lbl_flexible_plan: "📅 灵活行程（非固定日历表）",
+    badge_verified_only: "行前确认",
+    planner_rome_block1_title: "🏛️ 历史中心区悠闲漫步组合（3-4天）",
+    planner_rome_block1_desc: "万神殿、西班牙广场、特莱维喷泉不一次赶完，配合咖啡馆露台小憩分散于上午或傍晚游览。建议穿戴减震舒适鞋行走于鹅卵石路。",
+    planner_rome_block2_title: "⛪ 梵蒂冈分日错峰探访（2天）",
+    planner_rome_block2_desc: "将梵蒂冈博物馆/西斯廷礼拜堂与圣彼得大教堂安排在同一天会导致极大体力消耗。强烈建议分两天悠闲参访。",
+    planner_rome_block3_title: "🚅 罗马近郊一日游备选（佛罗伦萨 / 奥尔维耶托）",
+    planner_rome_block3_desc: "搭乘高速列车可轻松一日游佛罗伦萨或宁静山城奥尔维耶托。视长辈体力在12天中挑选1~2次成行。",
+    planner_rome_block4_title: "🛗 全景电梯（维托里奥·埃马努埃莱二世纪念堂）",
+    planner_rome_block4_desc: "无需攀爬台阶即可乘全景观光电梯直达顶层露台尽览罗马城景。遇恶劣天气需留意运行变动。",
+    planner_rome_ext_note: "ℹ️ <strong>行程规划提示：</strong> 罗马12天延展段为塞维利亚之后的灵活行程，具体起止日期与天数/晚数待航班确认后最终定案。请勿固定死板日程，根据当地天气与长辈状态灵活调换顺序。",
+    tab_btn_dress: "⛪ 教堂着装规范与长辈贴心指南",
+    dress_alert_text: "梵蒂冈（圣彼得大教堂、西斯廷礼拜堂）及西班牙各大教堂（塞维利亚大教堂等）均严格执行着装规范，不合规者将谢绝入内。",
+    dress_checklist_title: "📋 [折叠式清单] 梵蒂冈与西班牙各大教堂入场必读着装规范",
+    dress_rule_strict_title: "🚫 严格禁止着装（谢绝入场）",
+    dress_rule_ok_title: "✅ 推荐及合规着装标准",
+    dress_chk_title: "出发前长辈着装自查清单",
+    santangelo_card_title: "🏰 场馆区分提示：圣天使堡并非宗教教堂",
+    st_distinction_title: "圣天使堡 vs 教堂着装规范区别",
+    st_dress_rule_desc: "圣天使堡为哈德良皇帝陵墓及教皇防御军事要塞改建的国立博物馆。并非天主教礼拜教堂，因此无需遵守遮掩双肩/膝盖的宗教着装规范。",
+    st_terrain_desc: "虽无教堂着装要求，但堡内多为古代斜坡石板路、阶梯与高低不平鹅卵石地面，必须穿着具有良好足弓支撑的舒适软底鞋。",
+    lbl_visit_verify: "行前确认",
+    santangelo_verify_note: "开放时间与预约购票政策请在行前至意大利文化部及圣天使堡官方网站进行确认。",
+    senior_care_title: "👵 陪伴长辈出游 4大贴心照护指南",
+    senior_care_rest_title: "充裕休息与午间小憩",
+    senior_care_rest_desc: "坚持每日1.5景点原则。下午1:00~3:30于露天咖啡馆或酒店小憩，避免长辈疲劳累积。",
+    senior_care_walk_title: "最大限度减少长途步行",
+    senior_care_walk_desc: "欧洲历史古城区多为石板路，建议单次连续行走不超过15分钟，多搭乘出租车。",
+    senior_care_shoes_title: "加厚缓震健步鞋",
+    senior_care_shoes_desc: "长辈须穿着底厚、缓震减压的健步鞋，并备足柔软透气的棉袜以缓解足底疲惫。",
+    senior_care_layers_title: "轻便多层叠穿",
+    senior_care_layers_desc: "针对教堂内部偏凉与室外温差，建议备好轻薄针织开衫、丝巾披肩及轻羽绒进行多层叠穿。"
+  }
+};
+
+  // Inject into I18N_DICTIONARY
+  if (typeof I18N_DICTIONARY !== 'undefined') {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
+      Object.assign(I18N_DICTIONARY[lang], ROME_EXTRA_I18N[lang] || {});
+    });
+  }
+})();
