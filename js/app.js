@@ -648,10 +648,11 @@ function switchTransitHotelSubTab(tab) {
 
 function renderItalyTransitGuide() {
   const panel = document.getElementById('italyTransitGuidePanel');
-  if (!panel || typeof ITALY_TRANSIT_GUIDE_I18N === 'undefined') return;
+  const itGuide = (typeof ITALY_TRANSIT_GUIDE_I18N !== 'undefined') ? ITALY_TRANSIT_GUIDE_I18N : (typeof window !== 'undefined' ? window.ITALY_TRANSIT_GUIDE_I18N : null);
+  if (!panel || !itGuide) return;
 
   const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'ko';
-  const it = ITALY_TRANSIT_GUIDE_I18N[lang] || ITALY_TRANSIT_GUIDE_I18N.ko;
+  const it = itGuide[lang] || itGuide.ko;
 
   panel.innerHTML = `
     <div class="transit-guide-hero-card">
@@ -750,10 +751,11 @@ function renderItalyTransitGuide() {
 
 function renderEuropeTransitGuide() {
   const panel = document.getElementById('europeTransitGuidePanel');
-  if (!panel || typeof EUROPE_TRANSIT_GUIDE_I18N === 'undefined') return;
+  const euGuide = (typeof EUROPE_TRANSIT_GUIDE_I18N !== 'undefined') ? EUROPE_TRANSIT_GUIDE_I18N : (typeof window !== 'undefined' ? window.EUROPE_TRANSIT_GUIDE_I18N : null);
+  if (!panel || !euGuide) return;
 
   const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'ko';
-  const eu = EUROPE_TRANSIT_GUIDE_I18N[lang] || EUROPE_TRANSIT_GUIDE_I18N.ko;
+  const eu = euGuide[lang] || euGuide.ko;
 
   panel.innerHTML = `
     <div class="transit-guide-hero-card">
@@ -6787,6 +6789,26 @@ const GUIDEBOOK_CHAPTERS = [
   'chapter-practical'
 ];
 
+// ==========================================================================
+// 📖 디지털 가이드북 책장 넘기기 (Book Page Flip & Turn) 시스템 변수
+// ==========================================================================
+window.currentBookPage = {
+  'chapter-overview': 0,
+  'chapter-planner': 0,
+  'chapter-guide': 0,
+  'chapter-festivals': 0,
+  'chapter-practical': 0
+};
+
+const CHAPTER_PAGE_COUNTS = {
+  'chapter-overview': 3,
+  'chapter-planner': 4,
+  'chapter-guide': 4,
+  'chapter-festivals': 4,
+  'chapter-practical': 5
+};
+window.CHAPTER_PAGE_COUNTS = CHAPTER_PAGE_COUNTS;
+
 function switchGuidebookChapter(chapterId, shouldScroll = true) {
   if (!GUIDEBOOK_CHAPTERS.includes(chapterId)) {
     chapterId = 'chapter-overview';
@@ -6976,24 +6998,7 @@ if (document.readyState === 'loading') {
 }
 
 
-// ==========================================================================
-// 📖 디지털 가이드북 책장 넘기기 (Book Page Flip & Turn) 시스템
-// ==========================================================================
-window.currentBookPage = {
-  'chapter-overview': 0,
-  'chapter-planner': 0,
-  'chapter-guide': 0,
-  'chapter-festivals': 0,
-  'chapter-practical': 0
-};
-
-const CHAPTER_PAGE_COUNTS = {
-  'chapter-overview': 3,
-  'chapter-planner': 4,
-  'chapter-guide': 4,
-  'chapter-festivals': 4,
-  'chapter-practical': 5
-};
+// (CHAPTER_PAGE_COUNTS moved above switchGuidebookChapter to avoid TDZ)
 
 function goToBookPage(chapterId, pageIndex, shouldScroll = true) {
   const maxPages = CHAPTER_PAGE_COUNTS[chapterId] || 1;

@@ -20720,13 +20720,7 @@ Feel free to ask any travel question!<br>
     if (LANDMARK_TABS_I18N.zh && LANDMARK_TABS_I18N.zh[0]) LANDMARK_TABS_I18N.zh[0].label = '全部景观 (80处)';
   }
 
-  // Merge MISSING_PLANNER_I18N into I18N_DICTIONARY
-  if (typeof I18N_DICTIONARY !== 'undefined' && typeof MISSING_PLANNER_I18N !== 'undefined') {
-    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
-      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
-      Object.assign(I18N_DICTIONARY[lang], MISSING_PLANNER_I18N[lang] || {});
-    });
-  }
+
 
 })();
 
@@ -31639,11 +31633,25 @@ const EUROPE_TRANSIT_GUIDE_I18N = {
   }
 };
 
-  // Inject into I18N_DICTIONARY
-  if (typeof I18N_DICTIONARY !== 'undefined') {
+  // Expose to window & globalThis for other modules (app.js, components.js)
+  const rootObj = typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : (typeof global !== 'undefined' ? global : {}));
+  rootObj.ROME_SECTION_I18N = ROME_SECTION_I18N;
+  rootObj.ROME_EXTRA_I18N = ROME_EXTRA_I18N;
+  rootObj.MISSING_PLANNER_I18N = MISSING_PLANNER_I18N;
+  rootObj.ITALY_TRANSIT_GUIDE_I18N = ITALY_TRANSIT_GUIDE_I18N;
+  rootObj.EUROPE_TRANSIT_GUIDE_I18N = EUROPE_TRANSIT_GUIDE_I18N;
+
+  // Inject ROME_EXTRA_I18N and MISSING_PLANNER_I18N into I18N_DICTIONARY
+  const dictTarget = (typeof I18N_DICTIONARY !== 'undefined') ? I18N_DICTIONARY : rootObj.I18N_DICTIONARY;
+  if (dictTarget) {
     ['ko', 'en', 'ja', 'zh'].forEach(lang => {
-      if (!I18N_DICTIONARY[lang]) I18N_DICTIONARY[lang] = {};
-      Object.assign(I18N_DICTIONARY[lang], ROME_EXTRA_I18N[lang] || {});
+      if (!dictTarget[lang]) dictTarget[lang] = {};
+      if (typeof ROME_EXTRA_I18N !== 'undefined' && ROME_EXTRA_I18N[lang]) {
+        Object.assign(dictTarget[lang], ROME_EXTRA_I18N[lang]);
+      }
+      if (typeof MISSING_PLANNER_I18N !== 'undefined' && MISSING_PLANNER_I18N[lang]) {
+        Object.assign(dictTarget[lang], MISSING_PLANNER_I18N[lang]);
+      }
     });
   }
 })();
