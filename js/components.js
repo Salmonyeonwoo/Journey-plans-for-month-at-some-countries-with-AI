@@ -1268,13 +1268,17 @@
           <p class="sub" id="transitSectionSub" data-i18n="transit_hotels_sub">도시별 최적 교통카드 준비법, 환승 규칙, 엘리베이터 완비 및 가성비 호텔 디렉토리.</p>
         </div>
         <div class="filter-tabs" style="margin-bottom:24px" id="transitHotelSubTabs">
-          <button class="tab-chip active" id="tabBtnTransitGuide" onclick="switchTransitHotelSubTab('transit')" data-i18n="tab_transit_guide">🚇 도시별 대중교통 &amp; 교통카드 완전 정복</button>
+          <button class="tab-chip active" id="tabBtnTransitGuide" onclick="switchTransitHotelSubTab('spain')" data-i18n="tab_transit_spain">🇪🇸/🇵🇹 스페인 &amp; 포르투갈 대중교통</button>
+          <button class="tab-chip" id="tabBtnTransitItaly" onclick="switchTransitHotelSubTab('italy')" data-i18n="tab_transit_italy">🚄 이탈리아 (로마·피렌체) 고속철도 &amp; 스마트 이동</button>
+          <button class="tab-chip" id="tabBtnTransitEurope" onclick="switchTransitHotelSubTab('europe')" data-i18n="tab_transit_europe">🌍 서·중부 유럽 5개국 대중교통 &amp; 기차 완벽 마스터</button>
           <button class="tab-chip" id="tabBtnHotelGuide" onclick="switchTransitHotelSubTab('hotels')" data-i18n="tab_hotel_guide">🏨 지역별 가성비·시니어 친화 호텔 (24선)</button>
         </div>
         <div id="transitGuidePanel" class="transit-guide-box">
           <div class="transit-box-grid" id="transitCardsGrid"></div>
           <div style="margin-top:28px" id="transitComparisonWrap"></div>
         </div>
+        <div id="italyTransitGuidePanel" class="transit-guide-box" style="display:none;"></div>
+        <div id="europeTransitGuidePanel" class="transit-guide-box" style="display:none;"></div>
         <div id="hotelGuidePanel" style="display:none;">
           <div class="hotel-filter-bar" id="hotelFilterBar"></div>
           <div class="hotel-grid" id="hotelCardsGrid"></div>

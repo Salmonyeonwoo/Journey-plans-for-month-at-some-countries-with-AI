@@ -7766,3 +7766,259 @@ body, html {
     padding-bottom: 130px !important;
   }
 }
+
+
+/* ==========================================================================
+   ITALY & WESTERN/CENTRAL EUROPE TRANSIT MASTER COMPONENT STYLES
+   ========================================================================== */
+.transit-guide-hero-card {
+  background: #ffffff;
+  border: 1px solid #e0d6c8;
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 3px 12px rgba(27, 67, 50, 0.05);
+}
+
+.transit-hero-badge {
+  display: inline-block;
+  background: #1b4332;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.transit-hero-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0 0 8px 0;
+}
+
+.transit-hero-intro {
+  font-size: 14px;
+  color: #4e4336;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.transit-part-section {
+  margin-bottom: 26px;
+}
+
+.transit-part-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0 0 12px 0;
+  border-bottom: 1.5px solid #ded4c5;
+  padding-bottom: 8px;
+}
+
+.transit-cards-trio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.transit-cards-duo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.transit-spec-card {
+  background: #ffffff;
+  border: 1px solid #e2dacd;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transit-spec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 67, 50, 0.08);
+}
+
+.transit-spec-card.highlight-card {
+  background: #f9fcf9;
+  border-color: #bad8c7;
+}
+
+.transit-spec-card.warning-card {
+  background: #fffbf5;
+  border-color: #eedec4;
+}
+
+.transit-spec-card.alert-card {
+  background: #fff7f5;
+  border-color: #f2cec5;
+}
+
+.spec-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #1b4332;
+}
+
+.spec-icon {
+  font-size: 20px;
+}
+
+.spec-card-body {
+  font-size: 13px;
+  color: #453c31;
+  line-height: 1.55;
+}
+
+.transit-formula-banner {
+  background: #f7f9f7;
+  border: 1.5px solid #1b4332;
+  border-radius: 12px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  box-shadow: 0 3px 10px rgba(27, 67, 50, 0.06);
+}
+
+.formula-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.formula-content strong {
+  font-size: 15px;
+  color: #1b4332;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.formula-content p {
+  font-size: 13px;
+  color: #383026;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.europe-countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.transit-country-card {
+  background: #ffffff;
+  border: 1px solid #e0d6c8;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.country-card-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0 0 12px 0;
+  border-bottom: 1px solid #eee5da;
+  padding-bottom: 8px;
+}
+
+.country-tip-row {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.country-tip-row strong {
+  color: #1b4332;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.country-tip-row p {
+  color: #4a4034;
+  margin: 0;
+}
+
+.country-tip-row.warning-tip {
+  background: #fffaf2;
+  border-left: 3px solid #d4973b;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.country-tip-row.alert-tip {
+  background: #fff5f2;
+  border-left: 3px solid #c25b3a;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.country-tip-row.highlight-tip {
+  background: #f5faf6;
+  border-left: 3px solid #1b4332;
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.transit-cheat-sheet-box {
+  background: #fffdf8;
+  border: 1.5px solid #d9cbba;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-top: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.cheat-sheet-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0 0 14px 0;
+}
+
+.cheat-sheet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cheat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #383027;
+  line-height: 1.45;
+}
+
+.cheat-item span {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .transit-cards-trio-grid,
+  .transit-cards-duo-grid,
+  .europe-countries-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .transit-formula-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

@@ -609,27 +609,250 @@ function renderDiningMap() {
 }
 
 // 6. Section 16 Transit & Hotels Interactive Handlers
+
+/* ==========================================================================
+   ENHANCED TRANSIT SUBTABS & RENDERERS FOR ITALY & 5 EUROPEAN NATIONS
+   ========================================================================== */
 function switchTransitHotelSubTab(tab) {
-  const btnTransit = document.getElementById('tabBtnTransitGuide');
+  const btnSpain = document.getElementById('tabBtnTransitGuide');
+  const btnItaly = document.getElementById('tabBtnTransitItaly');
+  const btnEurope = document.getElementById('tabBtnTransitEurope');
   const btnHotel = document.getElementById('tabBtnHotelGuide');
-  const panelTransit = document.getElementById('transitGuidePanel');
+
+  const panelSpain = document.getElementById('transitGuidePanel');
+  const panelItaly = document.getElementById('italyTransitGuidePanel');
+  const panelEurope = document.getElementById('europeTransitGuidePanel');
   const panelHotel = document.getElementById('hotelGuidePanel');
 
-  if (tab === 'hotels') {
-    if (btnTransit) btnTransit.classList.remove('active');
+  [btnSpain, btnItaly, btnEurope, btnHotel].forEach(b => { if (b) b.classList.remove('active'); });
+  [panelSpain, panelItaly, panelEurope, panelHotel].forEach(p => { if (p) p.style.display = 'none'; });
+
+  if (tab === 'spain' || tab === 'transit') {
+    if (btnSpain) btnSpain.classList.add('active');
+    if (panelSpain) panelSpain.style.display = 'block';
+    renderTransitGuide();
+  } else if (tab === 'italy') {
+    if (btnItaly) btnItaly.classList.add('active');
+    if (panelItaly) panelItaly.style.display = 'block';
+    renderItalyTransitGuide();
+  } else if (tab === 'europe') {
+    if (btnEurope) btnEurope.classList.add('active');
+    if (panelEurope) panelEurope.style.display = 'block';
+    renderEuropeTransitGuide();
+  } else if (tab === 'hotels') {
     if (btnHotel) btnHotel.classList.add('active');
-    if (panelTransit) panelTransit.style.display = 'none';
     if (panelHotel) panelHotel.style.display = 'block';
     renderHotelFilterBar();
-    renderHotelsGrid();
-  } else {
-    if (btnTransit) btnTransit.classList.add('active');
-    if (btnHotel) btnHotel.classList.remove('active');
-    if (panelTransit) panelTransit.style.display = 'block';
-    if (panelHotel) panelHotel.style.display = 'none';
-    renderTransitGuide();
   }
 }
+
+function renderItalyTransitGuide() {
+  const panel = document.getElementById('italyTransitGuidePanel');
+  if (!panel || typeof ITALY_TRANSIT_GUIDE_I18N === 'undefined') return;
+
+  const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'ko';
+  const it = ITALY_TRANSIT_GUIDE_I18N[lang] || ITALY_TRANSIT_GUIDE_I18N.ko;
+
+  panel.innerHTML = `
+    <div class="transit-guide-hero-card">
+      <div class="transit-hero-badge">${it.badge}</div>
+      <h3 class="transit-hero-title">${it.title}</h3>
+      <p class="transit-hero-intro">${it.intro}</p>
+    </div>
+
+    <!-- 파트 1: 고속열차 -->
+    <div class="transit-part-section">
+      <h4 class="transit-part-title">${it.part1_title}</h4>
+      <div class="transit-cards-trio-grid">
+        <div class="transit-spec-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">🚄</span>
+            <strong>${it.part1_sec1_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part1_sec1_desc}</div>
+        </div>
+        <div class="transit-spec-card highlight-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">💺</span>
+            <strong>${it.part1_sec2_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part1_sec2_desc}</div>
+        </div>
+        <div class="transit-spec-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">📺</span>
+            <strong>${it.part1_sec3_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part1_sec3_desc}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 파트 2: 로마 시내 이동 -->
+    <div class="transit-part-section">
+      <h4 class="transit-part-title">${it.part2_title}</h4>
+      <div class="transit-cards-trio-grid">
+        <div class="transit-spec-card highlight-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">🚕</span>
+            <strong>${it.part2_sec1_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part2_sec1_desc}</div>
+        </div>
+        <div class="transit-spec-card warning-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">🚌</span>
+            <strong>${it.part2_sec2_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part2_sec2_desc}</div>
+        </div>
+        <div class="transit-spec-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">🚇</span>
+            <strong>${it.part2_sec3_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part2_sec3_desc}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 파트 3: 결제 & 벌금 함정 -->
+    <div class="transit-part-section">
+      <h4 class="transit-part-title">${it.part3_title}</h4>
+      <div class="transit-cards-duo-grid">
+        <div class="transit-spec-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">💳</span>
+            <strong>${it.part3_sec1_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part3_sec1_desc}</div>
+        </div>
+        <div class="transit-spec-card alert-card">
+          <div class="spec-card-head">
+            <span class="spec-icon">🚨</span>
+            <strong>${it.part3_sec2_title}</strong>
+          </div>
+          <div class="spec-card-body">${it.part3_sec2_desc}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 요약 공식 배너 -->
+    <div class="transit-formula-banner">
+      <div class="formula-icon">💡</div>
+      <div class="formula-content">
+        <strong>${it.summary_formula_title}</strong>
+        <p>${it.summary_formula_desc}</p>
+      </div>
+    </div>
+  `;
+}
+
+function renderEuropeTransitGuide() {
+  const panel = document.getElementById('europeTransitGuidePanel');
+  if (!panel || typeof EUROPE_TRANSIT_GUIDE_I18N === 'undefined') return;
+
+  const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'ko';
+  const eu = EUROPE_TRANSIT_GUIDE_I18N[lang] || EUROPE_TRANSIT_GUIDE_I18N.ko;
+
+  panel.innerHTML = `
+    <div class="transit-guide-hero-card">
+      <div class="transit-hero-badge">${eu.badge}</div>
+      <h3 class="transit-hero-title">${eu.title}</h3>
+      <p class="transit-hero-intro">${eu.intro}</p>
+    </div>
+
+    <div class="europe-countries-grid">
+      <!-- 1. 영국 -->
+      <div class="transit-country-card">
+        <h4 class="country-card-title">${eu.uk_title}</h4>
+        <div class="country-tip-row">
+          <strong>${eu.uk_sec1_title}</strong>
+          <p>${eu.uk_sec1_desc}</p>
+        </div>
+        <div class="country-tip-row">
+          <strong>${eu.uk_sec2_title}</strong>
+          <p>${eu.uk_sec2_desc}</p>
+        </div>
+        <div class="country-tip-row">
+          <strong>${eu.uk_sec3_title}</strong>
+          <p>${eu.uk_sec3_desc}</p>
+        </div>
+      </div>
+
+      <!-- 2. 프랑스 -->
+      <div class="transit-country-card">
+        <h4 class="country-card-title">${eu.fr_title}</h4>
+        <div class="country-tip-row">
+          <strong>${eu.fr_sec1_title}</strong>
+          <p>${eu.fr_sec1_desc}</p>
+        </div>
+        <div class="country-tip-row warning-tip">
+          <strong>${eu.fr_sec2_title}</strong>
+          <p>${eu.fr_sec2_desc}</p>
+        </div>
+        <div class="country-tip-row">
+          <strong>${eu.fr_sec3_title}</strong>
+          <p>${eu.fr_sec3_desc}</p>
+        </div>
+      </div>
+
+      <!-- 3. 네덜란드 -->
+      <div class="transit-country-card">
+        <h4 class="country-card-title">${eu.nl_title}</h4>
+        <div class="country-tip-row">
+          <strong>${eu.nl_sec1_title}</strong>
+          <p>${eu.nl_sec1_desc}</p>
+        </div>
+        <div class="country-tip-row alert-tip">
+          <strong>${eu.nl_sec2_title}</strong>
+          <p>${eu.nl_sec2_desc}</p>
+        </div>
+      </div>
+
+      <!-- 4. 독일 -->
+      <div class="transit-country-card">
+        <h4 class="country-card-title">${eu.de_title}</h4>
+        <div class="country-tip-row alert-tip">
+          <strong>${eu.de_sec1_title}</strong>
+          <p>${eu.de_sec1_desc}</p>
+        </div>
+        <div class="country-tip-row">
+          <strong>${eu.de_sec2_title}</strong>
+          <p>${eu.de_sec2_desc}</p>
+        </div>
+      </div>
+
+      <!-- 5. 오스트리아 -->
+      <div class="transit-country-card">
+        <h4 class="country-card-title">${eu.at_title}</h4>
+        <div class="country-tip-row">
+          <strong>${eu.at_sec1_title}</strong>
+          <p>${eu.at_sec1_desc}</p>
+        </div>
+        <div class="country-tip-row">
+          <strong>${eu.at_sec2_title}</strong>
+          <p>${eu.at_sec2_desc}</p>
+        </div>
+        <div class="country-tip-row highlight-tip">
+          <strong>${eu.at_sec3_title}</strong>
+          <p>${eu.at_sec3_desc}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 핵심 요약 치트시트 -->
+    <div class="transit-cheat-sheet-box">
+      <h4 class="cheat-sheet-title">${eu.core_summary_title}</h4>
+      <div class="cheat-sheet-list">
+        <div class="cheat-item"><span>💳</span> <div>${eu.core_summary_uk_nl}</div></div>
+        <div class="cheat-item"><span>🎒</span> <div>${eu.core_summary_fr}</div></div>
+        <div class="cheat-item"><span>🚨</span> <div>${eu.core_summary_de_at}</div></div>
+      </div>
+    </div>
+  `;
+}
+
 
 function renderTransitGuide() {
   const grid = document.getElementById('transitCardsGrid');
