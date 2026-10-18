@@ -3469,7 +3469,7 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
   const europeGrid = document.getElementById('landmarksEuropeGrid');
   if (europeGrid) {
     europeGrid.innerHTML = '';
-    const europeItems = list.filter(x => x.region !== '스페인' && x.region !== '포르투갈');
+    const europeItems = list.filter(x => x.region !== '스페인' && x.region !== '포르투갈' && x.region !== '이탈리아' && x.city !== '로마' && x.city !== '피렌체' && x.city !== '베네치아');
     europeItems.forEach(item => europeGrid.appendChild(createCard(item)));
   }
 
@@ -4123,6 +4123,7 @@ function switchLanguage(lang, btn) {
   renderGlobalDining();
   renderGlobalLandmarks();
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(lang);
+  if (typeof renderItalyCityGuide === "function") renderItalyCityGuide(lang);
   
   // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
   const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
@@ -6803,7 +6804,7 @@ window.currentBookPage = {
 const CHAPTER_PAGE_COUNTS = {
   'chapter-overview': 3,
   'chapter-planner': 4,
-  'chapter-guide': 4,
+  'chapter-guide': 5,
   'chapter-festivals': 4,
   'chapter-practical': 5
 };
@@ -6890,6 +6891,7 @@ function switchGuidebookChapter(chapterId, shouldScroll = true) {
       }
       if (typeof renderSeniorDistrictRoutes === 'function') {
         renderSeniorDistrictRoutes();
+  if (typeof renderItalyCityGuide === "function") renderItalyCityGuide();
       }
       setTimeout(() => {
         if (window.landmarksMap && typeof window.landmarksMap.invalidateSize === 'function') {
@@ -7274,7 +7276,7 @@ function scrollToLandmarkCard(cardId) {
   if (window.currentActiveChapter !== 'chapter-guide') {
     switchGuidebookChapter('chapter-guide', false);
   }
-  goToBookPage('chapter-guide', 0, false);
+  goToBookPage('chapter-guide', 1, false);
   
   setTimeout(() => {
     const el = document.getElementById(cardId);
@@ -7361,7 +7363,7 @@ function renderSeniorDistrictRoutes(lang = (typeof currentLang !== 'undefined' ?
 
     // 5. Rome 12-Day Extension Section
     if (data.romeSection) {
-      html += renderRomeExtensionSectionHtml(data.romeSection, lbl);
+      // Rome is now rendered in premier Italy City Guide (Page 0)
     }
 
     containerEl.innerHTML = html;
@@ -7499,15 +7501,15 @@ window.toggleMobileToc = toggleMobileToc;
 
 
 // ==========================================================================
-// 🏛️ 로마 12일 연장 섹션 동적 렌더러 (도시 간 타임라인, 대표 사진 카드, 2열 명소 카드)
+// 🏛️ 로마 약 10일 체류 섹션 동적 렌더러 (도시 간 타임라인, 대표 사진 카드, 2열 명소 카드)
 // ==========================================================================
 function renderRomeExtensionSectionHtml(rome, lbl) {
   if (!rome) return '';
   return '<section class="district-route-card rome-extension-card" id="district-rome-extension">' +
     '<div class="district-card-header rome-header">' +
       '<div class="d-badge-row">' +
-        '<span class="d-badge rome-badge">' + (rome.badge || '로마 12일 연장') + '</span>' +
-        '<span class="d-time-badge rome-time-badge">' + (rome.statusBadge || '세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요') + '</span>' +
+        '<span class="d-badge rome-badge">' + (rome.badge || '로마 약 10일 체류') + '</span>' +
+        '<span class="d-time-badge rome-time-badge">' + (rome.statusBadge || '세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요') + '</span>' +
       '</div>' +
       '<h3 class="district-title rome-main-title">' + (rome.title || '') + '</h3>' +
       '<p class="district-desc rome-main-desc">' + (rome.desc || '') + '</p>' +
@@ -7613,3 +7615,340 @@ window.renderRomeExtensionSectionHtml = renderRomeExtensionSectionHtml;
     }, 2500);
   }, { passive: true });
 })();
+
+
+// ==========================================================================
+// 🇮🇹 ITALY CITIES GUIDE CONTROLLER & DYNAMIC RENDERER (100% MULTILINGUAL)
+// ==========================================================================
+window.currentItalyCity = window.currentItalyCity || 'rome';
+window.currentItalySubTab = window.currentItalySubTab || 'attractions';
+
+function selectItalyCity(cityId) {
+  window.currentItalyCity = cityId;
+  
+  const navBar = document.getElementById('italyCityNavBar');
+  if (navBar) {
+    navBar.querySelectorAll('.italy-city-tab').forEach(btn => {
+      const match = btn.getAttribute('data-city') === cityId;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+  }
+
+  const subTabBar = document.getElementById('italySubTabBar');
+  if (subTabBar) {
+    subTabBar.style.display = (cityId === 'itinerary') ? 'none' : 'flex';
+  }
+
+  renderItalyCityGuide();
+}
+window.selectItalyCity = selectItalyCity;
+
+function selectItalySubTab(subTabId) {
+  window.currentItalySubTab = subTabId;
+
+  const subTabBar = document.getElementById('italySubTabBar');
+  if (subTabBar) {
+    subTabBar.querySelectorAll('.italy-subtab').forEach(btn => {
+      const match = btn.getAttribute('data-subtab') === subTabId;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+  }
+
+  renderItalyCityGuide();
+}
+window.selectItalySubTab = selectItalySubTab;
+
+function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
+  const container = document.getElementById('italyCityContentContainer');
+  if (!container) return;
+
+  const data = (typeof ITALY_CITIES_GUIDE_DATA !== 'undefined') ? ITALY_CITIES_GUIDE_DATA : (typeof window !== 'undefined' ? window.ITALY_CITIES_GUIDE_DATA : null);
+  if (!data) return;
+
+  const cityId = window.currentItalyCity || 'rome';
+  const subTabId = window.currentItalySubTab || 'attractions';
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
+
+  // Localized UI helper terms
+  const L = {
+    transitLoad: lang === 'en' ? 'Transit Load' : (lang === 'ja' ? '移動負担' : (lang === 'zh' ? '交通负荷' : '이동 부담')),
+    kneeLoad: lang === 'en' ? 'Knee Strain' : (lang === 'ja' ? '膝の負担' : (lang === 'zh' ? '膝盖负荷' : '무릎 부담')),
+    pros: lang === 'en' ? 'Advantages' : (lang === 'ja' ? 'メリット' : (lang === 'zh' ? '优势特点' : '장점')),
+    cons: lang === 'en' ? 'Cautions' : (lang === 'ja' ? '留意点' : (lang === 'zh' ? '注意事项' : '유의점')),
+    trainPrefix: lang === 'en' ? 'Train: ' : (lang === 'ja' ? '列車: ' : (lang === 'zh' ? '列车在途: ' : '기차: ')),
+    d2dPrefix: lang === 'en' ? 'Actual Door-to-Door: ' : (lang === 'ja' ? '実際の宿泊間所要時間: ' : (lang === 'zh' ? '全程门到门实际耗时: ' : '실제 도어투도어: ')),
+    tableType: lang === 'en' ? 'Type' : (lang === 'ja' ? '種類' : (lang === 'zh' ? '车票种类' : '종류')),
+    tableRule: lang === 'en' ? 'Details & Validity' : (lang === 'ja' ? '内容＆有効時間' : (lang === 'zh' ? '规则与有效期' : '내용 및 유효시간')),
+    tableFare: lang === 'en' ? 'Fare' : (lang === 'ja' ? '運賃' : (lang === 'zh' ? '票价' : '요금')),
+    tapAndGoTitle: lang === 'en' ? 'Contactless Tap & Go (Easy Ride)' : (lang === 'ja' ? 'タッチ決済 Tap & Go (簡単乗車)' : (lang === 'zh' ? '非接闪付 Tap & Go (便捷乘车)' : '컨택리스 Tap & Go (간편 승차)')),
+    officialFaresBtn: lang === 'en' ? 'Official Fares & Ticket Portal ➔' : (lang === 'ja' ? '公式運賃＆チケットポータル ➔' : (lang === 'zh' ? '官方票价与购票指南 ➔' : '공식 요금 및 티켓 안내 확인 ➔'))
+  };
+
+  // Case 1: 12-Night Itinerary & Senior Comparison Analysis
+  if (cityId === 'itinerary') {
+    const itData = data.itineraryAnalysis;
+    let html = '<div class="itinerary-analysis-wrapper">';
+    
+    // Header
+    html += '<div class="it-head-card">' +
+      '<div class="it-badge">12 NIGHTS / 13 DAYS PACING GUIDE</div>' +
+      '<h3 class="it-title">' + (itData.title[lang] || itData.title.ko) + '</h3>' +
+      '<p class="it-context">' + (itData.context[lang] || itData.context.ko) + '</p>' +
+    '</div>';
+
+    // 3 Options Comparison Cards Grid
+    html += '<div class="it-options-grid">';
+    (itData.options || []).forEach(opt => {
+      html += '<div class="it-option-card ' + opt.class + '">' +
+        '<div class="opt-head">' +
+          '<span class="opt-badge">' + (opt.badge[lang] || opt.badge.ko) + '</span>' +
+          '<h4 class="opt-name">' + (opt.name[lang] || opt.name.ko) + '</h4>' +
+        '</div>' +
+        '<div class="opt-metrics">' +
+          '<div class="metric-row"><span class="m-label">🚆 ' + L.transitLoad + ':</span> <strong>' + (opt.transitLoad[lang] || opt.transitLoad.ko) + '</strong></div>' +
+          '<div class="metric-row"><span class="m-label">🦵 ' + L.kneeLoad + ':</span> <strong>' + (opt.kneeLoad[lang] || opt.kneeLoad.ko) + '</strong></div>' +
+        '</div>' +
+        '<div class="opt-pros"><span class="check-icon">✓ ' + L.pros + ':</span> ' + (opt.pros[lang] || opt.pros.ko) + '</div>' +
+        '<div class="opt-cons"><span class="warn-icon">⚠️ ' + L.cons + ':</span> ' + (opt.cons[lang] || opt.cons.ko) + '</div>' +
+      '</div>';
+    });
+    html += '</div>';
+
+    // Door-to-Door Transit Comparison
+    const trD = itData.transitDetails;
+    const r2fSteps = (trD.romeToFlorence.steps[lang] || trD.romeToFlorence.steps.ko || []);
+    const r2vSteps = (trD.romeToVenice.steps[lang] || trD.romeToVenice.steps.ko || []);
+
+    html += '<div class="door-to-door-card">' +
+      '<div class="d2d-head">' +
+        '<span class="d2d-icon">🚆</span>' +
+        '<div>' +
+          '<h4>' + (trD.title[lang] || trD.title.ko) + '</h4>' +
+          '<p>' + (trD.desc[lang] || trD.desc.ko) + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="d2d-grid">' +
+        '<div class="d2d-box rec">' +
+          '<div class="d2d-box-title">🟢 ' + (trD.romeToFlorence.title[lang] || trD.romeToFlorence.title.ko) + '</div>' +
+          '<div class="d2d-time">' + L.trainPrefix + (trD.romeToFlorence.trainTime[lang] || trD.romeToFlorence.trainTime.ko) + '</div>' +
+          '<div class="d2d-real"><strong>' + L.d2dPrefix + (trD.romeToFlorence.realTime[lang] || trD.romeToFlorence.realTime.ko) + '</strong></div>' +
+          '<ul class="d2d-steps">' + r2fSteps.map(s => '<li>' + s + '</li>').join('') + '</ul>' +
+          '<a href="' + trD.romeToFlorence.officialLink + '" target="_blank" rel="noopener noreferrer" class="d2d-link-btn">' + (trD.romeToFlorence.linkText[lang] || trD.romeToFlorence.linkText.ko) + '</a>' +
+        '</div>' +
+        '<div class="d2d-box warn">' +
+          '<div class="d2d-box-title">🔴 ' + (trD.romeToVenice.title[lang] || trD.romeToVenice.title.ko) + '</div>' +
+          '<div class="d2d-time">' + L.trainPrefix + (trD.romeToVenice.trainTime[lang] || trD.romeToVenice.trainTime.ko) + '</div>' +
+          '<div class="d2d-real"><strong>' + L.d2dPrefix + (trD.romeToVenice.realTime[lang] || trD.romeToVenice.realTime.ko) + '</strong></div>' +
+          '<ul class="d2d-steps">' + r2vSteps.map(s => '<li>' + s + '</li>').join('') + '</ul>' +
+          '<a href="' + trD.romeToVenice.officialLink + '" target="_blank" rel="noopener noreferrer" class="d2d-link-btn">' + (trD.romeToVenice.linkText[lang] || trD.romeToVenice.linkText.ko) + '</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+    // Day-by-Day Timeline
+    const tl = itData.suggestedTimeline;
+    html += '<div class="timeline-card">' +
+      '<div class="tl-head">' +
+        '<h4>' + (tl.title[lang] || tl.title.ko) + '</h4>' +
+        '<p class="tl-note">' + (tl.note[lang] || tl.note.ko) + '</p>' +
+      '</div>' +
+      '<div class="tl-list">' +
+        (tl.days || []).map(d => {
+          const dTitle = (d.title && (d.title[lang] || d.title.ko)) || d.title;
+          const dDesc = (d.desc && (d.desc[lang] || d.desc.ko)) || d.desc;
+          return '<div class="tl-day-item">' +
+            '<div class="tl-day-badge">' + d.day + '</div>' +
+            '<div class="tl-day-body">' +
+              '<strong>' + dTitle + '</strong>' +
+              '<p>' + dDesc + '</p>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+    '</div>';
+
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Case 2: City Guide (Rome, Florence, Venice)
+  const city = data.cities[cityId];
+  if (!city) return;
+
+  let html = '<div class="city-guide-wrapper">';
+
+  // City Intro Header Banner
+  html += '<div class="city-intro-banner">' +
+    '<div class="city-tag-row">' +
+      '<span class="city-pill-badge">' + (city.tag[lang] || city.tag.ko) + '</span>' +
+      '<span class="city-status-badge">' + (city.statusBadge[lang] || city.statusBadge.ko) + '</span>' +
+    '</div>' +
+    '<h3 class="city-title">' + (city.name[lang] || city.name.ko) + '</h3>' +
+    '<p class="city-desc">' + (city.intro[lang] || city.intro.ko) + '</p>' +
+  '</div>';
+
+  // Sub-Tab Content: 1. Attractions (명소)
+  if (subTabId === 'attractions') {
+    html += '<div class="city-attractions-view">';
+
+    if (cityId === 'rome' && city.districts) {
+      city.districts.forEach(dist => {
+        html += '<div class="district-group-block" id="dist-' + dist.id + '">' +
+          '<div class="dist-group-head">' +
+            '<span class="dist-badge">' + (dist.badge[lang] || dist.badge.ko) + '</span>' +
+            '<h4 class="dist-title">' + (dist.name[lang] || dist.name.ko) + '</h4>' +
+          '</div>' +
+          '<div class="italy-cards-grid">';
+        
+        (dist.spots || []).forEach(spot => {
+          html += renderSingleSpotCard(spot, lang, dict);
+        });
+
+        html += '</div></div>';
+      });
+    } else if (city.spots) {
+      html += '<div class="italy-cards-grid">';
+      city.spots.forEach(spot => {
+        html += renderSingleSpotCard(spot, lang, dict);
+      });
+      html += '</div>';
+    }
+
+    html += '</div>';
+  } 
+  // Sub-Tab Content: 2. Dining (대표 미식)
+  else if (subTabId === 'dining') {
+    html += '<div class="city-dining-view">' +
+      '<div class="dining-view-intro">' +
+        '<h4>🍝 ' + (city.name[lang] || city.name.ko) + ' ' + (dict['subtab_dining'] || '대표 미식') + '</h4>' +
+        '<p class="season-disclaimer-note">' + (data.meta.seasonNote[lang] || data.meta.seasonNote.ko) + '</p>' +
+      '</div>' +
+      '<div class="italy-food-grid">';
+
+    (city.dining || []).forEach(dish => {
+      html += '<div class="italy-food-card">' +
+        '<div class="food-img-wrap">' +
+          '<img src="' + dish.photo + '" alt="' + (dish.name[lang] || dish.name.ko) + '" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=800&q=80\';" />' +
+          '<span class="food-it-badge">' + dish.italianName + '</span>' +
+        '</div>' +
+        '<div class="food-body">' +
+          '<h5 class="food-title">' + (dish.name[lang] || dish.name.ko) + '</h5>' +
+          '<div class="food-field">' +
+            '<span class="field-label">🥬 ' + (dict['lbl_ingredients'] || '핵심 재료') + ':</span>' +
+            '<p class="field-val">' + (dish.ingredients[lang] || dish.ingredients.ko) + '</p>' +
+          '</div>' +
+          '<div class="food-field">' +
+            '<span class="field-label">✨ ' + (dict['lbl_taste_profile'] || '맛의 특징') + ':</span>' +
+            '<p class="field-val">' + (dish.taste[lang] || dish.taste.ko) + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+
+    html += '</div></div>';
+  }
+  // Sub-Tab Content: 3. Transit (대중교통)
+  else if (subTabId === 'transit') {
+    const tr = city.transit;
+    html += '<div class="city-transit-view">';
+
+    if (tr.disclaimer) {
+      html += '<div class="transit-alert-box">' + (tr.disclaimer[lang] || tr.disclaimer.ko) + '</div>';
+    }
+    if (tr.stairsWarning) {
+      html += '<div class="transit-alert-box">' + (tr.stairsWarning[lang] || tr.stairsWarning.ko) + '</div>';
+    }
+    if (tr.tramsAndStation) {
+      html += '<div class="transit-info-card">' + (tr.tramsAndStation[lang] || tr.tramsAndStation.ko) + '</div>';
+    }
+
+    const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
+
+    html += '<div class="transit-fares-card">' +
+      '<div class="fares-head">' +
+        '<h4>🎫 ' + (dict['lbl_fares_summary'] || '대중교통 요금 & 승차권 체계') + ' (' + tr.operator + ')</h4>' +
+        '<div class="verified-tag">✓ ' + verifiedTagText + '</div>' +
+      '</div>' +
+      '<div class="fares-table-wrap">' +
+        '<table class="transit-table">' +
+          '<thead><tr><th>' + L.tableType + '</th><th>' + L.tableRule + '</th><th>' + L.tableFare + '</th></tr></thead>' +
+          '<tbody>' +
+            (tr.fares || []).map(f => {
+              const fName = (f.name && (f.name[lang] || f.name.ko)) || f.name;
+              const fDesc = (f.desc && (f.desc[lang] || f.desc.ko)) || f.desc;
+              return '<tr><td><strong>' + fName + '</strong></td><td>' + fDesc + '</td><td class="price-cell">' + f.price + '</td></tr>';
+            }).join('') +
+          '</tbody>' +
+        '</table>' +
+      '</div>' +
+    '</div>';
+
+    if (tr.tapAndGo) {
+      html += '<div class="tap-and-go-card">' +
+        '<div class="tg-icon">💳</div>' +
+        '<div>' +
+          '<strong>' + L.tapAndGoTitle + '</strong>' +
+          '<p>' + (tr.tapAndGo[lang] || tr.tapAndGo.ko) + '</p>' +
+        '</div>' +
+      '</div>';
+    }
+
+    html += '<div class="transit-official-card">' +
+      '<a href="' + tr.officialUrl + '" target="_blank" rel="noopener noreferrer" class="official-portal-btn">' +
+        '🌐 ' + tr.operator + ' ' + L.officialFaresBtn +
+      '</a>' +
+    '</div>';
+
+    html += '</div>';
+  }
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+window.renderItalyCityGuide = renderItalyCityGuide;
+
+function renderSingleSpotCard(spot, lang, dict) {
+  const pLevel = spot.priorityLevel || 'good';
+  const wLevel = spot.walkingLevel || 'medium';
+
+  const hoursLabel = lang === 'en' ? 'Hours:' : (lang === 'ja' ? '営業時間:' : (lang === 'zh' ? '开放时间:' : '운영시간:'));
+  const admissionLabel = lang === 'en' ? 'Admission:' : (lang === 'ja' ? '入場料:' : (lang === 'zh' ? '门票费用:' : '입장료:'));
+  const bookBtnText = lang === 'en' ? '🎟 Official Site Booking / Details' : (lang === 'ja' ? '🎟 公式サイト予約 / 詳細案内' : (lang === 'zh' ? '🎟 官方网站预订 / 详情指南' : '🎟 공식 사이트 예매 / 상세 안내'));
+  const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
+
+  const spotHours = (spot.hours && (spot.hours[lang] || spot.hours.ko)) || spot.hours;
+  const spotAdmission = (spot.admission && (spot.admission[lang] || spot.admission.ko)) || spot.admission;
+
+  return '<div class="italy-spot-card" id="spot-' + spot.id + '">' +
+    '<div class="spot-img-wrap">' +
+      '<img src="' + spot.photo + '" alt="' + (spot.name[lang] || spot.name.ko) + '" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80\';" />' +
+      '<span class="spot-it-tag">' + spot.italianName + '</span>' +
+    '</div>' +
+    '<div class="spot-content">' +
+      '<div class="spot-badges-row">' +
+        '<span class="spot-badge badge-p-' + pLevel + '">🎟 ' + (spot.priority[lang] || spot.priority.ko) + '</span>' +
+        '<span class="spot-badge badge-w-' + wLevel + '">🚶 ' + (spot.walking[lang] || spot.walking.ko) + '</span>' +
+      '</div>' +
+      '<h4 class="spot-h4">' + (spot.name[lang] || spot.name.ko) + '</h4>' +
+      '<p class="spot-lead">' + (spot.desc[lang] || spot.desc.ko) + '</p>' +
+      '<div class="spot-senior-box">' +
+        '<div class="s-box-head">♿ ' + (dict['lbl_senior_access'] || '부모님 보행 및 접근성 안내') + '</div>' +
+        '<div class="s-box-desc">' + (spot.details[lang] || spot.details.ko) + '</div>' +
+      '</div>' +
+      '<div class="spot-meta-row">' +
+        '<div class="meta-item"><span>⏰ ' + hoursLabel + '</span> <strong>' + spotHours + '</strong></div>' +
+        '<div class="meta-item"><span>💶 ' + admissionLabel + '</span> <strong>' + spotAdmission + '</strong></div>' +
+      '</div>' +
+      '<div class="spot-footer">' +
+        '<a href="' + spot.officialUrl + '" target="_blank" rel="noopener noreferrer" class="spot-btn primary">' +
+          bookBtnText +
+        '</a>' +
+        '<span class="spot-verify-tag">✓ ' + verifiedTagText + '</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+window.renderSingleSpotCard = renderSingleSpotCard;

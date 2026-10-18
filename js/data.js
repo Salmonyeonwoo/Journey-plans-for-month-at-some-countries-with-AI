@@ -30368,13 +30368,13 @@ if (typeof window !== 'undefined') {
 (function() {
   const ROME_SECTION_I18N = {
     ko: {
-      badge: "이탈리아 로마 12일 연장",
-      statusBadge: "세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요",
-      title: "천년의 역사 로마: 60대 부모님 맞춤 12일 슬로우 가이드",
-      desc: "세비야 이후 이어지는 로마 12일 연장 여정. 과장된 ‘완전 평지’ 환상을 지양하고, 거친 고대 자갈길(Sampietrini) 특성을 고려한 1일 1.5스팟과 시에스타 휴식 루틴을 적용한 4대 핵심 테마 가이드입니다.",
+      badge: "이탈리아 로마 약 10일 체류",
+      statusBadge: "세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요",
+      title: "천년의 역사 로마: 60대 부모님 맞춤 약 10일 슬로우 가이드",
+      desc: "세비야 이후 이어지는 로마 약 10일 여정. 과장된 ‘완전 평지’ 환상을 지양하고, 거친 고대 자갈길(Sampietrini) 특성을 고려한 1일 1.5스팟과 시에스타 휴식 루틴을 적용한 4대 핵심 테마 가이드입니다.",
       transit: {
         title: "세비야(SVQ) ➔ 로마(FCO/CIA) 도시 간 이동 타임라인",
-        sub: "세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요",
+        sub: "세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요",
         notice: "⚠️ <strong>항공편 및 날짜 미정 안내:</strong> 세비야에서 로마로의 이동은 직항 항공편(약 2시간 30분 소요 예상) 또는 1회 경유편으로 예상되며, 정확한 이동 날짜, 편명, 출발·도착 시각 및 소요시간은 현재 미정입니다. 날짜를 임의로 확정하지 않으며, 출발 2~3개월 전 항공사 공식 웹사이트(Vueling, Iberia, Ryanair 등)에서 수하물 규정(대형 위탁 수하물 3개)과 운항 스케줄을 사전 확인해야 합니다.",
         steps: [
           {
@@ -30402,7 +30402,7 @@ if (typeof window !== 'undefined') {
       hero: {
         photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
         alt: "로마 콜로세움 및 고대 로마 유적 전경",
-        badge: "🏛️ 12일 연장 추천 여정 · 세비야 이후 (날짜/항공편 확인 필요)",
+        badge: "🏛️ 약 10일 추천 여정 · 세비야 이후 (날짜/항공편 확인 필요)",
         title: "로마 대표 전경 & 60대 부모님 맞춤 슬로우 보행 원칙",
         desc: "로마는 수천 년의 역사를 간직한 야외 박물관이지만, 구시가지 전역이 거친 삼피에트리니(Sampietrini) 자갈길과 좁은 보도로 이루어져 있어 발목 피로가 매우 큽니다. ‘완벽한 평지’는 없으므로, 하루 1.5스팟을 원칙으로 오후 13:00~15:30에는 반드시 숙소 낮잠이나 카페 휴식을 배치해야 합니다.",
         badges: [
@@ -30488,9 +30488,9 @@ if (typeof window !== 'undefined') {
       ]
     },
     en: {
-      badge: "Rome 12-Day Extension",
-      statusBadge: "After Seville · 12-day extension · Dates/flights confirmation required",
-      title: "Rome: 12-Day Senior-Friendly Slow Travel Guide",
+      badge: "Rome Approx. 10 Days Stay",
+      statusBadge: "After Seville · Approx. 10 Days · Dates/Flights TBD",
+      title: "Rome: Approx. 10-Day Senior-Friendly Slow Travel Guide",
       desc: "Following Seville, extend the journey to Rome for 12 days. Instead of unrealistic '100% barrier-free' assumptions, this guide implements a 1.5-spot daily rhythm, mandatory afternoon siestas, and careful cobblestone (Sampietrini) navigation across 4 curated themes.",
       transit: {
         title: "Intercity Transit Timeline: Seville (SVQ) ➔ Rome (FCO/CIA)",
@@ -30859,7 +30859,7 @@ if (typeof window !== 'undefined') {
           const hasRomeChip = globalDistricts[lang].nav.chips.some(c => c.id === 'district-rome-extension');
           if (!hasRomeChip) {
             const chipTexts = {
-              ko: "🏛️ 5. 로마 12일 연장 (세비야 이후)",
+              ko: "🏛️ 5. 로마 약 10일 체류 (세비야 이후)",
               en: "🏛️ 5. Rome 12-Day Extension",
               ja: "🏛️ 5. ローマ12日延長（セビリア後）",
               zh: "🏛️ 5. 罗马12天延展（塞维利亚后）"
@@ -30882,8 +30882,8 @@ if (typeof window !== 'undefined') {
 
 const ROME_EXTRA_I18N = {
   ko: {
-    hero_ctx_rome: "🇮🇹 로마 (12일 연장)",
-    hero_ctx_rome_date: "세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요",
+    hero_ctx_rome: "🇮🇹 로마 (약 10일, 날짜 미정)",
+    hero_ctx_rome_date: "세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요",
     hero_ctx_rome_hotel: "🏨 숙소·항공: <strong>미정 (일정 확정 후 예약 필요)</strong>",
     hero_tag_rome_tbd: "📍 로마 구간 날짜 미정",
     route_flow_title: "🗺️ 전체 여행 3개 도시 연결 경로 (스페인 ➔ 이탈리아 연장)",
@@ -30892,9 +30892,9 @@ const ROME_EXTRA_I18N = {
     route_step_2_title: "2차 거점: 세비야",
     route_step_2_sub: "2026.11.11 ~ 11.22 (11박 12일)",
     route_step_3_title: "3차 연장: 로마",
-    route_step_3_sub: "세비야 이후 · 12일 연장 (날짜/항공편 확인 필요)",
+    route_step_3_sub: "세비야 이후 · 약 10일 체류 (날짜/항공편 확인 필요)",
     route_step_3_badge: "날짜 미정",
-    planner_rome_ext_title: "🏛️ 로마 12일 연장 유연 일정 가이드",
+    planner_rome_ext_title: "🏛️ 로마 약 10일 유연 일정 가이드",
     planner_rome_ext_sub: "세비야 이후 연장 일정 · 날짜 및 항공편 미정 상태 · 무리 없는 권역별 체류 중심",
     lbl_status_unconfirmed: "⚠️ 날짜/항공편 확인 필요",
     lbl_flexible_plan: "📅 유연 일정 (일자별 확정표 아님)",
@@ -30904,10 +30904,10 @@ const ROME_EXTRA_I18N = {
     planner_rome_block2_title: "⛪ 바티칸 분리 방문 추천 (2일)",
     planner_rome_block2_desc: "바티칸 박물관/시스티나 성당과 성 베드로 대성당을 같은 날 몰아서 보면 보행 피로가 과중됩니다. 서로 다른 날에 여유 있게 나누어 방문하는 것을 권장합니다.",
     planner_rome_block3_title: "🚅 근교 당일치기 후보 (피렌체 / 오르비에토)",
-    planner_rome_block3_desc: "고속열차 이동으로 피렌체 또는 평화로운 언덕 도시 오르비에토 당일 방문이 가능합니다. 부모님 컨디션을 살펴 12일 중 1~2회 선택적으로 진행.",
+    planner_rome_block3_desc: "고속열차 이동으로 피렌체 또는 평화로운 언덕 도시 오르비에토 당일 방문이 가능합니다. 부모님 컨디션을 살펴 10일 중 1~2회 선택적으로 진행.",
     planner_rome_block4_title: "🛗 파노라마 전망 엘리베이터 (비토리오 에마누엘레 2세)",
     planner_rome_block4_desc: "계단을 오르지 않고 유리 엘리베이터(유료)로 옥상 테라스에 도달해 로마 전경을 편안하게 조망할 수 있습니다. 기상 악화 시 운행 변동 가능.",
-    planner_rome_ext_note: "ℹ️ <strong>일정 기획 유의사항:</strong> 로마 12일 연장 구간은 세비야 이후의 유연 일정이며, 정확한 시작/종료일 및 12일/12박 여부는 항공편 예약 확정 시 결정됩니다. 특정 일자에 일정을 고정하지 마시고 현지 날씨와 부모님 컨디션에 맞춰 유연하게 순서를 조율하세요.",
+    planner_rome_ext_note: "ℹ️ <strong>일정 기획 유의사항:</strong> 로마 체류 구간은 세비야 이후 약 10일의 유연 일정이며, 정확한 시작/종료일 및 박수는 항공편 예약 확정 시 결정됩니다. 특정 일자에 일정을 고정하지 마시고 현지 날씨와 부모님 컨디션에 맞춰 유연하게 순서를 조율하세요.",
     tab_btn_dress: "⛪ 성당 복장 규정 & 시니어 배려",
     dress_alert_text: "바티칸(성 베드로 대성당, 시스티나 성당) 및 스페인 주요 성당(세비야 대성당 등)은 엄격한 복장 규정이 적용되며, 규정 미준수 시 입장이 거부될 수 있습니다.",
     dress_checklist_title: "📋 [접이식 체크리스트] 바티칸 & 스페인 주요 성당 입장 필수 복장 가이드",
@@ -30931,8 +30931,8 @@ const ROME_EXTRA_I18N = {
     senior_care_layers_desc: "실내 성당과 야외의 일교차에 대비해 얇은 카디건, 스카프, 경량 패딩을 겹쳐 입습니다."
   },
   en: {
-    hero_ctx_rome: "🇮🇹 Rome (12-Day Extension)",
-    hero_ctx_rome_date: "Post-Seville · 12-Day Extension · Dates/Flights TBD",
+    hero_ctx_rome: "🇮🇹 Rome (Approx. 10 Days, Dates TBD)",
+    hero_ctx_rome_date: "Post-Seville · Approx. 10 Days · Dates/Flights TBD",
     hero_ctx_rome_hotel: "🏨 Hotel & Flight: <strong>TBD (Book after dates confirmed)</strong>",
     hero_tag_rome_tbd: "📍 Rome Dates TBD",
     route_flow_title: "🗺️ 3-City Route Overview (Spain ➔ Italy Extension)",
@@ -30941,9 +30941,9 @@ const ROME_EXTRA_I18N = {
     route_step_2_title: "Base 2: Seville",
     route_step_2_sub: "2026.11.11 - 11.22 (11 nights)",
     route_step_3_title: "Base 3: Rome (Extension)",
-    route_step_3_sub: "Post-Seville · 12-Day Extension (Dates/Flights TBD)",
+    route_step_3_sub: "Post-Seville · Approx. 10 Days (Dates/Flights TBD)",
     route_step_3_badge: "Dates TBD",
-    planner_rome_ext_title: "🏛️ Rome 12-Day Extension Flexible Pacing Guide",
+    planner_rome_ext_title: "🏛️ Rome Flexible Pacing Guide (~10 Days)",
     planner_rome_ext_sub: "Extension after Seville · Dates & Flights TBD · Paced stay by district",
     lbl_status_unconfirmed: "⚠️ Dates/Flights TBD",
     lbl_flexible_plan: "📅 Flexible Schedule (Not a fixed calendar)",
@@ -31088,10 +31088,10 @@ const ROME_EXTRA_I18N = {
 const MISSING_PLANNER_I18N = {
   ko: {
     route_summary_badge: "경로 요약",
-    hero_spot_rome: "🏛️ 로마 12일 연장 (일정·항공편 미정)",
-    planner_rome_badge: "🇮🇹 12일 연장 여정",
-    planner_rome_title: "로마 12일 유연 연장 모듈 (세비야 이후 · 유연 페이싱 가이드)",
-    planner_rome_sub: "로마는 세비야 이후 12일 연장으로 계획 중이며, 정확한 시작·종료일(12일/12박), 항공편 및 이동시간이 미정입니다. 날짜를 임의로 추측한 일자별 표 대신, 부모님 체력 안배에 최적화된 4대 권역별 유연 페이싱 가이드로 운영됩니다.",
+    hero_spot_rome: "🏛️ 로마 약 10일 체류 (일정·항공편 미정)",
+    planner_rome_badge: "🇮🇹 약 10일 여정 (날짜 미정)",
+    planner_rome_title: "로마 약 10일 유연 연장 모듈 (세비야 이후 · 유연 페이싱 가이드)",
+    planner_rome_sub: "로마는 세비야 이후 약 10일 체류로 계획 중이며, 정확한 시작·종료일과 항공편 및 이동시간이 미정입니다. 날짜를 임의로 추측한 일자별 표 대신, 부모님 체력 안배에 최적화된 4대 권역별 유연 페이싱 가이드로 운영됩니다.",
     cluster_01: "CLUSTER 01",
     cluster_02: "CLUSTER 02",
     cluster_03: "CLUSTER 03",
@@ -31145,9 +31145,9 @@ const MISSING_PLANNER_I18N = {
   },
   en: {
     route_summary_badge: "Route Flow",
-    hero_spot_rome: "🏛️ Rome 12-Day Extension (Dates & Flights TBD)",
-    planner_rome_badge: "🇮🇹 12-Day Extension Journey",
-    planner_rome_title: "Rome 12-Day Flexible Extension Module (Post-Seville · Pacing Guide)",
+    hero_spot_rome: "🏛️ Rome (~10 Days, Dates & Flights TBD)",
+    planner_rome_badge: "🇮🇹 ~10 Days Journey (Dates TBD)",
+    planner_rome_title: "Rome Flexible Module (Post-Seville · Approx. 10 Days · Pacing Guide)",
     planner_rome_sub: "The Rome leg is planned as a 12-day extension following Seville, with exact start/end dates (12 days / 12 nights), flights, and travel times TBD. Rather than a guessed calendar table, it operates as a flexible 4-cluster pacing guide tailored to senior stamina.",
     cluster_01: "CLUSTER 01",
     cluster_02: "CLUSTER 02",
@@ -31323,7 +31323,7 @@ const ITALY_TRANSIT_GUIDE_I18N = {
   ko: {
     badge: "🇮🇹 부모님 맞춤 이탈리아 교통 특강",
     title: "🚄 이탈리아 (로마 & 피렌체) 대중교통 및 고속철도 완벽 마스터 가이드",
-    intro: "부모님을 모시고 로마에서 12박을 머무르며 피렌체, 오르비에토 등을 다녀오실 때 반드시 알아야 할 대중교통 실전 팁입니다. <strong>‘부모님의 체력 보호’</strong>와 <strong>‘이탈리아 특유의 함정(벌금, 소매치기) 피하기’</strong>에 초점을 맞추었습니다.",
+    intro: "부모님을 모시고 로마에서 약 10일 머무르며 피렌체, 오르비에토 등을 다녀오실 때 반드시 알아야 할 대중교통 실전 팁입니다. <strong>‘부모님의 체력 보호’</strong>와 <strong>‘이탈리아 특유의 함정(벌금, 소매치기) 피하기’</strong>에 초점을 맞추었습니다.",
     
     part1_title: "🚄 [파트 1] 로마 ➔ 피렌체/근교 당일치기 (고속열차 편)",
     part1_sec1_title: "1. 트렌이탈리아(국철) vs 이탈로(사철) 비교",
@@ -31651,6 +31651,1936 @@ const EUROPE_TRANSIT_GUIDE_I18N = {
       }
       if (typeof MISSING_PLANNER_I18N !== 'undefined' && MISSING_PLANNER_I18N[lang]) {
         Object.assign(dictTarget[lang], MISSING_PLANNER_I18N[lang]);
+      }
+    });
+  }
+})();
+
+
+
+// ==========================================================================
+// 🇮🇹 ITALY CITIES GUIDE DATA (FULLY MULTILINGUAL PACK: KO, EN, JA, ZH)
+// ==========================================================================
+const ITALY_CITIES_GUIDE_DATA = {
+  meta: {
+    title: {
+      ko: "🇮🇹 이탈리아 도시별 심층 가이드 (로마 · 피렌체 · 베네치아)",
+      en: "🇮🇹 Italy In-Depth City Guide (Rome · Florence · Venice)",
+      ja: "🇮🇹 イタリア都市別詳細ガイド (ローマ・フィレンツェ・ヴェネツィア)",
+      zh: "🇮🇹 意大利深度城市指南 (罗马·佛罗伦萨·威尼斯)"
+    },
+    sub: {
+      ko: "바르셀로나(11/5~11) · 세비야(11/11~22) 이후 이어지는 로마 약 10일(날짜 미정) 및 피렌체·베네치아 선택 후보를 위한 명소·음식·대중교통 원스톱 가이드",
+      en: "Following Barcelona (Nov 5-11) & Seville (Nov 11-22), an all-in-one guide to Rome (~10 days, dates TBD) and selective candidates Florence & Venice: Highlights, Food & Public Transit",
+      ja: "バルセロナ（11/5〜11）・セビリア（11/11〜22）に続くローマ約10日間（日程未定）および選択候補フィレンツェ・ヴェネツィアの名所・グルメ・交通ワンストップガイド",
+      zh: "继巴塞罗那（11/5~11）与塞维利亚（11/11~22）之后的罗马约10天（日期未定）及备选城市佛罗伦萨、威尼斯的景观·美食·公共交通一站式指南"
+    },
+    seasonNote: {
+      ko: "※ 음식의 재료와 맛은 식당 및 조리법에 따라 다를 수 있으며, 제철 요리는 방문 시기에 따라 메뉴 구성이 달라질 수 있습니다.",
+      en: "※ Dish ingredients and flavors may vary by restaurant and recipe; seasonal dishes depend on availability during your travel dates.",
+      ja: "※ 料理の素材や味付けは店舗や調理法により異なり、旬の料理は訪問時期によりメニュー内容が変わる場合があります。",
+      zh: "※ 菜品用料与风味因各餐厅及烹饪方法而异，应季菜肴可能随旅行季节与食材供应情况有所调整。"
+    }
+  },
+  cities: {
+    rome: {
+      id: "rome",
+      name: { ko: "로마", en: "Rome", ja: "ローマ", zh: "罗马" },
+      tag: { ko: "약 10일 (날짜 미정)", en: "Approx. 10 Days (Dates TBD)", ja: "約10日間 (日程未定)", zh: "约10天 (日期未定)" },
+      statusBadge: {
+        ko: "세비야 이후 · 약 10일 체류 · 항공편 확인 필요",
+        en: "Post-Seville · Approx. 10 Days · Flights TBD",
+        ja: "セビリアの後・約10日間滞在・フライト確認要",
+        zh: "塞维利亚之后·约10天逗留·航班待定"
+      },
+      intro: {
+        ko: "고대 로마 제국의 심장부터 바로크 예술과 바티칸의 성스러움까지. 부모님 무릎을 위해 1일 1.5스팟과 시에스타 루틴을 철저히 적용하며, 권역별로 묶어 여유롭게 탐방합니다.",
+        en: "From the monumental Roman Empire to baroque splendors and the Holy See. Paced gently at 1.5 spots/day with afternoon siestas to protect parents' knees.",
+        ja: "古代ローマ帝国の中心地からバロック芸術、ヴァチカンの至宝まで。ご両親の膝に配慮し、1日1.5スポットとシエスタで地区別にゆったり巡ります。",
+        zh: "从古罗马帝国核心到巴洛克艺术与梵蒂冈圣殿。充分呵护长辈膝关节，严格践行每日1.5个景点及午休节奏，按片区分组悠闲游览。"
+      },
+      districts: [
+        {
+          id: "ancient",
+          name: { ko: "고대 로마 권역", en: "Ancient Rome District", ja: "古代ローマ地区", zh: "古罗马片区" },
+          badge: { ko: "제국의 심장 & 기념비적 유적", en: "Imperial Heart & Monuments", ja: "帝国の心臓部＆古代遺跡", zh: "帝国核心与丰碑遗址" },
+          spots: [
+            {
+              id: "colosseum",
+              name: { ko: "콜로세움", en: "Colosseum", ja: "コロッセオ", zh: "罗马斗兽场" },
+              italianName: "Colosseo (Anfiteatro Flavio)",
+              photo: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "예약 필수 (최우선)", en: "Mandatory Booking (Top Priority)", ja: "事前予約必須 (最優先)", zh: "必须提前预约 (最高优先级)" },
+              priorityLevel: "high",
+              walking: { ko: "보행 보통 (2층 전용 엘리베이터 완비)", en: "Moderate (2nd-Floor Elevator Available)", ja: "歩行普通 (2階直通エレベーター完備)", zh: "步行中等 (配备直达2层无障碍电梯)" },
+              walkingLevel: "medium",
+              desc: {
+                ko: "서기 80년 완공된 5만 명 수용 규모의 고대 원형경기장. 웅장한 아치형 회랑과 검투사의 역사가 살아 숨쉬는 곳입니다.",
+                en: "Flavian Amphitheater completed in 80 AD, accommodating 50,000 spectators for gladiatorial spectacles.",
+                ja: "西暦80年完成の巨大円形闘技場。5万人を収容したアーチ型回廊と古代の息吹を体感できます。",
+                zh: "公元80年建成的古罗马标志性圆形露天剧场，可容纳5万人观看角斗表演。"
+              },
+              details: {
+                ko: "입구에 배리어 프리 경사로가 있으며, 직원의 안내로 2층 회랑까지 전용 엘리베이터를 탑승할 수 있어 계단 부담이 매우 적습니다. 외곽 자갈길 보행 시 쿠션화 필수.",
+                en: "Features a dedicated barrier-free entrance and staff-assisted elevator to the second-tier terrace, eliminating stair climbing. Cushioned sneakers essential for outside cobblestones.",
+                ja: "入口に車椅子対応スロープがあり、スタッフ誘導で2階展望通路へ直通エレベーターを利用可能。外周の石畳歩行にはクッション性の高い靴が必要です。",
+                zh: "入口设有无障碍坡道，可由工作人员指引搭乘直达2层连廊的专用电梯，完全无需攀爬阶梯。场外古石板路请穿着厚底防滑运动鞋。"
+              },
+              hours: {
+                ko: "08:30 ~ 일몰 1시간 전 (연중무휴, 1/1, 12/25 휴관)",
+                en: "08:30 - 1 hour before sunset (Open daily except Jan 1, Dec 25)",
+                ja: "08:30〜日没1時間前（年中無休、1/1・12/25休館）",
+                zh: "08:30 ~ 日落前1小时（全年无休，1/1与12/25闭馆）"
+              },
+              admission: {
+                ko: "기본권 €18 / 풀 익스피리언스(지하·아레나) €24",
+                en: "Standard €18 / Full Experience (Underground & Arena) €24",
+                ja: "基本券 €18 / フル・エクスペリエンス（地下・アリーナ）€24",
+                zh: "普通门票 €18 / 深度通票（含地下室与竞技场底板）€24"
+              },
+              officialUrl: "https://ticketing.colosseo.it/"
+            },
+            {
+              id: "forum",
+              name: { ko: "포로 로마노", en: "Roman Forum", ja: "フォロ・ロマーノ", zh: "古罗马广场" },
+              italianName: "Foro Romano",
+              photo: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "콜로세움 통합권 포함", en: "Included in Colosseum Pass", ja: "コロッセオ共通券に含む", zh: "包含在斗兽场联票中" },
+              priorityLevel: "medium",
+              walking: { ko: "보행 난이도 높음 ⚠️ (울퉁불퉁한 돌길·경사 주의)", en: "High Difficulty ⚠️ (Uneven Cobblestones & Slopes)", ja: "難易度高 ⚠️ (凸凹の石畳と坂道に注意)", zh: "步行负担高 ⚠️ (凹凸古石板路与坡道)" },
+              walkingLevel: "high",
+              desc: {
+                ko: "고대 로마 공화정과 제국의 정치·사법·상업의 중심 광장. 원로원(Curia), 카이사르 신전, 개선문 유적이 펼쳐집니다.",
+                en: "The historic heart of public and political life in ancient Rome, featuring senate halls, temples, and triumphal arches.",
+                ja: "古代ローマの政治・司法・商業の中心広場。元老院やカエサル神殿の壮大な遺構が広がります。",
+                zh: "古罗马政治、宗教与公众生活核心，元老院、凯撒神庙及凯旋门遗址连绵宏伟。"
+              },
+              details: {
+                ko: "🚨 <strong>부모님 보행 주의:</strong> 수천 년 된 울퉁불퉁한 고대 돌길(Via Sacra)과 흙길, 완만한 경사가 길게 이어집니다. 무릎이 약하신 부모님은 중앙 평탄부만 30~40분 가볍게 둘러보고 그늘 벤치에서 충분히 쉬는 코스를 권장합니다.",
+                en: "🚨 <strong>Senior Walking Warning:</strong> Centuries-old uneven stones and gravel inclines along the Via Sacra. Limit senior exploration to the central level area (30-40 mins) with frequent bench breaks.",
+                ja: "🚨 <strong>ご両親の歩行注意:</strong> 古代の大きな石畳や傾斜が長く続きます。足腰の負担を減らすため、平坦な中央部のみ30〜40分ほど無理なく散策し木陰のベンチで休むのが賢明です。",
+                zh: "🚨 <strong>长辈步行特别警告:</strong> 千年古石板路（圣道Via Sacra）颠簸不平且有坡度。建议长辈仅在中央平坦区域漫步30~40分钟，并在阴凉长凳多休息。"
+              },
+              hours: {
+                ko: "08:30 ~ 일몰 1시간 전 (콜로세움 티켓 연동)",
+                en: "08:30 - 1 hour before sunset (Combined with Colosseum ticket)",
+                ja: "08:30〜日没1時間前（コロッセオ共通券連動）",
+                zh: "08:30 ~ 日落前1小时（与斗兽场门票联通）"
+              },
+              admission: {
+                ko: "콜로세움 통합권으로 입장",
+                en: "Entry with Colosseum Combined Ticket",
+                ja: "コロッセオ共通券で入場",
+                zh: "持斗兽场通票直接入场"
+              },
+              officialUrl: "https://ticketing.colosseo.it/"
+            },
+            {
+              id: "palatine",
+              name: { ko: "팔라티노 언덕", en: "Palatine Hill", ja: "パラティーノの丘", zh: "帕拉蒂尼山" },
+              italianName: "Palatino",
+              photo: "https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "콜로세움·포로 로마노 연계", en: "Linked with Colosseum/Forum Pass", ja: "共通券連動", zh: "联票互通" },
+              priorityLevel: "medium",
+              walking: { ko: "보행 보통~높음 ⚠️ (언덕 경사로)", en: "Moderate to High ⚠️ (Hill Inclines)", ja: "難易度中〜高 ⚠️ (丘の坂道)", zh: "步行中高 ⚠️ (缓坡丘陵)" },
+              walkingLevel: "high",
+              desc: {
+                ko: "로마 건국 신화의 무대이자 황제들의 호화 궁전 유적이 자리한 전설의 언덕. 소나무 숲과 파노라마 전망이 일품입니다.",
+                en: "Birthplace of Rome according to legend, hosting imperial palaces and peaceful pine gardens overlooking the Circus Maximus.",
+                ja: "ローマ建国の地であり歴代皇帝の宮殿跡が残る丘。優雅な松並木と絶景パノラマを楽しめます。",
+                zh: "罗马建城神话的发源地，历代皇帝宏大宫殿遗迹所在地，松林茂密，俯瞰全城景观绝佳。"
+              },
+              details: {
+                ko: "진입 시 오르막길을 걸어야 합니다. 티투스 개선문 인근 리프트를 활용하거나, 정상에 올라간 뒤에는 시원한 소나무 그늘 벤치에서 대경기장(Circo Massimo)과 시내 전경을 조망하세요.",
+                en: "Requires an uphill climb from the Forum. An elevator near the Arch of Titus assists part of the way. Shaded benches atop the hill offer scenic views over Circus Maximus.",
+                ja: "丘の上へ向かう坂道があります。ティトゥス凱旋門付近のリフトを利用可能。頂上の木陰ベンチからは大競技場を見渡せます。",
+                zh: "登顶需走一段缓坡。提图斯凯旋门附近配有局部升降梯。山顶长凳在松荫下十分惬意，可俯瞰大竞技场全貌。"
+              },
+              hours: {
+                ko: "08:30 ~ 일몰 1시간 전",
+                en: "08:30 - 1 hour before sunset",
+                ja: "08:30〜日没1時間前",
+                zh: "08:30 ~ 日落前1小时"
+              },
+              admission: {
+                ko: "콜로세움 통합권으로 입장",
+                en: "Entry with Colosseum Combined Ticket",
+                ja: "コロッセオ共通券で入場",
+                zh: "持斗兽场通票直接入场"
+              },
+              officialUrl: "https://ticketing.colosseo.it/"
+            },
+            {
+              id: "caracalla",
+              name: { ko: "카라칼라 욕장", en: "Baths of Caracalla", ja: "カラカラ浴場", zh: "卡拉卡拉浴场" },
+              italianName: "Terme di Caracalla",
+              photo: "https://images.unsplash.com/photo-1583321500900-82807e458f3c?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "현장 예매 또는 온라인 (여유)", en: "Online or Walk-in (Relaxed)", ja: "現地またはオンライン (空いている)", zh: "现场购票或在线预订 (宽松舒适)" },
+              priorityLevel: "good",
+              walking: { ko: "보행 매우 편안 🟢 (완전 평지 잔디밭 & 계단 없음)", en: "Very Easy 🟢 (Flat Lawns & Zero Stairs)", ja: "歩行快適 🟢 (完全平坦な芝生・階段なし)", zh: "极为轻松 🟢 (平坦草坪且无阶梯负担)" },
+              walkingLevel: "easy",
+              desc: {
+                ko: "서기 216년 카라칼라 황제가 지은 1,600명 동시 수용의 대규모 공중목욕탕 복합단지. 웅장한 아치 벽체와 바닥 모자이크가 압도적입니다.",
+                en: "Monumental 3rd-century public bath complex with towering vaulted red brick walls and well-preserved mosaics.",
+                ja: "西暦216年建造の大浴場遺構。そびえ立つ赤レンガの壁と美しい床モザイクが圧倒的です。",
+                zh: "公元216年建成的超大型古罗马公共浴场遗迹，高耸的红砖拱墙与原生地面马赛克极为震撼。"
+              },
+              details: {
+                ko: "✨ <strong>부모님 추천 스팟:</strong> 포로 로마노의 거친 돌길에 지친 부모님께 최적의 장소입니다. 전 구역이 평평한 잔디밭과 포장 산책로로 이어져 계단이 전혀 없으며, 붐비지 않아 한적하고 평화롭게 고대 건축미를 감상할 수 있습니다.",
+                en: "✨ <strong>Senior Recommendation:</strong> Ideal alternative to the rough stones of the Forum. Completely flat terrain with smooth accessible paths, peaceful lawns, and zero stairs.",
+                ja: "✨ <strong>ご両親おすすめ:</strong> フォロ・ロマーノの荒い石畳と異なり、全面フラットな芝生と遊歩道で階段がありません。静かに古代建築を鑑賞できる名所です。",
+                zh: "✨ <strong>长辈极力推荐:</strong> 相比古罗马广场颠簸的乱石路，此处全境为平整草坪与平坦路面，完全没有台阶，游客稀少静谧，是长辈欣赏古罗马建筑的绝佳静心之所。"
+              },
+              hours: {
+                ko: "09:00 ~ 일몰 1시간 전 (월요일은 14:00까지 단축 가능)",
+                en: "09:00 - 1 hour before sunset (Mondays may close at 14:00)",
+                ja: "09:00〜日没1時間前（月曜日は14:00までの短縮営業あり）",
+                zh: "09:00 ~ 日落前1小时（周一可能于14:00提前闭园）"
+              },
+              admission: {
+                ko: "성인 €8 (+ 예약 수수료 €2)",
+                en: "Adults €8 (+ €2 booking fee)",
+                ja: "大人 €8 (+ 予約手数料 €2)",
+                zh: "成人 €8 (+ 线上预约费 €2)"
+              },
+              officialUrl: "https://www.coopculture.it/en/heritage.cfm?id=6"
+            }
+          ]
+        },
+        {
+          id: "historic",
+          name: { ko: "역사 중심부 권역", en: "Historic Center District", ja: "歴史的中心地区", zh: "历史中心片区" },
+          badge: { ko: "바로크 광장 & 도심 산책", en: "Baroque Plazas & Center Stroll", ja: "バロック広場＆優雅な街歩き", zh: "巴洛克广场与经典漫步" },
+          spots: [
+            {
+              id: "pantheon",
+              name: { ko: "판테온", en: "Pantheon", ja: "パンテオン", zh: "万神殿" },
+              italianName: "Pantheon (Basilica di Santa Maria ad Martyres)",
+              photo: "https://images.unsplash.com/photo-1555992828-ca4dbe41d294?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "온라인 사전 예매 권장 (€5 유료화)", en: "Online Booking Recommended (€5 Entry)", ja: "オンライン事前予約推奨 (€5 有料化)", zh: "建议在线预约 (€5 门票制)" },
+              priorityLevel: "high",
+              walking: { ko: "보행 매우 편안 🟢 (실내 매끄러운 평지 대리석)", en: "Very Easy 🟢 (Smooth Level Marble Interior)", ja: "歩行快適 🟢 (滑らかな平坦大理石フロア)", zh: "极为轻松 🟢 (室内为平整光滑大理石地面)" },
+              walkingLevel: "easy",
+              desc: {
+                ko: "기원전 27년 아그리파가 짓고 하드리아누스 황제가 재건한 2,000년 된 신전. 철근 없는 세계 최대 콘크리트 돔과 천장의 오쿨루스(눈)가 경이롭습니다.",
+                en: "2,000-year-old temple boasting the world's largest unreinforced concrete dome with its celestial central oculus.",
+                ja: "約2000年前の完全な姿を残す神殿。無筋コンクリートとして世界最大のドームと天窓（オクルス）が見事。",
+                zh: "拥有2000年历史的完整古罗马神殿，世界最大的无钢筋混凝土穹顶与中央圆窗（天眼）令人赞叹。"
+              },
+              details: {
+                ko: "실내는 단차 없는 완벽한 평지 대리석 바닥으로 부모님 보행에 매우 편안합니다. 2023년부터 입장료 €5가 도입되었으며, 주말·공휴일은 공식 사이트 사전 예약이 필수입니다.",
+                en: "Completely flat interior marble floor makes walking effortless. A €5 entry fee was introduced; weekend visits require timed online booking via the official site.",
+                ja: "内部は段差のない平坦な大理石フロアで歩きやすさ抜群です。2023年より€5の入場料が導入され、週末や祝日は公式予約が必須です。",
+                zh: "内部为完全无台阶的平坦大理石地面，极其适合长辈漫步。自2023年起收取€5门票，周末及节假日必须在官方网站提前预约。"
+              },
+              hours: {
+                ko: "09:00 ~ 19:00 (마지막 입장 18:30)",
+                en: "09:00 - 19:00 (Last entry 18:30)",
+                ja: "09:00〜19:00（最終入場 18:30）",
+                zh: "09:00 ~ 19:00（最晚入场 18:30）"
+              },
+              admission: {
+                ko: "성인 €5 (공식 사이트 예매)",
+                en: "Adults €5 (Official site booking)",
+                ja: "大人 €5（公式サイト予約）",
+                zh: "成人票 €5（官方网站预约）"
+              },
+              officialUrl: "https://www.pantheonroma.com/"
+            },
+            {
+              id: "navona",
+              name: { ko: "나보나 광장", en: "Piazza Navona", ja: "ナヴォーナ広場", zh: "纳沃纳广场" },
+              italianName: "Piazza Navona",
+              photo: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "자유 방문 (상시 개방)", en: "Open 24/7 (Free Access)", ja: "自由訪問 (終日開放)", zh: "自由游览 (全天开放)" },
+              priorityLevel: "good",
+              walking: { ko: "보행 매우 편안 🟢 (넓은 보행자 전용 평지 광장)", en: "Very Easy 🟢 (Spacious Pedestrian Flat Plaza)", ja: "歩行快適 🟢 (広々とした歩行者天国の平坦広場)", zh: "极为轻松 🟢 (宽阔的纯步行平坦大广场)" },
+              walkingLevel: "easy",
+              desc: {
+                ko: "도미티아누스 황제의 고대 전차경기장 터 위에 세워진 타원형 광장. 베르니니의 걸작 '4대 강 분수'와 산타녜세 성당이 마주합니다.",
+                en: "Built on the stadium of Emperor Domitian, this elegant baroque oval square features Bernini's Fontana dei Quattro Fiumi.",
+                ja: "古代競技場跡に作られた優雅な楕円形広場。ベルニーニ作「四大河の噴水」と美しいカフェが並びます。",
+                zh: "建于古罗马图密善竞技场原址之上的椭圆形巴洛克广场，贝尼尼杰作《四河喷泉》矗立中央。"
+              },
+              details: {
+                ko: "차량 진입이 통제된 완벽한 평지 광장입니다. 분수대 주변에 벤치가 많고 야외 카페 테라스가 즐비하여, 따뜻한 커피 한 잔과 함께 부모님 시에스타 휴식을 즐기기에 최적입니다.",
+                en: "Completely pedestrianized flat stone plaza. Abundant benches and shaded outdoor cafe terraces make it a premier resting spot during city strolls.",
+                ja: "車の入らない完全な歩行者空間で平坦です。ベンチやテラスカフェが多数あり、温かいコーヒーを楽しみながら休憩するのに最適。",
+                zh: "完全禁行机动车的开阔平坦步行广场。喷泉周边长凳充足，露天咖啡馆林立，是伴长辈歇脚小憩的上佳之选。"
+              },
+              hours: {
+                ko: "연중 상시 개방",
+                en: "Open 24/7",
+                ja: "終日開放",
+                zh: "全年全天开放"
+              },
+              admission: {
+                ko: "무료 관람",
+                en: "Free Public Access",
+                ja: "無料見学",
+                zh: "免费开放参观"
+              },
+              officialUrl: "https://www.turismoroma.it/en/page/districts"
+            },
+            {
+              id: "trevi",
+              name: { ko: "트레비 분수", en: "Trevi Fountain", ja: "トレヴィの泉", zh: "特雷维喷泉" },
+              italianName: "Fontana di Trevi",
+              photo: "https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "🚨 2026년 2월부터 근접 구역 €2 입장료 도입!", en: "🚨 €2 Access Fee for Close-up Area from Feb 2026", ja: "🚨 2026年2月より至近区域€2有料化！", zh: "🚨 2026年2月起近距离观赏区收取€2入场费！" },
+              priorityLevel: "high",
+              walking: { ko: "인파 과밀 주의 ⚠️ (계단 단차 및 서서 대기)", en: "Crowd Caution ⚠️ (Steps & Standing in Crowds)", ja: "混雑注意 ⚠️ (階段の段差・立位待機)", zh: "客流拥挤注意 ⚠️ (池边台阶与人群站立)" },
+              walkingLevel: "medium",
+              desc: {
+                ko: "로마 바로크 양식의 정점을 보여주는 최대 규모 분수. 바다의 신 오케아노스와 트리톤 조각이 거대한 천연 암반 위를 장식합니다.",
+                en: "Rome's largest and most famous baroque fountain, depicting Oceanus commanding the waters over natural travertine rocks.",
+                ja: "ローマ最大のバロック様式噴水。海の神オケアノスとトリトンが巨岩の上で躍動する名所。",
+                zh: "罗马最负盛名的巴洛克式巨型喷泉，海神奥克阿诺斯驾驭战车跃于天然石灰岩之上。"
+              },
+              details: {
+                ko: "🚨 <strong>2026년 요금 변경 공지:</strong> 과밀 해소와 문화재 보호를 위해 <strong>2026년 2월부터 분수대 바로 앞 구역 진입 시 €2의 입장료가 부과</strong>되며 예약제로 운영됩니다(광장 원거리 조망은 무료 유지). 한낮에는 인파가 극심하므로 오전 08:30 이전에 부모님과 함께 방문하시면 한적하게 관람할 수 있습니다. [출처: 로마 공식 안내](https://www.turismoroma.it/en/news/trevi-fountain-new-entry-fee-one-romes-symbols)",
+                en: "🚨 <strong>Entry Fee Notice:</strong> Effective <strong>February 2026, the City of Rome introduces a €2 fee</strong> to enter the close-up basin area to control overcrowding (viewing from the upper perimeter remains free). To avoid heavy midday crowds and protect parents, visit before 08:30 AM.",
+                ja: "🚨 <strong>2026年料金改定告知:</strong> 過密対策のため、<strong>2026年2月より噴水池の至近エリアへの立ち入りに€2の入場料が導入</strong>され予約制となります（上部広場からの遠景鑑賞は無料）。日中は大混雑するため、午前8時30分前の早朝訪問が安心です。",
+                zh: "🚨 <strong>2026年最新收费特别提示:</strong> 为缓解过度拥挤，<strong>自2026年2月起，进入喷泉水池近身区域将正式收取€2门票</strong>并实行预约制（外围高处远观仍保持免费）。午后人流极度拥挤，建议于清晨08:30前陪同长辈游览。"
+              },
+              hours: {
+                ko: "외곽 24시간 개방 (근접 구역 운영시간 별도 지정)",
+                en: "Upper square open 24/7 (Close-up area operating hours apply)",
+                ja: "外周広場は終日開放（至近区域は別途指定時間）",
+                zh: "外围广场24小时开放（近距离观景区实行独立开放时间）"
+              },
+              admission: {
+                ko: "광장 외곽 무료 / 2026년 2월부터 근접 구역 €2",
+                en: "Free from perimeter / €2 for close-up area from Feb 2026",
+                ja: "広場外周は無料 / 2026年2月より至近区域は€2",
+                zh: "外围远观免费 / 2026年2月起近距离亲水区€2"
+              },
+              officialUrl: "https://www.turismoroma.it/en/news/trevi-fountain-new-entry-fee-one-romes-symbols"
+            },
+            {
+              id: "spagna",
+              name: { ko: "스페인 광장 & 계단", en: "Piazza di Spagna & Spanish Steps", ja: "スペイン広場＆階段", zh: "西班牙广场与大阶梯" },
+              italianName: "Piazza di Spagna e Scalinata di Trinità dei Monti",
+              photo: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "자유 방문 (계단 착석 금지 규정 주의)", en: "Free Access (Sitting on Steps Prohibited)", ja: "自由訪問 (階段着席禁止ルール注意)", zh: "自由游览 (严格禁止席地静坐)" },
+              priorityLevel: "good",
+              walking: { ko: "보행 주의 ⚠️ (135개 트래버틴 계단 등반 부담)", en: "Stair Caution ⚠️ (135 Travertine Steps)", ja: "階段注意 ⚠️ (135段のトラバーチン階段)", zh: "阶梯注意 ⚠️ (共135级石阶，攀登负荷较大)" },
+              walkingLevel: "medium",
+              desc: {
+                ko: "영화 '로마의 휴일'로 유명한 135개 계단과 바르카차 분수가 있는 명소. 계단 정상의 트리니타 데이 몬티 성당으로 이어집니다.",
+                en: "135 travertine steps immortalized in 'Roman Holiday', rising from the Fontana della Barcaccia up to Trinità dei Monti.",
+                ja: "映画『ローマの休日』で知られる135段の階段とバルカッチャの噴水。頂上にはトリニタ・デイ・モンティ教会があります。",
+                zh: "因电影《罗马假日》闻名遐迩的135级石阶，自破船喷泉拾级而上直抵圣三一教堂。"
+              },
+              details: {
+                ko: "🚨 <strong>수칙 & 보행 팁:</strong> 계단에 앉는 행위는 문화재 보호법에 따라 벌금(최대 €400)이 부과되므로 절대 앉지 마세요. 부모님 무릎 보호를 위해 135개 계단을 걸어 올라가지 마시고, 메트로 Spagna 역 내부의 공용 무료 엘리베이터를 타고 언덕 정상 전망대로 편안히 이동하세요.",
+                en: "🚨 <strong>Rules & Senior Tip:</strong> Sitting on the steps is illegal and strictly fined (up to €400). Instead of climbing 135 stairs, take the public elevator inside Spagna Metro Station up to the top panorama.",
+                ja: "🚨 <strong>規則＆移動ヒント:</strong> 階段に着席することは法律で禁止されており罰金対象です。階段を登らず、メトロSpagna駅構内の無料エレベーターで頂上展望広場へ移動するのが最も安全です。",
+                zh: "🚨 <strong>保护法规与长辈技巧:</strong> 在台阶上坐卧属于违法行为，最高可处€400罚款。为保护膝关节，切勿让长辈攀爬135级陡梯，可搭乘Spagna地铁站内的免费公共电梯轻松直达顶端观景台。"
+              },
+              hours: {
+                ko: "연중 상시 개방",
+                en: "Open 24/7",
+                ja: "終日開放",
+                zh: "全年全天开放"
+              },
+              admission: {
+                ko: "무료 관람",
+                en: "Free Public Access",
+                ja: "無料見学",
+                zh: "免费漫步参观"
+              },
+              officialUrl: "https://www.turismoroma.it/en/page/districts"
+            }
+          ]
+        },
+        {
+          id: "vatican",
+          name: { ko: "바티칸 권역", en: "Vatican District", ja: "ヴァチカン地区", zh: "梵蒂冈片区" },
+          badge: { ko: "가톨릭 총본산 & 르네상스 걸작", en: "Holy See & Renaissance Art", ja: "カトリック総本山＆最高峰の至宝", zh: "天主教圣座与文艺复兴珍宝" },
+          spots: [
+            {
+              id: "vatican-museums",
+              name: { ko: "바티칸 박물관 & 시스티나 성당", en: "Vatican Museums & Sistine Chapel", ja: "ヴァチカン美術館＆システィーナ礼拝堂", zh: "梵蒂冈博物馆与西斯廷礼拜堂" },
+              italianName: "Musei Vaticani e Cappella Sistina",
+              photo: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "예약 필수 (공식 사이트 60일 전 오픈 즉시 예매)", en: "Strict Advance Booking (60 Days Ahead)", ja: "事前予約必須 (60日前オープン即予約)", zh: "必须提前预订 (官方60天前开票即抢)" },
+              priorityLevel: "high",
+              walking: { ko: "보행 부담 매우 큼 ⚠️ (관람 동선 총 7km)", en: "Very Heavy Walking ⚠️ (~7km Gallery Walk)", ja: "歩行負担大 ⚠️ (見学順路は計7kmに及ぶ)", zh: "步行负荷极大 ⚠️ (参观动线总长达7公里)" },
+              walkingLevel: "high",
+              desc: {
+                ko: "역대 교황들이 수집한 인류 최고의 예술 보고. 미켈란젤로의 불후의 명작 '천장화'와 '최후의 심판'이 있는 시스티나 성당이 하이라이트입니다.",
+                en: "One of the greatest art collections in human history, culminating in Michelangelo's breathtaking Sistine Chapel frescoes.",
+                ja: "歴代教皇が集めた人類の至宝。ミケランジェロの『天地創造』と『最後の審判』があるシスティーナ礼拝堂が最大の見どころ。",
+                zh: "汇聚历代教宗收藏的人类艺术宝库，米开朗基罗举世无双的《创世纪》与《最后的审判》西斯廷湿壁画震撼绝伦。"
+              },
+              details: {
+                ko: "🚨 <strong>별도 입장 절차 & 부모님 케어:</strong> 성 베드로 대성당과 입구가 완전히 다릅니다(북쪽 Viale Vaticano 전용 입구). 관람 동선이 매우 길기 때문에 안내 데스크에서 무료 휠체어를 대여하거나, 엘리베이터가 연결된 단축 배리어 프리 코스를 이용하세요. 복장 규정(어깨·무릎 덮기)이 엄격합니다.",
+                en: "🚨 <strong>Separate Entrance & Pacing:</strong> Entrance is completely separate from St. Peter's Basilica (north side on Viale Vaticano). Extended 7km corridors; free wheelchairs and barrier-free elevator circuits available at reception. Strict dress code enforced.",
+                ja: "🚨 <strong>別ルート入場＆ケア:</strong> サン・ピエトロ大聖堂とは入口が全く異なります（北側の専用入口）。見学通路が非常に長いため、無料車椅子レンタルやエレベーター短縮ルートの利用をお勧めします。肩・膝を隠す服装規定あり。",
+                zh: "🚨 <strong>独立入场程序与长辈关照:</strong> 与圣伯多禄大殿入口完全分开（位于北侧梵蒂冈大道）。内部长达7公里，服务台提供免费轮椅，建议走电梯无障碍短线。必须严格遵守着装规范（遮盖肩部与膝盖）。"
+              },
+              hours: {
+                ko: "08:00 ~ 19:00 (월~토, 일요일 휴관, 매월 마지막 일요일 오전 무료 개방)",
+                en: "08:00 - 19:00 (Mon-Sat, closed Sun except last Sun of month)",
+                ja: "08:00〜19:00（月〜土、日曜休館、毎月最終日曜午前は無料開放）",
+                zh: "08:00 ~ 19:00（周一至周六，周日闭馆，每月最后一个周日上午免费）"
+              },
+              admission: {
+                ko: "일반권 €20 (+ 온라인 예약비 €5)",
+                en: "Standard Ticket €20 (+ €5 online booking fee)",
+                ja: "一般チケット €20 (+ オンライン予約料 €5)",
+                zh: "常规门票 €20 (+ 在线预约费 €5)"
+              },
+              officialUrl: "https://www.museivaticani.va/"
+            },
+            {
+              id: "st-peter-basilica",
+              name: { ko: "성 베드로 대성당", en: "St. Peter's Basilica", ja: "サン・ピエトロ大聖堂", zh: "圣伯多禄大殿" },
+              italianName: "Basilica di San Pietro in Vaticano",
+              photo: "https://images.unsplash.com/photo-1588614959060-4d144f28b207?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "무료 입장 (성 베드로 광장 공항형 보안검색 대기 필수)", en: "Free Entry (Airport Security Line Required)", ja: "無料入場 (広場の手荷物検査列に並ぶ必要あり)", zh: "免费入殿 (圣伯多禄广场安检排队必经)" },
+              priorityLevel: "high",
+              walking: { ko: "보행 편안 (실내 평지 대리석) / 돔 등반은 계단 주의", en: "Level Marble Walk / Dome Climb Involves Stairs", ja: "聖堂内は平坦大理石 / クーポラ登頂は階段注意", zh: "殿内平坦顺畅 / 登穹顶含陡峭狭窄台阶" },
+              walkingLevel: "medium",
+              desc: {
+                ko: "세계 가톨릭의 중심이자 최대 규모의 성당. 미켈란젤로의 '피에타', 베르니니의 청동 '발다키노', 거대한 황금빛 돔이 경외감을 자아냅니다.",
+                en: "The paramount shrine of Catholicism, housing Michelangelo's Pietà and Bernini's soaring bronze Baldachin under the great dome.",
+                ja: "世界最大のカトリック教会。ミケランジェロの『ピエタ』、ベルニーニの天蓋（バルダッキーノ）が荘厳に輝きます。",
+                zh: "全球最大的天主教圣殿，米开朗基罗国宝雕塑《圣伤（哀悼基督）》与贝尼尼华盖雄伟神圣。"
+              },
+              details: {
+                ko: "🚨 <strong>바티칸 박물관과 별도 입장:</strong> 박물관 관람 후 대성당으로 바로 연결되는 통로는 단체 투어 전용으로 일반인은 이용할 수 없습니다. 광장 보안 검색대(오전 07:30~08:30 방문 시 대기 10분 이내)를 통해 별도 입장해야 합니다. 돔(쿠폴라) 등반은 엘리베이터를 타도 마지막 320개 좁은 나선 계단이 남아 부모님께는 무리입니다.",
+                en: "🚨 <strong>Distinct Entry Protocol:</strong> Must enter via St. Peter's Square security line (visit at 07:30-08:30 AM to avoid 1-2h lines). The dome climb requires 320 narrow spiral steps even after taking the lift; skip dome climbing for seniors.",
+                ja: "🚨 <strong>美術館とは別入場:</strong> 美術館からの直接連絡通路は団体専用です。広場の保安検査列（朝07:30〜08:30なら待ち時間わずか）から入場してください。クーポラ登頂はエレベーター後も320段の狭い螺旋階段があるため避けるのが安全です。",
+                zh: "🚨 <strong>必须由广场独立安检排队:</strong> 散客无法从博物馆走直通通道，必须前往圣伯多禄广场安检进殿（清晨07:30~08:30排队仅需10分钟）。登顶电梯后仍需攀爬320级狭窄螺旋阶梯，长辈请勿强行登顶。"
+              },
+              hours: {
+                ko: "07:00 ~ 19:00 (10~3월은 18:30까지)",
+                en: "07:00 - 19:00 (Closes 18:30 Oct-Mar)",
+                ja: "07:00〜19:00（10〜3月は18:30まで）",
+                zh: "07:00 ~ 19:00（10月至3月开放至18:30）"
+              },
+              admission: {
+                ko: "대성당 무료입장 (쿠폴라 돔 등반 엘리베이터 €10)",
+                en: "Basilica Free Entry (Dome climb with lift €10)",
+                ja: "大聖堂無料入場（クーポラ登頂エレベーター €10）",
+                zh: "大殿免费参观（搭乘电梯登穹顶 €10）"
+              },
+              officialUrl: "https://www.basilicasanpietro.va/"
+            }
+          ]
+        },
+        {
+          id: "art_park",
+          name: { ko: "미술 & 공원 권역", en: "Art & Park District", ja: "美術＆緑地地区", zh: "艺术与绿地片区" },
+          badge: { ko: "베르니니 조각 걸작 & 평온한 녹지", en: "Bernini Sculptures & Serene Gardens", ja: "ベルニーニ彫刻＆静かな庭園", zh: "贝尼尼传世雕塑与静谧公园" },
+          spots: [
+            {
+              id: "borghese-gallery",
+              name: { ko: "보르게세 미술관", en: "Borghese Gallery", ja: "ボルゲーゼ美術館", zh: "博尔盖塞美术馆" },
+              italianName: "Galleria Borghese",
+              photo: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "예약 필수 (회차당 360명 엄격 제한)", en: "Strict Mandatory Reservation (360 limit/slot)", ja: "事前予約必須 (各回360名厳格制限)", zh: "必须提前预约 (每场严格限制360人)" },
+              priorityLevel: "high",
+              walking: { ko: "보행 매우 쾌적 🟢 (내부 엘리베이터 & 아담한 동선)", en: "Very Easy 🟢 (Compact Scale & Elevators)", ja: "歩行快適 🟢 (館内エレベーター＆程よい広さ)", zh: "极其舒适 🟢 (馆内配有电梯且展线紧凑)" },
+              walkingLevel: "easy",
+              desc: {
+                ko: "시피오네 보르게세 추기경의 저택. 베르니니의 '아폴론과 다프네', '페르세포네의 납치' 및 카라바조의 명작들이 눈앞에 펼쳐집니다.",
+                en: "Cardinal Borghese's villa showcasing Bernini's master sculptures (Apollo & Daphne) and magnificent Caravaggio canvases.",
+                ja: "ボルゲーゼ枢機卿の優美な別荘。ベルニーニ作『アポロンとダフネ』やカラヴァッジョの至高の絵画を至近距離で鑑賞できます。",
+                zh: "博尔盖塞枢机主教奢华别墅，贝尼尼神作《阿波罗与达芙妮》、《普洛塞尔皮娜的劫持》与卡拉瓦乔名作荟萃。"
+              },
+              details: {
+                ko: "바티칸 박물관보다 규모가 훨씬 작고 회차당 관람객 수가 360명으로 통제되어 부모님이 붐비지 않고 조용히 감상할 수 있습니다. 엘리베이터 완비. 2시간 관람 시간제한이 있으므로 30분 전 도착 권장.",
+                en: "Far more manageable and intimate than the Vatican. Limited to ~360 visitors per 2-hour slot with elevators, making it low-stress and relaxing for parents.",
+                ja: "ヴァチカンより規模がコンパクトで人数制限があるため、混雑せず静かに鑑賞できます。エレベーター完備。2時間の入替制のため30分前の到着を推奨。",
+                zh: "规模远小于梵蒂冈，每场严格限流360人，毫无推挤嘈杂，非常适合长辈静心欣赏。备有电梯。每场限时2小时，建议提前30分钟到达。"
+              },
+              hours: {
+                ko: "09:00 ~ 19:00 (월요일 휴관, 2시간 단위 예약제)",
+                en: "09:00 - 19:00 (Closed Mon, 2-hour timed slots)",
+                ja: "09:00〜19:00（月曜休館、2時間ごとの入替予約制）",
+                zh: "09:00 ~ 19:00（周一闭馆，每场限时2小时预约制）"
+              },
+              admission: {
+                ko: "성인 €13 (+ 예약 수수료 €2)",
+                en: "Adults €13 (+ €2 booking fee)",
+                ja: "大人 €13 (+ 予約手数料 €2)",
+                zh: "成人票 €13 (+ 预约费 €2)"
+              },
+              officialUrl: "https://galleriaborghese.beniculturali.it/"
+            },
+            {
+              id: "borghese-gardens",
+              name: { ko: "보르게세 공원 & 핀초 언덕", en: "Villa Borghese Gardens & Pincian Hill", ja: "ボルゲーゼ公園＆ピンチョの丘", zh: "博尔盖塞公园与苹丘观景台" },
+              italianName: "Villa Borghese e Terrazza del Pincio",
+              photo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "자유 방문 (상시 개방 공원)", en: "Open Park Access (Free)", ja: "自由散策 (終日開放の市民公園)", zh: "自由漫步 (全天开放绿地公园)" },
+              priorityLevel: "good",
+              walking: { ko: "보행 매우 편안 🟢 (평탄한 녹지 & 소형 전동 카트 대여)", en: "Very Easy 🟢 (Flat Shaded Paths & Golf Cart Rental)", ja: "歩行快適 🟢 (平坦な緑道＆電動カートレンタルあり)", zh: "极为轻松 🟢 (平坦林荫大道与小型电动代步车租赁)" },
+              walkingLevel: "easy",
+              desc: {
+                ko: "로마 시내에서 가장 사랑받는 도심 속 심장형 녹지. 핀초 언덕 테라스에서 포폴로 광장과 성 베드로 대성당 돔을 조망합니다.",
+                en: "Rome's beloved urban park featuring flat promenades, umbrella pine shade, and panoramic views of Piazza del Popolo from the Pincio terrace.",
+                ja: "ローマ市民に親しまれるハート形の広大な公園。ピンチョの丘からはポポロ広場とヴァチカンのドームを一望できます。",
+                zh: "罗马市区最受喜爱的绿心公园，苹丘露台可俯瞰人民广场与圣伯多禄大殿穹顶全景。"
+              },
+              details: {
+                ko: "넓은 평지 산책로와 우거진 소나무 그늘, 벤치가 풍부하여 걷기 피로가 전혀 없습니다. 공원 내 소형 전동 카트(Golf cart)를 대여하면 부모님을 태우고 편안하게 공원 전체를 유람할 수 있습니다.",
+                en: "Shaded flat avenues with endless resting benches. Small electric golf carts can be rented on-site, offering a completely effortless way for elderly parents to tour the park.",
+                ja: "木陰の平坦な散策路とベンチが充実。園内で小型電動カート（ゴルフカート）をレンタルすれば、歩くことなく優雅に園内を周遊できます。",
+                zh: "林荫遮阳，步道平整，长凳密布。公园内提供小型电动高尔夫代步车租赁服务，可载着长辈不费吹灰之力惬意游览全园。"
+              },
+              hours: {
+                ko: "일출부터 일몰까지 연중 개방",
+                en: "Open daily from dawn to dusk",
+                ja: "日の出から日没まで終日開放",
+                zh: "每日从日出至日落全天开放"
+              },
+              admission: {
+                ko: "무료 공원 산책",
+                en: "Free Park Access",
+                ja: "無料公園散策",
+                zh: "公园免费入园漫步"
+              },
+              officialUrl: "https://www.turismoroma.it/en/page/districts"
+            }
+          ]
+        },
+        {
+          id: "neighborhood",
+          name: { ko: "동네 산책 권역", en: "Neighborhood District", ja: "下町・散策地区", zh: "地道社区片区" },
+          badge: { ko: "골목 미식 & 활기찬 현지 시장", en: "Local Trattorias & Authentic Markets", ja: "下町トラットリア＆活気ある市場", zh: "传统街巷酒馆与地道集市" },
+          spots: [
+            {
+              id: "trastevere",
+              name: { ko: "트라스테베레", en: "Trastevere", ja: "トラステヴェレ", zh: "特拉斯提弗列" },
+              italianName: "Rione Trastevere",
+              photo: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "저녁 미식 산책 추천 (자유 방문)", en: "Evening Dinner Stroll (Free)", ja: "夕方のグルメ散策推奨 (自由訪問)", zh: "傍晚美食漫步推荐 (自由前往)" },
+              priorityLevel: "good",
+              walking: { ko: "보행 주의 ⚠️ (전형적인 좁은 자갈 골목길)", en: "Cobblestone Alert ⚠️ (Narrow Medieval Alleys)", ja: "石畳注意 ⚠️ (狭い中世の石畳路地)", zh: "石板路注意 ⚠️ (狭窄中世纪碎石巷道)" },
+              walkingLevel: "medium",
+              desc: {
+                ko: "테베레강 서안의 옛 서민 동네. 담쟁이덩굴이 우거진 황토색 골목, 따뜻한 등불, 활기찬 로컬 트라토리아가 가득한 낭만적인 지구입니다.",
+                en: "Charming historic quarter across the Tiber, woven with ivy-clad ochre alleys and warm, authentic family trattorias.",
+                ja: "テヴェレ川西岸の下町。ツタの絡まる路地と温かい街灯、活気ある地元トラットリアが立ち並ぶ風情あるエリア。",
+                zh: "台伯河西岸的传统老城区，常春藤掩映的赭黄色古巷、昏黄街灯与地道家庭小餐馆充满罗马市井烟火气。"
+              },
+              details: {
+                ko: "차량 진입이 통제된 아늑한 골목이지만 울퉁불퉁한 산피에트리니 돌길이 많으므로 부모님께 편안한 쿠션화를 신겨주세요. 중심 산타 마리아 광장의 분수대 테라스 카페에서 저녁 식사 전 젤라토 휴식을 취하기 좋습니다.",
+                en: "Charming vehicle-free alleys but bumpy historic cobblestones require sturdy cushioned footwear. The piazza around Santa Maria in Trastevere has pleasant terrace seating.",
+                ja: "車両通行止めで歩きやすい一方、昔ながらの石畳が多いので履き慣れた靴を。サンタ・マリア広場の噴水前テラスで夕食前に休憩するのがおすすめです。",
+                zh: "巷弄内机动车禁行，但路面多为传统罗马乱石路，务必穿着减震软底鞋。圣母大殿广场景观开阔，露天坐席是餐前品尝意式冰淇淋的上选。"
+              },
+              hours: {
+                ko: "상시 산책 (식당 영업: 12:30~15:00 / 19:30~23:00)",
+                en: "Open 24/7 (Dining: 12:30-15:00 / 19:30-23:00)",
+                ja: "終日散策可能（飲食店: 12:30〜15:00 / 19:30〜23:00）",
+                zh: "全天自由漫步（餐馆营业时段: 12:30~15:00 / 19:30~23:00）"
+              },
+              admission: {
+                ko: "무료 산책",
+                en: "Free Stroll",
+                ja: "無料散策",
+                zh: "免费街区散步"
+              },
+              officialUrl: "https://www.turismoroma.it/en/page/districts"
+            },
+            {
+              id: "testaccio",
+              name: { ko: "테스타초 & 로컬 시장", en: "Testaccio & Local Market", ja: "テスタッチョ＆ローカル市場", zh: "泰斯塔奇奥与本地集市" },
+              italianName: "Rione Testaccio e Mercato Testaccio",
+              photo: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+              priority: { ko: "오전 로컬 시장 탐방 (일요일 휴무)", en: "Morning Market Visit (Closed Sundays)", ja: "午前中の地元市場探訪 (日曜定休)", zh: "上午探访本地菜市场 (周日休市)" },
+              priorityLevel: "good",
+              walking: { ko: "보행 매우 편안 🟢 (완전 평평한 격자형 거리 & 실내 시장)", en: "Very Easy 🟢 (Completely Flat Grid & Covered Market)", ja: "歩行極めて快適 🟢 (完全フラットな碁盤目街路＆屋内市場)", zh: "极其平坦舒适 🟢 (平坦棋盘式街道与室内无障碍市场)" },
+              walkingLevel: "easy",
+              desc: {
+                ko: "로마 정통 미식의 본향이자 시민들의 삶이 깃든 곳. 현대식 테스타초 시장에서 신선한 과일, 치즈, 수플리, 포카차를 부담 없이 맛볼 수 있습니다.",
+                en: "The culinary cradle of authentic Roman cuisine. The modern covered Mercato Testaccio offers fresh produce, cheeses, hot supplì, and sandwiches.",
+                ja: "ローマ庶民の食文化の発祥地。近代的なテスタッチョ市場では新鮮な果物、チーズ、揚げたてのスップリなどを気軽に楽しめます。",
+                zh: "正统罗马美食的孕育发祥地。现代化的泰斯塔奇奥集市内汇集当季鲜果、手工奶酪、现炸水仙丸子（Supplì）等平价小吃。"
+              },
+              details: {
+                ko: "✨ <strong>부모님 평지 보행 코스:</strong> 테스타초는 19세기 후반에 조성된 격자형 거리로 경사가 전혀 없는 완전 평지입니다. 관광객 인파가 적고 걷기 매우 쾌적하며, 실내 시장 내부에 깔끔한 공용 화장실과 앉아서 먹을 수 있는 벤치가 완비되어 있습니다.",
+                en: "✨ <strong>Senior Flat Walk:</strong> Testaccio is built on a 19th-century flat grid with zero hills and light foot traffic. The covered market has clean restrooms, wide ramps, and seating areas.",
+                ja: "✨ <strong>ご両親向け平坦コース:</strong> 19世紀後半に整備された碁盤目の街並みで坂道が一切ありません。観光客で混み合わず、屋内市場には清潔なトイレや休憩スペースも完備。",
+                zh: "✨ <strong>长辈平路漫步福地:</strong> 泰斯塔奇奥属于19世纪规划的棋盘街区，地势平坦毫无坡度，无过多游客打扰。室内市场配有无障碍通道、干净卫生间与充足用餐坐席。"
+              },
+              hours: {
+                ko: "시장: 07:00 ~ 15:30 (월~토 운영, 일요일 휴무)",
+                en: "Market: 07:00 - 15:30 (Mon-Sat, closed Sun)",
+                ja: "市場: 07:00〜15:30（月〜土営業、日曜定休）",
+                zh: "集市营业时间: 07:00 ~ 15:30（周一至周六，周日休市）"
+              },
+              admission: {
+                ko: "무료 시장 구경",
+                en: "Free Market Access",
+                ja: "無料市場見学",
+                zh: "免费入场参观采购"
+              },
+              officialUrl: "https://www.mercatotestaccio.it/"
+            }
+          ]
+        }
+      ],
+      dining: [
+        {
+          id: "carbonara",
+          name: { ko: "카르보나라", en: "Spaghetti alla Carbonara", ja: "スパゲッティ・カルボナーラ", zh: "正统罗马培根蛋面" },
+          italianName: "Spaghetti alla Carbonara",
+          photo: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "구안찰레(돼지 볼살 염장육), 신선한 달걀 노른자, 페코리노 로마노 치즈, 굵은 흑후추",
+            en: "Guanciale (cured pork jowl), fresh egg yolks, Pecorino Romano PDO cheese, freshly cracked black pepper",
+            ja: "グアンチャーレ（豚ホホ肉塩漬け）、新鮮な卵黄、ペコリーノ・ロマーノ、粗挽き黒胡椒",
+            zh: "风干猪面颊肉（Guanciale）、新鲜蛋黄、罗马羊奶酪（Pecorino Romano）、现磨黑胡椒"
+          },
+          taste: {
+            ko: "생크림을 일절 넣지 않고 달걀 노른자와 치즈, 면수만으로 유화시킨 꾸덕하고 진한 고소함. 바삭하게 구운 구안찰레의 깊은 감칠맛이 특징입니다.",
+            en: "Rich and creamy emulsified purely with egg yolk, cheese, and pasta water—never cream. Crispy savory guanciale delivers intense depth.",
+            ja: "生クリームは一切使わず、卵黄とチーズと茹で汁だけで乳化させた濃厚なコク。カリカリに焼いたグアンチャーレの旨味が絶品。",
+            zh: "绝不添加淡奶油，仅凭蛋黄、羊奶酪与面汤自然乳化，浓稠绵密，香脆咸香的猪面颊肉赋予其醇厚回味。"
+          }
+        },
+        {
+          id: "cacio-e-pepe",
+          name: { ko: "카초 에 페페", en: "Cacio e Pepe", ja: "カチョ・エ・ペペ", zh: "干酪黑胡椒意面" },
+          italianName: "Tonnarelli Cacio e Pepe",
+          photo: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "톤나렐리(두툼한 사각 생면), 페코리노 로마노 치즈, 알싸한 흑후추",
+            en: "Tonnarelli fresh square spaghetti, aged Pecorino Romano cheese, freshly ground black pepper",
+            ja: "トンナレッリ生パスタ、ペコリーノ・ロマーノチーズ、厳選黒胡椒",
+            zh: "粗方截面手擀鸡蛋意面（Tonnarelli）、陈年罗马羊奶酪、现磨辛香黑胡椒"
+          },
+          taste: {
+            ko: "로마에서 가장 오래된 클래식 파스타. 짭조름한 양젖 치즈의 풍미에 흑후추의 매콤한 향이 어우러져 단순함 속에서 깊은 맛을 냅니다.",
+            en: "Rome's most ancient pasta: simple yet sophisticated, balancing sharp salty sheep's cheese with the aromatic punch of toasted black pepper.",
+            ja: "ローマ最古の素朴で力強いパスタ。羊乳チーズの塩気と黒胡椒のスパイシーな香りがシンプルながら奥深い味わいを生み出します。",
+            zh: "罗马最古老的极简传世意面。咸香醇厚的羊乳酪与温润辛辣的黑胡椒碰撞，大道至简，余味悠长。"
+          }
+        },
+        {
+          id: "amatriciana",
+          name: { ko: "아마트리치아나", en: "Bucatini all'Amatriciana", ja: "ブカティーニ・アマトリチャーナ", zh: "阿马特里切番茄培根面" },
+          italianName: "Bucatini all'Amatriciana",
+          photo: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "구안찰레, 산마르차노 토마토, 페코리노 로마노 치즈, 화이트 와인, 페페론치노",
+            en: "Crispy guanciale, San Marzano peeled tomatoes, Pecorino Romano, white wine splash, red chili flakes",
+            ja: "グアンチャーレ、サンマルツァーノ産トマト、ペコリーノ・ロマーノ、白ワイン、唐辛子",
+            zh: "风干猪面颊肉、圣马扎诺甜番茄、罗马羊奶酪、白葡萄酒、红干辣椒碎"
+          },
+          taste: {
+            ko: "가운데 구멍이 뚫린 부카티니 면에 상큼한 토마토소스, 고소한 구안찰레, 매콤한 고추가 어우러져 한국인 입맛에 가장 잘 맞는 개운한 파스타입니다.",
+            en: "Savory tomato sauce infused with pork fat and a hint of chili heat, clinging to hollow bucatini pasta for a bright, balanced meal.",
+            ja: "穴あきパスタ（ブカティーニ）に、トマトの爽やかな酸味、グアンチャーレのコク、唐辛子のピリッとした刺激が調和した人気料理。",
+            zh: "中空有嚼劲的粗管面（Bucatini）吸饱清甜番茄果酱与肉香，微辣提鲜解腻，极度契合亚洲长辈胃口。"
+          }
+        },
+        {
+          id: "suppli",
+          name: { ko: "수플리", en: "Supplì al Telefono", ja: "スップリ", zh: "罗马拉丝炸饭丸" },
+          italianName: "Supplì al Telefono",
+          photo: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "미트 라구 소스 리소토 밥, 신선한 모차렐라 치즈, 빵가루 튀김옷",
+            en: "Arborio rice cooked in meat tomato ragù, centered with fresh mozzarella, breaded and fried golden",
+            ja: "ミートラソースで煮たリゾット米、モッツァレラチーズ、特製パン粉",
+            zh: "肉酱番茄烩意式短粒米饭、新鲜水牛马苏里拉奶酪心、金黄面包糠"
+          },
+          taste: {
+            ko: "반을 가르면 뜨거운 모차렐라 치즈가 전화선(Telefono)처럼 길게 늘어나는 로마의 대표 핑거푸드. 겉은 바삭하고 속은 촉촉한 든든한 간식입니다.",
+            en: "A crispy fried rice croquette named after telephone cords because melting mozzarella stretches endlessly when pulled apart.",
+            ja: "割ると中のチーズが電話線のように伸びることから名付けられたローマの名物ストリートフード。サクサク香ばしい揚げたてが最高。",
+            zh: "掰开时融化的马苏里拉奶酪如老式电话线般拉扯绵延。外皮金黄酥脆，内里米香软糯，是长辈漫步时的暖胃解馋小吃。"
+          }
+        }
+      ],
+      transit: {
+        operator: "ATAC (Azienda per la Mobilità di Roma)",
+        fares: [
+          {
+            name: { ko: "BIT 1회권", en: "BIT Single Ticket", ja: "BIT 1回券", zh: "BIT单次票" },
+            desc: {
+              ko: "첫 펀칭 후 100분 유효 (버스/트램 환승 무제한, 지하철 1회 입장)",
+              en: "Valid 100 mins from validation (Unlimited bus/tram, 1 metro entry)",
+              ja: "打刻後100分有効（バス/トラム乗換無制限、地下鉄1回入場）",
+              zh: "打票后100分钟内有效（公交电车不限次换乘，地铁限进站1次）"
+            },
+            price: "€1.50"
+          },
+          {
+            name: { ko: "Roma 24시간권", en: "Roma 24h Pass", ja: "Roma 24時間券", zh: "Roma 24小时通票" },
+            desc: {
+              ko: "첫 펀칭 시점부터 24시간 동안 로마 시내 대중교통 무제한",
+              en: "Unlimited urban transit for 24 hours from validation",
+              ja: "最初の打刻から24時間、市内公共交通機関が無制限乗り放題",
+              zh: "自首次检票起24小时内罗马市区公共交通不限次乘坐"
+            },
+            price: "€7.00"
+          },
+          {
+            name: { ko: "Roma 48시간권", en: "Roma 48h Pass", ja: "Roma 48時間券", zh: "Roma 48小时通票" },
+            desc: {
+              ko: "첫 펀칭 시점부터 48시간 동안 로마 시내 대중교통 무제한",
+              en: "Unlimited urban transit for 48 hours from validation",
+              ja: "最初の打刻から48時間、市内公共交通機関が無制限乗り放題",
+              zh: "自首次检票起48小时内罗马市区公共交通不限次乘坐"
+            },
+            price: "€12.50"
+          },
+          {
+            name: { ko: "Roma 72시간권", en: "Roma 72h Pass", ja: "Roma 72時間券", zh: "Roma 72小时通票" },
+            desc: {
+              ko: "첫 펀칭 시점부터 72시간 동안 로마 시내 대중교통 무제한",
+              en: "Unlimited urban transit for 72 hours from validation",
+              ja: "最初の打刻から72時間、市内公共交通機関が無制限乗り放題",
+              zh: "自首次检票起72小时内罗马市区公共交通不限次乘坐"
+            },
+            price: "€18.00"
+          },
+          {
+            name: { ko: "CIS 7일 정기권", en: "CIS 7-Day Pass", ja: "CIS 7日定期券", zh: "CIS 7日周票" },
+            desc: {
+              ko: "개시일 포함 7일째 되는 날 자정까지 로마 시내 전역 무제한 탑승",
+              en: "Unlimited rides until midnight on the 7th day from activation",
+              ja: "使用開始日を含む7日目の深夜24時まで市内乗り放題",
+              zh: "截至首次使用起第7日午夜24:00，全天不限次畅行罗马全境"
+            },
+            price: "€24.00"
+          }
+        ],
+        tapAndGo: {
+          ko: "지하철 개찰구 및 주요 버스/트램 단말기에 해외 컨택리스 카드(Visa/Master) 또는 스마트폰 결제(Apple/Google Pay)를 태그하여 티켓 구매 없이 즉시 탑승 가능합니다.",
+          en: "Tap your contactless credit card (Visa/Mastercard) or phone (Apple/Google Pay) directly at metro gates and bus readers for automatic fare capping.",
+          ja: "メトロ改札やバス端末にタッチ決済対応クレジットカード（Visa/Master）やスマホをかざすだけで切符を買わずに乗車できます。",
+          zh: "地铁进站闸机及公交读卡器均全面支持境外非接信用卡（Visa/Mastercard）或手机闪付（Apple/Google Pay）直接刷卡过闸。"
+        },
+        disclaimer: {
+          ko: "🚨 <strong>피우미치노 공항 직행열차(Leonardo Express) 제외 주의:</strong> 피우미치노 공항(FCO)과 테르미니역을 논스톱 32분에 잇는 레오나르도 익스프레스(편도 €14)는 이탈리아 국철(Trenitalia) 소속 열차입니다. <strong>ATAC 시내 교통권(1회권, 24/48/72시간권, CIS 7일권)으로는 절대로 이용할 수 없으니</strong> 공항 이동 시 반드시 트렌이탈리아 공식 창구나 키오스크에서 별도 티켓을 구매하세요.",
+          en: "🚨 <strong>Airport Direct Train Exclusion Alert:</strong> The Leonardo Express non-stop train (€14) between FCO Airport and Termini Station is operated by Trenitalia, NOT ATAC. <strong>ATAC city tickets and passes (BIT, 24h, 48h, 72h, CIS) are NOT valid</strong> on this train. Purchase separate Trenitalia tickets.",
+          ja: "🚨 <strong>レオナルド・エクスプレス除外警告:</strong> FCO空港とテルミニ駅をノンストップ32分で結ぶ直通列車（片道€14）はトレニタリア国鉄運行です。<strong>ATAC市内交通券（1回券・各種時間券・7日券）では乗車できません</strong>。必ず別途トレニタリアの乗車券を購入してください。",
+          zh: "🚨 <strong>莱昂纳多机场特快专线不通用警告:</strong> 往返于菲乌米奇诺机场（FCO）与特米尼火车站之间的直达列车Leonardo Express（单程€14）隶属于意大利国铁Trenitalia。<strong>ATAC罗马市内任何次票、一日票、三日票及七日卡（CIS）均严禁用于此列车</strong>。前往机场须单独在国铁柜台或机具购票。"
+        },
+        officialUrl: "https://www.atac.roma.it/en/tickets-and-passes/request-and-charge-online"
+      }
+    },
+    florence: {
+      id: "florence",
+      name: { ko: "피렌체", en: "Florence", ja: "フィレンツェ", zh: "佛罗伦萨" },
+      tag: { ko: "선택 후보 (2박 권장)", en: "Optional Candidate (2 Nights Rec.)", ja: "選択候補 (2泊推奨)", zh: "备选候选 (建议2晚)" },
+      statusBadge: {
+        ko: "선택 후보 · 고속열차 1시간 30분 · 도어투도어 3~4시간",
+        en: "Optional · High-Speed Train 1.5h · Door-to-Door 3-4h",
+        ja: "選択候補・高速鉄道1時間30分・移動合計3〜4時間",
+        zh: "备选候选·高铁1.5小时·全程门到门3-4小时"
+      },
+      intro: {
+        ko: "꽃의 도시 피렌체. 르네상스의 발상지로 도시 전체가 유네스코 세계유산입니다. 로마에서 고속열차로 1시간 30분 거리이며, 우피치·아카데미아 등 핵심 명소를 평지 위주로 집중 관람하는 선택지입니다.",
+        en: "The cradle of the Renaissance. Compact and walkable, boasting world-class galleries like the Uffizi and Accademia, situated 1.5 hours north of Rome by high-speed train.",
+        ja: "ルネサンス発祥の花の都。ローマから高速鉄道で約1時間30分。ウフィツィ美術館やアカデミア美術館など至高の芸術を平坦な中心街で堪能できます。",
+        zh: "文艺复兴发源地翡冷翠。城市紧凑适宜步行，汇聚乌菲兹与学院美术馆等世界艺术殿堂，从罗马乘高铁仅需1.5小时。"
+      },
+      spots: [
+        {
+          id: "duomo-complex",
+          name: { ko: "두오모 복합단지 (산타 마리아 델 피오레)", en: "Florence Duomo Complex", ja: "フィレンツェ・ドゥオーモ複合体", zh: "圣母百花大教堂建筑群" },
+          italianName: "Complesso Monumentale di Santa Maria del Fiore",
+          photo: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "대성당 무료(긴 대기) vs 돔·종탑 유료 예약 구분", en: "Cathedral Free vs Dome/Tower Paid Pass", ja: "大聖堂無料（行列）vs クーポラ有料予約を区別", zh: "大殿免费(常排长队) 与 穹顶钟楼付费通票区分" },
+          priorityLevel: "high",
+          walking: { ko: "대성당 평지 🟢 / 돔 등반은 463계단 극심 주의 ⚠️", en: "Cathedral Level 🟢 / Dome Climb 463 Steps ⚠️", ja: "大聖堂内は平坦 🟢 / 登頂は463段の急階段 ⚠️", zh: "大殿平整 🟢 / 登穹顶需攀登463级急梯 ⚠️" },
+          walkingLevel: "high",
+          desc: {
+            ko: "피렌체의 붉은 지붕을 대표하는 브루넬레스키의 돔, 분홍·흰색·녹색 대리석 외관, 조토의 종탑과 오페라 박물관으로 이루어진 복합단지입니다.",
+            en: "Brunelleschi's magnificent octagonal dome, the tricolor marble facade, Giotto's Campanile, and the Museo dell'Opera del Duomo.",
+            ja: "ブルネレスキ設計の巨大ドーム、三色大理石のファサード、ジョットの鐘楼、大聖堂付属博物館からなる複合体。",
+            zh: "布鲁内莱斯基八角形红砖穹顶、三色大理石外墙、乔托钟楼与圣母百花博物馆构成的建筑奇迹。"
+          },
+          details: {
+            ko: "🚨 <strong>시설 구분 & 부모님 안내:</strong> <strong>대성당 본당 관람은 무료</strong>이나 대기 줄이 깁니다. <strong>브루넬레스키 돔(쿠폴라) 등반은 유료 예약 패스가 필요하며, 엘리베이터 없이 463개의 가파른 계단</strong>을 올라야 하므로 무릎이 약한 부모님은 등반을 절대 피하세요. 대신 엘리베이터가 완비된 '오페라 두오모 박물관'에서 진품 조각과 미켈란젤로의 피에타를 편안히 관람하세요.",
+            en: "🚨 <strong>Clear Distinction:</strong> <strong>Cathedral nave is FREE</strong> (line required). <strong>Brunelleschi's Dome requires a paid pass and involves 463 steep stairs with NO elevator</strong>—seniors with knee issues should strictly avoid climbing. Instead, visit the air-conditioned, elevator-equipped Opera Museum.",
+            ja: "🚨 <strong>施設区分と注意:</strong> <strong>大聖堂内部の見学は無料</strong>ですが行列があります。<strong>クーポラ登頂は有料予約制で、エレベーターなしの急な463段の階段</strong>を登るため、ご両親の登頂は避けてください。エレベーター完備の「大聖堂付属博物館」の見学が推奨されます。",
+            zh: "🚨 <strong>设施明确区分与长辈提示:</strong> <strong>大教堂主殿免费参观</strong>但需排队。<strong>登穹顶（Cupola）必须购买收费通票，且全程无电梯、须攀登463级极其陡峭的狭窄台阶</strong>，膝关节脆弱的长辈切勿尝试登顶。建议改游配备全套现代电梯的“百花圣母博物馆”，悠然观赏米开朗基罗晚年《圣殇》真迹。"
+          },
+          hours: {
+            ko: "대성당: 10:15~15:45 / 박물관: 09:00~19:30",
+            en: "Cathedral: 10:15-15:45 / Museum: 09:00-19:30",
+            ja: "大聖堂: 10:15〜15:45 / 博物館: 09:00〜19:30",
+            zh: "大教堂: 10:15~15:45 / 博物馆: 09:00~19:30"
+          },
+          admission: {
+            ko: "대성당 본당 무료 / 복합단지 브루넬레스키 패스 €30",
+            en: "Cathedral Free / Brunelleschi Complex Pass €30",
+            ja: "大聖堂本堂無料 / 複合ブルネレスキパス €30",
+            zh: "大教堂主殿免费 / 布鲁内莱斯基建筑群通票 €30"
+          },
+          officialUrl: "https://operaduomo.firenze.it/"
+        },
+        {
+          id: "uffizi",
+          name: { ko: "우피치 미술관", en: "Uffizi Gallery", ja: "ウフィツィ美術館", zh: "乌菲兹美术馆" },
+          italianName: "Gallerie degli Uffizi",
+          photo: "https://images.unsplash.com/photo-1576085898323-218337e3e43c?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "예약 필수 (월요일 정기 휴관 / 수요일 관람 적합)", en: "Mandatory Booking (Closed Mondays / Wed Ideal)", ja: "事前予約必須 (月曜定休 / 水曜鑑賞が最適)", zh: "必须提前预约 (每周一闭馆 / 建议周三参观)" },
+          priorityLevel: "high",
+          walking: { ko: "보행 보통 (엘리베이터 & 복도 벤치 완비)", en: "Moderate (Elevators & Rest Benches Throughout)", ja: "歩行普通 (エレベーター＆廊下ベンチ完備)", zh: "步行中等 (配备直梯与走廊观光长凳)" },
+          walkingLevel: "medium",
+          desc: {
+            ko: "메디치 가문의 방대한 소장품을 바탕으로 한 세계 최고의 르네상스 미술관. 보티첼리의 '비너스의 탄생', '봄', 레오나르도 다빈치의 명작이 소장되어 있습니다.",
+            en: "The world's premier Renaissance art museum, housing Botticelli's 'The Birth of Venus' and masterpiece paintings by Leonardo da Vinci.",
+            ja: "メディチ家の至宝を受け継ぐ世界屈指の美術館。ボッティチェリの『ヴィーナスの誕生』『プリマヴェーラ』などルネサンスの精華が集結。",
+            zh: "传承美第奇家族庞大收藏的顶级文艺复兴殿堂，汇集波提切利《维纳斯的诞生》、《春》及达·芬奇真迹。"
+          },
+          details: {
+            ko: "🚨 <strong>방문 일정 팁:</strong> <strong>우피치는 매주 월요일 휴관</strong>입니다. (12월 1일 화요일 피렌체 도착 시, 12월 2일 수요일 관람이 최적입니다). 건물 1층부터 3층까지 장애인/시니어 전용 엘리베이터가 운행되며 복도 곳곳에 등받이 벤치가 있어 여유롭게 쉬어갈 수 있습니다.",
+            en: "🚨 <strong>Scheduling Tip:</strong> <strong>Uffizi is CLOSED on Mondays</strong>. (For a proposed trip arriving Tue Dec 1, visiting on Wednesday Dec 2 is optimal). Equipped with elevators to all floors and benches along the grand corridors.",
+            ja: "🚨 <strong>スケジュール注意:</strong> <strong>毎週月曜休館</strong>です（12月1日着なら12月2日水曜の鑑賞が最適）。全フロアにシニア対応エレベーターが稼働し、主要通路にベンチが多数設置されています。",
+            zh: "🚨 <strong>排期核心技巧:</strong> <strong>每周一闭馆</strong>（若12月1日抵达佛罗伦萨，12月2日周三游览最为合适）。全馆配备直通无障碍电梯，各主连廊设有带靠背长凳供长辈随时歇脚。"
+          },
+          hours: {
+            ko: "08:15 ~ 18:30 (매주 월요일 휴관)",
+            en: "08:15 - 18:30 (Closed Mondays)",
+            ja: "08:15〜18:30（毎週月曜休館）",
+            zh: "08:15 ~ 18:30（每周一闭馆）"
+          },
+          admission: {
+            ko: "성인 €25~€26 (시즌 요금 + 온라인 예약비 €4)",
+            en: "Adults €25-€26 (Seasonal + €4 booking fee)",
+            ja: "大人 €25〜€26（季節料金 + 予約料 €4）",
+            zh: "成人票 €25~€26（随季节变动 + 在线预约费 €4）"
+          },
+          officialUrl: "https://www.uffizi.it/en/the-uffizi"
+        },
+        {
+          id: "accademia",
+          name: { ko: "아카데미아 미술관", en: "Accademia Gallery", ja: "アカデミア美術館", zh: "学院美术馆" },
+          italianName: "Galleria dell'Accademia",
+          photo: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "예약 필수 (다비드상 집중 관람)", en: "Mandatory Booking (David Highlights)", ja: "事前予約必須 (ダビデ像集中鑑賞)", zh: "必须提前预约 (聚焦大卫真迹)" },
+          priorityLevel: "high",
+          walking: { ko: "보행 매우 편안 🟢 (완전 평지 콤팩트 동선)", en: "Very Easy 🟢 (Compact Single-Floor Layout)", ja: "歩行快適 🟢 (平坦でコンパクトな動線)", zh: "极为轻松 🟢 (平坦紧凑的单层动线)" },
+          walkingLevel: "easy",
+          desc: {
+            ko: "미켈란젤로의 인류 최고 조각 '다비드(David)' 진품이 전시된 미술관. 거인의 완벽한 해부학적 아름다움과 미완성 수작 '노예들'을 감상할 수 있습니다.",
+            en: "Home to Michelangelo's original colossal marble 'David', along with his unfinished 'Slaves' series and antique instruments.",
+            ja: "ミケランジェロ作の最高傑作『ダビデ像』本物を展示。未完の『囚われの身』や歴史的な楽器展示も楽しめます。",
+            zh: "米开朗基罗举世闻名的大理石《大卫》原件所在馆，并展出其未完成的《奴隶》系列雕像与古乐器珍品。"
+          },
+          details: {
+            ko: "우피치 미술관보다 전시관 규모가 아담하여 1시간 내외로 핵심만 여유롭게 둘러볼 수 있어 부모님 보행 피로가 거의 없습니다. 전 구역 단차 없는 평지이며 사전 예약 시간 입장 시 대기열이 짧습니다.",
+            en: "Much more compact than the Uffizi, allowing a full visit in about 1 hour with minimal senior fatigue. Step-free level flooring throughout.",
+            ja: "ウフィツィ美術館より規模が小さく、約1時間で主要展示を見られるためご両親の負担が非常に少ないです。段差のないフラットなフロア。",
+            zh: "规模比乌菲兹小巧得多，约1小时即可不慌不忙看完全馆精髓，极少耗费长辈精力。全馆无台阶，凭预约时段进馆排队极短。"
+          },
+          hours: {
+            ko: "08:15 ~ 18:50 (매주 월요일 휴관)",
+            en: "08:15 - 18:50 (Closed Mondays)",
+            ja: "08:15〜18:50（毎週月曜休館）",
+            zh: "08:15 ~ 18:50（每周一闭馆）"
+          },
+          admission: {
+            ko: "성인 €16 (+ 예약비 €4)",
+            en: "Adults €16 (+ €4 booking fee)",
+            ja: "大人 €16 (+ 予約料 €4)",
+            zh: "成人票 €16 (+ 在线预约费 €4)"
+          },
+          officialUrl: "https://www.galleriaaccademiafirenze.it/"
+        },
+        {
+          id: "signoria-vecchio",
+          name: { ko: "시뇨리아 광장 & 팔라초 베키오", en: "Piazza della Signoria & Palazzo Vecchio", ja: "シニョーリア広場＆ヴェッキオ宮殿", zh: "领主广场与旧宫" },
+          italianName: "Piazza della Signoria e Palazzo Vecchio",
+          photo: "https://images.unsplash.com/photo-1541370976299-4d24ebbc9077?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "광장 무료 개방 / 궁전 내부 관람 선택", en: "Free Plaza / Palace Interior Optional", ja: "広場無料 / 宮殿内部は任意", zh: "广场免费开放 / 宫殿内部自选参观" },
+          priorityLevel: "good",
+          walking: { ko: "보행 매우 편안 🟢 (완전 평지 보행자 광장)", en: "Very Easy 🟢 (Completely Flat Paved Plaza)", ja: "歩行極めて快適 🟢 (完全平坦な歩行者広場)", zh: "极其轻松 🟢 (平坦开阔的纯石板步行广场)" },
+          walkingLevel: "easy",
+          desc: {
+            ko: "피렌체 공화국의 정치적 중심지였던 광장. 야외 조각 미술관인 로지아 데이 란치(로지아 회랑)에서 첼리니의 '페르세우스' 등을 무료로 감상할 수 있습니다.",
+            en: "Historic civic heart of Florence framed by the open-air sculpture gallery of Loggia dei Lanzi and the fortress-palace Palazzo Vecchio.",
+            ja: "かつての政治の中心広場。屋外彫刻ギャラリー「ロッジア・デイ・ランツィ」でチェッリーニ作『ペルセウス』等を無料で鑑賞できます。",
+            zh: "佛罗伦萨共和国政治中心。佣兵凉廊（Loggia dei Lanzi）堪称露天免费雕塑殿堂，切利尼《珀耳修斯》等矗立于此。"
+          },
+          details: {
+            ko: "광장 전체가 넓고 평평한 석판으로 포장되어 부모님과 함께 산책하기 매우 쾌적합니다. 팔라초 베키오 궁전 내부 관람 시에도 현대식 엘리베이터가 운행되어 웅장한 '500인의 방'을 편안히 관람할 수 있습니다.",
+            en: "The entire plaza is paved with flat stones, offering senior-friendly walking. Palazzo Vecchio features an elevator up to the magnificent Salone dei Cinquecento.",
+            ja: "広場全体が平坦な敷石で歩きやすく散策に最適。ヴェッキオ宮殿内部にもエレベーターがあり、壮麗な「500人広間」を無理なく見学できます。",
+            zh: "全广场铺设平坦宽大石板，漫步极佳。旧宫（Palazzo Vecchio）内部配有直梯，可免走高陡台阶轻松参观著名的五百人大厅。"
+          },
+          hours: {
+            ko: "광장 24시간 개방 / 궁전: 09:00~19:00 (목요일 14:00까지)",
+            en: "Plaza 24/7 / Palace: 09:00-19:00 (Thu to 14:00)",
+            ja: "広場終日 / 宮殿: 09:00〜19:00（木曜は14:00まで）",
+            zh: "广场全天开放 / 旧宫: 09:00~19:00（周四开放至14:00）"
+          },
+          admission: {
+            ko: "광장 무료 / 팔라초 베키오 박물관 성인 €12.50",
+            en: "Plaza Free / Palazzo Vecchio Museum Adults €12.50",
+            ja: "広場無料 / ヴェッキオ宮殿博物館 大人 €12.50",
+            zh: "广场免费 / 旧宫博物馆成人票 €12.50"
+          },
+          officialUrl: "https://cultura.comune.fi.it/musei"
+        },
+        {
+          id: "ponte-vecchio",
+          name: { ko: "베키오 다리", en: "Ponte Vecchio", ja: "ヴェッキオ橋", zh: "老桥" },
+          italianName: "Ponte Vecchio",
+          photo: "https://images.unsplash.com/photo-1534270804882-6b5048b1c1fc?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "자유 방문 (상시 개방)", en: "Open 24/7 (Free Stroll)", ja: "自由散策 (終日開放)", zh: "自由漫步 (全天开放)" },
+          priorityLevel: "good",
+          walking: { ko: "보행 매우 편안 🟢 (완전 평지 보행교)", en: "Very Easy 🟢 (Completely Flat Pedestrian Bridge)", ja: "歩行極めて快適 🟢 (完全平坦な歩行者専用橋)", zh: "极其轻松 🟢 (平坦顺畅的纯步行古桥)" },
+          walkingLevel: "easy",
+          desc: {
+            ko: "아르노강에 놓인 피렌체에서 가장 오래된 14세기 중세 석조 다리. 다리 양편에 유서 깊은 금세공·보석 상점들이 늘어서 있습니다.",
+            en: "Florence's iconic 14th-century medieval stone closed-spandrel arch bridge, lined with historic goldsmiths and jeweler shops.",
+            ja: "アルノ川に架かるフィレンツェ最古の中世の橋。橋の上には伝統ある金細工・宝飾品店が所狭しと並びます。",
+            zh: "横跨阿诺河的佛罗伦萨最古老中世纪石拱桥，桥面两侧林立着百年老字号金银首饰工坊。"
+          },
+          details: {
+            ko: "계단이나 단차가 전혀 없는 완전 평지 보행교로 부모님 무릎에 부담이 전혀 없습니다. 다리 중앙의 개방형 테라스에서 아르노강과 피렌체 강변 전경을 감상하며 사진을 남기기에 최고의 포인트입니다.",
+            en: "Completely flat level walking surface with zero steps. The open middle terrace provides scenic views along the river for leisurely photos.",
+            ja: "階段や段差が一切ない完全フラットな橋で、足腰への負担が全くありません。橋の中央テラスからはアルノ川の絶景を望めます。",
+            zh: "桥面通体平整无任何台阶，完全免去长辈膝部顾虑。桥梁中央的露天拱廊台可将阿诺河两岸风光尽收眼底，留影极佳。"
+          },
+          hours: {
+            ko: "연중 상시 개방",
+            en: "Open 24/7",
+            ja: "終日開放",
+            zh: "全年全天开放"
+          },
+          admission: {
+            ko: "무료 산책",
+            en: "Free Stroll",
+            ja: "無料散策",
+            zh: "免费通行漫步"
+          },
+          officialUrl: "https://www.feelflorence.it/en"
+        },
+        {
+          id: "pitti-boboli",
+          name: { ko: "피티 궁전 & 보볼리 정원", en: "Pitti Palace & Boboli Gardens", ja: "ピッティ宮殿＆ボーボリ庭園", zh: "皮蒂宫与波波里花园" },
+          italianName: "Palazzo Pitti e Giardino di Boboli",
+          photo: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "궁전 내부 위주 권장 / 정원 언덕 등반 주의", en: "Palace Recommended / Garden Incline Caution", ja: "宮殿内部推奨 / 庭園の急坂に注意", zh: "建议主游宫殿 / 花园急坡务必谨慎" },
+          priorityLevel: "medium",
+          walking: { ko: "궁전 평지·엘리베이터 🟢 / 보볼리 정원 가파른 자갈 언덕 ⚠️", en: "Palace Level 🟢 / Boboli Steep Gravel Hills ⚠️", ja: "宮殿は平坦＆エレベーター 🟢 / 庭園は急坂・砂利道 ⚠️", zh: "宫殿内部平坦电梯 🟢 / 波波里花园急坡碎石 ⚠️" },
+          walkingLevel: "high",
+          desc: {
+            ko: "메디치 가문의 대궁전 피티 궁전(팔라티나 갤러리)과 언덕 경사면에 조성된 르네상스 양식의 대규모 보볼리 정원입니다.",
+            en: "Vast Medici palace featuring the Palatine Gallery paintings, backed by the sprawling hillside renaissance Boboli Gardens.",
+            ja: "メディチ家の居城であった壮大なピッティ宮殿（パラティーナ美術館）と、丘の傾斜に広がる広大なボーボリ庭園。",
+            zh: "美第奇家族曾居住的恢弘巨宫皮蒂宫（帕拉蒂娜画廊）及其后山丘顺坡而建的波波里大花园。"
+          },
+          details: {
+            ko: "🚨 <strong>보행 부담 구분 주의:</strong> <strong>피티 궁전 내부는 엘리베이터가 완비되어 평지 관람이 쾌적</strong>합니다. 그러나 <strong>보볼리 정원은 언덕 지형으로 가파른 자갈길 오르막과 수많은 계단</strong>이 이어져 무릎이 약한 부모님께는 등반이 매우 힘듭니다. 부모님 동행 시에는 궁전 내부와 정원 초입 평지 분수대 주변만 둘러보는 코스를 강력 추천합니다.",
+            en: "🚨 <strong>Walking Distinction:</strong> <strong>Pitti Palace interior is level and equipped with elevators</strong>. In contrast, <strong>Boboli Gardens ascends a steep gravel hillside with numerous stone stairways</strong>, causing extreme knee strain. Seniors should stick to the palace and the flat lower amphitheater.",
+            ja: "🚨 <strong>歩行負担の区別注意:</strong> <strong>ピッティ宮殿内部はエレベーター完備で快適</strong>です。一方、<strong>ボーボリ庭園は急勾配の砂利道と階段が続く丘陵地</strong>のため、足腰の弱いご両親の登頂は危険です。宮殿内部と庭園の入口付近の平坦エリアのみに留めるのが賢明です。",
+            zh: "🚨 <strong>长辈体能负担明确区分:</strong> <strong>皮蒂宫内部配备垂直电梯，平步看画极其轻松</strong>。然而，<strong>后山的波波里花园依山势而建，通体为陡峭碎石斜坡与露天大石阶</strong>，极其折损长辈膝盖。强烈建议仅游览宫殿内部画廊及花园入口平整的圆形露天剧场区域。"
+          },
+          hours: {
+            ko: "08:15 ~ 18:30 (매주 월요일 휴관)",
+            en: "08:15 - 18:30 (Closed Mondays)",
+            ja: "08:15〜18:30（毎週月曜休館）",
+            zh: "08:15 ~ 18:30（每周一闭馆）"
+          },
+          admission: {
+            ko: "피티 궁전 성인 €16 / 보볼리 정원 성인 €10",
+            en: "Pitti Palace €16 / Boboli Gardens €10",
+            ja: "ピッティ宮殿 大人 €16 / ボーボリ庭園 大人 €10",
+            zh: "皮蒂宫成人票 €16 / 波波里花园成人票 €10"
+          },
+          officialUrl: "https://www.uffizi.it/en/pitti-palace"
+        }
+      ],
+      dining: [
+        {
+          id: "bistecca",
+          name: { ko: "비스테카 알라 피오렌티나", en: "Bistecca alla Fiorentina", ja: "ビステッカ・アッラ・フィオレンティーナ", zh: "佛罗伦萨炭烤T骨牛排" },
+          italianName: "Bistecca alla Fiorentina",
+          photo: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "토스카나 키아니나(Chianina) 소의 두툼한 T자 뼈 등심/안심, 참나무 숯불 구이, 바다 소금, 올리브유",
+            en: "Thick T-bone steak from Tuscan Chianina cattle, oak charcoal grilled, coarse sea salt, Tuscan extra virgin olive oil",
+            ja: "トスカーナ産キアニーナ牛の極厚Tボーン（ヒレ＆サーロイン）、木炭直火焼き、粗塩、オリーブ油",
+            zh: "托斯卡纳特产奇亚尼娜（Chianina）厚切带骨T骨肉、橡木炭火直烤、海盐、初榨橄榄油"
+          },
+          taste: {
+            ko: "두께 4~5cm에 달하는 묵직한 스테이크로 겉은 숯불 향으로 바삭하고 속은 부드러운 선홍빛 레어(al sangue)로 구워내는 피렌체 대표 미식. (무게 kg 단위 주문).",
+            en: "Iconic 4-5cm thick Florentine steak served rare (al sangue), seared crisp outside with an intensely tender, juicy core. Priced by weight (kg).",
+            ja: "厚さ4〜5cmの豪快なTボーン。外側は炭火で香ばしく、中はジューシーなレア（アル・サングエ）で味わう名物。（通常kg単位で注文）。",
+            zh: "厚达4~5公分的豪迈牛排，外皮炭焦酥脆，内里粉嫩多汁，传统标准为一分熟（Al sangue）。通常按公斤（kg）称重计价。"
+          }
+        },
+        {
+          id: "lampredotto",
+          name: { ko: "람프레도토", en: "Panino con il Lampredotto", ja: "ランプレドット", zh: "佛罗伦萨传统牛肚包" },
+          italianName: "Panino con il Lampredotto",
+          photo: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "소의 4번째 위(주름위), 토마토·셀러리·양파 야채 육수, 바삭한 세멜레 빵, 살사 베르데(파슬리 허브 소스)",
+            en: "Slow-cooked cow's fourth stomach (abomasum) in vegetable broth, crusty semelle bread bun, spicy oil & salsa verde",
+            ja: "牛の第4胃（ギアラ）、香味野菜のブイヨン、丸パン（セメッレ）、サルサ・ヴェルデ（パセリソース）",
+            zh: "牛第四胃（皱胃）、番茄西芹慢炖清汤、外脆内软Semelle面包、经典欧芹青酱与自制辣油"
+          },
+          taste: {
+            ko: "피렌체 서민들의 영혼이 담긴 길거리 소울푸드. 장시간 푹 고아 잡내 없이 부드럽고 쫄깃한 내장에 매콤한 오일과 상큼한 허브 소스가 어우러집니다.",
+            en: "Quintessential Florentine street food. Incredibly tender, slow-simmered tripe served in a crusty roll dipped in rich broth with zesty green salsa.",
+            ja: "何百年も愛される下町の名物サンドイッチ。じっくり煮込まれた胃袋は驚くほど柔らかく、さわやかなハーブソースが絶妙に合います。",
+            zh: "流传数百年的佛罗伦萨市井灵魂小吃。慢火煨炖至极度软烂无异味，面包浸润鲜美汤汁，青酱解腻提香，长辈亦赞不绝口。"
+          }
+        },
+        {
+          id: "ribollita",
+          name: { ko: "리볼리타", en: "Ribollita", ja: "リボッリータ", zh: "托斯卡纳重沸蔬菜豆汤" },
+          italianName: "Ribollita Toscana",
+          photo: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "카넬리니 흰콩, 카볼로 네로(토스카나 검은 케일), 배추, 당근, 감자, 토스카나 굳은 빵",
+            en: "Cannellini white beans, Tuscan cavolo nero (black kale), winter vegetables, stale crusty Tuscan bread",
+            ja: "白インゲン豆、黒キャベツ（カーボロ・ネロ）、香味野菜、トスカーナの固くなったパン",
+            zh: "托斯卡纳白芸豆、黑羽衣甘蓝（Cavolo nero）、洋葱胡萝卜蔬菜高汤、硬皮酵母老面包"
+          },
+          taste: {
+            ko: "‘다시 끓였다(re-boiled)’는 뜻의 토스카나 전통 가정식 수프. 쌀쌀한 가을·겨울철 채소와 콩, 빵이 부드럽게 녹아들어 속을 따뜻하고 편안하게 감싸줍니다.",
+            en: "A hearty Tuscan vegetable and bread porridge stewed twice. Rich, comforting, and easily digestible—perfect for chilly autumn and winter days.",
+            ja: "「再び煮込んだ」を意味する伝統の家庭料理。豆と野菜の優しい甘みとパンのとろみが溶け合い、冷えた体を芯から温めてくれます。",
+            zh: "意为“再次熬煮”的经典托斯卡纳浓汤。深秋寒冬里白芸豆与黑甘蓝炖至软烂，面包化于汤中，温润厚实极易消化，是慰劳长辈肠胃的养生佳品。"
+          }
+        },
+        {
+          id: "pappa-al-pomodoro",
+          name: { ko: "파파 알 포모도로", en: "Pappa al Pomodoro", ja: "パッパ・アル・ポモドーロ", zh: "托斯卡纳番茄面包浓糊" },
+          italianName: "Pappa al Pomodoro",
+          photo: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "완숙 토스카나 토마토, 굳은 소금 없는 빵, 마늘, 신선한 바질, 최고급 엑스트라 버진 올리브유",
+            en: "Ripe Tuscan plum tomatoes, unsalted stale bread, garlic, fresh basil leaves, robust extra virgin olive oil",
+            ja: "完熟トマト、トスカーナの無塩パン、ニンニク、フレッシュバジル、上質オリーブ油",
+            zh: "成熟多汁熟番茄、无盐硬面包、大蒜瓣、新鲜罗勒叶、特级初榨橄榄油"
+          },
+          taste: {
+            ko: "토마토의 산뜻한 산미와 빵이 뭉근하게 끓여져 부드러운 죽처럼 입안에서 녹아내리는 음식. 기름지지 않고 깔끔해 부모님 아침·점심 식사로 이상적입니다.",
+            en: "A comforting tomato and bread mush simmered into a velvety porridge, perfumed with basil and olive oil. Exceptionally light and soothing.",
+            ja: "トマトのフレッシュな酸味とパンが煮崩れ、お粥のようにとろける優しい一皿。重たい肉料理が続いたご両親の胃に最適。",
+            zh: "酸甜新鲜番茄与老面包温和慢煨成的如粥般细腻的浓糊，罗勒清香四溢。完全不油腻，为吃不惯厚重西餐的长辈提供抚慰。"
+          }
+        }
+      ],
+      transit: {
+        operator: "Autolinee Toscane (at-bus) & GEST Tramvia",
+        fares: [
+          {
+            name: { ko: "도심 1회권 (Urbano)", en: "Urban Single Ticket", ja: "市内1回券 (Urbano)", zh: "市区单次票 (Urbano)" },
+            desc: {
+              ko: "첫 펀칭 후 90분 유효 (피렌체 시내 버스 및 T1·T2 트램 환승 자유)",
+              en: "Valid 90 mins from validation (Free transfers on buses & T1/T2 trams)",
+              ja: "打刻後90分有効（フィレンツェ市バスおよびT1・T2トラム乗換自由）",
+              zh: "打票后90分钟内有效（佛罗伦萨市区公交车及T1/T2有轨电车无限次换乘）"
+            },
+            price: "€1.70"
+          },
+          {
+            name: { ko: "10회 다회권 (Carnet 10)", en: "10-Ride Carnet", ja: "10回数券 (Carnet 10)", zh: "10次套票 (Carnet 10)" },
+            desc: {
+              ko: "10회분 승차권 묶음 (Tabacchi 또는 모바일 앱 구매)",
+              en: "Booklet of 10 single rides (Purchase at Tabacchi or via app)",
+              ja: "10回分の乗車券綴り（タバッキまたはアプリで購入）",
+              zh: "10次乘车联票（可在烟草店Tabacchi或官方APP购买）"
+            },
+            price: "€15.50"
+          }
+        ],
+        tapAndGo: {
+          ko: "버스 및 트램 탑승 시 차내 단말기에 컨택리스 카드나 스마트폰을 태그(Tap&Tap)하여 종이 티켓 없이 즉시 결제 및 탑승할 수 있습니다.",
+          en: "Tap your contactless payment card or smartphone directly on bus and tram validator screens for instant single fare ticketing.",
+          ja: "バスやトラムの車内リーダーにタッチ決済対応カードやスマホをかざすだけでチケット不要で乗車可能です。",
+          zh: "电车及公交车厢内均配有Tap&Tap读卡器，直接刷非接银行卡或手机即可乘车，无需费力寻找烟草店购票。"
+        },
+        tramsAndStation: {
+          ko: "🚆 <strong>트램비아 노선 & SMN 중앙역 팁:</strong><br>• <strong>T2 노선:</strong> 피렌체 페레톨라 공항(Peretola) ↔ 피렌체 산타 마리아 노벨라(SMN) 중앙역을 단 20분에 직통 연결 (€1.70). 100% 저상 트램으로 계단 없이 캐리어 이동이 매우 편합니다.<br>• <strong>산타 마리아 노벨라(SMN) 역:</strong> 로마에서 고속열차(Frecciarossa/Italo 1시간 30분)로 도착하는 종착역으로, 열차 플랫폼과 대합실, 택시 승강장이 계단 없이 완전 평지(지상)로 연결되어 짐 이동이 편리합니다.",
+          en: "🚆 <strong>Tramway & SMN Station Notes:</strong><br>• <strong>Line T2:</strong> Connects Florence Airport directly to SMN Central Station in 20 minutes (€1.70). Fully low-floor step-free trams.<br>• <strong>Santa Maria Novella (SMN) Station:</strong> Central terminal where high-speed trains from Rome arrive. All platforms are level ground-floor terminals with step-free taxi and luggage access.",
+          ja: "🚆 <strong>トラム路線＆SMN駅情報:</strong><br>• <strong>T2路線:</strong> フィレンツェ空港とSMN中央駅をわずか20分で直通（€1.70）。完全ノンステップでスーツケースの移動が極めて容易。<br>• <strong>SMN中央駅:</strong> ローマからの高速列車（約1時間30分）が到着する終着駅構造。ホームから駅前広場・タクシー乗り場まで段差のない完全フラット構造です。",
+          zh: "🚆 <strong>有轨电车与SMN中央火车站长辈实战指南:</strong><br>• <strong>T2号线:</strong> 连接佛罗伦萨佩雷托拉机场与SMN中央火车站仅需20分钟（票价€1.70）。全程无障碍低地板车厢，提大行李毫不费力。<br>• <strong>SMN中央火车站:</strong> 罗马高铁（1.5小时）抵达的终点站。采用尽端式站台，从下火车到出站大厅、出租车站全程为平整地面无任何台阶，推行李极为轻松。"
+        },
+        officialUrl: "https://www.at-bus.it/en/ticket"
+      }
+    },
+    venice: {
+      id: "venice",
+      name: { ko: "베네치아", en: "Venice", ja: "ヴェネツィア", zh: "威尼斯" },
+      tag: { ko: "선택 후보 (보행 부담 높음)", en: "Optional Candidate (High Walking Load)", ja: "選択候補 (歩行負担高め)", zh: "备选候选 (步行负担较高)" },
+      statusBadge: {
+        ko: "선택 후보 · 고속열차 3시간 40분 · 다리·계단 주의",
+        en: "Optional · Train 3h 40m · Bridge & Stair Caution",
+        ja: "選択候補・高速鉄道3時間40分・階段橋に注意",
+        zh: "备选候选·高铁3小时40分·台阶桥梁注意"
+      },
+      intro: {
+        ko: "물의 도시 베네치아. 118개 섬과 400여 개 다리로 이루어진 경이로운 수상 도시입니다. 로마에서 고속열차로 약 3시간 40분이 소요되며, 수상버스를 타더라도 수많은 아치교 계단을 걸어야 하므로 피렌체보다 보행 부담이 큽니다.",
+        en: "The Queen of the Adriatic. An ethereal floating city of 118 islands and 400 arched bridges. Located 3h 40m north of Rome; despite water buses, hundreds of stepped bridges impose high senior walking strain.",
+        ja: "アドリア海の真珠、水の都ヴェネツィア。118の島と400以上の太鼓橋で結ばれた唯一無二の都市。ローマから高速鉄道で約3時間40分、階段橋が多いためフィレンツェより歩行負担が高くなります。",
+        zh: "亚得里亚海的水上明珠。由118座岛屿与400多座石桥编织的漂浮奇迹。距罗马高铁约3小时40分；即便搭乘水上巴士，过桥爬阶依然不可避免，体能要求显著高于佛罗伦萨。"
+      },
+      spots: [
+        {
+          id: "san-marco",
+          name: { ko: "산 마르코 대성당 & 광장", en: "St. Mark's Basilica & Piazza San Marco", ja: "サン・マルコ大聖堂＆広場", zh: "圣马可大教堂与圣马可广场" },
+          italianName: "Basilica e Piazza San Marco",
+          photo: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "온라인 사전 예매 필수 (€3~€5 유료화)", en: "Online Booking Mandatory (€3~€5 Entry)", ja: "オンライン事前予約必須 (€3〜€5 有料)", zh: "必须提前在线预约 (€3~€5 门票)" },
+          priorityLevel: "high",
+          walking: { ko: "광장 평지 🟢 / 가을철 아쿠아 알타(조수 침수) 주의", en: "Plaza Level 🟢 / Autumn High Water (Acqua Alta) Alert", ja: "広場は平坦 🟢 / 秋のアクア・アルタ（高潮）に注意", zh: "广场平整 🟢 / 秋季注意潮汐倒灌（Acqua Alta）" },
+          walkingLevel: "medium",
+          desc: {
+            ko: "비잔틴 황금 모자이크로 빛나는 대성당과 나폴레옹이 '유럽의 가장 아름다운 응접실'이라 극찬한 베네치아의 심장 광장입니다.",
+            en: "Venice's grandest piazza anchored by the Byzantine golden mosaics and domes of the Basilica di San Marco.",
+            ja: "黄金色に輝くビザンチンモザイクの大聖堂と、ナポレオンが「世界で最も美しい客間」と称えた壮麗な大広場。",
+            zh: "闪耀拜占庭金色马赛克的恢弘大殿，拿破仑笔下“欧洲最优雅的会客厅”。"
+          },
+          details: {
+            ko: "대성당은 사전 예약 없이는 현장 대기가 1~2시간에 달합니다. 11월 방문 시 아쿠아 알타(조수 상승)로 광장 일부가 침수될 수 있으며, 이때는 설치된 목조 가설보도(Passerelle)를 따라 걷게 됩니다. 성당 내부는 계단 없이 평지 관람 가능.",
+            en: "Skip-the-line online booking is essential. In November, tidal high water (Acqua Alta) may submerge parts of the square; elevated wooden walkways (passerelle) are erected.",
+            ja: "事前予約なしでは1〜2時間の長蛇の列となります。11月はアクア・アルタで広場が冠水することがあり、仮設木製歩道を通行します。大聖堂内は平坦。",
+            zh: "不提前在线购票现场排队极长。11月适逢秋冬高潮位（Acqua Alta），广场低洼处可能轻微积水，市政会架设架高木栈道供游客行走。殿内平坦无阶梯。"
+          },
+          hours: {
+            ko: "09:30 ~ 17:15 (일요일/공휴일은 14:00부터)",
+            en: "09:30 - 17:15 (Sundays/holidays from 14:00)",
+            ja: "09:30〜17:15（日曜・祝日は14:00から）",
+            zh: "09:30 ~ 17:15（周日及节假日自14:00起开放）"
+          },
+          admission: {
+            ko: "성인 €3~€5 (공식 사이트 예매)",
+            en: "Adults €3-€5 (Official site booking)",
+            ja: "大人 €3〜€5（公式サイト予約）",
+            zh: "成人票 €3~€5（官方网站预约）"
+          },
+          officialUrl: "https://basilicasanmarco.skiperformance.com/"
+        },
+        {
+          id: "doge-palace",
+          name: { ko: "두칼레 궁전", en: "Doge's Palace", ja: "ドゥカーレ宮殿", zh: "总督宫" },
+          italianName: "Palazzo Ducale",
+          photo: "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "사전 예매 권장 (현장 대기 단축)", en: "Advance Ticket Recommended", ja: "事前予約推奨 (混雑回避)", zh: "建议提前购票 (缩短现场排队)" },
+          priorityLevel: "high",
+          walking: { ko: "보행 보통 (엘리베이터 & 휠체어 리프트 지원)", en: "Moderate (Elevators & Wheelchair Lifts Available)", ja: "歩行普通 (エレベーター＆リフト対応あり)", zh: "步行中等 (馆内配备电梯与轮椅升降梯)" },
+          walkingLevel: "medium",
+          desc: {
+            ko: "1,000년 베네치아 공화국 국가원수(도제)의 거처이자 정부 청사. 고딕 양식의 외관, 웅장한 대평의원실, 탄식의 다리로 연결됩니다.",
+            en: "The Gothic seat of the Venetian Republic's rulers, featuring magnificent council chambers, the Bridge of Sighs, and historic prisons.",
+            ja: "千年続いた共和国総督の居城。豪華絢爛な大評議会の間、牢獄へと続く『ため息の橋』が有名。",
+            zh: "千年威尼斯共和国总督官邸与最高权力中枢，哥特式精美石雕回廊、大议事厅与“叹息桥”闻名于世。"
+          },
+          details: {
+            ko: "궁전 내 황금 계단 등 계단 구간이 많지만, 시니어와 보행 약자를 위해 엘리베이터와 리프트가 구비되어 있습니다. 안내 직원에게 요청하면 계단 없이 주요 갤러리와 탄식의 다리 뷰를 편안히 둘러볼 수 있습니다.",
+            en: "While the palace features grand staircases, elevators and stair-lifts are installed for mobility-impaired visitors upon request to staff.",
+            ja: "壮麗な大階段がありますが、足腰の弱い方のためのエレベーターや昇降機が整備されています。係員に申し出れば階段を回避可能です。",
+            zh: "宫内虽有著名黄金台阶，但工作人员可协助长辈搭乘专用电梯与楼梯升降机，轻松避开阶梯直达主展厅与叹息桥内部通道。"
+          },
+          hours: {
+            ko: "09:00 ~ 19:00 (마지막 입장 18:00)",
+            en: "09:00 - 19:00 (Last entry 18:00)",
+            ja: "09:00〜19:00（最終入場 18:00）",
+            zh: "09:00 ~ 19:00（最晚入场 18:00）"
+          },
+          admission: {
+            ko: "산 마르코 뮤지엄 패스 포함 €25~€30",
+            en: "Included in St. Mark's Museums Pass €25-€30",
+            ja: "サン・マルコ博物館共通パス €25〜€30",
+            zh: "包含在圣马可广场博物馆联票中 €25~€30"
+          },
+          officialUrl: "https://palazzoducale.visitmuve.it/"
+        },
+        {
+          id: "rialto",
+          name: { ko: "리알토 다리 & 대운하", en: "Rialto Bridge & Grand Canal", ja: "リアルト橋＆カナル・グランデ", zh: "里亚托桥与大运河" },
+          italianName: "Ponte di Rialto e Canal Grande",
+          photo: "https://images.unsplash.com/photo-1520175480921-4edfa2983e0f?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "자유 방문 (바포레토 수상 감상 강력 추천)", en: "Free Access (Vaporetto Water View Best)", ja: "自由訪問 (水上バスからの水上鑑賞を推奨)", zh: "自由游览 (强烈推荐坐水上巴士水上观赏)" },
+          priorityLevel: "good",
+          walking: { ko: "🚨 다리는 계단만 존재 (바포레토 탑승 권장)", en: "🚨 Bridge has Stairs Only (Ride Vaporetto Instead)", ja: "🚨 橋は階段のみ (水上バス乗船が楽)", zh: "🚨 桥梁仅有台阶 (推荐乘坐水上巴士巡游)" },
+          walkingLevel: "high",
+          desc: {
+            ko: "대운하를 가로지르는 가장 오래되고 아름다운 대리석 아치교. 다리 위에서 내려다보는 곤돌라와 대운하 파노라마가 장관입니다.",
+            en: "Venice's oldest and most famous stone arch bridge spanning the Grand Canal, lined with shops and bustling boat traffic.",
+            ja: "大運河に架かる最古にして最も優美な大理石の太鼓橋。橋からのゴンドラと運河の眺めはベネチアの象徴。",
+            zh: "横跨大运河最古老的白色大理石单孔拱桥，桥上俯瞰贡多拉舟楫穿梭、两岸宫殿倒影如画。"
+          },
+          details: {
+            ko: "🚨 <strong>부모님 무릎 보호 필수:</strong> 리알토 다리는 대리석 계단으로만 이루어져 있어 휠체어나 캐리어 이동이 불가능하며 무릎 부담이 큽니다. 다리를 억지로 걸어 오르기보다, <strong>1번 바포레토를 타고 물 위에서 리알토 다리를 올려다보며 대운하를 유람하는 방법</strong>이 부모님께 10배 더 편안하고 낭만적입니다.",
+            en: "🚨 <strong>Senior Advice:</strong> The bridge has steep marble steps and no ramps. Instead of tiring elderly knees, board ACTV Vaporetto Line 1 to cruise under the bridge and take in the view from the water.",
+            ja: "🚨 <strong>ご両親の膝の保護:</strong> 橋は急な階段のみでスロープはありません。無理に階段を登るより、<strong>1番水上バスに乗って水上からリアルト橋を見上げる大運河クルーズ</strong>が圧倒的に快適です。",
+            zh: "🚨 <strong>保护长辈膝盖关键策略:</strong> 里亚托桥全桥皆为陡峭大理石阶梯，无坡道，攀爬费力。与其硬拉长辈爬桥，<strong>不如乘1号水上巴士坐在船头，自大运河水面上仰望老桥全貌</strong>，惬意倍增且免除劳顿。"
+          },
+          hours: {
+            ko: "연중 상시 개방",
+            en: "Open 24/7",
+            ja: "終日開放",
+            zh: "全年全天开放"
+          },
+          admission: {
+            ko: "무료 관람 (바포레토 이용 시 승차권 필요)",
+            en: "Free View (Vaporetto ticket needed for cruise)",
+            ja: "無料見学（水上バス利用時は乗車券必要）",
+            zh: "免费观景（乘坐水上巴士巡游需持交通票）"
+          },
+          officialUrl: "https://www.veneziaunica.it/"
+        },
+        {
+          id: "gallerie-accademia",
+          name: { ko: "아카데미아 미술관", en: "Gallerie dell'Accademia", ja: "アカデミア美術館 (ヴェネツィア)", zh: "威尼斯学院美术馆" },
+          italianName: "Gallerie dell'Accademia di Venezia",
+          photo: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "현장 또는 온라인 예매 (여유로운 관람)", en: "Online or Walk-in (Spacious & Peaceful)", ja: "現地またはオンライン (静かに鑑賞可能)", zh: "现场购票或在线预约 (空间开阔安静)" },
+          priorityLevel: "good",
+          walking: { ko: "보행 매우 편안 🟢 (전면 엘리베이터 & 휠체어 완비)", en: "Very Easy 🟢 (Full Elevators & Accessible Routes)", ja: "歩行極めて快適 🟢 (全館エレベーター＆バリアフリー)", zh: "极其轻松舒适 🟢 (全馆配备电梯与无障碍设施)" },
+          walkingLevel: "easy",
+          desc: {
+            ko: "14~18세기 베네치아 회화의 총본산. 티치아노, 조르조네, 틴토레토, 베로네세 등 찬란한 색채의 걸작들이 전시되어 있습니다.",
+            en: "The greatest repository of Venetian Renaissance and Baroque painting, including masterpieces by Titian, Tintoretto, and Veronese.",
+            ja: "14〜18世紀のヴェネツィア派絵画の殿堂。ティツィアーノ、ジョルジョーネ、ティントレットら色彩豊かな傑作を網羅。",
+            zh: "14至18世纪威尼斯画派艺术巅峰殿堂，汇集提香、乔尔乔内、丁托列托及委罗内塞的浓郁色彩巨作。"
+          },
+          details: {
+            ko: "베네치아에서 가장 시니어 친화적인 미술관입니다. 리프트와 엘리베이터가 전 구역에 완비되어 있으며, 인파로 붐비지 않아 다리 아픈 부모님이 여유롭게 의자에 앉아 르네상스 걸작을 음미할 수 있습니다.",
+            en: "The most senior-friendly museum in Venice. Fully accessible with modern lifts, gentle ramps, and quiet bench seating in front of grand masterpieces.",
+            ja: "ヴェネツィアで最もバリアフリーが行き届いた美術館。全館リフト完備で混雑が少なく、ご両親がゆったり座って鑑賞できます。",
+            zh: "威尼斯无障碍设施最完备的美术馆。全馆配有直升电梯与斜坡，游人适中，名画前均设柔软长凳，长辈可坐定细细品鉴。"
+          },
+          hours: {
+            ko: "08:15 ~ 19:15 (월요일은 14:00까지 단축)",
+            en: "08:15 - 19:15 (Mon closes at 14:00)",
+            ja: "08:15〜19:15（月曜は14:00までの短縮）",
+            zh: "08:15 ~ 19:15（周一提前至14:00闭馆）"
+          },
+          admission: {
+            ko: "성인 €15 (+ 온라인 수수료 €1.50)",
+            en: "Adults €15 (+ €1.50 online fee)",
+            ja: "大人 €15 (+ オンライン手数料 €1.50)",
+            zh: "成人票 €15 (+ 在线手续费 €1.50)"
+          },
+          officialUrl: "https://www.gallerieaccademia.it/"
+        },
+        {
+          id: "jewish-ghetto",
+          name: { ko: "유대인 게토 (칸나레조)", en: "Jewish Ghetto (Cannaregio)", ja: "ユダヤ人ゲットー (カンナレージョ)", zh: "犹太人区（卡纳雷吉欧）" },
+          italianName: "Ghetto Ebraico di Venezia",
+          photo: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "자유 평화로운 산책 (자유 방문)", en: "Peaceful Neighborhood Stroll (Free)", ja: "静かな下町散策 (自由訪問)", zh: "恬静市井散步 (自由游览)" },
+          priorityLevel: "good",
+          walking: { ko: "보행 매우 편안 🟢 (다리 경사가 완만하고 넓은 평지 광장)", en: "Very Easy 🟢 (Gentle Bridge Slopes & Flat Square)", ja: "歩行快適 🟢 (傾斜の緩やかな橋と平坦な広場)", zh: "极其轻松 🟢 (石桥坡度平缓且广场开阔平整)" },
+          walkingLevel: "easy",
+          desc: {
+            ko: "1516년 세계 최초로 설립된 유대인 거주 구역. 고층 목조 주택과 평화로운 운하, 유대인 회당(시나고그)과 베이커리가 자리합니다.",
+            en: "The world's first Jewish Ghetto established in 1516, featuring historic synagogues, high-rise tenements, and tranquil canals.",
+            ja: "1516年に世界で最初に設立されたユダヤ人居住区。静かな運河と歴史あるシナゴーグ、昔ながらのパン屋が並びます。",
+            zh: "建于1516年的世界上首个犹太人区（Ghetto）。独特的相对高层联排建筑、静谧运河与百年犹太犹太会堂充满岁月沉淀。"
+          },
+          details: {
+            ko: "산타 루치아 기차역에서 도보 10분 거리로, 산 마르코 주변의 복잡한 인파에서 벗어나 고요함을 만끽할 수 있습니다. 다리 경사가 비교적 완만하고 광장(Campo di Ghetto Nuovo)이 평평하여 부모님과 산책하기 가장 편안합니다.",
+            en: "A 10-minute flat walk from Santa Lucia Train Station. Avoids intense tourist crowds with gentle bridges and an expansive, level neighborhood square.",
+            ja: "サンタ・ルチア駅から徒歩10分。観光客の喧騒から離れ、橋の傾斜も比較的緩やかで、ご両親と静かに散策するのに最適です。",
+            zh: "距圣路西亚火车站仅步行10分钟。完全避开了圣马可的人潮喧嚣，桥梁台阶坡度最为平缓，开阔广场平坦清幽，极宜安步当车。"
+          },
+          hours: {
+            ko: "연중 상시 산책 (박물관: 10:00~17:30, 토요일 휴관)",
+            en: "Open 24/7 (Museum: 10:00-17:30, closed Sat)",
+            ja: "終日散策可能（博物館: 10:00〜17:30、土曜休館）",
+            zh: "全天自由漫步（犹太博物馆: 10:00~17:30，周六闭馆）"
+          },
+          admission: {
+            ko: "지구 무료 산책 (유대인 박물관 별도)",
+            en: "Free District Walk (Museum entry separate)",
+            ja: "地区散策無料（ユダヤ博物館は別料金）",
+            zh: "街区免费漫步（犹太博物馆门票另计）"
+          },
+          officialUrl: "https://www.ghettovenezia.com/"
+        },
+        {
+          id: "murano-burano",
+          name: { ko: "무라노 & 부라노 섬", en: "Murano & Burano Islands", ja: "ムラーノ島＆ブラーノ島", zh: "穆拉诺岛与布拉诺岛（玻璃岛与彩色岛）" },
+          italianName: "Isole di Murano e Burano",
+          photo: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80",
+          priority: { ko: "별도 선택 일정 (왕복 이동 2~3시간 소요)", en: "Optional Excursion (2-3h Travel Time)", ja: "別枠の選択日程 (往復移動2〜3時間要)", zh: "需预留大半天的备选行程 (往返乘船2~3小时)" },
+          priorityLevel: "medium",
+          walking: { ko: "이동 시간 소요 ⚠️ (배 멀미 및 장시간 도보 안배)", en: "Travel Time Warning ⚠️ (Boat Ride & Island Walking)", ja: "移動時間注意 ⚠️ (船の揺れと島内歩行配慮)", zh: "路途较长注意 ⚠️ (乘船耗时与全岛徒步)" },
+          walkingLevel: "medium",
+          desc: {
+            ko: "유리공예로 유서 깊은 무라노섬과 알록달록 무지개색 어촌 가옥 및 레이스 공예로 유명한 부라노섬입니다.",
+            en: "Famous lagoon excursions: Murano's artisan glass workshops and Burano's vibrant, candy-colored fishing cottages.",
+            ja: "伝統のガラス工芸で知られるムラーノ島と、カラフルな家並みとレース編みで人気のブラーノ島。",
+            zh: "闻名遐迩的泻湖离岛：以传统吹制玻璃工艺著称的穆拉诺岛，与以斑斓如彩虹糖果般的渔家民居及蕾丝刺绣闻名的布拉诺岛。"
+          },
+          details: {
+            ko: "🚨 <strong>선택 일정 안내:</strong> 본섬에서 12번 바포레토로 무라노까지 20~30분, 부라노까지 45~50분이 소요됩니다. 왕복 배 이동 시간만 2~3시간이 걸리는 반나절 이상의 코스이므로, 베네치아 체류가 짧거나 부모님 컨디션이 저하된 경우 무리하게 넣지 말고 본섬 산책에 집중하세요.",
+            en: "🚨 <strong>Excursion Alert:</strong> Takes 45-50 mins each way by water bus to Burano. Represents a substantial half-day commitment (2-3 hours total boat travel); prioritize Venice main island relaxed walks if parents are tired.",
+            ja: "🚨 <strong>選択日程のご案内:</strong> 本島から12番水上バスで片道45〜50分かかります。往復移動だけで2〜3時間を要する半日コースのため、ご両親の体調次第で本島での滞在を優先してください。",
+            zh: "🚨 <strong>长途备选特别提示:</strong> 从本岛乘12路水上巴士至穆拉诺需25分钟，至布拉诺需近50分钟。往返水陆交通耗时达2~3小时，属于半天以上重体力线路。若长辈体力不足，切莫强行打卡，安心留驻本岛漫步更为舒心。"
+          },
+          hours: {
+            ko: "바포레토 수시 운항 (낮 시간 방문 권장)",
+            en: "Vaporetto regular service (Daytime recommended)",
+            ja: "水上バス随時運航（日中の訪問を推奨）",
+            zh: "水上巴士班次密集（建议日间充裕时段前往）"
+          },
+          admission: {
+            ko: "섬 입장 무료 (ACTV 24시간권 이용 추천)",
+            en: "Free Island Access (ACTV 24h pass recommended)",
+            ja: "島への入場無料（ACTV24時間パス利用推奨）",
+            zh: "离岛全天免费登岛（推荐配合ACTV 24小时通票使用）"
+          },
+          officialUrl: "https://www.veneziaunica.it/"
+        }
+      ],
+      dining: [
+        {
+          id: "cicchetti",
+          name: { ko: "치케티", en: "Cicchetti Veneziani", ja: "チケッティ", zh: "威尼斯特色一口小食塔帕斯" },
+          italianName: "Cicchetti nei Bàcari",
+          photo: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "바게트/폴렌타 위에 올린 해산물, 바칼라 만테카토, 프로슈토, 절인 올리브, 치즈 핑거푸드",
+            en: "Small bread or polenta toasts topped with seafood, whipped cod, prosciutto, meatballs, and pickled vegetables",
+            ja: "バゲットやポレンタに乗せた魚介、バッカラ、生ハム、オリーブ等の小皿料理",
+            zh: "法棍切片或玉米糕托底，点缀海鲜、鳕鱼泥、帕尔马火腿、醋腌小八爪鱼等开胃小点"
+          },
+          taste: {
+            ko: "베네치아 전통 선술집 바카로(Bàcaro)에서 즐기는 한입 안주. 화이트 와인 한 잔(Ombra)과 함께 서너 가지를 골라 가볍고 다채롭게 즐기는 낭만적인 식문화입니다.",
+            en: "Venetian bite-sized bar snacks enjoyed at cozy local bàcari wine bars alongside a small glass of wine (ombra). Perfect for light, customizable grazing.",
+            ja: "下町の居酒屋バーカロでワインの小グラス（オンブラ）と共に楽しむ一品料理。少量ずつ多彩な味をつまめるのが魅力。",
+            zh: "威尼斯传统小酒馆Bàcaro的经典吃法。配上一小杯当地清冽白葡萄酒（Ombra），任选三四种小点品尝，随性自由且丝毫不给长辈脾胃添负担。"
+          }
+        },
+        {
+          id: "baccala",
+          name: { ko: "바칼라 만테카토", en: "Baccalà Mantecato", ja: "バッカラ・マンテカート", zh: "威尼斯橄榄油乳化鳕鱼酱" },
+          italianName: "Baccalà Mantecato alla Veneziana",
+          photo: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "염장 건대구, 최고급 엑스트라 버진 올리브유, 마늘, 흰 후추, 구운 화이트 폴렌타(옥수수빵)",
+            en: "Norwegian dried stockfish, extra virgin olive oil, garlic, white pepper, served over grilled white polenta",
+            ja: "干しタラ、上質エキストラバージンオリーブオイル、ニンニク、白ポレンタ",
+            zh: "精选盐渍风干鳕鱼、特级初榨橄榄油、微量大蒜、白胡椒、烘烤白玉米糕"
+          },
+          taste: {
+            ko: "삶은 건대구를 올리브유와 함께 크림처럼 부드러워질 때까지 거품기로 쳐낸 베네치아의 전통 스프레드. 비린내가 전혀 없이 담백하고 입안에서 사르르 녹아내립니다.",
+            en: "Salt cod whipped tirelessly with olive oil into a velvety, airy mousse spread over warm white polenta. Remarkably mild and savory.",
+            ja: "干しダラをオリーブオイルで泡立てるように練り上げたクリーム状の伝統料理。魚臭さがなく滑らかで優しい味わい。",
+            zh: "将煮透的风干鳕鱼以初榨橄榄油如打发奶油般慢速乳化而成的慕斯鱼酱。毫无腥味，细腻顺滑入口即化，配烤热的白玉米糕极度温养。"
+          }
+        },
+        {
+          id: "sarde-in-saor",
+          name: { ko: "사르데 인 사오르", en: "Sarde in Saor", ja: "サルデ・イン・サオール", zh: "威尼斯甜酸醋渍沙丁鱼" },
+          italianName: "Sarde in Saor",
+          photo: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+          ingredients: {
+            ko: "신선한 정어리 튀김, 뭉근하게 캐러멜라이징한 양파, 백포도 식초, 건포도, 볶은 잣",
+            en: "Pan-fried fresh sardines marinated in sweet caramelized onions, white wine vinegar, sweet raisins, and pine nuts",
+            ja: "揚げた新鮮なイワシ、じっくり炒めた甘い玉ねぎ、白ワインビネガー、レーズン、松の実",
+            zh: "油炸新鲜沙丁鱼排、慢炒焦糖化白洋葱丝、白葡萄酒醋、甜葡萄干、香脆松子仁"
+          },
+          taste: {
+            ko: "베네치아 뱃사람들의 오랜 보존식에서 유래한 전채 요리. 양파의 자연스러운 단맛과 식초의 상큼함, 건포도의 달콤함이 어우러져 느끼함을 싹 잡아줍니다.",
+            en: "Centuries-old sailor recipe: sweet-and-sour marinated fried sardines balanced with soft sweet onions, raisins, and pine nuts.",
+            ja: "航海者たちが生み出した伝統の保存食。玉ねぎの甘みと酢のさっぱりした酸味、レーズンの甘みが魚の旨味を引き立てます。",
+            zh: "威尼斯水手远洋航行传承的古老风味。洋葱的温润甘甜与果醋的爽脆微酸交织，点缀葡萄干与松子，开胃解腻，风味别致。"
+          }
+        }
+      ],
+      transit: {
+        operator: "ACTV (Azienda Veneziana della Mobilità)",
+        fares: [
+          {
+            name: { ko: "바포레토 1회권", en: "Vaporetto Single Ticket", ja: "水上バス 1回券", zh: "水上巴士单次票" },
+            desc: {
+              ko: "첫 태그 후 75분 유효 (베네치아 대운하 및 시내 수상 노선 환승 가능)",
+              en: "Valid 75 mins from validation (Water buses on Grand Canal & urban routes)",
+              ja: "打刻後75分有効（大運河および市内水上路線乗り換え可能）",
+              zh: "首次刷卡后75分钟内有效（大运河及水上各常规线路换乘）"
+            },
+            price: "€9.50"
+          },
+          {
+            name: { ko: "ACTV 24시간권", en: "ACTV 24-Hour Pass", ja: "ACTV 24時間券", zh: "ACTV 24小时日票" },
+            desc: {
+              ko: "첫 태그 시점부터 24시간 동안 바포레토 및 메스트레 버스/트램 무제한",
+              en: "Unlimited rides on water buses and mainland Mestre buses/trams for 24h",
+              ja: "最初の打刻から24時間、水上バスおよびメストレ市バス/トラム乗り放題",
+              zh: "自首次刷卡起24小时内，水上巴士及陆上梅斯特雷电车公交不限次乘坐"
+            },
+            price: "€25.00"
+          },
+          {
+            name: { ko: "ACTV 48시간권", en: "ACTV 48-Hour Pass", ja: "ACTV 48時間券", zh: "ACTV 48小时通票" },
+            desc: {
+              ko: "첫 태그 시점부터 48시간 동안 바포레토 및 메스트레 버스/트램 무제한",
+              en: "Unlimited rides on water buses and mainland Mestre buses/trams for 48h",
+              ja: "最初の打刻から48時間、水上バスおよびメストレ市バス/トラム乗り放題",
+              zh: "自首次刷卡起48小时内，水上巴士及陆上梅斯特雷电车公交不限次乘坐"
+            },
+            price: "€35.00"
+          },
+          {
+            name: { ko: "ACTV 72시간권", en: "ACTV 72-Hour Pass", ja: "ACTV 72時間券", zh: "ACTV 72小时通票" },
+            desc: {
+              ko: "첫 태그 시점부터 72시간 동안 바포레토 및 메스트레 버스/트램 무제한",
+              en: "Unlimited rides on water buses and mainland Mestre buses/trams for 72h",
+              ja: "最初の打刻から72時間、水上バスおよびメストレ市バス/トラム乗り放題",
+              zh: "自首次刷卡起72小时内，水上巴士及陆上梅斯特雷电车公交不限次乘坐"
+            },
+            price: "€45.00"
+          },
+          {
+            name: { ko: "ACTV 7일 정기권", en: "ACTV 7-Day Pass", ja: "ACTV 7日定期券", zh: "ACTV 7日周票" },
+            desc: {
+              ko: "첫 태그 시점부터 7일(168시간) 동안 전 수상/육상 교통 무제한",
+              en: "Unlimited rides for 7 days (168 hours) across urban water and mainland routes",
+              ja: "最初の打刻から7日間（168時間）、全水上・陸上交通機関乗り放題",
+              zh: "自首次刷卡起7天（168小时）内全水陆交通网络不限次乘坐"
+            },
+            price: "€65.00"
+          }
+        ],
+        coverage: {
+          ko: "포함: 베네치아 시내 바포레토(1, 2번 등), 무라노/부라노(12번 등), 리도섬, 메스트레 본토 버스/트램.<br>🚨 제외: 마르코 폴로 공항 연결 수상 셔틀(알릴라구나 Alilaguna)은 별도 민간 노선으로 이용 불가.",
+          en: "Included: Venice urban vaporetti, Murano/Burano water buses (Line 12), Lido, Mestre mainland buses/trams.<br>🚨 Excluded: Alilaguna airport water shuttles are private and not covered.",
+          ja: "対象: 市内水上バス、ムラーノ・ブラーノ線、リド島、メストレ市バス・トラム。<br>🚨 除外: 空港連絡船アリラグーナ（Alilaguna）は民間運航のため利用不可。",
+          zh: "包含范围: 威尼斯运河全线水上巴士（1、2路等）、穆拉诺/布拉诺外岛线（12路）、利多岛及陆上梅斯特雷电车公交。<br>🚨 不包含: 马可波罗机场水上专线（Alilaguna）属于私营公司，不可使用此通票。"
+        },
+        stairsWarning: {
+          ko: "🚨 <strong>수상버스를 타도 걷기와 계단이 남는 이유 (부모님 보행 주의):</strong><br>베네치아 본섬에는 400개가 넘는 아치형 석조 다리가 있으며, <strong>거의 모든 다리가 수십 개의 돌계단</strong>으로 이루어져 있습니다. 수상버스 선착장에 내리더라도 숙소나 식당으로 이동하려면 <strong>최소 2~5개의 계단식 다리를 캐리어를 들고 넘어야 하는 경우가 대부분</strong>입니다.<br>따라서 부모님 동행 시에는 <strong>'산타 루치아 기차역 바로 앞' 또는 '바포레토 주요 정류장(San Zaccaria 등) 바로 앞 다리를 건너지 않는 숙소'</strong>를 선택하는 것이 무릎 보호의 절대 원칙입니다.",
+          en: "🚨 <strong>Why Stairs Remain Even When Using Water Buses:</strong><br>Venice has over 400 arched canal bridges, and almost every single one consists of steps without ramps. Even after getting off the water bus, reaching your hotel typically requires lugging baggage over 2 to 5 stepped bridges.<br>Strictly choose accommodations right next to Santa Lucia Train Station or directly in front of main vaporetto piers to avoid crossing bridges with luggage.",
+          ja: "🚨 <strong>水上バスに乗っても歩行と階段が残る理由:</strong><br>ベネチアには400以上の太鼓橋があり、ほぼ全てに階段があります。水上バスを降りても、ホテルへ向かうにはスーツケースを持って2〜5か所の階段橋を越える必要があります。<br>ご両親連れの場合は「サンタ・ルチア駅直近」または「主要船着き場目の前の橋を渡らないホテル」を選ぶことが膝を守る鉄則です。",
+          zh: "🚨 <strong>为何乘坐水上巴士依然无法免除台阶跋涉（长辈特别警示）:</strong><br>威尼斯全城拥有400余座运河石拱桥，<strong>几乎无一例外皆由数十级陡峭石阶构成，毫无平坦坡道</strong>。即便在码头下船，步行至酒店往往必须手提沉重行李翻越2~5座高耸拱桥。<br>陪同长辈出行，<strong>务必死守“入住圣路西亚火车站正门旁”或“紧邻水上大码头且免跨桥的临水酒店”</strong>这一铁律，绝不可让长辈扛行李爬桥。"
+        },
+        officialUrl: "https://actv.avmspa.it/en/content/venice-urban-services-0"
+      }
+    }
+  },
+  itineraryAnalysis: {
+    title: {
+      ko: "⚖️ 12박 13일 이탈리아 일정 비교 & 부모님 시니어 분석",
+      en: "⚖️ 12-Night Italy Scenario Comparison & Senior Pacing Analysis",
+      ja: "⚖️ 12泊13日イタリア日程比較＆ご両親向けシニア分析",
+      zh: "⚖️ 12晚13天意大利行程方案对比与长者关爱分析"
+    },
+    context: {
+      ko: "2026년 11월 22일 로마 도착, 12월 4일 출국 기준 (12박 13일). 항공편 예약 전 가상 모델이며, 부모님의 무릎 건강과 짐 이동 피로도를 다각도로 비교 분석합니다.",
+      en: "Hypothetical scenario based on Nov 22 Rome arrival and Dec 4 departure (12 nights, 13 days). Flights TBD. Analyzed specifically for parents' knee health and luggage handling.",
+      ja: "2026年11月22日ローマ着、12月4日出国の想定（12泊13日）。航空便予約前のシミュレーションであり、ご両親の膝の負担と荷物移動を多角的に比較します。",
+      zh: "基于2026年11月22日抵达罗马、12月4日离境的假设模型（共12晚13天，实际航班待定）。重点围绕长辈膝关节负荷与行李转运劳顿深度比对。"
+    },
+    options: [
+      {
+        id: "opt-a",
+        name: { ko: "옵션 A. 로마 10박 + 피렌체 2박 (가장 균형 잡힌 추천안)", en: "Option A: Rome 10N + Florence 2N (Best Balanced)", ja: "オプションA: ローマ10泊＋フィレンツェ2泊 (最もバランスが良い)", zh: "方案A: 罗马10晚 + 佛罗伦萨2晚 (最均衡推荐方案)" },
+        badge: { ko: "⭐ 최고 추천안", en: "⭐ Best Recommended", ja: "⭐ 一番おすすめ", zh: "⭐ 最优推荐" },
+        class: "recommended",
+        transitLoad: { ko: "중간 (이동 1회 발생, 도어투도어 3~4시간 소요)", en: "Moderate (1 intercity transfer, 3-4h door-to-door)", ja: "中程度 (都市間移動1回、移動合計3〜4時間)", zh: "中等 (仅1次城际转运，全程门到门约3~4小时)" },
+        kneeLoad: { ko: "양호 (피렌체 도심 완전 평지로 걷기 편안)", en: "Good (Florence historic center is flat & walkable)", ja: "良好 (フィレンツェ旧市街は平坦で歩きやすい)", zh: "优良 (佛罗伦萨老城平坦无坡，步行省力)" },
+        pros: {
+          ko: "로마 10박 동안 여유 있는 1.5스팟/일과 충분한 시에스타를 확보하면서, 르네상스의 꽃 피렌체(우피치, 두오모)를 무리 없이 맛볼 수 있는 최적의 황금비율입니다.",
+          en: "Allows gentle 1.5 spots/day and ample siestas in Rome, while experiencing the cultural splendour of Florence (Uffizi, Duomo) without rushing.",
+          ja: "ローマで10泊のゆったりしたペースとシエスタを確保しつつ、フィレンツェのルネサンス芸術も無理なく味わえる絶妙な黄金比です。",
+          zh: "在罗马享有整整10晚的充裕时间实践每日1.5景点与午休，同时无需赶路即可深度领略文艺复兴明珠佛罗伦萨，张弛有度。"
+        },
+        cons: {
+          ko: "12월 1일 피렌체 이동 시 호텔 체크아웃, 짐 챙기기, 역 이동, 12월 3일 로마 복귀 등 짐 이동 과정에서 3~4시간의 완충 시간과 피로가 수반됩니다.",
+          en: "Packing, checkout, and luggage handling on train travel days (Dec 1 and Dec 3) require 3-4 hours of buffer time and energy.",
+          ja: "12月1日の移動時と12月3日のローマ帰還時に、チェックアウトや荷物移動で各3〜4時間の所要時間と体力を要します。",
+          zh: "12月1日赴佛罗伦萨与12月3日返回罗马时，需要经历打包、退房、火车站搬运行李，门到门需预留3~4小时耗费一定体力。"
+        }
+      },
+      {
+        id: "opt-b",
+        name: { ko: "옵션 B. 로마 12박 단일 체류 (부모님 무릎 최우선 안락안)", en: "Option B: Rome 12 Nights Single Stay (Maximum Comfort)", ja: "オプションB: ローマ12泊単一滞在 (足腰最優先・安楽案)", zh: "方案B: 罗马单城连住12晚 (无痛长辈安心首选)" },
+        badge: { ko: "🛋️ 시니어 체력 최적", en: "🛋️ Easiest for Seniors", ja: "🛋️ シニア負担最小", zh: "🛋️ 长者体力负担最低" },
+        class: "comfort",
+        transitLoad: { ko: "최소 (도시 간 이동 및 호텔 체크아웃 전무)", en: "Minimal (Zero intercity transfers & zero luggage moves)", ja: "最小 (都市間移動なし・チェックアウト不要)", zh: "极低 (零城际转场，全程免除搬家打包之苦)" },
+        kneeLoad: { ko: "최우수 (한 숙소에서 매일 컨디션 따라 일정 조율)", en: "Best (Single hotel base allows day-to-day pacing)", ja: "最良 (連泊により体調に合わせた完全柔軟日程)", zh: "极佳 (固定单一居所，可随长辈当日精神随时微调)" },
+        pros: {
+          ko: "부모님의 무릎 통증이나 만성 피로가 가장 걱정될 때 최선의 선택. 짐을 풀고 싸는 번거로움이 전혀 없으며, 기차역 환승 계단에서 캐리어를 들 필요가 없습니다. 피렌체가 아쉬우면 짐 없이 가벼운 몸으로 당일치기 기차 여행도 가능합니다.",
+          en: "The safest bet if parents have knee issues. Zero luggage stress. If desired, Florence or Orvieto can still be visited as a light day trip without luggage.",
+          ja: "膝の不安がある場合に最も安心な選択。荷造りの負担がなく、駅の階段で荷物を持つ必要もありません。身軽な日帰り小旅行も可能。",
+          zh: "若长辈关节脆弱或极易疲乏，此为最稳妥策略。全程无需重复打包行李，免除火车站楼梯提拉重物。若思念翡冷翠，大可轻装日间高铁往返。"
+        },
+        cons: {
+          ko: "12일 동안 한 도시에만 머무르므로 다양한 도시의 분위기 변화를 원하시는 여행자에게는 다소 정적일 수 있습니다.",
+          en: "Staying in one city for 12 nights offers less geographic variety.",
+          ja: "12日間同じ街に留まるため、複数の都市の雰囲気を楽しみたい方にはやや単調に感じられる可能性があります。",
+          zh: "12晚扎根同一座古城，相比多城串联少了一份跨区域风貌切换的新鲜感。"
+        }
+      },
+      {
+        id: "opt-c",
+        name: { ko: "옵션 C. 로마 + 베네치아 (비추천 대안: 긴 이동 & 다리 계단)", en: "Option C: Rome + Venice (Not Recommended: Long Travel)", ja: "オプションC: ローマ＋ヴェネツィア (非推奨: 長距離＆階段)", zh: "方案C: 罗马 + 威尼斯 (不予推荐: 耗时漫长且阶梯过多)" },
+        badge: { ko: "⚠️ 시니어 비추천", en: "⚠️ Not Recommended for Seniors", ja: "⚠️ シニア非推奨", zh: "⚠️ 长者出行慎选" },
+        class: "caution",
+        transitLoad: { ko: "매우 높음 (열차만 편도 약 3시간 40분 소요)", en: "Very Heavy (Train alone takes ~3h 40m each way)", ja: "非常に高い (列車だけで片道約3時間40分所要)", zh: "极高 (仅单程高铁即耗时3小时40分)" },
+        kneeLoad: { ko: "극심 (400개 계단 다리로 캐리어 이동 및 보행 무리)", en: "Severe (400 stepped bridges cause extreme knee strain)", ja: "極めて過酷 (400の階段橋で荷物移動・歩行困難)", zh: "沉重 (全城400座无坡石桥，搬箱与徒步负荷过载)" },
+        pros: {
+          ko: "세계 어디에도 없는 물의 도시 베네치아의 독보적인 수상 풍광과 산 마르코 광장의 정취를 직접 체험할 수 있습니다.",
+          en: "Allows seeing the magical floating city and St. Mark's Square in person.",
+          ja: "世界唯一の水の都の絶景とサン・マルコ広場の情緒を体験できます。",
+          zh: "可亲身体验举世无双的亚得里亚海漂浮水城风貌与圣马可广场绝景。"
+        },
+        cons: {
+          ko: "🚨 <strong>부모님 동행 시 치명적 단점:</strong> 열차 이동만 왕복 7시간이 넘는 고된 하루가 발생합니다. 결정적으로 베네치아는 다리마다 수십 개의 돌계단이 있어 수상버스를 타도 숙소까지 무거운 캐리어를 들고 계단을 오르내려야 하므로, 이번 가족 여행에는 피렌체를 훨씬 더 권장합니다.",
+          en: "🚨 <strong>Severe Pitfall:</strong> Over 7 hours round-trip on trains. Over 400 bridges with stairs make luggage transit exhausting for elderly knees. Florence is vastly superior.",
+          ja: "🚨 <strong>重大なデメリット:</strong> 往復7時間以上の移動日が発生。ヴェネツィアは橋のたびに階段があり、荷物を持っての移動がご両親の膝に過酷です。今回はフィレンツェを強く推奨します。",
+          zh: "🚨 <strong>致命弊端:</strong> 往返火车即消耗7个多小时漫长车程。全城桥梁全为陡峭石阶，下船后仍需拖提沉重行李上下拱桥，长辈膝部难以承受。本次绝对应优先选择佛罗伦萨。"
+        }
+      }
+    ],
+    transitDetails: {
+      title: {
+        ko: "🚆 숙소 간 실제 이동 시간(Door-to-Door) 팩트체크",
+        en: "🚆 Real Door-to-Door Intercity Travel Time Fact-Check",
+        ja: "🚆 宿泊施設間の実際の移動時間（Door-to-Door）検証",
+        zh: "🚆 门到门（Door-to-Door）城际真实转场耗时深度核实"
+      },
+      desc: {
+        ko: "기차 탑승 시간만 보고 일정을 짜면 큰 피로를 겪습니다. 부모님 동행 시 체크아웃, 짐 챙기기, 역 이동 및 대기까지 포함한 실제 소요 시간을 안내합니다.",
+        en: "Train ride times are deceiving. Always factor in hotel checkout, luggage packing, taxi transfers, and platform buffer time when traveling with seniors.",
+        ja: "列車の乗車時間だけで予定を立てると失敗します。チェックアウト、荷造り、駅への移動、乗車前の待機を含めた実際の所要時間を把握してください。",
+        zh: "单纯看列车时刻表极易低估疲劳度。陪同长辈出行，必须完整预估从打包退房、打车赴站、提前候车到抵达新酒店的全流程真实耗时。"
+      },
+      romeToFlorence: {
+        title: {
+          ko: "로마 ➔ 피렌체 이동",
+          en: "Rome ➔ Florence Transfer",
+          ja: "ローマ ➔ フィレンツェ移動",
+          zh: "罗马 ➔ 佛罗伦萨城际转运"
+        },
+        trainTime: {
+          ko: "이탈로/프레차로사 고속열차: 약 1시간 25분 ~ 1시간 30분",
+          en: "High-speed rail (Italo/Frecciarossa): Approx. 1h 25m - 1h 30m",
+          ja: "高速鉄道イタロ/フレッチャロッサ: 約1時間25分〜1時間30分",
+          zh: "意铁高铁直达（Italo/Frecciarossa）: 约1小时25分 ~ 1小时30分"
+        },
+        realTime: {
+          ko: "실제 숙소 간 소요시간: 3 ~ 4시간 (권장 안전 마진)",
+          en: "Actual Door-to-Door Time: 3 - 4 hours (Safety buffer)",
+          ja: "実際の宿泊間所要時間: 3〜4時間 (推奨安全マージン)",
+          zh: "全程门到门实际耗时: 3 ~ 4小时 (建议预留充裕缓冲)"
+        },
+        steps: {
+          ko: [
+            "10:00 로마 호텔 체크아웃 및 공식 택시(FreeNow)로 테르미니역 이동 (30분)",
+            "10:30 테르미니역 도착, 플랫폼 대기 및 화장실 이용, 승차 준비 (35분)",
+            "11:05 고속열차 탑승 ➔ 12:35 피렌체 산타 마리아 노벨라(SMN) 역 도착 (1시간 30분)",
+            "12:45 SMN역 평지 출구 나와 피렌체 호텔 체크인/짐 보관 후 점심 식사 (40분)"
+          ],
+          en: [
+            "10:00 Checkout of Rome hotel & take official taxi (FreeNow) to Termini Station (30 min)",
+            "10:30 Arrive at Termini, locate platform, restroom break & board train (35 min)",
+            "11:05 Depart high-speed train ➔ 12:35 Arrive at Florence SMN Station (1h 30m)",
+            "12:45 Exit flat SMN terminal, check into Florence hotel/drop bags & lunch (40 min)"
+          ],
+          ja: [
+            "10:00 ローマのホテルをチェックアウト、公式タクシーでテルミニ駅へ移動 (30分)",
+            "10:30 テルミニ駅到着、ホーム確認・トイレ休憩・乗車準備 (35分)",
+            "11:05 高速列車乗車 ➔ 12:35 フィレンツェSMN駅到着 (1時間30分)",
+            "12:45 SMN駅の平坦な出口を出てホテルへチェックイン・荷物を預け昼食 (40分)"
+          ],
+          zh: [
+            "10:00 罗马酒店退房，搭乘官方正规出租车（FreeNow）前往特米尼车站 (30分钟)",
+            "10:30 抵达车站大厅，确认站台屏幕、使用洗手间、检票候车 (35分钟)",
+            "11:05 登上高铁 ➔ 12:35 抵达佛罗伦萨SMN中央火车站 (1小时30分钟)",
+            "12:45 由SMN站平坦地面出站，抵达酒店办理入住/寄存行李并享用午餐 (40分钟)"
+          ]
+        },
+        linkText: {
+          ko: "🚆 Italo 시간표 및 요금 확인",
+          en: "🚆 Check Italo Timetable & Fares",
+          ja: "🚆 Italo時刻表＆運賃確認",
+          zh: "🚆 查询Italo时刻表与票价"
+        },
+        officialLink: "https://www.italotreno.com/en/destinations-timetable/rome-florence-tickets"
+      },
+      romeToVenice: {
+        title: {
+          ko: "로마 ➔ 베네치아 이동 (비추천)",
+          en: "Rome ➔ Venice Transfer (Not Rec.)",
+          ja: "ローマ ➔ ヴェネツィア移動 (非推奨)",
+          zh: "罗马 ➔ 威尼斯城际转运 (不予推荐)"
+        },
+        trainTime: {
+          ko: "고속열차 탑승 시간만: 약 3시간 34분 ~ 4시간",
+          en: "Train ride alone: Approx. 3h 34m - 4h",
+          ja: "列車乗車時間のみ: 約3時間34分〜4時間",
+          zh: "仅高铁在途时间: 约3小时34分 ~ 4小时"
+        },
+        realTime: {
+          ko: "실제 숙소 간 소요시간: 5시간 30분 ~ 6시간 이상",
+          en: "Actual Door-to-Door Time: 5.5 - 6+ hours",
+          ja: "実際の宿泊間所要時間: 5時間30分〜6時間以上",
+          zh: "全程门到门实际耗时: 5小时30分 ~ 6小时以上"
+        },
+        steps: {
+          ko: [
+            "테르미니역 이동 및 사전 대기 (1시간)",
+            "고속열차 장시간 탑승 (약 3시간 40분)",
+            "산타 루치아역 도착 후 수상버스 탑승 및 계단식 아치교 넘어 호텔 이동 (1시간)"
+          ],
+          en: [
+            "Transfer to Termini Station & advance platform waiting (1 hour)",
+            "Extended high-speed train ride (~3h 40m)",
+            "Arrive Santa Lucia Station, board crowded water bus & haul luggage over stepped bridges (1 hour)"
+          ],
+          ja: [
+            "テルミニ駅への移動および乗車前の待機 (1時間)",
+            "高速列車での長時間の移動 (約3時間40分)",
+            "サンタ・ルチア駅到着後、水上バスに乗車し階段橋を越えてホテルへ移動 (1時間)"
+          ],
+          zh: [
+            "前往特米尼车站并提前候车 (1小时)",
+            "长时间搭乘高铁舟车劳顿 (约3小时40分)",
+            "抵达圣路西亚站后换乘拥挤水上巴士，并手提沉重行李翻越多座大阶梯拱桥至酒店 (1小时)"
+          ]
+        },
+        linkText: {
+          ko: "♿ 베네치아 접근성 공식 안내",
+          en: "♿ Venice Accessible Travel Official Guide",
+          ja: "♿ ヴェネツィア公式バリアフリー案内",
+          zh: "♿ 威尼斯官方无障碍出行指南"
+        },
+        officialLink: "https://www.veneziaunica.it/en/plan-your-trip/accessible-venice"
+      }
+    },
+    suggestedTimeline: {
+      title: {
+        ko: "📅 추천 12박 13일 여유 페이싱 모델 (로마 10박 + 피렌체 2박)",
+        en: "📅 Suggested 12-Night Pacing Timeline (Rome 10N + Florence 2N)",
+        ja: "📅 推奨12泊13日ゆったりペース配分 (ローマ10泊＋フィレンツェ2泊)",
+        zh: "📅 推荐12晚13天从容节奏示范模型 (罗马10晚 + 佛罗伦萨2晚)"
+      },
+      note: {
+        ko: "※ 11월 22일 로마 도착 및 12월 4일 출국을 가정한 추천 예시안이며, 항공편 예약 확정 전까지 날짜는 유연하게 변경될 수 있습니다.",
+        en: "※ A recommended scenario assuming Nov 22 arrival and Dec 4 departure. Dates remain flexible until flight bookings are finalized.",
+        ja: "※ 11月22日着・12月4日出国を想定したモデル案であり、航空便確定まで日程は柔軟に変更可能です。",
+        zh: "※ 本行程为假设11月22日抵罗、12月4日离境的示范方案，在机票正式出票前起止日期均保持弹性。"
+      },
+      days: [
+        {
+          day: "11/22",
+          title: {
+            ko: "로마 도착 & 숙소 체크인",
+            en: "Arrive Rome & Hotel Check-in",
+            ja: "ローマ到着＆ホテルチェックイン",
+            zh: "抵达罗马并办理入住"
+          },
+          desc: {
+            ko: "공항 도착 후 전용 밴/택시로 숙소 이동. 짐 풀고 가벼운 저녁 식사 후 온수 샤워 및 충분한 시차 적응 수면.",
+            en: "Transfer to hotel via taxi from airport. Unpack, enjoy a light dinner, hot shower, and restful sleep for jet lag recovery.",
+            ja: "空港到着後タクシーでホテルへ。荷解き後、軽い夕食と温かいシャワーで時差ボケ解消の十分な睡眠。",
+            zh: "抵达机场后乘车前往酒店。安顿行李，享用清淡晚餐，温水沐浴并充分休息以倒时差。"
+          }
+        },
+        {
+          day: "11/23",
+          title: {
+            ko: "역사 중심부 슬로우 산책",
+            en: "Historic Center Gentle Stroll",
+            ja: "歴史的中心部のゆったり散策",
+            zh: "历史中心悠然漫步"
+          },
+          desc: {
+            ko: "오전 판테온(평지 관람) ➔ 로툰다 광장 테라스 커피 ➔ 오후 숙소 시에스타 ➔ 늦은 오후 나보나 광장 분수 산책.",
+            en: "Morning Pantheon flat visit ➔ Piazza della Rotonda coffee ➔ Afternoon hotel siesta ➔ Piazza Navona fountain stroll.",
+            ja: "午前パンテオン（平坦見学）➔ ロトンダ広場カフェ ➔ 午後シエスタ ➔ 夕方ナヴォーナ広場の噴水散策。",
+            zh: "上午万神殿平路参观 ➔ 罗通达广场露天咖啡 ➔ 下午回酒店午休 ➔ 傍晚纳沃纳广场漫步。"
+          }
+        },
+        {
+          day: "11/24",
+          title: {
+            ko: "바티칸 박물관 집중 관람",
+            en: "Vatican Museums Highlights",
+            ja: "ヴァチカン美術館の集中鑑賞",
+            zh: "梵蒂冈博物馆深度参观"
+          },
+          desc: {
+            ko: "오전 바티칸 박물관 사전 예약 입장(엘리베이터 단축 동선) ➔ 시스티나 성당 천장화 ➔ 오후 호텔 온전한 휴식.",
+            en: "Morning reserved Vatican Museums entry (elevator shortcut route) ➔ Sistine Chapel ➔ Afternoon restful relaxation.",
+            ja: "午前ヴァチカン美術館予約入場（エレベーター短縮動線）➔ システィーナ礼拝堂 ➔ 午後はホテルで休養。",
+            zh: "上午预约入馆（乘电梯走无障碍捷径）➔ 仰望西斯廷礼拜堂 ➔ 下午彻底静心休整。"
+          }
+        },
+        {
+          day: "11/25",
+          title: {
+            ko: "온전한 완충 휴식일 (Buffer Day)",
+            en: "Full Buffer Rest Day",
+            ja: "終日ゆったり休養日 (Buffer Day)",
+            zh: "全天从容休整缓冲日 (Buffer Day)"
+          },
+          desc: {
+            ko: "무리한 일정 없이 늦잠 ➔ 보르게세 공원 평지 산책 및 핀초 언덕 전망 ➔ 테스타초 시장에서 신선한 과일과 수플리 맛보기.",
+            en: "Sleep in peacefully ➔ Villa Borghese flat stroll & Pincio view ➔ Testaccio Market for fresh fruit & supplì tasting.",
+            ja: "無理のない起床 ➔ ボルゲーゼ公園の平坦散策とピンチョの丘 ➔ テスタッチョ市場で新鮮果物やスップリ試食。",
+            zh: "自然睡醒不赶时间 ➔ 博尔盖塞林荫平步与眺望 ➔ 泰斯塔奇奥市场品尝时鲜水果与炸饭丸。"
+          }
+        },
+        {
+          day: "11/26",
+          title: {
+            ko: "고대 로마 콜로세움 관람",
+            en: "Ancient Rome Colosseum",
+            ja: "古代ローマ・コロッセオ見学",
+            zh: "探访古罗马斗兽场"
+          },
+          desc: {
+            ko: "오전 콜로세움 2층 전용 엘리베이터 관람 ➔ 카라칼라 욕장의 평평한 잔디밭에서 여유로운 고대 유적 힐링.",
+            en: "Morning Colosseum 2nd-tier elevator visit ➔ Baths of Caracalla flat lawns for peaceful open-air exploration.",
+            ja: "午前コロッセオ2階エレベーター見学 ➔ カラカラ浴場の平坦な芝生で優雅に遺跡散策。",
+            zh: "上午乘无障碍电梯直达斗兽场2层 ➔ 卡拉卡拉浴场平坦草坪悠然漫步。"
+          }
+        },
+        {
+          day: "11/27",
+          title: {
+            ko: "성 베드로 대성당 분산 관람",
+            en: "St. Peter's Basilica Split Visit",
+            ja: "サン・ピエトロ大聖堂の分散見学",
+            zh: "圣伯多禄大殿错峰分流参观"
+          },
+          desc: {
+            ko: "이른 아침 성 베드로 광장 보안검색대 통과 ➔ 대성당 내부 피에타 감상(평지 관람). 바티칸 박물관과 분산 배치로 무릎 피로 최소화.",
+            en: "Early morning square security check ➔ St. Peter's Basilica Pietà level walk. Split from museums to spare knees.",
+            ja: "早朝の広場保安検査通過 ➔ 聖堂内のピエタ鑑賞（平坦）。美術館と別日程にし膝への負担を分散。",
+            zh: "清晨早到免排队过安检 ➔ 入殿静赏《哀悼基督》（平地）。与博物馆分日游览避免长辈过累。"
+          }
+        },
+        {
+          day: "11/28",
+          title: {
+            ko: "트레비 분수 & 스페인 광장",
+            en: "Trevi Fountain & Spanish Steps",
+            ja: "トレヴィの泉＆スペイン広場",
+            zh: "特雷维喷泉与西班牙广场"
+          },
+          desc: {
+            ko: "오전 한적한 시간 트레비 분수 조망 ➔ 스페인 광장 바르카차 분수 ➔ 스페인역 엘리베이터로 언덕 위 파노라마 감상.",
+            en: "Morning quiet view of Trevi Fountain ➔ Piazza di Spagna Barcaccia ➔ Spagna metro elevator to hilltop panorama.",
+            ja: "朝の静かなトレヴィの泉 ➔ スペイン広場バルカッチャ噴水 ➔ 地下鉄駅エレベーターで丘の上へ。",
+            zh: "清晨静享特雷维喷泉 ➔ 西班牙广场破船喷泉 ➔ 乘地铁站电梯直抵丘顶俯瞰全城。"
+          }
+        },
+        {
+          day: "11/29",
+          title: {
+            ko: "보르게세 미술관 & 미식 탐방",
+            en: "Borghese Gallery & Trastevere Dining",
+            ja: "ボルゲーゼ美術館＆トラステヴェレの美味",
+            zh: "博尔盖塞艺术殿堂与老城美食"
+          },
+          desc: {
+            ko: "오전 보르게세 미술관(2시간 예약제, 아담한 동선) ➔ 트라스테베레 골목에서 정통 카르보나라와 카초 에 페페 런치.",
+            en: "Morning Borghese Gallery (2-hour timed slot, intimate walk) ➔ Trastevere authentic Carbonara & Cacio e Pepe lunch.",
+            ja: "午前ボルゲーゼ美術館（2時間予約制）➔ トラステヴェレの下町で本格カルボナーラとカチョ・エ・ペペの昼食。",
+            zh: "上午博尔盖塞美术馆（2小时限时静赏）➔ 特拉斯提弗列品尝正宗培根蛋面与奶酪胡椒面。"
+          }
+        },
+        {
+          day: "11/30",
+          title: {
+            ko: "로마 완충일 & 짐 정리",
+            en: "Rome Buffer Day & Packing",
+            ja: "ローマ休養日＆移動準備",
+            zh: "罗马机动缓冲日与打包准备"
+          },
+          desc: {
+            ko: "빠진 명소 가볍게 보충 또는 호텔 주변 카페 휴식. 피렌체 이동을 위한 1박용 소형 캐리어 준비.",
+            en: "Revisit favorites or relax at sidewalk cafes. Pack small overnight luggage for the Florence excursion.",
+            ja: "気になったスポットを再訪、またはカフェで休息。フィレンツェ用の一泊荷物を準備。",
+            zh: "重访心仪角落或于街边咖啡小憩。分装准备前往佛罗伦萨的便携小件行李箱。"
+          }
+        },
+        {
+          day: "12/01",
+          title: {
+            ko: "피렌체 이동 (2박 3일 시작)",
+            en: "Transfer to Florence (2-Night Stay Begins)",
+            ja: "フィレンツェへ移動（2泊3日の始まり）",
+            zh: "前往佛罗伦萨（开启2晚3天旅程）"
+          },
+          desc: {
+            ko: "10:30 테르미니역 출발 ➔ 12:00 피렌체 SMN역 도착 (평지 출구). 호텔 체크인 후 베키오 다리와 시뇨리아 광장 산책.",
+            en: "10:30 Depart Termini ➔ 12:00 Arrive Florence SMN Station (flat exit). Check into hotel, stroll Ponte Vecchio & Signoria.",
+            ja: "10:30 テルミニ駅発 ➔ 12:00 フィレンツェSMN駅着。ホテル着後、ヴェッキオ橋とシニョーリア広場を散策。",
+            zh: "10:30 特米尼站出发 ➔ 12:00 抵达佛罗伦萨SMN火车站（平坦出站）。入住后漫步老桥与领主广场。"
+          }
+        },
+        {
+          day: "12/02",
+          title: {
+            ko: "우피치 또는 아카데미아 관람",
+            en: "Uffizi or Accademia Gallery Visit",
+            ja: "ウフィツィまたはアカデミア鑑賞",
+            zh: "乌菲兹或学院美术馆自选精赏"
+          },
+          desc: {
+            ko: "수요일 관람(우피치 월요일 휴관 회피 최적). 우피치 미술관이나 아카데미아 중 딱 1곳만 선택해 집중 관람 ➔ 저녁 비스테카 알라 피오렌티나 만찬.",
+            en: "Wednesday visit (avoids Monday museum closure). Focus on 1 museum (Uffizi or Accademia) ➔ Bistecca alla Fiorentina dinner.",
+            ja: "水曜鑑賞（月曜休館を回避）。ウフィツィまたはアカデミアのいずれか1館を鑑賞 ➔ 夕食は名物Tボーンステーキ。",
+            zh: "周三游览（完美避开周一闭馆）。从乌菲兹或学院美术馆中精选1所从容欣赏 ➔ 晚餐享用炭烤T骨大牛排。"
+          }
+        },
+        {
+          day: "12/03",
+          title: {
+            ko: "로마 복귀 (공항 대비 1박)",
+            en: "Return to Rome (Pre-flight 1 Night)",
+            ja: "ローマへ帰還（出国前泊）",
+            zh: "返回罗马（出境前夕安顿1晚）"
+          },
+          desc: {
+            ko: "오전 피렌체 중앙시장 구경 ➔ 오후 고속열차로 로마 복귀 (테르미니역 또는 공항 인근 투숙) ➔ 마지막 가족 만찬.",
+            en: "Morning Florence Central Market ➔ Afternoon train back to Rome (stay near Termini or airport) ➔ Farewell family dinner.",
+            ja: "午前中央市場を散策 ➔ 午後高速列車でローマへ（テルミニ駅または空港近郊泊）➔ 最後の家族ディナー。",
+            zh: "上午逛佛罗伦萨中央集市 ➔ 下午乘高铁返回罗马（入住车站旁或机场酒店）➔ 共享温馨惜别晚餐。"
+          }
+        },
+        {
+          day: "12/04",
+          title: {
+            ko: "로마 피우미치노(FCO) 출국",
+            en: "Depart from Rome FCO Airport",
+            ja: "ローマ・フィウミチーノ空港から出国",
+            zh: "罗马菲乌米奇诺机场（FCO）启程回国"
+          },
+          desc: {
+            ko: "호텔 체크아웃 후 FCO 공항으로 이동하여 귀국 항공편 탑승.",
+            en: "Checkout of hotel, transfer to FCO Airport and board homeward flight.",
+            ja: "チェックアウト後、FCO空港へ移動し帰国便に搭乗。",
+            zh: "办理退房，乘车前往FCO机场办理登机，圆满启程归国。"
+          }
+        }
+      ]
+    }
+  }
+};
+
+// Expose globally
+if (typeof window !== 'undefined') {
+  window.ITALY_CITIES_GUIDE_DATA = ITALY_CITIES_GUIDE_DATA;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.ITALY_CITIES_GUIDE_DATA = ITALY_CITIES_GUIDE_DATA;
+}
+
+
+// === EXTENDED I18N DICTIONARY FOR ITALY CITIES & REGIONAL GUIDE ===
+(function() {
+  const ITALY_UI_I18N = {
+    ko: {
+      page_guide_0: "1. 이탈리아 도시 가이드",
+      page_guide_1: "2. 스페인 명소 & 루트",
+      page_guide_2: "3. 포르투갈 명소 18선",
+      page_guide_3: "4. 기타 유럽 연계",
+      page_guide_5: "5. 대형 지도 뷰",
+      page_guide_italy_title: "🇮🇹 이탈리아 도시별 심층 가이드 (로마 · 피렌체 · 베네치아)",
+      page_guide_italy_sub: "바르셀로나(11/5~11) · 세비야(11/11~22) 이후 이어지는 로마 약 10일(날짜 미정) 및 피렌체·베네치아 선택 후보를 위한 명소·음식·대중교통 원스톱 가이드",
+      tab_city_rome: "🏛️ 로마 (약 10일, 날짜 미정)",
+      tab_city_florence: "⚜️ 피렌체 (선택 후보)",
+      tab_city_venice: "🎭 베네치아 (선택 후보)",
+      tab_city_itinerary: "⚖️ 12박 13일 일정 비교 & 시니어 분석",
+      subtab_attractions: "🏛️ 권역별 명소",
+      subtab_dining: "🍝 대표 미식",
+      subtab_transit: "🚆 대중교통",
+      lbl_priority: "예약 우선순위",
+      lbl_walking_burden: "보행 및 접근성",
+      lbl_ingredients: "핵심 재료",
+      lbl_taste_profile: "맛의 특징",
+      lbl_fares_summary: "대중교통 요금 & 승차권 체계",
+      lbl_transit_warning: "🚨 대중교통 필수 주의사항",
+      lbl_official_source: "공식 출처 & 확인일"
+    },
+    en: {
+      page_guide_0: "1. Italy City Guide",
+      page_guide_1: "2. Spain Highlights & Routes",
+      page_guide_2: "3. Portugal 18 Spots",
+      page_guide_3: "4. Other European Spots",
+      page_guide_5: "5. Large Map View",
+      page_guide_italy_title: "🇮🇹 Italy In-Depth City Guide (Rome · Florence · Venice)",
+      page_guide_italy_sub: "Following Barcelona (Nov 5-11) & Seville (Nov 11-22), an all-in-one guide to Rome (~10 days, dates TBD) and selective candidates Florence & Venice: Highlights, Food & Public Transit",
+      tab_city_rome: "🏛️ Rome (~10 Days, Dates TBD)",
+      tab_city_florence: "⚜️ Florence (Optional Candidate)",
+      tab_city_venice: "🎭 Venice (Optional Candidate)",
+      tab_city_itinerary: "⚖️ 12-Night Scenario Comparison & Senior Analysis",
+      subtab_attractions: "🏛️ District Highlights",
+      subtab_dining: "🍝 Food & Dining",
+      subtab_transit: "🚆 Public Transit",
+      lbl_priority: "Booking Priority",
+      lbl_walking_burden: "Walking & Accessibility",
+      lbl_ingredients: "Key Ingredients",
+      lbl_taste_profile: "Taste Profile",
+      lbl_fares_summary: "Transit Fares & Ticket Types",
+      lbl_transit_warning: "🚨 Essential Transit Caution",
+      lbl_official_source: "Official Source & Verified Date"
+    },
+    ja: {
+      page_guide_0: "1. イタリア都市ガイド",
+      page_guide_1: "2. スペイン名所＆ルート",
+      page_guide_2: "3. ポルトガル名所18選",
+      page_guide_3: "4. その他ヨーロッパ連動",
+      page_guide_5: "5. 大型マップ表示",
+      page_guide_italy_title: "🇮🇹 イタリア都市別詳細ガイド (ローマ・フィレンツェ・ヴェネツィア)",
+      page_guide_italy_sub: "バルセロナ（11/5〜11）・セビリア（11/11〜22）に続くローマ約10日間（日程未定）および選択候補フィレンツェ・ヴェネツィアの名所・グルメ・交通ワンストップガイド",
+      tab_city_rome: "🏛️ ローマ (約10日間・日程未定)",
+      tab_city_florence: "⚜️ フィレンツェ (選択候補)",
+      tab_city_venice: "🎭 ヴェネツィア (選択候補)",
+      tab_city_itinerary: "⚖️ 12泊13日日程比較＆シニア分析",
+      subtab_attractions: "🏛️ 地区別名所",
+      subtab_dining: "🍝 代表グルメ",
+      subtab_transit: "🚆 公共交通",
+      lbl_priority: "予約優先度",
+      lbl_walking_burden: "歩行＆アクセス",
+      lbl_ingredients: "主な食材",
+      lbl_taste_profile: "味の特徴",
+      lbl_fares_summary: "運賃＆乗車券体系",
+      lbl_transit_warning: "🚨 公共交通の必須注意事項",
+      lbl_official_source: "公式情報元＆確認日"
+    },
+    zh: {
+      page_guide_0: "1. 意大利城市指南",
+      page_guide_1: "2. 西班牙景观与路线",
+      page_guide_2: "3. 葡萄牙名胜18选",
+      page_guide_3: "4. 其他欧洲连动景观",
+      page_guide_5: "5. 交互式大地图",
+      page_guide_italy_title: "🇮🇹 意大利深度城市指南 (罗马·佛罗伦萨·威尼斯)",
+      page_guide_italy_sub: "继巴塞罗那（11/5~11）与塞维利亚（11/11~22）之后的罗马约10天（日期未定）及备选城市佛罗伦萨、威尼斯的景观·美食·公共交通一站式指南",
+      tab_city_rome: "🏛️ 罗马 (约10天·日期未定)",
+      tab_city_florence: "⚜️ 佛罗伦萨 (备选候选)",
+      tab_city_venice: "🎭 威尼斯 (备选候选)",
+      tab_city_itinerary: "⚖️ 12晚13日行程对比与长者分析",
+      subtab_attractions: "🏛️ 片区名胜",
+      subtab_dining: "🍝 经典美食",
+      subtab_transit: "🚆 公共交通",
+      lbl_priority: "预约优先级",
+      lbl_walking_burden: "步行与无障碍",
+      lbl_ingredients: "核心用料",
+      lbl_taste_profile: "风味特色",
+      lbl_fares_summary: "交通票价与车票体系",
+      lbl_transit_warning: "🚨 公共交通关键警示",
+      lbl_official_source: "官方来源与确认日期"
+    }
+  };
+
+  const dictTarget = (typeof I18N_DICTIONARY !== 'undefined') ? I18N_DICTIONARY : (typeof window !== 'undefined' ? window.I18N_DICTIONARY : null);
+  if (dictTarget) {
+    ['ko', 'en', 'ja', 'zh'].forEach(lang => {
+      if (!dictTarget[lang]) dictTarget[lang] = {};
+      if (ITALY_UI_I18N[lang]) {
+        Object.assign(dictTarget[lang], ITALY_UI_I18N[lang]);
       }
     });
   }

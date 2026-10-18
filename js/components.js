@@ -134,7 +134,7 @@
                 </p>
               </div>
 
-              <!-- 3대 도시 경로 요약 바 (바르셀로나 -> 세비야 -> 로마 12일 연장) -->
+              <!-- 3대 도시 경로 요약 바 (바르셀로나 -> 세비야 -> 로마 약 10일 체류) -->
               <div class="hero-route-summary-bar">
                 <span class="r-flow-badge" data-i18n="route_summary_badge">🗺️ 전체 경로 요약</span>
                 <div class="r-flow-track">
@@ -142,7 +142,7 @@
                   <span class="r-arrow">➔</span>
                   <span class="r-step confirmed">🇪🇸 세비야 (11.11~11.22)</span>
                   <span class="r-arrow">➔</span>
-                  <span class="r-step unconfirmed" data-i18n="hero_ctx_rome_date">🇮🇹 로마 (세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요)</span>
+                  <span class="r-step unconfirmed" data-i18n="hero_ctx_rome_date">🇮🇹 로마 (세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요)</span>
                 </div>
               </div>
 
@@ -166,8 +166,8 @@
                       <span class="c-hotel" data-i18n="hero_ctx_svq_hotel">🏨 숙소: <strong>미정 (향후 확인 필요)</strong></span>
                     </div>
                     <div class="context-detail-item rome-leg-item">
-                      <span class="c-city" data-i18n="hero_ctx_rome">🇮🇹 로마 (12일 연장)</span>
-                      <span class="c-date unconfirmed-date-badge" data-i18n="hero_ctx_rome_date">세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요</span>
+                      <span class="c-city" data-i18n="hero_ctx_rome">🇮🇹 로마 (약 10일, 날짜 미정)</span>
+                      <span class="c-date unconfirmed-date-badge" data-i18n="hero_ctx_rome_date">세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요</span>
                       <span class="c-hotel" data-i18n="hero_ctx_rome_hotel">🏨 숙소·항공: <strong>미정 (일정 확정 후 예약 필요)</strong></span>
                     </div>
                     <div class="context-tag-row">
@@ -212,7 +212,7 @@
                       <strong>당일치기 후보:</strong> 코르도바(열차 시간표 확인/꽃의 골목), 론다(협곡 트레킹 금지)
                     </div>
                     <div class="spot-summary-block rome-spot-block" data-i18n="hero_spot_rome">
-                      <strong>로마 (12일 연장 · 미정):</strong> 판테온·스페인광장·트레비 분수 산책, 바티칸 분산 관람, 피렌체/오르비에토 당일치기 후보, 조국의 제단 전망대 엘리베이터
+                      <strong>로마 (약 10일 체류 · 날짜 미정):</strong> 판테온·스페인광장·트레비 분수 산책, 바티칸 분산 관람, 피렌체/오르비에토 당일치기 후보, 조국의 제단 전망대 엘리베이터
                     </div>
                     <div class="hero-action-buttons">
                       <button type="button" class="btn-hero-action primary" onclick="switchGuidebookChapter('chapter-guide'); goToBookPage('chapter-guide', 0);" data-i18n="hero_btn_route3">
@@ -608,16 +608,16 @@
                 </div>
               </div>
 
-              <!-- 🇮🇹 로마 12일 유연 연장 모듈 (날짜 미정 전제 · 4대 유연 페이싱 가이드) -->
+              <!-- 🇮🇹 로마 약 10일 유연 연장 모듈 (날짜 미정 전제 · 4대 유연 페이싱 가이드) -->
               <div class="planner-rome-extension-card" id="plannerRomeExtension">
                 <div class="p-rome-header">
                   <div class="p-rome-badge-row">
-                    <span class="p-rome-badge" data-i18n="planner_rome_badge">🇮🇹 12일 연장 여정</span>
-                    <span class="p-rome-status" data-i18n="hero_ctx_rome_date">세비야 이후 · 12일 연장 · 날짜/항공편 확인 필요</span>
+                    <span class="p-rome-badge" data-i18n="planner_rome_badge">🇮🇹 약 10일 여정 (날짜 미정)</span>
+                    <span class="p-rome-status" data-i18n="hero_ctx_rome_date">세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요</span>
                   </div>
-                  <h3 class="p-rome-title" data-i18n="planner_rome_title">로마 12일 유연 연장 모듈 (세비야 이후 · 유연 페이싱 가이드)</h3>
+                  <h3 class="p-rome-title" data-i18n="planner_rome_title">로마 약 10일 유연 연장 모듈 (세비야 이후 · 유연 페이싱 가이드)</h3>
                   <p class="p-rome-desc" data-i18n="planner_rome_sub">
-                    로마는 세비야 이후 12일 연장으로 계획 중이며, 정확한 시작·종료일(12일/12박), 항공편 및 이동시간이 미정입니다. 날짜를 임의로 추측한 일자별 표 대신, 부모님 체력 안배에 최적화된 4대 권역별 유연 페이싱 가이드로 운영됩니다.
+                    로마는 세비야 이후 약 10일 체류로 계획 중이며, 정확한 시작·종료일과 항공편 및 이동시간이 미정입니다. 날짜를 임의로 추측한 일자별 표 대신, 부모님 체력 안배에 최적화된 4대 권역별 유연 페이싱 가이드로 운영됩니다.
                   </p>
                 </div>
                 <div class="p-rome-clusters-grid">
@@ -790,20 +790,23 @@
         <div class="book-page-bar" id="bookBar-chapter-guide">
           <div class="book-page-meta">
             <span class="book-chapter-badge" data-i18n="chapter_name_guide">🗺️ 제3장. 지역별 명소 가이드</span>
-            <span class="book-page-counter" id="counter-chapter-guide">P. 1 / 4</span>
+            <span class="book-page-counter" id="counter-chapter-guide">P. 1 / 5</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-guide">
             <button type="button" class="bookmark-chip active" onclick="goToBookPage('chapter-guide', 0)">
-              <span>🇪🇸</span> <span data-i18n="page_guide_1">1. 스페인 명소 18선</span>
+              <span>🇮🇹</span> <span data-i18n="page_guide_0">1. 이탈리아 도시 가이드</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-guide', 1)">
-              <span>🇵🇹</span> <span data-i18n="page_guide_2">2. 포르투갈 명소 18선</span>
+              <span>🇪🇸</span> <span data-i18n="page_guide_1">2. 스페인 명소 &amp; 루트</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-guide', 2)">
-              <span>🌍</span> <span data-i18n="page_guide_3">3. 주변 유럽 연계 37선</span>
+              <span>🇵🇹</span> <span data-i18n="page_guide_2">3. 포르투갈 명소 18선</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-guide', 3)">
-              <span>🗺️</span> <span data-i18n="page_guide_5">4. 대형 지도 뷰</span>
+              <span>🌍</span> <span data-i18n="page_guide_3">4. 기타 유럽 연계</span>
+            </button>
+            <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-guide', 4)">
+              <span>🗺️</span> <span data-i18n="page_guide_5">5. 대형 지도 뷰</span>
             </button>
           </div>
           <div class="book-flip-controls">
@@ -816,13 +819,79 @@
           </div>
         </div>
 
-        <!-- Page 0: 60대 부모님 동행 스페인 구역별 루트 & 명소 18선 -->
+        <!-- Page 0: 🇮🇹 이탈리아 도시별 심층 가이드 (로마 · 피렌체 · 베네치아) -->
         <div class="book-page active" id="page-guide-0">
+          <section class="section guide-section italy-guide-section" style="background:#f8f6f0;padding:16px 0 36px;">
+            <div class="wrap">
+              <div class="section-head" style="margin-bottom:14px;">
+                <div>
+                  <div class="kicker">03-1 / SENIOR-FRIENDLY ITALY IN-DEPTH CITY GUIDE</div>
+                  <h2 data-i18n="page_guide_italy_title">🇮🇹 이탈리아 도시별 심층 가이드 (로마 · 피렌체 · 베네치아)</h2>
+                </div>
+                <p class="sub" data-i18n="page_guide_italy_sub">
+                  바르셀로나(11/5~11) · 세비야(11/11~22) 이후 이어지는 로마 약 10일(날짜 미정) 및 피렌체·베네치아 선택 후보를 위한 명소·음식·대중교통 원스톱 가이드
+                </p>
+              </div>
+
+              <!-- [A] 도시 선택 탭 바 (로마 · 피렌체 · 베네치아 · 12박 일정 분석) -->
+              <div class="italy-city-nav-bar" id="italyCityNavBar">
+                <button type="button" class="italy-city-tab active" data-city="rome" onclick="selectItalyCity('rome')">
+                  <span class="c-icon">🏛️</span> <span data-i18n="tab_city_rome">로마 (약 10일, 날짜 미정)</span>
+                </button>
+                <button type="button" class="italy-city-tab" data-city="florence" onclick="selectItalyCity('florence')">
+                  <span class="c-icon">⚜️</span> <span data-i18n="tab_city_florence">피렌체 (선택 후보)</span>
+                </button>
+                <button type="button" class="italy-city-tab" data-city="venice" onclick="selectItalyCity('venice')">
+                  <span class="c-icon">🎭</span> <span data-i18n="tab_city_venice">베네치아 (선택 후보)</span>
+                </button>
+                <button type="button" class="italy-city-tab" data-city="itinerary" onclick="selectItalyCity('itinerary')">
+                  <span class="c-icon">⚖️</span> <span data-i18n="tab_city_itinerary">12박 13일 일정 비교 &amp; 시니어 분석</span>
+                </button>
+              </div>
+
+              <!-- [B] 3대 항목 서브 탭 바 (명소 / 대표 미식 / 대중교통) -->
+              <div class="italy-subtab-bar" id="italySubTabBar">
+                <button type="button" class="italy-subtab active" data-subtab="attractions" onclick="selectItalySubTab('attractions')">
+                  <span data-i18n="subtab_attractions">🏛️ 권역별 명소</span>
+                </button>
+                <button type="button" class="italy-subtab" data-subtab="dining" onclick="selectItalySubTab('dining')">
+                  <span data-i18n="subtab_dining">🍝 대표 미식</span>
+                </button>
+                <button type="button" class="italy-subtab" data-subtab="transit" onclick="selectItalySubTab('transit')">
+                  <span data-i18n="subtab_transit">🚆 대중교통</span>
+                </button>
+              </div>
+
+              <!-- [C] 선택된 도시 및 서브탭 동적 렌더링 컨테이너 -->
+              <div class="italy-city-content" id="italyCityContentContainer"></div>
+
+              <!-- 하단 페이지 넘김 바 -->
+              <div class="page-turner-bar" style="margin-top:28px;">
+                <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 3);">
+                  ◀ <span data-i18n="prev_chapter_prefix">이전 장</span>: <strong data-i18n="chapter_name_planner">02. 일정 플래너</strong>
+                </button>
+                <div class="book-page-dots">
+                  <span class="book-page-dot active"></span>
+                  <span class="book-page-dot"></span>
+                  <span class="book-page-dot"></span>
+                  <span class="book-page-dot"></span>
+                  <span class="book-page-dot"></span>
+                </div>
+                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 1)">
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_1">2. 스페인 명소 &amp; 루트</strong> ▶
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Page 1: 60대 부모님 동행 스페인 구역별 루트 & 명소 18선 -->
+        <div class="book-page" id="page-guide-1">
           <section class="section guide-section" style="background:#f4efe6;padding:20px 0 36px;">
             <div class="wrap">
               <div class="section-head" style="margin-bottom:16px;">
                 <div>
-                  <div class="kicker">03-1 / SENIOR-FRIENDLY SPAIN ROUTE &amp; HIGHLIGHTS</div>
+                  <div class="kicker">03-2 / SENIOR-FRIENDLY SPAIN ROUTE &amp; HIGHLIGHTS</div>
                   <h2 data-i18n="page_guide_spain_title">🇪🇸 60대 부모님 동행 스페인 구역별 루트 &amp; 명소 18선</h2>
                 </div>
                 <p class="sub" data-i18n="page_guide_spain_sub">
@@ -845,30 +914,31 @@
               <!-- [E] 기존 스페인 18선 그리드 마운트 지점 -->
               <div class="photo-grid" id="landmarksSpainGrid"></div>
               <div class="page-turner-bar">
-                <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 3);">
-                  ◀ <span data-i18n="prev_chapter_prefix">이전 장</span>: <strong data-i18n="chapter_name_planner">02. 일정 플래너</strong>
+                <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 0)">
+                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_0">1. 이탈리아 도시</strong>
                 </button>
                 <div class="book-page-dots">
+                  <span class="book-page-dot"></span>
                   <span class="book-page-dot active"></span>
                   <span class="book-page-dot"></span>
                   <span class="book-page-dot"></span>
                   <span class="book-page-dot"></span>
                 </div>
-                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 1)">
-                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_2">2. 포르투갈 명소</strong> ▶
+                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 2)">
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_2">3. 포르투갈 명소</strong> ▶
                 </button>
               </div>
             </div>
           </section>
         </div>
 
-        <!-- Page 1: 포르투갈 핵심 명소 18선 -->
-        <div class="book-page" id="page-guide-1">
+        <!-- Page 2: 포르투갈 핵심 명소 18선 -->
+        <div class="book-page" id="page-guide-2">
           <section class="section guide-section" style="background:#f4efe6;padding:24px 0 36px;">
             <div class="wrap">
               <div class="section-head">
                 <div>
-                  <div class="kicker">03-2 / PORTUGAL HIGHLIGHTS</div>
+                  <div class="kicker">03-3 / PORTUGAL HIGHLIGHTS</div>
                   <h2 data-i18n="page_guide_portugal_title">🇵🇹 포르투갈 대표 명소 컬렉션 (18선)</h2>
                 </div>
                 <p class="sub" data-i18n="page_guide_portugal_sub">
@@ -877,57 +947,59 @@
               </div>
               <div class="photo-grid" id="landmarksPortugalGrid"></div>
               <div class="page-turner-bar">
-                <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 0)">
-                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_1">1. 스페인 명소</strong>
+                <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 1)">
+                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_1">2. 스페인 명소</strong>
                 </button>
                 <div class="book-page-dots">
+                  <span class="book-page-dot"></span>
                   <span class="book-page-dot"></span>
                   <span class="book-page-dot active"></span>
                   <span class="book-page-dot"></span>
                   <span class="book-page-dot"></span>
                 </div>
-                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 2)">
-                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_3">3. 주변 유럽 연계</strong> ▶
+                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 3)">
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_3">4. 기타 유럽 연계</strong> ▶
                 </button>
               </div>
             </div>
           </section>
         </div>
 
-        <!-- Page 2: 주변 유럽 & 연계 명소 37선 -->
-        <div class="book-page" id="page-guide-2">
+        <!-- Page 3: 기타 유럽 & 연계 명소 (이탈리아 분리 완료) -->
+        <div class="book-page" id="page-guide-3">
           <section class="section guide-section" style="background:#f4efe6;padding:24px 0 36px;">
             <div class="wrap">
               <div class="section-head">
                 <div>
-                  <div class="kicker">03-3 / SURROUNDING REGIONS &amp; EXPANDED SITES</div>
-                  <h2 data-i18n="page_guide_europe_title">🌍 주변 유럽 &amp; 연계 추천 명소 (37선)</h2>
+                  <div class="kicker">03-4 / SURROUNDING EUROPE HIGHLIGHTS</div>
+                  <h2 data-i18n="page_guide_europe_title">🌍 서·중부 유럽 연계 추천 명소</h2>
                 </div>
                 <p class="sub" data-i18n="page_guide_europe_sub">
-                  파리·로마·런던 등 경유지 및 연계 여행지 명소 모음. 시니어 보행 친화도와 필수 예약 정보 수록.
+                  파리·런던·스위스·독일 등 경유지 및 연계 여행지 명소 모음. 시니어 보행 친화도와 필수 예약 정보 수록.
                 </p>
               </div>
               <div class="photo-grid" id="landmarksEuropeGrid"></div>
               <div class="page-turner-bar">
-                <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 1)">
-                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_2">2. 포르투갈 명소</strong>
+                <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 2)">
+                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_2">3. 포르투갈 명소</strong>
                 </button>
                 <div class="book-page-dots">
+                  <span class="book-page-dot"></span>
                   <span class="book-page-dot"></span>
                   <span class="book-page-dot"></span>
                   <span class="book-page-dot active"></span>
                   <span class="book-page-dot"></span>
                 </div>
-                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 3)">
-                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_5">4. 대형 지도 뷰</strong> ▶
+                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-guide', 4)">
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_guide_5">5. 대형 지도 뷰</strong> ▶
                 </button>
               </div>
             </div>
           </section>
         </div>
 
-        <!-- Page 3: 대형 랜드마크 인터랙티브 지도 뷰 -->
-        <div class="book-page" id="page-guide-3">
+        <!-- Page 4: 대형 랜드마크 인터랙티브 지도 뷰 -->
+        <div class="book-page" id="page-guide-4">
           <div class="wrap" style="padding:24px 0 36px;">
             <div class="section-head">
               <div>
@@ -959,17 +1031,18 @@
             </div>
             <div id="landmarksBigMapContainer" class="map-view-container" style="display:block;height:550px;border-radius:18px;"></div>
             <div class="page-turner-bar">
-              <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 2)">
-                ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_3">3. 주변 유럽 연계</strong>
+              <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 3)">
+                ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_guide_3">4. 기타 유럽 연계</strong>
               </button>
               <div class="book-page-dots">
+                <span class="book-page-dot"></span>
                 <span class="book-page-dot"></span>
                 <span class="book-page-dot"></span>
                 <span class="book-page-dot"></span>
                 <span class="book-page-dot active"></span>
               </div>
               <button type="button" class="btn-turn-page-bottom next" onclick="switchGuidebookChapter('chapter-festivals'); goToBookPage('chapter-festivals', 0);">
-                <span data-i18n="next_chapter_prefix">다음 장</span>: <strong data-i18n="chapter_name_festivals">04. 축제 &amp; 야경</strong> ➔
+                <span data-i18n="next_chapter_prefix">다음 장</span>: <strong data-i18n="chapter_name_festivals">04. 축제 &amp; 야경</strong> ▶
               </button>
             </div>
           </div>
