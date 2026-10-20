@@ -544,7 +544,7 @@
 
                   <div class="form-group">
                     <label data-i18n="label_start_date">🗓️ 출발 희망일</label>
-                    <input type="date" id="userStartDate" value="2026-11-20" onchange="applyPlanReconfiguration()" />
+                    <input type="date" id="userStartDate" value="2026-11-05" onchange="applyPlanReconfiguration()" />
                   </div>
 
                   <div class="form-group">
@@ -580,6 +580,20 @@
                       <option value="relaxed" selected>부모님 동행 (오후 시에스타 필수)</option>
                       <option value="balanced">균형형 (시니어 친화 + 핵심 전망대)</option>
                     </select>
+                  </div>
+                </div>
+
+                <!-- 현재 적용 여행 기간 & 표준 일정 초기화 바 -->
+                <div class="planner-schedule-status-bar" id="plannerScheduleStatusBar">
+                  <div class="schedule-status-info">
+                    <span class="schedule-status-badge" data-i18n="lbl_applied_dates">🗓️ 현재 적용 기간</span>
+                    <strong id="appliedScheduleText">2026.11.05 ~ 2026.12.04 (30일 · 29박)</strong>
+                    <span class="schedule-status-desc" id="appliedScheduleDesc">바르셀로나 6박(11.05~11.11) · 세비야 11박(11.11~11.22) · 이탈리아 12박(11.22~12.04)</span>
+                  </div>
+                  <div class="schedule-status-action">
+                    <button type="button" class="btn-reset-dates" id="btnResetDates" onclick="resetToStandardSchedule()" title="표준 확정 일정으로 재설정">
+                      🔄 <span data-i18n="btn_reset_dates">표준 일정으로 초기화</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -833,7 +847,7 @@
                 </p>
               </div>
 
-              <!-- [A] 도시 선택 탭 바 (로마 · 피렌체 · 베네치아 · 12박 일정 분석) -->
+              <!-- [A] 도시 선택 탭 바 (로마 · 피렌체 · 베네치아 · 카프리 선택 후보 · 12박 일정 분석) -->
               <div class="italy-city-nav-bar" id="italyCityNavBar">
                 <button type="button" class="italy-city-tab active" data-city="rome" onclick="selectItalyCity('rome')">
                   <span class="c-icon">🏛️</span> <span data-i18n="tab_city_rome">로마 (약 10일, 날짜 미정)</span>
@@ -843,6 +857,9 @@
                 </button>
                 <button type="button" class="italy-city-tab" data-city="venice" onclick="selectItalyCity('venice')">
                   <span class="c-icon">🎭</span> <span data-i18n="tab_city_venice">베네치아 (선택 후보)</span>
+                </button>
+                <button type="button" class="italy-city-tab" data-city="capri" onclick="selectItalyCity('capri')">
+                  <span class="c-icon">⛵</span> <span data-i18n="tab_city_capri">나폴리·카프리 (날씨에 따라 선택)</span>
                 </button>
                 <button type="button" class="italy-city-tab" data-city="itinerary" onclick="selectItalyCity('itinerary')">
                   <span class="c-icon">⚖️</span> <span data-i18n="tab_city_itinerary">12박 13일 일정 비교 &amp; 시니어 분석</span>
@@ -1055,10 +1072,10 @@
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-festivals">
             <button type="button" class="bookmark-chip active" onclick="goToBookPage('chapter-festivals', 0)">
-              <span>🌸</span> <span data-i18n="page_festivals_1">1. 봄·여름 대표 축제</span>
+              <span>🍁</span> <span data-i18n="page_festivals_1">1. 11월 가을·겨울 축제 (여행 연계)</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-festivals', 1)">
-              <span>🍁</span> <span data-i18n="page_festivals_2">2. 가을·겨울 &amp; 특별 축제</span>
+              <span>🌸</span> <span data-i18n="page_festivals_2">2. 다른 계절 참고 (봄·여름 축제)</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-festivals', 2)">
               <span>🌃</span> <span data-i18n="page_festivals_3">3. 파노라마 야경 명소 전 지점</span>
@@ -1077,14 +1094,54 @@
           </div>
         </div>
 
-        <!-- Page 0: 봄 & 여름 대표 축제 4선 -->
+        <!-- Page 0: 11월 가을 & 연말 & 특별 축제 (11월 여행 연계 우선 표시) -->
         <div class="book-page active" id="page-festivals-0">
           <section class="section guide-section" style="background:#fdfaf5;border-top:1px solid #e8e2d8;padding:24px 0 36px;">
             <div class="wrap">
               <div class="section-head">
                 <div>
                   <div class="kicker" data-i18n="fest_night_kicker">04 / REGIONAL FESTIVALS &amp; PANORAMIC NIGHT VIEWS</div>
-                  <h2 data-i18n="fest_spring_sub_title">🌸 봄 &amp; 여름 이베리아 4대 대표 축제 (3~8월)</h2>
+                  <h2 data-i18n="fest_autumn_sub_title">🍁 11월 가을·겨울 시즌 축제 &amp; 11월 여행 권역</h2>
+                </div>
+                <p class="sub" data-i18n="fest_autumn_sub_desc">
+                  바르셀로나·세비야·말라가 크리스마스 일루미네이션 및 가을·연말 주요 행사. 11월 여행 일정과 연계되는 주요 축제를 우선 확인하세요.
+                </p>
+              </div>
+
+              <!-- 동적 여행 일정 매칭 인디케이터 바 -->
+              <div class="fest-match-indicator-bar" id="festMatchIndicatorBarAutumn">
+                <span id="festMatchIndicatorTextAutumn">🗓️ 플래너에 설정된 여행 시작일과 매칭을 확인 중입니다...</span>
+              </div>
+
+              <!-- 가을/겨울 카드 그리드 -->
+              <div class="photo-grid" id="festivalsAutumnGrid"></div>
+
+              <div class="page-turner-bar">
+                <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-guide'); goToBookPage('chapter-guide', 3);">
+                  ◀ <span data-i18n="prev_chapter_prefix">이전 장</span>: <strong data-i18n="chapter_name_guide">03. 지역 가이드</strong>
+                </button>
+                <div class="book-page-dots">
+                  <span class="book-page-dot active"></span>
+                  <span class="book-page-dot"></span>
+                  <span class="book-page-dot"></span>
+                  <span class="book-page-dot"></span>
+                </div>
+                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-festivals', 1)">
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_festivals_2">2. 다른 계절 (봄·여름)</strong> ▶
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Page 1: 다른 계절 참고 자료 (봄·여름 대표 축제 3~8월 아카이브) -->
+        <div class="book-page" id="page-festivals-1">
+          <section class="section guide-section" style="background:#fdfaf5;border-top:1px solid #e8e2d8;padding:24px 0 36px;">
+            <div class="wrap">
+              <div class="section-head">
+                <div>
+                  <div class="kicker" data-i18n="fest_night_kicker">04 / REGIONAL FESTIVALS &amp; PANORAMIC NIGHT VIEWS</div>
+                  <h2 data-i18n="fest_spring_sub_title">🌸 다른 계절 참고 자료 (봄 &amp; 여름 이베리아 4대 대표 축제 3~8월)</h2>
                 </div>
                 <p class="sub" data-i18n="fest_spring_sub_desc">
                   스페인 안달루시아의 전통 마차 행렬, 코르도바 꽃 파티오, 리스본의 정어리 축제까지. 인파와 예매 팁을 확인하세요.
@@ -1100,48 +1157,8 @@
               <div class="photo-grid" id="festivalsSpringGrid"></div>
 
               <div class="page-turner-bar">
-                <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-guide'); goToBookPage('chapter-guide', 3);">
-                  ◀ <span data-i18n="prev_chapter_prefix">이전 장</span>: <strong data-i18n="chapter_name_guide">03. 지역 가이드</strong>
-                </button>
-                <div class="book-page-dots">
-                  <span class="book-page-dot active"></span>
-                  <span class="book-page-dot"></span>
-                  <span class="book-page-dot"></span>
-                  <span class="book-page-dot"></span>
-                </div>
-                <button type="button" class="btn-turn-page-bottom next" onclick="goToBookPage('chapter-festivals', 1)">
-                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_festivals_2">2. 가을·겨울 축제</strong> ▶
-                </button>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <!-- Page 1: 가을 & 연말 & 특별 축제 5선 -->
-        <div class="book-page" id="page-festivals-1">
-          <section class="section guide-section" style="background:#fdfaf5;border-top:1px solid #e8e2d8;padding:24px 0 36px;">
-            <div class="wrap">
-              <div class="section-head">
-                <div>
-                  <div class="kicker" data-i18n="fest_night_kicker">04 / REGIONAL FESTIVALS &amp; PANORAMIC NIGHT VIEWS</div>
-                  <h2 data-i18n="fest_autumn_sub_title">🍁 가을 &amp; 연말 &amp; 특별 축제 5선 (9~2월 / 글로벌 추천)</h2>
-                </div>
-                <p class="sub" data-i18n="fest_autumn_sub_desc">
-                  바르셀로나의 거인 행렬과 말라가 크리스마스 일루미네이션, 테네리페 카니발 및 남미 대축제 비교 정보 수록.
-                </p>
-              </div>
-
-              <!-- 동적 여행 일정 매칭 인디케이터 바 -->
-              <div class="fest-match-indicator-bar" id="festMatchIndicatorBarAutumn">
-                <span id="festMatchIndicatorTextAutumn">🗓️ 플래너에 설정된 여행 시작일과 매칭을 확인 중입니다...</span>
-              </div>
-
-              <!-- 가을/겨울 카드 그리드 -->
-              <div class="photo-grid" id="festivalsAutumnGrid"></div>
-
-              <div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-festivals', 0)">
-                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_festivals_1">1. 봄·여름 축제</strong>
+                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_festivals_1">1. 11월 가을·겨울 축제</strong>
                 </button>
                 <div class="book-page-dots">
                   <span class="book-page-dot"></span>
@@ -1176,7 +1193,7 @@
 
               <div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-festivals', 1)">
-                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_festivals_2">2. 가을·겨울 축제</strong>
+                  ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_festivals_2">2. 다른 계절 (봄·여름)</strong>
                 </button>
                 <div class="book-page-dots">
                   <span class="book-page-dot"></span>

@@ -3604,9 +3604,92 @@ function filterLandmarks(category, btn) {
 }
 
 let currentActiveRegion = "IBERIA";
-let currentStartDateStr = "2026-11-20";
+let currentStartDateStr = "2026-11-05";
 let currentDurationDays = 30;
 let currentPacing = "relaxed";
+
+// On script load, initialize from saved localStorage or STANDARD_TRIP_SCHEDULE
+try {
+  const savedStart = localStorage.getItem('travel_user_start_date');
+  if (savedStart) currentStartDateStr = savedStart;
+  const savedDur = localStorage.getItem('travel_user_duration');
+  if (savedDur) currentDurationDays = parseInt(savedDur, 10);
+  const savedReg = localStorage.getItem('travel_user_region');
+  if (savedReg) currentActiveRegion = savedReg;
+  const savedPace = localStorage.getItem('travel_user_pacing');
+  if (savedPace) currentPacing = savedPace;
+} catch(e) {}
+
+function resetToStandardSchedule() {
+  const std = (typeof STANDARD_TRIP_SCHEDULE !== 'undefined') ? STANDARD_TRIP_SCHEDULE : { startDate: "2026-11-05", totalDays: 30 };
+  currentStartDateStr = std.startDate;
+  currentDurationDays = std.totalDays || 30;
+  
+  const dateEl = document.getElementById('userStartDate');
+  if (dateEl) dateEl.value = currentStartDateStr;
+  const durEl = document.getElementById('userDurationSelect');
+  if (durEl) durEl.value = String(currentDurationDays);
+  
+  try {
+    localStorage.setItem('travel_user_start_date', currentStartDateStr);
+    localStorage.setItem('travel_user_duration', String(currentDurationDays));
+  } catch(e) {}
+  
+  applyPlanReconfiguration(false);
+  
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
+  const msg = dict['toast_dates_reset'] || '🔄 표준 확정 일정(2026.11.05~12.04, 29박 30일)으로 초기화되었습니다.';
+  if (typeof showToast === 'function') showToast(msg);
+}
+window.resetToStandardSchedule = resetToStandardSchedule;
+
+function updateAppliedScheduleDisplay() {
+  const elAppliedText = document.getElementById('appliedScheduleText');
+  const elAppliedDesc = document.getElementById('appliedScheduleDesc');
+  if (!elAppliedText) return;
+
+  const sD = new Date(currentStartDateStr);
+  const eD = new Date(sD);
+  eD.setDate(sD.getDate() + (currentDurationDays - 1));
+  const sStr = `${sD.getFullYear()}.${String(sD.getMonth() + 1).padStart(2, '0')}.${String(sD.getDate()).padStart(2, '0')}`;
+  const eStr = `${eD.getFullYear()}.${String(eD.getMonth() + 1).padStart(2, '0')}.${String(eD.getDate()).padStart(2, '0')}`;
+  const nights = Math.max(0, currentDurationDays - 1);
+
+  if (currentLang === 'en') {
+    elAppliedText.textContent = `${sStr} ~ ${eStr} (${currentDurationDays} Days · ${nights} Nights)`;
+  } else if (currentLang === 'ja') {
+    elAppliedText.textContent = `${sStr}〜${eStr}（${currentDurationDays}日間・${nights}泊）`;
+  } else if (currentLang === 'zh') {
+    elAppliedText.textContent = `${sStr} ~ ${eStr}（${currentDurationDays}天 · ${nights}晚）`;
+  } else {
+    elAppliedText.textContent = `${sStr} ~ ${eStr} (${currentDurationDays}일 · ${nights}박)`;
+  }
+
+  if (elAppliedDesc) {
+    if (currentStartDateStr === '2026-11-05' && currentDurationDays === 30) {
+      if (currentLang === 'en') {
+        elAppliedDesc.textContent = 'Barcelona 6N (11.05–11.11) · Seville 11N (11.11–11.22) · Italy 12N (11.22–12.04)';
+      } else if (currentLang === 'ja') {
+        elAppliedDesc.textContent = 'バルセロナ6泊（11.05〜11.11）・セビリア11泊（11.11〜11.22）・イタリア12泊（11.22〜12.04）';
+      } else if (currentLang === 'zh') {
+        elAppliedDesc.textContent = '巴塞罗那 6晚 (11.05~11.11) · 塞维利亚 11晚 (11.11~11.22) · 意大利 12晚 (11.22~12.04)';
+      } else {
+        elAppliedDesc.textContent = '바르셀로나 6박(11.05~11.11) · 세비야 11박(11.11~11.22) · 이탈리아 12박(11.22~12.04)';
+      }
+    } else {
+      if (currentLang === 'en') {
+        elAppliedDesc.textContent = 'Custom dates applied · Click [Reset to Standard Schedule] to restore standard itinerary';
+      } else if (currentLang === 'ja') {
+        elAppliedDesc.textContent = 'カスタム日程適用中 · [標準日程にリセット] で標準行程に復元できます';
+      } else if (currentLang === 'zh') {
+        elAppliedDesc.textContent = '自定义日期生效中 · 点击【重置为标准行程】可恢复标准行程';
+      } else {
+        elAppliedDesc.textContent = '사용자 맞춤 설정 기간 적용 중 · 표준 일정 복원을 원하시면 [표준 일정으로 초기화]를 누르세요';
+      }
+    }
+  }
+}
+window.updateAppliedScheduleDisplay = updateAppliedScheduleDisplay;
 
 function applyPlanReconfiguration(isUserTriggered = false) {
   const regEl = document.getElementById('userRegionSelect');
@@ -3619,6 +3702,12 @@ function applyPlanReconfiguration(isUserTriggered = false) {
   if (!regEl || !dateEl) return;
 
   currentActiveRegion = regEl.value;
+  currentStartDateStr = dateEl.value || "2026-11-05";
+  currentDurationDays = durEl ? parseInt(durEl.value, 10) : 30;
+  currentPacing = pacEl ? pacEl.value : "relaxed";
+  const partySize = partyEl ? parseInt(partyEl.value, 10) : 3;
+  const tier = tierEl ? tierEl.value : "standard";
+
   try {
     localStorage.setItem('travel_user_region', currentActiveRegion);
     localStorage.setItem('travel_user_duration', String(currentDurationDays));
@@ -3628,11 +3717,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     localStorage.setItem('travel_user_pacing', currentPacing);
   } catch(e) {}
 
-  currentStartDateStr = dateEl.value || "2026-11-20";
-  currentDurationDays = durEl ? parseInt(durEl.value, 10) : 30;
-  currentPacing = pacEl ? pacEl.value : "relaxed";
-  const partySize = partyEl ? parseInt(partyEl.value, 10) : 3;
-  const tier = tierEl ? tierEl.value : "standard";
+  updateAppliedScheduleDisplay();
 
   const planMeta = REGIONAL_PLANS[currentActiveRegion] || REGIONAL_PLANS["IBERIA"];
   const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
@@ -3814,7 +3899,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     `;
     timelineGrid.appendChild(card);
       // Distribute to 10-day book pages
-      const dayNum = idx + 1;
+      const dayNum = slotIdx + 1;
       const g1 = document.getElementById('timelineGrid1');
       const g2 = document.getElementById('timelineGrid2');
       const g3 = document.getElementById('timelineGrid3');
@@ -4109,8 +4194,10 @@ function switchLanguage(lang, btn) {
     aiInput.placeholder = dict['ai_search_ph'];
   }
 
-  // 7) 플래너 드롭다운 갱신
+  // 7) 플래너 드롭다운 및 적용 기간 바 갱신
   renderPlannerDropdownOptions();
+  if (typeof updateAppliedScheduleDisplay === 'function') updateAppliedScheduleDisplay();
+  if (typeof renderItalyCityGuide === 'function') renderItalyCityGuide(lang);
 
   // 8) 프리셋 바 및 필터 탭 갱신
   renderDiningPresets();
@@ -6446,10 +6533,10 @@ function renderFestivalsAndNightViews() {
   const nightData = window.NIGHTVIEWS_GUIDE_DATA || [];
   const savedCandidates = getSavedCandidates();
 
-  // 사용자 현재 여행 기간 계산 (현재 날짜 기준: 2026-10-11)
-  const userStartDate = new Date(currentStartDateStr || '2026-11-20');
+  // 사용자 현재 여행 기간 계산 (표준 확정 일정 연계)
+  const userStartDate = new Date(currentStartDateStr || '2026-11-05');
   const userEndDate = new Date(userStartDate);
-  userEndDate.setDate(userStartDate.getDate() + (currentDurationDays || 30));
+  userEndDate.setDate(userStartDate.getDate() + ((currentDurationDays || 30) - 1));
 
   const startFormatted = `${userStartDate.getFullYear()}.${String(userStartDate.getMonth() + 1).padStart(2, '0')}.${String(userStartDate.getDate()).padStart(2, '0')}`;
   const endFormatted = `${userEndDate.getFullYear()}.${String(userEndDate.getMonth() + 1).padStart(2, '0')}.${String(userEndDate.getDate()).padStart(2, '0')}`;
@@ -6473,13 +6560,13 @@ function renderFestivalsAndNightViews() {
   const getIndicatorHtml = () => {
     if (matchedFestCount > 0) {
       if (currentLang === 'en') {
-        return `🎯 <strong>Selected Trip Dates (${startFormatted} - ${endFormatted}, ${currentDurationDays} days)</strong>: <strong>${matchedFestCount} official festival(s)</strong> coincide (${matchedFestNames.join(', ')})`;
+        return `🎯 <strong>Selected Trip Dates (${startFormatted} - ${endFormatted}, ${currentDurationDays} days)</strong>: <strong>${matchedFestCount} festival(s) overlap</strong> (Verify actual operations before visit: ${matchedFestNames.join(', ')})`;
       } else if (currentLang === 'ja') {
-        return `🎯 <strong>選択した旅行期間（${startFormatted}〜${endFormatted}、${currentDurationDays}日間）</strong>内に公式確定フェスティバル<strong>${matchedFestCount}件</strong>が重なります（${matchedFestNames.join(', ')}）`;
+        return `🎯 <strong>選択した旅行期間（${startFormatted}〜${endFormatted}、${currentDurationDays}日間）</strong>内に<strong>${matchedFestCount}件</strong>の祭典が重なります（訪問前に公式運営要確認: ${matchedFestNames.join(', ')}）`;
       } else if (currentLang === 'zh') {
-        return `🎯 <strong>所选出行期间（${startFormatted} ~ ${endFormatted}，共${currentDurationDays}天）</strong>内有<strong>${matchedFestCount}个</strong>官方确认节庆活动重合（${matchedFestNames.join(', ')}）`;
+        return `🎯 <strong>所选出行期间（${startFormatted} ~ ${endFormatted}，共${currentDurationDays}天）</strong>内有<strong>${matchedFestCount}个</strong>节庆重合（出行前须核对官方实际运营: ${matchedFestNames.join(', ')}）`;
       } else {
-        return `🎯 <strong>선택된 여행 기간(${startFormatted} ~ ${endFormatted}, ${currentDurationDays}일)</strong> 내 공식 확정 축제 <strong>${matchedFestCount}개</strong> 연계 가능 (${matchedFestNames.join(', ')})`;
+        return `🎯 <strong>선택된 여행 기간(${startFormatted} ~ ${endFormatted}, ${currentDurationDays}일)</strong> 내 축제 <strong>${matchedFestCount}개</strong> 일정 중첩 (방문 전 공식 운영 확인 필수: ${matchedFestNames.join(', ')})`;
       }
     } else {
       if (currentLang === 'en') {
@@ -6542,7 +6629,7 @@ function renderFestivalsAndNightViews() {
           <span class="photo-badge">${localizedCountry} · ${localizedCity}</span>
         </div>
         <div class="photo-body">
-          ${isOverlap ? `<div class="badge-overlap-match">${dict['badge_overlap_match'] || '🎯 선택한 여행 기간과 겹침 (방문 가능)'}</div>` : ''}
+          ${isOverlap ? `<div class="badge-overlap-match">${dict['badge_overlap_check'] || dict['badge_overlap_match'] || (currentLang === 'en' ? '🎯 Trip Dates Overlap · Verify Before Visit' : (currentLang === 'ja' ? '🎯 旅行期間と重複 · 訪問前に要確認' : (currentLang === 'zh' ? '🎯 与行程重合 · 访问前须核实' : '🎯 여행 기간 중첩 · 방문 전 확인 필요')))}</div>` : ''}
           <div class="badge-fest-status ${statusBadgeClass}">${localizedStatus}</div>
           <h3 class="photo-title" style="margin-top:6px">${localizedName}</h3>
           <div class="photo-region">📍 ${localizedVenue}</div>
@@ -7637,7 +7724,7 @@ function selectItalyCity(cityId) {
 
   const subTabBar = document.getElementById('italySubTabBar');
   if (subTabBar) {
-    subTabBar.style.display = (cityId === 'itinerary') ? 'none' : 'flex';
+    subTabBar.style.display = (cityId === 'itinerary' || cityId === 'capri') ? 'none' : 'flex';
   }
 
   renderItalyCityGuide();
@@ -7767,6 +7854,115 @@ function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? curre
           '</div>';
         }).join('') +
       '</div>' +
+    '</div>';
+
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Case 1.5: Naples & Capri Optional Weather-Dependent Guide
+  if (cityId === 'capri') {
+    const capri = data.cities.capri;
+    if (!capri) return;
+
+    let html = '<div class="capri-guide-wrapper">';
+
+    // 1. Header Card
+    html += '<div class="capri-header-card">' +
+      '<div class="capri-tag-row">' +
+        '<span class="city-pill-badge">' + (capri.tag[lang] || capri.tag.ko) + '</span>' +
+        '<span class="badge-unverified-official">⚠️ ' + (capri.statusBadge[lang] || capri.statusBadge.ko) + '</span>' +
+      '</div>' +
+      '<h3 class="capri-title">⛵ ' + (capri.name[lang] || capri.name.ko) + '</h3>' +
+      '<p class="capri-intro">' + (capri.intro[lang] || capri.intro.ko) + '</p>' +
+    '</div>';
+
+    // 2. tvN Broadcast Box
+    html += '<div class="capri-tvn-box">' +
+      '<div class="tvn-head-row">' +
+        '<span class="tvn-badge">' + (capri.tvn.badge[lang] || capri.tvn.badge.ko) + '</span>' +
+        '<a href="' + capri.tvn.url + '" target="_blank" rel="noopener noreferrer" class="tvn-link-btn">' +
+          (capri.tvn.linkText[lang] || capri.tvn.linkText.ko) +
+        '</a>' +
+      '</div>' +
+      '<p class="tvn-desc">' + (capri.tvn.desc[lang] || capri.tvn.desc.ko) + '</p>' +
+    '</div>';
+
+    // 3. 4 Overview & Burden Cards Grid
+    html += '<div class="capri-overview-grid">';
+    (capri.overviewItems || []).forEach(item => {
+      html += '<div class="capri-overview-card ' + item.id + '">' +
+        '<h4 class="ov-title">' + (item.title[lang] || item.title.ko) + '</h4>' +
+        '<p class="ov-content">' + (item.content[lang] || item.content.ko) + '</p>' +
+      '</div>';
+    });
+    html += '</div>';
+
+    // 4. Operational Verification Section
+    html += '<div class="capri-verification-box">' +
+      '<div class="verif-head">' +
+        '<h4>🔍 ' + (lang === 'en' ? 'Operational Verification & Official Channels' : (lang === 'ja' ? '運航・開閉の確認と公式窓口' : (lang === 'zh' ? '运营核实与官方查询渠道' : '운영 확인과 공식 창구'))) + '</h4>' +
+        '<p class="verif-sub">' + (lang === 'en' ? 'Ferry transport and Blue Grotto admission are strictly separate verification items. Real-time conditions must be verified directly via official sources.' : (lang === 'ja' ? '船舶の運航と青の洞窟の入場は完全に別個の確認項目です。リアルタイムの運航・開閉は公式案内で直接ご確認ください。' : (lang === 'zh' ? '渡轮交通与蓝洞入内游览属于两个相互独立的核查项。即时状态须通过官方渠道亲自核实。' : '선박 운항과 푸른 동굴 입장은 별개의 확인 항목입니다. 실시간 상황은 공식 안내에서 직접 확인해야 합니다.'))) + '</p>' +
+      '</div>' +
+      '<div class="verif-items-list">';
+    
+    (capri.verificationItems || []).forEach(v => {
+      html += '<div class="verif-item-card">' +
+        '<div class="verif-item-header">' +
+          '<strong class="verif-item-name">' + (v.name[lang] || v.name.ko) + '</strong>' +
+          '<span class="verif-status-tag">⚠️ ' + (v.status[lang] || v.status.ko) + '</span>' +
+        '</div>' +
+        '<p class="verif-note">' + (v.note[lang] || v.note.ko) + '</p>' +
+        '<div class="verif-links-row">' +
+          '<a href="' + v.url + '" target="_blank" rel="noopener noreferrer" class="official-verif-btn">' +
+            '🌐 ' + (v.linkText[lang] || v.linkText.ko) +
+          '</a>';
+      if (v.url2) {
+        html += '<a href="' + v.url2 + '" target="_blank" rel="noopener noreferrer" class="official-verif-btn secondary">' +
+          '🌐 ' + (v.linkText2[lang] || v.linkText2.ko) +
+        '</a>';
+      }
+      html += '</div></div>';
+    });
+    html += '</div></div>';
+
+    // 5. Step-by-Step Verification Checklist
+    const ch = capri.checklist;
+    html += '<div class="capri-checklist-box">' +
+      '<h4 class="checklist-title">' + (ch.title[lang] || ch.title.ko) + '</h4>' +
+      '<div class="checklist-steps-grid">';
+    (ch.steps || []).forEach((st, idx) => {
+      html += '<div class="check-step-item">' +
+        '<div class="step-num">Step ' + (idx + 1) + ' · ' + (st.time[lang] || st.time.ko) + '</div>' +
+        '<div class="step-action">' + (st.action[lang] || st.action.ko) + '</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+
+    // 6. 3 Weather Scenarios Grid (A, B, C)
+    const sc = capri.scenarios;
+    html += '<div class="capri-scenarios-wrapper">' +
+      '<h4 class="scenarios-main-title">' + (sc.title[lang] || sc.title.ko) + '</h4>' +
+      '<div class="capri-scenarios-grid">';
+    (sc.list || []).forEach(s => {
+      html += '<div class="scenario-card ' + s.id + '">' +
+        '<div class="sc-badge">' + (s.badge[lang] || s.badge.ko) + '</div>' +
+        '<h5 class="sc-title">' + (s.title[lang] || s.title.ko) + '</h5>' +
+        '<p class="sc-desc">' + (s.content[lang] || s.content.ko) + '</p>' +
+      '</div>';
+    });
+    html += '</div></div>';
+
+    // 7. Planner Conflict Check Action Bar
+    html += '<div class="capri-planner-guardrail-bar">' +
+      '<div class="guardrail-info">' +
+        '<strong>🗓️ ' + (lang === 'en' ? 'Planner Schedule Safety Guardrail' : (lang === 'ja' ? 'プランナー日程の安全ガードレール' : (lang === 'zh' ? '行程规划安全防线' : '플래너 일정 안전 가드레일'))) + '</strong>' +
+        '<p>' + (lang === 'en' ? 'Naples/Capri is an optional excursion. It is never auto-inserted into your planner to protect your Rome rest days.' : (lang === 'ja' ? 'ナポリ・カプリは追加の選択肢です。ローマの休息日程を保護するため、プランナー日程へ自動挿入されません。' : (lang === 'zh' ? '那不勒斯与卡普里仅为备选方案，绝不自动插入日程以守护罗马充分休息。' : '나폴리·카프리는 추가 선택지입니다. 로마 휴식 일정을 보존하기 위해 플래너에 자동으로 삽입되지 않습니다.'))) + '</p>' +
+      '</div>' +
+      '<button type="button" class="btn-check-conflict" onclick="checkCapriPlannerConflict()">' +
+        '⚠️ ' + (lang === 'en' ? 'Check Schedule Conflict Alert' : (lang === 'ja' ? '日程衝突の警告を確認' : (lang === 'zh' ? '查看日程冲突预警' : '일정 충돌 여부 확인하기'))) +
+      '</button>' +
     '</div>';
 
     html += '</div>';
@@ -7952,3 +8148,23 @@ function renderSingleSpotCard(spot, lang, dict) {
   '</div>';
 }
 window.renderSingleSpotCard = renderSingleSpotCard;
+
+function checkCapriPlannerConflict() {
+  let msg = '';
+  if (currentLang === 'en') {
+    msg = '⚠️ [Schedule Conflict Alert]\nThe Italy segment (Nov 22 ~ Dec 4, 12 nights) is designed around a relaxed ~10-day Rome stay with parent fatigue care (1.5 spots/day + afternoon siestas).\n\nA same-day round trip from Rome to Naples/Capri entails over 6 hours of high-speed train, taxi, and ferry transfers each way. To preserve the confirmed Rome rest schedule, this optional trip is NOT automatically added to the planner, nor will it alter or delete existing rest days.\n\nPlease choose it flexibly on-site only if real-time weather and sea conditions are fully favorable and family stamina allows.';
+  } else if (currentLang === 'ja') {
+    msg = '⚠️【日程衝突の警告】\nイタリア日程（11月22日〜12月4日、12泊）は、ご両親の疲労ケア（1日1.5スポット＋シエスタ休息）を考慮し、ローマ約10泊のゆったりした滞在を中心に構成されています。\n\nローマからナポリ・カプリ島への日帰りは往復6時間以上の高速鉄道・タクシー・船の乗換が発生します。確定済みのローマ休息日程を損なわないため、プランナー日程へ自動挿入されたり既存の予定が削除・変更されることはありません。\n\n海況・気象が完全に良好で、ご家族全員の体力が十分な場合にのみ現地で柔軟にご判断ください。';
+  } else if (currentLang === 'zh') {
+    msg = '⚠️【行程冲突预警】\n意大利行程（11月22日~12月4日，共12晚）以罗马约10天慢游逗留为核心，充分兼顾长辈体力照护（每日1.5景点＋午休休息）。\n\n从罗马出发往返那不勒斯与卡普里岛单日往返将产生6小时以上的火车、出租车与渡轮连续换乘。为避免打乱已确认的罗马修整节奏，系统不会将此候选自动添加进主日程，亦绝不会自动删改现有日程与休息日。\n\n建议仅在当地海况天象完全平稳良好、全人体力充沛时，再作现场弹性决择。';
+  } else {
+    msg = '⚠️ [일정 충돌 경고 및 안내]\n현재 2026.11.22~12.04 이탈리아 일정은 로마 약 10일 체류를 중심으로 부모님의 피로도(1.5 스팟/일, 시에스타 휴식)를 고려하여 구성되어 있습니다.\n\n로마에서 나폴리·카프리 당일치기는 왕복 6시간 이상의 기차+택시+페리 연속 환승이 수반됩니다. 기존 확정된 로마 10일 휴식 일정을 훼손하지 않기 위해 플래너에 자동 끼워넣지 않으며, 기존 일정을 자동 삭제하거나 변경하지 않습니다.\n\n당일 기상과 파도가 온전히 양호하고 가족 모두의 컨디션이 충분할 때 현지에서 자율적으로 선택하시기 바랍니다.';
+  }
+  
+  if (typeof showToast === 'function') {
+    showToast(msg, 6000);
+  } else {
+    alert(msg);
+  }
+}
+window.checkCapriPlannerConflict = checkCapriPlannerConflict;

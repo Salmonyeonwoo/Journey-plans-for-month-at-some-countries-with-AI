@@ -2133,7 +2133,7 @@ const EDITORIAL_SECTIONS_HTML = {
 <section class="section" style="padding-top:0"><div class="wrap"><div class="section-head"><div><div class="kicker">06 / BEFORE YOU BOOK</div><h2>예약 전 체크리스트</h2></div></div><div class="checklist"><div class="check"><strong>□ 일정</strong>　도시별 숙박일·휴식일·이동일 확정</div><div class="check"><strong>□ 항공</strong>　다구간(IN/OUT), 수하물, 환승 시간과 공항 확인</div><div class="check"><strong>□ 교통</strong>　기차 공식 사이트 요금·환불·짐 규정 확인</div><div class="check"><strong>□ 숙박</strong>　엘리베이터, 침대 구성, 역에서의 경사 확인</div><div class="check"><strong>□ 입국</strong>　여권 유효기간, 솅겐 체류일, ETIAS 최신 공지 확인</div><div class="check"><strong>□ 안전·건강</strong>　여행자 보험, 상비약, 긴급 연락처, 카드 분실 대비</div></div></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><div><div class="kicker">07 / ROUTE IDEAS FROM TRAVELERS</div><h2>여행자들이 자주 짜는 코스, 30일 버전</h2></div><p class="sub">여행 블로그·여행자 포럼·철도 루트 제안에서 공통으로 반복되는 거점을 바탕으로 재구성했어요. 블로거 코스는 개인 경험이지 공식 권고나 안전 보증은 아닙니다.</p></div><div class="cards"><article class="card"><div class="num">EUROPE · IBERIA CLASSIC</div><h3>스페인 + 포르투갈, 30일</h3><p><b>바르셀로나 5박 → 마드리드 4박 → 세비야 4박 → 그라나다 3박 → 리스본 5박 → 포르투 4박 → 이동·완충 5박</b></p><ul><li>블로거·기차 여행 루트에서 자주 보이는 바르셀로나·마드리드·안달루시아·리스본·포르투 조합</li><li>코르도바는 세비야/마드리드 사이 1박 또는 당일 방문으로 넣기</li><li>리스본–세비야를 육로로 잇는 구간은 시간이 오래 걸릴 수 있어 이동일을 따로 둠</li><li>부모님 동행이면 도시 수를 5~6곳으로 제한하고 쉬는 날 확보</li></ul></article><article class="card"><div class="num">EUROPE · SPAIN + PORTUGAL</div><h3>자연·소도시를 섞는 확장형</h3><p><b>마드리드 4박 → 포르투 4박 → 코임브라 2박 → 리스본 5박 → 알가르브(파루/라고스) 4박 → 세비야 4박 → 그라나다 3박 → 말라가 2박</b></p><ul><li>Interrail의 이베리아 철도 아이디어에서 포르투·코임브라·리스본·파루·세비야·카디스·그라나다 축을 참고</li><li>포르투갈–스페인 국경 횡단은 철도 연결이 제한적일 수 있어 버스/항공 포함 비교</li><li>가족 여행에는 8개 거점이 바쁠 수 있어 알가르브 또는 말라가를 선택적으로 제외</li></ul></article><article class="card"><div class="num">LATIN AMERICA · CENTRAL</div><h3>멕시코 남부 + 과테말라, 30일</h3><p><b>멕시코시티 4박 → 오악사카 4박 → 산크리스토발 3박 → 팔렌케 2박 → 메리다/바야돌리드 4박 → 안티구아 5박 → 아티틀란 호수 4박 → 완충·귀국 4박</b></p><ul><li>여행자 블로그에 흔한 멕시코–과테말라 문화·유적·호수 코스를 여유형으로 조정</li><li>장거리 구간은 낮 시간대의 신뢰도 높은 버스/항공 우선, 국경 이동은 여유 시간 확보</li><li>고원도로·긴 이동이 있어 부모님과는 산크리스토발 또는 팔렌케 중 하나를 줄이는 것을 고려</li></ul></article><article class="card"><div class="num">LATIN AMERICA · PERU</div><h3>페루 한 나라에 집중, 24~30일</h3><p><b>리마 2박 → 아레키파 3박 → 쿠스코 적응 3박 → 성스러운 계곡 4박 → 마추픽추 2박 → 쿠스코 2박 → 아마존 또는 푸노 4~5박 → 예비·이동 4~6박</b></p><ul><li>여행 블로그가 반복 추천하는 리마·쿠스코·성스러운 계곡·마추픽추 축에 적응일을 더한 구성</li><li>고산 구간은 건강상태 먼저 확인하고 무리한 일정·연속 등반 피하기</li><li>아마존·푸노는 둘 다 넣지 않고 한 곳만 골라 체력을 아끼기</li></ul></article><article class="card"><div class="num">LATIN AMERICA · SOUTHERN CONE</div><h3>칠레 + 아르헨티나, 자연 집중</h3><p><b>산티아고 3박 → 멘도사 3박 → 부에노스아이레스 4박 → 엘 칼라파테 4박 → 푸에르토 나탈레스/토레스 델 파이네 5박 → 이동·완충 6~8박</b></p><ul><li>여행자들이 추천하는 산티아고–멘도사 코스에 파타고니아를 확장</li><li>도시 간 거리가 매우 길어 국내선 항공과 버스를 섞고 지연 대비 완충일 필요</li><li>트레킹·국립공원은 날씨와 보행 난이도를 보고 선택. 부모님 체력에 맞춘 전망대·보트 투어 대안 확보</li></ul></article><article class="card"><div class="num">LATIN AMERICA · CENTRAL AMERICA</div><h3>과테말라 + 코스타리카 + 파나마</h3><p><b>안티구아 4박 → 아티틀란 4박 → 플로레스/티칼 3박 → 라 포르투나 4박 → 몬테베르데 3박 → 산호세 1박 → 보카스 델 토로 4박 → 파나마시티 3박 + 이동 완충</b></p><ul><li>투어 운영사가 제안하는 4주 중앙아메리카 루트의 거점을 참고한 요약</li><li>국경과 산악도로 이동이 잦고 여행 시간이 길어, 가족 자유여행에는 과테말라+코스타리카 등 2개국만 권장</li><li>보트·셔틀·항공을 사전 예약할 구간이 있어 각 운영사의 실제 시간표 확인</li></ul></article></div><div class="callout"><b>이번 가족여행의 현실적인 추천:</b> 이동 편의와 편안함은 이베리아가 가장 균형적이에요. 중남미를 꼭 경험하고 싶다면 ‘페루 한 나라’ 또는 ‘멕시코 남부+과테말라’처럼 한 권역을 고르고, 여정 중 며칠은 비워 두세요. 남미 3~4개국을 30일에 묶는 코스는 비행·고도·이동 피로가 커 부모님 동행에는 비추천입니다.</div></div></section>
 <section class="section" style="background:#eee9dd"><div class="wrap"><div class="section-head"><div><div class="kicker">08 / BOOKING ORDER</div><h2>사전 예약, 무엇부터 할까</h2></div><p class="sub">인기 입장권과 한정 좌석부터 잡고, 나머지는 일정 유연성에 따라 예약하는 순서가 안전해요.</p></div><div class="split"><div class="panel"><h3>우선 예약할 항목</h3><ol><li><b>항공권·숙소:</b> 날짜와 실제 총액을 비교하고, 이동일 주변 숙소부터 확보</li><li><b>알함브라:</b> 공식 사이트에서 날짜·나스르 궁전 입장 시간대를 확인. 매진 가능성이 있어 일정 확정 즉시 예약</li><li><b>마추픽추:</b> 방문 티켓과 열차표는 별도 구매. 공식 입장권 플랫폼과 PeruRail/Inca Rail에서 날짜·회로·기차 시간 교차 확인</li><li><b>장거리 기차·버스/항공:</b> 성수기·인기 출발 시간·국경 구간은 운행사 공식 채널에서 미리 확보</li><li><b>시간 지정 명소:</b> 사그라다 파밀리아, 주요 박물관, 플라멩코 공연 및 인기 투어는 공식 예약 조건 확인</li></ol></div><div class="panel"><h3>예약 우선순위 낮추기</h3><ul><li>도시 내 일반 대중교통은 현지 도착 후 교통카드/일회권 구매가 가능한 경우가 많음. 다만 공항 이동·컨택트리스 가능 여부는 확인</li><li>일정 변경 가능성이 있으면 환불·변경 가능한 운임을 선택하고 가격 차이를 비교</li><li>당일투어는 날씨·휴식 상태를 보고 예약할 수 있으나, 특정 날짜만 운영하는 투어는 사전 확인</li><li>연말·축제 기간은 레스토랑·숙박·공연이 빨리 차므로 도시별 날짜 발표 후 먼저 예약</li></ul><div class="callout">가격은 고정된 “몇 개월 전이 최저” 공식이 없습니다. 스페인 고속열차는 사전 구매가 유리할 수 있고, CP 포르투갈은 공식 온라인 판매가 통상 최대 60일 전 열립니다. 실제 판매 개시일·좌석·운임은 노선별로 확인하세요.</div></div></div></div></section>
-<section class="section" id="recommend"><div class="wrap"><div class="section-head"><div><div class="kicker">09 / BEST SEASON & FAMILY PICKS</div><h2>언제, 어디로 가는 게 잘 맞을까</h2></div><p class="sub">3명 가족·대중교통·예산 2,000~3,000만 원을 기준으로, 날씨가 극단적이지 않고 이동이 지나치게 복잡하지 않은 조합을 우선했습니다. 비용 등급은 항공권 제외 현지 체감의 대략적 비교이며 실제 견적이 아닙니다.</p></div><table class="table"><thead><tr><th>후보</th><th>날씨·가성비 감각</th><th>추천 여행창</th><th>축제·이벤트</th><th>가족 여행 적합도</th></tr></thead><tbody><tr><td><b>남부 스페인 + 포르투갈</b></td><td>늦가을은 대체로 온화, 비·밤 추위 대비. 현지 비용은 서북유럽보다 부담이 적은 편</td><td>11월 중순~12월 초: 비교적 한산하고 걷기 편한 기간</td><td>12월 크리스마스 조명·마켓. 말라가 조명 운영일은 매해 확인</td><td>★★★★★ 철도·도시 인프라와 명소가 잘 맞음</td></tr><tr><td><b>카나리아 제도 + 이베리아</b></td><td>겨울 유럽에서 따뜻한 편. 섬 내 산악지대는 춥고 바람·비 변동</td><td>11월~12월 초가 비교적 균형. 연말은 숙박·항공 수요 높음</td><td>12월 크리스마스 시즌, 섬별 새해 행사</td><td>★★★★☆ 따뜻함은 강점, 본토-섬 추가 이동·비용 있음</td></tr><tr><td><b>마데이라 + 포르투갈</b></td><td>겨울에도 온화한 해안, 산악 날씨·비 차이 큼. 섬 휴양·자연 중심</td><td>12월 1~20일 또는 새해 직후. 12/31 주간은 미리 예약</td><td>공식 관광청이 크리스마스·새해 축제 기간을 2026.12.1~2027.1.10로 안내</td><td>★★★★☆ 축제는 훌륭, 지형이 가파르고 트레일에 따라 체력 요구</td></tr><tr><td><b>중부 유럽 크리스마스 마켓</b></td><td>추위·짧은 낮·눈/비 가능. 현지 물가는 도시마다 다르고 숙소 수요 큼</td><td>12월 1~14일 평일 위주가 혼잡·가격 관리에 유리</td><td>독일·오스트리아·체코·프랑스 마켓은 대개 11월 중하순~12월 23/24일</td><td>★★★☆☆ 축제 경험은 최고, “안 춥게”가 우선이면 비추천</td></tr><tr><td><b>멕시코 고원 + 과테말라</b></td><td>건기 시작 구간으로 비가 줄 수 있음. 고원은 낮 쾌적해도 밤·새벽 쌀쌀, 저지대 더움</td><td>11월 하순~12월 초, 연말 성수기 직전</td><td>12월 전통 성탄 행사, 안티구아의 Las Posadas 등 현지 일정 확인</td><td>★★★☆☆ 문화·유적 다양, 국경과 장거리 셔틀/버스 피로 고려</td></tr><tr><td><b>콜롬비아 안데스 + 칼리</b></td><td>고도별 기온차 큼: 보고타는 서늘, 메데진은 온화, 칼리는 더 따뜻. 12월은 성수기</td><td>12월 중순~말(축제) 또는 1월(축제 후 가격·혼잡 완화 가능)</td><td>칼리 Feria de Cali는 2026.12.25~30로 시 정부 행사 캘린더에 등재</td><td>★★★☆☆ 살사 축제 매력 큼, 야간 군중·도시 간 비행/도로 계획 필요</td></tr></tbody></table><div class="callout"><b>가장 잘 맞는 결론:</b> “온화한 날씨 + 대중교통 + 부모님과의 편안함 + 예산” 균형은 남부 이베리아를 기본으로 하고, 따뜻함과 연말 이벤트를 원하면 마데이라 또는 카나리아를 5~7박 추가하는 방향이 유력해요. “특별한 라틴 문화”가 가장 중요하면 멕시코 고원+과테말라 또는 칼리 축제 일정으로 별도 설계하세요. 중남미는 대륙 내 이동비와 비행시간이 커서 유럽보다 자동으로 저렴해지는 것은 아닙니다.</div><div class="section-head" style="margin-top:40px"><div><div class="kicker">DATE-LOCKED PLAN · 2026</div><h2>11월 20일~12월 19일에 실제로 겹치는 것</h2></div><p class="sub">이 구간은 30일(29박)로 보고 일정에 맞춰 다시 짰습니다. 행사 날짜가 공식 확정된 것과 매년 반복되지만 아직 2026 세부 발표 전인 것을 구분했습니다.</p></div><div class="cards"><article class="card"><div class="num">EUROPE · 행사 중심, 따뜻한 루트</div><h3>포르투갈·안달루시아·마데이라</h3><p><b>11/20–24 포르투 4박 → 11/24–30 리스본 6박 → 11/30–12/6 세비야 6박 → 12/6–11 말라가 5박 → 12/11–18 마데이라 7박 → 12/18–19 리스본 1박/귀국</b></p><ul><li><b>11/27부터:</b> 리스본 Wonderland Lisboa가 2026년 11/27–2027년 1/3 개최로 안내됨. 개막 직후 방문 가능(행사 listing, 주최자 공지로 최종 확인)</li><li><b>12/1부터:</b> 마데이라 공식 크리스마스·새해 축제 시즌 시작, 2027년 1/10까지. 이 일정은 12/11–18에 축제 기간을 충분히 포함</li><li><b>12월:</b> 말라가 중심가 조명·음악 행사는 해마다 운영되며, 2026 점등일은 조사 당시 현지 가이드가 11/27 예상으로 표시했으나 확정이 아니므로 출발 전 확인</li><li>세비야 크리스마스 마켓은 안내처별 2026 일정이 달라 세부 개장일을 확정 일정으로 넣지 않음. 대신 대성당·알카사르·스페인 광장 등 상시 명소를 중심으로 설계</li><li>섬 이동은 리스본 경유 항공일 수 있어 항공편 시간·짐 비용·공항 이동을 먼저 확인. 더 경제적으로 하려면 마데이라를 빼고 세비야/그라나다 체류를 늘림</li></ul></article><article class="card"><div class="num">EUROPE · 크리스마스 마켓 집중 대안</div><h3>비엔나·프라하를 넣고 싶다면</h3><p><b>11/20–25 비엔나 5박 → 11/25–30 부다페스트 5박 → 11/30–12/6 프라하 6박 → 12/6–12 리스본 6박 → 12/12–16 세비야 4박 → 12/16–19 말라가 3박</b></p><ul><li>비엔나 주요 마켓은 11월 중순부터, 프라하 구시가지 마켓은 11/28–2027/1/6 일정으로 여행 안내에 게시됨</li><li>12/6–12/16 남부 이베리아 구간에 Wonderland·말라가 조명 시즌이 겹치는 구조</li><li>중부 유럽은 추운 겨울 일정이며 항공/철도 구간이 많아 “온화함·가성비” 우선순위는 첫 번째 루트보다 낮음</li><li>부다페스트 2026 마켓 날짜는 이번 조사에서 공식 확정 근거를 확인하지 못해, 확정 이벤트로 간주하지 말고 현지 공식 공지를 확인</li></ul></article><article class="card"><div class="num">LATIN AMERICA · 날짜 정합성 체크</div><h3>11/20–12/19에는 칼리 Feria가 안 열려요</h3><p><b>이 기간으로 콜롬비아를 간다면 Feria de Cali를 일정에 넣을 수 없습니다.</b></p><ul><li>칼리 시 정부는 Feria de Cali를 2026년 12/25–30으로 달력에 올렸으므로, 11/20–12/19 여행과는 날짜가 겹치지 않음</li><li>메데진 크리스마스 조명은 매년 연말 행사지만 EPM의 정확한 2026 날짜는 통상 11월에 발표. 현재 날짜로 확정 일정처럼 넣지 말 것</li><li>멕시코의 Las Posadas(12/16–24)는 12/16–19 일부만 겹치고, 오악사카 Noche de Rábanos(12/23)는 여행 종료 뒤라 이 기간만으로는 온전히 즐기기 어려움</li><li>중남미 행사 중심 일정이 목적이면 출발일을 12/20 이후로 바꾸고, 정확한 귀국일을 정한 뒤 다시 짜는 편이 맞음</li></ul></article></div><div class="notice"><b>두 번째 후보(“연말~2027년 새해 초”):</b> 정확한 시작·종료일이 아직 없으므로 날짜별 도시 배정은 보류했습니다. 확인된 주요 후보로는 마데이라 축제(12/1–1/10), 리스본 Wonderland(11/27–1/3), 프라하 마켓(11/28–1/6), 칼리 Feria(12/25–30)가 있습니다. 다만 서로 다른 대륙/도시에 있어 30일 안에 모두 묶는 일정은 장거리 이동이 과도합니다. 출발일과 귀국일을 확정해 주시면 해당 30일에 실제 열리는 행사만 남겨 itinerary를 다시 최적화하겠습니다.</div></div></section>
+<section class="section" id="recommend"><div class="wrap"><div class="section-head"><div><div class="kicker">09 / BEST SEASON & FAMILY PICKS</div><h2>언제, 어디로 가는 게 잘 맞을까</h2></div><p class="sub">3명 가족·대중교통·예산 2,000~3,000만 원을 기준으로, 날씨가 극단적이지 않고 이동이 지나치게 복잡하지 않은 조합을 우선했습니다. 비용 등급은 항공권 제외 현지 체감의 대략적 비교이며 실제 견적이 아닙니다.</p></div><table class="table"><thead><tr><th>후보</th><th>날씨·가성비 감각</th><th>추천 여행창</th><th>축제·이벤트</th><th>가족 여행 적합도</th></tr></thead><tbody><tr><td><b>남부 스페인 + 포르투갈</b></td><td>늦가을은 대체로 온화, 비·밤 추위 대비. 현지 비용은 서북유럽보다 부담이 적은 편</td><td>11월 중순~12월 초: 비교적 한산하고 걷기 편한 기간</td><td>12월 크리스마스 조명·마켓. 말라가 조명 운영일은 매해 확인</td><td>★★★★★ 철도·도시 인프라와 명소가 잘 맞음</td></tr><tr><td><b>카나리아 제도 + 이베리아</b></td><td>겨울 유럽에서 따뜻한 편. 섬 내 산악지대는 춥고 바람·비 변동</td><td>11월~12월 초가 비교적 균형. 연말은 숙박·항공 수요 높음</td><td>12월 크리스마스 시즌, 섬별 새해 행사</td><td>★★★★☆ 따뜻함은 강점, 본토-섬 추가 이동·비용 있음</td></tr><tr><td><b>마데이라 + 포르투갈</b></td><td>겨울에도 온화한 해안, 산악 날씨·비 차이 큼. 섬 휴양·자연 중심</td><td>12월 1~20일 또는 새해 직후. 12/31 주간은 미리 예약</td><td>공식 관광청이 크리스마스·새해 축제 기간을 2026.12.1~2027.1.10로 안내</td><td>★★★★☆ 축제는 훌륭, 지형이 가파르고 트레일에 따라 체력 요구</td></tr><tr><td><b>중부 유럽 크리스마스 마켓</b></td><td>추위·짧은 낮·눈/비 가능. 현지 물가는 도시마다 다르고 숙소 수요 큼</td><td>12월 1~14일 평일 위주가 혼잡·가격 관리에 유리</td><td>독일·오스트리아·체코·프랑스 마켓은 대개 11월 중하순~12월 23/24일</td><td>★★★☆☆ 축제 경험은 최고, “안 춥게”가 우선이면 비추천</td></tr><tr><td><b>멕시코 고원 + 과테말라</b></td><td>건기 시작 구간으로 비가 줄 수 있음. 고원은 낮 쾌적해도 밤·새벽 쌀쌀, 저지대 더움</td><td>11월 하순~12월 초, 연말 성수기 직전</td><td>12월 전통 성탄 행사, 안티구아의 Las Posadas 등 현지 일정 확인</td><td>★★★☆☆ 문화·유적 다양, 국경과 장거리 셔틀/버스 피로 고려</td></tr><tr><td><b>콜롬비아 안데스 + 칼리</b></td><td>고도별 기온차 큼: 보고타는 서늘, 메데진은 온화, 칼리는 더 따뜻. 12월은 성수기</td><td>12월 중순~말(축제) 또는 1월(축제 후 가격·혼잡 완화 가능)</td><td>칼리 Feria de Cali는 2026.12.25~30로 시 정부 행사 캘린더에 등재</td><td>★★★☆☆ 살사 축제 매력 큼, 야간 군중·도시 간 비행/도로 계획 필요</td></tr></tbody></table><div class="callout"><b>가장 잘 맞는 결론:</b> “온화한 날씨 + 대중교통 + 부모님과의 편안함 + 예산” 균형은 남부 이베리아를 기본으로 하고, 따뜻함과 연말 이벤트를 원하면 마데이라 또는 카나리아를 5~7박 추가하는 방향이 유력해요. “특별한 라틴 문화”가 가장 중요하면 멕시코 고원+과테말라 또는 칼리 축제 일정으로 별도 설계하세요. 중남미는 대륙 내 이동비와 비행시간이 커서 유럽보다 자동으로 저렴해지는 것은 아닙니다.</div><div class="section-head" style="margin-top:40px"><div><div class="kicker">DATE-LOCKED PLAN · 2026</div><h2>2026년 11월 5일~12월 4일 여행 기간과 축제·이벤트 연계</h2></div><p class="sub">확정된 30일(29박: 바르셀로나 11/5~11 6박, 세비야 11/11~22 11박, 이탈리아 11/22~12/4 12박) 기준입니다. 행사 날짜가 공식 확정된 것과 매년 반복되지만 아직 2026 세부 발표 전인 것을 구분했습니다.</p></div><div class="cards"><article class="card"><div class="num">EUROPE · 행사 중심, 따뜻한 루트</div><h3>포르투갈·안달루시아·마데이라</h3><p><b>11/20–24 포르투 4박 → 11/24–30 리스본 6박 → 11/30–12/6 세비야 6박 → 12/6–11 말라가 5박 → 12/11–18 마데이라 7박 → 12/18–19 리스본 1박/귀국</b></p><ul><li><b>11/27부터:</b> 리스본 Wonderland Lisboa가 2026년 11/27–2027년 1/3 개최로 안내됨. 개막 직후 방문 가능(행사 listing, 주최자 공지로 최종 확인)</li><li><b>12/1부터:</b> 마데이라 공식 크리스마스·새해 축제 시즌 시작, 2027년 1/10까지. 이 일정은 12/11–18에 축제 기간을 충분히 포함</li><li><b>12월:</b> 말라가 중심가 조명·음악 행사는 해마다 운영되며, 2026 점등일은 조사 당시 현지 가이드가 11/27 예상으로 표시했으나 확정이 아니므로 출발 전 확인</li><li>세비야 크리스마스 마켓은 안내처별 2026 일정이 달라 세부 개장일을 확정 일정으로 넣지 않음. 대신 대성당·알카사르·스페인 광장 등 상시 명소를 중심으로 설계</li><li>섬 이동은 리스본 경유 항공일 수 있어 항공편 시간·짐 비용·공항 이동을 먼저 확인. 더 경제적으로 하려면 마데이라를 빼고 세비야/그라나다 체류를 늘림</li></ul></article><article class="card"><div class="num">EUROPE · 크리스마스 마켓 집중 대안</div><h3>비엔나·프라하를 넣고 싶다면</h3><p><b>11/20–25 비엔나 5박 → 11/25–30 부다페스트 5박 → 11/30–12/6 프라하 6박 → 12/6–12 리스본 6박 → 12/12–16 세비야 4박 → 12/16–19 말라가 3박</b></p><ul><li>비엔나 주요 마켓은 11월 중순부터, 프라하 구시가지 마켓은 11/28–2027/1/6 일정으로 여행 안내에 게시됨</li><li>12/6–12/16 남부 이베리아 구간에 Wonderland·말라가 조명 시즌이 겹치는 구조</li><li>중부 유럽은 추운 겨울 일정이며 항공/철도 구간이 많아 “온화함·가성비” 우선순위는 첫 번째 루트보다 낮음</li><li>부다페스트 2026 마켓 날짜는 이번 조사에서 공식 확정 근거를 확인하지 못해, 확정 이벤트로 간주하지 말고 현지 공식 공지를 확인</li></ul></article><article class="card"><div class="num">LATIN AMERICA · 날짜 정합성 체크</div><h3>11/20–12/19에는 칼리 Feria가 안 열려요</h3><p><b>이 기간으로 콜롬비아를 간다면 Feria de Cali를 일정에 넣을 수 없습니다.</b></p><ul><li>칼리 시 정부는 Feria de Cali를 2026년 12/25–30으로 달력에 올렸으므로, 11/20–12/19 여행과는 날짜가 겹치지 않음</li><li>메데진 크리스마스 조명은 매년 연말 행사지만 EPM의 정확한 2026 날짜는 통상 11월에 발표. 현재 날짜로 확정 일정처럼 넣지 말 것</li><li>멕시코의 Las Posadas(12/16–24)는 12/16–19 일부만 겹치고, 오악사카 Noche de Rábanos(12/23)는 여행 종료 뒤라 이 기간만으로는 온전히 즐기기 어려움</li><li>중남미 행사 중심 일정이 목적이면 출발일을 12/20 이후로 바꾸고, 정확한 귀국일을 정한 뒤 다시 짜는 편이 맞음</li></ul></article></div><div class="notice"><b>두 번째 후보(“연말~2027년 새해 초”):</b> 정확한 시작·종료일이 아직 없으므로 날짜별 도시 배정은 보류했습니다. 확인된 주요 후보로는 마데이라 축제(12/1–1/10), 리스본 Wonderland(11/27–1/3), 프라하 마켓(11/28–1/6), 칼리 Feria(12/25–30)가 있습니다. 다만 서로 다른 대륙/도시에 있어 30일 안에 모두 묶는 일정은 장거리 이동이 과도합니다. 출발일과 귀국일을 확정해 주시면 해당 30일에 실제 열리는 행사만 남겨 itinerary를 다시 최적화하겠습니다.</div></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><div><div class="kicker">10 / SOURCES</div><h2>참고한 공식 안내와 여행자 코스</h2></div><p class="sub">공식 운행·티켓 정보는 운영기관을 우선하고, 루트 아이디어는 여행 매체·블로그·여행자 포럼을 참고했습니다.</p></div><div class="split"><div class="panel"><h3>공식 예약·교통 정보</h3><ul><li><a href="https://www.renfe.com/es/en" target="_blank" rel="noopener">Renfe</a> · 스페인 기차 운임·예약</li><li><a href="https://cp.pt/info/en/w/online-ticket-office" target="_blank" rel="noopener">CP Portugal</a> · 온라인 티켓 최대 60일 전 구매 안내</li><li><a href="https://tickets.alhambra-patronato.es/en" target="_blank" rel="noopener">알함브라 공식 티켓</a> · 직접 구매</li><li><a href="https://www.spain.info/en/top/how-to-buy-tickets-visit-alhambra/" target="_blank" rel="noopener">Spain.info</a> · 알함브라 사전 예약·방문 안내</li><li><a href="https://tuboleto.cultura.pe/" target="_blank" rel="noopener">페루 문화부 티켓 포털</a> · 마추픽추 입장권 공식 경로</li><li><a href="https://www.perurail.com/" target="_blank" rel="noopener">PeruRail</a> · 마추픽추행 열차 정보</li><li><a href="https://visitmadeira.com/en/whats-on/events/christmas-and-new-year-festivities" target="_blank" rel="noopener">Visit Madeira</a> · 2026 크리스마스·새해 축제 안내</li><li><a href="https://www.cali.gov.co/boletines/publicaciones/193104/cali-la-ciudad-de-los-grandes-eventos-se-prepara-para-vivir-un-segundo-semestre-historico/" target="_blank" rel="noopener">Cali 시 정부 행사 캘린더</a> · 2026년 Feria de Cali 날짜</li></ul></div><div class="panel"><h3>루트 영감·계절 정보 (비공식)</h3><ul><li><a href="https://www.interrail.com/en/plan-your-trip/trip-ideas/spain-and-portugal" target="_blank" rel="noopener">Interrail: Spain & Portugal by Train</a> · 포르투갈·안달루시아 열차 루트</li><li><a href="https://community.ricksteves.com/travel-forum/spain/itinerary-help-for-4-weeks-in-spain-and-1-week-in-portugal" target="_blank" rel="noopener">Rick Steves’ Europe Forum</a> · 4주 스페인+포르투갈 여행자 토론</li><li><a href="https://community.ricksteves.com/travel-forum/spain/a-month-in-spain-portugal-itinerary" target="_blank" rel="noopener">Rick Steves’ Europe Forum</a> · 한 달 이베리아 루트 토론</li><li><a href="https://www.earthtrekkers.com/peru-travel-guide" target="_blank" rel="noopener">Earth Trekkers: Peru Guide</a> · 쿠스코·성스러운 계곡·마추픽추·아마존</li><li><a href="https://caitypfohl.com/2019/10/30/mexico-belize-guatemala-itinerary/" target="_blank" rel="noopener">The Pamplemousse Papers</a> · 멕시코·벨리즈·과테말라 여행기</li><li><a href="https://www.tourradar.com/n/latin-america-4-week" target="_blank" rel="noopener">TourRadar 4-week routes</a> · 중앙아메리카 4주 코스 예시(투어 상품 편집 페이지)</li><li><a href="https://www.stippl.io/blog/warmest-places-in-europe-in-winter" target="_blank" rel="noopener">Stippl winter climate guide</a> · 카나리아·마데이라·남부 스페인 비교(2차 자료)</li><li><a href="https://www.audleytravel.com/central-america/best-time-to-visit" target="_blank" rel="noopener">Audley Travel</a> · 중앙아메리카 건기 참고</li><li><a href="https://www.jacadatravel.com/latin-america/mexico/travel-guides/best-time-go-mexico/" target="_blank" rel="noopener">Jacada Travel</a> · 멕시코 지역별 계절 참고</li><li><a href="https://www.kimkim.com/c/colombia-in-december" target="_blank" rel="noopener">kimkim Colombia in December</a> · 12월 콜롬비아 날씨·성수기 참고</li><li><a href="https://www.europeanbestdestinations.com/christmas-markets/lisbon/" target="_blank" rel="noopener">Wonderland Lisboa 2026 안내</a> · 11/27–2027/1/3 일정(행사 listing, 공식 공지 재확인)</li><li><a href="https://www.guidetomalaga.com/events-in-malaga/christmas-in-malaga/all-you-need-to-know-about-christmas-in-malaga/" target="_blank" rel="noopener">Guide to Malaga · 2026 Christmas update</a> · 점등일은 예상치로 표기, 확정 전 확인 필요</li><li><a href="https://www.pragueexperience.com/events/christmas-markets.asp" target="_blank" rel="noopener">Prague Christmas Markets 2026/27</a> · 일정·시간 안내(현지 공식 캘린더 대조 권장)</li><li><a href="https://www.visitingvienna.com/sights/christmasmarkets/when-open/" target="_blank" rel="noopener">Visiting Vienna · 2026 마켓 일정</a> · 공식 시장 페이지 확인 기반 지역 안내</li><li><a href="https://www.frommers.com/destinations/oaxaca-city/festivals/" target="_blank" rel="noopener">Frommer’s Oaxaca festival guide</a> · 12월 Noche de Rábanos 참고</li></ul></div></div></div></section>`,
   ja: `<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">A month together · Iberia & beyond</div><h1>家族とともに、<br><em>南欧を巡る1ヶ月の旅</em></h1><p class="lead">ご両親とゆったり滞在しながらスペイン・ポルトガルの都市と風景を楽しむ旅。中南米の壮大さ、カナリア諸島の温暖な冬、英国・フランスの年末の風情まで一目で比較できます。</p><div class="tagrow"><span class="tag">3人家族</span><span class="tag">約4週間</span><span class="tag">公共交通中心</span><span class="tag">予算 約2,000〜3,000万KRW</span></div></div><div class="hero-art" aria-label="南欧の山と太陽を表現したイラスト"><div class="sun"></div><div class="route-line"></div><div class="pin p1">🇪🇸 セビリア</div><div class="pin p2">🇵🇹 リスボン</div><div class="hill"></div><div class="hill2"></div></div></div></section>
 <section class="section" id="compare"><div class="wrap"><div class="section-head"><div><div class="kicker">01 / WHERE TO GO</div><h2>旅の方向性を選ぶ</h2></div><p class="sub">初めて訪れる場所の特別感と、ご両親同伴の快適さを両立させた比較です。</p></div><div class="cards">
@@ -27498,8 +27498,14 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       map_official_ticket: "공식 예매처 ↗",
       map_google_directions: "길찾기",
       map_senior_note: "시니어 접근성",
-      page_festivals_1: "1. 봄·여름 대표 축제",
-      page_festivals_2: "2. 가을·겨울 & 특별 축제",
+      page_festivals_1: "1. 11월 가을·겨울 축제 (여행 연계)",
+      page_festivals_2: "2. 다른 계절 참고 (봄·여름 축제)",
+      lbl_applied_dates: "🗓️ 현재 적용 기간",
+      badge_overlap_match: "🎯 여행 기간 중첩 · 방문 전 확인 필요",
+      fest_autumn_sub_title: "🍁 11월 가을·겨울 시즌 축제 & 11월 여행 권역",
+      fest_autumn_sub_desc: "바르셀로나·세비야·말라가 크리스마스 일루미네이션 및 가을·연말 주요 행사. 11월 여행 일정과 연계되는 주요 축제를 우선 확인하세요.",
+      fest_spring_sub_title: "🌸 다른 계절 참고 자료 (봄 & 여름 이베리아 4대 대표 축제 3~8월)",
+      fest_spring_sub_desc: "스페인 안달루시아의 전통 마차 행렬, 코르도바 꽃 파티오, 리스본의 정어리 축제까지. 봄·여름 시즌 아카이브 참고 자료입니다.",
       page_festivals_3: "3. 파노라마 야경 명소 전 지점",
       page_festivals_4: "4. 나의 저장 후보 위시리스트"
     },
@@ -27520,8 +27526,14 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       map_official_ticket: "Official Booking Site ↗",
       map_google_directions: "Directions",
       map_senior_note: "Senior Accessibility",
-      page_festivals_1: "1. Spring & Summer Festivals",
-      page_festivals_2: "2. Autumn, Winter & Special Festivals",
+      page_festivals_1: "1. Nov Autumn & Winter Festivals (Trip Match)",
+      page_festivals_2: "2. Other Seasons Reference (Spring & Summer)",
+      lbl_applied_dates: "🗓️ Applied Trip Period",
+      badge_overlap_match: "🎯 Trip Dates Overlap · Verification Required Before Visit",
+      fest_autumn_sub_title: "🍁 November Autumn/Winter Season Festivals & Regions",
+      fest_autumn_sub_desc: "Barcelona, Seville, Malaga Christmas lights and key autumn/year-end events. Prioritizing festivals synchronized with your November travel period.",
+      fest_spring_sub_title: "🌸 Other Seasons Reference (Spring & Summer Top Festivals, Mar–Aug)",
+      fest_spring_sub_desc: "From Andalusia carriage parades and Cordoba patios to Lisbon sardine festivities. Archival reference for spring and summer seasons.",
       page_festivals_3: "3. Panoramic Night Views (All Sites)",
       page_festivals_4: "4. My Saved Wishlist"
     },
@@ -27542,8 +27554,14 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       map_official_ticket: "公式予約・詳細 ↗",
       map_google_directions: "経路案内",
       map_senior_note: "シニア移動利便性",
-      page_festivals_1: "1. 春夏シーズン代表祭典",
-      page_festivals_2: "2. 秋冬・特別フェスティバル",
+      page_festivals_1: "1. 11月・秋冬フェスティバル（旅程連携）",
+      page_festivals_2: "2. 他の季節の参考資料（春夏フェス）",
+      lbl_applied_dates: "🗓️ 現在の適用期間",
+      badge_overlap_match: "🎯 旅行期間と重複 · 訪問前に要確認",
+      fest_autumn_sub_title: "🍁 11月・秋冬シーズン祭典＆11月旅行エリア",
+      fest_autumn_sub_desc: "バルセロナ・セビリア・マラガのクリスマスイルミネーションおよび秋冬の主要行事。11月の旅行日程と重なる祭典を優先的に確認できます。",
+      fest_spring_sub_title: "🌸 他の季節の参考資料（春＆夏のイベリア4大祭典 3〜8月）",
+      fest_spring_sub_desc: "アンダルシアの伝統馬車行列、コルドバのパティオ祭り、リスボンのイワシ祭りまで。春夏の参考アーカイブです。",
       page_festivals_3: "3. パノラマ夜景スポット全拠点",
       page_festivals_4: "4. 保存済みウィッシュリスト"
     },
@@ -27564,8 +27582,14 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       map_official_ticket: "官方预订网站 ↗",
       map_google_directions: "路线导航",
       map_senior_note: "适老无障碍出行",
-      page_festivals_1: "1. 春夏标志性节日盛典",
-      page_festivals_2: "2. 秋冬及跨年特别狂欢",
+      page_festivals_1: "1. 11月秋冬节庆（行程联动）",
+      page_festivals_2: "2. 其他季节参考资料（春夏节庆）",
+      lbl_applied_dates: "🗓️ 当前适用出行周期",
+      badge_overlap_match: "🎯 与出行日期重合 · 出发前须核实",
+      fest_autumn_sub_title: "🍁 11月秋冬季代表节庆与11月旅行区域",
+      fest_autumn_sub_desc: "巴塞罗那、塞维利亚、马拉加圣诞灯光秀与秋冬代表节事。优先核对与11月行程相匹配的活动。",
+      fest_spring_sub_title: "🌸 其他季节参考资料（春夏季伊比利亚4大代表节庆 3~8月）",
+      fest_spring_sub_desc: "从安达卢西亚传统马车巡游、科尔多瓦庭院节到里斯本沙丁鱼节，作为春夏季参考归档资料。",
       page_festivals_3: "3. 全景观赏夜景坐标全收录",
       page_festivals_4: "4. 我的愿望清单"
     }
@@ -30078,7 +30102,7 @@ if (typeof window !== 'undefined') {
     "hero_warn_item2": "<strong>타워 계단 하강 주의:</strong> 사그라다 파밀리아 타워는 400여 개 나선계단 하강으로 부모님 일반 본당 티켓 권장",
     "hero_warn_item3": "<strong>카사 밀라 옥상 노면:</strong> 카사 밀라 옥상은 연속 계단 굴곡으로 휠체어/보행약자 옥상 전역 보행 불가",
     "hero_warn_item4": "<strong>11월 동절기 운영 확인:</strong> 관람 시간 및 열차 편성은 2026년 11월 공식 시간표 사전 확인 필수",
-    "hero_spot_badge": "🏛️ 핵심 명소 &amp; 루트 요약",
+    "hero_spot_badge": "🏛️ 핵심 명소 & 루트 요약",
     "hero_spot_sub": "구역별 맞춤 연결",
     "hero_spot_bcn": "<strong>바르셀로나:</strong> 가우디(사그라다·바트요·밀라), 고딕 지구·보케리아 시장, 포트 벨 수변, 구엘 공원",
     "hero_spot_svq": "<strong>세비야:</strong> 대성당·히랄다(종탑 17계단 주의), 알카사르·산타크루즈, 스페인 광장, 강변 황금의 탑",
@@ -30088,12 +30112,12 @@ if (typeof window !== 'undefined') {
     "chapter_name_overview": "제1장 여행 개요",
     "chapter_name_planner": "제2장 일정 플래너",
     "chapter_name_guide": "제3장 지역 가이드",
-    "chapter_name_festivals": "제4장 축제 &amp; 야경",
+    "chapter_name_festivals": "제4장 축제 & 야경",
     "chapter_name_practical": "제5장 여행 실용정보",
     "lbl_senior_access": "보행 및 접근성 (팩트 검증)",
     "btn_official_tickets": "공식 예매처 / 접근성",
-    "page_guide_spain_title": "🇪🇸 60대 부모님 동행 스페인 구역별 루트 &amp; 명소 18선",
-    "page_guide_spain_sub": "2026.11.05~11.22 바르셀로나(숙소 Suite Marina) · 세비야 3인 가족 맞춤 · 과장 없는 보행 팩트체크 &amp; Door-to-Door 이동 종합 비교"
+    "page_guide_spain_title": "🇪🇸 60대 부모님 동행 스페인 구역별 루트 & 명소 18선",
+    "page_guide_spain_sub": "2026.11.05~11.22 바르셀로나(숙소 Suite Marina) · 세비야 3인 가족 맞춤 · 과장 없는 보행 팩트체크 & Door-to-Door 이동 종합 비교"
   },
   "en": {
     "hero_ctx_badge": "🗓️ Nov 2026 Confirmed Dates",
@@ -30106,29 +30130,29 @@ if (typeof window !== 'undefined') {
     "hero_ctx_svq_hotel": "🏨 Hotel: <strong>TBD (Prior confirmation needed)</strong>",
     "hero_tag_family": "👥 3-Person Family",
     "hero_tag_siesta": "☕ 13:00~15:30 Siesta",
-    "hero_tag_taxi": "🚕 Flat &amp; Taxi Priority",
+    "hero_tag_taxi": "🚕 Flat & Taxi Priority",
     "hero_warn_badge": "♿ Accessibility Fact-Check",
     "hero_warn_sub": "Zero Exaggeration Standard",
-    "hero_warn_item1": "<strong>No Generalizations:</strong> Excludes '100% flat', 'barrier-free', or 'taxis to main gate'; explicitly details stairs, inclines &amp; cobblestones",
+    "hero_warn_item1": "<strong>No Generalizations:</strong> Excludes '100% flat', 'barrier-free', or 'taxis to main gate'; explicitly details stairs, inclines & cobblestones",
     "hero_warn_item2": "<strong>Tower Descent Warning:</strong> Sagrada Família towers require 400+ spiral stairs down; basilica-only general admission strongly recommended for parents",
     "hero_warn_item3": "<strong>Casa Milà Rooftop Steps:</strong> Rooftop consists of continuous stepped wave curves; inaccessible for wheelchairs/seniors across full terrace",
     "hero_warn_item4": "<strong>Winter Timetable Verification:</strong> Attraction hours and train schedules require prior confirmation against official Nov 2026 channels",
-    "hero_spot_badge": "🏛️ Key Highlights &amp; Routes",
+    "hero_spot_badge": "🏛️ Key Highlights & Routes",
     "hero_spot_sub": "Connected by Districts",
-    "hero_spot_bcn": "<strong>Barcelona:</strong> Gaudí (Sagrada, Batlló, Milà), Gothic Quarter &amp; Boqueria, Port Vell, Park Güell",
-    "hero_spot_svq": "<strong>Seville:</strong> Cathedral &amp; Giralda (Caution: 17 steps), Alcázar &amp; Santa Cruz, Plaza de España, Riverside Gold Tower",
+    "hero_spot_bcn": "<strong>Barcelona:</strong> Gaudí (Sagrada, Batlló, Milà), Gothic Quarter & Boqueria, Port Vell, Park Güell",
+    "hero_spot_svq": "<strong>Seville:</strong> Cathedral & Giralda (Caution: 17 steps), Alcázar & Santa Cruz, Plaza de España, Riverside Gold Tower",
     "hero_spot_trips": "<strong>Day-Trip Options:</strong> Córdoba (Train timetable check / Flowers alley), Ronda (Canyon descent prohibited)",
     "hero_btn_route3": "🗺️ View Ch. 3 Senior Routes →",
     "hero_btn_compare3": "🧭 Compare 3 Curated Routes",
     "chapter_name_overview": "Ch. 1 Trip Overview",
     "chapter_name_planner": "Ch. 2 Itinerary Planner",
     "chapter_name_guide": "Ch. 3 Regional Guide",
-    "chapter_name_festivals": "Ch. 4 Festivals &amp; Nightlife",
+    "chapter_name_festivals": "Ch. 4 Festivals & Nightlife",
     "chapter_name_practical": "Ch. 5 Practical Info",
-    "lbl_senior_access": "Walking &amp; Mobility (Fact-Checked)",
+    "lbl_senior_access": "Walking & Mobility (Fact-Checked)",
     "btn_official_tickets": "Official Tickets / Access",
-    "page_guide_spain_title": "🇪🇸 Senior-Friendly Spain District Routes &amp; Top 18 Landmarks",
-    "page_guide_spain_sub": "Nov 5–22, 2026 · Barcelona (Hotel Suite Marina) &amp; Seville 3-Person Family · Verified walking facts &amp; Door-to-Door transit comparison"
+    "page_guide_spain_title": "🇪🇸 Senior-Friendly Spain District Routes & Top 18 Landmarks",
+    "page_guide_spain_sub": "Nov 5–22, 2026 · Barcelona (Hotel Suite Marina) & Seville 3-Person Family · Verified walking facts & Door-to-Door transit comparison"
   },
   "ja": {
     "hero_ctx_badge": "🗓️ 2026年11月 確定日程",
@@ -30282,7 +30306,7 @@ if (typeof window !== 'undefined') {
     "toc_ch2_sub": "맞춤 일정 · 30일 타임라인",
     "toc_ch3_title": "지역 가이드",
     "toc_ch3_sub": "부모님 동행 루트 · 스페인 18선",
-    "toc_ch4_title": "축제 &amp; 야경",
+    "toc_ch4_title": "축제 & 야경",
     "toc_ch4_sub": "11월 유럽 축제 · 15대 야경",
     "toc_ch5_title": "여행 실용정보",
     "toc_ch5_sub": "대중교통 · 숙소 · 회화"
@@ -30294,7 +30318,7 @@ if (typeof window !== 'undefined') {
     "toc_ch2_sub": "Custom Schedule · 30-Day Timeline",
     "toc_ch3_title": "Regional Guide",
     "toc_ch3_sub": "Senior Routes · Spain Top 18",
-    "toc_ch4_title": "Festivals &amp; Nightlife",
+    "toc_ch4_title": "Festivals & Nightlife",
     "toc_ch4_sub": "Nov Festivals · 15 Night Views",
     "toc_ch5_title": "Practical Info",
     "toc_ch5_sub": "Transit · Hotels · Phrases"
@@ -33062,6 +33086,171 @@ const ITALY_CITIES_GUIDE_DATA = {
         },
         officialUrl: "https://actv.avmspa.it/en/content/venice-urban-services-0"
       }
+    },
+    capri: {
+      id: "capri",
+      name: { ko: "나폴리·카프리", en: "Naples & Capri", ja: "ナポリ・カプリ", zh: "那不勒斯·卡普里" },
+      tag: { ko: "날씨에 따라 선택 (추가 선택지)", en: "Weather-Dependent (Optional)", ja: "気象連動（追加候補）", zh: "视天气而定（附加候选）" },
+      statusBadge: {
+        ko: "미확인 — 공식 안내에서 직접 확인",
+        en: "Unverified — Check Directly on Official Channels",
+        ja: "未確認 — 公式案内で直接ご確認ください",
+        zh: "未核实 — 请直接在官方渠道确认"
+      },
+      intro: {
+        ko: "tvN 《텐트 밖은 유럽–로맨틱 이탈리아》에서 소개된 카프리섬과 푸른 동굴은 매력적인 선택지지만, 늦가을·초겨울에는 해상 상황에 따라 방문 여부를 결정해야 합니다. 로마 10일 체류 중 날씨가 완벽히 받쳐줄 때 고려하는 유연한 추가 선택지입니다.",
+        en: "Featured in tvN's 'Europe Outside Your Tent: Romantic Italy', Capri Island and the Blue Grotto are stunning options, but in late autumn and early winter, visitation strictly depends on marine conditions. A flexible optional excursion during the 10-day Rome stay.",
+        ja: "tvN『テントの外はヨーロッパ〜ロマンティック・イタリア編』で紹介されたカプリ島と青の洞窟は魅力的な選択肢ですが、晩秋・初冬は海況に応じて訪問の可否を判断する必要があります。ローマ滞在中に天候が恵まれた場合にのみ検討する柔軟な追加候補です。",
+        zh: "tvN《帐篷外面是欧洲·浪漫意大利篇》中亮相的卡普里岛与蓝洞极富魅力，但在深秋初冬时节，必须根据即时海况决定是否前往。仅在罗马约10天逗留期间天气适宜时，作为弹性的附加候选考虑。"
+      },
+      tvn: {
+        badge: { ko: "📺 방송 소개", en: "📺 Featured Show", ja: "📺 番組紹介", zh: "📺 节目介绍" },
+        desc: {
+          ko: "tvN 《텐트 밖은 유럽–로맨틱 이탈리아》에서 소개된 카프리섬과 푸른 동굴은 매력적인 선택지지만, 늦가을·초겨울에는 해상 상황에 따라 방문 여부를 결정해야 합니다.",
+          en: "Featured in tvN's 'Europe Outside Your Tent: Romantic Italy', Capri Island and the Blue Grotto are attractive options, but in late autumn and early winter, visitation strictly depends on marine conditions.",
+          ja: "tvN『テントの外はヨーロッパ〜ロマンティック・イタリア編』で紹介されたカプリ島と青の洞窟は魅力的な選択肢ですが、晩秋・初冬は海況に応じて訪問の可否を判断する必要があります。",
+          zh: "tvN《帐篷外面是欧洲·浪漫意大利篇》中介绍的卡普里岛与蓝洞极富魅力，但在深秋初冬时节，必须根据即时海况决定是否前往。"
+        },
+        url: "https://tvn.cjenm.com/ko/Europe-Outside-Your-Tent-Romantic-Italy/episodes/",
+        linkText: {
+          ko: "tvN 공식 회차 안내 ➔",
+          en: "tvN Official Episode Guide ➔",
+          ja: "tvN公式エピソード案内 ➔",
+          zh: "tvN官方分集指引 ➔"
+        }
+      },
+      overviewItems: [
+        {
+          id: "reasons",
+          title: { ko: "🌟 왜 가는지 (매력)", en: "🌟 Why Visit (Highlights)", ja: "🌟 訪問の魅力", zh: "🌟 为何前往（亮点）" },
+          content: {
+            ko: "지중해의 눈부신 해안 절벽, 아우구스투스 정원에서 조망하는 파라글리오니(Faraglioni) 기암괴석 전망, 햇빛이 수중 틈으로 굴절되어 빚어내는 신비로운 에메랄드빛 해양 절경.",
+            en: "Dramatic limestone cliffs, panoramic Faraglioni sea stack views from the Gardens of Augustus, and mystical radiant glowing blue light refracting into the sea cave.",
+            ja: "地中海の切り立つ断崖、アウグストゥス庭園からのファラリオーニ奇岩の絶景、水中の光が織りなす神秘的なエメラルドブルーの輝き。",
+            zh: "地中海壮丽的海蚀崖景观、奥古斯都花园远眺法拉廖尼海蚀巨柱群的全景，以及光线透过水下洞隙折射出的梦幻蓝光海景。"
+          }
+        },
+        {
+          id: "romeBurden",
+          title: { ko: "🚆 로마에서의 이동 부담 (연속 환승 주의)", en: "🚆 Transit Load from Rome (Consecutive Transfers)", ja: "🚆 ローマからの移動負担（連続乗換の注意）", zh: "🚆 从罗马出发的交通负荷（警惕连续转场）" },
+          content: {
+            ko: "로마 테르미니역 ➔ 나폴리 중앙역 고속열차(약 1시간 10분) ➔ 나폴리 베베렐로 항구 이동(택시 20~30분) ➔ 카프리행 페리/고속선 탑승(약 50분~80분). 편도만 최소 2.5~3시간 이상(왕복 6시간 초과)이 소요됩니다. 부모님 동행 시 철도와 배를 연속 이용하는 카프리 당일치기는 상당한 체력 소모가 따르므로 기본 추천으로 두지 않으며, 나폴리 1박 이상은 선택안으로만 소개해 드립니다 (숙박을 추가해도 동굴 입장이 보장되는 것은 아닙니다).",
+            en: "Rome Termini ➔ Naples Central by high-speed train (~1h 10m) ➔ Taxi to Naples Beverello port (20-30m) ➔ Ferry to Capri (50-80m). One-way takes at least 2.5-3+ hours (round-trip exceeds 6 hours). A same-day round trip from Rome with consecutive train and ferry transfers causes severe fatigue for elderly parents and is NOT a default recommendation; an overnight stay of 1+ nights in Naples is presented only as an option (adding nights does NOT guarantee cave admission).",
+            ja: "ローマ・テルミニ駅 ➔ ナポリ中央駅の高速鉄道（約1時間10分）➔ ナポリ港へタクシー（20〜30分）➔ カプリ島行きフェリー（約50〜80分）。片道だけで2.5〜3時間以上（往復6時間超）を要します。ご両親連れで鉄道と船を連続利用する日帰りは過酷な負担となるため基本推奨とはせず、ナポリ1泊以上は選択肢としてのみご紹介します（※宿泊を追加しても洞窟入場が保証されるわけではありません）。",
+            zh: "从罗马特米尼站乘高铁至那不勒斯中央站（约1小时10分）➔ 打车至那不勒斯港（20~30分）➔ 乘渡轮至卡普里岛（约50~80分）。单程耗时即需2.5~3小时以上（往返超6小时）。带长辈连续乘坐火车与轮船的一日游极其消耗体力，绝不作为基础推荐；那不勒斯住宿1晚以上仅作为备选方案介绍（增加住宿也绝不保证洞穴能够开放）。"
+          }
+        },
+        {
+          id: "seniorBoatBurden",
+          title: { ko: "⚠️ 부모님 동행 시 보트 승하선·흔들림·멀미 부담", en: "⚠️ Boarding, Swaying & Motion Sickness Strain for Seniors", ja: "⚠️ ご両親同伴時の乗降・揺れ・船酔い負担", zh: "⚠️ 长者同行时的上下船、颠簸与晕船负担" },
+          content: {
+            ko: "카프리 마리나 그란데 항구에 닿은 뒤에도 중형 보트로 이동 후, 파도 위에 출렁이는 4인승 작은 나룻배(Rowboat)로 옮겨 타야 합니다. 늦가을 파도와 너울로 인한 멀미 부담이 크며, 흔들리는 배 사이를 건너탈 때 발을 헛디딜 위험이 있어 60대 부모님에게는 관절 및 균형 감각 부담이 큽니다. 작은 보트로 옮겨 타거나 낮은 동굴 입구를 통과해야 하는 부담이 분명히 존재하므로, 푸른 동굴을 생략하고 카프리 섬의 경치를 즐기는 것만으로도 충분히 좋은 여행이 됩니다.",
+            en: "Even after reaching Capri's Marina Grande, passengers transfer from an excursion boat to a small 4-person rowboat on tossing open waters. Swells cause significant motion sickness, and stepping between tossing boats poses slip/fall risks for seniors. Transferring into small rowboats and squeezing under low cave arches is physically strenuous; skipping the Blue Grotto and enjoying scenic island sights still makes for a wonderful trip.",
+            ja: "カプリ島のマリーナ・グランデ港に到着後も、遊覧船から波に揺れる4人乗りの小型手漕ぎボートへと乗り換える必要があります。波とうねりによる船酔い負担が大きく、揺れる船の間を跨ぐ際の転倒リスクがあり、ご両親には足腰の負担となります。小型ボートへの乗り換えや低い洞窟入口を通過する身体的負担は明確に存在するため、青の洞窟を割愛して島の景色を楽しむだけでも十分に素晴らしい旅になります。",
+            zh: "抵达卡普里大港后，仍需从中型游船直接跨步换乘至海面颠簸的4人座手划小木船。晚秋海浪与涌浪极易诱发晕船，在晃动船只间跨越上下存在失足滑倒风险，对长辈的平衡与关节负荷沉重。换乘小船并蜷身通过低矮洞口具有显著的身体负担，即便省略蓝洞、仅游览海岛全景也同样是一次极佳的旅行体验。"
+          }
+        },
+        {
+          id: "grottoConditions",
+          title: { ko: "🌊 푸른 동굴의 입장 조건 (기상·파고·조수)", en: "🌊 Blue Grotto Admission Conditions (Swells, Tide & Wind)", ja: "🌊 青の洞窟の入場条件（気象・波高・潮位）", zh: "🌊 蓝洞入内游览硬性条件（风浪·潮汐·气象）" },
+          content: {
+            ko: "동굴 입구의 높이는 해수면 기준 약 1m에 불과합니다. 맑은 날씨라도 파고나 너울이 조금만 높거나, 만조로 해수면이 차오르거나, 바람이 불면 즉시 폐쇄됩니다. 입장 시에도 승객 전원이 보트 바닥에 등을 대고 완전히 누워야 뱃사공이 쇠사슬을 잡고 좁은 입구를 통과할 수 있습니다. 맑은 날씨만으로 배 운항이나 동굴 입장을 확정할 수 없으며, 확인되지 않은 파고 기준·폐쇄 횟수·개방 확률·'연중 100일' 같은 임의의 통계 숫자는 사용하지 않습니다. 카프리에 도착해도 푸른 동굴은 폐쇄될 수 있고, 겨울에도 조건이 맞으면 열릴 수 있지만 입장은 절대 보장되지 않습니다.",
+            en: "The cave entrance arch is only ~1 meter above the sea surface. Even on clear sunny days, slight wave swells, high tide, or strong winds cause instant closure. Inside, passengers must lie completely flat on the boat floor while the skipper pulls an iron chain to slip underneath. Clear skies alone never guarantee boat operation or grotto entry. We do not use unverified wave thresholds, closure counts, opening percentages, or '100 days a year' figures. Even upon reaching Capri, the Blue Grotto may be closed; while it can open in winter if conditions align, entry is never guaranteed.",
+            ja: "洞窟の入口は海抜約1メートル程度です。快晴であっても波やうねりが高い、満潮で海面が上がる、強風が吹くと直ちに閉鎖されます。入場時も乗客全員がボートの底に仰向けに寝そべり、船頭が鎖を引いて狭い岩の隙間をくぐります。晴天だけで運航や入場を確定することはできず、未確認の波高基準・閉鎖回数・確率・「年100日」といった数字は使用しません。カプリ島に到着しても青の洞窟は閉鎖される可能性があり、冬でも条件が合えば開くことがありますが、入場は一切保証されません。",
+            zh: "洞口天然拱券距海平面仅约1米高。即便晴空万里，只要稍有涌浪、遇涨潮导致海平面上升或风力增强，便会立即关闭。进洞时全体乘客必须完全仰卧于船底，由船夫手扯锁链从岩缝穿入。绝不能仅凭晴朗天气断定开航或入洞，绝不采信未经核实的浪高限值、关闭频次、开放概率或所谓“年均100天”等编造数据。即便顺利登上卡普里岛，蓝洞依然可能关闭；冬季若条件合适可能偶有开放，但入内绝无保证。"
+          }
+        }
+      ],
+      verificationItems: [
+        {
+          id: "ferry-service",
+          name: { ko: "1. 나폴리/소렌토 ➔ 카프리 선박(페리/고속선) 왕복 운항", en: "1. Naples/Sorrento ➔ Capri Ferry Round-Trip Operation", ja: "1. ナポリ/ソレント ➔ カプリ島 往復フェリー運航", zh: "1. 那不勒斯/索伦托 ➔ 卡普里 渡轮往返开航状态" },
+          status: { ko: "미확인 — 공식 안내에서 직접 확인", en: "Unverified — Check Directly on Official Channel", ja: "未確認 — 公式案内で直接ご確認ください", zh: "未核实 — 请直接在官方渠道确认" },
+          url: "https://easy.caremar.it/en/route-timetable/Napoli-Capri/",
+          linkText: { ko: "CAREMAR 공식 나폴리–카프리 운항표 확인 ➔", en: "CAREMAR Official Naples-Capri Timetable ➔", ja: "CAREMAR公式 ナポリ–カプリ運航表を確認 ➔", zh: "CAREMAR官方那不勒斯–卡普里班期表 ➔" },
+          note: { ko: "방문일 운항·요금·운영 여부는 날짜별로 다시 확인해야 합니다.", en: "Fares, schedules, and operations must be re-verified by specific date.", ja: "訪問当日の運航・運賃・運行状況は日付ごとに再確認が必要です。", zh: "出行当天的班次、票价及运营状态须按具体日期重新核实。" }
+        },
+        {
+          id: "grotto-admission",
+          name: { ko: "2. 카프리 현지 푸른 동굴(Grotta Azzurra) 개방 및 소형 보트 운영", en: "2. Local Capri Blue Grotto Admission & Rowboat Operation", ja: "2. カプリ現地 青の洞窟の開閉状況および手漕ぎボート運行", zh: "2. 卡普里当地蓝洞实时开放与手划木船运营" },
+          status: { ko: "미확인 — 공식 안내에서 직접 확인", en: "Unverified — Check Directly on Official Channel", ja: "未確認 — 公式案内で直接ご確認ください", zh: "未核实 — 请直接在官方渠道确认" },
+          url: "https://www.capri.com/en/e/la-grotta-azzurra",
+          linkText: { ko: "푸른 동굴 현지 공식 안내 (Capri.com) ➔", en: "Capri.com Official Blue Grotto Guide ➔", ja: "青の洞窟 現地公式案内 (Capri.com) ➔", zh: "蓝洞当地官方指南 (Capri.com) ➔" },
+          url2: "https://www.motoscafisticapri.com/",
+          linkText2: { ko: "현지 보트 운영사 (Motoscafisti Capri) ➔", en: "Motoscafisti Capri Boat Operator ➔", ja: "現地ボート運行会社 (Motoscafisti Capri) ➔", zh: "当地观光船运营公司 (Motoscafisti Capri) ➔" },
+          note: { ko: "카프리에 도착해도 푸른 동굴은 폐쇄될 수 있으며, 선박 운항과 동굴 입장은 별개의 확인 항목입니다.", en: "Even if ferries reach Capri, the grotto may be closed. Ferry operation and grotto admission are strictly separate check items.", ja: "カプリ島に到着しても青の洞窟は閉鎖される場合があり、船の運航と洞窟入場は完全に別個の確認項目です。", zh: "抵达卡普里岛蓝洞亦可能关闭，渡轮开航与蓝洞进洞属于两个完全独立的核查项。" }
+        }
+      ],
+      checklist: {
+        title: { ko: "📋 단계별 사전 확인 체크리스트", en: "📋 Step-by-Step Verification Checklist", ja: "📋 段階別事前確認チェックリスト", zh: "📋 分阶段事前核查清单" },
+        steps: [
+          {
+            time: { ko: "방문 전날", en: "Day Before", ja: "訪問前日", zh: "出行前一天" },
+            action: {
+              ko: "남부 티레니아 해상 예보(바람·너울) 및 CAREMAR 등 공식 선사 결항·감편 공지 확인.",
+              en: "Check Tyrrhenian marine forecast (wind & swells) and ferry operators' schedule alerts.",
+              ja: "ティレニア海の気象・波浪予報（風向・うねり）およびCAREMAR等の運休・減便告知を確認。",
+              zh: "核对第勒尼安海海况预报（风向、涌浪）及CAREMAR等渡轮公司停航或减班通告。"
+            }
+          },
+          {
+            time: { ko: "방문 당일 아침", en: "Day of Trip (Morning)", ja: "訪問当日 朝", zh: "出行当天清晨" },
+            action: {
+              ko: "나폴리 출발편 정상 출항 확인 + 당일 돌아오는 귀환편 페리 결항 여부 별도 교차 확인.",
+              en: "Verify outbound ferry departure from Naples AND verify return ferry operation to prevent stranding.",
+              ja: "ナポリ発の往路出航確認 ＋ 当日戻る復路フェリーの欠航有無をそれぞれ別個に交差確認。",
+              zh: "确认那不勒斯去程渡轮正常启航 ＋ 分别交叉核对当天返回的末班返程渡轮是否正常运营。"
+            }
+          },
+          {
+            time: { ko: "카프리 도착 후", en: "Upon Arriving Capri", ja: "カプリ島到着後", zh: "抵达卡普里后" },
+            action: {
+              ko: "마리나 그란데 항구 매표소에서 푸른 동굴 실제 개방 여부 최종 확인 (바다 상태에 따라 오전 개방 후에도 급폐쇄될 수 있음).",
+              en: "Check grotto status at Marina Grande ticket kiosk (caves can close abruptly mid-morning as tides shift).",
+              ja: "マリーナ・グランデ港の窓口で青の洞窟の実際の開閉状況を最終確認（潮位や波により急遽閉鎖あり）。",
+              zh: "在卡普里大港售票窗口最终确认蓝洞实时状态（受潮汐和波浪影响，上午开放后亦可能随时临时关闭）。"
+            }
+          }
+        ]
+      },
+      scenarios: {
+        title: { ko: "🧭 해상 상황별 3대 대응 시나리오", en: "🧭 3 Weather & Sea Action Scenarios", ja: "🧭 海況別 3大対応シナリオ", zh: "🧭 依海况制定的3套应对预案" },
+        list: [
+          {
+            id: "scenario-a",
+            badge: { ko: "시나리오 A", en: "Scenario A", ja: "シナリオA", zh: "预案 A" },
+            title: { ko: "왕복 선박 운항 & 해상 안전 양호 시", en: "Round-Trip Ferry & Sea Safety Good", ja: "往復フェリー運航＆海況が安全な場合", zh: "往返渡轮正常且海况良好安全" },
+            content: {
+              ko: "카프리 방문 후보로 안내하되, 푸른 동굴 입장은 보장되지 않으므로 섬 풍광을 중심에 두고 일정을 진행합니다.",
+              en: "Proceed with Capri visit candidate, keeping island viewpoints as primary focus as grotto admission remains unguaranteed.",
+              ja: "カプリ島訪問候補として進めますが、青の洞窟入場は保証されないため、島の景観を中心に日程を進行します。",
+              zh: "作为备选前往卡普里岛，但须以海岛风光为主轴，充分知晓蓝洞入内游览绝无绝对保障。"
+            }
+          },
+          {
+            id: "scenario-b",
+            badge: { ko: "시나리오 B", en: "Scenario B", ja: "シナリオB", zh: "预案 B" },
+            title: { ko: "배는 다니지만 동굴이 닫힌 경우", en: "Ferries Run but Grotto is Closed", ja: "フェリーは運航するが洞窟が閉鎖の場合", zh: "渡轮正常通航但蓝洞已关闭" },
+            content: {
+              ko: "무리한 해상 투어를 지양하고 가족 컨디션과 귀환편을 확인한 후, 아나카프리 마을 산책·아우구스투스 정원 절벽 조망을 즐기거나 나폴리 본토에 머무릅니다. (※ 다른 보트 투어도 파도로 위험할 수 있으므로 자동으로 안전하다고 단정하지 마세요).",
+              en: "Avoid risky water tours. Check family energy and return ferries, then explore Anacapri village and Augustus Gardens cliffside vistas, or stay in Naples. (Do NOT assume other boat tours are automatically safe).",
+              ja: "無理な海上ツアーを避け、家族の体調と復路便を確認の上、アナカプリ散策やアウグストゥス庭園の断崖絶景を楽しむか、ナポリ本土に滞在します（※他のボートツアーも波の危険があるため自動的に安全と断定しないでください）。",
+              zh: "避免冒险进行水上游览。核实家人体力与返程船期后，可选择游览阿纳卡普里小镇或奥古斯都花园峭壁风光，或直接留在那不勒斯市区。（※其他游船项目同样受风浪影响，切不可擅自推定其他出海游绝对安全）。"
+            }
+          },
+          {
+            id: "scenario-c",
+            badge: { ko: "시나리오 C", en: "Scenario C", ja: "シナリオC", zh: "预案 C" },
+            title: { ko: "선박 운항이 불안정하거나 가족이 피곤할 때", en: "Unstable Ferry Operations or Family Fatigue", ja: "フェリー運航不安定または家族に疲労がある場合", zh: "渡轮运营不稳定或家人出现疲乏" },
+            content: {
+              ko: "섬 이동을 전면 취소하고, 나폴리 국립 고고학 박물관 등 평지 실내 일정으로 전환하거나 로마 숙소에서 편안한 휴식을 유지합니다.",
+              en: "Cancel island travel entirely. Switch to flat indoor attractions such as the Naples National Archaeological Museum, or enjoy restful recovery in Rome.",
+              ja: "島への移動を全面的に取り消し、ナポリ国立考古学博物館など平坦な屋内日程に切り替えるか、ローマの宿泊先で休養を維持します。",
+              zh: "果断全面取消登岛安排，转换为那不勒斯国立考古博物馆等平坦的室内文化游览，或直接在罗马居所充分休养生息。"
+            }
+          }
+        ]
+      }
     }
   },
   itineraryAnalysis: {
@@ -33487,11 +33676,12 @@ if (typeof globalThis !== 'undefined') {
       page_guide_2: "3. 포르투갈 명소 18선",
       page_guide_3: "4. 기타 유럽 연계",
       page_guide_5: "5. 대형 지도 뷰",
-      page_guide_italy_title: "🇮🇹 이탈리아 도시별 심층 가이드 (로마 · 피렌체 · 베네치아)",
-      page_guide_italy_sub: "바르셀로나(11/5~11) · 세비야(11/11~22) 이후 이어지는 로마 약 10일(날짜 미정) 및 피렌체·베네치아 선택 후보를 위한 명소·음식·대중교통 원스톱 가이드",
+      page_guide_italy_title: "🇮🇹 이탈리아 도시별 심층 가이드 (로마 · 피렌체 · 베네치아 · 카프리)",
+      page_guide_italy_sub: "바르셀로나(11/5~11) · 세비야(11/11~22) 이후 이어지는 로마 약 10일(날짜 미정) 및 피렌체·베네치아·카프리 선택 후보를 위한 명소·음식·대중교통 원스톱 가이드",
       tab_city_rome: "🏛️ 로마 (약 10일, 날짜 미정)",
       tab_city_florence: "⚜️ 피렌체 (선택 후보)",
       tab_city_venice: "🎭 베네치아 (선택 후보)",
+      tab_city_capri: "⛵ 나폴리·카프리 (날씨에 따라 선택)",
       tab_city_itinerary: "⚖️ 12박 13일 일정 비교 & 시니어 분석",
       subtab_attractions: "🏛️ 권역별 명소",
       subtab_dining: "🍝 대표 미식",
@@ -33502,7 +33692,13 @@ if (typeof globalThis !== 'undefined') {
       lbl_taste_profile: "맛의 특징",
       lbl_fares_summary: "대중교통 요금 & 승차권 체계",
       lbl_transit_warning: "🚨 대중교통 필수 주의사항",
-      lbl_official_source: "공식 출처 & 확인일"
+      lbl_official_source: "공식 출처 & 확인일",
+      btn_reset_dates: "🔄 기본 여행 일정으로 초기화 (2026.11.05)",
+      toast_dates_reset: "✅ 기본 여행 일정(2026.11.05 ~ 12.04, 30일)으로 초기화되었습니다.",
+      badge_overlap_check: "🎯 여행 기간 중첩 · 방문 전 확인 필요",
+      lbl_check_before_visit: "방문 전 확인",
+      lbl_unverified_official: "미확인 — 공식 안내에서 직접 확인",
+      badge_conflict_alert: "⚠️ 일정 충돌 주의 (휴식일·기존 일정 자동 삭제 안 됨)"
     },
     en: {
       page_guide_0: "1. Italy City Guide",
@@ -33510,11 +33706,12 @@ if (typeof globalThis !== 'undefined') {
       page_guide_2: "3. Portugal 18 Spots",
       page_guide_3: "4. Other European Spots",
       page_guide_5: "5. Large Map View",
-      page_guide_italy_title: "🇮🇹 Italy In-Depth City Guide (Rome · Florence · Venice)",
-      page_guide_italy_sub: "Following Barcelona (Nov 5-11) & Seville (Nov 11-22), an all-in-one guide to Rome (~10 days, dates TBD) and selective candidates Florence & Venice: Highlights, Food & Public Transit",
+      page_guide_italy_title: "🇮🇹 Italy In-Depth City Guide (Rome · Florence · Venice · Capri)",
+      page_guide_italy_sub: "Following Barcelona (Nov 5-11) & Seville (Nov 11-22), an all-in-one guide to Rome (~10 days, dates TBD) and selective candidates Florence, Venice & Capri: Highlights, Food & Public Transit",
       tab_city_rome: "🏛️ Rome (~10 Days, Dates TBD)",
       tab_city_florence: "⚜️ Florence (Optional Candidate)",
       tab_city_venice: "🎭 Venice (Optional Candidate)",
+      tab_city_capri: "⛵ Naples & Capri (Weather-Dependent)",
       tab_city_itinerary: "⚖️ 12-Night Scenario Comparison & Senior Analysis",
       subtab_attractions: "🏛️ District Highlights",
       subtab_dining: "🍝 Food & Dining",
@@ -33525,7 +33722,13 @@ if (typeof globalThis !== 'undefined') {
       lbl_taste_profile: "Taste Profile",
       lbl_fares_summary: "Transit Fares & Ticket Types",
       lbl_transit_warning: "🚨 Essential Transit Caution",
-      lbl_official_source: "Official Source & Verified Date"
+      lbl_official_source: "Official Source & Verified Date",
+      btn_reset_dates: "🔄 Reset to Standard Schedule (2026.11.05)",
+      toast_dates_reset: "✅ Reset to standard travel itinerary (2026.11.05 - 12.04, 30 days).",
+      badge_overlap_check: "🎯 Overlaps Trip Dates · Verification Needed",
+      lbl_check_before_visit: "Check Before Visit",
+      lbl_unverified_official: "Unverified — Check Directly on Official Channel",
+      badge_conflict_alert: "⚠️ Schedule Conflict Alert (No Auto-Deletion)"
     },
     ja: {
       page_guide_0: "1. イタリア都市ガイド",
@@ -33533,11 +33736,12 @@ if (typeof globalThis !== 'undefined') {
       page_guide_2: "3. ポルトガル名所18選",
       page_guide_3: "4. その他ヨーロッパ連動",
       page_guide_5: "5. 大型マップ表示",
-      page_guide_italy_title: "🇮🇹 イタリア都市別詳細ガイド (ローマ・フィレンツェ・ヴェネツィア)",
-      page_guide_italy_sub: "バルセロナ（11/5〜11）・セビリア（11/11〜22）に続くローマ約10日間（日程未定）および選択候補フィレンツェ・ヴェネツィアの名所・グルメ・交通ワンストップガイド",
+      page_guide_italy_title: "🇮🇹 イタリア都市別詳細ガイド (ローマ・フィレンツェ・ヴェネツィア・カプリ)",
+      page_guide_italy_sub: "バルセロナ（11/5〜11）・セビリア（11/11〜22）に続くローマ約10日間（日程未定）および選択候補フィレンツェ・ヴェネツィア・カプリの名所・グルメ・交通ワンストップガイド",
       tab_city_rome: "🏛️ ローマ (約10日間・日程未定)",
       tab_city_florence: "⚜️ フィレンツェ (選択候補)",
       tab_city_venice: "🎭 ヴェネツィア (選択候補)",
+      tab_city_capri: "⛵ ナポリ・カプリ (気象連動・追加候補)",
       tab_city_itinerary: "⚖️ 12泊13日日程比較＆シニア分析",
       subtab_attractions: "🏛️ 地区別名所",
       subtab_dining: "🍝 代表グルメ",
@@ -33548,7 +33752,13 @@ if (typeof globalThis !== 'undefined') {
       lbl_taste_profile: "味の特徴",
       lbl_fares_summary: "運賃＆乗車券体系",
       lbl_transit_warning: "🚨 公共交通の必須注意事項",
-      lbl_official_source: "公式情報元＆確認日"
+      lbl_official_source: "公式情報元＆確認日",
+      btn_reset_dates: "🔄 標準日程にリセット (2026.11.05)",
+      toast_dates_reset: "✅ 標準旅行日程（2026.11.05〜12.04、30日間）にリセットされました。",
+      badge_overlap_check: "🎯 旅行期間重複・事前確認推奨",
+      lbl_check_before_visit: "訪問前要確認",
+      lbl_unverified_official: "未確認 — 公式案内で直接ご確認ください",
+      badge_conflict_alert: "⚠️ 日程重複注意（休息日・既存日程は自動削除されません）"
     },
     zh: {
       page_guide_0: "1. 意大利城市指南",
@@ -33556,11 +33766,12 @@ if (typeof globalThis !== 'undefined') {
       page_guide_2: "3. 葡萄牙名胜18选",
       page_guide_3: "4. 其他欧洲连动景观",
       page_guide_5: "5. 交互式大地图",
-      page_guide_italy_title: "🇮🇹 意大利深度城市指南 (罗马·佛罗伦萨·威尼斯)",
-      page_guide_italy_sub: "继巴塞罗那（11/5~11）与塞维利亚（11/11~22）之后的罗马约10天（日期未定）及备选城市佛罗伦萨、威尼斯的景观·美食·公共交通一站式指南",
+      page_guide_italy_title: "🇮🇹 意大利深度城市指南 (罗马·佛罗伦萨·威尼斯·卡普里)",
+      page_guide_italy_sub: "继巴塞罗那（11/5~11）与塞维利亚（11/11~22）之后的罗马约10天（日期未定）及备选城市佛罗伦萨、威尼斯、卡普里的景观·美食·公共交通一站式指南",
       tab_city_rome: "🏛️ 罗马 (约10天·日期未定)",
       tab_city_florence: "⚜️ 佛罗伦萨 (备选候选)",
       tab_city_venice: "🎭 威尼斯 (备选候选)",
+      tab_city_capri: "⛵ 那不勒斯·卡普里 (视天气而定)",
       tab_city_itinerary: "⚖️ 12晚13日行程对比与长者分析",
       subtab_attractions: "🏛️ 片区名胜",
       subtab_dining: "🍝 经典美食",
@@ -33571,7 +33782,13 @@ if (typeof globalThis !== 'undefined') {
       lbl_taste_profile: "风味特色",
       lbl_fares_summary: "交通票价与车票体系",
       lbl_transit_warning: "🚨 公共交通关键警示",
-      lbl_official_source: "官方来源与确认日期"
+      lbl_official_source: "官方来源与确认日期",
+      btn_reset_dates: "🔄 重置为默认标准行程 (2026.11.05)",
+      toast_dates_reset: "✅ 已重置为默认标准旅行行程（2026.11.05 ~ 12.04，共30天）。",
+      badge_overlap_check: "🎯 旅行期间重合 · 须出行前核实",
+      lbl_check_before_visit: "出行前核实",
+      lbl_unverified_official: "未核实 — 请直接在官方渠道确认",
+      badge_conflict_alert: "⚠️ 提醒：注意行程冲突（不自动删减休息日与原有安排）"
     }
   };
 
@@ -33585,3 +33802,56 @@ if (typeof globalThis !== 'undefined') {
     });
   }
 })();
+
+// === COMMON STANDARD TRIP ITINERARY DATA (SINGLE SOURCE OF TRUTH) ===
+const STANDARD_TRIP_SCHEDULE = {
+  startDate: "2026-11-05",
+  endDate: "2026-12-04",
+  durationDays: 30,
+  totalDays: 30,
+  totalNights: 29, // 6박(바르셀로나) + 11박(세비야) + 12박(이탈리아) = 29박 (도시 경계일 11/11, 11/22 중복 없음)
+  legs: [
+    {
+      cityId: "barcelona",
+      name: { ko: "바르셀로나", en: "Barcelona", ja: "バルセロナ", zh: "巴塞罗那" },
+      checkIn: "2026-11-05",
+      checkOut: "2026-11-11",
+      nights: 6,
+      days: 7,
+      status: "confirmed",
+      hotel: "Suite Marina (※ 도로명 주소 미정)"
+    },
+    {
+      cityId: "seville",
+      name: { ko: "세비야", en: "Seville", ja: "セビリア", zh: "塞维利亚" },
+      checkIn: "2026-11-11",
+      checkOut: "2026-11-22",
+      nights: 11,
+      days: 12,
+      status: "confirmed",
+      hotel: "미정 (향후 확인 필요)"
+    },
+    {
+      cityId: "italy",
+      name: { ko: "이탈리아 (로마 약 10일 중심)", en: "Italy (Rome ~10D Centered)", ja: "イタリア (ローマ約10日間中心)", zh: "意大利 (以罗马约10天为核心)" },
+      checkIn: "2026-11-22",
+      checkOut: "2026-12-04",
+      nights: 12,
+      days: 13,
+      status: "flexible",
+      notes: {
+        ko: "로마 약 10일 중심 · 피렌체·베네치아 선택 후보 · 나폴리·카프리 날씨 연계 선택지 (로마 체류일·항공편 미정, 경계일 숙박 중복 없음: 6+11+12=29박)",
+        en: "Rome ~10D centered · Florence & Venice optional candidates · Naples & Capri weather-dependent option (Rome dates & flights TBD, no duplicate nights: 6+11+12=29 nights)",
+        ja: "ローマ約10日間中心・フィレンツェ＆ヴェネツィア選択候補・ナポリ＆カプリ気候連動オプション（ローマ日程・便名未定、重複なし：6+11+12=29泊）",
+        zh: "以罗马约10天为核心·佛罗伦萨与威尼斯备选·那不勒斯与卡普里视天气可选（罗马逗留日与航班待定，无重复计算宿夜：6+11+12=29晚）"
+      }
+    }
+  ]
+};
+
+if (typeof window !== 'undefined') {
+  window.STANDARD_TRIP_SCHEDULE = STANDARD_TRIP_SCHEDULE;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.STANDARD_TRIP_SCHEDULE = STANDARD_TRIP_SCHEDULE;
+}
