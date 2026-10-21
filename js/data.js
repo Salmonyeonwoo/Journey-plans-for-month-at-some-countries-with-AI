@@ -33132,53 +33132,78 @@ const ITALY_CITIES_GUIDE_DATA = {
         },
         {
           id: "romeBurden",
-          title: { ko: "🚆 로마에서의 이동 부담 (연속 환승 주의)", en: "🚆 Transit Load from Rome (Consecutive Transfers)", ja: "🚆 ローマからの移動負担（連続乗換の注意）", zh: "🚆 从罗马出发的交通负荷（警惕连续转场）" },
+          title: { ko: "🚆 로마 ➔ 나폴리 이동 현실 & 열차 팁", en: "🚆 Rome ➔ Naples Transit Reality & Train Tips", ja: "🚆 ローマ ➔ ナポリ移動の実態と列車ティップス", zh: "🚆 罗马 ➔ 那不勒斯实际交通负荷与乘车指南" },
           content: {
-            ko: "로마 테르미니역 ➔ 나폴리 중앙역 고속열차(약 1시간 10분) ➔ 나폴리 베베렐로 항구 이동(택시 20~30분) ➔ 카프리행 페리/고속선 탑승(약 50분~80분). 편도만 최소 2.5~3시간 이상(왕복 6시간 초과)이 소요됩니다. 부모님 동행 시 철도와 배를 연속 이용하는 카프리 당일치기는 상당한 체력 소모가 따르므로 기본 추천으로 두지 않으며, 나폴리 1박 이상은 선택안으로만 소개해 드립니다 (숙박을 추가해도 동굴 입장이 보장되는 것은 아닙니다).",
-            en: "Rome Termini ➔ Naples Central by high-speed train (~1h 10m) ➔ Taxi to Naples Beverello port (20-30m) ➔ Ferry to Capri (50-80m). One-way takes at least 2.5-3+ hours (round-trip exceeds 6 hours). A same-day round trip from Rome with consecutive train and ferry transfers causes severe fatigue for elderly parents and is NOT a default recommendation; an overnight stay of 1+ nights in Naples is presented only as an option (adding nights does NOT guarantee cave admission).",
-            ja: "ローマ・テルミニ駅 ➔ ナポリ中央駅の高速鉄道（約1時間10分）➔ ナポリ港へタクシー（20〜30分）➔ カプリ島行きフェリー（約50〜80分）。片道だけで2.5〜3時間以上（往復6時間超）を要します。ご両親連れで鉄道と船を連続利用する日帰りは過酷な負担となるため基本推奨とはせず、ナポリ1泊以上は選択肢としてのみご紹介します（※宿泊を追加しても洞窟入場が保証されるわけではありません）。",
-            zh: "从罗马特米尼站乘高铁至那不勒斯中央站（约1小时10分）➔ 打车至那不勒斯港（20~30分）➔ 乘渡轮至卡普里岛（约50~80分）。单程耗时即需2.5~3小时以上（往返超6小时）。带长辈连续乘坐火车与轮船的一日游极其消耗体力，绝不作为基础推荐；那不勒斯住宿1晚以上仅作为备选方案介绍（增加住宿也绝不保证洞穴能够开放）。"
+            ko: "로마→나폴리 고속열차는 최단 약 55분으로 안내되지만, 숙소↔역 이동과 체크아웃까지 더하면 반나절 이동으로 잡는 게 편해요. 날짜별 열차는 Italo 공식 안내에서 확인하면 됩니다.",
+            en: "Rome ➔ Naples high-speed trains are advertised as fast as ~55 minutes, but adding lodging ↔ station transfer and checkout realistically makes it a half-day move. Verify specific train dates on the official Italo timetable.",
+            ja: "ローマ→ナポリの高速鉄道は最短約55分と案内されますが、宿泊先↔駅の移動やチェックアウトを含めると実質半日の移動と見込むのが快適です。日付別の運行状況はItalo公式案内で確認できます。",
+            zh: "罗马→那不勒斯高铁官方标称最快约55分钟，但加上酒店↔车站转场及退房行李处理，按半天行程预算最为从容。每日具体车次可在Italo官方指南查询。"
           }
         },
         {
           id: "seniorBoatBurden",
-          title: { ko: "⚠️ 부모님 동행 시 보트 승하선·흔들림·멀미 부담", en: "⚠️ Boarding, Swaying & Motion Sickness Strain for Seniors", ja: "⚠️ ご両親同伴時の乗降・揺れ・船酔い負担", zh: "⚠️ 长者同行时的上下船、颠簸与晕船负担" },
+          title: { ko: "👴 부모님 동행: 나폴리 숙소 거점 & 당일치기 추천", en: "👴 Traveling with Parents: Naples Base & Day-Trip Strategy", ja: "👴 ご両親同伴：ナポリ拠点＆身軽な日帰り推奨", zh: "👴 长辈同行关怀：那不勒斯住宿大本营与轻装一日游" },
           content: {
-            ko: "카프리 마리나 그란데 항구에 닿은 뒤에도 중형 보트로 이동 후, 파도 위에 출렁이는 4인승 작은 나룻배(Rowboat)로 옮겨 타야 합니다. 늦가을 파도와 너울로 인한 멀미 부담이 크며, 흔들리는 배 사이를 건너탈 때 발을 헛디딜 위험이 있어 60대 부모님에게는 관절 및 균형 감각 부담이 큽니다. 작은 보트로 옮겨 타거나 낮은 동굴 입구를 통과해야 하는 부담이 분명히 존재하므로, 푸른 동굴을 생략하고 카프리 섬의 경치를 즐기는 것만으로도 충분히 좋은 여행이 됩니다.",
-            en: "Even after reaching Capri's Marina Grande, passengers transfer from an excursion boat to a small 4-person rowboat on tossing open waters. Swells cause significant motion sickness, and stepping between tossing boats poses slip/fall risks for seniors. Transferring into small rowboats and squeezing under low cave arches is physically strenuous; skipping the Blue Grotto and enjoying scenic island sights still makes for a wonderful trip.",
-            ja: "カプリ島のマリーナ・グランデ港に到着後も、遊覧船から波に揺れる4人乗りの小型手漕ぎボートへと乗り換える必要があります。波とうねりによる船酔い負担が大きく、揺れる船の間を跨ぐ際の転倒リスクがあり、ご両親には足腰の負担となります。小型ボートへの乗り換えや低い洞窟入口を通過する身体的負担は明確に存在するため、青の洞窟を割愛して島の景色を楽しむだけでも十分に素晴らしい旅になります。",
-            zh: "抵达卡普里大港后，仍需从中型游船直接跨步换乘至海面颠簸的4人座手划小木船。晚秋海浪与涌浪极易诱发晕船，在晃动船只间跨越上下存在失足滑倒风险，对长辈的平衡与关节负荷沉重。换乘小船并蜷身通过低矮洞口具有显著的身体负担，即便省略蓝洞、仅游览海岛全景也同样是一次极佳的旅行体验。"
+            ko: "부모님 동행이면 카프리 1박보다 나폴리에 숙소를 두고 작은 가방으로 당일 다녀오는 편이 낫습니다. 다만 왕복 배·항구 대기·카프리 항구에서 중심부까지 이동이 있어, 컨디션이 안 좋으면 나폴리만 보는 안으로 전환하세요.",
+            en: "When traveling with elderly parents, staying overnight in Naples and taking a day trip with small daypacks is far better than changing hotels to Capri. However, factor in round-trip ferry rides, port waiting times, and transit from Capri port up to the town center; if family condition isn't optimal, smoothly switch to a relaxed Naples-only itinerary.",
+            ja: "ご両親連れならカプリ島で1泊するより、ナポリに宿を構えて小さな手荷物で日帰りする方がはるかに快適です。ただし往復の船・港での乗船待ち・カプリ港から中心部への移動があり体力を要するため、体調がすぐれなければ無理せずナポリ市内観光のみに切り替えてください。",
+            zh: "若陪同长辈出行，在卡普里岛过夜不如在那不勒斯连住、仅带轻便小包一日往返更为轻松。但由于包含往返轮渡、港口候船以及卡普里港口到中心镇区的接驳，仍需消耗体力；若长辈状态欠佳，请果断转为纯那不勒斯市内漫游。"
           }
         },
         {
           id: "grottoConditions",
           title: { ko: "🌊 푸른 동굴의 입장 조건 (기상·파고·조수)", en: "🌊 Blue Grotto Admission Conditions (Swells, Tide & Wind)", ja: "🌊 青の洞窟の入場条件（気象・波高・潮位）", zh: "🌊 蓝洞入内游览硬性条件（风浪·潮汐·气象）" },
           content: {
-            ko: "동굴 입구의 높이는 해수면 기준 약 1m에 불과합니다. 맑은 날씨라도 파고나 너울이 조금만 높거나, 만조로 해수면이 차오르거나, 바람이 불면 즉시 폐쇄됩니다. 입장 시에도 승객 전원이 보트 바닥에 등을 대고 완전히 누워야 뱃사공이 쇠사슬을 잡고 좁은 입구를 통과할 수 있습니다. 맑은 날씨만으로 배 운항이나 동굴 입장을 확정할 수 없으며, 확인되지 않은 파고 기준·폐쇄 횟수·개방 확률·'연중 100일' 같은 임의의 통계 숫자는 사용하지 않습니다. 카프리에 도착해도 푸른 동굴은 폐쇄될 수 있고, 겨울에도 조건이 맞으면 열릴 수 있지만 입장은 절대 보장되지 않습니다.",
-            en: "The cave entrance arch is only ~1 meter above the sea surface. Even on clear sunny days, slight wave swells, high tide, or strong winds cause instant closure. Inside, passengers must lie completely flat on the boat floor while the skipper pulls an iron chain to slip underneath. Clear skies alone never guarantee boat operation or grotto entry. We do not use unverified wave thresholds, closure counts, opening percentages, or '100 days a year' figures. Even upon reaching Capri, the Blue Grotto may be closed; while it can open in winter if conditions align, entry is never guaranteed.",
-            ja: "洞窟の入口は海抜約1メートル程度です。快晴であっても波やうねりが高い、満潮で海面が上がる、強風が吹くと直ちに閉鎖されます。入場時も乗客全員がボートの底に仰向けに寝そべり、船頭が鎖を引いて狭い岩の隙間をくぐります。晴天だけで運航や入場を確定することはできず、未確認の波高基準・閉鎖回数・確率・「年100日」といった数字は使用しません。カプリ島に到着しても青の洞窟は閉鎖される可能性があり、冬でも条件が合えば開くことがありますが、入場は一切保証されません。",
-            zh: "洞口天然拱券距海平面仅约1米高。即便晴空万里，只要稍有涌浪、遇涨潮导致海平面上升或风力增强，便会立即关闭。进洞时全体乘客必须完全仰卧于船底，由船夫手扯锁链从岩缝穿入。绝不能仅凭晴朗天气断定开航或入洞，绝不采信未经核实的浪高限值、关闭频次、开放概率或所谓“年均100天”等编造数据。即便顺利登上卡普里岛，蓝洞依然可能关闭；冬季若条件合适可能偶有开放，但入内绝无保证。"
+            ko: "동굴 입구의 높이는 해수면 기준 약 1m에 불과합니다. 맑은 날씨라도 파고나 너울이 조금만 높거나, 만조로 해수면이 차오르거나, 바람이 불면 즉시 폐쇄됩니다. 입장 시에도 승객 전원이 보트 바닥에 등을 대고 완전히 누워야 뱃사공이 쇠사슬을 잡고 좁은 입구를 통과할 수 있습니다. 카프리에 도착해도 푸른 동굴은 별도로 닫힐 수 있으니, 배 운항과 동굴 개방을 따로 봐야 합니다. 겨울에도 조건이 맞으면 열릴 수 있지만 입장은 절대 보장되지 않습니다.",
+            en: "The cave entrance arch is only ~1 meter above the sea surface. Even on clear sunny days, slight wave swells, high tide, or strong winds cause instant closure. Inside, passengers must lie completely flat on the boat floor while the skipper pulls an iron chain to slip underneath. Even upon reaching Capri, the Blue Grotto may be closed separately, so ferry operation and grotto admission must be checked independently.",
+            ja: "洞窟の入口は海抜約1メートル程度です。快晴であっても波やうねりが高い、満潮で海面が上がる、強風が吹くと直ちに閉鎖されます。入場時も乗客全員がボートの底に仰向けに寝そべり、船頭が鎖を引いて狭い岩の隙間をくぐります。カプリ島に到着しても青の洞窟は個別に閉鎖される場合があるため、船の運航と洞窟の開閉は別々に確認する必要があります。",
+            zh: "洞口天然拱券距海平面仅约1米高。即便晴空万里，只要稍有涌浪、遇涨潮导致海平面上升或风力增强，便会立即关闭。进洞时全体乘客必须完全仰卧于船底，由船夫手扯锁链从岩缝穿入。即使抵达岛上，蓝洞亦可能单独关闭，渡轮开航与洞穴开放须分开核查。"
           }
         }
       ],
       verificationItems: [
         {
+          id: "italo-train",
+          name: { ko: "1. 로마 ➔ 나폴리 고속열차 (Italo / Trenitalia)", en: "1. Rome ➔ Naples High-Speed Rail (Italo / Trenitalia)", ja: "1. ローマ ➔ ナポリ 高速鉄道 (Italo / Trenitalia)", zh: "1. 罗马 ➔ 那不勒斯 高速铁路 (Italo / Trenitalia)" },
+          status: { ko: "공식 시간표 확인 필요", en: "Official Timetable Check Required", ja: "公式時刻表の確認が必要", zh: "须核实官方时刻表" },
+          url: "https://www.italotreno.com/en/destinations-timetable/rome-naples-tickets",
+          linkText: { ko: "Italo 공식 안내 (로마–나폴리 시간표/예매) ➔", en: "Italo Official Rome-Naples Timetable ➔", ja: "Italo公式 ローマ–ナポリ時刻表 ➔", zh: "Italo官方 那不勒斯–罗马班期表 ➔" },
+          note: {
+            ko: "로마→나폴리 고속열차는 최단 약 55분으로 안내되지만, 숙소↔역 이동과 체크아웃까지 더하면 반나절 이동으로 잡는 게 편해요. 날짜별 열차는 Italo 공식 안내에서 확인하면 됩니다.",
+            en: "Rome ➔ Naples high-speed trains are advertised as fast as ~55 minutes, but adding lodging ↔ station transfer and checkout realistically makes it a half-day move. Verify specific train dates on the official Italo timetable.",
+            ja: "ローマ→ナポリの高速鉄道は最短約55分と案内されますが、宿泊先↔駅の移動やチェックアウトを含めると実質半日の移動と見込むのが快適です。日付別の運行状況はItalo公式案内で確認できます。",
+            zh: "罗马→那不勒斯高铁官方标称最快约55分钟，但加上酒店↔车站转场及退房行李处理，按半天行程预算最为从容。每日具体车次可在Italo官方指南查询。"
+          }
+        },
+        {
           id: "ferry-service",
-          name: { ko: "1. 나폴리/소렌토 ➔ 카프리 선박(페리/고속선) 왕복 운항", en: "1. Naples/Sorrento ➔ Capri Ferry Round-Trip Operation", ja: "1. ナポリ/ソレント ➔ カプリ島 往復フェリー運航", zh: "1. 那不勒斯/索伦托 ➔ 卡普里 渡轮往返开航状态" },
-          status: { ko: "미확인 — 공식 안내에서 직접 확인", en: "Unverified — Check Directly on Official Channel", ja: "未確認 — 公式案内で直接ご確認ください", zh: "未核实 — 请直接在官方渠道确认" },
-          url: "https://easy.caremar.it/en/route-timetable/Napoli-Capri/",
-          linkText: { ko: "CAREMAR 공식 나폴리–카프리 운항표 확인 ➔", en: "CAREMAR Official Naples-Capri Timetable ➔", ja: "CAREMAR公式 ナポリ–カプリ運航表を確認 ➔", zh: "CAREMAR官方那不勒斯–卡普里班期表 ➔" },
-          note: { ko: "방문일 운항·요금·운영 여부는 날짜별로 다시 확인해야 합니다.", en: "Fares, schedules, and operations must be re-verified by specific date.", ja: "訪問当日の運航・運賃・運行状況は日付ごとに再確認が必要です。", zh: "出行当天的班次、票价及运营状态须按具体日期重新核实。" }
+          name: { ko: "2. 나폴리 ↔ 카프리 선박(페리/고속선) 왕복 운항 (SNAV & Caremar)", en: "2. Naples ↔ Capri Ferry/Hydrofoil Operation (SNAV & Caremar)", ja: "2. ナポリ ↔ カプリ島 往復フェリー運航 (SNAV & Caremar)", zh: "2. 那不勒斯 ↔ 卡普里 渡轮往返开航状态 (SNAV & Caremar)" },
+          status: { ko: "미확인 — 계절별 시간표 & 결항 여부 확인", en: "Unverified — Check Seasonal Timetable & Cancellations", ja: "未確認 — 季節別時刻表＆欠航の有無を確認", zh: "未核实 — 须核实季节班次与停航状态" },
+          url: "https://www.snav.it/en/orari-e-tratte",
+          linkText: { ko: "SNAV 공식 운항 시간표 ➔", en: "SNAV Official Timetable ➔", ja: "SNAV公式運航時刻表 ➔", zh: "SNAV官方船期时刻表 ➔" },
+          url2: "https://easy.caremar.it/it/orari-tratta/Napoli-Capri/",
+          linkText2: { ko: "Caremar 겨울 시간표 안내 ➔", en: "Caremar Winter Schedule ➔", ja: "Caremar冬期時刻表案内 ➔", zh: "Caremar冬季时刻表指南 ➔" },
+          note: {
+            ko: "나폴리↔카프리 배는 겨울에도 운항편이 있지만 시간표가 계절별이고, 악천후엔 변경·결항될 수 있어요. SNAV와 Caremar 겨울 시간표를 각각 확인하세요. 섬에 도착해도 푸른 동굴은 별도로 닫힐 수 있으니, 배 운항과 동굴 개방을 따로 봐야 합니다.",
+            en: "Naples ↔ Capri ferries operate in winter, but timetables are seasonal and prone to weather cancellations. Check SNAV and Caremar winter schedules respectively. Grotto entry can be closed even if ferries run; check them separately.",
+            ja: "ナポリ↔カプリ島の船は冬期も運航便がありますが、時刻表は季節別で悪天候時は欠航があり得ます。SNAVとCaremarの冬期時刻表をそれぞれ確認してください。島に着いても洞窟は別個に閉鎖されるため、運航と洞窟開閉は分けて確認が必要です。",
+            zh: "那不勒斯↔卡普里轮渡冬季虽有班次，但随季节调整且受风浪影响易停航。请分别核对SNAV与Caremar冬季时刻表。抵岛后蓝洞可能另行关闭，轮渡开航与入洞须分开核查。"
+          }
         },
         {
           id: "grotto-admission",
-          name: { ko: "2. 카프리 현지 푸른 동굴(Grotta Azzurra) 개방 및 소형 보트 운영", en: "2. Local Capri Blue Grotto Admission & Rowboat Operation", ja: "2. カプリ現地 青の洞窟の開閉状況および手漕ぎボート運行", zh: "2. 卡普里当地蓝洞实时开放与手划木船运营" },
+          name: { ko: "3. 카프리 현지 푸른 동굴(Grotta Azzurra) 개방 및 소형 보트 운영", en: "3. Local Capri Blue Grotto Admission & Rowboat Operation", ja: "3. カプリ現地 青の洞窟の開閉状況および手漕ぎボート運行", zh: "3. 卡普里当地蓝洞实时开放与手划木船运营" },
           status: { ko: "미확인 — 공식 안내에서 직접 확인", en: "Unverified — Check Directly on Official Channel", ja: "未確認 — 公式案内で直接ご確認ください", zh: "未核实 — 请直接在官方渠道确认" },
           url: "https://www.capri.com/en/e/la-grotta-azzurra",
           linkText: { ko: "푸른 동굴 현지 공식 안내 (Capri.com) ➔", en: "Capri.com Official Blue Grotto Guide ➔", ja: "青の洞窟 現地公式案内 (Capri.com) ➔", zh: "蓝洞当地官方指南 (Capri.com) ➔" },
           url2: "https://www.motoscafisticapri.com/",
           linkText2: { ko: "현지 보트 운영사 (Motoscafisti Capri) ➔", en: "Motoscafisti Capri Boat Operator ➔", ja: "現地ボート運行会社 (Motoscafisti Capri) ➔", zh: "当地观光船运营公司 (Motoscafisti Capri) ➔" },
-          note: { ko: "카프리에 도착해도 푸른 동굴은 폐쇄될 수 있으며, 선박 운항과 동굴 입장은 별개의 확인 항목입니다.", en: "Even if ferries reach Capri, the grotto may be closed. Ferry operation and grotto admission are strictly separate check items.", ja: "カプリ島に到着しても青の洞窟は閉鎖される場合があり、船の運航と洞窟入場は完全に別個の確認項目です。", zh: "抵达卡普里岛蓝洞亦可能关闭，渡轮开航与蓝洞进洞属于两个完全独立的核查项。" }
+          note: {
+            ko: "섬에 도착해도 푸른 동굴은 별도로 닫힐 수 있으니, 배 운항과 동굴 개방을 따로 봐야 합니다.",
+            en: "Even upon reaching Capri, the Blue Grotto may be closed separately; ferry operations and grotto admission must be checked independently.",
+            ja: "島に到着しても青の洞窟は個別に閉鎖される場合があるため、船の運航と洞窟の開閉は別々に確認する必要があります。",
+            zh: "即使抵达岛上，蓝洞亦可能单独关闭，渡轮开航与洞穴开放须分开核查。"
+          }
         }
       ],
       checklist: {
@@ -33187,19 +33212,19 @@ const ITALY_CITIES_GUIDE_DATA = {
           {
             time: { ko: "방문 전날", en: "Day Before", ja: "訪問前日", zh: "出行前一天" },
             action: {
-              ko: "남부 티레니아 해상 예보(바람·너울) 및 CAREMAR 등 공식 선사 결항·감편 공지 확인.",
-              en: "Check Tyrrhenian marine forecast (wind & swells) and ferry operators' schedule alerts.",
-              ja: "ティレニア海の気象・波浪予報（風向・うねり）およびCAREMAR等の運休・減便告知を確認。",
-              zh: "核对第勒尼安海海况预报（风向、涌浪）及CAREMAR等渡轮公司停航或减班通告。"
+              ko: "남부 티레니아 해상 예보(바람·너울) 확인 및 SNAV / Caremar 겨울 시간표 결항 공지 확인.",
+              en: "Check Tyrrhenian marine forecast (wind & swells) and SNAV / Caremar winter schedule cancellation alerts.",
+              ja: "ティレニア海の気象・波浪予報（風向・うねり）およびSNAV / Caremar冬期時刻表の運休告知を確認。",
+              zh: "核对第勒尼安海海况预报（风向、涌浪）及SNAV / Caremar冬季时刻表停航通告。"
             }
           },
           {
             time: { ko: "방문 당일 아침", en: "Day of Trip (Morning)", ja: "訪問当日 朝", zh: "出行当天清晨" },
             action: {
-              ko: "나폴리 출발편 정상 출항 확인 + 당일 돌아오는 귀환편 페리 결항 여부 별도 교차 확인.",
-              en: "Verify outbound ferry departure from Naples AND verify return ferry operation to prevent stranding.",
-              ja: "ナポリ発の往路出航確認 ＋ 当日戻る復路フェリーの欠航有無をそれぞれ別個に交差確認。",
-              zh: "确认那不勒斯去程渡轮正常启航 ＋ 分别交叉核对当天返回的末班返程渡轮是否正常运营。"
+              ko: "나폴리 출발편 정상 출항 확인 + 당일 돌아오는 귀환편 페리 결항 여부 별도 교차 확인. 컨디션 난조 시 나폴리 시내 일정으로 전환.",
+              en: "Verify outbound ferry departure from Naples AND verify return ferry operation. Switch to Naples city plan if family fatigue occurs.",
+              ja: "ナポリ発の往路出航確認 ＋ 当日戻る復路フェリーの欠航有無をそれぞれ別個に交差確認。疲労時はナポリ市内観光に切替。",
+              zh: "确认那不勒斯去程渡轮正常启航 ＋ 交叉核对当天返回的末班返程渡轮是否正常运营。若长辈疲乏果断转为那不勒斯市内游览。"
             }
           },
           {
@@ -33221,10 +33246,10 @@ const ITALY_CITIES_GUIDE_DATA = {
             badge: { ko: "시나리오 A", en: "Scenario A", ja: "シナリオA", zh: "预案 A" },
             title: { ko: "왕복 선박 운항 & 해상 안전 양호 시", en: "Round-Trip Ferry & Sea Safety Good", ja: "往復フェリー運航＆海況が安全な場合", zh: "往返渡轮正常且海况良好安全" },
             content: {
-              ko: "카프리 방문 후보로 안내하되, 푸른 동굴 입장은 보장되지 않으므로 섬 풍광을 중심에 두고 일정을 진행합니다.",
-              en: "Proceed with Capri visit candidate, keeping island viewpoints as primary focus as grotto admission remains unguaranteed.",
-              ja: "カプリ島訪問候補として進めますが、青の洞窟入場は保証されないため、島の景観を中心に日程を進行します。",
-              zh: "作为备选前往卡普里岛，但须以海岛风光为主轴，充分知晓蓝洞入内游览绝无绝对保障。"
+              ko: "나폴리 숙소 거점으로 가벼운 가방만 챙겨 카프리 당일 방문을 진행하되, 푸른 동굴 입장은 별도이므로 섬 풍광을 중심에 두고 일정을 진행합니다.",
+              en: "Take a light day trip to Capri based from Naples lodging. As grotto entry is separate and never guaranteed, center your day on island scenery.",
+              ja: "ナポリの宿を拠点に軽装でカプリ日帰りを進めますが、青の洞窟入場は別個で保証されないため、島の景観を中心に日程を進行します。",
+              zh: "以那不勒斯住宿为大本营携带轻便小包前往卡普里一日游，但因蓝洞入内游览为独立事项且无绝对保证，须以海岛风光为主轴。"
             }
           },
           {
@@ -33232,10 +33257,10 @@ const ITALY_CITIES_GUIDE_DATA = {
             badge: { ko: "시나리오 B", en: "Scenario B", ja: "シナリオB", zh: "预案 B" },
             title: { ko: "배는 다니지만 동굴이 닫힌 경우", en: "Ferries Run but Grotto is Closed", ja: "フェリーは運航するが洞窟が閉鎖の場合", zh: "渡轮正常通航但蓝洞已关闭" },
             content: {
-              ko: "무리한 해상 투어를 지양하고 가족 컨디션과 귀환편을 확인한 후, 아나카프리 마을 산책·아우구스투스 정원 절벽 조망을 즐기거나 나폴리 본토에 머무릅니다. (※ 다른 보트 투어도 파도로 위험할 수 있으므로 자동으로 안전하다고 단정하지 마세요).",
-              en: "Avoid risky water tours. Check family energy and return ferries, then explore Anacapri village and Augustus Gardens cliffside vistas, or stay in Naples. (Do NOT assume other boat tours are automatically safe).",
-              ja: "無理な海上ツアーを避け、家族の体調と復路便を確認の上、アナカプリ散策やアウグストゥス庭園の断崖絶景を楽しむか、ナポリ本土に滞在します（※他のボートツアーも波の危険があるため自動的に安全と断定しないでください）。",
-              zh: "避免冒险进行水上游览。核实家人体力与返程船期后，可选择游览阿纳卡普里小镇或奥古斯都花园峭壁风光，或直接留在那不勒斯市区。（※其他游船项目同样受风浪影响，切不可擅自推定其他出海游绝对安全）。"
+              ko: "무리한 해상 투어를 지양하고 가족 컨디션과 귀환편을 확인한 후, 아나카프리 마을 산책·아우구스투스 정원 절벽 조망을 즐기거나 나폴리 본토에 머무릅니다. 부모님 컨디션이 저조하면 무리하지 말고 나폴리 시내 일정으로 전환하세요.",
+              en: "Avoid risky water tours. Check family energy and return ferries, then explore Anacapri village and Augustus Gardens cliffside vistas, or stay in Naples. If parents feel tired, smoothly switch to relaxed Naples sightseeing.",
+              ja: "無理な海上ツアーを避け、家族の体調と復路便を確認の上、アナカプリ散策やアウグストゥス庭園の断崖絶景を楽しむか、ナポリ本土に滞在します。ご両親の疲労がある場合は無理せずナポリ市内観光に切り替えてください。",
+              zh: "避免冒险进行水上游览。核实家人体力与返程船期后，可选择游览阿纳卡普里小镇或奥古斯都花园峭壁风光，或直接留在那不勒斯市区。若长辈体力不支，请果断转为舒缓的那不勒斯市内游览。"
             }
           },
           {
@@ -33243,10 +33268,10 @@ const ITALY_CITIES_GUIDE_DATA = {
             badge: { ko: "시나리오 C", en: "Scenario C", ja: "シナリオC", zh: "预案 C" },
             title: { ko: "선박 운항이 불안정하거나 가족이 피곤할 때", en: "Unstable Ferry Operations or Family Fatigue", ja: "フェリー運航不安定または家族に疲労がある場合", zh: "渡轮运营不稳定或家人出现疲乏" },
             content: {
-              ko: "섬 이동을 전면 취소하고, 나폴리 국립 고고학 박물관 등 평지 실내 일정으로 전환하거나 로마 숙소에서 편안한 휴식을 유지합니다.",
-              en: "Cancel island travel entirely. Switch to flat indoor attractions such as the Naples National Archaeological Museum, or enjoy restful recovery in Rome.",
-              ja: "島への移動を全面的に取り消し、ナポリ国立考古学博物館など平坦な屋内日程に切り替えるか、ローマの宿泊先で休養を維持します。",
-              zh: "果断全面取消登岛安排，转换为那不勒斯国立考古博物馆等平坦的室内文化游览，或直接在罗马居所充分休养生息。"
+              ko: "섬 이동을 전면 취소하고, 나폴리에 숙소를 두고 작은 가방으로 나폴리 국립 고고학 박물관, 산 제나로 지하 묘지, 나폴리 원조 피자 맛집 등 평지 실내 일정으로 전환하거나 로마 숙소에서 편안한 휴식을 유지합니다.",
+              en: "Cancel island travel entirely. Keep your Naples base and explore flat indoor highlights (Naples National Archaeological Museum, authentic Neapolitan pizza, Catacombs of San Gennaro) or enjoy restful recovery in Rome.",
+              ja: "島への移動を全面的に取り消し、ナポリを拠点にナポリ国立考古学博物館、本場ナポリピッツァ巡りなど平坦な屋内日程に切り替えるか、ローマの宿泊先で休養を維持します。",
+              zh: "果断全面取消登岛安排，在那不勒斯住宿大本营转为那不勒斯国立考古博物馆、正宗那不勒斯比萨等平坦舒适的室内日程，或在罗马居所充分休养。"
             }
           }
         ]
