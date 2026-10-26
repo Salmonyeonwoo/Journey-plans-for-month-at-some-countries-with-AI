@@ -6,6 +6,222 @@
 
 // === FULL MULTILINGUAL TRANSIT & HOTELS DATA ===
 const FULL_HOTELS_DATA = [
+{
+  "name": "Suites Marina Abapart",
+  "nameEn": "Suites Marina Abapart Barcelona",
+  "city": {
+    "ko": "바르셀로나",
+    "en": "Barcelona",
+    "ja": "バルセロナ",
+    "zh": "巴塞罗那"
+  },
+  "region": "BARCELONA",
+  "stars": 4,
+  "basePriceKrw": 280000,
+  "photo": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80",
+  "station": "Sagrada Família 지하철역 도보 3분",
+  "busStop": "사그라다 파밀리아 정류장 바로 앞",
+  "elevator": "전 객실 엘리베이터 및 주방 완비 (아파트형)",
+  "features": {
+    "ko": "⭐ [확정 11/5~11/11, 6박] 사그라다 파밀리아 대성당 도보 3분! 넓은 거실과 주방 완비, 부모님 동행 가족 최적화 아파트",
+    "en": "Confirmed: 3 mins to Sagrada Familia, full kitchen & spacious living room for family",
+    "ja": "確定宿：サグラダ・ファミリア徒歩3分、キッチン付きファミリーアパートメント",
+    "zh": "确定住宿：步行3分钟到达圣家堂，配备完整厨房的宽敞家庭公寓"
+  },
+  "mapQuery": "Suites Marina Abapart Barcelona"
+},
+{
+  "name": "Letoh Letoh Sevilla",
+  "nameEn": "Letoh Letoh Sevilla",
+  "city": {
+    "ko": "세비야",
+    "en": "Seville",
+    "ja": "セビリア",
+    "zh": "塞维利亚"
+  },
+  "region": "SEVILLE",
+  "stars": 4,
+  "basePriceKrw": 240000,
+  "photo": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
+  "station": "세비야 산타 후스타 역 택시 8분",
+  "busStop": "세비야 시내 중심가 정류장",
+  "elevator": "엘리베이터 완비, 평지 출입구",
+  "features": {
+    "ko": "⭐ [확정 11/11~11/12, 1박] 세비야 1차 체류 숙소! 공항 택시(25~30 EUR) 이동 편리, 구시가지와 플라멩코 공연장 도보권",
+    "en": "Confirmed 1st stay in Seville: Great taxi access, near historic center & Flamenco shows",
+    "ja": "セビリア第1次確定宿：空港タクシー至便、旧市街・フラメンコ会場徒歩圏内",
+    "zh": "塞维利亚第1次确定住宿：机场出租便捷，步行即可体验旧城与弗拉门戈"
+  },
+  "mapQuery": "Letoh Letoh Sevilla"
+},
+{
+  "name": "Hotel de los Faroles",
+  "nameEn": "Hotel de los Faroles Cordoba",
+  "city": {
+    "ko": "코르도바",
+    "en": "Cordoba",
+    "ja": "コルドバ",
+    "zh": "科尔多瓦"
+  },
+  "region": "CORDOBA",
+  "stars": 3,
+  "basePriceKrw": 190000,
+  "photo": "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=800&q=80",
+  "station": "코르도바 기차역 택시 7분",
+  "busStop": "콜론 광장 인근",
+  "elevator": "엘리베이터 완비, 안달루시아 전통 안뜰(파티오)",
+  "features": {
+    "ko": "⭐ [확정 11/12~11/13, 1박] 메스키타 대성당 도보권! 아름다운 전통 파티오와 고즈넉한 객실, 소꼬리찜 맛집(Bodegas Mezquita) 인접",
+    "en": "Confirmed: Walking distance to Mezquita, traditional patio courtyard",
+    "ja": "コルドバ確定宿：メスキータ徒歩圏内、静かな伝統パティオ空間",
+    "zh": "科尔多瓦确定住宿：步行至大清真寺，优美的安达卢西亚传统庭院"
+  },
+  "mapQuery": "Hotel de los Faroles Cordoba"
+},
+{
+  "name": "The Central House Granada",
+  "nameEn": "The Central House Granada",
+  "city": {
+    "ko": "그라나다",
+    "en": "Granada",
+    "ja": "グラナダ",
+    "zh": "格拉纳达"
+  },
+  "region": "GRANADA",
+  "stars": 4,
+  "basePriceKrw": 220000,
+  "photo": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+  "station": "그라나다 버스터미널 택시 10분",
+  "busStop": "누에바 광장 도보 4분",
+  "elevator": "엘리베이터 완비, 쾌적한 전용 패밀리룸",
+  "features": {
+    "ko": "⭐ [확정 11/13~11/15, 2박] 누에바 광장 인근! 알함브라 궁전 이동 택시 정류장 근접, 알바이신 석양 조망 편리",
+    "en": "Confirmed: 2 nights in Granada, near Plaza Nueva & Alhambra taxi access",
+    "ja": "グラナダ確定宿：ヌエバ広場至近、アルハンブラ宮殿アクセス便利",
+    "zh": "格拉纳达确定住宿：新广场附近，前往阿尔罕布拉宫及观景台极为便利"
+  },
+  "mapQuery": "The Central House Granada"
+},
+{
+  "name": "Coeo Pena Design Apartment",
+  "nameEn": "Coeo Pena Design Apartment Malaga",
+  "city": {
+    "ko": "말라가",
+    "en": "Malaga",
+    "ja": "マラガ",
+    "zh": "马拉加"
+  },
+  "region": "MALAGA",
+  "stars": 4,
+  "basePriceKrw": 250000,
+  "photo": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
+  "station": "말라가 Maria Zambrano 역 택시 8분",
+  "busStop": "구시가지 라리오스 인근",
+  "elevator": "엘리베이터 완비, 프리미엄 주방 및 세탁 시설",
+  "features": {
+    "ko": "⭐ [확정 11/15~11/18, 3박] 말라가 지중해 힐링 아파트! 피카소 미술관 도보권, 라리오스 거리 및 Muelle Uno 항구 산책 최적",
+    "en": "Confirmed: 3 nights stylish apartment near Picasso Museum & port",
+    "ja": "マラガ確定宿：ピカソ美術館徒歩圏内のスタイリッシュアパートメント",
+    "zh": "马拉加确定住宿：毕加索博物馆与港口附近的现代设计公寓"
+  },
+  "mapQuery": "Coeo Pena Design Apartment Malaga"
+},
+{
+  "name": "Libere Seville Plaza Nueva",
+  "nameEn": "Libere Seville Plaza Nueva",
+  "city": {
+    "ko": "세비야",
+    "en": "Seville",
+    "ja": "セビリア",
+    "zh": "塞维利亚"
+  },
+  "region": "SEVILLE",
+  "stars": 4,
+  "basePriceKrw": 290000,
+  "photo": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+  "station": "Plaza de Armas 터미널 도보 10분/택시 3분",
+  "busStop": "누에바 광장 바로 앞",
+  "elevator": "최신 엘리베이터, 스마트 체크인, 넓은 거실과 주방",
+  "features": {
+    "ko": "⭐ [확정 11/18~11/22, 4박] 세비야 2차 4박 장기 체류 최적! 누에바 광장 도보 2분, 대성당·알카사르·스페인 광장 산책 최고 입지",
+    "en": "Confirmed 2nd Seville stay: Premium serviced apartments at Plaza Nueva, 4 nights",
+    "ja": "セビリア第2次確定宿：ヌエバ広場徒歩2分、長期滞在に最適な上質アパート",
+    "zh": "塞维利亚第2次确定住宿：新广场核心地段，4晚连住高品质公寓"
+  },
+  "mapQuery": "Libere Seville Plaza Nueva"
+},
+{
+  "name": "Calenda Suite",
+  "nameEn": "Calenda Suite Naples",
+  "city": {
+    "ko": "나폴리",
+    "en": "Naples",
+    "ja": "ナポリ",
+    "zh": "那不勒斯"
+  },
+  "region": "NAPLES",
+  "stars": 4,
+  "basePriceKrw": 230000,
+  "photo": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
+  "station": "Napoli Centrale 역 택시 7분",
+  "busStop": "스파카 나폴리 인근",
+  "elevator": "엘리베이터 완비, 방음 창호 및 안락한 침구",
+  "features": {
+    "ko": "⭐ [확정 11/22~11/25, 3박] 나폴리 중심 스위트 숙소! 11/22 세비야발 입성 안착, 폼페이·포지타노 일일 차량 투어 출발 최적",
+    "en": "Confirmed: 3 nights in Naples, prime base for Pompeii & Positano tours",
+    "ja": "ナポリ確定宿：快適なスイートルーム、ポンペイ・アマルフィ観光に最適",
+    "zh": "那不勒斯确定住宿：舒适套房，庞贝与波西塔诺一日游绝佳起止点"
+  },
+  "mapQuery": "Calenda Suite Naples"
+},
+{
+  "name": "Artemente Florence B&B",
+  "nameEn": "Artemente Florence B&B",
+  "city": {
+    "ko": "피렌체",
+    "en": "Florence",
+    "ja": "フィレンツェ",
+    "zh": "佛罗伦萨"
+  },
+  "region": "FLORENCE",
+  "stars": 4,
+  "basePriceKrw": 260000,
+  "photo": "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+  "station": "Firenze Santa Maria Novella 역 도보 8분",
+  "busStop": "두오모 대성당 방향 도보 7분",
+  "elevator": "엘리베이터 완비, 고풍스러운 토스카나 감성 인테리어",
+  "features": {
+    "ko": "⭐ [확정 11/25~11/29, 4박] 산타마리아노벨라역 도보 8분! 두오모 대성당·우피치 미술관 평지 도보 관광, 자자(Zà Zà) 티본 스테이크 인접",
+    "en": "Confirmed: 8 mins walk from SMN station, walk to Duomo & Uffizi",
+    "ja": "フィレンツェ確定宿：SMN駅徒歩8分、ドゥオモやウフィツィ美術館へ完全徒歩圏内",
+    "zh": "佛罗伦萨确定住宿：距SMN火车站步行8分钟，圣母百花大教堂轻松平步抵达"
+  },
+  "mapQuery": "Artemente Florence B&B"
+},
+{
+  "name": "Salotto Monti",
+  "nameEn": "Salotto Monti Rome",
+  "city": {
+    "ko": "로마",
+    "en": "Rome",
+    "ja": "ローマ",
+    "zh": "罗马"
+  },
+  "region": "ROME",
+  "stars": 4,
+  "basePriceKrw": 310000,
+  "photo": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+  "station": "Roma Termini 역 택시 5분 / Cavour 메트로 도보 4분",
+  "busStop": "몬티 지구 나치오날레 거리",
+  "elevator": "엘리베이터 완비, 루프탑 테라스 보유",
+  "features": {
+    "ko": "⭐ [확정 11/29~12/4, 5박] 로마 피날레 5박 완벽 안착! 콜로세움 도보권, 테르미니역 공항철도(레오나르도 익스프레스) 이동 최적, 12/4 귀국일 짐보관 지원",
+    "en": "Confirmed Rome Finale: 5 nights boutique hotel near Colosseum & Termini Leonardo Express",
+    "ja": "ローマ大団円確定宿：コロッセオ徒歩圏内、テルミニ駅空港特急至便、最終日荷物預かり対応",
+    "zh": "罗马终章确定住宿：邻近斗兽场，前往特米尼车站机场快线极便，离境日行李寄存无忧"
+  },
+  "mapQuery": "Salotto Monti Rome"
+},
   {
     "name": "Hotel Jazz",
     "nameEn": "Hotel Jazz Barcelona",
@@ -2470,445 +2686,554 @@ const DOC_TITLES = {
 // 1. Plan
 const REGIONAL_PLANS = {
   "IBERIA": {
-    "title": "남유럽 이베리아 & 대서양 마데이라 30일 여정",
-    "score": "94점 (골든 창)",
-    "season": "11월 숄더 시즌 · 인파 적고 온화한 날씨",
-    "budget": "2,440만 원",
-    "festivals": "4개 축제 (원더랜드 리스본, 마데이라, 말라가, 세비야)",
-    "festSub": "12월 공식 성탄 축제 및 환상적인 조명쇼 연계",
-    "cities": [
-      "포르투",
-      "리스본",
-      "세비야",
-      "말라가·그라나다",
-      "마데이라",
-      "귀국"
-    ],
-    "days": [
-      {
-        "city": "포르투",
-        "isTransfer": true,
-        "theme": "인천 출발 및 포르투 도착, 여유로운 첫걸음",
-        "morning": "공항 도착 후 숙소 체크인",
-        "rest": "장거리 비행 피로 회복 온수 샤워 및 충분한 수면",
-        "evening": "볼량 시장 주변 완만한 골목에서 따뜻한 채소 수프와 차",
-        "walk": "낮음",
-        "transport": "공항 우버 XL 탑승",
-        "meal": "가정식 수프(Caldo Verde)",
-        "events": [
-          "포르투 도착일"
-        ]
-      },
-      {
-        "city": "포르투",
-        "isTransfer": false,
-        "theme": "상벤투 역 푸른 아줄레주와 도루 강변",
-        "morning": "10:30 상벤투 기차역 푸른 아줄레주 벽화 관람 (평지 보행)",
-        "rest": "13:00 점심 식사 후 숙소 복귀 2시간 시에스타 휴식",
-        "evening": "16:30 도루 강변 히베이라 광장 카페 일몰 감상",
-        "walk": "보통",
-        "transport": "상벤투 역에서 강변 이동 시 우버 탑승 (무릎 보호)",
-        "meal": "대구요리(Bacalhau à Brás)",
-        "events": [
-          "상벤투 역 아줄레주"
-        ]
-      },
-      {
-        "city": "포르투",
-        "isTransfer": false,
-        "theme": "가이아 와이너리 정원과 동 루이스 다리 노을",
-        "morning": "10:30 가이아 지구의 Taylor's 와이너리 정원 투어",
-        "rest": "13:30 와인 시음 및 점심 후 숙소 다리 마사지 낮잠",
-        "evening": "17:00 동 루이스 1세 다리 상층부 케이블카 노을 산책",
-        "walk": "낮음",
-        "transport": "강변에서 다리 상층부 이동 시 케이블카 탑승",
-        "meal": "부드러운 문어 스테이크(Polvo à Lagareiro)",
-        "events": [
-          "도루강 노을 & 와이너리"
-        ]
-      },
-      {
-        "city": "포르투",
-        "isTransfer": false,
-        "theme": "크리스탈 궁전 정원과 시청사 알리아두스 야경",
-        "morning": "10:00 크리스탈 궁전 정원 완만한 평지 산책",
-        "rest": "13:00 공원 뷰 카페 식사 후 숙소 휴식",
-        "evening": "16:30 알리아두스 대로 시청사 앞 겨울 조명 점등 감상",
-        "walk": "낮음",
-        "transport": "메트로 D라인 평지 역세권 또는 우버",
-        "meal": "전통 닭요리(Frango Piri-Piri)",
-        "events": [
-          "알리아두스 겨울 조명"
-        ]
-      },
-      {
-        "city": "리스본",
-        "isTransfer": true,
-        "theme": "고속열차 이동 및 리스본 테주 강변 첫 산책",
-        "morning": "10:00 포르투 캄파냐 역에서 리스본행 Alfa Pendular 1등석 탑승",
-        "rest": "열차 풍경 감상, 13:30 리스본 도착 후 체크인 및 낮잠",
-        "evening": "17:00 코메르시우 광장 테주 강변 노을 감상",
-        "walk": "낮음",
-        "transport": "CP 고속열차 1등석 → 리스본 역 우버",
-        "meal": "해산물 밥(Arroz de Marisco)",
-        "events": [
-          "포르투 → 리스본 이동"
-        ]
-      },
-      {
-        "city": "리스본",
-        "isTransfer": false,
-        "theme": "대항해시대 벨렝 지구 완전 평지 투어",
-        "morning": "10:30 벨렝 제로니무스 수도원 외관 및 발견기념비 평지 산책",
-        "rest": "13:00 원조 파스테이스 드 벨렝 에그타르트 시식 후 휴식",
-        "evening": "16:30 벨렝 탑 주변 바다 공원 일몰 감상",
-        "walk": "낮음",
-        "transport": "시내에서 벨렝까지 우버 직행 (트램 소매치기 회피)",
-        "meal": "원조 에그타르트(Pastel de Nata)",
-        "events": [
-          "유네스코 벨렝 유적"
-        ]
-      },
-      {
-        "city": "리스본",
-        "isTransfer": false,
-        "theme": "동화마을 신트라 페나 왕궁 전용 차량 투어",
-        "morning": "10:30 신트라 페나 국립왕궁 (정문까지 공식 미니셔틀 탑승)",
-        "rest": "13:30 신트라 마을 전통 베이커리 휴식 후 전용차량 귀환",
-        "evening": "17:30 바이샤 지구 아우구스타 거리 평지 쇼핑",
-        "walk": "보통",
-        "transport": "프라이빗 데이투어 차량 대절 권장",
-        "meal": "신트라 전통 치즈 타르트 케이자다",
-        "events": [
-          "신트라 동화마을"
-        ]
-      },
-      {
-        "city": "리스본",
-        "isTransfer": false,
-        "theme": "굴벤키안 미술관과 ★원더랜드 리스본 개막",
-        "morning": "10:30 굴벤키안 미술관 실내 갤러리 및 연못 정원",
-        "rest": "13:00 미술관 정원 레스토랑 식사 후 숙소 휴식",
-        "evening": "★ 16:30 원더랜드 리스본(Wonderland) 대형 관람차 성탄 마켓",
-        "walk": "보통",
-        "transport": "공원 정상까지 우버로 올라간 뒤 아래로 내려오는 동선",
-        "meal": "구운 밤(Castanhas)과 따뜻한 뱅쇼",
-        "events": [
-          "★ 원더랜드 리스본 축제!"
-        ]
-      },
-      {
-        "city": "리스본",
-        "isTransfer": false,
-        "theme": "산 페드로 전망대와 감미로운 정통 파두 공연",
-        "morning": "11:00 산 페드로 데 알칸타라 전망대 구시가지 파노라마",
-        "rest": "13:30 시아두 테라스 점심 후 숙소 2시간 여유 시간",
-        "evening": "18:00 정통 파두(Fado) 하우스 저녁 식사 공연",
-        "walk": "낮음",
-        "transport": "전망대까지 우버 이동 (비카선 대기 줄 회피)",
-        "meal": "구운 정어리 요리와 그린 와인",
-        "events": [
-          "유네스코 무형유산 파두"
-        ]
-      },
-      {
-        "city": "리스본",
-        "isTransfer": false,
-        "theme": "오리엔테 현대 해양수족관 평지 힐링",
-        "morning": "10:30 오리엔테 지구: 세계 최고 수준 평지 실내 수족관",
-        "rest": "13:30 바스코 다 가마 쇼핑몰 점심 후 숙소 복귀",
-        "evening": "스페인 세비야 이동 짐 정리 및 휴식",
-        "walk": "낮음",
-        "transport": "메트로 또는 우버",
-        "meal": "조개 찜(Amêijoas à Bulhão Pato)",
-        "events": [
-          "완전 평지 힐링"
-        ]
-      },
-      {
-        "city": "세비야",
-        "isTransfer": true,
-        "theme": "안달루시아 세비야 입성 및 스페인 광장 노을",
-        "morning": "10:00 리스본에서 세비야행 고급 고속버스 또는 항공편",
-        "rest": "14:00 호텔 체크인 후 안달루시아식 긴 시에스타",
-        "evening": "17:30 스페인 광장 일몰 산책 및 마차 구경",
-        "walk": "낮음",
-        "transport": "안락한 우등 버스 좌석 또는 공항 우버",
-        "meal": "이베리코 하몽과 판 콘 토마테",
-        "events": [
-          "스페인 입성",
-          "스페인 광장 노을"
-        ]
-      },
-      {
-        "city": "세비야",
-        "isTransfer": false,
-        "theme": "세비야 대성당과 ★성탄 인형 시장(Feria del Belén)",
-        "morning": "10:30 세비야 대성당 및 히랄다 탑 (경사로 설계 보행 수월)",
-        "rest": "13:00 오렌지 나무 그늘 테라스 점심 후 시에스타",
-        "evening": "★ 16:30 대성당 옆 성탄 인형 시장 및 대형 조명 트리",
-        "walk": "보통",
-        "transport": "구시가지 도보 이동 가능",
-        "meal": "세비야식 소꼬리 찜(Rabo de Toro)",
-        "events": [
-          "★ 세비야 성탄 인형 시장"
-        ]
-      },
-      {
-        "city": "세비야",
-        "isTransfer": false,
-        "theme": "이슬람 왕궁 알카사르와 정통 플라멩코 소극장",
-        "morning": "10:00 세비야 알카사르 궁전과 분수 정원 산책",
-        "rest": "13:00 점심 식사 후 숙소 충분한 휴식",
-        "evening": "19:00 카사 데 라 메모리아 정통 플라멩코 소극장 관람",
-        "walk": "보통",
-        "transport": "알카사르 정문 인근 하차",
-        "meal": "가스파초와 올리브 샐러드",
-        "events": [
-          "알카사르 왕궁",
-          "정통 플라멩코"
-        ]
-      },
-      {
-        "city": "세비야",
-        "isTransfer": false,
-        "theme": "메트로폴 파라솔 스카이워크와 과달키비르 강",
-        "morning": "10:00 메트로폴 파라솔: 엘리베이터로 전망대 파노라마 조망",
-        "rest": "13:00 마켓 점심 후 숙소 휴식",
-        "evening": "17:00 과달키비르 강변 황금의 탑 주변 평지 산책",
-        "walk": "낮음",
-        "transport": "숙소에서 메트로폴 파라솔 우버",
-        "meal": "안달루시아 생선 튀김(Pescaíto)",
-        "events": [
-          "라스 세타스 스카이워크"
-        ]
-      },
-      {
-        "city": "세비야",
-        "isTransfer": false,
-        "theme": "하얀 절벽 마을 론다(Ronda) 당일치기 전용 투어",
-        "morning": "09:30 하얀 마을 론다 전용 투어 (누에보 다리 조망)",
-        "rest": "13:30 절벽 뷰 레스토랑 점심 후 밴 차량 휴식 귀환",
-        "evening": "17:30 세비야 귀환 후 따뜻한 추로스 티타임",
-        "walk": "보통",
-        "transport": "소규모 프라이빗 투어 밴 대절",
-        "meal": "초콜릿 찍어먹는 추로스(Churros)",
-        "events": [
-          "론다 누에보 다리"
-        ]
-      },
-      {
-        "city": "세비야",
-        "isTransfer": false,
-        "theme": "마리아 루이사 공원 마차 투어와 휴식",
-        "morning": "11:00 마리아 루이사 공원 마차 투어 (편안히 앉아서 즐김)",
-        "rest": "13:00 점심 후 짐 정리 및 다음 도시 이동 준비",
-        "evening": "17:00 산타크루즈 지구 완만한 골목 테라스 카페",
-        "walk": "낮음",
-        "transport": "마차 투어 탑승",
-        "meal": "감자 오믈렛 또르띠야",
-        "events": [
-          "마리아 루이사 마차 투어"
-        ]
-      },
-      {
-        "city": "말라가·그라나다",
-        "isTransfer": true,
-        "theme": "지중해 말라가 이동 및 ★라리오스 음악 조명쇼",
-        "morning": "10:30 렌페 고속열차로 말라가 이동 (약 2시간)",
-        "rest": "13:30 바다 뷰 호텔 체크인 후 테라스 휴식",
-        "evening": "★ 18:30 칼레 라리오스 크리스마스 대형 음악 조명쇼",
-        "walk": "낮음",
-        "transport": "렌페 열차 → 말라가 역 우버 직행",
-        "meal": "말라가 전통 정어리 숯불구이(Espetos)",
-        "events": [
-          "★ 말라가 라리오스 조명쇼"
-        ]
-      },
-      {
-        "city": "말라가·그라나다",
-        "isTransfer": false,
-        "theme": "피카소 미술관과 지중해 항구 무엘레 우노 산책",
-        "morning": "10:30 피카소 미술관 고향 걸작 탐방 (실내 평지)",
-        "rest": "13:00 해변 레스토랑 점심 후 숙소 시에스타",
-        "evening": "17:30 말라가 항구 무엘레 우노 산책로와 등대 야경",
-        "walk": "낮음",
-        "transport": "시내 중심가 도보 또는 우버",
-        "meal": "해산물 빠에야(Paella de Marisco)",
-        "events": [
-          "피카소 미술관 & 항구 산책"
-        ]
-      },
-      {
-        "city": "말라가·그라나다",
-        "isTransfer": true,
-        "theme": "그라나다 이동 및 ★알함브라 나스르 궁전 집중 관람",
-        "morning": "09:30 전용 차량으로 그라나다 이동 (약 1시간 30분)",
-        "rest": "12:00 호텔 체크인 후 점심 식사 및 휴식",
-        "evening": "★ 14:30 알함브라 나스르 궁전 시간 지정 입장 및 정원 산책",
-        "walk": "주의",
-        "transport": "중심가에서 알함브라 정문 미니버스(C30) 또는 택시",
-        "meal": "음료 주문 시 무료 타파스",
-        "events": [
-          "★ 알함브라 나스르 궁전"
-        ]
-      },
-      {
-        "city": "말라가·그라나다",
-        "isTransfer": false,
-        "theme": "산 니콜라스 전망대 설산 조망 후 말라가 복귀",
-        "morning": "11:00 산 니콜라스 전망대 알함브라 시에라네바다 설산 조망",
-        "rest": "13:30 아랍 거리 찻집 민트티 휴식 후 말라가 복귀",
-        "evening": "★ 20:00 말라가 라리오스 거리 야경 2차 산책 (테라스 좌석)",
-        "walk": "낮음",
-        "transport": "전망대는 절대 걷지 말고 택시 C31 버스",
-        "meal": "아랍식 민트 티와 꿀 아몬드 파이",
-        "events": [
-          "시에라 네바다 설산 뷰"
-        ]
-      },
-      {
-        "city": "말라가·그라나다",
-        "isTransfer": true,
-        "theme": "히브랄파로 성 조망 후 대서양 마데이라 섬 비행",
-        "morning": "10:30 말라가 히브랄파로 성 입구 전망대 해안선 조망",
-        "rest": "13:00 지중해식 점심 후 마데이라행 항공 이동 짐 정리",
-        "evening": "16:00 말라가 공항 출발 → 마데이라 풍샬 도착 및 체크인",
-        "walk": "낮음",
-        "transport": "공항 우버 및 항공편",
-        "meal": "호텔 룸서비스 가벼운 식사",
-        "events": [
-          "마데이라 제도 이동"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": false,
-        "theme": "온화한 봄 날씨 리조트 휴식과 ★공식 성탄 축제",
-        "morning": "10:30 풍샬 오션뷰 테라스 늦은 조식",
-        "rest": "리조트 내 온수 수영장 및 정원 선베드 힐링 휴식",
-        "evening": "★ 17:00 아베니다 아리아가 공식 크리스마스 마켓 빌리지",
-        "walk": "낮음",
-        "transport": "리조트 셔틀 또는 택시",
-        "meal": "흑칼치 바나나 요리(Espada com Banana)",
-        "events": [
-          "★ 마데이라 공식 성탄 축제"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": false,
-        "theme": "몬테 케이블카 파노라마와 구시가지 채색 문 골목",
-        "morning": "10:30 풍샬 케이블카 탑승하여 몬테 정상 이동",
-        "rest": "13:00 몬테 팰리스 정원 카페 점심 후 케이블카 하산",
-        "evening": "17:00 풍샬 구시가지 산타 마리아 거리 채색 문 골목 산책",
-        "walk": "보통",
-        "transport": "케이블카 왕복 탑승",
-        "meal": "마늘빵 볼로 두 카쿠(Bolo do Caco)",
-        "events": [
-          "몬테 케이블카"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": false,
-        "theme": "카보 지랑 580m 스카이워크와 마리나 노을",
-        "morning": "10:00 카보 지랑 해안 절벽 스카이워크 유리 전망대",
-        "rest": "13:00 어촌 마을 테라스 식사 후 리조트 복귀 시에스타",
-        "evening": "17:30 풍샬 마리나 항구 노을 산책 및 요트 구경",
-        "walk": "낮음",
-        "transport": "남부 해안 프라이빗 전용 투어 차량",
-        "meal": "전통 소고기 꼬치구이 에스페타다",
-        "events": [
-          "카보 지랑 스카이워크"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": false,
-        "theme": "온화한 남서부 해안 드라이브와 도심 조명 터널",
-        "morning": "10:30 리베이라 브라바 남서부 해안 드라이브",
-        "rest": "13:30 해변 바다 전망 점심 후 온수풀 휴식",
-        "evening": "★ 18:00 풍샬 시청사 광장 크리스마스 조명 터널 감상",
-        "walk": "낮음",
-        "transport": "전용 차량 드라이브",
-        "meal": "패션프루트 디저트와 생선 그릴",
-        "events": [
-          "풍샬 도심 조명 터널"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": false,
-        "theme": "마데이라 식물원과 200년 역사 와인 롯지",
-        "morning": "10:30 마데이라 식물원 아열대 수목과 파노라마 뷰",
-        "rest": "13:00 식물원 레스토랑 식사 후 리조트 복귀 휴식",
-        "evening": "17:30 마데이라 와인 롯지(Blandy's) 고택 정원 산책",
-        "walk": "보통",
-        "transport": "택시 직행",
-        "meal": "숙성 마데이라 와인과 볼로 드 멜 케이크",
-        "events": [
-          "블랜디스 와인 탐방"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": false,
-        "theme": "산타나 전통 초가 가옥과 가족 감사 디너",
-        "morning": "10:00 산타나(Santana) 전통 초가삼간 가옥 마을 관광 드라이브",
-        "rest": "13:30 산림욕 후 리조트 복귀 여유로운 티타임",
-        "evening": "18:00 리조트 오션뷰 테라스 가족 감사 디너 코스",
-        "walk": "낮음",
-        "transport": "프라이빗 차량",
-        "meal": "셰프 특선 해산물 코스",
-        "events": [
-          "산타나 전통 가옥"
-        ]
-      },
-      {
-        "city": "마데이라",
-        "isTransfer": true,
-        "theme": "로컬 시장 기념품 쇼핑 및 본토 리스본 귀환",
-        "morning": "11:00 풍샬 로컬 농산물 시장 열대 과일 쇼핑",
-        "rest": "13:30 점심 후 공항 이동 준비",
-        "evening": "16:30 풍샬 공항 출발 → 리스본 도착 호텔 체크인",
-        "walk": "낮음",
-        "transport": "국내선 항공편",
-        "meal": "호텔 레스토랑 안락한 저녁",
-        "events": [
-          "본토 리스본 귀환"
-        ]
-      },
-      {
-        "city": "귀국",
-        "isTransfer": false,
-        "theme": "테주 강변 평지 케이블카와 30일 여정 완주 축하",
-        "morning": "11:00 테주 강변 파르크 다스 나송이스 평지 케이블카",
-        "rest": "13:30 바스코 다 가마 센터 쇼핑 및 귀국 짐 패킹",
-        "evening": "17:30 테주 강 일몰 바라보며 30일 완주 기념 티타임",
-        "walk": "낮음",
-        "transport": "우버 또는 호텔 리무진",
-        "meal": "포르투갈 도미 구이(Dourada)",
-        "events": [
-          "30일 여정 완주 티타임"
-        ]
-      },
-      {
-        "city": "귀국",
-        "isTransfer": true,
-        "theme": "리스본 공항 출발 및 인천 귀국",
-        "morning": "09:30 리스본 공항(LIS) 이동 세금 환급(Tax Refund) 수속",
-        "rest": "13:00 인천행 항공편 탑승, 기내 휴식",
-        "evening": "기내 숙면 및 인천 도착",
-        "walk": "낮음",
-        "transport": "공항 전용 픽업 차량",
-        "meal": "기내식 및 라운지 식사",
-        "events": [
-          "인천 귀국"
-        ]
-      }
+  "title": "스페인 & 이탈리아 부모님 동행 30일 마스터 플래너",
+  "score": "98점 (완전 확정 플랜)",
+  "season": "11월~12월 숄더 시즌 · 온화한 기후 & 크리스마스 조명",
+  "budget": "2,440만 원",
+  "festivals": "사그라다 파밀리아 노을, 알함브라 전일, 나폴리 피자, 로마 성탄 마켓",
+  "festSub": "확정 항공·기차·버스 시간표 및 9대 확정 숙소 100% 매칭",
+  "cities": [
+    "바르셀로나",
+    "세비야",
+    "코르도바",
+    "그라나다",
+    "말라가",
+    "나폴리",
+    "피렌체",
+    "로마",
+    "귀국"
+  ],
+  "days": [
+  {
+    "city": "바르셀로나",
+    "isTransfer": true,
+    "theme": "인천 출발 및 바르셀로나 입성 (BCN T1 ➔ Suites Marina Abapart)",
+    "morning": "인천공항 출발 및 기내 휴식 (충분한 수분 섭취와 기내 스트레칭)",
+    "rest": "18:55 BCN T1 도착 후 공식 택시 직행(35~40€), Suites Marina Abapart 체크인 및 온수 샤워",
+    "evening": "숙소 인근 가벼운 산책 및 로컬 마트 장보기 (따뜻한 수프로 장거리 비행 시차 적응 수면)",
+    "walk": "매우 낮음 (1,800보)",
+    "transport": "공식 공항 택시",
+    "meal": "숙소 인근 따뜻한 카탈루냐 가정식 수프 & 신선한 과일",
+    "events": [
+      "바르셀로나 입성 (18:55)",
+      "공식 택시 직행 (35~40€)",
+      "Suites Marina Abapart",
+      "인근 산책 & 마트"
     ]
   },
+  {
+    "city": "바르셀로나",
+    "isTransfer": false,
+    "theme": "고딕 지구 평지 산책 & 1836년 전통 파에야 (7 Portes) & 산타 카테리나 로컬 시장",
+    "morning": "바르셀로나 대성당 광장과 고딕 지구의 넓고 평탄한 보행자 전용 도로를 천천히 산책",
+    "rest": "13:30~16:00 Suites Marina Abapart 복귀 후 침대 낮잠 및 발 마사지 (부모님 관절 완벽 보호)",
+    "evening": "산타 카테리나 시장 (Mercat de Santa Caterina) 물결무늬 지붕 구경, 신선한 과일과 하몬 시식 및 저녁 산책",
+    "walk": "낮음 (4,200보)",
+    "transport": "도보 & 택시",
+    "meal": "Ciudad Condal: 꿀대구(Bacalao a la miel, 달콤한 꿀과 아이올리 소스 부모님 최애 확정!), 소고기 안심 몬타디토, 상큼한 레몬맥주 클라라 & 산타 카테리나 시장 생과일 컵",
+    "events": [
+      "고딕 지구 평지 산책",
+      "7 Portes 1836 전통 파에야",
+      "시에스타 낮잠 휴식",
+      "산타 카테리나 시장 물결지붕"
+    ]
+  },
+  {
+    "city": "바르셀로나",
+    "isTransfer": false,
+    "theme": "가우디 파노라마 & 꿀대구 미식 (Ciudad Condal) & 사그라다 호수공원 무료 야경",
+    "morning": "T-familiar 카드로 이동, 2층 시티투어 버스 탑승하여 계단 없이 카사 바트요와 카사 밀라 외관 파노라마 감상",
+    "rest": "13:30~16:00 아파트 복귀 낮잠 및 따뜻한 꿀차 티타임 휴식",
+    "evening": "사그라다 파밀리아 인근 호수 공원 (Plaça de Gaudí): 성당 정면 호숫가에 앉아 밤의 사그라다 파밀리아 조명 야경 감상 (무료, 예약 불필요)",
+    "walk": "낮음 (3,800보)",
+    "transport": "시티투어 2층 버스",
+    "meal": "7 Portes: 1836년 전통 명가의 해산물 파에야 & 먹물 파에야 (Paella) & 고딕 지구 바삭한 츄러스와 진한 쇼콜라테 (Churros con Chocolate)",
+    "events": [
+      "시티투어 2층 버스",
+      "카사 바트요·밀라 파노라마",
+      "Ciudad Condal 꿀대구",
+      "사그라다 파밀리아 호수공원 야경"
+    ]
+  },
+  {
+    "city": "바르셀로나",
+    "isTransfer": false,
+    "theme": "몬주익 언덕 시티버스 파노라마 & 바르셀로네타 해변 산책",
+    "morning": "시티투어 버스로 몬주익 언덕 순환 코스 탑승, 지중해 바다와 바르셀로나 시가지 파노라마 조망",
+    "rest": "13:30~16:00 바르셀로네타 해변 그늘 벤치 휴식 후 숙소 복귀 낮잠",
+    "evening": "올림픽 항구 산책로를 가볍게 걷고 노을 감상 후 아파트 복귀",
+    "walk": "낮음 (3,600보)",
+    "transport": "시티투어 버스 & 택시",
+    "meal": "Puertecillo Sagrada Família: 숙소 도보 2분 신선한 해산물 직접 골라 즉석 철판구이 & 보케리아 시장 최고급 이베리코 하몬 콘 (Jamón Cone)",
+    "events": [
+      "몬주익 파노라마",
+      "지중해 항구 뷰",
+      "바르셀로네타 테라스",
+      "노을 힐링"
+    ]
+  },
+  {
+    "city": "바르셀로나",
+    "isTransfer": false,
+    "theme": "그라시아 거리 명품 산책 & 도보 2분 즉석 해산물 구이 (Puertecillo)",
+    "morning": "그라시아 거리(Passeig de Gràcia)의 넓고 평탄한 가로수길 산책 및 올리브 오일, 기념품 쇼핑",
+    "rest": "13:30~16:30 숙소 복귀 후 충분한 수면 및 온수 샤워",
+    "evening": "숙소에서 도보 단 2분 거리인 Puertecillo Sagrada Família에서 부모님 이동 부담 없이 신선한 해산물 즉석 구이 만찬",
+    "walk": "낮음 (3,900보)",
+    "transport": "도보 & Uber",
+    "meal": "Puertecillo Sagrada Família: 숙소 도보 2분, 신선한 해산물을 직접 골라 즉석 구이로 먹는 가성비 맛집",
+    "events": [
+      "그라시아 평지 쇼핑",
+      "까탈루냐 광장",
+      "Puertecillo 해산물 구이",
+      "숙소 도보 2분 만찬"
+    ]
+  },
+  {
+    "city": "바르셀로나",
+    "isTransfer": false,
+    "theme": "사그라다 파밀리아 내부 확정 관람 (15:30 황금빛 노을 스테인드글라스)",
+    "morning": "숙소에서 늦잠 및 여유로운 브런치, 사그라다 파밀리아 외관 조각 천천히 감상",
+    "rest": "12:30~14:30 내부 관람 전 침대 누워 체력 100% 비축",
+    "evening": "15:30 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
+    "walk": "낮음 (3,500보)",
+    "transport": "도보 3분",
+    "meal": "카탈루냐 로컬 타파스: 하몬 이베리코 데 베요타 & 따뜻한 크로케타",
+    "events": [
+      "오전 여유 휴식",
+      "숙소 도보 3분 진입",
+      "15:30 사그라다 내부 확정",
+      "황금빛 스테인드글라스",
+      "안달루시아 짐정리"
+    ]
+  },
+  {
+    "city": "세비야",
+    "isTransfer": true,
+    "theme": "항공으로 세비야 1차 이동 & 1670년 타파스 바 (El Rinconcillo) & 메트로폴 파라솔 야경",
+    "morning": "09:10 바르셀로나(BCN) 출발 ➔ 10:50 세비야(SVQ) 도착. 공식 택시(정액 25~30€)로 Letoh Letoh Sevilla 직행 체크인",
+    "rest": "13:30~16:00 Letoh Letoh Sevilla 호텔 침대에서 따뜻한 샤워 및 충분한 시에스타 낮잠",
+    "evening": "세비야 최고령 타파스 바 El Rinconcillo 식사 후, 메트로폴 파라솔 (Las Setas de Sevilla) 야외 광장 산책 & 거대 목조 구조물 야경 감상 (무료, 예약 불필요)",
+    "walk": "낮음 (3,700보)",
+    "transport": "국내선 항공 + 공항 택시",
+    "meal": "El Rinconcillo (1670년 개업 최고령 타파스 바): 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)",
+    "events": [
+      "BCN➔SVQ 항공 (09:10~10:50)",
+      "공항 택시 정액(25~30€)",
+      "Letoh Letoh Sevilla",
+      "El Rinconcillo 시금치스튜",
+      "메트로폴 파라솔 무료 야경"
+    ]
+  },
+  {
+    "city": "코르도바",
+    "isTransfer": true,
+    "theme": "Renfe 초고속열차 코르도바 이동 & 소꼬리찜 (Bodegas Mezquita) & 로마 다리 노을 야경",
+    "morning": "세비야 산타 후스타(Santa Justa)역에서 12:30 Renfe 고속열차 탑승 (41분 쾌속 이동) ➔ 코르도바 13:11 도착, 택시로 Hotel de los Faroles 체크인",
+    "rest": "13:30~15:30 전통 안달루시안 파티오 호텔에서 침대 낮잠 및 온수 휴식",
+    "evening": "코르도바 메스키타와 유대인 지구 꽃길 산책 후, 해 질 녘 로마 다리 (Puente Romano)를 건너며 메스키타와 강변 야경 감상 (무료, 예약 불필요)",
+    "walk": "낮음 (4,100보)",
+    "transport": "Renfe 초고속열차 + 택시",
+    "meal": "Bodegas Mezquita: 소꼬리 찜 'Rabo de Toro' (갈비찜 싱크로율 90% 이상 부모님 감탄 보양식!), 바삭한 가지 튀김과 사탕수수 꿀(Berenjenas con miel), 크리미한 살모레호",
+    "events": [
+      "Renfe 기차 (12:30~13:11)",
+      "Hotel de los Faroles",
+      "메스키타 회랑",
+      "Bodegas Mezquita 소꼬리찜",
+      "로마 다리 무료 야경"
+    ]
+  },
+  {
+    "city": "그라나다",
+    "isTransfer": true,
+    "theme": "ALSA 우등버스 그라나다 이동 & 음료 시 무료 타파스 (Bar Los Diamantes)",
+    "morning": "코르도바 숙소 체크아웃 후 버스터미널로 이동, 14:15~16:55 ALSA 우등버스 탑승하여 안달루시아 올리브 평원 감상",
+    "rest": "17:15 그라나다 터미널 도착 후 택시로 The Central House Granada 이동, 체크인 및 따뜻한 온수 샤워",
+    "evening": "나바스 거리(Calle Navas) 활기찬 타파스 골목을 천천히 산책하고, 음료 주문 시 신선한 튀김 타파스를 무료로 내어주는 그라나다 전통 문화 체험",
+    "walk": "낮음 (3,600보)",
+    "transport": "ALSA 우등버스 + 택시",
+    "meal": "Bar Los Diamantes: 음료 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공 & 나바스 거리 정통 안달루시아 타파스 투어",
+    "events": [
+      "코르도바 14:15 버스",
+      "그라나다 16:55 도착",
+      "The Central House Granada",
+      "Bar Los Diamantes 무료 타파스",
+      "나바스 거리 산책"
+    ]
+  },
+  {
+    "city": "그라나다",
+    "isTransfer": false,
+    "theme": "알함브라 궁전 종일 투어 (티켓 확정) & 산 니콜라스 전망대 최고의 무료 야경",
+    "morning": "숙소 앞에서 택시 타고 알함브라 정문 직행. 경사로 최소화 코스로 나스르 궁전과 헤네랄리페 정원 집중 관람",
+    "rest": "13:30~16:00 택시로 호텔 복귀, 신발 벗고 다리 올린 채 침대에서 2시간 반 깊은 수면",
+    "evening": "택시 타고 산 니콜라스 전망대 (Mirador de San Nicolás) 올라가기: 알함브라 궁전의 붉은 성곽 뒤로 지는 석양과 시에라 네바다 설산 배경 야경을 무료로 감상 (최고의 명소)",
+    "walk": "중간 (5,500보)",
+    "transport": "왕복 택시 탑승 (관절 보호)",
+    "meal": "그라나다 정통 타파스: 하몬 이베리코 데 베요타, 따뜻한 안달루시아 토마토 스프",
+    "events": [
+      "알함브라 택시 직행",
+      "나스르 궁전 집중 관람",
+      "시에스타 2시간 낮잠",
+      "산 니콜라스 전망대 택시",
+      "알함브라 붉은 성곽 야경"
+    ]
+  },
+  {
+    "city": "말라가",
+    "isTransfer": true,
+    "theme": "ALSA 버스 말라가 이동 & 무에예 우노 (Muelle Uno) 해안 산책로 무료 야경",
+    "morning": "그라나다 도심에서 여유로운 브런치 및 기념품 쇼핑, 버스터미널로 이동",
+    "rest": "16:00~18:15 ALSA 버스 안에서 지중해 해안선 조망하며 편안한 수면 휴식",
+    "evening": "Coeo Pena Design Apartment 체크인 후, 말라가 항구 무에예 우노 (Muelle Uno) 해안 산책로 야경 산책: 야자수와 지중해 바다가 어우러진 현대식 해안 조명 산책 (무료, 예약 불필요)",
+    "walk": "낮음 (3,600보)",
+    "transport": "ALSA 우등버스 + 택시",
+    "meal": "말라가 로컬 타파스: 신선한 안달루시아 지중해 샐러드 & 멸치 튀김(Boquerones fritos)",
+    "events": [
+      "그라나다 16:00 버스",
+      "말라가 18:15 도착",
+      "Coeo Pena Apartment",
+      "Muelle Uno 야경",
+      "지중해 해안 산책"
+    ]
+  },
+  {
+    "city": "말라가",
+    "isTransfer": false,
+    "theme": "피카소 거리 산책 & 전통 정어리 숯불구이 (에스페토) & 안토니오 반데라스 와이너리 (El Pimpi)",
+    "morning": "숙소 도보권의 피카소 생가 및 라리오스(Calle Larios) 대리석 쇼핑 거리의 평탄하고 우아한 도로 산책",
+    "rest": "13:30~16:00 지중해 바닷바람 맞으며 아파트 복귀 낮잠 및 여유로운 티타임",
+    "evening": "배우 안토니오 반데라스가 운영하는 역사 깊은 와이너리 El Pimpi에서 전통 말라가 스위트 와인과 최고급 하몬을 맛보고 라리오스 화려한 야경 감상",
+    "walk": "낮음 (4,000보)",
+    "transport": "도보 & 택시",
+    "meal": "말라가 해변 에스페토 (Espeto): 대나무 꼬치에 꿰어 모래사장 숯불 화로에 구운 정통 정어리 구이 & El Pimpi 안토니오 반데라스 와이너리 전통 하몬과 와인",
+    "events": [
+      "피카소 미술관 산책",
+      "라리오스 대리석 거리",
+      "해변 에스페토 숯불구이",
+      "El Pimpi 와인 & 하몬"
+    ]
+  },
+  {
+    "city": "말라가",
+    "isTransfer": false,
+    "theme": "네르하 유럽의 발코니 / 선셋 요트 힐링 & 항구 테라스 해산물 구이 (Marisquería Godoy)",
+    "morning": "택시로 편안하게 네르하 '유럽의 발코니' 전망대 당일치기 또는 말라가 요트 항구에서 여유로운 오전 산책",
+    "rest": "13:30~16:00 아파트 복귀 후 따뜻한 온수 샤워 및 충분한 낮잠",
+    "evening": "Marisquería Godoy: 말라가 항구 테라스에서 지중해 바다를 바라보며 갓 잡은 신선한 모둠 해산물 구이 만찬 후 세비야 이동 짐 패킹",
+    "walk": "낮음 (3,800보)",
+    "transport": "전용 차량 / 택시",
+    "meal": "Marisquería Godoy: 항구 테라스에서 즐기는 신선한 지중해 해산물 구이 & 라리오스 대리석 쇼핑 거리 카페 테라스",
+    "events": [
+      "네르하 또는 선셋 크루즈",
+      "지중해 절경 감상",
+      "Marisquería Godoy 해산물",
+      "세비야 복귀 짐 정리"
+    ]
+  },
+  {
+    "city": "세비야",
+    "isTransfer": true,
+    "theme": "ALSA 버스 세비야 2차 복귀 & 스페인 광장 (Plaza de España) 로맨틱 야간 조명 무료 산책",
+    "morning": "말라가 버스터미널에서 09:00 ALSA 우등버스 탑승 ➔ 11:45 세비야 Plaza de Armas 터미널 도착 ➔ Libere Seville Plaza Nueva 도보/택시 체크인",
+    "rest": "13:00~16:00 누에바 광장 인근 여유로운 점심 식사 후 호텔 침대에서 3시간 시에스타 꿀잠",
+    "evening": "스페인 광장 (Plaza de España) 야간 조명 산책: 밤에 조명이 켜져 낮과는 다른 웅장하고 로맨틱한 분위기를 무료로 감상 (분수 쇼 & 고요한 야경)",
+    "walk": "낮음 (4,200보)",
+    "transport": "ALSA 버스 + 택시",
+    "meal": "세비야 전통 안달루시안 타파스 & 이베리코 하몬 & 시원한 틴토 데 베라노",
+    "events": [
+      "말라가 09:00 버스",
+      "세비야 11:45 도착",
+      "Libere Seville Plaza Nueva",
+      "누에바 광장 산책",
+      "스페인 광장 무료 야경"
+    ]
+  },
+  {
+    "city": "세비야",
+    "isTransfer": false,
+    "theme": "세비야 대성당 평지 회랑 관람 & 알카사르 정원 & 정통 플라멩코 공연",
+    "morning": "누에바 광장에서 도보 3분 세비야 대성당 진입, 콜럼버스 무덤과 넓고 평평한 오렌지 회랑 천천히 관람",
+    "rest": "13:30~16:30 숙소 복귀 후 충분한 수면 및 다리 찜질 휴식",
+    "evening": "산타 크루스 지구 전통 공연장에서 부모님 좌석 예약된 정통 플라멩코 예술 공연 감상",
+    "walk": "낮음 (4,300보)",
+    "transport": "도보 & 택시",
+    "meal": "세비야 전통 바: 바삭하고 담백한 안달루시아 정통 추로스와 카페 콘 레체 (Churros y Café con leche) & 구시가지 로컬 타파스",
+    "events": [
+      "대성당 평지 회랑",
+      "히랄다탑 외관 조망",
+      "알카사르 오렌지 정원",
+      "정통 플라멩코 관람"
+    ]
+  },
+  {
+    "city": "세비야",
+    "isTransfer": false,
+    "theme": "마리아 루이사 공원 & 스페인 광장 마차 투어 (부모님 관절 보호) & 과달키비르 강변 황금의 탑 야경",
+    "morning": "대성당 앞에서 4인승 전통 마차 탑승, 걸을 필요 없이 마리아 루이사 공원과 스페인 광장 전체를 파노라마로 순회",
+    "rest": "13:30~16:00 마차 투어 후 숙소 복귀, 침대 낮잠 및 발 온수 족욕",
+    "evening": "과달키비르 강변 야외 테라스 레스토랑에서 저녁 식사 후, 은은한 조명이 강물에 비치는 황금의 탑 (Torre del Oro) 야경 산책 (무료)",
+    "walk": "낮음 (3,400보)",
+    "transport": "전통 마차 투어 & 택시",
+    "meal": "과달키비르 강변 해산물 테라스: 스페인식 문어 요리(Pulpo a la Gallega) & 샐러드",
+    "events": [
+      "스페인 광장 마차 투어",
+      "마리아 루이사 그늘",
+      "시에스타 온수 휴식",
+      "황금의 탑 야경 산책"
+    ]
+  },
+  {
+    "city": "세비야",
+    "isTransfer": false,
+    "theme": "시에르페스 쇼핑 & 전통 핫초코 츄러스 (Bar El Comercio) & 이탈리아 이동 패킹",
+    "morning": "차량이 다니지 않는 평탄한 시에르페스(Calle Sierpes) 거리 산책, 스페인 올리브 오일과 가죽 기념품 쇼핑",
+    "rest": "13:00~16:30 내일 이탈리아 국가 간 이동을 대비해 숙소에서 온수 목욕 및 3시간 반 충분한 수면",
+    "evening": "Bar El Comercio에서 갓 튀겨낸 바삭한 츄러스와 진한 핫초콜릿을 즐기고, 스페인 일정 무사 완주 축하 가족 만찬",
+    "walk": "낮음 (3,500보)",
+    "transport": "도보 위주",
+    "meal": "Bar El Comercio: 갓 튀긴 정통 츄러스 & 진한 핫초콜릿, 저녁 안달루시안 소고기 스테이크",
+    "events": [
+      "시에르페스 보행자 거리",
+      "Bar El Comercio 츄러스",
+      "오후 꿀휴식",
+      "스페인 완주 축배",
+      "이탈리아 짐정리"
+    ]
+  },
+  {
+    "city": "나폴리",
+    "isTransfer": true,
+    "theme": "이탈리아 나폴리 입성 (비행기+기차) & 전설의 화덕 마르게리타 피자 (Gino Sorbillo)",
+    "morning": "세비야(SVQ) 출발 ➔ 로마(FCO) 공항 도착, 레오나르도 익스프레스로 테르미니역 이동 후 트렌이탈리아 고속열차 환승",
+    "rest": "16:26~18:29 트렌이탈리아 1등석 열차에서 편안하게 차창 풍경 감상하며 휴식, 나폴리 도착 후 택시로 Calenda Suite 체크인",
+    "evening": "Gino Sorbillo: 나폴리 피자의 성지에서 갓 구워낸 겉바속촉 전설의 화덕 마르게리타 피자를 맛보며 이탈리아 첫날 여독 풀기",
+    "walk": "매우 낮음 (2,500보)",
+    "transport": "항공 + 공항철도 + 트렌이탈리아 + 택시",
+    "meal": "Gino Sorbillo: 쫄깃한 도우와 버팔로 모차렐라의 전설적인 화덕 마르게리타 & 튀긴 피자(Pizza Fritta), Gran Caffè Gambrinus 럼주 빵 바바(Babà al Rum)",
+    "events": [
+      "SVQ➔FCO 비행기",
+      "레오나르도 익스프레스",
+      "트렌이탈리아 고속열차 (16:26~18:29)",
+      "Calenda Suite 체크인",
+      "Gino Sorbillo 피자"
+    ]
+  },
+  {
+    "city": "나폴리",
+    "isTransfer": false,
+    "theme": "1860년 유서 깊은 카페 (감브리누스) 에스프레소 & 바바 빵 & 플레비시토 광장 야경",
+    "morning": "스파카 나폴리 골목의 활기찬 아침 정취를 느끼고 톨레도 거리의 평탄한 보행자 전용로 산책",
+    "rest": "13:30~16:00 Calenda Suite 복귀 후 침대에서 편안한 시에스타 낮잠",
+    "evening": "웅장한 반원형 열주가 빛나는 플레비시토 광장 (Piazza del Plebiscito) 야경 산책 후 산 카를로 극장 외관 조망 (무료, 예약 불필요)",
+    "walk": "낮음 (4,100보)",
+    "transport": "도보 & 택시",
+    "meal": "스파카 나폴리 로컬 카페: 진한 에스프레소에 부드러운 헤이즐넛 크림을 얹은 달콤한 카페 노촐라 (Caffè Nocciola) & 신선한 해산물 파스타",
+    "events": [
+      "스파카 나폴리 골목",
+      "Gran Caffè Gambrinus",
+      "에스프레소 & 바바(Babà)",
+      "시에스타 휴식",
+      "플레비시토 광장 야경"
+    ]
+  },
+  {
+    "city": "나폴리",
+    "isTransfer": false,
+    "theme": "나폴리 출발 아말피/포지타노 전용 차량 투어 & 소렌토 레몬 뇨끼",
+    "morning": "숙소 앞에서 편안한 전용 차량(벤츠 밴) 탑승, 계단 걷기 없이 차창 밖으로 세계 3대 미항과 소렌토, 포지타노 해안 절경 감상",
+    "rest": "14:00~16:30 에어컨 완비 전용 차량에서 편안하게 시에스타 수면 취하며 나폴리 복귀",
+    "evening": "Calenda Suite 복귀 후 온수 샤워, 내일 피렌체 이동을 위한 기차 짐 정리 및 여유로운 와인 타임",
+    "walk": "낮음 (3,200보)",
+    "transport": "전용 차량 투어 (관절 보호)",
+    "meal": "소렌토 해안 식당: 향긋한 소렌토 레몬 버터 뇨끼 & 신선한 해산물 파스타",
+    "events": [
+      "전용 차량 픽업",
+      "포지타노 해안 뷰",
+      "소렌토 레몬 뇨끼",
+      "폼페이 또는 해안 휴식",
+      "피렌체 기차 패킹"
+    ]
+  },
+  {
+    "city": "피렌체",
+    "isTransfer": true,
+    "theme": "Italo 고속기차 피렌체 이동 & 명품 포카치아 샌드위치 (All’Antico Vinaio) & 베키오 다리 야경",
+    "morning": "나폴리 숙소 체크아웃 후 중앙역 이동, 13:20 Italo 프리마(1등석) 고속열차 탑승하여 피렌체로 쾌속 이동",
+    "rest": "16:17 피렌체 SMN역 도착 후 도보 단 8분 거리 Artemente Florence B&B 체크인 및 온수 샤워",
+    "evening": "베키오 다리 (Ponte Vecchio): 아르노강 물빛에 비치는 피렌체의 로맨틱한 반영 야경을 무료로 감상하며 강변 산책",
+    "walk": "낮음 (3,800보)",
+    "transport": "Italo 초고속열차 + 도보",
+    "meal": "All’Antico Vinaio: 겉바속촉 토스카나 포카치아 사이에 프로슈토와 트러플 크림, 신선 치즈를 산더미처럼 넣은 포카치아 샌드위치 (Schiacciata)",
+    "events": [
+      "Italo 기차 (13:20~16:17)",
+      "Artemente Florence B&B",
+      "All’Antico Vinaio",
+      "베키오 다리 야경 산책"
+    ]
+  },
+  {
+    "city": "피렌체",
+    "isTransfer": false,
+    "theme": "두오모 광장 평지 산책 & 택시로 미켈란젤로 광장 (Piazzale Michelangelo) 최고의 무료 야경",
+    "morning": "숙소에서 두오모 광장까지 완전 평지 도보 7분. 붉은 돔 외관과 조토의 종탑을 계단 등반 없이 광장에서 여유롭게 감상",
+    "rest": "13:30~16:00 카페 질리(Gilli)에서 티라미수 맛본 후 숙소 복귀 침대 낮잠",
+    "evening": "택시 타고 미켈란젤로 광장 (Piazzale Michelangelo) 올라가기: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿 (노을~조명 야경)",
+    "walk": "낮음 (3,900보)",
+    "transport": "도보 & 택시 (언덕)",
+    "meal": "Trattoria Zà Zà: 참나무 숯불에 구운 두툼한 1kg 티본 스테이크(Bistecca alla Fiorentina) + 풍미 가득한 트러플 크림 파스타",
+    "events": [
+      "두오모 광장 평지 산책",
+      "시뇨리아 광장",
+      "카페 질리 티타임",
+      "미켈란젤로 광장 택시",
+      "피렌체 전경 무료 야경"
+    ]
+  },
+  {
+    "city": "피렌체",
+    "isTransfer": false,
+    "theme": "우피치 미술관 르네상스 걸작 관람 & 1kg 티본 스테이크 보양 만찬 (Trattoria Zà Zà)",
+    "morning": "우피치 미술관 사전 예약 입장, 전용 엘리베이터로 이동하여 보티첼리 '비너스의 탄생', 라파엘로 명작 집중 관람",
+    "rest": "13:30~16:30 관람 후 숙소 복귀, 침대에 누워 다리 올리고 3시간 충분한 낮잠",
+    "evening": "Trattoria Zà Zà: 숯불에 구워낸 1kg 두툼한 티본 스테이크(Bistecca alla Fiorentina)와 진한 트러플 크림 파스타로 부모님 보양 만찬",
+    "walk": "낮음 (4,200보)",
+    "transport": "도보 & 택시",
+    "meal": "토스카나 전통 디저트: 바삭한 아몬드 비스킷을 달콤한 디저트 와인에 찍어 먹는 칸투치니와 빈 산토 (Cantuccini e Vin Santo) & 리보리타 채소 수프",
+    "events": [
+      "우피치 엘리베이터 관람",
+      "보티첼리 '비너스의 탄생'",
+      "오후 침대 꿀잠",
+      "Trattoria Zà Zà 티본 1kg",
+      "트러플 크림 파스타"
+    ]
+  },
+  {
+    "city": "피렌체",
+    "isTransfer": false,
+    "theme": "산 로렌초 가죽 시장 & 산타 마리아 노벨라 약국 & 로마 이동 짐 정리",
+    "morning": "산 로렌초 실내 중앙 시장과 가죽 노점 거리 산책, 800년 전통 산타 마리아 노벨라 약국에서 천연 장미수 쇼핑",
+    "rest": "13:00~16:30 숙소 복귀 후 충분한 낮잠 및 발 피로 해소 온수 족욕",
+    "evening": "피렌체 마지막 밤 평화로운 아르노 강변 야간 산책 후, 내일 로마 이동을 위한 짐 정리",
+    "walk": "낮음 (3,600보)",
+    "transport": "도보 위주",
+    "meal": "중앙시장 네르보네(Nerbone): 부드러운 곱창버거(Lampredotto) 또는 토스카나 샐러드",
+    "events": [
+      "산 로렌초 시장 평지 쇼핑",
+      "노벨라 약국 장미수",
+      "네르보네 샌드위치",
+      "로마 이동 패킹"
+    ]
+  },
+  {
+    "city": "로마",
+    "isTransfer": true,
+    "theme": "Italo 고속기차 로마 이동 & 트레비 분수 (Fontana di Trevi) 밤 10시 심야 무료 야경 산책",
+    "morning": "피렌체 숙소 체크아웃 후 SMN역 이동, 13:28 Italo 고속열차 탑승 ➔ 15:10 로마 테르미니(Roma Termini)역 도착",
+    "rest": "15:30~18:30 Salotto Monti 체크인 후 온수 샤워 및 부모님 침대 휴식",
+    "evening": "트레비 분수 (Fontana di Trevi) 야간 산책: 숙소에서 도보 12분 거리. 밤 10시 이후 방문 시 낮의 혼잡이 줄어들어 가장 아름답고 신비로운 조명과 물빛을 무료로 감상하며 동전 던지기 체험",
+    "walk": "낮음 (3,800보)",
+    "transport": "Italo 초고속열차 + 택시",
+    "meal": "몬티 지구 트라토리아: 로마식 뇨끼 알라 로마나 & 부드러운 하우스 와인",
+    "events": [
+      "Italo 기차 (13:28~15:10)",
+      "Salotto Monti 호텔",
+      "몬티 지구 산책",
+      "트레비 분수 밤 10시 산책",
+      "동전 던지기"
+    ]
+  },
+  {
+    "city": "로마",
+    "isTransfer": false,
+    "theme": "콜로세움 외관 평지 산책 & 가성비 파스타 (Trattoria Luzzi) & 캄포 디 피오리 로컬 야시장",
+    "morning": "숙소에서 콜로세움까지 도보 8분. 긴 대기줄이나 계단 등반 없이 웅장한 콜로세움과 포로 로마노 외관을 평지에서 여유롭게 감상",
+    "rest": "13:30~16:00 Salotto Monti 복귀 후 침대에서 편안한 낮잠 및 온수 샤워",
+    "evening": "캄포 디 피오리 (Campo de' Fiori) 구경: 로마의 활기 넘치는 로컬 야시장 및 야간 광장 정취를 무료로 산책하며 현지 식재료와 과일 구경",
+    "walk": "낮음 (4,100보)",
+    "transport": "도보 & 택시",
+    "meal": "Trattoria Luzzi: 생크림 없이 달걀노른자와 구안찰레로 맛을 낸 진짜배기 카르보나라 & 아마트리치아나, 길거리 수플리 (Supplì 치즈 튀김 밥볼)",
+    "events": [
+      "콜로세움 평지 조망",
+      "포로 로마노 외관",
+      "Trattoria Luzzi 파스타",
+      "오후 시에스타",
+      "캄포 디 피오리 야시장"
+    ]
+  },
+  {
+    "city": "로마",
+    "isTransfer": false,
+    "theme": "바티칸 박물관 & 성 베드로 대성당 평지 관람 & 1900년 젤라또 명가 (Giolitti 쌀맛/피스타치오)",
+    "morning": "택시로 바티칸 입구 직행. 사전 예약 패스트트랙과 엘리베이터를 이용해 시스티나 경당과 성 베드로 대성당 평지 관람",
+    "rest": "13:30~16:30 관람 후 택시로 Salotto Monti 복귀, 침대 낮잠 3시간 꿀휴식",
+    "evening": "판테온 앞 역사 깊은 타차 도로(Tazza d'Oro)에서 에스프레소 콘 판나를 마시고, 1900년 개업 젤라또 명가 Giolitti에서 쌀맛(Riso) 젤라또 맛보기",
+    "walk": "낮음 (4,400보)",
+    "transport": "왕복 택시",
+    "meal": "Giolitti (지올리띠): 쫀득한 젤라토에 씹히는 쌀알이 든 시그니처 쌀맛(Riso) & 피스타치오, 아침 생크림 브리오슈 마리토초 (Maritozzo con panna)",
+    "events": [
+      "바티칸 택시 직행",
+      "시스티나 천장화",
+      "성 베드로 광장",
+      "Giolitti 젤라또",
+      "타차 도로 에스프레소"
+    ]
+  },
+  {
+    "city": "로마",
+    "isTransfer": false,
+    "theme": "2천 년 역사 판테온 신전 내부 & 나보나 광장 & 스페인 계단 황금빛 노을 야경",
+    "morning": "완전 평지인 판테온 내부로 진입, 기둥 없이 지탱하는 2천 년 된 거대 콘크리트 돔 오쿨루스(Oculus) 감상 후 나보나 광장 산책",
+    "rest": "13:30~16:00 숙소 복귀 후 충분한 낮잠 수면 및 온수 샤워",
+    "evening": "스페인 광장 (Piazza di Spagna): 스페인 계단 위에서 내려다보는 로마 구시가지의 황금빛 노을과 화려한 도심 야경을 무료로 감상",
+    "walk": "낮음 (3,900보)",
+    "transport": "도보 & 택시",
+    "meal": "로마식 전통 안티파스토: 바삭한 아티초크 구이(Carciofi alla Giudia) & 카초 에 페페(Cacio e Pepe)",
+    "events": [
+      "판테온 돔 내부 관람",
+      "나보나 광장 분수",
+      "오후 시에스타 낮잠",
+      "스페인 계단 노을 야경"
+    ]
+  },
+  {
+    "city": "로마",
+    "isTransfer": false,
+    "theme": "콘도티 거리 쇼핑 & 부모님 은혜 감사 만찬 (살팀보카) & 귀국 짐 최종 패킹",
+    "morning": "콘도티 거리와 코르소 거리의 평탄한 명품 상점가 산책, 이탈리아 트러플 오일, 발사믹 식초 등 귀국 선물 쇼핑",
+    "rest": "13:00~16:30 내일 장거리 귀국 비행을 위해 숙소에서 온수 목욕 및 3시간 반 충분한 수면",
+    "evening": "몬티 지구 고급 트라토리아에서 부모님과 함께 로마식 송아지 요리(Saltimbocca alla Romana) 만찬을 즐기며 30일 대장정 완주 가족 축배",
+    "walk": "낮음 (3,500보)",
+    "transport": "도보 & 택시",
+    "meal": "로마 전통 요리: 로마식 송아지 살팀보카(Saltimbocca alla Romana) & 티라미수 & 와인",
+    "events": [
+      "콘도티 평지 쇼핑",
+      "이탈리아 식료품 구매",
+      "오후 충분한 낮잠",
+      "부모님 감사 만찬",
+      "최종 짐정리"
+    ]
+  },
+  {
+    "city": "로마",
+    "isTransfer": true,
+    "theme": "공항철도 레오나르도 익스프레스 ➔ FCO T3 22:00 인천행 출국 (안전 완주)",
+    "morning": "Salotto Monti에서 여유롭게 늦잠 후 체크아웃, 짐 보관 후 몬티 지구 카페에서 브런치",
+    "rest": "14:00~17:00 호텔 라운지에서 편안한 소파 휴식 및 공항 이동 전 마지막 컨디션 점검",
+    "evening": "테르미니역에서 레오나르도 익스프레스 탑승 (직통 32분 논스톱) ➔ FCO T3 도착. 사전 택스리펀 완료 후 22:00 인천행 비행기 탑승 (익일 인천 도착)",
+    "walk": "낮음 (3,200보)",
+    "transport": "공항철도 레오나르도 익스프레스",
+    "meal": "FCO 공항 VIP 라운지: 편안한 휴식과 따뜻한 이탈리안 커피 & 샌드위치",
+    "events": [
+      "여유로운 체크아웃",
+      "테르미니역 이동",
+      "레오나르도 익스프레스 (32분)",
+      "FCO 공항 택스리펀",
+      "22:00 인천행 탑승"
+    ]
+  }
+]
+},
   "WEST_CENTRAL_EU": {
     "title": "서유럽 & 중부유럽 클래식 컬처 & 크리스마스 마켓 투어 30일 (영국·프랑스·이탈리아·오스트리아·체코)",
     "score": "91점 (황실 문화 & 성탄)",
@@ -8450,2109 +8775,2359 @@ const LANDMARK_I18N_DATA = {
 
 const PLANS_DAYS_I18N_DATA = {
   "IBERIA": [
-    {
-      "city": {
-        "ko": "포르투",
-        "ja": "ポルト",
-        "en": "Porto",
-        "zh": "波尔图"
-      },
-      "theme": {
-        "ko": "인천 출발 및 포르투 도착, 여유로운 첫걸음",
-        "ja": "ポルトへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Porto & Relaxed Evening Arrival",
-        "zh": "前往波尔图的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "포르투 도착일"
-        ],
-        "ja": [
-          "ポルト日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Porto Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "波尔图行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "공항 도착 후 숙소 체크인",
-        "ja": "午前：ポルトの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Porto's key cultural sites",
-        "zh": "上午：波尔图平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "장거리 비행 피로 회복 온수 샤워 및 충분한 수면",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "볼량 시장 주변 완만한 골목에서 따뜻한 채소 수프와 차",
-        "ja": "夕方：ポルトのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Porto's evening lights & dinner",
-        "zh": "傍晚：欣赏波尔图璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "공항 우버 XL 탑승",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "가정식 수프(Caldo Verde)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
     },
-    {
-      "city": {
-        "ko": "포르투",
-        "ja": "ポルト",
-        "en": "Porto",
-        "zh": "波尔图"
-      },
-      "theme": {
-        "ko": "상벤투 역 푸른 아줄레주와 도루 강변",
-        "ja": "ポルトの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Porto Highlights & Afternoon Siesta",
-        "zh": "波尔图核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "상벤투 역 아줄레주"
-        ],
-        "ja": [
-          "ポルト日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Porto Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "波尔图行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 상벤투 기차역 푸른 아줄레주 벽화 관람 (평지 보행)",
-        "ja": "午前：ポルトの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Porto's key cultural sites",
-        "zh": "上午：波尔图平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 점심 식사 후 숙소 복귀 2시간 시에스타 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "16:30 도루 강변 히베이라 광장 카페 일몰 감상",
-        "ja": "夕方：ポルトのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Porto's evening lights & dinner",
-        "zh": "傍晚：欣赏波尔图璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "상벤투 역에서 강변 이동 시 우버 탑승 (무릎 보호)",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "대구요리(Bacalhau à Brás)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "theme": {
+      "ko": "인천 출발 및 바르셀로나 입성 (BCN T1 ➔ Suites Marina Abapart)",
+      "en": "Departure from Incheon & Barcelona Arrival (BCN T1 ➔ Suites Marina Abapart)",
+      "ja": "仁川出発＆バルセロナ到着 (BCN T1 ➔ Suites Marina Abapart)",
+      "zh": "仁川出发与抵达巴塞罗那 (BCN T1 ➔ Suites Marina Abapart)"
     },
-    {
-      "city": {
-        "ko": "포르투",
-        "ja": "ポルト",
-        "en": "Porto",
-        "zh": "波尔图"
-      },
-      "theme": {
-        "ko": "가이아 와이너리 정원과 동 루이스 다리 노을",
-        "ja": "ポルトの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Porto Highlights & Afternoon Siesta",
-        "zh": "波尔图核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "도루강 노을 & 와이너리"
-        ],
-        "ja": [
-          "ポルト日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Porto Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "波尔图行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 가이아 지구의 Taylor's 와이너리 정원 투어",
-        "ja": "午前：ポルトの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Porto's key cultural sites",
-        "zh": "上午：波尔图平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 와인 시음 및 점심 후 숙소 다리 마사지 낮잠",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:00 동 루이스 1세 다리 상층부 케이블카 노을 산책",
-        "ja": "夕方：ポルトのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Porto's evening lights & dinner",
-        "zh": "傍晚：欣赏波尔图璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "강변에서 다리 상층부 이동 시 케이블카 탑승",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "부드러운 문어 스테이크(Polvo à Lagareiro)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "events": {
+      "ko": [
+        "바르셀로나 입성 (18:55)",
+        "공식 택시 직행 (35~40€)",
+        "Suites Marina Abapart",
+        "인근 산책 & 마트"
+      ],
+      "en": [
+        "BCN Arrival (18:55)",
+        "Official Taxi Direct (35~40€)",
+        "Suites Marina Abapart",
+        "Local Stroll & Grocery"
+      ],
+      "ja": [
+        "バルセロナ到着 (18:55)",
+        "公式タクシー直行 (35~40€)",
+        "Suites Marina Abapart",
+        "近隣散歩＆スーパー"
+      ],
+      "zh": [
+        "抵达巴塞罗那 (18:55)",
+        "官方出租车直达 (35~40€)",
+        "Suites Marina Abapart",
+        "周边散步与超市采购"
+      ]
     },
-    {
-      "city": {
-        "ko": "포르투",
-        "ja": "ポルト",
-        "en": "Porto",
-        "zh": "波尔图"
-      },
-      "theme": {
-        "ko": "크리스탈 궁전 정원과 시청사 알리아두스 야경",
-        "ja": "ポルトの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Porto Highlights & Afternoon Siesta",
-        "zh": "波尔图核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "알리아두스 겨울 조명"
-        ],
-        "ja": [
-          "ポルト日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Porto Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "波尔图行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 크리스탈 궁전 정원 완만한 평지 산책",
-        "ja": "午前：ポルトの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Porto's key cultural sites",
-        "zh": "上午：波尔图平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 공원 뷰 카페 식사 후 숙소 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "16:30 알리아두스 대로 시청사 앞 겨울 조명 점등 감상",
-        "ja": "夕方：ポルトのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Porto's evening lights & dinner",
-        "zh": "傍晚：欣赏波尔图璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "메트로 D라인 평지 역세권 또는 우버",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "전통 닭요리(Frango Piri-Piri)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "morning": {
+      "ko": "인천공항 출발 및 기내 휴식 (충분한 수분 섭취와 기내 스트레칭)",
+      "en": "Incheon Airport departure & in-flight rest (hydration and light stretching)",
+      "ja": "仁川空港出発＆機内での休息（水分補給と軽いストレッチ）",
+      "zh": "仁川机场出发与机上休息（充分补水与机上舒展活动）"
     },
-    {
-      "city": {
-        "ko": "리스본",
-        "ja": "リスボン",
-        "en": "Lisbon",
-        "zh": "里斯本"
-      },
-      "theme": {
-        "ko": "고속열차 이동 및 리스본 테주 강변 첫 산책",
-        "ja": "リスボンへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Lisbon & Relaxed Evening Arrival",
-        "zh": "前往里斯本的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "포르투 → 리스본 이동"
-        ],
-        "ja": [
-          "リスボン日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Lisbon Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "里斯本行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 포르투 캄파냐 역에서 리스본행 Alfa Pendular 1등석 탑승",
-        "ja": "午前：リスボンの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Lisbon's key cultural sites",
-        "zh": "上午：里斯本平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "열차 풍경 감상, 13:30 리스본 도착 후 체크인 및 낮잠",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:00 코메르시우 광장 테주 강변 노을 감상",
-        "ja": "夕方：リスボンのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Lisbon's evening lights & dinner",
-        "zh": "傍晚：欣赏里斯本璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "CP 고속열차 1등석 → 리스본 역 우버",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "해산물 밥(Arroz de Marisco)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "rest": {
+      "ko": "18:55 BCN T1 도착 후 공식 택시 직행(35~40€), Suites Marina Abapart 체크인 및 온수 샤워",
+      "en": "18:55 BCN T1 arrival, take official taxi direct (35~40€), check in at Suites Marina Abapart & hot shower",
+      "ja": "18:55 BCN T1到着後、公式タクシー直行(35~40€)、Suites Marina Abapartチェックイン＆温水シャワー",
+      "zh": "18:55抵达BCN T1，搭乘官方出租车直达(35~40€)，入住Suites Marina Abapart并热水沐浴"
     },
-    {
-      "city": {
-        "ko": "리스본",
-        "ja": "リスボン",
-        "en": "Lisbon",
-        "zh": "里斯本"
-      },
-      "theme": {
-        "ko": "대항해시대 벨렝 지구 완전 평지 투어",
-        "ja": "リスボンの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Lisbon Highlights & Afternoon Siesta",
-        "zh": "里斯本核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "유네스코 벨렝 유적"
-        ],
-        "ja": [
-          "リスボン日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Lisbon Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "里斯本行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 벨렝 제로니무스 수도원 외관 및 발견기념비 평지 산책",
-        "ja": "午前：リスボンの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Lisbon's key cultural sites",
-        "zh": "上午：里斯本平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 원조 파스테이스 드 벨렝 에그타르트 시식 후 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "16:30 벨렝 탑 주변 바다 공원 일몰 감상",
-        "ja": "夕方：リスボンのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Lisbon's evening lights & dinner",
-        "zh": "傍晚：欣赏里斯本璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "시내에서 벨렝까지 우버 직행 (트램 소매치기 회피)",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "원조 에그타르트(Pastel de Nata)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "evening": {
+      "ko": "숙소 인근 가벼운 산책 및 로컬 마트 장보기 (따뜻한 수프로 장거리 비행 시차 적응 수면)",
+      "en": "Gentle stroll near apartment & local grocery shop (warm soup to recharge and adjust to timezone)",
+      "ja": "アパート周辺の軽い散歩＆地元スーパー買い出し（温かいスープで時差調整の十分な睡眠）",
+      "zh": "公寓周边轻松散步与超市采购（热汤暖胃，充分休息适应时差）"
     },
-    {
-      "city": {
-        "ko": "리스본",
-        "ja": "リスボン",
-        "en": "Lisbon",
-        "zh": "里斯本"
-      },
-      "theme": {
-        "ko": "동화마을 신트라 페나 왕궁 전용 차량 투어",
-        "ja": "リスボンの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Lisbon Highlights & Afternoon Siesta",
-        "zh": "里斯本核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "신트라 동화마을"
-        ],
-        "ja": [
-          "リスボン日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Lisbon Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "里斯本行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 신트라 페나 국립왕궁 (정문까지 공식 미니셔틀 탑승)",
-        "ja": "午前：リスボンの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Lisbon's key cultural sites",
-        "zh": "上午：里斯本平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 신트라 마을 전통 베이커리 휴식 후 전용차량 귀환",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 바이샤 지구 아우구스타 거리 평지 쇼핑",
-        "ja": "夕方：リスボンのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Lisbon's evening lights & dinner",
-        "zh": "傍晚：欣赏里斯本璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "프라이빗 데이투어 차량 대절 권장",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "신트라 전통 치즈 타르트 케이자다",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "walk": {
+      "ko": "매우 낮음 (1,800보)",
+      "en": "Very Low (1,800 steps)",
+      "ja": "極めて低い (1,800歩)",
+      "zh": "极低 (1,800步)"
     },
-    {
-      "city": {
-        "ko": "리스본",
-        "ja": "リスボン",
-        "en": "Lisbon",
-        "zh": "里斯本"
-      },
-      "theme": {
-        "ko": "굴벤키안 미술관과 ★원더랜드 리스본 개막",
-        "ja": "リスボンの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Lisbon Highlights & Afternoon Siesta",
-        "zh": "里斯本核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "★ 원더랜드 리스본 축제!"
-        ],
-        "ja": [
-          "リスボン日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Lisbon Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "里斯本行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 굴벤키안 미술관 실내 갤러리 및 연못 정원",
-        "ja": "午前：リスボンの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Lisbon's key cultural sites",
-        "zh": "上午：里斯本平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 미술관 정원 레스토랑 식사 후 숙소 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 16:30 원더랜드 리스본(Wonderland) 대형 관람차 성탄 마켓",
-        "ja": "夕方：リスボンのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Lisbon's evening lights & dinner",
-        "zh": "傍晚：欣赏里斯本璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "공원 정상까지 우버로 올라간 뒤 아래로 내려오는 동선",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "구운 밤(Castanhas)과 따뜻한 뱅쇼",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "transport": {
+      "ko": "공식 공항 택시",
+      "en": "Official Airport Taxi",
+      "ja": "公式空港タクシー",
+      "zh": "机场官方出租车"
     },
-    {
-      "city": {
-        "ko": "리스본",
-        "ja": "リスボン",
-        "en": "Lisbon",
-        "zh": "里斯本"
-      },
-      "theme": {
-        "ko": "산 페드로 전망대와 감미로운 정통 파두 공연",
-        "ja": "リスボンの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Lisbon Highlights & Afternoon Siesta",
-        "zh": "里斯本核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "유네스코 무형유산 파두"
-        ],
-        "ja": [
-          "リスボン日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Lisbon Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "里斯本行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "11:00 산 페드로 데 알칸타라 전망대 구시가지 파노라마",
-        "ja": "午前：リスボンの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Lisbon's key cultural sites",
-        "zh": "上午：里斯本平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 시아두 테라스 점심 후 숙소 2시간 여유 시간",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "18:00 정통 파두(Fado) 하우스 저녁 식사 공연",
-        "ja": "夕方：リスボンのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Lisbon's evening lights & dinner",
-        "zh": "傍晚：欣赏里斯本璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "전망대까지 우버 이동 (비카선 대기 줄 회피)",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "구운 정어리 요리와 그린 와인",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "리스본",
-        "ja": "リスボン",
-        "en": "Lisbon",
-        "zh": "里斯本"
-      },
-      "theme": {
-        "ko": "오리엔테 현대 해양수족관 평지 힐링",
-        "ja": "リスボンの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Lisbon Highlights & Afternoon Siesta",
-        "zh": "里斯本核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "완전 평지 힐링"
-        ],
-        "ja": [
-          "リスボン日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Lisbon Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "里斯本行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 오리엔테 지구: 세계 최고 수준 평지 실내 수족관",
-        "ja": "午前：リスボンの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Lisbon's key cultural sites",
-        "zh": "上午：里斯本平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 바스코 다 가마 쇼핑몰 점심 후 숙소 복귀",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "스페인 세비야 이동 짐 정리 및 휴식",
-        "ja": "夕方：リスボンのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Lisbon's evening lights & dinner",
-        "zh": "傍晚：欣赏里斯本璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "메트로 또는 우버",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "조개 찜(Amêijoas à Bulhão Pato)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "세비야",
-        "ja": "セビリア",
-        "en": "Seville",
-        "zh": "塞维利亚"
-      },
-      "theme": {
-        "ko": "안달루시아 세비야 입성 및 스페인 광장 노을",
-        "ja": "セビリアへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Seville & Relaxed Evening Arrival",
-        "zh": "前往塞维利亚的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "스페인 입성",
-          "스페인 광장 노을"
-        ],
-        "ja": [
-          "セビリア日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Seville Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "塞维利亚行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 리스본에서 세비야행 고급 고속버스 또는 항공편",
-        "ja": "午前：セビリアの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Seville's key cultural sites",
-        "zh": "上午：塞维利亚平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "14:00 호텔 체크인 후 안달루시아식 긴 시에스타",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 스페인 광장 일몰 산책 및 마차 구경",
-        "ja": "夕方：セビリアのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Seville's evening lights & dinner",
-        "zh": "傍晚：欣赏塞维利亚璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "안락한 우등 버스 좌석 또는 공항 우버",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "이베리코 하몽과 판 콘 토마테",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "세비야",
-        "ja": "セビリア",
-        "en": "Seville",
-        "zh": "塞维利亚"
-      },
-      "theme": {
-        "ko": "세비야 대성당과 ★성탄 인형 시장(Feria del Belén)",
-        "ja": "セビリアの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Seville Highlights & Afternoon Siesta",
-        "zh": "塞维利亚核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "★ 세비야 성탄 인형 시장"
-        ],
-        "ja": [
-          "セビリア日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Seville Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "塞维利亚行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 세비야 대성당 및 히랄다 탑 (경사로 설계 보행 수월)",
-        "ja": "午前：セビリアの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Seville's key cultural sites",
-        "zh": "上午：塞维利亚平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 오렌지 나무 그늘 테라스 점심 후 시에스타",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 16:30 대성당 옆 성탄 인형 시장 및 대형 조명 트리",
-        "ja": "夕方：セビリアのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Seville's evening lights & dinner",
-        "zh": "傍晚：欣赏塞维利亚璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "구시가지 도보 이동 가능",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "세비야식 소꼬리 찜(Rabo de Toro)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "세비야",
-        "ja": "セビリア",
-        "en": "Seville",
-        "zh": "塞维利亚"
-      },
-      "theme": {
-        "ko": "이슬람 왕궁 알카사르와 정통 플라멩코 소극장",
-        "ja": "セビリアの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Seville Highlights & Afternoon Siesta",
-        "zh": "塞维利亚核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "알카사르 왕궁",
-          "정통 플라멩코"
-        ],
-        "ja": [
-          "セビリア日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Seville Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "塞维利亚行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 세비야 알카사르 궁전과 분수 정원 산책",
-        "ja": "午前：セビリアの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Seville's key cultural sites",
-        "zh": "上午：塞维利亚平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 점심 식사 후 숙소 충분한 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "19:00 카사 데 라 메모리아 정통 플라멩코 소극장 관람",
-        "ja": "夕方：セビリアのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Seville's evening lights & dinner",
-        "zh": "傍晚：欣赏塞维利亚璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "알카사르 정문 인근 하차",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "가스파초와 올리브 샐러드",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "세비야",
-        "ja": "セビリア",
-        "en": "Seville",
-        "zh": "塞维利亚"
-      },
-      "theme": {
-        "ko": "메트로폴 파라솔 스카이워크와 과달키비르 강",
-        "ja": "セビリアの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Seville Highlights & Afternoon Siesta",
-        "zh": "塞维利亚核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "라스 세타스 스카이워크"
-        ],
-        "ja": [
-          "セビリア日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Seville Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "塞维利亚行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 메트로폴 파라솔: 엘리베이터로 전망대 파노라마 조망",
-        "ja": "午前：セビリアの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Seville's key cultural sites",
-        "zh": "上午：塞维利亚平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 마켓 점심 후 숙소 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:00 과달키비르 강변 황금의 탑 주변 평지 산책",
-        "ja": "夕方：セビリアのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Seville's evening lights & dinner",
-        "zh": "傍晚：欣赏塞维利亚璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "숙소에서 메트로폴 파라솔 우버",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "안달루시아 생선 튀김(Pescaíto)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "세비야",
-        "ja": "セビリア",
-        "en": "Seville",
-        "zh": "塞维利亚"
-      },
-      "theme": {
-        "ko": "하얀 절벽 마을 론다(Ronda) 당일치기 전용 투어",
-        "ja": "セビリアの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Seville Highlights & Afternoon Siesta",
-        "zh": "塞维利亚核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "론다 누에보 다리"
-        ],
-        "ja": [
-          "セビリア日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Seville Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "塞维利亚行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "09:30 하얀 마을 론다 전용 투어 (누에보 다리 조망)",
-        "ja": "午前：セビリアの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Seville's key cultural sites",
-        "zh": "上午：塞维利亚平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 절벽 뷰 레스토랑 점심 후 밴 차량 휴식 귀환",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 세비야 귀환 후 따뜻한 추로스 티타임",
-        "ja": "夕方：セビリアのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Seville's evening lights & dinner",
-        "zh": "傍晚：欣赏塞维利亚璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "소규모 프라이빗 투어 밴 대절",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "초콜릿 찍어먹는 추로스(Churros)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "세비야",
-        "ja": "セビリア",
-        "en": "Seville",
-        "zh": "塞维利亚"
-      },
-      "theme": {
-        "ko": "마리아 루이사 공원 마차 투어와 휴식",
-        "ja": "セビリアの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Seville Highlights & Afternoon Siesta",
-        "zh": "塞维利亚核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "마리아 루이사 마차 투어"
-        ],
-        "ja": [
-          "セビリア日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Seville Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "塞维利亚行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "11:00 마리아 루이사 공원 마차 투어 (편안히 앉아서 즐김)",
-        "ja": "午前：セビリアの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Seville's key cultural sites",
-        "zh": "上午：塞维利亚平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 점심 후 짐 정리 및 다음 도시 이동 준비",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:00 산타크루즈 지구 완만한 골목 테라스 카페",
-        "ja": "夕方：セビリアのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Seville's evening lights & dinner",
-        "zh": "傍晚：欣赏塞维利亚璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "마차 투어 탑승",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "감자 오믈렛 또르띠야",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "말라가·그라나다",
-        "ja": "マラガ・グラナダ",
-        "en": "Málaga · Granada",
-        "zh": "马拉加·格拉纳达"
-      },
-      "theme": {
-        "ko": "지중해 말라가 이동 및 ★라리오스 음악 조명쇼",
-        "ja": "マラガ・グラナダへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Málaga · Granada & Relaxed Evening Arrival",
-        "zh": "前往马拉加·格拉纳达的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "★ 말라가 라리오스 조명쇼"
-        ],
-        "ja": [
-          "マラガ・グラナダ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Málaga · Granada Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马拉加·格拉纳达行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 렌페 고속열차로 말라가 이동 (약 2시간)",
-        "ja": "午前：マラガ・グラナダの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Málaga · Granada's key cultural sites",
-        "zh": "上午：马拉加·格拉纳达平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 바다 뷰 호텔 체크인 후 테라스 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 18:30 칼레 라리오스 크리스마스 대형 음악 조명쇼",
-        "ja": "夕方：マラガ・グラナダのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Málaga · Granada's evening lights & dinner",
-        "zh": "傍晚：欣赏马拉加·格拉纳达璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "렌페 열차 → 말라가 역 우버 직행",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "말라가 전통 정어리 숯불구이(Espetos)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "말라가·그라나다",
-        "ja": "マラガ・グラナダ",
-        "en": "Málaga · Granada",
-        "zh": "马拉加·格拉纳达"
-      },
-      "theme": {
-        "ko": "피카소 미술관과 지중해 항구 무엘레 우노 산책",
-        "ja": "マラガ・グラナダの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Málaga · Granada Highlights & Afternoon Siesta",
-        "zh": "马拉加·格拉纳达核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "피카소 미술관 & 항구 산책"
-        ],
-        "ja": [
-          "マラガ・グラナダ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Málaga · Granada Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马拉加·格拉纳达行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 피카소 미술관 고향 걸작 탐방 (실내 평지)",
-        "ja": "午前：マラガ・グラナダの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Málaga · Granada's key cultural sites",
-        "zh": "上午：马拉加·格拉纳达平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 해변 레스토랑 점심 후 숙소 시에스타",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 말라가 항구 무엘레 우노 산책로와 등대 야경",
-        "ja": "夕方：マラガ・グラナダのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Málaga · Granada's evening lights & dinner",
-        "zh": "傍晚：欣赏马拉加·格拉纳达璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "시내 중심가 도보 또는 우버",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "해산물 빠에야(Paella de Marisco)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "말라가·그라나다",
-        "ja": "マラガ・グラナダ",
-        "en": "Málaga · Granada",
-        "zh": "马拉加·格拉纳达"
-      },
-      "theme": {
-        "ko": "그라나다 이동 및 ★알함브라 나스르 궁전 집중 관람",
-        "ja": "マラガ・グラナダへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Málaga · Granada & Relaxed Evening Arrival",
-        "zh": "前往马拉加·格拉纳达的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "★ 알함브라 나스르 궁전"
-        ],
-        "ja": [
-          "マラガ・グラナダ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Málaga · Granada Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马拉加·格拉纳达行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "09:30 전용 차량으로 그라나다 이동 (약 1시간 30분)",
-        "ja": "午前：マラガ・グラナダの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Málaga · Granada's key cultural sites",
-        "zh": "上午：马拉加·格拉纳达平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "12:00 호텔 체크인 후 점심 식사 및 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 14:30 알함브라 나스르 궁전 시간 지정 입장 및 정원 산책",
-        "ja": "夕方：マラガ・グラナダのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Málaga · Granada's evening lights & dinner",
-        "zh": "傍晚：欣赏马拉加·格拉纳达璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "주의",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "중심가에서 알함브라 정문 미니버스(C30) 또는 택시",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "음료 주문 시 무료 타파스",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "말라가·그라나다",
-        "ja": "マラガ・グラナダ",
-        "en": "Málaga · Granada",
-        "zh": "马拉加·格拉纳达"
-      },
-      "theme": {
-        "ko": "산 니콜라스 전망대 설산 조망 후 말라가 복귀",
-        "ja": "マラガ・グラナダの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Málaga · Granada Highlights & Afternoon Siesta",
-        "zh": "马拉加·格拉纳达核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "시에라 네바다 설산 뷰"
-        ],
-        "ja": [
-          "マラガ・グラナダ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Málaga · Granada Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马拉加·格拉纳达行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "11:00 산 니콜라스 전망대 알함브라 시에라네바다 설산 조망",
-        "ja": "午前：マラガ・グラナダの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Málaga · Granada's key cultural sites",
-        "zh": "上午：马拉加·格拉纳达平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 아랍 거리 찻집 민트티 휴식 후 말라가 복귀",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 20:00 말라가 라리오스 거리 야경 2차 산책 (테라스 좌석)",
-        "ja": "夕方：マラガ・グラナダのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Málaga · Granada's evening lights & dinner",
-        "zh": "傍晚：欣赏马拉加·格拉纳达璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "전망대는 절대 걷지 말고 택시 C31 버스",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "아랍식 민트 티와 꿀 아몬드 파이",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "말라가·그라나다",
-        "ja": "マラガ・グラナダ",
-        "en": "Málaga · Granada",
-        "zh": "马拉加·格拉纳达"
-      },
-      "theme": {
-        "ko": "히브랄파로 성 조망 후 대서양 마데이라 섬 비행",
-        "ja": "マラガ・グラナダへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Málaga · Granada & Relaxed Evening Arrival",
-        "zh": "前往马拉加·格拉纳达的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "마데이라 제도 이동"
-        ],
-        "ja": [
-          "マラガ・グラナダ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Málaga · Granada Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马拉加·格拉纳达行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 말라가 히브랄파로 성 입구 전망대 해안선 조망",
-        "ja": "午前：マラガ・グラナダの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Málaga · Granada's key cultural sites",
-        "zh": "上午：马拉加·格拉纳达平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 지중해식 점심 후 마데이라행 항공 이동 짐 정리",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "16:00 말라가 공항 출발 → 마데이라 풍샬 도착 및 체크인",
-        "ja": "夕方：マラガ・グラナダのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Málaga · Granada's evening lights & dinner",
-        "zh": "傍晚：欣赏马拉加·格拉纳达璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "공항 우버 및 항공편",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "호텔 룸서비스 가벼운 식사",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "온화한 봄 날씨 리조트 휴식과 ★공식 성탄 축제",
-        "ja": "マデイラの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Madeira Highlights & Afternoon Siesta",
-        "zh": "马德拉核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "★ 마데이라 공식 성탄 축제"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 풍샬 오션뷰 테라스 늦은 조식",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "리조트 내 온수 수영장 및 정원 선베드 힐링 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 17:00 아베니다 아리아가 공식 크리스마스 마켓 빌리지",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "리조트 셔틀 또는 택시",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "흑칼치 바나나 요리(Espada com Banana)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "몬테 케이블카 파노라마와 구시가지 채색 문 골목",
-        "ja": "マデイラの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Madeira Highlights & Afternoon Siesta",
-        "zh": "马德拉核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "몬테 케이블카"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 풍샬 케이블카 탑승하여 몬테 정상 이동",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 몬테 팰리스 정원 카페 점심 후 케이블카 하산",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:00 풍샬 구시가지 산타 마리아 거리 채색 문 골목 산책",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "케이블카 왕복 탑승",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "마늘빵 볼로 두 카쿠(Bolo do Caco)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "카보 지랑 580m 스카이워크와 마리나 노을",
-        "ja": "マデイラの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Madeira Highlights & Afternoon Siesta",
-        "zh": "马德拉核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "카보 지랑 스카이워크"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 카보 지랑 해안 절벽 스카이워크 유리 전망대",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 어촌 마을 테라스 식사 후 리조트 복귀 시에스타",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 풍샬 마리나 항구 노을 산책 및 요트 구경",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "남부 해안 프라이빗 전용 투어 차량",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "전통 소고기 꼬치구이 에스페타다",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "온화한 남서부 해안 드라이브와 도심 조명 터널",
-        "ja": "マデイラの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Madeira Highlights & Afternoon Siesta",
-        "zh": "马德拉核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "풍샬 도심 조명 터널"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 리베이라 브라바 남서부 해안 드라이브",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 해변 바다 전망 점심 후 온수풀 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "★ 18:00 풍샬 시청사 광장 크리스마스 조명 터널 감상",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "전용 차량 드라이브",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "패션프루트 디저트와 생선 그릴",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "마데이라 식물원과 200년 역사 와인 롯지",
-        "ja": "マデイラの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Madeira Highlights & Afternoon Siesta",
-        "zh": "马德拉核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "블랜디스 와인 탐방"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:30 마데이라 식물원 아열대 수목과 파노라마 뷰",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 식물원 레스토랑 식사 후 리조트 복귀 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 마데이라 와인 롯지(Blandy's) 고택 정원 산책",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "보통",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "택시 직행",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "숙성 마데이라 와인과 볼로 드 멜 케이크",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "산타나 전통 초가 가옥과 가족 감사 디너",
-        "ja": "マデイラの歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Madeira Highlights & Afternoon Siesta",
-        "zh": "马德拉核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "산타나 전통 가옥"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "10:00 산타나(Santana) 전통 초가삼간 가옥 마을 관광 드라이브",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 산림욕 후 리조트 복귀 여유로운 티타임",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "18:00 리조트 오션뷰 테라스 가족 감사 디너 코스",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "프라이빗 차량",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "셰프 특선 해산물 코스",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "마데이라",
-        "ja": "マデイラ",
-        "en": "Madeira",
-        "zh": "马德拉"
-      },
-      "theme": {
-        "ko": "로컬 시장 기념품 쇼핑 및 본토 리스본 귀환",
-        "ja": "マデイラへの拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Madeira & Relaxed Evening Arrival",
-        "zh": "前往马德拉的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "본토 리스본 귀환"
-        ],
-        "ja": [
-          "マデイラ日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Madeira Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "马德拉行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "11:00 풍샬 로컬 농산물 시장 열대 과일 쇼핑",
-        "ja": "午前：マデイラの平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Madeira's key cultural sites",
-        "zh": "上午：马德拉平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 점심 후 공항 이동 준비",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "16:30 풍샬 공항 출발 → 리스본 도착 호텔 체크인",
-        "ja": "夕方：マデイラのライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Madeira's evening lights & dinner",
-        "zh": "傍晚：欣赏马德拉璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "국내선 항공편",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "호텔 레스토랑 안락한 저녁",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "귀국",
-        "ja": "帰国",
-        "en": "Return Home",
-        "zh": "归国"
-      },
-      "theme": {
-        "ko": "테주 강변 평지 케이블카와 30일 여정 완주 축하",
-        "ja": "帰国の歴史名所と午後のシエスタゆったり滞在",
-        "en": "Exploring Return Home Highlights & Afternoon Siesta",
-        "zh": "归国核心历史景点与午后西斯塔慢游"
-      },
-      "events": {
-        "ko": [
-          "30일 여정 완주 티타임"
-        ],
-        "ja": [
-          "帰国日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Return Home Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "归国行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "11:00 테주 강변 파르크 다스 나송이스 평지 케이블카",
-        "ja": "午前：帰国の平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Return Home's key cultural sites",
-        "zh": "上午：归国平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:30 바스코 다 가마 센터 쇼핑 및 귀국 짐 패킹",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "17:30 테주 강 일몰 바라보며 30일 완주 기념 티타임",
-        "ja": "夕方：帰国のライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Return Home's evening lights & dinner",
-        "zh": "傍晚：欣赏归国璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "우버 또는 호텔 리무진",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "포르투갈 도미 구이(Dourada)",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
-    },
-    {
-      "city": {
-        "ko": "귀국",
-        "ja": "帰国",
-        "en": "Return Home",
-        "zh": "归国"
-      },
-      "theme": {
-        "ko": "리스본 공항 출발 및 인천 귀국",
-        "ja": "帰国への拠点移動と無理のない到着後の街歩き",
-        "en": "Transfer to Return Home & Relaxed Evening Arrival",
-        "zh": "前往归国的城市中转与轻松抵达漫步"
-      },
-      "events": {
-        "ko": [
-          "인천 귀국"
-        ],
-        "ja": [
-          "帰国日程",
-          "シニア配慮",
-          "移動最小化"
-        ],
-        "en": [
-          "Return Home Day",
-          "Senior-Paced",
-          "Minimal Transit"
-        ],
-        "zh": [
-          "归国行程",
-          "适老舒适",
-          "轻度中转"
-        ]
-      },
-      "morning": {
-        "ko": "09:30 리스본 공항(LIS) 이동 세금 환급(Tax Refund) 수속",
-        "ja": "午前：帰国の平坦な散策路と主要文化遺産のゆったり見学",
-        "en": "Morning: Gentle walking route exploring Return Home's key cultural sites",
-        "zh": "上午：归国平缓核心路线与主要文化遗迹悠闲游览"
-      },
-      "rest": {
-        "ko": "13:00 인천행 항공편 탑승, 기내 휴식",
-        "ja": "午後：ホテルでの温水シャワー、午睡シエスタで体力を完全回復",
-        "en": "Afternoon: Hotel warm shower, rest, and mandatory siesta recharge",
-        "zh": "午后：酒店热水沐浴、西斯塔午休，恢复充沛体力"
-      },
-      "evening": {
-        "ko": "기내 숙면 및 인천 도착",
-        "ja": "夕方：帰国のライトアップ夜景鑑賞と消化に優しい名物ディナー",
-        "en": "Evening: Gentle stroll around Return Home's evening lights & dinner",
-        "zh": "傍晚：欣赏归国璀璨夜景灯光，享用温热养胃特色晚宴"
-      },
-      "walk": {
-        "ko": "낮음",
-        "ja": "低（平坦・シニア配慮）",
-        "en": "Low (Flat & Senior-Friendly)",
-        "zh": "低（平缓适老）"
-      },
-      "transport": {
-        "ko": "공항 전용 픽업 차량",
-        "ja": "Uber XLまたは低床トラム・専用車",
-        "en": "Uber XL or low-floor tram / private car",
-        "zh": "Uber XL或低地板有轨电车/专车"
-      },
-      "meal": {
-        "ko": "기내식 및 라운지 식사",
-        "ja": "昼：胃に優しい名物料理 / 夕：温かいスープと伝統ディナー",
-        "en": "Lunch: Regional specialty / Dinner: Warm soup & light dining",
-        "zh": "午市：养胃特色美食 / 晚市：温热鲜汤与传统晚宴"
-      }
+    "meal": {
+      "ko": "숙소 인근 따뜻한 카탈루냐 가정식 수프 & 신선한 과일",
+      "en": "Warm Catalan homestyle soup & fresh fruit near hotel",
+      "ja": "宿近くの温かいカタルーニャ家庭風スープ＆新鮮な果物",
+      "zh": "公寓附近温馨加泰罗尼亚家庭风味热汤与新鲜水果"
     }
-  ],
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "고딕 지구 평지 산책 & 1836년 전통 파에야 (7 Portes) & 산타 카테리나 로컬 시장",
+      "en": "Gothic Quarter Stroll & Historic 1836 Paella (7 Portes) & Santa Caterina Market",
+      "ja": "ゴシック地区平坦路散策＆1836年創業 7 Portesの伝統パエリア＆サンタ・カテリーナ市場",
+      "zh": "哥特区平缓漫步与百年老店 7 Portes 传统海鲜饭＆圣卡特琳娜市场"
+    },
+    "events": {
+      "ko": [
+        "고딕 지구 평지 산책",
+        "7 Portes 1836 전통 파에야",
+        "시에스타 낮잠 휴식",
+        "산타 카테리나 시장 물결지붕"
+      ],
+      "en": [
+        "Gothic Quarter Flat Walk",
+        "7 Portes 1836 Historic Paella",
+        "Siesta Afternoon Rest",
+        "Santa Caterina Market Waves"
+      ],
+      "ja": [
+        "ゴシック地区平坦路散策",
+        "7 Portes 1836年創業パエリア",
+        "シエスタ昼寝休憩",
+        "サンタ・カテリーナ市場の波屋根"
+      ],
+      "zh": [
+        "哥特区平缓散步",
+        "7 Portes 始于1836年传统海鲜饭",
+        "午后午休充能",
+        "圣卡特琳娜彩色波浪屋顶"
+      ]
+    },
+    "morning": {
+      "ko": "바르셀로나 대성당 광장과 고딕 지구의 넓고 평탄한 보행자 전용 도로를 천천히 산책",
+      "en": "Relaxed stroll along flat pedestrian promenades around Barcelona Cathedral and Gothic Quarter",
+      "ja": "バルセロナ大聖堂前広場とゴシック地区の平坦で歩きやすい歩行者専用道路をゆったり散策",
+      "zh": "漫步巴塞罗那大教堂广场与哥特区平整开阔的步行街"
+    },
+    "rest": {
+      "ko": "13:30~16:00 Suites Marina Abapart 복귀 후 침대 낮잠 및 발 마사지 (부모님 관절 완벽 보호)",
+      "en": "13:30~16:00 Return to Suites Marina Abapart for nap and foot rest (knee joint protection)",
+      "ja": "13:30~16:00 宿に戻りベッドで昼寝＆フットケア（ご両親の関節をしっかり保護）",
+      "zh": "13:30~16:00 返回Suites Marina Abapart午睡休息，保护长辈膝关节"
+    },
+    "evening": {
+      "ko": "산타 카테리나 시장 (Mercat de Santa Caterina) 물결무늬 지붕 구경, 신선한 과일과 하몬 시식 및 저녁 산책",
+      "en": "Visit Santa Caterina Market to admire its colorful wavy roof, taste fresh fruits & sliced jamón",
+      "ja": "波打つ屋根が美しいサンタ・カテリーナ市場を訪れ、新鮮な果物と生ハム散策＆穏やかな夕景散歩",
+      "zh": "漫步圣卡特琳娜市场欣赏波浪形彩色屋顶，品尝新鲜水果与伊比利亚火腿"
+    },
+    "walk": {
+      "ko": "낮음 (4,200보)",
+      "en": "Low (4,200 steps)",
+      "ja": "低い (4,200歩)",
+      "zh": "较低 (4,200步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "Ciudad Condal: 꿀대구(Bacalao a la miel, 달콤한 꿀과 아이올리 소스 부모님 최애 확정!), 소고기 안심 몬타디토, 상큼한 레몬맥주 클라라 & 산타 카테리나 시장 생과일 컵",
+      "en": "Ciudad Condal: Honey Cod (Bacalao a la miel - sweet honey & aioli, parents' favorite!), Beef Tenderloin Montadito, Clara Lemon Beer & Santa Caterina Market fresh fruit cup",
+      "ja": "Ciudad Condal: タラの蜂蜜アイオリ焼き (Bacalao a la miel - 蜂蜜とアイオリの甘辛風味でご両親大絶賛!)、牛ヒレ肉のモンタディート、レモンビール・クララ＆市場のフルーツカップ",
+      "zh": "Ciudad Condal：蜂蜜蒜香鳕鱼 (Bacalao a la miel - 蜂蜜与蒜黄酱浓郁交融，长辈最爱!)、牛柳小串配烤面包、柠檬啤酒克拉拉与圣卡特琳娜市场混合水果杯"
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "가우디 파노라마 & 꿀대구 미식 (Ciudad Condal) & 사그라다 호수공원 무료 야경",
+      "en": "Gaudí Panorama & Ciudad Condal Honey Cod & Sagrada Lake Park Free Night View",
+      "ja": "ガウディ建築パノラマ＆名店 Ciudad Condalの蜂蜜タラ料理＆ガウディ池夜景",
+      "zh": "高迪全景巡游＆Ciudad Condal蜂蜜鳕鱼＆圣家堂湖畔免费夜景"
+    },
+    "events": {
+      "ko": [
+        "시티투어 2층 버스",
+        "카사 바트요·밀라 파노라마",
+        "Ciudad Condal 꿀대구",
+        "사그라다 파밀리아 호수공원 야경"
+      ],
+      "en": [
+        "2-Floor Tour Bus",
+        "Casa Batlló & Milà Views",
+        "Ciudad Condal Honey Cod",
+        "Plaça de Gaudí Lake Night View"
+      ],
+      "ja": [
+        "2階建てツアーバス",
+        "カサ・バトリョ＆ミラ遠望",
+        "Ciudad Condal 蜂蜜タラ",
+        "ガウディ池の聖堂ライトアップ"
+      ],
+      "zh": [
+        "双层观光巴士",
+        "巴特罗之家与米拉之家全景",
+        "Ciudad Condal蜂蜜鳕鱼",
+        "圣家堂高迪湖畔倒影夜景"
+      ]
+    },
+    "morning": {
+      "ko": "T-familiar 카드로 이동, 2층 시티투어 버스 탑승하여 계단 없이 카사 바트요와 카사 밀라 외관 파노라마 감상",
+      "en": "Hop on the 2-Floor City Tour Bus using T-familiar card to view Casa Batlló & Casa Milà without walking stairs",
+      "ja": "T-familiarを利用し2階建てツアーバスに乗車。階段を使わずにカサ・バトリョやカサ・ミラの外観をパノラマ見学",
+      "zh": "使用T-familiar交通卡搭乘双层观光大巴，免登楼梯全景饱览巴特罗之家与米拉之家"
+    },
+    "rest": {
+      "ko": "13:30~16:00 아파트 복귀 낮잠 및 따뜻한 꿀차 티타임 휴식",
+      "en": "13:30~16:00 Afternoon siesta recharge at apartment with warm honey tea",
+      "ja": "13:30~16:00 アパートに戻り昼寝＆温かい蜂蜜茶ティータイム休憩",
+      "zh": "13:30~16:00 返回公寓午休，享用热蜂蜜茶惬意充能"
+    },
+    "evening": {
+      "ko": "사그라다 파밀리아 인근 호수 공원 (Plaça de Gaudí): 성당 정면 호숫가에 앉아 밤의 사그라다 파밀리아 조명 야경 감상 (무료, 예약 불필요)",
+      "en": "Plaça de Gaudí Lake Park: Sit by the calm lake to marvel at illuminated Sagrada Família reflected on water (Free, no booking needed)",
+      "ja": "ガウディ池公園(Plaça de Gaudí): 聖堂正面の池のほとりに座り、水面に映る夜のサグラダ・ファミリアの幻想的ライトアップを鑑賞（無料・予約不要）",
+      "zh": "圣家堂高迪湖泊公园(Plaça de Gaudí)：坐在湖畔长椅欣赏夜晚圣家堂倒影与华丽金色灯光（免费，无需预约）"
+    },
+    "walk": {
+      "ko": "낮음 (3,800보)",
+      "en": "Low (3,800 steps)",
+      "ja": "低い (3,800歩)",
+      "zh": "较低 (3,800步)"
+    },
+    "transport": {
+      "ko": "시티투어 2층 버스",
+      "en": "City Tour Bus",
+      "ja": "シティツアー2階バス",
+      "zh": "双层观光大巴"
+    },
+    "meal": {
+      "ko": "7 Portes: 1836년 전통 명가의 해산물 파에야 & 먹물 파에야 (Paella) & 고딕 지구 바삭한 츄러스와 진한 쇼콜라테 (Churros con Chocolate)",
+      "en": "7 Portes: Historic 1836 Seafood Paella & Black Rice Paella with saffron & Gothic Quarter crispy Churros dipped in rich hot chocolate",
+      "ja": "7 Portes: 1836年創業の老舗が誇る伝統魚介パエリア＆イカスミパエリア＆ゴシック地区のサクサクチュロスと濃厚ホットチョコレート (Churros con Chocolate)",
+      "zh": "7 Portes：始于1836年老字号经典的藏红花海鲜西班牙烩饭与墨鱼饭，搭配哥特区香脆吉事果蘸浓郁热巧 (Churros con Chocolate)"
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "몬주익 언덕 시티버스 파노라마 & 바르셀로네타 해변 산책",
+      "en": "Montjuïc Hill Tour Bus Panorama & Barceloneta Beach Stroll",
+      "ja": "モンジュイックの丘 バス周遊＆バルセロネータ海岸プロムナード",
+      "zh": "蒙特惠奇山双层巴士全景游＆巴塞罗内塔海滨散步"
+    },
+    "events": {
+      "ko": [
+        "몬주익 파노라마",
+        "지중해 항구 뷰",
+        "바르셀로네타 테라스",
+        "노을 힐링"
+      ],
+      "en": [
+        "Montjuïc Panorama",
+        "Mediterranean Port Views",
+        "Barceloneta Terrace",
+        "Sunset Recharge"
+      ],
+      "ja": [
+        "モンジュイック眺望",
+        "地中海ハーバービュー",
+        "海岸テラス席",
+        "夕日リフレッシュ"
+      ],
+      "zh": [
+        "蒙特惠奇俯瞰",
+        "地中海海港全景",
+        "巴塞罗内塔海滨露台",
+        "海风日落休憩"
+      ]
+    },
+    "morning": {
+      "ko": "시티투어 버스로 몬주익 언덕 순환 코스 탑승, 지중해 바다와 바르셀로나 시가지 파노라마 조망",
+      "en": "Scenic loop on Montjuïc hill via tour bus, viewing Mediterranean coastline and Barcelona city skyline",
+      "ja": "ツアーバスでモンジュイックの丘を巡り、地中海の海とバルセロナ市街の壮大なパノラマを一望",
+      "zh": "搭乘观光大巴环游蒙特惠奇山，轻松俯瞰蔚蓝地中海与巴塞罗那市区全景"
+    },
+    "rest": {
+      "ko": "13:30~16:00 바르셀로네타 해변 그늘 벤치 휴식 후 숙소 복귀 낮잠",
+      "en": "13:30~16:00 Beachfront shade rest followed by peaceful nap at apartment",
+      "ja": "13:30~16:00 海岸沿いのベンチで休憩後、アパートに戻り快適な昼寝",
+      "zh": "13:30~16:00 海滨阴凉长椅稍歇，返回公寓午睡充能"
+    },
+    "evening": {
+      "ko": "올림픽 항구 산책로를 가볍게 걷고 노을 감상 후 아파트 복귀",
+      "en": "Gentle stroll around Port Olímpic promenade to catch Mediterranean golden sunset",
+      "ja": "ポート・オリンピック遊歩道をのんびり歩き、地中海の夕景を堪能",
+      "zh": "在奥林匹克港步道轻松散步，欣赏地中海金色夕阳"
+    },
+    "walk": {
+      "ko": "낮음 (3,600보)",
+      "en": "Low (3,600 steps)",
+      "ja": "低い (3,600歩)",
+      "zh": "较低 (3,600步)"
+    },
+    "transport": {
+      "ko": "시티투어 버스 & 택시",
+      "en": "Tour Bus & Taxi",
+      "ja": "ツアーバス＆タクシー",
+      "zh": "观光大巴与出租车"
+    },
+    "meal": {
+      "ko": "Puertecillo Sagrada Família: 숙소 도보 2분 신선한 해산물 직접 골라 즉석 철판구이 & 보케리아 시장 최고급 이베리코 하몬 콘 (Jamón Cone)",
+      "en": "Puertecillo Sagrada Família: 2-min walk market-style fresh griddled seafood & Boqueria Market acorn-fed Ibérico Jamón paper cone",
+      "ja": "Puertecillo Sagrada Família: 宿から徒歩2分の新鮮魚介を選んで焼く鉄板焼き＆ボケリア市場の最高級イベリコ生ハムコーン (Jamón Cone)",
+      "zh": "Puertecillo Sagrada Família：距住所步行2分钟自选现煎海鲜铁板烧，以及波盖利亚市场顶级伊比利亚火腿纸筒 (Jamón Cone)"
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "그라시아 거리 명품 산책 & 도보 2분 즉석 해산물 구이 (Puertecillo)",
+      "en": "Passeig de Gràcia Stroll & Fresh Seafood Grill (Puertecillo, 2m from hotel)",
+      "ja": "グラシア通り散策＆宿徒歩2分の極上シーフードグリル (Puertecillo)",
+      "zh": "格拉西亚大道漫步＆距酒店步行2分钟海鲜铁板烧 (Puertecillo)"
+    },
+    "events": {
+      "ko": [
+        "그라시아 평지 쇼핑",
+        "까탈루냐 광장",
+        "Puertecillo 해산물 구이",
+        "숙소 도보 2분 만찬"
+      ],
+      "en": [
+        "Passeig de Gràcia Walk",
+        "Plaça Catalunya",
+        "Puertecillo Seafood",
+        "2 Min Walk to Bed"
+      ],
+      "ja": [
+        "グラシア通り平坦路",
+        "カタルーニャ広場",
+        "Puertecillo 海鮮グリル",
+        "宿徒歩2分の至福"
+      ],
+      "zh": [
+        "格拉西亚平坦漫步",
+        "加泰罗尼亚广场",
+        "Puertecillo现点海鲜",
+        "下楼即达无需奔波"
+      ]
+    },
+    "morning": {
+      "ko": "그라시아 거리(Passeig de Gràcia)의 넓고 평탄한 가로수길 산책 및 올리브 오일, 기념품 쇼핑",
+      "en": "Leisurely walk under tree-lined Passeig de Gràcia, shopping for artisanal olive oils & souvenirs",
+      "ja": "グラシア通りの広々とした並木道を散策し、オリーブオイルやお土産のショッピング",
+      "zh": "漫步绿树成荫的格拉西亚大道平坦林荫路，选购优质特级初榨橄榄油与特色伴手礼"
+    },
+    "rest": {
+      "ko": "13:30~16:30 숙소 복귀 후 충분한 수면 및 온수 샤워",
+      "en": "13:30~16:30 Extended siesta nap and warm shower at apartment",
+      "ja": "13:30~16:30 アパートに戻り十分な昼寝＆温水シャワーで体力回復",
+      "zh": "13:30~16:30 返回公寓充分午休，享受热水淋浴消除疲劳"
+    },
+    "evening": {
+      "ko": "숙소에서 도보 단 2분 거리인 Puertecillo Sagrada Família에서 부모님 이동 부담 없이 신선한 해산물 즉석 구이 만찬",
+      "en": "Just a 2-minute flat walk from apartment to Puertecillo Sagrada Família for an easy, fresh grilled seafood feast",
+      "ja": "宿から徒歩わずか2分のPuertecillo Sagrada Famíliaで、移動の負担なく新鮮な魚介の鉄板焼きを満喫",
+      "zh": "距公寓仅步行2分钟的Puertecillo Sagrada Família，长辈无需多走路即可享受现选生猛海鲜铁板烧大餐"
+    },
+    "walk": {
+      "ko": "낮음 (3,900보)",
+      "en": "Low (3,900 steps)",
+      "ja": "低い (3,900歩)",
+      "zh": "较低 (3,900步)"
+    },
+    "transport": {
+      "ko": "도보 & Uber",
+      "en": "Walking & Uber",
+      "ja": "徒歩＆Uber",
+      "zh": "步行与网约车"
+    },
+    "meal": {
+      "ko": "Puertecillo Sagrada Família: 숙소 도보 2분, 신선한 해산물을 직접 골라 즉석 구이로 먹는 가성비 맛집",
+      "en": "Puertecillo Sagrada Família: 2 min walk from hotel, select fresh razor clams, shrimp & fish grilled to order",
+      "ja": "Puertecillo Sagrada Família: 宿徒歩2分、新鮮なマテ貝・エビ・白身魚を選んでその場で焼き上げる高コスパ名店",
+      "zh": "Puertecillo Sagrada Família：距酒店步行2分钟，自选生猛蛏子、大虾与海鱼现场铁板烧，性价比极高"
+    }
+  },
+  {
+    "city": {
+      "ko": "바르셀로나",
+      "en": "Barcelona",
+      "ja": "バルセロナ",
+      "zh": "巴塞罗那"
+    },
+    "theme": {
+      "ko": "사그라다 파밀리아 내부 확정 관람 (15:30 황금빛 노을 스테인드글라스)",
+      "en": "Sagrada Família Confirmed Interior Visit (15:30 Sunset Stained-Glass)",
+      "ja": "サグラダ・ファミリア内部確定鑑賞 (15:30 西側黄金色の夕景ステンドグラス)",
+      "zh": "圣家堂内部确定参观 (15:30 西侧彩色玻璃金色夕阳时段)"
+    },
+    "events": {
+      "ko": [
+        "오전 여유 휴식",
+        "숙소 도보 3분 진입",
+        "15:30 사그라다 내부 확정",
+        "황금빛 스테인드글라스",
+        "안달루시아 짐정리"
+      ],
+      "en": [
+        "Relaxed Morning",
+        "3 Min Walk to Entry",
+        "15:30 Sagrada Confirmed",
+        "Golden Stained Glass",
+        "Pack for Andalusia"
+      ],
+      "ja": [
+        "午前ゆっくり休養",
+        "宿から徒歩3分入場",
+        "15:30 聖堂内部確定",
+        "黄金色ステンドグラス",
+        "アンダルシア荷造り"
+      ],
+      "zh": [
+        "上午充裕休息",
+        "步行3分钟即达入口",
+        "15:30 圣家堂确定入场",
+        "金色夕阳彩色玻璃",
+        "整理行装备战安达卢西亚"
+      ]
+    },
+    "morning": {
+      "ko": "숙소에서 늦잠 및 여유로운 브런치, 사그라다 파밀리아 외관 조각 천천히 감상",
+      "en": "Sleep in, leisurely brunch at apartment, and peaceful morning walk admiring Sagrada exterior facades",
+      "ja": "朝は遅めの起床、アパートでゆったりブランチを楽しみ聖堂外観の彫刻を鑑賞",
+      "zh": "睡到自然醒，在公寓享用早午餐，漫步欣赏圣家堂外立面精美雕塑"
+    },
+    "rest": {
+      "ko": "12:30~14:30 내부 관람 전 침대 누워 체력 100% 비축",
+      "en": "12:30~14:30 Pre-entry rest on bed to reach 100% vitality",
+      "ja": "12:30~14:30 入場前にベッドでしっかり横になり体力を100%充填",
+      "zh": "12:30~14:30 进馆前卧床静养，积蓄充沛体力"
+    },
+    "evening": {
+      "ko": "15:30 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
+      "en": "Walk 3 min for 15:30 confirmed admission. Marvel at breathtaking golden sunset cascading through western stained glass, then pack bags",
+      "ja": "15:30の確定予約時間に合わせて徒歩3分で入場。西側ステンドグラスから降り注ぐ黄金色の夕景の光に包まれ、宿に戻り荷造り",
+      "zh": "按15:30确定预约时间步行3分钟入场。沉浸于西侧彩色玻璃倾泻而下的金色夕阳圣光，返回公寓整理行李"
+    },
+    "walk": {
+      "ko": "낮음 (3,500보)",
+      "en": "Low (3,500 steps)",
+      "ja": "低い (3,500歩)",
+      "zh": "较低 (3,500步)"
+    },
+    "transport": {
+      "ko": "도보 3분",
+      "en": "3 Min Walk",
+      "ja": "徒歩3分",
+      "zh": "步行3分钟"
+    },
+    "meal": {
+      "ko": "카탈루냐 로컬 타파스: 하몬 이베리코 데 베요타 & 따뜻한 크로케타",
+      "en": "Catalan local tapas: 100% Acorn-fed Jamón Ibérico & warm creamy croquetas",
+      "ja": "カタルーニャ料理: 最高級ベジョータ生ハム＆熱々クリーミーなクロケッタ",
+      "zh": "加泰罗尼亚风味小吃：特级橡果饲伊比利亚生火腿与香热炸丸子"
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "항공으로 세비야 1차 이동 & 1670년 타파스 바 (El Rinconcillo) & 메트로폴 파라솔 야경",
+      "en": "Flight to Seville Leg 1 & 1670 Historic Tapas (El Rinconcillo) & Las Setas Free Night Walk",
+      "ja": "航空便でセビリア第1期移動＆1670年創業 El Rinconcillo＆メトロポール・パラソル夜景",
+      "zh": "飞抵塞维利亚第一期＆始于1670年最古老小吃吧(El Rinconcillo)＆都市阳伞免费夜景"
+    },
+    "events": {
+      "ko": [
+        "BCN➔SVQ 항공 (09:10~10:50)",
+        "공항 택시 정액(25~30€)",
+        "Letoh Letoh Sevilla",
+        "El Rinconcillo 시금치스튜",
+        "메트로폴 파라솔 무료 야경"
+      ],
+      "en": [
+        "BCN➔SVQ Flight (09:10~10:50)",
+        "Airport Taxi Flat (25~30€)",
+        "Letoh Letoh Sevilla",
+        "El Rinconcillo Spinach Stew",
+        "Las Setas Free Night Walk"
+      ],
+      "ja": [
+        "BCN➔SVQ 航空便 (09:10~10:50)",
+        "空港タクシー定額(25~30€)",
+        "Letoh Letoh Sevilla",
+        "El Rinconcillo ホウレン草煮込み",
+        "メトロポール・パラソル無料夜景"
+      ],
+      "zh": [
+        "BCN➔SVQ 航班 (09:10~10:50)",
+        "机场出租车一口价(25~30€)",
+        "Letoh Letoh Sevilla",
+        "El Rinconcillo 菠菜鹰嘴豆炖菜",
+        "都市阳伞室外广场免费夜景"
+      ]
+    },
+    "morning": {
+      "ko": "09:10 바르셀로나(BCN) 출발 ➔ 10:50 세비야(SVQ) 도착. 공식 택시(정액 25~30€)로 Letoh Letoh Sevilla 직행 체크인",
+      "en": "09:10 BCN flight ➔ 10:50 SVQ arrival. Official flat-rate airport taxi (25~30€) direct to Letoh Letoh Sevilla for check-in",
+      "ja": "09:10 BCN出発 ➔ 10:50 SVQ到着。公式定額タクシー(25~30€)でLetoh Letoh Sevillaへ直行チェックイン",
+      "zh": "09:10 BCN起飞 ➔ 10:50 抵达SVQ。乘坐官方一口价出租车(25~30€)直达Letoh Letoh Sevilla办理入住"
+    },
+    "rest": {
+      "ko": "13:30~16:00 Letoh Letoh Sevilla 호텔 침대에서 따뜻한 샤워 및 충분한 시에스타 낮잠",
+      "en": "13:30~16:00 Check-in, hot shower and rejuvenating afternoon siesta at Letoh Letoh Sevilla",
+      "ja": "13:30~16:00 ホテルで温水シャワーを浴びてベッドでゆったりシエスタ（昼寝）",
+      "zh": "13:30~16:00 酒店热水淋浴后卧床充分午睡，消除航程疲惫"
+    },
+    "evening": {
+      "ko": "세비야 최고령 타파스 바 El Rinconcillo 식사 후, 메트로폴 파라솔 (Las Setas de Sevilla) 야외 광장 산책 & 거대 목조 구조물 야경 감상 (무료, 예약 불필요)",
+      "en": "Dinner at Seville's oldest bar El Rinconcillo, then stroll Las Setas de Sevilla open-air plaza to admire the giant illuminated wooden mushrooms (Free)",
+      "ja": "1670年創業の最古タパスバー El Rinconcilloで夕食後、メトロポール・パラソル(Las Setas)屋外広場を散歩し巨大木造建築のライトアップを無料鑑賞",
+      "zh": "在塞维利亚最古老小吃吧 El Rinconcillo 晚餐后，漫步都市阳伞(Las Setas)室外广场，免费欣赏宏大木结构夜景灯光"
+    },
+    "walk": {
+      "ko": "낮음 (3,700보)",
+      "en": "Low (3,700 steps)",
+      "ja": "低い (3,700歩)",
+      "zh": "较低 (3,700步)"
+    },
+    "transport": {
+      "ko": "국내선 항공 + 공항 택시",
+      "en": "Flight + Airport Taxi",
+      "ja": "航空便＋空港タクシー",
+      "zh": "国内航班与机场出租车"
+    },
+    "meal": {
+      "ko": "El Rinconcillo (1670년 개업 최고령 타파스 바): 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)",
+      "en": "El Rinconcillo (Oldest bar since 1670): Spinach & Chickpea Stew (Espinacas con garbanzos), Braised Pork Cheek (Carrillada)",
+      "ja": "El Rinconcillo (1670年創業最古店): ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の赤ワイン煮込み",
+      "zh": "El Rinconcillo (始于1670年最古老小吃吧)：菠菜鹰嘴豆炖菜(Espinacas con garbanzos)、慢炖伊比利亚猪面颊肉(Carrillada)"
+    }
+  },
+  {
+    "city": {
+      "ko": "코르도바",
+      "en": "Córdoba",
+      "ja": "コルドバ",
+      "zh": "科尔多瓦"
+    },
+    "theme": {
+      "ko": "Renfe 초고속열차 코르도바 이동 & 소꼬리찜 (Bodegas Mezquita) & 로마 다리 노을 야경",
+      "en": "Renfe Train to Córdoba & Tender Ox-tail Stew (Bodegas Mezquita) & Roman Bridge Sunset Night View",
+      "ja": "Renfe高速列車でコルドバへ移動＆オックステール煮込み＆ローマ橋の夕景・夜景",
+      "zh": "搭乘Renfe高铁前往科尔多瓦＆慢炖牛尾(Bodegas Mezquita)＆古罗马桥日落免费夜景"
+    },
+    "events": {
+      "ko": [
+        "Renfe 기차 (12:30~13:11)",
+        "Hotel de los Faroles",
+        "메스키타 회랑",
+        "Bodegas Mezquita 소꼬리찜",
+        "로마 다리 무료 야경"
+      ],
+      "en": [
+        "Renfe Train (12:30~13:11)",
+        "Hotel de los Faroles",
+        "Mezquita Courtyard",
+        "Bodegas Mezquita Ox-tail",
+        "Roman Bridge Free Sunset Night View"
+      ],
+      "ja": [
+        "Renfe 列車 (12:30~13:11)",
+        "Hotel de los Faroles",
+        "メスキタ中庭回廊",
+        "Bodegas Mezquita 牛テール煮",
+        "ローマ橋の無料夕景夜景"
+      ],
+      "zh": [
+        "Renfe高铁 (12:30~13:11)",
+        "Hotel de los Faroles",
+        "清真寺大教堂回廊",
+        "Bodegas Mezquita 慢炖牛尾",
+        "古罗马桥日落夕阳免费夜景"
+      ]
+    },
+    "morning": {
+      "ko": "세비야 산타 후스타(Santa Justa)역에서 12:30 Renfe 고속열차 탑승 (41분 쾌속 이동) ➔ 코르도바 13:11 도착, 택시로 Hotel de los Faroles 체크인",
+      "en": "Board 12:30 Renfe high-speed train from Seville Santa Justa (smooth 41 min ride) ➔ Córdoba 13:11, taxi to Hotel de los Faroles",
+      "ja": "セビリアSanta Justa駅から12:30発Renfe高速列車に乗車(41分快適移動) ➔ コルドバ13:11到着、タクシーでHotel de los Farolesへ",
+      "zh": "在塞维利亚Santa Justa站搭乘12:30 Renfe高铁(舒适平稳运行41分钟) ➔ 13:11抵达科尔多瓦，打车前往Hotel de los Faroles办理入住"
+    },
+    "rest": {
+      "ko": "13:30~15:30 전통 안달루시안 파티오 호텔에서 침대 낮잠 및 온수 휴식",
+      "en": "13:30~15:30 Recharging siesta in the charming Andalusian patio hotel",
+      "ja": "13:30~15:30 アンダルシア伝統パティオのあるホテルで快適な昼寝休養",
+      "zh": "13:30~15:30 在独具安达卢西亚庭院特色的酒店房间舒适午睡"
+    },
+    "evening": {
+      "ko": "코르도바 메스키타와 유대인 지구 꽃길 산책 후, 해 질 녘 로마 다리 (Puente Romano)를 건너며 메스키타와 강변 야경 감상 (무료, 예약 불필요)",
+      "en": "Stroll Mezquita exterior and flower alley, then cross the historic Roman Bridge (Puente Romano) at sunset to view illuminated Mezquita over the river (Free)",
+      "ja": "メスキタ周辺と花の小道を散策後、夕暮れ時にローマ橋(Puente Romano)を渡り川面に映るメスキタの無料夜景を満喫",
+      "zh": "漫步清真寺大教堂周边与百花巷，黄昏时分漫步古罗马桥(Puente Romano)，眺望清真寺与瓜达尔基维尔河畔绝美免费夜景"
+    },
+    "walk": {
+      "ko": "낮음 (4,100보)",
+      "en": "Low (4,100 steps)",
+      "ja": "低い (4,100歩)",
+      "zh": "较低 (4,100步)"
+    },
+    "transport": {
+      "ko": "Renfe 초고속열차 + 택시",
+      "en": "Renfe High-Speed Train + Taxi",
+      "ja": "Renfe高速鉄道＋タクシー",
+      "zh": "Renfe高速列车与出租车"
+    },
+    "meal": {
+      "ko": "Bodegas Mezquita: 소꼬리 찜 'Rabo de Toro' (갈비찜 싱크로율 90% 이상 부모님 감탄 보양식!), 바삭한 가지 튀김과 사탕수수 꿀(Berenjenas con miel), 크리미한 살모레호",
+      "en": "Bodegas Mezquita: Slow-braised Oxtail Stew (Rabo de Toro - fall-off-the-bone like Korean galbi!), Fried Eggplant with Cane Honey (Berenjenas con miel), Salmorejo",
+      "ja": "Bodegas Mezquita: 牛テール煮込み (Rabo de Toro - カルビ煮込みに似て柔らかくご両親感動!)、ナスのフライ蜂蜜がけ(Berenjenas con miel)、サルモレホ",
+      "zh": "Bodegas Mezquita：慢炖牛尾 (Rabo de Toro - 浓油赤酱软烂如炖牛小排，长辈赞不绝口!)、脆皮炸茄子配天然甘蔗蜜 (Berenjenas con miel)、萨尔莫霍番茄冷汤"
+    }
+  },
+  {
+    "city": {
+      "ko": "그라나다",
+      "en": "Granada",
+      "ja": "グラナダ",
+      "zh": "格拉纳达"
+    },
+    "theme": {
+      "ko": "ALSA 우등버스 그라나다 이동 & 음료 시 무료 타파스 (Bar Los Diamantes)",
+      "en": "ALSA Bus to Granada & Free Seafood Tapas with Drinks (Bar Los Diamantes)",
+      "ja": "ALSA優等バスでグラナダへ移動＆ドリンクで無料魚介タパス (Bar Los Diamantes)",
+      "zh": "搭乘ALSA优等大巴前往格拉纳达＆点酒赠海鲜Tapas名店 (Bar Los Diamantes)"
+    },
+    "events": {
+      "ko": [
+        "코르도바 14:15 버스",
+        "그라나다 16:55 도착",
+        "The Central House Granada",
+        "Bar Los Diamantes 무료 타파스",
+        "나바스 거리 산책"
+      ],
+      "en": [
+        "Córdoba 14:15 Bus",
+        "Granada 16:55 Arrival",
+        "The Central House Granada",
+        "Bar Los Diamantes Free Tapas",
+        "Calle Navas Tapas Walk"
+      ],
+      "ja": [
+        "コルドバ 14:15発バス",
+        "グラナダ 16:55着",
+        "The Central House Granada",
+        "Bar Los Diamantes 無料タパス",
+        "ナバス通り散策"
+      ],
+      "zh": [
+        "科尔多瓦 14:15大巴",
+        "格拉纳达 16:55抵达",
+        "The Central House Granada",
+        "Bar Los Diamantes 免费海鲜Tapas",
+        "纳瓦斯街漫步"
+      ]
+    },
+    "morning": {
+      "ko": "코르도바 숙소 체크아웃 후 버스터미널로 이동, 14:15~16:55 ALSA 우등버스 탑승하여 안달루시아 올리브 평원 감상",
+      "en": "Check out from Córdoba hotel, board 14:15 ALSA premium bus (arriving 16:55), relaxing through Andalusian olive groves",
+      "ja": "チェックアウト後バスターミナルへ。14:15発ALSA優等バスに乗車(16:55着)、オリーブ畑の風景を眺めながら快適移動",
+      "zh": "退房后前往汽车站，搭乘14:15 ALSA优等大巴(16:55抵达)，沿途饱览安达卢西亚连绵的橄榄树庄园"
+    },
+    "rest": {
+      "ko": "17:15 그라나다 터미널 도착 후 택시로 The Central House Granada 이동, 체크인 및 따뜻한 온수 샤워",
+      "en": "17:15 Taxi direct from Granada station to The Central House Granada, check in & hot shower",
+      "ja": "17:15 到着後タクシーでThe Central House Granadaへ直行、チェックイン＆温水シャワー",
+      "zh": "17:15 抵达后打车直达 The Central House Granada，办理入住并享受热水沐浴"
+    },
+    "evening": {
+      "ko": "나바스 거리(Calle Navas) 활기찬 타파스 골목을 천천히 산책하고, 음료 주문 시 신선한 튀김 타파스를 무료로 내어주는 그라나다 전통 문화 체험",
+      "en": "Evening walk through vibrant Calle Navas tapas street, experiencing authentic Granada culture with complimentary fresh tapas",
+      "ja": "活気あるナバス通りを散策。ドリンクを頼むと無料の揚げたてタパスが付いてくるグラナダ伝統文化を体験",
+      "zh": "漫步热闹惬意的纳瓦斯街(Calle Navas)，体验格拉纳达点饮品即赠免费现做Tapas的热情地道文化"
+    },
+    "walk": {
+      "ko": "낮음 (3,600보)",
+      "en": "Low (3,600 steps)",
+      "ja": "低い (3,600보)",
+      "zh": "较低 (3,600步)"
+    },
+    "transport": {
+      "ko": "ALSA 우등버스 + 택시",
+      "en": "ALSA Bus + Taxi",
+      "ja": "ALSAバス＋タクシー",
+      "zh": "ALSA优等大巴与出租车"
+    },
+    "meal": {
+      "ko": "Bar Los Diamantes: 음료 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공 & 나바스 거리 정통 안달루시아 타파스 투어",
+      "en": "Bar Los Diamantes: Free plate of freshly fried seafood tapas with every drink order & Calle Navas authentic Andalusian tapas crawl",
+      "ja": "Bar Los Diamantes: 飲み物注文で揚げたて海鮮タパス1皿無料サービス＆ナバス通りのアンダルシア郷土タパス巡り",
+      "zh": "Bar Los Diamantes：点任意饮品免费赠送现炸新鲜海鲜拼盘小吃，漫步纳瓦斯街享受地道安达卢西亚小吃巡游"
+    }
+  },
+  {
+    "city": {
+      "ko": "그라나다",
+      "en": "Granada",
+      "ja": "グラナダ",
+      "zh": "格拉纳达"
+    },
+    "theme": {
+      "ko": "알함브라 궁전 종일 투어 (티켓 확정) & 산 니콜라스 전망대 최고의 무료 야경",
+      "en": "Alhambra Palace In-Depth Tour (Confirmed) & Mirador de San Nicolás Best Free Night View",
+      "ja": "アルハンブラ宮殿終日鑑賞 (チケット確定)＆サン・ニコラス展望台の極上無料夜景",
+      "zh": "阿尔罕布拉宫全日深度游 (门票已锁)＆圣尼古拉斯观景台绝美免费夜景"
+    },
+    "events": {
+      "ko": [
+        "알함브라 택시 직행",
+        "나스르 궁전 집중 관람",
+        "시에스타 2시간 낮잠",
+        "산 니콜라스 전망대 택시",
+        "알함브라 붉은 성곽 야경"
+      ],
+      "en": [
+        "Taxi to Alhambra",
+        "Nasrid Palaces Tour",
+        "2h Siesta Bed Rest",
+        "Taxi to San Nicolás",
+        "Alhambra Red Fortress Sunset"
+      ],
+      "ja": [
+        "タクシーでアルハンブラへ",
+        "ナスル朝宮殿鑑賞",
+        "2時間ベッド昼寝",
+        "タクシーで展望台へ",
+        "アルハンブラ赤い城壁の夕景"
+      ],
+      "zh": [
+        "打车直达阿尔罕布拉宫",
+        "纳斯里德宫深度参观",
+        "午后两小时卧床休息",
+        "打车登圣尼古拉斯观景台",
+        "红堡日落夜景绝色"
+      ]
+    },
+    "morning": {
+      "ko": "숙소 앞에서 택시 타고 알함브라 정문 직행. 경사로 최소화 코스로 나스르 궁전과 헤네랄리페 정원 집중 관람",
+      "en": "Direct taxi to Alhambra main gate. Explore Nasrid Palaces and Generalife gardens via flat, gentle pathways",
+      "ja": "宿前からタクシーでアルハンブラ正門へ直行。傾斜の少ないルートでナスル朝宮殿とヘネラリフェ庭園をじっくり見学",
+      "zh": "从酒店打车直达阿尔罕布拉宫正门。选择平缓无障碍路径，深度参观纳斯里德宫与赫内拉利费夏宫花园"
+    },
+    "rest": {
+      "ko": "13:30~16:00 택시로 호텔 복귀, 신발 벗고 다리 올린 채 침대에서 2시간 반 깊은 수면",
+      "en": "13:30~16:00 Taxi back to hotel, elevate legs and enjoy 2.5 hours of deep bed rest",
+      "ja": "13:30~16:00 タクシーでホテルに戻り、靴を脱ぎ足を高くして2時間半しっかり休息",
+      "zh": "13:30~16:00 打车返回酒店，脱鞋垫高双腿，卧床静享两个半小时深度睡眠"
+    },
+    "evening": {
+      "ko": "택시 타고 산 니콜라스 전망대 (Mirador de San Nicolás) 올라가기: 알함브라 궁전의 붉은 성곽 뒤로 지는 석양과 시에라 네바다 설산 배경 야경을 무료로 감상 (최고의 명소)",
+      "en": "Take taxi up to Mirador de San Nicolás: Witness the breathtaking red fortress of Alhambra glowing against the sunset and Sierra Nevada mountains (Top free viewpoint)",
+      "ja": "タクシーでサン・ニコラス展望台(Mirador de San Nicolás)へ: 夕日に赤く染まるアルハンブラ宮殿とシェラネバダ山脈を望む最高峰の無料夕景・夜景を堪能",
+      "zh": "打车直登圣尼古拉斯观景台(Mirador de San Nicolás)：亲眼见证夕阳余晖与内华达雪山映衬下赤红壮丽的阿尔罕布拉宫绝美免费夜景（一生必看顶级机位）"
+    },
+    "walk": {
+      "ko": "중간 (5,500보)",
+      "en": "Moderate (5,500 steps)",
+      "ja": "普通 (5,500歩)",
+      "zh": "中等 (5,500步)"
+    },
+    "transport": {
+      "ko": "왕복 택시 탑승 (관절 보호)",
+      "en": "Round-trip Taxis",
+      "ja": "往復タクシー利用",
+      "zh": "往返全程出租车"
+    },
+    "meal": {
+      "ko": "그라나다 정통 타파스: 하몬 이베리코 데 베요타, 따뜻한 안달루시아 토마토 스프",
+      "en": "Granada traditional tapas: Bellota acorn-fed Jamón Ibérico & warm Andalusian soup",
+      "ja": "グラナダ伝統タパス: 最高級ベジョータ生ハム＆温かいアンダルシア風スープ",
+      "zh": "格拉纳达地道Tapas：橡果饲伊比利亚生火腿与温热安达卢西亚浓汤"
+    }
+  },
+  {
+    "city": {
+      "ko": "말라가",
+      "en": "Málaga",
+      "ja": "マラガ",
+      "zh": "马拉加"
+    },
+    "theme": {
+      "ko": "ALSA 버스 말라가 이동 & 무에예 우노 (Muelle Uno) 해안 산책로 무료 야경",
+      "en": "ALSA Bus to Málaga & Muelle Uno Waterfront Illuminated Promenade Free Night Walk",
+      "ja": "ALSAバスでマラガへ移動＆ムエジェ・ウノ海岸プロムナード無料夜景散歩",
+      "zh": "搭乘ALSA大巴前往马拉加＆一号码头(Muelle Uno)海滨步道免费夜景漫步"
+    },
+    "events": {
+      "ko": [
+        "그라나다 16:00 버스",
+        "말라가 18:15 도착",
+        "Coeo Pena Apartment",
+        "Muelle Uno 야경",
+        "지중해 해안 산책"
+      ],
+      "en": [
+        "Granada 16:00 Bus",
+        "Málaga 18:15 Arrival",
+        "Coeo Pena Apartment",
+        "Muelle Uno Night View",
+        "Mediterranean Walk"
+      ],
+      "ja": [
+        "グラナダ 16:00発バス",
+        "マラガ 18:15着",
+        "Coeo Pena Apartment",
+        "ムエジェ・ウノ夜景",
+        "地中海プロムナード"
+      ],
+      "zh": [
+        "格拉纳达 16:00大巴",
+        "马拉加 18:15抵达",
+        "Coeo Pena Apartment",
+        "一号码头夜景",
+        "地中海海滨漫步"
+      ]
+    },
+    "morning": {
+      "ko": "그라나다 도심에서 여유로운 브런치 및 기념품 쇼핑, 버스터미널로 이동",
+      "en": "Relaxed morning in Granada, brunch and souvenir shopping before heading to bus station",
+      "ja": "グラナダ市内でのんびりブランチとお土産購入後、バスターミナルへ移動",
+      "zh": "在格拉纳达市区享用早午餐与特色纪念品采购，前往汽车站"
+    },
+    "rest": {
+      "ko": "16:00~18:15 ALSA 버스 안에서 지중해 해안선 조망하며 편안한 수면 휴식",
+      "en": "16:00~18:15 Restful scenic nap aboard ALSA bus admiring coastal mountains",
+      "ja": "16:00~18:15 ALSAバス車内で海岸線の景色を眺めながら快適な睡眠休憩",
+      "zh": "16:00~18:15 在ALSA优等大巴上舒适小憩，欣赏沿途海岸山脉风光"
+    },
+    "evening": {
+      "ko": "Coeo Pena Design Apartment 체크인 후, 말라가 항구 무에예 우노 (Muelle Uno) 해안 산책로 야경 산책: 야자수와 지중해 바다가 어우러진 현대식 해안 조명 산책 (무료, 예약 불필요)",
+      "en": "Check in at Coeo Pena Design Apartment, then stroll Muelle Uno waterfront promenade: Palm trees, modern marina lighting, and Mediterranean sea breeze (Free)",
+      "ja": "チェックイン後、マラガ港ムエジェ・ウノ(Muelle Uno)遊歩道の夜景散歩: ヤシの木と地中海が織りなす美しいイルミネーション（無料・予約不要）",
+      "zh": "入住Coeo Pena Design Apartment后，漫步马拉加一号码头(Muelle Uno)海滨步道：棕榈树、游艇港璀璨灯火与地中海晚风交融（免费，无需预约）"
+    },
+    "walk": {
+      "ko": "낮음 (3,600보)",
+      "en": "Low (3,600 steps)",
+      "ja": "低い (3,600歩)",
+      "zh": "较低 (3,600步)"
+    },
+    "transport": {
+      "ko": "ALSA 우등버스 + 택시",
+      "en": "ALSA Bus + Taxi",
+      "ja": "ALSAバス＋タクシー",
+      "zh": "ALSA优等大巴与出租车"
+    },
+    "meal": {
+      "ko": "말라가 로컬 타파스: 신선한 안달루시아 지중해 샐러드 & 멸치 튀김(Boquerones fritos)",
+      "en": "Málaga local tapas: Fresh Mediterranean salad & crispy fried whitebait (Boquerones fritos)",
+      "ja": "マラガ名物: 地中海風フレッシュサラダ＆小魚のサクサクフライ(Boquerones fritos)",
+      "zh": "马拉加特色小吃：地中海风味什锦沙拉与香脆炸银鱼(Boquerones fritos)"
+    }
+  },
+  {
+    "city": {
+      "ko": "말라가",
+      "en": "Málaga",
+      "ja": "マラガ",
+      "zh": "马拉加"
+    },
+    "theme": {
+      "ko": "피카소 거리 산책 & 전통 정어리 숯불구이 (에스페토) & 안토니오 반데라스 와이너리 (El Pimpi)",
+      "en": "Picasso Museum Walk & Traditional Sardine Charcoal Skewers (Espeto) & El Pimpi Winery",
+      "ja": "ピカソゆかりの地散策＆伝統イワシ炭火串焼き(エスペト)＆El Pimpi老舗ワイナリー",
+      "zh": "毕加索故居漫步＆传统竹签炭烤沙丁鱼(Espeto)＆班德拉斯百年酒庄(El Pimpi)"
+    },
+    "events": {
+      "ko": [
+        "피카소 미술관 산책",
+        "라리오스 대리석 거리",
+        "해변 에스페토 숯불구이",
+        "El Pimpi 와인 & 하몬"
+      ],
+      "en": [
+        "Picasso Museum Walk",
+        "Calle Larios Marble Ave",
+        "Seaside Espeto Grill",
+        "El Pimpi Wine & Jamón"
+      ],
+      "ja": [
+        "ピカソ美術館散歩",
+        "ラリオス大理石通り",
+        "海辺のエスペト炭火焼き",
+        "El Pimpi ワイン＆生ハム"
+      ],
+      "zh": [
+        "毕加索艺术漫步",
+        "拉里奥斯大理石步行街",
+        "海滨炭烤沙丁鱼Espeto",
+        "El Pimpi百年甜酒与火腿"
+      ]
+    },
+    "morning": {
+      "ko": "숙소 도보권의 피카소 생가 및 라리오스(Calle Larios) 대리석 쇼핑 거리의 평탄하고 우아한 도로 산책",
+      "en": "Flat, elegant morning walk through Calle Larios marble boulevard and Picasso's birthplace museum",
+      "ja": "宿徒歩圏のピカソ生家とラリオス通りの平坦で美しい大理石プロムナードを散策",
+      "zh": "漫步毕加索故居及大理石铺就的拉里奥斯高雅步行街平坦路段"
+    },
+    "rest": {
+      "ko": "13:30~16:00 지중해 바닷바람 맞으며 아파트 복귀 낮잠 및 여유로운 티타임",
+      "en": "13:30~16:00 Soothing siesta nap at apartment with gentle sea breezes and tea",
+      "ja": "13:30~16:00 海風を感じながらアパートに戻り昼寝＆リラックスティータイム",
+      "zh": "13:30~16:00 返回公寓在清凉海风中惬意午休，品茗充能"
+    },
+    "evening": {
+      "ko": "배우 안토니오 반데라스가 운영하는 역사 깊은 와이너리 El Pimpi에서 전통 말라가 스위트 와인과 최고급 하몬을 맛보고 라리오스 화려한 야경 감상",
+      "en": "Visit historic Bodega El Pimpi run by Antonio Banderas to savor sweet Málaga wine & premium jamón, then enjoy Calle Larios night lights",
+      "ja": "アントニオ・バンデラスが手掛ける老舗El Pimpiで名物の甘口マラガワインと最高級生ハムを味わい、ラリオス通りの夜景散歩",
+      "zh": "在安东尼奥·班德拉斯经营的百年老酒窖El Pimpi品尝地道马拉加甜葡萄酒与特级生火腿，漫步璀璨商业街夜景"
+    },
+    "walk": {
+      "ko": "낮음 (4,000보)",
+      "en": "Low (4,000 steps)",
+      "ja": "低い (4,000歩)",
+      "zh": "较低 (4,000步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "말라가 해변 에스페토 (Espeto): 대나무 꼬치에 꿰어 모래사장 숯불 화로에 구운 정통 정어리 구이 & El Pimpi 안토니오 반데라스 와이너리 전통 하몬과 와인",
+      "en": "Málaga Beach Espeto: Charcoal-grilled bamboo-skewered sardines on the sand & El Pimpi historic Antonio Banderas winery ham & dessert wine",
+      "ja": "マラガ海岸エスペト (Espeto): 竹串に刺した新鮮イワシの炭火舟焼き＆El Pimpiアントニオ・バンデラスゆかりのボデガ生ハムとワイン",
+      "zh": "马拉加海滩烤沙丁鱼 (Espeto)：沙滩炭火舟现烤竹签新鲜沙丁鱼，以及安东尼奥·班德拉斯传统酒庄El Pimpi的火腿与佳酿"
+    }
+  },
+  {
+    "city": {
+      "ko": "말라가",
+      "en": "Málaga",
+      "ja": "マラガ",
+      "zh": "马拉加"
+    },
+    "theme": {
+      "ko": "네르하 유럽의 발코니 / 선셋 요트 힐링 & 항구 테라스 해산물 구이 (Marisquería Godoy)",
+      "en": "Nerja Balcony of Europe / Sunset Cruise & Port Terrace Seafood Feast (Marisquería Godoy)",
+      "ja": "ネルハ ヨーロッパのバルコニー/ヨット遊覧＆港テラスの極南海鮮 (Marisquería Godoy)",
+      "zh": "内尔哈欧洲阳台/日落游艇巡航＆海港露台海鲜盛宴 (Marisquería Godoy)"
+    },
+    "events": {
+      "ko": [
+        "네르하 또는 선셋 크루즈",
+        "지중해 절경 감상",
+        "Marisquería Godoy 해산물",
+        "세비야 복귀 짐 정리"
+      ],
+      "en": [
+        "Nerja / Sunset Cruise",
+        "Panoramic Sea Views",
+        "Marisquería Godoy Feast",
+        "Pack for Seville"
+      ],
+      "ja": [
+        "ネルハまたは遊覧クルーズ",
+        "地中海絶景パノラマ",
+        "Marisquería Godoy 海鮮料理",
+        "セビリア復帰荷造り"
+      ],
+      "zh": [
+        "内尔哈或日落游艇巡航",
+        "地中海绝美全景",
+        "Marisquería Godoy海鲜大餐",
+        "整理行装备战塞维利亚"
+      ]
+    },
+    "morning": {
+      "ko": "택시로 편안하게 네르하 '유럽의 발코니' 전망대 당일치기 또는 말라가 요트 항구에서 여유로운 오전 산책",
+      "en": "Scenic excursion to Nerja's 'Balcony of Europe' via taxi, or relaxed morning stroll along Málaga marina",
+      "ja": "タクシーでネルハ「ヨーロッパのバルコニー」へ日帰りドライブ、または港でのんびり午前散策",
+      "zh": "打车舒适前往内尔哈“欧洲阳台”海天一色观景台，或在马拉加游艇港惬意晨间散步"
+    },
+    "rest": {
+      "ko": "13:30~16:00 아파트 복귀 후 따뜻한 온수 샤워 및 충분한 낮잠",
+      "en": "13:30~16:00 Return to apartment for hot shower and refreshing afternoon nap",
+      "ja": "13:30~16:00 アパートに戻り温水シャワー＆しっかり昼寝で休養",
+      "zh": "13:30~16:00 返回公寓洗热水澡，舒适午休恢复活力"
+    },
+    "evening": {
+      "ko": "Marisquería Godoy: 말라가 항구 테라스에서 지중해 바다를 바라보며 갓 잡은 신선한 모둠 해산물 구이 만찬 후 세비야 이동 짐 패킹",
+      "en": "Marisquería Godoy: Dine on the harbor terrace enjoying grilled seafood platter overlooking the Mediterranean, then pack bags",
+      "ja": "Marisquería Godoy: 港のテラス席で地中海を眺めながら獲れたて鮮魚の鉄板焼きを満喫後、セビリアへの移動準備",
+      "zh": "Marisquería Godoy：坐在海港露台面向碧蓝地中海，享用现捞杂锦海鲜铁板大餐，随后收拾行囊"
+    },
+    "walk": {
+      "ko": "낮음 (3,800보)",
+      "en": "Low (3,800 steps)",
+      "ja": "低い (3,800歩)",
+      "zh": "较低 (3,800步)"
+    },
+    "transport": {
+      "ko": "전용 차량 / 택시",
+      "en": "Private Car / Taxi",
+      "ja": "専用車／タクシー",
+      "zh": "包车或出租车"
+    },
+    "meal": {
+      "ko": "Marisquería Godoy: 항구 테라스에서 즐기는 신선한 지중해 해산물 구이 & 라리오스 대리석 쇼핑 거리 카페 테라스",
+      "en": "Marisquería Godoy: Portside terrace fresh Mediterranean grilled seafood & marble-paved Calle Larios cafe break",
+      "ja": "Marisquería Godoy: 港のテラス席で味わう地中海ミックスシーフードグリル＆大理石が美しいラリオス通りのカフェ",
+      "zh": "Marisquería Godoy：海港露台地中海炭烤综合海鲜盛宴，在拉里奥斯大理石步行街品味咖啡"
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "ALSA 버스 세비야 2차 복귀 & 스페인 광장 (Plaza de España) 로맨틱 야간 조명 무료 산책",
+      "en": "ALSA Bus Return to Seville Leg 2 & Plaza de España Romantic Free Night Lighting Walk",
+      "ja": "ALSAバスでセビリア第2期復帰＆スペイン広場の幻想的ライトアップ無料夜景散歩",
+      "zh": "搭乘ALSA大巴重返塞维利亚第二期＆西班牙广场浪漫夜景灯光免费漫步"
+    },
+    "events": {
+      "ko": [
+        "말라가 09:00 버스",
+        "세비야 11:45 도착",
+        "Libere Seville Plaza Nueva",
+        "누에바 광장 산책",
+        "스페인 광장 무료 야경"
+      ],
+      "en": [
+        "Málaga 09:00 Bus",
+        "Seville 11:45 Arrival",
+        "Libere Seville Plaza Nueva",
+        "Plaza Nueva Walk",
+        "Plaza de España Free Night View"
+      ],
+      "ja": [
+        "マラガ 09:00発バス",
+        "セビリア 11:45着",
+        "Libere Seville Plaza Nueva",
+        "ヌエバ広場散策",
+        "スペイン広場無料夜景"
+      ],
+      "zh": [
+        "马拉加 09:00大巴",
+        "塞维利亚 11:45抵达",
+        "Libere Seville Plaza Nueva",
+        "新广场散步",
+        "西班牙广场绝美免费夜景"
+      ]
+    },
+    "morning": {
+      "ko": "말라가 버스터미널에서 09:00 ALSA 우등버스 탑승 ➔ 11:45 세비야 Plaza de Armas 터미널 도착 ➔ Libere Seville Plaza Nueva 도보/택시 체크인",
+      "en": "09:00 ALSA premium bus from Málaga ➔ 11:45 Seville Plaza de Armas arrival ➔ check in at Libere Seville Plaza Nueva",
+      "ja": "マラガから09:00発ALSA優等バスに乗車 ➔ 11:45 セビリア到着 ➔ Libere Seville Plaza Nuevaへチェックイン",
+      "zh": "从马拉加搭乘09:00 ALSA大巴 ➔ 11:45 抵达塞维利亚 ➔ 入住Libere Seville Plaza Nueva公寓酒店"
+    },
+    "rest": {
+      "ko": "13:00~16:00 누에바 광장 인근 여유로운 점심 식사 후 호텔 침대에서 3시간 시에스타 꿀잠",
+      "en": "13:00~16:00 Leisurely lunch near Plaza Nueva followed by 3-hour restorative siesta",
+      "ja": "13:00~16:00 ヌエバ広場近くで昼食後、ホテルベッドで3時間しっかりシエスタ昼寝",
+      "zh": "13:00~16:00 新广场附近温馨午餐，随后在酒店卧床享受3小时惬意午睡"
+    },
+    "evening": {
+      "ko": "스페인 광장 (Plaza de España) 야간 조명 산책: 밤에 조명이 켜져 낮과는 다른 웅장하고 로맨틱한 분위기를 무료로 감상 (분수 쇼 & 고요한 야경)",
+      "en": "Plaza de España Romantic Night Stroll: When illuminated at night, it reveals a grand and serene fairy-tale atmosphere (Free, no reservation needed)",
+      "ja": "スペイン広場(Plaza de España)夜間ライトアップ散歩: 夜の明かりが灯ると昼とは一変する壮大でロマンチックな雰囲気を無料で満喫（無料・予約不要）",
+      "zh": "西班牙广场(Plaza de España)浪漫夜景漫步：华灯初上，喷泉与红砖回廊交织出比白天更宏伟浪漫的宁静童话氛围（免费，无需预约）"
+    },
+    "walk": {
+      "ko": "낮음 (4,200보)",
+      "en": "Low (4,200 steps)",
+      "ja": "低い (4,200歩)",
+      "zh": "较低 (4,200步)"
+    },
+    "transport": {
+      "ko": "ALSA 버스 + 택시",
+      "en": "ALSA Bus + Taxi",
+      "ja": "ALSAバス＋タクシー",
+      "zh": "ALSA优等大巴与出租车"
+    },
+    "meal": {
+      "ko": "세비야 전통 안달루시안 타파스 & 이베리코 하몬 & 시원한 틴토 데 베라노",
+      "en": "Seville traditional Andalusian tapas, Jamón Ibérico & chilled Tinto de Verano",
+      "ja": "セビリア伝統アンダルシア料理: イベリコ生ハム＆冷たいティント・デ・ベラーノ",
+      "zh": "塞维利亚地道Tapas小吃、特级伊比利亚火腿与冰爽柠檬红酒饮"
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "세비야 대성당 평지 회랑 관람 & 알카사르 정원 & 정통 플라멩코 공연",
+      "en": "Seville Cathedral Flat Cloister & Alcázar Gardens & Authentic Flamenco Show",
+      "ja": "セビリア大聖堂平坦回廊見学＆アルカサル庭園散策＆本場フラメンコ鑑賞",
+      "zh": "塞维利亚大教堂平缓回廊参观＆阿尔卡萨王宫花园＆正宗弗拉门戈秀"
+    },
+    "events": {
+      "ko": [
+        "대성당 평지 회랑",
+        "히랄다탑 외관 조망",
+        "알카사르 오렌지 정원",
+        "정통 플라멩코 관람"
+      ],
+      "en": [
+        "Cathedral Flat Cloister",
+        "Giralda Tower Views",
+        "Alcázar Orange Gardens",
+        "Authentic Flamenco Show"
+      ],
+      "ja": [
+        "大聖堂平坦回廊",
+        "ヒラルダの塔外観",
+        "アルカサルオレンジ庭園",
+        "本場フラメンコ鑑賞"
+      ],
+      "zh": [
+        "大教堂平缓回廊",
+        "吉拉尔达塔外景",
+        "王宫橘树芬芳花园",
+        "正宗弗拉门戈艺术秀"
+      ]
+    },
+    "morning": {
+      "ko": "누에바 광장에서 도보 3분 세비야 대성당 진입, 콜럼버스 무덤과 넓고 평평한 오렌지 회랑 천천히 관람",
+      "en": "3 min walk from Plaza Nueva to Cathedral, gently admiring Columbus's tomb and flat Orange Courtyard",
+      "ja": "ヌエバ広場から徒歩3分で大聖堂へ。コロンブスの墓と平坦なオレンジの中庭をゆったり見学",
+      "zh": "从新广场步行3分钟进入大教堂，轻松参观哥伦布灵柩与平坦开阔的橘树庭院"
+    },
+    "rest": {
+      "ko": "13:30~16:30 숙소 복귀 후 충분한 수면 및 다리 찜질 휴식",
+      "en": "13:30~16:30 Relaxing siesta nap and warm compress for parents' knees",
+      "ja": "13:30~16:30 宿に戻り十分な昼寝＆ご両親の膝の温湿布ケア",
+      "zh": "13:30~16:30 返回酒店充分午休，为长辈热敷膝盖消除酸胀"
+    },
+    "evening": {
+      "ko": "산타 크루스 지구 전통 공연장에서 부모님 좌석 예약된 정통 플라멩코 예술 공연 감상",
+      "en": "Experience passionate authentic Flamenco show with reserved comfortable seating in Santa Cruz quarter",
+      "ja": "サンタ・クルス地区の伝統劇場で、快適な指定席から本場フラメンコの情熱的な舞台を鑑賞",
+      "zh": "在圣十字区精选剧场，入座预订舒适席位，沉浸式观赏正宗弗拉门戈震撼艺术"
+    },
+    "walk": {
+      "ko": "낮음 (4,300보)",
+      "en": "Low (4,300 steps)",
+      "ja": "低い (4,300歩)",
+      "zh": "较低 (4,300步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "세비야 전통 바: 바삭하고 담백한 안달루시아 정통 추로스와 카페 콘 레체 (Churros y Café con leche) & 구시가지 로컬 타파스",
+      "en": "Seville historic bar: Extra-crispy Andalusian artisanal churros with velvety café con leche & Old Town local tapas",
+      "ja": "セビリア伝統バル: サクサク軽やかなアンダルシア伝統チュロスとカフェ・コン・レチェ＆旧市街のバルタパス",
+      "zh": "塞维利亚传统吧台：酥脆清爽的安达卢西亚手工油条配香浓拿铁 (Churros y Café con leche) 与老城特色小吃"
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "마리아 루이사 공원 & 스페인 광장 마차 투어 (부모님 관절 보호) & 과달키비르 강변 황금의 탑 야경",
+      "en": "Maria Luisa Park Horse Carriage Tour (Senior Knee Protection) & Golden Tower Riverfront Night Stroll",
+      "ja": "マリア・ルイサ公園 伝統馬車ツアー(膝に優しい)＆グアダルキビール川黄金の塔の夜景",
+      "zh": "玛丽亚路易莎公园经典马车巡游(呵护膝盖)＆瓜达尔基维尔河畔黄金塔夜景"
+    },
+    "events": {
+      "ko": [
+        "스페인 광장 마차 투어",
+        "마리아 루이사 그늘",
+        "시에스타 온수 휴식",
+        "황금의 탑 야경 산책"
+      ],
+      "en": [
+        "Horse Carriage Tour",
+        "Maria Luisa Shade",
+        "Siesta Warm Recharge",
+        "Golden Tower Night Walk"
+      ],
+      "ja": [
+        "スペイン広場馬車ツアー",
+        "マリア・ルイサ公園木陰",
+        "シエスタ温水休息",
+        "黄金の塔の夜景散歩"
+      ],
+      "zh": [
+        "西班牙广场经典马车游",
+        "绿荫林道微风拂面",
+        "午后热水足浴充能",
+        "黄金塔水面辉映夜景"
+      ]
+    },
+    "morning": {
+      "ko": "대성당 앞에서 4인승 전통 마차 탑승, 걸을 필요 없이 마리아 루이사 공원과 스페인 광장 전체를 파노라마로 순회",
+      "en": "Board a classic horse carriage in front of Cathedral, gliding around Maria Luisa Park and Plaza de España without walking",
+      "ja": "大聖堂前から伝統的な4人乗り馬車に乗車。歩くことなくマリア・ルイサ公園とスペイン広場全体を優雅に周遊",
+      "zh": "在大教堂前搭乘经典观光马车，免除步行动线，惬意饱览玛丽亚路易莎公园与西班牙广场全景"
+    },
+    "rest": {
+      "ko": "13:30~16:00 마차 투어 후 숙소 복귀, 침대 낮잠 및 발 온수 족욕",
+      "en": "13:30~16:00 Return to apartment, soothing foot soak and deep afternoon sleep",
+      "ja": "13:30~16:00 宿に戻り足湯でリラックス＆ベッドで心地よい昼寝",
+      "zh": "13:30~16:00 返回公寓热水泡脚解乏，卧床享受深度午觉"
+    },
+    "evening": {
+      "ko": "과달키비르 강변 야외 테라스 레스토랑에서 저녁 식사 후, 은은한 조명이 강물에 비치는 황금의 탑 (Torre del Oro) 야경 산책 (무료)",
+      "en": "Dinner at riverside open-air terrace, then gentle romantic evening walk admiring Golden Tower (Torre del Oro) reflections (Free)",
+      "ja": "川沿いのテラスレストランで夕食後、川面に灯りが揺れる黄金の塔(Torre del Oro)の夜景散策（無料）",
+      "zh": "在瓜达尔基维尔河畔露台餐厅晚宴后，漫步欣赏倒映在水波中的黄金塔璀璨夜景（免费）"
+    },
+    "walk": {
+      "ko": "낮음 (3,400보)",
+      "en": "Low (3,400 steps)",
+      "ja": "低い (3,400歩)",
+      "zh": "较低 (3,400步)"
+    },
+    "transport": {
+      "ko": "전통 마차 투어 & 택시",
+      "en": "Horse Carriage & Taxi",
+      "ja": "伝統馬車＆タクシー",
+      "zh": "经典观光马车与出租车"
+    },
+    "meal": {
+      "ko": "과달키비르 강변 해산물 테라스: 스페인식 문어 요리(Pulpo a la Gallega) & 샐러드",
+      "en": "Riverside seafood terrace: Tender Galician-style Octopus (Pulpo a la Gallega) & fresh salad",
+      "ja": "川沿い海鮮テラス: 柔らかいタコのガリシア風(Pulpo a la Gallega)＆サラダ",
+      "zh": "河畔海鲜露台：鲜嫩多汁的加利西亚风味章鱼(Pulpo a la Gallega)与沙拉"
+    }
+  },
+  {
+    "city": {
+      "ko": "세비야",
+      "en": "Seville",
+      "ja": "セビリア",
+      "zh": "塞维利亚"
+    },
+    "theme": {
+      "ko": "시에르페스 쇼핑 & 전통 핫초코 츄러스 (Bar El Comercio) & 이탈리아 이동 패킹",
+      "en": "Calle Sierpes Shopping & Classic Churros (Bar El Comercio) & Pack for Italy",
+      "ja": "シエルペス通りショッピング＆伝統チュロス(Bar El Comercio)＆イタリア便準備",
+      "zh": "谢尔皮斯商业街漫步＆百年传统现炸吉事果(Bar El Comercio)＆打包备战意大利"
+    },
+    "events": {
+      "ko": [
+        "시에르페스 보행자 거리",
+        "Bar El Comercio 츄러스",
+        "오후 꿀휴식",
+        "스페인 완주 축배",
+        "이탈리아 짐정리"
+      ],
+      "en": [
+        "Calle Sierpes Stroll",
+        "Bar El Comercio Churros",
+        "Afternoon Deep Rest",
+        "Spain Toast Dinner",
+        "Pack for Italy Flight"
+      ],
+      "ja": [
+        "シエルペス歩行者天国",
+        "Bar El Comercio チュロス",
+        "午後しっかり休息",
+        "スペイン完走の乾杯",
+        "イタリア便荷造り"
+      ],
+      "zh": [
+        "谢尔皮斯步行街",
+        "百年名店现炸吉事果",
+        "午后充分休息",
+        "西班牙圆满庆功宴",
+        "打包整理行李"
+      ]
+    },
+    "morning": {
+      "ko": "차량이 다니지 않는 평탄한 시에르페스(Calle Sierpes) 거리 산책, 스페인 올리브 오일과 가죽 기념품 쇼핑",
+      "en": "Stroll traffic-free flat Calle Sierpes for Spanish virgin olive oils and leather crafts",
+      "ja": "車の入らない歩行者専用のシエルペス通りを散歩し、特産オリーブオイルや革製品を購入",
+      "zh": "漫步完全无机动车的谢尔皮斯步行街，选购正宗橄榄油与安达卢西亚皮具纪念品"
+    },
+    "rest": {
+      "ko": "13:00~16:30 내일 이탈리아 국가 간 이동을 대비해 숙소에서 온수 목욕 및 3시간 반 충분한 수면",
+      "en": "13:00~16:30 Extended siesta bath and 3.5 hours sleep to store stamina for tomorrow's international flight",
+      "ja": "13:00~16:30 明日のイタリア移動に備え、宿で温水入浴＆3時間半の深い睡眠休憩",
+      "zh": "13:00~16:30 为明日飞往意大利储备充沛体力，在公寓热水沐浴并午休3.5小时"
+    },
+    "evening": {
+      "ko": "Bar El Comercio에서 갓 튀겨낸 바삭한 츄러스와 진한 핫초콜릿을 즐기고, 스페인 일정 무사 완주 축하 가족 만찬",
+      "en": "Savor freshly fried churros with thick dipping hot chocolate at Bar El Comercio, then celebrate completing Spain leg",
+      "ja": "Bar El Comercioで揚げたてサクサクのチュロスと濃厚ホットチョコを楽しみ、スペイン無事完走の祝杯",
+      "zh": "在Bar El Comercio品尝刚出锅的热气腾腾酥脆吉事果蘸浓郁热巧克力，举行西班牙段圆满完赛庆祝晚宴"
+    },
+    "walk": {
+      "ko": "낮음 (3,500보)",
+      "en": "Low (3,500 steps)",
+      "ja": "低い (3,500歩)",
+      "zh": "较低 (3,500步)"
+    },
+    "transport": {
+      "ko": "도보 위주",
+      "en": "Mostly Walking",
+      "ja": "徒歩中心",
+      "zh": "主要步行"
+    },
+    "meal": {
+      "ko": "Bar El Comercio: 갓 튀긴 정통 츄러스 & 진한 핫초콜릿, 저녁 안달루시안 소고기 스테이크",
+      "en": "Bar El Comercio: Fresh crispy churros & rich hot chocolate, evening Andalusian beef steak",
+      "ja": "Bar El Comercio: 揚げたて伝統チュロス＆濃厚ホットチョコレート、夕食はアンダルシア産牛肉ステーキ",
+      "zh": "Bar El Comercio：现炸经典吉事果与浓郁热巧，晚间享用安达卢西亚风味嫩煎牛排"
+    }
+  },
+  {
+    "city": {
+      "ko": "나폴리",
+      "en": "Naples",
+      "ja": "ナポリ",
+      "zh": "那不勒斯"
+    },
+    "theme": {
+      "ko": "이탈리아 나폴리 입성 (비행기+기차) & 전설의 화덕 마르게리타 피자 (Gino Sorbillo)",
+      "en": "Italy Arrival in Naples (Flight + Train) & Legendary Neapolitan Pizza (Gino Sorbillo)",
+      "ja": "イタリア・ナポリ到着 (航空＋高速列車)＆伝説の薪窯ピッツァ (Gino Sorbillo)",
+      "zh": "抵达意大利那不勒斯 (航班+高铁)＆始祖级柴火玛格丽特披萨 (Gino Sorbillo)"
+    },
+    "events": {
+      "ko": [
+        "SVQ➔FCO 비행기",
+        "레오나르도 익스프레스",
+        "트렌이탈리아 고속열차 (16:26~18:29)",
+        "Calenda Suite 체크인",
+        "Gino Sorbillo 피자"
+      ],
+      "en": [
+        "SVQ➔FCO Flight",
+        "Leonardo Express",
+        "Trenitalia Train (16:26~18:29)",
+        "Calenda Suite Check-in",
+        "Gino Sorbillo Pizza"
+      ],
+      "ja": [
+        "SVQ➔FCO 航空便",
+        "レオナルド特快",
+        "Trenitalia 高速列車 (16:26~18:29)",
+        "Calenda Suite チェックイン",
+        "Gino Sorbillo ピッツァ"
+      ],
+      "zh": [
+        "SVQ➔FCO 国际航班",
+        "莱昂纳多特快",
+        "意铁高品质列车 (16:26~18:29)",
+        "Calenda Suite 入住",
+        "Gino Sorbillo 传奇披萨"
+      ]
+    },
+    "morning": {
+      "ko": "세비야(SVQ) 출발 ➔ 로마(FCO) 공항 도착, 레오나르도 익스프레스로 테르미니역 이동 후 트렌이탈리아 고속열차 환승",
+      "en": "Fly SVQ ➔ Rome FCO, take Leonardo Express to Termini, smooth platform transfer to Trenitalia high-speed train",
+      "ja": "セビリア発 ➔ ローマFCO空港到着、レオナルド特快でテルミニ駅へ移動し高速列車に乗り換え",
+      "zh": "从塞维利亚起飞 ➔ 抵达罗马FCO机场，搭乘莱昂纳多特快抵达特米尼站，同站台换乘意铁高铁"
+    },
+    "rest": {
+      "ko": "16:26~18:29 트렌이탈리아 1등석 열차에서 편안하게 차창 풍경 감상하며 휴식, 나폴리 도착 후 택시로 Calenda Suite 체크인",
+      "en": "16:26~18:29 Relaxing scenic ride on Trenitalia, taxi direct from Napoli Centrale to Calenda Suite for warm shower",
+      "ja": "16:26~18:29 高速列車内でゆったり車窓を眺めながら休養、ナポリ到着後タクシーでCalenda Suiteへ",
+      "zh": "16:26~18:29 在意铁舒适列车上欣赏南意田园风光，抵达那不勒斯后打车直达Calenda Suite入住"
+    },
+    "evening": {
+      "ko": "Gino Sorbillo: 나폴리 피자의 성지에서 갓 구워낸 겉바속촉 전설의 화덕 마르게리타 피자를 맛보며 이탈리아 첫날 여독 풀기",
+      "en": "Gino Sorbillo: Taste the legendary crispy, chewy wood-fired Neapolitan Margherita pizza at its historic birthplace",
+      "ja": "Gino Sorbillo: ナポリピッツァの聖地で焼き立て熱々の香ばしい元祖マルゲリータピッツァを堪能し旅の疲れを癒やす",
+      "zh": "Gino Sorbillo：在那不勒斯披萨发源圣地品尝刚出炉的外脆里嫩传奇柴火玛格丽特披萨，暖胃暖心消除旅途劳顿"
+    },
+    "walk": {
+      "ko": "매우 낮음 (2,500보)",
+      "en": "Very Low (2,500 steps)",
+      "ja": "極めて低い (2,500歩)",
+      "zh": "极低 (2,500步)"
+    },
+    "transport": {
+      "ko": "항공 + 공항철도 + 트렌이탈리아 + 택시",
+      "en": "Flight + Airport Rail + Train + Taxi",
+      "ja": "航空＋空港鉄道＋高速鉄道＋タクシー",
+      "zh": "航班与机场快线及高铁与出租车"
+    },
+    "meal": {
+      "ko": "Gino Sorbillo: 쫄깃한 도우와 버팔로 모차렐라의 전설적인 화덕 마르게리타 & 튀긴 피자(Pizza Fritta), Gran Caffè Gambrinus 럼주 빵 바바(Babà al Rum)",
+      "en": "Gino Sorbillo: Legendary Wood-fired Margherita Pizza & crispy stuffed Fried Pizza (Pizza Fritta), Gran Caffè Gambrinus rum-soaked Babà cake",
+      "ja": "Gino Sorbillo: 伝説の薪窯マルゲリータピッツァ＆揚げピッツァ(Pizza Fritta)、Gran Caffè Gambrinusの伝統ラム酒菓子ババ(Babà al Rum)",
+      "zh": "Gino Sorbillo：正宗柴火烤制玛格丽特披萨与酥脆油炸披萨 (Pizza Fritta)，Gran Caffè Gambrinus百年咖啡馆朗姆酒蛋糕 (Babà al Rum)"
+    }
+  },
+  {
+    "city": {
+      "ko": "나폴리",
+      "en": "Naples",
+      "ja": "ナポリ",
+      "zh": "那不勒斯"
+    },
+    "theme": {
+      "ko": "1860년 유서 깊은 카페 (감브리누스) 에스프레소 & 바바 빵 & 플레비시토 광장 야경",
+      "en": "1860 Historic Café Gambrinus Espresso & Babà & Piazza del Plebiscito Night View",
+      "ja": "1860年創業 Gambrinus 本格エスプレッソ＆名物ババ＆プレビシート広場夜景",
+      "zh": "始于1860年历史名店Gambrinus特浓咖啡＆朗姆蛋糕＆平民表决广场夜景"
+    },
+    "events": {
+      "ko": [
+        "스파카 나폴리 골목",
+        "Gran Caffè Gambrinus",
+        "에스프레소 & 바바(Babà)",
+        "시에스타 휴식",
+        "플레비시토 광장 야경"
+      ],
+      "en": [
+        "Spaccanapoli Alley Stroll",
+        "Gran Caffè Gambrinus",
+        "Espresso & Babà Pastry",
+        "Siesta Bed Rest",
+        "Piazza del Plebiscito Lights"
+      ],
+      "ja": [
+        "スパッカナポリ下町散歩",
+        "Gran Caffè Gambrinus",
+        "エスプレッソ＆ババ",
+        "シエスタ昼寝",
+        "プレビシート広場夜景"
+      ],
+      "zh": [
+        "斯帕卡老街漫步",
+        "百年名店Gambrinus",
+        "经典浓缩与朗姆甜点",
+        "午间充沛休息",
+        "平民表决广场夜景"
+      ]
+    },
+    "morning": {
+      "ko": "스파카 나폴리 골목의 활기찬 아침 정취를 느끼고 톨레도 거리의 평탄한 보행자 전용로 산책",
+      "en": "Experience the vibrant morning energy of Spaccanapoli and stroll the flat pedestrian Via Toledo",
+      "ja": "スパッカナポリの活気あふれる朝の空気を肌で感じ、トレド通りの歩行者天国をゆったり散策",
+      "zh": "漫步斯帕卡那波利老街感受生动生活气息，漫游托莱多平整开阔的步行街"
+    },
+    "rest": {
+      "ko": "13:30~16:00 Calenda Suite 복귀 후 침대에서 편안한 시에스타 낮잠",
+      "en": "13:30~16:00 Relaxing siesta nap in the comfort of Calenda Suite",
+      "ja": "13:30~16:00 快適なCalenda Suiteに戻りベッドでしっかり昼寝",
+      "zh": "13:30~16:00 返回Calenda Suite温馨客房卧床享受惬意午休"
+    },
+    "evening": {
+      "ko": "웅장한 반원형 열주가 빛나는 플레비시토 광장 (Piazza del Plebiscito) 야경 산책 후 산 카를로 극장 외관 조망 (무료, 예약 불필요)",
+      "en": "Piazza del Plebiscito: Marvel at the grand illuminated colonnades and Royal Palace at night (Free, no reservation needed)",
+      "ja": "プレビシート広場(Piazza del Plebiscito): 夜のライトアップに照らされた壮大な半円形回廊と王宮を無料散策",
+      "zh": "漫步平民表决广场(Piazza del Plebiscito)：欣赏夜间璀璨灯光映衬下的半圆形雄伟柱廊与皇宫外立面（免费，无需预约）"
+    },
+    "walk": {
+      "ko": "낮음 (4,100보)",
+      "en": "Low (4,100 steps)",
+      "ja": "低い (4,100歩)",
+      "zh": "较低 (4,100步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "스파카 나폴리 로컬 카페: 진한 에스프레소에 부드러운 헤이즐넛 크림을 얹은 달콤한 카페 노촐라 (Caffè Nocciola) & 신선한 해산물 파스타",
+      "en": "Spaccanapoli local cafe: Velvety Caffè Nocciola (espresso with hazelnut cream) & coastal fresh seafood pasta",
+      "ja": "スパッカ・ナポリのバル: ヘーゼルナッツクリームがとろけるカフェ・ノッチョーラ (Caffè Nocciola)＆新鮮魚介パスタ",
+      "zh": "那不勒斯街头咖啡馆：融入浓郁丝滑榛果酱的招牌咖啡 (Caffè Nocciola) 与地道海鲜意面"
+    }
+  },
+  {
+    "city": {
+      "ko": "나폴리",
+      "en": "Naples",
+      "ja": "ナポリ",
+      "zh": "那不勒斯"
+    },
+    "theme": {
+      "ko": "나폴리 출발 아말피/포지타노 전용 차량 투어 & 소렌토 레몬 뇨끼",
+      "en": "Naples Private Van Tour to Amalfi/Positano Coast & Sorrento Lemon Gnocchi",
+      "ja": "ナポリ発 専用車で行くアマルフィ/ポジターノ海岸ツアー＆ソレント風レモンニョッキ",
+      "zh": "那不勒斯出发 阿马尔菲与波西塔诺专属包车一日游＆索伦托柠檬团子"
+    },
+    "events": {
+      "ko": [
+        "전용 차량 픽업",
+        "포지타노 해안 뷰",
+        "소렌토 레몬 뇨끼",
+        "폼페이 또는 해안 휴식",
+        "피렌체 기차 패킹"
+      ],
+      "en": [
+        "Private Van Door-to-Door",
+        "Positano Viewpoints",
+        "Sorrento Lemon Gnocchi",
+        "Scenic Coastal Relax",
+        "Pack for Florence"
+      ],
+      "ja": [
+        "専用車ホテル送迎",
+        "ポジターノ絶景ビュー",
+        "ソレント産レモンニョッキ",
+        "海岸沿い優雅な休息",
+        "フィレンツェ行荷造り"
+      ],
+      "zh": [
+        "专属商务车点对点接送",
+        "波西塔诺绝美全景",
+        "索伦托新鲜柠檬土豆团",
+        "悬崖海岸舒缓漫步",
+        "整理行李备战佛罗伦萨"
+      ]
+    },
+    "morning": {
+      "ko": "숙소 앞에서 편안한 전용 차량(벤츠 밴) 탑승, 계단 걷기 없이 차창 밖으로 세계 3대 미항과 소렌토, 포지타노 해안 절경 감상",
+      "en": "Comfortable private Mercedes van pickup at hotel. Admire panoramic coastal cliffs of Positano and Amalfi without walking steep stairs",
+      "ja": "宿前から快適な専用車に乗車。階段を上り下りすることなく、車窓から世界屈指のソレント〜ポジターノ海岸美を堪能",
+      "zh": "在酒店门口搭乘专属奔驰商务车，免除长辈攀爬台阶劳顿，全程车窗全景饱览波西塔诺与阿马尔菲断崖海岸绝景"
+    },
+    "rest": {
+      "ko": "14:00~16:30 에어컨 완비 전용 차량에서 편안하게 시에스타 수면 취하며 나폴리 복귀",
+      "en": "14:00~16:30 Restful nap in air-conditioned comfort of private vehicle returning to Naples",
+      "ja": "14:00~16:30 快適な専用車内でしっかり昼寝をしながらナポリへ帰還",
+      "zh": "14:00~16:30 在空调舒适的专属商务车上安稳午休，惬意返回那不勒斯"
+    },
+    "evening": {
+      "ko": "Calenda Suite 복귀 후 온수 샤워, 내일 피렌체 이동을 위한 기차 짐 정리 및 여유로운 와인 타임",
+      "en": "Return to hotel, warm shower and relaxed packing for tomorrow's high-speed train to Florence",
+      "ja": "宿に戻り温水シャワーでリフレッシュ、明日のフィレンツェ高速列車の荷造り",
+      "zh": "返回公寓热水淋浴，整理明日搭乘意铁高铁前往佛罗伦萨的行装"
+    },
+    "walk": {
+      "ko": "낮음 (3,200보)",
+      "en": "Low (3,200 steps)",
+      "ja": "低い (3,200歩)",
+      "zh": "较低 (3,200步)"
+    },
+    "transport": {
+      "ko": "전용 차량 투어 (관절 보호)",
+      "en": "Private Van Tour",
+      "ja": "専用車ツアー",
+      "zh": "点对点专属包车"
+    },
+    "meal": {
+      "ko": "소렌토 해안 식당: 향긋한 소렌토 레몬 버터 뇨끼 & 신선한 해산물 파스타",
+      "en": "Sorrento coastal trattoria: Fragrant Sorrento lemon butter gnocchi & fresh seafood pasta",
+      "ja": "ソレント海岸レストラン: ソレント産レモンとバターの特製ニョッキ＆新鮮魚介パスタ",
+      "zh": "索伦托海边餐厅：清香索伦托特产柠檬黄油土豆团与新鲜海鲜意面"
+    }
+  },
+  {
+    "city": {
+      "ko": "피렌체",
+      "en": "Florence",
+      "ja": "フィレンツェ",
+      "zh": "佛罗伦萨"
+    },
+    "theme": {
+      "ko": "Italo 고속기차 피렌체 이동 & 명품 포카치아 샌드위치 (All’Antico Vinaio) & 베키오 다리 야경",
+      "en": "Italo Train to Florence & Famous Focaccia Sandwiches (All’Antico Vinaio) & Ponte Vecchio Night View",
+      "ja": "Italo高速列車でフィレンツェへ移動＆大人気フォカッチャサンド＆ヴェッキオ橋の夜景",
+      "zh": "搭乘Italo高铁前往佛罗伦萨＆爆款托斯卡纳佛卡夏(All’Antico Vinaio)＆老桥绝美夜景"
+    },
+    "events": {
+      "ko": [
+        "Italo 기차 (13:20~16:17)",
+        "Artemente Florence B&B",
+        "All’Antico Vinaio",
+        "베키오 다리 야경 산책"
+      ],
+      "en": [
+        "Italo Train (13:20~16:17)",
+        "Artemente Florence B&B",
+        "All’Antico Vinaio",
+        "Ponte Vecchio Night Stroll"
+      ],
+      "ja": [
+        "Italo 列車 (13:20~16:17)",
+        "Artemente Florence B&B",
+        "All’Antico Vinaio",
+        "ヴェッキオ橋の夜景散歩"
+      ],
+      "zh": [
+        "Italo高铁 (13:20~16:17)",
+        "Artemente Florence B&B",
+        "All’Antico Vinaio",
+        "老桥夜景水面倒影漫步"
+      ]
+    },
+    "morning": {
+      "ko": "나폴리 숙소 체크아웃 후 중앙역 이동, 13:20 Italo 프리마(1등석) 고속열차 탑승하여 피렌체로 쾌속 이동",
+      "en": "Check out from Naples, board 13:20 Italo high-speed train in comfortable Prima class to Florence SMN",
+      "ja": "ナポリを出発し13:20発Italo特快列車（1等席）に乗車、フィレンツェSMN駅へ快適移動",
+      "zh": "退房前往那不勒斯火车站，搭乘13:20 Italo高铁一等座舒适平稳前往佛罗伦萨SMN站"
+    },
+    "rest": {
+      "ko": "16:17 피렌체 SMN역 도착 후 도보 단 8분 거리 Artemente Florence B&B 체크인 및 온수 샤워",
+      "en": "16:17 Florence arrival, easy 8-minute flat walk to Artemente Florence B&B for check-in & shower",
+      "ja": "16:17 フィレンツェ到着後、駅から徒歩わずか8分のArtemente Florence B&Bへチェックイン",
+      "zh": "16:17 抵达佛罗伦萨，平缓步行仅8分钟入驻Artemente Florence B&B并热水沐浴"
+    },
+    "evening": {
+      "ko": "베키오 다리 (Ponte Vecchio): 아르노강 물빛에 비치는 피렌체의 로맨틱한 반영 야경을 무료로 감상하며 강변 산책",
+      "en": "Ponte Vecchio: Free romantic evening stroll along the Arno River, admiring illuminated jewelers' bridge reflected in calm water",
+      "ja": "ヴェッキオ橋(Ponte Vecchio): アルノ川の水面に美しく揺れるフィレンツェのロマンチックな夜景を無料で散策",
+      "zh": "漫步老桥(Ponte Vecchio)：欣赏古老珠宝廊桥倒映在阿诺河水面上的迷人浪漫免费夜景"
+    },
+    "walk": {
+      "ko": "낮음 (3,800보)",
+      "en": "Low (3,800 steps)",
+      "ja": "低い (3,800歩)",
+      "zh": "较低 (3,800步)"
+    },
+    "transport": {
+      "ko": "Italo 초고속열차 + 도보",
+      "en": "Italo High-Speed Rail + Walking",
+      "ja": "Italo高速鉄道＋徒歩",
+      "zh": "Italo高铁与步行"
+    },
+    "meal": {
+      "ko": "All’Antico Vinaio: 겉바속촉 토스카나 포카치아 사이에 프로슈토와 트러플 크림, 신선 치즈를 산더미처럼 넣은 포카치아 샌드위치 (Schiacciata)",
+      "en": "All’Antico Vinaio: World-famous crispy warm focaccia sandwich loaded with prosciutto, cheeses & black truffle cream (Schiacciata)",
+      "ja": "All’Antico Vinaio: サクサクフォカッチャに生ハムとトリュフクリームを山盛りに挟んだ世界的人気サンドイッチ (Schiacciata)",
+      "zh": "All’Antico Vinaio：香脆佛卡夏面包夹入丰厚生火腿、新鲜奶酪与特级黑松露酱的知名三明治 (Schiacciata)"
+    }
+  },
+  {
+    "city": {
+      "ko": "피렌체",
+      "en": "Florence",
+      "ja": "フィレンツェ",
+      "zh": "佛罗伦萨"
+    },
+    "theme": {
+      "ko": "두오모 광장 평지 산책 & 택시로 미켈란젤로 광장 (Piazzale Michelangelo) 최고의 무료 야경",
+      "en": "Duomo Flat Walk & Piazzale Michelangelo Unbeatable Hilltop Free Panoramic Sunset & Night View",
+      "ja": "ドゥオーモ広場平坦路散策＆タクシーでミケランジェロ広場の最高峰無料パノラマ夕景・夜景",
+      "zh": "大教堂广场平缓漫步＆打车登顶米开朗基罗广场绝色免费日落与夜景全景"
+    },
+    "events": {
+      "ko": [
+        "두오모 광장 평지 산책",
+        "시뇨리아 광장",
+        "카페 질리 티타임",
+        "미켈란젤로 광장 택시",
+        "피렌체 전경 무료 야경"
+      ],
+      "en": [
+        "Duomo Flat Stroll",
+        "Piazza della Signoria",
+        "Caffè Gilli Tiramisu",
+        "Taxi to Michelangelo",
+        "Florence Panoramic Night View"
+      ],
+      "ja": [
+        "ドゥオーモ広場平坦路",
+        "シニョーリア広場",
+        "名門カフェ・ジッリ",
+        "タクシーでミケランジェロ広場へ",
+        "フィレンツェ全景無料夜景"
+      ],
+      "zh": [
+        "大教堂广场平缓散步",
+        "领主广场雕塑巡礼",
+        "百年吉利咖啡甜点",
+        "打车登米开朗基罗广场",
+        "佛罗伦萨全城日落夜景"
+      ]
+    },
+    "morning": {
+      "ko": "숙소에서 두오모 광장까지 완전 평지 도보 7분. 붉은 돔 외관과 조토의 종탑을 계단 등반 없이 광장에서 여유롭게 감상",
+      "en": "Completely flat 7 min walk from hotel to Duomo, admiring Brunelleschi's Dome from open plaza without stairs",
+      "ja": "宿からドゥオーモ広場まで完全平坦路で徒歩7分。階段を登らず広場から優雅にクーポラと鐘楼を鑑賞",
+      "zh": "从旅舍全程平坦步行7分钟至圣母百花大教堂广场，无需登顶即可在开阔广场仰望宏伟红砖穹顶"
+    },
+    "rest": {
+      "ko": "13:30~16:00 카페 질리(Gilli)에서 티라미수 맛본 후 숙소 복귀 침대 낮잠",
+      "en": "13:30~16:00 Taste iconic tiramisu at historic Caffè Gilli, then deep siesta nap at B&B",
+      "ja": "13:30~16:00 老舗カフェ・ジッリでティラミスを堪能後、宿で快適な昼寝休養",
+      "zh": "13:30~16:00 在百年老店吉利咖啡馆品尝经典提拉米苏，返回旅舍午休充能"
+    },
+    "evening": {
+      "ko": "택시 타고 미켈란젤로 광장 (Piazzale Michelangelo) 올라가기: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿 (노을~조명 야경)",
+      "en": "Take taxi up to Piazzale Michelangelo: Best free viewpoint overlooking Florence red roofs, Duomo and Arno River at sunset & twilight",
+      "ja": "タクシーでミケランジェロ広場(Piazzale Michelangelo)へ: 丘の上からフィレンツェの赤い屋根、ドゥオーモ、アルノ川を一望する最高峰の無料夜景スポット",
+      "zh": "打车直登米开朗基罗广场(Piazzale Michelangelo)：在山顶俯瞰夕阳与华灯初上时的佛罗伦萨全城红屋顶、百花穹顶与阿诺河（顶级免费观景台）"
+    },
+    "walk": {
+      "ko": "낮음 (3,900보)",
+      "en": "Low (3,900 steps)",
+      "ja": "低い (3,900歩)",
+      "zh": "较低 (3,900步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시 (언덕)",
+      "en": "Walking & Hill Taxi",
+      "ja": "徒歩＆丘陵タクシー",
+      "zh": "平路步行与上下山出租车"
+    },
+    "meal": {
+      "ko": "Trattoria Zà Zà: 참나무 숯불에 구운 두툼한 1kg 티본 스테이크(Bistecca alla Fiorentina) + 풍미 가득한 트러플 크림 파스타",
+      "en": "Trattoria Zà Zà: 1kg oak charcoal-seared Fiorentina T-Bone Steak with juicy pink center + rich aromatic Truffle Cream Pasta",
+      "ja": "Trattoria Zà Zà: オーク薪で香ばしく焼き上げた1kgの極上Tボーンステーキ (Bistecca alla Fiorentina)＋芳醇黒トリュフクリームパスタ",
+      "zh": "Trattoria Zà Zà：橡木炭火烤制的外焦里嫩1公斤经典丁骨大牛排 (Bistecca alla Fiorentina) 与浓郁黑松露奶油意面"
+    }
+  },
+  {
+    "city": {
+      "ko": "피렌체",
+      "en": "Florence",
+      "ja": "フィレンツェ",
+      "zh": "佛罗伦萨"
+    },
+    "theme": {
+      "ko": "우피치 미술관 르네상스 걸작 관람 & 1kg 티본 스테이크 보양 만찬 (Trattoria Zà Zà)",
+      "en": "Uffizi Gallery Renaissance Masterpieces & 1kg Florentine T-Bone Steak Feast (Trattoria Zà Zà)",
+      "ja": "ウフィツィ美術館ルネサンス名画鑑賞＆Tボーンステーキ1kg極上滋養ディナー (Trattoria Zà Zà)",
+      "zh": "乌菲兹美术馆文艺复兴传世名作＆1公斤厚切T骨牛排奢华盛宴 (Trattoria Zà Zà)"
+    },
+    "events": {
+      "ko": [
+        "우피치 엘리베이터 관람",
+        "보티첼리 '비너스의 탄생'",
+        "오후 침대 꿀잠",
+        "Trattoria Zà Zà 티본 1kg",
+        "트러플 크림 파스타"
+      ],
+      "en": [
+        "Uffizi Elevator Access",
+        "Botticelli 'Birth of Venus'",
+        "Afternoon Deep Nap",
+        "Trattoria Zà Zà 1kg Steak",
+        "Truffle Cream Pasta"
+      ],
+      "ja": [
+        "ウフィツィ エレベーター利用",
+        "ボッティチェリ『ヴィーナスの誕生』",
+        "午後ベッドで快眠",
+        "Trattoria Zà Zà Tボーン1kg",
+        "トリュフパスタ"
+      ],
+      "zh": [
+        "乌菲兹无障碍电梯参观",
+        "波提切利《维纳斯的诞生》",
+        "午后充分卧床蓄能",
+        "Trattoria Zà Zà 1公斤T骨牛排",
+        "浓郁松露奶油意面"
+      ]
+    },
+    "morning": {
+      "ko": "우피치 미술관 사전 예약 입장, 전용 엘리베이터로 이동하여 보티첼리 '비너스의 탄생', 라파엘로 명작 집중 관람",
+      "en": "Timed entry to Uffizi Gallery, using priority elevator to comfortably enjoy Botticelli's 'Birth of Venus' and Raphael",
+      "ja": "予約入場したウフィツィ美術館で専用エレベーターを利用し、ボッティチェリの名作などを無理なく鑑賞",
+      "zh": "按时段入场乌菲兹美术馆，搭乘无障碍电梯，轻松深度欣赏波提切利《维纳斯的诞生》与拉斐尔名作"
+    },
+    "rest": {
+      "ko": "13:30~16:30 관람 후 숙소 복귀, 침대에 누워 다리 올리고 3시간 충분한 낮잠",
+      "en": "13:30~16:30 Post-gallery rest, elevating legs on bed for 3 hours of restorative siesta",
+      "ja": "13:30~16:30 見学後アパートに戻り足を高くして3時間の深い休息",
+      "zh": "13:30~16:30 观展后返回旅舍垫高双腿，卧床享受3小时充分午睡"
+    },
+    "evening": {
+      "ko": "Trattoria Zà Zà: 숯불에 구워낸 1kg 두툼한 티본 스테이크(Bistecca alla Fiorentina)와 진한 트러플 크림 파스타로 부모님 보양 만찬",
+      "en": "Trattoria Zà Zà: Savor thick 1kg charcoal-grilled Bistecca alla Fiorentina and rich truffle cream pasta to recharge stamina",
+      "ja": "Trattoria Zà Zà: 炭火で豪快に焼いた極厚1kgのTボーンステーキと芳醇トリュフクリームパスタで最高の滋養ディナー",
+      "zh": "Trattoria Zà Zà：品尝用橄榄木炭火现烤的1公斤厚切经典佛罗伦萨T骨牛排与浓郁松露奶油面，为长辈深度补充满满活力"
+    },
+    "walk": {
+      "ko": "낮음 (4,200보)",
+      "en": "Low (4,200 steps)",
+      "ja": "低い (4,200歩)",
+      "zh": "较低 (4,200步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "토스카나 전통 디저트: 바삭한 아몬드 비스킷을 달콤한 디저트 와인에 찍어 먹는 칸투치니와 빈 산토 (Cantuccini e Vin Santo) & 리보리타 채소 수프",
+      "en": "Tuscan dessert tradition: Almond Cantuccini biscotti dipped in amber sweet dessert wine (Vin Santo) & hearty ribollita vegetable soup",
+      "ja": "トスカーナ伝統デザート: 堅焼きアーモンド菓子を甘口デザートワインに浸すカントゥッチーニとヴィン・サント (Cantuccini e Vin Santo)",
+      "zh": "托斯卡纳传统甜点：硬香杏仁脆饼蘸入甜白葡萄酒品尝的经典组合 (Cantuccini e Vin Santo) 与托斯卡纳热蔬菜汤"
+    }
+  },
+  {
+    "city": {
+      "ko": "피렌체",
+      "en": "Florence",
+      "ja": "フィレンツェ",
+      "zh": "佛罗伦萨"
+    },
+    "theme": {
+      "ko": "산 로렌초 가죽 시장 & 산타 마리아 노벨라 약국 & 로마 이동 짐 정리",
+      "en": "San Lorenzo Leather Market & Santa Maria Novella Pharmacy & Pack for Rome",
+      "ja": "サン・ロレンツォ革製品市場＆サンタ・マリア・ノヴェッラ薬局＆ローマ行荷造り",
+      "zh": "圣洛伦佐皮具集市＆百年修道院药妆店＆打包备战帝国之都罗马"
+    },
+    "events": {
+      "ko": [
+        "산 로렌초 시장 평지 쇼핑",
+        "노벨라 약국 장미수",
+        "네르보네 샌드위치",
+        "로마 이동 패킹"
+      ],
+      "en": [
+        "San Lorenzo Flat Market",
+        "SM Novella Rose Water",
+        "Nerbone Sandwich",
+        "Pack Bags for Rome"
+      ],
+      "ja": [
+        "サン・ロレンツォ平坦市場",
+        "老舗薬局のローズウォーター",
+        "Nerbone パニーニ",
+        "ローマ行荷造り"
+      ],
+      "zh": [
+        "圣洛伦佐平坦集市购物",
+        "新圣母修道院百年玫瑰水",
+        "内尔博内特色牛肚包",
+        "整理行装备战罗马"
+      ]
+    },
+    "morning": {
+      "ko": "산 로렌초 실내 중앙 시장과 가죽 노점 거리 산책, 800년 전통 산타 마리아 노벨라 약국에서 천연 장미수 쇼핑",
+      "en": "Explore flat indoor Central Market and San Lorenzo leather stalls; pick up rose water at 800-year-old Santa Maria Novella pharmacy",
+      "ja": "平坦な中央市場とサン・ロレンツォ革市場を散策し、800年の歴史を誇る薬局で名物のローズウォーターをお土産に購入",
+      "zh": "漫步平坦整洁的中央市场与圣洛伦佐皮具街，前往拥有800年历史的新圣母修道院药妆店选购经典天然玫瑰水"
+    },
+    "rest": {
+      "ko": "13:00~16:30 숙소 복귀 후 충분한 낮잠 및 발 피로 해소 온수 족욕",
+      "en": "13:00~16:30 Rest at B&B, relaxing afternoon sleep and warm bath to soothe legs",
+      "ja": "13:00~16:30 宿に戻り足湯と心地よい昼寝で旅の疲労をしっかりリセット",
+      "zh": "13:00~16:30 返回旅舍热水泡脚，卧床享受3.5小时充分午睡消除疲劳"
+    },
+    "evening": {
+      "ko": "피렌체 마지막 밤 평화로운 아르노 강변 야간 산책 후, 내일 로마 이동을 위한 짐 정리",
+      "en": "Peaceful evening walk along the Arno River on our last night in Florence, packing bags for Rome",
+      "ja": "フィレンツェ最後の夜、静かなアルノ川沿いを散策後、明日のローマ移動へ向けて荷造り",
+      "zh": "在佛罗伦萨最后一晚漫步宁静怡人的阿诺河畔，整理行李准备明日奔赴罗马"
+    },
+    "walk": {
+      "ko": "낮음 (3,600보)",
+      "en": "Low (3,600 steps)",
+      "ja": "低い (3,600보)",
+      "zh": "较低 (3,600步)"
+    },
+    "transport": {
+      "ko": "도보 위주",
+      "en": "Mostly Walking",
+      "ja": "徒歩中心",
+      "zh": "主要步行"
+    },
+    "meal": {
+      "ko": "중앙시장 네르보네(Nerbone): 부드러운 곱창버거(Lampredotto) 또는 토스카나 샐러드",
+      "en": "Central Market Nerbone: Famous tender Florentine Lampredotto sandwich or fresh salad",
+      "ja": "中央市場 Nerbone: 名物ランプレドット（牛モツ煮込みパニーニ）またはサラダ",
+      "zh": "中央市场百年老店Nerbone：入口即化的经典佛罗伦萨慢炖牛肚包或清爽沙拉"
+    }
+  },
+  {
+    "city": {
+      "ko": "로마",
+      "en": "Rome",
+      "ja": "ローマ",
+      "zh": "罗马"
+    },
+    "theme": {
+      "ko": "Italo 고속기차 로마 이동 & 트레비 분수 (Fontana di Trevi) 밤 10시 심야 무료 야경 산책",
+      "en": "Italo Train to Rome & Trevi Fountain Late-Night (After 10 PM) Serene Free Walk & Coin Toss",
+      "ja": "Italo高速列車でローマへ移動＆トレビの泉 夜10時以降の幻想的無料夜景散歩＆コイン投げ",
+      "zh": "搭乘Italo高铁前往罗马＆晚10点后静谧特雷维喷泉免费夜景漫步与投币许愿"
+    },
+    "events": {
+      "ko": [
+        "Italo 기차 (13:28~15:10)",
+        "Salotto Monti 호텔",
+        "몬티 지구 산책",
+        "트레비 분수 밤 10시 산책",
+        "동전 던지기"
+      ],
+      "en": [
+        "Italo Train (13:28~15:10)",
+        "Salotto Monti Boutique",
+        "Monti District Walk",
+        "Trevi Fountain at 10 PM",
+        "Coin Toss Moment"
+      ],
+      "ja": [
+        "Italo 列車 (13:28~15:10)",
+        "Salotto Monti",
+        "モンティ地区散策",
+        "トレビの泉 夜10時散歩",
+        "コイン投げ"
+      ],
+      "zh": [
+        "Italo高铁 (13:28~15:10)",
+        "Salotto Monti精品酒店",
+        "蒙蒂文艺街区漫步",
+        "晚10点后特雷维喷泉",
+        "背对喷泉投币许愿"
+      ]
+    },
+    "morning": {
+      "ko": "피렌체 숙소 체크아웃 후 SMN역 이동, 13:28 Italo 고속열차 탑승 ➔ 15:10 로마 테르미니(Roma Termini)역 도착",
+      "en": "Board 13:28 Italo train from Florence SMN ➔ arrive at Roma Termini 15:10, smooth taxi to Salotto Monti",
+      "ja": "フィレンツェSMN駅から13:28発Italo特快に乗車 ➔ 15:10 ローマ・テルミニ駅到着、タクシーでSalotto Montiへ直行",
+      "zh": "从佛罗伦萨搭乘13:28 Italo高铁 ➔ 15:10 抵达罗马特米尼站，打车直达Salotto Monti精品酒店办理入住"
+    },
+    "rest": {
+      "ko": "15:30~18:30 Salotto Monti 체크인 후 온수 샤워 및 부모님 침대 휴식",
+      "en": "15:30~18:30 Check in at Salotto Monti, hot shower and deep resting hours in hotel room",
+      "ja": "15:30~18:30 ホテルにチェックイン後、温水シャワーを浴びてベッドでしっかり休息",
+      "zh": "15:30~18:30 入住Salotto Monti，享受热水淋浴并在舒适客房中充分卧床静养"
+    },
+    "evening": {
+      "ko": "트레비 분수 (Fontana di Trevi) 야간 산책: 숙소에서 도보 12분 거리. 밤 10시 이후 방문 시 낮의 혼잡이 줄어들어 가장 아름답고 신비로운 조명과 물빛을 무료로 감상하며 동전 던지기 체험",
+      "en": "Trevi Fountain Night Stroll: 12 min walk from hotel. Visiting after 10 PM avoids daytime crowds, revealing breathtaking illumination and calm water for a magical coin toss (Free)",
+      "ja": "トレビの泉(Fontana di Trevi)夜間散策: 宿から徒歩12分。夜10時以降に訪れると昼の混雑が大幅に減り、最も幻想的で美しいライトアップと泉の音を無料で満喫しながらコイン投げ体験",
+      "zh": "特雷维喷泉夜景漫步：距酒店仅步行12分钟。晚10点后前往，避开白天人潮喧嚣，在神圣梦幻的灯光与泉水交响中，免费欣赏最美喷泉并体验背对喷泉投掷硬币许愿（免费）"
+    },
+    "walk": {
+      "ko": "낮음 (3,800보)",
+      "en": "Low (3,800 steps)",
+      "ja": "低い (3,800歩)",
+      "zh": "较低 (3,800步)"
+    },
+    "transport": {
+      "ko": "Italo 초고속열차 + 택시",
+      "en": "Italo High-Speed Rail + Taxi",
+      "ja": "Italo高速鉄道＋タクシー",
+      "zh": "Italo高铁与出租车"
+    },
+    "meal": {
+      "ko": "몬티 지구 트라토리아: 로마식 뇨끼 알라 로마나 & 부드러운 하우스 와인",
+      "en": "Monti trattoria: Classic Gnocchi alla Romana & smooth house red wine",
+      "ja": "モンティ地区トラットリア: ローマ風ニョッキ＆美味しいハウスワイン",
+      "zh": "蒙蒂街区特色餐馆：罗马风味焗烤土豆团配爽口佐餐红酒"
+    }
+  },
+  {
+    "city": {
+      "ko": "로마",
+      "en": "Rome",
+      "ja": "ローマ",
+      "zh": "罗马"
+    },
+    "theme": {
+      "ko": "콜로세움 외관 평지 산책 & 가성비 파스타 (Trattoria Luzzi) & 캄포 디 피오리 로컬 야시장",
+      "en": "Colosseum Flat Exterior Walk & Trattoria Luzzi Great Value Pasta & Campo de' Fiori Night Market",
+      "ja": "コロッセオ外観平坦路散策＆高コスパパスタ (Trattoria Luzzi)＆カンポ・デ・フィオーリ夜市",
+      "zh": "斗兽场平缓外立面漫步＆超高性价比意面 (Trattoria Luzzi)＆鲜花广场地道夜市"
+    },
+    "events": {
+      "ko": [
+        "콜로세움 평지 조망",
+        "포로 로마노 외관",
+        "Trattoria Luzzi 파스타",
+        "오후 시에스타",
+        "캄포 디 피오리 야시장"
+      ],
+      "en": [
+        "Colosseum Flat Views",
+        "Roman Forum Panorama",
+        "Trattoria Luzzi Pasta",
+        "Afternoon Siesta",
+        "Campo de' Fiori Market"
+      ],
+      "ja": [
+        "コロッセオ平坦眺望",
+        "フォロ・ロマーノ外観",
+        "Trattoria Luzzi パスタ",
+        "午後シエスタ",
+        "カンポ・デ・フィオーリ夜市"
+      ],
+      "zh": [
+        "斗兽场平路仰望",
+        "古罗马广场全景",
+        "Trattoria Luzzi经典面",
+        "午后充分午休",
+        "鲜花广场热闹夜市"
+      ]
+    },
+    "morning": {
+      "ko": "숙소에서 콜로세움까지 도보 8분. 긴 대기줄이나 계단 등반 없이 웅장한 콜로세움과 포로 로마노 외관을 평지에서 여유롭게 감상",
+      "en": "Flat 8 min walk from hotel to Colosseum, admiring its grand arches and Roman Forum from open ground without stair climbing",
+      "ja": "宿からコロッセオまで徒歩8分。長蛇の列や階段を登ることなく、外側の平坦な遊歩道から壮大なコロッセオを優雅に鑑賞",
+      "zh": "从酒店步行8分钟即达斗兽场，免除排长队与陡峭台阶，在平整开阔的步道从容欣赏斗兽场与古罗马广场雄姿"
+    },
+    "rest": {
+      "ko": "13:30~16:00 Salotto Monti 복귀 후 침대에서 편안한 낮잠 및 온수 샤워",
+      "en": "13:30~16:00 Restful siesta sleep and warm shower at Salotto Monti",
+      "ja": "13:30~16:00 ホテルに戻り快適な昼寝＆温水シャワーで休養",
+      "zh": "13:30~16:00 返回Salotto Monti卧床享受舒适午觉，热水淋浴焕发活力"
+    },
+    "evening": {
+      "ko": "캄포 디 피오리 (Campo de' Fiori) 구경: 로마의 활기 넘치는 로컬 야시장 및 야간 광장 정취를 무료로 산책하며 현지 식재료와 과일 구경",
+      "en": "Campo de' Fiori Stroll: Soak in the lively atmosphere of Rome's historic night market and vibrant piazza (Free, no booking needed)",
+      "ja": "カンポ・デ・フィオーリ(Campo de' Fiori): ローマ情緒たっぷりのローカルナイトマーケットと広場の賑わいを無料で散策",
+      "zh": "鲜花广场(Campo de' Fiori)漫步：感受罗马本土充满烟火气息的露天夜市与广场夜晚欢快氛围（免费，无需预约）"
+    },
+    "walk": {
+      "ko": "낮음 (4,100보)",
+      "en": "Low (4,100 steps)",
+      "ja": "低い (4,100歩)",
+      "zh": "较低 (4,100步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "Trattoria Luzzi: 생크림 없이 달걀노른자와 구안찰레로 맛을 낸 진짜배기 카르보나라 & 아마트리치아나, 길거리 수플리 (Supplì 치즈 튀김 밥볼)",
+      "en": "Trattoria Luzzi: Authentic Roman Carbonara & Amatriciana (no cream, just egg yolks, guanciale & pecorino) & crispy molten-cheese Supplì",
+      "ja": "Trattoria Luzzi: 生クリーム不使用、卵黄とグアンチャーレで仕上げる本場カルボナーラ＆アマトリチャーナ、熱々スップリ (Supplì)",
+      "zh": "Trattoria Luzzi：纯以蛋黄、风干猪脸肉调味的正宗罗马培根蛋面与辣茄酱培根面，以及拉丝芝士炸饭团小吃 (Supplì)"
+    }
+  },
+  {
+    "city": {
+      "ko": "로마",
+      "en": "Rome",
+      "ja": "ローマ",
+      "zh": "罗马"
+    },
+    "theme": {
+      "ko": "바티칸 박물관 & 성 베드로 대성당 평지 관람 & 1900년 젤라또 명가 (Giolitti 쌀맛/피스타치오)",
+      "en": "Vatican Museums & St. Peter's Flat Tour & 1900 Artisanal Gelato (Giolitti Rice/Pistachio)",
+      "ja": "バチカン美術館＆サン・ピエトロ大聖堂見学＆1900年創業ジェラート名店 (Giolitti お米/ピスタチオ)",
+      "zh": "梵蒂冈博物馆与圣彼得大教堂平缓参观＆百年国宝冰淇淋 (Giolitti 大米与开心果味)"
+    },
+    "events": {
+      "ko": [
+        "바티칸 택시 직행",
+        "시스티나 천장화",
+        "성 베드로 광장",
+        "Giolitti 젤라또",
+        "타차 도로 에스프레소"
+      ],
+      "en": [
+        "Direct Taxi to Vatican",
+        "Sistine Chapel Fresco",
+        "St. Peter's Square",
+        "Giolitti Gelato",
+        "Tazza d'Oro Coffee"
+      ],
+      "ja": [
+        "タクシーでバチカン直行",
+        "システィーナ礼拝堂",
+        "サン・ピエトロ広場",
+        "Giolitti ジェラート",
+        "タッツァ・ドーロ"
+      ],
+      "zh": [
+        "打车直达梵蒂冈",
+        "西斯廷创世纪穹顶画",
+        "圣彼得大广场",
+        "Giolitti老字号冰淇淋",
+        "金杯特浓咖啡"
+      ]
+    },
+    "morning": {
+      "ko": "택시로 바티칸 입구 직행. 사전 예약 패스트트랙과 엘리베이터를 이용해 시스티나 경당과 성 베드로 대성당 평지 관람",
+      "en": "Taxi direct to Vatican gate. Use priority entry and elevators to smoothly view Sistine Chapel and St. Peter's Basilica",
+      "ja": "タクシーでバチカン入口へ直行。優先入場とエレベーターを利用しシスティーナ礼拝堂と大聖堂を無理なく見学",
+      "zh": "打车直达梵蒂冈入口。凭预约快速通道与无障碍电梯，轻松平稳欣赏西斯廷礼拜堂壁画与圣彼得大教堂"
+    },
+    "rest": {
+      "ko": "13:30~16:30 관람 후 택시로 Salotto Monti 복귀, 침대 낮잠 3시간 꿀휴식",
+      "en": "13:30~16:30 Taxi back to Salotto Monti for 3 hours of rejuvenating sleep on bed",
+      "ja": "13:30~16:30 タクシーで宿に戻りベッドで3時間しっかり昼寝休養",
+      "zh": "13:30~16:30 打车返回Salotto Monti，卧床安稳午休3小时恢复充沛精力"
+    },
+    "evening": {
+      "ko": "판테온 앞 역사 깊은 타차 도로(Tazza d'Oro)에서 에스프레소 콘 판나를 마시고, 1900년 개업 젤라또 명가 Giolitti에서 쌀맛(Riso) 젤라또 맛보기",
+      "en": "Sip espresso con panna at Tazza d'Oro by Pantheon, then savor world-famous Rice (Riso) & Pistachio gelato at 1900 Giolitti",
+      "ja": "パンテオン前の老舗タッツァ・ドーロでカフェを楽しみ、1900年創業のGiolittiでお米味(Riso)とピスタチオのジェラートを満喫",
+      "zh": "在万神殿前金杯咖啡(Tazza d'Oro)品尝生奶油特浓咖啡，前往始于1900年的Giolitti品尝国宝级大米味与开心果味冰淇淋"
+    },
+    "walk": {
+      "ko": "낮음 (4,400보)",
+      "en": "Low (4,400 steps)",
+      "ja": "低い (4,400보)",
+      "zh": "较低 (4,400步)"
+    },
+    "transport": {
+      "ko": "왕복 택시",
+      "en": "Round-trip Taxi",
+      "ja": "往復タクシー",
+      "zh": "往返全程出租车"
+    },
+    "meal": {
+      "ko": "Giolitti (지올리띠): 쫀득한 젤라토에 씹히는 쌀알이 든 시그니처 쌀맛(Riso) & 피스타치오, 아침 생크림 브리오슈 마리토초 (Maritozzo con panna)",
+      "en": "Giolitti: World-famous artisan rice gelato (Riso) & rich pistachio gelato, plus Roman morning sweet cream brioche Maritozzo con panna",
+      "ja": "Giolitti: つぶつぶお米の食感が美味しい名物お米ジェラート (Riso)＆濃厚ピスタチオ、朝食の生クリームパン・マリトッツォ (Maritozzo)",
+      "zh": "Giolitti：享誉世界的颗粒感招牌大米冰淇淋 (Riso) 与浓醇开心果味，搭配罗马传统早餐鲜奶油面包 (Maritozzo)"
+    }
+  },
+  {
+    "city": {
+      "ko": "로마",
+      "en": "Rome",
+      "ja": "ローマ",
+      "zh": "罗马"
+    },
+    "theme": {
+      "ko": "2천 년 역사 판테온 신전 내부 & 나보나 광장 & 스페인 계단 황금빛 노을 야경",
+      "en": "2,000-Year Pantheon Temple & Piazza Navona Fountains & Spanish Steps Golden Sunset",
+      "ja": "2千年の歴史 パンテオン神殿内部＆ナヴォーナ広場＆スペイン階段の黄金色夕景",
+      "zh": "两千年古罗马万神殿内部＆纳沃纳广场喷泉巡礼＆西班牙阶梯金色夕阳晚霞"
+    },
+    "events": {
+      "ko": [
+        "판테온 돔 내부 관람",
+        "나보나 광장 분수",
+        "오후 시에스타 낮잠",
+        "스페인 계단 노을 야경"
+      ],
+      "en": [
+        "Pantheon Dome Interior",
+        "Piazza Navona Fountains",
+        "Afternoon Siesta",
+        "Spanish Steps Sunset Lights"
+      ],
+      "ja": [
+        "パンテオン内部見学",
+        "ナヴォーナ広場の噴水",
+        "午後シエスタ昼寝",
+        "スペイン階段夕景ライトアップ"
+      ],
+      "zh": [
+        "万神殿穹顶内部参观",
+        "纳沃纳广场贝尔尼尼喷泉",
+        "午后充分午休",
+        "西班牙阶梯浪漫夕阳霞光"
+      ]
+    },
+    "morning": {
+      "ko": "완전 평지인 판테온 내부로 진입, 기둥 없이 지탱하는 2천 년 된 거대 콘크리트 돔 오쿨루스(Oculus) 감상 후 나보나 광장 산책",
+      "en": "Enter flat Pantheon interior to gaze at 2,000-year unreinforced concrete dome oculus, then stroll Piazza Navona",
+      "ja": "完全平坦路のパンテオン内部に入場し、2千年前の奇跡のクーポラを見学後ナヴォーナ広場を散歩",
+      "zh": "平缓步入万神殿内部，仰望两千年前无钢筋混凝土穹顶中央通光圆孔，随后漫步纳沃纳广场"
+    },
+    "rest": {
+      "ko": "13:30~16:00 숙소 복귀 후 충분한 낮잠 수면 및 온수 샤워",
+      "en": "13:30~16:00 Afternoon siesta nap and warm shower at hotel",
+      "ja": "13:30~16:00 宿に戻りベッドで昼寝＆温水シャワーで休養",
+      "zh": "13:30~16:00 返回酒店温馨客房安稳午休，热水沐浴解乏"
+    },
+    "evening": {
+      "ko": "스페인 광장 (Piazza di Spagna): 스페인 계단 위에서 내려다보는 로마 구시가지의 황금빛 노을과 화려한 도심 야경을 무료로 감상",
+      "en": "Spanish Steps Sunset: Marvel at panoramic golden sunset over Rome's rooftops from the top of Spanish Steps (Free)",
+      "ja": "スペイン広場(Piazza di Spagna): スペイン階段の上からローマの街並みを染める黄金色の夕景と美しい夜景を無料鑑賞",
+      "zh": "西班牙广场(Piazza di Spagna)：在西班牙阶梯顶端饱览金色夕阳染红罗马古城屋顶的壮丽黄昏与夜景（免费）"
+    },
+    "walk": {
+      "ko": "낮음 (3,900보)",
+      "en": "Low (3,900 steps)",
+      "ja": "低い (3,900보)",
+      "zh": "较低 (3,900步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "로마식 전통 안티파스토: 바삭한 아티초크 구이(Carciofi alla Giudia) & 카초 에 페페(Cacio e Pepe)",
+      "en": "Roman traditional specialties: Crispy Jewish artichoke (Carciofi alla Giudia) & Cacio e Pepe pasta",
+      "ja": "ローマ伝統料理: カリカリのアーティチョーク素揚げ(Carciofi alla Giudia)＆カチョ・エ・ペペ",
+      "zh": "罗马经典传统菜肴：酥脆犹太式炸洋蓟(Carciofi alla Giudia)与黑胡椒奶酪意面"
+    }
+  },
+  {
+    "city": {
+      "ko": "로마",
+      "en": "Rome",
+      "ja": "ローマ",
+      "zh": "罗马"
+    },
+    "theme": {
+      "ko": "콘도티 거리 쇼핑 & 부모님 은혜 감사 만찬 (살팀보카) & 귀국 짐 최종 패킹",
+      "en": "Via Condotti Shopping & Parents Celebration Dinner (Saltimbocca) & Final Flight Packing",
+      "ja": "コンドッティ通りショッピング＆ご両親感謝のディナー(サルティンボッカ)＆帰国荷造り",
+      "zh": "孔多蒂商业街漫步购物＆答谢长辈感恩盛宴(意式煎小牛肉)＆最终归国打包"
+    },
+    "events": {
+      "ko": [
+        "콘도티 평지 쇼핑",
+        "이탈리아 식료품 구매",
+        "오후 충분한 낮잠",
+        "부모님 감사 만찬",
+        "최종 짐정리"
+      ],
+      "en": [
+        "Via Condotti Shopping",
+        "Italian Gourmet Truffle Oils",
+        "Afternoon Deep Rest",
+        "Celebration Dinner",
+        "Final Packing"
+      ],
+      "ja": [
+        "コンドッティ通り散策",
+        "トリュフオイル買出し",
+        "午後たっぷり昼寝",
+        "感謝の記念ディナー",
+        "最終パッキング"
+      ],
+      "zh": [
+        "孔多蒂平坦街道漫游",
+        "精选松露油与黑醋伴手礼",
+        "午后充分卧床蓄能",
+        "感恩长辈庆功大餐",
+        "全面打包行李"
+      ]
+    },
+    "morning": {
+      "ko": "콘도티 거리와 코르소 거리의 평탄한 명품 상점가 산책, 이탈리아 트러플 오일, 발사믹 식초 등 귀국 선물 쇼핑",
+      "en": "Flat walk along Via Condotti & Via del Corso, purchasing authentic Italian truffle oils & aged balsamic vinegar gifts",
+      "ja": "コンドッティ通りとコルソ通りの平坦なショッピング街を歩き、極上トリュフオイルや熟成バルサミコ酢などのお土産を購入",
+      "zh": "漫步孔多蒂大街与科尔索大道平整步行街，采购纯正意大利特级松露油、百年古法黑醋等高档回国伴手礼"
+    },
+    "rest": {
+      "ko": "13:00~16:30 내일 장거리 귀국 비행을 위해 숙소에서 온수 목욕 및 3시간 반 충분한 수면",
+      "en": "13:00~16:30 Deep rest, hot bath and 3.5 hours of sleep to prepare for long-haul return flight tomorrow",
+      "ja": "13:00~16:30 明日の長距離フライトに備え、宿で温水入浴＆3時間半の充実した睡眠休養",
+      "zh": "13:00~16:30 为明日长途回国航班储备精力，在酒店热水沐浴并午睡3.5小时深度休整"
+    },
+    "evening": {
+      "ko": "몬티 지구 고급 트라토리아에서 부모님과 함께 로마식 송아지 요리(Saltimbocca alla Romana) 만찬을 즐기며 30일 대장정 완주 가족 축배",
+      "en": "Celebration dinner at Monti trattoria featuring tender veal Saltimbocca alla Romana, toasting to 30 days of safe family travels",
+      "ja": "モンティ地区の名店で仔牛肉のサルティンボッカを味わいながら、30日間の大旅行無事完走を祝う家族の記念ディナー",
+      "zh": "在蒙蒂高雅餐馆享用鲜嫩多汁的经典罗马式鼠尾草火腿煎小牛肉(Saltimbocca alla Romana)，举杯欢庆30天大长征圆满成功"
+    },
+    "walk": {
+      "ko": "낮음 (3,500보)",
+      "en": "Low (3,500 steps)",
+      "ja": "低い (3,500보)",
+      "zh": "较低 (3,500步)"
+    },
+    "transport": {
+      "ko": "도보 & 택시",
+      "en": "Walking & Taxi",
+      "ja": "徒歩＆タクシー",
+      "zh": "步行与出租车"
+    },
+    "meal": {
+      "ko": "로마 전통 요리: 로마식 송아지 살팀보카(Saltimbocca alla Romana) & 티라미수 & 와인",
+      "en": "Roman classic feast: Veal Saltimbocca alla Romana with sage & prosciutto, homemade tiramisu & wine",
+      "ja": "ローマ伝統名物料理: 仔牛肉のサルティンボッカ＆自家製ティラミス＆上質ワイン",
+      "zh": "罗马经典名菜：鼠尾草生火腿嫩煎小牛肉(Saltimbocca alla Romana)配自制提拉米苏与陈酿红酒"
+    }
+  },
+  {
+    "city": {
+      "ko": "로마",
+      "en": "Rome",
+      "ja": "ローマ",
+      "zh": "罗马"
+    },
+    "theme": {
+      "ko": "공항철도 레오나르도 익스프레스 ➔ FCO T3 22:00 인천행 출국 (안전 완주)",
+      "en": "Leonardo Express Direct Airport Train ➔ FCO T3 22:00 Flight to Incheon (Safe Completion)",
+      "ja": "空港特快レオナルド・エクスプレス ➔ FCO T3 22:00発 仁川行き帰国便 (無事完走)",
+      "zh": "莱昂纳多特快直达列车 ➔ FCO T3 22:00 飞往仁川回国航班 (圆满凯旋)"
+    },
+    "events": {
+      "ko": [
+        "여유로운 체크아웃",
+        "테르미니역 이동",
+        "레오나르도 익스프레스 (32분)",
+        "FCO 공항 택스리펀",
+        "22:00 인천행 탑승"
+      ],
+      "en": [
+        "Leisurely Check-out",
+        "Termini Station",
+        "Leonardo Express (32 min)",
+        "FCO Tax Refund",
+        "22:00 Incheon Flight"
+      ],
+      "ja": [
+        "ゆったりチェックアウト",
+        "テルミニ駅へ",
+        "レオナルド特快(32分)",
+        "空港免税手続き",
+        "22:00 仁川行き搭乗"
+      ],
+      "zh": [
+        "从容办理退房",
+        "前往特米尼车站",
+        "莱昂纳多特快(32分钟直达)",
+        "FCO机场退税盖章",
+        "22:00 登机返程仁川"
+      ]
+    },
+    "morning": {
+      "ko": "Salotto Monti에서 여유롭게 늦잠 후 체크아웃, 짐 보관 후 몬티 지구 카페에서 브런치",
+      "en": "Sleep in, leisurely check-out with luggage stored at hotel, relaxed brunch in Monti quarter",
+      "ja": "遅めの起床後チェックアウト、荷物を預けてモンティ地区のカフェでゆったりブランチ",
+      "zh": "睡到自然醒后退房并将行李寄存在前台，在蒙蒂街区咖啡馆享受悠闲早午餐"
+    },
+    "rest": {
+      "ko": "14:00~17:00 호텔 라운지에서 편안한 소파 휴식 및 공항 이동 전 마지막 컨디션 점검",
+      "en": "14:00~17:00 Rest peacefully on hotel lounge couches before departing for airport",
+      "ja": "14:00~17:00 ホテルラウンジのソファで静かに休憩し空港移動への体調を万全に",
+      "zh": "14:00~17:00 在酒店大堂舒适沙发静歇充能，轻松备战前往机场"
+    },
+    "evening": {
+      "ko": "테르미니역에서 레오나르도 익스프레스 탑승 (직통 32분 논스톱) ➔ FCO T3 도착. 사전 택스리펀 완료 후 22:00 인천행 비행기 탑승 (익일 인천 도착)",
+      "en": "Board non-stop Leonardo Express from Termini (32 min) ➔ FCO T3. Complete tax refund, boarding 22:00 flight to Incheon (arriving safely next day)",
+      "ja": "テルミニ駅からノンストップのレオナルド特快に乗車(32分) ➔ FCO T3到着。免税手続き完了後、22:00発仁川行きに搭乗（翌日無事帰国）",
+      "zh": "在特米尼站搭乘莱昂纳多特快直达列车(32分钟直达无停靠) ➔ 抵达FCO T3。顺利办妥退税手续，登机搭乘22:00飞往仁川的航班（次日平安抵达）"
+    },
+    "walk": {
+      "ko": "낮음 (3,200보)",
+      "en": "Low (3,200 steps)",
+      "ja": "低い (3,200보)",
+      "zh": "较低 (3,200步)"
+    },
+    "transport": {
+      "ko": "공항철도 레오나르도 익스프레스",
+      "en": "Leonardo Express Train",
+      "ja": "空港特快レオナルド・エクスプレス",
+      "zh": "莱昂纳多特快机场直达专线"
+    },
+    "meal": {
+      "ko": "FCO 공항 VIP 라운지: 편안한 휴식과 따뜻한 이탈리안 커피 & 샌드위치",
+      "en": "FCO Airport VIP Lounge: Restful break with Italian espresso & warm panini",
+      "ja": "FCO空港VIPラウンジ: 快適な休息と温かいイタリアンエスプレッソ＆パニーニ",
+      "zh": "罗马机场贵宾休息室：安适休歇，品尝香浓意式咖啡与热压帕尼尼"
+    }
+  }
+],
   "WEST_CENTRAL_EU": [
     {
       "city": {
@@ -14874,8 +15449,131 @@ const I18N_DICTIONARY = {
     "opt_party_5": "5인 (대가족 5인)",
     "opt_tier_economy": "실속 알뜰형 (스마트 가성비)",
     "opt_tier_standard": "편안한 4성급 (센트럴 패밀리)",
-    "opt_tier_luxury": "프리미엄 럭셔리 (5성급 & VIP투어)"
-  },
+    "opt_tier_luxury": "프리미엄 럭셔리 (5성급 & VIP투어)",
+        "master_sum4_title": "[요약 4] 스페인 & 이탈리아 권역별 시그니처 미식 & 로컬 길거리 간식 총정리",
+    "master_sum4_desc": "여행의 즐거움을 극대화하는 도시별 필수 시그니처 요리와 시장·골목길 대표 로컬 간식, 조식 및 디저트를 총정리한 미식 가이드입니다.",
+    "gourmet_part1_title": "🇪🇸 [Part 1] 스페인 미식 & 간식 파헤치기",
+    "badge_catalonia": "카탈루냐 미식",
+    "gourmet_bcn_title": "1. 바르셀로나 (Barcelona)",
+    "gourmet_bcn_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>꿀대구 (Bacalao a la miel)</strong>: Ciudad Condal 등 타파스 바의 전설. 두툼한 대구 살 위에 달콤한 꿀과 부드러운 아이올리 소스를 얹어 구워낸 요리로 한국인 부모님 최애 메뉴 확정!<br>• <strong>해산물 파에야 & 먹물 파에야 (Paella)</strong>: 7 Portes 등 1836년 전통 명가에서 맛보는 사프란 향 가득한 해산물 쌀요리.",
+    "gourmet_bcn_snack": "<strong>🥐 로컬 시장 & 야시장 간식 (산타 카테리나 / 보케리아):</strong><br>• <strong>생과일 주스 & 과일 컵</strong>: 시장 골목마다 1~2€로 즐기는 생망고·딸기·멜론 믹스 비타민 충전 컵.<br>• <strong>이베리코 하몬 콘 (Jamón Cone)</strong>: 걸어 다니며 맛보는 최고급 생고기 하몬 슬라이스 종이콘.<br>• <strong>츄러스와 쇼콜라테 (Churros con Chocolate)</strong>: 바삭한 츄러스를 걸쭉하고 진한 핫초코에 듬뿍 찍어 먹는 최고의 간식.",
+    "gourmet_and_title": "2. 안달루시아 (세비야·코르도바·그라나다·말라가)",
+    "badge_andalusia": "남부 정통 향토",
+    "gourmet_and_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>소꼬리 찜 (Rabo de Toro)</strong>: Bodegas Mezquita 등 전역 명물. 한국의 진한 소갈비찜과 싱크로율 90% 이상으로 부모님 감탄 보장!<br>• <strong>가지 튀김과 꿀 (Berenjenas con miel)</strong>: 바삭한 가지 튀김 위에 사탕수수 꿀을 뿌린 단짠의 극치 타파스.<br>• <strong>살모레호 (Salmorejo)</strong>: 가스파초보다 훨씬 진하고 크리미한 코르도바식 토마토 마늘 냉수프 (바삭 하몬 토핑).<br>• <strong>에스페토 (Espeto, 말라가 해변)</strong>: 대나무 꼬치에 정어리를 꿰어 해변 모래사장 숯불 화로에 즉석으로 구워내는 명물.",
+    "gourmet_and_snack": "<strong>🥐 로컬 시장 간식:</strong><br>• <strong>안달루시아 추로스 (Churros)</strong>: 바르셀로나보다 훨씬 바삭하고 담백! 아침에 현지인들처럼 바에 서서 갓 튀긴 추러스와 카페 콘 레체 즐기기.",
+    "gourmet_part2_title": "🇮🇹 [Part 2] 이탈리아 미식 & 간식 파헤치기",
+    "badge_napoli": "피자의 본향",
+    "gourmet_nap_title": "1. 나폴리 (Napoli) - [미식의 진짜 고향]",
+    "gourmet_nap_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>나폴리 정통 화덕 피자 (Pizza Napoletana)</strong>: Gino Sorbillo 등. 산마르자노 토마토와 신선한 버팔로 모차렐라의 마르게리타 & 마리나라. 차원이 다른 부드러운 도우.<br>• <strong>튀긴 피자 (Pizza Fritta)</strong>: 나폴리 길거리 간식의 왕! 피자 반죽을 기름에 바삭하게 튀겨 속에 리코타 치즈와 토마토를 채운 별미.",
+    "gourmet_nap_snack": "<strong>🥐 조식 & 디저트 간식:</strong><br>• <strong>바바 (Babà al Rum)</strong>: 버섯 모양 폭신한 스펀지케이크에 독한 럼 시럽을 듬뿍 적신 전통 디저트 (어른들의 깊은 풍미!).<br>• <strong>카페 노촐라 (Caffè Nocciola)</strong>: 진한 에스프레소 바닥에 부드러운 헤이즐넛 크림을 깔아준 달콤한 나폴리식 커피.",
+    "badge_tuscany": "토스카나 육류",
+    "gourmet_flr_title": "2. 피렌체 (Firenze)",
+    "gourmet_flr_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>비스테카 알라 피오렌티나 (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zà 등. 두툼한 티본 스테이크를 참나무 숯불에 구워 겉바속촉 육즙을 즐기는 토스카나 최고 요리.<br>• <strong>트러플 크림 파스타 (Truffle Pasta)</strong>: 향긋한 송로버섯 오일과 크림이 어우러져 입안 가득 풍미가 퍼지는 명물 파스타.<br>• <strong>포카치아 샌드위치 (Schiacciata)</strong>: All’Antico Vinaio. 겉바속촉 포카치아 사이에 프로슈토와 트러플 크림, 신선 치즈를 산더미처럼 넣은 세계 최고 샌드위치.",
+    "gourmet_flr_snack": "<strong>🥐 조식 & 간식:</strong><br>• <strong>칸투치니와 빈 산토 (Cantuccini e Vin Santo)</strong>: 고소한 아몬드 비스킷을 달콤한 디저트 와인(빈 산토)에 콕 찍어 먹는 토스카나 전통 디저트.",
+    "badge_rome": "고대 수도 전통",
+    "gourmet_rom_title": "3. 로마 (Roma)",
+    "gourmet_rom_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>로마 3대 파스타 (카르보나라·아마트리치아나·카초 에 페페)</strong>: 생크림 없이 달걀노른자, 페코리노 치즈, 구안찰레, 통후추로 꾸덕하게 맛을 낸 진짜배기 정통 파스타!<br>• <strong>수플리 (Supplì)</strong>: 토마토 소스 리소토 밥 속에 모차렐라 치즈를 넣고 바삭하게 튀겨낸 로마식 길거리 핑거푸드 고로케.",
+    "gourmet_rom_snack": "<strong>🥐 젤라토 & 디저트 간식:</strong><br>• <strong>지올리띠 쌀 젤라토 (Riso)</strong>: Giolitti. 쫀득한 젤라토 사이에 고소하게 씹히는 쌀알이 박혀 있어 부모님이 가장 좋아하시는 이탈리아 아이스크림.<br>• <strong>마리토초 (Maritozzo)</strong>: 촉촉한 브리오슈 번 사이에 달콤하고 부드러운 생크림을 산처럼 가득 채워 넣은 로마 전통 조식/간식 빵.",
+    "master_guide_badge": "스페인 & 이탈리아 항공·기차·숙소 100% 확정 마스터 가이드",
+
+    "lbl_transfer_day": "City Transfer Day",
+    "timeline_morning_title": "Morning: Core Cultural Walk (Low Fatigue)",
+    "timeline_rest_title": "Afternoon: Essential Rest (Siesta Recharge)",
+    "timeline_evening_title": "Evening: Scenic Night Views & Dining",
+    "timeline_walk_burden": "Walking Burden",
+    "timeline_transport": "Transit Mode",
+    "timeline_recommended_meal": "Recommended Cuisine",
+    "timeline_expand_detail": "View Daily Schedule ▼",
+    "timeline_collapse_detail": "Collapse Schedule ▲",
+
+    "lbl_transfer_day": "거점이동일",
+    "timeline_morning_title": "오전: 핵심 문화 산책 (피로도 낮음)",
+    "timeline_rest_title": "오후: 필수 휴식 (시에스타 충전)",
+    "timeline_evening_title": "저녁: 야경 감상 & 가벼운 식사",
+    "timeline_walk_burden": "보행 강도",
+    "timeline_transport": "이동 수단",
+    "timeline_recommended_meal": "추천 미식",
+    "timeline_expand_detail": "세부 일정 펼치기 ▼",
+    "timeline_collapse_detail": "세부 일정 접기 ▲",
+    "master_guide_status": "2026.11.05 ~ 12.04 (29박 30일) · 총 9대 숙소 및 이동편 완전 연계",
+    "master_sum1_title": "📅 [요약 1] 도시별 확정 숙소 9선 & 체류 일정",
+    "master_sum1_desc": "본 플래너는 확정된 항공권(Vueling, Ryanair), 고속열차(Renfe, Italo, Trenitalia), ALSA 우등버스 시간과 9대 최종 확정 숙소를 바탕으로 최적화된 동선과 맛집, 대중교통 이용법을 총망라한 최종본입니다.",
+    "hotel_bcn_title": "바르셀로나 (6박)",
+    "hotel_bcn_dates": "11/5 ~ 11/11",
+    "hotel_bcn_name": "Suites Marina Abapart",
+    "hotel_bcn_desc": "사그라다 파밀리아 도보 3분 · 주방 완비 아파트 · 공항 공식 택시(35~40€) 직행",
+    "hotel_svq1_title": "세비야 1차 (1박)",
+    "hotel_svq1_dates": "11/11 ~ 11/12",
+    "hotel_svq1_name": "Letoh Letoh Sevilla",
+    "hotel_svq1_desc": "세비야 공항 택시(정액 25~30€) · 구시가지 & 저녁 정통 플라멩코 접근성 우수",
+    "hotel_odb_title": "코르도바 (1박)",
+    "hotel_odb_dates": "11/12 ~ 11/13",
+    "hotel_odb_name": "Hotel de los Faroles",
+    "hotel_odb_desc": "Renfe 12:30 탑승(41분) · 메스키타 도보권 · 소꼬리찜 맛집(Bodegas Mezquita) 인접",
+    "hotel_grx_title": "그라나다 (2박)",
+    "hotel_grx_dates": "11/13 ~ 11/15",
+    "hotel_grx_name": "The Central House Granada",
+    "hotel_grx_desc": "ALSA 14:15 탑승 · 11/14 알함브라 궁전 종일 투어(티켓 확정) 택시 직행",
+    "hotel_agp_title": "말라가 (3박)",
+    "hotel_agp_dates": "11/15 ~ 11/18",
+    "hotel_agp_name": "Coeo Pena Design Apartment",
+    "hotel_agp_desc": "ALSA 16:00 탑승 · 피카소 미술관 도보권 · 선셋 요트 크루즈 및 에스페토 맛집",
+    "hotel_svq2_title": "세비야 2차 (4박)",
+    "hotel_svq2_dates": "11/18 ~ 11/22",
+    "hotel_svq2_name": "Libere Seville Plaza Nueva",
+    "hotel_svq2_desc": "ALSA 09:00 탑승 · 누에바 광장 도보 2분 · 스페인 광장 야경 산책 & 마차 투어",
+    "hotel_nap_title": "나폴리 (3박)",
+    "hotel_nap_dates": "11/22 ~ 11/25",
+    "hotel_nap_name": "Calenda Suite",
+    "hotel_nap_desc": "11/22 항공+기차(16:26 탑승) 도착 · 폼페이/포지타노 차량 투어 & 원조 화덕 피자",
+    "hotel_flr_title": "피렌체 (4박)",
+    "hotel_flr_dates": "11/25 ~ 11/29",
+    "hotel_flr_name": "Artemente Florence B&B",
+    "hotel_flr_desc": "Italo 13:20 탑승(2h57m) · SMN역 도보 8분 · 전 일정 평지 도보 & 미켈란젤로 광장 야경",
+    "hotel_rom_title": "로마 (5박 & 귀국)",
+    "hotel_rom_dates": "11/29 ~ 12/4",
+    "hotel_rom_name": "Salotto Monti",
+    "hotel_rom_desc": "Italo 13:28 탑승 · 몬티 지구 부티크 · 트레비 분수 야간 도보 · 12/4 22:00 FCO T3 출국",
+    "master_sum2_title": "[요약 2] 국가별 대중교통 패스 & 이동 공식 마스터",
+    "transit_bcn_title": "바르셀로나 이동 공식",
+    "transit_bcn_tip1": "<strong>T-familiar (8회권) 1장</strong>으로 가족 3인 함께 태그 공유 (무제한 패스보다 경제적)",
+    "transit_bcn_tip2": "<strong>2층 시티투어 버스 (48시간권)</strong>로 부모님 무릎 부담 없이 파노라마 시내 관광",
+    "transit_bcn_tip3": "<strong>공항 ↔ 숙소</strong>: 공식 택시(노란+검정, 35~40€) 직행 (대형 캐리어 3개 완벽 적재)",
+    "transit_and_title": "안달루시아 (세비야·그라나다·코르도바·말라가)",
+    "transit_and_tip1": "구시가지는 골목길 평지 위주로 천천히 도보 산책",
+    "transit_and_tip2": "<strong>기차역/버스터미널 ↔ 숙소</strong> 이동은 <strong>무조건 Uber / Cabify (택시 앱)</strong> 이용 (3인 기준 버스비 차이 미미, 관절 보호 최적)",
+    "transit_and_tip3": "도시 간 장거리 이동은 Renfe 초고속열차 및 ALSA 우등버스 완벽 연계",
+    "transit_ita_title": "이탈리아 (나폴리·피렌체·로마)",
+    "transit_ita_tip1": "지하철/버스는 복잡한 티켓 구매 없이 각자 <strong>트래블월렛 / 트래블로그 카드(컨택트리스)</strong>로 단말기 직접 태그 (Tap & Go)",
+    "transit_ita_tip2": "<strong>피렌체</strong>: 구시가지 전 일정 도보 최적화 (차량 진입 제한 ZTL 구역, 평지 위주 산책)",
+    "transit_ita_tip3": "<strong>로마 ➔ FCO 공항</strong>: 테르미니역에서 <strong>레오나르도 익스프레스 (직통 32분)</strong> 탑승",
+    "master_sum3_title": "🍽️ [요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 & 무료 야경·야시장 총정리",
+    "master_sum3_desc": "확정 일정에 맞춰 부모님 입맛과 체력을 완벽히 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 사전 예약 없이 즐기는 무료 야경·야시장 스폿 총정리입니다.",
+    "must_bcn_city": "바르셀로나",
+    "must_bcn_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Ciudad Condal</strong>: 꿀대구(Bacalao a la miel), 안심 몬타디토, 레몬맥주 클라라<br>• <strong>7 Portes</strong>: 1836년 전통 해산물 파에야 & 먹물 파에야<br>• <strong>Puertecillo Sagrada Família</strong>: 숙소 도보 2분 즉석 해산물 구이 가성비 맛집",
+    "must_bcn_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>사그라다 파밀리아 호수공원(Plaça de Gaudí)</strong>: 성당 정면 호숫가 밤 조명 야경 (무료, 예약 불필요)<br>• <strong>산타 카테리나 로컬 시장</strong>: 물결지붕 아래 신선한 과일과 하몬 구경<br>• <strong>11/10 15:30</strong>: 사그라다 파밀리아 서쪽 스테인드글라스 황금빛 노을 관람",
+    "must_svq_city": "세비야 (1차 & 2차)",
+    "must_svq_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>• 정통 타파스 & 시원한 상그리아",
+    "must_svq_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>메트로폴 파라솔 (Las Setas)</strong>: 거대 목조 구조물 야외 광장 무료 산책 & 야간 조명<br>• <strong>스페인 광장 (Plaza de España)</strong>: 밤 조명이 켜진 웅장하고 로맨틱한 광장 야간 산책 (무료)<br>• 과달키비르 강변 황금의 탑 야경",
+    "must_odb_city": "코르도바",
+    "must_odb_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Bodegas Mezquita</strong>: 부드럽게 푹 고아낸 소꼬리 찜(Rabo de Toro - 부모님 최애 보양식), 바삭한 가지 튀김(Berenjenas con miel), 살모레호",
+    "must_odb_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>로마 다리 (Puente Romano)</strong>: 해 질 녘 다리를 건너며 메스키타와 과달키비르 강변 무료 야경 감상<br>• 유대인 지구(유다리아) 꽃길 골목(Calleja de las Flores) 산책",
+    "must_grx_city": "그라나다",
+    "must_grx_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Bar Los Diamantes</strong>: 음료(맥주/와인) 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공!<br>• 나바스 거리(Calle Navas) 활기찬 로컬 타파스 투어",
+    "must_grx_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>산 니콜라스 전망대 (Mirador de San Nicolás)</strong>: 택시로 올라가 알함브라 붉은 성곽 뒤로 물드는 노을과 야경 감상 (최고의 무료 명소)<br>• 11/14 알함브라 궁전 및 나스르 궁전 집중 관람",
+    "must_agp_city": "말라가",
+    "must_agp_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>에스페토 (Espeto)</strong>: 해변가에서 대나무 꼬치에 꿰어 숯불에 구워내는 정통 정어리 구이<br>• <strong>El Pimpi</strong>: 안토니오 반데라스 와이너리 전통 와인 & 하몬<br>• <strong>Marisquería Godoy</strong>: 항구 테라스 해산물 구이",
+    "must_agp_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>말라가 항구 무에예 우노 (Muelle Uno)</strong>: 야자수와 지중해가 어우러진 해안 산책로 야경 산책<br>• 라리오스 대리석 쇼핑 거리의 화려한 조명 산책",
+    "must_nap_city": "나폴리",
+    "must_nap_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Gino Sorbillo</strong>: 겉바속촉 전설의 화덕 마르게리타 피자<br>• <strong>Gran Caffè Gambrinus</strong>: 1860년 유서 깊은 카페의 정통 에스프레소 & 럼주 빵 '바바(Babà)', 조개 페이스트리 '스폴리아텔라'",
+    "must_nap_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>플레비시토 광장 (Piazza del Plebiscito)</strong>: 웅장한 기둥 회랑과 왕궁 야경 산책<br>• 스파카 나폴리 골목 활기 체감 & 폼페이/소렌토/아말피 전용 차량 투어",
+    "must_flr_city": "피렌체",
+    "must_flr_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg 두툼한 숯불 티본 스테이크(Bistecca alla Fiorentina) + 트러플 크림 파스타<br>• <strong>All’Antico Vinaio</strong>: 줄서서 먹는 토스카나 포카치아 샌드위치",
+    "must_flr_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>미켈란젤로 광장 (Piazzale Michelangelo)</strong>: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿<br>• <strong>베키오 다리 (Ponte Vecchio)</strong>: 아르노강 반영 야경",
+    "must_rom_city": "로마",
+    "must_rom_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Trattoria Luzzi</strong>: 콜로세움 인접 가성비 파스타 & 화덕 피자<br>• <strong>Giolitti (지올리띠)</strong>: 쌀맛(Riso) & 고소한 피스타치오(Pistacchio) 젤라또 필수 주문<br>• 타차 도로(Tazza d'Oro): 판테온 앞 그라니타 콘 판나",
+    "must_rom_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>트레비 분수 (Fontana di Trevi)</strong>: 밤 10시 이후 야간 산책 (인파 줄어든 로맨틱한 야경 & 동전 던지기, 숙소 도보 12분)<br>• <strong>캄포 디 피오리 (Campo de' Fiori)</strong>: 로컬 야시장 및 야간 광장 정취<br>• 12/4 테르미니역 공항철도 ➔ FCO T3 22:00 출국",
+},
   "en": {
     "nav_transit": "🚇 Smart Transit",
     "nav_hotels": "🏨 Value Hotels (24)",
@@ -15038,8 +15736,121 @@ const I18N_DICTIONARY = {
     "opt_party_5": "5 People (Extended Family of 5)",
     "opt_tier_economy": "Smart Economy (Great Value)",
     "opt_tier_standard": "Comfortable 4-Star (Central Family)",
-    "opt_tier_luxury": "Premium Luxury (5-Star & VIP Tours)"
-  },
+    "opt_tier_luxury": "Premium Luxury (5-Star & VIP Tours)",
+        "master_sum4_title": "[Summary 4] Spain & Italy Regional Signature Gourmet & Local Street Snacks Guide",
+    "master_sum4_desc": "A complete culinary guide covering must-try signature dishes, market & street snacks, breakfasts, and local desserts across all cities.",
+    "gourmet_part1_title": "🇪🇸 [Part 1] Spain Culinary & Snack Deep Dive",
+    "badge_catalonia": "Catalan Cuisine",
+    "gourmet_bcn_title": "1. Barcelona",
+    "gourmet_bcn_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Honey Cod (Bacalao a la miel)</strong>: Tapas legend at Ciudad Condal. Tender cod fillet topped with sweet honey and savory aioli sauce—an absolute parent favorite!<br>• <strong>Seafood Paella & Black Rice Paella</strong>: Saffron-infused traditional seafood rice dishes at the historic 7 Portes (est. 1836).",
+    "gourmet_bcn_snack": "<strong>🥐 Local Market & Street Snacks (Santa Caterina / Boqueria):</strong><br>• <strong>Fresh Fruit Juice & Cups</strong>: 1~2€ fresh mango, strawberry, and melon vitamin cups in vibrant market aisles.<br>• <strong>Ibérico Jamón Cone</strong>: Handheld paper cones filled with freshly carved premium acorn-fed ham.<br>• <strong>Churros con Chocolate</strong>: Crispy golden churros dipped into rich, thick hot chocolate.",
+    "gourmet_and_title": "2. Andalusia (Seville, Córdoba, Granada, Málaga)",
+    "badge_andalusia": "Southern Heritage",
+    "gourmet_and_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Braised Oxtail (Rabo de Toro)</strong>: Specialty at Bodegas Mezquita. Rich, fall-off-the-bone tenderness similar to Korean galbi-jjim, loved by senior travelers!<br>• <strong>Fried Eggplant with Honey (Berenjenas con miel)</strong>: Thin crispy fried eggplant drizzled with cane sugar honey—the ultimate sweet & savory tapas.<br>• <strong>Salmorejo</strong>: Rich, silky cold tomato and garlic soup from Córdoba, topped with crunchy jamón.<br>• <strong>Espeto (Málaga Beach)</strong>: Fresh sardines skewered on bamboo sticks and grilled over charcoal boat fires right on the sand.",
+    "gourmet_and_snack": "<strong>🥐 Local Market Snacks:</strong><br>• <strong>Andalusian Churros</strong>: Noticeably crispier and lighter than northern versions! Stand at a morning coffee bar and enjoy with café con leche like a local.",
+    "gourmet_part2_title": "🇮🇹 [Part 2] Italy Culinary & Snack Deep Dive",
+    "badge_napoli": "Birthplace of Pizza",
+    "gourmet_nap_title": "1. Naples (Napoli) - The Real Heart of Italian Food",
+    "gourmet_nap_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Authentic Neapolitan Wood-Fired Pizza</strong>: Gino Sorbillo. Tender airy crust with sweet San Marzano tomatoes and creamy buffalo mozzarella (Margherita & Marinara).<br>• <strong>Fried Pizza (Pizza Fritta)</strong>: King of Neapolitan street eats—crispy fried dough stuffed with fresh ricotta cheese and savory fillings.",
+    "gourmet_nap_snack": "<strong>🥐 Breakfast & Dessert Treats:</strong><br>• <strong>Babà al Rum</strong>: Fluffy mushroom-shaped sponge cake soaked in fragrant rum syrup—an authentic classic.<br>• <strong>Caffè Nocciola</strong>: Velvety espresso layered over rich hazelnut cream, Naples' signature morning perk.",
+    "badge_tuscany": "Tuscan Meats",
+    "gourmet_flr_title": "2. Florence (Firenze)",
+    "gourmet_flr_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Bistecca alla Fiorentina</strong>: Trattoria Zà Zà. Thick 1kg T-bone steak seared over oak charcoal with tender pink center, simply seasoned with sea salt.<br>• <strong>Truffle Cream Pasta</strong>: Silky pasta loaded with aromatic Tuscan black truffles and rich cream.<br>• <strong>Focaccia Sandwich (Schiacciata)</strong>: All’Antico Vinaio. World-famous crispy warm focaccia stacked high with prosciutto, creamy cheeses, and truffle spread.",
+    "gourmet_flr_snack": "<strong>🥐 Breakfast & Snacks:</strong><br>• <strong>Cantuccini e Vin Santo</strong>: Crunchy Tuscan almond biscotti dipped into sweet amber dessert wine.",
+    "badge_rome": "Ancient Capital Heritage",
+    "gourmet_rom_title": "3. Rome (Roma)",
+    "gourmet_rom_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>The 3 Roman Pastas (Carbonara, Amatriciana, Cacio e Pepe)</strong>: True authentic recipes—no heavy cream, only farm egg yolks, Pecorino Romano, crispy guanciale, and cracked pepper.<br>• <strong>Supplì</strong>: Classic Roman street food—fried tomato risotto croquette filled with molten mozzarella string cheese.",
+    "gourmet_rom_snack": "<strong>🥐 Gelato & Dessert Treats:</strong><br>• <strong>Giolitti Rice Gelato (Riso)</strong>: Creamy artisan gelato packed with sweet chewy rice grains—parents' all-time top choice.<br>• <strong>Maritozzo</strong>: Soft sweet brioche bun overflowing with pillowy whipped cream, the ultimate Roman morning indulgence.",
+    "master_guide_badge": "Spain & Italy Flights, Trains & Accommodations 100% Confirmed Master Guide",
+
+    "lbl_transfer_day": "City Transfer Day",
+    "timeline_morning_title": "Morning: Core Cultural Walk (Low Fatigue)",
+    "timeline_rest_title": "Afternoon: Essential Rest (Siesta Recharge)",
+    "timeline_evening_title": "Evening: Scenic Night Views & Dining",
+    "timeline_walk_burden": "Walking Burden",
+    "timeline_transport": "Transit Mode",
+    "timeline_recommended_meal": "Recommended Cuisine",
+    "timeline_expand_detail": "View Daily Schedule ▼",
+    "timeline_collapse_detail": "Collapse Schedule ▲",
+    "master_guide_status": "2026.11.05 ~ 12.04 (29N 30D) · Fully Integrated with 9 Confirmed Accommodations & Transit",
+    "master_sum1_title": "📅 [Summary 1] 9 Confirmed City Accommodations & Stay Schedule",
+    "master_sum1_desc": "This master itinerary is built around confirmed flights (Vueling, Ryanair), high-speed trains (Renfe, Italo, Trenitalia), ALSA buses, and 9 confirmed accommodations, perfectly calibrated for senior parents' comfort, must-eat local cuisine, and seamless transit.",
+    "hotel_bcn_title": "Barcelona (6 Nights)",
+    "hotel_bcn_dates": "11/5 ~ 11/11",
+    "hotel_bcn_name": "Suites Marina Abapart",
+    "hotel_bcn_desc": "3 min walk to Sagrada Família · Kitchen-equipped apartment · Official airport taxi direct (35~40€)",
+    "hotel_svq1_title": "Seville Leg 1 (1 Night)",
+    "hotel_svq1_dates": "11/11 ~ 11/12",
+    "hotel_svq1_name": "Letoh Letoh Sevilla",
+    "hotel_svq1_desc": "Airport taxi flat rate (25~30€) · Historic center & prime evening Flamenco show access",
+    "hotel_odb_title": "Córdoba (1 Night)",
+    "hotel_odb_dates": "11/12 ~ 11/13",
+    "hotel_odb_name": "Hotel de los Faroles",
+    "hotel_odb_desc": "Renfe 12:30 train (41 min) · Walking distance to Mezquita · Near ox-tail stew (Bodegas Mezquita)",
+    "hotel_grx_title": "Granada (2 Nights)",
+    "hotel_grx_dates": "11/13 ~ 11/15",
+    "hotel_grx_name": "The Central House Granada",
+    "hotel_grx_desc": "ALSA 14:15 bus · 11/14 Full-day Alhambra & Nasrid Palaces tour (confirmed ticket) direct taxi",
+    "hotel_agp_title": "Málaga (3 Nights)",
+    "hotel_agp_dates": "11/15 ~ 11/18",
+    "hotel_agp_name": "Coeo Pena Design Apartment",
+    "hotel_agp_desc": "ALSA 16:00 bus · Picasso Museum walkable · Sunset yacht cruise & authentic Espeto sardines",
+    "hotel_svq2_title": "Seville Leg 2 (4 Nights)",
+    "hotel_svq2_dates": "11/18 ~ 11/22",
+    "hotel_svq2_name": "Libere Seville Plaza Nueva",
+    "hotel_svq2_desc": "ALSA 09:00 bus · 2 min walk to Plaza Nueva · Plaza de España night stroll & carriage ride",
+    "hotel_nap_title": "Naples (3 Nights)",
+    "hotel_nap_dates": "11/22 ~ 11/25",
+    "hotel_nap_name": "Calenda Suite",
+    "hotel_nap_desc": "11/22 Flight + High-speed train (16:26) arrival · Pompeii/Positano private van tour & wood-fired pizza",
+    "hotel_flr_title": "Florence (4 Nights)",
+    "hotel_flr_dates": "11/25 ~ 11/29",
+    "hotel_flr_name": "Artemente Florence B&B",
+    "hotel_flr_desc": "Italo 13:20 train (2h57m) · 8 min walk from SMN Station · Flat-ground strolls & Piazzale Michelangelo sunset",
+    "hotel_rom_title": "Rome (5 Nights & Departure)",
+    "hotel_rom_dates": "11/29 ~ 12/4",
+    "hotel_rom_name": "Salotto Monti",
+    "hotel_rom_desc": "Italo 13:28 train · Monti boutique hotel · 12 min walk to Trevi Fountain · 12/4 22:00 FCO T3 flight",
+    "master_sum2_title": "🚇 [Summary 2] Country Transit Pass & Navigation Formula",
+    "transit_bcn_title": "Barcelona Transit Formula",
+    "transit_bcn_tip1": "Share <strong>1 T-familiar card (8 trips)</strong> among all 3 family members (far more economical than unlimited passes)",
+    "transit_bcn_tip2": "Ride the <strong>2-Floor Hop-On Hop-Off City Tour Bus (48h)</strong> to save parents' knees with panoramic rooftop views",
+    "transit_bcn_tip3": "<strong>Airport ↔ Hotel</strong>: Official black & yellow taxi (approx. 35~40€) direct for 3 persons + 3 large luggage",
+    "transit_and_title": "Andalusia (Seville, Granada, Córdoba, Málaga)",
+    "transit_and_tip1": "Gentle, flat-ground strolls through historic cobblestone alleyways",
+    "transit_and_tip2": "<strong>Station / Bus Terminal ↔ Hotel</strong>: Always book <strong>Uber / Cabify apps</strong> (minimal price difference from bus for 3 people, ideal joint protection)",
+    "transit_and_tip3": "Intercity travel seamlessly linked with Renfe high-speed rail and ALSA premium coaches",
+    "transit_ita_title": "Italy (Naples, Florence, Rome)",
+    "transit_ita_tip1": "Metro & city buses: Simply <strong>Tap & Go using Contactless travel cards</strong> (TravelWallet / TravelLog) with no ticket counter queues",
+    "transit_ita_tip2": "<strong>Florence</strong>: 100% walkable pedestrian center (strict ZTL traffic limits, relaxed flat walking)",
+    "transit_ita_tip3": "<strong>Rome ➔ FCO Airport</strong>: Non-stop <strong>Leonardo Express train (32 min)</strong> from Termini Station",
+    "master_sum3_title": "🍽️ [Summary 3] Must-Eat Dining Specialties & Free Night Views / Markets",
+    "master_sum3_desc": "Carefully selected signature dishes and free romantic night-view spots perfectly matched with your confirmed schedule and senior parents' wellness.",
+    "must_bcn_city": "Barcelona",
+    "must_bcn_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Ciudad Condal</strong>: Honey Cod (Bacalao a la miel), Beef Tenderloin Montadito, Clara Lemon Beer<br>• <strong>7 Portes</strong>: Historic 1836 Seafood & Squid-Ink Paella<br>• <strong>Puertecillo Sagrada Família</strong>: 2 min walk from hotel, select fresh seafood grilled to order at great value",
+    "must_bcn_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Plaça de Gaudí Lake Park</strong>: View the illuminated Sagrada Família reflection over the water (Free, no reservation needed)<br>• <strong>Santa Caterina Market</strong>: Colorful undulating roof and fresh fruit/jamón tasting<br>• <strong>11/10 15:30</strong>: Sagrada Família golden sunset stained-glass interior admission",
+    "must_svq_city": "Seville (Leg 1 & 2)",
+    "must_svq_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>El Rinconcillo</strong>: Oldest tapas bar since 1670 - Spinach & Chickpea Stew (Espinacas con garbanzos), Tender Pork Cheek (Carrillada)<br>• Authentic tapas & chilled sangria",
+    "must_svq_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Metropol Parasol (Las Setas)</strong>: Stroll the giant wooden structure open-air plaza with evening illumination (Free)<br>• <strong>Plaza de España</strong>: Romantic night lighting walk with serene fountains (Free)<br>• Evening river walk by the Golden Tower (Torre del Oro)",
+    "must_odb_city": "Córdoba",
+    "must_odb_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Bodegas Mezquita</strong>: Slow-braised tender Ox-tail stew (Rabo de Toro - parents' favorite nourishing meal), Crispy eggplant with honey (Berenjenas con miel), Salmorejo",
+    "must_odb_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Roman Bridge (Puente Romano)</strong>: Cross at sunset for stunning free panorama of the Mezquita and riverbank lights<br>• Flower-lined Calleja de las Flores alley stroll",
+    "must_grx_city": "Granada",
+    "must_grx_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Bar Los Diamantes</strong>: Complimentary freshly fried seafood tapas platter served free with every drink ordered!<br>• Calle Navas vibrant tapas bar crawl",
+    "must_grx_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Mirador de San Nicolás</strong>: Take taxi up to witness the red walls of the Alhambra illuminated against the sunset (Top free viewpoint)<br>• 11/14 Comprehensive tour of Alhambra & Nasrid Palaces",
+    "must_agp_city": "Málaga",
+    "must_agp_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Espeto de Sardinas</strong>: Traditional fresh sardines skewered on bamboo and wood-charcoal roasted on beach chiringuitos<br>• <strong>El Pimpi</strong>: Historic winery run by Antonio Banderas serving sweet wine & jamón<br>• <strong>Marisquería Godoy</strong>: Harbour terrace seafood grill",
+    "must_agp_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Muelle Uno Waterfront</strong>: Breezy illuminated harbor promenade lined with palms and Mediterranean views<br>• Stroll Calle Larios marble avenue lights",
+    "must_nap_city": "Naples",
+    "must_nap_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Gino Sorbillo</strong>: Legendary crispy & chewy wood-fired Neapolitan Margherita pizza<br>• <strong>Gran Caffè Gambrinus</strong>: 1860 historic café serving rich espresso, rum-soaked Babà cake & flaky Sfogliatella pastry",
+    "must_nap_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Piazza del Plebiscito</strong>: Grand colonnade night illumination and royal palace stroll<br>• Spaccanapoli vibrant alleyways & private van tour to Pompeii and Amalfi/Positano",
+    "must_flr_city": "Florence",
+    "must_flr_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg thick charcoal-grilled Bistecca alla Fiorentina + Truffle Cream Pasta<br>• <strong>All’Antico Vinaio</strong>: World-famous Tuscan focaccia sandwiches overflowing with prosciutto and truffle cream",
+    "must_flr_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Piazzale Michelangelo</strong>: Unbeatable hilltop panoramic free sunset and night view overlooking Florence Duomo and Arno River<br>• <strong>Ponte Vecchio</strong>: Romantic reflections on the river",
+    "must_rom_city": "Rome",
+    "must_rom_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Trattoria Luzzi</strong>: Great value Roman carbonara & thin-crust pizza 3 min from Colosseum<br>• <strong>Giolitti</strong>: 1900 artisanal gelato - must try Rice (Riso) and rich Pistachio (Pistacchio)<br>• Tazza d'Oro: Granita di caffè con panna near Pantheon",
+    "must_rom_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Trevi Fountain (Fontana di Trevi)</strong>: Stroll after 10 PM for minimal crowds, majestic lighting and coin toss (12 min walk from hotel)<br>• <strong>Campo de' Fiori</strong>: Lively local night market and piazza atmosphere<br>• 12/4 Airport express train from Termini ➔ FCO T3 22:00 departure",
+},
   "ja": {
     "nav_routes": "🧭 3大コース比較",
     "nav_guide": "📖 旅行ガイド",
@@ -15209,8 +16020,121 @@ const I18N_DICTIONARY = {
     "opt_party_5": "5名（大家族5名）",
     "opt_tier_economy": "実得エコノミー（高コスパ）",
     "opt_tier_standard": "快適4つ星（セントラル・ファミリー）",
-    "opt_tier_luxury": "プレミアムラグジュアリー（5つ星＆VIPツアー）"
-  },
+    "opt_tier_luxury": "プレミアムラグジュアリー（5つ星＆VIPツアー）",
+        "master_sum4_title": "[要約 4] スペイン＆イタリア 地域別シグネチャーグルメ＆ローカル屋台スナック徹底ガイド",
+    "master_sum4_desc": "旅の喜びを最高潮に高める都市別の名物料理、市場や路地裏のストリートスナック、朝食＆伝統デザートを網羅した美食ガイドです。",
+    "gourmet_part1_title": "🇪🇸 [Part 1] スペイン美食＆スナック探訪",
+    "badge_catalonia": "カタルーニャ美食",
+    "gourmet_bcn_title": "1. バルセロナ (Barcelona)",
+    "gourmet_bcn_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>タラの蜂蜜アイオリ焼き (Bacalao a la miel)</strong>: Ciudad Condalなど名店タパスバーの伝説。肉厚なタラに甘い蜂蜜とコクのあるアイオリソースを乗せて焼き上げた、ご両親にも大好評の逸品！<br>• <strong>海鮮パエリア＆イカスミパエリア (Paella)</strong>: 1836年創業の7 Portesで味わうサフラン香る伝統米料理。",
+    "gourmet_bcn_snack": "<strong>🥐 市場＆夜市スナック (サンタ・カタリーナ／ボケリア市場):</strong><br>• <strong>生絞りジュース＆カットフルーツカップ</strong>: 市場の露店で1〜2€で買える新鮮マンゴーやイチゴのビタミン補給カップ。<br>• <strong>イベリコ生ハムコーン (Jamón Cone)</strong>: 散策しながら気軽に楽しめる最高級生ハムスライスの紙コーン。<br>• <strong>チュロスとホットチョコレート (Churros con Chocolate)</strong>: 揚げたてサクサクのチュロスを濃厚な温かいチョコにたっぷり浸して味わう至福のスイーツ。",
+    "gourmet_and_title": "2. アンダルシア (セビリア・コルドバ・グラナダ・マラガ)",
+    "badge_andalusia": "アンダルシア郷土料理",
+    "gourmet_and_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>オックステール煮込み (Rabo de Toro)</strong>: Bodegas Mezquitaなどの南部名物。韓国の牛カルビ煮込みに似て柔らかく、ご両親も大絶賛！<br>• <strong>ナスのフライ蜂蜜がけ (Berenjenas con miel)</strong>: 薄切りナスのサクサク揚げにサトウキビ蜂蜜をかけた絶品甘塩タパス。<br>• <strong>サルモレホ (Salmorejo)</strong>: ガスパチョよりも濃厚でクリーミーなコルドバ風トマトとニンニクの冷製スープ。<br>• <strong>エスペト (Espeto, マラガ海岸)</strong>: 竹串に刺した新鮮なイワシを砂浜の炭火舟で豪快に焼き上げる名物。",
+    "gourmet_and_snack": "<strong>🥐 ローカル市場スナック:</strong><br>• <strong>アンダルシア風チュロス (Churros)</strong>: 北部より軽やかでサクサク！朝のバルで地元の人々のようにカフェ・コン・レチェと一緒に楽しむのがおすすめ。",
+    "gourmet_part2_title": "🇮🇹 [Part 2] イタリア美食＆スナック探訪",
+    "badge_napoli": "ピッツァ発祥の地",
+    "gourmet_nap_title": "1. ナポリ (Napoli) - [美食の真髄]",
+    "gourmet_nap_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>ナポリ伝統薪窯ピッツァ (Pizza Napoletana)</strong>: Gino Sorbilloなど。サンマルツァーノトマトと水牛モッツァレラが絶妙なマルゲリータ＆マリナーラ。もっちり柔らかい生地。<br>• <strong>揚げピッツァ (Pizza Fritta)</strong>: ナポリのストリートフードの王様。サクッと揚げた生地の中にリコッタチーズとトマトがたっぷり。",
+    "gourmet_nap_snack": "<strong>🥐 朝食＆デザートスナック:</strong><br>• <strong>ババ (Babà al Rum)</strong>: キノコ型のスポンジに香り高いラム酒シロップを染み込ませた伝統菓子（大人の贅沢な風味）。<br>• <strong>カフェ・ノッチョーラ (Caffè Nocciola)</strong>: 濃厚なエスプレッソの下に滑らかなヘーゼルナッツクリームを敷いた甘美なナポリ風コーヒー。",
+    "badge_tuscany": "トスカーナ肉料理",
+    "gourmet_flr_title": "2. フィレンツェ (Firenze)",
+    "gourmet_flr_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>ビステッカ・アッラ・フィオレンティーナ (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zàなど。オーク薪で表面を香ばしく中はジューシーに焼き上げる1kg超の絶品Tボーンステーキ。<br>• <strong>トリュフクリームパスタ (Truffle Pasta)</strong>: 芳醇な黒トリュフの香りと濃厚なクリームが口いっぱいに広がるパスタ。<br>• <strong>フォカッチャサンド (Schiacciata)</strong>: All’Antico Vinaio。焼き立てフォカッチャに生ハム、トリュフクリーム、チーズを山盛りに挟んだ世界的人気サンド。",
+    "gourmet_flr_snack": "<strong>🥐 朝食＆スナック:</strong><br>• <strong>カントゥッチーニとヴィン・サント (Cantuccini e Vin Santo)</strong>: 堅焼きのアーモンドビスケットを甘口デザートワインに浸して楽しむトスカーナの伝統スタイル。",
+    "badge_rome": "古代都市の味",
+    "gourmet_rom_title": "3. ローマ (Roma)",
+    "gourmet_rom_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>ローマ三大パスタ (カルボナーラ・アマトリチャーナ・カチョエペペ)</strong>: 生クリームを使わず卵黄、ペコリーノチーズ、グアンチャーレ、黒胡椒だけで仕上げる本物の濃厚パスタ！<br>• <strong>スップリ (Supplì)</strong>: トマト味のリゾットの中にモッツァレラチーズを入れて揚げたローマ風ライスコロッケ。",
+    "gourmet_rom_snack": "<strong>🥐 ジェラート＆デザートスナック:</strong><br>• <strong>ジョリッティのお米ジェラート (Riso)</strong>: Giolitti。滑らかなジェラートの中にお米の粒々食感が心地よい、ご両親一番人気のスイーツ。<br>• <strong>マリトッツォ (Maritozzo)</strong>: 柔らかなブリオッシュパンに口どけの良い生クリームをたっぷり挟んだローマの伝統朝食パン。",
+    "master_guide_badge": "スペイン＆イタリア 航空・列車・宿泊 100%確定マスターガイド",
+
+    "lbl_transfer_day": "拠点移動日",
+    "timeline_morning_title": "午前: 核心文化散歩 (負担軽微)",
+    "timeline_rest_title": "午後: 必須休憩 (シエスタ充電)",
+    "timeline_evening_title": "夕方: 夜景鑑賞＆軽食",
+    "timeline_walk_burden": "歩行負荷",
+    "timeline_transport": "移動手段",
+    "timeline_recommended_meal": "おすすめグルメ",
+    "timeline_expand_detail": "詳細日程を展開 ▼",
+    "timeline_collapse_detail": "詳細日程を閉じる ▲",
+    "master_guide_status": "2026.11.05 ~ 12.04 (29泊30日) · 確定宿泊9施設＆移動チケット完全連携",
+    "master_sum1_title": "📅 [要約 1] 都市別 確定宿泊先9選＆滞在スケジュール",
+    "master_sum1_desc": "本プランナーは確定済みの航空券(Vueling, Ryanair)、高速鉄道(Renfe, Italo, Trenitalia)、ALSA優等バスおよび9つの確定宿泊先をもとに、シニアの体力に配慮した最適動線・必食グルメ・交通公式を網羅した最終版です。",
+    "hotel_bcn_title": "バルセロナ (6泊)",
+    "hotel_bcn_dates": "11/5 ~ 11/11",
+    "hotel_bcn_name": "Suites Marina Abapart",
+    "hotel_bcn_desc": "サグラダ・ファミリア徒歩3分 · キッチン完備アパート · 空港公式タクシー(35~40€)直行",
+    "hotel_svq1_title": "セビリア 第1期 (1泊)",
+    "hotel_svq1_dates": "11/11 ~ 11/12",
+    "hotel_svq1_name": "Letoh Letoh Sevilla",
+    "hotel_svq1_desc": "セビリア空港タクシー(定額25~30€) · 旧市街＆夜の本格フラメンコ鑑賞に最適",
+    "hotel_odb_title": "コルドバ (1泊)",
+    "hotel_odb_dates": "11/12 ~ 11/13",
+    "hotel_odb_name": "Hotel de los Faroles",
+    "hotel_odb_desc": "Renfe 12:30乗車(41分) · メスキータ徒歩圏 · オックステール煮込み名店(Bodegas Mezquita)至近",
+    "hotel_grx_title": "グラナダ (2泊)",
+    "hotel_grx_dates": "11/13 ~ 11/15",
+    "hotel_grx_name": "The Central House Granada",
+    "hotel_grx_desc": "ALSA 14:15乗車 · 11/14 アルハンブラ宮殿終日ツアー(チケット確定)タクシー直行",
+    "hotel_agp_title": "マラガ (3泊)",
+    "hotel_agp_dates": "11/15 ~ 11/18",
+    "hotel_agp_name": "Coeo Pena Design Apartment",
+    "hotel_agp_desc": "ALSA 16:00乗車 · ピカソ美術館徒歩圏 · サンセットクルーズ＆エスペト(イワシ串焼き)名店",
+    "hotel_svq2_title": "セビリア 第2期 (4泊)",
+    "hotel_svq2_dates": "11/18 ~ 11/22",
+    "hotel_svq2_name": "Libere Seville Plaza Nueva",
+    "hotel_svq2_desc": "ALSA 09:00乗車 · ヌエバ広場徒歩2分 · スペイン広場の夜景散策＆馬車ツアー",
+    "hotel_nap_title": "ナポリ (3泊)",
+    "hotel_nap_dates": "11/22 ~ 11/25",
+    "hotel_nap_name": "Calenda Suite",
+    "hotel_nap_desc": "11/22 航空便+高速鉄道(16:26乗車)到着 · ポンペイ/ポジターノ専用車ツアー＆元祖薪窯ピッツァ",
+    "hotel_flr_title": "フィレンツェ (4泊)",
+    "hotel_flr_dates": "11/25 ~ 11/29",
+    "hotel_flr_name": "Artemente Florence B&B",
+    "hotel_flr_desc": "Italo 13:20乗車(2h57m) · SMN駅徒歩8分 · 全日程平坦路徒歩＆ミケランジェロ広場の夜景",
+    "hotel_rom_title": "ローマ (5泊＆帰国)",
+    "hotel_rom_dates": "11/29 ~ 12/4",
+    "hotel_rom_name": "Salotto Monti",
+    "hotel_rom_desc": "Italo 13:28乗車 · モンティ地区ブティック · トレビの泉夜間徒歩 · 12/4 22:00 FCO T3出国",
+    "master_sum2_title": "🚇 [要約 2] 国別 公共交通パス＆移動公式マスター",
+    "transit_bcn_title": "バルセロナ移動公式",
+    "transit_bcn_tip1": "<strong>T-familiar(8回券)1枚</strong>で家族3人シェア利用(無制限パスより格段に経済的)",
+    "transit_bcn_tip2": "<strong>2階建てシティツアーバス(48時間券)</strong>で膝に負担をかけずパノラマ市内観光",
+    "transit_bcn_tip3": "<strong>空港 ↔ 宿</strong>: 公式タクシー(黄＋黒、35~40€)直行(大型スーツケース3個を完璧積載)",
+    "transit_and_title": "アンダルシア (セビリア・グラナダ・コルドバ・マラガ)",
+    "transit_and_tip1": "旧市街は石畳の平坦な路地をゆっくり散策",
+    "transit_and_tip2": "<strong>駅／バスターミナル ↔ 宿</strong>の移動は<strong>迷わずUber / Cabify(配車アプリ)</strong>を利用(3名利用ならバス代と大差なく関節を保護)",
+    "transit_and_tip3": "都市間移動はRenfe高速鉄道およびALSA優等バスを完全連携",
+    "transit_ita_title": "イタリア (ナポリ・フィレンツェ・ローマ)",
+    "transit_ita_tip1": "地下鉄・バスは切符売り場に並ばず、各自の<strong>タッチ決済対応カード</strong>(TravelWallet等)を改札に直接タッチ(Tap & Go)",
+    "transit_ita_tip2": "<strong>フィレンツェ</strong>: 全日程徒歩観光に最適化(車両進入禁止ZTL区域、平坦路中心)",
+    "transit_ita_tip3": "<strong>ローマ ➔ FCO空港</strong>: テルミニ駅から<strong>レオナルド・エクスプレス直通(所要32分)</strong>に乗車",
+    "master_sum3_title": "🍽️ [要約 3] 都市別 必食グルメ名店＆無料夜景・夜市総まとめ",
+    "master_sum3_desc": "確定日程に合わせてご両親の味覚と体力を完璧に考慮した都市別代表グルメ、シグネチャーメニュー、事前予約なしで楽しめる無料夜景・夜市スポットの総まとめです。",
+    "must_bcn_city": "バルセロナ",
+    "must_bcn_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Ciudad Condal</strong>: ハチミツタラ(Bacalao a la miel)、牛ヒレ肉のモンタディート、レモンビール クララ<br>• <strong>7 Portes</strong>: 1836年創業の伝統魚介パエリア＆イカスミパエリア<br>• <strong>Puertecillo Sagrada Família</strong>: 宿徒歩2分、新鮮な魚介を自ら選んでその場で焼く高コスパ海鮮",
+    "must_bcn_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ガウディ池公園(Plaça de Gaudí)</strong>: 水面に映る夜のサグラダ・ファミリアのライトアップ鑑賞(無料・予約不要)<br>• <strong>サンタ・カテリーナ市場</strong>: 波打つ屋根が美しいローカル市場でフルーツと生ハム散策<br>• <strong>11/10 15:30</strong>: サグラダ・ファミリア西側ステンドグラスの黄金色夕景入場",
+    "must_svq_city": "セビリア (第1・2期)",
+    "must_svq_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>El Rinconcillo</strong>: 1670年創業の最古タパスバー - ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の煮込み<br>• 本場タパス＆冷たいサングリア",
+    "must_svq_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>メトロポール・パラソル (Las Setas)</strong>: 巨大木造建築の屋外広場無料散策＆夜間ライトアップ<br>• <strong>スペイン広場 (Plaza de España)</strong>: 夜の明かりが灯る幻想的でロマンチックな広場散歩(無料)<br>• グアダルキビール川沿い黄金の塔の夜景",
+    "must_odb_city": "コルドバ",
+    "must_odb_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Bodegas Mezquita</strong>: じっくり煮込んだ柔らかいオックステール煮込み(Rabo de Toro - ご両親絶賛の滋養食)、ナスのハチミツ揚げ、サルモレホ",
+    "must_odb_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ローマ橋 (Puente Romano)</strong>: 夕暮れ時に橋を渡りメスキタと川沿いの無料夜景を一望<br>• ユダヤ人街の花の小道(Calleja de las Flores)散策",
+    "must_grx_city": "グラナダ",
+    "must_grx_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Bar Los Diamantes</strong>: ドリンク注文で揚げたて熱々の魚介タパスが1皿無料提供！<br>• ナバス通り(Calle Navas)の活気あるタパス巡り",
+    "must_grx_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>サン・ニコラス展望台 (Mirador de San Nicolás)</strong>: タクシーで登り、夕日に染まるアルハンブラ宮殿の赤い城壁と無料夜景を満喫<br>• 11/14 アルハンブラ宮殿＆ナスル朝宮殿集中鑑賞",
+    "must_agp_city": "マラガ",
+    "must_agp_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>エスペト (Espeto)</strong>: ビーチ沿いで竹串に刺した新鮮なイワシの炭火焼き<br>• <strong>El Pimpi</strong>: アントニオ・バンデラスが手掛ける老舗ワイナリーの甘口ワイン＆生ハム<br>• <strong>Marisquería Godoy</strong>: 港湾テラスの極上シーフードグリル",
+    "must_agp_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>マラガ港ムエジェ・ウノ (Muelle Uno)</strong>: ヤシの木と地中海が広がる海岸プロムナードの夜景散歩<br>• 大理石が輝くラリオス通りのイルミネーション",
+    "must_nap_city": "ナポリ",
+    "must_nap_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Gino Sorbillo</strong>: 伝説の薪窯で焼き上げる香ばしい元祖マルゲリータピッツァ<br>• <strong>Gran Caffè Gambrinus</strong>: 1860年創業の歴史的カフェで本格エスプレッソ＆ラム酒風味のババ(Babà)、スフォリアテッラ",
+    "must_nap_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>プレビシート広場 (Piazza del Plebiscito)</strong>: 壮大な回廊と王宮のライトアップ散歩<br>• スパッカナポリ下町情緒体験＆ポンペイ・アマルフィ専用車ツアー",
+    "must_flr_city": "フィレンツェ",
+    "must_flr_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Trattoria Zà Zà</strong>: 炭火焼きビステッカ・アッラ・フィオレンティーナ(Tボーンステーキ1kg)＋トリュフクリームパスタ<br>• <strong>All’Antico Vinaio</strong>: 行列のできるトスカーナ産フォカッチャサンド",
+    "must_flr_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ミケランジェロ広場 (Piazzale Michelangelo)</strong>: 丘の上からフィレンツェの赤い屋根とドゥオーモを一望する最高の無料夜景スポット<br>• <strong>ヴェッキオ橋 (Ponte Vecchio)</strong>: アルノ川に映る美しい夜景",
+    "must_rom_city": "ローマ",
+    "must_rom_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Trattoria Luzzi</strong>: コロッセオ徒歩3分、高コスパな本場カルボナーラ＆ピッツァ<br>• <strong>Giolitti</strong>: 1900年創業の老舗ジェラート - お米味(Riso)と香ばしいピスタチオ必須<br>• タッツァ・ドーロ: パンテオン前のグラニータ・ディ・カフェ",
+    "must_rom_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>トレビの泉 (Fontana di Trevi)</strong>: 混雑が引く夜10時以降のライトアップ散策＆コイン投げ(宿から徒歩12分)<br>• <strong>カンポ・デ・フィオーリ (Campo de' Fiori)</strong>: 活気あるナイトマーケット＆広場情緒<br>• 12/4 テルミニ駅から空港鉄道直通 ➔ FCO T3 22:00帰国便",
+},
   "zh": {
     "nav_routes": "🧭 三大路线对比",
     "nav_guide": "📖 旅行指南",
@@ -15380,7 +16304,120 @@ const I18N_DICTIONARY = {
     "opt_party_5": "5人（大家庭5人）",
     "opt_tier_economy": "实惠经济型（高性价比）",
     "opt_tier_standard": "舒适四星级（市中心家庭房）",
-    "opt_tier_luxury": "尊贵奢华型（五星级与VIP私人游）"
+    "opt_tier_luxury": "尊贵奢华型（五星级与VIP私人游）",
+        "master_sum4_title": "[摘要 4] 西班牙与意大利 各区域招牌美食与地道街头小吃全解析",
+    "master_sum4_desc": "全方位梳理各城市必尝的招牌料理、街头与市集小吃、早餐及传统甜点，为您带来丰富美味的旅行体验。",
+    "gourmet_part1_title": "🇪🇸 [Part 1] 西班牙美食与特色小吃深度解析",
+    "badge_catalonia": "加泰罗尼亚美食",
+    "gourmet_bcn_title": "1. 巴塞罗那 (Barcelona)",
+    "gourmet_bcn_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>蜂蜜蒜香鳕鱼 (Bacalao a la miel)</strong>: Ciudad Condal等小吃吧的传奇之作。厚切鲜嫩鳕鱼淋上甘甜蜂蜜与浓郁蒜黄酱烘烤，长辈极力赞赏！<br>• <strong>海鲜西班牙烩饭与墨鱼饭 (Paella)</strong>: 1836年老字号 7 Portes 散发藏红花香气的经典海鲜米饭。",
+    "gourmet_bcn_snack": "<strong>🥐 传统市集与夜市小吃 (圣卡特琳娜／波盖利亚市场):</strong><br>• <strong>鲜榨果汁与混合水果杯</strong>: 市集随处可见1~2欧元的芒果、草莓、哈密瓜切片维他命能量杯。<br>• <strong>伊比利亚火腿纸筒 (Jamón Cone)</strong>: 边走边享用的现切顶级生火腿薄片纸杯。<br>• <strong>吉事果配热巧 (Churros con Chocolate)</strong>: 金黄酥脆的西班牙油条蘸入醇厚浓郁的热巧克力，完美的早餐与下午茶。",
+    "gourmet_and_title": "2. 安达卢西亚 (塞维利亚·科尔多瓦·格拉纳达·马拉加)",
+    "badge_andalusia": "南部传统风味",
+    "gourmet_and_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>炖牛尾 (Rabo de Toro)</strong>: Bodegas Mezquita等南部名店特色。口感软烂醇厚，非常贴合东方长辈口味！<br>• <strong>炸茄子配甘蔗蜜 (Berenjenas con miel)</strong>: 薄脆多汁的炸茄条淋上天然甘蔗蜜，咸甜适口的招牌小吃。<br>• <strong>萨尔莫雷霍番茄浓汤 (Salmorejo)</strong>: 较冷汤更为浓郁丝滑的科尔多瓦特色蒜香冷番茄羹，配以香脆火腿碎。<br>• <strong>竹签烤沙丁鱼 (Espeto, 马拉加海滩)</strong>: 竹签穿串新鲜沙丁鱼，在海滩沙地炭火舟上现烤，香气四溢。",
+    "gourmet_and_snack": "<strong>🥐 街头市集小吃:</strong><br>• <strong>安达卢西亚油条 (Churros)</strong>: 比北部更为酥脆清爽！早晨站在街角吧台，伴随一杯热拿铁享受地道西式晨光。",
+    "gourmet_part2_title": "🇮🇹 [Part 2] 意大利美食与特色小吃深度解析",
+    "badge_napoli": "披萨发源地",
+    "gourmet_nap_title": "1. 那不勒斯 (Napoli) - [美食的真正摇篮]",
+    "gourmet_nap_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>那不勒斯正宗柴炉披萨 (Pizza Napoletana)</strong>: Gino Sorbillo等。精选圣马扎诺番茄与水牛奶酪烘烤出的玛格丽特与玛丽娜拉披萨，饼皮香韧软嫩。<br>• <strong>油炸披萨 (Pizza Fritta)</strong>: 那不勒斯街头小吃之冠！金黄油炸面团内包裹浓郁意式乳清干酪与番茄馅料。",
+    "gourmet_nap_snack": "<strong>🥐 早餐与传统甜点:</strong><br>• <strong>朗姆酒蛋糕 (Babà al Rum)</strong>: 蘑菇形状的松软海绵蛋糕浸润着醇正朗姆酒糖浆，回味悠长。<br>• <strong>榛子奶油浓缩咖啡 (Caffè Nocciola)</strong>: 浓烈意式浓缩底衬丝滑榛果酱，那不勒斯独特的甜蜜晨曲。",
+    "badge_tuscany": "托斯卡纳肉食",
+    "gourmet_flr_title": "2. 佛罗伦萨 (Firenze)",
+    "gourmet_flr_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>佛罗伦萨丁骨大牛排 (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zà等。橡木炭火烤制的外焦里嫩1公斤厚切T骨牛排，仅撒海盐即显纯粹肉香。<br>• <strong>黑松露奶油意面 (Truffle Pasta)</strong>: 弥漫着托斯卡纳黑松露诱人香气与丝滑乳酪的经典意面。<br>• <strong>意式佛卡夏三明治 (Schiacciata)</strong>: All’Antico Vinaio。香脆佛卡夏面包夹入丰厚帕尔马火腿、松露酱与新鲜奶酪的全球知名三明治。",
+    "gourmet_flr_snack": "<strong>🥐 早餐与小食:</strong><br>• <strong>意式杏仁脆饼配圣酒 (Cantuccini e Vin Santo)</strong>: 坚硬香脆的杏仁饼干蘸入甜白葡萄酒享用的托斯卡纳经典传统。",
+    "badge_rome": "古罗马传统",
+    "gourmet_rom_title": "3. 罗马 (Roma)",
+    "gourmet_rom_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>罗马三大传统意面 (培根蛋面·辣茄酱培根面·黑胡椒干酪面)</strong>: 不加鲜奶油，纯以蛋黄、佩科里诺羊乳干酪、风干猪脸肉与现磨胡椒调制而成的正宗浓稠风味！<br>• <strong>意式马苏里拉炸饭团 (Supplì)</strong>: 番茄烩饭包裹拉丝芝士金黄炸制的罗马经典街头手指点心。",
+    "gourmet_rom_snack": "<strong>🥐 意式冰淇淋与甜点:</strong><br>• <strong>Giolitti大米冰淇淋 (Riso)</strong>: Giolitti。绵密Gelato中藏着颗粒分明的香甜米粒，长辈赞不绝口。<br>• <strong>罗马奶油面包 (Maritozzo)</strong>: 蓬松布里欧修面包中盛满轻盈如云朵的鲜奶油，罗马招牌经典早餐。",
+    "master_guide_badge": "西班牙与意大利 机票·火车·酒店 100%确定大师指南",
+
+    "lbl_transfer_day": "城市转移日",
+    "timeline_morning_title": "上午: 核心文化漫步 (轻松低劳度)",
+    "timeline_rest_title": "下午: 必备休整 (午休Siesta充能)",
+    "timeline_evening_title": "晚间: 迷人夜景与轻松用餐",
+    "timeline_walk_burden": "步行强度",
+    "timeline_transport": "交通方式",
+    "timeline_recommended_meal": "推荐地道美馔",
+    "timeline_expand_detail": "展开每日详细日程 ▼",
+    "timeline_collapse_detail": "收起详细日程 ▲",
+    "master_guide_status": "2026.11.05 ~ 12.04 (29晚30天) · 9家确定酒店及城际交通全方位衔接",
+    "master_sum1_title": "📅 [概要 1] 各城市9家确定酒店与逗留日程",
+    "master_sum1_desc": "本行程已完全整合已出票航班（伏林、瑞安）、高速列车（Renfe、Italo、Trenitalia）、ALSA优等巴士班次及9家确定酒店，为长辈量身打造最轻松平缓的动线、必尝美食与交通法则。",
+    "hotel_bcn_title": "巴塞罗那 (6晚)",
+    "hotel_bcn_dates": "11/5 ~ 11/11",
+    "hotel_bcn_name": "Suites Marina Abapart",
+    "hotel_bcn_desc": "步行3分钟至圣家堂 · 带全套厨房公寓 · 机场官方出租车(35~40€)直达",
+    "hotel_svq1_title": "塞维利亚 第一期 (1晚)",
+    "hotel_svq1_dates": "11/11 ~ 11/12",
+    "hotel_svq1_name": "Letoh Letoh Sevilla",
+    "hotel_svq1_desc": "塞维利亚机场出租车(一口价25~30€) · 紧邻老城区与正宗弗拉门戈晚秀",
+    "hotel_odb_title": "科尔多瓦 (1晚)",
+    "hotel_odb_dates": "11/12 ~ 11/13",
+    "hotel_odb_name": "Hotel de los Faroles",
+    "hotel_odb_desc": "搭乘Renfe 12:30(41分钟) · 步行至清真寺大教堂 · 紧邻牛尾汤名店(Bodegas Mezquita)",
+    "hotel_grx_title": "格拉纳达 (2晚)",
+    "hotel_grx_dates": "11/13 ~ 11/15",
+    "hotel_grx_name": "The Central House Granada",
+    "hotel_grx_desc": "搭乘ALSA 14:15 · 11/14阿尔罕布拉宫全日深度游(门票已锁)打车直达",
+    "hotel_agp_title": "马拉加 (3晚)",
+    "hotel_agp_dates": "11/15 ~ 11/18",
+    "hotel_agp_name": "Coeo Pena Design Apartment",
+    "hotel_agp_desc": "搭乘ALSA 16:00 · 步行至毕加索博物馆 · 日落帆船游艇与炭烤沙丁鱼名店",
+    "hotel_svq2_title": "塞维利亚 第二期 (4晚)",
+    "hotel_svq2_dates": "11/18 ~ 11/22",
+    "hotel_svq2_name": "Libere Seville Plaza Nueva",
+    "hotel_svq2_desc": "搭乘ALSA 09:00 · 步行2分钟至新广场 · 西班牙广场浪漫夜景漫步与马车游",
+    "hotel_nap_title": "那不勒斯 (3晚)",
+    "hotel_nap_dates": "11/22 ~ 11/25",
+    "hotel_nap_name": "Calenda Suite",
+    "hotel_nap_desc": "11/22航班+高铁(16:26乘车)平稳抵达 · 庞贝/波西塔诺包车游与始祖柴火披萨",
+    "hotel_flr_title": "佛罗伦萨 (4晚)",
+    "hotel_flr_dates": "11/25 ~ 11/29",
+    "hotel_flr_name": "Artemente Florence B&B",
+    "hotel_flr_desc": "搭乘Italo 13:20(2小时57分) · 步行8分钟至SMN火车站 · 全平路漫步与米开朗基罗广场夜景",
+    "hotel_rom_title": "罗马 (5晚及回程)",
+    "hotel_rom_dates": "11/29 ~ 12/4",
+    "hotel_rom_name": "Salotto Monti",
+    "hotel_rom_desc": "搭乘Italo 13:28 · 蒙蒂精品街区 · 步行12分钟至特雷维喷泉夜景 · 12/4 22:00 FCO T3起飞",
+    "master_sum2_title": "🚇 [概要 2] 各国公共交通通票与出行法则",
+    "transit_bcn_title": "巴塞罗那交通法则",
+    "transit_bcn_tip1": "一家3人共享<strong>1张 T-familiar（8次票）</strong>（比无限制通票经济得多）",
+    "transit_bcn_tip2": "搭乘<strong>双层城市观光大巴（48小时票）</strong>，免除长辈步行劳顿，饱览城市全景",
+    "transit_bcn_tip3": "<strong>机场 ↔ 酒店</strong>：官方黑黄出租车（约35~40€）直达，轻松容纳3大行李箱",
+    "transit_and_title": "安达卢西亚 (塞维利亚·格拉纳达·科尔多瓦·马拉加)",
+    "transit_and_tip1": "老城区以平缓石板路慢行散步为主",
+    "transit_and_tip2": "<strong>火车站/汽车站 ↔ 酒店</strong>往返<strong>坚决使用Uber / Cabify（网约车软件）</strong>（3人同行与公交差价极小，保护膝盖）",
+    "transit_and_tip3": "城际大跨度出行完美衔接Renfe高铁与ALSA优等大巴",
+    "transit_ita_title": "意大利 (那不勒斯·佛罗伦萨·罗马)",
+    "transit_ita_tip1": "地铁与公交无需繁琐购票，使用<strong>非接触式旅行卡</strong>（TravelWallet等）直接刷卡进出（Tap & Go）",
+    "transit_ita_tip2": "<strong>佛罗伦萨</strong>：全程步行最优（严格车辆限行ZTL区域，全程平缓漫步）",
+    "transit_ita_tip3": "<strong>罗马 ➔ FCO机场</strong>：在特米尼火车站搭乘<strong>莱昂纳多特快直达列车（32分钟）</strong>",
+    "master_sum3_title": "🍽️ [概要 3] 各城市必吃美食名店与免费夜景·夜市全汇总",
+    "master_sum3_desc": "完全贴合确定日程，兼顾长辈胃口与体力的各城市代表美食名店、招牌菜品及无需预约的免费夜景、夜市精选汇总。",
+    "must_bcn_city": "巴塞罗那",
+    "must_bcn_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Ciudad Condal</strong>: 蜂蜜鳕鱼(Bacalao a la miel)、牛里脊蒙塔迪托小食、柠檬啤酒(Clara)<br>• <strong>7 Portes</strong>: 始于1836年的传统海鲜饭与墨鱼汁海鲜饭<br>• <strong>Puertecillo Sagrada Família</strong>: 距酒店步行2分钟，自选生猛海鲜现场铁板烧，性价比极高",
+    "must_bcn_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>圣家堂高迪湖泊公园(Plaça de Gaudí)</strong>: 坐在湖畔欣赏夜晚圣家堂倒影与华丽灯光(免费，无需预约)<br>• <strong>圣卡特琳娜市场</strong>: 欣赏波浪形彩色屋顶，品尝新鲜水果与伊比利亚火腿<br>• <strong>11/10 15:30</strong>: 圣家堂西侧彩色玻璃窗金色夕阳入场观赏",
+    "must_svq_city": "塞维利亚 (第一与第二期)",
+    "must_svq_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>El Rinconcillo</strong>: 始于1670年的最古老小吃吧 - 菠菜鹰嘴豆炖菜、慢炖伊比利亚猪面颊肉<br>• 经典安达卢西亚Tapas与冰镇桑格利亚汽酒",
+    "must_svq_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>都市阳伞 (Las Setas)</strong>: 漫步世界最大木结构室外广场欣赏夜景灯光(免费)<br>• <strong>西班牙广场 (Plaza de España)</strong>: 夜晚灯光亮起时的壮丽浪漫夜景散步(免费)<br>• 漫步瓜达尔基维尔河畔黄金塔夜景",
+    "must_odb_city": "科尔多瓦",
+    "must_odb_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Bodegas Mezquita</strong>: 软烂入味的慢炖牛尾(Rabo de Toro - 长辈最爱滋补菜)、蜂蜜炸茄子、萨尔莫霍番茄冷汤",
+    "must_odb_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>古罗马桥 (Puente Romano)</strong>: 黄昏时分漫步过桥，眺望清真寺大教堂与河畔绝美免费夜景<br>• 漫步百花巷(Calleja de las Flores)",
+    "must_grx_city": "格拉纳达",
+    "must_grx_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Bar Los Diamantes</strong>: 每点一杯酒水即免费赠送一盘热气腾腾的现炸海鲜Tapas！<br>• 纳瓦斯街(Calle Navas)地道小吃街品尝巡游",
+    "must_grx_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>圣尼古拉斯观景台 (Mirador de San Nicolás)</strong>: 打车登顶，免费饱览红堡在夕阳与夜景映衬下的雄伟壮丽景色(最佳观景点)<br>• 11/14阿尔罕布拉宫及纳斯里德宫深度参观",
+    "must_agp_city": "马拉加",
+    "must_agp_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>炭烤沙丁鱼 (Espeto)</strong>: 海滩边用竹签串起用橄榄木炭火现烤的地道传统风味<br>• <strong>El Pimpi</strong>: 安东尼奥·班德拉斯经营的百年老酒窖甜葡萄酒与生火腿<br>• <strong>Marisquería Godoy</strong>: 海港露台海鲜拼盘",
+    "must_agp_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>马拉加一号码头 (Muelle Uno)</strong>: 棕榈树与地中海海风相伴的现代化海滨步道夜景散步<br>• 漫步大理石铺就的拉里奥斯商业街璀璨灯火",
+    "must_nap_city": "那不勒斯",
+    "must_nap_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Gino Sorbillo</strong>: 外脆内软的正宗传统柴火玛格丽特披萨圣殿<br>• <strong>Gran Caffè Gambrinus</strong>: 始于1860年的历史咖啡厅品尝浓缩咖啡、朗姆蛋糕(Babà)与贝壳酥(Sfogliatella)",
+    "must_nap_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>平民表决广场 (Piazza del Plebiscito)</strong>: 壮观柱廊与皇宫夜景漫步<br>• 感受斯帕卡那波利老街生活气息与庞贝/阿马尔菲包车一日游",
+    "must_flr_city": "佛罗伦萨",
+    "must_flr_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1公斤厚切炭烤佛罗伦萨T骨牛排 + 松露奶油意面<br>• <strong>All’Antico Vinaio</strong>: 闻名全球的托斯卡纳佛卡夏大三明治",
+    "must_flr_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>米开朗基罗广场 (Piazzale Michelangelo)</strong>: 俯瞰佛罗伦萨红屋顶穹顶与阿诺河全景的顶级免费日落与夜景胜地<br>• <strong>老桥 (Ponte Vecchio)</strong>: 阿诺河水面倒影浪漫夜景",
+    "must_rom_city": "罗马",
+    "must_rom_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Trattoria Luzzi</strong>: 斗兽场旁性价比极高的经典罗马培根蛋酱面与薄底披萨<br>• <strong>Giolitti</strong>: 始于1900年的国宝级手工冰淇淋 - 必点大米味(Riso)与浓郁开心果味<br>• 金杯咖啡(Tazza d'Oro): 万神殿前意式碎冰咖啡",
+    "must_rom_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>特雷维喷泉 (Fontana di Trevi)</strong>: 晚10点后夜游（避开白天人潮，灯光梦幻，投币许愿，距酒店步行仅12分钟）<br>• <strong>鲜花广场 (Campo de' Fiori)</strong>: 热闹的本地夜市与广场夜间氛围<br>• 12/4 特米尼机场快线 ➔ FCO T3 22:00 回国航班",
   }
 };
 
@@ -22443,9 +23480,9 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
     "page_overview_2": "2. 현지 포토 & 4K 투어 영상",
     "page_overview_3": "3. 전문가 심층 에디토리얼 가이드",
     "page_planner_1": "1. 조건 설정 & 동적 예산",
-    "page_planner_2": "2. 1~10일차: 카탈루냐 & 마드리드",
-    "page_planner_3": "3. 11~20일차: 안달루시아 로드",
-    "page_planner_4": "4. 21~30일차: 포르투갈 & 캘린더",
+    "page_planner_2": "2. 1~10일차: 바르셀로나 & 안달루시아 전반",
+    "page_planner_3": "3. 11~20일차: 말라가·세비야 2차·나폴리",
+    "page_planner_4": "4. 21~30일차: 피렌체·로마·귀국",
     "page_guide_1": "1. 🇪🇸 바르셀로나 & 카탈루냐",
     "page_guide_2": "2. 🏰 안달루시아 (세비야·그라나다)",
     "page_guide_3": "3. 👑 마드리드 & 중부 고도",
@@ -22693,11 +23730,11 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
   const ext = {
   "ko": {
     "planner_kicker": "01 / INTERACTIVE FAMILY PLANNER",
-    "timeline_part1_title": "📅 1~10일차: 바르셀로나 & 마드리드 (카탈루냐·중부)",
+    "timeline_part1_title": "📅 1~10일차: 바르셀로나 & 안달루시아 전반 (사그라다 파밀리아 11/10 & 알함브라 11/14 확정)",
     "timeline_part1_sub": "장거리 비행 시차 적응, 가우디 건축 산책, 프라도 미술관 평지 관람 및 1일 1.5스팟 시에스타 루틴.",
-    "timeline_part2_title": "📅 11~20일차: 안달루시아 낭만 로드 (세비야·그라나다·코르도바)",
+    "timeline_part2_title": "📅 11~20일차: 말라가·세비야 2차·나폴리 (남부 지중해 힐링 & 이탈리아 입성)",
     "timeline_part2_sub": "스페인 남부의 따스한 햇살, 알함브라 나스르 궁전, 세비야 플라멩코 및 온화한 11월 숄더 시즌 여정.",
-    "timeline_part3_title": "📅 21~30일차: 포르투갈 대서양 로드 (리스본·포르투) & 캘린더",
+    "timeline_part3_title": "📅 21~30일차: 피렌체 르네상스 & 영원의 도시 로마 (12/4 안심 귀국)",
     "timeline_part3_sub": "노란 트램 28번, 에그타르트 원조 맛집, 도루강 와이너리와 완성된 30일 캘린더(.ics) 다운로드.",
     "btn_export_ics_full": "30일 전체 일정 캘린더 파일(.ics) 내보내기 (구글·애플 캘린더 동기화)",
     "page_guide_spain_title": "🇪🇸 스페인 대표 명소 컬렉션 (18선)",

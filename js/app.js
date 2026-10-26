@@ -2955,7 +2955,9 @@ function clearAiSearch() {
 
 // 6. 동적 예산 계산기 (Dynamic Budget Calculator)
 function calculateDynamicBudget(region, durationDays, partySize, tier) {
-  const tierMultiplier = tier === 'luxury' ? 1.48 : (tier === 'economy' ? 0.78 : 1.0);
+  const isLuxury = tier === 'luxury' || tier === 'premium';
+  const isEconomy = tier === 'economy' || tier === 'budget';
+  const tierMultiplier = isLuxury ? 1.48 : (isEconomy ? 0.78 : 1.0);
   
   const flightPerPerson = {
     IBERIA: 1800000,
@@ -3674,7 +3676,7 @@ function updateAppliedScheduleDisplay() {
       } else if (currentLang === 'zh') {
         elAppliedDesc.textContent = '巴塞罗那 6晚 (11.05~11.11) · 塞维利亚 11晚 (11.11~11.22) · 意大利 12晚 (11.22~12.04)';
       } else {
-        elAppliedDesc.textContent = '바르셀로나 6박(11.05~11.11) · 세비야 11박(11.11~11.22) · 이탈리아 12박(11.22~12.04)';
+        elAppliedDesc.textContent = '바르셀로나 6박(11.05~11.11) · 안달루시아 11박(11.11~11.22) · 이탈리아 12박(11.22~12.04) [9대 숙소 100% 확정]';
       }
     } else {
       if (currentLang === 'en') {
@@ -3692,6 +3694,7 @@ function updateAppliedScheduleDisplay() {
 window.updateAppliedScheduleDisplay = updateAppliedScheduleDisplay;
 
 function applyPlanReconfiguration(isUserTriggered = false) {
+
   const regEl = document.getElementById('userRegionSelect');
   const dateEl = document.getElementById('userStartDate');
   const durEl = document.getElementById('userDurationSelect');
@@ -3706,7 +3709,9 @@ function applyPlanReconfiguration(isUserTriggered = false) {
   currentDurationDays = durEl ? parseInt(durEl.value, 10) : 30;
   currentPacing = pacEl ? pacEl.value : "relaxed";
   const partySize = partyEl ? parseInt(partyEl.value, 10) : 3;
-  const tier = tierEl ? tierEl.value : "standard";
+  let tier = tierEl ? tierEl.value : "standard";
+  if (tier === 'budget') tier = 'economy';
+  if (tier === 'premium') tier = 'luxury';
 
   try {
     localStorage.setItem('travel_user_region', currentActiveRegion);
@@ -3774,14 +3779,16 @@ function applyPlanReconfiguration(isUserTriggered = false) {
 
   // Build Day Cards
   const timelineGrid = document.getElementById('timelineGrid') || document.getElementById('dynamicTimelineContainer');
-  if (!timelineGrid) return;
-  timelineGrid.innerHTML = '';
-    const g1 = document.getElementById('timelineGrid1');
-    const g2 = document.getElementById('timelineGrid2');
-    const g3 = document.getElementById('timelineGrid3');
-    if (g1) g1.innerHTML = '';
-    if (g2) g2.innerHTML = '';
-    if (g3) g3.innerHTML = '';
+  const g1 = document.getElementById('timelineGrid1');
+  const g2 = document.getElementById('timelineGrid2');
+  const g3 = document.getElementById('timelineGrid3');
+
+  if (!timelineGrid && !g1 && !g2 && !g3) return;
+
+  if (timelineGrid) timelineGrid.innerHTML = '';
+  if (g1) g1.innerHTML = '';
+  if (g2) g2.innerHTML = '';
+  if (g3) g3.innerHTML = '';
 
 
   const rawDays = planMeta.days || [];
@@ -3861,7 +3868,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
       <div class="day-body">
         <div class="day-header-summary">
           <h3>${cleanHangul(localizedTheme, currentLang)} ${eventBadges}</h3>
-          <button type="button" class="btn-toggle-day-detail" id="btnToggleDay-${slotIdx}" onclick="toggleDayDetail(${slotIdx}, this)" aria-expanded="${isInitiallyExpanded}" title="1일 1.5스팟 시에스타 세부 일정 확인">
+          <button type="button" class="btn-toggle-day-detail" id="btnToggleDay-${slotIdx}" onclick="toggleDayDetail(${slotIdx}, this)" aria-expanded="${isInitiallyExpanded}" title="${dict['timeline_toggle_title'] || (currentLang === 'en' ? 'Check 1.5 spots/day siesta daily schedule' : (currentLang === 'ja' ? '1日1.5スポット シエスタ詳細日程を確認' : (currentLang === 'zh' ? '查看每日1.5景点午休详细日程' : '1일 1.5스팟 시에스타 세부 일정 확인')))}">
             <span class="toggle-text">${expandBtnLabel}</span>
           </button>
         </div>
@@ -3897,22 +3904,28 @@ function applyPlanReconfiguration(isUserTriggered = false) {
         </div>
       </div>
     `;
-    timelineGrid.appendChild(card);
-      // Distribute to 10-day book pages
-      const dayNum = slotIdx + 1;
-      const g1 = document.getElementById('timelineGrid1');
-      const g2 = document.getElementById('timelineGrid2');
-      const g3 = document.getElementById('timelineGrid3');
-      if (dayNum <= 10 && g1) {
-        g1.appendChild(card.cloneNode(true));
-      } else if (dayNum > 10 && dayNum <= 20 && g2) {
-        g2.appendChild(card.cloneNode(true));
-      } else if (dayNum > 20 && g3) {
-        g3.appendChild(card.cloneNode(true));
-      }
+    // Distribute to 10-day book pages (preserves event listeners)
+    const dayNum = slotIdx + 1;
+    let appendedToBook = false;
+    if (dayNum <= 10 && g1) {
+      g1.appendChild(card);
+      appendedToBook = true;
+    } else if (dayNum > 10 && dayNum <= 20 && g2) {
+      g2.appendChild(card);
+      appendedToBook = true;
+    } else if (dayNum > 20 && g3) {
+      g3.appendChild(card);
+      appendedToBook = true;
+    }
+
+    if (timelineGrid) {
+      timelineGrid.appendChild(appendedToBook ? card.cloneNode(true) : card);
+    }
 
   }
 }
+
+window.applyPlanReconfiguration = applyPlanReconfiguration;
 
 function filterTimelineCity(cityName, btn) {
   window.currentCityFilter = cityName;
@@ -6898,6 +6911,7 @@ const CHAPTER_PAGE_COUNTS = {
 window.CHAPTER_PAGE_COUNTS = CHAPTER_PAGE_COUNTS;
 
 function switchGuidebookChapter(chapterId, shouldScroll = true) {
+  try { localStorage.setItem('slowtravel_last_chapter', chapterId); } catch(e){}
   if (!GUIDEBOOK_CHAPTERS.includes(chapterId)) {
     chapterId = 'chapter-overview';
   }
@@ -7017,12 +7031,18 @@ window.switchGuidebookChapter = switchGuidebookChapter;
 // 해시 기반 챕터 라우팅 (외부 링크, 즐겨찾기, #planner 호환)
 function handleGuidebookHashRouting(scrollIntoElement = false) {
   const hash = (window.location.hash || '').toLowerCase();
-  let targetChapter = 'chapter-overview';
+  let targetChapter = (function() {
+    try {
+      const saved = localStorage.getItem('slowtravel_last_chapter');
+      if (saved && GUIDEBOOK_CHAPTERS.includes(saved) && !window.location.hash) return saved;
+    } catch(e){}
+    return 'chapter-overview';
+  })();
   let targetElementId = null;
 
-  if (hash === '#planner' || hash === '#route-itinerary' || hash === '#budget' || hash === '#timelinegrid') {
+  if (hash === '#planner' || hash === '#route-itinerary' || hash === '#budget' || hash === '#timelinegrid' || hash === '#gourmet' || hash === '#food' || hash === '#snacks' || hash === '#summary-gourmet') {
     targetChapter = 'chapter-planner';
-    targetElementId = hash.replace('#', '');
+    targetElementId = (hash === '#gourmet' || hash === '#food' || hash === '#snacks') ? 'summary-gourmet' : hash.replace('#', '');
   } else if (hash === '#festivals' || hash === '#festivals-nightviews' || hash === '#nightviews') {
     targetChapter = 'chapter-festivals';
     targetElementId = 'festivals-nightviews';
@@ -8168,3 +8188,5 @@ function checkCapriPlannerConflict() {
   }
 }
 window.checkCapriPlannerConflict = checkCapriPlannerConflict;
+
+window.downloadIcsCalendar = downloadCustomCalendarIcs;

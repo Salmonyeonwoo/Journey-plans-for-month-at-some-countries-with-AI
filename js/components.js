@@ -145,6 +145,26 @@
                   <span class="r-step unconfirmed" data-i18n="hero_ctx_rome_date">🇮🇹 로마 (세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요)</span>
                 </div>
               </div>
+              <!-- 📢 [신규 탑재 알림] 30일 마스터 플래너 & 미식 총정리 다이렉트 점프 배너 -->
+              <div class="banner-master-planner-jump" style="background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color: #fff; padding: 18px 22px; border-radius: 14px; margin: 20px 0; box-shadow: 0 4px 14px rgba(27,67,50,0.18); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; border: 1.5px solid #52b788;">
+                <div style="flex: 1; min-width: 260px;">
+                  <div style="font-weight: 800; font-size: 15.5px; display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                    <span style="font-size: 18px;">🇪🇸 🇮🇹</span>
+                    <span style="color:#d8f3dc;">스페인 &amp; 이탈리아 30일 마스터 플래너 (맛집·야경·야시장·간식 총정리)</span>
+                  </div>
+                  <div style="font-size: 13px; line-height: 1.5; color: #e8f5e9;">
+                    확정 숙소 9선, 이동 교통 공식과 함께 <strong>바르셀로나 꿀대구·안달루시아 소꼬리찜·나폴리 화덕피자·피렌체 티본스테이크·로마 3대 파스타</strong> 및 로컬 길거리 간식 가이드가 <strong>[제2장 일정 플래너]</strong>와 <strong>[제5장 여행 실용정보]</strong>에 완벽히 탑재되었습니다!
+                  </div>
+                </div>
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                  <button type="button" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('summary-gourmet') || document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background: #f59e0b; color: #111; font-weight: 800; font-size: 13.5px; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); display:inline-flex; align-items:center; gap:6px;">
+                    <span>🍱</span> <span>시그니처 미식 &amp; 간식 바로보기</span>
+                  </button>
+                  <button type="button" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background: #ffffff; color: #1b4332; font-weight: 700; font-size: 13.5px; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display:inline-flex; align-items:center; gap:6px;">
+                    <span>📅</span> <span>마스터 플래너 전체보기</span>
+                  </button>
+                </div>
+              </div>
 
               <!-- 첫 화면 압축 대시보드 그리드: 일정/가족 조건 · 팩트체크 주의사항 · 첫 명소 요약 -->
               <div class="hero-dashboard-grid">
@@ -492,16 +512,16 @@
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-planner">
             <button type="button" class="bookmark-chip active" onclick="goToBookPage('chapter-planner', 0)">
-              <span>⚙️</span> <span data-i18n="page_planner_1">1. 맞춤 조건 설정 &amp; 예산</span>
+              <span>⚙️</span> <span data-i18n="page_planner_1">1. 확정 조건 &amp; 숙소·교통 요약</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-planner', 1)">
-              <span>📅</span> <span data-i18n="page_planner_2">2. 1~10일차 (카탈루냐·중부)</span>
+              <span>📅</span> <span data-i18n="page_planner_2">2. 1~10일차 (바르셀로나 &amp; 안달루시아 전반)</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-planner', 2)">
-              <span>📅</span> <span data-i18n="page_planner_3">3. 11~20일차 (안달루시아)</span>
+              <span>📅</span> <span data-i18n="page_planner_3">3. 11~20일차 (말라가·세비야 2차·나폴리)</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-planner', 3)">
-              <span>📅</span> <span data-i18n="page_planner_4">4. 21~30일차 (포르투갈)</span>
+              <span>📅</span> <span data-i18n="page_planner_4">4. 21~30일차 (피렌체·로마·귀국)</span>
             </button>
           </div>
           <div class="book-flip-controls">
@@ -623,62 +643,576 @@
               </div>
 
               <!-- 🇮🇹 로마 약 10일 유연 연장 모듈 (날짜 미정 전제 · 4대 유연 페이싱 가이드) -->
-              <div class="planner-rome-extension-card" id="plannerRomeExtension">
+                            <!-- 📅 [요약 1 & 2] 최종 확정 숙소 9선 & 국가별 대중교통 이용 공식 마스터 카드 -->
+                            <!-- 📅 [요약 1, 2, 3] 최종 확정 숙소 9선 & 국가별 대중교통 이동 공식 & 맛집·야경·야시장 총정리 마스터 카드 -->
+              <div class="planner-rome-extension-card" id="plannerMasterSummaryCard" style="border: 2px solid #2d6a4f; background: #fdfcf9; border-radius: 16px; padding: 22px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(27,67,50,0.08);">
                 <div class="p-rome-header">
-                  <div class="p-rome-badge-row">
-                    <span class="p-rome-badge" data-i18n="planner_rome_badge">🇮🇹 약 10일 여정 (날짜 미정)</span>
-                    <span class="p-rome-status" data-i18n="hero_ctx_rome_date">세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요</span>
+                  <div class="p-rome-badge-row" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:8px;">
+                    <span class="p-rome-badge" style="background:#1b4332;color:#fff;padding:4px 12px;border-radius:20px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:6px;">
+                      <span style="display:inline-flex;align-items:center;gap:4px;">
+                        <svg width="18" height="12" viewBox="0 0 750 500" style="border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,0.3);"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/><rect width="100" height="130" x="150" y="185" fill="#c60b1e" rx="10"/></svg>
+                        <svg width="18" height="12" viewBox="0 0 3 2" style="border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,0.3);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                      </span>
+                      <span data-i18n="master_guide_badge">스페인 & 이탈리아 항공·기차·숙소 100% 확정 마스터 가이드</span>
+                    </span>
+                    <span class="p-rome-status" data-i18n="master_guide_status" style="color:#8c6d46;font-weight:700;font-size:13px;">2026.11.05 ~ 12.04 (29박 30일) · 총 9대 숙소 및 이동편 완전 연계</span>
                   </div>
-                  <h3 class="p-rome-title" data-i18n="planner_rome_title">로마 약 10일 유연 연장 모듈 (세비야 이후 · 유연 페이싱 가이드)</h3>
-                  <p class="p-rome-desc" data-i18n="planner_rome_sub">
-                    로마는 세비야 이후 약 10일 체류로 계획 중이며, 정확한 시작·종료일과 항공편 및 이동시간이 미정입니다. 날짜를 임의로 추측한 일자별 표 대신, 부모님 체력 안배에 최적화된 4대 권역별 유연 페이싱 가이드로 운영됩니다.
+                  <h3 class="p-rome-title" style="font-size:20px;margin:8px 0 6px;color:#1b4332;" data-i18n="master_sum1_title">📅 [요약 1] 도시별 확정 숙소 9선 & 체류 일정</h3>
+                  <p class="p-rome-desc" style="font-size:14px;color:#555;line-height:1.6;margin:0;" data-i18n="master_sum1_desc">
+                    본 플래너는 확정된 항공권(Vueling, Ryanair), 고속열차(Renfe, Italo, Trenitalia), ALSA 우등버스 시간과 9대 최종 확정 숙소를 바탕으로 최적화된 동선과 맛집, 대중교통 이용법을 총망라한 최종본입니다.
                   </p>
+                  <!-- ⚡ 마스터 요약 4대 섹션 퀵 점프 내비게이터 -->
+                  <div id="plannerMasterQuickNav" style="display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px;">
+                    <button type="button" onclick="document.getElementById('summary-hotels')?.scrollIntoView({behavior:'smooth'})" style="background:#e8f5e9;color:#1b4332;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:700;border:1px solid #c8e6c9;cursor:pointer;">🏨 [요약 1] 확정 숙소 9선</button>
+                    <button type="button" onclick="document.getElementById('summary-transit')?.scrollIntoView({behavior:'smooth'})" style="background:#e8f5e9;color:#1b4332;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:700;border:1px solid #c8e6c9;cursor:pointer;">🚆 [요약 2] 교통 공식</button>
+                    <button type="button" onclick="document.getElementById('summary-nightviews')?.scrollIntoView({behavior:'smooth'})" style="background:#fff3e0;color:#e65100;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:700;border:1px solid #ffe0b2;cursor:pointer;">🍽️ [요약 3] 맛집 &amp; 무료 야경</button>
+                    <button type="button" onclick="document.getElementById('summary-gourmet')?.scrollIntoView({behavior:'smooth'})" style="background:#fff7ed;color:#c2410c;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:800;border:1.5px solid #f97316;cursor:pointer;box-shadow:0 1px 4px rgba(249,115,22,0.2);">🍱 [요약 4] 시그니처 미식 &amp; 길거리 간식</button>
+                  </div>
                 </div>
-                <div class="p-rome-clusters-grid">
-                  <div class="p-cluster-card">
-                    <div class="p-cluster-num">CLUSTER 01</div>
-                    <h4 data-i18n="cluster1_title">🏛️ 역사 지구 슬로우 산책 (2~3일 배정)</h4>
-                    <p data-i18n="cluster1_desc">판테온, 스페인 광장, 트레비 분수, 나보나 광장. 오전 1곳 관람 ➔ 로툰다 광장 테라스 카페 및 지올리티 젤라토 휴식 ➔ 오후 숙소 시에스타 루틴.</p>
-                    <div class="p-cluster-badges">
-                      <span class="p-cbadge" data-i18n="badge_cobble">돌길 발목 주의</span>
-                      <span class="p-cbadge" data-i18n="badge_cushion">쿠션 운동화 필수</span>
-                      <span class="p-cbadge" data-i18n="badge_pantheon_chk">판테온 티켓 확인</span>
+
+                <!-- 9대 확정 숙소 칩스 그리드 -->
+                <div id="summary-hotels" class="planner-hotels-confirmed-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;margin:18px 0;">
+                  <!-- 1. 바르셀로나 (6박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="hotel_bcn_title">바르셀로나 (6박)</span>
+                      </strong>
+                      <span data-i18n="hotel_bcn_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/5 ~ 11/11</span>
+                    </div>
+                    <div data-i18n="hotel_bcn_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Suites Marina Abapart</div>
+                    <p data-i18n="hotel_bcn_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">사그라다 파밀리아 도보 3분 · 주방 완비 아파트 · 공항 공식 택시(35~40€) 직행</p>
+                  </div>
+
+                  <!-- 2. 세비야 1차 (1박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="hotel_svq1_title">세비야 1차 (1박)</span>
+                      </strong>
+                      <span data-i18n="hotel_svq1_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/11 ~ 11/12</span>
+                    </div>
+                    <div data-i18n="hotel_svq1_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Letoh Letoh Sevilla</div>
+                    <p data-i18n="hotel_svq1_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">세비야 공항 택시(정액 25~30€) · 구시가지 & 저녁 정통 플라멩코 접근성 우수</p>
+                  </div>
+
+                  <!-- 3. 코르도바 (1박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="hotel_odb_title">코르도바 (1박)</span>
+                      </strong>
+                      <span data-i18n="hotel_odb_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/12 ~ 11/13</span>
+                    </div>
+                    <div data-i18n="hotel_odb_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Hotel de los Faroles</div>
+                    <p data-i18n="hotel_odb_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">Renfe 12:30 탑승(41분) · 메스키타 도보권 · 소꼬리찜 맛집(Bodegas Mezquita) 인접</p>
+                  </div>
+
+                  <!-- 4. 그라나다 (2박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="hotel_grx_title">그라나다 (2박)</span>
+                      </strong>
+                      <span data-i18n="hotel_grx_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/13 ~ 11/15</span>
+                    </div>
+                    <div data-i18n="hotel_grx_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">The Central House Granada</div>
+                    <p data-i18n="hotel_grx_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">ALSA 14:15 탑승 · 11/14 알함브라 궁전 종일 투어(티켓 확정) 택시 직행</p>
+                  </div>
+
+                  <!-- 5. 말라가 (3박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="hotel_agp_title">말라가 (3박)</span>
+                      </strong>
+                      <span data-i18n="hotel_agp_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/15 ~ 11/18</span>
+                    </div>
+                    <div data-i18n="hotel_agp_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Coeo Pena Design Apartment</div>
+                    <p data-i18n="hotel_agp_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">ALSA 16:00 탑승 · 피카소 미술관 도보권 · 선셋 요트 크루즈 및 에스페토 맛집</p>
+                  </div>
+
+                  <!-- 6. 세비야 2차 (4박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="hotel_svq2_title">세비야 2차 (4박)</span>
+                      </strong>
+                      <span data-i18n="hotel_svq2_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/18 ~ 11/22</span>
+                    </div>
+                    <div data-i18n="hotel_svq2_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Libere Seville Plaza Nueva</div>
+                    <p data-i18n="hotel_svq2_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">ALSA 09:00 탑승 · 누에바 광장 도보 2분 · 스페인 광장 야경 산책 & 마차 투어</p>
+                  </div>
+
+                  <!-- 7. 나폴리 (3박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="hotel_nap_title">나폴리 (3박)</span>
+                      </strong>
+                      <span data-i18n="hotel_nap_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/22 ~ 11/25</span>
+                    </div>
+                    <div data-i18n="hotel_nap_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Calenda Suite</div>
+                    <p data-i18n="hotel_nap_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">11/22 항공+기차(16:26 탑승) 도착 · 폼페이/포지타노 차량 투어 & 원조 화덕 피자</p>
+                  </div>
+
+                  <!-- 8. 피렌체 (4박) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="hotel_flr_title">피렌체 (4박)</span>
+                      </strong>
+                      <span data-i18n="hotel_flr_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/25 ~ 11/29</span>
+                    </div>
+                    <div data-i18n="hotel_flr_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Artemente Florence B&B</div>
+                    <p data-i18n="hotel_flr_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">Italo 13:20 탑승(2h57m) · SMN역 도보 8분 · 전 일정 평지 도보 & 미켈란젤로 광장 야경</p>
+                  </div>
+
+                  <!-- 9. 로마 (5박 & 귀국) -->
+                  <div style="background:#fff;border:1.5px solid #e2d9cc;border-radius:12px;padding:14px;box-shadow:0 2px 6px rgba(0,0,0,0.03);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                      <strong style="color:#1b4332;font-size:14px;display:inline-flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="hotel_rom_title">로마 (5박 & 귀국)</span>
+                      </strong>
+                      <span data-i18n="hotel_rom_dates" style="font-size:12px;color:#8c6d46;background:#f5efe6;padding:2px 8px;border-radius:6px;font-weight:600;">11/29 ~ 12/4</span>
+                    </div>
+                    <div data-i18n="hotel_rom_name" style="font-weight:700;font-size:15px;color:#222;margin-bottom:4px;">Salotto Monti</div>
+                    <p data-i18n="hotel_rom_desc" style="font-size:12px;color:#666;margin:0;line-height:1.4;">Italo 13:28 탑승 · 몬티 지구 부티크 · 트레비 분수 야간 도보 · 12/4 22:00 FCO T3 출국</p>
+                  </div>
+                </div>
+
+                <!-- 🚇 [요약 2] 국가별 대중교통 패스 & 이동 공식 가이드 박스 -->
+                <div style="background:#edf6f2;border:1.5px solid #a3cfbb;border-radius:14px;padding:18px 20px;margin-top:16px;">
+                  <h4 style="margin:0 0 10px;color:#1b4332;font-size:16px;display:flex;align-items:center;gap:8px;">
+                    <span>🚇</span> <strong data-i18n="master_sum2_title">[요약 2] 국가별 대중교통 패스 & 이동 공식 마스터</strong>
+                  </h4>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;">
+                    <!-- 바르셀로나 이동 공식 -->
+                    <div style="background:#fff;padding:12px 14px;border-radius:10px;border:1px solid #cce3d8;">
+                      <strong style="color:#b23b23;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="transit_bcn_title">바르셀로나 이동 공식</span>
+                      </strong>
+                      <ul style="margin:6px 0 0;padding-left:18px;font-size:13px;color:#444;line-height:1.5;">
+                        <li data-i18n="transit_bcn_tip1"><strong>T-familiar (8회권) 1장</strong>으로 가족 3인 함께 태그 공유 (무제한 패스보다 경제적)</li>
+                        <li data-i18n="transit_bcn_tip2"><strong>2층 시티투어 버스 (48시간권)</strong>로 부모님 무릎 부담 없이 파노라마 시내 관광</li>
+                        <li data-i18n="transit_bcn_tip3"><strong>공항 ↔ 숙소</strong>: 공식 택시(노란+검정, 35~40€) 직행 (대형 캐리어 3개 완벽 적재)</li>
+                      </ul>
+                    </div>
+                    <!-- 안달루시아 이동 공식 -->
+                    <div style="background:#fff;padding:12px 14px;border-radius:10px;border:1px solid #cce3d8;">
+                      <strong style="color:#d97706;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="transit_and_title">안달루시아 (세비야·그라나다·코르도바·말라가)</span>
+                      </strong>
+                      <ul style="margin:6px 0 0;padding-left:18px;font-size:13px;color:#444;line-height:1.5;">
+                        <li data-i18n="transit_and_tip1">구시가지는 골목길 평지 위주로 천천히 도보 산책</li>
+                        <li data-i18n="transit_and_tip2"><strong>기차역/버스터미널 ↔ 숙소</strong> 이동은 <strong>무조건 Uber / Cabify (택시 앱)</strong> 이용 (3인 기준 버스비 차이 미미, 관절 보호 최적)</li>
+                        <li data-i18n="transit_and_tip3">도시 간 장거리 이동은 Renfe 초고속열차 및 ALSA 우등버스 완벽 연계</li>
+                      </ul>
+                    </div>
+                    <!-- 이탈리아 이동 공식 -->
+                    <div style="background:#fff;padding:12px 14px;border-radius:10px;border:1px solid #cce3d8;">
+                      <strong style="color:#0f5132;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="transit_ita_title">이탈리아 (나폴리·피렌체·로마)</span>
+                      </strong>
+                      <ul style="margin:6px 0 0;padding-left:18px;font-size:13px;color:#444;line-height:1.5;">
+                        <li data-i18n="transit_ita_tip1">지하철/버스는 복잡한 티켓 구매 없이 각자 <strong>트래블월렛 / 트래블로그 카드(컨택트리스)</strong>로 단말기 직접 태그 (Tap & Go)</li>
+                        <li data-i18n="transit_ita_tip2"><strong>피렌체</strong>: 구시가지 전 일정 도보 최적화 (차량 진입 제한 ZTL 구역, 평지 위주 산책)</li>
+                        <li data-i18n="transit_ita_tip3"><strong>로마 ➔ FCO 공항</strong>: 테르미니역에서 <strong>레오나르도 익스프레스 (직통 32분)</strong> 탑승</li>
+                      </ul>
                     </div>
                   </div>
-                  <div class="p-cluster-card">
-                    <div class="p-cluster-num">CLUSTER 02</div>
-                    <h4 data-i18n="cluster2_title">⛪ 바티칸 박물관 &amp; 대성당 분산 관람 (2일 배정)</h4>
-                    <p data-i18n="cluster2_desc">박물관(수 km 복도)과 성 베드로 대성당(장시간 보안 검색 대기)을 하루에 몰아보지 않고 서로 다른 날로 나누어 부모님 보행 피로를 최소화합니다.</p>
-                    <div class="p-cluster-badges">
-                      <span class="p-cbadge" data-i18n="badge_split_rec">격일 분산 권장</span>
-                      <span class="p-cbadge" data-i18n="badge_dress_rule">어깨·무릎 복장 규정</span>
-                      <span class="p-cbadge" data-i18n="badge_vatican_book">공식 사전 예매</span>
+                </div>
+
+                <!-- 🍽️ [요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 & 무료 야경·야시장 총정리 -->
+                <div style="background:#fff8ee;border:1.5px solid #f2cf92;border-radius:14px;padding:18px 20px;margin-top:16px;">
+                  <h4 style="margin:0 0 6px;color:#854d0e;font-size:16px;display:flex;align-items:center;gap:8px;">
+                    <span>🍽️</span> <strong data-i18n="master_sum3_title">[요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 & 무료 야경·야시장 총정리</strong>
+                  </h4>
+                  <p style="font-size:13px;color:#78350f;margin:0 0 14px;line-height:1.5;" data-i18n="master_sum3_desc">
+                    확정 일정에 맞춰 부모님 입맛과 체력을 완벽히 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 사전 예약 없이 즐기는 무료 야경·야시장 스폿 총정리입니다.
+                  </p>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;">
+                    <!-- 바르셀로나 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#c2410c;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="must_bcn_city">바르셀로나</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=600&q=80" alt="🥘 7 Portes 파에야 &amp; Ciudad Condal 꿀대구" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 7 Portes 파에야 &amp; Ciudad Condal 꿀대구</span>
+                        </div>
+                      <div data-i18n="must_bcn_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>Ciudad Condal</strong>: 꿀대구(Bacalao a la miel), 안심 몬타디토, 레몬맥주 클라라<br>
+                        • <strong>7 Portes</strong>: 1836년 전통 해산물 파에야 & 먹물 파에야<br>
+                        • <strong>Puertecillo Sagrada Família</strong>: 숙소 도보 2분 즉석 해산물 구이 가성비 맛집
+                      </div>
+                      <div data-i18n="must_bcn_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>사그라다 파밀리아 호수공원(Plaça de Gaudí)</strong>: 성당 정면 호숫가 밤 조명 야경 (무료, 예약 불필요)<br>
+                        • <strong>산타 카테리나 로컬 시장</strong>: 물결지붕 아래 신선한 과일과 하몬 구경<br>
+                        • <strong>11/10 15:30</strong>: 사그라다 파밀리아 서쪽 스테인드글라스 황금빛 노을 관람
+                      </div>
+                    </div>
+
+                    <!-- 세비야 (1차 & 2차) -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#c2410c;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="must_svq_city">세비야 (1차 & 2차)</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80" alt="🥓 El Rinconcillo 1670년 최고령 타파스 &amp; 하몽" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥓 El Rinconcillo 1670년 최고령 타파스 &amp; 하몽</span>
+                        </div>
+                      <div data-i18n="must_svq_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>
+                        • 정통 타파스 & 시원한 상그리아
+                      </div>
+                      <div data-i18n="must_svq_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>메트로폴 파라솔 (Las Setas)</strong>: 거대 목조 구조물 야외 광장 무료 산책 & 야간 조명<br>
+                        • <strong>스페인 광장 (Plaza de España)</strong>: 밤 조명이 켜진 웅장하고 로맨틱한 광장 야간 산책 (무료)<br>
+                        • 과달키비르 강변 황금의 탑 야경
+                      </div>
+                    </div>
+
+                    <!-- 코르도바 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#c2410c;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="must_odb_city">코르도바</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="🥩 Bodegas Mezquita 부드러운 소꼬리 찜 (Rabo de Toro)" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥩 Bodegas Mezquita 부드러운 소꼬리 찜 (Rabo de Toro)</span>
+                        </div>
+                      <div data-i18n="must_odb_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>Bodegas Mezquita</strong>: 부드럽게 푹 고아낸 소꼬리 찜(Rabo de Toro - 부모님 최애 보양식), 바삭한 가지 튀김(Berenjenas con miel), 살모레호
+                      </div>
+                      <div data-i18n="must_odb_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>로마 다리 (Puente Romano)</strong>: 해 질 녘 다리를 건너며 메스키타와 과달키비르 강변 무료 야경 감상<br>
+                        • 유대인 지구(유다리아) 꽃길 골목(Calleja de las Flores) 산책
+                      </div>
+                    </div>
+
+                    <!-- 그라나다 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#c2410c;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="must_grx_city">그라나다</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="🍤 Bar Los Diamantes 신선 해산물 타파스" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍤 Bar Los Diamantes 신선 해산물 타파스</span>
+                        </div>
+                      <div data-i18n="must_grx_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>Bar Los Diamantes</strong>: 음료(맥주/와인) 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공!<br>
+                        • 나바스 거리(Calle Navas) 활기찬 로컬 타파스 투어
+                      </div>
+                      <div data-i18n="must_grx_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>산 니콜라스 전망대 (Mirador de San Nicolás)</strong>: 택시로 올라가 알함브라 붉은 성곽 뒤로 물드는 노을과 야경 감상 (최고의 무료 명소)<br>
+                        • 11/14 알함브라 궁전 및 나스르 궁전 집중 관람
+                      </div>
+                    </div>
+
+                    <!-- 말라가 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#c2410c;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                        <span data-i18n="must_agp_city">말라가</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="🐟 해변 대나무 꼬치 숯불구이 에스페토 (Espeto)" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🐟 해변 대나무 꼬치 숯불구이 에스페토 (Espeto)</span>
+                        </div>
+                      <div data-i18n="must_agp_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>에스페토 (Espeto)</strong>: 해변가에서 대나무 꼬치에 꿰어 숯불에 구워내는 정통 정어리 구이<br>
+                        • <strong>El Pimpi</strong>: 안토니오 반데라스 와이너리 전통 와인 & 하몬<br>
+                        • <strong>Marisquería Godoy</strong>: 항구 테라스 해산물 구이
+                      </div>
+                      <div data-i18n="must_agp_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>말라가 항구 무에예 우노 (Muelle Uno)</strong>: 야자수와 지중해가 어우러진 해안 산책로 야경 산책<br>
+                        • 라리오스 대리석 쇼핑 거리의 화려한 조명 산책
+                      </div>
+                    </div>
+
+                    <!-- 나폴리 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#15803d;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="must_nap_city">나폴리</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="🍕 Gino Sorbillo 전설의 화덕 마르게리타 피자" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍕 Gino Sorbillo 전설의 화덕 마르게리타 피자</span>
+                        </div>
+                      <div data-i18n="must_nap_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>Gino Sorbillo</strong>: 겉바속촉 전설의 화덕 마르게리타 피자<br>
+                        • <strong>Gran Caffè Gambrinus</strong>: 1860년 유서 깊은 카페의 정통 에스프레소 & 럼주 빵 '바바(Babà)', 조개 페이스트리 '스폴리아텔라'
+                      </div>
+                      <div data-i18n="must_nap_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>플레비시토 광장 (Piazza del Plebiscito)</strong>: 웅장한 기둥 회랑과 왕궁 야경 산책<br>
+                        • 스파카 나폴리 골목 활기 체감 & 폼페이/소렌토/아말피 전용 차량 투어
+                      </div>
+                    </div>
+
+                    <!-- 피렌체 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#15803d;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="must_flr_city">피렌체</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="🥩 Trattoria Zà Zà 1kg 피렌체식 티본 스테이크" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥩 Trattoria Zà Zà 1kg 피렌체식 티본 스테이크</span>
+                        </div>
+                      <div data-i18n="must_flr_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>Trattoria Zà Zà</strong>: 1kg 두툼한 숯불 티본 스테이크(Bistecca alla Fiorentina) + 트러플 크림 파스타<br>
+                        • <strong>All’Antico Vinaio</strong>: 줄서서 먹는 토스카나 포카치아 샌드위치
+                      </div>
+                      <div data-i18n="must_flr_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>미켈란젤로 광장 (Piazzale Michelangelo)</strong>: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿<br>
+                        • <strong>베키오 다리 (Ponte Vecchio)</strong>: 아르노강 반영 야경
+                      </div>
+                    </div>
+
+                    <!-- 로마 -->
+                    <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                      <div style="font-weight:700;color:#15803d;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px;">
+                        <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                        <span data-i18n="must_rom_city">로마</span>
+                      </div>
+                        <!-- 📸 대표 미식 사진 배너 -->
+                        <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
+                          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=80" alt="🍝 Trattoria Luzzi 정통 카르보나라 &amp; 지올리띠 젤라토" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍝 Trattoria Luzzi 정통 카르보나라 &amp; 지올리띠 젤라토</span>
+                        </div>
+                      <div data-i18n="must_rom_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
+                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
+                        • <strong>Trattoria Luzzi</strong>: 콜로세움 인접 가성비 파스타 & 화덕 피자<br>
+                        • <strong>Giolitti (지올리띠)</strong>: 쌀맛(Riso) & 고소한 피스타치오(Pistacchio) 젤라또 필수 주문<br>
+                        • 타차 도로(Tazza d'Oro): 판테온 앞 그라니타 콘 판나
+                      </div>
+                      <div data-i18n="must_rom_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
+                        <strong>꼭 해볼 것 & 무료 야경:</strong><br>
+                        • <strong>트레비 분수 (Fontana di Trevi)</strong>: 밤 10시 이후 야간 산책 (인파 줄어든 로맨틱한 야경 & 동전 던지기, 숙소 도보 12분)<br>
+                        • <strong>캄포 디 피오리 (Campo de' Fiori)</strong>: 로컬 야시장 및 야간 광장 정취<br>
+                        • 12/4 테르미니역 공항철도 ➔ FCO T3 22:00 출국
+                      </div>
                     </div>
                   </div>
-                  <div class="p-cluster-card">
-                    <div class="p-cluster-num">CLUSTER 03</div>
-                    <h4 data-i18n="cluster3_title">🏛️ 파노라마 전망 &amp; 고대 유적 힐링 (2~3일 배정)</h4>
-                    <p data-i18n="cluster3_desc">비토리오 에마누엘레 2세 기념관(조국의 제단) 파노라마 엘리베이터로 360도 전경 감상, 콜로세움 2층 전용 엘리베이터 관람, 테르미니역 주변 여유로운 미식.</p>
-                    <div class="p-cluster-badges">
-                      <span class="p-cbadge" data-i18n="badge_lift_ok">전망대 엘리베이터</span>
-                      <span class="p-cbadge" data-i18n="badge_no_stairs">계단 부담 최소화</span>
-                      <span class="p-cbadge" data-i18n="badge_colosseo_book">콜로세움 사전 예매</span>
+                </div>
+
+                <!-- 🍱 [요약 4] 스페인 & 이탈리아 권역별 시그니처 미식 & 길거리 간식 총정리 -->
+                <div id="summary-gourmet" style="background:#fffcf7;border:1.5px solid #ea580c;border-radius:14px;padding:18px 20px;margin-top:16px;">
+                  <h4 style="margin:0 0 6px;color:#9a3412;font-size:16px;display:flex;align-items:center;gap:8px;">
+                    <span>🍱</span> <strong data-i18n="master_sum4_title">[요약 4] 스페인 &amp; 이탈리아 권역별 시그니처 미식 &amp; 로컬 길거리 간식 총정리</strong>
+                  </h4>
+                  <p style="font-size:13px;color:#7c2d12;margin:0 0 14px;line-height:1.5;" data-i18n="master_sum4_desc">
+                    여행의 즐거움을 극대화하는 도시별 필수 시그니처 요리와 시장·골목길 대표 로컬 간식, 조식 및 디저트를 총정리한 미식 가이드입니다.
+                  </p>
+
+                  <!-- 🇪🇸 Part 1: 스페인 미식 & 간식 파헤치기 -->
+                  <div style="margin-bottom:18px;">
+                    <div style="display:inline-flex;align-items:center;gap:6px;background:#c2410c;color:#fff;padding:4px 10px;border-radius:6px;font-weight:700;font-size:13px;margin-bottom:10px;">
+                      <svg width="15" height="10" viewBox="0 0 750 500" style="border-radius:2px;"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>
+                      <span data-i18n="gourmet_part1_title">🇪🇸 [Part 1] 스페인 미식 &amp; 간식 파헤치기</span>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;">
+                      <!-- 바르셀로나 (Barcelona) -->
+                      <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                        <div style="font-weight:700;color:#9a3412;font-size:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
+                          <span data-i18n="gourmet_bcn_title">1. 바르셀로나 (Barcelona)</span>
+                          <span style="font-size:11px;background:#ffedd5;color:#9a3412;padding:2px 6px;border-radius:4px;font-weight:600;" data-i18n="badge_catalonia">카탈루냐 미식</span>
+                        </div>
+                        <!-- 📸 대표 미식 & 간식 사진 갤러리 -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=600&q=80" alt="🥘 꿀대구 &amp; 해산물 파에야" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 꿀대구 &amp; 해산물 파에야</span>
+                          </div>
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1624300629298-e9de39c13be5?auto=format&fit=crop&w=600&q=80" alt="☕ 바삭 츄러스 &amp; 하몬 콘" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">☕ 바삭 츄러스 &amp; 하몬 콘</span>
+                          </div>
+                        </div>
+                        <div style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fffbeb;padding:8px 10px;border-radius:6px;border-left:3px solid #f59e0b;" data-i18n="gourmet_bcn_sig">
+                          <strong>⭐️ 시그니처 미식 (필수):</strong><br>
+                          • <strong>꿀대구 (Bacalao a la miel)</strong>: Ciudad Condal 등 타파스 바의 전설. 두툼한 대구 살 위에 달콤한 꿀과 부드러운 아이올리 소스를 얹어 구워낸 요리로 한국인 부모님 최애 메뉴 확정!<br>
+                          • <strong>해산물 파에야 &amp; 먹물 파에야 (Paella)</strong>: 7 Portes 등 1836년 전통 명가에서 맛보는 사프란 향 가득한 해산물 쌀요리.
+                        </div>
+                        <div style="font-size:12.5px;color:#0f766e;line-height:1.5;background:#f0fdfa;padding:8px 10px;border-radius:6px;border-left:3px solid #0d9488;" data-i18n="gourmet_bcn_snack">
+                          <strong>🥐 로컬 시장 &amp; 야시장 간식 (산타 카테리나 / 보케리아):</strong><br>
+                          • <strong>생과일 주스 &amp; 과일 컵</strong>: 시장 골목마다 1~2€로 즐기는 생망고·딸기·멜론 믹스 비타민 충전 컵.<br>
+                          • <strong>이베리코 하몬 콘 (Jamón Cone)</strong>: 걸어 다니며 맛보는 최고급 생고기 하몬 슬라이스 종이콘.<br>
+                          • <strong>츄러스와 쇼콜라테 (Churros con Chocolate)</strong>: 바삭한 츄러스를 걸쭉하고 진한 핫초코에 듬뿍 찍어 먹는 최고의 간식.
+                        </div>
+                      </div>
+
+                      <!-- 안달루시아 (세비야 & 코르도바 & 그라나다 & 말라가) -->
+                      <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #fed7aa;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                        <div style="font-weight:700;color:#9a3412;font-size:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
+                          <span data-i18n="gourmet_and_title">2. 안달루시아 (세비야·코르도바·그라나다·말라가)</span>
+                          <span style="font-size:11px;background:#ffedd5;color:#9a3412;padding:2px 6px;border-radius:4px;font-weight:600;" data-i18n="badge_andalusia">남부 정통 향토</span>
+                        </div>
+                        <!-- 📸 대표 미식 & 간식 사진 갤러리 -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="🥩 소꼬리 찜 &amp; 가지튀김 꿀" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥩 소꼬리 찜 &amp; 가지튀김 꿀</span>
+                          </div>
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="🐟 해변 숯불구이 에스페토" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🐟 해변 숯불구이 에스페토</span>
+                          </div>
+                        </div>
+                        <div style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fffbeb;padding:8px 10px;border-radius:6px;border-left:3px solid #f59e0b;" data-i18n="gourmet_and_sig">
+                          <strong>⭐️ 시그니처 미식 (필수):</strong><br>
+                          • <strong>소꼬리 찜 (Rabo de Toro)</strong>: Bodegas Mezquita 등 전역 명물. 한국의 진한 소갈비찜과 싱크로율 90% 이상으로 부모님 감탄 보장!<br>
+                          • <strong>가지 튀김과 꿀 (Berenjenas con miel)</strong>: 바삭한 가지 튀김 위에 사탕수수 꿀을 뿌린 단짠의 극치 타파스.<br>
+                          • <strong>살모레호 (Salmorejo)</strong>: 가스파초보다 훨씬 진하고 크리미한 코르도바식 토마토 마늘 냉수프 (바삭 하몬 토핑).<br>
+                          • <strong>에스페토 (Espeto, 말라가 해변)</strong>: 대나무 꼬치에 정어리를 꿰어 해변 모래사장 숯불 화로에 즉석으로 구워내는 명물.
+                        </div>
+                        <div style="font-size:12.5px;color:#0f766e;line-height:1.5;background:#f0fdfa;padding:8px 10px;border-radius:6px;border-left:3px solid #0d9488;" data-i18n="gourmet_and_snack">
+                          <strong>🥐 로컬 시장 간식:</strong><br>
+                          • <strong>안달루시아 추로스 (Churros)</strong>: 바르셀로나보다 훨씬 바삭하고 담백! 아침에 현지인들처럼 바에 서서 갓 튀긴 추러스와 카페 콘 레체 즐기기.
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="p-cluster-card">
-                    <div class="p-cluster-num">CLUSTER 04</div>
-                    <h4 data-i18n="cluster4_title">🚆 근교 슬로우 당일치기 &amp; 완충 휴식일 (3~4일 배정)</h4>
-                    <p data-i18n="cluster4_desc">푸니쿨라로 편안히 연결되는 슬로우시티 오르비에토 또는 고속열차 1시간 30분 피렌체 중 1곳 선택. 일정 중간에 온전한 무일정 휴식일(Buffer Days) 2일 확보.</p>
-                    <div class="p-cluster-badges">
-                      <span class="p-cbadge" data-i18n="badge_funicular">오르비에토 푸니쿨라</span>
-                      <span class="p-cbadge" data-i18n="badge_buffer_days">중간 완충 휴식일</span>
-                      <span class="p-cbadge" data-i18n="badge_train_check">열차 시간표 확인</span>
+
+                  <!-- 🇮🇹 Part 2: 이탈리아 미식 & 간식 파헤치기 -->
+                  <div>
+                    <div style="display:inline-flex;align-items:center;gap:6px;background:#15803d;color:#fff;padding:4px 10px;border-radius:6px;font-weight:700;font-size:13px;margin-bottom:10px;">
+                      <svg width="15" height="10" viewBox="0 0 3 2" style="border-radius:2px;"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>
+                      <span data-i18n="gourmet_part2_title">🇮🇹 [Part 2] 이탈리아 미식 &amp; 간식 파헤치기</span>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;">
+                      <!-- 1. 나폴리 (Napoli) -->
+                      <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #bbf7d0;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                        <div style="font-weight:700;color:#166534;font-size:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
+                          <span data-i18n="gourmet_nap_title">1. 나폴리 (Napoli) - [미식의 진짜 고향]</span>
+                          <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 6px;border-radius:4px;font-weight:600;" data-i18n="badge_napoli">피자의 본향</span>
+                        </div>
+                        <!-- 📸 대표 미식 & 간식 사진 갤러리 -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="🍕 정통 화덕 마르게리타 피자" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍕 정통 화덕 마르게리타 피자</span>
+                          </div>
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=600&q=80" alt="☕ 럼주 빵 바바 &amp; 카페 노촐라" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">☕ 럼주 빵 바바 &amp; 카페 노촐라</span>
+                          </div>
+                        </div>
+                        <div style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fffbeb;padding:8px 10px;border-radius:6px;border-left:3px solid #f59e0b;" data-i18n="gourmet_nap_sig">
+                          <strong>⭐️ 시그니처 미식 (필수):</strong><br>
+                          • <strong>나폴리 정통 화덕 피자 (Pizza Napoletana)</strong>: Gino Sorbillo 등. 산마르자노 토마토와 신선한 버팔로 모차렐라의 마르게리타 &amp; 마리나라. 차원이 다른 부드러운 도우.<br>
+                          • <strong>튀긴 피자 (Pizza Fritta)</strong>: 나폴리 길거리 간식의 왕! 피자 반죽을 기름에 바삭하게 튀겨 속에 리코타 치즈와 토마토를 채운 별미.
+                        </div>
+                        <div style="font-size:12.5px;color:#854d0e;line-height:1.5;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;" data-i18n="gourmet_nap_snack">
+                          <strong>🥐 조식 &amp; 디저트 간식:</strong><br>
+                          • <strong>바바 (Babà al Rum)</strong>: 버섯 모양 폭신한 스펀지케이크에 독한 럼 시럽을 듬뿍 적신 전통 디저트 (어른들의 깊은 풍미!).<br>
+                          • <strong>카페 노촐라 (Caffè Nocciola)</strong>: 진한 에스프레소 바닥에 부드러운 헤이즐넛 크림을 깔아준 달콤한 나폴리식 커피.
+                        </div>
+                      </div>
+
+                      <!-- 2. 피렌체 (Firenze) -->
+                      <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #bbf7d0;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                        <div style="font-weight:700;color:#166534;font-size:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
+                          <span data-i18n="gourmet_flr_title">2. 피렌체 (Firenze)</span>
+                          <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 6px;border-radius:4px;font-weight:600;" data-i18n="badge_tuscany">토스카나 육류</span>
+                        </div>
+                        <!-- 📸 대표 미식 & 간식 사진 갤러리 -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="🥩 1kg 피렌체 티본 스테이크" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥩 1kg 피렌체 티본 스테이크</span>
+                          </div>
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="🥪 올안티코비나이오 포카치아" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥪 올안티코비나이오 포카치아</span>
+                          </div>
+                        </div>
+                        <div style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fffbeb;padding:8px 10px;border-radius:6px;border-left:3px solid #f59e0b;" data-i18n="gourmet_flr_sig">
+                          <strong>⭐️ 시그니처 미식 (필수):</strong><br>
+                          • <strong>비스테카 알라 피오렌티나 (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zà 등. 두툼한 티본 스테이크를 참나무 숯불에 구워 겉바속촉 육즙을 즐기는 토스카나 최고 요리.<br>
+                          • <strong>트러플 크림 파스타 (Truffle Pasta)</strong>: 향긋한 송로버섯 오일과 크림이 어우러져 입안 가득 풍미가 퍼지는 명물 파스타.<br>
+                          • <strong>포카치아 샌드위치 (Schiacciata)</strong>: All’Antico Vinaio. 겉바속촉 포카치아 사이에 프로슈토와 트러플 크림, 신선 치즈를 산더미처럼 넣은 세계 최고 샌드위치.
+                        </div>
+                        <div style="font-size:12.5px;color:#854d0e;line-height:1.5;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;" data-i18n="gourmet_flr_snack">
+                          <strong>🥐 조식 &amp; 간식:</strong><br>
+                          • <strong>칸투치니와 빈 산토 (Cantuccini e Vin Santo)</strong>: 고소한 아몬드 비스킷을 달콤한 디저트 와인(빈 산토)에 콕 찍어 먹는 토스카나 전통 디저트.
+                        </div>
+                      </div>
+
+                      <!-- 3. 로마 (Roma) -->
+                      <div style="background:#fff;padding:14px;border-radius:10px;border:1px solid #bbf7d0;box-shadow:0 2px 5px rgba(0,0,0,0.02);">
+                        <div style="font-weight:700;color:#166534;font-size:14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;">
+                          <span data-i18n="gourmet_rom_title">3. 로마 (Roma)</span>
+                          <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 6px;border-radius:4px;font-weight:600;" data-i18n="badge_rome">고대 수도 전통</span>
+                        </div>
+                        <!-- 📸 대표 미식 & 간식 사진 갤러리 -->
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=600&q=80" alt="🍝 정통 카르보나라 &amp; 수플리" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍝 정통 카르보나라 &amp; 수플리</span>
+                          </div>
+                          <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
+                            <img src="https://images.unsplash.com/photo-1560008511-11c63416e52d?auto=format&fit=crop&w=600&q=80" alt="🍨 지올리띠 쌀 젤라토 &amp; 마리토초" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍨 지올리띠 쌀 젤라토 &amp; 마리토초</span>
+                          </div>
+                        </div>
+                        <div style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fffbeb;padding:8px 10px;border-radius:6px;border-left:3px solid #f59e0b;" data-i18n="gourmet_rom_sig">
+                          <strong>⭐️ 시그니처 미식 (필수):</strong><br>
+                          • <strong>로마 3대 파스타 (카르보나라·아마트리치아나·카초 에 페페)</strong>: 생크림 없이 달걀노른자, 페코리노 치즈, 구안찰레, 통후추로 꾸덕하게 맛을 낸 진짜배기 정통 파스타!<br>
+                          • <strong>수플리 (Supplì)</strong>: 토마토 소스 리소토 밥 속에 모차렐라 치즈를 넣고 바삭하게 튀겨낸 로마식 길거리 핑거푸드 고로케.
+                        </div>
+                        <div style="font-size:12.5px;color:#854d0e;line-height:1.5;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;" data-i18n="gourmet_rom_snack">
+                          <strong>🥐 젤라토 &amp; 디저트 간식:</strong><br>
+                          • <strong>지올리띠 쌀 젤라토 (Riso)</strong>: Giolitti. 쫀득한 젤라토 사이에 고소하게 씹히는 쌀알이 박혀 있어 부모님이 가장 좋아하시는 이탈리아 아이스크림.<br>
+                          • <strong>마리토초 (Maritozzo)</strong>: 촉촉한 브리오슈 번 사이에 달콤하고 부드러운 생크림을 산처럼 가득 채워 넣은 로마 전통 조식/간식 빵.
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div class="page-turner-bar">
+<div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-overview'); goToBookPage('chapter-overview', 2);">
                   ◀ <span data-i18n="prev_chapter_prefix">이전 장</span>: <strong data-i18n="chapter_name_overview">01. 여행 개요</strong>
                 </button>
@@ -702,11 +1236,11 @@
             <div class="wrap">
               <div class="section-head">
                 <div>
-                  <div class="kicker">02-1 / DAYS 01 - 10 · CATALONIA &amp; MADRID</div>
-                  <h2 data-i18n="timeline_part1_title">📅 1~10일차: 바르셀로나 &amp; 마드리드 (카탈루냐·중부)</h2>
+                  <div class="kicker">02-1 / DAYS 01 - 10 · BARCELONA &amp; ANDALUSIA PART 1</div>
+                  <h2 data-i18n="timeline_part1_title">📅 1~10일차: 바르셀로나 &amp; 안달루시아 전반 (사그라다 파밀리아 11/10 &amp; 알함브라 11/14 확정)</h2>
                 </div>
                 <p class="sub" data-i18n="timeline_part1_sub">
-                  장거리 비행 시차 적응, 가우디 건축 산책, 프라도 미술관 평지 관람 및 1일 1.5스팟 시에스타 루틴.
+                  가우디 건축 산책, 2층 시티투어 버스, 11/10 사그라다 파밀리아 내부 노을(15:30), 코르도바 메스키타(소꼬리찜) 및 11/14 알함브라 궁전 종일 투어.
                 </p>
               </div>
               <div class="day-timeline" id="timelineGrid1"></div>
@@ -734,7 +1268,7 @@
             <div class="wrap">
               <div class="section-head">
                 <div>
-                  <div class="kicker">02-2 / DAYS 11 - 20 · ANDALUSIA ROAD</div>
+                  <div class="kicker">02-2 / DAYS 11 - 20 · MALAGA &amp; SEVILLE 2 &amp; NAPLES</div>
                   <h2 data-i18n="timeline_part2_title">📅 11~20일차: 안달루시아 낭만 로드 (세비야·그라나다·코르도바)</h2>
                 </div>
                 <p class="sub" data-i18n="timeline_part2_sub">
@@ -766,11 +1300,11 @@
             <div class="wrap">
               <div class="section-head">
                 <div>
-                  <div class="kicker">02-3 / DAYS 21 - 30 · PORTUGAL ATLANTIC ROAD</div>
-                  <h2 data-i18n="timeline_part3_title">📅 21~30일차: 포르투갈 대서양 로드 (리스본·포르투) &amp; 캘린더</h2>
+                  <div class="kicker">02-3 / DAYS 21 - 30 · FLORENCE &amp; ROME GRAND FINALE</div>
+                  <h2 data-i18n="timeline_part3_title">📅 21~30일차: 피렌체 르네상스 &amp; 영원의 도시 로마 (12/4 안심 귀국)</h2>
                 </div>
                 <p class="sub" data-i18n="timeline_part3_sub">
-                  노란 트램 28번, 에그타르트 원조 맛집, 도루강 와이너리와 완성된 30일 캘린더(.ics) 다운로드.
+                  피렌체 두오모 &amp; 우피치 미술관, 자자 티본 스테이크, 로마 바티칸 &amp; 콜로세움 엘리베이터 투어, 판테온·지올리티 젤라또 및 완성된 30일 캘린더(.ics) 다운로드.
                 </p>
               </div>
               <div class="day-timeline" id="timelineGrid3"></div>
