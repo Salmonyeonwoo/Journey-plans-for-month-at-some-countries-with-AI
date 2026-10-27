@@ -4706,6 +4706,187 @@ const GLOBAL_DINING_DATA = [
     "booking": "현장 주문",
     "mapQuery": "Eggslut Grand Central Market Los Angeles"
   }
+,
+  {
+  "name": "Vinitus",
+  "region": "스페인",
+  "city": "바르셀로나",
+  "country": "스페인 (Spain)",
+  "dishName": "꿀대구 구이 & 맛조개 철판구이 (Bacalao al alioli de miel & Navajas)",
+  "photo": "img/gourmet/pulpo-a-la-gallega.jpg",
+  "signature": "달콤한 꿀과 크리미한 아이올리 소스를 얹어 구워낸 부드러운 대구와 싱싱한 맛조개",
+  "seniorTip": "가시가 없고 부드러워 어르신들이 가장 극찬하는 바르셀로나 1등 타파스",
+  "hours": "매일 11:30~01:00",
+  "language": "영어 완벽 · 활기찬 서비스",
+  "phone": "+34 933 63 21 27",
+  "booking": "현장 대기 (브레이크타임 없어 16~17시 방문 시 대기 없음)",
+  "mapQuery": "Vinitus Carrer del Consell de Cent Barcelona"
+},
+  {
+  "name": "Ciudad Condal",
+  "region": "스페인",
+  "city": "바르셀로나",
+  "country": "스페인 (Spain)",
+  "dishName": "꿀대구 타파스 & 이베리코 하몽 바게트 (Montaditos & Bacalao con miel)",
+  "photo": "img/gourmet/fideua-barcelona.jpg",
+  "signature": "카탈루냐 광장 인근 최고 인기 타파스 바. 꿀대구와 즉석 몬타디토스(미니 샌드위치)",
+  "seniorTip": "카탈루냐 광장 도보 2분 평지 위치. 매장이 넓고 직원이 친절하여 어르신 모시기 편안",
+  "hours": "매일 08:30~01:00",
+  "language": "영어 능통 · 그림 메뉴판 제공",
+  "phone": "+34 933 18 19 97",
+  "booking": "현장 대기",
+  "mapQuery": "Ciudad Condal Rambla de Catalunya Barcelona"
+},
+  {
+  "name": "La Paradeta (Sagrada Família)",
+  "region": "스페인",
+  "city": "바르셀로나",
+  "country": "스페인 (Spain)",
+  "dishName": "수산시장식 즉석 해산물 구이 & 모둠 해물찜 (Mariscos a la plancha)",
+  "photo": "img/gourmet/fideua-barcelona.jpg",
+  "signature": "얼음 진열대에서 생선, 오징어, 맛조개, 랍스터를 직접 골라 무게를 달아 즉석 조리",
+  "seniorTip": "한국 수산시장처럼 신선한 해산물을 눈으로 보고 골라 부모님 만족도가 매우 높음",
+  "hours": "화~일 13:00~16:00, 20:00~23:30 (월 휴무)",
+  "language": "영어 가능 · 쉬운 주문 방식",
+  "phone": "+34 934 50 01 91",
+  "booking": "현장 주문",
+  "mapQuery": "La Paradeta Sagrada Familia Barcelona"
+},
+  {
+  "name": "La Brunilda",
+  "region": "스페인",
+  "city": "세비야",
+  "country": "스페인 (Spain)",
+  "dishName": "이베리코 돼지고기구이 & 고구마 퓨레 (Presa Ibérica con puré de boniato)",
+  "photo": "img/gourmet/carrillada-iberica.jpg",
+  "signature": "세비야 최고 모던 타파스. 부드럽게 구워낸 이베리코 프레사와 달콤한 고구마 퓌레",
+  "seniorTip": "잡내가 전혀 없고 육질이 연해 치아가 약하신 부모님도 맛있게 드실 수 있는 일품 고기",
+  "hours": "화~토 13:00~16:00, 20:30~23:30 (일·월 휴무)",
+  "language": "영어 메뉴판 완비",
+  "phone": "+34 954 22 04 81",
+  "booking": "현장 대기 (오픈 15분 전 대기 권장)",
+  "mapQuery": "La Brunilda Calle Galera Seville"
+},
+  {
+  "name": "Bodegas Castañeda",
+  "region": "스페인",
+  "city": "그라나다",
+  "country": "스페인 (Spain)",
+  "dishName": "그라나다 명물 따블라 콤비나다 플래터 (Tabla Castañeda)",
+  "photo": "img/gourmet/berenjenas-con-miel.jpg",
+  "signature": "음료 주문 시 무료 타파스 제공. 하몬, 로컬 치즈, 파테가 듬뿍 올라간 전통 목판 플래터",
+  "seniorTip": "스페인 남부 안달루시아 전통 정취를 느낄 수 있는 유서 깊은 타파스 명소",
+  "hours": "매일 11:30~00:00",
+  "language": "영어 소통 가능",
+  "phone": "+34 958 21 54 64",
+  "booking": "현장 방문",
+  "mapQuery": "Bodegas Castaneda Calle Almireceros Granada"
+},
+  {
+  "name": "Los Diamantes",
+  "region": "스페인",
+  "city": "그라나다",
+  "country": "스페인 (Spain)",
+  "dishName": "바삭한 모둠 해산물 & 버섯 튀김 (Fritura de Pescado y Champiñones)",
+  "photo": "img/gourmet/berenjenas-con-miel.jpg",
+  "signature": "주문 즉시 고온에서 튀겨내는 신선한 버섯 튀김과 안달루시아식 멸치(보케로네스) 튀김",
+  "seniorTip": "기름기가 쏙 빠져 바삭담백하여 느끼하지 않고 고소해 부모님 음료 안주로 인기 최고",
+  "hours": "매일 12:30~16:30, 20:00~00:00",
+  "language": "기본 영어 가능",
+  "phone": "+34 958 22 70 70",
+  "booking": "현장 방문",
+  "mapQuery": "Los Diamantes Calle Navas Granada"
+},
+  {
+  "name": "Los Mellizos Málaga",
+  "region": "스페인",
+  "city": "말라가",
+  "country": "스페인 (Spain)",
+  "dishName": "프리미엄 지중해 모둠 생선구이 & 튀김 (Pescados a la plancha)",
+  "photo": "img/gourmet/fritura-malaguena.jpg",
+  "signature": "말라가 최고급 해산물 레스토랑의 정갈한 농어·도미 소금구이와 모둠 해물 튀김",
+  "seniorTip": "말라가 시내에서 가장 쾌적하고 실내가 넓으며 테이블 간격이 여유로워 부모님 식사에 최적",
+  "hours": "매일 13:00~00:00",
+  "language": "영어 완벽 · 고급 서비스",
+  "phone": "+34 952 22 07 45",
+  "booking": "공식 웹사이트(losmellizos.net) 예약 권장",
+  "mapQuery": "Los Mellizos Calle Sancha de Lara Malaga"
+},
+  {
+  "name": "Trattoria Da Nennella",
+  "region": "이탈리아",
+  "city": "나폴리",
+  "country": "이탈리아 (Italy)",
+  "dishName": "정통 나폴리탄 라구 파스타 & 감자 파스타 (Ragù Napoletano & Pasta e Patate)",
+  "photo": "img/gourmet/ragu-napoletano.jpg",
+  "signature": "산마르자노 토마토에 푹 고아낸 소고기 라구 파스타와 훈제 치즈 감자 파스타",
+  "seniorTip": "사골육수처럼 깊은 맛의 라구 소스와 부드러운 고기로 어르신들이 밥 생각난다고 하심",
+  "hours": "월~토 12:15~15:30, 19:15~23:30 (일 휴무)",
+  "language": "영어 메뉴판 완비",
+  "phone": "+39 081 41 43 38",
+  "booking": "현장 번호표 대기",
+  "mapQuery": "Trattoria Da Nennella Piazza Carita Naples"
+},
+  {
+  "name": "Osteria Il Gobbetto",
+  "region": "이탈리아",
+  "city": "나폴리",
+  "country": "이탈리아 (Italy)",
+  "dishName": "나폴리식 풍성한 해산물 링귀니 (Linguine allo Scoglio)",
+  "photo": "img/gourmet/cuoppo-napoli.jpg",
+  "signature": "나폴리 만에서 직송한 신선한 홍합, 조개, 새우, 오징어가 푸짐하게 들어간 전통 파스타",
+  "seniorTip": "올리브유와 해물 육수가 자작하게 배어있어 자극적이지 않고 개운하여 부모님 입맛에 딱",
+  "hours": "화~일 12:00~15:30, 19:00~23:30 (월 휴무)",
+  "language": "친절한 로컬 서비스",
+  "phone": "+39 081 251 2435",
+  "booking": "전화 예약 권장",
+  "mapQuery": "Osteria Il Gobbetto Via Sergente Maggiore Naples"
+},
+  {
+  "name": "Trattoria Mario",
+  "region": "이탈리아",
+  "city": "피렌체",
+  "country": "이탈리아 (Italy)",
+  "dishName": "토스카나식 리볼리타 수프 & 페포소 소고기 스튜 (Ribollita & Peposo)",
+  "photo": "img/gourmet/ribollita-toscana.jpg",
+  "signature": "1953년부터 영업한 피렌체 중앙시장 점심 노포. 흰강낭콩과 채소를 푹 끓인 리볼리타",
+  "seniorTip": "시래깃국처럼 구수하고 속이 편안한 따뜻한 채소 수프로 쌀쌀한 날씨에 부모님 보약",
+  "hours": "월~토 12:00~15:00 (점심만 영업, 일 휴무)",
+  "language": "영어 소통 가능",
+  "phone": "+39 055 218563",
+  "booking": "현장 대기 (11:45분 도착 권장)",
+  "mapQuery": "Trattoria Mario Via Rosina Florence"
+},
+  {
+  "name": "Trattoria Luzzi",
+  "region": "이탈리아",
+  "city": "로마",
+  "country": "이탈리아 (Italy)",
+  "dishName": "로마식 소꼬리 찜 & 화덕 파스타 (Coda alla Vaccinara)",
+  "photo": "img/gourmet/coda-alla-vaccinara.jpg",
+  "signature": "콜로세움 인근 최고의 가성비 식당. 뼈에서 고기가 쏙 빠지는 진한 토마토 소꼬리 스튜",
+  "seniorTip": "한국의 소꼬리찜과 흡사하여 부모님이 숟가락으로 국물까지 맛있게 드실 수 있는 메뉴",
+  "hours": "목~화 12:00~00:00 (수 휴무)",
+  "language": "다국어 메뉴판 완비",
+  "phone": "+39 06 700 4483",
+  "booking": "현장 방문",
+  "mapQuery": "Trattoria Luzzi Via di San Giovanni in Laterano Rome"
+},
+  {
+  "name": "Cantina e Cucina",
+  "region": "이탈리아",
+  "city": "로마",
+  "country": "이탈리아 (Italy)",
+  "dishName": "로마식 수제 미트볼 & 정통 카르보나라 (Polpette al Sugo)",
+  "photo": "img/gourmet/saltimbocca-alla-romana.jpg",
+  "signature": "나보나 광장 골목의 활기찬 식당. 촉촉하게 조린 홈메이드 미트볼과 크리미한 카르보나라",
+  "seniorTip": "고기가 퍽퍽하지 않고 부드러워 어르신들이 편하게 드실 수 있으며 매장 분위기가 매우 밝음",
+  "hours": "매일 11:00~01:00",
+  "language": "영어 완벽 · 활기찬 서비스",
+  "phone": "+39 06 689 2574",
+  "booking": "cantinaecucina.it",
+  "mapQuery": "Cantina e Cucina Via del Governo Vecchio Rome"
+}
 ];
 
 // 3. Landmarks
@@ -7894,6 +8075,619 @@ const DINING_I18N_DATA = {
       "zh": "现场点单"
     }
   }
+,
+  "Vinitus": {
+  "displayName": {
+    "ko": "Vinitus (비니투스)",
+    "ja": "Vinitus (ヴィニトゥス)",
+    "en": "Vinitus",
+    "zh": "Vinitus"
+  },
+  "dishTitle": {
+    "ko": "꿀대구 구이 & 맛조개 철판구이",
+    "ja": "タラのハチミツアイオリ焼き＆マテ貝の鉄板焼き",
+    "en": "Honey Cod & Grilled Razor Clams",
+    "zh": "蜂蜜焗鳕鱼与铁板竹蛏"
+  },
+  "badge": {
+    "ko": "스페인 · 바르셀로나",
+    "ja": "スペイン・バルセロナ",
+    "en": "Spain · Barcelona",
+    "zh": "西班牙 · 巴塞罗那"
+  },
+  "signature": {
+    "ko": "달콤한 꿀과 크리미한 아이올리 소스를 얹어 구워낸 부드러운 대구와 싱싱한 맛조개",
+    "ja": "ハチミツの甘みとアイオリのコクが絶品のタラ料理と新鮮なマテ貝",
+    "en": "Honey-aioli baked tender cod and freshly griddled razor clams",
+    "zh": "蜂蜜与蒜味蛋黄酱烤鳕鱼，搭配极品鲜香铁板竹蛏"
+  },
+  "seniorTip": {
+    "ko": "가시가 없고 부드러워 어르신들이 가장 극찬하는 바르셀로나 1등 타파스",
+    "ja": "骨がなく口の中でとろける柔らかさでシニアに一番人気のタパス",
+    "en": "Boneless and silky soft—the #1 rated tapas praise by senior parents",
+    "zh": "无骨软嫩入口即化，深受长辈好评的头号人气Tapas"
+  },
+  "hours": {
+    "ko": "매일 11:30~01:00",
+    "ja": "毎日 11:30〜01:00",
+    "en": "Daily 11:30–01:00",
+    "zh": "每日 11:30~01:00"
+  },
+  "language": {
+    "ko": "영어 완벽 · 활기찬 서비스",
+    "ja": "英語対応・活気ある接客",
+    "en": "Fluent English · Lively service",
+    "zh": "英文流利·热情活力"
+  },
+  "phone": "+34 933 63 21 27",
+  "booking": {
+    "ko": "현장 대기 (16~17시 대기 없음)",
+    "ja": "店頭受付（16〜17時は待ちなし）",
+    "en": "Walk-in (No wait around 16:00-17:00)",
+    "zh": "现场排队（16~17点基本免排队）"
+  }
+},
+  "Ciudad Condal": {
+  "displayName": {
+    "ko": "Ciudad Condal (시우다드 콘달)",
+    "ja": "Ciudad Condal (シウダード・コンダル)",
+    "en": "Ciudad Condal",
+    "zh": "Ciudad Condal"
+  },
+  "dishTitle": {
+    "ko": "꿀대구 타파스 & 이베리코 하몽 바게트",
+    "ja": "タラのハチミツ焼き＆イベリコ生ハムバゲット",
+    "en": "Honey Cod & Jamón Montaditos",
+    "zh": "蜂蜜鳕鱼与伊比利亚火腿法棍"
+  },
+  "badge": {
+    "ko": "스페인 · 바르셀로나",
+    "ja": "スペイン・バルセロナ",
+    "en": "Spain · Barcelona",
+    "zh": "西班牙 · 巴塞罗那"
+  },
+  "signature": {
+    "ko": "카탈루냐 광장 인근 최고 인기 타파스 바. 꿀대구와 즉석 몬타디토스",
+    "ja": "カタルーニャ広場すぐの超人気バル。絶品タラ料理と出来立てピンチョス",
+    "en": "Premier tapas bar near Placa de Catalunya, famous for honey cod and montaditos",
+    "zh": "加泰罗尼亚广场旁的顶级高分Tapas小馆，招牌蜂蜜鳕鱼"
+  },
+  "seniorTip": {
+    "ko": "카탈루냐 광장 도보 2분 평지 위치. 매장이 넓고 직원이 친절하여 어르신 모시기 편안",
+    "ja": "平坦な道で徒歩2分。広々とした店内で親孝行旅に最適",
+    "en": "Flat 2-min walk from main square. Spacious and senior-friendly",
+    "zh": "平地步行2分钟即达，宽敞整洁适宜长辈休憩就餐"
+  },
+  "hours": {
+    "ko": "매일 08:30~01:00",
+    "ja": "毎日 08:30〜01:00",
+    "en": "Daily 08:30–01:00",
+    "zh": "每日 08:30~01:00"
+  },
+  "language": {
+    "ko": "영어 능통 · 그림 메뉴판 제공",
+    "ja": "英語可能・写真付きメニューあり",
+    "en": "English friendly · Picture menu",
+    "zh": "提供图片菜单·服务热情"
+  },
+  "phone": "+34 933 18 19 97",
+  "booking": {
+    "ko": "현장 대기",
+    "ja": "店頭受付",
+    "en": "Walk-in queue",
+    "zh": "现场候位"
+  }
+},
+  "La Paradeta (Sagrada Família)": {
+  "displayName": {
+    "ko": "La Paradeta (라 파라데타)",
+    "ja": "La Paradeta (ラ・パラデタ)",
+    "en": "La Paradeta (Sagrada Família)",
+    "zh": "La Paradeta (圣家堂店)"
+  },
+  "dishTitle": {
+    "ko": "수산시장식 즉석 해산물 구이 & 모둠 해물찜",
+    "ja": "魚市場風 出来立てシーフード鉄板焼き＆蒸し海鮮",
+    "en": "Market-Style Flash-Grilled Fresh Seafood",
+    "zh": "水产集市风现挑现烤鲜猛海鲜拼盘"
+  },
+  "badge": {
+    "ko": "스페인 · 바르셀로나",
+    "ja": "スペイン・バルセロナ",
+    "en": "Spain · Barcelona",
+    "zh": "西班牙 · 巴塞罗那"
+  },
+  "signature": {
+    "ko": "얼음 진열대에서 생선, 오징어, 맛조개, 랍스터를 직접 골라 즉석 조리",
+    "ja": "氷上の新鮮魚介を自分で指差し注文しその場で調理",
+    "en": "Point and pick catches on ice to be griddled or fried on the spot",
+    "zh": "在碎冰展台自由挑拣鲜活海鲜，称重即刻铁板现烹"
+  },
+  "seniorTip": {
+    "ko": "한국 수산시장처럼 신선한 해산물을 눈으로 보고 골라 부모님 만족도가 매우 높음",
+    "ja": "市場感覚で目利きでき、素材本来の塩味で食べやすい",
+    "en": "Visual ordering makes it intuitive and familiar for traveling parents",
+    "zh": "长辈亲眼挑选极度放心，原汁原味清蒸铁板老少皆宜"
+  },
+  "hours": {
+    "ko": "화~일 13:00~16:00, 20:00~23:30 (월 휴무)",
+    "ja": "火〜日 13:00〜16:00, 20:00〜23:30（月曜定休）",
+    "en": "Tue–Sun 13:00–16:00, 20:00–23:30 (Mon Closed)",
+    "zh": "周二至周日 13:00~16:00, 20:00~23:30 (周一店休)"
+  },
+  "language": {
+    "ko": "영어 가능 · 쉬운 주문 방식",
+    "ja": "指差し注文で簡単",
+    "en": "Easy visual ordering",
+    "zh": "指点选菜轻松直观"
+  },
+  "phone": "+34 934 50 01 91",
+  "booking": {
+    "ko": "현장 주문",
+    "ja": "店頭受付",
+    "en": "Counter walk-in",
+    "zh": "柜台现点"
+  }
+},
+  "La Brunilda": {
+  "displayName": {
+    "ko": "La Brunilda (라 브루닐다)",
+    "ja": "La Brunilda (ラ・ブルニルダ)",
+    "en": "La Brunilda Tapas",
+    "zh": "La Brunilda 摩登小馆"
+  },
+  "dishTitle": {
+    "ko": "이베리코 돼지고기구이 & 고구마 퓨레",
+    "ja": "イベリコ豚のロースト サツマイモピューレ添え",
+    "en": "Grilled Iberico Pork with Sweet Potato Purée",
+    "zh": "香烤伊比利亚猪肉佐丝滑红薯泥"
+  },
+  "badge": {
+    "ko": "스페인 · 세비야",
+    "ja": "スペイン・セビリア",
+    "en": "Spain · Seville",
+    "zh": "西班牙 · 塞维利亚"
+  },
+  "signature": {
+    "ko": "세비야 최고 모던 타파스. 부드럽게 구워낸 이베리코 프레사와 달콤한 고구마 퓌레",
+    "ja": "セビリア屈指のモダンタパス。柔らかいイベリコ肉と上品なピューレ",
+    "en": "Tender grilled Iberian pork cuts paired with velvety sweet potato purée",
+    "zh": "塞维利亚现代Tapas天花板，嫩烤伊比利亚猪肉配甘美红薯泥"
+  },
+  "seniorTip": {
+    "ko": "잡내가 전혀 없고 육질이 연해 치아가 약하신 부모님도 맛있게 드실 수 있는 일품 고기",
+    "ja": "臭みが全くなく柔らかい肉質でシニアも絶賛の極上ポーク",
+    "en": "Tender and mild flavor suitable for older palates without toughness",
+    "zh": "毫无腥膻软嫩无渣，深受长辈喜爱的高水准肉食"
+  },
+  "hours": {
+    "ko": "화~토 13:00~16:00, 20:30~23:30",
+    "ja": "火〜土 13:00〜16:00, 20:30〜23:30",
+    "en": "Tue–Sat 13:00–16:00, 20:30–23:30",
+    "zh": "周二至周六 13:00~16:00, 20:30~23:30"
+  },
+  "language": {
+    "ko": "영어 메뉴판 완비",
+    "ja": "英語メニューあり",
+    "en": "English menu available",
+    "zh": "提供英文菜单"
+  },
+  "phone": "+34 954 22 04 81",
+  "booking": {
+    "ko": "현장 대기 (오픈 15분 전 추천)",
+    "ja": "開店15分前の来店推奨",
+    "en": "Walk-in (arrive 15 mins before open)",
+    "zh": "开门前15分钟排队最佳"
+  }
+},
+  "Bodegas Castañeda": {
+  "displayName": {
+    "ko": "Bodegas Castañeda (보데가스 카스타녜다)",
+    "ja": "Bodegas Castañeda (ボデガス・カスタニェーダ)",
+    "en": "Bodegas Castañeda",
+    "zh": "Bodegas Castañeda"
+  },
+  "dishTitle": {
+    "ko": "그라나다 명물 따블라 콤비나다 플래터",
+    "ja": "名物盛り合わせ大皿タブラ・コンビナーダ",
+    "en": "Signature Charcuterie & Cheese 'Tabla' Platter",
+    "zh": "格拉纳达传统木盘冷切与乳酪大拼盘"
+  },
+  "badge": {
+    "ko": "스페인 · 그라나다",
+    "ja": "スペイン・グラナダ",
+    "en": "Spain · Granada",
+    "zh": "西班牙 · 格拉纳达"
+  },
+  "signature": {
+    "ko": "음료 주문 시 무료 타파스 제공. 하몬, 로컬 치즈, 파테가 듬뿍 올라간 전통 목판 플래터",
+    "ja": "ドリンクで無料タパス付き。生ハムとチーズ満載の伝統木皿盛り",
+    "en": "Complimentary tapas with drinks plus legendary wooden platters of jamon and cheeses",
+    "zh": "点酒附赠免费小吃，招牌木盘盛满伊比利亚火腿与安达卢西亚芝士"
+  },
+  "seniorTip": {
+    "ko": "스페인 남부 안달루시아 전통 정취를 느낄 수 있는 유서 깊은 타파스 명소",
+    "ja": "アンダルシアの伝統的なバル情緒を肌で感じられる名所",
+    "en": "Lively immersion into genuine Andalusian tavern traditions",
+    "zh": "体验安达卢西亚传统市井热络酒肆风情的不二之选"
+  },
+  "hours": {
+    "ko": "매일 11:30~00:00",
+    "ja": "毎日 11:30〜00:00",
+    "en": "Daily 11:30–00:00",
+    "zh": "每日 11:30~00:00"
+  },
+  "language": {
+    "ko": "영어 소통 가능",
+    "ja": "簡単な英語対応",
+    "en": "English spoken",
+    "zh": "简单英语沟通"
+  },
+  "phone": "+34 958 21 54 64",
+  "booking": {
+    "ko": "현장 방문",
+    "ja": "店頭受付",
+    "en": "Walk-in",
+    "zh": "直接进店"
+  }
+},
+  "Los Diamantes": {
+  "displayName": {
+    "ko": "Los Diamantes (로스 디아만테스)",
+    "ja": "Los Diamantes (ロス・ディアマンテス)",
+    "en": "Los Diamantes",
+    "zh": "Los Diamantes"
+  },
+  "dishTitle": {
+    "ko": "바삭한 모둠 해산물 & 버섯 튀김",
+    "ja": "揚げたてシーフード＆キノコのサクサクフリット",
+    "en": "Crisp Flash-Fried Seafood & Mushrooms",
+    "zh": "现炸酥脆小海鲜与鲜蘑菇Tapas"
+  },
+  "badge": {
+    "ko": "스페인 · 그라나다",
+    "ja": "スペイン・グラナダ",
+    "en": "Spain · Granada",
+    "zh": "西班牙 · 格拉纳达"
+  },
+  "signature": {
+    "ko": "주문 즉시 고온에서 튀겨내는 신선한 버섯 튀김과 안달루시아식 멸치(보케로네스) 튀김",
+    "ja": "高温でカラッと揚げたキノコや小イワシの絶品フリット",
+    "en": "Piping-hot fried mushrooms and crispy Andalusian anchovies (boquerones)",
+    "zh": "高温急炸的外酥里嫩鲜蘑菇与安达卢西亚酥炸小鳀鱼"
+  },
+  "seniorTip": {
+    "ko": "기름기가 쏙 빠져 바삭담백하여 느끼하지 않고 고소해 부모님 음료 안주로 인기 최고",
+    "ja": "油っぽさがなく軽やかでサクサク香ばしい揚げ物",
+    "en": "Light and non-greasy; clean crunch that parents thoroughly enjoy",
+    "zh": "控油极佳干爽不油腻，香脆可口长辈点赞"
+  },
+  "hours": {
+    "ko": "매일 12:30~16:30, 20:00~00:00",
+    "ja": "毎日 12:30〜16:30, 20:00〜00:00",
+    "en": "Daily 12:30–16:30, 20:00–00:00",
+    "zh": "每日 12:30~16:30, 20:00~00:00"
+  },
+  "language": {
+    "ko": "기본 영어 가능",
+    "ja": "基本英語可能",
+    "en": "Basic English",
+    "zh": "基础英语"
+  },
+  "phone": "+34 958 22 70 70",
+  "booking": {
+    "ko": "현장 방문",
+    "ja": "店頭受付",
+    "en": "Walk-in",
+    "zh": "直接进店"
+  }
+},
+  "Los Mellizos Málaga": {
+  "displayName": {
+    "ko": "Los Mellizos Málaga (로스 메지소스)",
+    "ja": "Los Mellizos (ロス・メジソス)",
+    "en": "Los Mellizos Málaga",
+    "zh": "Los Mellizos 高级海鲜馆"
+  },
+  "dishTitle": {
+    "ko": "프리미엄 지중해 모둠 생선구이 & 튀김",
+    "ja": "特選 地中海鮮魚の鉄板焼き＆ミックスフリット",
+    "en": "Premium Mediterranean Grilled Catch & Seafood Fritura",
+    "zh": "顶级地中海鲜鱼铁板盐烤与综合炸海鲜"
+  },
+  "badge": {
+    "ko": "스페인 · 말라가",
+    "ja": "スペイン・マラガ",
+    "en": "Spain · Malaga",
+    "zh": "西班牙 · 马拉加"
+  },
+  "signature": {
+    "ko": "말라가 최고급 해산물 레스토랑의 정갈한 농어·도미 소금구이와 모둠 해물 튀김",
+    "ja": "マラガ最高峰シーフード店のスズキ・鯛の塩焼きと極上フリット",
+    "en": "Pristine grilled sea bass and sea bream alongside traditional mixed fritura",
+    "zh": "马拉加高分名店的正统海鲈鱼/鲷鱼盐烤与极品炸海鲜"
+  },
+  "seniorTip": {
+    "ko": "말라가 시내에서 가장 쾌적하고 실내가 넓으며 테이블 간격이 여유로워 부모님 식사에 최적",
+    "ja": "店内が広く清潔で席間隔もゆったり。シニアの落ち着いた食事に最適",
+    "en": "Spacious and quiet dining room with wide tables—ideal for comfortable family dining",
+    "zh": "市中心最整洁宽敞的高雅餐厅，桌间距大，就餐从容舒适"
+  },
+  "hours": {
+    "ko": "매일 13:00~00:00",
+    "ja": "毎日 13:00〜00:00",
+    "en": "Daily 13:00–00:00",
+    "zh": "每日 13:00~00:00"
+  },
+  "language": {
+    "ko": "영어 완벽 · 고급 서비스",
+    "ja": "英語堪能・丁寧なサービス",
+    "en": "Fluent English · Professional staff",
+    "zh": "英语熟练·贴心细致"
+  },
+  "phone": "+34 952 22 07 45",
+  "booking": {
+    "ko": "웹사이트(losmellizos.net) 예약 권장",
+    "ja": "HP予約推奨",
+    "en": "Website booking recommended",
+    "zh": "推荐官网预订"
+  }
+},
+  "Trattoria Da Nennella": {
+  "displayName": {
+    "ko": "Trattoria Da Nennella (트라토리아 다 넨넬라)",
+    "ja": "Trattoria Da Nennella (トラットリア・ダ・ネンネッラ)",
+    "en": "Trattoria Da Nennella",
+    "zh": "Trattoria Da Nennella"
+  },
+  "dishTitle": {
+    "ko": "정통 나폴리탄 라구 파스타 & 감자 파스타",
+    "ja": "ナポリ伝統ラグーパ스타＆ジャガイモのパスタ",
+    "en": "Authentic Neapolitan Ragù & Pasta e Patate",
+    "zh": "传统那不勒斯炖牛肉酱意面与土豆烟熏芝士面"
+  },
+  "badge": {
+    "ko": "이탈리아 · 나폴리",
+    "ja": "イタリア・ナポリ",
+    "en": "Italy · Naples",
+    "zh": "意大利 · 那不勒斯"
+  },
+  "signature": {
+    "ko": "산마르자노 토마토에 푹 고아낸 소고기 라구 파스타와 훈제 치즈 감자 파스타",
+    "ja": "長時間煮込んだ濃厚トマト牛すじラグーとスモーキーなポテトパスタ",
+    "en": "Slow-cooked beef tomato ragù and iconic smoked provola potato pasta",
+    "zh": "慢炖数小时的番茄浓香牛肉丝拉古意面与浓郁拉丝土豆面"
+  },
+  "seniorTip": {
+    "ko": "사골육수처럼 깊은 맛의 라구 소스와 부드러운 고기로 어르신들이 밥 생각난다고 하심",
+    "ja": "出汁のようにコクのある優しい煮込みソースで日本の味覚にも馴染む",
+    "en": "Deep umami stew reminiscent of comforting slow-simmered Asian bone broths",
+    "zh": "汤浓肉烂极似中餐老火煲牛肉，暖胃亲切易消化"
+  },
+  "hours": {
+    "ko": "월~토 12:15~15:30, 19:15~23:30",
+    "ja": "月〜土 12:15〜15:30, 19:15〜23:30",
+    "en": "Mon–Sat 12:15–15:30, 19:15–23:30",
+    "zh": "周一至周六 12:15~15:30, 19:15~23:30"
+  },
+  "language": {
+    "ko": "영어 메뉴판 완비",
+    "ja": "英語メニューあり",
+    "en": "English menu ready",
+    "zh": "备有英文菜单"
+  },
+  "phone": "+39 081 41 43 38",
+  "booking": {
+    "ko": "현장 번호표 대기",
+    "ja": "店頭整理券",
+    "en": "Door ticket queue",
+    "zh": "现场拿号"
+  }
+},
+  "Osteria Il Gobbetto": {
+  "displayName": {
+    "ko": "Osteria Il Gobbetto (오스테리아 일 고베토)",
+    "ja": "Osteria Il Gobbetto (オステリア・イル・ゴッベット)",
+    "en": "Osteria Il Gobbetto",
+    "zh": "Osteria Il Gobbetto"
+  },
+  "dishTitle": {
+    "ko": "나폴리식 풍성한 해산물 링귀니",
+    "ja": "ナポリ湾直送料理 具だくさん海の幸リングイネ",
+    "en": "Neapolitan Fresh Seafood Linguine allo Scoglio",
+    "zh": "那不勒斯湾丰盛地道海鲜大虾青口意面"
+  },
+  "badge": {
+    "ko": "이탈리아 · 나폴리",
+    "ja": "イタリア・ナポリ",
+    "en": "Italy · Naples",
+    "zh": "意大利 · 那不勒斯"
+  },
+  "signature": {
+    "ko": "나폴리 만에서 직송한 신선한 홍합, 조개, 새우, 오징어가 푸짐하게 들어간 전통 파스타",
+    "ja": "ムール貝、アサリ、エビ、イカが溢れる贅沢な海鮮パスタ",
+    "en": "Fresh Mediterranean mussels, clams, squid and prawns in rich ocean juices",
+    "zh": "青口贝、大蛤蜊、鲜鱿与海虾共煮的鲜美多汁传统海鲜面"
+  },
+  "seniorTip": {
+    "ko": "올리브유와 해물 육수가 자작하게 배어있어 자극적이지 않고 개운하여 부모님 입맛에 딱",
+    "ja": "魚介の出汁が効いたあっさりオイル仕立てで、ご両親もペロリと完食",
+    "en": "Light natural seafood broth without heavy cream—gentle and very appetizing",
+    "zh": "无厚重奶油、以原汁鲜高汤调味，清淡鲜爽契合长辈胃口"
+  },
+  "hours": {
+    "ko": "화~일 12:00~15:30, 19:00~23:30",
+    "ja": "火〜日 12:00〜15:30, 19:00〜23:30",
+    "en": "Tue–Sun 12:00–15:30, 19:00–23:30",
+    "zh": "周二至周日 12:00~15:30, 19:00~23:30"
+  },
+  "language": {
+    "ko": "친절한 로컬 서비스",
+    "ja": "アットホームな接客",
+    "en": "Warm local hospitality",
+    "zh": "温馨市井亲切待客"
+  },
+  "phone": "+39 081 251 2435",
+  "booking": {
+    "ko": "전화 예약 권장",
+    "ja": "電話予約推奨",
+    "en": "Phone reservation recommended",
+    "zh": "建议电话预约"
+  }
+},
+  "Trattoria Mario": {
+  "displayName": {
+    "ko": "Trattoria Mario (트라토리아 마리오)",
+    "ja": "Trattoria Mario (トラットリア・マリオ)",
+    "en": "Trattoria Mario",
+    "zh": "Trattoria Mario (午市名店)"
+  },
+  "dishTitle": {
+    "ko": "토스카나식 리볼리타 수프 & 페포소 소고기 스튜",
+    "ja": "トスカーナ伝統リボッリータ＆牛すじの黒胡椒煮込みペポーゾ",
+    "en": "Tuscan Ribollita Soup & Peposo Beef Stew",
+    "zh": "托斯卡纳复煮暖胃蔬菜汤与胡椒慢炖牛肉"
+  },
+  "badge": {
+    "ko": "이탈리아 · 피렌체",
+    "ja": "イタリア・フィレンツェ",
+    "en": "Italy · Florence",
+    "zh": "意大利 · 佛罗伦萨"
+  },
+  "signature": {
+    "ko": "1953년부터 영업한 피렌체 중앙시장 점심 노포. 흰강낭콩과 채소를 푹 끓인 리볼리타",
+    "ja": "1953年創業の中央市場前ランチ名店。白インゲン豆と黒キャベツの滋味深い煮込みスープ",
+    "en": "Historic 1953 lunch legend famed for hearty bean soup Ribollita and slow-braised meats",
+    "zh": "始于1953年的中央集市纯正老店，招牌软烂豆泥蔬菜汤与炖牛肉"
+  },
+  "seniorTip": {
+    "ko": "시래깃국처럼 구수하고 속이 편안한 따뜻한 채소 수프로 쌀쌀한 날씨에 부모님 보약",
+    "ja": "和風の温かい具だくさん汁物のように身体が温まり、胃疲れをリセット",
+    "en": "Gentle, non-greasy warm vegetable soup like home-cooked comfort broth",
+    "zh": "极似清润养胃的中式蔬菜豆腐老火汤，深秋初冬暖胃极品"
+  },
+  "hours": {
+    "ko": "월~토 12:00~15:00 (점심 전용)",
+    "ja": "月〜土 12:00〜15:00（ランチ限定）",
+    "en": "Mon–Sat 12:00–15:00 (Lunch only)",
+    "zh": "周一至周六 12:00~15:00 (仅营业午市)"
+  },
+  "language": {
+    "ko": "영어 소통 가능",
+    "ja": "英語対応可能",
+    "en": "English spoken",
+    "zh": "可英语交流"
+  },
+  "phone": "+39 055 218563",
+  "booking": {
+    "ko": "현장 대기 (11:45 권장)",
+    "ja": "11:45頃の来店推奨",
+    "en": "Walk-in (arrive 11:45)",
+    "zh": "现场候位（建议11:45到）"
+  }
+},
+  "Trattoria Luzzi": {
+  "displayName": {
+    "ko": "Trattoria Luzzi (트라토리아 루찌)",
+    "ja": "Trattoria Luzzi (トラットリア・ルッツィ)",
+    "en": "Trattoria Luzzi",
+    "zh": "Trattoria Luzzi (斗兽场性价比首选)"
+  },
+  "dishTitle": {
+    "ko": "로마식 소꼬리 찜 & 화덕 파스타",
+    "ja": "ローマ風牛テール煮込みコーダ＆薪窯パスタ",
+    "en": "Roman Braised Oxtail Coda & Wood-Fired Pasta",
+    "zh": "经典罗马番茄慢炖酥烂牛尾与窑烤面"
+  },
+  "badge": {
+    "ko": "이탈리아 · 로마",
+    "ja": "イタリア・ローマ",
+    "en": "Italy · Rome",
+    "zh": "意大利 · 罗马"
+  },
+  "signature": {
+    "ko": "콜로세움 인근 최고의 가성비 식당. 뼈에서 고기가 쏙 빠지는 진한 토마토 소꼬리 스튜",
+    "ja": "コロッセオ近くの超人気大衆食堂。骨から肉がホロリと外れる柔らか煮込み",
+    "en": "Tender braised oxtail stew slipping right off bone, steps away from the Colosseum",
+    "zh": "斗兽场旁性价比极高的市井名店，骨肉脱落入口即化的慢炖牛尾"
+  },
+  "seniorTip": {
+    "ko": "한국의 소꼬리찜과 흡사하여 부모님이 숟가락으로 국물까지 맛있게 드실 수 있는 메뉴",
+    "ja": "テール煮込みの深い旨味でシニア世代にも非常に親しみやすい味付け",
+    "en": "Resembles beloved braised beef stews, effortlessly chewed by elders",
+    "zh": "形神皆似中餐家常焖牛尾，汤浓肉烂极下饭"
+  },
+  "hours": {
+    "ko": "목~화 12:00~00:00 (수 휴무)",
+    "ja": "木〜火 12:00〜00:00（水曜定休）",
+    "en": "Thu–Tue 12:00–00:00 (Wed Closed)",
+    "zh": "周四至周二 12:00~00:00 (周三店休)"
+  },
+  "language": {
+    "ko": "다국어 메뉴판 완비",
+    "ja": "多言語メニューあり",
+    "en": "Multilingual menu ready",
+    "zh": "备有多语言菜单"
+  },
+  "phone": "+39 06 700 4483",
+  "booking": {
+    "ko": "현장 방문",
+    "ja": "店頭受付",
+    "en": "Walk-in queue",
+    "zh": "直接进店排队"
+  }
+},
+  "Cantina e Cucina": {
+  "displayName": {
+    "ko": "Cantina e Cucina (칸티나 에 쿠치나)",
+    "ja": "Cantina e Cucina (カンティーナ・エ・クチーナ)",
+    "en": "Cantina e Cucina",
+    "zh": "Cantina e Cucina"
+  },
+  "dishTitle": {
+    "ko": "로마식 수제 미트볼 & 정통 카르보나라",
+    "ja": "特製トマト煮込みミートボール＆本場カルボナーラ",
+    "en": "Roman Braised Meatballs & Classic Carbonara",
+    "zh": "慢炖茄汁意式手作肉丸与正宗培根蛋面"
+  },
+  "badge": {
+    "ko": "이탈리아 · 로마",
+    "ja": "イタリア・ローマ",
+    "en": "Italy · Rome",
+    "zh": "意大利 · 罗马"
+  },
+  "signature": {
+    "ko": "나보나 광장 골목의 활기찬 식당. 촉촉하게 조린 홈메이드 미트볼과 크리미한 카르보나라",
+    "ja": "ナヴォーナ広場近くの人気店。ジューシーな肉団子と濃厚パスタ",
+    "en": "Tender meatballs braised in sweet tomato sauce and genuine Roman pasta",
+    "zh": "纳沃纳广场巷内的温馨小馆，浸透浓郁番茄酱汁的多汁肉丸"
+  },
+  "seniorTip": {
+    "ko": "고기가 퍽퍽하지 않고 부드러워 어르신들이 편하게 드실 수 있으며 매장 분위기가 매우 밝음",
+    "ja": "お肉がホロリと柔らかく、明るい店内でシニアもリラックスできる",
+    "en": "Very soft and easy on teeth; welcoming and cheerful hospitality",
+    "zh": "肉丸松软多汁毫无硬心，牙口不适的长辈也能大快朵颐"
+  },
+  "hours": {
+    "ko": "매일 11:00~01:00",
+    "ja": "毎日 11:00〜01:00",
+    "en": "Daily 11:00–01:00",
+    "zh": "每日 11:00~01:00"
+  },
+  "language": {
+    "ko": "영어 완벽 · 활기찬 서비스",
+    "ja": "英語堪能・フレンドリー",
+    "en": "Fluent English · Upbeat hospitality",
+    "zh": "英文流利·笑容亲切"
+  },
+  "phone": "+39 06 689 2574",
+  "booking": {
+    "ko": "웹사이트 예약 권장",
+    "ja": "WEB予約推奨",
+    "en": "Online booking recommended",
+    "zh": "推荐官网订座"
+  }
+}
 };
 
 const LANDMARK_I18N_DATA = {
@@ -14138,6 +14932,19 @@ const CLEAN_PHRASES_DATA = [
     "regionDesc": "이탈리아(로마·피렌체·베네치아·밀라노)",
     "locale": "it-IT",
     "phrases": [
+      {
+        "category": "dining",
+        "original": "Poco sale, per favore.",
+        "ko_pron": "포코 살레, 페르 파보레",
+        "ko_meaning": "소금 조금만 넣어주세요 (어르신 저염식/덜 짜게)",
+        "en_meaning": "Only a little salt, please / Less salt",
+        "ja_meaning": "塩は少しだけでお願いします（薄味で）",
+        "zh_meaning": "请少放点盐（清淡少盐）",
+        "original_ja": "Poco sale, per favore.",
+        "original_en": "Poco sale, per favore.",
+        "original_zh": "Poco sale, per favore.",
+        "original_ko": "Poco sale, per favore."
+      },
       {
         "category": "dining",
         "original": "Senza sale, per favore.",
@@ -34910,6 +35717,612 @@ const STANDARD_TRIP_SCHEDULE = {
     }
   ]
 };
+
+
+
+// 🍽️ 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편) 데이터
+const MASTER_GOURMET_GUIDE_DATA = {
+  meta: {
+    badge: {
+      ko: "🌟 2026 특별 기획 · 부모님 맞춤 미식",
+      en: "🌟 2026 Special Curation · Senior-Tailored Gastronomy",
+      ja: "🌟 2026特別企画・シニア向け絶品グルメ",
+      zh: "🌟 2026特别企划·适老养胃定制美馔"
+    },
+    title: {
+      ko: "🍽️ 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편)",
+      en: "🍽️ Spain & Italy 30-Day Gourmet Master Guide (Beyond Paella & Pizza)",
+      ja: "🍽️ スペイン＆イタリア30日 グルメマスターガイド（パエリア＆ピザ以外の名物編）",
+      zh: "🍽️ 西班牙与意大利30天美食大师指南（海鲜饭与披萨之外的特色篇）"
+    },
+    intro: {
+      ko: "매일 빠에야와 피자만 드실 수는 없죠! 부모님의 입맛(한식과 비슷한 결의 요리, 따뜻한 국물, 부드러운 고기)을 완벽하게 저격하면서도 현지의 특색을 살린 '도시별 대체 불가 미식과 추천 식당'을 총정리했습니다.",
+      en: "You can't eat paella and pizza every single day! Here is a curated master guide to irreplaceable city-by-city specialties and verified restaurants that perfectly satisfy parents' palates (comforting warm broths, tender braised meats, and gentle seasonings) while celebrating authentic local traditions.",
+      ja: "毎日パエリアとピザばかりでは飽きてしまいますよね！ご両親の舌（和食にも通じる優しい出汁、温かいスープ、ホロホロに煮込んだ柔らかい肉料理）を完璧に満たしつつ、現地の魅力が詰まった「都市別・必食名物＆厳選レストラン」を完全網羅しました。",
+      zh: "每天只吃海鲜饭和披萨怎么行！专为长辈口味量身定制（类似中餐的暖胃炖汤、软烂酥嫩的炖肉、温和不腻的口感），精选各城市不可替代的地道风味与口碑餐厅全汇总。"
+    },
+    survivalTitle: {
+      ko: "💡 부모님 동행 식당 필수 서바이벌 회화",
+      en: "💡 Essential Dining Survival Phrases for Traveling with Parents",
+      ja: "💡 ご両親同伴のレストラン必須サバイバル会話",
+      zh: "💡 陪伴长辈就餐必备生存口语"
+    },
+    survivalDesc: {
+      ko: "유럽 음식은 한국인 입맛에 기본적으로 꽤 짭니다. 부모님이 맛있게 드시려면 주문 시 아래 마법의 단어를 꼭 외쳐주세요!",
+      en: "European restaurant dishes can taste noticeably salty to Asian palates. To ensure your parents enjoy their meals comfortably, always say these magic phrases when ordering!",
+      ja: "ヨーロッパの料理は日本の味覚基準からすると塩気が強めです。ご両親が美味しく快適に食事できるよう、注文時は必ずこの魔法のフレーズを伝えましょう！",
+      zh: "欧洲餐馆菜肴对于习惯清淡饮食的长辈而言普遍偏咸。为了让父母吃得舒心可口，点餐时务必说出以下这两句黄金口诀！"
+    },
+    survivalPhrases: [
+      {
+        country: "es",
+        countryName: { ko: "🇪🇸 스페인 식당에서", en: "🇪🇸 In Spain", ja: "🇪🇸 スペインのレストランで", zh: "🇪🇸 在西班牙餐厅" },
+        original: "Sin sal, por favor",
+        pronunciation: { ko: "씬 쌀, 뽀르 파보르!", en: "Seen sal, por fah-vor!", ja: "シン・サル、ポル・ファボール！", zh: "辛·萨尔，波尔·法沃尔！" },
+        meaning: { ko: "소금 빼주세요 / 덜 짜게 해주세요", en: "No salt, please / Less salt, please", ja: "塩抜き／塩分控えめでお願いします", zh: "请少放盐 / 免盐" },
+        locale: "es-ES"
+      },
+      {
+        country: "it",
+        countryName: { ko: "🇮🇹 이탈리아 식당에서", en: "🇮🇹 In Italy", ja: "🇮🇹 イタリアのレストランで", zh: "🇮🇹 在意大利餐厅" },
+        original: "Poco sale, per favore",
+        pronunciation: { ko: "포코 살레, 페르 파보레!", en: "Poh-koh sah-leh, pehr fah-voh-reh!", ja: "ポコ・サーレ、ペル・ファヴォーレ！", zh: "波科·萨莱，佩尔·法沃雷！" },
+        meaning: { ko: "소금 조금만 넣어주세요 (덜 짜게 해주세요)", en: "Only a little salt, please / Less salt, please", ja: "塩は少しだけでお願いします", zh: "请只放一点点盐 / 少盐" },
+        locale: "it-IT"
+      }
+    ]
+  },
+  countries: [
+    {
+      id: "spain",
+      flag: "🇪🇸",
+      name: { ko: "스페인 편", en: "Spain Edition", ja: "スペイン編", zh: "西班牙篇" },
+      theme: {
+        ko: "고기와 해산물, 따뜻한 스튜의 향연",
+        en: "A Symphony of Meats, Seafood & Hearty Warm Stews",
+        ja: "肉料理・極上シーフード・温かいシチューの競演",
+        zh: "鲜肉、海鲜与暖心浓郁炖菜的盛宴"
+      },
+      cities: [
+        {
+          num: "1",
+          id: "barcelona",
+          name: { ko: "바르셀로나", en: "Barcelona", ja: "バルセロナ", zh: "巴塞罗那" },
+          dishes: [
+            {
+              id: "pulpo",
+              label: { ko: "추천 미식 1", en: "Recommended Dish 1", ja: "おすすめ名物 1", zh: "推荐美馔 1" },
+              name: { ko: "뽈뽀 아 라 가예가 (Pulpo a la Gallega)", en: "Pulpo a la Gallega (Galician Tender Octopus)", ja: "タコのガリシア風 (Pulpo a la Gallega)", zh: "加利西亚嫩章鱼 (Pulpo a la Gallega)" },
+              photo: "img/gourmet/pulpo-a-la-gallega.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "부드럽게 삶은 문어에 올리브오일과 매콤한 파프리카 가루를 뿌린 요리. 스페인 문어는 질기지 않고 입에서 녹아 부모님이 극찬하십니다.",
+                en: "Tender boiled octopus drizzled with extra virgin olive oil, coarse sea salt, and smoked paprika. Spanish octopus is velvety soft, melting in the mouth—parents rave about it!",
+                ja: "柔らかく茹で上げたタコに上質なオリーブオイルとスモーキーなパプリカパウダーをふったガリシア伝統料理。驚くほど柔らかく口の中でとろけ、ご両親からも大絶賛。",
+                zh: "温火慢煮至极致鲜嫩的章鱼，淋上特级初榨橄榄油与微辣烟熏红椒粉。西班牙章鱼毫无嚼劲负担、入口即化，深受长辈喜爱与称赞。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 전혀 질기지 않고 입에서 사르르 녹아 치아가 약하신 어르신도 감탄",
+                en: "👴 Senior Appeal: Silky tender texture without chewiness, effortless to chew for seniors",
+                ja: "👴 シニア推奨：硬さが全くなく口の中でとろける柔らかさ。歯が弱いお年寄りも大満足",
+                zh: "👴 适老亮点：质地极为鲜嫩软滑毫无韧劲，牙口不便的长辈也能轻松享用"
+              }
+            },
+            {
+              id: "fideua",
+              label: { ko: "추천 미식 2", en: "Recommended Dish 2", ja: "おすすめ名物 2", zh: "推荐美馔 2" },
+              name: { ko: "피데우아 (Fideuà)", en: "Fideuà (Catalonian Seafood Short Noodle Paella)", ja: "フィデウア (Fideuà)", zh: "加泰罗尼亚海鲜炒短面 (Fideuà)" },
+              photo: "img/gourmet/fideua-barcelona.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "쌀 대신 '짧은 면'을 넣어 만든 까탈루냐식 해산물 볶음면. 쌀이 지겨울 때 훌륭한 대안입니다.",
+                en: "Catalonian seafood noodles cooked in a shallow pan with rich seafood broth instead of rice. A delightful, savory alternative when you want a break from rice paella.",
+                ja: "お米の代わりに「極細のショートパスタ」を濃厚な魚介出汁で炊き上げたカタルーニャ名物。パエリア続きの時に最高のアクセントになります。",
+                zh: "加泰罗尼亚经典海鲜炒细面，以鲜浓海鲜高汤慢煮特制短面代替大米。不想顿顿吃米饭时的绝佳美味替代。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 쌀밥이 연속될 때 속 편하게 넘어가는 고소하고 쫄깃한 해산물 국수 요리",
+                en: "👴 Senior Appeal: A comforting noodle variation rich in seafood umami when rice gets repetitive",
+                ja: "👴 シニア推奨：連日の米料理で飽きがちな胃にも優しい、出汁が染みた絶品ショートパスタ",
+                zh: "👴 适老亮点：连日吃米饭容易腻，海鲜浓汤浸润的温热面食暖胃又爽口"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "Vinitus (비니투스) 또는 Ciudad Condal (시우다드 콘달)",
+                en: "Vinitus or Ciudad Condal",
+                ja: "Vinitus (ヴィニトゥス) または Ciudad Condal (シウダード・コンダル)",
+                zh: "Vinitus 或 Ciudad Condal"
+              },
+              badge: { ko: "타파스 성지", en: "Iconic Tapas", ja: "タパスの聖地", zh: "人气Tapas圣地" },
+              desc: {
+                ko: "'꿀대구'와 '맛조개 구이'는 무조건 시켜야 하는 타파스 성지.",
+                en: "Must-order tapas sanctuaries: famous for Honey Cod (Bacalao al alioli de miel) and grilled Razor Clams (Navajas).",
+                ja: "「タラのハチミツアイオリ焼き」と「マテ貝の鉄板焼き」は絶対注文すべき超人気タパス店。",
+                zh: "“蜂蜜焗鳕鱼”与“蒜香烤竹蛏”桌桌必点的极品Tapas打卡地。"
+              },
+              mapQuery: "Vinitus Carrer del Consell de Cent Barcelona"
+            },
+            {
+              name: {
+                ko: "La Paradeta (라 파라데타)",
+                en: "La Paradeta (Sagrada Família)",
+                ja: "La Paradeta (ラ・パラデタ)",
+                zh: "La Paradeta (圣家堂店)"
+              },
+              badge: { ko: "신선 해산물 마켓", en: "Fresh Seafood Market", ja: "新鮮魚介マーケット", zh: "水产自选现烹" },
+              desc: {
+                ko: "노량진 수산시장처럼 해산물을 직접 고르면 굽고 튀겨주는 가성비 식당 (사그라다 파밀리아 근처).",
+                en: "Market-style seafood restaurant where you choose catches from ice counters to be grilled/fried on the spot (near Sagrada Família).",
+                ja: "魚市場のように新鮮な魚介を自分で選び、その場で焼き・揚げ調理してくれる高コスパ海鮮店（サグラダ・ファミリア至近）。",
+                zh: "如海鲜市场般现场挑拣生猛海鲜，现选现烤现炸的超高性价比餐厅（圣家堂附近）。"
+              },
+              mapQuery: "La Paradeta Sagrada Familia Barcelona"
+            }
+          ]
+        },
+        {
+          num: "2",
+          id: "sevilla",
+          name: { ko: "세비야", en: "Seville", ja: "セビリア", zh: "塞维利亚" },
+          dishes: [
+            {
+              id: "carrillada",
+              label: { ko: "추천 미식 1", en: "Recommended Dish 1", ja: "おすすめ名物 1", zh: "推荐美馔 1" },
+              name: { ko: "까리야다 (Carrillada Ibérica)", en: "Carrillada Ibérica (Braised Iberian Pork Cheeks)", ja: "カリージャダ (Carrillada Ibérica)", zh: "慢炖伊比利亚猪颊肉 (Carrillada Ibérica)" },
+              photo: "img/gourmet/carrillada-iberica.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "이베리코 돼지 볼살을 와인과 채소에 푹 끓여낸 스튜. 한국의 '갈비찜'과 100% 똑같은 맛과 부드러운 식감이라 밥 한 공기가 절로 생각납니다.",
+                en: "Iberian pork cheeks slow-braised in red wine, vegetables, and aromatic spices. Remarkably identical in melt-in-your-mouth tenderness and flavor to Korean braised short ribs (Galbijjim)!",
+                ja: "イベリコ豚のホホ肉を赤ワインと香味野菜でじっくり煮込んだ絶品シチュー。韓国の「カルビチム」そっくりの深い旨味とホロホロ食感で白ご飯が欲しくなります。",
+                zh: "伊比利亚黑猪脸颊肉佐红酒与蔬菜慢火酥烂慢炖。口感软糯柔滑，浓郁肉香与中式传统“红烧牛肋排/酱牛肉”如出一辙，令人忍不住想配一碗热白米饭。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 한국 갈비찜 100% 도플갱어! 어르신들이 유럽 여행 중 가장 행복해하시는 원픽 고기 요리",
+                en: "👴 Senior Appeal: 100% familiar braised rib flavor! The #1 meat dish praised by traveling parents",
+                ja: "👴 シニア推奨：和風の煮込み肉に非常に近く、旅の途中でホッとする一番人気の肉料理",
+                zh: "👴 适老亮点：中餐红烧炖肉神还原！异国他乡长辈赞不绝口的头号肉食之选"
+              }
+            },
+            {
+              id: "adobo",
+              label: { ko: "추천 미식 2", en: "Recommended Dish 2", ja: "おすすめ名物 2", zh: "推荐美馔 2" },
+              name: { ko: "아도보 (Cazón en Adobo)", en: "Cazón en Adobo (Marinated Crispy Fried Fish)", ja: "カソン・エン・アドボ (Cazón en Adobo)", zh: "香草醋腌酥炸角鲨白肉 (Cazón en Adobo)" },
+              photo: "img/gourmet/cazon-en-adobo.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "식초와 허브에 재운 상어고기(또는 흰살생선) 튀김. 새콤짭짤해서 맥주 안주로 최고입니다.",
+                en: "Marinated dogfish (white fish) seasoned in sherry vinegar, oregano, and cumin, fried crispy and golden. Tangy, savory, and an unbeatable tapas pairing with cold beer.",
+                ja: "シェリー酢、ニンニク、ハーブに漬け込んだ白身魚のサクサクフリット。爽やかな酸味と程よい塩気でビールのお供に最高です。",
+                zh: "用雪莉醋、蒜瓣和地中海香草腌渍入味的白身鱼炸鱼块。外酥里嫩、酸爽咸香，是搭配冰镇啤酒的下酒极品。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 비린내가 전혀 없고 식초 향이 느끼함을 싹 잡아주어 담백하고 바삭함",
+                en: "👴 Senior Appeal: Zero fishy smell; the gentle vinegar brine cuts oiliness completely",
+                ja: "👴 シニア推奨：生臭さが全くなく、爽やかなハーブ酢の風味でさっぱり食べられる白身魚揚げ",
+                zh: "👴 适老亮点：毫无鱼腥味，香草醋渍解腻提鲜，外酥里嫩清爽开胃"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "El Rinconcillo (엘 린콘시요)",
+                en: "El Rinconcillo (Est. 1670)",
+                ja: "El Rinconcillo (エル・リンコンシージョ)",
+                zh: "El Rinconcillo (始于1670年)"
+              },
+              badge: { ko: "세비야 최고령 바", en: "Oldest Bar in Seville", ja: "セビリア最古の老舗", zh: "塞维利亚最古老酒馆" },
+              desc: {
+                ko: "1670년에 개업한 최고령 바. 시금치 병아리콩 스튜(Espinacas con garbanzos)와 까리야다 강추.",
+                en: "Seville's oldest tavern founded in 1670. Highly recommended for Spinach & Chickpea Stew (Espinacas con garbanzos) and Carrillada.",
+                ja: "1670年創業のセビリア最古の老舗バル。ほうれん草とひよこ豆のシチューや極上カリージャダが名物。",
+                zh: "始于1670年的塞维利亚最古老小酒馆。强烈推荐招牌菠菜鹰嘴豆炖菜与酥烂猪颊肉Carrillada。"
+              },
+              mapQuery: "El Rinconcillo Calle Alhondiga Seville"
+            },
+            {
+              name: {
+                ko: "La Brunilda (라 브루닐다)",
+                en: "La Brunilda Tapas",
+                ja: "La Brunilda (ラ・ブルニルダ)",
+                zh: "La Brunilda 摩登小馆"
+              },
+              badge: { ko: "세비야 최고 모던 타파스", en: "Top Modern Tapas", ja: "最高峰モダンタパス", zh: "顶级新派Tapas" },
+              desc: {
+                ko: "세비야 최고의 모던 타파스. '이베리코 돼지고기구이(고구마 퓨레 곁들임)'가 환상적입니다.",
+                en: "Seville's acclaimed modern tapas bar. Grilled Iberico pork paired with silky sweet potato purée is extraordinary.",
+                ja: "セビリア屈指のモダンタパス。「イベリコ豚のグリル（サツマイモピューレ添え）」の絶妙な火入れは感動的です。",
+                zh: "塞维利亚备受推崇的新派摩登Tapas。其特制“香烤伊比利亚猪肉配丝滑红薯泥”令人惊艳。"
+              },
+              mapQuery: "La Brunilda Calle Galera Seville"
+            }
+          ]
+        },
+        {
+          num: "3",
+          id: "granada",
+          name: { ko: "그라나다", en: "Granada", ja: "グラナダ", zh: "格拉纳达" },
+          dishes: [
+            {
+              id: "berenjenas",
+              label: { ko: "추천 미식", en: "Recommended Dish", ja: "おすすめ名物", zh: "推荐美馔" },
+              name: { ko: "베렌헤나스 꼰 미엘 (Berenjenas con miel)", en: "Berenjenas con miel (Crispy Fried Eggplant with Cane Honey)", ja: "ナスのフリット ハチミツがけ (Berenjenas con miel)", zh: "蜜汁脆皮炸茄盒 (Berenjenas con miel)" },
+              photo: "img/gourmet/berenjenas-con-miel.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "가지를 얇게 썰어 바삭하게 튀긴 후 사탕수수 꿀을 뿌린 안달루시아 명물. 달콤바삭해서 호불호가 없습니다.",
+                en: "Thinly sliced eggplant fried crispy and drizzled with dark cane sugar honey (miel de caña). Sweet, crunchy, and loved by travelers of all ages.",
+                ja: "薄切りナスをカリッと香ばしく揚げ、アンダルシア特産のサトウキビ蜜を回しかけた名物。サクサク甘じょっぱい食感で世代を問わず大人気です。",
+                zh: "薄切茄子炸至金黄酥脆，浇上安达卢西亚特产甘蔗蜜糖。外脆里嫩、甜香四溢，老少咸宜毫无踩雷风险。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 겉은 바삭 속은 촉촉한 고구마 맛탕 느낌! 가지를 안 좋아하시는 분도 반하는 맛",
+                en: "👴 Senior Appeal: Resembles sweet glazed candied treats, converting even non-eggplant eaters",
+                ja: "👴 シニア推奨：大学芋のように外はサクッと中はふんわり。野菜が苦手な方でも箸が進む味",
+                zh: "👴 适老亮点：类似中式拔丝地瓜与风味炸茄盒的绝妙口感，不喜蔬菜的长辈也爱不释口"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "Bodegas Castañeda (보데가스 카스타녜다)",
+                en: "Bodegas Castañeda",
+                ja: "Bodegas Castañeda (ボデガス・カスタニェーダ)",
+                zh: "Bodegas Castañeda"
+              },
+              badge: { ko: "로컬 타블라 플래터", en: "Famous Tabla Platter", ja: "名物タブラ大皿", zh: "传统木盘拼盘" },
+              desc: {
+                ko: "현지인들이 붐비는 곳. 음료를 시키면 무료 타파스를 주며, 고기와 치즈가 듬뿍 올라간 '따블라(Tabla)' 플래터가 유명합니다.",
+                en: "Bustling local icon. Generous complimentary tapas with each drink, and famous for huge charcuterie & cheese 'Tabla' platters.",
+                ja: "地元民で賑わう活気ある酒場。ドリンクで無料タパスが付き、生ハムやチーズが贅沢に乗った大皿「タブラ」が名物。",
+                zh: "当地人络绎不绝的传统老字号。点酒水即可免费附赠丰盛Tapas，其铺满火腿与乳酪的“Tabla木盘拼盘”极具盛名。"
+              },
+              mapQuery: "Bodegas Castaneda Calle Almireceros Granada"
+            },
+            {
+              name: {
+                ko: "Los Diamantes (로스 디아만테스)",
+                en: "Los Diamantes (Seafood Tapas King)",
+                ja: "Los Diamantes (ロス・ディアマンテス)",
+                zh: "Los Diamantes (海鲜炸物名家)"
+              },
+              badge: { ko: "튀김 타파스 끝판왕", en: "Fried Tapas Legend", ja: "フリット系タパスの頂点", zh: "炸物Tapas天花板" },
+              desc: {
+                ko: "버섯 튀김, 멸치(보케로네스) 튀김 등 튀김류 타파스의 끝판왕.",
+                en: "Undisputed champion of crispy fried tapas: fresh deep-fried mushrooms, prawns, and anchovies (boquerones fritos).",
+                ja: "キノコのフリットや小イワシ（ボケロネス）揚げなど、揚げたてサクサクのフリット系タパスの頂点。",
+                zh: "格拉纳达油炸海鲜Tapas无可争议的人气天花板，炸鲜蘑菇与香酥炸鳀鱼（Boquerones）香脆诱人。"
+              },
+              mapQuery: "Los Diamantes Calle Navas Granada"
+            }
+          ]
+        },
+        {
+          num: "4",
+          id: "malaga",
+          name: { ko: "말라가", en: "Málaga", ja: "マラガ", zh: "马拉加" },
+          dishes: [
+            {
+              id: "fritura",
+              label: { ko: "추천 미식", en: "Recommended Dish", ja: "おすすめ名物", zh: "推荐美馔" },
+              name: { ko: "프리투라 말라게냐 (Fritura Malagueña)", en: "Fritura Malagueña (Mediterranean Crispy Mixed Fried Seafood)", ja: "マラガ風シーフードフリット (Fritura Malagueña)", zh: "马拉加地中海综合炸海鲜 (Fritura Malagueña)" },
+              photo: "img/gourmet/fritura-malaguena.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "말라가식 모둠 해산물 튀김. 오징어, 새우, 멸치 등을 가볍게 튀겨내어 레몬을 뿌려 먹는 지중해 최고의 요리입니다.",
+                en: "Malaga-style assorted Mediterranean fried seafood. Tender calamari rings, fresh prawns, and whitebait lightly coated in flour and flash-fried, served with fresh lemon wedges.",
+                ja: "マラガ風ミックスシーフードフリット。イカ、エビ、小魚などを極薄の衣でカラッと揚げ、レモンを搾っていただく地中海を代表する名物料理です。",
+                zh: "马拉加式地中海杂锦炸海鲜。精选鱿鱼圈、小河虾、白身小鱼等轻裹薄粉轻炸，淋上新鲜柠檬汁，鲜爽不腻的地中海绝味。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 기름기가 쏙 빠져 바삭담백! 레몬즙을 듬뿍 뿌리면 전혀 느끼하지 않은 해산물 모둠",
+                en: "👴 Senior Appeal: Light and non-greasy; generous lemon spritzes keep it crisp and refreshing",
+                ja: "👴 シニア推奨：油切れが良く軽やかな食感。たっぷりのレモン果汁でさっぱり楽しめます",
+                zh: "👴 适老亮点：高温急炸控油得当，外皮酥脆不腻口，挤上柠檬汁鲜嫩开胃"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "El Pimpi (엘 핌피)",
+                en: "El Pimpi Bodega Bar",
+                ja: "El Pimpi (エル・ピンピ)",
+                zh: "El Pimpi 传奇酒窖"
+              },
+              badge: { ko: "피카소 단골 와이너리", en: "Picasso's Favorite", ja: "ピカソゆかりのボデガ", zh: "毕加索挚爱百年酒庄" },
+              desc: {
+                ko: "피카소도 사랑했던 와이너리 식당. 달콤한 말라가 와인과 하몬, 문어 요리 추천.",
+                en: "Historic winery bodega beloved by Picasso. Pair sweet local Malaga wine with bellota jamón and tender octopus.",
+                ja: "ピカソも愛したマラガ屈指の歴史的ボデガ。甘口のマラガワイン、極上ハモン・イベリコ、タコ料理が格別です。",
+                zh: "毕加索生前挚爱的传奇酒窖餐厅。推荐搭配香甜的马拉加甜葡萄酒、顶级伊比利亚火腿与鲜美章鱼料理。"
+              },
+              mapQuery: "El Pimpi Calle Granada Malaga"
+            },
+            {
+              name: {
+                ko: "Los Mellizos (로스 메지소스)",
+                en: "Los Mellizos Málaga",
+                ja: "Los Mellizos (ロス・メジソス)",
+                zh: "Los Mellizos 高级海鲜馆"
+              },
+              badge: { ko: "정갈한 최고급 해산물", en: "Premium Seafood Dining", ja: "最高級シーフード", zh: "高雅地中海海鲜" },
+              desc: {
+                ko: "말라가 시내에서 해산물 요리와 튀김, 생선구이를 가장 깔끔하게 잘하는 고급 레스토랑.",
+                en: "Premier high-end seafood dining room in central Malaga, renowned for pristine grilled fish and delicate seafood fry-ups.",
+                ja: "マラガ中心部で最も清潔感があり、高品質な海鮮料理・フリット・グリル魚を提供する洗練されたシーフード名店。",
+                zh: "马拉加市中心品质出众的高级海鲜餐厅，环境优雅整洁，以极致新鲜的烤鱼、地中海海鲜炸盘见长。"
+              },
+              mapQuery: "Los Mellizos Calle Sancha de Lara Malaga"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "italy",
+      flag: "🇮🇹",
+      name: { ko: "이탈리아 편", en: "Italy Edition", ja: "イタリア編", zh: "意大利篇" },
+      theme: {
+        ko: "진한 고기 스튜와 따뜻한 수프",
+        en: "Rich Meat Stews & Comforting Warm Soups",
+        ja: "濃厚な肉の煮込みシチューと温かい伝統スープ",
+        zh: "醇厚浓郁慢炖肉菜与暖心传统汤品"
+      },
+      cities: [
+        {
+          num: "5",
+          id: "napoli",
+          name: { ko: "나폴리", en: "Naples", ja: "ナポリ", zh: "那不勒斯" },
+          dishes: [
+            {
+              id: "ragu",
+              label: { ko: "추천 미식 1", en: "Recommended Dish 1", ja: "おすすめ名物 1", zh: "推荐美馔 1" },
+              name: { ko: "나폴리탄 라구 파스타 (Ragù Napoletano)", en: "Ragù Napoletano (Slow-Simmered Beef Tomato Pasta)", ja: "ナポリ風ラグーパスタ (Ragù Napoletano)", zh: "慢炖牛腩番茄拉古意面 (Ragù Napoletano)" },
+              photo: "img/gourmet/ragu-napoletano.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "고기를 토마토소스에 아주 오랜 시간 푹 끓여내어 고기 결이 다 풀어질 정도로 진하고 깊은 맛이 나는 파스타입니다.",
+                en: "Large cuts of beef slow-simmered in San Marzano tomato sauce for 6 to 8 hours until the meat shreds tenderly into an intensely savory, velvet-smooth pasta sauce.",
+                ja: "大きなお肉をトマトソースで半日以上かけてじっくり煮込み、肉の繊維がほぐれるほど濃厚で奥深いコクを引き出した伝統パスタ。",
+                zh: "大块肉料放入圣马扎诺番茄酱中慢火咕嘟熬煮6至8小时，肉质酥烂拉丝，酱香浓郁醇厚的传统意面。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 인스턴트 소스와 차원이 다른 진한 사골육수급 토마토 고기 소스! 부드러운 고기 결이 일품",
+                en: "👴 Senior Appeal: Deep, slow-simmered bone-broth richness in tomato form with fork-tender meat",
+                ja: "👴 シニア推奨：出汁のように深みのあるトマトとほろほろの牛肉煮込みで、胃に染みわたる美味しさ",
+                zh: "👴 适老亮点：类似老火靓汤般醇厚的浓香番茄炖牛肉酱，牛肉丝软烂入味，长辈易嚼易消化"
+              }
+            },
+            {
+              id: "cuoppo",
+              label: { ko: "추천 미식 2", en: "Recommended Dish 2", ja: "おすすめ名物 2", zh: "推荐美馔 2" },
+              name: { ko: "꾸오뽀 (Cuoppo)", en: "Cuoppo Napoletano (Street Seafood Fried Cone)", ja: "クオッポ (Cuoppo)", zh: "那不勒斯街头海鲜纸筒炸物 (Cuoppo)" },
+              photo: "img/gourmet/cuoppo-napoli.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "꼬깔콘 모양의 종이에 오징어, 새우, 작은 생선 등을 튀겨서 담아주는 나폴리식 길거리 해산물 튀김.",
+                en: "Neapolitan street food icon: a brown paper cone packed high with piping hot fried squid, prawns, and whitebait, perfect for strolling.",
+                ja: "円錐形の紙コップ（コッポ）に揚げたてのイカ、小エビ、小魚をたっぷり盛り付けたナポリ名物の屋台シーフードフリット。",
+                zh: "卷成甜筒锥形的牛皮纸筒里盛满现炸金黄鱿鱼、海虾与小银鱼等，香酥滚烫的那不勒斯经典街头海鲜小吃。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 갓 튀겨내어 종이깔때기에 담아 먹는 바삭한 길거리 해산물 간식",
+                en: "👴 Senior Appeal: Piping-hot, fun street snack of fresh crispy ocean bites while exploring",
+                ja: "👴 シニア推奨：港町ならではの揚げたてアツアツ魚介を手軽に楽しめる人気スナック",
+                zh: "👴 适老亮点：热气腾腾现点现炸，漫步那不勒斯老城街头方便适口的海鲜零食"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "Trattoria Da Nennella (트라토리아 다 넨넬라)",
+                en: "Trattoria Da Nennella",
+                ja: "Trattoria Da Nennella (トラットリア・ダ・ネンネッラ)",
+                zh: "Trattoria Da Nennella"
+              },
+              badge: { ko: "나폴리 흥폭발 로컬", en: "Lively Neapolitan Icon", ja: "活気溢れる下町大衆食堂", zh: "欢腾热烈市井老店" },
+              desc: {
+                ko: "나폴리의 활기찬(시끄러운) 분위기를 느낄 수 있는 로컬 식당. 파스타와 고기 요리가 아주 저렴하고 맛있습니다.",
+                en: "Boisterous Neapolitan institution famed for singing waiters, delightfully affordable home-style pastas, and succulent meat dishes.",
+                ja: "ナポリらしい陽気で賑やかな大衆食堂。驚くほどリーズナブルで美味しい手作りパスタと肉料理が味わえます。",
+                zh: "体验那不勒斯热情奔放（充满欢声笑语）市井氛围的地道小馆，意面与炖肉实惠量足又极其美味。"
+              },
+              mapQuery: "Trattoria Da Nennella Piazza Carita Naples"
+            },
+            {
+              name: {
+                ko: "Osteria Il Gobbetto (오스테리아 일 고베토)",
+                en: "Osteria Il Gobbetto",
+                ja: "Osteria Il Gobbetto (オステリア・イル・ゴッベット)",
+                zh: "Osteria Il Gobbetto"
+              },
+              badge: { ko: "스페인 지구 숨은 맛집", en: "Hidden Seafood Trattoria", ja: "隠れ家シーフード名店", zh: "西班牙区宝藏海鲜馆" },
+              desc: {
+                ko: "해산물 파스타(Scoglio)와 전통 나폴리 요리를 맛볼 수 있는 숨은 맛집.",
+                en: "Hidden rustic gem in the Spanish Quarter serving superb seafood linguine (allo scoglio) and timeless Neapolitan recipes.",
+                ja: "スペイン地区の隠れ家名店。魚介満載のパスタ（Scoglio）や伝統のナポリ家庭料理を温かいもてなしで堪能できます。",
+                zh: "西班牙区巷弄里的宝藏小馆，能品尝到用料实在的海鲜大虾青口意面（Scoglio）与正宗那不勒斯传统料理。"
+              },
+              mapQuery: "Osteria Il Gobbetto Via Sergente Maggiore Naples"
+            }
+          ]
+        },
+        {
+          num: "6",
+          id: "firenze",
+          name: { ko: "피렌체", en: "Florence", ja: "フィレンツェ", zh: "佛罗伦萨" },
+          dishes: [
+            {
+              id: "bistecca",
+              label: { ko: "추천 미식 1", en: "Recommended Dish 1", ja: "おすすめ名物 1", zh: "推荐美馔 1" },
+              name: { ko: "비스테카 알라 피오렌티나 (Bistecca alla Fiorentina)", en: "Bistecca alla Fiorentina (Charcoal-Grilled Florentine T-Bone)", ja: "フィレンツェ風Tボーンステーキ (Bistecca alla Fiorentina)", zh: "佛罗伦萨炭烤T骨牛排 (Bistecca alla Fiorentina)" },
+              photo: "img/gourmet/bistecca-alla-fiorentina.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "피렌체식 티본스테이크. 겉은 숯불에 바삭하게 굽고 속은 촉촉한(미디엄 레어) 고기 파티입니다.",
+                en: "Florentine thick-cut Chianina T-bone steak seared over roaring oak coals: crisp and smoky outside, buttery rare-to-medium-rare and juicy inside.",
+                ja: "キアニーナ牛の分厚いTボーンを木炭の強火で一気に焼き上げる伝統ステーキ。表面は香ばしく中はジューシーな赤身で肉本来の旨味を堪能。",
+                zh: "佛罗伦萨传统厚切T骨牛排，炭火高温炙烤。外焦里嫩、肉汁丰盈（熟度通常推荐一至三分熟），肉香扑鼻的极致飨宴。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 참숯 향 가득한 두툼한 소고기 구이! 소금과 올리브유만으로 풍미가 극대화되는 든든한 단백질 보충",
+                en: "👴 Senior Appeal: Oak-charred aroma, tender grain, and simple olive oil seasoning for pure nourishment",
+                ja: "👴 シニア推奨：炭火の香ばしさと良質な赤身肉で重すぎず、オリーブ油と塩だけで極上の美味しさ",
+                zh: "👴 适老亮点：天然橡木炭烤香气浓郁，简单蘸取粗海盐与特级橄榄油即是纯粹至味"
+              }
+            },
+            {
+              id: "ribollita",
+              label: { ko: "추천 미식 2", en: "Recommended Dish 2", ja: "おすすめ名物 2", zh: "推荐美馔 2" },
+              name: { ko: "리볼리타 (Ribollita)", en: "Ribollita Toscana (Tuscan Winter Bread & Bean Soup)", ja: "リボッリータ (Ribollita)", zh: "托斯卡纳蔬菜豆泥复煮暖胃汤 (Ribollita)" },
+              photo: "img/gourmet/ribollita-toscana.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "빵, 콩, 양배추 등 각종 채소를 푹 끓여낸 토스카나 전통 수프. 11월 말 쌀쌀한 날씨에 부모님 속을 따뜻하게 달래줄 최고의 메뉴입니다.",
+                en: "Tuscan winter vegetable soup made with sourdough bread, white beans, and black kale. The ultimate warming comfort food for parents during chilly travel days.",
+                ja: "固くなったパン、白インゲン豆、黒キャベツなど旬の野菜をとろとろになるまで再沸騰させて煮込んだ伝統スープ。晩秋の肌寒い日に身体を芯から温める最高の一碗。",
+                zh: "由托斯卡纳硬面包、白芸豆、黑甘蓝与各色蔬菜慢火复煮而成的传统暖胃浓汤。11月深秋初冬微凉时节抚慰父母肠胃的最佳温热良品。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 유럽에서 만나는 '시래깃국/우거지 된장국' 느낌의 따끈따끈하고 순한 야채 국물 요리",
+                en: "👴 Senior Appeal: Gentle vegetable stew texture reminiscent of comforting Asian vegetable soups",
+                ja: "👴 シニア推奨：和風の具だくさん味噌汁や野菜スープに通じる、ほっこり優しい無化調の味わい",
+                zh: "👴 适老亮点：极似中式温热软烂的白菜炖豆汤，少油清淡暖脾胃，深受长辈好评"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "Trattoria Zà Zà (트라토리아 자자)",
+                en: "Trattoria Zà Zà",
+                ja: "Trattoria Zà Zà (トラットリア・ザ・ザ)",
+                zh: "Trattoria Zà Zà"
+              },
+              badge: { ko: "피렌체 명물 스테이크", en: "Iconic Steak & Truffle", ja: "大人気ステーキ名店", zh: "牛排与松露意面名家" },
+              desc: {
+                ko: "티본스테이크와 감칠맛 폭발하는 '트러플 크림 파스타'는 무조건 시켜야 합니다.",
+                en: "Must-order prime charcoal-grilled Bistecca alongside their rich, aromatic Truffle Cream Pasta.",
+                ja: "炭火焼きTボーンステーキと香り高い絶品「トリュフクリームパスタ」は絶対外せない名物。",
+                zh: "碳烤T骨牛排与香气馥郁的“黑松露奶油意面”为每桌必点王牌。"
+              },
+              mapQuery: "Trattoria ZaZa Piazza del Mercato Centrale Florence"
+            },
+            {
+              name: {
+                ko: "Trattoria Mario (트라토리아 마리오)",
+                en: "Trattoria Mario (Lunch Only)",
+                ja: "Trattoria Mario (トラットリア・マリオ)",
+                zh: "Trattoria Mario (午市限定)"
+              },
+              badge: { ko: "점심 전용 찐 로컬", en: "Rustic Lunch Legend", ja: "ランチ限定の真の老舗", zh: "纯正质朴市井老字号" },
+              desc: {
+                ko: "피렌체 중앙시장 근처로 오직 점심에만 영업하는 찐 로컬 맛집. 리볼리타와 고기 요리가 예술입니다.",
+                en: "Central Market rustic legend open exclusively for lunch. Outstanding Ribollita and hearty braised Tuscan meats.",
+                ja: "中央市場すぐ、ランチ営業のみの正統派ローカル名店。伝統のリボッリータと肉料理の仕込みはまさに芸術的。",
+                zh: "紧邻中央集市、仅在午市营业的正统老字号小馆。地道托斯卡纳蔬菜汤Ribollita与招牌炖肉火候堪称一绝。"
+              },
+              mapQuery: "Trattoria Mario Via Rosina Florence"
+            }
+          ]
+        },
+        {
+          num: "7",
+          id: "roma",
+          name: { ko: "로마", en: "Rome", ja: "ローマ", zh: "罗马" },
+          dishes: [
+            {
+              id: "coda",
+              label: { ko: "추천 미식 1", en: "Recommended Dish 1", ja: "おすすめ名物 1", zh: "推荐美馔 1" },
+              name: { ko: "꼬다 알라 바치나라 (Coda alla Vaccinara)", en: "Coda alla Vaccinara (Roman Braised Oxtail Stew)", ja: "牛テールのローマ風煮込み (Coda alla Vaccinara)", zh: "经典罗马式慢炖牛尾 (Coda alla Vaccinara)" },
+              photo: "img/gourmet/coda-alla-vaccinara.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "로마식 소꼬리 스튜. 토마토, 셀러리 등과 함께 푹 삶아내어 뼈에서 고기가 쏙 빠집니다. 세비야의 까리야다와 쌍벽을 이루는 한식 느낌의 고기 요리입니다.",
+                en: "Roman braised oxtail stew slow-simmered with tomatoes, celery, and aromatic herbs. Meat slips effortlessly off the bone—wonderfully similar to Korean braised oxtail stew.",
+                ja: "ローマ伝統のオックステール（牛テール）煮込み。トマトやセロリと長時間煮込み、骨から肉がホロリと外れる柔らかさ。韓国のカルビチムや日本のテール煮込みに通じる安心の味。",
+                zh: "经典罗马式慢炖牛尾。搭配番茄、西芹与香料细火慢熬，肉质酥烂脱骨、浓郁温润，与塞维利亚炖牛颊肉并称最契合东方人胃口的暖心炖肉。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 푹 고아낸 소꼬리 찜! 콜라겐 가득 부드러운 고기가 뼈에서 스르륵 분리되어 감탄 연발",
+                en: "👴 Senior Appeal: Collagen-rich, fall-off-the-bone tenderness mimicking traditional braised oxtail dishes",
+                ja: "👴 シニア推奨：コラーゲンたっぷりで骨からスッとほぐれる柔らかさ。お肉好きなシニアの絶賛メニュー",
+                zh: "👴 适老亮点：胶原蛋白满满，筷子一碰即骨肉分离，软糯咸鲜浓厚适口"
+              }
+            },
+            {
+              id: "saltimbocca",
+              label: { ko: "추천 미식 2", en: "Recommended Dish 2", ja: "おすすめ名物 2", zh: "推荐美馔 2" },
+              name: { ko: "살팀보카 (Saltimbocca alla Romana)", en: "Saltimbocca alla Romana (Veal Cutlet with Prosciutto & Sage)", ja: "サルティンボッカ (Saltimbocca alla Romana)", zh: "罗马风味鼠尾草火腿小牛肉片 (Saltimbocca alla Romana)" },
+              photo: "img/gourmet/saltimbocca-alla-romana.jpg",
+              fallbackPhoto: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80",
+              desc: {
+                ko: "얇은 송아지 고기 위에 프로슈토(하몬)와 살비아(허브)를 얹어 화이트 와인에 구워낸 짭조름하고 부드러운 고기 요리.",
+                en: "Thin veal cutlet layered with delicate prosciutto crudo and fresh sage leaves, pan-seared with butter and dry white wine. 'Jumps into the mouth' with savory tenderness.",
+                ja: "薄切り仔牛肉に生ハム（プロシュート）とセージの葉を留め、白ワインとバターでソテーした名物。名前通り「口の中に飛び込む」ほどの柔らかさと程よい塩気が絶妙。",
+                zh: "鲜嫩薄切小牛肉片铺上意式风干火腿与新鲜鼠尾草叶，加入白葡萄酒与黄油慢煎而成。“Saltimbocca”意为“跳进嘴里”，柔嫩多汁、咸香适口易于咀嚼。"
+              },
+              parentsHighlight: {
+                ko: "👴 부모님 취향: 퍽퍽함이 전혀 없고 얇게 저며 부드럽게 씹히는 담백하고 향긋한 이탈리아 대표 송아지 요리",
+                en: "👴 Senior Appeal: Ultra-thin, tender cutlet with subtle herb butter aroma, gentle and easy to chew",
+                ja: "👴 シニア推奨：パサつきが一切なく、薄切りで歯切れの良い上品な味わい",
+                zh: "👴 适老亮点：肉片极薄鲜嫩多汁，香草与白葡萄酒香气扑鼻，软嫩好嚼"
+              }
+            }
+          ],
+          picks: [
+            {
+              name: {
+                ko: "Trattoria Luzzi (트라토리아 루찌)",
+                en: "Trattoria Luzzi (Colosseum Value)",
+                ja: "Trattoria Luzzi (トラットリア・ルッツィ)",
+                zh: "Trattoria Luzzi (斗兽场性价比之选)"
+              },
+              badge: { ko: "콜로세움 앞 가성비 성지", en: "Colosseum Favorite", ja: "コロッセオ前の高コスパ店", zh: "斗兽场高性价比名店" },
+              desc: {
+                ko: "콜로세움 바로 근처. 저렴한 가격에 맛있는 파스타와 화덕 피자, 고기 요리를 파는 가성비 최고 식당.",
+                en: "Right near the Colosseum. Famous for honest prices, delicious homemade pasta, wood-fired pizza, and hearty meats.",
+                ja: "コロッセオ至近。リーズナブルな価格で本格パスタ、薪窯ピザ、煮込み肉料理が食べられる大人気コスパ店。",
+                zh: "斗兽场附近的平价宝藏小馆，以亲民公道的价格供应美味手作意面、柴火烤披萨与传统炖肉。"
+              },
+              mapQuery: "Trattoria Luzzi Via di San Giovanni in Laterano Rome"
+            },
+            {
+              name: {
+                ko: "Cantina e Cucina (칸티나 에 쿠치나)",
+                en: "Cantina e Cucina (Navona)",
+                ja: "Cantina e Cucina (カンティーナ・エ・クチーナ)",
+                zh: "Cantina e Cucina (纳沃纳广场)"
+              },
+              badge: { ko: "나보나 광장 최고 인기", en: "Piazza Navona Gem", ja: "ナヴォーナ広場の人気店", zh: "纳沃纳高分活力餐厅" },
+              desc: {
+                ko: "나보나 광장 근처. 활기찬 분위기에서 로마 3대 파스타(카르보나라, 아마트리치아나 등)와 로마식 미트볼(Polpette)을 즐길 수 있습니다.",
+                en: "Near Piazza Navona. Welcoming vibe serving Rome's classic pastas (Carbonara, Amatriciana) and savory meatballs (Polpette).",
+                ja: "ナヴォーナ広場近く。活気あふれる店内でローマ三大パスタ（カルボナーラ等）や自家製ミートボールを楽しめます。",
+                zh: "纳沃纳广场附近的欢快温馨餐馆，供应正宗罗马三大意面（培根蛋面、茄汁腌肉面等）与香嫩多汁的罗马式肉丸（Polpette）。"
+              },
+              mapQuery: "Cantina e Cucina Via del Governo Vecchio Rome"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+if (typeof window !== 'undefined') {
+  window.MASTER_GOURMET_GUIDE_DATA = MASTER_GOURMET_GUIDE_DATA;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.MASTER_GOURMET_GUIDE_DATA = MASTER_GOURMET_GUIDE_DATA;
+}
 
 if (typeof window !== 'undefined') {
   window.STANDARD_TRIP_SCHEDULE = STANDARD_TRIP_SCHEDULE;

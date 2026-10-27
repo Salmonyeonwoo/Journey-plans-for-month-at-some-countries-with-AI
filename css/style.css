@@ -9427,3 +9427,532 @@ h1, h2, h3, h4,
   box-shadow: 0 4px 12px rgba(180, 83, 9, 0.2);
 }
 
+
+
+/* ==========================================================================
+   🍽️ 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편)
+   ========================================================================== */
+.master-gourmet-wrapper {
+  margin: 18px 0 28px;
+  font-family: inherit;
+}
+
+.mg-hero-box {
+  background: linear-gradient(135deg, #fffcf7 0%, #fdf8f0 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: 18px;
+  padding: 24px 24px 20px;
+  box-shadow: 0 4px 18px rgba(234, 88, 12, 0.06);
+  margin-bottom: 24px;
+}
+
+.mg-hero-badge {
+  display: inline-block;
+  background: #ffedd5;
+  color: #c2410c;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #fdba74;
+}
+
+.mg-hero-title {
+  margin: 0 0 10px;
+  color: #7c2d12;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.mg-hero-intro {
+  margin: 0 0 18px;
+  color: #57534e;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* Survival Phrases Banner */
+.mg-survival-container {
+  background: #ffffff;
+  border: 1.5px solid #ea580c;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 10px rgba(234, 88, 12, 0.08);
+}
+
+.mg-survival-lead {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mg-survival-lead-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.mg-survival-lead-title {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #9a3412;
+  margin-bottom: 4px;
+}
+
+.mg-survival-lead-desc {
+  margin: 0;
+  font-size: 12.5px;
+  color: #78716c;
+  line-height: 1.45;
+}
+
+.mg-survival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.mg-phrase-box {
+  background: #fffbeb;
+  border: 1.5px dashed #f59e0b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mg-phrase-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+.mg-phrase-box.it {
+  background: #f0fdf4;
+  border-color: #22c55e;
+}
+
+.mg-phrase-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mg-phrase-flag {
+  font-size: 13px;
+  font-weight: 800;
+  color: #9a3412;
+}
+
+.mg-phrase-box.it .mg-phrase-flag {
+  color: #166534;
+}
+
+.mg-phrase-audio-btn {
+  background: #ffffff;
+  border: 1px solid #d97706;
+  color: #b45309;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mg-phrase-box.it .mg-phrase-audio-btn {
+  border-color: #16a34a;
+  color: #15803d;
+}
+
+.mg-phrase-audio-btn:hover {
+  background: #fef3c7;
+  transform: scale(1.04);
+}
+
+.mg-phrase-box.it .mg-phrase-audio-btn:hover {
+  background: #dcfce7;
+}
+
+.mg-phrase-quote {
+  font-size: 16px;
+  font-weight: 900;
+  color: #1c1917;
+  margin-bottom: 4px;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.3px;
+}
+
+.mg-phrase-pronun {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c2410c;
+  margin-bottom: 6px;
+}
+
+.mg-phrase-box.it .mg-phrase-pronun {
+  color: #15803d;
+}
+
+.mg-phrase-meaning {
+  font-size: 12px;
+  color: #44403c;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Tabs Bar */
+.mg-tabs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.mg-tab-pill {
+  background: #ffffff;
+  color: #44403c;
+  border: 1.5px solid #d6d3d1;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mg-tab-pill:hover {
+  border-color: #ea580c;
+  color: #ea580c;
+  background: #fff7ed;
+}
+
+.mg-tab-pill.active {
+  background: #ea580c;
+  color: #ffffff;
+  border-color: #ea580c;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+}
+
+/* Country Group */
+.mg-country-group {
+  margin-bottom: 28px;
+}
+
+.mg-country-header {
+  margin-bottom: 16px;
+}
+
+.mg-country-title {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #e7e5e4;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1c1917;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.mg-country-theme {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ea580c;
+  background: #fff7ed;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.mg-country-group.italy .mg-country-theme {
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+/* City Block */
+.mg-city-block {
+  background: #ffffff;
+  border: 1.5px solid #e7e5e4;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mg-city-block:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.mg-city-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid #f5f5f4;
+  margin-bottom: 16px;
+}
+
+.mg-city-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mg-city-num {
+  background: #ea580c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mg-country-group.italy .mg-city-num {
+  background: #16a34a;
+}
+
+.mg-city-name {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #1c1917;
+}
+
+.mg-country-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: #f5f5f4;
+  color: #57534e;
+}
+
+.mg-country-pill.spain {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.mg-country-pill.italy {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* Dishes Grid */
+.mg-dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.mg-dish-card {
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mg-dish-photo-wrap {
+  position: relative;
+  height: 190px;
+  background: #f5f5f4;
+  overflow: hidden;
+}
+
+.mg-dish-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.mg-dish-card:hover .mg-dish-img {
+  transform: scale(1.04);
+}
+
+.mg-dish-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(4px);
+  color: #fef08a;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(254, 240, 138, 0.3);
+}
+
+.mg-dish-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.mg-dish-title {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1c1917;
+  line-height: 1.4;
+}
+
+.mg-dish-desc {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #44403c;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.mg-dish-highlight {
+  background: #ecfdf5;
+  border-left: 3.5px solid #10b981;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #065f46;
+  line-height: 1.45;
+}
+
+/* Picks Section */
+.mg-picks-section {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.mg-picks-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #92400e;
+  margin-bottom: 10px;
+}
+
+.mg-picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.mg-pick-item {
+  background: #ffffff;
+  border: 1px solid #fef3c7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+.mg-pick-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.mg-pick-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.mg-pick-star {
+  font-size: 13px;
+}
+
+.mg-pick-name {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #1c1917;
+  line-height: 1.35;
+}
+
+.mg-pick-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  background: #fef3c7;
+  color: #b45309;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.mg-pick-desc {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  color: #57534e;
+  line-height: 1.5;
+}
+
+.mg-pick-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mg-map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f43f5e;
+  color: #ffffff !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 1px 4px rgba(244, 63, 94, 0.25);
+}
+
+.mg-map-btn:hover {
+  background: #e11d48;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .mg-hero-box {
+    padding: 18px 16px;
+  }
+  .mg-city-block {
+    padding: 14px;
+  }
+  .mg-dishes-grid {
+    grid-template-columns: 1fr;
+  }
+  .mg-picks-grid {
+    grid-template-columns: 1fr;
+  }
+  .mg-dish-photo-wrap {
+    height: 160px;
+  }
+}

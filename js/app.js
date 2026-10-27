@@ -4224,6 +4224,7 @@ function switchLanguage(lang, btn) {
   renderGlobalLandmarks();
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(lang);
   if (typeof renderItalyCityGuide === "function") renderItalyCityGuide(lang);
+  if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(lang, window.masterGourmetActiveCountry || 'all');
   
   // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
   const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
@@ -4411,6 +4412,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderGlobalDining();
   renderGlobalLandmarks();
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(currentLang);
+  if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(currentLang, 'all');
   renderLocalPhrases();
   renderTransitGuide();
   renderHotelFilterBar();
@@ -8190,3 +8192,221 @@ function checkCapriPlannerConflict() {
 window.checkCapriPlannerConflict = checkCapriPlannerConflict;
 
 window.downloadIcsCalendar = downloadCustomCalendarIcs;
+
+
+
+// ==========================================================================
+// 🍽️ MASTER GOURMET GUIDE (Beyond Paella & Pizza - Senior Tailored)
+// ==========================================================================
+window.masterGourmetActiveCountry = 'all';
+
+function buildMasterGourmetGuideHtml(data, l, filterCountry) {
+  if (!data || !data.meta) return '';
+  l = l || 'ko';
+  filterCountry = filterCountry || 'all';
+  const meta = data.meta;
+  const badgeText = (meta.badge && meta.badge[l]) || meta.badge['ko'];
+  const titleText = (meta.title && meta.title[l]) || meta.title['ko'];
+  const introText = (meta.intro && meta.intro[l]) || meta.intro['ko'];
+  const survivalTitle = (meta.survivalTitle && meta.survivalTitle[l]) || meta.survivalTitle['ko'];
+  const survivalDesc = (meta.survivalDesc && meta.survivalDesc[l]) || meta.survivalDesc['ko'];
+
+  const filterLabels = {
+    all: { ko: "🌍 전체 7대 도시", en: "🌍 All 7 Cities", ja: "🌍 全7都市", zh: "🌍 全部7大城市" },
+    spain: { ko: "🇪🇸 스페인 편 (4개 도시)", en: "🇪🇸 Spain Edition (4 Cities)", ja: "🇪🇸 スペイン編 (4都市)", zh: "🇪🇸 西班牙篇 (4城)" },
+    italy: { ko: "🇮🇹 이탈리아 편 (3개 도시)", en: "🇮🇹 Italy Edition (3 Cities)", ja: "🇮🇹 イタリア編 (3都市)", zh: "🇮🇹 意大利篇 (3城)" }
+  };
+
+  const btnListenText = { ko: "🔊 원어 발음 듣기", en: "🔊 Listen Audio", ja: "🔊 発音を聞く", zh: "🔊 播放原声" };
+  const verifiedPicksLabel = { ko: "⭐ 픽업 맛집 (추천 식당)", en: "⭐ Verified Pick Restaurants", ja: "⭐ 厳選ピックアップ名店", zh: "⭐ 严选精选餐厅" };
+  const mapBtnText = { ko: "🗺️ Google 지도", en: "🗺️ Google Maps", ja: "🗺️ Google マップ", zh: "🗺️ 谷歌地图" };
+
+  // Survival phrases HTML
+  const phrasesHtml = (meta.survivalPhrases || []).map(p => `
+    <div class="mg-phrase-box ${p.country}">
+      <div class="mg-phrase-top">
+        <span class="mg-phrase-flag">${(p.countryName && p.countryName[l]) || p.countryName['ko']}</span>
+        <button type="button" class="mg-phrase-audio-btn" onclick="playVoice('${p.original.replace(/'/g, "\\'")}', '${p.locale}')" title="${btnListenText[l] || btnListenText['ko']}">
+          ${btnListenText[l] || btnListenText['ko']}
+        </button>
+      </div>
+      <div class="mg-phrase-quote">"${p.original}"</div>
+      <div class="mg-phrase-pronun">🗣️ ${(p.pronunciation && p.pronunciation[l]) || p.pronunciation['ko']}</div>
+      <div class="mg-phrase-meaning">💡 <strong>${(p.meaning && p.meaning[l]) || p.meaning['ko']}</strong></div>
+    </div>
+  `).join('');
+
+  // Filter countries
+  const countriesToRender = (data.countries || []).filter(c => filterCountry === 'all' || c.id === filterCountry);
+
+  const countriesHtml = countriesToRender.map(country => {
+    const cName = (country.name && country.name[l]) || country.name['ko'];
+    const cTheme = (country.theme && country.theme[l]) || country.theme['ko'];
+    const isSpain = country.id === 'spain';
+    const flagSvg = isSpain
+      ? `<svg width="22" height="15" viewBox="0 0 750 500" style="border-radius:3px;vertical-align:middle;box-shadow:0 1px 3px rgba(0,0,0,0.2);"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>`
+      : `<svg width="22" height="15" viewBox="0 0 3 2" style="border-radius:3px;vertical-align:middle;box-shadow:0 1px 3px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>`;
+
+    const citiesHtml = (country.cities || []).map(city => {
+      const cityName = (city.name && city.name[l]) || city.name['ko'];
+
+      const dishesHtml = (city.dishes || []).map(dish => {
+        const dName = (dish.name && dish.name[l]) || dish.name['ko'];
+        const dLabel = (dish.label && dish.label[l]) || dish.label['ko'];
+        const dDesc = (dish.desc && dish.desc[l]) || dish.desc['ko'];
+        const dHighlight = (dish.parentsHighlight && dish.parentsHighlight[l]) || dish.parentsHighlight['ko'];
+
+        return `
+          <div class="mg-dish-card">
+            <div class="mg-dish-photo-wrap">
+              <img src="${dish.photo}" alt="${dName}" class="mg-dish-img" loading="lazy" onerror="if(this.src!=='${dish.fallbackPhoto}') this.src='${dish.fallbackPhoto}';" />
+              <span class="mg-dish-badge">${dLabel}</span>
+            </div>
+            <div class="mg-dish-body">
+              <h5 class="mg-dish-title">${dName}</h5>
+              <p class="mg-dish-desc">${dDesc}</p>
+              <div class="mg-dish-highlight">
+                ${dHighlight}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const picksHtml = (city.picks || []).map(pick => {
+        const pName = (pick.name && pick.name[l]) || pick.name['ko'];
+        const pBadge = (pick.badge && pick.badge[l]) || pick.badge['ko'];
+        const pDesc = (pick.desc && pick.desc[l]) || pick.desc['ko'];
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pick.mapQuery)}`;
+
+        return `
+          <div class="mg-pick-item">
+            <div class="mg-pick-header">
+              <div class="mg-pick-title-wrap">
+                <span class="mg-pick-star">⭐</span>
+                <strong class="mg-pick-name">${pName}</strong>
+              </div>
+              <span class="mg-pick-badge">${pBadge}</span>
+            </div>
+            <p class="mg-pick-desc">${pDesc}</p>
+            <div class="mg-pick-actions">
+              <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="mg-map-btn" title="${mapBtnText[l] || mapBtnText['ko']}">
+                <span>${mapBtnText[l] || mapBtnText['ko']}</span>
+                <span style="font-size:11px;">↗</span>
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <div class="mg-city-block">
+          <div class="mg-city-header">
+            <div class="mg-city-title-group">
+              <span class="mg-city-num">${city.num}</span>
+              <h4 class="mg-city-name">${cityName}</h4>
+            </div>
+            <span class="mg-country-pill ${country.id}">${country.flag} ${cName}</span>
+          </div>
+
+          <div class="mg-dishes-grid">
+            ${dishesHtml}
+          </div>
+
+          <div class="mg-picks-section">
+            <div class="mg-picks-title">
+              <span>🍽️</span> <strong>${verifiedPicksLabel[l] || verifiedPicksLabel['ko']}</strong>
+            </div>
+            <div class="mg-picks-grid">
+              ${picksHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="mg-country-group ${country.id}">
+        <div class="mg-country-header">
+          <div class="mg-country-title">
+            ${flagSvg}
+            <span>[${cName}]</span>
+            <span class="mg-country-theme">${cTheme}</span>
+          </div>
+        </div>
+        <div class="mg-cities-list">
+          ${citiesHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="master-gourmet-wrapper">
+      <!-- Master Header -->
+      <div class="mg-hero-box">
+        <div class="mg-hero-badge">${badgeText}</div>
+        <h3 class="mg-hero-title">${titleText}</h3>
+        <p class="mg-hero-intro">${introText}</p>
+
+        <!-- Survival Phrases Banner -->
+        <div class="mg-survival-container">
+          <div class="mg-survival-lead">
+            <span class="mg-survival-lead-icon">💡</span>
+            <div>
+              <strong class="mg-survival-lead-title">${survivalTitle}</strong>
+              <p class="mg-survival-lead-desc">${survivalDesc}</p>
+            </div>
+          </div>
+          <div class="mg-survival-grid">
+            ${phrasesHtml}
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="mg-tabs-bar">
+          <button type="button" class="mg-tab-pill ${filterCountry === 'all' ? 'active' : ''}" onclick="switchMasterGourmetFilter('all', this)">
+            ${filterLabels.all[l] || filterLabels.all['ko']}
+          </button>
+          <button type="button" class="mg-tab-pill ${filterCountry === 'spain' ? 'active' : ''}" onclick="switchMasterGourmetFilter('spain', this)">
+            ${filterLabels.spain[l] || filterLabels.spain['ko']}
+          </button>
+          <button type="button" class="mg-tab-pill ${filterCountry === 'italy' ? 'active' : ''}" onclick="switchMasterGourmetFilter('italy', this)">
+            ${filterLabels.italy[l] || filterLabels.italy['ko']}
+          </button>
+        </div>
+      </div>
+
+      <!-- Countries & Cities -->
+      <div class="mg-content-area">
+        ${countriesHtml}
+      </div>
+    </div>
+  `;
+}
+
+function renderMasterGourmetGuide(lang, filterCountry) {
+  if (typeof MASTER_GOURMET_GUIDE_DATA === 'undefined') return;
+  const mounts = document.querySelectorAll('.master-gourmet-mount');
+  if (!mounts.length) return;
+
+  const currentL = lang || (typeof currentLang !== 'undefined' ? currentLang : 'ko');
+  const activeCountry = filterCountry || window.masterGourmetActiveCountry || 'all';
+  window.masterGourmetActiveCountry = activeCountry;
+
+  const html = buildMasterGourmetGuideHtml(MASTER_GOURMET_GUIDE_DATA, currentL, activeCountry);
+  mounts.forEach(mount => {
+    mount.innerHTML = html;
+  });
+}
+
+function switchMasterGourmetFilter(country, btn) {
+  window.masterGourmetActiveCountry = country;
+  const currentL = typeof currentLang !== 'undefined' ? currentLang : 'ko';
+  renderMasterGourmetGuide(currentL, country);
+}
+
+if (typeof window !== 'undefined') {
+  window.renderMasterGourmetGuide = renderMasterGourmetGuide;
+  window.switchMasterGourmetFilter = switchMasterGourmetFilter;
+}

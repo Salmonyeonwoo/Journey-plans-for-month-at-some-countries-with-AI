@@ -667,6 +667,7 @@
                     <button type="button" onclick="document.getElementById('summary-transit')?.scrollIntoView({behavior:'smooth'})" style="background:#e8f5e9;color:#1b4332;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:700;border:1px solid #c8e6c9;cursor:pointer;">🚆 [요약 2] 교통 공식</button>
                     <button type="button" onclick="document.getElementById('summary-nightviews')?.scrollIntoView({behavior:'smooth'})" style="background:#fff3e0;color:#e65100;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:700;border:1px solid #ffe0b2;cursor:pointer;">🍽️ [요약 3] 맛집 &amp; 무료 야경</button>
                     <button type="button" onclick="document.getElementById('summary-gourmet')?.scrollIntoView({behavior:'smooth'})" style="background:#fff7ed;color:#c2410c;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:800;border:1.5px solid #f97316;cursor:pointer;box-shadow:0 1px 4px rgba(249,115,22,0.2);">🍱 [요약 4] 시그니처 미식 &amp; 길거리 간식</button>
+                    <button type="button" onclick="document.getElementById('summary-master-gourmet')?.scrollIntoView({behavior:'smooth'})" style="background:#fff1f2;color:#be123c;padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:800;border:1.5px solid #f43f5e;cursor:pointer;box-shadow:0 1px 4px rgba(244,63,94,0.2);">🍽️ [요약 5] 빠에야·피자 외 부모님 미식</button>
                   </div>
                 </div>
 
@@ -1211,6 +1212,9 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- 🍽️ [요약 5] 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편) -->
+                <div id="summary-master-gourmet" class="master-gourmet-mount" style="margin-top:20px;"></div>
               </div>
 <div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="switchGuidebookChapter('chapter-overview'); goToBookPage('chapter-overview', 2);">
@@ -1812,6 +1816,9 @@
         <div class="book-page active" id="page-practical-0">
           <section class="section guide-section" id="dining">
       <div class="wrap">
+        <!-- 🍽️ 2026 특별 기획: 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편) -->
+        <div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
+
         <div class="section-head">
           <div>
             <div class="kicker">04 / MUST-EAT DISHES &amp; VERIFIED RESTAURANTS</div>
