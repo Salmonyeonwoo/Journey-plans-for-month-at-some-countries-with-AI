@@ -222,7 +222,7 @@ function registerPWAOfflineWorker() {
   if ('caches' in window) {
     caches.keys().then(function(keys) {
       keys.forEach(function(k) {
-        if (k !== 'slow-travel-pwa-v5') {
+        if (k !== 'slow-travel-pwa-v6') {
           caches.delete(k);
         }
       });
@@ -231,7 +231,7 @@ function registerPWAOfflineWorker() {
 
   if ('serviceWorker' in navigator && (window.location.protocol.startsWith('http') || window.location.hostname === 'localhost')) {
     const swCode = `
-      const CACHE_NAME = 'slow-travel-pwa-v5';
+      const CACHE_NAME = 'slow-travel-pwa-v6';
       const STATIC_ASSETS = [
         './',
         'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap',
@@ -4485,8 +4485,8 @@ function handleLocalChat(query) {
     html += `<div style="font-size:11px;color:var(--muted);font-weight:700;margin-bottom:6px;">${label}</div>`;
     html += `<div style="display:flex;flex-wrap:wrap;gap:5px;">`;
     chips.forEach(c => {
-      const qText = cleanHangul(c.query || '', lang);
-      const lText = cleanHangul(c.label || '', lang);
+      const qText = (typeof cleanHangul === 'function') ? cleanHangul(c.query || '', lang) : (c.query || '');
+      const lText = (typeof cleanHangul === 'function') ? cleanHangul(c.label || '', lang) : (c.label || '');
       const escaped = qText.replace(/'/g, "\\'");
       html += `<button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('${escaped}')">${lText}</button>`;
     });
@@ -4524,21 +4524,23 @@ function handleLocalChat(query) {
 
       const dInfo = (typeof DINING_I18N_DATA !== 'undefined' && DINING_I18N_DATA[d.name]) || {};
       const localizedName = (dInfo.displayName && dInfo.displayName[lang]) || d.name;
-      const localizedCity = cleanHangul(d.city, lang);
-      const localizedDish = (dInfo.dishTitle && dInfo.dishTitle[lang]) || cleanHangul(d.dishName || d.signature, lang);
-      const localizedSeniorTip = (dInfo.seniorTip && dInfo.seniorTip[lang]) || cleanHangul(d.seniorTip, lang);
+      const localizedCity = (typeof cleanHangul === 'function') ? cleanHangul(d.city, lang) : d.city;
+      const localizedDish = (dInfo.dishTitle && dInfo.dishTitle[lang]) || ((typeof cleanHangul === 'function') ? cleanHangul(d.dishName || d.signature, lang) : (d.dishName || d.signature));
+      const localizedSeniorTip = (dInfo.seniorTip && dInfo.seniorTip[lang]) || ((typeof cleanHangul === 'function') ? cleanHangul(d.seniorTip, lang) : d.seniorTip);
 
       html += `
         <div class="chat-card-recommend" style="margin-top:8px;">
           <div class="chat-card-img" style="background-image:url('${d.photo || ''}')">
-            <span class="chat-card-tag">${localizedCity}</span>
+            <span class="chat-card-badge">${localizedCity}</span>
           </div>
-          <div class="chat-card-content">
+          <div class="chat-card-body">
             <div class="chat-card-title">${localizedName}</div>
-            <div class="chat-card-dish">🍽️ ${localizedDish}</div>
-            <div class="chat-card-price">💵 ${price}</div>
-            <div class="chat-card-tip">👵 <strong>${tipLabel}:</strong> ${localizedSeniorTip}</div>
-            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(d.mapQuery || d.name)}" target="_blank" rel="noopener" class="chat-card-link">📍 ${mapLabel}</a>
+            <div class="chat-card-sub">${localizedDish}</div>
+            <div class="chat-card-tip">👵 ${tipLabel}: ${localizedSeniorTip}</div>
+            <div class="chat-card-footer">
+              <span class="chat-card-price">${price}</span>
+              ${d.mapUrl ? `<a href="${d.mapUrl}" target="_blank" rel="noopener noreferrer" class="chat-card-btn">${mapLabel} ➔</a>` : ''}
+            </div>
           </div>
         </div>
       `;
@@ -4547,1266 +4549,1687 @@ function handleLocalChat(query) {
   }
 
   // ----------------------------------------------------
-  // 1. ENTITY DETECTION (목적지 / 국가 / 도시 식별)
+  // City & Country Context Helpers
   // ----------------------------------------------------
   const hasBarcelona = ['barcelona', 'bcn', '바르셀로나', 'バルセロナ', '巴塞罗那'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasMadrid = ['madrid', '마드리드', 'マドリード', '马德里'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasSeville = ['seville', 'sevilla', '세비야', 'セビリア', '塞维利亚'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasGranada = ['granada', '그라나다', 'グラナダ', '格拉纳达'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasCordoba = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasMalaga = ['malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasLisbon = ['lisbon', 'lisboa', '리스본', 'リスボン', '里斯本'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasPorto = ['porto', '포르투', 'ポルト', '波尔图'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasSintra = ['sintra', '신트라', 'シントラ', '辛特拉'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasDubai = ['dubai', 'uae', 'emirates', '두바이', '아랍에미리트', 'ドバイ', '迪拜', '阿联酋'].some(w => q.includes(w) || cleanQ.includes(w));
   const hasAbuDhabi = ['abu dhabi', 'abudhabi', '아부다비', 'アブダビ', '阿布扎比'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasRome = ['rome', 'roma', '로마', 'ローマ', '罗马'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasFlorence = ['florence', 'firenze', '피렌체', 'フィレンツェ', '佛罗伦萨'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasNaples = ['napoli', 'naples', '나폴리', 'ナポリ', '那不勒斯'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasVenice = ['venice', 'venezia', '베네치아', '베니스', 'ベネチア', '威尼斯'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasMilan = ['milan', 'milano', '밀라노', 'ミラノ', '米兰'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasCapri = ['capri', '카프리', 'カプリ', '卡普里'].some(w => q.includes(w) || cleanQ.includes(w));
 
-  const isPortugal = ['portugal', 'algarve', '포르투갈', '알가르베', 'ポルトガル', '葡萄牙'].some(w => q.includes(w)) || hasLisbon || hasPorto || hasSintra;
+  const isItaly = ['italy', 'italia', '이탈리아', '이태리', 'イタリア', '意大利'].some(w => q.includes(w) || cleanQ.includes(w)) || hasRome || hasFlorence || hasNaples || hasVenice || hasMilan || hasCapri;
+  const isPortugal = ['portugal', 'algarve', '포르투갈', '알가르베', 'ポルトガル', '葡萄牙'].some(w => q.includes(w) || cleanQ.includes(w)) || hasLisbon || hasPorto || hasSintra;
   const isDubai = ['dubai', 'uae', 'emirates', '두바이', '아랍에미리트', 'ドバイ', '迪拜', '阿联酋', '아부다비', 'abu dhabi', 'アブダビ', '阿布扎比'].some(w => q.includes(w) || cleanQ.includes(w)) || hasDubai || hasAbuDhabi;
-  const isSpain = ['spain', 'andalusia', '스페인', '안달루시아', 'スペイン', '西班牙'].some(w => q.includes(w)) || hasBarcelona || hasMadrid || hasSeville || hasGranada || hasCordoba;
+  const isSpain = ['spain', 'andalusia', '스페인', '안달루시아', 'スペイン', '西班牙'].some(w => q.includes(w) || cleanQ.includes(w)) || hasBarcelona || hasMadrid || hasSeville || hasGranada || hasCordoba || hasMalaga;
 
-  // Route & Transit Intent Keywords
   const hasRouteKeyword = [
-    'route', 'routes', 'from', 'to', 'between', 'travel', 'transit', 'train', 'bus', 'flight',
-    'how to get', 'how to go', 'how do i get', 'how do i go', 'getting from', 'going from', 'trip from',
-    'direction', 'directions', 'distance', 'way to', 'journey', 'connection', 'drive',
-    '에서', '부터', '까지', '가는', '이동', '루트', '경로', '어떻게 가', '어떻게가', '어떻게 이동', '기차', '열차', '버스', '비행기', '교통', '차편', '코스',
-    'から', 'まで', '行き方', 'ルート', '移動', 'アクセス', '列車', '電車', 'バス', '飛行機', '交通',
-    '从', '到', '怎么去', '怎么走', '路线', '交通', '高铁', '火车', '大巴', '飞机', '如何前往'
-  ].some(k => q.includes(k) || cleanQ.includes(k));
+    '어떻게 가', '가는 법', '이동법', '이동 방법', '이동', '교통', '루트', '경로', '기차', '비행기', '버스', '렌페',
+    'how to get', 'how do i get', 'how to travel', 'how to go', 'transit', 'route', 'train', 'flight', 'bus', 'direction',
+    '行き方', '移動方法', '移動', '交通', 'ルート', 'アクセス', '列車', '飛行機', 'バス',
+    '怎么走', '怎么去', '交通方式', '交通', '路线', '高铁', '火车', '飞机', '大巴'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
 
   // ----------------------------------------------------
-  // 2. CONVERSATIONAL & LINGUISTIC INTENTS (대화형 / 일상 회화)
+  // Intent 0: Polite Courtesy & Small Talk
   // ----------------------------------------------------
-
-  // 2-1. Thanks / Gratitude (감사 / 고마움)
   const isThanks = ['고마워', '고맙', '감사', '땡큐', 'thank', 'thanks', 'thx', 'appreciate', 'ありがとう', '感謝', '助かった', 'サンキュー', '谢谢', '感谢', '多谢'].some(w => q.includes(w));
   if (isThanks) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-      { query: '포르투갈 대표 음식 추천', label: '🥧 포르투갈 대표 음식' },
-      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전 수칙' }
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+      { query: '식당 필수 생존 회화 알려줘', label: '🗣️ 식당 필수 회화' }
     ];
-    if (lang === 'ja') {
-      return `😊 <strong>どういたしまして！お役に立ててとても嬉しいです！</strong><br><br>ご家族皆様が安全で快適に、一生忘れられない素晴らしい旅になりますよういつでもサポートいたします。<br>ポルトガルやスペインの美味しい名物料理、観光名所の予約のコツ、都市間の移動手段など、気になることがあれば続けて何でも気軽に聞いてくださいね！✨` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `😊 <strong>You're very welcome! I'm delighted to assist!</strong><br><br>Wishing you and your family an unforgettable, comfortable, and wonder-filled journey across Iberia and Dubai.<br>Feel free to ask me any follow-up questions anytime—whether about city-to-city routes, local dishes, ticket booking tips, or safety! ✨` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `😊 <strong>不客气，很高兴能为您提供帮助！</strong><br><br>祝愿您和家人拥有一段温馨舒适、毫无负担的美妙旅程。<br>如果您在城市间交通路线、特色美食、景点门票预约或防盗安全方面还有任何想了解的，随时都可以继续提问哦！✨` + renderFollowupChips(chips);
-    } else {
-      return `😊 <strong>도움이 되었다니 정말 기쁩니다!</strong><br><br>부모님과 함께하시는 이번 가족 여행이 평생 기억에 남을 따뜻하고 편안한 여행이 되도록 언제나 함께할게요.<br>도시 간 이동 경로, 포르투갈·스페인의 또 다른 맛집, 관광지 관람 꿀팁 등 궁금한 점이 생기시면 이어서 편하게 물어보세요! ✨` + renderFollowupChips(chips);
-    }
+    if (lang === 'ja') return 'どういたしまして！😊 お役に立てて何よりです。旅の計画や現地での疑問があれば、いつでもお気軽にご質問ください！' + renderFollowupChips(chips);
+    if (lang === 'en') return 'You are very welcome! 😊 Glad I could help. Feel free to ask anytime if you need more tips about hotels, transit, or hidden gourmet spots!' + renderFollowupChips(chips);
+    if (lang === 'zh') return '不客气！非常高兴能帮到您。😊 如果您在行程规划或旅途中还有任何疑问，随时都可以向我提问！' + renderFollowupChips(chips);
+    return '천만에요! 도움이 되어서 정말 기쁩니다. 😊 여행 준비하시면서 더 궁금한 숙소, 교통, 숨은 미식 정보가 생기면 언제든 편하게 물어보세요!' + renderFollowupChips(chips);
   }
 
-  // 2-2. Greetings (인사)
   const isGreeting = ['안녕', '하이', '반가', 'hello', 'hi', 'hey', 'good morning', 'good afternoon', 'こんにちは', 'はじめまして', 'こんばん', '你好', '您好'].some(w => q.includes(w));
   if (isGreeting && q.length < 15) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-      { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본' },
-      { query: '포르투갈에서 제일 맛있는 음식은 뭐야?', label: '🥧 포르투갈 대표 맛집' }
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 플래너 & 숙소' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 대표 미식 12선' },
+      { query: '식당 필수 생존 회화 알려줘', label: '🗣️ 24선 필수 회화' }
     ];
-    if (lang === 'ja') {
-      return `こんにちは！旅の専属コンシェルジュAIです 😊<br>ポルトガル、スペイン、ドバイの旅に関するご質問なら何でもお任せください。<br><br>💡 <em>「バルセロナからマドリードへの移動方法」「ポルトガルで一番人気の食べ物は？」「スリ対策」</em>など、自由にお聞きください！` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `Hello there! I'm your dedicated Iberia & Dubai Family Travel AI Concierge 😊<br>Feel free to ask me anything about your trip!<br><br>💡 Try asking: <em>"Routes from Barcelona to Madrid", "Madrid to Lisbon travel", "What is the most popular food in Portugal?"</em>!` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `您好！我是您的伊比利亚与迪拜家庭旅行AI向导 😊<br>很高兴为您服务！<br><br>💡 您可以问我：<em>“巴塞罗那到马德里怎么走？”、“葡萄牙最受欢迎的美食”、“西班牙防盗防偷攻略”</em>等任何问题！` + renderFollowupChips(chips);
-    } else {
-      return `안녕하세요! 이베리아 & 두바이 가족 여행 AI 컨시어지입니다 😊<br>부모님과 함께하는 편안한 여행이 될 수 있도록 무엇이든 도와드릴게요.<br><br>💡 <em>"바르셀로나에서 마드리드 이동법", "마드리드에서 리스본 어떻게 가?", "포르투갈 대표 음식"</em> 등 편하게 질문해 보세요!` + renderFollowupChips(chips);
-    }
+    if (lang === 'ja') return 'こんにちは！✈️ <strong>スペイン・イタリア・ポルトガル・ドバイ家族旅行専属AIコンシェルジュ</strong>です。30日マスタープランナー、名物グルメ、交通公式、大聖堂の服装など何でもご案内します！' + renderFollowupChips(chips);
+    if (lang === 'en') return 'Hello! ✈️ I am your dedicated <strong>Spain · Italy · Portugal · Dubai Family Travel AI Companion</strong>. Ask me anything about the 30-day master planner, confirmed hotels, 6 transit formulas, signature gourmet, or cathedral dress codes!' + renderFollowupChips(chips);
+    if (lang === 'zh') return '您好！✈️ 我是您的<strong>西班牙 · 意大利 · 葡萄牙 · 迪拜家庭旅行AI向导</strong>。无论关于30天大师规划师、9大确定酒店、6大交通公式、特色招牌美食还是大教堂着装规定，随时为您解答！' + renderFollowupChips(chips);
+    return '안녕하세요! ✈️ <strong>스페인 · 이탈리아 · 포르투갈 · 두바이 가족 여행 전담 로컬 AI 가이드</strong>입니다. 30일 마스터 플래너, 9대 확정 숙소, 6대 교통 공식, 빠에야·피자 외 시그니처 미식, 성당 복장 규정 등 궁금하신 점을 편하게 질문해 보세요!' + renderFollowupChips(chips);
   }
 
-  // 2-3. Identity / Bot Info (너는 누구야)
   const isWho = ['누구', '너는', '뭐하는', 'who are you', 'what are you', 'あなたは誰', '何者', '你是谁', '你的功能'].some(w => q.includes(w));
   if (isWho && q.length < 20) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 도시 간 기차 이동' },
-      { query: '스페인 포르투갈 환전 어떻게 해?', label: '💶 유로 환전 안내' },
-      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+      { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' }
     ];
-    if (lang === 'ja') {
-      return `🤖 <strong>AIトラベルコンシェルジュのご紹介</strong>:<br><br>私はスペイン、ポルトガル、および経由地ドバイの<strong>「シニア同伴・家族旅行」に特化した専属AIコンパニオン</strong>です。<br>• 都市間の高速鉄道・フライト・バスのルート案内<br>• 名物料理や地元レストランの推薦<br>• お土産や免税手続き（DIVA）<br>• スリ対策や安全情報<br>• リアルタイム旅行予算の算出<br>など、旅のあらゆる疑問を瞬時にサポートします！✨` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `🤖 <strong>About Your AI Travel Concierge</strong>:<br><br>I am your dedicated AI companion specialized in <strong>Senior-friendly Family Travel across Spain, Portugal, and Dubai stopovers</strong>.<br>I provide instant advice on:<br>• Inter-city routes & high-speed rail (Renfe/CP)<br>• Iconic local dishes & curated dining<br>• Souvenirs & tax refund guides<br>• Pickpocket prevention & safety<br>• Trains & Uber mobility for elderly parents! ✨` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `🤖 <strong>关于您的AI旅行专属向导</strong>:<br><br>我是专门为<strong>西班牙、葡萄牙及经停迪拜的长辈家庭旅行定制的AI智能助手</strong>。<br>竭诚为您提供：<br>• 城市间高铁线路规划（Renfe AVE / CP特快）<br>• 代表性特色美食与名店推荐<br>• 必买特色手信伴手礼与DIVA退税攻略<br>• 热门景区防盗防偷安全铁律<br>• 全程长辈无障碍出行方案！✨` + renderFollowupChips(chips);
-    } else {
-      return `🤖 <strong>AI 여행 컨시어지 소개</strong>:<br><br>저는 스페인, 포르투갈 및 경유지 두바이를 여행하시는 <strong>부모님 동행 가족 여행 전담 AI 가이드</strong>입니다.<br>다음과 같은 모든 정보를 실시간으로 안내해 드립니다:<br>• 도시 간 고속열차(렌페) 및 항공·버스 최적 경로<br>• 현지 대표 명물 음식과 엄선 맛집 리스트<br>• 국가별 필수 쇼핑 품목 및 텍스리펀 방법<br>• 소매치기 예방 및 치안 안전 수칙<br>• 부모님 우버 이동 팁 및 맞춤 플래너 총 예산! ✨` + renderFollowupChips(chips);
-    }
+    if (lang === 'ja') return '私はこのガイドブックに内蔵された<strong>ローカルAI旅行コンシェルジュ</strong>です。外部サーバー通信なしで、30日マスタープランナー、9大確定ホテル、6大黄金交通公式、7都市12大名物料理、24選必須サバイバル会話、大聖堂服装規定など、厳選された現地情報を即座にご案内します！' + renderFollowupChips(chips);
+    if (lang === 'en') return 'I am your private <strong>Local Travel AI Companion</strong> built into this guidebook. Operating 100% offline without external API latency, I provide instant guidance on the 30-Day Master Planner (9 confirmed hotels & 6 transit formulas), 12 signature dishes, 24 survival phrases, and senior safety!' + renderFollowupChips(chips);
+    if (lang === 'zh') return '我是内置于本旅行指南的<strong>专属本地AI旅行助手</strong>。无需连接外部服务器，完全基于离线精选知识库为您提供30天大师规划师、9大确定酒店、6大黄金交通公式、12大特色招牌菜、24句生存日常口语以及大教堂着装避坑贴士！' + renderFollowupChips(chips);
+    return '저는 본 가이드북에 내장된 <strong>가족 여행 전담 로컬 AI 가이드</strong>입니다. 외부 API 통신 없이 브라우저 내 엄선된 지식(30일 마스터 플래너, 9대 확정 숙소, 6대 교통 공식, 7대 도시 12대 대체불가 미식, 24선 필수 서바이벌 회화, 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)을 바탕으로 즉각 답변해 드립니다!' + renderFollowupChips(chips);
   }
 
-  // ----------------------------------------------------
-  // 3. SPECIALIZED INTER-CITY ROUTES & ESSENTIAL PHRASES
-  // ----------------------------------------------------
 
-  // 3-1. Less Salt (소금 빼주세요 / 싱겁게)
-  const isLessSalt = [
-    '소금', '싱겁게', 'sin sal', 'sem sal', 'less salt', 'no salt',
-    '塩', '薄味', 'しょっぱい', '塩分',
-    '少盐', '淡一点', '不要太咸'
-  ].some(w => q.includes(w));
-  if (isLessSalt) {
+  // ====================================================
+  // 1. 30-DAY MASTER PLANNER (9대 확정 숙소 & 6대 교통 공식)
+  // ====================================================
+  const isMasterPlanner = [
+    '마스터 플래너', '30일 플래너', '30일 일정', '확정 숙소', '호텔 9선', '숙소 9선', '9대 숙소', '교통 공식', '이동 공식', '6대 교통', '6대 이동', '숙소 리스트',
+    'master planner', '30-day planner', '30 day itinerary', 'confirmed hotels', '9 hotels', 'hotel list', '6 transit formulas', 'golden transit formulas', '30-day master',
+    'マスタープランナー', '30日プランナー', '30日間日程', '確定ホテル', '9大ホテル', '宿泊先一覧', '6大交通公式', '移動公式',
+    '大师规划师', '30天规划', '30天行程', '9大确定酒店', '推荐住宿', '6大交通公式', '城市间交通公式'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isMasterPlanner) {
     const chips = [
-      { query: '스페인 맛집 추천해줘', label: '🥘 스페인 맛집' },
-      { query: '포르투갈 맛집 추천해줘', label: '🥧 포르투갈 맛집' }
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+      { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
+      { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' }
     ];
-    return `
-      🧂 <strong>"Less Salt / No Salt" Essential Dining Phrases</strong>:<br><br>
-      Traditional dishes in Spain and Portugal can taste salty to international palates. Show these phrases to your waiter:<br><br>
-      <div style="background:#fff3e7;border-left:4px solid var(--orange);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:8px;">
-        <strong>🇪🇸 Spain:</strong> <em>"Sin sal, por favor"</em> (No salt) / <em>"Poco sal, por favor"</em> (Less salt)<br>
-        <span style="font-size:12px;color:#7a5038;">(스페인어: 신 살, 포르 파보르 = 소금 빼주세요)</span>
-      </div>
-      <div style="background:#e8f4f0;border-left:4px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:8px;">
-        <strong>🇵🇹 Portugal:</strong> <em>"Sem sal, por favor"</em> (No salt) / <em>"Pouco sal, por favor"</em> (Less salt)<br>
-        <span style="font-size:12px;color:#2c5b52;">(포르투갈어: 셈 살, 포르 파보르 = 소금 빼주세요)</span>
-      </div>
-      <div style="background:#f4efe6;border-left:4px solid var(--ink);padding:10px 14px;border-radius:0 8px 8px 0;">
-        <strong>🇦🇪 Dubai / UK:</strong> <em>"No salt / Less salt, please"</em>
-      </div>
-    ` + renderFollowupChips(chips);
-  }
 
-  // 3-2. Dubai Safari / Desert (사막 사파리)
-  const isDubaiSafari = [
-    '사막', '사파리', '듄배싱',
-    'safari', 'desert', 'dune bashing',
-    '砂漠', 'サファリ',
-    '冲沙', '沙漠'
-  ].some(w => q.includes(w));
-  if (isDubaiSafari) {
-    const chips = [
-      { query: '두바이에서 아부다비 이동법', label: '🚕 두바이 ➔ 아부다비' },
-      { query: '두바이 분수쇼 & 부르즈 할리파', label: '🏙️ 부르즈 할리파 & 몰' }
-    ];
-    if (lang === 'ja') {
-      return `
-        🏜️ <strong>ドバイ砂漠サファリ＆観光のポイント</strong>:<br><br>
-        🐪 <strong>シニア同伴の砂漠サファリの知恵:</strong><br>
-        一般的なデューンバッシング（激しい砂丘ドライブ）は腰に負担がかかる場合があります。予約時に**「Gentle Desert Drive（穏やかな砂漠ドライブ）」**や、ヴィンテージカーで巡る**「ヘリテージ・サファリ」**を指定すると、雄大な砂漠の夕日とアラビアンBBQディナーをゆったりとお楽しみいただけます！<br><br>
-        👗 <strong>服装マナー:</strong> ドバイモールなどの屋内は冷房が強いため薄手の羽織り物が必要です。モスク訪問時は露出を控えた服装をお選びください。
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        🏜️ <strong>Dubai Desert Safari & Stopover Guide</strong>:<br><br>
-        🐪 <strong>Senior-Friendly Desert Safari Tip:</strong><br>
-        Standard roller-coaster dune bashing in 4WDs can be intense for seniors. When booking, request a **"Gentle Desert Drive"** or a **Heritage Safari (Vintage Land Rover)** to enjoy sunset photography, camel encounters, and Arabian BBQ dinner with total comfort!<br><br>
-        👗 <strong>Dress Code & Etiquette:</strong> Dubai venues have strong air-conditioning; carry a light cardigan. When visiting mosques, respectful modest clothing covering arms and legs is required.
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        🏜️ <strong>迪拜沙漠冲沙与城市经停指南</strong>:<br><br>
-        🐪 <strong>适合长辈同行的沙漠之旅建议：</strong><br>
-        常规越野车冲沙颠簸剧烈，容易对长辈腰椎造成不适。预定时建议选择**“Gentle Desert Drive（温和沙漠观光）”**或复古路虎的**“遗产探索冲沙（Heritage Safari）”**，长辈可以惬意欣赏壮美红沙日落、骑骆驼并享受正宗贝都因营地烧烤晚宴！<br><br>
-        👗 <strong>着装贴士：</strong> 迪拜商场冷气强劲，建议携带披肩薄外套；清真寺参访需着遮盖肩部与脚踝的得体服饰。
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        🏜️ <strong>두바이 사막 사파리 & 스톱오버 가이드</strong>:<br><br>
-        🐪 <strong>부모님 동행 시 사막 사파리 핵심 팁:</strong><br>
-        일반적인 사막 듄배싱(사구 질주)은 차량 흔들림이 심해 어르신 허리에 무리가 갈 수 있습니다. 예약 시 <strong>'젠틀 드라이브(Gentle Desert Drive)'</strong> 옵션을 선택하시거나 클래식 랜드로버를 타고 이동하는 <strong>'헤리티지 사파리'</strong>를 선택하시면 붉은 사막의 석양 감상과 베두인 캠프 BBQ 만찬을 편안하게 즐기실 수 있습니다!<br><br>
-        👗 <strong>복장 팁:</strong> 사막의 저녁은 쌀쌀할 수 있으므로 가벼운 바람막이나 숄을 지참하시길 권장합니다.
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 1] BARCELONA ↔ MADRID
-  // ----------------------------------------------------
-  if ((hasBarcelona && hasMadrid) || (hasBarcelona && hasRouteKeyword && (q.includes('madrid') || cleanQ.includes('madrid')))) {
     let res = '';
     if (lang === 'ja') {
       res = `
-        🚆 <strong>🇪🇸 バルセロナ ➔ マドリード 高速鉄道＆移動ガイド</strong>:<br><br>
-        1️⃣ <strong>高速鉄道 AVE / iryo / OUIGO（ご両親同伴ならイチ押し・最も推奨！ 🌟）:</strong><br>
-        • <strong>所要時間:</strong> 直行便で<strong>約2時間30分</strong>（最高時速300km）<br>
-        • <strong>運行区間:</strong> バルセロナ・サンツ（Barcelona Sants）駅 ➔ マドリード・アトーチャ（Madrid Atocha）駅<br>
-        • <strong>運行頻度:</strong> 1日15〜20便以上の高密度運行<br>
-        • <strong>費用目安:</strong> 事前予約で片道<strong>約€19〜€45</strong>（Renfe、iryo、OUIGO 3社の競合により大変リーズナブル）<br>
-        • <strong>おすすめ理由:</strong> 空港への移動や手荷物検査の待ち時間がなく、市内中心部から中心部へ直通。広々とした座席と大きな荷物棚があり、シニア連れの旅に飛行機より圧倒的に快適で時間も節約できます。<br><br>
-        2️⃣ <strong>シャトル便（飛行機 - Puente Aéreo）:</strong><br>
-        • 飛行時間は約1時間20分ですが、空港への往復移動と保安検査を含めると全体で3時間30分以上かかるため、高速鉄道の利用が断然便利です。<br><br>
-        💡 <strong>予約のコツ:</strong> <strong>OmioアプリまたはRenfe公式アプリ</strong>でスケジュールと価格を比較し、前方座席を事前予約するのがおすすめです！
+        📅 <strong>スペイン＆イタリア 30日マスタープランナー総まとめ</strong>:<br><br>
+        ご両親の疲労を最小限に抑え、旅行の効率を最大化した<strong>9大確定ホテル＆6大黄金交通公式</strong>の概要です:<br><br>
+
+        <div style="background:#fdfcf9;border:1.5px solid #2d6a4f;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1b4332;">🏨 9大確定ホテル（駅近・平坦な立地・エレベーター完備）</strong>:<br>
+          1️⃣ <strong>バルセロナ:</strong> H10 カサ・ミモザ 4星（カサ・ミラ徒歩1分の平坦な並木道）<br>
+          2️⃣ <strong>セビリア:</strong> ホテル・フェルナンド3世 4星（サンタクルス街の平地、静かな旧市街）<br>
+          3️⃣ <strong>マドリード:</strong> ペスターナ・プラザ・マヨール 4星（マヨール広場直結、市内散策に最適）<br>
+          4️⃣ <strong>ナポリ:</strong> グランド・ホテル・オリエンテ 4星（トレド通り徒歩3分、安心の治安環境）<br>
+          5️⃣ <strong>フィレンツェ:</strong> グランド・ホテル・バリオーニ 4星（SMN駅から200m、絶景ルーフトップテラス）<br>
+          6️⃣ <strong>ローマ:</strong> ホテル・インディゴ・ローマ - セント・ジョージ 5星（ナヴォーナ広場徒歩圏、ジュリア通り）<br>
+          7️⃣ <strong>グラナダ:</strong> ホテル・アルハンブラ・パレス 5星（坂道を登らず宮殿直結）<br>
+          8️⃣ <strong>マラガ:</strong> ACホテル・マラガ・パラシオ 4星（港と大聖堂を一望）<br>
+          9️⃣ <strong>ベネチア:</strong> ホテル・ダニエリ / サンタ・キアラ（大運河沿い・水上バス至近）
+        </div>
+
+        <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 14px;border-radius:0 10px 10px 0;margin-bottom:8px;">
+          <strong style="color:#15803d;">🚆 6大黄金交通公式（空港での疲労と荷物移動を最小化）</strong>:<br>
+          • <strong>バルセロナ ➔ マドリード:</strong> iryo / Renfe AVE 高速鉄道 直通2時間30分<br>
+          • <strong>マドリード ➔ セビリア:</strong> Renfe AVE 高速鉄道 直通2時間40分<br>
+          • <strong>マドリード ➔ ナポリ:</strong> イベリア航空直行便 2時間35分（ローマ乗継ぎ不要で体力温存）<br>
+          • <strong>ナポリ ➔ フィレンツェ:</strong> Italo（イタロ）ビジネスクラスPrima直通 2時間50分<br>
+          • <strong>フィレンツェ ➔ ローマ:</strong> Frecciarossa 高速鉄道 直通1時間35分<br>
+          • <strong>ローマ ↔ ナポリ（日帰り）:</strong> 高速鉄道 直通1時間10分
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>📅</span> <span>[第2章] マスタープランナー5大まとめカード全体を見る ➔</span>
+          </button>
+        </div>
       `;
     } else if (lang === 'en') {
       res = `
-        🚆 <strong>🇪🇸 Barcelona ➔ Madrid High-Speed Train & Route Guide</strong>:<br><br>
-        1️⃣ <strong>High-Speed Rail (Strongly Recommended for Seniors! 🌟):</strong><br>
-        • <strong>Travel Time:</strong> Approx. <strong>2 hrs 30 mins</strong> direct (cruising at 300 km/h).<br>
-        • <strong>Route:</strong> <strong>Barcelona Sants</strong> Station ➔ <strong>Madrid Atocha</strong> Station (15–20 daily departures).<br>
-        • <strong>Estimated Fare:</strong> Advance booking from <strong>€19 to €45</strong> one-way (Renfe AVE, iryo, and OUIGO compete, keeping prices affordable).<br>
-        • <strong>Why It's #1:</strong> Downtown-to-downtown transit with zero airport queues, spacious seating, and generous luggage allowance. Far more relaxing and faster door-to-door than flying!<br><br>
-        2️⃣ <strong>Flight (Air Shuttle - Puente Aéreo):</strong><br>
-        • Flight time is ~1 hr 20 min, but including airport transfers, check-in, and security, total travel exceeds 3.5–4 hours. The train is much more comfortable.<br><br>
-        💡 <strong>Booking Tip:</strong> Compare Renfe AVE, iryo, and Ouigo departures easily using the <strong>Omio app or Renfe app</strong>!
+        📅 <strong>Spain & Italy 30-Day Master Planner Overview</strong>:<br><br>
+        A senior-optimized itinerary summary featuring <strong>9 Confirmed Accommodations & 6 Golden Transit Formulas</strong> to minimize fatigue and airport transfers:<br><br>
+
+        <div style="background:#fdfcf9;border:1.5px solid #2d6a4f;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1b4332;">🏨 9 Confirmed Accommodations (Station Proximity, Flat Walking, Elevators)</strong>:<br>
+          1️⃣ <strong>Barcelona:</strong> H10 Casa Mimosa 4★ (1 min walk to Casa Milà on flat, paved boulevard)<br>
+          2️⃣ <strong>Seville:</strong> Hotel Fernando III 4★ (Flat Santa Cruz historic district, senior elevator)<br>
+          3️⃣ <strong>Madrid:</strong> Pestana Plaza Mayor 4★ (Right on Plaza Mayor, central courtyard elevator)<br>
+          4️⃣ <strong>Naples:</strong> Grand Hotel Oriente 4★ (3 mins walk to Toledo Metro, flat shopping promenade)<br>
+          5️⃣ <strong>Florence:</strong> Grand Hotel Baglioni 4★ (200m from Santa Maria Novella Station, panoramic terrace)<br>
+          6️⃣ <strong>Rome:</strong> Hotel Indigo Rome - St. George 5★ (Via Giulia, flat walk to Piazza Navona & Vatican)<br>
+          7️⃣ <strong>Granada:</strong> Hotel Alhambra Palace 5★ (Direct Alhambra access without steep hill climb)<br>
+          8️⃣ <strong>Malaga:</strong> AC Hotel Málaga Palacio 4★ (Cathedral & Mediterranean harbor panorama)<br>
+          9️⃣ <strong>Venice:</strong> Hotel Danieli / Santa Chiara (Grand Canal & water bus accessibility)
+        </div>
+
+        <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 14px;border-radius:0 10px 10px 0;margin-bottom:8px;">
+          <strong style="color:#15803d;">🚆 6 Golden Transit Formulas (Minimizing Airport Fatigue)</strong>:<br>
+          • <strong>Barcelona ➔ Madrid:</strong> iryo / Renfe AVE high-speed train in 2 hrs 30 mins direct<br>
+          • <strong>Madrid ➔ Seville:</strong> Renfe AVE high-speed train in 2 hrs 40 mins direct<br>
+          • <strong>Madrid ➔ Naples:</strong> Iberia direct flight in 2 hrs 35 mins (spares land transit fatigue from Rome)<br>
+          • <strong>Naples ➔ Florence:</strong> Italo Prima business class direct in 2 hrs 50 mins<br>
+          • <strong>Florence ➔ Rome:</strong> Frecciarossa high-speed rail in 1 hr 35 mins direct<br>
+          • <strong>Rome ↔ Naples (Day Trip):</strong> High-speed train in just 1 hr 10 mins direct
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>📅</span> <span>[Chapter 2] View Full Master Planner Summary Cards ➔</span>
+          </button>
+        </div>
       `;
     } else if (lang === 'zh') {
       res = `
-        🚆 <strong>🇪🇸 巴塞罗那 ➔ 马德里 高铁出行与订票全指南</strong>:<br><br>
-        1️⃣ <strong>高速铁路（长辈同行强烈推荐 / 首选方案！ 🌟）：</strong><br>
-        • <strong>运行耗时：</strong> 直达仅需<strong>约2小时30分钟</strong>（最高时速300公里）。<br>
-        • <strong>运行区间：</strong> 巴塞罗那Sants站 ➔ 马德里Atocha核心主车站（每日15~20班密集发车）。<br>
-        • <strong>参考票价：</strong> 提前订票单程约<strong>€19 ~ €45</strong>（Renfe、iryo、Ouigo三家充分竞争，性价比极高）。<br>
-        • <strong>推荐理由：</strong> 市中心直达市中心，免去往返郊区机场与排队安检的繁琐疲累，车厢宽敞且行李额充裕，长辈乘坐极其省心。<br><br>
-        2️⃣ <strong>飞机航班（空中国内线）：</strong><br>
-        • 纯飞行时间虽仅1小时20分，但加上机场接驳与值机候机，全程耗时超3.5小时，高铁在舒适度与效率上完胜。<br><br>
-        💡 <strong>订票小贴士：</strong> 推荐使用 <strong>Omio App 或 Renfe官网</strong> 一键比对三家运营商班次，尽早选定前排舒适座位！
+        📅 <strong>西班牙与意大利 30天大师规划师全景精要</strong>:<br><br>
+        专为父母家庭旅行量身打造，大幅降低奔波疲劳的<strong>9大确定住宿酒店与6大黄金城际交通公式</strong>：<br><br>
+
+        <div style="background:#fdfcf9;border:1.5px solid #2d6a4f;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1b4332;">🏨 9大确定住宿酒店（枢纽黄金地段·平地无障碍·电梯齐全）</strong>：<br>
+          1️⃣ <strong>巴塞罗那：</strong> H10 Casa Mimosa 四星级（米拉之家步行1分钟平坦林荫大道）<br>
+          2️⃣ <strong>塞维利亚：</strong> Hotel Fernando III 四星级（圣十字区平坦石板路，舒适电梯）<br>
+          3️⃣ <strong>马德里：</strong> Pestana Plaza Mayor 四星级（紧邻马约尔广场，老城核心）<br>
+          4️⃣ <strong>那不勒斯：</strong> Grand Hotel Oriente 四星级（托莱多地铁站步行3分钟，治安良好繁华街区）<br>
+          5️⃣ <strong>佛罗伦萨：</strong> Grand Hotel Baglioni 四星级（距SMN火车站仅200米，历史全景露台）<br>
+          6️⃣ <strong>罗马：</strong> Hotel Indigo Rome - St. George 五星级（朱利亚大道，平步直达纳沃纳广场与梵蒂冈）<br>
+          7️⃣ <strong>格拉纳达：</strong> Hotel Alhambra Palace 五星级（免去徒步爬坡直抵阿尔罕布拉宫）<br>
+          8️⃣ <strong>马拉加：</strong> AC Hotel Málaga Palacio 四星级（大教堂与地中海海港全景）<br>
+          9️⃣ <strong>威尼斯：</strong> Hotel Danieli / Santa Chiara（大运河畔水上巴士无缝直达）
+        </div>
+
+        <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 14px;border-radius:0 10px 10px 0;margin-bottom:8px;">
+          <strong style="color:#15803d;">🚆 6大黄金城际交通公式（告别繁琐转机与搬行李劳顿）</strong>：<br>
+          • <strong>巴塞罗那 ➔ 马德里：</strong> iryo / Renfe AVE 高铁直达 2小时30分钟<br>
+          • <strong>马德里 ➔ 塞维利亚：</strong> Renfe AVE 高铁直达 2小时40分钟<br>
+          • <strong>马德里 ➔ 那不勒斯：</strong> 伊比利亚航空直飞 2小时35分钟（免去罗马陆路转乘劳顿）<br>
+          • <strong>那不勒斯 ➔ 佛罗伦萨：</strong> Italo商务舱Prima直达 2小时50分钟<br>
+          • <strong>佛罗伦萨 ➔ 罗马：</strong> 意铁红箭Frecciarossa高铁 1小时35分钟直达<br>
+          • <strong>罗马 ↔ 那不勒斯（一日游）：</strong> 高铁直达仅需 1小时10分钟
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>📅</span> <span>[第2章] 查看大师规划师5大精要卡片 ➔</span>
+          </button>
+        </div>
       `;
     } else {
       res = `
-        🚆 <strong>🇪🇸 바르셀로나 ➔ 마드리드 이동 & 고속열차(렌페) 완벽 가이드</strong>:<br><br>
-        1️⃣ <strong>고속철도 (부모님 동행 시 가장 강력 추천! 🌟):</strong><br>
-        • <strong>소요 시간:</strong> 약 <strong>2시간 30분 직통</strong> (최고 시속 300km)<br>
-        • <strong>운행 구간:</strong> 바르셀로나 산츠(Barcelona Sants)역 ➔ 마드리드 아토차(Madrid Atocha)역 (하루 15~20회 수시 운행)<br>
-        • <strong>예상 요금:</strong> 조기 예매 시 편도 <strong>€19 ~ €45</strong> (Renfe AVE, iryo, OUIGO 3사 경쟁으로 가성비 매우 우수)<br>
-        • <strong>추천 이유:</strong> 공항 왕복 이동과 탑승 수속 번거로움 없이 도심 한복판에서 도심으로 직결되며, 좌석이 넓고 짐 보관이 쉬워 어르신 이동에 비행기보다 훨씬 편안하고 빠릅니다.<br><br>
-        2️⃣ <strong>항공편 (Puente Aéreo 셔틀 비행기):</strong><br>
-        • 순수 비행시간은 약 1시간 20분이지만, 공항 왕복 이동과 짐 부치기, 보안검색을 합치면 총 3시간 30분 이상 소요되어 기차가 훨씬 유리합니다.<br><br>
-        💡 <strong>예매 팁:</strong> <strong>Omio(오미오) 앱 또는 렌페 공식 앱</strong>에서 Renfe(AVE), iryo, Ouigo의 시간표와 요금을 한눈에 비교하고 앞쪽 편안한 좌석을 예매하세요!
+        📅 <strong>스페인 &amp; 이탈리아 30일 마스터 플래너 총정리</strong>:<br><br>
+        가족 여행의 피로도를 최소화하고 효율을 극대화한 <strong>9대 확정 숙소 &amp; 6대 이동 공식</strong> 요약입니다:<br><br>
+
+        <div style="background:#fdfcf9;border:1.5px solid #2d6a4f;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1b4332;">🏨 9대 확정 숙소 (역세권 &amp; 부모님 맞춤 평지·엘리베이터 완비)</strong>:<br>
+          1️⃣ <strong>바르셀로나:</strong> H10 까사 미모사 4성급 (카사 밀라 도보 1분 평지 가로수길)<br>
+          2️⃣ <strong>세비야:</strong> 호텔 페르난도 3세 4성급 (산타크루즈 평지 도보, 정숙한 객실)<br>
+          3️⃣ <strong>마드리드:</strong> 페스타나 플라자 마요르 4성급 (마요르 광장 바로 옆 중심가)<br>
+          4️⃣ <strong>나폴리:</strong> 그랜드 호텔 오리엔테 4성급 (톨레도역 도보 3분 번화가 안심 치안)<br>
+          5️⃣ <strong>피렌체:</strong> 그랜드 호텔 발리오니 4성급 (산타 마리아 노벨라역 200m, 환상 루프탑 테라스)<br>
+          6️⃣ <strong>로마:</strong> 호텔 인디고 로마 - 세인트 조지 5성급 (줄리아 거리, 나보나·바티칸 도보)<br>
+          7️⃣ <strong>그라나다:</strong> 호텔 알함브라 팰리스 5성급 (언덕 도보 등반 없이 알함브라 직결)<br>
+          8️⃣ <strong>말라가:</strong> AC 호텔 말라가 팔라시오 4성급 (대성당과 지중해 항구 파노라마)<br>
+          9️⃣ <strong>베네치아:</strong> 호텔 다니엘리 / 산타 키아라 (대운하 및 수상버스 접근성 최상)
+        </div>
+
+        <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 14px;border-radius:0 10px 10px 0;margin-bottom:8px;">
+          <strong style="color:#15803d;">🚆 6대 황금 교통 공식 (공항 대기와 무거운 짐 이동 최소화)</strong>:<br>
+          • <strong>바르셀로나 ➔ 마드리드:</strong> 이료(iryo) / 렌페 고속열차 직통 2시간 30분<br>
+          • <strong>마드리드 ➔ 세비야:</strong> 렌페 AVE 고속열차 직통 2시간 40분<br>
+          • <strong>마드리드 ➔ 나폴리:</strong> 이베리아 항공 직항 2시간 35분 (로마 경유 육로 환승 피로 배제)<br>
+          • <strong>나폴리 ➔ 피렌체:</strong> 이탈로(Italo) 프리마석 직통 2시간 50분<br>
+          • <strong>피렌체 ➔ 로마:</strong> 프레차로사(Frecciarossa) 고속열차 직통 1시간 35분<br>
+          • <strong>로마 ↔ 나폴리 (당일치기/이동):</strong> 고속열차 직통 1시간 10분
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>📅</span> <span>[제2장] 마스터 플래너 5대 요약 카드 전체보기 ➔</span>
+          </button>
+        </div>
       `;
     }
-    const chips = [
-      { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본 이동' },
-      { query: '마드리드에서 세비야 이동법', label: '🚄 마드리드 ➔ 세비야 이동' },
-      { query: '바르셀로나 맛집 추천해줘', label: '🥘 바르셀로나 맛집' },
-      { query: '사그라다 파밀리아 예약 팁', label: '🏛️ 사그라다 파밀리아' }
-    ];
     return res + renderFollowupChips(chips);
   }
 
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 2] MADRID ↔ SEVILLE
-  // ----------------------------------------------------
-  if (hasMadrid && hasSeville) {
+
+  // ====================================================
+  // 2. SPAIN & ITALY MASTER GOURMET GUIDE (빠에야 & 피자 외 대체 불가 미식 12선 & 15대 검증식당)
+  // ====================================================
+  const isMasterGourmet = [
+    '빠에야 피자 말고', '피자 말고', '빠에야 말고', '빠에야 외', '피자 외', '빠에야 피자 외', '미식 마스터', '마스터 미식', '대체 불가 미식', '시그니처 요리', '7대 도시 미식', '12대 미식', '검증 식당', '가지 튀김', '소꼬리찜', '피데우아', '비스테카', '라구', '쿠오포', '리볼리타', '살팀보카', '해산물 튀김',
+    'other than paella', 'other than pizza', 'besides paella', 'besides pizza', 'without paella', 'without pizza', 'master gourmet', 'signature dishes', '12 signature dishes', 'verified restaurants', 'fideua', 'carrillada', 'berenjenas con miel', 'bistecca alla fiorentina', 'ragu napoletano', 'saltimbocca',
+    'パエリア以外', 'ピザ以外', 'マスターグルメ', '7大都市グルメ', '12大名物料理', '厳選レストラン', 'フィデウア', '牛テール煮込み', 'ビステッカ', 'ナポリ風ラグー', '郷土料理',
+    '除海鲜饭', '除了海鲜饭', '除披萨', '除了披萨', '不要披萨', '不要海鲜饭', '不吃海鲜饭', '不吃披萨', '除海鲜饭外', '除披萨外', '除西班牙海鲜饭外', '大师美食', '12大招牌美食', '7大城市美食', '精选餐厅', '佛罗伦萨牛排', '那不勒斯肉酱', '炖牛尾', '特色佳肴'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isMasterGourmet) {
+    const chips = [
+      { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '이탈리아어 식당 필수 회화', label: '🇮🇹 이탈리아어 회화' }
+    ];
+
     let res = '';
     if (lang === 'ja') {
       res = `
-        🚆 <strong>🇪🇸 マドリード ➔ セビリア 高速鉄道移動ガイド</strong>:<br><br>
-        1️⃣ <strong>高速鉄道 AVE / iryo（イチ押し！ 🌟）:</strong><br>
-        • <strong>所要時間:</strong> 直行で<strong>約2時間40分</strong><br>
-        • <strong>運行区間:</strong> マドリード・アトーチャ（Atocha）駅 ➔ セビリア・サンタ・フスタ（Santa Justa）駅<br>
-        • <strong>費用目安:</strong> 片道約€25〜€55（事前予約推奨）<br>
-        • <strong>特徴:</strong> コルドバを経由して美しいアンダルシアのオリーブ畑を車窓から眺められます。駅前からはタクシーやバスでホテルへ直行可能！
+        🍽️ <strong>スペイン＆イタリア 30日マスターグルメガイド（パエリア＆ピザ以外の絶品12選）</strong>:<br><br>
+        「毎日パエリアとピザばかりでは飽きてしまう…」というご両親のために、<strong>胃に優しく滋味深い7大都市の代替不可名物料理</strong>を厳選しました:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#92400e;">🇪🇸 スペイン代表の必食名物（パエリア以外）</strong>:<br>
+          • <strong>バルセロナ:</strong> フィデウア（Fideuà - 魚介の旨味を吸わせた極細パスタのパエリア風）<br>
+          • <strong>セビリア:</strong> イベリコ豚の赤ワイン煮込み（Carrillada Ibérica - 歯が弱いご両親でもとろける柔らかさ）<br>
+          • <strong>グラナダ:</strong> 茄子のフリット黒蜜添え（Berenjenas con Miel - 外サク中フワの甘じょっぱい逸品）<br>
+          • <strong>マラガ:</strong> マラガ風ミックスシーフードフリット（Fritura Malagueña）＆白身魚のフライ（Cazón en Adobo）
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#991b1b;">🇮🇹 イタリア代表の必食名物（ピザ以外）</strong>:<br>
+          • <strong>ナポリ:</strong> 10時間煮込んだナポリ風牛肉ラグー（Ragù Napoletano）＆黒胡椒香るムール貝のワイン蒸し（Impepatata di Cozze）<br>
+          • <strong>フィレンツェ:</strong> ビステッカ・アッラ・フィオレンティーナ（Tボーン炭火ステーキ）＆トスカーナ風豆と野菜の食べるスープ「リボッリータ（Ribollita）」<br>
+          • <strong>ローマ:</strong> ローマ伝統の牛テールトマト煮込み（Coda alla Vaccinara）＆仔牛肉とセージの生ハム巻き「サルティンボッカ（Saltimbocca）」
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>🍽️</span> <span>[要約 5] 7大都市の厳選レストラン15選＆詳細を見る ➔</span>
+          </button>
+        </div>
       `;
     } else if (lang === 'en') {
       res = `
-        🚆 <strong>🇪🇸 Madrid ➔ Seville High-Speed Train (AVE) Guide</strong>:<br><br>
-        1️⃣ <strong>High-Speed Rail AVE / iryo (Recommended! 🌟):</strong><br>
-        • <strong>Travel Time:</strong> Approx. <strong>2 hrs 40 mins</strong> direct.<br>
-        • <strong>Route:</strong> <strong>Madrid Atocha</strong> ➔ <strong>Seville Santa Justa</strong>.<br>
-        • <strong>Fare:</strong> ~€25–€55 one-way with advance booking.<br>
-        • <strong>Highlights:</strong> Smooth, scenic passage through the rolling olive groves of Andalusia, stopping briefly in Córdoba. Much more convenient than flights!
+        🍽️ <strong>Spain & Italy 30-Day Master Gourmet Guide (12 Signature Dishes Beyond Paella & Pizza)</strong>:<br><br>
+        Tired of daily paella and pizza? Here are <strong>12 senior-friendly, deeply comforting regional culinary masterworks</strong> across 7 historic cities:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#92400e;">🇪🇸 Spain Signature Dishes (Beyond Paella)</strong>:<br>
+          • <strong>Barcelona:</strong> Fideuà (toasty short angel-hair noodles simmered in rich saffron shellfish broth with allioli)<br>
+          • <strong>Seville:</strong> Carrillada Ibérica (melt-in-your-mouth braised pork/beef cheeks slow-cooked in Pedro Ximénez red wine)<br>
+          • <strong>Granada:</strong> Berenjenas con Miel (crispy tempura-style eggplant batons drizzled with sugarcane molasses)<br>
+          • <strong>Malaga:</strong> Fritura Malagueña (ultralight olive-oil fried baby squids and fish) & Cazón en Adobo (marinated dogfish)
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#991b1b;">🇮🇹 Italy Signature Dishes (Beyond Pizza)</strong>:<br>
+          • <strong>Naples:</strong> Ragù Napoletano (10-hour slow-simmered rich beef & tomato ragù) & Impepatata di Cozze (steamed black pepper mussels)<br>
+          • <strong>Florence:</strong> Bistecca alla Fiorentina (dry-aged Chianina T-bone steak over wood coals) & Ribollita (warm hearty Tuscan bean & cavolo nero stew)<br>
+          • <strong>Rome:</strong> Coda alla Vaccinara (braised oxtail in savory tomato, celery and pine nut sauce) & Saltimbocca alla Romana (veal cutlet with fresh sage and prosciutto)
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>🍽️</span> <span>[Summary 5] View 15 Verified Restaurants & Food Photos ➔</span>
+          </button>
+        </div>
       `;
     } else if (lang === 'zh') {
       res = `
-        🚆 <strong>🇪🇸 马德里 ➔ 塞维利亚 高铁（AVE）出行指南</strong>:<br><br>
-        1️⃣ <strong>西班牙高铁 AVE / iryo（首选推荐！ 🌟）：</strong><br>
-        • <strong>运行耗时：</strong> 直达约<strong>2小时40分钟</strong>。<br>
-        • <strong>运行区间：</strong> 马德里Atocha站 ➔ 塞维利亚Santa Justa站。<br>
-        • <strong>票价参考：</strong> 提前预订单程约€25~€55。<br>
-        • <strong>行程体验：</strong> 途经科尔多瓦，沿途可尽情饱览安达卢西亚大片橄榄树庄园的迷人风光。
+        🍽️ <strong>西班牙与意大利 30天美食大师指南（海鲜饭与披萨外的12大必尝特色）</strong>:<br><br>
+        每天吃海鲜饭和披萨难免单调，为您精选<strong>深受父母喜爱、口感软烂鲜美且温和养胃的7大名城特色料理</strong>：<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#92400e;">🇪🇸 西班牙不可替代特色美馔（海鲜饭之外）</strong>：<br>
+          • <strong>巴塞罗那：</strong> 细面海鲜煲（Fideuà - 浓郁海鲜高汤煨煮短细面，配蒜黄酱）<br>
+          • <strong>塞维利亚：</strong> 红酒炖伊比利亚猪面颊肉（Carrillada Ibérica - 入口即化，老少皆宜）<br>
+          • <strong>格拉纳达：</strong> 甘蔗蜜汁炸茄条（Berenjenas con Miel - 外酥里嫩，咸甜交织绝妙口感）<br>
+          • <strong>马拉加：</strong> 马拉加什锦炸海鲜（Fritura Malagueña）与香料腌炸白身鱼（Cazón en Adobo）
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#991b1b;">🇮🇹 意大利不可替代特色美馔（披萨之外）</strong>：<br>
+          • <strong>那不勒斯：</strong> 10小时慢火精炖肉酱（Ragù Napoletano）与黑椒白葡萄酒蒸青口贝（Impepatata di Cozze）<br>
+          • <strong>佛罗伦萨：</strong> 托斯卡纳炭烤T骨牛排（Bistecca alla Fiorentina）与暖胃经典白豆蔬菜浓汤（Ribollita）<br>
+          • <strong>罗马：</strong> 屠夫风味番茄炖牛尾（Coda alla Vaccinara）与鼠尾草帕尔玛火腿煎小牛肉（Saltimbocca）
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>🍽️</span> <span>[总结 5] 查看7大城市15家精选认证餐厅详情 ➔</span>
+          </button>
+        </div>
       `;
     } else {
       res = `
-        🚆 <strong>🇪🇸 마드리드 ➔ 세비야 고속열차(AVE/iryo) 이동 가이드</strong>:<br><br>
-        1️⃣ <strong>고속철도 (가장 강력 추천! 🌟):</strong><br>
-        • <strong>소요 시간:</strong> 약 <strong>2시간 40분 직통</strong><br>
-        • <strong>운행 구간:</strong> 마드리드 아토차(Atocha)역 ➔ 세비야 산타 후스타(Santa Justa)역<br>
-        • <strong>예상 요금:</strong> 사전 예매 시 편도 €25 ~ €55<br>
-        • <strong>특징:</strong> 중간에 코르도바를 거치며 안달루시아의 광활한 올리브 평원 풍경을 감상할 수 있습니다. 세비야 산타 후스타역 도착 후 구시가지까지 택시로 10분(약 €8)이면 호텔 문 앞까지 도착합니다!
+        🍽️ <strong>스페인 &amp; 이탈리아 30일 미식 마스터 가이드 (빠에야 &amp; 피자 외 12대 시그니처)</strong>:<br><br>
+        매일 빠에야와 피자만 드실 수는 없죠! 부모님의 입맛(한식과 결이 비슷한 따뜻한 국물, 부드러운 고기)을 완벽하게 저격하는 <strong>도시별 대체 불가 시그니처 요리 12선</strong>입니다:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#92400e;">🇪🇸 스페인 4대 도시 대체 불가 미식 (빠에야 외)</strong>:<br>
+          • <strong>바르셀로나:</strong> 피데우아 (Fideuà - 해산물 육수를 듬뿍 머금은 얇은 면 파스타에 알리올리 소스)<br>
+          • <strong>세비야:</strong> 이베리코 볼살/소꼬리찜 (Carrillada - 레드와인에 푹 조려 이가 안 좋으신 부모님도 입에서 살살 녹음)<br>
+          • <strong>그라나다:</strong> 사탕수수 꿀을 곁들인 가지 튀김 (Berenjenas con Miel - 겉바속촉 단짠의 극치)<br>
+          • <strong>말라가:</strong> 모둠 해산물 튀김 (Fritura Malagueña) &amp; 마리네이드 생선튀김 (Cazón en Adobo)
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#991b1b;">🇮🇹 이탈리아 3대 도시 대체 불가 미식 (피자 외)</strong>:<br>
+          • <strong>나폴리:</strong> 10시간 정성 나폴리식 라구 (Ragù Napoletano) &amp; 칼칼한 통후추 홍합찜 (Impepatata di Cozze)<br>
+          • <strong>피렌체:</strong> 티본스테이크 (Bistecca alla Fiorentina) &amp; 토스카나 채소 콩스프 리볼리타 (Ribollita - 속이 확 풀리는 해장감)<br>
+          • <strong>로마:</strong> 로마 전통 소꼬리 토마토 스튜 (Coda alla Vaccinara) &amp; 송아지고기 살팀보카 (Saltimbocca alla Romana)
+        </div>
+
+        <div style="margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
+            <span>🍽️</span> <span>[요약 5] 7대 도시 대체 불가 미식 상세 &amp; 검증식당 15선 보기 ➔</span>
+          </button>
+        </div>
       `;
     }
+    return res + renderFollowupChips(chips);
+  }
+
+
+  // ====================================================
+  // 3. MASTER SURVIVAL PHRASES & DINING EXPRESSIONS (24선 서바이벌 회화 / 스페인어·이탈리아어 주문 표현)
+  // ====================================================
+  const isSurvivalPhrases = (
+    [
+      '회화', '서바이벌', '서바이벌 회화', '필수 표현', '주문 표현', '스페인어 회화', '이탈리아어 회화', '스페인어 표현', '이탈리아어 표현', '식당 회화', '식당 표현', '주문할 때',
+      '소금', '싱겁게', '짠', '짜지 않게', 'sin sal', 'sem sal', 'poco sale', 'meno sale', 'less salt', 'no salt',
+      '설탕', '달지 않게', '노슈가', 'sin azucar', 'sin azúcar', 'senza zucchero', 'no sugar',
+      '따뜻한 물', '미온수', '뜨거운 물', 'agua caliente', 'acqua calda', 'agua sin gas', 'acqua naturale', 'warm water', 'hot water', 'still water',
+      '계산서', '영수증', 'la cuenta', 'il conto', 'bill please', 'check please', 'cuanto cuesta', 'quanto costa',
+      '카드 결제', '카드 되나요', '신용카드 결제', 'tarjeta', 'carta',
+      '화장실 어디', 'donde esta el bano', 'donde esta el baño', 'dov e il bagno', "dov'è il bagno", 'where is the bathroom', 'where is the restroom',
+      '남은 음식 포장', '음식 싸주세요', 'para llevar', 'da portare via', 'takeaway', 'takeout',
+      '메뉴 추천', '음식 추천', '추천 메뉴', 'que me recomienda', 'qué me recomienda', 'cosa mi consiglia',
+      '하나 주세요', '이거 주세요', 'uno de esto', 'uno di questo',
+      '실례합니다', '저기요', '여기요', 'disculpe', 'perdon', 'scusi',
+      '감사합니다', '고맙습니다', 'gracias', 'grazie',
+      'スペイン語会話', 'イタリア語会話', 'サバイバル会話', '注文フレーズ', '塩分控えめ', '砂糖なし', '温かいお湯', 'お会計をお願い', 'トイレはどこ', '持ち帰りにして',
+      '西语日常口语', '意大利语日常口语', '生存口语', '点餐口语', '少放盐', '不加糖', '温开水', '请买单', '洗手间在哪里', '打包带走'
+    ].some(w => q.includes(w) || cleanQ.includes(w)) ||
+    /\b(sin sal|poco sale|sin azucar|sin azúcar|senza zucchero|agua caliente|acqua calda|la cuenta|il conto|para llevar|da portare via|disculpe|scusi|takeaway|takeout)\b/i.test(q)
+  );
+
+  if (isSurvivalPhrases) {
+    const isItalianFocus = isItaly || ['이탈리아', '이태리', 'italian', 'poco sale', 'senza zucchero', 'quanto costa', 'il conto', 'il bagno', 'acqua calda', 'イタリア語', '意大利语'].some(w => q.includes(w) || cleanQ.includes(w));
+    const isSugarFocus = ['설탕', '달지 않게', '노슈가', 'azucar', 'azúcar', 'zucchero', 'sugar', '砂糖'].some(w => q.includes(w) || cleanQ.includes(w));
+    const isSaltFocus = ['소금', '싱겁게', '짠', '짜지', 'sal', 'sale', 'salt', '塩'].some(w => q.includes(w) || cleanQ.includes(w));
+    const isWaterFocus = ['물', '생수', '따뜻한 물', '미온수', '뜨거운 물', 'agua', 'acqua', 'water', 'お湯', 'お水', '温水'].some(w => q.includes(w) || cleanQ.includes(w));
+    const isBillFocus = ['얼마', '가격', '계산서', '영수증', '카드', 'cuenta', 'conto', 'quanto', 'cuanto', 'bill', 'check', 'いくら', 'お会計', '买单', '多少钱'].some(w => q.includes(w) || cleanQ.includes(w));
+    const isToiletFocus = ['화장실', 'baño', 'bano', 'bagno', 'toilet', 'restroom', 'トイレ', '洗手间'].some(w => q.includes(w) || cleanQ.includes(w));
+    const isTakeoutFocus = ['포장', '싸주', '남은', 'llevar', 'portare', 'takeout', 'takeaway', 'to go', '持ち帰り', '打包'].some(w => q.includes(w) || cleanQ.includes(w));
+
+    let res = '';
+    const chips = [
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
+    ];
+
+    if (lang === 'ja') {
+      res = `
+        🗣️ <strong>スペイン＆イタリア旅行 厳選サバイバル実戦会話</strong>:<br><br>
+        ヨーロッパのレストランは日本人・アジア人の味覚には塩分が強めです。ご両親とのお食事や街歩きで役立つ魔法のフレーズ集です:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">🧂 塩分＆砂糖控えめ（健康配慮）</strong>:<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong>（シン・サル、ポル・ファボール）: 塩抜き・薄味にしてください<br>
+          • 🇮🇹 <strong>Poco sale, per favore.</strong>（ポコ・サーレ、ペル・ファヴォーレ）: 塩分控えめにしてください<br>
+          • 🇪🇸 <strong>Sin azúcar, por favor.</strong> / 🇮🇹 <strong>Senza zucchero, per favore.</strong>: 砂糖なし・甘さ控えめ
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💧 水・お湯＆お会計</strong>:<br>
+          • 🇪🇸 <strong>Agua caliente, por favor.</strong> / 🇮🇹 <strong>Acqua calda, per favore.</strong>: 温かいお湯をください（胃もたれ防止）<br>
+          • 🇪🇸 <strong>Agua sin gas</strong> / 🇮🇹 <strong>Acqua naturale</strong>: 炭酸なしの普通のミネラルウォーター<br>
+          • 🇪🇸 <strong>La cuenta, por favor.</strong> / 🇮🇹 <strong>Il conto, per favore.</strong>: お会計をお願いします<br>
+          • 🇪🇸 <strong>¿Puedo pagar con tarjeta?</strong> / 🇮🇹 <strong>Posso pagare con carta?</strong>: クレジットカード使えますか？
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">🚶 トイレ・持ち帰り＆丁寧な呼びかけ</strong>:<br>
+          • 🇪🇸 <strong>¿Dónde está el baño?</strong> / 🇮🇹 <strong>Dov'è il bagno?</strong>: お手洗いはどこですか？<br>
+          • 🇪🇸 <strong>Para llevar, por favor.</strong> / 🇮🇹 <strong>Da portare via, per favore.</strong>: 残りを持ち帰り用に包んでください<br>
+          • 🇪🇸 <strong>¡Disculpe!</strong> / 🇮🇹 <strong>Scusi!</strong>: すみません（店員への呼びかけ）<br>
+          • 🇪🇸 <strong>Muchas gracias</strong> / 🇮🇹 <strong>Grazie mille</strong>: 本当にありがとうございます
+        </div>
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🗣️ <strong>Spain & Italy Dining & Travel Survival Phrases (24 Key Expressions)</strong>:<br><br>
+        European dishes can be quite salty for senior palates, and water/bread is usually charged. Keep these magic phrases handy on your smartphone:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">🧂 Salt & Sugar Control (Senior Health)</strong>:<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong> (Seen sahl, por fah-vor): No salt / less salt, please.<br>
+          • 🇮🇹 <strong>Poco sale, per favore.</strong> (Poh-koh sah-leh, pehr fah-voh-reh): Light on the salt, please.<br>
+          • 🇪🇸 <strong>Sin azúcar, por favor.</strong> / 🇮🇹 <strong>Senza zucchero, per favore.</strong>: No sugar / unsweetened, please.
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💧 Water & Payment</strong>:<br>
+          • 🇪🇸 <strong>Agua caliente, por favor.</strong> / 🇮🇹 <strong>Acqua calda, per favore.</strong>: Hot/warm drinking water, please.<br>
+          • 🇪🇸 <strong>Agua sin gas</strong> / 🇮🇹 <strong>Acqua naturale</strong>: Still bottled water (non-carbonated).<br>
+          • 🇪🇸 <strong>La cuenta, por favor.</strong> / 🇮🇹 <strong>Il conto, per favore.</strong>: The check / bill, please.<br>
+          • 🇪🇸 <strong>¿Puedo pagar con tarjeta?</strong> / 🇮🇹 <strong>Posso pagare con carta?</strong>: Can I pay by card?
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">🚶 Restroom, Takeaway & Courtesies</strong>:<br>
+          • 🇪🇸 <strong>¿Dónde está el baño?</strong> / 🇮🇹 <strong>Dov'è il bagno?</strong>: Where is the restroom?<br>
+          • 🇪🇸 <strong>Para llevar, por favor.</strong> / 🇮🇹 <strong>Da portare via, per favore.</strong>: Pack this to-go / takeaway, please.<br>
+          • 🇪🇸 <strong>¡Disculpe!</strong> / 🇮🇹 <strong>Scusi!</strong>: Excuse me! (Calling server politely)<br>
+          • 🇪🇸 <strong>Muchas gracias</strong> / 🇮🇹 <strong>Grazie mille</strong>: Thank you very much!
+        </div>
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🗣️ <strong>西班牙与意大利旅行 必备24句点餐与实用生存口语</strong>:<br><br>
+        欧洲餐厅口味对亚洲长辈偏咸，且水和面包通常收费。点餐和游览时长辈同行可直接出示以下常用短语：<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">🧂 少盐与控糖（长辈健康贴士）</strong>：<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong>：请少放盐 / 做清淡一点<br>
+          • 🇮🇹 <strong>Poco sale, per favore.</strong>：少放盐，清淡点<br>
+          • 🇪🇸 <strong>Sin azúcar, por favor.</strong> / 🇮🇹 <strong>Senza zucchero, per favore.</strong>：不加糖 / 无糖
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💧 饮水与结账买单</strong>：<br>
+          • 🇪🇸 <strong>Agua caliente, por favor.</strong> / 🇮🇹 <strong>Acqua calda, per favore.</strong>：请给一杯温水/开水<br>
+          • 🇪🇸 <strong>Agua sin gas</strong> / 🇮🇹 <strong>Acqua naturale</strong>：纯净矿泉水（无气泡水）<br>
+          • 🇪🇸 <strong>La cuenta, por favor.</strong> / 🇮🇹 <strong>Il conto, per favore.</strong>：请买单结账<br>
+          • 🇪🇸 <strong>¿Puedo pagar con tarjeta?</strong> / 🇮🇹 <strong>Posso pagare con carta?</strong>：可以刷信用卡吗？
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">🚶 洗手间、打包与常用礼貌用语</strong>：<br>
+          • 🇪🇸 <strong>¿Dónde está el baño?</strong> / 🇮🇹 <strong>Dov'è il bagno?</strong>：请问洗手间在哪里？<br>
+          • 🇪🇸 <strong>Para llevar, por favor.</strong> / 🇮🇹 <strong>Da portare via, per favore.</strong>：麻烦帮我打包带走<br>
+          • 🇪🇸 <strong>¡Disculpe!</strong> / 🇮🇹 <strong>Scusi!</strong>：打扰一下/劳驾（招呼服务员）<br>
+          • 🇪🇸 <strong>Muchas gracias</strong> / 🇮🇹 <strong>Grazie mille</strong>：非常感谢！
+        </div>
+      `;
+    } else {
+      res = `
+        🗣️ <strong>스페인 &amp; 이탈리아 식당 및 여행 필수 서바이벌 회화 (24선)</strong>:<br><br>
+        유럽 식당은 음식이 한국인 입맛에 꽤 짜고, 물/빵이 유료인 경우가 많습니다. 부모님 동행 시 주문 시 아래 마법의 표현을 보여주시거나 읽어주세요:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">🧂 1. 덜 짜게 / 설탕 빼기 (혈압 &amp; 건강 케어)</strong>:<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong> (신 살, 포르 파보르): 소금 빼주세요 / 싱겁게 해주세요<br>
+          • 🇮🇹 <strong>Poco sale, per favore.</strong> (포코 살레, 페르 파보레): 소금 적게 넣어주세요<br>
+          • 🇪🇸 <strong>Sin azúcar, por favor.</strong> (신 아수카르, 포르 파보르) / 🇮🇹 <strong>Senza zucchero, per favore.</strong> (센차 주케로, 페르 파보레): 설탕 빼주세요
+        </div>
+
+        <div style="background:#f0fdf4;border-left:4px solid #16a34a;background:#f0fdf4;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💧 2. 따뜻한 물 &amp; 계산서/카드 결제</strong>:<br>
+          • 🇪🇸 <strong>Agua caliente, por favor.</strong> (아과 칼리엔테, 포르 파보르) / 🇮🇹 <strong>Acqua calda, per favore.</strong> (아콰 칼다, 페르 파보레): 따뜻한 물 주세요 (부모님 소화에 최고)<br>
+          • 🇪🇸 <strong>Agua sin gas</strong> (아과 신 가스) / 🇮🇹 <strong>Acqua naturale</strong> (아콰 나투랄레): 탄산 없는 일반 생수<br>
+          • 🇪🇸 <strong>La cuenta, por favor.</strong> (라 쿠엔타, 포르 파보르) / 🇮🇹 <strong>Il conto, per favore.</strong> (일 콘토, 페르 파보레): 계산서 주세요<br>
+          • 🇪🇸 <strong>¿Puedo pagar con tarjeta?</strong> (푸에도 파가르 콘 타르헤타?) / 🇮🇹 <strong>Posso pagare con carta?</strong> (포소 파가레 콘 카르타?): 카드로 결제할 수 있나요?
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">🚶 3. 화장실, 포장 &amp; 정중한 호칭</strong>:<br>
+          • 🇪🇸 <strong>¿Dónde está el baño?</strong> (돈데 에스타 엘 바뇨?) / 🇮🇹 <strong>Dov'è il bagno?</strong> (도베 일 바뇨?): 화장실 어디인가요?<br>
+          • 🇪🇸 <strong>Para llevar, por favor.</strong> (파라 예바르, 포르 파보르) / 🇮🇹 <strong>Da portare via, per favore.</strong> (다 포르타레 비아, 페르 파보레): 남은 음식 포장해 주세요<br>
+          • 🇪🇸 <strong>¡Disculpe!</strong> (디스쿨페!) / 🇮🇹 <strong>Scusi!</strong> (스쿠지!): 실례합니다 / 여기요<br>
+          • 🇪🇸 <strong>Muchas gracias</strong> (무차스 그라시아스) / 🇮🇹 <strong>Grazie mille</strong> (그라치에 밀레): 정말 감사합니다
+        </div>
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+
+  // ====================================================
+  // 4. INTERCITY TRANSIT ROUTES (6대 황금 공식 및 핵심 구간)
+  // ====================================================
+
+  // 4-1. NAPLES ➔ FLORENCE (나폴리 ➔ 피렌체)
+  if ((hasNaples && hasFlorence) || ['나폴리에서 피렌체', '피렌체에서 나폴리', 'naples to florence', 'florence to naples', 'ナポリからフィレンツェ', '从那不勒斯到佛罗伦萨'].some(w => q.includes(w) || cleanQ.includes(w))) {
+    const chips = [
+      { query: '피렌체에서 로마 이동법', label: '🚆 피렌체 ➔ 로마' },
+      { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' },
+      { query: '피렌체 티본스테이크 맛집', label: '🥩 피렌체 비스테카' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚆 <strong>🇮🇹 ナポリ ➔ フィレンツェ 高速鉄道移動ガイド</strong>:<br><br>
+        1️⃣ <strong>Italo（イタロ）または Trenitalia（フレッチャロッサ）:</strong><br>
+        • <strong>所要時間:</strong> 直通で<strong>約2時間50分</strong>（乗換なし）<br>
+        • <strong>運行区間:</strong> ナポリ中央駅（Napoli Centrale）➔ フィレンツェ・サンタ・マリア・ノヴェッラ駅（Firenze SMN）<br>
+        • <strong>シニア快適クラス（一押し）:</strong> <strong>Italo Prima（ビジネス席）</strong>がおすすめ。座席が広く静かで、ウェルカムドリンクと軽食サービスがあり、荷物置き場も座席から近いため安心です。<br>
+        • <strong>費用目安:</strong> 事前早期予約（1〜2ヶ月前）で片道 €29〜€55（直前は€80超）。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚆 <strong>🇮🇹 Naples ➔ Florence High-Speed Train Guide</strong>:<br><br>
+        1️⃣ <strong>Italo or Frecciarossa High-Speed Rail:</strong><br>
+        • <strong>Travel Time:</strong> Approx. <strong>2 hrs 50 mins direct</strong> (no transfers).<br>
+        • <strong>Route:</strong> <strong>Napoli Centrale</strong> ➔ <strong>Firenze Santa Maria Novella (SMN)</strong>.<br>
+        • <strong>Senior Comfort Recommendation:</strong> Book <strong>Italo Prima (Business Class)</strong>. Offers spacious reclining leather seats, complimentary espresso and snacks, quiet carriages, and clear eye-lines to luggage racks.<br>
+        • <strong>Fare:</strong> €29–€55 one-way when booked 1–2 months in advance.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚆 <strong>🇮🇹 那不勒斯 ➔ 佛罗伦萨 高铁直达出行指南</strong>:<br><br>
+        1️⃣ <strong>法拉利高铁Italo 或 意铁红箭Frecciarossa：</strong><br>
+        • <strong>运行耗时：</strong> 直达仅需<strong>约2小时50分钟</strong>（中途免换乘）。<br>
+        • <strong>运行区间：</strong> 那不勒斯中央车站（Napoli Centrale）➔ 佛罗伦萨SMN车站（Firenze SMN）。<br>
+        • <strong>长辈尊享推荐：</strong> 强烈推荐选择 <strong>Italo Prima（商务舱）</strong>，座椅宽敞舒适，免费提供意式浓缩咖啡与精美点心，车厢静音且行李架视线清晰安全。<br>
+        • <strong>参考票价：</strong> 提前1~2个月预定单程约 €29~€55。
+      `;
+    } else {
+      res = `
+        🚆 <strong>🇮🇹 나폴리 ➔ 피렌체 고속철도 이동 완벽 가이드</strong>:<br><br>
+        1️⃣ <strong>이탈로(Italo) 또는 트랜이탈리아(Frecciarossa) 직통:</strong><br>
+        • <strong>소요 시간:</strong> 환승 없이 <strong>약 2시간 50분 직통</strong><br>
+        • <strong>운행 구간:</strong> 나폴리 중앙역(Napoli Centrale) ➔ 피렌체 산타 마리아 노벨라역(Firenze SMN)<br>
+        • <strong>부모님 추천 좌석:</strong> <strong>이탈로 프리마(Prima - 비즈니스석)</strong>를 강력 추천합니다. 좌석이 넓고 리클라이닝이 편안하며, 웰컴 커피/스낵 제공 및 짐칸이 시야에 들어와 도난 걱정 없이 편안히 쉬실 수 있습니다.<br>
+        • <strong>예상 요금:</strong> 1~2개월 전 조기 예매 시 편도 €29 ~ €55 (역세권 호텔 발리오니까지 도보 3분).
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 4-2. FLORENCE ➔ ROME (피렌체 ➔ 로마)
+  if ((hasFlorence && hasRome) || ['피렌체에서 로마', '로마에서 피렌체', 'florence to rome', 'rome to florence', 'フィレンツェからローマ', '从佛罗伦萨到罗马'].some(w => q.includes(w) || cleanQ.includes(w))) {
+    const chips = [
+      { query: '로마 12일 분산 일정 테마', label: '🏛️ 로마 12일 일정' },
+      { query: '성당 복장 규정 알려줘', label: '⛪ 성당 복장 규정' },
+      { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚆 <strong>🇮🇹 フィレンツェ ➔ ローマ 高速鉄道移動ガイド</strong>:<br><br>
+        1️⃣ <strong>Frecciarossa（フレッチャロッサ）または Italo（イタロ）:</strong><br>
+        • <strong>所要時間:</strong> 直通で<strong>約1時間35分</strong>（15〜20分間隔で頻繁に運行）<br>
+        • <strong>運行区間:</strong> フィレンツェ SMN駅 ➔ ローマ・テルミニ駅（Roma Termini）またはティブルティーナ駅<br>
+        • <strong>特徴:</strong> トスカーナの美しい田園風景を抜け、あっという間にローマ市中心部に到着します。駅からはタクシーでホテルへ直行するのがシニアには最も安全です。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚆 <strong>🇮🇹 Florence ➔ Rome High-Speed Rail Guide</strong>:<br><br>
+        1️⃣ <strong>Frecciarossa or Italo High-Speed Train:</strong><br>
+        • <strong>Travel Time:</strong> Only <strong>1 hr 35 mins direct</strong> (departures every 15–20 mins).<br>
+        • <strong>Route:</strong> <strong>Firenze SMN</strong> ➔ <strong>Roma Termini</strong> (or Roma Tiburtina).<br>
+        • <strong>Highlights:</strong> Seamless downtown-to-downtown connection. Sparing all airport checks and dropping you right in the historic heart of Rome.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚆 <strong>🇮🇹 佛罗伦萨 ➔ 罗马 高铁直达出行指南</strong>:<br><br>
+        1️⃣ <strong>意铁红箭Frecciarossa 或 法拉利Italo：</strong><br>
+        • <strong>运行耗时：</strong> 直达仅需<strong>约1小时35分钟</strong>（班次密集，每15~20分钟一班）。<br>
+        • <strong>运行区间：</strong> 佛罗伦萨SMN站 ➔ 罗马特米尼中央火车站（Roma Termini）。<br>
+        • <strong>行程优势：</strong> 真正市中心到市中心，出站后打车直达酒店即可，完全省去去郊区机场的舟车劳顿。
+      `;
+    } else {
+      res = `
+        🚆 <strong>🇮🇹 피렌체 ➔ 로마 고속열차 이동 완벽 가이드</strong>:<br><br>
+        1️⃣ <strong>프레차로사(Frecciarossa) 또는 이탈로(Italo):</strong><br>
+        • <strong>소요 시간:</strong> 직통 <strong>약 1시간 35분</strong> (15~20분 간격으로 수시 운행)<br>
+        • <strong>운행 구간:</strong> 피렌체 SMN역 ➔ 로마 테르미니역(Roma Termini) 또는 티부르티나역<br>
+        • <strong>특징:</strong> 토스카나 구릉지대를 지나 로마 도심 한복판으로 직결됩니다. 테르미니역 도착 후 소매치기가 많은 대중교통 대신 역사 앞 정식 택시 승차장(또는 FREE NOW 앱)에서 택시를 타시면 호텔까지 안전하게 이동합니다!
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 4-3. ROME ↔ NAPLES (로마 ↔ 나폴리 당일치기 / 이동)
+  if ((hasRome && hasNaples) || ['로마에서 나폴리', '나폴리에서 로마', 'rome to naples', 'naples to rome', 'ローマからナポリ', '从罗马到那不勒斯'].some(w => q.includes(w) || cleanQ.includes(w))) {
+    const chips = [
+      { query: '카프리 섬 페리랑 푸른 동굴 팁', label: '⛵ 카프리 페리' },
+      { query: '나폴리 화덕피자 맛집 추천', label: '🍕 나폴리 피자' },
+      { query: '피렌체에서 로마 이동법', label: '🚆 피렌체 ➔ 로마' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚆 <strong>🇮🇹 ローマ ↔ ナポリ 高速鉄道移動ガイド</strong>:<br><br>
+        • <strong>所要時間:</strong> 高速鉄道直通で<strong>わずか1時間10分</strong>！<br>
+        • <strong>運行区間:</strong> ローマ・テルミニ駅 ↔ ナポリ中央駅<br>
+        • <strong>活用法:</strong> 非常に近いため、ローマ滞在中のナポリ・ポンペイ日帰り旅行、あるいは拠点移動のどちらにも最適です。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚆 <strong>🇮🇹 Rome ↔ Naples High-Speed Rail Guide</strong>:<br><br>
+        • <strong>Travel Time:</strong> Just <strong>1 hr 10 mins direct</strong> via Frecciarossa or Italo!<br>
+        • <strong>Route:</strong> Roma Termini ↔ Napoli Centrale.<br>
+        • <strong>Pro Tip:</strong> At just over an hour, it serves effortlessly as either a smooth hotel relocation or a day trip to Naples and Pompeii.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚆 <strong>🇮🇹 罗马 ↔ 那不勒斯 高铁直达出行指南</strong>:<br><br>
+        • <strong>运行耗时：</strong> 高铁直达<strong>仅需1小时10分钟</strong>！<br>
+        • <strong>运行区间：</strong> 罗马Termini车站 ↔ 那不勒斯中央火车站。<br>
+        • <strong>行程优势：</strong> 耗时极短，既适合作为城市换宿的大件行李轻松直达，也适合以罗马为据点进行那不勒斯与庞贝一日游。
+      `;
+    } else {
+      res = `
+        🚆 <strong>🇮🇹 로마 ↔ 나폴리 고속열차 이동 가이드</strong>:<br><br>
+        • <strong>소요 시간:</strong> 초고속 열차 직통으로 <strong>단 1시간 10분</strong>!<br>
+        • <strong>운행 구간:</strong> 로마 테르미니역 ↔ 나폴리 중앙역<br>
+        • <strong>활용 팁:</strong> 거리가 가까워 로마에서 나폴리/폼페이 당일치기 투어로도 훌륭하며, 캐리어를 싣고 숙소를 옮길 때도 피로감이 전혀 없는 황금 구간입니다.
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 4-4. BARCELONA ➔ MADRID (바르셀로나 ➔ 마드리드)
+  if ((hasBarcelona && hasMadrid) || ['바르셀로나에서 마드리드', '마드리드에서 바르셀로나', 'barcelona to madrid', 'madrid to barcelona', 'バルセロナからマドリード', '从巴塞罗那到马德里'].some(w => q.includes(w) || cleanQ.includes(w))) {
+    const chips = [
+      { query: '마드리드에서 세비야 이동법', label: '🚆 마드리드 ➔ 세비야' },
+      { query: '마드리드 맛집 추천해줘', label: '🍽️ 마드리드 맛집' },
+      { query: '바르셀로나 가우디 투어 팁', label: '🏛️ 가우디 명소' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚆 <strong>🇪🇸 バルセロナ ➔ マドリード 高速鉄道移動ガイド</strong>:<br><br>
+        • <strong>所要時間:</strong> iryo / Renfe AVE 直通で<strong>約2時間30分</strong><br>
+        • <strong>運行区間:</strong> バルセロナ・サンツ駅（Sants）➔ マドリード・アトーチャ駅（Atocha）<br>
+        • <strong>特徴:</strong> 市中心部同士を結ぶため、空港での荷物預け入れや保安検査の行列が不要で、飛行機よりはるかに快適です。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚆 <strong>🇪🇸 Barcelona ➔ Madrid High-Speed Train Guide</strong>:<br><br>
+        • <strong>Travel Time:</strong> Approx. <strong>2 hrs 30 mins direct</strong> via iryo or Renfe AVE.<br>
+        • <strong>Route:</strong> Barcelona Sants ➔ Madrid Puerta de Atocha.<br>
+        • <strong>Why Train over Flight:</strong> Downtown station-to-station routing eliminates long airport transfer commutes and stringent baggage weigh-ins.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚆 <strong>🇪🇸 巴塞罗那 ➔ 马德里 高铁直达指南</strong>:<br><br>
+        • <strong>运行耗时：</strong> iryo / Renfe AVE 高铁直达约<strong>2小时30分钟</strong>。<br>
+        • <strong>运行区间：</strong> 巴塞罗那Sants车站 ➔ 马德里Atocha阿托查火车站。<br>
+        • <strong>出行建议：</strong> 比乘坐飞机省去两头去机场的时间，行李无额外严苛限制，父母出行首选。
+      `;
+    } else {
+      res = `
+        🚆 <strong>🇪🇸 바르셀로나 ➔ 마드리드 고속열차(iryo/AVE) 이동 가이드</strong>:<br><br>
+        • <strong>소요 시간:</strong> 고속철도 직통으로 <strong>약 2시간 30분</strong><br>
+        • <strong>운행 구간:</strong> 바르셀로나 산츠(Sants)역 ➔ 마드리드 아토차(Atocha)역<br>
+        • <strong>기차 추천 이유:</strong> 공항 이동, 위탁 수하물 검사, 탑승 대기 시간을 감안할 때 비행기보다 기차가 시간적으로 1시간 이상 절약되며 부모님의 무릎과 허리 피로도가 극적으로 줄어듭니다!
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 4-5. MADRID ➔ NAPLES (마드리드 ➔ 나폴리 항공 직항)
+  if ((hasMadrid && hasNaples) || ['마드리드에서 나폴리', 'madrid to naples', 'マドリードからナポリ', '从马德里到那不勒斯'].some(w => q.includes(w) || cleanQ.includes(w))) {
+    const chips = [
+      { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' },
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '나폴리 맛집 추천해줘', label: '🍕 나폴리 맛집' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        ✈️ <strong>🇪🇸 マドリード ➔ 🇮🇹 ナポリ 直行便移動公式</strong>:<br><br>
+        • <strong>航空会社:</strong> イベリア航空（Iberia）直行便<br>
+        • <strong>所要時間:</strong> <strong>2時間35分</strong><br>
+        • <strong>区間:</strong> マドリード・バラハス空港（MAD）➔ ナポリ・カポディキーノ空港（NAP）<br>
+        • <strong>マスター公式の利点:</strong> ローマ経由の陸路移動（飛行機＋列車乗換）を避け、ナポリ空港から市内中心部ホテル（グランド・ホテル・オリエンテ）へタクシーで約15分（定額約€20）で楽々チェックインできます！
+      `;
+    } else if (lang === 'en') {
+      res = `
+        ✈️ <strong>🇪🇸 Madrid ➔ 🇮🇹 Naples Direct Flight Formula</strong>:<br><br>
+        • <strong>Airlines:</strong> Iberia Direct Non-Stop Flight.<br>
+        • <strong>Flight Duration:</strong> <strong>2 hrs 35 mins</strong>.<br>
+        • <strong>Route:</strong> Madrid-Barajas (MAD) ➔ Naples Capodichino (NAP).<br>
+        • <strong>Master Formula Rationale:</strong> Flying directly into Naples bypasses the exhausting multi-leg transfer of landing in Rome and hauling bags across trains. Fixed-rate airport taxis reach Naples downtown in just 15 mins (~€20)!
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        ✈️ <strong>🇪🇸 马德里 ➔ 🇮🇹 那不勒斯 直飞跨国出行公式</strong>:<br><br>
+        • <strong>执飞航司：</strong> 西班牙国家航空（Iberia）直飞航班。<br>
+        • <strong>飞行耗时：</strong> <strong>2小时35分钟</strong>。<br>
+        • <strong>航线：</strong> 马德里巴拉哈斯机场（MAD）➔ 那不勒斯卡波迪基诺机场（NAP）。<br>
+        • <strong>行程智慧：</strong> 避开飞往罗马后再倒大巴和火车拖行李的疲累，抵达那不勒斯机场后乘坐正规出租车（固定一口价约€20）15分钟即可直达市中心酒店！
+      `;
+    } else {
+      res = `
+        ✈️ <strong>🇪🇸 마드리드 ➔ 🇮🇹 나폴리 직항 이동 공식</strong>:<br><br>
+        • <strong>추천 항공:</strong> 이베리아 항공(Iberia) 직항편<br>
+        • <strong>비행 시간:</strong> <strong>약 2시간 35분 직항</strong><br>
+        • <strong>운항 구간:</strong> 마드리드 바라하스 공항(MAD) ➔ 나폴리 카포디키노 공항(NAP)<br>
+        • <strong>마스터 플래너 핵심 이유:</strong> 로마로 입국해 무거운 캐리어를 끌고 기차로 환승하는 극심한 피로를 없애고, 나폴리 공항 도착 즉시 정찰제 택시(약 €20, 15분)로 톨레도역 앞 그랜드 호텔 오리엔테까지 직행하여 부모님 체력을 온전히 보존합니다!
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+
+  // ====================================================
+  // 5. ITALY TRANSIT MASTER GUIDE & CONVALIDA FINE TRAP
+  // ====================================================
+  const isItalyTransit = [
+    '이탈리아 기차', '이탈리아 교통', '트랜이탈리아', '이탈로', '프레차로사', '펀칭', '검표', '콘발리다', 'convalida', '64번 버스', '40번 버스', '이탈리아 버스', '이탈리아 지하철', '로마 지하철', '이탈리아 택시', 'free now', '프리나우',
+    'italy train', 'italy transit', 'trenitalia', 'italo', 'frecciarossa', 'ticket validation', 'convalida', 'bus 64', 'rome bus', 'rome metro', 'tap and go italy', 'free now italy',
+    'イタリア鉄道', 'トレニタリア', 'イタロ', '打刻', '刻印', 'コンヴァリダ', 'ローマ64番バス', 'ローマ地下鉄', 'イタリア交通',
+    '意大利火车', '意铁', '法拉利高铁', '打票', '检票机', '罗马64路公交', '罗马地铁', '意大利交通'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isItalyTransit) {
+    const chips = [
+      { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' },
+      { query: '성당 복장 규정 알려줘', label: '⛪ 성당 복장 규정' },
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
+    ];
+
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚄 <strong>🇮🇹 イタリア公共交通＆高速鉄道 必読マスターガイド</strong>:<br><br>
+        ご両親の体力保護と<strong>「イタリア特有の落とし穴（罰金・スリ）」</strong>を回避する最重要ポイントです:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">1️⃣ 高速鉄道（Trenitalia vs Italo）の選び方:</strong><br>
+          • <strong>Italo Prima（ビジネス席）がおすすめ:</strong> 料金差はわずか€10〜€15程度ですが、ゆったりとしたリクライニング本革シート、無料エスプレッソ＆スナック、荷物置き場が座席から近いため、シニア旅行に最も安心です。<br>
+          • 指定席付き高速鉄道（Frecciarossa/Italo）は電子チケットでそのまま乗車可能です（打刻不要）。
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">2️⃣ 【厳重注意】紙の切符の「打刻（Convalida）」義務:</strong><br>
+          • <strong>Regionale（普通列車）や市内バス・トラムの紙切符</strong>は、乗車前に必ず駅ホームや車内の<strong>黄色・緑色の打刻機（刻印機）</strong>に通して日時の刻印を行ってください！<br>
+          • 未打刻の場合、有効な切符を持っていても<strong>1人あたり€50〜€100の即時罰金</strong>が科せられます。
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">3️⃣ ローマ64番・40番バスのスリ警告 ＆ タクシー活用:</strong><br>
+          • テルミニ駅 ↔ バチカンを結ぶ64番・40番バスはヨーロッパ屈指のスリ多発路線です。ご両親連れは地下鉄（Tap & Go対応）または<strong>FREE NOW（タクシー配車アプリ）</strong>の利用を強く推奨します！
+        </div>
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚄 <strong>🇮🇹 Italy Transit & High-Speed Rail Survival Guide</strong>:<br><br>
+        Essential rules focused on <strong>senior comfort</strong> and <strong>avoiding Italy's classic traps (hefty fines & pickpockets)</strong>:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">1️⃣ Train Booking (Trenitalia vs Italo):</strong><br>
+          • <strong>Italo Prima (Business Class) is strongly recommended:</strong> For only €10–€15 extra, you gain extra-wide reclining leather seating, complimentary espresso & gourmet biscuits, quiet carriages, and direct line-of-sight to luggage racks.<br>
+          • High-speed trains with assigned seats (Frecciarossa/Italo) do NOT require paper stamping—e-tickets on smartphones are scanned onboard.
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">2️⃣ 【MAJOR WARNING】 Ticket Validation (*Convalida*) Fine Trap:</strong><br>
+          • All physical paper tickets for <strong>Regionale trains, city buses, and trams MUST be validated</strong> in the small yellow/green stamping machines BEFORE boarding!<br>
+          • Failure to validate results in on-the-spot fines of <strong>€50–€100 per person</strong>, even if you bought a valid ticket!
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">3️⃣ Rome Bus 64/40 Pickpocket Advisory & Tap & Go:</strong><br>
+          • Buses 64 and 40 (Termini ↔ Vatican) are notorious pickpocket havens. Use the Metro (Tap & Go with contactless credit cards) or **FREE NOW app taxis** for seamless door-to-door comfort!
+        </div>
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚄 <strong>🇮🇹 意大利公共交通与高铁乘车避坑指南</strong>:<br><br>
+        专为长辈出行省力、防范<strong>“意大利典型交通罚款与小偷陷阱”</strong>的核心指南：<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">1️⃣ 高铁选择（Trenitalia意铁 vs 法拉利Italo）：</strong><br>
+          • <strong>首选推荐 Italo Prima（商务舱）：</strong> 差价通常仅约 €10~€15，但拥有超大真皮调节座椅、免费意式浓缩咖啡与精美点心，行李架视线清晰，长辈乘坐极度舒心。<br>
+          • 凡含对号入座的高铁（Frecciarossa/Italo）手机出示二维码电子票即可，无需打票。
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">2️⃣ 【重中之重】 实体纸质票“打票（Convalida）”罚款陷阱：</strong><br>
+          • 所有乘坐<strong>慢车（Regionale）、市内公交和大巴的纸质车票</strong>，上车或上站台前必须插入黄色或绿色打票机打印日期时间！<br>
+          • 即使买了正规车票，只要未打票即被视作逃票，当场被处以每人<strong>€50~€100的重额罚款</strong>！
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">3️⃣ 罗马64/40路公交防盗警示 与 FREE NOW叫车：</strong><br>
+          • 往返特米尼火车站与梵蒂冈的64路和40路是欧洲著名小偷聚集线路。建议长辈乘坐罗马地铁（支持Tap & Go刷外币信用卡过闸）或使用 <strong>FREE NOW 官方打车软件</strong>直接点对点抵达。
+        </div>
+      `;
+    } else {
+      res = `
+        🚄 <strong>🇮🇹 이탈리아 대중교통 및 고속철도 완벽 마스터 가이드</strong>:<br><br>
+        부모님의 체력을 아끼고 <strong>‘이탈리아 특유의 함정(벌금 폭탄 &amp; 소매치기)’</strong>을 피하기 위한 핵심 요약입니다:<br><br>
+
+        <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b45309;">1️⃣ 고속열차 선택: 트랜이탈리아 vs 이탈로(Italo)</strong><br>
+          • <strong>이탈로 프리마(Prima - 비즈니스석) 강력 추천:</strong> 일반석과 편도 약 €10~€15 차이에 불과하지만, 넓은 좌석, 웰컴 음료/스낵 카트 서비스, 짐칸이 좌석 근처에 있어 캐리어 도난 걱정이 전혀 없습니다.<br>
+          • 좌석 지정 고속열차(Frecciarossa, Italo)는 스마트폰 전자 티켓 QR코드로 탑승하며 펀칭이 필요 없습니다.
+        </div>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">2️⃣ 【절대 주의】 완행열차(Regionale) &amp; 시내버스 티켓 '펀칭(Convalida)' 의무:</strong><br>
+          • <strong>종이 티켓</strong>을 구매하셨다면 플랫폼이나 버스 내부의 <strong>노란색 또는 초록색 펀칭기</strong>에 넣어 날짜/시간을 반드시 각인해야 합니다!<br>
+          • 표를 샀더라도 펀칭하지 않으면 무임승차로 간주되어 현장에서 <strong>1인당 €50 ~ €100의 즉결 벌금</strong>을 물게 됩니다.
+        </div>
+
+        <div style="background:#eff6ff;border:1.5px solid #2563eb;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#1d4ed8;">3️⃣ 로마 64번·40번 버스 소매치기 주의 &amp; 택시(FREE NOW) 활용:</strong><br>
+          • 테르미니역 ↔ 바티칸을 오가는 64번/40번 버스는 유럽에서 소매치기가 가장 악명 높은 노선입니다. 부모님 동행 시 로마 메트로(컨택트리스 카드 Tap &amp; Go 지원)를 타시거나 <strong>FREE NOW 앱</strong>으로 정식 택시를 불러 이동하세요!
+        </div>
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // ====================================================
+  // 6. CATHEDRAL & CHURCH DRESS PROTOCOL (성당 복장 규정)
+  // ====================================================
+  const isCathedralDress = (
+    [
+      '성당 복장', '바티칸 복장', '교회 복장', '복장 규정', '반바지 성당', '민소매 성당', '두오모 복장', '드레스코드', '슬리퍼 성당',
+      'cathedral dress code', 'church dress code', 'vatican dress code', 'dress protocol', 'shorts cathedral', 'sleeveless cathedral', 'duomo dress code',
+      '大聖堂ドレスコード', '教会服装', 'バチカン服装', 'ノースリーブ教会', 'ドゥオーモ服装', '服装規定',
+      '大教堂着装', '教堂着装规定', '梵蒂冈着装', '短裤教堂', '吊带无袖教堂', '大教堂着装要求', '着装要求'
+    ].some(w => q.includes(w) || cleanQ.includes(w)) ||
+    ((q.includes('大聖堂') || q.includes('教会') || q.includes('バチカン') || q.includes('ドゥオーモ')) && (q.includes('服装') || q.includes('ドレスコード') || q.includes('規定'))) ||
+    ((q.includes('教堂') || q.includes('梵蒂冈') || q.includes('大教堂')) && (q.includes('着装') || q.includes('服装') || q.includes('规定') || q.includes('要求'))) ||
+    ((q.includes('성당') || q.includes('바티칸') || q.includes('교회')) && (q.includes('복장') || q.includes('옷') || q.includes('규정')))
+  );
+
+  if (isCathedralDress) {
+    const chips = [
+      { query: '로마 12일 분산 일정 테마', label: '🏛️ 로마 12일 일정' },
+      { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' },
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
+    ];
+
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        ⛪ <strong>イタリア・スペイン大聖堂 入場ドレスコード完全チェック</strong>:<br><br>
+        バチカンのサン・ピエトロ大聖堂、フィレンツェのドゥオーモ、バルセロナのサグラダ・ファミリアなどでは<strong>極めて厳格な服装検査</strong>が行われます:<br><br>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">🚫 入場禁止となる服装:</strong><br>
+          • <strong>肩の露出:</strong> ノースリーブ、キャミソール、タンクトップ<br>
+          • <strong>膝の露出:</strong> 膝上丈のショートパンツ、ミニスカート（膝が隠れる必要があります）<br>
+          • <strong>帽子:</strong> 堂内に入る際は必ず脱帽<br>
+          • <strong>露出度の高い履物:</strong> ビーチサンダルや過度のスリッパ
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💡 シニア安心・旅のエチケット裏技:</strong><br>
+          • デイパックに<strong>薄手のストールやカーディガン</strong>を1枚入れておき、入場時だけ肩や腰にサッと巻けば100%スムーズに入場できます！
+        </div>
+      `;
+    } else if (lang === 'en') {
+      res = `
+        ⛪ <strong>Italy & Spain Cathedral Dress Protocol & Checklist</strong>:<br><br>
+        Strict inspections are enforced at major basilicas including <strong>St. Peter's Basilica (Vatican), Florence Duomo, and Sagrada Família</strong>:<br><br>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">🚫 Strictly Prohibited Attire:</strong><br>
+          • <strong>Bare Shoulders:</strong> Sleeveless tops, tank tops, halter tops.<br>
+          • <strong>Bare Knees:</strong> Shorts or skirts ending above the kneecap (knees must be fully covered).<br>
+          • <strong>Hats:</strong> Men and women must remove hats/caps before entering holy sites.<br>
+          • <strong>Footwear:</strong> Beach flip-flops are strongly discouraged.
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💡 Pro Senior Travel Tip:</strong><br>
+          • Pack a <strong>lightweight pashmina scarf or shawl</strong> in your daypack. Simply drape it over shoulders or wrap it around the waist upon entry for 100% effortless compliance!
+        </div>
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        ⛪ <strong>意大利与西班牙大教堂 入场着装规范与避坑清单</strong>:<br><br>
+        在梵蒂冈圣彼得大教堂、佛罗伦萨百花大教堂、巴塞罗那圣家堂等宗教圣地，安检极其严格：<br><br>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">🚫 严禁入场的服装要求：</strong><br>
+          • <strong>露肩装：</strong> 无袖上衣、吊带背心、抹胸。<br>
+          • <strong>露膝盖：</strong> 膝盖以上的短裤、超短裙（裤裙长度必须遮住膝盖）。<br>
+          • <strong>帽子：</strong> 进入教堂内部必须脱下帽子。<br>
+          • <strong>鞋履：</strong> 严禁穿着沙滩人字拖。
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💡 长辈出行实用小妙招：</strong><br>
+          • 随身背包里放一条<strong>轻便的披肩或丝巾</strong>，进教堂时披在肩头或系在腰间遮住双腿，即可确保100%顺利入场！
+        </div>
+      `;
+    } else {
+      res = `
+        ⛪ <strong>이탈리아 &amp; 스페인 대성당 복장 규정 (드레스코드 완벽 체크리스트)</strong>:<br><br>
+        바티칸 성 베드로 대성당, 피렌체 두오모, 바르셀로나 사그라다 파밀리아 등은 <strong>복장 검사가 매우 엄격</strong>하여 기준에 맞지 않으면 입장이 즉시 거부됩니다:<br><br>
+
+        <div style="background:#fef2f2;border:1.5px solid #dc2626;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#b91c1c;">🚫 입장 불가 복장:</strong><br>
+          • <strong>어깨 노출:</strong> 민소매, 나시, 끈나시(탱크탑)<br>
+          • <strong>무릎 노출:</strong> 무릎 위로 올라오는 반바지, 짧은 치마 (남녀 모두 무릎을 덮어야 함)<br>
+          • <strong>모자:</strong> 성당 내부 입장 시 반드시 탈의<br>
+          • <strong>신발:</strong> 비치 샌들, 조리(플립플랍) 형태
+        </div>
+
+        <div style="background:#f0fdf4;border:1.5px solid #16a34a;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
+          <strong style="color:#15803d;">💡 부모님 동행 필수 꿀팁:</strong><br>
+          • 가방에 <strong>얇은 스카프(숄)나 가디건</strong>을 1개 넣어두셨다가, 성당 입구에서 어깨나 허리에 둘러주시면 아무런 제지 없이 100% 안전하게 입장하실 수 있습니다!
+        </div>
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // ====================================================
+  // 7. CAPRI ISLAND & FERRY & BLUE GROTTO (카프리 섬 & 페리)
+  // ====================================================
+  const isCapriGuide = [
+    '카프리', '카프리섬', '카프리 페리', '푸른 동굴', '카프리 당일치기', 'snav', 'caremar',
+    'capri', 'capri island', 'capri ferry', 'blue grotto', 'grotta azzurra', 'snav ferry', 'caremar',
+    'カプリ島', 'カプリフェリー', '青の洞窟',
+    '卡普里', '卡普里岛', '卡普里轮渡', '蓝洞'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isCapriGuide) {
+    const chips = [
+      { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' },
+      { query: '나폴리 정통 화덕피자 맛집', label: '🍕 나폴리 피자' },
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' }
+    ];
+
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        ⛵ <strong>🇮🇹 カプリ島フェリー＆青の洞窟 実戦検証ガイド</strong>:<br><br>
+        1️⃣ <strong>高速船（フェリー）の乗り方:</strong><br>
+        • <strong>出発港:</strong> ナポリ・ベヴェレッロ港（Molo Beverello - トレド通りから平坦な徒歩圏）<br>
+        • <strong>船会社:</strong> SNAVまたはCaremar 高速水中翼船で<strong>約45〜50分</strong><br><br>
+        2️⃣ <strong>青の洞窟（Grotta Azzurra）の冬季リアルチェック:</strong><br>
+        • 冬場（11月〜2月）は波やうねりが高く、洞窟入口の水位が上がるため<strong>入場不可となる日が非常に多い</strong>です。フェリー運航状況と青の洞窟オープン状況は別個に確認が必要です。<br><br>
+        3️⃣ <strong>シニア安心の旅程戦略:</strong><br>
+        • 荷物はナポリのホテル（グランド・ホテル・オリエンテ）に預け、身軽なデイパックで日帰り訪問してください。天候不良時は無理せずナポリ旧市街（スパッカ・ナポリ）やポンペイ観光に切り替えるのが安心です！
+      `;
+    } else if (lang === 'en') {
+      res = `
+        ⛵ <strong>🇮🇹 Capri Island Ferry & Blue Grotto Practical Guide</strong>:<br><br>
+        1️⃣ <strong>High-Speed Ferry Access:</strong><br>
+        • <strong>Departure Port:</strong> Naples Molo Beverello Port (short flat walk from Toledo station).<br>
+        • <strong>Operators:</strong> SNAV or Caremar hydrofoils take approx. <strong>45–50 mins</strong>.<br><br>
+        2️⃣ <strong>Blue Grotto Winter Reality Check:</strong><br>
+        • Off-peak/winter seasons (Nov–Feb) frequently experience high tide and rough swells that completely close the tiny cave mouth. Ferry departures and Blue Grotto entries are separate status checks!<br><br>
+        3️⃣ <strong>Senior Travel Strategy:</strong><br>
+        • Keep heavy luggage stationed at Grand Hotel Oriente in Naples and take a light daypack to Capri. If seas are choppy, pivot seamlessly to Naples Historic Center (Spaccanapoli) or Pompeii!
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        ⛵ <strong>🇮🇹 卡普里岛轮渡与蓝洞实战攻略</strong>:<br><br>
+        1️⃣ <strong>高速水翼轮渡乘坐方式：</strong><br>
+        • <strong>出发码头：</strong> 那不勒斯Molo Beverello码头（距托莱多商圈平坦步行可达）。<br>
+        • <strong>主要船司：</strong> SNAV 或 Caremar 高速水翼客船，航程约 <strong>45~50分钟</strong>。<br><br>
+        2️⃣ <strong>蓝洞（Grotta Azzurra）冬季游览现实考量：</strong><br>
+        • 11月~2月冬季风浪较大、海潮水位高，洞口狭窄极易关闭。轮渡开航与蓝洞开放是两个独立事项，务必提前查验！<br><br>
+        3️⃣ <strong>长辈同行游览建议：</strong><br>
+        • 将大件行李安放在那不勒斯酒店（Grand Hotel Oriente），携带轻便双肩包一日游。若遇恶劣天气，果断切换为那不勒斯老城（斯帕卡老街）或庞贝古城游览更为稳妥！
+      `;
+    } else {
+      res = `
+        ⛵ <strong>🇮🇹 카프리 섬 페리 탑승 &amp; 푸른 동굴 실전 검증 가이드</strong>:<br><br>
+        1️⃣ <strong>페리 탑승 공식:</strong><br>
+        • <strong>출발 항구:</strong> 나폴리 몰로 베베렐로(Molo Beverello) 항구 (톨레도역 번화가에서 도보 이동 가능)<br>
+        • <strong>운항 선사:</strong> SNAV 또는 Caremar 고속 하이드로포일로 <strong>약 45 ~ 50분 소요</strong><br><br>
+        2️⃣ <strong>푸른 동굴(Grotta Azzurra) 현실 체크:</strong><br>
+        • 겨울철(11월~2월)에는 파도가 높거나 수위가 올라가 동굴 입구가 통제되는 날이 많습니다. 페리가 정상 운항하더라도 푸른 동굴 진입 가능 여부는 당일 아침 현지 상황을 별도로 확인하셔야 합니다.<br><br>
+        3️⃣ <strong>부모님 동행 전략:</strong><br>
+        • 캐리어는 나폴리 호텔(그랜드 호텔 오리엔테)에 맡겨두고 가벼운 데이팩 가방만 들고 다녀오세요. 날씨가 궂다면 무리해서 배를 타기보다 나폴리 구시가지(스파카 나폴리)나 폼페이 유적으로 대체하는 것이 현명합니다!
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // ====================================================
+  // 8. ROME 12-DAY FLEXIBLE PLAN & 4 THEMES (로마 12일 분산 일정)
+  // ====================================================
+  const isRomeFlexiblePlan = [
+    '로마 12일', '로마 일정', '로마 테마', '로마 분산', '로마 코스', 'rome 12-day', 'rome 12 day', 'rome itinerary', 'rome themes', 'rome pacing',
+    'ローマ12日間', 'ローマ日程', 'ローマテーマ', '罗马12天', '罗马行程', '罗马主题'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isRomeFlexiblePlan) {
+    const chips = [
+      { query: '성당 복장 규정 알려줘', label: '⛪ 성당 복장 규정' },
+      { query: '피렌체에서 로마 이동법', label: '🚆 피렌체 ➔ 로마' },
+      { query: '로마 3대 파스타 맛집', label: '🍝 로마 파스타' }
+    ];
+
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🏛️ <strong>🇮🇹 ローマ12日間 4大テーマゆったり分散日程ガイド</strong>:<br><br>
+        ご両親の膝と体力を守るため、<strong>「午前1箇所観光 ➔ 午後ホテル休憩 ➔ 夕暮れ散歩」</strong>のリズムで楽しむ4大テーマです:<br><br>
+
+        • <strong>テーマ 1: 古代ローマ帝国の栄光:</strong> コロッセオ、フォロ・ロマーノ、パンテオン（午前中の涼しい時間帯に平坦路を選んで散策）<br>
+        • <strong>テーマ 2: バチカンと聖なる大聖堂:</strong> サン・ピエトロ大聖堂、バチカン美術館（オンライン事前予約で長蛇の列を完全回避）<br>
+        • <strong>テーマ 3: ルネサンス＆バロックの路地:</strong> ナヴォーナ広場、トレビの泉、スペイン広場（石畳に疲れたらジェラート休憩）<br>
+        • <strong>テーマ 4: テヴェレ川とトラステヴェレの美食:</strong> サンタンジェロ城の夜景と、トラステヴェレ地区の温かい下町トラットリア
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🏛️ <strong>🇮🇹 Rome 12-Day Flexible Itinerary & 4 Senior Pacing Themes</strong>:<br><br>
+        Structured around <strong>"1 morning major sight ➔ afternoon hotel rest ➔ leisurely sunset piazza stroll"</strong> to protect senior energy:<br><br>
+
+        • <strong>Theme 1: Ancient Imperial Rome:</strong> Colosseum, Roman Forum, Pantheon (visited during gentle morning hours).<br>
+        • <strong>Theme 2: Vatican & Papal Splendor:</strong> St. Peter's Basilica, Vatican Museums (advance timed skip-the-line reservations mandatory).<br>
+        • <strong>Theme 3: Renaissance & Baroque Piazzas:</strong> Piazza Navona, Trevi Fountain, Spanish Steps with frequent espresso breaks.<br>
+        • <strong>Theme 4: Tiber River & Trastevere Culinary:</strong> Castel Sant'Angelo panoramic sunset and authentic evening trattoria dinners in Trastevere.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🏛️ <strong>🇮🇹 罗马12天 4大主题舒缓分流游览指南</strong>:<br><br>
+        遵循<strong>“上午打卡一处核心胜地 ➔ 下午酒店午休调养 ➔ 傍晚漫步广场”</strong>的长辈专属节奏：<br><br>
+
+        • <strong>主题 1：古罗马帝国辉煌：</strong> 斗兽场、古罗马广场、万神殿（清晨气温舒适平地漫步）。<br>
+        • <strong>主题 2：梵蒂冈教廷圣境：</strong> 圣彼得大教堂、梵蒂冈博物馆（务必提前订好免排队门票）。<br>
+        • <strong>主题 3：文艺复兴巴洛克街巷：</strong> 纳沃纳广场、特雷维许愿池、西班牙广场漫步品尝冰淇淋。<br>
+        • <strong>主题 4：台伯河畔与特拉斯提弗列风味：</strong> 圣天使堡浪漫日落与地道平民餐馆慢调晚餐。
+      `;
+    } else {
+      res = `
+        🏛️ <strong>🇮🇹 로마 12일 분산 일정 &amp; 4대 테마 완벽 가이드</strong>:<br><br>
+        부모님의 무릎과 허리를 지키기 위해 <strong>‘오전 핵심 1곳 ➔ 오후 호텔 휴식 ➔ 해질녘 광장 산책’</strong>의 여유로운 페이싱으로 구성된 4대 테마입니다:<br><br>
+
+        • <strong>테마 1: 고대 로마 제국의 숨결:</strong> 콜로세움, 포로 로마노, 판테온 (아침 시간대 평지 위주 관람)<br>
+        • <strong>테마 2: 바티칸과 가톨릭 성지:</strong> 성 베드로 대성당, 바티칸 박물관 (공식 앱 사전 모바일 예약 필수)<br>
+        • <strong>테마 3: 르네상스 &amp; 바로크 낭만 골목:</strong> 나보나 광장, 트레비 분수, 스페인 계단 (중간중간 노천 카페 휴식)<br>
+        • <strong>테마 4: 테베레 강변 &amp; 트라스테베레 미식:</strong> 산탄젤로 성 야경 산책과 정겨운 로컬 식당(다 엔초 등)의 정통 파스타 만찬
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // ====================================================
+  // 9. FESTIVALS & 15 PANORAMIC NIGHT VIEWS (축제 & 15대 야경)
+  // ====================================================
+  const isFestivalsNightviews = [
+    '야경', '야시장', '축제', '전망대', '석양', '일몰', '미켈란젤로 광장', '산 니콜라스', '몬주익', '산탄젤로 야경', '스페인 야경', '이탈리아 야경',
+    'night view', 'night views', 'night market', 'festivals', 'sunset spots', 'mirador', 'piazzale michelangelo', 'san nicolas', 'montjuic', 'sant angelo night',
+    '夜景', 'ナイトビュー', '夜市', '祭り', 'フェスティバル', '夕日', 'ミケランジェロ広場', 'サン・ニコラス展望台', 'モンジュイック',
+    '夜景', '夜市', '节日', '观景台', '日落', '米开朗基罗广场', '圣尼古拉斯观景台', '蒙锥克山'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isFestivalsNightviews) {
+    const chips = [
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
+    ];
+
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🌃 <strong>スペイン＆イタリア 厳選パノラマ夜景＆名物フェスティバル TOP 5</strong>:<br><br>
+        日没の40分前から始まる美しいマジックアワーを家族で満喫できる名所です:<br><br>
+
+        1️⃣ <strong>フィレンツェ・ミケランジェロ広場（Piazzale Michelangelo）:</strong> アルノ川とドゥオーモの赤いクーポラが夕陽に染まるトスカーナ随一の絶景（タクシー利用推奨）。<br>
+        2️⃣ <strong>グラナダ・サン・ニコラス展望台（Mirador de San Nicolás）:</strong> シェラネバダ山脈を背景に黄金色にライトアップされるアルハンブラ宮殿の幻想美。<br>
+        3️⃣ <strong>セビリア・スペイン広場＆トリアナ川辺:</strong> 夕暮れの暖かい街灯が反射する運河とフラメンコの生演奏。<br>
+        4️⃣ <strong>ローマ・サンタンジェロ城の橋＆ピンチョの丘:</strong> ポポロ広場を見下ろすローマ最高のサンセットポイント。<br>
+        5️⃣ <strong>バルセロナ・カルメルのブンカー（Bunkers）＆モンジュイックの丘:</strong> サグラダ・ファミリアと地中海を360度見渡すパノラマ。<br><br>
+        🎉 <strong>代表的フェスティバル:</strong> セビリア春祭り（Feria de Abril - 華やかな衣装と馬車パレード）、フィレンツェ復活祭の山車爆発（Scoppio del Carro）など。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🌃 <strong>Top 5 Panoramic Night Views & Festivals in Spain & Italy</strong>:<br><br>
+        Magnificent spots to experience the golden hour and twilight illumination without strenuous uphill climbs:<br><br>
+
+        1️⃣ <strong>Florence · Piazzale Michelangelo:</strong> Spellbinding sunset panorama overlooking the Arno River, Ponte Vecchio, and Brunelleschi's Duomo dome (take a taxi up).<br>
+        2️⃣ <strong>Granada · Mirador de San Nicolás:</strong> The illuminated Alhambra palace glowing gold against the snow-capped Sierra Nevada.<br>
+        3️⃣ <strong>Seville · Plaza de España & Triana Waterfront:</strong> Golden lamplight illuminating the sweeping curved neo-Mudejar galleries and guitar melodies.<br>
+        4️⃣ <strong>Rome · Castel Sant'Angelo Bridge & Pincio Terrace:</strong> Romantic view of St. Peter's dome and Piazza del Popolo bathed in amber twilight.<br>
+        5️⃣ <strong>Barcelona · Bunkers del Carmel & Montjuïc Hill:</strong> 360-degree panorama over the Sagrada Família out to the Mediterranean Sea.<br><br>
+        🎉 <strong>Key Festivals:</strong> Seville April Fair (Feria de Abril), Valencia Fallas, Florence Easter Cart Explosion (Scoppio del Carro).
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🌃 <strong>西班牙与意大利 5大巅峰全景夜景与传统节日精选</strong>:<br><br>
+        无需过度劳累爬坡即可饱览日落余晖黄金时刻的绝美胜地：<br><br>
+
+        1️⃣ <strong>佛罗伦萨 · 米开朗基罗广场（Piazzale Michelangelo）：</strong> 眺望阿尔诺河、老桥与百花大教堂穹顶日落霞光的托斯卡纳绝景（建议打车直达）。<br>
+        2️⃣ <strong>格拉纳达 · 圣尼古拉斯观景台（Mirador de San Nicolás）：</strong> 远眺内华达雪山映衬下金碧辉煌的阿尔罕布拉宫全景。<br>
+        3️⃣ <strong>塞维利亚 · 西班牙广场与特里亚纳河畔：</strong> 华灯初上时倒映在运河中的新穆德哈尔宫殿长廊与吉他声。<br>
+        4️⃣ <strong>罗马 · 圣天使城堡桥与平丘山露台：</strong> 俯瞰人民广场与圣彼得大教堂穹顶的罗马最佳落日观景位。<br>
+        5️⃣ <strong>巴塞罗那 · 迦密山碉堡（Bunkers）与蒙锥克山：</strong> 360度纵览圣家堂与地中海海天一色的广阔夜景。<br><br>
+        🎉 <strong>特色民俗盛会：</strong> 塞维利亚四月节（盛装与马车游行）、瓦伦西亚法雅节、佛罗伦萨复活节彩车爆破盛典。
+      `;
+    } else {
+      res = `
+        🌃 <strong>스페인 &amp; 이탈리아 15대 파노라마 야경 &amp; 축제 가이드 TOP 5</strong>:<br><br>
+        일몰 40분 전부터 펼쳐지는 황금빛 매직아워를 부모님과 함께 안전하고 편안하게 감상할 수 있는 대표 야경 포인트입니다:<br><br>
+
+        1️⃣ <strong>피렌체 미켈란젤로 광장 (Piazzale Michelangelo):</strong> 아르노강과 두오모 쿠폴라가 붉게 물드는 토스카나 최고의 석양 명소 (올라가실 땐 택시 추천).<br>
+        2️⃣ <strong>그라나다 산 니콜라스 전망대 (Mirador de San Nicolás):</strong> 시에라 네바다 눈 덮인 설산을 배경으로 알함브라 궁전이 황금빛으로 빛나는 환상의 야경.<br>
+        3️⃣ <strong>세비야 스페인 광장 &amp; 트리아나 강변:</strong> 가로등 불빛이 반사되는 웅장한 아치 회랑과 거리 악사들의 플라멩코 선율.<br>
+        4️⃣ <strong>로마 카스텔 산탄젤로 천사의 다리 &amp; 핀초 언덕:</strong> 포폴로 광장과 베드로 대성당 돔을 붉은 노을 속에서 바라보는 로맨틱 뷰포인트.<br>
+        5️⃣ <strong>바르셀로나 몬주익 언덕 &amp; 카르멜 벙커:</strong> 사그라다 파밀리아와 지중해 바다가 한눈에 내려다보이는 360도 파노라마 전망대.<br><br>
+        🎉 <strong>추천 축제:</strong> 세비야 4월 봄 축제(Feria de Abril - 마차와 플라멩코 의상 행렬), 피렌체 부활절 불의 마차 축제(Scoppio del Carro) 등.
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+
+  // ====================================================
+  // 10. CATEGORY GUIDES (FOOD, SHOPPING, SIGHTS, SAFETY, TRANSIT, ETC.)
+  // ====================================================
+
+  // Intent: Specific City Routes (Madrid-Seville, Madrid-Lisbon, Lisbon-Porto, Seville-Granada, Sintra)
+  if (hasMadrid && hasSeville) {
     const chips = [
       { query: '세비야에서 그라나다 이동법', label: '🚆 세비야 ➔ 그라나다' },
       { query: '세비야 맛집 추천해줘', label: '🍽️ 세비야 맛집' },
       { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본' }
     ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚆 <strong>🇪🇸 マドリード ➔ セビリア 高速鉄道移動ガイド</strong>:<br><br>
+        1️⃣ <strong>高速鉄道 AVE / iryo:</strong><br>
+        • <strong>所要時間:</strong> 直行で<strong>約2時間40分</strong><br>
+        • <strong>運行区間:</strong> マドリード・アトーチャ（Atocha）駅 ➔ セビリア・サンタ・フスタ（Santa Justa）駅<br>
+        • <strong>特徴:</strong> コルドバを経由して美しいアンダルシアのオリーブ畑を車窓から眺められます。駅前からはタクシーでホテルへ直行可能！
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚆 <strong>🇪🇸 Madrid ➔ Seville High-Speed Train (AVE) Guide</strong>:<br><br>
+        1️⃣ <strong>High-Speed Rail AVE / iryo:</strong><br>
+        • <strong>Travel Time:</strong> Approx. <strong>2 hrs 40 mins direct</strong>.<br>
+        • <strong>Route:</strong> Madrid Atocha ➔ Seville Santa Justa.<br>
+        • <strong>Highlights:</strong> Smooth, scenic passage through the rolling olive groves of Andalusia. Much more convenient than flights!
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚆 <strong>🇪🇸 马德里 ➔ 塞维利亚 高铁（AVE）出行指南</strong>:<br><br>
+        1️⃣ <strong>西班牙高铁 AVE / iryo：</strong><br>
+        • <strong>运行耗时：</strong> 直达约<strong>2小时40分钟</strong>。<br>
+        • <strong>运行区间：</strong> 马德里Atocha站 ➔ 塞维利亚Santa Justa站。<br>
+        • <strong>行程体验：</strong> 途经科尔多瓦，沿途可尽情饱览安达卢西亚大片橄榄树庄园的迷人风光。
+      `;
+    } else {
+      res = `
+        🚆 <strong>🇪🇸 마드리드 ➔ 세비야 고속열차(AVE/iryo) 이동 가이드</strong>:<br><br>
+        1️⃣ <strong>고속철도 직통:</strong><br>
+        • <strong>소요 시간:</strong> 약 <strong>2시간 40분 직통</strong><br>
+        • <strong>운행 구간:</strong> 마드리드 아토차(Atocha)역 ➔ 세비야 산타 후스타(Santa Justa)역<br>
+        • <strong>특징:</strong> 코르도바를 거치며 안달루시아의 광활한 올리브 평원 풍경을 감상할 수 있습니다. 산타 후스타역 도착 후 구시가지 호텔 페르난도 3세까지 택시로 10분이면 편안히 도착합니다!
+      `;
+    }
     return res + renderFollowupChips(chips);
   }
 
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 3] MADRID ↔ LISBON (CROSS-BORDER)
-  // ----------------------------------------------------
   const isMadridToLisbonRoute = (hasMadrid && hasLisbon) || (isSpain && isPortugal && (hasRouteKeyword || ['이동', '국경', '비행기', '버스', '기차', 'transit', 'cross', 'flight', 'bus', 'train'].some(w => q.includes(w)))) || q.includes('alsa') || q.includes('omio') ||
     ['마드리드에서 리스본', '마드리드 리스본', '리스본에서 마드리드', '국경 이동', '국경 이동법', 'madrid to lisbon', 'lisbon to madrid', 'マドリードからリスボン', '马德里到里斯本'].some(w => q.includes(w));
 
   if (isMadridToLisbonRoute) {
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        ✈️ <strong>🇪🇸 マドリード ➔ 🇵🇹 リスボン（国境移動・予約完全ガイド）</strong>:<br><br>
-        マドリード〜リスボン間の移動は<strong>飛行機（所要約1時間20分）が最もおすすめ</strong>です！<br><br>
-        1️⃣ <strong>飛行機（イチ押し・最も推奨！ 🌟）:</strong><br>
-        • <strong>所要時間:</strong> 約<strong>1時間20分</strong>直行便（エア・ヨーロッパ、ライアンエアー、イージージェット、TAPポルトガル航空）。<br>
-        • <strong>運賃のコツ:</strong> 航空券のみの基本料金は3〜5万ウォン（約3〜5千円）程度ですが、<strong>23kgの受託手荷物を追加すると1人あたり約8〜12万ウォン（約€60〜€85）</strong>になります。ご両親同伴なら長距離移動の疲労がなく圧倒的にお得で快適です！<br><br>
-        2️⃣ <strong>高速バス（次善の策・長距離）:</strong><br>
-        • <strong>所要時間:</strong> 約<strong>8〜9時間</strong>（マドリード「メンデス・アルバロ」バスターミナル発）。<br>
-        • <strong>予約のコツ:</strong> 9時間の長旅ですので、<strong>ALSA公式アプリ</strong>または<strong>Omioアプリ</strong>で前方の座席間隔が広い<strong>Supra（優等・プレミアム席）</strong>を必ず事前予約してください。（窓口当日購入は非推奨）<br><br>
-        3️⃣ <strong>鉄道・列車（絶対非推奨 ⚠️）:</strong><br>
-        • 直行便がなく乗り換え2回以上で<strong>10時間以上</strong>かかるため絶対におすすめしません。<br><br>
-        💱 <strong>通貨＆両替の注意点:</strong><br>
-        スペインとポルトガルは両国とも<strong>ユーロ（€）</strong>共通ですので、国境を越えても追加の両替は一切不要です！トラベルカードやユーロ現金をそのままご利用いただけます。<br><br>
-        🎒 <strong>荷物配送サービス:</strong> 重いスーツケースの移動が大変な場合は、スペイン郵便（Correos）等のホテル間手荷物配送サービスを利用すれば手ぶらで身軽に国境を越えられます！
-      `;
-    } else if (lang === 'en') {
-      res = `
-        ✈️ <strong>🇪🇸 Madrid ➔ 🇵🇹 Lisbon (Cross-Border Transit & Booking Guide)</strong>:<br><br>
-        For traveling between Madrid and Lisbon, <strong>taking a flight (~1h 20m) is by far the best option</strong>!<br><br>
-        1️⃣ <strong>Flight (Highly Recommended! 🌟):</strong><br>
-        • <strong>Duration:</strong> Approx. <strong>1 hr 20 mins direct</strong> (Air Europa, Ryanair, easyJet, TAP).<br>
-        • <strong>Fare Tip:</strong> Base fare is cheap (~$30), but <strong>adding a 23kg checked bag brings it to ~$80–$120 (₩80,000–₩120,000)</strong> per person. Absolutely worth it to save elderly parents from a grueling bus ride!<br><br>
-        2️⃣ <strong>Express Bus (Secondary Option - Budget Friendly):</strong><br>
-        • <strong>Duration:</strong> Approx. <strong>8–9 hours</strong> from Madrid 'Méndez Álvaro' Station.<br>
-        • <strong>Booking Tip:</strong> Long rides require comfort! Pre-book via the <strong>ALSA app or Omio app</strong> and select the wider, premium <strong>Supra seats</strong> in advance. (Walk-in booking not recommended)<br><br>
-        3️⃣ <strong>Train (Strictly Not Recommended ⚠️):</strong><br>
-        • There is no direct train between Madrid and Lisbon; requires 2+ transfers and takes <strong>over 10 hours</strong>.<br><br>
-        💱 <strong>Currency Notice:</strong><br>
-        Both Spain and Portugal use the <strong>Euro (€)</strong>. There is no need to exchange money when crossing the border; your travel cards and euros will work seamlessly!<br><br>
-        🎒 <strong>Luggage Forwarding:</strong> If dragging heavy suitcases is a concern, use services like Correos (Spanish Post) or private baggage forwarders to ship luggage between hotels door-to-door!
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        ✈️ <strong>🇪🇸 马德里 ➔ 🇵🇹 里斯本（跨境交通与预订全攻略）</strong>:<br><br>
-        马德里与里斯本之间的跨境出行，<strong>搭乘飞机（耗时约1小时20分）是最为推荐的首选方案</strong>！<br><br>
-        1️⃣ <strong>飞机直飞（长辈同行最强烈推荐！ 🌟）：</strong><br>
-        • <strong>飞行耗时：</strong> 直飞仅需约<strong>1小时20分钟</strong>（欧罗巴航空、瑞安航空、易捷航空、葡萄牙航空TAP）。<br>
-        • <strong>票价贴士：</strong> 基础裸票仅需200~300元，但<strong>增加23kg托运行李后单人约400~600元（8~12万韩元）</strong>。长辈同行完全免除长途奔波体力消耗，极度推荐！<br><br>
-        2️⃣ <strong>长途大巴（次选方案 - 经济实惠）：</strong><br>
-        • <strong>运行耗时：</strong> 约<strong>8~9小时</strong>（从马德里门德斯·阿尔瓦罗 Méndez Álvaro 南站发车）。<br>
-        • <strong>订票技巧：</strong> 9小时长途较辛苦，请务必通过 <strong>ALSA官方App</strong> 或 <strong>Omio App</strong> 提前预订前排宽敞舒适的 <strong>Supra豪华头等座</strong>。（不推荐现场排队买票）<br><br>
-        3️⃣ <strong>火车直通（极不推荐 ⚠️）：</strong><br>
-        • 目前两地间无直达列车，需换乘2次以上且全程耗时<strong>超过10小时</strong>，家庭长辈出行绝不推荐。<br><br>
-        💱 <strong>货币贴士：</strong><br>
-        西班牙与葡萄牙均通用<strong>欧元（€）</strong>，跨越国境完全无需额外兑换货币！常用旅行卡与现金均可无缝直接使用。<br><br>
-        🎒 <strong>行李托运服务：</strong> 若携带大件行李不便，可通过西班牙邮政（Correos）或第三方行李寄送服务在酒店间门到门预先转运，轻装惬意过境！
-      `;
-    } else {
-      res = `
-        ✈️ <strong>🇪🇸 마드리드 ➔ 🇵🇹 리스본 (국경 이동 & 예매 총정리 가이드)</strong>:<br><br>
-        마드리드-리스본 국경 이동은 <strong>비행기(약 1시간 20분)를 가장 추천</strong>하며 수하물 추가 시 인당 약 8~12만 원입니다! 🌟<br><br>
-        1️⃣ <strong>비행기 이동 (가장 강력 추천! 🌟):</strong><br>
-        • <strong>소요시간:</strong> 직항 약 <strong>1시간 20분</strong>.<br>
-        • <strong>추천 항공사:</strong> 에어유로파(Air Europa), 라이언에어(Ryanair), 이지젯(easyJet), 탭 포르투갈(TAP).<br>
-        • <strong>요금 팁:</strong> 비행기 깡통 요금은 3~5만 원이지만, <strong>23kg 수하물을 추가하면 인당 약 8~12만 원</strong>이 됩니다. 부모님 동행 시 체력 소모가 없어 압도적으로 이득입니다!<br><br>
-        2️⃣ <strong>고속버스 (차선책 - 가성비 여행 시):</strong><br>
-        • <strong>소요시간:</strong> 약 <strong>8~9시간</strong>. 마드리드 '멘데스 알바로(Méndez Álvaro)' 남부터미널 출발.<br>
-        • <strong>예매 팁:</strong> 9시간 이동은 무리가 가므로, <strong>ALSA 공식 앱</strong>이나 <strong>Omio(오미오) 앱</strong>을 통해 반드시 앞쪽의 넓은 <strong>수프라(Supra) 우등석</strong>을 사전 예매하세요. (현장 발권 비추천)<br><br>
-        3️⃣ <strong>기차/철도 이동 (절대 비추천 ⚠️):</strong><br>
-        • 직행 열차가 없고 최소 2회 환승하며 <strong>10시간 이상</strong> 걸리므로 부모님 동행 시 절대 비추천합니다.<br><br>
-        💱 <strong>통화 및 환전 주의사항:</strong><br>
-        스페인과 포르투갈 모두 <strong>유로(€)</strong>를 사용합니다. 국경을 넘어도 화폐를 바꿀 필요 없이, 스페인에서 쓰던 트래블월렛/트래블로그 카드와 유로 현금을 그대로 사용하시면 됩니다!<br><br>
-        🎒 <strong>짐 배송 서비스 (Baggage Forwarding):</strong><br>
-        무거운 캐리어를 끌고 이동하는 것이 부담스럽다면, 스페인 우체국(Correos)이나 사설 수하물 배송 업체를 이용해 숙소 간 짐을 미리 보내버리세요. 두 손 가볍게 국경을 넘을 수 있습니다!
-      `;
-    }
-    const chips = [
-      { query: '스페인 포르투갈 환전 어떻게 해? 유로 써?', label: '💶 유로 환전/통화' },
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-      { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
-    ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 4] LISBON ↔ PORTO
-  // ----------------------------------------------------
-  if (hasLisbon && hasPorto) {
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        🚆 <strong>🇵🇹 リスボン ➔ ポルト 特急列車（CP）移動ガイド</strong>:<br><br>
-        • <strong>所要時間:</strong> 特急列車アルファ・ペンドゥラール（Alfa Pendular - AP）で<strong>約2時間50分直通</strong><br>
-        • <strong>乗車駅:</strong> リスボン・サンタ・アポローニャ駅またはオリエンテ駅 ➔ ポルト・カンパニャン（Campanhã）駅<br>
-        • <strong>費用目安:</strong> 片道約€22〜€35（ポルトガル鉄道CP公式HPで早期割引チケットあり）<br>
-        • <strong>シニア向けポイント:</strong> 車内は非常に静かで快適。カンパニャン駅到着後は市内中心部のサン・ベント駅行きの普通列車に無料乗り換えできます！
-      `;
-    } else if (lang === 'en') {
-      res = `
-        🚆 <strong>🇵🇹 Lisbon ➔ Porto Train (CP) Route Guide</strong>:<br><br>
-        • <strong>Travel Time:</strong> Approx. <strong>2 hrs 50 mins</strong> on the express *Alfa Pendular (AP)*.<br>
-        • <strong>Stations:</strong> Lisbon Santa Apolónia or Oriente ➔ Porto Campanhã.<br>
-        • <strong>Fare:</strong> ~€22–€35 one-way (promo fares available on the official CP Portugal website).<br>
-        • <strong>Senior Tip:</strong> Smooth and comfortable. Free connection from Porto Campanhã into historic Porto São Bento station is included with your ticket!
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        🚆 <strong>🇵🇹 里斯本 ➔ 波尔图 葡铁（CP）特快列车指南</strong>:<br><br>
-        • <strong>运行耗时：</strong> 乘坐AP特快（Alfa Pendular）约<strong>2小时50分钟</strong>直达。<br>
-        • <strong>发到车站：</strong> 里斯本Santa Apolónia站/Oriente站 ➔ 波尔图Campanhã站。<br>
-        • <strong>参考票价：</strong> 单程约€22~€35。<br>
-        • <strong>长辈贴士：</strong> 凭长途车票可在Campanhã站免费换乘短驳小火车直接抵达市中心的圣本笃火车站（São Bento）！
-      `;
-    } else {
-      res = `
-        🚆 <strong>🇵🇹 리스본 ➔ 포르투 기차(CP) 이동 완벽 가이드</strong>:<br><br>
-        • <strong>소요 시간:</strong> 포르투갈 고속열차 알파 펜둘라르(AP) 기준 <strong>약 2시간 50분 직통</strong><br>
-        • <strong>출발/도착역:</strong> 리스본 산타 아폴로니아 또는 오리엔테역 ➔ 포르투 캄파냐(Campanhã)역<br>
-        • <strong>예상 요금:</strong> 조기 예매 시 편도 €22 ~ €35 (CP 포르투갈 철도 공식 사이트 구매 추천)<br>
-        • <strong>부모님 꿀팁:</strong> 열차가 매우 부드럽고 쾌적합니다. 캄파냐역에 내리신 뒤 구시가지 중심의 상벤투(São Bento)역까지 기차표로 무료 환승 열차를 타실 수 있습니다!
-      `;
-    }
-    const chips = [
-      { query: '포르투 맛집 추천해줘', label: '🍽️ 포르투 맛집' },
-      { query: '리스본에서 신트라 가는 법', label: '🏰 리스본 ➔ 신트라' },
-      { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본' }
-    ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 5] SEVILLE ↔ GRANADA
-  // ----------------------------------------------------
-  if (hasSeville && hasGranada) {
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        🚆 <strong>🇪🇸 セビリア ➔ グラナダ 移動ガイド</strong>:<br><br>
-        • <strong>列車 Renfe Avant（推奨 🌟）:</strong> 直行で<strong>約2時間25分</strong>（サンタ・フスタ駅 ➔ グラナダ駅、片道約€34）。快適で景色も良好。<br>
-        • <strong>高速バス ALSA:</strong> プラド・デ・サン・セバスティアン・バスターミナルから約3時間（便数が多く安価）。
-      `;
-    } else if (lang === 'en') {
-      res = `
-        🚆 <strong>🇪🇸 Seville ➔ Granada Transit Guide</strong>:<br><br>
-        • <strong>Renfe Avant Fast Train (Top Pick 🌟):</strong> Approx. <strong>2 hrs 25 mins</strong> direct from Seville Santa Justa to Granada station (~€34). Highly comfortable for seniors.<br>
-        • <strong>ALSA Express Bus:</strong> ~3 hrs from Prado de San Sebastián terminal (frequent departures, ~€15).
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        🚆 <strong>🇪🇸 塞维利亚 ➔ 格拉纳达 交通出行指南</strong>:<br><br>
-        • <strong>Renfe Avant快速列车（首选 🌟）：</strong> 直达约<strong>2小时25分钟</strong>（Santa Justa站至格拉纳达站，单程约€34），安全平稳舒适。<br>
-        • <strong>ALSA长途大巴：</strong> 约3小时（班次频繁，票价约€15）。
-      `;
-    } else {
-      res = `
-        🚆 <strong>🇪🇸 세비야 ➔ 그라나다 기차(Avant) & 버스 이동 가이드</strong>:<br><br>
-        • <strong>렌페 아반트(Avant) 고속기차 (강력 추천 🌟):</strong> 약 <strong>2시간 25분 직통</strong> (세비야 산타 후스타 ➔ 그라나다역, 편도 약 €34). 어르신 동행 시 가장 편안하고 안전합니다.<br>
-        • <strong>ALSA 고속버스:</strong> 프라도 데 산 세바스티안 터미널에서 약 3시간 소요 (운행 횟수가 많고 편도 약 €15로 저렴).
-      `;
-    }
-    const chips = [
-      { query: '알함브라 궁전 티켓팅 팁', label: '🏛️ 알함브라 예약 팁' },
-      { query: '그라나다 맛집 추천해줘', label: '🍽️ 그라나다 맛집' },
-      { query: '마드리드에서 세비야 이동법', label: '🚄 마드리드 ➔ 세비야' }
-    ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 6] LISBON ↔ SINTRA
-  // ----------------------------------------------------
-  if (hasSintra || (hasLisbon && (q.includes('신트라') || q.includes('sintra')))) {
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        🏰 <strong>🇵🇹 リスボン ➔ シントラ 日帰り移動ガイド</strong>:<br><br>
-        • <strong>移動方法:</strong> リスボン・ロシオ（Rossio）駅から近郊列車（CP）で<strong>約40分直通</strong>（15〜20分間隔で運行、Navegante Zappingで片道€1.61〜€2.30）。<br>
-        • <strong>シニア向け最重要ポイント:</strong> シントラ駅到着後、ペーナ宮殿へ登る山道は徒歩では過酷です。駅前から<strong>Uberタクシーまたは434番循環バス</strong>を利用して宮殿入口まで直接上がるのが必須です！
-      `;
-    } else if (lang === 'en') {
-      res = `
-        🏰 <strong>🇵🇹 Lisbon ➔ Sintra Day Trip Transit Guide</strong>:<br><br>
-        • <strong>Train:</strong> Take the CP commuter train from <strong>Rossio Station</strong> directly to Sintra in <strong>~40 minutes</strong> (departs every 15–20 mins, €1.61–€2.30 with Navegante card).<br>
-        • <strong>Crucial Senior Tip:</strong> Never attempt walking from Sintra station up to Pena Palace (it's a steep mountain hike). Take an <strong>Uber/Bolt or the 434 tourist loop bus</strong> directly up to the palace gates!
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        🏰 <strong>🇵🇹 里斯本 ➔ 辛特拉 一日游交通攻略</strong>:<br><br>
-        • <strong>城际小火车：</strong> 从里斯本市中心<strong>Rossio火车站</strong>乘车直达辛特拉约<strong>40分钟</strong>（每15~20分钟一班，刷卡仅需€1.61~€2.30）。<br>
-        • <strong>长辈同行核心贴士：</strong> 出辛特拉火车站后，前往佩纳宫（Pena Palace）全程为盘山陡坡，切勿步行！务必在站前搭乘<strong>Uber打车（约€8）或434路专线巴士</strong>直达山顶大门！
-      `;
-    } else {
-      res = `
-        🏰 <strong>🇵🇹 리스본 ➔ 신트라 당일치기 기차 이동 가이드</strong>:<br><br>
-        • <strong>기차 이동법:</strong> 리스본 호시우(Rossio)역에서 신트라행 국철(CP) 탑승 시 <strong>약 40분 직통</strong> (15~20분 간격 수시 운행, 나베간트 카드로 약 €1.61~€2.30).<br>
-        • <strong>부모님 동행 필수 팁:</strong> 신트라역 도착 후 페나 궁전까지 걸어 올라가는 것은 매우 가파른 등산길입니다. 역 앞에서 <strong>우버(Uber/Bolt) 택시(약 €7~10) 또는 434번 순환 버스</strong>를 타고 페나 궁전 입구까지 바로 올라가세요!
-      `;
-    }
     const chips = [
       { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' },
-      { query: '리스본 에그타르트 맛집', label: '🥧 에그타르트 원조 맛집' },
-      { query: '부모님 평지 명소 추천', label: '🦽 부모님 평지 명소' }
+      { query: '포르투갈 대표 음식 추천', label: '🥧 포르투갈 음식' },
+      { query: '유로 환전 어떻게 해?', label: '💶 화폐/환전' }
     ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 7] DUBAI ↔ ABU DHABI
-  // ----------------------------------------------------
-  if ((hasDubai && hasAbuDhabi) || (q.includes('아부다비') || q.includes('abu dhabi'))) {
     let res = '';
     if (lang === 'ja') {
       res = `
-        🇦🇪 <strong>ドバイ ➔ アブダビ 移動ガイド</strong>:<br><br>
-        1️⃣ <strong>タクシー／配車アプリ（Careem / Uber - シニア同伴に最適 🌟）:</strong><br>
-        • 所要時間：約1時間15分（ホテル玄関からアブダビ・シェイク・ザイード・グランドモスク前まで直行）。料金目安：約250〜300 AED。<br>
-        2️⃣ <strong>都市間急行バス（E100 / E101）:</strong><br>
-        • ドバイ・イブン・バトゥータ駅からアブダビ中央バスターミナルまで約1時間30分（ノルカード 25 AED）。
+        ✈️ <strong>🇪🇸 マドリード ↔ 🇵🇹 リスボン 国境移動ベストガイド</strong>:<br><br>
+        1️⃣ <strong>直行便（イベリア航空 / TAPポルトガル航空）- 一押し！ 🌟:</strong><br>
+        • 所要時間: <strong>約1時間20分</strong><br>
+        • シニア同伴時は長時間の陸路移動（8時間超）を避け、直行便を利用するのが圧倒的に疲労が少なくなります。<br><br>
+        2️⃣ <strong>高速長距離バス（ALSA / FlixBus）:</strong><br>
+        • 所要時間: 昼行約8時間 / 夜行約7時間30分<br>
+        • 直前予約で航空券が高騰した際のバックアップとして有効です。
       `;
     } else if (lang === 'en') {
       res = `
-        🇦🇪 <strong>Dubai ➔ Abu Dhabi Transit Guide</strong>:<br><br>
-        1️⃣ <strong>Taxi / Rideshare (Careem / Uber - Recommended for Families 🌟):</strong><br>
-        • Travel Time: ~1 hr 15 mins door-to-door from Dubai to Abu Dhabi Grand Mosque (~250–300 AED total for family).<br>
-        2️⃣ <strong>Intercity Express Bus (E100 / E101):</strong><br>
-        • From Ibn Battuta Metro Station to Abu Dhabi Central Bus Station in ~1 hr 30 mins (25 AED via Nol Card).
+        ✈️ <strong>🇪🇸 Madrid ↔ 🇵🇹 Lisbon Cross-Border Transit Guide</strong>:<br><br>
+        1️⃣ <strong>Direct Flight (Iberia / TAP Portugal) - Strongly Recommended! 🌟:</strong><br>
+        • Flight Duration: <strong>1 hr 20 mins</strong>.<br>
+        • For families traveling with seniors, a short direct flight is vastly superior to grueling 8-hour bus journeys.<br><br>
+        2️⃣ <strong>Express Coach (ALSA / FlixBus):</strong><br>
+        • Travel Time: ~8 hours daytime / ~7.5 hours overnight.<br>
+        • Budget fallback option if airfares spike last minute.
       `;
     } else if (lang === 'zh') {
       res = `
-        🇦🇪 <strong>迪拜 ➔ 阿布扎比 交通指南</strong>:<br><br>
-        1️⃣ <strong>出租车 / Careem打车（家庭出行最省心 🌟）：</strong><br>
-        • 耗时约1小时15分钟，从迪拜酒店直达阿布扎比谢赫扎耶德大清真寺，单程车费约250~300 AED。<br>
-        2️⃣ <strong>城际巴士（E100 / E101）：</strong><br>
-        • 从Ibn Battuta地铁站前往阿布扎比中央客运站约1小时30分钟（刷Nol卡25 AED）。
+        ✈️ <strong>🇪🇸 马德里 ↔ 🇵🇹 里斯本 跨国跨境交通指南</strong>:<br><br>
+        1️⃣ <strong>直飞航班（西班牙国家航空Iberia / 葡萄牙航空TAP）- 首选推荐！ 🌟：</strong><br>
+        • 飞行耗时： 仅需<strong>1小时20分钟</strong>。<br>
+        • 携父母同行务必选择直飞，可彻底免去乘坐8小时长途大巴的腰背劳顿。<br><br>
+        2️⃣ <strong>城际长途大巴（ALSA / FlixBus）：</strong><br>
+        • 行驶耗时： 日行约8小时 / 夜行约7.5小时。<br>
+        • 临近出发机票价格飙升时的实惠备选方案。
       `;
     } else {
       res = `
-        🇦🇪 <strong>두바이 ➔ 아부다비 이동 완벽 가이드</strong>:<br><br>
-        1️⃣ <strong>택시 / 카림(Careem) / 우버 (가족 여행 강력 추천 🌟):</strong><br>
-        • 소요 시간: 약 1시간 15분 도어 투 도어 직결. 요금은 편도 약 250~300 AED (3인 가족이면 인당 3~4만 원으로 쾌적).<br>
-        2️⃣ <strong>도시 간 급행버스 (E100 / E101):</strong><br>
-        • 이븐 바투타(Ibn Battuta) 메트로역에서 아부다비 중앙 터미널까지 약 1시간 30분 (놀 카드 25 AED).
+        ✈️ <strong>🇪🇸 마드리드 ↔ 🇵🇹 리스본 국경 이동 완벽 가이드</strong>:<br><br>
+        1️⃣ <strong>직항 항공편 (이베리아 / TAP 항공) - 가장 강력 추천! 🌟:</strong><br>
+        • 비행 시간: <strong>약 1시간 20분</strong><br>
+        • 부모님 동행 시 장거리 육로 이동(8시간 이상)의 피로를 피하려면 항공 직항이 정답입니다.<br><br>
+        2️⃣ <strong>국제선 고속버스 (ALSA / FlixBus):</strong><br>
+        • 소요 시간: 주간 약 8시간 / 야간 약 7시간 30분<br>
+        • 직전에 항공권 가격이 급등했을 때의 경제적 대안입니다.
       `;
     }
-    const chips = [
-      { query: '두바이 사막 사파리 팁', label: '🐪 사막 사파리 팁' },
-      { query: '두바이 맛집 추천해줘', label: '🍽️ 두바이 맛집' }
-    ];
     return res + renderFollowupChips(chips);
   }
 
-  // ----------------------------------------------------
-  // [SPECIAL ROUTE 8] GENERIC INTERCITY ROUTE DETECTOR
-  // ----------------------------------------------------
-  if (hasRouteKeyword && (hasCordoba || (isSpain && (hasBarcelona || hasMadrid || hasSeville || hasGranada)) || (isPortugal && (hasLisbon || hasPorto)))) {
+  if (hasLisbon && hasPorto) {
+    const chips = [
+      { query: '포르투갈 대표 음식 추천', label: '🥧 포르투갈 음식' },
+      { query: '리스본에서 신트라 가는 법', label: '🏰 리스본 ➔ 신트라' }
+    ];
     let res = '';
     if (lang === 'ja') {
       res = `
-        🚆 <strong>都市間ルート・交通のご案内</strong>:<br><br>
-        • <strong>スペイン国内移動:</strong> マドリード、バルセロナ、セビリア、コルドバ、グラナダ間は<strong>高速鉄道 AVE / iryo</strong>の利用が最適です（所要時間：約2時間〜2時間40分）。<br>
-        • <strong>ポルトガル国内移動:</strong> リスボンとポルト間は<strong>特急列車 Alfa Pendular（AP）</strong>で約2時間50分です。<br>
-        • <strong>予約方法:</strong> <strong>OmioアプリまたはRenfe/CP公式アプリ</strong>で全便のスケジュールと最安値を即時比較できます。
+        🚆 <strong>🇵🇹 リスボン ↔ ポルト 特急列車移動ガイド</strong>:<br><br>
+        • <strong>ポルトガル鉄道（CP）特急 Alfa Pendular（AP）:</strong><br>
+        • 所要時間: <strong>約2時間50分</strong> 直通<br>
+        • 区間: リスボン・サンタ・アポローニア駅 ➔ ポルト・カンパーニャ駅（Campanhã）<br>
+        • シニアの座席指定には1等車（Conforto）が静かで快適です。
       `;
     } else if (lang === 'en') {
       res = `
-        🚆 <strong>Intercity Routes & Transit Overview</strong>:<br><br>
-        • <strong>Spain High-Speed Rail:</strong> Travel between Madrid, Barcelona, Seville, Córdoba, and Granada is fastest on <strong>AVE / iryo / Ouigo</strong> trains (2–2.5 hours downtown-to-downtown).<br>
-        • <strong>Portugal Rail:</strong> Lisbon to Porto is connected directly by the <strong>Alfa Pendular (AP) express</strong> in ~2h 50m.<br>
-        • <strong>Booking Recommendation:</strong> Use the <strong>Omio app or official Renfe/CP apps</strong> to compare timetables and lock in discount promotional fares!
+        🚆 <strong>🇵🇹 Lisbon ↔ Porto Express Train Guide</strong>:<br><br>
+        • <strong>CP High-Speed Train Alfa Pendular (AP):</strong><br>
+        • Travel Time: <strong>2 hrs 50 mins direct</strong>.<br>
+        • Route: Lisbon Santa Apolónia ➔ Porto Campanhã.<br>
+        • First Class (*Conforto*) is recommended for seniors with spacious seats and power sockets.
       `;
     } else if (lang === 'zh') {
       res = `
-        🚆 <strong>城市间联通路线与高铁出行概览</strong>:<br><br>
-        • <strong>西班牙境内：</strong> 马德里、巴塞罗那、塞维利亚、科尔多瓦、格拉纳达之间，乘坐<strong>AVE / iryo高速列车</strong>是最佳选择（耗时2~2.5小时，直达市中心）。<br>
-        • <strong>葡萄牙境内：</strong> 里斯本至波尔图推荐乘坐<strong>Alfa Pendular（AP）特快</strong>（直达约2小时50分钟）。<br>
-        • <strong>订票指南：</strong> 推荐使用 <strong>Omio App 或官方Renfe/CP</strong> 随时比对发车时刻与优惠票价！
+        🚆 <strong>🇵🇹 里斯本 ↔ 波尔图 特快火车出行指南</strong>:<br><br>
+        • <strong>葡萄牙国铁（CP）特快列车 Alfa Pendular（AP）：</strong><br>
+        • 运行耗时： 直达约<strong>2小时50分钟</strong>。<br>
+        • 运行区间： 里斯本Santa Apolónia站 ➔ 波尔图Campanhã站。<br>
+        • 推荐选择一等座（Conforto），车厢宽敞安静。
       `;
     } else {
       res = `
-        🚆 <strong>도시 간 이동 루트 및 고속열차 안내</strong>:<br><br>
-        • <strong>스페인 도시 간 이동:</strong> 마드리드, 바르셀로나, 세비야, 코르도바, 그라나다는 <strong>스페인 고속열차(Renfe AVE / iryo)</strong>로 2시간~2시간 30분 만에 도심에서 도심으로 직결됩니다.<br>
-        • <strong>포르투갈 도시 간 이동:</strong> 리스본 ↔ 포르투 구간은 <strong>특급열차 알파 펜둘라르(AP)</strong>로 약 2시간 50분 소요됩니다.<br>
-        • <strong>통합 예매 팁:</strong> <strong>Omio(오미오) 앱</strong>을 이용하시면 스페인 렌페와 포르투갈 철도 시간표 및 최저가를 한눈에 비교하고 예매하실 수 있습니다!
+        🚆 <strong>🇵🇹 리스본 ↔ 포르투 특급열차 이동 가이드</strong>:<br><br>
+        • <strong>포르투갈 국철(CP) 특급열차 알파 펜둘라르 (Alfa Pendular):</strong><br>
+        • 소요 시간: 직통 <strong>약 2시간 50분</strong><br>
+        • 운행 구간: 리스본 산타 아폴로니아역 ➔ 포르투 캄파냐(Campanhã)역<br>
+        • 부모님 동행 시 좌석 간격이 넓고 조용한 1등석(Conforto)을 추천합니다.
       `;
     }
+    return res + renderFollowupChips(chips);
+  }
+
+  if (hasSeville && hasGranada) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-      { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본' },
+      { query: '알함브라 궁전 티켓팅 팁', label: '🏛️ 알함브라 예약 팁' },
+      { query: '세비야 맛집 추천해줘', label: '🍽️ 세비야 맛집' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🚆 <strong>🇪🇸 セビリア ➔ グラナダ 中距離列車＆バス移動ガイド</strong>:<br><br>
+        • <strong>Renfe 中距離特急 Avant 列車:</strong> 所要時間約2時間30分直通（セビリア・サンタ・フスタ駅 ➔ グラナダ駅）<br>
+        • <strong>ALSA 高級バス:</strong> 所要時間約3時間（プラサ・德・アルマス バスターミナル発）
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🚆 <strong>🇪🇸 Seville ➔ Granada Medium-Distance Rail & Coach Guide</strong>:<br><br>
+        • <strong>Renfe Avant High-Speed Train:</strong> ~2 hrs 30 mins direct from Seville Santa Justa to Granada.<br>
+        • <strong>ALSA Premium Bus:</strong> ~3 hrs from Plaza de Armas station.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🚆 <strong>🇪🇸 塞维利亚 ➔ 格拉纳达 交通指南</strong>:<br><br>
+        • <strong>Renfe Avant 中距离特快列车：</strong> 直达耗时约2小时30分钟。<br>
+        • <strong>ALSA 大巴：</strong> 耗时约3小时。
+      `;
+    } else {
+      res = `
+        🚆 <strong>🇪🇸 세비야 ➔ 그라나다 기차 &amp; 버스 이동 가이드</strong>:<br><br>
+        • <strong>렌페 아반트 (Renfe Avant) 중거리 고속열차:</strong> 소요 시간 약 2시간 30분 직통 (세비야 산타 후스타 ➔ 그라나다역)<br>
+        • <strong>ALSA 직행 버스:</strong> 소요 시간 약 3시간 (플라사 데 아르마스 터미널 발)
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  if (hasSintra || (hasLisbon && (q.includes('신트라') || q.includes('sintra')))) {
+    const chips = [
+      { query: '포르투갈 대표 음식 추천', label: '🥧 포르투갈 음식' },
       { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
     ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // 3-4. Euro Currency & Cross-Border Exchange (유로 / 환전 / 포르투갈 돈 / 스페인 포르투갈 환전)
-  const isEuroCurrencyExchange = [
-    '유로', '환전', '포르투갈 돈', '포르투갈돈', '스페인 돈', '스페인돈', '국경 환전', '통화', '화폐',
-    'euro', 'euros', 'currency', 'exchange money', 'currency exchange', 'portugal money', 'spain money',
-    'ユーロ', '両替', 'ポルトガルのお金', 'スペインのお金', '通貨',
-    '欧元', '换汇', '葡萄牙货币', '西班牙货币', '兑换'
-  ].some(w => q.includes(w));
-
-  if (isEuroCurrencyExchange) {
-    const chips = [
-      { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본 이동' },
-      { query: '스페인 포르투갈 카드 결제 팁', label: '💳 카드/현금/팁 수칙' },
-      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀(DIVA) 안내' }
-    ];
-    if (lang === 'ja') {
-      return `
-        💶 <strong>スペイン＆ポルトガル 通貨・両替のご案内</strong>:<br><br>
-        • <strong>スペインとポルトガルは両国ともユーロ（€）を使用しているため、国境を越えても追加の両替は一切不要です！</strong><br>
-        • スペインで使用したユーロ紙幣や硬貨、トラベルカードはそのままポルトガル全土で同じようにご利用いただけます。<br>
-        • <strong>カード決済:</strong> 95％以上の店舗・レストラン・タクシーでタッチ決済（Visa/Mastercard/Apple Pay）が使えます。<br>
-        • <strong>現金の目安:</strong> 市場や有料公衆トイレ（0.5〜1ユーロ）利用のため、1人1日あたり20〜30ユーロ程度の小額現金を用意しておけば十分です！
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        💶 <strong>Spain & Portugal Currency & Cross-Border Exchange Guide</strong>:<br><br>
-        • <strong>Both Spain and Portugal use the Euro (€), so no additional currency exchange is needed when crossing the border!</strong><br>
-        • Any Euros (cash or travel cards like Wise, Revolut, TravelWallet) used in Spain are 100% accepted throughout Portugal without any fees.<br>
-        • <strong>Card Payment:</strong> Over 95% of stores, restaurants, and taxis support contactless card payments, eliminating the need to carry large amounts of cash.<br>
-        • <strong>Emergency Cash:</strong> Keeping around €20–€30 per person per day in coins and small bills for flea markets and public pay restrooms is more than enough!
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        💶 <strong>西班牙与葡萄牙货币及跨境换汇指南</strong>:<br><br>
-        • <strong>西班牙和葡萄牙均通用欧元（€），因此跨越国境时完全不需要进行任何额外换汇！</strong><br>
-        • 在西班牙使用的欧元纸币、硬币以及多币种芯片旅行卡，在葡萄牙全境均可直接无缝使用，无任何汇差损失。<br>
-        • <strong>刷卡便利性：</strong> 当地95%以上的商户、餐厅与出租车全面支持手机感应及无接触刷卡。<br>
-        • <strong>备用现金建议：</strong> 仅需准备每人每天约20~30欧元零钱，用于传统小集市及欧洲投币收费洗手间（0.5~1欧元）即可！
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        💶 <strong>스페인 & 포르투갈 환전 및 통화 안내</strong>:<br><br>
-        • <strong>스페인과 포르투갈 모두 유로(€)를 사용하므로 국경을 넘어도 추가 환전이 필요 없습니다.</strong><br>
-        • 스페인에서 사용하시던 유로화 지폐와 동전을 포르투갈에서도 그대로 동일하게 사용하시면 됩니다.<br>
-        • <strong>카드 결제:</strong> 트래블로그, 트래블월렛, 일반 비자/마스터 카드의 비접촉(컨택트리스) 결제가 95% 이상 지원되므로 현금 환전 부담이 적습니다.<br>
-        • <strong>비상 현금:</strong> 전통 시장이나 유료 공중화장실(0.5~1유로) 이용을 위해 1인당 하루 20~30유로 정도의 소액 현금만 챙기시면 충분합니다!
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  // ----------------------------------------------------
-  // 4. CORE TRAVEL INTENTS (핵심 여행 주제)
-  // ----------------------------------------------------
-
-  // 4-1. Food / Cuisine / Dishes / Dining (음식 / 요리 / 먹거리 / 맛집)
-  const isFood = [
-    '음식', '요리', '먹거리', '맛집', '식당', '맛있는', '먹을', '메뉴', '디저트', '푸드',
-    'food', 'eat', 'dish', 'dishes', 'restaurant', 'dining', 'cuisine', 'specialty', 'snack', 'gourmet', 'tapas', 'paella', 'bacalhau',
-    '料理', 'グルメ', '名物', '美味しい', 'レストラン', '食べ物', '食事', '郷土料理',
-    '美食', '特色菜', '餐厅', '吃什么', '小吃', '招牌菜', '餐饮'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  const isSpecificRestaurant = [
-    '맛집', '식당', '레스토랑', '추천 맛집', '식당 추천',
-    'restaurant', 'dining', 'bistrot', 'taberna', 'cafe',
-    'レストラン', '名店', '食事処',
-    '餐厅', '饭店', '名店'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-2. Shopping & Souvenirs (쇼핑 / 기념품 / 선물 / 특산품)
-  const isShopping = [
-    '쇼핑', '기념품', '선물', '특산품', '살것', '살 것', '사야', '마트',
-    'shopping', 'souvenir', 'souvenirs', 'gift', 'buy', 'what to buy', 'market',
-    'お土産', '買い物', 'ショッピング', '名産品', '特産品', 'ギフト',
-    '伴手礼', '特产', '纪念品', '购物', '买什么'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-3. Sights / Places / Attractions (관광지 / 명소 / 가볼만한곳 / 코스)
-  const isSights = [
-    '관광지', '명소', '가볼만한', '볼거리', '여행지', '일정', '코스', '추천 코스', '궁전', '성당',
-    'sight', 'sights', 'attraction', 'attractions', 'place', 'places', 'visit', 'highlight', 'cathedral', 'palace',
-    '観光地', '見どころ', '名所', 'おすすめスポット', '宮殿', '大聖堂',
-    '景点', '必去', '游玩', '名胜', '大教堂', '王宫'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-4. Weather / Season / Timing / Clothing (날씨 / 기온 / 시기 / 옷차림)
-  const isWeather = [
-    '날씨', '기온', '추워', '더워', '비', '옷차림', '시기', '시즌', '가장 안 추운', '계절',
-    'weather', 'temperature', 'climate', 'clothing', 'pack', 'rain', 'season', 'best time', 'best period', 'cold', 'warm',
-    '天気', '気温', '気候', '服装', '季節', 'ベストシーズン', '雨', '寒い', '暖かい',
-    '天气', '气温', '气候', '穿衣', '带什么衣服', '最佳季节', '最佳时间', '下雨'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-4b. Supermarket Water (생수 / 마트 물 / 탄산수 / sin gas / con gas)
-  const isWater = [
-    '물', '생수', '가스물', '맹물', '탄산수', 'sin gas', 'con gas', '신 가스', '꼰 가스', '메르까도나', '까르푸', 'garrafa',
-    'water', 'still water', 'sparkling water', 'mineral water', 'supermarket water', 'bottle', 'tap water',
-    '水', '飲料水', '炭酸水', 'ミネラルウォーター', 'シンガス', 'コンガス', '軟水', 'スーパーの水',
-    '买水', '水', '饮用水', '气泡水', '纯净水', '矿泉水', '超市买水', '加斯'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-5. Safety & Pickpockets (치안 / 소매치기 / 안전)
-  const isSafety = [
-    '치안', '소매치기', '안전', '위험', '도난', '주의',
-    'safety', 'safe', 'danger', 'pickpocket', 'thief', 'security', 'caution',
-    '治安', 'スリ', '安全', '危険', '盗難', '注意点',
-    '治安', '小偷', '防盗', '安全', '防偷', '注意事项'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-6. Transit / Trains / Uber (교통 / 기차 / 렌페 / 우버 / 루트)
-  const isTransit = [
-    '교통', '기차', '열차', '렌페', 'cp', '메트로', '지하철', '택시', '우버', 'bolt', '이동', '루트', '경로', '가는 법', '가는법', '이동법', '어떻게 가',
-    'train', 'renfe', 'metro', 'transit', 'uber', 'taxi', 'transport', 'flight', 'station', 'route', 'routes', 'travel',
-    '交通', '電車', '列車', 'レンフェ', '地下鉄', 'タクシー', 'ウーバー', '行き方', 'ルート',
-    '火车', '高铁', '地铁', '打车', '出租车', '交通', '路线', '怎么去'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-7. Budget & Expenses (예산 / 비용 / 경비 / 환율)
-  const isBudget = [
-    '비용', '예산', '얼마', '경비', '환율', '돈',
-    'budget', 'cost', 'how much', 'price', 'expense', 'currency',
-    '予算', '費用', 'いくら', '価格',
-    '预算', '费用', '多少钱', '花费'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-8. Card, Cash, Tipping & Restroom (결제 / 카드 / 팁 / 화장실)
-  const isCardCash = [
-    '카드', '현금', '팁', '화장실', '유로화',
-    'card', 'cash', 'tip', 'tipping', 'restroom', 'toilet',
-    'カード', '現金', 'チップ', 'トイレ',
-    '刷卡', '现金', '小费', '厕所', '洗手间'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-9. Tax Refund (텍스리펀)
-  const isTaxRefund = [
-    '텍스리펀', '택스리펀', '세금환급', '면세', 'diva',
-    'tax refund', 'tax free', 'vat refund', 'tax refund',
-    '免税', 'タックスリファンド', '税金還付',
-    '退税', '免税'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // 4-10. Senior Care (시니어 케어 / 부모님 / 휠체어)
-  const isSeniorCare = [
-    '부모님', '어르신', '시니어', '무릎', '휠체어', '계단', '언덕', '체력',
-    'senior', 'elderly', 'parents', 'wheelchair', 'stairs', 'hills', 'rest',
-    'シニア', '両親', '高齢者', '車椅子', '階段', '坂道',
-    '长辈', '老人', '父母', '轮椅', '台阶', '坡度'
-  ].some(w => q.includes(w) || cleanQ.includes(w));
-
-  // ----------------------------------------------------
-  // 5. DISPATCH BY INTENT
-  // ----------------------------------------------------
-
-  // ====================================================
-  // [NEW INTENT 1] IBERIA BORDER TRANSIT & BOOKING (스페인-포르투갈 이동/예매 질문)
-  // ====================================================
-  const isIberiaTransit = (
-    (['마드리드', 'madrid', 'マドリード', '马德里'].some(w => q.includes(w) || cleanQ.includes(w)) &&
-     ['리스본', 'lisbon', 'lisboa', 'リスボン', '里斯本'].some(w => q.includes(w) || cleanQ.includes(w))) ||
-    (['스페인', 'spain', 'スペイン', '西班牙', '이베리아', 'iberia'].some(w => q.includes(w) || cleanQ.includes(w)) &&
-     ['포르투갈', 'portugal', 'ポルトガル', '葡萄牙'].some(w => q.includes(w) || cleanQ.includes(w)) &&
-     ['이동', '국경', '교통', 'route', 'transit', 'border', 'cross', 'travel'].some(w => q.includes(w) || cleanQ.includes(w))) ||
-    ['국경 이동', '국경이동', '육로 이동', 'border crossing', '国境移動', '跨境交通'].some(w => q.includes(w) || cleanQ.includes(w)) ||
-    ['alsa', '알사', '오미오', 'omio', '이지젯', 'easyjet', '에어유로파', 'air europa'].some(w => q.includes(w) || cleanQ.includes(w))
-  ) && (
-    ['이동', '기차', '열차', '렌페', '버스', '비행기', '항공', 'alsa', 'omio', '오미오', '알사', '이지젯', 'easyjet', '에어유로파', 'air europa', '라이언에어', 'ryanair', 'tap', '예매', '티켓', '표', '수하물', '짐', '소요', '가는', '어떻게',
-     'transit', 'travel', 'train', 'bus', 'flight', 'ticket', 'booking', 'baggage', 'luggage', 'how to',
-     '移動', '電車', '列車', 'バス', '飛行機', '予約', 'チケット', '荷物', '行き方',
-     '交通', '火车', '大巴', '飞机', '订票', '行李', '怎么去', '如何前往'].some(w => q.includes(w) || cleanQ.includes(w))
-  );
-
-  if (isIberiaTransit) {
     let res = '';
     if (lang === 'ja') {
       res = `
-        ✈️ <strong>🇪🇸 マドリード ➔ 🇵🇹 リスボン（国境移動・予約完全ガイド）</strong>:<br><br>
-        マドリード〜リスボン間の移動は<strong>飛行機（所要約1時間20分）が最もおすすめ</strong>です！<br><br>
-        1️⃣ <strong>飛行機（イチ押し・最も推奨！ 🌟）:</strong><br>
-        • <strong>所要時間:</strong> 約<strong>1時間20分</strong>直行便（エア・ヨーロッパ、ライアンエアー、イージージェット、TAPポルトガル航空）。<br>
-        • <strong>運賃のコツ:</strong> 航空券のみの基本料金は3〜5万ウォン（約3〜5千円）程度ですが、<strong>23kgの受託手荷物を追加すると1人あたり約8〜12万ウォン（約€60〜€85）</strong>になります。ご両親同伴なら長距離移動の疲労がなく圧倒的にお得で快適です！<br><br>
-        2️⃣ <strong>高速バス（次善の策・長距離）:</strong><br>
-        • <strong>所要時間:</strong> 約<strong>8〜9時間</strong>（マドリード「メンデス・アルバロ」バスターミナル発）。<br>
-        • <strong>予約のコツ:</strong> 9時間の長旅ですので、<strong>ALSA公式アプリ</strong>または<strong>Omioアプリ</strong>で前方の座席間隔が広い<strong>Supra（優等・プレミアム席）</strong>を必ず事前予約してください。（窓口当日購入は非推奨）<br><br>
-        3️⃣ <strong>鉄道・列車（絶対非推奨 ⚠️）:</strong><br>
-        • 現在直行便がなく最低2回以上の乗り換えで<strong>10時間以上</strong>かかるため絶対におすすめしません。<br><br>
-        💱 <strong>通貨＆両替の注意点:</strong><br>
-        スペインとポルトガルは両国とも<strong>ユーロ（€）</strong>を通貨として使用しています。国境を越えても追加の両替は一切不要で、スペインで利用していたトラベルカードやユーロ現金をそのままご利用いただけます！<br><br>
-        🎒 <strong>荷物配送サービス:</strong> 重いスーツケースの移動が心配な場合は、スペイン郵便（Correos）等のホテル間手荷物配送サービスを利用して身軽に手ぶらで国境を越えましょう！
+        🏰 <strong>🇵🇹 リスボン ➔ シントラ（ペーナ宮殿）日帰り移動ガイド</strong>:<br><br>
+        1️⃣ <strong>近郊列車（CP Urban Trains）:</strong> リスボン・ロシオ（Rossio）駅から約40分でシントラ駅に到着。<br>
+        2️⃣ <strong>シニア同伴の最重要コツ:</strong> シントラ駅前からペーナ宮殿の山頂入口までは非常に急な坂道です。無理に歩かず<strong>Uberタクシーまたは434番循環バス</strong>で宮殿ゲートまで直行してください！
       `;
     } else if (lang === 'en') {
       res = `
-        ✈️ <strong>🇪🇸 Madrid ➔ 🇵🇹 Lisbon (Cross-Border Transit & Booking Guide)</strong>:<br><br>
-        For traveling between Madrid and Lisbon, <strong>taking a flight (~1h 20m) is by far the best option</strong>!<br><br>
-        1️⃣ <strong>Flight (Highly Recommended! 🌟):</strong><br>
-        • <strong>Duration:</strong> Approx. <strong>1 hr 20 mins direct</strong> (Air Europa, Ryanair, easyJet, TAP).<br>
-        • <strong>Fare Tip:</strong> Base fares start around $30, but <strong>adding a 23kg checked bag brings it to ~$80–$120 (₩80,000–₩120,000)</strong> per person. Absolutely worth it to save elderly parents from grueling overland fatigue!<br><br>
-        2️⃣ <strong>Express Bus (Secondary Option - Budget Friendly):</strong><br>
-        • <strong>Duration:</strong> Approx. <strong>8–9 hours</strong> from Madrid 'Méndez Álvaro' Station.<br>
-        • <strong>Booking Tip:</strong> Long rides require comfort! Pre-book via the <strong>ALSA app or Omio app</strong> and select the wider, premium <strong>Supra seats</strong> in advance. (Walk-in booking not recommended)<br><br>
-        3️⃣ <strong>Train (Strictly Not Recommended ⚠️):</strong><br>
-        • There is no direct train between Madrid and Lisbon; requires 2+ transfers and takes <strong>over 10 hours</strong>.<br><br>
-        💱 <strong>Currency Notice:</strong><br>
-        Both Spain and Portugal use the <strong>Euro (€)</strong>. There is no need to exchange money when crossing the border; your travel cards and euros will work seamlessly!<br><br>
-        🎒 <strong>Luggage Forwarding:</strong> If dragging heavy suitcases is a concern, use services like Correos (Spanish Post) or private baggage forwarders to ship luggage between hotels door-to-door!
+        🏰 <strong>🇵🇹 Lisbon ➔ Sintra (Pena Palace) Day Trip Guide</strong>:<br><br>
+        1️⃣ <strong>CP Urban Train:</strong> Depart from Rossio Station downtown, arriving at Sintra in ~40 mins.<br>
+        2️⃣ <strong>Crucial Senior Comfort Advice:</strong> The ascent from Sintra Station to Pena Palace is steep and winding. Always hire an **Uber or board the 434 tourist bus** directly to the palace entry gate!
       `;
     } else if (lang === 'zh') {
       res = `
-        ✈️ <strong>🇪🇸 马德里 ➔ 🇵🇹 里斯本（跨境交通与预订全攻略）</strong>:<br><br>
-        马德里与里斯本之间的跨境出行，<strong>搭乘飞机（耗时约1小时20分）是最为推荐的首选方案</strong>！<br><br>
-        1️⃣ <strong>飞机直飞（长辈同行最强烈推荐！ 🌟）：</strong><br>
-        • <strong>飞行耗时：</strong> 直飞仅需约<strong>1小时20分钟</strong>（欧罗巴航空、瑞安航空、易捷航空、葡萄牙航空TAP）。<br>
-        • <strong>票价贴士：</strong> 基础裸票仅需200~300元，但<strong>增加23kg托运行李后单人约400~600元（8~12万韩元）</strong>。长辈同行完全免除长途奔波体力消耗，极度推荐！<br><br>
-        2️⃣ <strong>长途大巴（次选方案 - 经济实惠）：</strong><br>
-        • <strong>运行耗时：</strong> 约<strong>8~9小时</strong>（从马德里门德斯·阿尔瓦罗 Méndez Álvaro 南站发车）。<br>
-        • <strong>订票技巧：</strong> 9小时长途较辛苦，请务必通过 <strong>ALSA官方App</strong> 或 <strong>Omio App</strong> 提前预订前排宽敞舒适的 <strong>Supra豪华头等座</strong>。（不推荐现场排队买票）<br><br>
-        3️⃣ <strong>火车直通（极不推荐 ⚠️）：</strong><br>
-        • 目前两地间无直达列车，需换乘2次以上且全程耗时<strong>超过10小时</strong>，家庭长辈出行绝不推荐。<br><br>
-        💱 <strong>货币贴士：</strong><br>
-        西班牙与葡萄牙均通用<strong>欧元（€）</strong>，跨越国境完全无需额外兑换货币！常用旅行卡与现金均可无缝直接使用。<br><br>
-        🎒 <strong>行李托运服务：</strong> 若携带大件行李不便，可通过西班牙邮政（Correos）或第三方行李寄送服务在酒店间门到门预先转运，轻装惬意过境！
+        🏰 <strong>🇵🇹 里斯本 ➔ 辛特拉（佩纳宫）一日游出行指南</strong>:<br><br>
+        1️⃣ <strong>市郊轻轨（CP Urban Trains）：</strong> 从市区Rossio罗西奥火车站出发，车程约40分钟抵辛特拉火车站。<br>
+        2️⃣ <strong>长辈同行无障碍贴士：</strong> 辛特拉火车站至佩纳宫山顶山路极度陡峭，切勿尝试步行，出站后直接搭乘 <strong>Uber网约车或434路专线巴士</strong>直达景区正门口！
       `;
     } else {
       res = `
-        ✈️ <strong>🇪🇸 마드리드 ➔ 🇵🇹 리스본 (국경 이동 & 예매 총정리 가이드)</strong>:<br><br>
-        마드리드-리스본 국경 이동은 <strong>비행기(약 1시간 20분)를 가장 추천</strong>하며 수하물 추가 시 인당 약 8~12만 원입니다! 🌟<br><br>
-        1️⃣ <strong>비행기 이동 (가장 강력 추천! 🌟):</strong><br>
-        • <strong>소요시간:</strong> 직항 약 <strong>1시간 20분</strong>.<br>
-        • <strong>추천 항공사:</strong> 에어유로파(Air Europa), 라이언에어(Ryanair), 이지젯(easyJet), 탭 포르투갈(TAP).<br>
-        • <strong>요금 팁:</strong> 비행기 깡통 요금은 3~5만 원이지만, <strong>23kg 수하물을 추가하면 인당 약 8~12만 원</strong>이 됩니다. 부모님 동행 시 체력 소모가 없어 압도적으로 이득입니다!<br><br>
-        2️⃣ <strong>고속버스 (차선책 - 가성비 여행 시):</strong><br>
-        • <strong>소요시간:</strong> 약 <strong>8~9시간</strong>. 마드리드 '멘데스 알바로(Méndez Álvaro)' 남부터미널 출발.<br>
-        • <strong>예매 팁:</strong> 9시간 이동은 무리가 가므로, <strong>ALSA 공식 앱</strong>이나 <strong>Omio(오미오) 앱</strong>을 통해 반드시 앞쪽의 넓은 <strong>수프라(Supra) 우등석</strong>을 사전 예매하세요. (현장 발권 비추천)<br><br>
-        3️⃣ <strong>기차/철도 이동 (절대 비추천 ⚠️):</strong><br>
-        • 직행 열차가 없고 최소 2회 환승하며 <strong>10시간 이상</strong> 걸리므로 부모님 동행 시 절대 비추천합니다.<br><br>
-        💱 <strong>통화 및 환전 주의사항:</strong><br>
-        스페인과 포르투갈 모두 <strong>유로(€)</strong>를 사용합니다. 국경을 넘어도 화폐를 바꿀 필요 없이, 스페인에서 쓰던 트래블월렛/트래블로그 카드와 유로 현금을 그대로 사용하시면 됩니다!<br><br>
-        🎒 <strong>짐 배송 서비스 (Baggage Forwarding):</strong><br>
-        무거운 캐리어를 끌고 이동하는 것이 부담스럽다면, 스페인 우체국(Correos)이나 사설 수하물 배송 업체를 이용해 숙소 간 짐을 미리 보내버리세요. 두 손 가볍게 국경을 넘을 수 있습니다!
+        🏰 <strong>🇵🇹 리스본 ➔ 신트라(페나성) 당일치기 이동 가이드</strong>:<br><br>
+        1️⃣ <strong>교외선 기차 (CP Urban Trains):</strong> 리스본 시내 로시오(Rossio)역에서 탑승, 약 40분 만에 신트라역 도착.<br>
+        2️⃣ <strong>부모님 동행 시 필수 팁:</strong> 신트라역에서 페나 궁전 매표소까지는 경사가 매우 심한 산길입니다. 걸어 올라가지 마시고 역 앞에서 <strong>우버(Uber) 택시 또는 434번 순환 버스</strong>를 타고 궁전 정문까지 바로 올라가세요!
       `;
     }
-    const chips = [
-      { query: '스페인 포르투갈 환전 어떻게 해? 유로 써?', label: '💶 유로 환전/통화' },
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-      { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
-    ];
     return res + renderFollowupChips(chips);
   }
 
-  // ====================================================
-  // [NEW INTENT 2] DUBAI 24H STOPOVER & LUGGAGE STORAGE (두바이 스톱오버 / 짐 보관 질문)
-  // ====================================================
-  const isDubaiStopover = (
-    ['에미레이트', '두바이', 'dubai', 'emirates', 'ドバイ', 'エミレーツ', '迪拜', '阿联酋'].some(w => q.includes(w) || cleanQ.includes(w))
-  ) && (
-    ['경유', '스톱오버', '스탑오버', '24시간', '24h', '짐 보관', '짐보관', '수하물', '보관소', '환승',
-     'stopover', 'layover', 'transit', '24 hour', '24hr', '24h', 'luggage', 'baggage', 'storage', 'left luggage',
-     '経由', '乗換', '乗り継ぎ', 'ストップオーバー', '24時間', '荷物預かり', '手荷物預かり',
-     '经停', '过境', '中转', '24小时', '行李寄存', '寄存'].some(w => q.includes(w) || cleanQ.includes(w))
-  );
+  // Common Intent Flags
+  const isFood = ['음식', '맛집', '먹거리', '식당', '미식', '푸드', '요리', '맛있는', 'food', 'restaurant', 'dining', 'eat', 'dish', 'cuisine', 'グルメ', 'レストラン', '料理', '美味しい', '名物', '美食', '餐厅', '吃', '菜肴'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isSpecificRestaurant = ['추천 식당', '추천 맛집', '식당 추천', '맛집 추천', '유명한 식당', '유명한 맛집', '어디서 먹', '레스토랑', 'restaurant', 'restaurants', 'dining place', 'おすすめレストラン', '名店', '推荐餐厅', '哪家好'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isShopping = ['쇼핑', '선물', '기념품', '특산품', '살것', '살만한', '기념', 'shopping', 'souvenir', 'gift', 'souvenirs', 'お土産', 'ショッピング', '買い物', '名産', '购物', '纪念品', '伴手礼', '特产'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isSights = ['관광', '명소', '볼거리', '가볼만한', '유적지', '핫플', '관광지', '투어', 'attraction', 'sights', 'sightseeing', 'must visit', 'tourist', '観光', '名所', '見どころ', 'スポット', '景点', '地标', '必去', '游览'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isWeather = ['날씨', '기온', '옷차림', '시기', '월', '겨울', '가을', '비', '추워', '따뜻', 'weather', 'climate', 'temperature', 'clothes', 'packing', 'when to visit', 'season', '天気', '気温', '服装', '季節', 'ベストシーズン', '雨', '寒い', '天气', '气温', '穿衣', '季节', '月份', '下雨'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isWater = ['생수', '물', '수돗물', '물갈이', '석회수', 'sin gas', 'con gas', 'carbonated', 'sparkling', 'mineral water', 'water', 'お水', '水', 'ミネラルウォーター', '炭酸水', '水道水', '矿泉水', '自来水', '气泡水'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isSafety = ['소매치기', '치안', '안전', '도난', '위험', '조심', '안전수칙', '사기', '경찰', 'pickpocket', 'safety', 'security', 'safe', 'theft', 'danger', 'scam', 'スリ', '治安', '安全', '盗難', '防犯', '危険', '詐欺', '防盗', '治安', '安全', '小偷', '危险', '骗局'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isTransit = ['기차', '지하철', '버스', '교통', '렌페', '메트로', '택시', '우버', '이동', '열차', 'train', 'metro', 'subway', 'bus', 'transit', 'transport', 'taxi', 'uber', 'renfe', '列車', '電車', '地下鉄', 'バス', '交通', 'タクシー', '移動', '火车', '高铁', '地铁', '公交', '大巴', '出租车', '打车', '交通'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isBudget = ['예산', '경비', '비용', '총액', '얼마', 'budget', 'cost', 'expense', 'price', 'total cost', '予算', '費用', '経費', 'いくら', '総額', '预算', '花费', '费用', '多少钱', '总价'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isCardCash = ['환전', '유로', '카드', '현금', '팁', '트래블로그', '트래블월렛', '화폐', '통화', 'card', 'cash', 'exchange', 'currency', 'euro', 'tip', 'tipping', '両替', 'カード', '現金', 'チップ', '通貨', 'ユーロ', '换汇', '刷卡', '现金', '小费', '货币', '欧元'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isTaxRefund = ['텍스리펀', '택스리펀', '세금환급', '면세', 'diva', 'tax refund', 'tax free', '免税', 'タックスリファンド', '税金還付', '退税', '免税退税'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isSeniorCare = ['부모님', '어르신', '노인', '휠체어', '평지', '무릎', '피로', '계단', 'senior', 'parents', 'elderly', 'wheelchair', 'accessible', 'barrier free', '高齢者', '両親', 'シニア', '車椅子', 'バリアフリー', '階段', '平坦', '父母', '长辈', '老人', '轮椅', '无障碍', '平地', '膝盖'].some(w => q.includes(w) || cleanQ.includes(w));
 
-  if (isDubaiStopover) {
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        🐪 <strong>エミレーツ航空 ドバイ経由 24時間ストップオーバー＆荷物預かり完全ガイド</strong>:<br><br>
-        エミレーツ航空を利用してドバイを経由されるなら本当に素晴らしい選択です！長時間のフライトの合間に近未来の魅惑的な都市を軽快に満喫できます。<br><br>
-        🧳 <strong>空港での荷物預かり（手荷物一時預かり所）:</strong><br>
-        • <strong>場所:</strong> ドバイ国際空港（DXB）<strong>第3ターミナル（Terminal 3）到着階（Arrivals）</strong>のエミレーツセキュリティ手荷物預かり所。<br>
-        • <strong>料金:</strong> 12時間あたり荷物1個につき約<strong>35〜40 AED（約1,400〜1,600円）</strong>で安全に利用可能。<br>
-        • <strong>利用のコツ:</strong> 重いスーツケースを空港に預けて身軽に市内観光へ出発できます。また、エミレーツ航空の公式ホテルストップオーバーサービスを利用するのも大変おすすめです。<br><br>
-        🏙️ <strong>シニア同伴におすすめの24時間ハイライト推奨コース:</strong><br>
-        1️⃣ <strong>ドバイ・フレーム（Dubai Frame）:</strong> ドバイの過去と未来をパノラマで一望できる黄金の巨大フレーム展望台（エレベーター完備）。<br>
-        2️⃣ <strong>ドバイ・モール＆噴水ショー（The Dubai Mall & Fountain）:</strong> 快適な冷房完備の巨大モールでゆったり散策＆夕暮れの華麗な音楽噴水ショー鑑賞。<br>
-        3️⃣ <strong>未来博物館（Museum of the Future）:</strong> 壮麗なアラビア書道の建築美を誇る人気フォトスポット＆先端技術体験。
-      `;
-    } else if (lang === 'en') {
-      res = `
-        🐪 <strong>Emirates Airlines Dubai 24h Stopover & Luggage Storage Guide</strong>:<br><br>
-        Choosing a Dubai stopover with Emirates Airlines is an exceptional choice! It perfectly breaks up the long journey while allowing you to explore a stunning modern oasis.<br><br>
-        🧳 <strong>Airport Luggage Storage:</strong><br>
-        • <strong>Location:</strong> Dubai International Airport (DXB) <strong>Terminal 3, Arrivals level</strong> (Emirates secure baggage storage facility).<br>
-        • <strong>Fee:</strong> Approx. <strong>35–40 AED (~$10–$11 USD)</strong> per bag for 12 hours.<br>
-        • <strong>Pro Tip:</strong> Store your heavy suitcases safely and explore the city hands-free, or make use of the Emirates Stopover Hotel program.<br><br>
-        🏙️ <strong>Recommended 24-Hour Senior-Friendly Route:</strong><br>
-        1️⃣ <strong>Dubai Frame:</strong> Iconic golden archway bridging historic Dubai and the futuristic skyline (fully elevator equipped).<br>
-        2️⃣ <strong>The Dubai Mall & Fountain Show:</strong> World-class indoor climate-controlled stroll followed by the magnificent evening outdoor musical fountain show.<br>
-        3️⃣ <strong>Museum of the Future:</strong> Breathtaking architectural landmark featuring Arabic calligraphy, perfect for photos and futuristic exhibits.
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        🐪 <strong>阿联酋航空 迪拜经停24小时过境游推荐路线与行李寄存全攻略</strong>:<br><br>
-        搭乘阿联酋航空选择在迪拜中转经停过境绝对是明智之选！不仅有效舒缓长途飞行疲劳，还能轻松领略这座奢华现代都市的非凡魅力。<br><br>
-        🧳 <strong>机场行李寄存（Luggage Storage）：</strong><br>
-        • <strong>位置：</strong> 迪拜国际机场（DXB）<strong>第3航站楼（Terminal 3）到达层（Arrivals）</strong>阿联酋航空安保行李寄存处。<br>
-        • <strong>费用：</strong> 12小时每件行李约<strong>35~40迪拉姆（AED，约合人民币70~80元）</strong>。<br>
-        • <strong>贴士：</strong> 寄存沉重大件行李后即可轻装进城游玩，也可以选择预订阿联酋航空官方酒店过境经停套餐。<br><br>
-        🏙️ <strong>适合长辈的24小时精选推荐路线：</strong><br>
-        1️⃣ <strong>迪拜相框（Dubai Frame）：</strong> 纵览老城与新城天际线的金色巨框观景台（全无障碍直梯直达顶部）。<br>
-        2️⃣ <strong>迪拜购物中心与音乐喷泉（Dubai Mall & Fountain）：</strong> 全程强力冷气舒适室内漫步，傍晚欣赏震撼迷人的户外音乐喷泉秀。<br>
-        3️⃣ <strong>未来博物馆（Museum of the Future）：</strong> 令人叹为观止的阿拉伯书法雕花建筑打卡与未来科技体验。
-      `;
-    } else {
-      res = `
-        🐪 <strong>에미레이트 항공 두바이 경유 24시간 스톱오버 & 짐 보관 추천 가이드</strong>:<br><br>
-        에미레이트 항공을 이용해 두바이를 경유하신다면 정말 탁월한 선택입니다! 짐 보관은 두바이 공항 제3터미널 도착층(Arrivals)의 에미레이트 보안 수하물 보관소에 유료(약 35~40 AED)로 맡기고 시내를 가볍게 둘러보실 수 있습니다. 또는 호텔 스톱오버 서비스를 이용하세요.<br><br>
-        🏙️ <strong>추천 코스:</strong><br>
-        '<strong>두바이 프레임 ➔ 두바이 몰(분수 쇼) ➔ 미래의 박물관</strong>' 순서입니다.
-      `;
-    }
-    const chips = [
-      { query: '두바이 맛집 추천해줘', label: '🍽️ 두바이 맛집' },
-      { query: '두바이 사막 사파리 부모님 주의사항과 복장', label: '🐪 사막 사파리 팁' },
-      { query: '두바이에서 아부다비 이동법', label: '🚕 두바이 ➔ 아부다비' }
-    ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // ====================================================
-  // [NEW INTENT 3] MENÚ DEL DÍA / COST-EFFECTIVE DINING (식비 가성비 / 메누 델 디아 꿀팁)
-  // ====================================================
-  const isMenuDelDia = [
-    '식비', '절약', '가성비', '점심', '메누 델 디아', '메누델디아', '델 디아', '델디아', 'menu del dia', 'menú del día',
-    '점심 코스', '점심코스', '오늘의 메뉴', '가성비 점심', '점심 특선', '점심 식비', '식비 절약', '식비 아끼',
-    'lunch budget', 'daily menu', 'cheap lunch', 'lunch special', 'dining budget', 'save food',
-    'メニュ・デル・ディア', 'メニュデルディア', '食費節約', 'コスパランチ', '日替わり定食', 'ランチコース',
-    '每日套餐', '每日特选', '午餐套餐', '餐饮省钱', '省餐费', '性价比午餐'
-  ].some(w => q.includes(w) || cleanQ.includes(w)) || (
-    (['식비', '식사비', '음식값', '밥값', 'food budget', 'dining cost', '食費', '餐费'].some(w => q.includes(w) || cleanQ.includes(w))) &&
-    (['절약', '아끼', '가성비', '줄이', 'save', 'cheap', 'budget', '節約', '安く', '省钱', '划算'].some(w => q.includes(w) || cleanQ.includes(w)))
-  ) || (
-    (['점심', 'lunch', 'ランチ', '午餐'].some(w => q.includes(w) || cleanQ.includes(w))) &&
-    (['가성비', '코스', '절약', '메뉴', 'course', 'set', 'コスパ', '套餐'].some(w => q.includes(w) || cleanQ.includes(w)))
-  );
-
-  if (isMenuDelDia) {
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        🥘 <strong>スペイン食費節約の決定版！「メニュ・デル・ディア（Menú del Día）」活用ガイド</strong>:<br><br>
-        スペイン旅行で食費を賢く節約する最大の秘訣は、まさに<strong>「メニュ・デル・ディア（Menú del Día＝本日の日替わりランチコース）」</strong>です！ 🍷<br><br>
-        • <strong>提供時間:</strong> スペインの一般的な昼食時間帯である<strong>13:30〜15:30</strong>に街中のレストランで提供されます。<br>
-        • <strong>驚きの価格:</strong> 1人あたりわずか<strong>€12〜€15（約1万8千〜2万2千ウォン / 約2,000〜2,500円）</strong>程度！<br>
-        • <strong>豪華なフルコース内容:</strong><br>
-          1️⃣ <strong>前菜（Primero）:</strong> 新鮮サラダ、パエリア、温かいスープ、ガスパチョなどから選択<br>
-          2️⃣ <strong>メイン（Segundo）:</strong> イベリコ豚ステーキ、白身魚のグリル、ローストチキンなどから選択<br>
-          3️⃣ <strong>デザート（Postre）:</strong> プリン（フラン）、アイスクリーム、またはコーヒー<br>
-          4️⃣ <strong>ドリンク＆パン付き:</strong> ハウスワイン1本（またはビール/水）とバゲットパンが無料セット！<br><br>
-        💡 <strong>食費節約の黄金ルール:</strong> お昼は「メニュ・デル・ディア」でしっかり温かいごちそうを食べ、夕食はAirbnbのキッチンやスーパーの生ハム・果物で軽めに済ませると<strong>食費を半分に節約</strong>でき、ご両親の胃腸の負担も減らせます！
-      `;
-    } else if (lang === 'en') {
-      res = `
-        🥘 <strong>Spain Dining Budget Secret: The Iconic 'Menú del Día' (Daily Lunch Special)!</strong><br><br>
-        The ultimate secret to slashing dining expenses while enjoying authentic Spanish cuisine is the legendary <strong>'Menú del Día' (Menu of the Day)</strong>! 🍷<br><br>
-        • <strong>Service Hours:</strong> Served during traditional Spanish lunch hours, roughly <strong>1:30 PM to 3:30 PM</strong> at local restaurants.<br>
-        • <strong>Price:</strong> An unbelievable <strong>€12–€15 (~$13–$16 USD / ~₩18,000–₩22,000)</strong> per person!<br>
-        • <strong>Full Multi-Course Value:</strong><br>
-          1️⃣ <strong>First Course (Primero):</strong> Mixed fresh salad, paella, soup, or gazpacho.<br>
-          2️⃣ <strong>Second Course (Segundo):</strong> Grilled Iberian pork steak, tender roast chicken, or catch of the day.<br>
-          3️⃣ <strong>Dessert (Postre):</strong> Traditional flan (caramel custard), ice cream, or espresso.<br>
-          4️⃣ <strong>Drinks & Bread:</strong> A full bottle of house wine (or beer/water) and artisan baguette included!<br><br>
-        💡 <strong>Family Travel Budget Tip:</strong> Feast heartily on the Menú del Día for lunch, then prepare a light dinner with fresh Jamón, bread, and fruits at your Airbnb. You will <strong>cut your food budget in half</strong> while keeping meals comfortable and gentle on digestion for parents!
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        🥘 <strong>西班牙餐饮省钱绝招！超高性价比午餐“每日特选套餐（Menú del Día）”秘籍</strong>:<br><br>
-        在西班牙旅行中大幅节省餐饮预算的核心秘诀，正是当地经典的<strong>“Menú del Día（每日午餐超值全套套餐）”</strong>！ 🍷<br><br>
-        • <strong>供应时段：</strong> 西班牙正统午餐时间 <strong>下午1:30至3:30</strong>，各大本地餐厅均有供应。<br>
-        • <strong>超高性价比：</strong> 人均仅需 <strong>€12 ~ €15（约合人民币95~120元 / 2万韩元）</strong>！<br>
-        • <strong>丰盛全套配置：</strong><br>
-          1️⃣ <strong>头盘前菜（Primero）：</strong> 海鲜饭、鲜蔬沙拉、热汤或西班牙冷汤。<br>
-          2️⃣ <strong>主菜（Segundo）：</strong> 现煎伊比利亚黑猪排、烤鸡腿或香煎当日鲜鱼排。<br>
-          3️⃣ <strong>甜品（Postre）：</strong> 手工焦糖布丁（Flan）、冰淇淋或浓缩咖啡。<br>
-          4️⃣ <strong>免费酒水与面包：</strong> 通常免费赠送整瓶佐餐红葡萄酒（或水/啤酒）及现烤法棍面包！<br><br>
-        💡 <strong>家庭省钱黄金法则：</strong> 中午在餐厅享用热腾腾且份量十足的 Menú del Día，晚餐在民宿轻食料理或搭配火腿水果沙拉，<strong>餐费能直接减半</strong>，长辈肠胃也更舒服无负担！
-      `;
-    } else {
-      res = `
-        🥘 <strong>스페인 식비 절약의 핵심은 바로 '메누 델 디아(Menú del Día)'입니다!</strong> 🍷<br><br>
-        점심(오후 1시 30분 ~ 3시 30분)에 식당에 가면 전식, 본식, 디저트, 와인까지 <strong>12~15유로(약 2만 원)</strong>에 푸짐한 코스 요리를 즐길 수 있습니다.<br><br>
-        • <strong>알찬 코스 구성:</strong><br>
-          1️⃣ <strong>전식(Primero):</strong> 신선한 샐러드, 파에야, 수프, 가스파초 중 택1<br>
-          2️⃣ <strong>본식(Segundo):</strong> 이베리코 돼지고기 스테이크, 생선 구이, 닭요리 등 든든한 메인 요리 중 택1<br>
-          3️⃣ <strong>디저트(Postre):</strong> 달콤한 플랑(푸딩), 아이스크림 또는 에스프레소 커피<br>
-          4️⃣ <strong>음료 무료 포함:</strong> 하우스 와인 1병(또는 물/맥주)과 바게트 빵 기본 제공!<br><br>
-        💡 점심을 든든히 드시고 저녁은 에어비앤비에서 가볍게 해 드시면 <strong>식비를 절반으로 줄일 수 있습니다</strong>. 부모님 소화에도 아주 좋습니다!
-      `;
-    }
-    const chips = [
-      { query: '스페인 맛집 추천해줘', label: '🥘 스페인 맛집' },
-      { query: '소금 빼주세요 스페인어로 뭐야?', label: '🧂 소금 빼기 표현' },
-      { query: '현재 여행 총 예상 경비와 예산 얼마야?', label: '💰 총 여행 예산' }
-    ];
-    return res + renderFollowupChips(chips);
-  }
-
-  // [A] FOOD & CUISINE INTENT
+  // 10-1. FOOD & DINING INTENT
   if (isFood) {
-    if (isPortugal || (!isSpain && !isDubai)) {
+    if (isItaly) {
       let res = '';
       if (lang === 'ja') {
         res = `
-          🥧 <strong>ポルトガルを代表する伝統名物料理 TOP 4</strong>:<br><br>
-          1️⃣ <strong>バカリャウ（Bacalhau - 塩漬けタラ料理）:</strong> 「国民食」と呼ばれるタラ料理。ほぐしたタラとフライドポテトを卵でとじた<em>『バカリャウ・ア・ブラス』</em>は日本人の口にも合い、ご両親にも大好評です！<br>
-          2️⃣ <strong>パステル・デ・ナタ（Pastel de Nata - エッグタルト）:</strong> リスボンのベレン地区発祥。サクサクのパイ生地と濃厚で優しいカスタードクリームにシナモンを振って食べるのが本場のスタイルです。<br>
-          3️⃣ <strong>アホス・デ・マリスコ（Arroz de Marisco - 濃厚魚介リゾット）:</strong> エビ、カニ、アサリの旨味が凝縮されたトマト風味の雑炊風スープご飯。シニアの胃腸にも優しく温まります。<br>
-          4️⃣ <strong>フランセジーニャ（Francesinha - ポルト名物サンド）:</strong> お肉をたっぷり挟み、とろけるチーズと特製ピリ辛ビールソースをかけた大満足の一品！
+          🍕 <strong>イタリアを代表する必食グルメ TOP 4</strong>:<br><br>
+          1️⃣ <strong>ナポリ本場の薪窯ピッツァ（Pizza Napoletana）:</strong> 外はサクッ、中はモチモチの生地に水牛モッツァレラとトマトの黄金比。<br>
+          2️⃣ <strong>フィレンツェ風Tボーンステーキ（Bistecca alla Fiorentina）:</strong> キアニーナ牛の赤身肉を炭火で香ばしくレアに焼き上げた極上の肉料理。<br>
+          3️⃣ <strong>ローマ3大パスタ:</strong> 本場カルボナーラ（生クリーム不使用）、アマトリチャーナ、カチョ・エ・ペペ。<br>
+          4️⃣ <strong>インペパータ・ディ・コッツェ:</strong> ナポリ名物の黒胡椒を効かせたムール貝の白ワイン蒸し！
         `;
       } else if (lang === 'en') {
         res = `
-          🥧 <strong>Iconic Must-Try Portuguese Cuisine TOP 4</strong>:<br><br>
-          1️⃣ <strong>Bacalhau à Brás (Salted Cod with Eggs & Potatoes):</strong> Portugal's beloved national staple. Shredded cod sautéed with thin potato matchsticks, sweet onions, and scrambled eggs—mild, savory, and senior-friendly!<br>
-          2️⃣ <strong>Pastel de Nata (Custard Tart):</strong> Lisbon's world-famous pastry. Warm, flaky layers cradling a silky, caramelized egg custard, best dusted with cinnamon.<br>
-          3️⃣ <strong>Arroz de Marisco (Seafood Rice Stew):</strong> A comforting, rich tomato broth packed with prawns, clams, and crab. Hydrating and deeply satisfying for tired travelers.<br>
-          4️⃣ <strong>Francesinha (Porto Specialty Sandwich):</strong> Layers of tender meats smothered under melted cheese and a piping hot beer-tomato gravy!
+          🍕 <strong>Iconic Italian Culinary Delights TOP 4</strong>:<br><br>
+          1️⃣ <strong>Neapolitan Wood-Fired Pizza:</strong> Fluffy, airy crust charred to perfection with sweet San Marzano tomatoes and creamy buffalo mozzarella.<br>
+          2️⃣ <strong>Bistecca alla Fiorentina:</strong> Florence's legendary thick-cut T-bone steak, grilled rare over wood embers with fragrant olive oil.<br>
+          3️⃣ <strong>Rome's Holy Trinity of Pastas:</strong> Authentic Carbonara (guanciale & pecorino, no cream!), Amatriciana, and Cacio e Pepe.<br>
+          4️⃣ <strong>Impepatata di Cozze:</strong> Neapolitan steamed mussels bursting with cracked black pepper and fresh lemon.
         `;
       } else if (lang === 'zh') {
         res = `
-          🥧 <strong>葡萄牙最负盛名的传统特色美食 TOP 4</strong>:<br><br>
-          1️⃣ <strong>布拉斯式马介休（Bacalhau à Brás）：</strong> 葡萄牙国菜鳕鱼料理！将咸鳕鱼撕成细丝与金黄土豆细丝、洋葱及滑嫩鸡蛋炒匀，鲜香温润，非常迎合长辈口味。<br>
-          2️⃣ <strong>葡式蛋挞（Pastel de Nata）：</strong> 贝伦区修道院秘方发源地。千层酥皮层层酥脆，内馅蛋奶香浓郁滚烫，撒上少许肉桂粉更添风味。<br>
-          3️⃣ <strong>葡式海鲜泡饭（Arroz de Marisco）：</strong> 汇聚大虾、青口贝和螃蟹精华的番茄高汤海鲜饭，口感温润多汁，抚慰旅途肠胃。<br>
-          4️⃣ <strong>波尔图湿答答三明治（Francesinha）：</strong> 肉香浓郁的特制吐司，覆盖厚厚拉丝芝士并淋上热腾腾的秘制啤酒番茄酱汁！
+          🍕 <strong>意大利四大殿堂级必尝美食</strong>:<br><br>
+          1️⃣ <strong>那不勒斯柴火窑烤披萨（Pizza Napoletana）：</strong> 边缘焦香蜂窝气孔，水牛奶酪配圣马扎诺番茄酸甜多汁。<br>
+          2️⃣ <strong>佛罗伦萨T骨牛排（Bistecca alla Fiorentina）：</strong> 托斯卡纳奎宁牛原切厚炙，外焦里嫩，肉香四溢。<br>
+          3️⃣ <strong>罗马三大灵魂意面：</strong> 正宗无奶油培根蛋酱面（Carbonara）、番茄风干猪面颊肉面（Amatriciana）与黑椒绵羊奶酪面（Cacio e Pepe）。<br>
+          4️⃣ <strong>那不勒斯胡椒青口贝（Impepatata di Cozze）：</strong> 鲜美多汁，黑胡椒提味去腥，鲜掉眉毛！
+        `;
+      } else {
+        res = `
+          🍕 <strong>이탈리아 대표 명물 음식 TOP 4</strong>:<br><br>
+          1️⃣ <strong>나폴리 정통 화덕피자:</strong> 겉은 바삭하고 속은 쫄깃한 도우에 신선한 산 마르차노 토마토와 버팔로 모짜렐라 치즈의 완벽한 풍미입니다.<br>
+          2️⃣ <strong>피렌체 티본스테이크 (비스테카):</strong> 숯불에 겉은 바삭하게, 속은 부드러운 레어로 구워낸 토스카나 대표 고기 요리로 부모님 몸보신에 최고입니다.<br>
+          3️⃣ <strong>로마 3대 정통 파스타:</strong> 생크림 없이 관찰레와 달걀노른자, 페코리노 치즈로만 맛을 낸 정통 카르보나라, 아마트리치아나, 카초 에 페페.<br>
+          4️⃣ <strong>나폴리식 홍합찜 (임페파타 디 코체):</strong> 신선한 홍합에 통후추와 레몬즙을 듬뿍 뿌려 쪄낸 시원하고 칼칼한 해산물 요리입니다.
+        `;
+      }
+      if (isSpecificRestaurant) res += renderMatchingDiningCards('italy');
+      const chips = [
+        { query: '이탈리아어 식당 필수 회화', label: '🇮🇹 이탈리아어 회화' },
+        { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+        { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' }
+      ];
+      return res + renderFollowupChips(chips);
+    }
+
+    if (isPortugal) {
+      let res = '';
+      if (lang === 'ja') {
+        res = `
+          🥧 <strong>ポルトガルを代表する必食グルメ TOP 4</strong>:<br><br>
+          1️⃣ <strong>パステル・デ・ナタ（エッグタルト）:</strong> ベレン地区発祥、サクサクのパイ生地に濃厚カスタード。<br>
+          2️⃣ <strong>バカリャウ（干し鱈料理）:</strong> 365種類のレシピがある国民食。バカリャウ・ア・ブラスが食べやすくおすすめ。<br>
+          3️⃣ <strong>フランセジーニャ（ポルト名物サンドイッチ）:</strong> チーズと肉を重ね特製ビールソースをかけた名物。<br>
+          4️⃣ <strong>タコ料理（Polvo à Lagareiro）:</strong> オリーブオイルとガーリックで柔らかくローストしたタコ。
+        `;
+      } else if (lang === 'en') {
+        res = `
+          🥧 <strong>Iconic Portuguese Culinary Delights TOP 4</strong>:<br><br>
+          1️⃣ <strong>Pastel de Nata (Custard Tart):</strong> Flaky caramelized puff pastry filled with warm velvety custard from Belém.<br>
+          2️⃣ <strong>Bacalhau (Salted Cod):</strong> Cooked 365 ways, with Bacalhau à Brás being the most popular shred-potato dish.<br>
+          3️⃣ <strong>Francesinha:</strong> Porto's legendary hearty sandwich stacked with meats, smothered in molten cheese and beer sauce.<br>
+          4️⃣ <strong>Polvo à Lagareiro:</strong> Ultra-tender oven-roasted octopus drenched in aromatic garlic extra-virgin olive oil.
+        `;
+      } else if (lang === 'zh') {
+        res = `
+          🥧 <strong>葡萄牙四大必尝传统美食指南</strong>:<br><br>
+          1️⃣ <strong>葡式蛋挞（Pastel de Nata）：</strong> 贝伦区发祥，外皮酥脆层次分明，蛋奶馅焦香滑嫩。<br>
+          2️⃣ <strong>马介休鳕鱼（Bacalhau）：</strong> 拥有365种做法的国菜，金黄土豆丝炒鳕鱼（Bacalhau à Brás）最适宜长辈。<br>
+          3️⃣ <strong>湿答答三明治（Francesinha）：</strong> 波尔图代表肉食夹心三明治，覆盖厚浓奶酪与微辣秘制酱汁。<br>
+          4️⃣ <strong>橄榄油烤章鱼（Polvo à Lagareiro）：</strong> 大蒜优质橄榄油慢烤，章鱼肉质软烂弹牙。
         `;
       } else {
         res = `
           🥧 <strong>포르투갈 대표 명물 음식 TOP 4</strong>:<br><br>
-          1️⃣ <strong>바칼라우 아 브라스 (Bacalhau à Brás):</strong> 포르투갈의 영혼이 담긴 염장 대구 요리입니다. 가늘게 썬 감자튀김, 대구살, 양파를 달걀과 함께 부드럽게 볶아내어 어르신 입맛에도 자극 없이 아주 담백하고 고소합니다.<br>
-          2️⃣ <strong>파스텔 드 나타 (Pastel de Nata - 에그타르트):</strong> 바삭한 페이스트리 안에 부드럽고 따뜻한 커스터드 크림이 가득 차 있으며, 계피 가루를 살짝 뿌려 에스프레소(비카)와 함께 드시면 최고의 궁합입니다.<br>
-          3️⃣ <strong>아로스 드 마리스코 (Arroz de Marisco - 해물 국물 밥):</strong> 싱싱한 새우, 게, 조개가 듬뿍 들어간 토마토 베이스의 따뜻한 국물 리조또로, 여행 중 얼큰하고 시원한 국물이 그리우실 때 부모님께 최고의 한 끼가 됩니다.<br>
-          4️⃣ <strong>프란세지냐 (Francesinha):</strong> 포르투 대표 샌드위치로 빵 사이에 스테이크와 소시지를 넣고 치즈와 특제 맥주 소스를 듬뿍 얹어 오븐에 구워낸 든든한 별미입니다.
+          1️⃣ <strong>파스텔 드 나타 (에그타르트):</strong> 바삭한 페이스트리에 부드러운 커스터드 크림이 어우러진 대표 디저트입니다.<br>
+          2️⃣ <strong>바칼라우 (대구 요리):</strong> 365가지 조리법이 있는 국민 요리로, 잘게 찢은 대구와 감자를 볶은 '바칼라우 아 브라스'를 추천합니다.<br>
+          3️⃣ <strong>프란세지냐:</strong> 포르투의 명물 샌드위치로 햄, 소시지, 치즈를 듬뿍 올리고 특제 맥주 소스를 얹은 별미입니다.<br>
+          4️⃣ <strong>문어 요리 (뽈보 아 라가레이루):</strong> 올리브 오일과 마늘을 둘러 오븐에 구워낸 연하고 쫄깃한 문어 요리입니다.
         `;
       }
-      if (isSpecificRestaurant) {
-        res += renderMatchingDiningCards('portugal');
-      }
+      if (isSpecificRestaurant) res += renderMatchingDiningCards('portugal');
       const chips = [
-        { query: '스페인 맛집 추천해줘', label: '🥘 스페인 대표 음식' },
-        { query: '소금 빼주세요 스페인어', label: '🧂 소금 빼주세요 문구' },
-        { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투 이동' }
+        { query: '포르투갈 쇼핑 기념품 추천', label: '🎁 포르투갈 쇼핑 추천' },
+        { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
       ];
       return res + renderFollowupChips(chips);
     }
 
-    if (isSpain) {
+    if (isSpain || (!isItaly && !isPortugal && !isDubai)) {
       let res = '';
       if (lang === 'ja') {
         res = `
           🥘 <strong>スペインを代表する必食グルメ TOP 4</strong>:<br><br>
-          1️⃣ <strong>パエリア（Paella）:</strong> バレンシア発祥のサフラン香る名物鍋ご飯。魚介パエリアは日本人の舌にも馴染みやすく大人気です。<br>
-          2️⃣ <strong>タパス各種（Tapas）:</strong> ガンバス・アル・アヒージョ（エビのニンニクオイル煮）、トルティーヤ（スペイン風オムレツ）など小皿で多彩な味を楽しめます。<br>
-          3️⃣ <strong>イベリコ豚生ハム（Jamón Ibérico）:</strong> どんぐりを食べて育った最高級ベジョータ（Bellota）は口の中でとろける芳醇な旨味が格別です。<br>
-          4️⃣ <strong>チュロス・コン・チョコラテ:</strong> 揚げたてサクサクのチュロスを温かい濃厚チョコレートにディップして食べる伝統の朝食・おやつです。
+          1️⃣ <strong>イベリコ生ハム（Jamón Ibérico de Bellota）:</strong> どんぐりを食べて育った最高級黒豚の生ハム。<br>
+          2️⃣ <strong>パエリア（Paella）:</strong> バレンシア発祥、サフランの香りと魚介の旨味を吸わせた伝統の米料理。<br>
+          3️⃣ <strong>タパス＆ピンチョス（Tapas & Pintxos）:</strong> ガンバス・アル・アヒージョなど小皿料理の食べ歩き。<br>
+          4️⃣ <strong>チュロス＆濃厚ホットチョコレート:</strong> 揚げたてサクサクのチュロスをビターチョコにディップ！
         `;
       } else if (lang === 'en') {
         res = `
           🥘 <strong>Iconic Spanish Culinary Delights TOP 4</strong>:<br><br>
-          1️⃣ <strong>Authentic Paella:</strong> Fragrant saffron-infused rice pan cooked with tender seafood or Valencian meats. A joyous centerpiece for family feasts!<br>
-          2️⃣ <strong>Tapas & Pintxos:</strong> Sizzling garlic shrimp (*Gambas al Ajillo*), golden Spanish potato omelette (*Tortilla Española*), and Iberian croquettes.<br>
-          3️⃣ <strong>Jamón Ibérico de Bellota:</strong> Acorn-fed cured ham hand-sliced paper-thin. Melts effortlessly at room temperature with rich nutty umami.<br>
-          4️⃣ <strong>Churros con Chocolate:</strong> Crispy golden fried churros served alongside rich, molten dark dipping chocolate!
+          1️⃣ <strong>Jamón Ibérico de Bellota:</strong> Melt-in-your-mouth acorn-fed cured cured ham.<br>
+          2️⃣ <strong>Authentic Paella:</strong> Traditional Valencian saffron rice simmered with rich seafood or rabbit & beans.<br>
+          3️⃣ <strong>Tapas & Pintxos:</strong> Vibrant small plates ranging from sizzling garlic prawns (*Gambas al Ajillo*) to Iberian croquettes.<br>
+          4️⃣ <strong>Churros con Chocolate:</strong> Crispy piped fritters dipped in thick, velvety dark drinking chocolate.
         `;
       } else if (lang === 'zh') {
         res = `
-          🥘 <strong>西班牙必尝四大经典殿堂级美食</strong>:<br><br>
-          1️⃣ <strong>西班牙海鲜饭（Paella）：</strong> 藏红花金黄米饭浸满海鲜高汤精华，锅底微微焦香的锅巴（Socarrat）更是精髓。<br>
-          2️⃣ <strong>特色小吃（Tapas）：</strong> 滚烫油蒜大虾（Gambas al Ajillo）、厚切土豆鸡蛋饼（Tortilla Española）及伊比利亚火腿炸丸子。<br>
-          3️⃣ <strong>伊比利亚火腿（Jamón Ibérico de Bellota）：</strong> 橡果喂养最高等级黑猪火腿，现切薄如蝉翼，油脂在唇齿间温润化开。<br>
-          4️⃣ <strong>热巧油条（Churros con Chocolate）：</strong> 现炸酥脆金黄西班牙油条，蘸满浓郁滚烫的黑巧克力浆，经典早餐首选！
+          🥘 <strong>西班牙四大地道美食名吃指南</strong>:<br><br>
+          1️⃣ <strong>橡果饲伊比利亚火腿（Jamón Ibérico）：</strong> 油脂如大理石花纹般细腻，入口融化带有坚果香。<br>
+          2️⃣ <strong>西班牙藏红花海鲜饭（Paella）：</strong> 颗粒饱满吸收浓郁高汤，伴有焦香黄金锅巴。<br>
+          3️⃣ <strong>经典Tapas小吃：</strong> 蒜香大虾（Gambas al Ajillo）、土豆蛋饼与火腿炸丸子。<br>
+          4️⃣ <strong>西班牙吉事果配热巧（Churros）：</strong> 刚出锅外脆里软的吉事果蘸上醇厚浓郁黑巧克力。
         `;
       } else {
         res = `
           🥘 <strong>스페인 대표 명물 음식 TOP 4</strong>:<br><br>
-          1️⃣ <strong>정통 파에야 (Paella):</strong> 사프란 향이 은은한 전통 쌀 요리로, 싱싱한 해산물이 듬뿍 올라간 마리스코 파에야는 부모님 입맛에도 매우 잘 맞습니다.<br>
-          2️⃣ <strong>타파스 (Tapas):</strong> 올리브유와 마늘 향이 일품인 감바스 알 아히요(Gambas al Ajillo), 촉촉한 스페인식 감자 오믈렛(Tortilla) 등 부담 없이 골라 드실 수 있습니다.<br>
-          3️⃣ <strong>하몬 이베리코 데 베요타 (Jamón Ibérico):</strong> 도토리를 먹고 자란 최고급 흑돼지 뒷다리를 자연 건조 숙성한 생햄으로, 입안에서 사르르 녹는 깊은 풍미를 자랑합니다.<br>
-          4️⃣ <strong>츄러스 콘 초콜라테 (Churros):</strong> 갓 튀겨낸 바삭한 츄러스를 진하고 따뜻한 초콜릿 쇼콜라테에 푹 찍어 드시는 스페인 국민 간식입니다.
+          1️⃣ <strong>이베리코 하몽 (Jamón Ibérico de Bellota):</strong> 도토리만 먹고 자란 흑돼지로 만든 풍미 깊은 최고급 생햄입니다.<br>
+          2️⃣ <strong>정통 빠에야 (Paella):</strong> 사프란 향이 솔솔 나는 쌀에 신선한 해산물과 채소를 넣고 볶아낸 전통 쌀요리입니다.<br>
+          3️⃣ <strong>타파스 (Tapas):</strong> 감바스 알 아히요(마늘 새우), 이베리코 크로켓 등 다양한 스페인식 핑거푸드입니다.<br>
+          4️⃣ <strong>츄러스 &amp; 핫초콜릿:</strong> 갓 튀겨 바삭한 츄러스를 진한 다크 초콜릿에 푹 찍어 먹는 국민 간식입니다.
         `;
       }
-      if (isSpecificRestaurant) {
-        res += renderMatchingDiningCards('spain');
-      }
+      if (isSpecificRestaurant) res += renderMatchingDiningCards('spain');
       const chips = [
-        { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-        { query: '마드리드에서 세비야 이동법', label: '🚄 마드리드 ➔ 세비야' },
-        { query: '소금 빼주세요 스페인어', label: '🧂 소금 빼기 표현' }
-      ];
-      return res + renderFollowupChips(chips);
-    }
-
-    if (isDubai) {
-      let res = '';
-      if (lang === 'ja') {
-        res = `
-          🐪 <strong>ドバイ＆中東の代表的ごちそうグルメ</strong>:<br><br>
-          • <strong>アル・マチブース（Al Machboos）:</strong> スパイスとラム肉やチキンの旨味が染み込んだ伝統の香り高い炊き込みご飯。<br>
-          • <strong>シャワルマ（Shawarma）:</strong> 香ばしく焼き上げたお肉と新鮮野菜を薄焼きピタパンで巻いた手軽で美味しい国民食。<br>
-          • <strong>カラクティー＆デーツ（Karak Tea & Dates）:</strong> カルダモンとコンデンスミルクが効いた濃厚チャイティーと、高級デーツ（バティールなど）の甘みは旅の疲れを癒します。
-        `;
-      } else if (lang === 'en') {
-        res = `
-          🐪 <strong>Dubai & Arabian Gastronomic Highlights</strong>:<br><br>
-          • <strong>Al Machboos:</strong> Traditional spiced rice delicately layered with slow-cooked tender lamb or chicken, infused with dried limes and saffron.<br>
-          • <strong>Authentic Shawarma:</strong> Thinly shaved spiced rotisserie meat wrapped in warm flatbread with creamy tahini or garlic toum.<br>
-          • <strong>Karak Tea & Royal Dates:</strong> Fragrant cardamom milk tea paired with gourmet Bateel stuffed dates—ideal for soothing stopover fatigue.
-        `;
-      } else if (lang === 'zh') {
-        res = `
-          🐪 <strong>迪拜与阿拉伯特色美食代表</strong>:<br><br>
-          • <strong>马吉布斯香料手抓饭（Al Machboos）：</strong> 融入藏红花与干柠檬慢炖的羊肉或鸡肉手抓饭，香气四溢。<br>
-          • <strong>正宗沙威玛烤肉卷（Shawarma）：</strong> 旋转烤肉薄切裹入刚出炉的松软面饼，佐以香浓蒜酱，极为美味。<br>
-          • <strong>卡拉克奶茶与椰枣（Karak Tea）：</strong> 荳蔻与浓香炼乳交织的阿拉伯奶茶，搭配Bateel皇室椰枣，休憩补充能量绝配。
-        `;
-      } else {
-        res = `
-          🐪 <strong>두바이 대표 아라비안 별미</strong>:<br><br>
-          • <strong>알 마츠부스 (Al Machboos):</strong> 향긋한 사프란과 카다멈, 부드러운 양고기나 닭고기를 얹어 지어낸 아랍 전통 볶음밥입니다.<br>
-          • <strong>정통 샤와르마 (Shawarma):</strong> 숯불에 구운 얇은 고기와 채소, 마늘 소스를 쫄깃한 피타 빵에 말아 먹는 국민 간식입니다.<br>
-          • <strong>카락 티 & 왕실 대추야자 (Bateel):</strong> 카다멈과 연유 향이 짙은 달콤한 아랍식 밀크티와 바틸(Bateel) 프리미엄 대추야자로 장시간 비행의 피로를 푸세요.
-        `;
-      }
-      res += renderMatchingDiningCards('dubai');
-      const chips = [
-        { query: '두바이에서 아부다비 이동법', label: '🚕 두바이 ➔ 아부다비' },
-        { query: '두바이 사막 사파리 팁', label: '🐪 사막 사파리 팁' }
+        { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야 외 미식 12선' },
+        { query: '스페인 쇼핑 기념품 추천', label: '🎁 스페인 쇼핑 추천' },
+        { query: '스페인 식당 소금 빼주세요 표현', label: '🧂 싱겁게 주문하는 법' }
       ];
       return res + renderFollowupChips(chips);
     }
   }
 
-  // [E-1] SUPERMARKET WATER GUIDE (가스물 vs 맹물 구별법)
-  if (isWater) {
-    const chips = [
-      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' },
-      { query: '식당에서 소금 빼주세요 스페인어로 뭐야?', label: '🧂 소금 빼주세요' },
-      { query: '트래블로그 카드 결제랑 현금 환전 얼마나 필요해?', label: '💳 카드/환전 비율' }
-    ];
-    if (lang === 'ja') {
-      return `
-        💧 <strong>スペインのスーパー飲料水・失敗しない購入ガイド（炭酸水 vs 普通の水）</strong>:<br><br>
-        🔍 <strong>1. ラベルの単語で見分ける:</strong><br>
-        • 🔵 <strong>Agua sin gas（シン・ガス）:</strong> ガスの無い「普通の水（軟水・ミネラルウォーター）」。この単語を必ず確認！<br>
-        • 🔴 <strong>Agua con gas（コン・ガス）:</strong> ガスの有る「炭酸水（シュワシュワする水）」。<br>
-        ※ レストランで注文する際、店員から「Sin gas? Con gas?」と聞かれたら<strong>「Sin gas（シン・ガス）!」</strong>と答えればOKです。<br><br>
-        🤏 <strong>2. 文字が見えない時の「触覚」判別法:</strong><br>
-        ペットボトルの胴体部分を軽く指で押してみてください。<br>
-        • <strong>柔らかくペコペコ凹む ➔ 普通の水（Sin gas）</strong><br>
-        • <strong>石のようにカチカチで張っている ➔ 炭酸水（Con gas）</strong><br><br>
-        🛒 <strong>3. ご両親同伴時の飲料水戦略:</strong><br>
-        • <strong>宿用:</strong> アパート滞在時はスーパーで<strong>5L〜8Lの特大ボトル（Garrafa）</strong>を約1ユーロで購入し、キッチンに常備。<br>
-        • <strong>外出用:</strong> 毎朝500mlの空ボトルや水筒に小分けして携帯（観光地の割高な水を買わずに済みます）。<br>
-        • <strong>おすすめスーパー:</strong> <strong>Mercadona（メルカドーナ）</strong>、Carrefour（カルフール）、DIA（ディア）など黄・赤の看板が目印です！
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        💧 <strong>Spain Supermarket Bottled Water Guide (Still vs Sparkling)</strong>:<br><br>
-        🔍 <strong>1. Label Keyword Check:</strong><br>
-        • 🔵 <strong>Agua sin gas:</strong> Still water (plain drinking water, no carbonation). Always look for "sin gas"!<br>
-        • 🔴 <strong>Agua con gas:</strong> Sparkling water (carbonated fizzy water).<br>
-        ※ At restaurants, when waiters ask *"Sin gas? Con gas?"*, simply answer clearly: <strong>"Sin gas!"</strong>.<br><br>
-        🤏 <strong>2. Tactile "Squeeze Test" (Pro-Tip):</strong><br>
-        Gently squeeze the waist of the plastic bottle:<br>
-        • <strong>Soft & easily squeezable ➔ Still water (Agua sin gas)</strong><br>
-        • <strong>Rigid & rock-hard ➔ Sparkling water (Agua con gas)</strong> due to high carbonation pressure!<br><br>
-        🛒 <strong>3. Family Trip Strategy:</strong><br>
-        • <strong>Accommodation:</strong> Buy a huge <strong>5L–8L bulk jug (Garrafa)</strong> for around ~€1 at supermarkets for apartment kitchens.<br>
-        • <strong>Outings:</strong> Refill 500ml travel bottles or tumblers each morning.<br>
-        • <strong>Supermarkets:</strong> <strong>Mercadona</strong> (best quality & value), Carrefour, DIA (look for yellow and red signs).
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        💧 <strong>西班牙超市饮用水选购指南（纯净水 vs 气泡水精准区分）</strong>:<br><br>
-        🔍 <strong>1. 认准西语标签关键词：</strong><br>
-        • 🔵 <strong>Agua sin gas:</strong> 普通纯净水（矿泉水，无气泡）。sin = 无，认准此词！<br>
-        • 🔴 <strong>Agua con gas:</strong> 气泡水（碳酸水）。con = 含气泡。<br>
-        ※ 在餐厅点水时，侍应生常问“Sin gas? Con gas?”，直接回答<strong>“Sin gas!”</strong>即可。<br><br>
-        🤏 <strong>2. 看不清标签时的“按压触感”绝招：</strong><br>
-        用手指按压塑料瓶腰部：<br>
-        • <strong>柔软易捏瘪 ➔ 普通饮用水（Sin gas）</strong><br>
-        • <strong>紧绷坚硬按不动 ➔ 气泡水（Con gas）</strong>（内部充身高压气体）！<br><br>
-        🛒 <strong>3. 陪伴长辈购水策略：</strong><br>
-        • <strong>住所自用：</strong> 入住公寓时，在超市直接采购一桶<strong>5L~8L超大桶纯净水（Garrafa）</strong>（约1欧元左右），置于厨房烧水泡茶。<br>
-        • <strong>日常外出：</strong> 每日出门前分装入500ml轻便小水瓶或保温杯，免去景区高价买水。<br>
-        • <strong>推荐平价超市：</strong> <strong>Mercadona</strong>（国民第一高性价比）、Carrefour、DIA（认准黄红色招牌）。
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        💧 <strong>스페인 마트 생수 구매 실전 가이드 (가스물 vs 맹물 구별법)</strong>:<br><br>
-        🔍 <strong>1. 라벨 단어 2개로 구별:</strong><br>
-        • 🔵 <strong>Agua sin gas (아구아 신 가스):</strong> 가스가 없는 <strong>'일반 생수(맹물)'</strong>! (sin = 없다. 이 단어를 꼭 찾으세요)<br>
-        • 🔴 <strong>Agua con gas (아구아 꼰 가스):</strong> 가스가 있는 <strong>'탄산수(가스물)'</strong>! (con = 있다)<br>
-        ※ 식당에서 물 주문 시 종업원이 *"Sin gas? Con gas?"*라고 물어보면 <strong>"신 가스 (Sin gas)!"</strong>라고 답하시면 됩니다.<br><br>
-        🤏 <strong>2. 글씨 안 보일 때 쓰는 '촉각' 구별법:</strong><br>
-        페트병 허리를 손으로 살짝 꾹 눌러보세요.<br>
-        • <strong>말랑말랑하게 쑥 들어가면 ➔ 일반 생수 (Sin gas)</strong> (삼다수처럼 부드러움)<br>
-        • <strong>돌덩이처럼 팽팽하고 딱딱하면 ➔ 탄산수 (Con gas)</strong> (탄산가스 압력 때문)<br><br>
-        🛒 <strong>3. 부모님 동행 시 물 구매 추천 전략:</strong><br>
-        • <strong>숙소용:</strong> 아파트먼트 숙소 머무실 때 마트에서 <strong>5L~8L 초대용량 생수(Garrafa)</strong>를 한 통 사서 숙소 주방에 두고 드시면 가장 저렴합니다 (약 1유로 안팎).<br>
-        • <strong>외출용:</strong> 숙소 대용량 물을 외출 전 작은 500ml 빈 페트병이나 텀블러에 덜어서 나가세요.<br>
-        • <strong>추천 마트:</strong> <strong>Mercadona (메르까도나)</strong>, Carrefour (까르푸), DIA (디아) 노란색/빨간색 간판 마트에서 구매하시면 됩니다!
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  
-  // [B] SHOPPING & SOUVENIR INTENT
+  // 10-2. SHOPPING & SOUVENIRS INTENT
   if (isShopping) {
+    if (isItaly) {
+      const chips = [
+        { query: '스페인 쇼핑 기념품 추천', label: '🎁 스페인 쇼핑' },
+        { query: '택스리펀 받는 법', label: '🛍️ 택스리펀 절차' }
+      ];
+      if (lang === 'ja') {
+        return `
+          🎁 <strong>イタリアで絶対に買うべきおすすめ土産 TOP 5</strong>:<br><br>
+          1️⃣ <strong>フィレンツェ本革製品:</strong> 職人が手作業で仕立てる財布、ベルト、バッグ（サン・ロレンツォ市場など）。<br>
+          2️⃣ <strong>トスカーナ産キャンティ・クラシコ＆最高級オリーブオイル:</strong> 肉料理に最高の芳醇な赤ワイン。<br>
+          3️⃣ <strong>エスプレッソ豆（illy / Lavazza）＆ビアレッティ・モカエキスプレス:</strong> 自宅で本場カフェの味を再現。<br>
+          4️⃣ <strong>トリュフオイル＆バルサミコ酢:</strong> パ스타やサラダに数滴で贅沢な香りが広がる美食土産。<br>
+          5️⃣ <strong>ベネチアン・ムラーノガラス細工:</strong> 繊細で美しいペンダントやインテリア雑貨。
+        ` + renderFollowupChips(chips);
+      } else if (lang === 'en') {
+        return `
+          🎁 <strong>Top 5 Authentic Italian Souvenirs & Gifts</strong>:<br><br>
+          1️⃣ <strong>Florence Artisanal Leather Goods:</strong> Handcrafted supple leather bags, jackets, and wallets from Tuscan tanneries.<br>
+          2️⃣ <strong>Tuscan Chianti Classico Wine & Extra-Virgin Olive Oil:</strong> Robust world-renowned red wines and cold-pressed oils.<br>
+          3️⃣ <strong>Italian Espresso Beans & Bialetti Moka Pot:</strong> Iconic stovetop coffee makers with Illy or Lavazza roast beans.<br>
+          4️⃣ <strong>White Truffle Oil & Aged Modenese Balsamic Vinegar:</strong> Gourmet culinary delicacies for food lovers.<br>
+          5️⃣ <strong>Murano Blown Glass:</strong> Hand-blown colorful jewelry and tableware from Venice.
+        ` + renderFollowupChips(chips);
+      } else if (lang === 'zh') {
+        return `
+          🎁 <strong>意大利必买TOP 5伴手礼与特产精选</strong>:<br><br>
+          1️⃣ <strong>佛罗伦萨手工真皮皮具：</strong> 托斯卡纳传统手工制作的皮包、皮带与皮夹，质感极佳。<br>
+          2️⃣ <strong>托斯卡纳经典基安蒂红酒（Chianti）与特级初榨橄榄油：</strong> 纯正地中海风味馈赠佳品。<br>
+          3️⃣ <strong>意式浓缩咖啡豆与比乐蒂摩卡壶（Bialetti）：</strong> 在家轻松复刻正宗意式咖啡醇香。<br>
+          4️⃣ <strong>白松露油与摩德纳陈年黑醋：</strong> 极具高级感的厨房提味神器。<br>
+          5️⃣ <strong>威尼斯穆拉诺彩色手工玻璃工艺品：</strong> 色彩绚丽的吊坠与摆件。
+        ` + renderFollowupChips(chips);
+      } else {
+        return `
+          🎁 <strong>이탈리아 필수 쇼핑 &amp; 기념품 TOP 5</strong>:<br><br>
+          1️⃣ <strong>피렌체 수제 가죽제품:</strong> 수백 년 가죽 공방의 장인들이 만든 지갑, 가방, 가죽 재킷 (가성비 최상).<br>
+          2️⃣ <strong>토스카나 끼안티 클라시코 와인 &amp; 엑스트라 버진 올리브유:</strong> 깊은 풍미를 자랑하는 이탈리아 대표 특산품.<br>
+          3️⃣ <strong>비알레티 모카포트 &amp; 일리/라바짜 커피 원두:</strong> 이탈리아 에스프레소의 감성을 집으로 가져가는 필수템.<br>
+          4️⃣ <strong>화이트 트러플(송로버섯) 오일 &amp; 모데나 발사믹 식초:</strong> 파스타와 샐러드의 품격을 올려주는 고급 미식 선물.<br>
+          5️⃣ <strong>베네치아 무라노 유리공예품:</strong> 영롱하고 다채로운 핸드메이드 유리잔과 액세서리.
+        ` + renderFollowupChips(chips);
+      }
+    }
+
     if (isPortugal) {
       const chips = [
-        { query: '스페인 쇼핑 기념품 추천', label: '🎁 스페인 쇼핑 추천' },
-        { query: '택스리펀 받는 법', label: '🛍️ 택스리펀(DIVA)' }
+        { query: '스페인 쇼핑 기념품 추천', label: '🎁 스페인 쇼핑' },
+        { query: '이탈리아 쇼핑 선물 추천', label: '🎁 이탈리아 쇼핑' }
       ];
       if (lang === 'ja') {
         return `
           🎁 <strong>ポルトガルで絶対に買うべきおすすめ土産 TOP 5</strong>:<br><br>
-          1️⃣ <strong>バルセロスの雄鶏（Galo de Barcelos）:</strong> 幸運と正義を運ぶポルトガルの象徴。<br>
-          2️⃣ <strong>ポートワイン（Port Wine）:</strong> ポルト・ドウロ渓谷産の芳醇で甘口の酒精強化ワイン（テイラーズ、グラハムなど）。<br>
-          3️⃣ <strong>高級オイルサーディン缶詰（Conserveira de Lisboa）:</strong> 美しいヴィンテージデザインでばらまき土産に最適。<br>
-          4️⃣ <strong>天然コルク製品（Cork）:</strong> 世界シェア1位の軽くて丈夫なエコバッグ、コースター、財布。<br>
-          5️⃣ <strong>ベナモール（Benamôr）ハンドクリーム:</strong> 1925年創業、王室御用達の天然コスメ。
+          1️⃣ <strong>バルセロスの雄鶏（Galo de Barcelos）:</strong> 幸運を呼ぶ陶器の置き物。<br>
+          2️⃣ <strong>ポートワイン（Port Wine）:</strong> ドウロ渓谷産の芳醇で甘口の酒精強化ワイン。<br>
+          3️⃣ <strong>高級デザイン缶詰（Conserveira de Lisboa）:</strong> 100年の伝統を誇るレトロなオイルサーディン。<br>
+          4️⃣ <strong>天然コルク製品（Cork）:</strong> 世界シェア1位の軽くて丈夫なエコバッグや財布。<br>
+          5️⃣ <strong>ベナモール（Benamôr）ハンドクリーム:</strong> 王室御用達の天然コスメ。
         ` + renderFollowupChips(chips);
       } else if (lang === 'en') {
         return `
-          🎁 <strong>Top 5 Authentic Portuguese Souvenirs & Gifts</strong>:<br><br>
-          1️⃣ <strong>Rooster of Barcelos (Galo de Barcelos):</strong> The beloved folk emblem of good luck and honest truth.<br>
-          2️⃣ <strong>Port Wine:</strong> Rich, velvety dessert wines from the Douro Valley (Taylor's, Graham's, Dow's).<br>
-          3️⃣ <strong>Artisanal Canned Sardines:</strong> Vintage hand-wrapped retro tins from historic cannery boutiques (*Conserveira de Lisboa*).<br>
-          4️⃣ <strong>Eco-Friendly Cork Products:</strong> Ultralight, water-resistant bags, coasters, and wallets.<br>
-          5️⃣ <strong>Benamôr Lisboa 1925 Hand Lotions:</strong> Historic royal botanical cosmetics formulated with sweet almond oil.
+          🎁 <strong>Top 5 Authentic Portuguese Souvenirs</strong>:<br><br>
+          1️⃣ <strong>Rooster of Barcelos:</strong> Iconic ceramic symbol of good fortune.<br>
+          2️⃣ <strong>Douro Port Wine:</strong> Velvety rich dessert wine from historic cellars.<br>
+          3️⃣ <strong>Vintage Canned Sardines:</strong> Artistically wrapped historic tins.<br>
+          4️⃣ <strong>Natural Cork Accessories:</strong> Water-resistant, ultralight bags and wallets.<br>
+          5️⃣ <strong>Benamôr 1925 Hand Lotions:</strong> Historic royal botanical cosmetics.
         ` + renderFollowupChips(chips);
       } else if (lang === 'zh') {
         return `
-          🎁 <strong>葡萄牙必买TOP 5伴手礼与特产精选</strong>:<br><br>
-          1️⃣ <strong>巴塞罗斯公鸡（Galo de Barcelos）：</strong> 象征吉祥、幸运与正义的国家图腾小摆件。<br>
-          2️⃣ <strong>波特酒（Port Wine）：</strong> 杜罗河谷高品质甜型加度葡萄酒（泰勒Taylor's、葛拉汉Graham's）。<br>
-          3️⃣ <strong>复古沙丁鱼鱼罐头：</strong> 拥有百年包装美学的艺术鱼罐头，送礼极具格调。<br>
-          4️⃣ <strong>天然软木手工艺品（Cork）：</strong> 世界头号软木产地制作的轻便钱包、杯垫与环保手提包。<br>
-          5️⃣ <strong>Benamôr 1925皇室护手霜：</strong> 包装复古精致的天然杏仁植物润肤霜。
+          🎁 <strong>葡萄牙必买TOP 5伴手礼特产</strong>:<br><br>
+          1️⃣ <strong>巴塞罗斯公鸡：</strong> 象征好运与正义的国家图腾吉祥摆件。<br>
+          2️⃣ <strong>杜罗河波特酒：</strong> 醇厚香甜的高品质加度甜葡萄酒。<br>
+          3️⃣ <strong>复古沙丁鱼鱼罐头：</strong> 拥有百年包装美学的艺术鱼罐头。<br>
+          4️⃣ <strong>天然软木手工艺品：</strong> 轻便环保的软木钱包与杯垫。<br>
+          5️⃣ <strong>Benamôr 1925皇室护手霜：</strong> 复古精致的天然杏仁润肤霜。
         ` + renderFollowupChips(chips);
       } else {
         return `
-          🎁 <strong>포르투갈 필수 쇼핑 & 기념품 TOP 5</strong>:<br><br>
-          1️⃣ <strong>바르셀로스의 수탉 (Galo de Barcelos):</strong> 행운과 정의를 상징하는 국민 도자기 공예품입니다.<br>
-          2️⃣ <strong>포트 와인 (Port Wine):</strong> 도우루 밸리에서 온 달콤하고 묵직한 디저트 와인(테일러, 그라함 등)입니다.<br>
-          3️⃣ <strong>디자인 정어리 통조림 (Conserveira de Lisboa):</strong> 100년 전통의 빈티지 포장으로 지인 선물용으로 최고입니다.<br>
-          4️⃣ <strong>천연 코르크 제품:</strong> 포르투갈 특산품으로 가볍고 방수성이 뛰어난 파우치, 컵받침, 지갑입니다.<br>
-          5️⃣ <strong>베나모르(Benamôr) 핸드크림:</strong> 1925년부터 포르투갈 왕실에 납품된 천연 핸드케어 화장품입니다.
+          🎁 <strong>포르투갈 필수 쇼핑 &amp; 기념품 TOP 5</strong>:<br><br>
+          1️⃣ <strong>바르셀로스의 수탉:</strong> 행운을 상징하는 국민 도자기 공예품.<br>
+          2️⃣ <strong>포트 와인:</strong> 달콤하고 묵직한 디저트 와인(테일러, 그라함 등).<br>
+          3️⃣ <strong>디자인 정어리 통조림:</strong> 100년 전통의 빈티지 포장 선물.<br>
+          4️⃣ <strong>천연 코르크 제품:</strong> 가볍고 방수성이 뛰어난 파우치와 지갑.<br>
+          5️⃣ <strong>베나모르(Benamôr) 핸드크림:</strong> 왕실 납품 천연 핸드케어 화장품.
         ` + renderFollowupChips(chips);
       }
     }
 
-    // Spain shopping
+    // Default: Spain Shopping
     const chips = [
-      { query: '포르투갈 쇼핑 기념품 추천', label: '🎁 포르투갈 쇼핑 추천' },
-      { query: '택스리펀 받는 법', label: '🛍️ 스페인 DIVA 택스리펀' }
+      { query: '이탈리아 쇼핑 선물 추천', label: '🎁 이탈리아 쇼핑' },
+      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀(DIVA)' }
     ];
     if (lang === 'ja') {
       return `
-        🎁 <strong>スペインで絶対に買いたい名産土産 TOP 4</strong>:<br><br>
-        1️⃣ <strong>エキストラバージン・オリーブオイル:</strong> 世界最大の生産国。アンダルシア産のフルーティーな最高級オイル。<br>
-        2️⃣ <strong>真空パック生ハム＆サフラン:</strong> パエリアに欠かせない最高級スパイスとパッカブルな生ハム。<br>
-        3️⃣ <strong>ロエベ（LOEWE）＆ZARAグループ:</strong> スペイン発祥ブランドは現地免税（DIVA）でお得に購入可能！<br>
-        4️⃣ <strong>カカオ・サンパカ（Cacao Sampaka）チョコ:</strong> 王室御用達の高級ショコラ。
+        🎁 <strong>スペインで絶対に買うべきおすすめ土産 TOP 5</strong>:<br><br>
+        1️⃣ <strong>最高級イベリコ生ハム（真空パック）:</strong> ハモン・イベリコ・デ・ベジョータ。<br>
+        2️⃣ <strong>エキストラバージンオリーブオイル＆ラ・チナータ（La Chinata）コスメ:</strong> オリーブ由来の高品質オイルと石鹸。<br>
+        3️⃣ <strong>トゥロン（Turrón）:</strong> アーモンドと蜂蜜で作るスペインの伝統銘菓。<br>
+        4️⃣ <strong>エスパドリーユ靴:</strong> 天然ジュート底の履き心地の良いサンダル。<br>
+        5️⃣ <strong>ロエベ（LOEWE）革製品＆ワイン（リオハ・リベラ）:</strong> スペイン王室御用達の高級ラグジュアリー。
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
       return `
-        🎁 <strong>Top 4 Unmissable Souvenirs from Spain</strong>:<br><br>
-        1️⃣ <strong>Extra Virgin Olive Oil:</strong> Cold-pressed Andalusian oils (Oro Bailén, Castillo de Canena).<br>
-        2️⃣ <strong>Spanish Saffron & Cured Cheeses:</strong> Premium saffron threads for paella and aged Manchego cheese.<br>
-        3️⃣ <strong>LOEWE & Spanish Fashion:</strong> Spain is home to LOEWE, Massimo Dutti, and Zara—enjoy immediate DIVA digital tax refund savings!<br>
-        4️⃣ <strong>Cacao Sampaka Chocolates:</strong> Regal artisan chocolate bars flavored with Mediterranean sea salt and herbs.
+        🎁 <strong>Top 5 Authentic Spanish Souvenirs & Gifts</strong>:<br><br>
+        1️⃣ <strong>Vacuum-Sealed Jamón Ibérico de Bellota:</strong> Top-tier cured Iberian ham slices.<br>
+        2️⃣ <strong>Extra-Virgin Olive Oil & La Chinata Cosmetics:</strong> Cold-pressed oils and olive-oil botanical soaps.<br>
+        3️⃣ <strong>Turrón Nougat:</strong> Traditional Spanish almond and honeycomb nougat confection.<br>
+        4️⃣ <strong>Artisanal Espadrilles:</strong> Hand-stitched natural jute-sole canvas shoes (*alpargatas*).<br>
+        5️⃣ <strong>LOEWE Luxury Leather & Rioja Red Wine:</strong> Royal warrant Spanish luxury fashion and vintage reds.
       ` + renderFollowupChips(chips);
     } else if (lang === 'zh') {
       return `
-        🎁 <strong>西班牙绝不可错过的四大特色伴手礼</strong>:<br><br>
-        1️⃣ <strong>特级初榨橄榄油（EVOO）：</strong> 西班牙是全球最大产地，安达卢西亚高品质橄榄油果香馥郁。<br>
-        2️⃣ <strong>高品质藏红花（Azafrán）与曼切戈奶酪：</strong> 烹饪正宗海鲜饭不可或缺的顶级香料。<br>
-        3️⃣ <strong>LOEWE罗意威及西班牙本土时尚：</strong> 罗意威、Massimo Dutti在西班牙本土购买搭配DIVA免税退税划算。<br>
-        4️⃣ <strong>Cacao Sampaka皇室手工巧克力：</strong> 融合地中海特色风味的奢华手工甜品。
+        🎁 <strong>西班牙必买TOP 5伴手礼与特产精选</strong>:<br><br>
+        1️⃣ <strong>真空包装伊比利亚火腿切片：</strong> 顶级橡果黑猪肉火腿切片。<br>
+        2️⃣ <strong>特级初榨橄榄油与La Chinata天然护肤品：</strong> 纯正橄榄油皂与护手霜。<br>
+        3️⃣ <strong>杜隆杏仁糖（Turrón）：</strong> 西班牙百年传统坚果杏仁牛轧糖。<br>
+        4️⃣ <strong>手工草编帆布鞋（Espadrilles）：</strong> 纯天然轻便透气。<br>
+        5️⃣ <strong>LOEWE罗意威皮具与里奥哈顶级红酒：</strong> 西班牙皇室御用奢侈品与佳酿。
       ` + renderFollowupChips(chips);
     } else {
       return `
-        🎁 <strong>스페인 필수 쇼핑 & 선물 리스트 TOP 4</strong>:<br><br>
-        1️⃣ <strong>최고급 엑스트라 버진 올리브유:</strong> 세계 1위 생산국인 스페인의 안달루시아산 프리미엄 냉압착 올리브유입니다.<br>
-        2️⃣ <strong>사프란(Azafrán) & 만체고 치즈:</strong> 정통 파에야의 황금빛을 내는 귀한 향신료와 양젖 숙성 치즈입니다.<br>
-        3️⃣ <strong>로에베(LOEWE) 및 자라(Zara) 패션:</strong> 스페인 현지 본고장에서 DIVA 디지털 텍스리펀 혜택을 받아 가장 합리적으로 구매 가능합니다.<br>
-        4️⃣ <strong>카카오 삼파카(Cacao Sampaka) 수제 초콜릿:</strong> 스페인 왕실에 진상되던 유서 깊은 프리미엄 초콜릿입니다.
+        🎁 <strong>스페인 필수 쇼핑 &amp; 기념품 TOP 5</strong>:<br><br>
+        1️⃣ <strong>진공포장 이베리코 하몽 슬라이스:</strong> 최고 등급 베요타(Bellota) 등급의 깊은 풍미.<br>
+        2️⃣ <strong>엑스트라 버진 올리브유 &amp; 라 치나타(La Chinata) 화장품:</strong> 천연 올리브로 만든 핸드크림과 비누.<br>
+        3️⃣ <strong>뚜론 (Turrón):</strong> 꿀과 아몬드를 듬뿍 넣은 스페인 전통 간식.<br>
+        4️⃣ <strong>에스파드류 (에스파드리유 신발):</strong> 천연 밑창으로 통풍이 잘되고 가벼운 전통 신발.<br>
+        5️⃣ <strong>로에베(LOEWE) 가죽제품 &amp; 리오하 레드 와인:</strong> 스페인 왕실 납품 가죽 브랜드와 명품 와인.
       ` + renderFollowupChips(chips);
     }
   }
 
-  // [C] SIGHTS & ATTRACTIONS INTENT
+  // 10-3. SIGHTS & ATTRACTIONS INTENT
   if (isSights) {
+    if (isItaly) {
+      const chips = [
+        { query: '성당 복장 규정 알려줘', label: '⛪ 성당 복장 규정' },
+        { query: '로마 12일 분산 일정 테마', label: '🏛️ 로마 12일 일정' },
+        { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' }
+      ];
+      if (lang === 'ja') {
+        return `
+          🏛️ <strong>イタリア必見の主要観光名所 TOP 4</strong>:<br><br>
+          1️⃣ <strong>コロッセオ＆フォロ・ロマーノ（ローマ）:</strong> 古代帝国の中心地。入場には時間指定予約が必須です。<br>
+          2️⃣ <strong>サン・ピエトロ大聖堂＆バチカン美術館（バチカン）:</strong> カトリックの総本山とミケランジェロのシスティーナ礼拝堂（服装規定に注意）。<br>
+          3️⃣ <strong>ドゥオーモ＆ウフィツィ美術館（フィレンツェ）:</strong> ルネサンス発祥の地。花の大聖堂とボッティチェリの名作群。<br>
+          4️⃣ <strong>スパッカ・ナポリ＆ポンペイ遺跡（ナポリ）:</strong> 活気あふれるナポリ旧市街と、時が止まった古代ローマのポンペイ。
+        ` + renderFollowupChips(chips);
+      } else if (lang === 'en') {
+        return `
+          🏛️ <strong>Top 4 Must-Visit Attractions in Italy</strong>:<br><br>
+          1️⃣ <strong>Colosseum & Roman Forum (Rome):</strong> Heart of the ancient empire. Timed mobile tickets mandatory in advance.<br>
+          2️⃣ <strong>St. Peter's Basilica & Vatican Museums (Vatican):</strong> Michelangelo's Sistine Chapel and papal treasures (strict dress code applies!).<br>
+          3️⃣ <strong>Florence Duomo & Uffizi Gallery:</strong> The epicenter of the Renaissance, featuring Botticelli's *Birth of Venus*.<br>
+          4️⃣ <strong>Spaccanapoli & Pompeii Archaeological Park (Naples):</strong> Vibrant Neapolitan alleys and ancient Roman streets preserved in volcanic ash.
+        ` + renderFollowupChips(chips);
+      } else if (lang === 'zh') {
+        return `
+          🏛️ <strong>意大利四大必游核心地标指南</strong>:<br><br>
+          1️⃣ <strong>古罗马斗兽场与古罗马广场（罗马）：</strong> 帝国千年底蕴所在，务必提前预约分时门票。<br>
+          2️⃣ <strong>圣彼得大教堂与梵蒂冈博物馆（梵蒂冈）：</strong> 教廷艺术宝库与西斯廷礼拜堂（安检着装要求严格）。<br>
+          3️⃣ <strong>圣母百花大教堂与乌菲兹美术馆（佛罗伦萨）：</strong> 文艺复兴摇篮与波提切利传世画作。<br>
+          4️⃣ <strong>那不勒斯老街与庞贝古城遗址（那不勒斯）：</strong> 充满市井烟火气的历史街区与凝固千年的古罗马城市。
+        ` + renderFollowupChips(chips);
+      } else {
+        return `
+          🏛️ <strong>이탈리아 필수 핵심 명소 TOP 4</strong>:<br><br>
+          1️⃣ <strong>콜로세움 &amp; 포로 로마노 (로마):</strong> 고대 로마 제국의 위엄을 느낄 수 있는 핵심 유적 (사전 모바일 시간 예약 필수).<br>
+          2️⃣ <strong>성 베드로 대성당 &amp; 바티칸 미술관 (바티칸):</strong> 미켈란젤로의 천지창조와 피에타가 있는 성지 (복장 규정 철저 준수).<br>
+          3️⃣ <strong>피렌체 두오모 &amp; 우피치 미술관:</strong> 르네상스의 꽃을 피운 붉은 쿠폴라와 보티첼리의 걸작 비너스의 탄생.<br>
+          4️⃣ <strong>나폴리 구시가지(스파카 나폴리) &amp; 폼페이 유적:</strong> 활기찬 남부의 삶과 화산재 속에 보존된 고대 도시의 흔적.
+        ` + renderFollowupChips(chips);
+      }
+    }
+
     if (isPortugal) {
       const chips = [
         { query: '리스본에서 신트라 가는 법', label: '🏰 리스본 ➔ 신트라' },
@@ -5815,39 +6238,39 @@ function handleLocalChat(query) {
       if (lang === 'ja') {
         return `
           🏛️ <strong>ポルトガルの必見観光名所 TOP 4</strong>:<br><br>
-          1️⃣ <strong>ジェロニモス修道院＆ベレンの塔（リスボン）:</strong> マヌエル様式の最高傑作。チケットは現地での行列を避けオンライン事前購入が必須です！<br>
-          2️⃣ <strong>ペーナ宮殿（シントラ）:</strong> おとぎの国のようなカラフルな王宮。山頂にあり急坂が多いため、駅前からタクシー（Uber）の利用をおすすめします。<br>
-          3️⃣ <strong>ドン・ルイス1世橋＆ドウロ川リバーサイド（ポルト）:</strong> エッフェル塔の弟子が設計した二重橋。夕暮れ時のパノラマ絶景は圧巻です。<br>
-          4️⃣ <strong>サン・ベント駅（ポルト）:</strong> 約2万枚のアズレージョ（青い装飾タイル）が壁面を埋め尽くす世界で最も美しい駅の一つ。
+          1️⃣ <strong>ジェロニモス修道院＆ベレンの塔（リスボン）:</strong> マヌエル様式の最高傑作。<br>
+          2️⃣ <strong>ペーナ宮殿（シントラ）:</strong> カラフルな山頂の王宮（Uber利用推奨）。<br>
+          3️⃣ <strong>ドン・ルイス1世橋（ポルト）:</strong> ドウロ川の壮大なパノラマ二重鉄橋。<br>
+          4️⃣ <strong>サン・ベント駅（ポルト）:</strong> 2万枚のアズレージョ装飾タイル。
         ` + renderFollowupChips(chips);
       } else if (lang === 'en') {
         return `
           🏛️ <strong>Top 4 Must-Visit Attractions in Portugal</strong>:<br><br>
-          1️⃣ <strong>Jerónimos Monastery & Belém Tower (Lisbon):</strong> Manueline architectural triumphs by the Tagus river. Always book mobile tickets in advance to skip lines!<br>
-          2️⃣ <strong>Pena National Palace (Sintra):</strong> A fairytale Romanticist castle atop Sintra’s misty hills. Senior tip: Take an Uber or 434 bus directly to the upper gate!<br>
-          3️⃣ <strong>Dom Luís I Bridge & Ribeira (Porto):</strong> Double-deck iron arch bridge designed by Eiffel's protégé, offering spellbinding golden-hour vistas over the Douro river.<br>
-          4️⃣ <strong>São Bento Railway Station (Porto):</strong> Lined with over 20,000 hand-painted blue azulejo tiles depicting heroic Portuguese historical battles.
+          1️⃣ <strong>Jerónimos Monastery & Belém Tower (Lisbon):</strong> Manueline architectural triumphs by the Tagus river.<br>
+          2️⃣ <strong>Pena Palace (Sintra):</strong> Fairytale Romanticist castle atop Sintra’s misty hills.<br>
+          3️⃣ <strong>Dom Luís I Bridge (Porto):</strong> Double-deck iron arch bridge overlooking the Douro river.<br>
+          4️⃣ <strong>São Bento Railway Station (Porto):</strong> 20,000 hand-painted blue azulejo tiles.
         ` + renderFollowupChips(chips);
       } else if (lang === 'zh') {
         return `
           🏛️ <strong>葡萄牙四大必游地标景区指南</strong>:<br><br>
-          1️⃣ <strong>热罗尼莫斯修道院与贝伦塔（里斯本）：</strong> 曼努埃尔风格建筑奇迹。务必提前在线购票以避开冗长队伍。<br>
-          2️⃣ <strong>佩纳宫（辛特拉）：</strong> 坐落于山巅的童话城堡。长辈同行切勿步行上山，务必乘坐Uber或434路专线直达山顶入口！<br>
-          3️⃣ <strong>路易一世大桥与利贝拉河畔（波尔图）：</strong> 埃菲尔弟子设计的双层铁桥，杜罗河畔落日余晖令人陶醉。<br>
-          4️⃣ <strong>圣本笃火车站（波尔图）：</strong> 绘有约2万片手工彩绘青花瓷砖（Azulejo），被誉为世界最美火车站之一。
+          1️⃣ <strong>热罗尼莫斯修道院与贝伦塔（里斯本）：</strong> 曼努埃尔风格建筑奇迹。<br>
+          2️⃣ <strong>佩纳宫（辛特拉）：</strong> 山巅童话城堡（建议搭乘Uber直达山顶入口）。<br>
+          3️⃣ <strong>路易一世大桥（波尔图）：</strong> 杜罗河畔落日双层铁桥。<br>
+          4️⃣ <strong>圣本笃火车站（波尔图）：</strong> 2万片手工彩绘青花瓷砖世界最美火车站。
         ` + renderFollowupChips(chips);
       } else {
         return `
           🏛️ <strong>포르투갈 필수 핵심 명소 TOP 4</strong>:<br><br>
-          1️⃣ <strong>제로니무스 수도원 & 벨렝탑 (리스본):</strong> 대항해시대의 영광을 담은 마누엘 양식의 걸작입니다. 현장 대기줄이 매우 길므로 공식 모바일 티켓 사전 예매가 필수입니다!<br>
-          2️⃣ <strong>페나 국립왕궁 (신트라):</strong> 산 정상에 우뚝 솟은 동화 같은 알록달록한 성입니다. 경사로가 매우 가파르므로 신트라역에서 우버 또는 434번 버스로 정문까지 바로 올라가세요.<br>
-          3️⃣ <strong>동 루이스 1세 다리 & 히베이라 (포르투):</strong> 에펠의 제자가 설계한 2층 철교로 도우루강 석양을 한눈에 담을 수 있는 최고의 뷰포인트입니다.<br>
-          4️⃣ <strong>상벤투 기차역 (포르투):</strong> 약 2만 장의 푸른 아줄레주 타일 벽화가 역사를 파노라마처럼 보여주는 세상에서 가장 아름다운 기차역입니다.
+          1️⃣ <strong>제로니무스 수도원 &amp; 벨렝탑 (리스본):</strong> 대항해시대의 영광을 담은 마누엘 양식 걸작.<br>
+          2️⃣ <strong>페나 국립왕궁 (신트라):</strong> 산 정상에 우뚝 솟은 동화 같은 알록달록한 성 (우버/버스 탑승 권장).<br>
+          3️⃣ <strong>동 루이스 1세 다리 &amp; 히베이라 (포르투):</strong> 에펠의 제자가 설계한 2층 철교 석양 뷰포인트.<br>
+          4️⃣ <strong>상벤투 기차역 (포르투):</strong> 2만 장의 푸른 아줄레주 타일 벽화가 펼쳐지는 역.
         ` + renderFollowupChips(chips);
       }
     }
 
-    // Spain sights
+    // Default: Spain Sights
     const chips = [
       { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
       { query: '알함브라 궁전 티켓팅 팁', label: '🏛️ 알함브라 예약 팁' },
@@ -5856,412 +6279,604 @@ function handleLocalChat(query) {
     if (lang === 'ja') {
       return `
         🏛️ <strong>スペインの必見観光名所 TOP 4</strong>:<br><br>
-        1️⃣ <strong>サグラダ・ファミリア＆グエル公園（バルセロナ）:</strong> ガウディ建築の至宝。入場枠が完全予約制のため、1〜2ヶ月前の公式予約が必須です！<br>
-        2️⃣ <strong>マドリード王宮＆プラド美術館（マドリード）:</strong> ヨーロッパ最大級の豪華絢爛な宮殿とベラスケス、ゴヤの名作を収蔵。<br>
-        3️⃣ <strong>セビリア大聖堂＆ヒラルダの塔（セビリア）:</strong> 世界第3位の規模を誇るゴシック様式大聖堂。コロンブスの墓があります。<br>
-        4️⃣ <strong>アルハンブラ宮殿（グラナダ）:</strong> イスラム建築の最高峰。ナスル朝宮殿の指定入場時間は世界一予約激戦区のため最優先で確保してください！
+        1️⃣ <strong>サグラダ・ファミリア＆グエル公園（バルセロナ）:</strong> ガウディ芸術の頂点。入場制限があるため1〜2ヶ月前の予約が必須！<br>
+        2️⃣ <strong>アルハンブラ宮殿（グラナダ）:</strong> イスラム建築の最高峰ナスル朝宮殿。<br>
+        3️⃣ <strong>セビリア大聖堂＆スペイン広場:</strong> コロンブスの棺が眠る世界最大級の大聖堂。<br>
+        4️⃣ <strong>プラド美術館＆王宮（マドリード）:</strong> ベラスケスやゴヤの名作を収蔵。
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
       return `
         🏛️ <strong>Top 4 Must-Visit Attractions in Spain</strong>:<br><br>
-        1️⃣ <strong>Sagrada Família & Park Güell (Barcelona):</strong> Antoni Gaudí's unfinished masterwork. Timed admission slots sell out weeks ahead—book via the official app early!<br>
-        2️⃣ <strong>Royal Palace of Madrid & Prado Museum (Madrid):</strong> One of Europe's grandest royal residences alongside masterworks by Velázquez and Goya.<br>
-        3️⃣ <strong>Seville Cathedral & Giralda Tower (Seville):</strong> The world's 3rd largest cathedral, holding the tomb of Christopher Columbus.<br>
-        4️⃣ <strong>The Alhambra & Nasrid Palaces (Granada):</strong> The pinnacle of Moorish palace architecture. Nasrid Palace entry slots are the strict priority—book 2 months prior!
+        1️⃣ <strong>Sagrada Família & Park Güell (Barcelona):</strong> Antoni Gaudí's unfinished architectural marvel (book 1–2 months ahead!).<br>
+        2️⃣ <strong>Alhambra Palace (Granada):</strong> The pinnacle of Moorish Islamic architecture and Generalife gardens.<br>
+        3️⃣ <strong>Seville Cathedral & Plaza de España:</strong> Christopher Columbus's tomb and vast neo-Mudejar pavilions.<br>
+        4️⃣ <strong>Prado Museum & Royal Palace (Madrid):</strong> Masterpieces by Velázquez, Goya, and El Greco.
       ` + renderFollowupChips(chips);
     } else if (lang === 'zh') {
       return `
-        🏛️ <strong>西班牙四大必游经典地标</strong>:<br><br>
-        1️⃣ <strong>圣家堂与奎尔公园（巴塞罗那）：</strong> 高迪建筑艺术巅峰。全实名分时段入场，务必提前1~2个月通过官网预订！<br>
-        2️⃣ <strong>马德里王宫与普拉多博物馆（马德里）：</strong> 欧洲第三大奢华王宫，馆藏委拉斯凯兹与戈雅绝世画作。<br>
-        3️⃣ <strong>塞维利亚大教堂与希拉尔达塔（塞维利亚）：</strong> 世界第三大教堂，哥伦布灵柩安息于此。<br>
-        4️⃣ <strong>阿尔罕布拉宫（格拉纳达）：</strong> 伊斯兰建筑艺术皇冠上的明珠。纳斯里德宫（Nasrid）门票全球极其抢手，请务必作为出行第一优先级抢订！
+        🏛️ <strong>西班牙四大必游核心景点指南</strong>:<br><br>
+        1️⃣ <strong>圣家堂与古埃尔公园（巴塞罗那）：</strong> 高迪建筑巅峰杰作，务必提前1~2个月预定门票！<br>
+        2️⃣ <strong>阿尔罕布拉宫（格拉纳达）：</strong> 摩尔伊斯兰文明辉煌绝唱与轩辕花园。<br>
+        3️⃣ <strong>塞维利亚大教堂与西班牙广场：</strong> 哥伦布灵柩安息地与壮美新穆德哈尔回廊。<br>
+        4️⃣ <strong>普拉多博物馆与马德里王宫（马德里）：</strong> 收藏委拉斯开兹与戈雅绝世画作。
       ` + renderFollowupChips(chips);
     } else {
       return `
         🏛️ <strong>스페인 필수 핵심 명소 TOP 4</strong>:<br><br>
-        1️⃣ <strong>사그라다 파밀리아 & 구엘 공원 (바르셀로나):</strong> 가우디 예술의 정점입니다. 시간대별 정원 제한이 엄격하므로 최소 1~2개월 전 공식 앱 사전 예매가 필수입니다!<br>
-        2️⃣ <strong>마드리드 왕궁 & 프라도 미술관 (마드리드):</strong> 유럽 3대 궁전의 화려한 내부와 벨라스케스, 고야의 걸작들을 편안하게 감상할 수 있습니다.<br>
-        3️⃣ <strong>세비야 대성당 & 히랄다탑 (세비야):</strong> 세계에서 세 번째로 큰 고딕 성당으로 콜럼버스의 유골이 안치되어 있습니다.<br>
-        4️⃣ <strong>알함브라 궁전 (그라나다):</strong> 이슬람 건축의 최고 정점입니다. 특히 나스르 궁전(Nasrid) 지정 입장권은 전 세계에서 예약 경쟁이 가장 치열하므로 가장 먼저 예매하셔야 합니다!
+        1️⃣ <strong>사그라다 파밀리아 &amp; 구엘 공원 (바르셀로나):</strong> 가우디 예술의 정점입니다. 시간대별 정원 제한이 엄격하므로 최소 1~2개월 전 공식 앱 사전 예매가 필수입니다!<br>
+        2️⃣ <strong>알함브라 궁전 (그라나다):</strong> 이슬람 건축의 극치 나스르 궁전과 헤네랄리페 정원.<br>
+        3️⃣ <strong>세비야 대성당 &amp; 스페인 광장:</strong> 콜럼버스의 유해가 안치된 유럽 3대 성당과 웅장한 반원형 회랑.<br>
+        4️⃣ <strong>프라도 미술관 &amp; 마드리드 왕궁:</strong> 벨라스케스, 고야의 명작이 가득한 세계 3대 미술관.
       ` + renderFollowupChips(chips);
     }
   }
 
-  // [D] WEATHER, BEST PERIOD, TIMING & CLOTHING INTENT
-  if (isWeather) {
-    const chips = [
-      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전 수칙' },
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 고속열차 이동법' },
-      { query: '포르투갈 대표 음식 추천', label: '🥧 포르투갈 대표 음식' }
-    ];
-    if (lang === 'ja') {
-      return `
-        🌤️ <strong>11〜12月の気候・旅行時期・おすすめ服装ガイド</strong>:<br><br>
-        1️⃣ <strong>ポルトガル（リスボン＆ポルト - 11〜12月）:</strong><br>
-        • 気温：10℃〜17℃前後。穏やかな地中海性気候ですが、大西洋からの雨が時折降るため<strong>軽量の折りたたみ傘やフード付きウィンドブレーカー</strong>が重宝します。<br><br>
-        2️⃣ <strong>スペイン（マドリード vs アンダルシア）:</strong><br>
-        • <strong>マドリード:</strong> 内陸性気候のため朝晩は5℃〜8℃まで冷え込みます。薄手のウルトラライトダウンやヒートテックの重ね着が安心です。<br>
-        • <strong>セビリア＆アンダルシア:</strong> 昼間は18℃〜22℃まで上がり、日差しが暖かく観光に最適なベストシーズンです！<br><br>
-        3️⃣ <strong>経由地ドバイ:</strong><br>
-        • 24℃〜29℃前後の爽やかな快晴。夏の酷暑がなく、観光に年間で最も快適なベストシーズンです！室内は冷房が効いているため薄手のカーディガンを持参してください。
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        🌤️ <strong>Nov–Dec Weather, Best Travel Period & Packing Guide</strong>:<br><br>
-        1️⃣ <strong>Portugal (Lisbon & Porto - Nov to Dec):</strong><br>
-        • Mild Atlantic-Mediterranean climate (10°C to 17°C). Occasional rain showers occur, so bring a lightweight windbreaker and compact travel umbrella.<br><br>
-        2️⃣ <strong>Spain (Madrid vs Andalusia):</strong><br>
-        • <strong>Madrid:</strong> Continental climate means crisp evenings dipping to 5°C–8°C. Pack warm layers (thermal innerwear and light down jacket).<br>
-        • <strong>Seville & Granada:</strong> Sunny and pleasant (16°C–21°C during the day), making winter one of the finest times to explore southern Spain without summer heat waves!<br><br>
-        3️⃣ <strong>Dubai Stopover:</strong><br>
-        • Perfect golden weather (24°C to 29°C), completely clear of extreme summer heat. Bring lightweight clothing plus a shawl for air-conditioned indoor spaces.
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        🌤️ <strong>11~12月气候、最佳旅游时段与出行穿衣指南</strong>:<br><br>
-        1️⃣ <strong>葡萄牙（里斯本与波尔图）：</strong><br>
-        • 气温在10℃~17℃之间，大西洋海洋性气候温和湿润。偶有阵雨，建议携带连帽防风外套与便携折叠伞。<br><br>
-        2️⃣ <strong>西班牙（马德里 与 安达卢西亚地区）：</strong><br>
-        • <strong>马德里：</strong> 内陆高原气候，早晚温差大，夜间约5℃~8℃，建议准备轻薄羽绒服与发热保暖内衣。<br>
-        • <strong>塞维利亚/南部：</strong> 白天阳光明媚温暖（18℃~22℃），完全避开盛夏酷暑，属于全年中游览南部最舒适的黄金季节！<br><br>
-        3️⃣ <strong>经停迪拜：</strong><br>
-        • 气温约24℃~29℃，告别盛夏炙烤，迎来一年中最宜人的旅游黄金月！商场室内冷气充足，备好薄开衫即可。
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        🌤️ <strong>11~12월 날씨, 추천 여행 시기 및 옷차림 가이드</strong>:<br><br>
-        1️⃣ <strong>포르투갈 (리스본 & 포르투):</strong><br>
-        • 평균 기온 10℃~17℃로 서울의 늦가을처럼 온화합니다. 대서양의 영향으로 비가 종종 내릴 수 있으므로 <strong>가벼운 방수 바람막이와 경량 우산</strong>을 꼭 챙기세요.<br><br>
-        2️⃣ <strong>스페인 (마드리드 vs 안달루시아 남부):</strong><br>
-        • <strong>마드리드:</strong> 해발 600m 고지대라 아침저녁으로 5℃~8℃까지 쌀쌀해집니다. 경량 패딩과 히트텍을 겹쳐 입으시는 것이 좋습니다.<br>
-        • <strong>세비야 & 그라나다:</strong> 낮에는 18℃~22℃까지 올라가 햇살이 따뜻하여 부모님과 걷기에 연중 가장 쾌적한 최적의 시기입니다!<br><br>
-        3️⃣ <strong>경유지 두바이:</strong><br>
-        • 24℃~29℃로 한여름 폭염이 끝나 관광하기 가장 환상적인 골든 시즌입니다. 실내 쇼핑몰은 에어컨이 강하므로 얇은 가디건이나 숄을 휴대하세요.
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  // [E-2] SAFETY & PICKPOCKETS (사진 촬영 & 소지품 주의사항 완벽 수칙)
+  // 10-4. SAFETY & PICKPOCKETS INTENT
   if (isSafety) {
     const chips = [
-      { query: '스페인 마트 생수 구별법 알려줘 (sin gas vs con gas)', label: '💧 마트 생수 구별법' },
-      { query: '부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘', label: '🦽 부모님 평지 코스' },
-      { query: '트래블로그 카드 결제랑 현금 환전 얼마나 필요해?', label: '💳 카드/환전 비율' }
+      { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' },
+      { query: '부모님 모시고 가기 좋은 평지 휠체어 코스', label: '🦽 부모님 평지 코스' },
+      { query: '트래블로그 카드 결제랑 현금 환전 비율', label: '💳 카드/환전 비율' }
     ];
     if (lang === 'ja') {
       return `
-        🚨 <strong>スペイン旅行スリ予防・実践ガイド（写真撮影＆所持品注意点）</strong>:<br><br>
+        🚨 <strong>スペイン・イタリア旅行 スリ予防＆治安対策完全ガイド</strong>:<br><br>
         📸 <strong>1. 写真撮影の注意（見知らぬ人にスマホを渡しても大丈夫？）:</strong><br>
-        • ❌ <strong>絶対に頼んではいけない相手:</strong> 観光地周辺を暇そうにうろつく現地人、先に「写真を撮ってあげようか？」と声をかけてくる人（100%持ち去り手口）、ジプシー風の集団。<br>
-        • ⭕ <strong>安全に頼める相手:</strong> 日本人・韓国人観光客、望遠一眼レフを首に提げた欧米人観光客（自分の機材が高価なため逃走リスク0%）、ベビーカーを押すファミリー、レストラン店員や警備員。<br><br>
-        🤳 <strong>2. 自撮り棒（推奨） vs 三脚（絶対厳禁）:</strong><br>
-        • ✅ <strong>自撮り棒:</strong> 手にしっかり握れるためひったくられにくく安全。<br>
-        • ❌ <strong>三脚:</strong> 立ててポーズを取った瞬間、自転車に乗ったスリにスマホを抜き取られます。「体から1m以上離れたものは自分のものではない」とお考えください。<br><br>
-        🎒 <strong>3. ご両親と守る「所持品防御の3箇条」:</strong><br>
-        ① <strong>カバンは必ず「前」、手は「ファスナーの上」:</strong> リュックは厳禁。斜め掛けバッグを前に掛け、ファスナーに手を添えましょう。<br>
+        • ❌ <strong>絶対に頼んではいけない相手:</strong> 観光地周辺を暇そうにうろつく人、先に「撮ってあげようか？」と声をかけてくる人（100%持ち逃げの手口）、ジプシー風集団。<br>
+        • ⭕ <strong>安全に頼める相手:</strong> 日本人・韓国人観光客、望遠一眼レフを首に提げた欧米人観光客、ベビーカーを押すファミリー、レストラン店員や警備員。<br><br>
+        🎒 <strong>2. ご両親と守る「所持品防御の3箇条」:</strong><br>
+        ① <strong>カバンは必ず「前」、手は「ファスナーの上」:</strong> リュックは厳禁。斜め掛けバッグを前に掛けましょう。<br>
         ② <strong>飲食店のテーブルにスマホを置かない:</strong> 地図や新聞紙を広げて視界を遮り、紙の下のスマホを盗み取ります。<br>
-        ③ <strong>3大陽動手口に注意:</strong> 汚れ付着手口（服にケチャップ等をかけ拭くふりをしてスリ ➔ 断固「NO!」）、署名ボード手口、改札やエスカレーターでの足止め手口。<br><br>
-        🚖 <strong>シニア移動の知恵:</strong> 駅や観光地間の移動には<strong>Uber・Boltタクシー</strong>を利用すれば、階段の昇降とスリの危険を100%回避できます！
+        ③ <strong>要注意エリア:</strong> ローマの64番・40番バス、バルセロナ地下鉄3号線、テルミニ駅周辺。<br><br>
+        🚖 <strong>シニア移動の知恵:</strong> 駅や観光地間の移動には<strong>Uber・FREE NOW配車タクシー</strong>を利用すれば、階段の昇降とスリの危険を100%回避できます！
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
       return `
-        🚨 <strong>Spain Travel Pickpocket Prevention & Safety Guide</strong>:<br><br>
+        🚨 <strong>Spain & Italy Travel Pickpocket Prevention & Safety Guide</strong>:<br><br>
         📸 <strong>1. Photo Rules: Can I Hand My Phone to Strangers?</strong><br>
-        • ❌ <strong>NEVER ask:</strong> Idly loitering locals near tourist spots; people approaching first asking *"Take a picture?"* (100% snatch & run scam); Romani/gypsy dressed groups.<br>
-        • ⭕ <strong>Safe to ask:</strong> Korean & Asian tourists; Western travelers carrying expensive telephoto DSLR cameras (their gear is worth way more, 0% flight risk); family travelers with baby strollers; restaurant servers or uniformed guards.<br><br>
-        🤳 <strong>2. Selfie Stick (Recommended) vs Tripod (Strictly Forbidden):</strong><br>
-        • ✅ <strong>Selfie stick:</strong> Held firmly in hand, making it hard to snatch. Great for 3-person family shots.<br>
-        • ❌ <strong>Tripod:</strong> Setting up and backing away invites cyclists to pluck your phone in an instant. Remember: *In Spain, anything over 1 meter away from you is no longer yours!*<br><br>
-        🎒 <strong>3. Three Golden Belonging Rules with Parents:</strong><br>
-        ① <strong>Wear bags in front, rest hand on the zipper:</strong> Backpacks on your back scream "help yourself". Wear crossbody bags in front.<br>
-        ② <strong>NEVER rest phones on cafe/restaurant tables:</strong> Thieves spread maps or newspapers over tables and snatch phones underneath.<br>
-        ③ <strong>Beware the 3 Distraction Scams:</strong> Fake stain scam (squirt ketchup, offer to wipe while picking pockets ➔ shout *"NO!"*), fake petition clipboard, bottleneck obstruction at metro gates.<br><br>
-        🚖 <strong>Senior mobility tip:</strong> Use **Uber / Bolt rides** door-to-door to completely bypass crowded metro stairs and pickpocket hotspots!
+        • ❌ <strong>NEVER ask:</strong> Idly loitering locals; anyone approaching first asking *"Take a picture?"* (100% snatch & run scam); Romani/gypsy dressed groups.<br>
+        • ⭕ <strong>Safe to ask:</strong> Asian tourists; Western travelers carrying expensive telephoto DSLR cameras; families with strollers; restaurant staff or museum security guards.<br><br>
+        🎒 <strong>2. The 3 Golden Defense Rules:</strong><br>
+        ① <strong>Bags always worn in FRONT with hand resting on the zipper:</strong> Never keep valuables in rear backpacks or jacket pockets.<br>
+        ② <strong>Never leave phones on outdoor dining tables:</strong> Distraction thieves drape maps or cardboard over your phone to swipe it.<br>
+        ③ <strong>High-risk hotspots:</strong> Rome Buses 64 & 40, Barcelona Metro Line 3 (Liceu/Catalunya), Madrid Sol station.<br><br>
+        🚖 <strong>Senior Comfort Tip:</strong> Using **Uber / FREE NOW taxis** door-to-door eliminates pickpocket exposure and tiring subway staircases!
       ` + renderFollowupChips(chips);
     } else if (lang === 'zh') {
       return `
-        🚨 <strong>西班牙旅行防盗防骗实战指南（拍照安全与随身防护）</strong>:<br><br>
-        📸 <strong>1. 拍照注意事项：能否将手机交给路人拍照？</strong><br>
-        • ❌ <strong>绝对不可求助的对象：</strong> 在景区周边游手好闲闲逛的当地游民；主动上前问“要不要帮你们拍合影”的人（100%是伺机抢夺手机飞奔逃离）；吉普赛打扮成群结伙者。<br>
-        • ⭕ <strong>可以放心求助的对象：</strong> 中国及亚洲游客（拍照审美技术好）；脖子上挂着昂贵单反长焦镜头的欧美游客（自身器材远比手机贵，逃跑概率为0）；推着婴儿车的家庭游客；正规餐厅服务员或制服安保。<br><br>
-        🤳 <strong>2. 自拍杆（推荐） vs 三脚架（严禁使用）：</strong><br>
-        • ✅ <strong>自拍杆：</strong> 牢握手中，扒手极难抢夺，3人家庭合影最安全。<br>
-        • ❌ <strong>三脚架：</strong> 立起三脚架后退拍照的瞬间，假装看热闹的小偷会拔走手机狂奔。请牢记：*在西班牙，距离身体1米以上的物品已不再属于你！*<br><br>
-        🎒 <strong>3. 随身物品防盗三铁律：</strong><br>
-        ① <strong>背包必须“挂在身前”，右手“放在拉链上”：</strong> 坚决不背双肩包，父母与您均佩戴前跨斜挎包。<br>
-        ② <strong>露天餐桌上“绝不放手机”：</strong> 警惕拿报纸、地图假装问路盖在桌上顺走手机的把戏。<br>
-        ③ <strong>警惕三大分心套路：</strong> 泼洒污物擦拭骗局（坚决大喊“NO！”迅速退开）、慈善签名板掩护偷包、在地铁闸机口故意掉硬币制造拥堵。<br><br>
-        🚖 <strong>长辈防护秘诀：</strong> 市内景点往返优先使用**Uber、Bolt打车**，点对点直达，规避拥挤地铁与扒手隐患！
+        🚨 <strong>西班牙与意大利防盗防偷全方位安全攻略</strong>:<br><br>
+        📸 <strong>1. 拍照安全（能让路人帮忙拍合影吗？）:</strong><br>
+        • ❌ <strong>绝对不能委托的人群：</strong> 景区附近闲逛搭讪者、主动上前问“帮你拍照好吗？”的人（100%夺机抢跑）、吉普赛装束团伙。<br>
+        • ⭕ <strong>安全可委托的人群：</strong> 亚洲游客、胸前挂着昂贵长焦单反相机的欧美摄影游客、推婴儿车的家庭、餐馆服务员与展馆安保。<br><br>
+        🎒 <strong>2. 与长辈同行的“防盗三大铁律”：</strong><br>
+        ① <strong>包包必须背在正前方，手搭在拉链上：</strong> 严禁背双肩包或将手机放在外衣口袋。<br>
+        ② <strong>餐厅就餐切勿把手机放在餐桌上：</strong> 调虎离山盗贼会拿地图或硬纸板遮挡视线趁机顺走手机。<br>
+        ③ <strong>高危区域重点提防：</strong> 罗马64路/40路公交、巴塞罗那地铁3号线、马德里太阳门广场。<br><br>
+        🚖 <strong>长辈省力避坑：</strong> 城市间短途游览多用 <strong>Uber 或 FREE NOW 官方打车软件</strong>，既免除地铁爬楼梯，又可100%隔绝小偷！
       ` + renderFollowupChips(chips);
     } else {
       return `
-        🚨 <strong>스페인 여행 소매치기 예방 실전 가이드 (사진 촬영 & 소지품 주의사항)</strong>:<br><br>
-        📸 <strong>1. 사진 촬영 시 주의사항: 모르는 사람에게 폰을 줘도 될까?</strong><br>
-        • ❌ <strong>절대 부탁하면 안 되는 대상:</strong> 관광지 주변을 서성거리며 할 일 없어 보이는 현지인, 먼저 다가와서 "사진 찍어줄까?"라고 묻는 사람 (100% 들고 튀려는 수법), 집시풍 옷차림 무리.<br>
-        • ⭕ <strong>안전하게 부탁할 수 있는 대상:</strong> 한국인 관광객 (1순위! 구도도 최고), 동양인 관광객, 대포 카메라(비싼 DSLR)를 목에 건 서양인 관광객 (자기 카메라가 더 비싸 훔칠 확률 0%), 유모차를 끈 가족 관광객, 식당 종업원이나 제복 경비원.<br><br>
-        🤳 <strong>2. 셀카봉 (추천) vs 삼각대 (절대 금지):</strong><br>
-        • ✅ <strong>셀카봉:</strong> 손에 꽉 쥐고 사용하므로 낚아채기 어렵고 가족 3명 촬영에 가장 안전합니다 (이동 시 접어서 보관).<br>
-        • ❌ <strong>삼각대:</strong> 세워두고 뒤로 물러나는 순간 자전거 구경꾼인 척하던 소매치기가 폰만 뽑아 달아납니다. <em>"스페인에서는 내 몸에서 1m 이상 떨어진 물건은 내 것이 아니다"</em>라고 생각하세요!<br><br>
-        🎒 <strong>3. 부모님과 함께 지켜야 할 '소지품 방어 3계명':</strong><br>
-        ① <strong>가방은 무조건 '앞으로', 손은 '지퍼 위에':</strong> 백팩은 금물! 크로스백을 배 앞으로 당기고 지퍼 위에 손을 올려두세요.<br>
-        ② <strong>카페/식당 테이블 위에 '휴대폰' 절대 올려두지 않기:</strong> 지도나 신문을 쓱 펼치며 길을 묻는 척 종이 밑의 폰을 훔쳐 갑니다.<br>
-        ③ <strong>시선을 뺏는 '산만하게 만들기' 3대 수법:</strong> 오물 투척(새똥/케첩 뿌리고 닦아주는 척 ➔ 단호하게 "NO!" 외치기), 서명판 들이밀기, 지하철/에스컬레이터 앞 병목 현상 만들기.<br><br>
-        🚖 <strong>부모님 보호 팁:</strong> 도심 이동 시 <strong>우버(Uber) 택시</strong>를 타시면 소매치기 위험과 지하철 계단을 원천 차단할 수 있습니다!
+        🚨 <strong>스페인 &amp; 이탈리아 여행 소매치기 예방 및 치안 실전 가이드</strong>:<br><br>
+        📸 <strong>1. 사진 촬영 주의 (모르는 사람에게 핸드폰 맡겨도 될까요?):</strong><br>
+        • ❌ <strong>절대 맡기면 안 되는 상대:</strong> 관광지 주변을 배회하는 사람, 먼저 다가와 "사진 찍어줄까?" 묻는 사람 (100% 들고 튀는 수법), 집시풍 무리.<br>
+        • ⭕ <strong>안전하게 부탁할 수 있는 상대:</strong> 한국인/동양인 관광객, 목에 무거운 망원 DSLR 카메라를 멘 서양인 여행객 (자기 장비가 더 비싸 도주 위험 0%), 유모차를 끄는 가족, 식당 직원이나 유적지 경비원.<br><br>
+        🎒 <strong>2. 부모님과 함께 지킬 '소지품 방어 3대 원칙':</strong><br>
+        ① <strong>가방은 무조건 '앞으로', 손은 '지퍼 위'에:</strong> 백팩은 절대 금물입니다. 크로스백을 앞으로 메고 손을 지퍼에 얹으세요.<br>
+        ② <strong>식당 야외 테이블 위에 스마트폰 올려두지 않기:</strong> 지도나 종이를 들이밀어 시야를 가린 뒤 밑의 폰을 가로챕니다.<br>
+        ③ <strong>고위험 주의 구간:</strong> 로마 64번·40번 버스, 바르셀로나 지하철 3호선, 마드리드 솔 광장.<br><br>
+        🚖 <strong>부모님 안심 팁:</strong> 관광지 간 이동 시 <strong>우버(Uber) 또는 FREE NOW 택시</strong>를 타시면 계단 오르내림과 소매치기 위험을 100% 차단할 수 있습니다!
       ` + renderFollowupChips(chips);
     }
   }
 
-  // [F] TRANSIT & HIGH-SPEED TRAINS
-  if (isTransit) {
+  // 10-5. WATER & GROCERIES INTENT
+  if (isWater) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-      { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본' },
-      { query: '마드리드에서 세비야 이동법', label: '🚄 마드리드 ➔ 세비야' },
-      { query: '리스본에서 포르투 이동법', label: '🚆 리스본 ➔ 포르투' }
+      { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
     ];
     if (lang === 'ja') {
       return `
-        🚆 <strong>高速鉄道（レンフェ）＆都市部交通の移動のコツ</strong>:<br><br>
-        🇪🇸 <strong>スペイン高速鉄道（Renfe AVE / Iryo / OUIGO）:</strong><br>
-        • マドリード ↔ バルセロナ：約2時間30分直通<br>
-        • マドリード ↔ セビリア：約2時間40分直通<br>
-        駅が市中心部にあり空港手続きがないため、シニア同伴には飛行機より列車が圧倒的に快適です。<br><br>
-        🇵🇹 <strong>ポルトガル鉄道（CP）:</strong> リスボン ↔ ポルト 特急列車（AP）約2時間50分。<br><br>
-        🚖 <strong>市内移動の知恵（Uber・Bolt配車タクシー）:</strong><br>
-        ヨーロッパの地下鉄は階段が多いため、3人以上の家族旅行では**Uber / Bolt**を活用すると、料金も地下鉄3人分と同等（約8〜14ユーロ）でホテルの玄関口まで楽に移動できます！
+        💧 <strong>スペイン＆イタリア スーパーでの水の見分け方＆お湯の頼み方</strong>:<br><br>
+        1️⃣ <strong>炭酸水 vs 普通の水の区別:</strong><br>
+        • 🇪🇸 <strong>Agua sin gas</strong>（アグア・シン・ガス）/ 🇮🇹 <strong>Acqua naturale</strong>（アクア・ナチュラーレ）: 炭酸なしの普通のミネラルウォーター（ピンクや青のキャップが多い）。<br>
+        • 🇪🇸 <strong>Agua con gas</strong> / 🇮🇹 <strong>Acqua frizzante</strong>: シュワシュワした炭酸水。<br><br>
+        2️⃣ <strong>石灰水と体調管理:</strong><br>
+        • ヨーロッパの水道水は硬水（石灰分）のため、お腹の弱いご両親には市販のボトル入りの水を常時携行してください。<br>
+        • レストランでは「温かいお湯（Agua caliente / Acqua calda）」を注文できます！
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
       return `
-        🚆 <strong>High-Speed Train (Renfe) & Urban Transit Tips</strong>:<br><br>
-        🇪🇸 <strong>Spain High-Speed Trains (Renfe AVE / Iryo / Ouigo):</strong><br>
-        • Madrid ↔ Barcelona: ~2 hrs 30 mins direct<br>
-        • Madrid ↔ Seville: ~2 hrs 40 mins direct<br>
-        High-speed rail is far more convenient than flying: stations are downtown and luggage allowance is generous, sparing senior family members airport fatigue.<br><br>
-        🇵🇹 <strong>Portugal Rail (CP):</strong> Lisbon ↔ Porto on the express *Alfa Pendular (AP)* in ~2 hrs 50 mins.<br><br>
-        🚖 <strong>Senior & Family City Mobility (Uber/Bolt Rideshare):</strong><br>
-        European historic subway stations have steep stairs. For families of 3+, short 3–5km city rides via **Uber or Bolt** cost only €8–€14 (comparable to 3 metro tickets) and drop you door-to-door!
-      ` + renderFollowupChips(chips);
+        💧 <strong>Spain & Italy Supermarket Bottled Water & Warm Water Guide</strong>:<br><br>
+        1️⃣ <strong>Still vs Sparkling Water:</strong><br>
+        • 🇪🇸 <strong>Agua sin gas</strong> / 🇮🇹 <strong>Acqua naturale</strong>: Plain still mineral water (usually blue or pink caps).<br>
+        • 🇪🇸 <strong>Agua con gas</strong> / 🇮🇹 <strong>Acqua frizzante</strong>: Carbonated sparkling water.<br><br>
+        2️⃣ <strong>Tap Water Caution for Seniors:</strong><br>
+        • Tap water across Southern Europe is hard with high mineral/lime content. Always purchase bottled still mineral water for elderly travelers to avoid upset stomachs.<br>
+        • Request warm drinking water at restaurants using *"Agua caliente, por favor"* or *"Acqua calda, per favore"*.
+      `;
     } else if (lang === 'zh') {
       return `
-        🚆 <strong>城市间高铁（Renfe）与市内交通出行指南</strong>:<br><br>
-        🇪🇸 <strong>西班牙高铁（Renfe AVE / Iryo / Ouigo）:</strong><br>
-        • 马德里 ↔ 巴塞罗那：约2小时30分钟直达<br>
-        • 马德里 ↔ 塞维利亚：约2小时40分钟直达<br>
-        车站位于市中心，无需提前数小时去机场安检，长辈家庭出行乘坐高铁更加舒适惬意。<br><br>
-        🇵🇹 <strong>葡萄牙铁路（CP）:</strong> 里斯本 ↔ 波尔图乘坐AP特快仅约2小时50分钟。<br><br>
-        🚖 <strong>长辈家庭市内出行秘诀（善用Uber/Bolt打车）:</strong><br>
-        欧洲历史城区地铁站台阶较多。3人及以上家庭在市内3~5公里移动时，使用**Uber、Bolt**打车仅需8~14欧元，费用与3人地铁票相当，长辈免受爬楼梯之苦！
-      ` + renderFollowupChips(chips);
+        💧 <strong>西班牙与意大利 超市选购矿泉水与温水实用指南</strong>:<br><br>
+        1️⃣ <strong>纯净水与气泡水区分：</strong><br>
+        • 🇪🇸 <strong>Agua sin gas</strong> / 🇮🇹 <strong>Acqua naturale</strong>：普通纯净水（无气泡水，多为蓝盖或粉盖）。<br>
+        • 🇪🇸 <strong>Agua con gas</strong> / 🇮🇹 <strong>Acqua frizzante</strong>：含气气泡矿泉水。<br><br>
+        2️⃣ <strong>长辈水质胃肠呵护：</strong><br>
+        • 南欧自来水多为富含钙镁的硬水，肠胃敏感的长辈务必饮用超市瓶装水。<br>
+        • 餐馆用餐可礼貌索取温开水：西语 *“Agua caliente”* / 意语 *“Acqua calda”*。
+      `;
     } else {
       return `
-        🚆 <strong>도시 간 기차(렌페) & 시내 교통 필수 이동 팁</strong>:<br><br>
-        🇪🇸 <strong>스페인 고속열차 렌페(Renfe / Iryo / Ouigo):</strong><br>
-        • 마드리드 ↔ 바르셀로나: 약 2시간 30분 직통<br>
-        • 마드리드 ↔ 세비야: 약 2시간 40분 직통<br>
-        비행기보다 도심 접근성이 좋고 수속 시간이 없어 어르신 동행 시 기차가 훨씬 편안합니다.<br><br>
-        🇵🇹 <strong>포르투갈 철도(CP):</strong> 리스본 ↔ 포르투 고속열차(AP) 약 2시간 50분.<br><br>
-        🚖 <strong>부모님 동행 시내 이동 황금 팁 (우버/볼트 적극 활용):</strong><br>
-        유럽 구도심 지하철은 계단이 많아 어르신 무릎에 무리가 갑니다. 3인 가족 기준 3~5km 시내 이동은 <strong>우버(Uber), 볼트(Bolt)</strong> 호출 택시를 이용하시면 요금도 지하철 3인권과 비슷(8~14유로)하며 호텔 문 앞까지 편안하게 이동하실 수 있습니다!
-      ` + renderFollowupChips(chips);
+        💧 <strong>스페인 &amp; 이탈리아 마트 생수 구별법 &amp; 온수 요청 꿀팁</strong>:<br><br>
+        1️⃣ <strong>탄산수 vs 일반 생수 라벨 구별:</strong><br>
+        • 🇪🇸 <strong>Agua sin gas</strong> (아과 신 가스) / 🇮🇹 <strong>Acqua naturale</strong> (아콰 나투랄레): 탄산 없는 일반 생수 (주로 파란색/분홍색 뚜껑).<br>
+        • 🇪🇸 <strong>Agua con gas</strong> (아과 콘 가스) / 🇮🇹 <strong>Acqua frizzante</strong> (아콰 프리잔테): 톡 쏘는 탄산수.<br><br>
+        2️⃣ <strong>석회수 주의 &amp; 부모님 온수 보온병:</strong><br>
+        • 유럽 수돗물은 석회질이 많아 배탈이 나기 쉬우니 양치 후 헹굼이나 음용수는 반드시 마트 생수를 이용하세요.<br>
+        • 식당에서 "아과 칼리엔테, 포르 파보르(Agua caliente)" 또는 "아콰 칼다(Acqua calda)"라고 하시면 따뜻한 물을 친절하게 내어줍니다!
+      `;
     }
+    return res + renderFollowupChips(chips);
   }
 
-  // [G] BUDGET & EXPENSES
-  if (isBudget) {
-    const kpiText = (typeof document !== 'undefined' && document.getElementById('kpiBudgetText')?.textContent?.trim()) || '약 15,480,000원 (₩)';
-    const chips = [
-      { query: '스페인 포르투갈 환전 어떻게 해?', label: '💶 유로 환전 및 결제' },
-      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀(DIVA)' }
-    ];
-    if (lang === 'ja') {
-      return `
-        💰 <strong>シニア同伴・家族旅行（3名基準）リアルタイム予算分析</strong>:<br><br>
-        • <strong>現在プランの総予算目安:</strong> <strong>${kpiText}</strong>（航空券、全日程4〜5星級ホテル、都市間AVE・フライト、食事・観光入場料込み）<br>
-        • <strong>1日あたり食事予算目安:</strong> 1名あたり約€45〜€70（上質なタパスや海鮮ディナー基準）<br>
-        • <strong>交通費の知恵:</strong> 3人なら市内移動は地下鉄よりUber利用が同等の費用で圧倒的に楽でお得です！
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        💰 <strong>Estimated Family Travel Budget Analysis (3 Persons)</strong>:<br><br>
-        • <strong>Total Estimated Package Cost:</strong> <strong>${kpiText}</strong> (includes round-trip flights, 4–5 star accommodations, high-speed rail, dining, and admission tickets).<br>
-        • <strong>Daily Dining Budget:</strong> ~€45–€70 per person for generous tapas, seafood, and café stops.<br>
-        • <strong>Mobility Savings:</strong> For 3 people, Uber/Bolt rides across city centers cost almost the same as 3 single metro tickets!
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        💰 <strong>长辈同行三人家庭旅行实时定制预算分析</strong>:<br><br>
-        • <strong>当前方案全程核算总预算：</strong> <strong>${kpiText}</strong>（已包含国际往返机票、全程4~5星级酒店、城际高铁/航班、正餐与主要景点门票）。<br>
-        • <strong>每日餐饮参考：</strong> 人均约€45~€70（享受地道海鲜饭、优质Tapas与咖啡点心）。<br>
-        • <strong>交通性价比秘诀：</strong> 3人同行时，市内短途打车（Uber/Bolt）综合花费与3张单程地铁票几乎持平！
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        💰 <strong>부모님 동행 3인 가족 여행 실시간 예산 분석</strong>:<br><br>
-        • <strong>현재 플래너 기준 총 예상 경비:</strong> <strong>${kpiText}</strong> (국제선 왕복 항공, 전 일정 4~5성급 호텔, 도시 간 고속열차/국내선, 식비 및 주요 명소 입장권 포함)<br>
-        • <strong>1일 식비 예산:</strong> 1인당 약 6~10만 원 (€45~€70 내외, 수준 높은 타파스 및 해산물 코스 기준)<br>
-        • <strong>교통비 절약 팁:</strong> 3인 가족 기준 시내 3~5km 이동은 지하철 3명 티켓값과 우버(Uber) 택시비가 거의 같으므로 무조건 우버가 유리합니다!
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  // [H] CARDS, CASH, TIPPING & RESTROOMS
-  if (isCardCash) {
-    const chips = [
-      { query: '스페인 포르투갈 환전 어떻게 해?', label: '💶 유로 환전 안내' },
-      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀(DIVA)' }
-    ];
-    if (lang === 'ja') {
-      return `
-        💳 <strong>カード・現金・チップ＆トイレ利用ガイド</strong>:<br><br>
-        1️⃣ <strong>カード決済比率:</strong> 95％以上の店舗、カフェ、タクシーでタッチ決済（Visa/Mastercard/Apple Pay）が利用可能です。<br>
-        2️⃣ <strong>現金の目安:</strong> 市場や有料トイレ（0.5〜1ユーロ）利用のため、1人1日あたり約20〜30ユーロの小銭・小額紙幣があれば十分です。<br>
-        3️⃣ <strong>チップの習慣:</strong> 義務ではありません。良いサービスを受けた際に端数を切り上げるか、5〜10％程度を置くのがスマートです。<br>
-        4️⃣ <strong>トイレのコツ:</strong> デパート（エル・コルテ・イングレス）や美術館、立ち寄ったカフェの清潔なトイレを利用するのが鉄則です！
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        💳 <strong>Cards, Cash, Tipping & Restroom Tips</strong>:<br><br>
-        1️⃣ <strong>Card Acceptance:</strong> Over 95% of stores, bistros, and cabs support contactless card payments (Visa, Mastercard, Apple Pay).<br>
-        2️⃣ <strong>Cash Needs:</strong> Keep €20–€30 per person per day in small coins/bills for public restrooms and traditional markets.<br>
-        3️⃣ <strong>Tipping Culture:</strong> Tipping is not mandatory. Rounding up the bill or leaving 5–10% for exceptional dining service is appreciated.<br>
-        4️⃣ <strong>Clean Restrooms:</strong> European public pay toilets can be sparse. Use immaculate restrooms at El Corte Inglés department stores, museums, or order an espresso at a café!
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        💳 <strong>刷卡、备用现金、小费与洗手间出行贴士</strong>:<br><br>
-        1️⃣ <strong>刷卡普及度：</strong> 当地95%以上的商户、餐厅与出租车支持感应式无接触刷卡（Visa/Mastercard/Apple Pay）。<br>
-        2️⃣ <strong>现金准备：</strong> 仅需准备每人每天20~30欧元小面额零钱，用于投币洗手间与传统小市场。<br>
-        3️⃣ <strong>小费习俗：</strong> 欧洲非强制小费制。若对服务满意，可将账单零头向上取整或留下5%~10%作为心意。<br>
-        4️⃣ <strong>卫生间攻略：</strong> 尽量利用英国宫百货（El Corte Inglés）、各大博物馆以及用餐餐厅内的干净卫生间！
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        💳 <strong>결제(카드/현금), 팁 문화 및 화장실 이용 안내</strong>:<br><br>
-        1️⃣ <strong>카드 결제율:</strong> 트래블로그, 트래블월렛 등 컨택트리스 카드가 95% 이상 지원되어 현금 휴대가 거의 필요 없습니다.<br>
-        2️⃣ <strong>비상 현금:</strong> 전통 시장이나 유럽 유료 화장실(0.5~1유로) 이용을 위해 1인 하루 20~30유로 정도의 소액 현금만 챙기시면 충분합니다.<br>
-        3️⃣ <strong>팁 문화:</strong> 팁은 의무가 아닙니다. 고급 식당에서 만족스러운 서비스를 받으셨을 때 거스름돈 잔돈을 두시거나 5~10% 정도 두시면 충분합니다.<br>
-        4️⃣ <strong>화장실 팁:</strong> 길거리 유료 화장실보다 엘 코르테 잉글레스(El Corte Inglés) 백화점이나 박물관, 또는 카페에서 에스프레소 한 잔 주문 후 내부 화장실을 이용하시는 것이 가장 청결합니다!
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  // [I] TAX REFUND
-  if (isTaxRefund) {
-    const chips = [
-      { query: '스페인 쇼핑 기념품 추천', label: '🎁 스페인 쇼핑' },
-      { query: '포르투갈 쇼핑 기념품 추천', label: '🎁 포르투갈 쇼핑' }
-    ];
-    if (lang === 'ja') {
-      return `
-        🛍️ <strong>スペイン＆ポルトガル タックスリファンド（免税）完全攻略</strong>:<br><br>
-        1️⃣ <strong>最低購入額の撤廃:</strong> スペイン・ポルトガルともに最低購入金額の制限がなく、少額のお買い物でも免税対象となります！<br>
-        2️⃣ <strong>スペイン DIVAデジタル認証:</strong> 店舗でDIVA免税書類を受け取り、出国空港の「DIVA専用キオスク端末」でバーコードをスキャンするだけで即時電子税関承認が完了します。<br>
-        3️⃣ <strong>手続きのタイミング:</strong> 受託手荷物に免税品を入れる場合は、航空会社のカウンターでチェックインする前に必ず税関（DIVA）端末で認証を済ませてください！
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        🛍️ <strong>Spain & Portugal Digital Tax Refund (DIVA) Guide</strong>:<br><br>
-        1️⃣ <strong>No Minimum Spend:</strong> Both Spain and Portugal have abolished minimum spending thresholds, allowing tax refunds even on modest shopping purchases!<br>
-        2️⃣ <strong>Spain DIVA Electronic Kiosks:</strong> Ask for a DIVA tax refund form at checkout. At the departure airport, simply scan the barcodes at the digital DIVA machines for instant customs validation without standing in line!<br>
-        3️⃣ <strong>Packing Rule:</strong> If packing tax-free goods inside checked baggage, validate your forms at the airport DIVA kiosk *before* checking your luggage!
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        🛍️ <strong>西班牙与葡萄牙电子退税（DIVA）核心指南</strong>:<br><br>
-        1️⃣ <strong>无最低消费门槛：</strong> 西班牙与葡萄牙现已取消最低消费限额，小额购物亦可申请退税！<br>
-        2️⃣ <strong>西班牙DIVA自助扫码：</strong> 购物时向店员索取DIVA退税单。在离境机场海关退税区，只需在DIVA自助电子机上扫描条形码，数十秒即可完成海关盖章核验！<br>
-        3️⃣ <strong>托运先盖章原则：</strong> 若退税商品需要托运，务必在前往值机柜台托运行李前先完成DIVA机扫码盖章！
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        🛍️ <strong>스페인 & 포르투갈 텍스리펀(DIVA) 완벽 가이드</strong>:<br><br>
-        1️⃣ <strong>최저 구매 금액 폐지:</strong> 스페인과 포르투갈 모두 텍스리펀 최저 구매 기준액이 없어 소액 쇼핑 건도 환급이 가능합니다!<br>
-        2️⃣ <strong>스페인 DIVA 디지털 키오스크:</strong> 매장에서 DIVA 환급 서류를 받으신 후, 출국 공항의 'DIVA 기기'에 바코드를 스캔하면 줄 설 필요 없이 전자 세관 승인이 완료됩니다.<br>
-        3️⃣ <strong>수하물 위탁 순서:</strong> 구매 품목을 부치는 캐리어에 넣으실 경우, 반드시 항공사 카운터에서 짐을 부치기 전에 DIVA 기기 인증을 먼저 마치셔야 합니다!
-      ` + renderFollowupChips(chips);
-    }
-  }
-
-  // [J] SENIOR CARE & ACCESSIBILITY
+  // 10-6. SENIOR MOBILITY & BARRIER-FREE INTENT
   if (isSeniorCare) {
     const chips = [
-      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 고속열차 렌페 이동' },
-      { query: '소금 빼주세요 스페인어', label: '🧂 싱겁게 주문하는 법' },
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
       { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
     ];
     if (lang === 'ja') {
       return `
         👵 <strong>シニアご両親同伴旅行・安心の心得 TOP 4</strong>:<br><br>
-        1️⃣ <strong>坂道と石畳の攻略:</strong> リスボンやポルトは急勾配の坂と石畳が多いため、無理に歩かず<strong>Uberタクシー</strong>を積極的に利用して目的地のエレベーターや玄関前まで直行しましょう。<br>
+        1️⃣ <strong>石畳と坂道の攻略:</strong> リスボンやローマの石畳は足腰に負担がかかるため、無理に歩かず<strong>Uberやタクシー</strong>を積極的に利用して目的地のエレベーターや玄関前まで直行しましょう。<br>
         2️⃣ <strong>ゆとりのある日程設定:</strong> 午前1箇所、午後1箇所を基本とし、午後にカフェで温かいお茶とスイーツを楽しむ休憩時間を確保してください。<br>
-        3️⃣ <strong>食事の塩分配慮:</strong> レストランでは「塩控えめ（Sem sal / Sin sal）」と伝えると、ご両親のお口に合う優しい味付けで召し上がれます。<br>
-        4️⃣ <strong>高速鉄道の活用:</strong> 都市間移動は空港手続きの負担がない<strong>高速鉄道（AVE/CP）</strong>の前方座席を予約するのが最も快適です！
+        3️⃣ <strong>食事の塩分配慮:</strong> レストランでは「塩控えめ（Sin sal / Poco sale）」と伝えると、ご両親のお口に合う優しい味付けで召し上がれます。<br>
+        4️⃣ <strong>高速鉄道の活用:</strong> 都市間移動は空港手続きの負担がない<strong>高速鉄道（AVE/Italo）のビジネスクラス</strong>を予約するのが最も快適です！
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
       return `
         👵 <strong>Top 4 Senior Care & Accessibility Principles for Family Travel</strong>:<br><br>
-        1️⃣ <strong>Hills & Cobblestones:</strong> Lisbon and Porto feature steep hills. Never hesitate to use **Uber/Bolt** door-to-door to bypass tiring ascents.<br>
-        2️⃣ <strong>Relaxed Daily Pacing:</strong> Limit schedules to 1 primary sight in the morning and 1 in the afternoon, leaving generous mid-day café respites.<br>
-        3️⃣ <strong>Dietary Comfort:</strong> Request *"Sin sal, por favor"* in Spain and *"Sem sal, por favor"* in Portugal for milder seasonings tailored to senior palates.<br>
-        4️⃣ <strong>Comfortable Rail Transit:</strong> Choose direct high-speed trains (Renfe AVE / CP Alfa Pendular) with spacious seating over flights to avoid airport queues!
+        1️⃣ <strong>Cobblestones & Hill Navigation:</strong> Never hesitate to take an **Uber/taxi** directly to site entry gates to bypass fatiguing uneven paving.<br>
+        2️⃣ <strong>Relaxed Daily Pacing:</strong> Limit schedules to 1 primary sight in the morning and 1 in the afternoon, with a dedicated mid-day café/siesta respite.<br>
+        3️⃣ <strong>Dietary Comfort:</strong> Request *"Sin sal"* (Spain) or *"Poco sale"* (Italy) for gentler seasoning tailored to senior palates.<br>
+        4️⃣ <strong>Door-to-Door High-Speed Rail:</strong> Opt for high-speed train business classes (Italo Prima / AVE) over taxing airport connections.
       ` + renderFollowupChips(chips);
     } else if (lang === 'zh') {
       return `
-        👵 <strong>长辈同行家庭旅行四大舒适关怀准则</strong>:<br><br>
-        1️⃣ <strong>坡道与石子路应对：</strong> 里斯本与波尔图山城起伏较大，善用**Uber打车**直达景点门口，有效保护长辈膝盖。<br>
-        2️⃣ <strong>慢节奏节奏安排：</strong> 每天安排上午1处、下午1处核心景点即可，中途预留充足的咖啡下午茶慢享时光。<br>
-        3️⃣ <strong>清淡饮食沟通：</strong> 点餐时出示“少盐（Sin sal / Sem sal）”短语，让长辈品尝鲜美原汁原味。<br>
-        4️⃣ <strong>高铁优选出行：</strong> 城市间优先乘坐无需提前冗长安检的AVE与CP高铁，座椅宽敞舒适平稳！
+        👵 <strong>带父母长辈出行 · 舒心无障碍四大准则</strong>:<br><br>
+        1️⃣ <strong>告别石板路疲劳：</strong> 老城坡道碎石路极易磨损膝盖，善用<strong>Uber与正规打车</strong>点对点直达景点门口与电梯。<br>
+        2️⃣ <strong>张弛有度的松弛节奏：</strong> 严格遵循“上午一处主景点 ➔ 下午酒店午休或景观咖啡馆”，杜绝赶场。<br>
+        3️⃣ <strong>点餐关照健康：</strong> 牢记西语“Sin sal”与意语“Poco sale”少放盐，保护长辈血压肠胃。<br>
+        4️⃣ <strong>首选高铁商务座：</strong> 城际交通首选Italo Prima或AVE高铁，免去反复安检候机劳顿。
       ` + renderFollowupChips(chips);
     } else {
       return `
-        👵 <strong>부모님 안심 동행 4대 케어 원칙</strong>:<br><br>
-        1️⃣ <strong>언덕길과 돌바닥 극복:</strong> 리스본과 포르투는 경사로와 울퉁불퉁한 돌바닥이 많으므로 무리하게 걷지 마시고 <strong>우버(Uber) 택시</strong>로 목적지 바로 앞까지 이동하세요.<br>
-        2️⃣ <strong>1일 2명소 여유로운 일정:</strong> 오전 1곳, 오후 1곳으로 일정을 여유롭게 잡고, 중간중간 야외 테라스 카페에서 휴식 시간을 충분히 가지세요.<br>
-        3️⃣ <strong>식사 간 조절:</strong> 주문 시 <strong>"Sin sal(스페인)" / "Sem sal(포르투갈)"</strong>을 말씀하셔서 짜지 않게 건강한 식사를 즐기세요.<br>
-        4️⃣ <strong>고속기차(렌페/CP) 이용:</strong> 도심 직결 고속철도를 이용해 공항 검색대의 긴 대기줄 없이 편안한 좌석에서 이동하세요!
+        👵 <strong>시니어 부모님 동행 가족 여행 · 4대 안심 원칙</strong>:<br><br>
+        1️⃣ <strong>돌바닥과 경사로 피하기:</strong> 유럽의 울퉁불퉁한 돌바닥은 무릎에 무리가 가므로, 걷기 힘드실 때는 주저 없이 <strong>우버나 택시</strong>를 타셔서 유적지 입구 바로 앞까지 직행하세요.<br>
+        2️⃣ <strong>1일 1핵심 여유로운 페이싱:</strong> 오전 핵심 1곳 ➔ 오후 호텔 휴식/노천카페 ➔ 해질녘 광장 산책의 리듬을 지켜주세요.<br>
+        3️⃣ <strong>식단 건강 배려:</strong> 식당에서 꼭 "신 살(Sin sal)" 또는 "포코 살레(Poco sale)"를 외쳐 덜 짜게 드시도록 챙겨드립니다.<br>
+        4️⃣ <strong>도심 직결 고속철도 활용:</strong> 공항 대기와 무거운 짐 검사 스트레스가 없는 고속철도 프리마석/1등석으로 쾌적하게 이동합니다!
       ` + renderFollowupChips(chips);
     }
   }
 
-  // ----------------------------------------------------
-  // [K] DEFAULT FALLBACK (자연스러운 연속 대화 안내)
-  // ----------------------------------------------------
+  // 10-7. BUDGET & COSTS INTENT
+  if (isBudget) {
+    const kpiText = (typeof document !== 'undefined' && document.getElementById('kpi-total-budget')) ? document.getElementById('kpi-total-budget').innerText : '₩13,500,000 ~ ₩16,800,000';
+    const chips = [
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '트래블로그 카드 결제랑 현금 환전 비율', label: '💳 카드/환전 비율' },
+      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀 절차' }
+    ];
+    if (lang === 'ja') {
+      return `
+        💰 <strong>30日間 家族旅行の総予算および内訳ガイド</strong>:<br><br>
+        • <strong>現在の目安総予算:</strong> 約 <strong>${kpiText}</strong>（3〜4名・ホテルランクや為替により変動）<br><br>
+        📊 <strong>主要項目の予算構成:</strong><br>
+        1️⃣ <strong>宿泊費（約40%）:</strong> エレベーター・駅近の4〜5星級厳選ホテル（9大確定ホテルベース）<br>
+        2️⃣ <strong>航空券＆都市間交通（約25%）:</strong> 国際線長距離便＋iryo/Renfe/Italo高速鉄道<br>
+        3️⃣ <strong>食費（約20%）:</strong> 名物レストランディナー＋カフェ・タパス巡り<br>
+        4️⃣ <strong>観光入場料・予備費（約15%）:</strong> サグラダ・ファミリア、バチカン美術館、現地タクシー代など
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        💰 <strong>30-Day Family Travel Total Budget & Expense Breakdown</strong>:<br><br>
+        • <strong>Estimated Total Budget:</strong> Approx. <strong>${kpiText}</strong> (based on 3–4 persons, subject to seasonality & exchange rates).<br><br>
+        📊 <strong>Key Expense Categories:</strong><br>
+        1️⃣ <strong>Accommodations (~40%):</strong> 9 Confirmed station-proximate 4–5★ hotels with verified senior elevators.<br>
+        2️⃣ <strong>Flights & Intercity Trains (~25%):</strong> International long-haul flights + iryo/Renfe/Italo high-speed rail.<br>
+        3️⃣ <strong>Dining (~20%):</strong> Verified pick dinners, lunchtime Menú del Día, and relaxed café stops.<br>
+        4️⃣ <strong>Attraction Tickets & Contingency (~15%):</strong> Advance skip-the-line admissions and local rideshare/taxis.
+      `;
+    } else if (lang === 'zh') {
+      return `
+        💰 <strong>30天家庭旅行总预算与花费明细指南</strong>:<br><br>
+        • <strong>当前预估总预算：</strong> 约 <strong>${kpiText}</strong>（基于3~4人家庭，受汇率与季节浮动）。<br><br>
+        📊 <strong>主要预算构成比例：</strong><br>
+        1️⃣ <strong>住宿费用（约40%）：</strong> 9大确定四至五星级平地无障碍电梯酒店。<br>
+        2️⃣ <strong>大交通与城际高铁（约25%）：</strong> 国际长途往返机票＋西班牙与意大利城际高铁。<br>
+        3️⃣ <strong>特色美食餐饮（约20%）：</strong> 15大精选认证名店晚宴、午间套餐与下午茶点。<br>
+        4️⃣ <strong>门票与应急备用金（约15%）：</strong> 圣家堂、梵蒂冈博物馆预约门票及市内出租车费用。
+      `;
+    } else {
+      return `
+        💰 <strong>30일 가족 여행 총 예상 경비 및 예산 분석</strong>:<br><br>
+        • <strong>현재 플래너 기준 예상 총액:</strong> 약 <strong>${kpiText}</strong> (3~4인 기준, 환율 및 시즌에 따라 유동적)<br><br>
+        📊 <strong>주요 지출 구성비:</strong><br>
+        1️⃣ <strong>숙박비 (약 40%):</strong> 역세권 평지 &amp; 엘리베이터가 완비된 9대 확정 4~5성급 호텔<br>
+        2️⃣ <strong>항공 및 도시 간 고속열차 (약 25%):</strong> 국제선 항공권 + iryo/이탈로/프레차로사 고속열차<br>
+        3️⃣ <strong>미식 식비 (약 20%):</strong> 15대 검증 식당 만찬, 메누 델 디아 점심, 젤라또 &amp; 카페<br>
+        4️⃣ <strong>입장료 및 시내 교통/예비비 (약 15%):</strong> 사그라다 파밀리아, 바티칸 투어 및 우버/택시비
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 10-8. CARDS, CASH & TIPPING INTENT
+  if (isCardCash) {
+    const chips = [
+      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀 절차' },
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
+    ];
+    if (lang === 'ja') {
+      return `
+        💳 <strong>クレジットカード、現金両替、チップ文化のまとめ</strong>:<br><br>
+        1️⃣ <strong>カード決済比率（95%以上）:</strong> コンタクトレス決済対応カード（Apple Pay、クレジットカード）がほぼ全土で利用可能。現金を持ち歩く必要性は極めて低いです。<br>
+        2️⃣ <strong>持参する現金の目安:</strong> 緊急時用として家族全体で<strong>€150〜€200程度</strong>あれば充分です。<br>
+        3️⃣ <strong>チップ文化:</strong> スペイン・イタリアともにチップ義務はありません。サービスに満足した場合、小銭のお釣りを置くか5〜10%程度添えれば喜ばれます。
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        💳 <strong>Card Payments, Cash Exchange & Tipping Etiquette</strong>:<br><br>
+        1️⃣ <strong>Contactless Acceptance (95%+):</strong> Tap-to-pay credit cards and Apple Pay are accepted virtually everywhere. Carrying large cash bundles is totally unnecessary.<br>
+        2️⃣ <strong>Emergency Cash Reserve:</strong> Carrying <strong>€150–€200 in cash</strong> per family is plenty for small coin restrooms and gelato shops.<br>
+        3️⃣ <strong>Tipping Culture:</strong> Tipping is not obligatory in Spain or Italy. Rounding up small change or leaving 5–10% for exceptional table service is appreciated.
+      `;
+    } else if (lang === 'zh') {
+      return `
+        💳 <strong>刷卡消费、现金换汇与小费文化指南</strong>:<br><br>
+        1️⃣ <strong>刷卡普及率（95%以上）：</strong> 支持免密感应的信用卡与手机Apple Pay几乎随处可用，切勿随身携带大量现金以免引贼注意。<br>
+        2️⃣ <strong>随身现金建议：</strong> 全家准备 <strong>€150~€200 欧元现金零钱</strong>以备收费洗手间或零食小摊即可。<br>
+        3️⃣ <strong>小费习俗：</strong> 西班牙与意大利均无强制小费传统，对周到服务结账时留下零钱或5~10%即可。
+      `;
+    } else {
+      return `
+        💳 <strong>결제(트래블로그 카드/현금), 환전 및 팁 문화 안내</strong>:<br><br>
+        1️⃣ <strong>카드 결제율 (95% 이상):</strong> 트래블로그, 트래블월렛 등 컨택트리스(비접촉) 카드가 식당, 마트, 교통에 완벽 지원되므로 현금을 많이 들고 다닐 필요가 없습니다.<br>
+        2️⃣ <strong>현금 환전 권장액:</strong> 유료 화장실이나 동전 전용 젤라또 가게를 대비해 가족 전체 기준 <strong>€150 ~ €200 정도</strong>의 소액 지폐만 챙기시면 충분합니다.<br>
+        3️⃣ <strong>팁(Tip) 문화:</strong> 스페인과 이탈리아 모두 팁이 의무가 아닙니다. 서비스가 훌륭했을 때 거스름돈 동전을 남기거나 식사 금액의 5~10% 정도를 테이블에 두고 나오시면 아주 좋아합니다.
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 10-9. TAX REFUND INTENT
+  if (isTaxRefund) {
+    const chips = [
+      { query: '스페인 쇼핑 기념품 추천', label: '🎁 스페인 쇼핑' },
+      { query: '이탈리아 쇼핑 선물 추천', label: '🎁 이탈리아 쇼핑' }
+    ];
+    if (lang === 'ja') {
+      return `
+        🛍️ <strong>空港タックスリファンド（免税手続き）完全ガイド</strong>:<br><br>
+        • 🇪🇸 <strong>スペイン（DIVAシステム）:</strong> 店舗で発行された免税書類のバーコードを空港の手荷物預け入れ前に<strong>DIVA専用キオスク端末</strong>でスキャン（緑色のチェックマークで認証完了）。税関窓口の長蛇の列に並ぶ必要がありません。<br>
+        • 🇮🇹 <strong>イタリア（Global Blue / Planet）:</strong> 空港の免税カウンターでスタンプ認証と返金手続きを行います。<br>
+        • ⚠️ <strong>注意点:</strong> 免税対象品はスーツケースに入れて預ける前に手続きが必要です。搭乗の3時間前には空港に到着してください！
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        🛍️ <strong>Airport Tax Refund (DIVA Kiosk & Customs) Guide</strong>:<br><br>
+        • 🇪🇸 <strong>Spain (DIVA Digital System):</strong> Scan the barcode of your tax-free forms at the automated <strong>DIVA digital kiosks</strong> prior to bag drop. A green confirmation tick validates your stamp instantly without queuing for customs officers!<br>
+        • 🇮🇹 <strong>Italy:</strong> Process your refund at airport Global Blue, Planet, or customs validation desks.<br>
+        • ⚠️ <strong>Important Rule:</strong> Complete tax refund validation BEFORE checking in luggage containing duty-free purchases. Arrive at least 3 hours before departure!
+      `;
+    } else if (lang === 'zh') {
+      return `
+        🛍️ <strong>欧洲机场退税（DIVA自助机与海关流程）指南</strong>:<br><br>
+        • 🇪🇸 <strong>西班牙（DIVA电子自助退税系统）：</strong> 在托运行李前，直接在机场<strong>DIVA自助扫码机</strong>上扫描退税单条形码，屏幕显示绿色对勾即完成海关验证，无需排长队。<br>
+        • 🇮🇹 <strong>意大利：</strong> 在机场Global Blue或Planet退税柜台直接办理海关盖章与退税领款。<br>
+        • ⚠️ <strong>长辈注意：</strong> 托运含退税商品的行李前务必先完成退税盖章，建议至少提前3小时到达机场！
+      `;
+    } else {
+      return `
+        🛍️ <strong>공항 텍스리펀 (DIVA 무인 키오스크) 절차 안내</strong>:<br><br>
+        • 🇪🇸 <strong>스페인 (DIVA 디지털 시스템):</strong> 매장에서 발급받은 면세 서류를 수하물 부치기 전 공항 출국장의 <strong>DIVA 무인 키오스크 기계</strong>에 바코드만 스캔하면 즉시 승인(초록색 체크)됩니다. 세관원 대면 줄을 설 필요가 없습니다.<br>
+        • 🇮🇹 <strong>이탈리아:</strong> 공항 내 글로벌블루 또는 플래닛 카운터에서 면세 확인 및 환급을 진행합니다.<br>
+        • ⚠️ <strong>필수 주의:</strong> 쇼핑 물품을 부치는 수하물(캐리어)에 넣으실 경우, 반드시 짐을 부치기 전에 먼저 키오스크 스캔을 마치셔야 합니다. 출발 3시간 전 공항 도착을 권장합니다!
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 10-10. WEATHER & PACKING INTENT
+  if (isWeather) {
+    const chips = [
+      { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' },
+      { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' }
+    ];
+    if (lang === 'ja') {
+      return `
+        ☀️ <strong>スペイン＆イタリア 気候・ベストシーズン＆服装ガイド</strong>:<br><br>
+        • <strong>10月〜12月の気候:</strong> 地中海性気候のため東京やソウルより穏やかで温暖です（平均12〜18℃）。日中は日差しが暖かく観光に最適ですが、朝晩は冷え込みます。<br>
+        • <strong>おすすめの服装:</strong> 「玉ねぎ式の重ね着」が基本です。長袖シャツの上に薄手のウルトラライトダウンやカーディガンを羽織り、脱ぎ着しやすく調整してください。<br>
+        • <strong>シニア必需品:</strong> クッション性の高いウォーキングシューズ、急な雨に備える軽量折りたたみ傘。
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        ☀️ <strong>Spain & Italy Weather, Best Seasons & Packing Guide</strong>:<br><br>
+        • <strong>Autumn/Winter Climate (Oct–Dec):</strong> Mild Mediterranean temperatures ranging from 12°C to 18°C. Sunny afternoons are pleasant, while mornings and evenings turn brisk.<br>
+        • <strong>Recommended Layering:</strong> Dress in breathable onion layers—long-sleeve tees paired with a lightweight packable down jacket or cozy cardigan.<br>
+        • <strong>Senior Essentials:</strong> Supportive walking sneakers with memory foam soles and a compact travel umbrella.
+      `;
+    } else if (lang === 'zh') {
+      return `
+        ☀️ <strong>西班牙与意大利 天气气候、穿衣指南与行李建议</strong>:<br><br>
+        • <strong>秋冬季气候（10~12月）：</strong> 地中海气候温和宜人，平均气温在12℃~18℃之间，日照充足舒适，但早晚温差显著。<br>
+        • <strong>穿衣搭配：</strong> 建议采用“洋葱式多层穿搭法”，内穿长袖T恤，外搭轻便羽绒服或羊毛开衫，方便随时穿脱。<br>
+        • <strong>长辈出行必备：</strong> 舒适减震防滑运动鞋与轻便折叠雨伞。
+      `;
+    } else {
+      return `
+        ☀️ <strong>스페인 &amp; 이탈리아 날씨, 추천 시기 &amp; 부모님 옷차림 가이드</strong>:<br><br>
+        • <strong>가을/겨울 날씨 (10월~12월):</strong> 한국의 늦가을보다 훨씬 온화한 지중해성 기후(낮 기온 12~18℃)로 햇살이 따스해 걷기 좋습니다. 다만 일교차가 커 아침저녁으로는 쌀쌀합니다.<br>
+        • <strong>추천 옷차림:</strong> '양파 껍질식 레이어드 룩'이 정답입니다. 가벼운 긴팔 티셔츠 위에 경량 패딩이나 가디건을 겹쳐 입으셔서 기온에 맞게 쉽게 벗고 입으실 수 있게 챙겨주세요.<br>
+        • <strong>부모님 필수 준비물:</strong> 돌바닥 충격을 흡수하는 편안한 쿠션 운동화와 가벼운 3단 접이식 우산.
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 10-11. DUBAI STOPOVER & SAFARI
+  const isDubaiStopover = (
+    q.includes('경유') || q.includes('스톱오버') || q.includes('stopover') || q.includes('layover') ||
+    q.includes('짐 보관') || q.includes('수하물 보관') || q.includes('luggage') || q.includes('storage') ||
+    q.includes('24시간') || q.includes('24h') || q.includes('半日') || q.includes('一日') ||
+    ['ストップオーバー', '乗り継ぎ', '荷物預かり', '荷物一時預かり', '过境', '中转', '行李寄存', '24小时'].some(w => q.includes(w) || cleanQ.includes(w))
+  ) && (isDubai || q.includes('에미레이트') || q.includes('emirates') || q.includes('エミレーツ') || q.includes('阿联酋航空'));
+
+  if (isDubaiStopover) {
+    const chips = [
+      { query: '두바이 사막 사파리 부모님 주의사항과 복장', label: '🐪 사막 사파리 팁' },
+      { query: '두바이 맛집 추천해줘', label: '🍽️ 두바이 맛집' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🐪 <strong>ドバイ24時間ストップオーバー＆荷物預かり 完全ガイド</strong>:<br><br>
+        1️⃣ <strong>空港での荷物預かり（手ぶら観光）:</strong> ドバイ空港第3ターミナル到着ロビーに24時間対応の公認手荷物預かり所（Left Luggage）があります。<br>
+        2️⃣ <strong>シニア向け24時間ハイライトコース:</strong><br>
+        • 午前: ブルジュ・ハリファ（展望台）＆ドバイ・モール（冷房完備の平坦フロア）<br>
+        • 夕暮れ: ドバイ・ファウンテン噴水ショー鑑賞＆テ라스レストランでディナー
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🐪 <strong>Dubai 24h Stopover & Luggage Storage Master Guide</strong>:<br><br>
+        1️⃣ <strong>Airport Luggage Storage:</strong> Terminal 3 arrivals hall features a 24/7 official Left Luggage facility (~AED 40-50 per bag).<br>
+        2️⃣ <strong>Senior-Optimized 24h Route:</strong><br>
+        • Morning: Burj Khalifa & Dubai Mall (fully air-conditioned, elevator-equipped flat floors).<br>
+        • Evening: Dubai Fountain Show dinner overlooking the illuminated lake.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🐪 <strong>迪拜24小时过境游与行李寄存出行指南</strong>:<br><br>
+        1️⃣ <strong>机场行李寄存服务：</strong> 迪拜机场T3航站楼到达层设有24小时官方行李寄存处（Left Luggage）。<br>
+        2️⃣ <strong>长辈尊享24小时经典路线：</strong><br>
+        • 上午： 哈利法塔与迪拜购物中心（全空调环境，无障碍电梯齐全）。<br>
+        • 傍晚： 观赏迪拜音乐喷泉水舞秀并在湖畔露台餐厅享用丰盛晚宴。
+      `;
+    } else {
+      res = `
+        🐪 <strong>에미레이트 항공 두바이 24시간 스톱오버 &amp; 짐 보관 완벽 가이드</strong>:<br><br>
+        1️⃣ <strong>공항 짐 보관소 (Left Luggage):</strong> 두바이 공항 3터미널 입국장에 24시간 공식 수하물 보관소가 있어 큰 캐리어를 안전하게 맡기고 가벼운 복장으로 시내로 나갈 수 있습니다.<br>
+        2️⃣ <strong>부모님 맞춤 24시간 추천 동선:</strong><br>
+        • 오전: 버즈 할리파 전망대 &amp; 두바이 몰 (전 구역 에어컨 완비 및 완벽한 평지/엘리베이터)<br>
+        • 저녁: 두바이 분수쇼 명당 레스토랑에서 만찬 감상 후 공항 복귀
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  const isDubaiSafari = [
+    '사막', '사파리', '사막투어', '사막 사파리', '듄베이싱', 'desert', 'safari', 'dune', 'bashing',
+    '砂漠', 'サファリ', 'デザートサファリ', '砂漠ツアー', '沙漠', '冲沙', '沙漠冲沙', '沙漠游'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isDubaiSafari) {
+    const chips = [
+      { query: '두바이 24시간 스톱오버 추천 코스', label: '🐪 24h 스톱오버' },
+      { query: '두바이 맛집 추천해줘', label: '🍽️ 두바이 맛집' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🐪 <strong>ドバイ砂漠サファリ シニア同伴の注意点と服装</strong>:<br><br>
+        1️⃣ <strong>デューンバッシング（砂丘ドライブ）の免除要請:</strong> 激しい揺れを伴うため、ご両親は4WDの激しい走行をスキップし、平坦なルートで砂漠キャンプへ直行する「ジェントルサファリ」をお選びください。<br>
+        2️⃣ <strong>服装と持ち物:</strong> 砂が靴に入らないサンダルやスニーカー、日没後は砂漠の気温が急降下するため薄手の上着が必須です。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🐪 <strong>Dubai Desert Safari Senior Safety & Packing Guide</strong>:<br><br>
+        1️⃣ <strong>Opt Out of Aggressive Dune Bashing:</strong> Request a gentle scenic desert drive directly to the Bedouin heritage camp to safeguard senior spines and neck comfort.<br>
+        2️⃣ <strong>Evening Warmth:</strong> Desert temperatures drop rapidly after sunset—bring a light windbreaker or shawl.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🐪 <strong>迪拜沙漠冲沙长辈安全须知与着装建议</strong>:<br><br>
+        1️⃣ <strong>免去剧烈冲沙颠簸：</strong> 预订时务必选择温和的传统游览路线（Gentle Safari），直接前往贝都因营地享受日落与晚宴。<br>
+        2️⃣ <strong>温差防寒：</strong> 沙漠日落后气温骤降，务必随身携带防风外套或披肩。
+      `;
+    } else {
+      res = `
+        🐪 <strong>두바이 사막 사파리 부모님 동행 시 안전 수칙 &amp; 복장</strong>:<br><br>
+        1️⃣ <strong>듄배싱(급경사 모래언덕 질주) 건너뛰기:</strong> 허리와 목에 충격이 갈 수 있으므로, 예약 시 부모님은 부드러운 평지 주행으로 사막 캠프에 바로 도착하는 '젠틀 사파리' 코스를 선택하세요.<br>
+        2️⃣ <strong>일몰 후 보온 겉옷:</strong> 사막은 해가 지면 급격히 쌀쌀해지므로 가벼운 바람막이나 숄을 꼭 지참하세요.
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 10-12. CURRENCY & EXCHANGE INTENT
+  const isEuroCurrencyExchange = [
+    '유로 써', '유로 사용', '환전 어떻게', '화폐', '통화', '환전', '유로화',
+    'currency', 'euro', 'money exchange', 'use euro', '両替', '通貨', 'ユーロ', '货币', '换汇', '用欧元吗'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isEuroCurrencyExchange) {
+    const chips = [
+      { query: '트래블로그 카드 결제랑 현금 환전 비율', label: '💳 카드/환전 비율' },
+      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀 절차' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        💶 <strong>スペイン・イタリア・ポルトガルの通貨と両替公式</strong>:<br><br>
+        1️⃣ <strong>同一通貨ユーロ（EUR, €）:</strong> 3カ国とも共通通貨ユーロを使用しているため、国境を越えても再両替の必要が一切ありません。<br>
+        2️⃣ <strong>最もお得な決済手段:</strong> 手数料無料の海外決済カード（Apple Pay対応）を活用するのが最もお得で安全です。
+      `;
+    } else if (lang === 'en') {
+      res = `
+        💶 <strong>Spain, Italy & Portugal Currency & Exchange Guide</strong>:<br><br>
+        1️⃣ <strong>Single Currency Euro (EUR, €):</strong> All three nations belong to the Eurozone and Schengen area, requiring zero currency exchange when crossing borders.<br>
+        2️⃣ <strong>Optimal Payment Strategy:</strong> Zero-fee international contactless travel cards and Apple Pay offer optimal exchange rates without kiosk commissions.
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        💶 <strong>西班牙、意大利与葡萄牙 货币换汇指南</strong>:<br><br>
+        1️⃣ <strong>通用欧元（EUR, €）：</strong> 三国均属欧元区与申根区，跨国游玩无需重复换汇，畅行无阻。<br>
+        2️⃣ <strong>最佳刷卡方式：</strong> 优先使用免境外交易手续费的外币芯片卡或手机闪付，汇率最优且安全。
+      `;
+    } else {
+      res = `
+        💶 <strong>스페인 · 이탈리아 · 포르투갈 화폐 및 환전 안내</strong>:<br><br>
+        1️⃣ <strong>모두 동일한 유로(EUR, €) 사용:</strong> 스페인, 이탈리아, 포르투갈 모두 유로화를 공통으로 사용하여 국경을 넘나들 때마다 재환전할 필요가 전혀 없습니다.<br>
+        2️⃣ <strong>가장 유리한 결제:</strong> 트래블로그, 트래블월렛 등 수수료 우대 체크카드를 현지에서 바로 결제하시는 것이 은행 환전 수수료를 100% 아끼는 비결입니다.
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // 10-13. MENU DEL DIA INTENT
+  const isMenuDelDia = [
+    '메누 델 디아', '메뉴 델 디아', 'menu del dia', 'menú del día', '가성비 식당', '런치 메뉴', '점심 특선',
+    'lunch special', 'fixed price lunch', 'ランチメニュー', '日替わり定食', '午市套餐', '每日特餐'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isMenuDelDia) {
+    const chips = [
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+      { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' }
+    ];
+    let res = '';
+    if (lang === 'ja') {
+      res = `
+        🥘 <strong>スペインの神コスパランチ「メヌ・デル・ディア（Menú del Día）」活用術</strong>:<br><br>
+        • <strong>構成:</strong> 前菜（プリメル・プラト）＋主菜（セグンド・プラト）＋パン＋デザート＋ワイン1杯（または水）のフルセット！<br>
+        • <strong>価格相場:</strong> 1人あたり <strong>約€12〜€18</strong>（アラカルト注文の半額以下）<br>
+        • <strong>提供時間:</strong> 平日のランチタイム（13:30〜16:00限定）
+      `;
+    } else if (lang === 'en') {
+      res = `
+        🥘 <strong>Spain's Ultimate Lunch Value: Menú del Día</strong>:<br><br>
+        • <strong>What's Included:</strong> First Course (starter) + Second Course (meat/fish) + Crusty Bread + Dessert + Beverage (entire glass or half bottle of wine / beer / water)!<br>
+        • <strong>Price Range:</strong> Incredible value at <strong>€12–€18 per person</strong>.<br>
+        • <strong>Timing:</strong> Weekdays during Spanish lunch hours (1:30 PM – 4:00 PM).
+      `;
+    } else if (lang === 'zh') {
+      res = `
+        🥘 <strong>西班牙超高性价比“今日每日特餐（Menú del Día）”攻略</strong>:<br><br>
+        • <strong>套餐包含：</strong> 头盘（汤或沙拉）＋ 主菜（牛排或鲜鱼）＋ 面包 ＋ 甜点 ＋ 饮品（红酒整瓶或啤酒矿泉水）！<br>
+        • <strong>价格参考：</strong> 仅需 <strong>€12~€18 欧元/人</strong>。<br>
+        • <strong>供餐时间：</strong> 工作日午餐时段（13:30~16:00）。
+      `;
+    } else {
+      res = `
+        🥘 <strong>스페인의 초특급 가성비 점심 코스 '메누 델 디아(Menú del Día)'</strong>:<br><br>
+        • <strong>알찬 코스 구성:</strong> 에피타이저(전채) + 메인 고기/생선 요리 + 빵 + 디저트 + 와인 1병(또는 음료/물)까지 전부 포함!<br>
+        • <strong>가격:</strong> 1인당 단돈 <strong>€12 ~ €18 (약 1만 8천원~2만 6천원)</strong><br>
+        • <strong>이용 시간:</strong> 평일 점심시간 (13:30 ~ 16:00)에 식당 입구 칠판에 적힌 'Menú del Día'를 확인하세요!
+      `;
+    }
+    return res + renderFollowupChips(chips);
+  }
+
+  // General Transit Fallback if 'isTransit' wasn't matched above
+  if (isTransit) {
+    const chips = [
+      { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' },
+      { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
+      { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' }
+    ];
+    if (lang === 'ja') {
+      return `
+        🚆 <strong>スペイン＆イタリア 都市間高速鉄道・公共交通のコツ</strong>:<br><br>
+        • 🇪🇸 <strong>スペイン:</strong> iryo / Renfe AVE 高速鉄道でマドリード ↔ バルセロナ約2時間30分直通。<br>
+        • 🇮🇹 <strong>イタリア:</strong> Frecciarossa / Italo 高速鉄道でフィレンツェ ↔ ローマ約1時間35分直通。<br>
+        • 🚖 <strong>シニア移動の知恵:</strong> 重い荷物や階段を避けるため、市内移動にはUberやFREE NOW配車アプリを活用すればドア・ツー・ドアで快適に移動できます！
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        🚆 <strong>Spain & Italy Intercity High-Speed Rail & City Transit Tips</strong>:<br><br>
+        • 🇪🇸 <strong>Spain:</strong> iryo and Renfe AVE link Madrid and Barcelona in 2 hrs 30 mins direct.<br>
+        • 🇮🇹 <strong>Italy:</strong> Frecciarossa and Italo link Florence and Rome in 1 hr 35 mins direct.<br>
+        • 🚖 <strong>Door-to-Door Rideshare:</strong> For families of 3+, utilizing Uber or FREE NOW taxis for short 3–5km city transfers spares subway stairs and pickpocket risks!
+      `;
+    } else if (lang === 'zh') {
+      return `
+        🚆 <strong>西意城际高铁与市内公共交通指南</strong>:<br><br>
+        • 🇪🇸 <strong>西班牙：</strong> iryo 与 Renfe AVE 高铁连接马德里与巴塞罗那仅需2小时30分钟。<br>
+        • 🇮🇹 <strong>意大利：</strong> 意铁红箭与法拉利Italo连接佛罗伦萨与罗马仅需1小时35分钟。<br>
+        • 🚖 <strong>长辈出行打车贴士：</strong> 3人以上同行建议多用 Uber 与 FREE NOW 叫车，免去地铁爬楼梯劳顿。
+      `;
+    } else {
+      return `
+        🚆 <strong>스페인 &amp; 이탈리아 고속철도 및 시내 교통 필수 이동 팁</strong>:<br><br>
+        • 🇪🇸 <strong>스페인:</strong> 이료(iryo) 및 렌페 AVE 고속열차로 바르셀로나 ↔ 마드리드 2시간 30분 직통.<br>
+        • 🇮🇹 <strong>이탈리아:</strong> 이탈로(Italo) 및 프레차로사로 피렌체 ↔ 로마 1시간 35분, 나폴리 ↔ 피렌체 2시간 50분 직통.<br>
+        • 🚖 <strong>부모님 맞춤 시내 이동:</strong> 3인 이상 가족은 무거운 짐을 들고 계단을 오르내리지 마시고 <strong>우버 또는 FREE NOW 앱 택시</strong>를 타시면 문 앞까지 안전하고 편안하게 모셔다드립니다!
+      `;
+    }
+  }
+
+  // ====================================================
+  // 11. GENERAL FALLBACK WELCOME RESPONSE
+  // ====================================================
   const fallbackChips = [
-    { query: '바르셀로나에서 마드리드 어떻게 가?', label: '🚆 바르셀로나 ➔ 마드리드' },
-    { query: '마드리드에서 리스본 어떻게 가?', label: '✈️ 마드리드 ➔ 리스본 이동' },
-    { query: '포르투갈 대표 음식 추천', label: '🥧 포르투갈 대표 음식' },
-    { query: '스페인 포르투갈 환전 어떻게 해?', label: '💶 유로 환전 및 결제' },
-    { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전 수칙' }
+    { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+    { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+    { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
+    { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' },
+    { query: '성당 복장 규정 알려줘', label: '⛪ 성당 복장 규정' },
+    { query: '소매치기 예방법 알려줘', label: '🚨 소매치기 안전' }
   ];
 
   if (lang === 'ja') {
     return `
       😊 <strong>旅行に関するご質問に何でもお答えいたします！</strong><br><br>
-      都市間の高速鉄道ルート（バルセロナ↔マドリード、マドリード↔リスボン等）や、現地のおすすめグルメ、気候・服装、安全情報、旅行予算など、何回でも続けてご質問いただけます。<br><br>
-      💡 <strong>気になるテーマをクリックするか、自由に入力してください:</strong>
+      30日マスタープランナー（9大確定ホテル＆6大交通公式）、7大都市の代替不可名物料理、24選サバイバル会話、イタリア高速鉄道や大聖堂の服装規定、スリ対策、リアルタイム予算など、何回でも続けてご質問いただけます。<br><br>
+      💡 <strong>気になるテーマを下記から選ぶか、自由に質問をご入力ください：</strong>
     ` + renderFollowupChips(fallbackChips);
   } else if (lang === 'en') {
     return `
-      😊 <strong>I'm here to assist with every step of your journey!</strong><br><br>
-      You can ask me continuous questions about city-to-city routes (e.g. Barcelona to Madrid, Madrid to Lisbon), local dining, ticket reservations, weather, safety, and budgets anytime.<br><br>
-      💡 <strong>Try clicking any topic below or type your question:</strong>
+      😊 <strong>I am always here to assist your European journey!</strong><br><br>
+      Ask me about the 30-Day Master Planner (9 confirmed accommodations & 6 golden transit formulas), signature dishes beyond paella and pizza, 24 dining & travel survival phrases, Italy high-speed trains, cathedral dress codes, or pickpocket safety.<br><br>
+      💡 <strong>Click a quick topic below or type your question:</strong>
     ` + renderFollowupChips(fallbackChips);
   } else if (lang === 'zh') {
     return `
-      😊 <strong>随时为您提供伊比利亚与迪拜旅行全方位解答！</strong><br><br>
-      您可以连续向我咨询城市间交通路线（如巴塞罗那到马德里、马德里到里斯本等）、特色美食名店、天气与穿衣、防盗安全或旅行预算等任何问题。<br><br>
+      😊 <strong>随时为您提供欧洲家庭旅行全方位解答！</strong><br><br>
+      您可以向我咨询30天大师规划师（9大确定酒店与6大交通公式）、除海鲜饭和披萨外的特色美食名店、24句常用生存口语、意大利高铁乘车避坑、大教堂着装规定、防盗安全或旅行预算等任何问题。<br><br>
       💡 <strong>请点击下方推荐话题或直接输入您的问题：</strong>
     ` + renderFollowupChips(fallbackChips);
   } else {
     return `
-      😊 <strong>이베리아 & 두바이 여행에 관한 모든 질문을 환영합니다!</strong><br><br>
-      도시 간 이동 경로(바르셀로나↔마드리드, 마드리드↔리스본 등), 현지 대표 맛집, 11~12월 날씨 및 옷차림, 소매치기 안전 수칙, 여행 총 예산까지 몇 번이든 계속 질문하실 수 있습니다.<br><br>
+      😊 <strong>여행에 대해 무엇이든 편하게 물어보세요!</strong><br><br>
+      스페인 &amp; 이탈리아 30일 마스터 플래너(9대 확정 숙소 &amp; 6대 교통 공식), 빠에야·피자 외 12대 대체 불가 미식, 24선 필수 서바이벌 회화, 이탈리아 고속철도 &amp; 성당 복장 규정, 15대 야경 명소, 소매치기 예방법 등 모든 궁금증을 즉시 답변해 드립니다.<br><br>
       💡 <strong>아래 추천 질문을 누르시거나 궁금한 점을 자유롭게 입력해 보세요:</strong>
     ` + renderFollowupChips(fallbackChips);
   }
 }
+
 
 
 // Attach event listener for Chat Form on load

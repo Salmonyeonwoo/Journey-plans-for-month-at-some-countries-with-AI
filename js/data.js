@@ -17334,120 +17334,111 @@ const I18N_DICTIONARY = {
 
 var CHATBOT_I18N = {
   ko: {
-    title: "이베리아 & 두바이 AI 메이트",
+    title: "스페인 · 이탈리아 · 포르투갈 · 두바이 AI 메이트",
     status: "실시간 로컬 AI (오프라인 지원)",
-    placeholder: "질문을 입력하세요 (예: 포르투갈 맛있는 음식, 11월 날씨, 쇼핑, 예산)...",
+    placeholder: "질문을 입력하세요 (예: 30일 마스터 플래너, 이탈리아 기차, 빠에야 외 미식, 성당 복장)...",
     tooltip: "AI 여행 챗봇 열기",
-    welcome: `안녕하세요! <strong>이베리아 & 두바이 가족 여행 전담 로컬 AI 가이드</strong>입니다. ✈️<br><br>
-외부 API 호출 없이 브라우저 내 엄선 데이터(맛집, 관광 명소, 맞춤 플래너 실시간 예산)를 바탕으로 자연스럽고 친절하게 답변해 드립니다.<br><br>
+    welcome: `안녕하세요! <strong>스페인 · 이탈리아 · 포르투갈 · 두바이 가족 여행 전담 로컬 AI 가이드</strong>입니다. ✈️<br><br>
+외부 API 호출 없이 브라우저 내 엄선 데이터(<strong>30일 마스터 플래너 9대 확정 숙소 & 6대 교통 공식</strong>, <strong>7대 도시 12대 대체불가 미식</strong>, <strong>24선 필수 서바이벌 회화</strong>, 이탈리아 고속철도 & 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)를 바탕으로 자연스럽고 친절하게 답변해 드립니다.<br><br>
 궁금하신 점을 편하게 질문해 보세요!<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
-  💡 예: <em>"포르투갈에서 제일 유명한 음식은?", "스페인 쇼핑 기념품 추천", "11~12월 가장 안 추운 시기는?", "소매치기 예방법"</em>
+  💡 예: <em>"30일 마스터 플래너 요약해줘", "나폴리에서 피렌체 어떻게 가?", "빠에야 피자 말고 다른 음식 추천", "성당 복장 규정", "소금 빼주세요 스페인어/이탈리아어"</em>
 </span>`,
     chips: [
-      { text: "🚌 마드리드 ➔ 리스본 이동법", q: "마드리드에서 리스본 어떻게 가?" },
-      { text: "💶 스페인 포르투갈 환전/통화", q: "스페인 포르투갈 환전 어떻게 해? 유로 써?" },
-      { text: "🥧 포르투갈 대표 음식", q: "포르투갈에서 제일 유명하고 맛있는 음식은 뭐야?" },
-      { text: "🎁 쇼핑 & 추천 선물", q: "스페인 포르투갈 쇼핑 기념품 추천해줘" },
-      { text: "📅 11~12월 추천 시기/날씨", q: "스페인 ~ 포르투갈 가기에 11월 ~ 12월 중에 가장 안 추울 만한 적정한 시기는?" },
-      { text: "🍽️ 두바이 맛집", q: "두바이 맛집 추천해줘" },
-      { text: "🚨 소매치기/치안 예방", q: "소매치기 예방법과 치안 안전 수칙 알려줘" },
-      { text: "🦽 부모님 평지/휠체어", q: "부모님 모시고 가기 좋은 평지 휠체어 명소 알려줘" },
-      { text: "🚆 렌페/교통 팁", q: "렌페 기차 타는 법과 시내 택시/우버 이동 팁" },
-      { text: "💳 카드/환전/팁", q: "트래블로그 카드 결제랑 현금 환전 얼마나 필요해?" },
-      { text: "🛍️ 텍스리펀 방법", q: "스페인 공항 텍스리펀 절차 알려줘" },
-      { text: "💰 총 여행 예산", q: "현재 여행 총 예상 경비와 예산 얼마야?" },
-      { text: "🧂 소금 빼주세요", q: "식당에서 소금 빼주세요 스페인어로 뭐야?" },
-      { text: "🐪 사막 사파리 팁", q: "두바이 사막 사파리 부모님 주의사항과 복장" },
-      { text: "🐪 두바이 24h 스톱오버 팁", q: "에미레이트 항공 두바이 경유 24시간 스톱오버 추천 코스 & 짐 보관 방법" }
+      { text: "📅 30일 마스터 플래너 & 9대 숙소", q: "스페인 이탈리아 30일 마스터 플래너와 9대 확정 숙소 요약해줘" },
+      { text: "🚆 6대 황금 교통 공식", q: "도시 간 6대 황금 교통 공식과 이동 시간 알려줘" },
+      { text: "🍽️ 빠에야·피자 외 12대 미식", q: "빠에야 피자 말고 다른 음식 추천해줘" },
+      { text: "🗣️ 24선 필수 생존 회화", q: "식당과 여행에서 꼭 쓰는 24선 필수 생존 회화 알려줘" },
+      { text: "🚄 이탈리아 기차 & 펀칭 주의사항", q: "이탈리아 기차 예매 팁과 펀칭(Convalida) 벌금 주의사항" },
+      { text: "⛪ 성당 복장 규정 & 카프리 팁", q: "성당 복장 규정과 카프리 섬 페리 푸른 동굴 팁" },
+      { text: "🌃 15대 야경 & 축제 가이드", q: "스페인 이탈리아 15대 야경 명소와 엄선 축제 추천" },
+      { text: "👵 부모님 평지 동선 & 시니어 케어", q: "부모님 모시고 가기 좋은 평지 휠체어 명소와 시니어 케어 팁" },
+      { text: "🚨 소매치기 예방법 & 치안 수칙", q: "소매치기 예방법과 치안 안전 수칙 알려줘" },
+      { text: "💳 트래블로그 카드/환전/팁", q: "트래블로그 카드 결제랑 현금 환전 얼마나 필요해?" },
+      { text: "🛍️ 스페인·이탈리아 쇼핑 선물", q: "스페인 이탈리아 포르투갈 쇼핑 기념품 추천해줘" },
+      { text: "💧 마트 생수 구별법 (Sin vs Con)", q: "스페인 마트 생수 구별법 알려줘 (sin gas vs con gas)" },
+      { text: "🐫 두바이 24h 스톱오버 팁", q: "에미레이트 항공 두바이 경유 24시간 스톱오버 추천 코스 & 짐 보관 방법" }
     ]
   },
   en: {
-    title: "Iberia & Dubai AI Travel Mate",
+    title: "Spain · Italy · Portugal · Dubai AI Travel Mate",
     status: "Real-time Local AI (Offline Ready)",
-    placeholder: "Ask anything (e.g., popular Portuguese food, weather, souvenirs, budget)...",
+    placeholder: "Ask anything (e.g., 30-day master planner, Italy trains, food other than pizza, dress code)...",
     tooltip: "Open AI Travel Assistant",
-    welcome: `Hello! I am your <strong>Iberia & Dubai Family Travel AI Companion</strong>. ✈️<br><br>
-Instant answers powered 100% by local curated data (signature cuisine, top attractions, live planner budget) without any external API calls.<br><br>
+    welcome: `Hello! I am your <strong>Spain · Italy · Portugal · Dubai Family Travel AI Companion</strong>. ✈️<br><br>
+Instant answers powered 100% by local curated data (<strong>30-Day Master Planner with 9 Confirmed Hotels & 6 Golden Transit Formulas</strong>, <strong>7 Cities 12 Signature Dishes</strong>, <strong>24 Essential Survival Phrases</strong>, Italy High-Speed Rail & Cathedral Dress Protocol, 15 Night Views, and Real-Time Budget) without any external API calls.<br><br>
 Feel free to ask any travel question!<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
-  💡 e.g.: <em>"What is the most popular food in Portugal?", "What souvenirs should I buy?", "When is the best period to visit?", "Pickpocket tips"</em>
+  💡 e.g.: <em>"Summarize the 30-day master planner", "How to get from Naples to Florence?", "Food recommendations other than paella or pizza", "Cathedral dress code", "How to say less salt in Spanish/Italian"</em>
 </span>`,
     chips: [
-      { text: "🚌 Madrid ➔ Lisbon Route", q: "how to get from Madrid to Lisbon?" },
-      { text: "💶 Spain & Portugal Currency", q: "do Spain and Portugal use the same currency euro?" },
-      { text: "🥧 Portugal Must-Eats", q: "What is the most popular food in Portugal?" },
-      { text: "🎁 Top Souvenirs & Shopping", q: "What souvenirs should I buy in Spain and Portugal?" },
-      { text: "📅 Best Period (Nov-Dec)", q: "when is the best period for any tourists to go to Portugal? Where's the best place?" },
-      { text: "🍽️ Dubai Dining", q: "best restaurants and food recommendation in Dubai" },
-      { text: "🚨 Pickpocket & Safety", q: "pickpocket precautions and safety tips in Spain and Portugal" },
-      { text: "💧 Supermarket Water (Sin vs Con)", q: "how to buy bottled water in Spain (sin gas vs con gas)?" },
-      { text: "🦽 Senior Barrier-Free", q: "best barrier-free wheelchair accessible spots for elderly parents" },
-      { text: "🚆 Renfe Train & Uber", q: "how to take Renfe train and city Uber taxi tips" },
-      { text: "💳 Cards / Cash / Tipping", q: "how much cash to bring and card payment tipping culture" },
-      { text: "🛍️ Airport Tax Refund", q: "how to get tax refund at Spain airports DIVA kiosk" },
-      { text: "💰 Total Trip Budget", q: "what is the total budget for this trip?" },
-      { text: "🧂 Less Salt (Sin Sal)", q: "how to say less salt please in Spanish and Portuguese?" },
-      { text: "🐪 Desert Safari Tips", q: "Dubai desert safari tips and dress code for seniors" },
-      { text: "🐪 Dubai 24h Stopover Tip", q: "Emirates Airlines Dubai 24h Stopover Itinerary & Luggage Storage" }
+      { text: "📅 30-Day Master Planner & 9 Hotels", q: "Summarize the Spain & Italy 30-day master planner and 9 confirmed accommodations" },
+      { text: "🚆 6 Golden Transit Formulas", q: "What are the 6 golden intercity transit formulas and travel times?" },
+      { text: "🍽️ 12 Signature Dishes Beyond Paella/Pizza", q: "Food recommendations other than paella and pizza" },
+      { text: "🗣️ 24 Essential Survival Phrases", q: "Tell me the 24 essential dining and travel survival phrases in Spanish and Italian" },
+      { text: "🚄 Italy High-Speed Trains & Validation", q: "Italy train booking tips, Italo vs Trenitalia, and ticket validation (Convalida) rules" },
+      { text: "⛪ Cathedral Dress Code & Capri Ferry", q: "Cathedral dress protocol and Capri island ferry tips" },
+      { text: "🌃 15 Top Night Views & Festivals", q: "Recommend top 15 panoramic night views and festivals in Spain and Italy" },
+      { text: "👵 Senior Care & Barrier-Free Sights", q: "Best barrier-free wheelchair accessible spots for elderly parents" },
+      { text: "🚨 Pickpocket & Safety Precautions", q: "Pickpocket precautions and safety tips in Spain and Italy" },
+      { text: "💳 Contactless Card & Cash Exchange", q: "Card payment tipping culture and how much cash to bring" },
+      { text: "🛍️ Spain & Italy Souvenir Shopping", q: "Top souvenirs and shopping recommendations in Spain and Italy" },
+      { text: "💧 Bottled Water (Sin vs Con Gas)", q: "How to buy bottled water in Spain (sin gas vs con gas)" },
+      { text: "🐫 Dubai 24h Stopover Guide", q: "Emirates Airlines Dubai 24h Stopover Itinerary & Luggage Storage" }
     ]
   },
   ja: {
-    title: "イベリア＆ドバイ AIトラベルメイト",
+    title: "スペイン・イタリア・ポルトガル・ドバイ AIトラベルメイト",
     status: "リアルタイムローカルAI (オフライン対応)",
-    placeholder: "質問を入力 (例: ポルトガルの名物料理, ベストシーズン, お土産, 予算)...",
+    placeholder: "質問を入力 (例: 30日マスタープランナー, イタリア鉄道, ピザ以外の絶品グルメ, 教会服装)...",
     tooltip: "AI旅行アシスタントを開く",
-    welcome: `こんにちは！<strong>イベリア＆ドバイ家族旅行専属AIコンシェルジュ</strong>です。✈️<br><br>
-外部APIを使わず、ブラウザ内の厳選データ（名物グルメ、観光名所、リアルタイム予算）に基づいて自然かつ丁寧にお答えします。<br><br>
+    welcome: `こんにちは！<strong>スペイン・イタリア・ポルトガル・ドバイ家族旅行専属AIコンシェルジュ</strong>です。✈️<br><br>
+外部APIを使わず、ブラウザ内の厳選データ（<strong>30日マスタープランナー 9大確定ホテル＆6大交通公式</strong>、<strong>7大都市 12大代替不可グルメ</strong>、<strong>24選必須サバイバル会話</strong>、イタリア高速鉄道＆大聖堂ドレスコード、15大パノラマ夜景、リアルタイム予算）に基づいて自然かつ丁寧にお答えします。<br><br>
 旅の疑問やお悩みをお気軽にご質問ください！<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
-  💡 例: <em>「ポルトガルで一番人気がある食べ物は？」「スペインのお土産」「ベストシーズンと気候」「スリ対策」</em>
+  💡 例: <em>「30日マスタープランナーを要約して」「ナポリからフィレンツェへの移動方法」「パエリアやピザ以外のおすすめ名物」「教会の服装規定」「薄味・塩控えめの注文方法」</em>
 </span>`,
     chips: [
-      { text: "🚌 マドリード ➔ リスボン移動法", q: "マドリードからリスボンへの行き方は？" },
-      { text: "💶 スペイン・ポルトガル通貨＆両替", q: "スペインとポルトガルで両替やユーロはどうすればいい？" },
-      { text: "🥧 ポルトガル名物料理", q: "ポルトガルで一番人気がある食べ物は？" },
-      { text: "🎁 お土産＆ショッピング", q: "ポルトガルやスペインのおすすめのお土産は？" },
-      { text: "📅 11〜12月 ベストシーズン", q: "ポルトガル旅行のベストシーズンと気候、おすすめの場所は？" },
-      { text: "🍽️ ドバイ おすすめグルメ", q: "ドバイのおすすめ名物料理とレストランを教えて" },
+      { text: "📅 30日マスタープランナー＆9大ホテル", q: "スペイン・イタリア30日マスタープランナーと9大確定ホテルの要約を教えて" },
+      { text: "🚆 6大黄金交通公式（都市間移動）", q: "都市間を結ぶ6大黄金交通公式と所要時間を教えて" },
+      { text: "🍽️ パエリア・ピザ以外の12大名物", q: "パエリアやピザ以外のおすすめ料理を教えて" },
+      { text: "🗣️ 24選 必須サバイバル会話", q: "レストランや旅行で使えるスペイン語・イタリア語の24大必須フレーズ" },
+      { text: "🚄 イタリア鉄道＆打刻注意点", q: "イタリア鉄道予約のコツと切符の打刻（Convalida）罰金注意点" },
+      { text: "⛪ 教会ドレスコード＆カプリ島", q: "大聖堂の服装規定とカプリ島フェリー・青の洞窟のコツ" },
+      { text: "🌃 15大パノラマ夜景＆厳選祭り", q: "スペインとイタリアのおすすめ夜景スポットと祭り情報" },
+      { text: "👵 バリアフリー・シニア安心旅", q: "両親と行く平坦で車椅子対応の観光スポットとシニアケアのコツ" },
       { text: "🚨 スリ対策・治安ガイド", q: "スリ対策と治安の注意点を教えて" },
-      { text: "🦽 バリアフリー・車椅子", q: "両親と行く平坦で車椅子対応の観光スポットは？" },
-      { text: "🚆 レンフェ列車・交通", q: "レンフェ列車の乗り方とUberタクシー活用法" },
-      { text: "💳 カード決済・チップ", q: "クレジットカード利用と現金両替、チップ文化について" },
-      { text: "🛍️ 空港免税手続き", q: "スペイン空港でのタックスリファンド手続き方法" },
-      { text: "💰 旅行予算の総額", q: "現在の旅行の総予算と費用の内訳は？" },
-      { text: "🧂 塩分控えめ注文", q: "スペイン語で塩分控えめ・薄味はどう言う？" },
-      { text: "🐪 砂漠サファリ注意点", q: "ドバイの砂漠サファリの注意点と服装" },
-      { text: "🐪 ドバイ24時間乗継ぎのコツ", q: "エミレーツ航空ドバイ経由 24時間ストップオーバー推奨コース＆荷物預かり" }
+      { text: "💳 カード決済・チップ・両替", q: "クレジットカード利用と現金両替、チップ文化について" },
+      { text: "🛍️ スペイン・イタリアお土産", q: "スペインやイタリアのおすすめのお土産・ショッピング" },
+      { text: "💧 ミネラルウォーター（炭酸有無）", q: "スーパーでの水の見分け方（炭酸水と普通の水）" },
+      { text: "🐫 ドバイ24時間乗継ぎのコツ", q: "エミレーツ航空ドバイ経由 24時間ストップオーバー推奨コース＆荷物預かり" }
     ]
   },
   zh: {
-    title: "伊比利亚与迪拜 AI旅行助手",
+    title: "西班牙 · 意大利 · 葡萄牙 · 迪拜 AI旅行助手",
     status: "实时本地AI (支持离线使用)",
-    placeholder: "请输入问题 (例: 葡萄牙代表美食, 最佳旅游时间, 伴手礼, 预算)...",
+    placeholder: "请输入问题 (例: 30天大师规划, 意大利高铁, 披萨外招牌美食, 教堂着装)...",
     tooltip: "打开AI旅行助手",
-    welcome: `您好！我是您的<strong>伊比利亚与迪拜家庭旅行AI向导</strong>。✈️<br><br>
-无需调用外部API，完全基于本地精选数据库（特色美食、标志景点、实时定制预算）即刻为您智能自然地解答。<br><br>
+    welcome: `您好！我是您的<strong>西班牙 · 意大利 · 葡萄牙 · 迪拜家庭旅行AI向导</strong>。✈️<br><br>
+无需调用外部API，完全基于本地精选数据库（<strong>30天大师规划师 9大确定酒店与6大交通公式</strong>、<strong>7大城市 12大特色招牌美食</strong>、<strong>24句用餐与旅行生存口语</strong>、意大利高铁换乘与大教堂着装规范、15大璀璨夜景、实时定制预算）即刻为您智能自然地解答。<br><br>
 欢迎随时提问！<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
-  💡 例如：<em>“葡萄牙最受欢迎的特色美食是什么？”、“西班牙买什么伴手礼”、“什么时候去葡萄牙最合适？”、“防盗防偷攻略”</em>
+  💡 例如：<em>“总结30天大师规划师行程”、“从那不勒斯到佛罗伦萨怎么走”、“除海鲜饭和披萨外的特色美食”、“大教堂着装规定要求”、“少放盐意大利语西语怎么说”</em>
 </span>`,
     chips: [
-      { text: "🚌 马德里 ➔ 里斯本交通", q: "从马德里去里斯本怎么走？" },
-      { text: "💶 西班牙与葡萄牙货币换汇", q: "西班牙和葡萄牙需要换汇吗？都用欧元吗？" },
-      { text: "🥧 葡萄牙代表美食", q: "葡萄牙最受欢迎的特色美食是什么？" },
-      { text: "🎁 必买特产伴手礼", q: "西班牙和葡萄牙买什么纪念品伴手礼？" },
-      { text: "📅 最佳旅游时间", q: "什么时候去葡萄牙旅游最合适？最值得去的地方是哪里？" },
-      { text: "🍽️ 迪拜特色美食", q: "推荐迪拜必吃特色餐厅和传统美食" },
-      { text: "🚨 防盗安全攻略", q: "西班牙和葡萄牙防盗防偷攻略与治安注意事项" },
-      { text: "🦽 父母无障碍景点", q: "推荐适合带父母长辈游玩的无障碍平地景点" },
-      { text: "🚆 高铁Renfe出行", q: "西班牙高铁Renfe乘坐与城市Uber打车攻略" },
-      { text: "💳 刷卡支付与小费", q: "欧洲刷卡消费、现金换汇与小费文化指南" },
-      { text: "🛍️ 机场退税流程", q: "西班牙机场DIVA自助退税办理流程" },
-      { text: "💰 全程总预算", q: "当前旅行定制规划的总预算是多少？" },
-      { text: "🧂 少盐点餐西语", q: "在西餐厅少放盐的西班牙语怎么说？" },
-      { text: "🐪 沙漠冲沙贴士", q: "迪拜沙漠冲沙长辈注意事项与着装要求" },
-      { text: "🐪 迪拜24小时过境游", q: "阿联酋航空迪拜经停 24小时过境游推荐路线与行李寄存" }
+      { text: "📅 30天大师规划与9大确定酒店", q: "总结西班牙与意大利30天大师规划师和9大确定住宿酒店" },
+      { text: "🚆 6大黄金交通公式", q: "城市间6大黄金交通出行公式与耗时是怎样的？" },
+      { text: "🍽️ 海鲜饭/披萨外12大招牌美食", q: "除西班牙海鲜饭和披萨外还有什么不可错过的特色美食推荐？" },
+      { text: "🗣️ 24句西语意语生存常用语", q: "点餐与旅行必用的24句西语和意大利语生存口语" },
+      { text: "🚄 意大利高铁与检票打票避坑", q: "意大利高铁意铁法拉利订票攻略与检票打票（Convalida）罚款防坑" },
+      { text: "⛪ 大教堂着装规定与卡普里轮渡", q: "大教堂着装规定要求与卡普里岛轮渡蓝洞游览贴士" },
+      { text: "🌃 15大经典夜景与民俗节日", q: "推荐西班牙与意大利15大绝美全景夜景与特色节日" },
+      { text: "👵 父母平地无障碍与长辈呵护", q: "适合带父母长辈游玩的无障碍平地景点与长辈照料贴士" },
+      { text: "🚨 防盗防偷全方位安全攻略", q: "西班牙和意大利防盗防偷攻略与治安注意事项" },
+      { text: "💳 刷卡支付换汇与小费指南", q: "欧洲刷卡消费、现金换汇与小费文化指南" },
+      { text: "🛍️ 西意必买特色特产伴手礼", q: "西班牙与意大利必买特色纪念品与伴手礼推荐" },
+      { text: "💧 超市选购矿泉水（含气不含气）", q: "西班牙和意大利超市矿泉水选购区分（无气水 vs 气泡水）" },
+      { text: "🐫 迪拜24小时过境游攻略", q: "阿联酋航空迪拜经停 24小时过境游推荐路线与行李寄存" }
     ]
   }
 };
