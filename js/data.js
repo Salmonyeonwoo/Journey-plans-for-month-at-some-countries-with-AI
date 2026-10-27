@@ -14611,6 +14611,58 @@ const CLEAN_PHRASES_DATA = [
     "phrases": [
       {
         "category": "dining",
+        "original": "Sin azúcar, por favor.",
+        "ko_pron": "신 아수카르, 포르 파보르",
+        "ko_meaning": "설탕 빼주세요 (노슈가 / 달지 않게)",
+        "en_meaning": "No sugar, please",
+        "ja_meaning": "砂糖抜きでお願いします",
+        "zh_meaning": "请不要加糖 / 免糖",
+        "original_ja": "Sin azúcar, por favor.",
+        "original_en": "Sin azúcar, por favor.",
+        "original_zh": "Sin azúcar, por favor.",
+        "original_ko": "Sin azúcar, por favor."
+      },
+      {
+        "category": "dining",
+        "original": "Agua caliente, por favor.",
+        "ko_pron": "아구아 칼리엔테, 포르 파보르",
+        "ko_meaning": "따뜻한 물(온수) 한 잔 주세요",
+        "en_meaning": "Hot / warm water, please",
+        "ja_meaning": "お湯（温かいお水）をお願いします",
+        "zh_meaning": "请给我一杯温开水 / 热水",
+        "original_ja": "Agua caliente, por favor.",
+        "original_en": "Agua caliente, por favor.",
+        "original_zh": "Agua caliente, por favor.",
+        "original_ko": "Agua caliente, por favor."
+      },
+      {
+        "category": "shopping",
+        "original": "¿Cuánto cuesta esto?",
+        "ko_pron": "콴토 쿠에스타 에스토?",
+        "ko_meaning": "이거 얼마인가요?",
+        "en_meaning": "How much is this?",
+        "ja_meaning": "これはいくらですか？",
+        "zh_meaning": "这个多少钱？",
+        "original_ja": "¿Cuánto cuesta esto?",
+        "original_en": "¿Cuánto cuesta esto?",
+        "original_zh": "¿Cuánto cuesta esto?",
+        "original_ko": "¿Cuánto cuesta esto?"
+      },
+      {
+        "category": "dining",
+        "original": "Para llevar, por favor.",
+        "ko_pron": "파라 예바르, 포르 파보르",
+        "ko_meaning": "남은 음식 포장해 주세요",
+        "en_meaning": "To go / Takeout, please",
+        "ja_meaning": "持ち帰りでお願いします",
+        "zh_meaning": "请帮我打包带走",
+        "original_ja": "Para llevar, por favor.",
+        "original_en": "Para llevar, por favor.",
+        "original_zh": "Para llevar, por favor.",
+        "original_ko": "Para llevar, por favor."
+      },
+      {
+        "category": "dining",
         "original": "Sin sal, por favor.",
         "ko_pron": "신 살, 포르 파보르",
         "ko_meaning": "소금 적게(빼고) 넣어주세요 (어르신 저염식 필수)",
@@ -14932,6 +14984,58 @@ const CLEAN_PHRASES_DATA = [
     "regionDesc": "이탈리아(로마·피렌체·베네치아·밀라노)",
     "locale": "it-IT",
     "phrases": [
+      {
+        "category": "dining",
+        "original": "Senza zucchero, per favore.",
+        "ko_pron": "센차 주케로, 페르 파보레",
+        "ko_meaning": "설탕 빼주세요 (무설탕)",
+        "en_meaning": "Without sugar, please",
+        "ja_meaning": "砂糖なしでお願いします",
+        "zh_meaning": "请不要放糖 / 无糖",
+        "original_ja": "Senza zucchero, per favore.",
+        "original_en": "Senza zucchero, per favore.",
+        "original_zh": "Senza zucchero, per favore.",
+        "original_ko": "Senza zucchero, per favore."
+      },
+      {
+        "category": "dining",
+        "original": "Acqua calda, per favore.",
+        "ko_pron": "아콰 칼다, 페르 파보레",
+        "ko_meaning": "따뜻한 물 부탁합니다",
+        "en_meaning": "Warm water, please",
+        "ja_meaning": "温かいお湯をお願いします",
+        "zh_meaning": "请给我温水 / 热水",
+        "original_ja": "Acqua calda, per favore.",
+        "original_en": "Acqua calda, per favore.",
+        "original_zh": "Acqua calda, per favore.",
+        "original_ko": "Acqua calda, per favore."
+      },
+      {
+        "category": "shopping",
+        "original": "Quanto costa questo?",
+        "ko_pron": "콴토 코스타 퀘스토?",
+        "ko_meaning": "이것 얼마인가요?",
+        "en_meaning": "How much is this?",
+        "ja_meaning": "これはいくらですか？",
+        "zh_meaning": "这个多少钱？",
+        "original_ja": "Quanto costa questo?",
+        "original_en": "Quanto costa questo?",
+        "original_zh": "Quanto costa questo?",
+        "original_ko": "Quanto costa questo?"
+      },
+      {
+        "category": "dining",
+        "original": "Da portare via, per favore.",
+        "ko_pron": "다 포르타레 비아, 페르 파보레",
+        "ko_meaning": "남은 음식 포장 부탁합니다",
+        "en_meaning": "Takeaway, please",
+        "ja_meaning": "持ち帰りで包んでください",
+        "zh_meaning": "请帮我打包带走",
+        "original_ja": "Da portare via, per favore.",
+        "original_en": "Da portare via, per favore.",
+        "original_zh": "Da portare via, per favore.",
+        "original_ko": "Da portare via, per favore."
+      },
       {
         "category": "dining",
         "original": "Poco sale, per favore.",
@@ -35742,35 +35846,907 @@ const MASTER_GOURMET_GUIDE_DATA = {
       zh: "每天只吃海鲜饭和披萨怎么行！专为长辈口味量身定制（类似中餐的暖胃炖汤、软烂酥嫩的炖肉、温和不腻的口感），精选各城市不可替代的地道风味与口碑餐厅全汇总。"
     },
     survivalTitle: {
-      ko: "💡 부모님 동행 식당 필수 서바이벌 회화",
-      en: "💡 Essential Dining Survival Phrases for Traveling with Parents",
-      ja: "💡 ご両親同伴のレストラン必須サバイバル会話",
-      zh: "💡 陪伴长辈就餐必备生存口语"
+      ko: "💡 부모님 동행 식당 & 여행 필수 서바이벌 회화 (핵심 24선)",
+      en: "💡 Essential Dining & Travel Survival Phrases for Traveling with Parents (Key 24 Expressions)",
+      ja: "💡 ご両親同伴のレストラン＆旅行 必須サバイバル会話（重要24選）",
+      zh: "💡 陪伴长辈就餐与出行必备生存口语（核心实用24句）"
     },
     survivalDesc: {
-      ko: "유럽 음식은 한국인 입맛에 기본적으로 꽤 짭니다. 부모님이 맛있게 드시려면 주문 시 아래 마법의 단어를 꼭 외쳐주세요!",
-      en: "European restaurant dishes can taste noticeably salty to Asian palates. To ensure your parents enjoy their meals comfortably, always say these magic phrases when ordering!",
-      ja: "ヨーロッパの料理は日本の味覚基準からすると塩気が強めです。ご両親が美味しく快適に食事できるよう、注文時は必ずこの魔法のフレーズを伝えましょう！",
-      zh: "欧洲餐馆菜肴对于习惯清淡饮食的长辈而言普遍偏咸。为了让父母吃得舒心可口，点餐时务必说出以下这两句黄金口诀！"
+      ko: "유럽 식당 간 조절(소금·설탕 빼기), 따뜻한 물·생수 요청, 얼마에요/계산서, 화장실 찾기, 남은 음식 포장까지! 부모님과 함께할 때 가장 자주 쓰이는 핵심 표현들을 원어 오디오 발음과 함께 총정리했습니다.",
+      en: "From seasoning control (less salt/no sugar), asking for hot or still water, asking 'how much is it?' & the check, finding restrooms, to takeout! Master the most critical expressions with native audio pronunciations.",
+      ja: "塩分・糖分控えめの注文、温かいお湯やミネラルウォーターの頼み方、お会計・値段の確認、トイレの場所、お持ち帰りまで！ご両親との旅行で本当に役立つ実用フレーズをネイティブ音声付きで完全収録。",
+      zh: "从少盐免糖健康点餐、索要温水与饮用水、询问价格与结账买单，到找寻洗手间及餐后打包！长辈出行最常用高频生存口语，均配以地道真人语音发音。"
     },
     survivalPhrases: [
       {
-        country: "es",
-        countryName: { ko: "🇪🇸 스페인 식당에서", en: "🇪🇸 In Spain", ja: "🇪🇸 スペインのレストランで", zh: "🇪🇸 在西班牙餐厅" },
-        original: "Sin sal, por favor",
-        pronunciation: { ko: "씬 쌀, 뽀르 파보르!", en: "Seen sal, por fah-vor!", ja: "シン・サル、ポル・ファボール！", zh: "辛·萨尔，波尔·法沃尔！" },
-        meaning: { ko: "소금 빼주세요 / 덜 짜게 해주세요", en: "No salt, please / Less salt, please", ja: "塩抜き／塩分控えめでお願いします", zh: "请少放盐 / 免盐" },
-        locale: "es-ES"
+            "id": "es_salt",
+            "category": "health",
+            "categoryName": {
+                  "ko": "🧂 간·건강 조절",
+                  "en": "🧂 Health & Seasoning",
+                  "ja": "🧂 塩分・健康調整",
+                  "zh": "🧂 咸淡健康调节"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "Sin sal, por favor",
+            "pronunciation": {
+                  "ko": "씬 쌀, 뽀르 파보르!",
+                  "en": "Seen sal, por fah-vor!",
+                  "ja": "シン・サル、ポル・ファボール！",
+                  "zh": "辛·萨尔，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "소금 빼주세요 / 덜 짜게 해주세요",
+                  "en": "No salt / Less salt, please",
+                  "ja": "塩抜き／塩分控えめでお願いします",
+                  "zh": "请少放盐 / 免盐"
+            },
+            "seniorTip": {
+                  "ko": "유럽 음식은 기본 간이 세므로 주문 시 필수 외침",
+                  "en": "Essential to prevent overly salty European seasoning",
+                  "ja": "ヨーロッパ料理は塩気が強いので注文時の必須コール",
+                  "zh": "欧洲菜普遍偏咸，点餐时必说口诀"
+            },
+            "locale": "es-ES"
       },
       {
-        country: "it",
-        countryName: { ko: "🇮🇹 이탈리아 식당에서", en: "🇮🇹 In Italy", ja: "🇮🇹 イタリアのレストランで", zh: "🇮🇹 在意大利餐厅" },
-        original: "Poco sale, per favore",
-        pronunciation: { ko: "포코 살레, 페르 파보레!", en: "Poh-koh sah-leh, pehr fah-voh-reh!", ja: "ポコ・サーレ、ペル・ファヴォーレ！", zh: "波科·萨莱，佩尔·法沃雷！" },
-        meaning: { ko: "소금 조금만 넣어주세요 (덜 짜게 해주세요)", en: "Only a little salt, please / Less salt, please", ja: "塩は少しだけでお願いします", zh: "请只放一点点盐 / 少盐" },
-        locale: "it-IT"
+            "id": "it_salt",
+            "category": "health",
+            "categoryName": {
+                  "ko": "🧂 간·건강 조절",
+                  "en": "🧂 Health & Seasoning",
+                  "ja": "🧂 塩分・健康調整",
+                  "zh": "🧂 咸淡健康调节"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Poco sale, per favore",
+            "pronunciation": {
+                  "ko": "포코 살레, 페르 파보레!",
+                  "en": "Poh-koh sah-leh, pehr fah-voh-reh!",
+                  "ja": "ポコ・サーレ、ペル・ファヴォーレ！",
+                  "zh": "波科·萨莱，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "소금 조금만 넣어주세요 (덜 짜게 해주세요)",
+                  "en": "Only a little salt, please / Less salt",
+                  "ja": "塩は少しだけでお願いします（薄味で）",
+                  "zh": "请只放一点点盐 / 少盐"
+            },
+            "seniorTip": {
+                  "ko": "파스타나 고기 요리 주문 시 덜 짜고 담백하게 즐기는 비법",
+                  "en": "Ensures lighter, milder taste for pastas and meats",
+                  "ja": "パスタや肉料理を塩分控えめで美味しく楽しむコツ",
+                  "zh": "让意面与炖肉更清淡适口不齁咸"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_sugar",
+            "category": "health",
+            "categoryName": {
+                  "ko": "🧂 간·건강 조절",
+                  "en": "🧂 Health & Seasoning",
+                  "ja": "🧂 塩分・健康調整",
+                  "zh": "🧂 咸淡健康调节"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 카페/식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "Sin azúcar, por favor",
+            "pronunciation": {
+                  "ko": "씬 아수카르, 뽀르 파보르!",
+                  "en": "Seen ah-thoo-kar, por fah-vor!",
+                  "ja": "シン・アスカル、ポル・ファボール！",
+                  "zh": "辛·阿苏卡尔，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "설탕 빼주세요 (노슈가 / 달지 않게)",
+                  "en": "No sugar, please",
+                  "ja": "砂糖抜きでお願いします",
+                  "zh": "请不要加糖 / 免糖"
+            },
+            "seniorTip": {
+                  "ko": "커피(카페 콘 레체), 생과일주스 주문 시 당뇨·혈당 관리 어르신 필수",
+                  "en": "Must-know for seniors managing blood sugar when ordering coffee or fresh juice",
+                  "ja": "コーヒーや生搾りジュース注文時、糖分を気にするシニアに必須",
+                  "zh": "长辈点咖啡或鲜榨果汁时控糖必备"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_sugar",
+            "category": "health",
+            "categoryName": {
+                  "ko": "🧂 간·건강 조절",
+                  "en": "🧂 Health & Seasoning",
+                  "ja": "🧂 塩分・健康調整",
+                  "zh": "🧂 咸淡健康调节"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 카페/식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Senza zucchero, per favore",
+            "pronunciation": {
+                  "ko": "센차 주케로, 페르 파보레!",
+                  "en": "Sehn-tsah dzoo-keh-roh, pehr fah-voh-reh!",
+                  "ja": "センツァ・ズッケロ、ペル・ファヴォーレ！",
+                  "zh": "森察·祖克罗，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "설탕 빼주세요 (무설탕)",
+                  "en": "Without sugar, please",
+                  "ja": "砂糖なしでお願いします",
+                  "zh": "请不要放糖 / 无糖"
+            },
+            "seniorTip": {
+                  "ko": "이탈리아 에스프레소나 카푸치노를 설탕 없이 원두 본연의 풍미로 즐길 때",
+                  "en": "Enjoy authentic Italian espresso or cappuccino sugar-free",
+                  "ja": "イタリアのエスプレッソやカプチーノを無糖で楽しみたい時に",
+                  "zh": "品尝纯正无糖意式浓缩或卡布奇诺"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_hot_water",
+            "category": "drinks",
+            "categoryName": {
+                  "ko": "☕ 물·음료 주문",
+                  "en": "☕ Water & Drinks",
+                  "ja": "☕ お水・お飲み物",
+                  "zh": "☕ 饮用水与饮料"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "Agua caliente, por favor",
+            "pronunciation": {
+                  "ko": "아과 칼리엔테, 뽀르 파보르!",
+                  "en": "Ah-gwah kah-lyehn-teh, por fah-vor!",
+                  "ja": "アグア・カリエンテ、ポル・ファボール！",
+                  "zh": "阿瓜·卡连特，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "따뜻한 물(온수) 한 잔 주세요",
+                  "en": "Hot / warm water, please",
+                  "ja": "お湯（温かいお水）をお願いします",
+                  "zh": "请给我一杯温开水 / 热水"
+            },
+            "seniorTip": {
+                  "ko": "찬물 드시면 배탈 나기 쉬운 부모님을 위한 가장 절실한 표현",
+                  "en": "Crucial for parents who prefer gentle warm water over iced drinks",
+                  "ja": "冷たい水で胃腸を壊しやすいご両親のために最も役立つ表現",
+                  "zh": "习惯喝温热开水养胃的长辈海外就餐首选"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_hot_water",
+            "category": "drinks",
+            "categoryName": {
+                  "ko": "☕ 물·음료 주문",
+                  "en": "☕ Water & Drinks",
+                  "ja": "☕ お水・お飲み物",
+                  "zh": "☕ 饮用水与饮料"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Acqua calda, per favore",
+            "pronunciation": {
+                  "ko": "아콰 칼다, 페르 파보레!",
+                  "en": "Ah-kwah kahl-dah, pehr fah-voh-reh!",
+                  "ja": "アクア・カルダ、ペル・ファヴォーレ！",
+                  "zh": "阿夸·卡尔达，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "따뜻한 물 부탁합니다",
+                  "en": "Warm water, please",
+                  "ja": "温かいお湯をお願いします",
+                  "zh": "请给我温水 / 热水"
+            },
+            "seniorTip": {
+                  "ko": "식사 전후 어르신 속을 따스하게 데워주는 1순위 요청",
+                  "en": "Warms and settles parents' digestion before and after meals",
+                  "ja": "食前食後に胃を温めてホッと一息つける安心の一杯",
+                  "zh": "餐前餐后温暖肠胃的必备暖心口语"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_still_water",
+            "category": "drinks",
+            "categoryName": {
+                  "ko": "☕ 물·음료 주문",
+                  "en": "☕ Water & Drinks",
+                  "ja": "☕ お水・お飲み物",
+                  "zh": "☕ 饮用水与饮料"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "Agua sin gas, por favor",
+            "pronunciation": {
+                  "ko": "아과 씬 가스, 뽀르 파보르!",
+                  "en": "Ah-gwah seen gahs, por fah-vor!",
+                  "ja": "アグア・シン・ガス、ポル・ファボール！",
+                  "zh": "阿瓜·辛·加斯，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "탄산 없는 일반 생수로 주세요",
+                  "en": "Still water (no gas), please",
+                  "ja": "炭酸なしのミネラルウォーターをお願いします",
+                  "zh": "请给我无气矿泉水（纯净水）"
+            },
+            "seniorTip": {
+                  "ko": "그냥 물(Agua)만 달라고 하면 톡 쏘는 탄산수를 줄 때가 많으므로 '씬 가스' 강조",
+                  "en": "Specify 'sin gas' to prevent getting sparkling water by mistake",
+                  "ja": "単に水と頼むと炭酸水が出ることが多いため「シン・ガス」と明示",
+                  "zh": "只说水常会上气泡水，务必强调“Sin gas”"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_still_water",
+            "category": "drinks",
+            "categoryName": {
+                  "ko": "☕ 물·음료 주문",
+                  "en": "☕ Water & Drinks",
+                  "ja": "☕ お水・お飲み物",
+                  "zh": "☕ 饮用水与饮料"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Acqua naturale, per favore",
+            "pronunciation": {
+                  "ko": "아콰 나투랄레, 페르 파보레!",
+                  "en": "Ah-kwah nah-too-rah-leh, pehr fah-voh-reh!",
+                  "ja": "アクア・ナトゥラーレ、ペル・ファヴォーレ！",
+                  "zh": "阿夸·纳图拉莱，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "탄산 없는 미네랄워터(일반 생수) 주세요",
+                  "en": "Still water, please",
+                  "ja": "ガスなしのお水（ナチュラル水）をお願いします",
+                  "zh": "请给我不带气的普通矿泉水"
+            },
+            "seniorTip": {
+                  "ko": "이탈리아 식당에서는 가스 물(Frizzante) 대신 '나투랄레'로 주문",
+                  "en": "Italian restaurants ask 'naturale or frizzante'—always choose naturale",
+                  "ja": "イタリアではガス入り（フリザンテ）と区別して「ナトゥラーレ」を指定",
+                  "zh": "意大利就餐区分带气与不带气，长辈选“Naturale”"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_how_much",
+            "category": "billing",
+            "categoryName": {
+                  "ko": "💶 가격·계산 요청",
+                  "en": "💶 Price & Payment",
+                  "ja": "💶 お会計・お値段",
+                  "zh": "💶 结账与价格"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 상점/식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "¿Cuánto cuesta esto?",
+            "pronunciation": {
+                  "ko": "콴토 쿠에스타 에스토?",
+                  "en": "Kwan-toh kweh-stah eh-stoh?",
+                  "ja": "クアント・クエスタ・エスト？",
+                  "zh": "宽托·奎斯塔·埃斯托？"
+            },
+            "meaning": {
+                  "ko": "이거 얼마인가요?",
+                  "en": "How much is this?",
+                  "ja": "これはいくらですか？",
+                  "zh": "这个多少钱？"
+            },
+            "seniorTip": {
+                  "ko": "시장 과일이나 기념품 살 때 물건을 가리키며 가격 확인할 때 필수",
+                  "en": "Universal shopping phrase at local markets or souvenirs",
+                  "ja": "市場でフルーツや小物を買う時、指差して値段を確認する万能表現",
+                  "zh": "集市买水果或挑选纪念品问价百搭句"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_how_much",
+            "category": "billing",
+            "categoryName": {
+                  "ko": "💶 가격·계산 요청",
+                  "en": "💶 Price & Payment",
+                  "ja": "💶 お会計・お値段",
+                  "zh": "💶 结账与价格"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 상점/식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Quanto costa questo?",
+            "pronunciation": {
+                  "ko": "콴토 코스타 퀘스토?",
+                  "en": "Kwan-toh koh-stah kweh-stoh?",
+                  "ja": "クアント・コスタ・クエスト？",
+                  "zh": "宽托·科斯塔·奎斯托？"
+            },
+            "meaning": {
+                  "ko": "이것 얼마인가요?",
+                  "en": "How much is this?",
+                  "ja": "これはいくらですか？",
+                  "zh": "这个多少钱？"
+            },
+            "seniorTip": {
+                  "ko": "젤라토 가게나 로컬 시장에서 손가락으로 가리키며 묻기 좋은 표현",
+                  "en": "Perfect for gelaterias and artisanal craft shops in Italy",
+                  "ja": "ジェラート店や露店で気になる商品の値段を聞く基本フレーズ",
+                  "zh": "冰淇淋店或传统杂货店问价经典口语"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_bill",
+            "category": "billing",
+            "categoryName": {
+                  "ko": "💶 가격·계산 요청",
+                  "en": "💶 Price & Payment",
+                  "ja": "💶 お会計・お値段",
+                  "zh": "💶 结账与价格"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "La cuenta, por favor",
+            "pronunciation": {
+                  "ko": "라 쿠엔타, 뽀르 파보르!",
+                  "en": "Lah kwehn-tah, por fah-vor!",
+                  "ja": "ラ・クエンタ、ポル・ファボール！",
+                  "zh": "拉·昆塔，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "계산서 부탁합니다 / 계산할게요",
+                  "en": "The check / bill, please",
+                  "ja": "お会計をお願いします",
+                  "zh": "请买单 / 请结账"
+            },
+            "seniorTip": {
+                  "ko": "유럽은 자리에서 계산하는 문화이므로 테이블에서 손을 가볍게 들고 요청",
+                  "en": "Always pay at your table; gently signal the waiter",
+                  "ja": "ヨーロッパはテーブル会計が基本。席で軽く合図して伝えます",
+                  "zh": "欧洲餐厅习惯桌旁结账，轻举手示意服务员"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_bill",
+            "category": "billing",
+            "categoryName": {
+                  "ko": "💶 가격·계산 요청",
+                  "en": "💶 Price & Payment",
+                  "ja": "💶 お会計・お値段",
+                  "zh": "💶 结账与价格"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Il conto, per favore",
+            "pronunciation": {
+                  "ko": "일 콘토, 페르 파보레!",
+                  "en": "Eel kon-toh, pehr fah-voh-reh!",
+                  "ja": "イル・コント、ペル・ファヴォーレ！",
+                  "zh": "伊尔·孔托，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "계산서 주세요 / 영수증 부탁합니다",
+                  "en": "The bill, please",
+                  "ja": "お会計をお願いします",
+                  "zh": "请给我账单 / 结账"
+            },
+            "seniorTip": {
+                  "ko": "식사 끝난 후 자리에서 외치면 영수증 바구니를 가져다줍니다",
+                  "en": "Staff will bring the receipt booklet right to your table",
+                  "ja": "食後、席にいながらスタッフに伝えるとバインダーを持ってきてくれます",
+                  "zh": "餐毕在座位示意，服务员会送上账单小夹"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_card",
+            "category": "billing",
+            "categoryName": {
+                  "ko": "💶 가격·계산 요청",
+                  "en": "💶 Price & Payment",
+                  "ja": "💶 お会計・お値段",
+                  "zh": "💶 结账与价格"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "¿Se puede pagar con tarjeta?",
+            "pronunciation": {
+                  "ko": "세 푸에데 파가르 콘 타르헤타?",
+                  "en": "Seh pweh-deh pah-gar kon tar-heh-tah?",
+                  "ja": "セ・プエデ・パガール・コン・タルヘタ？",
+                  "zh": "塞·普埃德·帕加尔·孔·塔尔赫塔？"
+            },
+            "meaning": {
+                  "ko": "신용카드 결제 가능한가요?",
+                  "en": "Can I pay by credit card?",
+                  "ja": "クレジットカードで支払えますか？",
+                  "zh": "可以用信用卡支付吗？"
+            },
+            "seniorTip": {
+                  "ko": "현금 분실이 염려되는 어르신 동행 시 카드 결제 여부 사전 확인",
+                  "en": "Safer than carrying bulky cash when dining with parents",
+                  "ja": "多額の現金持ち歩きを避けるためカード対応を事前確認",
+                  "zh": "减少随身携带大额现金风险，消费前确认刷卡"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_card",
+            "category": "billing",
+            "categoryName": {
+                  "ko": "💶 가격·계산 요청",
+                  "en": "💶 Price & Payment",
+                  "ja": "💶 お会計・お値段",
+                  "zh": "💶 结账与价格"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Posso pagare con la carta?",
+            "pronunciation": {
+                  "ko": "포쏘 파가레 콘 라 카르타?",
+                  "en": "Poh-soh pah-gah-reh kon lah kahr-tah?",
+                  "ja": "ポッソ・パガーレ・コン・ラ・カルタ？",
+                  "zh": "波索·帕加雷·孔·拉·卡尔塔？"
+            },
+            "meaning": {
+                  "ko": "카드로 결제해도 될까요?",
+                  "en": "May I pay by card?",
+                  "ja": "カードで支払えますか？",
+                  "zh": "我可以用银行卡支付吗？"
+            },
+            "seniorTip": {
+                  "ko": "무선 카드 단말기(POS)를 자리로 직접 가져다줍니다",
+                  "en": "Waiters usually bring portable card readers to your table",
+                  "ja": "携帯型端末を席まで持ってきてくれるので座ったまま決済可能",
+                  "zh": "店员通常会将无线POS机送至桌前操作"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_recommend",
+            "category": "ordering",
+            "categoryName": {
+                  "ko": "🍽️ 주문·추천",
+                  "en": "🍽️ Ordering & Picks",
+                  "ja": "🍽️ 注文・おすすめ",
+                  "zh": "🍽️ 点单与推荐"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "¿Qué me recomienda?",
+            "pronunciation": {
+                  "ko": "케 메 레코미엔다?",
+                  "en": "Keh meh reh-koh-myen-dah?",
+                  "ja": "ケ・メ・レコミエンダ？",
+                  "zh": "凯·梅·雷科米恩达？"
+            },
+            "meaning": {
+                  "ko": "여기서 가장 추천하는 요리가 무엇인가요?",
+                  "en": "What do you recommend here?",
+                  "ja": "おすすめの料理は何ですか？",
+                  "zh": "这里有什么招牌菜推荐吗？"
+            },
+            "seniorTip": {
+                  "ko": "복잡한 스페인어 메뉴판 앞에서 실패 없는 시그니처 요리를 고르는 주문",
+                  "en": "Quickest way to order the chef's best signature specialty",
+                  "ja": "外国語メニューに迷った時、ハズレのない名物を尋ねる必殺技",
+                  "zh": "看不懂外文菜单时快速锁定主厨拿手招牌"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_recommend",
+            "category": "ordering",
+            "categoryName": {
+                  "ko": "🍽️ 주문·추천",
+                  "en": "🍽️ Ordering & Picks",
+                  "ja": "🍽️ 注文・おすすめ",
+                  "zh": "🍽️ 点单与推荐"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Cosa mi consiglia?",
+            "pronunciation": {
+                  "ko": "코사 미 콘실리아?",
+                  "en": "Koh-zah mee kon-seel-yah?",
+                  "ja": "コーザ・ミ・コンシーリャ？",
+                  "zh": "科萨·米·孔西利亚？"
+            },
+            "meaning": {
+                  "ko": "어떤 메뉴를 추천하시나요?",
+                  "en": "What do you recommend?",
+                  "ja": "何がおすすめですか？",
+                  "zh": "您推荐哪一道特色菜？"
+            },
+            "seniorTip": {
+                  "ko": "오늘 가장 신선한 식재료로 만든 오늘의 파스타나 고기 요리 추천받기",
+                  "en": "Unlocks the freshest seasonal pasta or meat of the day",
+                  "ja": "その日一番新鮮な食材を使った本日のおすすめパスタが分かります",
+                  "zh": "了解当天最鲜美当季意面或烤肉的不二问法"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_this_one",
+            "category": "ordering",
+            "categoryName": {
+                  "ko": "🍽️ 주문·추천",
+                  "en": "🍽️ Ordering & Picks",
+                  "ja": "🍽️ 注文・おすすめ",
+                  "zh": "🍽️ 点单与推荐"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "Uno de esto, por favor",
+            "pronunciation": {
+                  "ko": "우노 데 에스토, 뽀르 파보르!",
+                  "en": "Oo-noh deh eh-stoh, por fah-vor!",
+                  "ja": "ウノ・デ・エスト、ポル・ファボール！",
+                  "zh": "乌诺·德·埃斯托，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "(메뉴판/사진을 가리키며) 이거 하나 주세요",
+                  "en": "One of this, please (pointing)",
+                  "ja": "これを1つお願いします（指差し注文）",
+                  "zh": "（手指菜单或照片）请来一份这个"
+            },
+            "seniorTip": {
+                  "ko": "스마트폰 사진이나 가이드북의 요리 사진을 보여주며 콕 집어 주문",
+                  "en": "Simply point at photos on your phone or guidebook for instant ordering",
+                  "ja": "スマホやガイドブックの料理写真を見せながら指差すだけで完璧",
+                  "zh": "展示手机照片或指南图片一秒点餐神器"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_this_one",
+            "category": "ordering",
+            "categoryName": {
+                  "ko": "🍽️ 주문·추천",
+                  "en": "🍽️ Ordering & Picks",
+                  "ja": "🍽️ 注文・おすすめ",
+                  "zh": "🍽️ 点单与推荐"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Uno di questo, per favore",
+            "pronunciation": {
+                  "ko": "우노 디 퀘스토, 페르 파보레!",
+                  "en": "Oo-noh dee kweh-stoh, pehr fah-voh-reh!",
+                  "ja": "ウノ・ディ・クエスト、ペル・ファヴォーレ！",
+                  "zh": "乌诺·迪·奎斯托，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "(메뉴판을 가리키며) 이것 하나 주세요",
+                  "en": "One of this, please",
+                  "ja": "これを1つお願いします",
+                  "zh": "请给我来一个这个"
+            },
+            "seniorTip": {
+                  "ko": "말문이 막힐 때 원하는 음식 사진을 보여주며 외치는 만능 표현",
+                  "en": "Universal gesture-friendly ordering in Italian eateries",
+                  "ja": "イタリア語の発音が不安な時も、笑顔で指差せば通じる安心フレーズ",
+                  "zh": "发音不熟练时结合微笑手指照片顺畅点单"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_toilet",
+            "category": "convenience",
+            "categoryName": {
+                  "ko": "🚻 화장실 & 포장",
+                  "en": "🚻 Restroom & Takeout",
+                  "ja": "🚻 トイレ・お持ち帰り",
+                  "zh": "🚻 洗手间与打包"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 어디서나",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "¿Dónde está el baño?",
+            "pronunciation": {
+                  "ko": "돈데 에스타 엘 바뇨?",
+                  "en": "Dohn-deh eh-stah ehl bah-nyoh?",
+                  "ja": "ドンデ・エスタ・エル・バーニョ？",
+                  "zh": "冬德·埃斯塔·埃尔·巴纽？"
+            },
+            "meaning": {
+                  "ko": "화장실이 어디에 있나요?",
+                  "en": "Where is the restroom?",
+                  "ja": "お手洗いはどこですか？",
+                  "zh": "洗手间在哪里？"
+            },
+            "seniorTip": {
+                  "ko": "어르신 동행 여행에서 가장 위급하고 중요한 필수 생존 표현 1위",
+                  "en": "#1 most urgent and vital question when traveling with seniors",
+                  "ja": "シニア同伴の旅で最も緊急度が高く最重要なサバイバル表現第1位",
+                  "zh": "陪长辈旅行最紧急最关键的实用救急金句首选"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_toilet",
+            "category": "convenience",
+            "categoryName": {
+                  "ko": "🚻 화장실 & 포장",
+                  "en": "🚻 Restroom & Takeout",
+                  "ja": "🚻 トイレ・お持ち帰り",
+                  "zh": "🚻 洗手间与打包"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 어디서나",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Dov'è il bagno?",
+            "pronunciation": {
+                  "ko": "도베 일 바뇨?",
+                  "en": "Doh-veh eel bah-nyoh?",
+                  "ja": "ドヴェ・イル・バーニョ？",
+                  "zh": "多韦·伊尔·巴纽？"
+            },
+            "meaning": {
+                  "ko": "화장실이 어디인가요?",
+                  "en": "Where is the bathroom?",
+                  "ja": "トイレはどこですか？",
+                  "zh": "请问厕所在哪里？"
+            },
+            "seniorTip": {
+                  "ko": "이탈리아는 공중화장실이 드무므로 식사 마치고 나가기 전 식당 화장실 이용 필수",
+                  "en": "Always ask before leaving restaurants as public restrooms are rare in Italy",
+                  "ja": "イタリアは街中の公衆トイレが少ないため、退店前に必ず利用しましょう",
+                  "zh": "欧洲街头公厕少，离店前务必询问解决"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_takeout",
+            "category": "convenience",
+            "categoryName": {
+                  "ko": "🚻 화장실 & 포장",
+                  "en": "🚻 Restroom & Takeout",
+                  "ja": "🚻 トイレ・お持ち帰り",
+                  "zh": "🚻 洗手间与打包"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 식당에서",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "Para llevar, por favor",
+            "pronunciation": {
+                  "ko": "파라 예바르, 뽀르 파보르!",
+                  "en": "Pah-rah yeh-bahr, por fah-vor!",
+                  "ja": "パラ・ジェバール、ポル・ファボール！",
+                  "zh": "帕拉·耶巴尔，波尔·法沃尔！"
+            },
+            "meaning": {
+                  "ko": "남은 음식 포장해 주세요 / 포장 부탁해요",
+                  "en": "To go / Takeout, please (pack leftovers)",
+                  "ja": "持ち帰りでお願いします（残りを包んでください）",
+                  "zh": "请帮我打包 / 外带"
+            },
+            "seniorTip": {
+                  "ko": "유럽 식당의 푸짐한 양으로 음식이 남았을 때 어르신들이 가장 안심하는 표현",
+                  "en": "Generous European portions often leave leftovers—parents love packing them",
+                  "ja": "量が多くて残してしまった料理を包んでもらう時、ご両親が一番安心する言葉",
+                  "zh": "西餐量大吃不完，为长辈打包回酒店当夜宵"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_takeout",
+            "category": "convenience",
+            "categoryName": {
+                  "ko": "🚻 화장실 & 포장",
+                  "en": "🚻 Restroom & Takeout",
+                  "ja": "🚻 トイレ・お持ち帰り",
+                  "zh": "🚻 洗手间与打包"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 식당에서",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Da portare via, per favore",
+            "pronunciation": {
+                  "ko": "다 포르타레 비아, 페르 파보레!",
+                  "en": "Dah por-tah-reh vee-ah, pehr fah-voh-reh!",
+                  "ja": "ダ・ポルターレ・ヴィア、ペル・ファヴォーレ！",
+                  "zh": "达·波尔塔雷·维亚，佩尔·法沃雷！"
+            },
+            "meaning": {
+                  "ko": "남은 음식 포장 부탁합니다",
+                  "en": "Takeaway, please",
+                  "ja": "持ち帰りで包んでください",
+                  "zh": "请帮我打包带走"
+            },
+            "seniorTip": {
+                  "ko": "피자나 고기 요리가 남았을 때 깔끔한 포장 상자(박스)에 담아줍니다",
+                  "en": "Servers will cheerfully pack remaining pizza or steak into a to-go box",
+                  "ja": "ピザやお肉料理が余った時、専用箱に入れて持たせてくれます",
+                  "zh": "吃不下的比萨或牛排，店员会提供精致包装盒打包"
+            },
+            "locale": "it-IT"
+      },
+      {
+            "id": "es_thanks",
+            "category": "courtesy",
+            "categoryName": {
+                  "ko": "👏 매너 & 감사",
+                  "en": "👏 Courtesy & Thanks",
+                  "ja": "👏 マナー・感謝",
+                  "zh": "👏 礼貌与致谢"
+            },
+            "country": "es",
+            "countryName": {
+                  "ko": "🇪🇸 스페인 어디서나",
+                  "en": "🇪🇸 In Spain",
+                  "ja": "🇪🇸 スペインで",
+                  "zh": "🇪🇸 在西班牙"
+            },
+            "original": "¡Disculpe! / Muchas gracias",
+            "pronunciation": {
+                  "ko": "디스쿨페! / 무차스 그라시아스!",
+                  "en": "Dees-kool-peh! / Moo-chahs grah-thyahs!",
+                  "ja": "ディスクルペ！／ムチャス・グラシアス！",
+                  "zh": "迪斯库尔佩！/ 穆查斯·格拉西亚斯！"
+            },
+            "meaning": {
+                  "ko": "실례합니다!(직원 호출) / 대단히 감사합니다!",
+                  "en": "Excuse me! / Thank you very much!",
+                  "ja": "すみません！（呼び出し）／どうもありがとうございます！",
+                  "zh": "不好意思/打扰一下（呼叫店员） / 非常感谢！"
+            },
+            "seniorTip": {
+                  "ko": "손을 크게 휘젓지 않고 '디스쿨페'로 정중히 부르면 훨씬 친절한 서비스를 받음",
+                  "en": "Polite waiter call and appreciation guarantee warmer smiles and great service",
+                  "ja": "大声でなく「ディスクルペ」と微笑んで呼ぶと接客が格段に親切になります",
+                  "zh": "礼貌呼唤店员与真诚致谢，倍增异国暖意与周到服务"
+            },
+            "locale": "es-ES"
+      },
+      {
+            "id": "it_thanks",
+            "category": "courtesy",
+            "categoryName": {
+                  "ko": "👏 매너 & 감사",
+                  "en": "👏 Courtesy & Thanks",
+                  "ja": "👏 マナー・感謝",
+                  "zh": "👏 礼貌与致谢"
+            },
+            "country": "it",
+            "countryName": {
+                  "ko": "🇮🇹 이탈리아 어디서나",
+                  "en": "🇮🇹 In Italy",
+                  "ja": "🇮🇹 イタリアで",
+                  "zh": "🇮🇹 在意大利"
+            },
+            "original": "Scusi! / Grazie mille",
+            "pronunciation": {
+                  "ko": "스쿠지! / 그라치에 밀레!",
+                  "en": "Skoo-zee! / Graht-syeh meel-leh!",
+                  "ja": "スクージ！／グラツィエ・ミッレ！",
+                  "zh": "斯库吉！/ 格拉齐耶·米莱！"
+            },
+            "meaning": {
+                  "ko": "실례합니다!(여기요) / 정말 감사합니다!",
+                  "en": "Excuse me! / Thank you very much!",
+                  "ja": "すみません！（店員呼出）／本当にありがとうございます！",
+                  "zh": "劳驾/服务员！ / 非常感谢！"
+            },
+            "seniorTip": {
+                  "ko": "'스쿠지'로 직원을 부르고, 음식이 나올 때 '그라치에 밀레'를 건네면 기분 좋은 식사 보장",
+                  "en": "Creates lovely heartwarming interactions between parents and Italian hosts",
+                  "ja": "「スクージ」と「グラツィエ・ミッレ」で現地スタッフと心温まる交流が生まれます",
+                  "zh": "简单的“Scusi”与“Grazie mille”让长辈与意大利店员打成一片"
+            },
+            "locale": "it-IT"
       }
-    ]
+]
   },
   countries: [
     {

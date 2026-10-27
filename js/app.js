@@ -8199,6 +8199,8 @@ window.downloadIcsCalendar = downloadCustomCalendarIcs;
 // 🍽️ MASTER GOURMET GUIDE (Beyond Paella & Pizza - Senior Tailored)
 // ==========================================================================
 window.masterGourmetActiveCountry = 'all';
+window.masterSurvivalCountry = 'all';
+window.masterSurvivalCategory = 'all';
 
 function buildMasterGourmetGuideHtml(data, l, filterCountry) {
   if (!data || !data.meta) return '';
@@ -8217,24 +8219,52 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
     italy: { ko: "🇮🇹 이탈리아 편 (3개 도시)", en: "🇮🇹 Italy Edition (3 Cities)", ja: "🇮🇹 イタリア編 (3都市)", zh: "🇮🇹 意大利篇 (3城)" }
   };
 
+  const survCountryLabels = {
+    all: { ko: "🌍 전체 24선", en: "🌍 All 24", ja: "🌍 全24選", zh: "🌍 全部24句" },
+    es: { ko: "🇪🇸 스페인어 12선", en: "🇪🇸 Spanish (12)", ja: "🇪🇸 スペイン語 12選", zh: "🇪🇸 西班牙语 12句" },
+    it: { ko: "🇮🇹 이탈리아어 12선", en: "🇮🇹 Italian (12)", ja: "🇮🇹 イタリア語 12選", zh: "🇮🇹 意大利语 12句" }
+  };
+
+  const survCategoryLabels = {
+    all: { ko: "전체 상황", en: "All Scenarios", ja: "すべての場面", zh: "全部情景" },
+    health: { ko: "🧂 간·건강 (소금/설탕)", en: "🧂 Seasoning (Salt/Sugar)", ja: "🧂 味付け（塩・砂糖）", zh: "🧂 口味（少盐/免糖）" },
+    drinks: { ko: "☕ 물·음료 (따뜻한물/생수)", en: "☕ Water (Hot/Still)", ja: "☕ お水（お湯・ナチュラル水）", zh: "☕ 饮水（温水/纯净水）" },
+    billing: { ko: "💶 가격·계산 (얼마에요/영수증)", en: "💶 Price & Bill (How much/Check)", ja: "💶 お会計（いくら/レシート）", zh: "💶 结账（多少钱/买单）" },
+    ordering: { ko: "🍽️ 주문·추천 (이거주세요/추천)", en: "🍽️ Ordering (This one/Picks)", ja: "🍽️ 注文（これ/おすすめ）", zh: "🍽️ 点单（来一份/推荐菜）" },
+    convenience: { ko: "🚻 화장실·포장", en: "🚻 Restroom & Takeout", ja: "🚻 トイレ・お持ち帰り", zh: "🚻 洗手间与打包" },
+    courtesy: { ko: "👏 매너·감사 (여기요/감사합니다)", en: "👏 Courtesy (Excuse me/Thanks)", ja: "👏 マナー（すみません/感謝）", zh: "👏 礼貌（劳驾/谢谢）" }
+  };
+
   const btnListenText = { ko: "🔊 원어 발음 듣기", en: "🔊 Listen Audio", ja: "🔊 発音を聞く", zh: "🔊 播放原声" };
   const verifiedPicksLabel = { ko: "⭐ 픽업 맛집 (추천 식당)", en: "⭐ Verified Pick Restaurants", ja: "⭐ 厳選ピックアップ名店", zh: "⭐ 严选精选餐厅" };
   const mapBtnText = { ko: "🗺️ Google 지도", en: "🗺️ Google Maps", ja: "🗺️ Google マップ", zh: "🗺️ 谷歌地图" };
 
   // Survival phrases HTML
-  const phrasesHtml = (meta.survivalPhrases || []).map(p => `
-    <div class="mg-phrase-box ${p.country}">
-      <div class="mg-phrase-top">
-        <span class="mg-phrase-flag">${(p.countryName && p.countryName[l]) || p.countryName['ko']}</span>
-        <button type="button" class="mg-phrase-audio-btn" onclick="playVoice('${p.original.replace(/'/g, "\\'")}', '${p.locale}')" title="${btnListenText[l] || btnListenText['ko']}">
-          ${btnListenText[l] || btnListenText['ko']}
-        </button>
+  const phrasesHtml = (meta.survivalPhrases || []).map(p => {
+    const cName = (p.countryName && p.countryName[l]) || p.countryName['ko'];
+    const catName = (p.categoryName && p.categoryName[l]) || p.categoryName['ko'];
+    const pron = (p.pronunciation && p.pronunciation[l]) || p.pronunciation['ko'];
+    const mean = (p.meaning && p.meaning[l]) || p.meaning['ko'];
+    const tip = (p.seniorTip && p.seniorTip[l]) || p.seniorTip['ko'];
+
+    return `
+      <div class="mg-phrase-box ${p.country}" data-country="${p.country}" data-category="${p.category}">
+        <div class="mg-phrase-top">
+          <div class="mg-phrase-tags">
+            <span class="mg-phrase-flag">${cName}</span>
+            <span class="mg-phrase-cat-badge">${catName}</span>
+          </div>
+          <button type="button" class="mg-phrase-audio-btn" onclick="playVoice('${p.original.replace(/'/g, "\\'")}', '${p.locale}')" title="${btnListenText[l] || btnListenText['ko']}">
+            ${btnListenText[l] || btnListenText['ko']}
+          </button>
+        </div>
+        <div class="mg-phrase-quote">"${p.original}"</div>
+        <div class="mg-phrase-pronun">🗣️ ${pron}</div>
+        <div class="mg-phrase-meaning">💡 <strong>${mean}</strong></div>
+        <div class="mg-phrase-tip">👴 ${tip}</div>
       </div>
-      <div class="mg-phrase-quote">"${p.original}"</div>
-      <div class="mg-phrase-pronun">🗣️ ${(p.pronunciation && p.pronunciation[l]) || p.pronunciation['ko']}</div>
-      <div class="mg-phrase-meaning">💡 <strong>${(p.meaning && p.meaning[l]) || p.meaning['ko']}</strong></div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   // Filter countries
   const countriesToRender = (data.countries || []).filter(c => filterCountry === 'all' || c.id === filterCountry);
@@ -8349,7 +8379,7 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
         <h3 class="mg-hero-title">${titleText}</h3>
         <p class="mg-hero-intro">${introText}</p>
 
-        <!-- Survival Phrases Banner -->
+        <!-- Expanded Survival Phrases Banner (24 Expressions with Filters) -->
         <div class="mg-survival-container">
           <div class="mg-survival-lead">
             <span class="mg-survival-lead-icon">💡</span>
@@ -8358,12 +8388,54 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
               <p class="mg-survival-lead-desc">${survivalDesc}</p>
             </div>
           </div>
+
+          <!-- Country Filter Row -->
+          <div class="mg-survival-filter-row">
+            <div class="mg-survival-country-tabs">
+              <button type="button" class="mg-surv-pill active" data-surv-country="all" onclick="filterMasterSurvival('country', 'all', this)">
+                ${survCountryLabels.all[l] || survCountryLabels.all['ko']}
+              </button>
+              <button type="button" class="mg-surv-pill" data-surv-country="es" onclick="filterMasterSurvival('country', 'es', this)">
+                ${survCountryLabels.es[l] || survCountryLabels.es['ko']}
+              </button>
+              <button type="button" class="mg-surv-pill" data-surv-country="it" onclick="filterMasterSurvival('country', 'it', this)">
+                ${survCountryLabels.it[l] || survCountryLabels.it['ko']}
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Filter Chips -->
+          <div class="mg-survival-category-chips">
+            <button type="button" class="mg-surv-chip active" data-surv-cat="all" onclick="filterMasterSurvival('category', 'all', this)">
+              ${survCategoryLabels.all[l] || survCategoryLabels.all['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="health" onclick="filterMasterSurvival('category', 'health', this)">
+              ${survCategoryLabels.health[l] || survCategoryLabels.health['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="drinks" onclick="filterMasterSurvival('category', 'drinks', this)">
+              ${survCategoryLabels.drinks[l] || survCategoryLabels.drinks['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="billing" onclick="filterMasterSurvival('category', 'billing', this)">
+              ${survCategoryLabels.billing[l] || survCategoryLabels.billing['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="ordering" onclick="filterMasterSurvival('category', 'ordering', this)">
+              ${survCategoryLabels.ordering[l] || survCategoryLabels.ordering['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="convenience" onclick="filterMasterSurvival('category', 'convenience', this)">
+              ${survCategoryLabels.convenience[l] || survCategoryLabels.convenience['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="courtesy" onclick="filterMasterSurvival('category', 'courtesy', this)">
+              ${survCategoryLabels.courtesy[l] || survCategoryLabels.courtesy['ko']}
+            </button>
+          </div>
+
+          <!-- 24 Phrase Cards Grid -->
           <div class="mg-survival-grid">
             ${phrasesHtml}
           </div>
         </div>
 
-        <!-- Filter Tabs -->
+        <!-- City Filter Tabs -->
         <div class="mg-tabs-bar">
           <button type="button" class="mg-tab-pill ${filterCountry === 'all' ? 'active' : ''}" onclick="switchMasterGourmetFilter('all', this)">
             ${filterLabels.all[l] || filterLabels.all['ko']}
@@ -8398,6 +8470,11 @@ function renderMasterGourmetGuide(lang, filterCountry) {
   mounts.forEach(mount => {
     mount.innerHTML = html;
   });
+
+  // Re-apply survival filters if active
+  if (window.masterSurvivalCountry !== 'all' || window.masterSurvivalCategory !== 'all') {
+    applySurvivalPhrasesFilter();
+  }
 }
 
 function switchMasterGourmetFilter(country, btn) {
@@ -8406,7 +8483,43 @@ function switchMasterGourmetFilter(country, btn) {
   renderMasterGourmetGuide(currentL, country);
 }
 
+function filterMasterSurvival(type, value, btn) {
+  if (type === 'country') {
+    window.masterSurvivalCountry = value;
+    document.querySelectorAll('.mg-surv-pill').forEach(p => {
+      p.classList.toggle('active', p.getAttribute('data-surv-country') === value);
+    });
+  } else if (type === 'category') {
+    window.masterSurvivalCategory = value;
+    document.querySelectorAll('.mg-surv-chip').forEach(c => {
+      c.classList.toggle('active', c.getAttribute('data-surv-cat') === value);
+    });
+  }
+  applySurvivalPhrasesFilter();
+}
+
+function applySurvivalPhrasesFilter() {
+  const selectedCountry = window.masterSurvivalCountry || 'all';
+  const selectedCat = window.masterSurvivalCategory || 'all';
+
+  document.querySelectorAll('.mg-phrase-box').forEach(box => {
+    const boxCountry = box.getAttribute('data-country');
+    const boxCat = box.getAttribute('data-category');
+
+    const matchCountry = selectedCountry === 'all' || boxCountry === selectedCountry;
+    const matchCat = selectedCat === 'all' || boxCat === selectedCat;
+
+    if (matchCountry && matchCat) {
+      box.style.display = 'flex';
+    } else {
+      box.style.display = 'none';
+    }
+  });
+}
+
 if (typeof window !== 'undefined') {
   window.renderMasterGourmetGuide = renderMasterGourmetGuide;
   window.switchMasterGourmetFilter = switchMasterGourmetFilter;
+  window.filterMasterSurvival = filterMasterSurvival;
+  window.applySurvivalPhrasesFilter = applySurvivalPhrasesFilter;
 }
