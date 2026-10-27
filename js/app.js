@@ -1,4 +1,26 @@
 
+// Global Direct Jump to Master Gourmet & Survival Phrases
+window.jumpToMasterGourmet = function(targetSection) {
+  targetSection = targetSection || 'summary-master-gourmet';
+  if (targetSection === 'practical-master-gourmet') {
+    switchGuidebookChapter('chapter-practical');
+    goToBookPage('chapter-practical', 0);
+  } else {
+    switchGuidebookChapter('chapter-planner');
+    goToBookPage('chapter-planner', 0);
+  }
+  if (typeof renderMasterGourmetGuide === 'function') {
+    renderMasterGourmetGuide(typeof currentLang !== 'undefined' ? currentLang : 'ko', 'all');
+  }
+  setTimeout(function() {
+    var el = document.getElementById(targetSection);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 120);
+};
+
+
 // ========================================================
 // BIG LANDMARKS INTERACTIVE MAP (CHAPTER 3 PAGE 4)
 // ========================================================
@@ -196,9 +218,20 @@ function navigateToHotels() {
 
 // 1. PWA Service Worker Registration
 function registerPWAOfflineWorker() {
+  // Purge old stale caches on start
+  if ('caches' in window) {
+    caches.keys().then(function(keys) {
+      keys.forEach(function(k) {
+        if (k !== 'slow-travel-pwa-v5') {
+          caches.delete(k);
+        }
+      });
+    }).catch(function() {});
+  }
+
   if ('serviceWorker' in navigator && (window.location.protocol.startsWith('http') || window.location.hostname === 'localhost')) {
     const swCode = `
-      const CACHE_NAME = 'slow-travel-pwa-v3';
+      const CACHE_NAME = 'slow-travel-pwa-v5';
       const STATIC_ASSETS = [
         './',
         'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap',
@@ -218,26 +251,30 @@ function registerPWAOfflineWorker() {
           )).then(() => self.clients.claim())
         );
       });
+      // Network-First with Cache Fallback for instant updates
       self.addEventListener('fetch', event => {
         if (event.request.method !== 'GET') return;
         event.respondWith(
-          caches.match(event.request).then(cached => {
-            const networked = fetch(event.request).then(response => {
-              const cloned = response.clone();
-              caches.open(CACHE_NAME).then(cache => cache.put(event.request, cloned)).catch(() => {});
+          fetch(event.request)
+            .then(response => {
+              if (response && response.status === 200 && (response.type === 'basic' || response.type === 'cors')) {
+                const cloned = response.clone();
+                caches.open(CACHE_NAME).then(cache => cache.put(event.request, cloned)).catch(() => {});
+              }
               return response;
-            }).catch(() => cached);
-            return cached || networked;
-          })
+            })
+            .catch(() => caches.match(event.request))
         );
       });
     `;
     try {
       const blob = new Blob([swCode], { type: 'application/javascript' });
       const swUrl = URL.createObjectURL(blob);
-      navigator.serviceWorker.register(swUrl).then(reg => {
-        console.log('PWA ServiceWorker registered:', reg);
-      }).catch(err => {
+      navigator.serviceWorker.register(swUrl).then(function(reg) {
+        if (reg && typeof reg.update === 'function') {
+          reg.update();
+        }
+      }).catch(function(err) {
         console.log('SW registration note:', err);
       });
     } catch (e) {
@@ -6919,6 +6956,7 @@ function switchGuidebookChapter(chapterId, shouldScroll = true) {
   }
   
   window.currentActiveChapter = chapterId;
+  if (typeof renderMasterGourmetGuide === 'function') { renderMasterGourmetGuide(typeof currentLang !== 'undefined' ? currentLang : 'ko', window.masterGourmetActiveCountry || 'all'); }
 
   // 1. 본문 챕터 표시 전환
   document.querySelectorAll('.guidebook-chapter').forEach(ch => {

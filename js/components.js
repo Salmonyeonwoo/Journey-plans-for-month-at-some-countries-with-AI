@@ -146,22 +146,28 @@
                 </div>
               </div>
               <!-- 📢 [신규 탑재 알림] 30일 마스터 플래너 & 미식 총정리 다이렉트 점프 배너 -->
-              <div class="banner-master-planner-jump" style="background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color: #fff; padding: 18px 22px; border-radius: 14px; margin: 20px 0; box-shadow: 0 4px 14px rgba(27,67,50,0.18); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; border: 1.5px solid #52b788;">
-                <div style="flex: 1; min-width: 260px;">
-                  <div style="font-weight: 800; font-size: 15.5px; display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                    <span style="font-size: 18px;">🇪🇸 🇮🇹</span>
-                    <span style="color:#d8f3dc;">스페인 &amp; 이탈리아 30일 마스터 플래너 (맛집·야경·야시장·간식 총정리)</span>
+              <div class="banner-master-planner-jump" style="background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color: #fff; padding: 20px 24px; border-radius: 16px; margin: 20px 0; box-shadow: 0 4px 16px rgba(27,67,50,0.22); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border: 1.5px solid #52b788;">
+                <div style="flex: 1; min-width: 280px;">
+                  <div style="font-weight: 800; font-size: 16px; display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                    <span style="font-size: 20px;">🇪🇸 🇮🇹</span>
+                    <span style="color:#d8f3dc;">스페인 &amp; 이탈리아 30일 마스터 플래너 &amp; 미식 30선 + 필수 서바이벌 회화 24선</span>
                   </div>
-                  <div style="font-size: 13px; line-height: 1.5; color: #e8f5e9;">
-                    확정 숙소 9선, 이동 교통 공식과 함께 <strong>바르셀로나 꿀대구·안달루시아 소꼬리찜·나폴리 화덕피자·피렌체 티본스테이크·로마 3대 파스타</strong> 및 로컬 길거리 간식 가이드가 <strong>[제2장 일정 플래너]</strong>와 <strong>[제5장 여행 실용정보]</strong>에 완벽히 탑재되었습니다!
+                  <div style="font-size: 13.5px; line-height: 1.55; color: #e8f5e9;">
+                    부모님 입맛 저격 대체 불가 요리(<strong>뽈뽀·꿀대구·소꼬리찜·화덕피자·티본스테이크·뇨끼</strong>)와 식당 필수 <strong>서바이벌 회화 24선(소금·설탕 빼기, 따뜻한 물, 얼마에요, 계산서, 화장실, 포장 등 4개국어 음성 발음)</strong>이 완벽 탑재되었습니다!
                   </div>
                 </div>
                 <div style="display:flex;gap:8px;flex-wrap:wrap;">
-                  <button type="button" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('summary-gourmet') || document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background: #f59e0b; color: #111; font-weight: 800; font-size: 13.5px; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); display:inline-flex; align-items:center; gap:6px;">
-                    <span>🍱</span> <span>시그니처 미식 &amp; 간식 바로보기</span>
+                  <button type="button" onclick="jumpToMasterGourmet('summary-master-gourmet')" style="background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); color: #fff; font-weight: 800; font-size: 13.5px; border: 1.5px solid #fda4af; padding: 11px 18px; border-radius: 8px; cursor: pointer; box-shadow: 0 3px 10px rgba(225,29,72,0.35); display:inline-flex; align-items:center; gap:6px;">
+                    <span>🍽️</span> <span>[요약 5] 빠에야·피자 외 미식 &amp; 회화</span>
                   </button>
-                  <button type="button" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background: #ffffff; color: #1b4332; font-weight: 700; font-size: 13.5px; border: none; padding: 10px 16px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display:inline-flex; align-items:center; gap:6px;">
-                    <span>📅</span> <span>마스터 플래너 전체보기</span>
+                  <button type="button" onclick="jumpToMasterGourmet('practical-master-gourmet')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; font-weight: 800; font-size: 13px; border: 1.5px solid #7dd3fc; padding: 11px 16px; border-radius: 8px; cursor: pointer; box-shadow: 0 3px 10px rgba(2,132,199,0.3); display:inline-flex; align-items:center; gap:6px;">
+                    <span>💡</span> <span>[실전] 식당 서바이벌 회화 24선</span>
+                  </button>
+                  <button type="button" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('summary-gourmet') || document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background: #f59e0b; color: #111; font-weight: 800; font-size: 13px; border: none; padding: 11px 16px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); display:inline-flex; align-items:center; gap:6px;">
+                    <span>🍱</span> <span>[요약 4] 시그니처 미식 &amp; 간식</span>
+                  </button>
+                  <button type="button" onclick="switchGuidebookChapter('chapter-planner'); goToBookPage('chapter-planner', 0); setTimeout(() => { const el = document.getElementById('plannerMasterSummaryCard'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background: #ffffff; color: #1b4332; font-weight: 700; font-size: 13px; border: none; padding: 11px 16px; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.1); display:inline-flex; align-items:center; gap:6px;">
+                    <span>📅</span> <span>마스터 플래너 9대 숙소·교통</span>
                   </button>
                 </div>
               </div>
