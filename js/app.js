@@ -4584,6 +4584,29 @@ function handleLocalChat(query) {
   // ----------------------------------------------------
   // Intent 0: Polite Courtesy & Small Talk
   // ----------------------------------------------------
+  const isToilet = [
+    '화장실', '해우소', '변기', '골든 루틴', '골든루틴', '골든 팁',
+    '사그라다 파밀리아 화장실', '구엘 공원 화장실', '구엘공원 화장실',
+    '알함브라 화장실', '나스르 궁전 화장실', '나스르 화장실', '카를로스 5세 화장실',
+    '알카사르 화장실', '대성당 화장실', '세비야 대성당 화장실',
+    '바티칸 화장실', '시스티나 화장실', '시스티나 예배당 화장실',
+    '콜로세움 화장실', '포로 로마노 화장실', '우피치 화장실', '우피치 미술관 화장실',
+    '백화점 화장실', '엘 코르테 잉글레스', '엘코르테잉글레스', '변기 커버', '변기 시트',
+    '영수증 코드', '영수증 비밀번호', 'toilet', 'restroom', 'washroom', 'bathroom',
+    'wc', 'water closet', 'lavatory', 'bano', 'baño', 'bagno', 'toilette',
+    'donde esta el bano', 'donde esta el baño', "dov'e il bagno", "dov'è il bagno",
+    'where is the toilet', 'where is the restroom', 'where is the bathroom',
+    'golden routine', 'toilet routine', 'toilet tips', 'toilet seat', 'toilet code',
+    'sagrada familia toilet', 'alhambra toilet', 'nasrid toilet', 'vatican toilet',
+    'sistine chapel toilet', 'colosseum toilet', 'uffizi toilet',
+    'トイレ', 'お手洗い', '化粧室', 'サグラダファミリア トイレ', 'アルハンブラ トイレ',
+    'ナスル宮殿 トイレ', 'バチカン トイレ', 'システィーナ トイレ', 'コロッセオ トイレ',
+    'ウフィツィ トイレ', '便座', 'トイレ 暗証番号',
+    '洗手间', '厕所', '卫生间', '如厕', '黄金法则', '黄金守则', '圣家堂 厕所', '圣家堂 洗手间',
+    '阿尔罕布拉宫 洗手间', '纳斯瑞德 洗手间', '纳斯尔 洗手间', '梵蒂冈 洗手间', '西斯廷 洗手间',
+    '斗兽场 洗手间', '乌菲兹 洗手间', '马桶垫', '马桶圈', '小票 密码', '百货 洗手间'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
   const isThanks = ['고마워', '고맙', '감사', '땡큐', 'thank', 'thanks', 'thx', 'appreciate', 'ありがとう', '感謝', '助かった', 'サンキュー', '谢谢', '感谢', '多谢'].some(w => q.includes(w));
   if (isThanks) {
     const chips = [
@@ -4932,6 +4955,193 @@ function handleLocalChat(query) {
     ].some(w => q.includes(w) || cleanQ.includes(w)) ||
     /\b(sin sal|poco sale|sin azucar|sin azúcar|senza zucchero|agua caliente|acqua calda|la cuenta|il conto|para llevar|da portare via|disculpe|scusi|takeaway|takeout)\b/i.test(q)
   );
+
+  // 10-2B. RESTROOM & GOLDEN ROUTINES INTENT (SPAIN & ITALY)
+  if (isToilet) {
+    const isSagrada = ['사그라다', 'sagrada', '구엘', 'guell', '바르셀로나', 'barcelona', 'サグラダ', 'グエル', 'バルセロナ', '圣家堂', '奎尔', '巴塞罗那'].some(w => q.includes(w));
+    const isAlhambra = ['알함브라', '나스르', 'alhambra', 'nasrid', '카를로스', '그라나다', 'granada', 'アルハンブラ', 'ナスル', 'カルロス', 'グラナダ', '阿尔罕布拉', '纳斯瑞德', '纳斯尔', '卡洛斯', '格拉纳达'].some(w => q.includes(w));
+    const isVatican = ['바티칸', 'vatican', '시스티나', 'sistine', '베드로', 'バチカン', 'システィーナ', 'サンピエトロ', '梵蒂冈', '西斯廷', '圣伯多禄'].some(w => q.includes(w));
+    const isColosseum = ['콜로세움', '포로', 'colosseum', 'roman forum', 'foro romano', 'コロッセオ', 'フォロ', '斗兽场', '古罗马广场'].some(w => q.includes(w));
+    const isUffizi = ['우피치', 'uffizi', '피렌체', 'florence', 'firenze', 'ウフィツィ', 'フィレンツェ', '乌菲兹', '佛罗伦萨'].some(w => q.includes(w));
+    const isSeville = ['세비야', 'seville', 'sevilla', '알카사르', 'alcazar', 'セビリア', 'アルカサル', '塞维利亚', '王宫'].some(w => q.includes(w));
+    const isSurvivalTip = ['백화점', '영수증', '변기', '시트', '커버', 'department', 'receipt', 'seat', 'デパート', '便座', '百货', '马桶垫', '马桶圈'].some(w => q.includes(w));
+
+    let chips = [];
+    if (lang === 'ja') {
+      chips = [
+        { query: 'アルハンブラ宮殿とナスル朝宮殿のトイレ注意点', label: '⚠️ ナスル朝宮殿の注意点' },
+        { query: 'バチカン美術館とシスティーナ礼拝堂のトイレ情報', label: '⚠️ バチカン最後の砦' },
+        { query: 'ヨーロッパ旅行トイレの3大ゴールデンルール', label: '💡 3大ゴールデンルール' },
+        { query: 'ヨーロッパのトイレ裏ワザ（デパート＆便座事情）', label: '🏬 トイレ裏ワザ3選' }
+      ];
+    } else if (lang === 'en') {
+      chips = [
+        { query: 'Alhambra & Nasrid Palaces strict restroom rules', label: '⚠️ Nasrid Zero-Toilet Rule' },
+        { query: 'Vatican Sistine Chapel restroom last chance', label: '⚠️ Sistine Chapel Last Chance' },
+        { query: '3 golden routines for European restrooms', label: '💡 3 Golden Routines' },
+        { query: 'European restroom insider survival tips', label: '🏬 Restroom Survival Hacks' }
+      ];
+    } else if (lang === 'zh') {
+      chips = [
+        { query: '阿尔罕布拉宫与纳斯瑞德宫殿洗手间特级注意', label: '⚠️ 纳斯瑞德宫绝无厕所' },
+        { query: '梵蒂冈西斯廷礼拜堂洗手间最后关口', label: '⚠️ 西斯廷最后关口' },
+        { query: '欧洲旅行如厕3大黄金法则', label: '💡 3大黄金法则' },
+        { query: '欧洲如厕求生秘籍（百货与无马桶垫）', label: '🏬 如厕求生秘籍' }
+      ];
+    } else {
+      chips = [
+        { query: '알함브라 나스르 궁전 화장실 주의사항', label: '⚠️ 나스르 궁전 화장실 전무' },
+        { query: '바티칸 시스티나 예배당 직전 화장실 팁', label: '⚠️ 바티칸 마지막 화장실' },
+        { query: '사그라다 파밀리아 화장실 위치 알려줘', label: '⛪ 사그라다 파밀리아' },
+        { query: '피렌체 우피치 미술관 층별 화장실 위치', label: '🎨 피렌체 우피치 미술관' },
+        { query: '유럽 화장실 서바이벌 3대 현지 리얼 팁', label: '💡 유럽 화장실 3대 비법' }
+      ];
+    }
+
+    if (lang === 'ja') {
+      let res = `🚻 <strong>ヨーロッパ主要名所トイレ完全ガイド＆3大ゴールデンルール</strong><br><br>`;
+      if (isAlhambra) {
+        res += `⚠️ <strong>グラナダ・アルハンブラ（ナスル朝宮殿）の超厳格警告:</strong><br>
+        • <strong>宮殿内トイレ皆無:</strong> イスラム建築保護のため内部配管が禁止されており、入場から退場まで宮殿内にトイレは一切ありません！<br>
+        • <strong>対策:</strong> 30分刻みの時間指定列に並ぶ前に、すぐ隣にある<strong>【カルロス5世宮殿1階のトイレ】</strong>を必ず利用してください。<br>
+        • 敷地内のチケット売り場、カルロス5世宮殿、ヘネラリフェ庭園入口には清潔な無料トイレがあります。<br><br>`;
+      }
+      if (isVatican) {
+        res += `⚠️ <strong>ローマ・バチカン美術館（システィーナ礼拝堂）の注意点:</strong><br>
+        • <strong>一方通行で後戻り不可:</strong> システィーナ礼拝堂内にはトイレがなく、サン・ピエトロ大聖堂へ抜けると戻れません！<br>
+        • <strong>最後の砦:</strong> 礼拝堂に入る直前、回廊突き当たりのカフェテリア付近のトイレで必ず済ませてください。<br><br>`;
+      }
+      if (isSagrada) {
+        res += `⛪ <strong>バルセロナ・サグラダファミリア＆グエル公園:</strong><br>
+        • <strong>サグラダファミリア:</strong> 本堂内部にはトイレがありません。<strong>地下博物館（ショップ隣）や出口付近</strong>に無料トイレがあります。入場前や塔に登る前に必ず地下博物館へ！<br>
+        • <strong>グエル公園:</strong> 正門入口や自然の広場遊歩道沿いに清潔な無料トイレがあります。<br><br>`;
+      }
+      if (isUffizi) {
+        res += `🎨 <strong>フィレンツェ・ウフィツィ美術館（フロア別トイレ）:</strong><br>
+        • 0階（クローク向かい地下）、2階（カフェテリア下）、1階（特展エリア）に無料トイレ完備。<br>
+        • 3階鑑賞中は2階カフェテリアテラスのトイレへ降りるのが最短動線です。<em>「Dov'è il bagno?」</em>とお尋ねください。<br><br>`;
+      }
+      res += `💡 <strong>ヨーロッパ旅行トイレ「3大ゴールデンルール」:</strong><br>
+      1️⃣ <strong>美術館・宮殿は入場直前に必ず済ませる:</strong> 展示室内にトイレがないため、ロビーやカフェテリアで事前に済ませるのが鉄則です。<br>
+      2️⃣ <strong>カフェやレストラン出発前に必ず済ませる:</strong> 街中の公衆トイレは有料（€0.5〜€2）かつ希少。店を出る直前の利用が必須です。<br>
+      3️⃣ <strong>1ユーロ・50セント硬貨を常備する:</strong> 駅や高速SAの有料ゲート用に小銭をポケットに用意しておきましょう。<br><br>
+      🏬 <strong>現地リアル裏ワザ3選:</strong><br>
+      • <strong>大手デパート（無料オアシス）:</strong> カタルーニャ広場のエル・コルテ・イングレスやイタリアのCoin、リナシェンテの清潔な改装トイレを活用！<br>
+      • <strong>レシートの解錠コード:</strong> マクドナルドやスタバのトイレはレシート最下部の暗証番号が必要です。捨てないで！<br>
+      • <strong>便座がない理由:</strong> イタリアでは衛生と破損防止のため便座がない陶器便器が一般的。除菌シートを持参すると安心です。
+      `;
+      return res + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      let res = `🚻 <strong>Europe Major Sights Restroom Guide & 3 Golden Routines</strong><br><br>`;
+      if (isAlhambra) {
+        res += `⚠️ <strong>Granada Alhambra & Nasrid Palaces Strict Rule:</strong><br>
+        • <strong>Zero Toilets Inside:</strong> To preserve delicate Islamic plasterwork, no restrooms exist inside the Nasrid Palaces from entrance to exit!<br>
+        • <strong>Action Plan:</strong> Before queuing for your strict 30-min timeslot, visit the <strong>restrooms inside the Palace of Charles V</strong> without fail.<br>
+        • Free restrooms are placed at the main ticket office, Charles V Palace, and Generalife entrance.<br><br>`;
+      }
+      if (isVatican) {
+        res += `⚠️ <strong>Rome Vatican Museums (Sistine Chapel) Last Chance:</strong><br>
+        • <strong>Strict One-Way Route:</strong> No restrooms exist inside the Sistine Chapel, and the exit toward St. Peter's Basilica allows no return!<br>
+        • <strong>Last Bastion:</strong> Always use the cafeteria restrooms at the end of the gallery immediately before entering the Sistine Chapel.<br><br>`;
+      }
+      if (isSagrada) {
+        res += `⛪ <strong>Barcelona Sagrada Família & Park Güell:</strong><br>
+        • <strong>Sagrada Família:</strong> No restrooms inside the church nave itself. Clean free facilities are in the <strong>underground Museum (next to gift shop) & exit area</strong>. Use them before entering the nave or tower lifts.<br>
+        • <strong>Park Güell:</strong> Free restrooms at main entrance gates and around Plaça de la Natura walking trails.<br><br>`;
+      }
+      if (isUffizi) {
+        res += `🎨 <strong>Florence Uffizi Gallery Layout:</strong><br>
+        • Floor 0 (opposite cloakroom basement), Floor 2 (cafeteria mezzanine), Floor 1 (special exhibitions).<br>
+        • When viewing Floor 3 masterpieces, descending to Floor 2 cafeteria terrace is fastest. Ask staff: <em>"Dov'è il bagno?"</em>.<br><br>`;
+      }
+      res += `💡 <strong>3 Golden Routines for European Restroom Survival:</strong><br>
+      1️⃣ <strong>Always go right before entering palaces/museums:</strong> Exhibition galleries rarely have facilities; always use lobby/cafeteria restrooms beforehand.<br>
+      2️⃣ <strong>Empty bladders before departing cafes/restaurants:</strong> Street toilets charge €0.50–€2.00 coins. Always use dining venue restrooms before leaving.<br>
+      3️⃣ <strong>Keep €1.00 & €0.50 coins accessible:</strong> Train stations and highway stops use coin turnstiles. Keep loose change handy.<br><br>
+      🏬 <strong>3 Insider Real Hacks:</strong><br>
+      • <strong>Department Stores:</strong> El Corte Inglés (Pl. Catalunya, Barcelona) and Coin / Rinascente in Italy provide luxury, clean, free restrooms.<br>
+      • <strong>Receipt Door Codes:</strong> Fast-food chains (McDonald's, Starbucks) print 4–6 digit door codes at the bottom of purchase receipts.<br>
+      • <strong>Italian Toilet Seat Mystery:</strong> Many Italian public toilets lack plastic seats for sanitation & anti-vandalism. Carry pocket tissues & sanitizer wipes!
+      `;
+      return res + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      let res = `🚻 <strong>欧洲主要名胜洗手间实地核实指南与3大黄金法则</strong><br><br>`;
+      if (isAlhambra) {
+        res += `⚠️ <strong>格拉纳达 阿尔罕布拉宫（纳斯瑞德宫殿）特级警告:</strong><br>
+        • <strong>殿内绝无厕所:</strong> 为保护伊斯兰历史古迹，纳斯瑞德宫内部严禁通水，检票后直至完全离开全程无任何洗手间！<br>
+        • <strong>避坑秘籍:</strong> 纳斯瑞德宫严格30分钟定点检票，在前往排队前，务必先上紧邻的<strong>【卡洛斯五世宫殿内部洗手间】</strong>。<br>
+        • 景区售票处正门、卡洛斯五世宫殿、夏宫花园入口均有免费洗手间。<br><br>`;
+      }
+      if (isVatican) {
+        res += `⚠️ <strong>罗马 梵蒂冈博物馆（西斯廷礼拜堂）最后关口:</strong><br>
+        • <strong>单向通行严禁逆行:</strong> 西斯廷礼拜堂内无洗手间，穿过礼拜堂通往圣伯多禄大殿后无法返回！<br>
+        • <strong>最后关卡:</strong> 进入西斯廷前长廊尽头咖啡厅/简餐处的洗手间是最后机会，务必全家在此解决。<br><br>`;
+      }
+      if (isSagrada) {
+        res += `⛪ <strong>巴塞罗那 圣家堂与奎尔公园:</strong><br>
+        • <strong>圣家堂:</strong> 主堂内部完全没有洗手间！免费洗手间位于<strong>地下博物馆（纪念品店旁）及出口闸机处</strong>，入堂与登塔前务必先去！<br>
+        • <strong>奎尔公园:</strong> 正门入口处及中心自然大广场步道旁均设有免费干净公厕。<br><br>`;
+      }
+      if (isUffizi) {
+        res += `🎨 <strong>佛罗伦萨 乌菲兹美术馆分层指南:</strong><br>
+        • 0层存包处对面地下、2层咖啡厅夹层、1层特展区均有洗手间。<br>
+        • 3层欣赏名画时，顺路下到2层咖啡厅露台侧洗手间最顺畅。可向工作人员询问：<em>"Dov'è il bagno?"</em>。<br><br>`;
+      }
+      res += `💡 <strong>欧洲旅行如厕防坑「3大黄金法则」:</strong><br>
+      1️⃣ <strong>进博物馆宫殿前务必先上洗手间:</strong> 展厅内部不设公厕，趁在门厅或存包处时先解决是铁则。<br>
+      2️⃣ <strong>离开餐厅咖啡馆前务必清空膀胱:</strong> 街头公厕罕见且收费（€0.5~€2），离店前带长辈上店内厕所可免后顾之忧。<br>
+      3️⃣ <strong>口袋常备€1与50欧分硬币:</strong> 火车站与高速服务区收费闸机需投币，随身备好零钱急用。<br><br>
+      🏬 <strong>本地独家求生秘籍3则:</strong><br>
+      • <strong>百货商场免费避风港:</strong> 巴塞罗那加泰罗尼亚广场英国宫百货（El Corte Inglés）、意大利Coin与Rinascente百货均有豪华免费洗手间。<br>
+      • <strong>保留小票查开门密码:</strong> 麦当劳、星巴克等快餐店洗手间大门装有密码锁，密码清晰印在小票最底部。<br>
+      • <strong>意大利无马桶圈之谜:</strong> 当地为高温消毒和防踩踏故意拆除塑料坐圈，随身备好便携抽纸和消毒湿巾即可安心使用。
+      `;
+      return res + renderFollowupChips(chips);
+    } else {
+      let res = `🚻 <strong>유럽 주요 명소 화장실 완벽 가이드 &amp; 이용 수칙 '골든 루틴'</strong><br><br>`;
+      if (isAlhambra) {
+        res += `⚠️ <strong>그라나다 알함브라 궁전 (나스르 궁전) 초특급 주의:</strong><br>
+        • <strong>궁전 내부 화장실 전무:</strong> 이슬람 건축 보존을 위해 배관 설치가 제한되어, <strong>나스르 궁전은 입장 후 관람 종료까지 화장실이 전혀 없습니다!</strong><br>
+        • <strong>골든 팁:</strong> 30분 엄격 입장 대기줄을 서기 전, 바로 인근 <strong>[카를로스 5세 궁전 1층 화장실]</strong>을 반드시 이용하고 입장하셔야 합니다.<br>
+        • 알함브라 전체 부지는 매표소 정문, 카를로스 5세 궁전, 헤네랄리페 정원 입구에 무료 화장실이 완비되어 있습니다.<br><br>`;
+      }
+      if (isVatican) {
+        res += `⚠️ <strong>로마 바티칸 미술관 (시스티나 예배당 직전) 라스트 찬스:</strong><br>
+        • <strong>일방통행 되돌아오기 불가:</strong> 시스티나 예배당 내부에는 화장실이 절대 없으며, 성 베드로 대성당으로 넘어가면 동선상 다시 돌아올 수 없습니다.<br>
+        • <strong>마지막 보루:</strong> 예배당 들어가기 직전 회랑 끝 카페테리아/매점 구역 화장실이 마지막 기회이니 무조건 비우고 입장하세요!<br><br>`;
+      }
+      if (isSagrada) {
+        res += `⛪ <strong>바르셀로나 사그라다 파밀리아 &amp; 구엘 공원:</strong><br>
+        • <strong>사그라다 파밀리아:</strong> 성당 본당(예배당 내부) 안에는 화장실이 없습니다! 무료 화장실은 <strong>지하 박물관(Museum) 구역(기념품숍 옆) 및 출구 근처</strong>에 모여 있으니, 본당 입장 전이나 타워 탑승 전에 지하 박물관 쪽 화장실을 먼저 들르세요.<br>
+        • <strong>구엘 공원:</strong> 정문 입구 및 자연 광장(Plaça de la Natura) 주변 산책로 중간에 무료 공중화장실이 잘 마련되어 있습니다.<br><br>`;
+      }
+      if (isColosseum) {
+        res += `🏛️ <strong>로마 콜로세움 &amp; 포로 로마노:</strong><br>
+        • <strong>콜로세움:</strong> 내부 1층(Ground Floor) 개찰구 통과 직후 무료 화장실 완비.<br>
+        • <strong>포로 로마노:</strong> 매표소 근처에 무료 화장실이 있으며, 방대한 야외 유적지 안으로 들어가면 찾기 어려우니 입장 직전에 미리 해결하세요.<br><br>`;
+      }
+      if (isUffizi) {
+        res += `🎨 <strong>피렌체 우피치 미술관 (층별 안내):</strong><br>
+        • <strong>0층(지상층):</strong> 물품보관소 맞은편 지하 / <strong>2층(중앙층):</strong> 카페테리아 아래 메자닌 / <strong>1층:</strong> 특별전시회 구역에 무료 화장실 분산.<br>
+        • 3층 감상 중 급할 때는 <strong>2층 카페테리아 테라스 화장실</strong>로 내려가는 것이 가장 빠릅니다. 직원에게 <em>"Dov'è il bagno? (도베 일 바뇨?)"</em> 또는 <em>"Where is the restroom?"</em> 문의하세요.<br><br>`;
+      }
+      if (isSeville) {
+        res += `🏰 <strong>세비야 알카사르 &amp; 세비야 대성당:</strong><br>
+        • 두 곳 모두 유네스코 세계유산으로 내부 화장실이 매우 청결합니다. 관람 동선 초기(정원 및 중정 로비)와 중간 휴게 공간에 완비되어 있으니 입장 직후 픽토그램을 확인하세요.<br><br>`;
+      }
+      res += `💡 <strong>유럽 여행 중 화장실 이용 '골든 루틴' 3대 원칙:</strong><br>
+      1️⃣ <strong>박물관/궁전은 입장 직전에 무조건 다녀오기:</strong> 전시실 안에는 화장실이 없는 경우가 많으므로 로비/카페테리아 구역에서 무조건 먼저 들르는 것이 철칙입니다.<br>
+      2️⃣ <strong>카페나 식당에 들렀을 때 무조건 비우기:</strong> 길거리 공중화장실은 드물거나 유료(0.5~2유로 동전). 식사/커피 후 출발 직전 매장 화장실을 들르는 습관이 부모님 고생을 막습니다.<br>
+      3️⃣ <strong>동전(유로화 1유로 / 50센트) 항상 품고 다니기:</strong> 기차역, 광장, 고속도로 휴게소의 유료 화장실(턴스타일)을 대비해 주머니에 1유로, 50센트 동전을 항상 소지하세요.<br><br>
+      🏬 <strong>유럽 화장실 서바이벌 3대 현지 리얼 팁:</strong><br>
+      • <strong>무료 치트키 '백화점':</strong> 바르셀로나 카탈루냐 광장의 엘 코르테 잉글레스(El Corte Inglés)나 이탈리아의 Coin, Rinascente 백화점은 리모델링된 최고급 무료 화장실을 운영하는 도심의 오아시스!<br>
+      • <strong>영수증 코드를 확인하세요:</strong> 맥도날드, 스타벅스 등 프랜차이즈 화장실 문 도어락 비밀번호는 주문 영수증 맨 하단에 인쇄되어 있습니다.<br>
+      • <strong>이탈리아 화장실의 비밀 (변기 시트 없음):</strong> 위생 관리와 파손 방지를 위해 변기 커버 없이 도기만 둔 곳이 많습니다. 고장이 아니니 당황하지 마시고 휴대용 미니 티슈나 소독 물티슈를 챙기시면 쾌적하게 이용하실 수 있습니다.
+      `;
+      return res + renderFollowupChips(chips);
+    }
+  }
+
 
   if (isSurvivalPhrases) {
     const isItalianFocus = isItaly || ['이탈리아', '이태리', 'italian', 'poco sale', 'senza zucchero', 'quanto costa', 'il conto', 'il bagno', 'acqua calda', 'イタリア語', '意大利语'].some(w => q.includes(w) || cleanQ.includes(w));
@@ -7913,32 +8123,44 @@ function filterSafetyWaterSection(mode) {
   const blockSafety = document.getElementById('blockSafetyProtocol');
   const blockWater = document.getElementById('blockWaterProtocol');
   const blockDress = document.getElementById('blockDressProtocol');
+  const blockToilet = document.getElementById('blockToiletProtocol');
   const btnAll = document.getElementById('tabBtnSafetyAll');
   const btnSafety = document.getElementById('tabBtnSafetyOnly');
   const btnWater = document.getElementById('tabBtnWaterOnly');
   const btnDress = document.getElementById('tabBtnDressOnly');
+  const btnToilet = document.getElementById('tabBtnToiletOnly');
 
-  [btnAll, btnSafety, btnWater, btnDress].forEach(b => { if (b) b.classList.remove('active'); });
+  [btnAll, btnSafety, btnWater, btnDress, btnToilet].forEach(b => { if (b) b.classList.remove('active'); });
 
   if (mode === 'safety') {
     if (blockSafety) blockSafety.style.display = 'flex';
     if (blockWater) blockWater.style.display = 'none';
     if (blockDress) blockDress.style.display = 'none';
+    if (blockToilet) blockToilet.style.display = 'none';
     if (btnSafety) btnSafety.classList.add('active');
   } else if (mode === 'water') {
     if (blockSafety) blockSafety.style.display = 'none';
     if (blockWater) blockWater.style.display = 'flex';
     if (blockDress) blockDress.style.display = 'none';
+    if (blockToilet) blockToilet.style.display = 'none';
     if (btnWater) btnWater.classList.add('active');
   } else if (mode === 'dress') {
     if (blockSafety) blockSafety.style.display = 'none';
     if (blockWater) blockWater.style.display = 'none';
     if (blockDress) blockDress.style.display = 'flex';
+    if (blockToilet) blockToilet.style.display = 'none';
     if (btnDress) btnDress.classList.add('active');
+  } else if (mode === 'toilet') {
+    if (blockSafety) blockSafety.style.display = 'none';
+    if (blockWater) blockWater.style.display = 'none';
+    if (blockDress) blockDress.style.display = 'none';
+    if (blockToilet) blockToilet.style.display = 'flex';
+    if (btnToilet) btnToilet.classList.add('active');
   } else {
     if (blockSafety) blockSafety.style.display = 'flex';
     if (blockWater) blockWater.style.display = 'flex';
     if (blockDress) blockDress.style.display = 'flex';
+    if (blockToilet) blockToilet.style.display = 'flex';
     if (btnAll) btnAll.classList.add('active');
   }
 }

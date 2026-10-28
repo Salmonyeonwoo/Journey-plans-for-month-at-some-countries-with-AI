@@ -10077,3 +10077,213 @@ h1, h2, h3, h4,
     height: 160px;
   }
 }
+
+/* ==========================================================================
+   🚻 2026 Restroom Guide & Golden Routines (Spain & Italy)
+   ========================================================================== */
+
+.toilet-alert-banner {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  border: 1px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+
+.card-badge-num.gold-badge {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.toilet-golden-card {
+  border-left: 5px solid #f59e0b;
+}
+
+.spain-toilet-card {
+  border-left: 5px solid #ef4444;
+}
+
+.italy-toilet-card {
+  border-left: 5px solid #10b981;
+}
+
+.survival-toilet-card {
+  border-left: 5px solid #3b82f6;
+}
+
+.golden-routine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.golden-rule-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.golden-rule-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.routine-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fef3c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.routine-content {
+  flex: 1;
+}
+
+.routine-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.routine-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+.sights-toilet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.sight-toilet-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.sight-toilet-box.highlight-box {
+  background: #fffdf5;
+  border: 1px solid #fef08a;
+}
+
+.sight-box-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sight-pin-icon {
+  font-size: 16px;
+}
+
+.sight-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.sight-desc-chunk {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.sight-desc-chunk strong {
+  color: #0f172a;
+}
+
+.sight-warning-callout {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 12px 16px;
+  border-radius: 0 10px 10px 0;
+  color: #991b1b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.survival-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.survival-tip-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.survival-tip-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.tip-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tip-icon {
+  font-size: 20px;
+}
+
+.tip-title {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.tip-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .golden-routine-grid {
+    grid-template-columns: 1fr;
+  }
+  .survival-tips-grid {
+    grid-template-columns: 1fr;
+  }
+}

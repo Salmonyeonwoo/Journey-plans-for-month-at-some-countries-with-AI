@@ -1952,6 +1952,7 @@
                 <button type="button" class="tab-chip" id="tabBtnSafetyOnly" onclick="filterSafetyWaterSection('safety')" data-i18n="tab_safety_guide">🚨 1. 소매치기 예방 &amp; 소지품 방어</button>
                 <button type="button" class="tab-chip" id="tabBtnWaterOnly" onclick="filterSafetyWaterSection('water')" data-i18n="tab_water_guide">💧 2. 마트 생수(가스물 vs 맹물) 구별법</button>
                 <button type="button" class="tab-chip" id="tabBtnDressOnly" onclick="filterSafetyWaterSection('dress')" data-i18n="tab_dress_guide">⛪ 3. 성당 복장 규정 &amp; 부모님 케어</button>
+                <button type="button" class="tab-chip" id="tabBtnToiletOnly" onclick="filterSafetyWaterSection('toilet')" data-i18n="tab_toilet_guide">🚻 4. 명소 화장실 &amp; 골든 루틴</button>
               </div>
 
               <!-- PART 1: 🚨 소매치기 예방 실전 가이드 -->
@@ -2405,6 +2406,172 @@
                       <span class="care-badge layer-badge" data-i18n="care_badge_layer">🧥 겹쳐 입기</span>
                       <h4 data-i18n="care_layer_title">일교차 대비 가벼운 레이어링</h4>
                       <p data-i18n="care_layer_desc">11월 남유럽은 낮에는 햇살이 따스하지만 아침·저녁과 성당 내부는 쌀쌀합니다. 두꺼운 외투 1벌보다 경량 패딩·가디건·머플러를 여러 겹 겹쳐 입어 수시로 체온을 조절하는 것이 감기 예방에 효과적입니다.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- PART 4: 🚻 유럽 여행 명소 화장실 정보 & 이용 수칙 -->
+              <div class="protocol-card-block" id="blockToiletProtocol" style="margin-top:28px;">
+                <div class="dress-alert-banner toilet-alert-banner">
+                  <div class="alert-banner-icon">🚻</div>
+                  <div class="alert-banner-text" data-i18n="toilet_intro_banner">
+                    유럽의 궁전과 미술관은 <strong>전시실 내부에 화장실이 없거나 일방통행</strong>인 경우가 많습니다. 길거리 화장실은 유료(€0.5~€2)이므로, 부모님 동행 시 아래의 <strong>3대 골든 루틴과 스페인·이탈리아 명소별 화장실 위치</strong>를 반드시 숙지하세요!
+                  </div>
+                </div>
+
+                <!-- 1. 골든 루틴 3대 원칙 -->
+                <div class="safety-sub-card toilet-golden-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num gold-badge" data-i18n="toilet_golden_badge">ROUTINE 01</span>
+                    <h3 class="card-main-title" data-i18n="toilet_golden_title">💡 유럽 여행 중 화장실 이용 '골든 루틴' 3대 원칙</h3>
+                  </div>
+                  <p class="card-lead-text" data-i18n="toilet_golden_sub">부모님 고생을 100% 방지하는 현지 실전 행동 수칙</p>
+                  <div class="golden-routine-grid">
+                    <div class="golden-rule-item">
+                      <div class="routine-icon-circle">🏛️</div>
+                      <div class="routine-content">
+                        <h4 class="routine-title" data-i18n="golden_rule1_title">① 박물관 · 궁전은 입장 직전에 무조건 다녀오기</h4>
+                        <p class="routine-desc" data-i18n="golden_rule1_desc">영국의 대영박물관처럼 유럽의 궁전과 미술관들은 건물 내부(특히 전시실 안)에는 화장실이 없는 경우가 많습니다. 전시 관람을 시작하기 전, 로비나 카페테리아 구역에 있을 때 무조건 먼저 다녀오시는 것이 철칙입니다.</p>
+                      </div>
+                    </div>
+                    <div class="golden-rule-item">
+                      <div class="routine-icon-circle">☕</div>
+                      <div class="routine-content">
+                        <h4 class="routine-title" data-i18n="golden_rule2_title">② 카페나 식당에 들렀을 때 무조건 비우기</h4>
+                        <p class="routine-desc" data-i18n="golden_rule2_desc">유럽의 길거리 공중화장실은 찾기 힘들거나 유료(0.5유로~2유로 동전 필요)인 경우가 많습니다. 식당이나 카페에서 식사나 커피를 드신 후에는 출발하기 직전 무조건 매장 화장실을 들러서 나오시는 습관을 들이셔야 부모님 고생을 막을 수 있습니다.</p>
+                      </div>
+                    </div>
+                    <div class="golden-rule-item">
+                      <div class="routine-icon-circle">🪙</div>
+                      <div class="routine-content">
+                        <h4 class="routine-title" data-i18n="golden_rule3_title">③ 동전(유로화 1유로 / 50센트) 항상 품고 다니기</h4>
+                        <p class="routine-desc" data-i18n="golden_rule3_desc">기차역, 광장, 고속도로 휴게소 등의 유료 화장실(동전 투입식 턴스타일)을 대비해 항상 주머니나 가방 손 닿는 곳에 1유로, 50센트 동전 몇 개를 챙겨두시면 위급할 때 든든합니다!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2. 스페인 명소 화장실 정보 -->
+                <div class="safety-sub-card spain-toilet-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num red-badge" data-i18n="toilet_spain_badge">SPAIN 02</span>
+                    <h3 class="card-main-title" data-i18n="toilet_spain_title">🇪🇸 [Part 1] 스페인 명소 화장실 정밀 확인 가이드</h3>
+                  </div>
+                  <p class="card-lead-text" data-i18n="toilet_spain_sub">바르셀로나 사그라다 파밀리아·구엘 공원, 그라나다 알함브라·나스르 궁전, 세비야 알카사르·대성당</p>
+                  <div class="sights-toilet-list">
+                    <div class="sight-toilet-box">
+                      <div class="sight-box-head">
+                        <span class="sight-pin-icon">📍</span>
+                        <h4 class="sight-name" data-i18n="spain_spot1_title">1. 바르셀로나: 사그라다 파밀리아 &amp; 구엘 공원</h4>
+                      </div>
+                      <div class="sight-box-body">
+                        <div class="sight-desc-chunk" data-i18n="spain_spot1_sagrada">
+                          • <strong>사그라다 파밀리아 (Sagrada Família):</strong> 화장실 유무: <strong>있음 (무료)</strong><br>성당 본당(예배당 내부) 안에는 화장실이 없습니다. 입장권 소지자가 이용할 수 있는 무료 화장실은 <strong>지하 박물관(Museum) 구역(기념품숍 옆) 및 출구 근처</strong>에 모여 있습니다. 타워(종탑)에 올라가기 전이나 본당 입장 직전에 지하 박물관 쪽 화장실을 먼저 들르는 동선이 가장 안전합니다.
+                        </div>
+                        <div class="sight-desc-chunk" style="margin-top:10px;" data-i18n="spain_spot1_guell">
+                          • <strong>구엘 공원 (Park Güell):</strong> 화장실 유무: <strong>있음 (무료)</strong><br>정문 입구 매표소 근처와 공원 내부 자연 광장(Plaça de la Natura) 주변 산책로 중간 거점에 무료 공중화장실이 정상 운영 중입니다. 언덕을 오르기 전 입구 화장실을 이용하시는 것을 추천합니다.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sight-toilet-box highlight-box">
+                      <div class="sight-box-head">
+                        <span class="sight-pin-icon">📍</span>
+                        <h4 class="sight-name" data-i18n="spain_spot2_title">2. 그라나다: 알함브라 궁전 (나스르 궁전 포함)</h4>
+                      </div>
+                      <div class="sight-box-body">
+                        <div class="sight-desc-chunk" data-i18n="spain_spot2_alhambra">
+                          • <strong>알함브라 궁전 부지 전체:</strong> 화장실 유무: <strong>있음 (무료)</strong><br>부지가 방대하지만, 매표소 정문 인근, 카를로스 5세 궁전 내부, 그리고 헤네랄리페(Generalife) 정원 입구 등 주요 거점마다 깔끔한 무료 화장실이 분산 배치되어 있습니다.
+                        </div>
+                        <div class="sight-desc-chunk sight-warning-callout" style="margin-top:10px;" data-i18n="spain_spot2_nasrid_warn">
+                          ⚠️ <strong>나스르 궁전(Palacios Nazaríes) 초특급 주의: '궁전 내부 화장실 전무' 철저 적용!</strong><br>이슬람 유적 보존을 위해 내부 배관 설치가 엄격히 제한되어, <strong>입장 후 관람이 끝날 때까지 화장실이 전혀 없습니다.</strong><br>💡 <strong>골든 팁:</strong> 나스르 궁전은 입장 시간이 30분 단위로 엄격히 통제됩니다. 입장 대기줄을 서기 전, 바로 인근에 있는 <strong>[카를로스 5세 궁전 내부 화장실]</strong>을 반드시 다녀오셔야 중간에 낭패를 보지 않습니다.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sight-toilet-box">
+                      <div class="sight-box-head">
+                        <span class="sight-pin-icon">📍</span>
+                        <h4 class="sight-name" data-i18n="spain_spot3_title">3. 세비야: 알카사르 왕궁 &amp; 세비야 대성당</h4>
+                      </div>
+                      <div class="sight-box-body">
+                        <div class="sight-desc-chunk" data-i18n="spain_spot3_seville">
+                          화장실 유무: <strong>있음 (무료)</strong><br>두 곳 모두 세계적인 유네스코 세계유산으로 내부 화장실이 매우 청결하게 관리됩니다. 관람 동선 초기(정원 및 중정 로비 구역)와 중간 휴게 테라스 구역에 깔끔한 무료 화장실이 있습니다. 입장 직후 안내도에서 화장실 위치를 먼저 파악해 두시면 편리합니다.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3. 이탈리아 명소 화장실 정보 -->
+                <div class="safety-sub-card italy-toilet-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num green-badge" data-i18n="toilet_italy_badge">ITALY 03</span>
+                    <h3 class="card-main-title" data-i18n="toilet_italy_title">🇮🇹 [Part 2] 이탈리아 명소 화장실 정밀 확인 가이드</h3>
+                  </div>
+                  <p class="card-lead-text" data-i18n="toilet_italy_sub">로마 바티칸 미술관·콜로세움·포로 로마노, 피렌체 우피치 미술관 층별 위치</p>
+                  <div class="sights-toilet-list">
+                    <div class="sight-toilet-box highlight-box">
+                      <div class="sight-box-head">
+                        <span class="sight-pin-icon">📍</span>
+                        <h4 class="sight-name" data-i18n="italy_spot1_title">1. 로마: 바티칸 미술관 &amp; 콜로세움 (포로 로마노)</h4>
+                      </div>
+                      <div class="sight-box-body">
+                        <div class="sight-desc-chunk" data-i18n="italy_spot1_vatican">
+                          • <strong>바티칸 미술관 (Vatican Museums):</strong> 화장실 유무: <strong>있음 (무료)</strong><br>박물관 코스가 3~4시간에 달해 정원 안뜰, 카페테리아 인근 등에 무료 화장실이 분산되어 있습니다.<br>⚠️ <strong>시스티나 예배당(Cappella Sistina) 직전 라스트 찬스:</strong> 시스티나 예배당 내부에는 화장실이 절대 없으며, 성 베드로 대성당으로 이어지는 일방통행 통로로 나가면 <strong>되돌아오기가 불가능</strong>합니다. 예배당 진입 직전 회랑 끝 카페테리아/스낵바 구역 화장실이 마지막 기회이니 무조건 들렀다 가셔야 합니다.
+                        </div>
+                        <div class="sight-desc-chunk" style="margin-top:10px;" data-i18n="italy_spot1_colosseum">
+                          • <strong>콜로세움 &amp; 포로 로마노:</strong> 화장실 유무: <strong>있음 (무료)</strong><br>콜로세움 내부 1층(Ground Floor) 개찰구 통과 직후 구역에 무료 화장실이 완비되어 있습니다. 포로 로마노 역시 매표소 근처에 화장실이 있으나, 거대한 야외 유적지 안으로 들어가면 화장실을 찾기 어려우므로 입장 직전에 미리 해결하시는 것이 안전합니다.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="sight-toilet-box">
+                      <div class="sight-box-head">
+                        <span class="sight-pin-icon">📍</span>
+                        <h4 class="sight-name" data-i18n="italy_spot2_title">2. 피렌체: 우피치 미술관 (Uffizi Gallery 층별 안내)</h4>
+                      </div>
+                      <div class="sight-box-body">
+                        <div class="sight-desc-chunk" data-i18n="italy_spot2_uffizi">
+                          화장실 유무: <strong>있음 (무료)</strong><br>3층 구조의 대형 미술관으로 층마다 분산 배치되어 있습니다:<br>• <strong>0층 (지상층):</strong> 물품보관소(Cloakroom) 맞은편 지하 구역<br>• <strong>2층 (중앙층):</strong> 카페테리아 아래쪽 메자닌(Mezzanine) 구역<br>• <strong>1층:</strong> 특별전시회 구역 내부<br>💡 <strong>동선 팁:</strong> 최상층 3층 전시실(보티첼리 등)을 감상하다가 급할 때는 <strong>2층 카페테리아 테라스 구역 화장실</strong>로 내려가는 동선이 가장 편리합니다. 현장 직원에게 <em>"Dov'è il bagno? (도베 일 바뇨?)"</em> 또는 <em>"Where is the restroom?"</em>이라고 물어보시면 즉시 친절히 안내해 줍니다.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4. 유럽 화장실 서바이벌 3대 현지 리얼 팁 -->
+                <div class="safety-sub-card survival-toilet-card">
+                  <div class="card-headline-row">
+                    <span class="card-badge-num blue-badge" data-i18n="toilet_survival_badge">SURVIVAL 04</span>
+                    <h3 class="card-main-title" data-i18n="toilet_survival_title">💡 유럽 화장실 서바이벌 3대 현지 리얼 팁</h3>
+                  </div>
+                  <p class="card-lead-text" data-i18n="toilet_survival_sub">백화점 무료 치트키, 영수증 비밀번호 도어락, 이탈리아 변기 커버 미스터리</p>
+                  <div class="survival-tips-grid">
+                    <div class="survival-tip-card">
+                      <div class="tip-card-header">
+                        <span class="tip-icon">🏬</span>
+                        <h4 class="tip-title" data-i18n="survival_tip1_title">🏬 1. 도심 속 무료 치트키: '대형 백화점'을 노려라</h4>
+                      </div>
+                      <p class="tip-desc" data-i18n="survival_tip1_desc">바르셀로나 카탈루냐 광장의 <strong>엘 코르테 잉글레스 (El Corte Inglés)</strong> 백화점이나 이탈리아 주요 도시(로마, 밀라노, 피렌체)의 백화점(<strong>Coin, Rinascente</strong>)은 최고급 리모델링 화장실을 무료로 개방합니다. 도심 관광 중 깨끗한 화장실이 급할 때 완벽한 단비 같은 존재입니다.</p>
+                    </div>
+
+                    <div class="survival-tip-card">
+                      <div class="tip-card-header">
+                        <span class="tip-icon">🧾</span>
+                        <h4 class="tip-title" data-i18n="survival_tip2_title">🧾 2. 영수증 버리지 마세요! 화장실 비밀번호(Code) 인쇄</h4>
+                      </div>
+                      <p class="tip-desc" data-i18n="survival_tip2_desc">유럽의 맥도날드, 버거킹, 스타벅스 등 프랜차이즈 매장은 무단 이용 방지를 위해 화장실 문에 전자 도어락이 걸려 있습니다. <strong>주문 후 결제 영수증 맨 하단에 화장실 비밀번호(Code / Código) 4~6자리</strong>가 적혀 있으니 문을 열기 전까지 영수증을 꼭 챙기세요.</p>
+                    </div>
+
+                    <div class="survival-tip-card">
+                      <div class="tip-card-header">
+                        <span class="tip-icon">🚽</span>
+                        <h4 class="tip-title" data-i18n="survival_tip3_title">🚽 3. 이탈리아 화장실의 비밀: '변기 시트(커버)'가 없는 이유</h4>
+                      </div>
+                      <p class="tip-desc" data-i18n="survival_tip3_desc">이탈리아 공중화장실이나 유적지 화장실 중에는 위생 관리 및 파손 방지를 위해 변기 커버(플라스틱 시트) 없이 도기만 있는 곳이 많습니다. 고장이나 청소 불량이 아니니 당황하지 마세요! <strong>휴대용 미니 포켓 티슈나 알코올 소독 물티슈</strong>를 가방에 챙겨 다니시면 부모님께서도 위생적이고 안심하며 이용하실 수 있습니다.</p>
                     </div>
                   </div>
                 </div>
