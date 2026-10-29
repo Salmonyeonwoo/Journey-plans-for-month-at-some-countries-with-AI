@@ -845,10 +845,10 @@
                 <!-- 🍽️ [요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 & 무료 야경·야시장 총정리 -->
                 <div style="background:#fff8ee;border:1.5px solid #f2cf92;border-radius:14px;padding:18px 20px;margin-top:16px;">
                   <h4 style="margin:0 0 6px;color:#854d0e;font-size:16px;display:flex;align-items:center;gap:8px;">
-                    <span>🍽️</span> <strong data-i18n="master_sum3_title">[요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 & 무료 야경·야시장 총정리</strong>
+                    <span>🍽️</span> <strong data-i18n="master_sum3_title">[요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 &amp; 무료 야경·전통시장 총정리</strong>
                   </h4>
                   <p style="font-size:13px;color:#78350f;margin:0 0 14px;line-height:1.5;" data-i18n="master_sum3_desc">
-                    확정 일정에 맞춰 부모님 입맛과 체력을 완벽히 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 사전 예약 없이 즐기는 무료 야경·야시장 스폿 총정리입니다.
+                    확정 일정에 맞춰 부모님 입맛과 체력을 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 무료 야경·낮 전통시장 스폿 총정리입니다. (도시별 추가 푸드홀·전통식당·전망대 후보는 [제5장 실용정보]에서 확인)
                   </p>
                   <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:12px;">
                     <!-- 바르셀로나 -->
@@ -1035,7 +1035,7 @@
                       <div data-i18n="must_rom_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
                         <strong>꼭 해볼 것 & 무료 야경:</strong><br>
                         • <strong>트레비 분수 (Fontana di Trevi)</strong>: 밤 10시 이후 야간 산책 (인파 줄어든 로맨틱한 야경 & 동전 던지기, 숙소 도보 12분)<br>
-                        • <strong>캄포 디 피오리 (Campo de' Fiori)</strong>: 로컬 야시장 및 야간 광장 정취<br>
+                        • <strong>캄포 디 피오리 (Campo de' Fiori)</strong>: 낮 시간 로컬 전통 시장 및 저녁 야외 광장 식음업장 정취<br>
                         • 12/4 테르미니역 공항철도 ➔ FCO T3 22:00 출국
                       </div>
                     </div>
@@ -1823,7 +1823,7 @@
           <section class="section guide-section" id="dining">
       <div class="wrap">
         <!-- 🍽️ 2026 특별 기획: 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편) -->
-        <div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
+        <div class="practical-subnav-bar" role="navigation" aria-label="실용정보 미식·시장·야경 섹션 바로가기"><span class="practical-subnav-label">📌 섹션 바로가기:</span><button type="button" class="practical-subnav-chip active" onclick="document.getElementById('practical-city-candidates').scrollIntoView({behavior:'smooth', block:'start'})">✨ 도시별 추가 맛집·시장·전망 후보 (17선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-master-gourmet').scrollIntoView({behavior:'smooth', block:'start'})">🥘 빠에야·피자 외 7대 도시 미식 &amp; 회화 24선</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('globalDiningSearch').scrollIntoView({behavior:'smooth', block:'center'})">🏪 기존 검증 맛집 디렉토리 (92선 &amp; 지도)</button></div><div id="practical-city-candidates" class="practical-candidates-mount" style="margin-bottom:32px;"></div><div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
 
         <div class="section-head">
           <div>

@@ -1,6 +1,6 @@
 
 // Global Direct Jump to Master Gourmet & Survival Phrases
-window.jumpToMasterGourmet = function(targetSection) {
+window.jumpToMasterGourmet = function (targetSection) {
   targetSection = targetSection || 'summary-master-gourmet';
   if (targetSection === 'practical-master-gourmet') {
     switchGuidebookChapter('chapter-practical');
@@ -12,7 +12,7 @@ window.jumpToMasterGourmet = function(targetSection) {
   if (typeof renderMasterGourmetGuide === 'function') {
     renderMasterGourmetGuide(typeof currentLang !== 'undefined' ? currentLang : 'ko', 'all');
   }
-  setTimeout(function() {
+  setTimeout(function () {
     var el = document.getElementById(targetSection);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -86,7 +86,7 @@ function renderBigLandmarksMap() {
 
   const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) ? I18N_DICTIONARY[currentLang] : (I18N_DICTIONARY ? I18N_DICTIONARY['ko'] : {});
   const allItems = (typeof GLOBAL_LANDMARKS_DATA !== 'undefined' ? [...GLOBAL_LANDMARKS_DATA] : []);
-  
+
   if (typeof DUBAI_LANDMARKS !== 'undefined') {
     DUBAI_LANDMARKS.forEach(dlm => {
       if (!allItems.some(x => x.name === dlm.name)) {
@@ -100,21 +100,21 @@ function renderBigLandmarksMap() {
   if (currentBigMapFilter === 'IBERIA') {
     filteredItems = allItems.filter(x => x.region === '스페인' || x.region === '포르투갈' || x.group === '이베리아');
   } else if (currentBigMapFilter === 'EUROPE') {
-    filteredItems = allItems.filter(x => 
-      x.region !== '스페인' && x.region !== '포르투갈' && 
+    filteredItems = allItems.filter(x =>
+      x.region !== '스페인' && x.region !== '포르투갈' &&
       x.region !== '중남미' && x.region !== '두바이' && x.region !== '미국' &&
       !x.city.includes('두바이') && !x.city.includes('Dubai') &&
       !x.city.includes('페루') && !x.city.includes('브라질') && !x.city.includes('아르헨티나') && !x.city.includes('멕시코')
     );
   } else if (currentBigMapFilter === 'LATIN') {
-    filteredItems = allItems.filter(x => 
-      x.region === '중남미' || x.region === '페루' || x.region === '볼리비아' || 
+    filteredItems = allItems.filter(x =>
+      x.region === '중남미' || x.region === '페루' || x.region === '볼리비아' ||
       x.region === '아르헨티나' || x.region === '브라질' || x.region === '멕시코' || x.region === '칠레' ||
       x.city.includes('페루') || x.city.includes('브라질') || x.city.includes('아르헨티나') || x.city.includes('멕시코') || x.city.includes('쿠스코')
     );
   } else if (currentBigMapFilter === 'DUBAI') {
-    filteredItems = allItems.filter(x => 
-      x.region === '두바이' || x.city.includes('두바이') || x.city.includes('Dubai') || 
+    filteredItems = allItems.filter(x =>
+      x.region === '두바이' || x.city.includes('두바이') || x.city.includes('Dubai') ||
       x.name.includes('버즈') || x.name.includes('Burj') || x.name.includes('미래의 박물관')
     );
   }
@@ -220,18 +220,18 @@ function navigateToHotels() {
 function registerPWAOfflineWorker() {
   // Purge old stale caches on start
   if ('caches' in window) {
-    caches.keys().then(function(keys) {
-      keys.forEach(function(k) {
-        if (k !== 'slow-travel-pwa-v6') {
+    caches.keys().then(function (keys) {
+      keys.forEach(function (k) {
+        if (k !== 'slow-travel-pwa-v7') {
           caches.delete(k);
         }
       });
-    }).catch(function() {});
+    }).catch(function () { });
   }
 
   if ('serviceWorker' in navigator && (window.location.protocol.startsWith('http') || window.location.hostname === 'localhost')) {
     const swCode = `
-      const CACHE_NAME = 'slow-travel-pwa-v6';
+      const CACHE_NAME = 'slow-travel-pwa-v7';
       const STATIC_ASSETS = [
         './',
         'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap',
@@ -270,11 +270,11 @@ function registerPWAOfflineWorker() {
     try {
       const blob = new Blob([swCode], { type: 'application/javascript' });
       const swUrl = URL.createObjectURL(blob);
-      navigator.serviceWorker.register(swUrl).then(function(reg) {
+      navigator.serviceWorker.register(swUrl).then(function (reg) {
         if (reg && typeof reg.update === 'function') {
           reg.update();
         }
-      }).catch(function(err) {
+      }).catch(function (err) {
         console.log('SW registration note:', err);
       });
     } catch (e) {
@@ -308,7 +308,7 @@ function setTheme(theme) {
   }
   try {
     localStorage.setItem('travel_user_theme', theme);
-  } catch (e) {}
+  } catch (e) { }
   showToast(isDark ? '🌙 다크 모드가 적용되었습니다.' : '☀️ 라이트 모드가 적용되었습니다.');
 }
 
@@ -327,7 +327,7 @@ function initInteractiveChecklist() {
   try {
     const s = localStorage.getItem('travel_checklist_state');
     if (s) savedState = JSON.parse(s);
-  } catch (e) {}
+  } catch (e) { }
 
   const items = [];
   checks.forEach((chk, idx) => {
@@ -373,12 +373,12 @@ function toggleChecklistItem(index, isChecked) {
   try {
     const s = localStorage.getItem('travel_checklist_state');
     if (s) savedState = JSON.parse(s);
-  } catch (e) {}
+  } catch (e) { }
 
   savedState[`item_${index}`] = isChecked;
   try {
     localStorage.setItem('travel_checklist_state', JSON.stringify(savedState));
-  } catch (e) {}
+  } catch (e) { }
 
   const row = document.querySelector(`.check-item-row[data-check-idx="${index}"]`);
   if (row) {
@@ -407,7 +407,7 @@ function updateChecklistUI() {
   try {
     const s = localStorage.getItem('travel_checklist_state');
     if (s) savedState = JSON.parse(s);
-  } catch (e) {}
+  } catch (e) { }
 
   document.querySelectorAll('.check-item-row').forEach(row => {
     const idx = row.getAttribute('data-check-idx');
@@ -480,7 +480,7 @@ function getActiveTimelineOrder(totalDays) {
       const arr = JSON.parse(s);
       if (Array.isArray(arr) && arr.length === totalDays) return arr;
     }
-  } catch (e) {}
+  } catch (e) { }
   return Array.from({ length: totalDays }, (_, i) => i);
 }
 
@@ -488,14 +488,14 @@ function saveTimelineOrder(order) {
   const key = `travel_timeline_order_${currentActiveRegion}_${currentDurationDays}`;
   try {
     localStorage.setItem(key, JSON.stringify(order));
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function resetTimelineOrder() {
   const key = `travel_timeline_order_${currentActiveRegion}_${currentDurationDays}`;
   try {
     localStorage.removeItem(key);
-  } catch (e) {}
+  } catch (e) { }
   showToast('🔄 일정 순서가 원래대로 복원되었습니다.');
   applyPlanReconfiguration(false);
 }
@@ -1151,1512 +1151,1512 @@ let currentPhraseFilter = 'ALL';
 // ==============================================================
 // 🇦🇪 DUBAI DATASET & PRICES EXTENSION INJECTION
 // ==============================================================
-(function() {
+(function () {
   const DUBAI_LANDMARKS = [
-  {
-    "name": "버즈 칼리파 전망대 (Burj Khalifa - At the Top)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
-    "highlight": "세계 최고층 828m 타워. 초고속 엘리베이터로 124·125층 전망대 직행 및 360도 사막·도시 파노라마",
-    "seniorAccess": "완전 평지 동선, 휠체어 대응 초고속 더블데크 엘리베이터 완비, 전망층 라운지 푹신한 소파 좌석 다수 구비",
-    "hours": "매일 08:30~23:00 (일몰 골든타임 사전 예약 필수)",
-    "ticketTip": "공식 사이트에서 At the Top 시간 지정 패스트트랙 예매 시 대기열 없이 즉시 입장 가능",
-    "officialUrl": "https://www.burjkhalifa.ae/en/index.aspx",
-    "mapQuery": "Burj Khalifa Dubai",
-    "baseKrw": 65000
-  },
-  {
-    "name": "미래의 박물관 (Museum of the Future)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
-    "highlight": "세계에서 가장 아름다운 건축물 1위. 아라비아 서예 글귀로 감싼 기둥 없는 7층 도넛형 미래 혁신 공간",
-    "seniorAccess": "100% 무장애 배리어프리 설계, 턱이 전혀 없는 완만한 바닥, 초대형 엘리베이터 및 어르신 전용 휠체어 무료 대여",
-    "hours": "매일 10:00~19:30",
-    "ticketTip": "글로벌 최고 인기 명소로 최소 2~4주 전 공식 홈페이지 사전 티켓팅 필수",
-    "officialUrl": "https://museumofthefuture.ae/en",
-    "mapQuery": "Museum of the Future Dubai",
-    "baseKrw": 55000
-  },
-  {
-    "name": "두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=800&q=80",
-    "highlight": "세계 최대 규모 음악 분수 쇼. 150m 높이로 솟구치는 물줄기와 빛·음악의 환상적인 라이트 하모니",
-    "seniorAccess": "두바이 몰 실내 100% 평지, 무료 버기카(전동 카트) 서비스 지원, 테라스 레스토랑에서 편안히 앉아 관람 가능",
-    "hours": "매일 18:00~23:00 (30분 간격 무료 진행)",
-    "ticketTip": "수크 알 바하르 테라스 카페 또는 2층 애플스토어 발코니에서 군중 없이 편안하게 관람 추천",
-    "officialUrl": "https://thedubaimall.com/en/entertain-detail/the-dubai-fountain",
-    "mapQuery": "The Dubai Fountain",
-    "baseKrw": 0
-  },
-  {
-    "name": "더 뷰 앳 더 팜 (The View at The Palm)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80",
-    "highlight": "야자수 모양 인공섬 팜 주메이라를 360도로 한눈에 조망하는 240m 높이의 최고 전망대",
-    "seniorAccess": "더 팜 타워 52층까지 초고속 엘리베이터 직행, 무릎 부담 전혀 없는 완전 평지 실내·외 전망 데크",
-    "hours": "매일 09:00~20:30 (주말 ~21:00)",
-    "ticketTip": "일몰 1시간 전 입장하여 낮 풍경, 노을, 야경을 한 번에 감상하는 골든 아워 티켓 추천",
-    "officialUrl": "https://www.theviewpalm.ae/",
-    "mapQuery": "The View at The Palm",
-    "baseKrw": 37000
-  },
-  {
-    "name": "알 파히디 & 알 시프 역사 지구 (Al Fahidi & Al Seef)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=800&q=80",
-    "highlight": "19세기 전통 바람탑(Barjeel) 골목과 두바이 크릭을 잇는 올드 두바이의 고즈넉한 문화 유산",
-    "seniorAccess": "크릭 강변 산책로 완만한 평지 보행, 카페 정원 그늘 휴식처 다수, 전통 아브라 탑승 시 부축 지원",
-    "hours": "상시 개방 (상점 및 갤러리 10:00~22:00)",
-    "ticketTip": "알 시프에서 알 파히디를 거쳐 아브라(1 디르함 동전)로 건너편 골드 수크까지 이어지는 코스 추천",
-    "officialUrl": "https://dubaiculture.gov.ae/en/heritage/heritage-sites/Al-Fahidi-Historical-Neighbourhood",
-    "mapQuery": "Al Fahidi Historical Neighbourhood Dubai",
-    "baseKrw": 370
-  },
-  {
-    "name": "두바이 프레임 (Dubai Frame)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
-    "highlight": "150m 높이의 거대한 황금 액자. 북쪽으로는 올드 두바이, 남쪽으로는 현대 두바이의 마천루를 대비 조망",
-    "seniorAccess": "초고속 파노라마 엘리베이터, 상층부 투명 바닥 보행로 및 우회 가능한 불투명 평지 보행로 마련",
-    "hours": "매일 09:00~21:00",
-    "ticketTip": "자빌 파크 내 위치하여 아침 일찍 방문하면 대기 없이 쾌적하게 관람 가능",
-    "officialUrl": "https://www.dubaiframe.ae/en",
-    "mapQuery": "Dubai Frame Zabeel Park",
-    "baseKrw": 18500
-  },
-  {
-    "name": "두바이 미라클 가든 (Dubai Miracle Garden)",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "photo": "https://images.unsplash.com/photo-1528702748617-c64d49f918af?auto=format&fit=crop&w=800&q=80",
-    "highlight": "사막 한가운데 1억 5천만 송이 생화로 에미레이트 A380 비행기와 성을 구현한 세계 최대 천연 꽃 정원",
-    "seniorAccess": "넓은 평지 산책로, 걷기 힘드신 어르신을 위한 골프 카트(버기) 투어 운영 및 휠체어 대여 가능",
-    "hours": "11월~4월 겨울 시즌 한정 운영 (평일 09:00~21:00, 주말 ~22:00)",
-    "ticketTip": "여름엔 휴장하므로 11~12월 겨울 여행객에게 가장 이상적인 계절 한정 명소",
-    "officialUrl": "https://www.dubaimiraclegarden.com/",
-    "mapQuery": "Dubai Miracle Garden",
-    "baseKrw": 35000
-  }
-];
+    {
+      "name": "버즈 칼리파 전망대 (Burj Khalifa - At the Top)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+      "highlight": "세계 최고층 828m 타워. 초고속 엘리베이터로 124·125층 전망대 직행 및 360도 사막·도시 파노라마",
+      "seniorAccess": "완전 평지 동선, 휠체어 대응 초고속 더블데크 엘리베이터 완비, 전망층 라운지 푹신한 소파 좌석 다수 구비",
+      "hours": "매일 08:30~23:00 (일몰 골든타임 사전 예약 필수)",
+      "ticketTip": "공식 사이트에서 At the Top 시간 지정 패스트트랙 예매 시 대기열 없이 즉시 입장 가능",
+      "officialUrl": "https://www.burjkhalifa.ae/en/index.aspx",
+      "mapQuery": "Burj Khalifa Dubai",
+      "baseKrw": 65000
+    },
+    {
+      "name": "미래의 박물관 (Museum of the Future)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
+      "highlight": "세계에서 가장 아름다운 건축물 1위. 아라비아 서예 글귀로 감싼 기둥 없는 7층 도넛형 미래 혁신 공간",
+      "seniorAccess": "100% 무장애 배리어프리 설계, 턱이 전혀 없는 완만한 바닥, 초대형 엘리베이터 및 어르신 전용 휠체어 무료 대여",
+      "hours": "매일 10:00~19:30",
+      "ticketTip": "글로벌 최고 인기 명소로 최소 2~4주 전 공식 홈페이지 사전 티켓팅 필수",
+      "officialUrl": "https://museumofthefuture.ae/en",
+      "mapQuery": "Museum of the Future Dubai",
+      "baseKrw": 55000
+    },
+    {
+      "name": "두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=800&q=80",
+      "highlight": "세계 최대 규모 음악 분수 쇼. 150m 높이로 솟구치는 물줄기와 빛·음악의 환상적인 라이트 하모니",
+      "seniorAccess": "두바이 몰 실내 100% 평지, 무료 버기카(전동 카트) 서비스 지원, 테라스 레스토랑에서 편안히 앉아 관람 가능",
+      "hours": "매일 18:00~23:00 (30분 간격 무료 진행)",
+      "ticketTip": "수크 알 바하르 테라스 카페 또는 2층 애플스토어 발코니에서 군중 없이 편안하게 관람 추천",
+      "officialUrl": "https://thedubaimall.com/en/entertain-detail/the-dubai-fountain",
+      "mapQuery": "The Dubai Fountain",
+      "baseKrw": 0
+    },
+    {
+      "name": "더 뷰 앳 더 팜 (The View at The Palm)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=800&q=80",
+      "highlight": "야자수 모양 인공섬 팜 주메이라를 360도로 한눈에 조망하는 240m 높이의 최고 전망대",
+      "seniorAccess": "더 팜 타워 52층까지 초고속 엘리베이터 직행, 무릎 부담 전혀 없는 완전 평지 실내·외 전망 데크",
+      "hours": "매일 09:00~20:30 (주말 ~21:00)",
+      "ticketTip": "일몰 1시간 전 입장하여 낮 풍경, 노을, 야경을 한 번에 감상하는 골든 아워 티켓 추천",
+      "officialUrl": "https://www.theviewpalm.ae/",
+      "mapQuery": "The View at The Palm",
+      "baseKrw": 37000
+    },
+    {
+      "name": "알 파히디 & 알 시프 역사 지구 (Al Fahidi & Al Seef)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=800&q=80",
+      "highlight": "19세기 전통 바람탑(Barjeel) 골목과 두바이 크릭을 잇는 올드 두바이의 고즈넉한 문화 유산",
+      "seniorAccess": "크릭 강변 산책로 완만한 평지 보행, 카페 정원 그늘 휴식처 다수, 전통 아브라 탑승 시 부축 지원",
+      "hours": "상시 개방 (상점 및 갤러리 10:00~22:00)",
+      "ticketTip": "알 시프에서 알 파히디를 거쳐 아브라(1 디르함 동전)로 건너편 골드 수크까지 이어지는 코스 추천",
+      "officialUrl": "https://dubaiculture.gov.ae/en/heritage/heritage-sites/Al-Fahidi-Historical-Neighbourhood",
+      "mapQuery": "Al Fahidi Historical Neighbourhood Dubai",
+      "baseKrw": 370
+    },
+    {
+      "name": "두바이 프레임 (Dubai Frame)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=800&q=80",
+      "highlight": "150m 높이의 거대한 황금 액자. 북쪽으로는 올드 두바이, 남쪽으로는 현대 두바이의 마천루를 대비 조망",
+      "seniorAccess": "초고속 파노라마 엘리베이터, 상층부 투명 바닥 보행로 및 우회 가능한 불투명 평지 보행로 마련",
+      "hours": "매일 09:00~21:00",
+      "ticketTip": "자빌 파크 내 위치하여 아침 일찍 방문하면 대기 없이 쾌적하게 관람 가능",
+      "officialUrl": "https://www.dubaiframe.ae/en",
+      "mapQuery": "Dubai Frame Zabeel Park",
+      "baseKrw": 18500
+    },
+    {
+      "name": "두바이 미라클 가든 (Dubai Miracle Garden)",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "photo": "https://images.unsplash.com/photo-1528702748617-c64d49f918af?auto=format&fit=crop&w=800&q=80",
+      "highlight": "사막 한가운데 1억 5천만 송이 생화로 에미레이트 A380 비행기와 성을 구현한 세계 최대 천연 꽃 정원",
+      "seniorAccess": "넓은 평지 산책로, 걷기 힘드신 어르신을 위한 골프 카트(버기) 투어 운영 및 휠체어 대여 가능",
+      "hours": "11월~4월 겨울 시즌 한정 운영 (평일 09:00~21:00, 주말 ~22:00)",
+      "ticketTip": "여름엔 휴장하므로 11~12월 겨울 여행객에게 가장 이상적인 계절 한정 명소",
+      "officialUrl": "https://www.dubaimiraclegarden.com/",
+      "mapQuery": "Dubai Miracle Garden",
+      "baseKrw": 35000
+    }
+  ];
   const DUBAI_DINING = [
-  {
-    "name": "Arabian Tea House",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "에미라티 전통 아침 식사 트레이 & 민트 티 (Emirati Breakfast Tray)",
-    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-    "signature": "흰색 터키석 천막 정원에서 맛보는 수제 아랍 빵(카미르/체밥), 발루릿, 데이츠 시럽, 시원한 민트 티",
-    "seniorTip": "푸른 나무와 하얀 천막 아래 그늘진 정원 평지 좌석. 자극적이지 않고 담백해 어르신 아침 브런치로 환상적",
-    "hours": "매일 07:00~23:00",
-    "language": "영어 능통 · 친절하고 따뜻한 아라비아 전통 환대",
-    "phone": "+971 4 353 7723",
-    "booking": "워크인 (오전 10시 이전 방문 시 대기 없음)",
-    "mapQuery": "Arabian Tea House Restaurant Al Fahidi",
-    "baseKrw": 24000
-  },
-  {
-    "name": "Al Fanar Restaurant & Café",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "전통 양고기 마크부스 & 살루나 해산물 스튜 (Lamb Machboos)",
-    "photo": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
-    "signature": "카다멈과 사프란으로 지은 고슬고슬한 아랍 쌀밥 위에 푹 삶아 입에서 살살 녹는 부드러운 양고기",
-    "seniorTip": "1960년대 옛 두바이 마을을 재현한 턱 없는 1층 레스토랑. 고기가 아주 연하게 쪄 나와 치아가 약하신 부모님 식사로 최고",
-    "hours": "매일 12:00~23:00",
-    "language": "영어 완벽 · 사진 메뉴판 구비",
-    "phone": "+971 4 396 6669",
-    "booking": "공식 웹사이트 및 전화 예약 권장",
-    "mapQuery": "Al Fanar Restaurant Al Seef Dubai",
-    "baseKrw": 31000
-  },
-  {
-    "name": "Bu Qtair",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "당일 직송 하무르 생선 구이 & 매콤달콤 왕새우 튀김 (Fried Hamour & Prawns)",
-    "photo": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
-    "signature": "매일 아침 어시장에서 들여온 신선한 흰살 생선 하무르와 왕새우를 아라비안 마살라로 바삭하게 튀겨낸 어부의 맛",
-    "seniorTip": "주메이라 비치 인근 현대식 실내 매장으로 이전하여 쾌적한 에어컨과 넓은 평지 테이블 완비",
-    "hours": "매일 11:30~23:30 (금요일 13:00~)",
-    "language": "영어 능통 · 생선 무게 단위 주문",
-    "phone": "+971 55 705 2130",
-    "booking": "워크인 선착순 (저녁 18:30 이전 방문 추천)",
-    "mapQuery": "Bu Qtair Restaurant Umm Suqeim Dubai",
-    "baseKrw": 26000
-  },
-  {
-    "name": "Al Nafoorah",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "오스만 궁전식 프리미엄 양갈비 구이 & 후무스 (Lebanese Mixed Grill)",
-    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-    "signature": "참숯에 정성스레 구운 최고급 양갈비, 신선한 타불레 샐러드, 부드러운 병아리콩 후무스 플래터",
-    "seniorTip": "주메이라 알 카스르 럭셔리 리조트 내 위치. 호텔 정문에서 카트로 이동 가능하며 호텔급 최고 수준의 정중한 케어",
-    "hours": "매일 13:00~15:30, 18:30~23:00",
-    "language": "영어 완벽 · VIP 의전급 서비스",
-    "phone": "+971 800 323232",
-    "booking": "주메이라 공식 사이트 필수 예약",
-    "mapQuery": "Al Nafoorah Jumeirah Al Qasr Dubai",
-    "baseKrw": 59000
-  },
-  {
-    "name": "Armani/Amal",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "분수 쇼 테라스 뷰 컨템포러리 다이닝 & 달 카레 (Contemporary Asian / Indian)",
-    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-    "signature": "버즈 칼리파 3층 테라스에서 분수 쇼를 정면으로 바라보며 즐기는 미쉐린 셀렉티드 모던 다이닝 코스",
-    "seniorTip": "버즈 칼리파 내부 엘리베이터 직행, 호텔 발레파킹 및 휠체어 완벽 지원, 소음 없이 테라스에서 분수 쇼 조망",
-    "hours": "매일 18:30~23:30 (일요일 휴무)",
-    "language": "영어 완벽 · 다국어 소믈리에 상주",
-    "phone": "+971 4 888 3666",
-    "booking": "최소 2~3주 전 아르마니 호텔 공식 예약",
-    "mapQuery": "Armani Amal Burj Khalifa Dubai",
-    "baseKrw": 81000
-  },
-  {
-    "name": "Logma",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "사프란 카락 티 & 루카이마트 대추야자 도넛 (Karak Tea & Lugaimat)",
-    "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
-    "signature": "진한 사프란 향의 에미라티 밀크티와 갓 튀겨 따뜻한 조청 시럽을 뿌린 전통 도넛 루카이마트",
-    "seniorTip": "두바이 몰 패션 애비뉴 3층 분수 전망 테라스. 쇼핑 중 어르신 당 충전과 다리 쉼터로 제격",
-    "hours": "매일 10:00~00:00",
-    "language": "영어 완벽 · 태블릿 사진 주문",
-    "phone": "+971 800 56462",
-    "booking": "워크인 가능",
-    "mapQuery": "Logma Dubai Mall",
-    "baseKrw": 16500
-  },
-  {
-    "name": "Shabestan",
-    "region": "두바이",
-    "city": "UAE 두바이",
-    "country": "UAE",
-    "dishName": "두바이 크릭 야경 정통 사프란 양고기 쿠비데 케밥 (Koobideh Kebab)",
-    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
-    "signature": "40년 전통의 두바이 최고 페르시안 레스토랑. 숯불에 구운 육즙 가득한 다진 양고기와 사프란 버터 밥",
-    "seniorTip": "래디슨 블루 호텔 엘리베이터 이동, 크릭 야경이 파노라마로 펼쳐지는 넓은 소파 좌석과 전통 악기 라이브 연주",
-    "hours": "매일 12:30~23:00",
-    "language": "영어 완벽 · 친절한 전통 서비스",
-    "phone": "+971 4 222 7127",
-    "booking": "호텔 레스토랑 사전 예약 권장",
-    "mapQuery": "Shabestan Radisson Blu Hotel Dubai Deira Creek",
-    "baseKrw": 39000
-  }
-];
+    {
+      "name": "Arabian Tea House",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "에미라티 전통 아침 식사 트레이 & 민트 티 (Emirati Breakfast Tray)",
+      "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "signature": "흰색 터키석 천막 정원에서 맛보는 수제 아랍 빵(카미르/체밥), 발루릿, 데이츠 시럽, 시원한 민트 티",
+      "seniorTip": "푸른 나무와 하얀 천막 아래 그늘진 정원 평지 좌석. 자극적이지 않고 담백해 어르신 아침 브런치로 환상적",
+      "hours": "매일 07:00~23:00",
+      "language": "영어 능통 · 친절하고 따뜻한 아라비아 전통 환대",
+      "phone": "+971 4 353 7723",
+      "booking": "워크인 (오전 10시 이전 방문 시 대기 없음)",
+      "mapQuery": "Arabian Tea House Restaurant Al Fahidi",
+      "baseKrw": 24000
+    },
+    {
+      "name": "Al Fanar Restaurant & Café",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "전통 양고기 마크부스 & 살루나 해산물 스튜 (Lamb Machboos)",
+      "photo": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
+      "signature": "카다멈과 사프란으로 지은 고슬고슬한 아랍 쌀밥 위에 푹 삶아 입에서 살살 녹는 부드러운 양고기",
+      "seniorTip": "1960년대 옛 두바이 마을을 재현한 턱 없는 1층 레스토랑. 고기가 아주 연하게 쪄 나와 치아가 약하신 부모님 식사로 최고",
+      "hours": "매일 12:00~23:00",
+      "language": "영어 완벽 · 사진 메뉴판 구비",
+      "phone": "+971 4 396 6669",
+      "booking": "공식 웹사이트 및 전화 예약 권장",
+      "mapQuery": "Al Fanar Restaurant Al Seef Dubai",
+      "baseKrw": 31000
+    },
+    {
+      "name": "Bu Qtair",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "당일 직송 하무르 생선 구이 & 매콤달콤 왕새우 튀김 (Fried Hamour & Prawns)",
+      "photo": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
+      "signature": "매일 아침 어시장에서 들여온 신선한 흰살 생선 하무르와 왕새우를 아라비안 마살라로 바삭하게 튀겨낸 어부의 맛",
+      "seniorTip": "주메이라 비치 인근 현대식 실내 매장으로 이전하여 쾌적한 에어컨과 넓은 평지 테이블 완비",
+      "hours": "매일 11:30~23:30 (금요일 13:00~)",
+      "language": "영어 능통 · 생선 무게 단위 주문",
+      "phone": "+971 55 705 2130",
+      "booking": "워크인 선착순 (저녁 18:30 이전 방문 추천)",
+      "mapQuery": "Bu Qtair Restaurant Umm Suqeim Dubai",
+      "baseKrw": 26000
+    },
+    {
+      "name": "Al Nafoorah",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "오스만 궁전식 프리미엄 양갈비 구이 & 후무스 (Lebanese Mixed Grill)",
+      "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      "signature": "참숯에 정성스레 구운 최고급 양갈비, 신선한 타불레 샐러드, 부드러운 병아리콩 후무스 플래터",
+      "seniorTip": "주메이라 알 카스르 럭셔리 리조트 내 위치. 호텔 정문에서 카트로 이동 가능하며 호텔급 최고 수준의 정중한 케어",
+      "hours": "매일 13:00~15:30, 18:30~23:00",
+      "language": "영어 완벽 · VIP 의전급 서비스",
+      "phone": "+971 800 323232",
+      "booking": "주메이라 공식 사이트 필수 예약",
+      "mapQuery": "Al Nafoorah Jumeirah Al Qasr Dubai",
+      "baseKrw": 59000
+    },
+    {
+      "name": "Armani/Amal",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "분수 쇼 테라스 뷰 컨템포러리 다이닝 & 달 카레 (Contemporary Asian / Indian)",
+      "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      "signature": "버즈 칼리파 3층 테라스에서 분수 쇼를 정면으로 바라보며 즐기는 미쉐린 셀렉티드 모던 다이닝 코스",
+      "seniorTip": "버즈 칼리파 내부 엘리베이터 직행, 호텔 발레파킹 및 휠체어 완벽 지원, 소음 없이 테라스에서 분수 쇼 조망",
+      "hours": "매일 18:30~23:30 (일요일 휴무)",
+      "language": "영어 완벽 · 다국어 소믈리에 상주",
+      "phone": "+971 4 888 3666",
+      "booking": "최소 2~3주 전 아르마니 호텔 공식 예약",
+      "mapQuery": "Armani Amal Burj Khalifa Dubai",
+      "baseKrw": 81000
+    },
+    {
+      "name": "Logma",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "사프란 카락 티 & 루카이마트 대추야자 도넛 (Karak Tea & Lugaimat)",
+      "photo": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "signature": "진한 사프란 향의 에미라티 밀크티와 갓 튀겨 따뜻한 조청 시럽을 뿌린 전통 도넛 루카이마트",
+      "seniorTip": "두바이 몰 패션 애비뉴 3층 분수 전망 테라스. 쇼핑 중 어르신 당 충전과 다리 쉼터로 제격",
+      "hours": "매일 10:00~00:00",
+      "language": "영어 완벽 · 태블릿 사진 주문",
+      "phone": "+971 800 56462",
+      "booking": "워크인 가능",
+      "mapQuery": "Logma Dubai Mall",
+      "baseKrw": 16500
+    },
+    {
+      "name": "Shabestan",
+      "region": "두바이",
+      "city": "UAE 두바이",
+      "country": "UAE",
+      "dishName": "두바이 크릭 야경 정통 사프란 양고기 쿠비데 케밥 (Koobideh Kebab)",
+      "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      "signature": "40년 전통의 두바이 최고 페르시안 레스토랑. 숯불에 구운 육즙 가득한 다진 양고기와 사프란 버터 밥",
+      "seniorTip": "래디슨 블루 호텔 엘리베이터 이동, 크릭 야경이 파노라마로 펼쳐지는 넓은 소파 좌석과 전통 악기 라이브 연주",
+      "hours": "매일 12:30~23:00",
+      "language": "영어 완벽 · 친절한 전통 서비스",
+      "phone": "+971 4 222 7127",
+      "booking": "호텔 레스토랑 사전 예약 권장",
+      "mapQuery": "Shabestan Radisson Blu Hotel Dubai Deira Creek",
+      "baseKrw": 39000
+    }
+  ];
   const DUBAI_LANDMARK_I18N = {
-  "버즈 칼리파 전망대 (Burj Khalifa - At the Top)": {
-    "displayName": {
-      "ko": "버즈 칼리파 전망대 (Burj Khalifa - At the Top)",
-      "ja": "ブルジュ・ハリファ展望台（At the Top）",
-      "en": "Burj Khalifa - At the Top Observatory",
-      "zh": "哈利法塔观景台 (Burj Khalifa - At the Top)"
+    "버즈 칼리파 전망대 (Burj Khalifa - At the Top)": {
+      "displayName": {
+        "ko": "버즈 칼리파 전망대 (Burj Khalifa - At the Top)",
+        "ja": "ブルジュ・ハリファ展望台（At the Top）",
+        "en": "Burj Khalifa - At the Top Observatory",
+        "zh": "哈利法塔观景台 (Burj Khalifa - At the Top)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 세계 최고층 828m",
+        "ja": "🇦🇪 ドバイ · 世界最高峰828m",
+        "en": "🇦🇪 Dubai · World's Tallest 828m",
+        "zh": "🇦🇪 迪拜 · 全球最高828米"
+      },
+      "highlight": {
+        "ko": "세계 최고층 828m 타워. 초고속 엘리베이터로 124·125층 전망대 직행 및 360도 파노라마",
+        "ja": "世界一の超高層828mタワー。超高速エレベーターで124・125階展望フロアへ直行",
+        "en": "World's tallest 828m skyscraper with double-deck high-speed elevators to 124 & 125th floors",
+        "zh": "世界第一高楼828米。双层高速电梯直达124和125层全景落地窗观景台"
+      },
+      "seniorAccess": {
+        "ko": "완전 평지 동선, 휠체어 대응 초고속 엘리베이터, 전망층 라운지 안락 소파 좌석 구비",
+        "ja": "完全バリアフリー平坦動線、車椅子対応高速エレベーター完備、ゆったりソファ席多数",
+        "en": "Step-free walkways, wheelchair-accessible elevators, cushioned viewing lounge seating",
+        "zh": "全程无障碍平路通道，无障碍高速直梯直达，观景层设有多处舒适沙发休息区"
+      },
+      "hours": {
+        "ko": "매일 08:30~23:00 (일몰 시간대 사전 예약 필수)",
+        "ja": "毎日 08:30〜23:00（夕日鑑賞は事前予約必須）",
+        "en": "Daily 08:30–23:00 (Sunset slots advance reservation required)",
+        "zh": "每日 08:30~23:00（日落黄金场次须提前预约）"
+      },
+      "ticketTip": {
+        "ko": "공식 사이트 패스트트랙 예매 시 대기열 없이 즉시 입장 가능",
+        "ja": "公式サイトのファストトラック予約で並ばずスムーズに入場可能",
+        "en": "Pre-book official timed fast-track tickets online to bypass long queues",
+        "zh": "建议官网提前预订定时快速通道票，免排长队直达登塔"
+      }
     },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 세계 최고층 828m",
-      "ja": "🇦🇪 ドバイ · 世界最高峰828m",
-      "en": "🇦🇪 Dubai · World's Tallest 828m",
-      "zh": "🇦🇪 迪拜 · 全球最高828米"
+    "미래의 박물관 (Museum of the Future)": {
+      "displayName": {
+        "ko": "미래의 박물관 (Museum of the Future)",
+        "ja": "未来博物館（Museum of the Future）",
+        "en": "Museum of the Future",
+        "zh": "未来博物馆 (Museum of the Future)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 세계에서 가장 아름다운 건축",
+        "ja": "🇦🇪 ドバイ · 世界で最も美しい建築",
+        "en": "🇦🇪 Dubai · World's Most Beautiful Building",
+        "zh": "🇦🇪 迪拜 · 全球最美现代建筑奇迹"
+      },
+      "highlight": {
+        "ko": "세계에서 가장 아름다운 건축물 1위. 아라비아 서예 글귀로 감싼 무주형(기둥 없는) 미래 혁신 공간",
+        "ja": "世界で最も美しい建築第1位。アラビア書道で包まれた柱のない7階建ての革新空間",
+        "en": "Ranked world's most beautiful building with torus architecture covered in Arabic calligraphy",
+        "zh": "被评为全球最美建筑之首。阿拉伯书法镂空环形无立柱先锋建筑"
+      },
+      "seniorAccess": {
+        "ko": "100% 무장애 배리어프리 설계, 턱 없는 완만한 바닥, 초대형 엘리베이터 & 휠체어 무료 대여",
+        "ja": "100%段差なし完全バリアフリー設計、特大エレベーター＆無料車椅子貸出",
+        "en": "100% barrier-free design, gentle sloped floors, spacious elevators & complimentary wheelchairs",
+        "zh": "100%零门槛无障碍通道，缓坡防滑地面，宽敞无障碍垂直电梯及免费轮椅租借"
+      },
+      "hours": {
+        "ko": "매일 10:00~19:30",
+        "ja": "毎日 10:00〜19:30",
+        "en": "Daily 10:00–19:30",
+        "zh": "每日 10:00~19:30"
+      },
+      "ticketTip": {
+        "ko": "글로벌 인기 명소로 최소 2~4주 전 공식 홈페이지 사전 티켓팅 필수",
+        "ja": "世界的な人気施設のため、最低2〜4週間前の公式サイト事前予約が必須",
+        "en": "Ultra-popular global landmark: book at least 2–4 weeks in advance on official portal",
+        "zh": "全球超级热门地标，务必提前2至4周在官网预订入场时段"
+      }
     },
-    "highlight": {
-      "ko": "세계 최고층 828m 타워. 초고속 엘리베이터로 124·125층 전망대 직행 및 360도 파노라마",
-      "ja": "世界一の超高層828mタワー。超高速エレベーターで124・125階展望フロアへ直行",
-      "en": "World's tallest 828m skyscraper with double-deck high-speed elevators to 124 & 125th floors",
-      "zh": "世界第一高楼828米。双层高速电梯直达124和125层全景落地窗观景台"
+    "두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain)": {
+      "displayName": {
+        "ko": "두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain)",
+        "ja": "ドバイ・ファウンテン＆ドバイ・モール",
+        "en": "The Dubai Fountain & Dubai Mall",
+        "zh": "迪拜喷泉与迪拜购物中心 (The Dubai Fountain)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 세계 최대 음악 분수 쇼",
+        "ja": "🇦🇪 ドバイ · 世界最大級の噴水ショー",
+        "en": "🇦🇪 Dubai · World's Largest Dancing Fountain",
+        "zh": "🇦🇪 迪拜 · 全球最大音乐喷泉秀"
+      },
+      "highlight": {
+        "ko": "세계 최대 규모 음악 분수 쇼. 150m 높이 물줄기와 빛·음악의 환상적인 라이트 하모니",
+        "ja": "世界最大級の噴水ショー。高さ150mまで吹き上がる水と音楽・光のシンフォニー",
+        "en": "World's largest choreographed fountain system performing to world-class musical light scores",
+        "zh": "世界最大音乐喷泉。高达150米的水柱伴随世界名曲与灯光优雅起舞"
+      },
+      "seniorAccess": {
+        "ko": "두바이 몰 실내 100% 평지, 무료 버기카(전동 카트) 서비스 지원, 테라스 카페 좌석 관람",
+        "ja": "モール内完全フラット平坦路、無料電動バギー送迎あり、テラス席から座って鑑賞可能",
+        "en": "100% flat indoor mall terrain, free electric buggy transfers, comfortable lakeside cafe seating",
+        "zh": "购物中心内部全平整平步通道，提供免费电瓶摆渡车，可在湖畔露台餐厅悠闲坐享"
+      },
+      "hours": {
+        "ko": "매일 18:00~23:00 (30분 간격 무료 진행)",
+        "ja": "毎日 18:00〜23:00（30分毎・鑑賞無料）",
+        "en": "Daily 18:00–23:00 (Every 30 mins, Free Admission)",
+        "zh": "每日 18:00~23:00（每30分钟一场，免费观赏）"
+      },
+      "ticketTip": {
+        "ko": "수크 알 바하르 테라스 카페 또는 2층 애플스토어 발코니에서 쾌적하게 관람",
+        "ja": "スーク・アル・バハールのテラス席やアップルストア2階バルコニーが鑑賞ベストスポット",
+        "en": "Watch from Souk Al Bahar terrace restaurants or Apple Store 2nd floor balcony",
+        "zh": "建议在阿尔巴哈市集露台餐厅或苹果旗舰店2层露台避免拥挤舒适观赏"
+      }
     },
-    "seniorAccess": {
-      "ko": "완전 평지 동선, 휠체어 대응 초고속 엘리베이터, 전망층 라운지 안락 소파 좌석 구비",
-      "ja": "完全バリアフリー平坦動線、車椅子対応高速エレベーター完備、ゆったりソファ席多数",
-      "en": "Step-free walkways, wheelchair-accessible elevators, cushioned viewing lounge seating",
-      "zh": "全程无障碍平路通道，无障碍高速直梯直达，观景层设有多处舒适沙发休息区"
+    "더 뷰 앳 더 팜 (The View at The Palm)": {
+      "displayName": {
+        "ko": "더 뷰 앳 더 팜 (The View at The Palm)",
+        "ja": "ザ・ビュー・アット・ザ・パーム（The View）",
+        "en": "The View at The Palm",
+        "zh": "棕榈岛观景台 (The View at The Palm)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 팜 주메이라 360도 파노라마",
+        "ja": "🇦🇪 ドバイ · パーム・ジュメイラ360度展望",
+        "en": "🇦🇪 Dubai · 360° Palm Jumeirah Panorama",
+        "zh": "🇦🇪 迪拜 · 棕榈岛360度空中全景"
+      },
+      "highlight": {
+        "ko": "야자수 모양 인공섬 팜 주메이라를 360도로 한눈에 조망하는 240m 높이의 최고 전망대",
+        "ja": "ヤシの木型人工島パーム・ジュメイラを地上240mから一望する360度パノラマ展望台",
+        "en": "240m-high observation deck offering 360-degree panoramic views of Palm Jumeirah island",
+        "zh": "高240米的全景落地观景台，将壮丽的棕榈叶人工岛全貌与阿拉伯湾尽收眼底"
+      },
+      "seniorAccess": {
+        "ko": "더 팜 타워 52층까지 초고속 엘리베이터 직행, 무릎 부담 전혀 없는 완전 평지 실내·외 전망 데크",
+        "ja": "52階まで超高速エレベーター直行、膝の負担ゼロの完全平坦展望デッキ",
+        "en": "Direct express elevator to Level 52, step-free access across indoor and outdoor viewing decks",
+        "zh": "直梯高速直达52层，全程无台阶纯平整观景台，特别关照长辈膝盖"
+      },
+      "hours": {
+        "ko": "매일 09:00~20:30 (주말 ~21:00)",
+        "ja": "毎日 09:00〜20:30（週末〜21:00）",
+        "en": "Daily 09:00–20:30 (Weekends until 21:00)",
+        "zh": "每日 09:00~20:30（周末营业至21:00）"
+      },
+      "ticketTip": {
+        "ko": "일몰 1시간 전 입장하여 주경, 노을, 야경을 모두 감상하는 골든 아워 티켓 추천",
+        "ja": "日没1時間前に入場して昼景・夕暮れ・夜景をすべて楽しむゴールデンアワーがおすすめ",
+        "en": "Book sunset golden hour slots to enjoy daytime vistas, golden hour, and night lights",
+        "zh": "推荐日落前1小时入场，一次饱览日景、晚霞与璀璨夜景"
+      }
     },
-    "hours": {
-      "ko": "매일 08:30~23:00 (일몰 시간대 사전 예약 필수)",
-      "ja": "毎日 08:30〜23:00（夕日鑑賞は事前予約必須）",
-      "en": "Daily 08:30–23:00 (Sunset slots advance reservation required)",
-      "zh": "每日 08:30~23:00（日落黄金场次须提前预约）"
+    "알 파히디 & 알 시프 역사 지구 (Al Fahidi & Al Seef)": {
+      "displayName": {
+        "ko": "알 파히디 & 알 시프 역사 지구 (Al Fahidi & Al Seef)",
+        "ja": "アル・ファヒディ歴史地区＆アル・シーフ",
+        "en": "Al Fahidi & Al Seef Heritage District",
+        "zh": "阿法迪历史区与阿西夫河畔 (Al Fahidi & Al Seef)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 올드 두바이 전통 골목 & 아브라",
+        "ja": "🇦🇪 ドバイ · 歴史遺産地区＆アブラ船",
+        "en": "🇦🇪 Dubai · Old Dubai Heritage & Abra Boats",
+        "zh": "🇦🇪 迪拜 · 老城传统风塔街区与水上的士"
+      },
+      "highlight": {
+        "ko": "19세기 전통 바람탑(Barjeel) 골목과 두바이 크릭을 잇는 올드 두바이의 고즈넉한 문화 유산",
+        "ja": "19世紀の伝統的な風の塔（バージール）が連なる静かな歴史街並みとドバイ・クリーク",
+        "en": "19th-century wind-tower architecture and winding alleyways along Dubai Creek",
+        "zh": "保存完好的19世纪风塔泥砖院落老街，与迪拜湾传统木船相映成趣"
+      },
+      "seniorAccess": {
+        "ko": "크릭 강변 산책로 완만한 평지 보행, 카페 정원 그늘 휴식처 다수, 전통 아브라 탑승 시 부축 지원",
+        "ja": "クリーク沿いの平坦遊歩道、木陰カフェ多数、アブラ船乗船時も丁寧なサポートあり",
+        "en": "Gentle flat riverfront promenades, shaded courtyard cafes, assisted boarding on traditional boats",
+        "zh": "河畔沿岸步道极为平缓，绿树掩映庭院茶社众多，搭乘木船时有专人搀扶"
+      },
+      "hours": {
+        "ko": "상시 개방 (상점 및 갤러리 10:00~22:00)",
+        "ja": "常時散策可能（店舗・ギャラリー 10:00〜22:00）",
+        "en": "Open 24/7 (Shops & galleries 10:00–22:00)",
+        "zh": "全天开放（传统市集店铺 10:00~22:00）"
+      },
+      "ticketTip": {
+        "ko": "알 시프에서 알 파히디를 거쳐 아브라(1 디르함 동전)로 건너편 골드 수크까지 이어지는 코스 추천",
+        "ja": "アル・シーフから散策し、1ディルハムのアブラ船で対岸のゴールドスークへ渡るルートが最高",
+        "en": "Take the 1 AED traditional abra boat across Dubai Creek to explore Gold & Spice Souks",
+        "zh": "体验仅需1迪拉姆的木制水上的士横渡迪拜湾，连接黄金市集与香料市场"
+      }
     },
-    "ticketTip": {
-      "ko": "공식 사이트 패스트트랙 예매 시 대기열 없이 즉시 입장 가능",
-      "ja": "公式サイトのファストトラック予約で並ばずスムーズに入場可能",
-      "en": "Pre-book official timed fast-track tickets online to bypass long queues",
-      "zh": "建议官网提前预订定时快速通道票，免排长队直达登塔"
+    "두바이 프레임 (Dubai Frame)": {
+      "displayName": {
+        "ko": "두바이 프레임 (Dubai Frame)",
+        "ja": "ドバイ・フレーム（Dubai Frame）",
+        "en": "Dubai Frame",
+        "zh": "迪拜金相框 (Dubai Frame)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 150m 거대 황금 액자 전망대",
+        "ja": "🇦🇪 ドバイ · 高さ150mの黄金フレーム",
+        "en": "🇦🇪 Dubai · 150m Golden Frame Sky Bridge",
+        "zh": "🇦🇪 迪拜 · 150米镀金相框天桥"
+      },
+      "highlight": {
+        "ko": "150m 높이의 거대한 황금 액자. 북쪽으로는 올드 두바이, 남쪽으로는 현대 마천루를 대비 조망",
+        "ja": "高さ150mの巨大な金色の額縁。北の旧市街と南の近代超高層ビル群を対比して一望",
+        "en": "A 150m-high architectural golden picture frame bridging Old Dubai with futuristic modern Dubai",
+        "zh": "高达150米的巨型镀金相框，一桥连接老城历史街区与新城现代摩天楼群"
+      },
+      "seniorAccess": {
+        "ko": "초고속 파노라마 엘리베이터, 상층부 투명 바닥 보행로 및 우회 가능한 불투명 평지 보행로 마련",
+        "ja": "高速パノラマエレベーター直行、ガラス床の横に迂回可能な安心の平坦通路完備",
+        "en": "Panoramic high-speed elevators; glass walkway has solid opaque bypass paths for timid walkers",
+        "zh": "高速景观垂直电梯直达顶层，悬空玻璃桥身两侧设有安全平缓的非透明通道"
+      },
+      "hours": {
+        "ko": "매일 09:00~21:00",
+        "ja": "毎日 09:00〜21:00",
+        "en": "Daily 09:00–21:00",
+        "zh": "每日 09:00~21:00"
+      },
+      "ticketTip": {
+        "ko": "자빌 파크 내 위치하여 아침 일찍 방문하면 대기 없이 쾌적하게 관람 가능",
+        "ja": "ザビール公園内にあり、午前中の早い時間帯なら待ち時間なく快適",
+        "en": "Located in Zabeel Park; morning visits offer minimal wait times and pleasant temperatures",
+        "zh": "坐落于扎比尔公园，建议上午前往避开客流高峰与日晒"
+      }
+    },
+    "두바이 미라클 가든 (Dubai Miracle Garden)": {
+      "displayName": {
+        "ko": "두바이 미라클 가든 (Dubai Miracle Garden)",
+        "ja": "ドバイ・ミラクル・ガーデン",
+        "en": "Dubai Miracle Garden",
+        "zh": "迪拜奇迹花园 (Dubai Miracle Garden)"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 1억 5천만 송이 세계 최대 꽃 정원",
+        "ja": "🇦🇪 ドバイ · 1億5千万本の奇跡の花園",
+        "en": "🇦🇪 Dubai · World's Largest Natural Flower Garden",
+        "zh": "🇦🇪 迪拜 · 1.5亿株沙漠花海奇观"
+      },
+      "highlight": {
+        "ko": "사막 한가운데 1억 5천만 송이 생화로 에미레이트 A380 비행기와 성을 구현한 세계 최대 천연 꽃 정원",
+        "ja": "砂漠に咲き誇る1億5千万本の生花。等身大のA380航空機や城をかたどった世界最大の花園",
+        "en": "World's largest natural floral paradise with over 150 million blooms including a full-scale A380",
+        "zh": "沙漠奇迹。1.5亿株鲜花打造的巨型空客A380飞机造型与花卉城堡"
+      },
+      "seniorAccess": {
+        "ko": "넓은 평지 산책로, 걷기 힘드신 어르신을 위한 골프 카트(버기) 투어 운영 및 휠체어 대여 가능",
+        "ja": "広々とした平坦遊歩道、シニア向けゴルフカート（バギー）運行＆車椅子貸出完備",
+        "en": "Spacious flat pathways, golf buggy tours available for seniors, wheelchairs on site",
+        "zh": "全园平坦宽敞步道，专为长辈提供高尔夫电瓶游览车服务及轮椅租赁"
+      },
+      "hours": {
+        "ko": "11월~4월 겨울 시즌 한정 운영 (평일 09:00~21:00, 주말 ~22:00)",
+        "ja": "11月〜4月の冬季限定オープン（平日 09:00〜21:00、週末〜22:00）",
+        "en": "Winter Season only (Nov–Apr): Weekdays 09:00–21:00, Weekends until 22:00",
+        "zh": "仅限11月至次年4月冬季开放（工作日 09:00~21:00，周末至22:00）"
+      },
+      "ticketTip": {
+        "ko": "여름엔 휴장하므로 11~12월 겨울 여행객에게 가장 이상적인 계절 한정 명소",
+        "ja": "夏季は休園するため、11〜12月の冬の旅程に最適な期間限定ハイライト",
+        "en": "Closed during scorching summer: perfectly timed for November & December family stopovers",
+        "zh": "夏季炎热闭园，恰好与11~12月秋冬出行完美契合，不可错过"
+      }
     }
-  },
-  "미래의 박물관 (Museum of the Future)": {
-    "displayName": {
-      "ko": "미래의 박물관 (Museum of the Future)",
-      "ja": "未来博物館（Museum of the Future）",
-      "en": "Museum of the Future",
-      "zh": "未来博物馆 (Museum of the Future)"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 세계에서 가장 아름다운 건축",
-      "ja": "🇦🇪 ドバイ · 世界で最も美しい建築",
-      "en": "🇦🇪 Dubai · World's Most Beautiful Building",
-      "zh": "🇦🇪 迪拜 · 全球最美现代建筑奇迹"
-    },
-    "highlight": {
-      "ko": "세계에서 가장 아름다운 건축물 1위. 아라비아 서예 글귀로 감싼 무주형(기둥 없는) 미래 혁신 공간",
-      "ja": "世界で最も美しい建築第1位。アラビア書道で包まれた柱のない7階建ての革新空間",
-      "en": "Ranked world's most beautiful building with torus architecture covered in Arabic calligraphy",
-      "zh": "被评为全球最美建筑之首。阿拉伯书法镂空环形无立柱先锋建筑"
-    },
-    "seniorAccess": {
-      "ko": "100% 무장애 배리어프리 설계, 턱 없는 완만한 바닥, 초대형 엘리베이터 & 휠체어 무료 대여",
-      "ja": "100%段差なし完全バリアフリー設計、特大エレベーター＆無料車椅子貸出",
-      "en": "100% barrier-free design, gentle sloped floors, spacious elevators & complimentary wheelchairs",
-      "zh": "100%零门槛无障碍通道，缓坡防滑地面，宽敞无障碍垂直电梯及免费轮椅租借"
-    },
-    "hours": {
-      "ko": "매일 10:00~19:30",
-      "ja": "毎日 10:00〜19:30",
-      "en": "Daily 10:00–19:30",
-      "zh": "每日 10:00~19:30"
-    },
-    "ticketTip": {
-      "ko": "글로벌 인기 명소로 최소 2~4주 전 공식 홈페이지 사전 티켓팅 필수",
-      "ja": "世界的な人気施設のため、最低2〜4週間前の公式サイト事前予約が必須",
-      "en": "Ultra-popular global landmark: book at least 2–4 weeks in advance on official portal",
-      "zh": "全球超级热门地标，务必提前2至4周在官网预订入场时段"
-    }
-  },
-  "두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain)": {
-    "displayName": {
-      "ko": "두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain)",
-      "ja": "ドバイ・ファウンテン＆ドバイ・モール",
-      "en": "The Dubai Fountain & Dubai Mall",
-      "zh": "迪拜喷泉与迪拜购物中心 (The Dubai Fountain)"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 세계 최대 음악 분수 쇼",
-      "ja": "🇦🇪 ドバイ · 世界最大級の噴水ショー",
-      "en": "🇦🇪 Dubai · World's Largest Dancing Fountain",
-      "zh": "🇦🇪 迪拜 · 全球最大音乐喷泉秀"
-    },
-    "highlight": {
-      "ko": "세계 최대 규모 음악 분수 쇼. 150m 높이 물줄기와 빛·음악의 환상적인 라이트 하모니",
-      "ja": "世界最大級の噴水ショー。高さ150mまで吹き上がる水と音楽・光のシンフォニー",
-      "en": "World's largest choreographed fountain system performing to world-class musical light scores",
-      "zh": "世界最大音乐喷泉。高达150米的水柱伴随世界名曲与灯光优雅起舞"
-    },
-    "seniorAccess": {
-      "ko": "두바이 몰 실내 100% 평지, 무료 버기카(전동 카트) 서비스 지원, 테라스 카페 좌석 관람",
-      "ja": "モール内完全フラット平坦路、無料電動バギー送迎あり、テラス席から座って鑑賞可能",
-      "en": "100% flat indoor mall terrain, free electric buggy transfers, comfortable lakeside cafe seating",
-      "zh": "购物中心内部全平整平步通道，提供免费电瓶摆渡车，可在湖畔露台餐厅悠闲坐享"
-    },
-    "hours": {
-      "ko": "매일 18:00~23:00 (30분 간격 무료 진행)",
-      "ja": "毎日 18:00〜23:00（30分毎・鑑賞無料）",
-      "en": "Daily 18:00–23:00 (Every 30 mins, Free Admission)",
-      "zh": "每日 18:00~23:00（每30分钟一场，免费观赏）"
-    },
-    "ticketTip": {
-      "ko": "수크 알 바하르 테라스 카페 또는 2층 애플스토어 발코니에서 쾌적하게 관람",
-      "ja": "スーク・アル・バハールのテラス席やアップルストア2階バルコニーが鑑賞ベストスポット",
-      "en": "Watch from Souk Al Bahar terrace restaurants or Apple Store 2nd floor balcony",
-      "zh": "建议在阿尔巴哈市集露台餐厅或苹果旗舰店2层露台避免拥挤舒适观赏"
-    }
-  },
-  "더 뷰 앳 더 팜 (The View at The Palm)": {
-    "displayName": {
-      "ko": "더 뷰 앳 더 팜 (The View at The Palm)",
-      "ja": "ザ・ビュー・アット・ザ・パーム（The View）",
-      "en": "The View at The Palm",
-      "zh": "棕榈岛观景台 (The View at The Palm)"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 팜 주메이라 360도 파노라마",
-      "ja": "🇦🇪 ドバイ · パーム・ジュメイラ360度展望",
-      "en": "🇦🇪 Dubai · 360° Palm Jumeirah Panorama",
-      "zh": "🇦🇪 迪拜 · 棕榈岛360度空中全景"
-    },
-    "highlight": {
-      "ko": "야자수 모양 인공섬 팜 주메이라를 360도로 한눈에 조망하는 240m 높이의 최고 전망대",
-      "ja": "ヤシの木型人工島パーム・ジュメイラを地上240mから一望する360度パノラマ展望台",
-      "en": "240m-high observation deck offering 360-degree panoramic views of Palm Jumeirah island",
-      "zh": "高240米的全景落地观景台，将壮丽的棕榈叶人工岛全貌与阿拉伯湾尽收眼底"
-    },
-    "seniorAccess": {
-      "ko": "더 팜 타워 52층까지 초고속 엘리베이터 직행, 무릎 부담 전혀 없는 완전 평지 실내·외 전망 데크",
-      "ja": "52階まで超高速エレベーター直行、膝の負担ゼロの完全平坦展望デッキ",
-      "en": "Direct express elevator to Level 52, step-free access across indoor and outdoor viewing decks",
-      "zh": "直梯高速直达52层，全程无台阶纯平整观景台，特别关照长辈膝盖"
-    },
-    "hours": {
-      "ko": "매일 09:00~20:30 (주말 ~21:00)",
-      "ja": "毎日 09:00〜20:30（週末〜21:00）",
-      "en": "Daily 09:00–20:30 (Weekends until 21:00)",
-      "zh": "每日 09:00~20:30（周末营业至21:00）"
-    },
-    "ticketTip": {
-      "ko": "일몰 1시간 전 입장하여 주경, 노을, 야경을 모두 감상하는 골든 아워 티켓 추천",
-      "ja": "日没1時間前に入場して昼景・夕暮れ・夜景をすべて楽しむゴールデンアワーがおすすめ",
-      "en": "Book sunset golden hour slots to enjoy daytime vistas, golden hour, and night lights",
-      "zh": "推荐日落前1小时入场，一次饱览日景、晚霞与璀璨夜景"
-    }
-  },
-  "알 파히디 & 알 시프 역사 지구 (Al Fahidi & Al Seef)": {
-    "displayName": {
-      "ko": "알 파히디 & 알 시프 역사 지구 (Al Fahidi & Al Seef)",
-      "ja": "アル・ファヒディ歴史地区＆アル・シーフ",
-      "en": "Al Fahidi & Al Seef Heritage District",
-      "zh": "阿法迪历史区与阿西夫河畔 (Al Fahidi & Al Seef)"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 올드 두바이 전통 골목 & 아브라",
-      "ja": "🇦🇪 ドバイ · 歴史遺産地区＆アブラ船",
-      "en": "🇦🇪 Dubai · Old Dubai Heritage & Abra Boats",
-      "zh": "🇦🇪 迪拜 · 老城传统风塔街区与水上的士"
-    },
-    "highlight": {
-      "ko": "19세기 전통 바람탑(Barjeel) 골목과 두바이 크릭을 잇는 올드 두바이의 고즈넉한 문화 유산",
-      "ja": "19世紀の伝統的な風の塔（バージール）が連なる静かな歴史街並みとドバイ・クリーク",
-      "en": "19th-century wind-tower architecture and winding alleyways along Dubai Creek",
-      "zh": "保存完好的19世纪风塔泥砖院落老街，与迪拜湾传统木船相映成趣"
-    },
-    "seniorAccess": {
-      "ko": "크릭 강변 산책로 완만한 평지 보행, 카페 정원 그늘 휴식처 다수, 전통 아브라 탑승 시 부축 지원",
-      "ja": "クリーク沿いの平坦遊歩道、木陰カフェ多数、アブラ船乗船時も丁寧なサポートあり",
-      "en": "Gentle flat riverfront promenades, shaded courtyard cafes, assisted boarding on traditional boats",
-      "zh": "河畔沿岸步道极为平缓，绿树掩映庭院茶社众多，搭乘木船时有专人搀扶"
-    },
-    "hours": {
-      "ko": "상시 개방 (상점 및 갤러리 10:00~22:00)",
-      "ja": "常時散策可能（店舗・ギャラリー 10:00〜22:00）",
-      "en": "Open 24/7 (Shops & galleries 10:00–22:00)",
-      "zh": "全天开放（传统市集店铺 10:00~22:00）"
-    },
-    "ticketTip": {
-      "ko": "알 시프에서 알 파히디를 거쳐 아브라(1 디르함 동전)로 건너편 골드 수크까지 이어지는 코스 추천",
-      "ja": "アル・シーフから散策し、1ディルハムのアブラ船で対岸のゴールドスークへ渡るルートが最高",
-      "en": "Take the 1 AED traditional abra boat across Dubai Creek to explore Gold & Spice Souks",
-      "zh": "体验仅需1迪拉姆的木制水上的士横渡迪拜湾，连接黄金市集与香料市场"
-    }
-  },
-  "두바이 프레임 (Dubai Frame)": {
-    "displayName": {
-      "ko": "두바이 프레임 (Dubai Frame)",
-      "ja": "ドバイ・フレーム（Dubai Frame）",
-      "en": "Dubai Frame",
-      "zh": "迪拜金相框 (Dubai Frame)"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 150m 거대 황금 액자 전망대",
-      "ja": "🇦🇪 ドバイ · 高さ150mの黄金フレーム",
-      "en": "🇦🇪 Dubai · 150m Golden Frame Sky Bridge",
-      "zh": "🇦🇪 迪拜 · 150米镀金相框天桥"
-    },
-    "highlight": {
-      "ko": "150m 높이의 거대한 황금 액자. 북쪽으로는 올드 두바이, 남쪽으로는 현대 마천루를 대비 조망",
-      "ja": "高さ150mの巨大な金色の額縁。北の旧市街と南の近代超高層ビル群を対比して一望",
-      "en": "A 150m-high architectural golden picture frame bridging Old Dubai with futuristic modern Dubai",
-      "zh": "高达150米的巨型镀金相框，一桥连接老城历史街区与新城现代摩天楼群"
-    },
-    "seniorAccess": {
-      "ko": "초고속 파노라마 엘리베이터, 상층부 투명 바닥 보행로 및 우회 가능한 불투명 평지 보행로 마련",
-      "ja": "高速パノラマエレベーター直行、ガラス床の横に迂回可能な安心の平坦通路完備",
-      "en": "Panoramic high-speed elevators; glass walkway has solid opaque bypass paths for timid walkers",
-      "zh": "高速景观垂直电梯直达顶层，悬空玻璃桥身两侧设有安全平缓的非透明通道"
-    },
-    "hours": {
-      "ko": "매일 09:00~21:00",
-      "ja": "毎日 09:00〜21:00",
-      "en": "Daily 09:00–21:00",
-      "zh": "每日 09:00~21:00"
-    },
-    "ticketTip": {
-      "ko": "자빌 파크 내 위치하여 아침 일찍 방문하면 대기 없이 쾌적하게 관람 가능",
-      "ja": "ザビール公園内にあり、午前中の早い時間帯なら待ち時間なく快適",
-      "en": "Located in Zabeel Park; morning visits offer minimal wait times and pleasant temperatures",
-      "zh": "坐落于扎比尔公园，建议上午前往避开客流高峰与日晒"
-    }
-  },
-  "두바이 미라클 가든 (Dubai Miracle Garden)": {
-    "displayName": {
-      "ko": "두바이 미라클 가든 (Dubai Miracle Garden)",
-      "ja": "ドバイ・ミラクル・ガーデン",
-      "en": "Dubai Miracle Garden",
-      "zh": "迪拜奇迹花园 (Dubai Miracle Garden)"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 1억 5천만 송이 세계 최대 꽃 정원",
-      "ja": "🇦🇪 ドバイ · 1億5千万本の奇跡の花園",
-      "en": "🇦🇪 Dubai · World's Largest Natural Flower Garden",
-      "zh": "🇦🇪 迪拜 · 1.5亿株沙漠花海奇观"
-    },
-    "highlight": {
-      "ko": "사막 한가운데 1억 5천만 송이 생화로 에미레이트 A380 비행기와 성을 구현한 세계 최대 천연 꽃 정원",
-      "ja": "砂漠に咲き誇る1億5千万本の生花。等身大のA380航空機や城をかたどった世界最大の花園",
-      "en": "World's largest natural floral paradise with over 150 million blooms including a full-scale A380",
-      "zh": "沙漠奇迹。1.5亿株鲜花打造的巨型空客A380飞机造型与花卉城堡"
-    },
-    "seniorAccess": {
-      "ko": "넓은 평지 산책로, 걷기 힘드신 어르신을 위한 골프 카트(버기) 투어 운영 및 휠체어 대여 가능",
-      "ja": "広々とした平坦遊歩道、シニア向けゴルフカート（バギー）運行＆車椅子貸出完備",
-      "en": "Spacious flat pathways, golf buggy tours available for seniors, wheelchairs on site",
-      "zh": "全园平坦宽敞步道，专为长辈提供高尔夫电瓶游览车服务及轮椅租赁"
-    },
-    "hours": {
-      "ko": "11월~4월 겨울 시즌 한정 운영 (평일 09:00~21:00, 주말 ~22:00)",
-      "ja": "11月〜4月の冬季限定オープン（平日 09:00〜21:00、週末〜22:00）",
-      "en": "Winter Season only (Nov–Apr): Weekdays 09:00–21:00, Weekends until 22:00",
-      "zh": "仅限11月至次年4月冬季开放（工作日 09:00~21:00，周末至22:00）"
-    },
-    "ticketTip": {
-      "ko": "여름엔 휴장하므로 11~12월 겨울 여행객에게 가장 이상적인 계절 한정 명소",
-      "ja": "夏季は休園するため、11〜12月の冬の旅程に最適な期間限定ハイライト",
-      "en": "Closed during scorching summer: perfectly timed for November & December family stopovers",
-      "zh": "夏季炎热闭园，恰好与11~12月秋冬出行完美契合，不可错过"
-    }
-  }
-};
+  };
   const DUBAI_DINING_I18N = {
-  "Arabian Tea House": {
-    "displayName": {
-      "ko": "아라비안 티 하우스 (Arabian Tea House)",
-      "ja": "アラビアン・ティーハウス（バスタキヤ本店）",
-      "en": "Arabian Tea House (Al Fahidi)",
-      "zh": "阿拉伯茶屋 (Arabian Tea House)"
+    "Arabian Tea House": {
+      "displayName": {
+        "ko": "아라비안 티 하우스 (Arabian Tea House)",
+        "ja": "アラビアン・ティーハウス（バスタキヤ本店）",
+        "en": "Arabian Tea House (Al Fahidi)",
+        "zh": "阿拉伯茶屋 (Arabian Tea House)"
+      },
+      "dishTitle": {
+        "ko": "에미라티 전통 아침 식사 트레이 & 민트 티",
+        "ja": "伝統エミレーツ朝食トレイ＆ミントティー",
+        "en": "Emirati Breakfast Tray & Fresh Mint Tea",
+        "zh": "传统阿联酋特色早餐大拼盘与薄荷茶"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 올드 두바이 최고 정원 카페",
+        "ja": "🇦🇪 ドバイ · 歴史地区の名門中庭カフェ",
+        "en": "🇦🇪 Dubai · Old Town Garden Cafe",
+        "zh": "🇦🇪 迪拜 · 老城最负盛名花园茶馆"
+      },
+      "signature": {
+        "ko": "흰색 터키석 천막 정원에서 맛보는 수제 아랍 빵(카미르/체밥), 발루릿, 데이츠 시럽, 시원한 민트 티",
+        "ja": "白い天幕ガーデンで味わう焼きたてアラブパン、甘いデーツシロップ、爽快なミントティー",
+        "en": "Handmade khameer bread, sweet balaleet vermicelli, date syrup, and fragrant iced mint tea in a leafy courtyard",
+        "zh": "在白蓝相间的中庭品尝现烤阿联酋传统松饼、椰枣糖浆与提神薄荷茶"
+      },
+      "seniorTip": {
+        "ko": "푸른 나무와 하얀 천막 아래 그늘진 정원 평지 좌석. 자극적이지 않고 담백해 어르신 아침 식사로 환상적",
+        "ja": "木陰の涼しいテラス平坦席。刺激が少なく優しい味付けでご両親の朝食に最適",
+        "en": "Shaded garden seating on completely flat ground; gentle seasonings ideal for senior palates",
+        "zh": "绿植环绕的遮阳庭院平路席位，菜品清淡温和不油腻，深受长辈好评"
+      },
+      "hours": {
+        "ko": "매일 07:00~23:00",
+        "ja": "毎日 07:00〜23:00",
+        "en": "Daily 07:00–23:00",
+        "zh": "每日 07:00~23:00"
+      },
+      "language": {
+        "ko": "영어 능통 · 친절하고 따뜻한 아라비아 전통 환대",
+        "ja": "英語堪能 · 心温まる伝統アラビアンホスピタリティ",
+        "en": "Fluent English · Warm traditional Arabian hospitality",
+        "zh": "流利英语服务 · 热情传统的阿拉伯待客之道"
+      },
+      "booking": {
+        "ko": "워크인 선착순 (오전 10시 이전 방문 시 대기 없음)",
+        "ja": "当日順次案内（午前10時前なら並ばず入店可能）",
+        "en": "Walk-in (arrive before 10:00 AM for immediate seating)",
+        "zh": "现场到店（上午10点前抵达通常无需排队）"
+      }
     },
-    "dishTitle": {
-      "ko": "에미라티 전통 아침 식사 트레이 & 민트 티",
-      "ja": "伝統エミレーツ朝食トレイ＆ミントティー",
-      "en": "Emirati Breakfast Tray & Fresh Mint Tea",
-      "zh": "传统阿联酋特色早餐大拼盘与薄荷茶"
+    "Al Fanar Restaurant & Café": {
+      "displayName": {
+        "ko": "알 파나르 레스토랑 & 카페 (Al Fanar)",
+        "ja": "アル・ファナール（伝統エミレーツ料理）",
+        "en": "Al Fanar Restaurant & Café",
+        "zh": "阿尔法纳传统餐厅 (Al Fanar)"
+      },
+      "dishTitle": {
+        "ko": "전통 양고기 마크부스 & 살루나 해산물 스튜",
+        "ja": "伝統ラム肉のマクブース＆サルーナ魚介スープ",
+        "en": "Traditional Lamb Machboos & Saloona Seafood Stew",
+        "zh": "传统慢炖羊肉马克布斯手抓饭与海鲜炖汤"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 1960년대 옛 두바이 테마 식당",
+        "ja": "🇦🇪 ドバイ · 1960年代の古き良きドバイ",
+        "en": "🇦🇪 Dubai · Nostalgic 1960s Emirati Theme",
+        "zh": "🇦🇪 迪拜 · 1960年代复古老迪拜风情"
+      },
+      "signature": {
+        "ko": "카다멈과 사프란으로 지은 고슬고슬한 아랍 쌀밥 위에 푹 삶아 입에서 살살 녹는 부드러운 양고기",
+        "ja": "サフランとカルダモン香るご飯の上に、じっくり煮込まれた極上ラム肉がたっぷり",
+        "en": "Slow-braised tender lamb falling off the bone served over fragrant spiced basmati rice",
+        "zh": "藏红花与豆蔻香米焖煮，搭配慢炖至入口即化的鲜嫩羊肉与传统番茄炖汁"
+      },
+      "seniorTip": {
+        "ko": "1960년대 옛 두바이 마을을 재현한 턱 없는 1층 레스토랑. 고기가 아주 연해 치아가 약하신 부모님께 최고",
+        "ja": "段差のない1階フロア。お肉がほろほろと極めて柔らかく噛みやすいためご両親に好評",
+        "en": "Step-free ground floor access; meat is slow-cooked until meltingly soft, gentle for senior teeth",
+        "zh": "全一楼平地无门槛，肉质慢炖软烂酥口，特别便于牙口较弱的年长者进食"
+      },
+      "hours": {
+        "ko": "매일 12:00~23:00",
+        "ja": "毎日 12:00〜23:00",
+        "en": "Daily 12:00–23:00",
+        "zh": "每日 12:00~23:00"
+      },
+      "language": {
+        "ko": "영어 완벽 · 사진 메뉴판 구비",
+        "ja": "英語堪能 · わかりやすい写真付きメニューあり",
+        "en": "Fluent English · Clear illustrated picture menus",
+        "zh": "熟练英语 · 提供全图解照片菜单"
+      },
+      "booking": {
+        "ko": "공식 웹사이트 및 전화 예약 권장",
+        "ja": "公式サイトまたは電話事前予約推奨",
+        "en": "Official website or phone reservation recommended",
+        "zh": "建议官方网站或电话提前订位"
+      }
     },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 올드 두바이 최고 정원 카페",
-      "ja": "🇦🇪 ドバイ · 歴史地区の名門中庭カフェ",
-      "en": "🇦🇪 Dubai · Old Town Garden Cafe",
-      "zh": "🇦🇪 迪拜 · 老城最负盛名花园茶馆"
+    "Bu Qtair": {
+      "displayName": {
+        "ko": "부 크타이르 (Bu Qtair)",
+        "ja": "ブ・クテール（老舗シーフード）",
+        "en": "Bu Qtair (Seafood Landmark)",
+        "zh": "布克泰尔传奇海鲜 (Bu Qtair)"
+      },
+      "dishTitle": {
+        "ko": "당일 직송 하무르 생선 구이 & 매콤달콤 왕새우 튀김",
+        "ja": "新鮮ハルール鮮魚フライ＆大エビのスパイシーソテー",
+        "en": "Fresh Fried Hamour Fish & Jumbo Prawns",
+        "zh": "当日现捕炸石斑鱼与香脆罗氏沼虾"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 40년 전통 어부의 전설적 해산물",
+        "ja": "🇦🇪 ドバイ · 40年伝統の漁師名物シーフード",
+        "en": "🇦🇪 Dubai · Legendary Fisherman Seafood Shack",
+        "zh": "🇦🇪 迪拜 · 40年老字号地道海鲜"
+      },
+      "signature": {
+        "ko": "매일 아침 어시장에서 들여온 신선한 흰살 생선 하무르와 왕새우를 아라비안 마살라로 튀겨낸 어부의 맛",
+        "ja": "朝獲れの白身魚ハルールと大エビを自家製スパイスで香ばしく揚げた絶品料理",
+        "en": "Catch of the day hamour fish and jumbo prawns marinated in coastal spices and flash-fried to perfection",
+        "zh": "每日清晨直采自海鲜市场的石斑鱼和巨大明虾，外酥里嫩，肉质极为鲜美"
+      },
+      "seniorTip": {
+        "ko": "현대식 실내 매장으로 이전하여 쾌적한 에어컨과 넓은 평지 테이블 완비, 가시를 발라내기 쉬운 담백한 생선",
+        "ja": "冷房完備の快適な平坦フロア。骨が大きく取り除きやすい上質な白身魚で食べやすい",
+        "en": "Air-conditioned indoor dining with flat flooring; fish is meaty with easy-to-remove large bones",
+        "zh": "已迁至空调充沛的宽敞现代室内平步餐厅，大块鱼刺易剔除，食用十分方便"
+      },
+      "hours": {
+        "ko": "매일 11:30~23:30 (금요일 13:00~)",
+        "ja": "毎日 11:30〜23:30（金曜 13:00〜）",
+        "en": "Daily 11:30–23:30 (Fridays from 13:00)",
+        "zh": "每日 11:30~23:30（周五13:00开门）"
+      },
+      "language": {
+        "ko": "영어 능통 · 생선 무게 단위 주문",
+        "ja": "英語対応 · 量り売りオーダー",
+        "en": "Fluent English · Weigh-and-order counter system",
+        "zh": "流利英语 · 称重明码标价点单"
+      },
+      "booking": {
+        "ko": "워크인 선착순 (저녁 18:30 이전 방문 추천)",
+        "ja": "先着順（夕方18:30前の来店がスムーズ）",
+        "en": "Walk-in only (arrive before 6:30 PM to avoid dinner queues)",
+        "zh": "现场排队入座（建议傍晚18:30前抵达避开人流）"
+      }
     },
-    "signature": {
-      "ko": "흰색 터키석 천막 정원에서 맛보는 수제 아랍 빵(카미르/체밥), 발루릿, 데이츠 시럽, 시원한 민트 티",
-      "ja": "白い天幕ガーデンで味わう焼きたてアラブパン、甘いデーツシロップ、爽快なミントティー",
-      "en": "Handmade khameer bread, sweet balaleet vermicelli, date syrup, and fragrant iced mint tea in a leafy courtyard",
-      "zh": "在白蓝相间的中庭品尝现烤阿联酋传统松饼、椰枣糖浆与提神薄荷茶"
+    "Al Nafoorah": {
+      "displayName": {
+        "ko": "알 나푸라 (Al Nafoorah - Jumeirah)",
+        "ja": "アル・ナフーラ（名門レバノン料理）",
+        "en": "Al Nafoorah (Jumeirah)",
+        "zh": "阿尔纳芙拉黎巴嫩盛宴 (Al Nafoorah)"
+      },
+      "dishTitle": {
+        "ko": "오스만 궁전식 프리미엄 양갈비 구이 & 후무스",
+        "ja": "宮殿仕立ての最高級ラムチョップ炭火焼＆フムス",
+        "en": "Lebanese Mixed Grill & Velvety Hommus Platter",
+        "zh": "黎巴嫩奥斯曼宫廷烤羊排与顺滑鹰嘴豆泥拼盘"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 주메이라 럭셔리 레바논 다이닝",
+        "ja": "🇦🇪 ドバイ · 高級リゾート最高峰レバノン料理",
+        "en": "🇦🇪 Dubai · Luxury Palatial Lebanese Dining",
+        "zh": "🇦🇪 迪拜 · 卓美亚宫殿奢华中东盛宴"
+      },
+      "signature": {
+        "ko": "참숯에 정성스레 구운 최고급 양갈비, 신선한 타불레 샐러드, 부드러운 병아리콩 후무스 플래터",
+        "ja": "炭火で香ばしく焼き上げた極上ラムチョップ、新鮮タブレサラダ、滑らかなフムス",
+        "en": "Tender charcoal-grilled lamb chops, freshly made parsley tabbouleh, and silky smooth hummus",
+        "zh": "精选特级炭火慢烤羊排，佐以新鲜西芹塔布勒沙拉与秘制丝滑鹰嘴豆泥"
+      },
+      "seniorTip": {
+        "ko": "호텔 정문에서 카트로 이동 가능하며 호텔급 최고 수준의 정중한 케어와 푹신한 소파 좌석",
+        "ja": "ホテルエントランスからカート送迎可能。五つ星ホテルならではの丁寧なサポートと快適ソファ席",
+        "en": "Buggy transfers available from hotel lobby, 5-star service with plush sofa seating",
+        "zh": "酒店大堂可派电瓶车接送，五星级无微不至的长辈尊享礼遇与超宽软座"
+      },
+      "hours": {
+        "ko": "매일 13:00~15:30, 18:30~23:00",
+        "ja": "毎日 13:00〜15:30、18:30〜23:00",
+        "en": "Daily 13:00–15:30, 18:30–23:00",
+        "zh": "每日 13:00~15:30、18:30~23:00"
+      },
+      "language": {
+        "ko": "영어 완벽 · VIP 의전급 서비스",
+        "ja": "英語堪能 · VIP対応の上質なおもてなし",
+        "en": "Fluent English · Concierge-grade hospitality",
+        "zh": "流利英语 · 国宾级礼宾周到服务"
+      },
+      "booking": {
+        "ko": "주메이라 공식 사이트 필수 예약",
+        "ja": "ジュメイラ公式サイトにて事前予約必須",
+        "en": "Advance booking required via Jumeirah official portal",
+        "zh": "须在卓美亚酒店官网提前预订"
+      }
     },
-    "seniorTip": {
-      "ko": "푸른 나무와 하얀 천막 아래 그늘진 정원 평지 좌석. 자극적이지 않고 담백해 어르신 아침 식사로 환상적",
-      "ja": "木陰の涼しいテラス平坦席。刺激が少なく優しい味付けでご両親の朝食に最適",
-      "en": "Shaded garden seating on completely flat ground; gentle seasonings ideal for senior palates",
-      "zh": "绿植环绕的遮阳庭院平路席位，菜品清淡温和不油腻，深受长辈好评"
+    "Armani/Amal": {
+      "displayName": {
+        "ko": "아르마니/아말 (Armani/Amal)",
+        "ja": "アルマーニ / アマル（ブルジュ・ハリファ）",
+        "en": "Armani/Amal (Burj Khalifa)",
+        "zh": "阿玛尼/阿迈尔餐厅 (Armani/Amal)"
+      },
+      "dishTitle": {
+        "ko": "분수 쇼 테라스 뷰 컨템포러리 다이닝 & 달 카레",
+        "ja": "噴水ショーを一望するコンテンポラリーディナー",
+        "en": "Contemporary Fine Dining with Fountain Terrace Views",
+        "zh": "喷泉露台胜景当代精细料理与慢炖豆泥"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 버즈 칼리파 3층 미쉐린 테라스",
+        "ja": "🇦🇪 ドバイ · ミシュラン選定テラスダイニング",
+        "en": "🇦🇪 Dubai · Michelin Selected Fountain View",
+        "zh": "🇦🇪 迪拜 · 米其林指南精选喷泉观景露台"
+      },
+      "signature": {
+        "ko": "버즈 칼리파 3층 테라스에서 분수 쇼를 정면으로 바라보며 즐기는 미쉐린 셀렉티드 모던 다이닝 코스",
+        "ja": "ブルジュ・ハリファ3階テラスから噴水ショーを見下ろすラグジュアリーディナーコース",
+        "en": "Michelin-selected multi-course dinner perched on the 3rd-floor terrace overlooking the dancing fountains",
+        "zh": "坐拥哈利法塔3层露台正对世界最大喷泉秀，坐享米其林指南精选手工盛宴"
+      },
+      "seniorTip": {
+        "ko": "버즈 칼리파 내부 엘리베이터 직행, 호텔 발레파킹 및 휠체어 지원, 소음 없이 테라스에서 분수 쇼 조망",
+        "ja": "ホテル直通エレベーター完備。混雑や人混みなく座ったままテラスで優雅に噴水ショーを鑑賞",
+        "en": "Direct hotel elevator; avoids street crowds while seniors enjoy the fountain show from private terrace seating",
+        "zh": "酒店内部直梯直达，避开地面拥挤人流，安坐专属露台沙发即可全景尽揽喷泉盛况"
+      },
+      "hours": {
+        "ko": "매일 18:30~23:30 (일요일 휴무)",
+        "ja": "毎日 18:30〜23:30（日曜定休）",
+        "en": "Daily 18:30–23:30 (Closed Sundays)",
+        "zh": "每日 18:30~23:30（周日公休）"
+      },
+      "language": {
+        "ko": "영어 완벽 · 다국어 소믈리에 상주",
+        "ja": "英語堪能 · 多言語ソムリエ常駐",
+        "en": "Fluent English & multilingual sommeliers",
+        "zh": "流利英语及多语种专业侍酒师"
+      },
+      "booking": {
+        "ko": "최소 2~3주 전 아르마니 호텔 공식 예약",
+        "ja": "最低2〜3週間前の公式サイト予約必須",
+        "en": "Book 2–3 weeks in advance on Armani Hotel official portal",
+        "zh": "建议提前2至3周在阿玛尼酒店官网预订"
+      }
     },
-    "hours": {
-      "ko": "매일 07:00~23:00",
-      "ja": "毎日 07:00〜23:00",
-      "en": "Daily 07:00–23:00",
-      "zh": "每日 07:00~23:00"
+    "Logma": {
+      "displayName": {
+        "ko": "로그마 (Logma - Dubai Mall)",
+        "ja": "ログマ（ドバイ・モール店）",
+        "en": "Logma (The Dubai Mall)",
+        "zh": "洛格玛时尚茶歇 (Logma)"
+      },
+      "dishTitle": {
+        "ko": "사프란 카락 티 & 루카이마트 대추야자 도넛",
+        "ja": "サフラン・カラクティー＆揚げたてルカイマット",
+        "en": "Saffron Karak Tea & Hot Crispy Lugaimat",
+        "zh": "藏红花特色卡拉克奶茶与金黄椰枣炸面球"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 두바이 몰 분수 전망 모던 에미라티",
+        "ja": "🇦🇪 ドバイ · ドバイ・モール内ファウンテン展望",
+        "en": "🇦🇪 Dubai · Modern Emirati Cafe with Fountain View",
+        "zh": "🇦🇪 迪拜 · 购物中心内现代阿拉伯风味茶餐厅"
+      },
+      "signature": {
+        "ko": "진한 사프란 향의 에미라티 밀크티와 갓 튀겨 따뜻한 조청 시럽을 뿌린 전통 도넛 루카이마트",
+        "ja": "濃厚なサフラン香るミルクティーと、デーツ蜜をたっぷり絡めた伝統スイーツ",
+        "en": "Fragrant saffron-infused sweet milk tea paired with piping-hot Emirati honey-date dumplings",
+        "zh": "香醇浓郁的藏红花奶茶，搭配裹满金黄椰枣糖浆的传统酥脆面点"
+      },
+      "seniorTip": {
+        "ko": "두바이 몰 패션 애비뉴 3층 분수 전망 테라스. 쇼핑 중 어르신 당 충전과 다리 쉼터로 제격",
+        "ja": "モール3階の噴水ビューテラス。お買い物の途中でほっと一息つける絶好の休憩スポット",
+        "en": "Fashion Avenue 3rd-floor terrace; perfect rest stop with comfortable chairs during mall walks",
+        "zh": "位于时尚大道3层露台正对喷泉，是购物步行间隙让长辈歇脚品茶的绝佳去处"
+      },
+      "hours": {
+        "ko": "매일 10:00~00:00",
+        "ja": "毎日 10:00〜00:00",
+        "en": "Daily 10:00–00:00 (Midnight)",
+        "zh": "每日 10:00~午夜00:00"
+      },
+      "language": {
+        "ko": "영어 완벽 · 태블릿 사진 주문",
+        "ja": "英語対応 · タブレット写真注文",
+        "en": "Fluent English · Tablet visual ordering",
+        "zh": "流利英语 · 支持平板电脑图文点餐"
+      },
+      "booking": {
+        "ko": "워크인 가능",
+        "ja": "予約不要（ウォークイン可能）",
+        "en": "Walk-in friendly",
+        "zh": "支持随时直接到店"
+      }
     },
-    "language": {
-      "ko": "영어 능통 · 친절하고 따뜻한 아라비아 전통 환대",
-      "ja": "英語堪能 · 心温まる伝統アラビアンホスピタリティ",
-      "en": "Fluent English · Warm traditional Arabian hospitality",
-      "zh": "流利英语服务 · 热情传统的阿拉伯待客之道"
-    },
-    "booking": {
-      "ko": "워크인 선착순 (오전 10시 이전 방문 시 대기 없음)",
-      "ja": "当日順次案内（午前10時前なら並ばず入店可能）",
-      "en": "Walk-in (arrive before 10:00 AM for immediate seating)",
-      "zh": "现场到店（上午10点前抵达通常无需排队）"
+    "Shabestan": {
+      "displayName": {
+        "ko": "샤베스탄 (Shabestan - Deira Creek)",
+        "ja": "シャベスタン（老舗ペルシャ料理）",
+        "en": "Shabestan (Radisson Blu)",
+        "zh": "莎贝斯坦正宗波斯料理 (Shabestan)"
+      },
+      "dishTitle": {
+        "ko": "두바이 크릭 야경 정통 사프란 양고기 쿠비데 케밥",
+        "ja": "伝統サフラン・ラム肉コビデケバブ炭火焼",
+        "en": "Traditional Saffron Lamb Koobideh Kebab",
+        "zh": "迪拜湾夜景正宗藏红花烤羊肉库比德肉串"
+      },
+      "badge": {
+        "ko": "🇦🇪 두바이 · 40년 전통 크릭 뷰 페르시안 명가",
+        "ja": "🇦🇪 ドバイ · クリーク夜景を望む40年伝統の名店",
+        "en": "🇦🇪 Dubai · 40-Year Creekfront Persian Classic",
+        "zh": "🇦🇪 迪拜 · 俯瞰迪拜湾夜景40年正宗老店"
+      },
+      "signature": {
+        "ko": "40년 전통의 두바이 최고 페르시안 레스토랑. 숯불에 구운 육즙 가득한 다진 양고기와 사프란 버터 밥",
+        "ja": "炭火でジューシーに焼き上げた秘伝のラム挽肉ケバブと芳醇なサフランバターライス",
+        "en": "Juicy minced lamb kebabs grilled over open coals served with saffron-infused buttered basmati rice",
+        "zh": "40年沉淀的波斯料理招牌。炭火现烤鲜嫩多汁的羊肉肉串配以藏红花黄油长粒香米饭"
+      },
+      "seniorTip": {
+        "ko": "래디슨 블루 호텔 엘리베이터 이동, 크릭 야경이 파노라마로 펼쳐지는 넓은 소파 좌석과 전통 악기 연주",
+        "ja": "ホテル専用エレベーター利用、クリーク夜景が広がる広々ソファ席と伝統生演奏",
+        "en": "Hotel elevator access; panoramic creek views from comfortable booth seating with soothing live music",
+        "zh": "酒店垂直电梯平稳直达，全景落地窗俯瞰迪拜湾浪漫夜景，宽大沙发座配有温和现场民乐"
+      },
+      "hours": {
+        "ko": "매일 12:30~23:00",
+        "ja": "毎日 12:30〜23:00",
+        "en": "Daily 12:30–23:00",
+        "zh": "每日 12:30~23:00"
+      },
+      "language": {
+        "ko": "영어 완벽 · 친절한 전통 서비스",
+        "ja": "英語堪能 · 心配りの行き届いた接客",
+        "en": "Fluent English & courteous hospitable service",
+        "zh": "流利英语 · 体贴热情的五星级传统服务"
+      },
+      "booking": {
+        "ko": "호텔 레스토랑 사전 예약 권장",
+        "ja": "ホテルレストラン事前予約推奨",
+        "en": "Advance table reservation recommended",
+        "zh": "建议提前预订靠窗观景席位"
+      }
     }
-  },
-  "Al Fanar Restaurant & Café": {
-    "displayName": {
-      "ko": "알 파나르 레스토랑 & 카페 (Al Fanar)",
-      "ja": "アル・ファナール（伝統エミレーツ料理）",
-      "en": "Al Fanar Restaurant & Café",
-      "zh": "阿尔法纳传统餐厅 (Al Fanar)"
-    },
-    "dishTitle": {
-      "ko": "전통 양고기 마크부스 & 살루나 해산물 스튜",
-      "ja": "伝統ラム肉のマクブース＆サルーナ魚介スープ",
-      "en": "Traditional Lamb Machboos & Saloona Seafood Stew",
-      "zh": "传统慢炖羊肉马克布斯手抓饭与海鲜炖汤"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 1960년대 옛 두바이 테마 식당",
-      "ja": "🇦🇪 ドバイ · 1960年代の古き良きドバイ",
-      "en": "🇦🇪 Dubai · Nostalgic 1960s Emirati Theme",
-      "zh": "🇦🇪 迪拜 · 1960年代复古老迪拜风情"
-    },
-    "signature": {
-      "ko": "카다멈과 사프란으로 지은 고슬고슬한 아랍 쌀밥 위에 푹 삶아 입에서 살살 녹는 부드러운 양고기",
-      "ja": "サフランとカルダモン香るご飯の上に、じっくり煮込まれた極上ラム肉がたっぷり",
-      "en": "Slow-braised tender lamb falling off the bone served over fragrant spiced basmati rice",
-      "zh": "藏红花与豆蔻香米焖煮，搭配慢炖至入口即化的鲜嫩羊肉与传统番茄炖汁"
-    },
-    "seniorTip": {
-      "ko": "1960년대 옛 두바이 마을을 재현한 턱 없는 1층 레스토랑. 고기가 아주 연해 치아가 약하신 부모님께 최고",
-      "ja": "段差のない1階フロア。お肉がほろほろと極めて柔らかく噛みやすいためご両親に好評",
-      "en": "Step-free ground floor access; meat is slow-cooked until meltingly soft, gentle for senior teeth",
-      "zh": "全一楼平地无门槛，肉质慢炖软烂酥口，特别便于牙口较弱的年长者进食"
-    },
-    "hours": {
-      "ko": "매일 12:00~23:00",
-      "ja": "毎日 12:00〜23:00",
-      "en": "Daily 12:00–23:00",
-      "zh": "每日 12:00~23:00"
-    },
-    "language": {
-      "ko": "영어 완벽 · 사진 메뉴판 구비",
-      "ja": "英語堪能 · わかりやすい写真付きメニューあり",
-      "en": "Fluent English · Clear illustrated picture menus",
-      "zh": "熟练英语 · 提供全图解照片菜单"
-    },
-    "booking": {
-      "ko": "공식 웹사이트 및 전화 예약 권장",
-      "ja": "公式サイトまたは電話事前予約推奨",
-      "en": "Official website or phone reservation recommended",
-      "zh": "建议官方网站或电话提前订位"
-    }
-  },
-  "Bu Qtair": {
-    "displayName": {
-      "ko": "부 크타이르 (Bu Qtair)",
-      "ja": "ブ・クテール（老舗シーフード）",
-      "en": "Bu Qtair (Seafood Landmark)",
-      "zh": "布克泰尔传奇海鲜 (Bu Qtair)"
-    },
-    "dishTitle": {
-      "ko": "당일 직송 하무르 생선 구이 & 매콤달콤 왕새우 튀김",
-      "ja": "新鮮ハルール鮮魚フライ＆大エビのスパイシーソテー",
-      "en": "Fresh Fried Hamour Fish & Jumbo Prawns",
-      "zh": "当日现捕炸石斑鱼与香脆罗氏沼虾"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 40년 전통 어부의 전설적 해산물",
-      "ja": "🇦🇪 ドバイ · 40年伝統の漁師名物シーフード",
-      "en": "🇦🇪 Dubai · Legendary Fisherman Seafood Shack",
-      "zh": "🇦🇪 迪拜 · 40年老字号地道海鲜"
-    },
-    "signature": {
-      "ko": "매일 아침 어시장에서 들여온 신선한 흰살 생선 하무르와 왕새우를 아라비안 마살라로 튀겨낸 어부의 맛",
-      "ja": "朝獲れの白身魚ハルールと大エビを自家製スパイスで香ばしく揚げた絶品料理",
-      "en": "Catch of the day hamour fish and jumbo prawns marinated in coastal spices and flash-fried to perfection",
-      "zh": "每日清晨直采自海鲜市场的石斑鱼和巨大明虾，外酥里嫩，肉质极为鲜美"
-    },
-    "seniorTip": {
-      "ko": "현대식 실내 매장으로 이전하여 쾌적한 에어컨과 넓은 평지 테이블 완비, 가시를 발라내기 쉬운 담백한 생선",
-      "ja": "冷房完備の快適な平坦フロア。骨が大きく取り除きやすい上質な白身魚で食べやすい",
-      "en": "Air-conditioned indoor dining with flat flooring; fish is meaty with easy-to-remove large bones",
-      "zh": "已迁至空调充沛的宽敞现代室内平步餐厅，大块鱼刺易剔除，食用十分方便"
-    },
-    "hours": {
-      "ko": "매일 11:30~23:30 (금요일 13:00~)",
-      "ja": "毎日 11:30〜23:30（金曜 13:00〜）",
-      "en": "Daily 11:30–23:30 (Fridays from 13:00)",
-      "zh": "每日 11:30~23:30（周五13:00开门）"
-    },
-    "language": {
-      "ko": "영어 능통 · 생선 무게 단위 주문",
-      "ja": "英語対応 · 量り売りオーダー",
-      "en": "Fluent English · Weigh-and-order counter system",
-      "zh": "流利英语 · 称重明码标价点单"
-    },
-    "booking": {
-      "ko": "워크인 선착순 (저녁 18:30 이전 방문 추천)",
-      "ja": "先着順（夕方18:30前の来店がスムーズ）",
-      "en": "Walk-in only (arrive before 6:30 PM to avoid dinner queues)",
-      "zh": "现场排队入座（建议傍晚18:30前抵达避开人流）"
-    }
-  },
-  "Al Nafoorah": {
-    "displayName": {
-      "ko": "알 나푸라 (Al Nafoorah - Jumeirah)",
-      "ja": "アル・ナフーラ（名門レバノン料理）",
-      "en": "Al Nafoorah (Jumeirah)",
-      "zh": "阿尔纳芙拉黎巴嫩盛宴 (Al Nafoorah)"
-    },
-    "dishTitle": {
-      "ko": "오스만 궁전식 프리미엄 양갈비 구이 & 후무스",
-      "ja": "宮殿仕立ての最高級ラムチョップ炭火焼＆フムス",
-      "en": "Lebanese Mixed Grill & Velvety Hommus Platter",
-      "zh": "黎巴嫩奥斯曼宫廷烤羊排与顺滑鹰嘴豆泥拼盘"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 주메이라 럭셔리 레바논 다이닝",
-      "ja": "🇦🇪 ドバイ · 高級リゾート最高峰レバノン料理",
-      "en": "🇦🇪 Dubai · Luxury Palatial Lebanese Dining",
-      "zh": "🇦🇪 迪拜 · 卓美亚宫殿奢华中东盛宴"
-    },
-    "signature": {
-      "ko": "참숯에 정성스레 구운 최고급 양갈비, 신선한 타불레 샐러드, 부드러운 병아리콩 후무스 플래터",
-      "ja": "炭火で香ばしく焼き上げた極上ラムチョップ、新鮮タブレサラダ、滑らかなフムス",
-      "en": "Tender charcoal-grilled lamb chops, freshly made parsley tabbouleh, and silky smooth hummus",
-      "zh": "精选特级炭火慢烤羊排，佐以新鲜西芹塔布勒沙拉与秘制丝滑鹰嘴豆泥"
-    },
-    "seniorTip": {
-      "ko": "호텔 정문에서 카트로 이동 가능하며 호텔급 최고 수준의 정중한 케어와 푹신한 소파 좌석",
-      "ja": "ホテルエントランスからカート送迎可能。五つ星ホテルならではの丁寧なサポートと快適ソファ席",
-      "en": "Buggy transfers available from hotel lobby, 5-star service with plush sofa seating",
-      "zh": "酒店大堂可派电瓶车接送，五星级无微不至的长辈尊享礼遇与超宽软座"
-    },
-    "hours": {
-      "ko": "매일 13:00~15:30, 18:30~23:00",
-      "ja": "毎日 13:00〜15:30、18:30〜23:00",
-      "en": "Daily 13:00–15:30, 18:30–23:00",
-      "zh": "每日 13:00~15:30、18:30~23:00"
-    },
-    "language": {
-      "ko": "영어 완벽 · VIP 의전급 서비스",
-      "ja": "英語堪能 · VIP対応の上質なおもてなし",
-      "en": "Fluent English · Concierge-grade hospitality",
-      "zh": "流利英语 · 国宾级礼宾周到服务"
-    },
-    "booking": {
-      "ko": "주메이라 공식 사이트 필수 예약",
-      "ja": "ジュメイラ公式サイトにて事前予約必須",
-      "en": "Advance booking required via Jumeirah official portal",
-      "zh": "须在卓美亚酒店官网提前预订"
-    }
-  },
-  "Armani/Amal": {
-    "displayName": {
-      "ko": "아르마니/아말 (Armani/Amal)",
-      "ja": "アルマーニ / アマル（ブルジュ・ハリファ）",
-      "en": "Armani/Amal (Burj Khalifa)",
-      "zh": "阿玛尼/阿迈尔餐厅 (Armani/Amal)"
-    },
-    "dishTitle": {
-      "ko": "분수 쇼 테라스 뷰 컨템포러리 다이닝 & 달 카레",
-      "ja": "噴水ショーを一望するコンテンポラリーディナー",
-      "en": "Contemporary Fine Dining with Fountain Terrace Views",
-      "zh": "喷泉露台胜景当代精细料理与慢炖豆泥"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 버즈 칼리파 3층 미쉐린 테라스",
-      "ja": "🇦🇪 ドバイ · ミシュラン選定テラスダイニング",
-      "en": "🇦🇪 Dubai · Michelin Selected Fountain View",
-      "zh": "🇦🇪 迪拜 · 米其林指南精选喷泉观景露台"
-    },
-    "signature": {
-      "ko": "버즈 칼리파 3층 테라스에서 분수 쇼를 정면으로 바라보며 즐기는 미쉐린 셀렉티드 모던 다이닝 코스",
-      "ja": "ブルジュ・ハリファ3階テラスから噴水ショーを見下ろすラグジュアリーディナーコース",
-      "en": "Michelin-selected multi-course dinner perched on the 3rd-floor terrace overlooking the dancing fountains",
-      "zh": "坐拥哈利法塔3层露台正对世界最大喷泉秀，坐享米其林指南精选手工盛宴"
-    },
-    "seniorTip": {
-      "ko": "버즈 칼리파 내부 엘리베이터 직행, 호텔 발레파킹 및 휠체어 지원, 소음 없이 테라스에서 분수 쇼 조망",
-      "ja": "ホテル直通エレベーター完備。混雑や人混みなく座ったままテラスで優雅に噴水ショーを鑑賞",
-      "en": "Direct hotel elevator; avoids street crowds while seniors enjoy the fountain show from private terrace seating",
-      "zh": "酒店内部直梯直达，避开地面拥挤人流，安坐专属露台沙发即可全景尽揽喷泉盛况"
-    },
-    "hours": {
-      "ko": "매일 18:30~23:30 (일요일 휴무)",
-      "ja": "毎日 18:30〜23:30（日曜定休）",
-      "en": "Daily 18:30–23:30 (Closed Sundays)",
-      "zh": "每日 18:30~23:30（周日公休）"
-    },
-    "language": {
-      "ko": "영어 완벽 · 다국어 소믈리에 상주",
-      "ja": "英語堪能 · 多言語ソムリエ常駐",
-      "en": "Fluent English & multilingual sommeliers",
-      "zh": "流利英语及多语种专业侍酒师"
-    },
-    "booking": {
-      "ko": "최소 2~3주 전 아르마니 호텔 공식 예약",
-      "ja": "最低2〜3週間前の公式サイト予約必須",
-      "en": "Book 2–3 weeks in advance on Armani Hotel official portal",
-      "zh": "建议提前2至3周在阿玛尼酒店官网预订"
-    }
-  },
-  "Logma": {
-    "displayName": {
-      "ko": "로그마 (Logma - Dubai Mall)",
-      "ja": "ログマ（ドバイ・モール店）",
-      "en": "Logma (The Dubai Mall)",
-      "zh": "洛格玛时尚茶歇 (Logma)"
-    },
-    "dishTitle": {
-      "ko": "사프란 카락 티 & 루카이마트 대추야자 도넛",
-      "ja": "サフラン・カラクティー＆揚げたてルカイマット",
-      "en": "Saffron Karak Tea & Hot Crispy Lugaimat",
-      "zh": "藏红花特色卡拉克奶茶与金黄椰枣炸面球"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 두바이 몰 분수 전망 모던 에미라티",
-      "ja": "🇦🇪 ドバイ · ドバイ・モール内ファウンテン展望",
-      "en": "🇦🇪 Dubai · Modern Emirati Cafe with Fountain View",
-      "zh": "🇦🇪 迪拜 · 购物中心内现代阿拉伯风味茶餐厅"
-    },
-    "signature": {
-      "ko": "진한 사프란 향의 에미라티 밀크티와 갓 튀겨 따뜻한 조청 시럽을 뿌린 전통 도넛 루카이마트",
-      "ja": "濃厚なサフラン香るミルクティーと、デーツ蜜をたっぷり絡めた伝統スイーツ",
-      "en": "Fragrant saffron-infused sweet milk tea paired with piping-hot Emirati honey-date dumplings",
-      "zh": "香醇浓郁的藏红花奶茶，搭配裹满金黄椰枣糖浆的传统酥脆面点"
-    },
-    "seniorTip": {
-      "ko": "두바이 몰 패션 애비뉴 3층 분수 전망 테라스. 쇼핑 중 어르신 당 충전과 다리 쉼터로 제격",
-      "ja": "モール3階の噴水ビューテラス。お買い物の途中でほっと一息つける絶好の休憩スポット",
-      "en": "Fashion Avenue 3rd-floor terrace; perfect rest stop with comfortable chairs during mall walks",
-      "zh": "位于时尚大道3层露台正对喷泉，是购物步行间隙让长辈歇脚品茶的绝佳去处"
-    },
-    "hours": {
-      "ko": "매일 10:00~00:00",
-      "ja": "毎日 10:00〜00:00",
-      "en": "Daily 10:00–00:00 (Midnight)",
-      "zh": "每日 10:00~午夜00:00"
-    },
-    "language": {
-      "ko": "영어 완벽 · 태블릿 사진 주문",
-      "ja": "英語対応 · タブレット写真注文",
-      "en": "Fluent English · Tablet visual ordering",
-      "zh": "流利英语 · 支持平板电脑图文点餐"
-    },
-    "booking": {
-      "ko": "워크인 가능",
-      "ja": "予約不要（ウォークイン可能）",
-      "en": "Walk-in friendly",
-      "zh": "支持随时直接到店"
-    }
-  },
-  "Shabestan": {
-    "displayName": {
-      "ko": "샤베스탄 (Shabestan - Deira Creek)",
-      "ja": "シャベスタン（老舗ペルシャ料理）",
-      "en": "Shabestan (Radisson Blu)",
-      "zh": "莎贝斯坦正宗波斯料理 (Shabestan)"
-    },
-    "dishTitle": {
-      "ko": "두바이 크릭 야경 정통 사프란 양고기 쿠비데 케밥",
-      "ja": "伝統サフラン・ラム肉コビデケバブ炭火焼",
-      "en": "Traditional Saffron Lamb Koobideh Kebab",
-      "zh": "迪拜湾夜景正宗藏红花烤羊肉库比德肉串"
-    },
-    "badge": {
-      "ko": "🇦🇪 두바이 · 40년 전통 크릭 뷰 페르시안 명가",
-      "ja": "🇦🇪 ドバイ · クリーク夜景を望む40年伝統の名店",
-      "en": "🇦🇪 Dubai · 40-Year Creekfront Persian Classic",
-      "zh": "🇦🇪 迪拜 · 俯瞰迪拜湾夜景40年正宗老店"
-    },
-    "signature": {
-      "ko": "40년 전통의 두바이 최고 페르시안 레스토랑. 숯불에 구운 육즙 가득한 다진 양고기와 사프란 버터 밥",
-      "ja": "炭火でジューシーに焼き上げた秘伝のラム挽肉ケバブと芳醇なサフランバターライス",
-      "en": "Juicy minced lamb kebabs grilled over open coals served with saffron-infused buttered basmati rice",
-      "zh": "40年沉淀的波斯料理招牌。炭火现烤鲜嫩多汁的羊肉肉串配以藏红花黄油长粒香米饭"
-    },
-    "seniorTip": {
-      "ko": "래디슨 블루 호텔 엘리베이터 이동, 크릭 야경이 파노라마로 펼쳐지는 넓은 소파 좌석과 전통 악기 연주",
-      "ja": "ホテル専用エレベーター利用、クリーク夜景が広がる広々ソファ席と伝統生演奏",
-      "en": "Hotel elevator access; panoramic creek views from comfortable booth seating with soothing live music",
-      "zh": "酒店垂直电梯平稳直达，全景落地窗俯瞰迪拜湾浪漫夜景，宽大沙发座配有温和现场民乐"
-    },
-    "hours": {
-      "ko": "매일 12:30~23:00",
-      "ja": "毎日 12:30〜23:00",
-      "en": "Daily 12:30–23:00",
-      "zh": "每日 12:30~23:00"
-    },
-    "language": {
-      "ko": "영어 완벽 · 친절한 전통 서비스",
-      "ja": "英語堪能 · 心配りの行き届いた接客",
-      "en": "Fluent English & courteous hospitable service",
-      "zh": "流利英语 · 体贴热情的五星级传统服务"
-    },
-    "booking": {
-      "ko": "호텔 레스토랑 사전 예약 권장",
-      "ja": "ホテルレストラン事前予約推奨",
-      "en": "Advance table reservation recommended",
-      "zh": "建议提前预订靠窗观景席位"
-    }
-  }
-};
+  };
   const ARABIC_PHRASES_GROUP = {
-  "langGroup": "ar",
-  "langName": "🇦🇪 아랍어 (Arabic)",
-  "regionDesc": "아랍에미리트 (두바이, 아부다비) 및 중동 경유지",
-  "locale": "ar-AE",
-  "phrases": [
-    {
-      "category": "dining",
-      "original": "بدون ملح من فضلك",
-      "ko_pron": "비둔 밀흐 민 파들락",
-      "ko_meaning": "소금 적게(빼고) 넣어주세요 (어르신 저염식 필수)",
-      "en_meaning": "Less / no salt please (low-sodium diet)",
-      "ja_meaning": "塩分控えめ（塩抜き）でお願いします",
-      "zh_meaning": "请少放盐（免盐清淡饮食）",
-      "original_ja": "بدون ملح من فضلك",
-      "original_en": "Bedoun maleh min fadlak",
-      "original_zh": "بدون ملح من فضلك",
-      "original_ko": "بدون ملح من فضلك"
-    },
-    {
-      "category": "dining",
-      "original": "ماء بدون غاز من فضلك",
-      "ko_pron": "마- 비둔 가-즈 민 파들락",
-      "ko_meaning": "탄산 없는 미지근한 일반 생수 주세요",
-      "en_meaning": "Still water (no gas), please",
-      "ja_meaning": "炭酸なしの常温水をお願いします",
-      "zh_meaning": "请给我不带气泡的常温矿泉水",
-      "original_ja": "ماء بدون غاز من فضلك",
-      "original_en": "Maa bedoun ghaz min fadlak",
-      "original_zh": "ماء بدون غاز من فضلك",
-      "original_ko": "ماء بدون غاز من فضلك"
-    },
-    {
-      "category": "senior",
-      "original": "أين أقرب مصعد من فضلك؟",
-      "ko_pron": "아이나 아끄랍 미스아드 민 파들락?",
-      "ko_meaning": "가장 가까운 엘리베이터가 어디인가요?",
-      "en_meaning": "Where is the nearest elevator, please?",
-      "ja_meaning": "最も近いエレベーターはどこですか？",
-      "zh_meaning": "请问最近的电梯在哪里？",
-      "original_ja": "أين أقرب مصعد من فضلك؟",
-      "original_en": "Ayna aqrab mis'ad min fadlak?",
-      "original_zh": "أين أقرب مصعد من فضلك؟",
-      "original_ko": "أين أقرب مصعد من فضلك؟"
-    },
-    {
-      "category": "senior",
-      "original": "هل يمكنك تخفيف التكييف قليلاً؟",
-      "ko_pron": "할 윰키누카 타크피프 앗타키이프 갈릴란?",
-      "ko_meaning": "실내가 추워서 그런데 에어컨을 줄여주시겠어요?",
-      "en_meaning": "Could you please turn down the AC / make it warmer?",
-      "ja_meaning": "冷房の冷えを少し弱めていただけますか？",
-      "zh_meaning": "空调冷气有点强，能调小一点吗？",
-      "original_ja": "هل يمكنك تخفيف التكييف قليلاً؟",
-      "original_en": "Hal yumkinuka takhfeef al-takeef qalilan?",
-      "original_zh": "هل يمكنك تخفيف التكييف قليلاً؟",
-      "original_ko": "هل يمكنك تخفيف التكييف قليلاً؟"
-    },
-    {
-      "category": "basic",
-      "original": "أين دورة المياه؟",
-      "ko_pron": "아이나 다우라투 알미야-?",
-      "ko_meaning": "화장실이 어디에 있나요?",
-      "en_meaning": "Where is the restroom / toilet?",
-      "ja_meaning": "お手洗いはどこですか？",
-      "zh_meaning": "请问洗手间在哪里？",
-      "original_ja": "أين دورة المياه؟",
-      "original_en": "Ayna dawrat al-miyah?",
-      "original_zh": "أين دورة المياه؟",
-      "original_ko": "أين دورة المياه؟"
-    },
-    {
-      "category": "dining",
-      "original": "الفاتورة من فضلك",
-      "ko_pron": "알파투-라 민 파들락",
-      "ko_meaning": "계산서(영수증) 부탁합니다",
-      "en_meaning": "The bill / check, please",
-      "ja_meaning": "お会計をお願いします",
-      "zh_meaning": "请买单 / 结账",
-      "original_ja": "الفاتورة من فضلك",
-      "original_en": "Al-fatura min fadlak",
-      "original_zh": "الفاتورة من فضلك",
-      "original_ko": "الفاتورة من فضلك"
-    },
-    {
-      "category": "emergency",
-      "original": "نحتاج إلى مساعدة طبية عاجلة!",
-      "ko_pron": "나흐타-주 일라 무사-아다 티비야 아-질라!",
-      "ko_meaning": "의사의 도움이 급히 필요합니다 (응급 상황)",
-      "en_meaning": "We need urgent medical assistance!",
-      "ja_meaning": "緊急の医療支援が必要です！",
-      "zh_meaning": "我们需要紧急医疗救助！",
-      "original_ja": "نحتاج إلى مساعدة طبية عاجلة!",
-      "original_en": "Nahtaju ila musa'ada tibbiya 'ajila!",
-      "original_zh": "نحتاج إلى مساعدة طبية عاجلة!",
-      "original_ko": "نحتاج إلى مساعدة طبية عاجلة!"
-    },
-    {
-      "category": "basic",
-      "original": "السلام عليكم / مرحباً",
-      "ko_pron": "아살라무 알라이쿰 / 마르하반",
-      "ko_meaning": "안녕하세요 (아랍 전통 평화의 인사)",
-      "en_meaning": "Hello / Peace be upon you",
-      "ja_meaning": "こんにちは（平和があなたにありますように）",
-      "zh_meaning": "您好（和平与你同在）",
-      "original_ja": "السلام عليكم / مرحباً",
-      "original_en": "As-salamu alaykum / Marhaban",
-      "original_zh": "السلام عليكم / مرحباً",
-      "original_ko": "السلام عليكم / مرحباً"
-    },
-    {
-      "category": "basic",
-      "original": "شكراً جزيلاً",
-      "ko_pron": "슈크란 자질-란",
-      "ko_meaning": "대단히 감사합니다",
-      "en_meaning": "Thank you very much",
-      "ja_meaning": "どうもありがとうございます",
-      "zh_meaning": "非常感谢",
-      "original_ja": "شكراً جزيلاً",
-      "original_en": "Shukran jazilan",
-      "original_zh": "شكراً جزيلاً",
-      "original_ko": "شكراً جزيلاً"
-    },
-    {
-      "category": "basic",
-      "original": "سيارة أجرة إلى المطار من فضلك",
-      "ko_pron": "사야-라 우즈라 일랄 마타-르 민 파들락",
-      "ko_meaning": "공항으로 가는 택시를 불러주시겠어요?",
-      "en_meaning": "A taxi to the airport, please",
-      "ja_meaning": "空港までのタクシーをお願いします",
-      "zh_meaning": "请帮叫一辆去机场的出租车",
-      "original_ja": "سيارة أجرة إلى المطار من فضلك",
-      "original_en": "Sayyarat ujra ilal matar min fadlak",
-      "original_zh": "سيارة أجرة إلى المطار من فضلك",
-      "original_ko": "سيارة أجرة إلى المطار من فضلك"
-    }
-  ]
-};
+    "langGroup": "ar",
+    "langName": "🇦🇪 아랍어 (Arabic)",
+    "regionDesc": "아랍에미리트 (두바이, 아부다비) 및 중동 경유지",
+    "locale": "ar-AE",
+    "phrases": [
+      {
+        "category": "dining",
+        "original": "بدون ملح من فضلك",
+        "ko_pron": "비둔 밀흐 민 파들락",
+        "ko_meaning": "소금 적게(빼고) 넣어주세요 (어르신 저염식 필수)",
+        "en_meaning": "Less / no salt please (low-sodium diet)",
+        "ja_meaning": "塩分控えめ（塩抜き）でお願いします",
+        "zh_meaning": "请少放盐（免盐清淡饮食）",
+        "original_ja": "بدون ملح من فضلك",
+        "original_en": "Bedoun maleh min fadlak",
+        "original_zh": "بدون ملح من فضلك",
+        "original_ko": "بدون ملح من فضلك"
+      },
+      {
+        "category": "dining",
+        "original": "ماء بدون غاز من فضلك",
+        "ko_pron": "마- 비둔 가-즈 민 파들락",
+        "ko_meaning": "탄산 없는 미지근한 일반 생수 주세요",
+        "en_meaning": "Still water (no gas), please",
+        "ja_meaning": "炭酸なしの常温水をお願いします",
+        "zh_meaning": "请给我不带气泡的常温矿泉水",
+        "original_ja": "ماء بدون غاز من فضلك",
+        "original_en": "Maa bedoun ghaz min fadlak",
+        "original_zh": "ماء بدون غاز من فضلك",
+        "original_ko": "ماء بدون غاز من فضلك"
+      },
+      {
+        "category": "senior",
+        "original": "أين أقرب مصعد من فضلك؟",
+        "ko_pron": "아이나 아끄랍 미스아드 민 파들락?",
+        "ko_meaning": "가장 가까운 엘리베이터가 어디인가요?",
+        "en_meaning": "Where is the nearest elevator, please?",
+        "ja_meaning": "最も近いエレベーターはどこですか？",
+        "zh_meaning": "请问最近的电梯在哪里？",
+        "original_ja": "أين أقرب مصعد من فضلك؟",
+        "original_en": "Ayna aqrab mis'ad min fadlak?",
+        "original_zh": "أين أقرب مصعد من فضلك؟",
+        "original_ko": "أين أقرب مصعد من فضلك؟"
+      },
+      {
+        "category": "senior",
+        "original": "هل يمكنك تخفيف التكييف قليلاً؟",
+        "ko_pron": "할 윰키누카 타크피프 앗타키이프 갈릴란?",
+        "ko_meaning": "실내가 추워서 그런데 에어컨을 줄여주시겠어요?",
+        "en_meaning": "Could you please turn down the AC / make it warmer?",
+        "ja_meaning": "冷房の冷えを少し弱めていただけますか？",
+        "zh_meaning": "空调冷气有点强，能调小一点吗？",
+        "original_ja": "هل يمكنك تخفيف التكييف قليلاً؟",
+        "original_en": "Hal yumkinuka takhfeef al-takeef qalilan?",
+        "original_zh": "هل يمكنك تخفيف التكييف قليلاً؟",
+        "original_ko": "هل يمكنك تخفيف التكييف قليلاً؟"
+      },
+      {
+        "category": "basic",
+        "original": "أين دورة المياه؟",
+        "ko_pron": "아이나 다우라투 알미야-?",
+        "ko_meaning": "화장실이 어디에 있나요?",
+        "en_meaning": "Where is the restroom / toilet?",
+        "ja_meaning": "お手洗いはどこですか？",
+        "zh_meaning": "请问洗手间在哪里？",
+        "original_ja": "أين دورة المياه؟",
+        "original_en": "Ayna dawrat al-miyah?",
+        "original_zh": "أين دورة المياه؟",
+        "original_ko": "أين دورة المياه؟"
+      },
+      {
+        "category": "dining",
+        "original": "الفاتورة من فضلك",
+        "ko_pron": "알파투-라 민 파들락",
+        "ko_meaning": "계산서(영수증) 부탁합니다",
+        "en_meaning": "The bill / check, please",
+        "ja_meaning": "お会計をお願いします",
+        "zh_meaning": "请买单 / 结账",
+        "original_ja": "الفاتورة من فضلك",
+        "original_en": "Al-fatura min fadlak",
+        "original_zh": "الفاتورة من فضلك",
+        "original_ko": "الفاتورة من فضلك"
+      },
+      {
+        "category": "emergency",
+        "original": "نحتاج إلى مساعدة طبية عاجلة!",
+        "ko_pron": "나흐타-주 일라 무사-아다 티비야 아-질라!",
+        "ko_meaning": "의사의 도움이 급히 필요합니다 (응급 상황)",
+        "en_meaning": "We need urgent medical assistance!",
+        "ja_meaning": "緊急の医療支援が必要です！",
+        "zh_meaning": "我们需要紧急医疗救助！",
+        "original_ja": "نحتاج إلى مساعدة طبية عاجلة!",
+        "original_en": "Nahtaju ila musa'ada tibbiya 'ajila!",
+        "original_zh": "نحتاج إلى مساعدة طبية عاجلة!",
+        "original_ko": "نحتاج إلى مساعدة طبية عاجلة!"
+      },
+      {
+        "category": "basic",
+        "original": "السلام عليكم / مرحباً",
+        "ko_pron": "아살라무 알라이쿰 / 마르하반",
+        "ko_meaning": "안녕하세요 (아랍 전통 평화의 인사)",
+        "en_meaning": "Hello / Peace be upon you",
+        "ja_meaning": "こんにちは（平和があなたにありますように）",
+        "zh_meaning": "您好（和平与你同在）",
+        "original_ja": "السلام عليكم / مرحباً",
+        "original_en": "As-salamu alaykum / Marhaban",
+        "original_zh": "السلام عليكم / مرحباً",
+        "original_ko": "السلام عليكم / مرحباً"
+      },
+      {
+        "category": "basic",
+        "original": "شكراً جزيلاً",
+        "ko_pron": "슈크란 자질-란",
+        "ko_meaning": "대단히 감사합니다",
+        "en_meaning": "Thank you very much",
+        "ja_meaning": "どうもありがとうございます",
+        "zh_meaning": "非常感谢",
+        "original_ja": "شكراً جزيلاً",
+        "original_en": "Shukran jazilan",
+        "original_zh": "شكراً جزيلاً",
+        "original_ko": "شكراً جزيلاً"
+      },
+      {
+        "category": "basic",
+        "original": "سيارة أجرة إلى المطار من فضلك",
+        "ko_pron": "사야-라 우즈라 일랄 마타-르 민 파들락",
+        "ko_meaning": "공항으로 가는 택시를 불러주시겠어요?",
+        "en_meaning": "A taxi to the airport, please",
+        "ja_meaning": "空港までのタクシーをお願いします",
+        "zh_meaning": "请帮叫一辆去机场的出租车",
+        "original_ja": "سيارة أجرة إلى المطار من فضلك",
+        "original_en": "Sayyarat ujra ilal matar min fadlak",
+        "original_zh": "سيارة أجرة إلى المطار من فضلك",
+        "original_ko": "سيارة أجرة إلى المطار من فضلك"
+      }
+    ]
+  };
   const DUBAI_STOPOVER_PLAN = {
-  "title": "🇦🇪 두바이 에미레이트 경유 럭셔리 슬로우 스톱오버 (3~5일 핵심)",
-  "score": "95점 (사막의 기적 & 무장애 힐링)",
-  "season": "11~3월 최고 성수기 · 24도 온화한 쾌적 기후",
-  "budget": "890만 원",
-  "festivals": "두바이 쇼핑 페스티벌 (DSF) & 분수 쇼 매일 밤 진행",
-  "festSub": "세계 최고층 버즈칼리파와 100% 무장애 배리어프리 실내 쇼핑몰",
-  "cities": [
-    "다운타운 두바이",
-    "올드 두바이 크릭",
-    "팜 주메이라",
-    "자빌/미래지구",
-    "DXB 공항/귀국"
-  ],
-  "days": [
-    {
-      "city": "다운타운 두바이",
-      "isTransfer": true,
-      "theme": "인천 출발, 두바이 DXB 도착 및 다운타운 체크인",
-      "morning": "인천 국제공항 출발 후 두바이 국제공항(DXB) 도착 및 스마트 패스트트랙 입국",
-      "rest": "다운타운 럭셔리 호텔 체크인 후 장거리 비행 피로 회복 온수 스파 휴식",
-      "evening": "두바이 몰 시원한 실내 산책 및 두바이 분수 쇼 카페 테라스 커피 타임",
-      "walk": "낮음 (완전 평지)",
-      "transport": "공항 전용 픽업 렉서스 세단 또는 전용 밴",
-      "meal": "Arabian Tea House - 부드러운 에미라티 브런치 & 민트 티",
-      "events": [
-        "두바이 입성",
-        "두바이 분수 쇼"
-      ]
-    },
-    {
-      "city": "다운타운 두바이",
-      "isTransfer": false,
-      "theme": "버즈 칼리파 124·125층 전망대 & 미식의 향연",
-      "morning": "10:30 버즈 칼리파 At the Top 더블데크 고속 엘리베이터로 124층 직행 (360도 파노라마)",
-      "rest": "13:00 두바이 몰 에어컨 실내 이동 후 Armani/Amal에서 시에스타 휴식",
-      "evening": "17:00 두바이 아쿠아리움 대형 수조 터널 관람 및 음악 분수 야경",
-      "walk": "낮음 (엘리베이터 완비)",
-      "transport": "두바이 몰 내부 무료 버기카(전동 카트) 이용",
-      "meal": "Armani/Amal - 분수 쇼 조망 컨템포러리 다이닝 코스",
-      "events": [
-        "버즈 칼리파",
-        "두바이 몰 분수 쇼"
-      ]
-    },
-    {
-      "city": "올드 두바이 크릭",
-      "isTransfer": false,
-      "theme": "올드 두바이 크릭 & 알 파히디 역사 문화 지구",
-      "morning": "10:00 알 파히디 19세기 전통 바람탑 골목 산책 및 전통 향수/향신료 수크",
-      "rest": "12:30 Al Fanar Restaurant에서 1960년대 옛 두바이 정취 느끼며 점심 휴식",
-      "evening": "16:30 전통 목선 아브라(Abra) 탑승하여 두바이 크릭 건너기 & 알 시프 강변 야경",
-      "walk": "보통 (평지 보행)",
-      "transport": "전통 아브라(1디르함) 및 우버 블랙",
-      "meal": "Al Fanar Restaurant - 부드러운 양고기 마크부스 & 해산물 스튜",
-      "events": [
-        "알 파히디 역사 지구",
-        "아브라 크릭 투어"
-      ]
-    },
-    {
-      "city": "자빌/미래지구",
-      "isTransfer": false,
-      "theme": "미래의 박물관 & 황금빛 두바이 프레임",
-      "morning": "10:30 미래의 박물관 (기둥 없는 7층 도넛형 미래 건축과 무장애 배리어프리 관람)",
-      "rest": "13:30 Logma 카페에서 사프란 카락 티와 따뜻한 루카이마트 도넛으로 당 충전",
-      "evening": "16:30 자빌 파크 두바이 프레임에서 올드 두바이와 뉴 두바이 파노라마 조망",
-      "walk": "낮음 (100% 무장애 설계)",
-      "transport": "우버 XL 전용 차량",
-      "meal": "Bu Qtair - 당일 직송 하무르 생선 구이 & 왕새우 튀김",
-      "events": [
-        "미래의 박물관",
-        "두바이 프레임"
-      ]
-    },
-    {
-      "city": "팜 주메이라",
-      "isTransfer": false,
-      "theme": "더 뷰 앳 더 팜 & 주메이라 비치 휴식",
-      "morning": "10:00 더 뷰 앳 더 팜 52층 전망대에서 야자수 인공섬 팜 주메이라 360도 감상",
-      "rest": "13:00 주메이라 알 카스르 리조트 정원 산책 및 프라이빗 라운지 휴식",
-      "evening": "17:30 팜 주메이라 모노레일 탑승 및 아틀란티스 더 로열 해변 석양 감상",
-      "walk": "낮음 (모노레일/엘리베이터 완비)",
-      "transport": "팜 모노레일 및 우버 블랙",
-      "meal": "Al Nafoorah - 오스만 궁전식 프리미엄 양갈비 구이 & 후무스",
-      "events": [
-        "더 뷰 앳 더 팜",
-        "팜 주메이라 석양"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    },
-    {
-      "city": "미라클 가든/사막",
-      "isTransfer": false,
-      "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
-      "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
-      "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
-      "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
-      "walk": "낮음 (버기카 지원)",
-      "transport": "사막 전용 4WD VIP 차량",
-      "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
-      "events": [
-        "미라클 가든",
-        "사막 선셋"
-      ]
-    },
-    {
-      "city": "DXB 공항/귀국",
-      "isTransfer": true,
-      "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
-      "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
-      "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
-      "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
-      "walk": "낮음",
-      "transport": "호텔 리무진 샌딩",
-      "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
-      "events": [
-        "인천 귀국"
-      ]
-    }
-  ]
-};
+    "title": "🇦🇪 두바이 에미레이트 경유 럭셔리 슬로우 스톱오버 (3~5일 핵심)",
+    "score": "95점 (사막의 기적 & 무장애 힐링)",
+    "season": "11~3월 최고 성수기 · 24도 온화한 쾌적 기후",
+    "budget": "890만 원",
+    "festivals": "두바이 쇼핑 페스티벌 (DSF) & 분수 쇼 매일 밤 진행",
+    "festSub": "세계 최고층 버즈칼리파와 100% 무장애 배리어프리 실내 쇼핑몰",
+    "cities": [
+      "다운타운 두바이",
+      "올드 두바이 크릭",
+      "팜 주메이라",
+      "자빌/미래지구",
+      "DXB 공항/귀국"
+    ],
+    "days": [
+      {
+        "city": "다운타운 두바이",
+        "isTransfer": true,
+        "theme": "인천 출발, 두바이 DXB 도착 및 다운타운 체크인",
+        "morning": "인천 국제공항 출발 후 두바이 국제공항(DXB) 도착 및 스마트 패스트트랙 입국",
+        "rest": "다운타운 럭셔리 호텔 체크인 후 장거리 비행 피로 회복 온수 스파 휴식",
+        "evening": "두바이 몰 시원한 실내 산책 및 두바이 분수 쇼 카페 테라스 커피 타임",
+        "walk": "낮음 (완전 평지)",
+        "transport": "공항 전용 픽업 렉서스 세단 또는 전용 밴",
+        "meal": "Arabian Tea House - 부드러운 에미라티 브런치 & 민트 티",
+        "events": [
+          "두바이 입성",
+          "두바이 분수 쇼"
+        ]
+      },
+      {
+        "city": "다운타운 두바이",
+        "isTransfer": false,
+        "theme": "버즈 칼리파 124·125층 전망대 & 미식의 향연",
+        "morning": "10:30 버즈 칼리파 At the Top 더블데크 고속 엘리베이터로 124층 직행 (360도 파노라마)",
+        "rest": "13:00 두바이 몰 에어컨 실내 이동 후 Armani/Amal에서 시에스타 휴식",
+        "evening": "17:00 두바이 아쿠아리움 대형 수조 터널 관람 및 음악 분수 야경",
+        "walk": "낮음 (엘리베이터 완비)",
+        "transport": "두바이 몰 내부 무료 버기카(전동 카트) 이용",
+        "meal": "Armani/Amal - 분수 쇼 조망 컨템포러리 다이닝 코스",
+        "events": [
+          "버즈 칼리파",
+          "두바이 몰 분수 쇼"
+        ]
+      },
+      {
+        "city": "올드 두바이 크릭",
+        "isTransfer": false,
+        "theme": "올드 두바이 크릭 & 알 파히디 역사 문화 지구",
+        "morning": "10:00 알 파히디 19세기 전통 바람탑 골목 산책 및 전통 향수/향신료 수크",
+        "rest": "12:30 Al Fanar Restaurant에서 1960년대 옛 두바이 정취 느끼며 점심 휴식",
+        "evening": "16:30 전통 목선 아브라(Abra) 탑승하여 두바이 크릭 건너기 & 알 시프 강변 야경",
+        "walk": "보통 (평지 보행)",
+        "transport": "전통 아브라(1디르함) 및 우버 블랙",
+        "meal": "Al Fanar Restaurant - 부드러운 양고기 마크부스 & 해산물 스튜",
+        "events": [
+          "알 파히디 역사 지구",
+          "아브라 크릭 투어"
+        ]
+      },
+      {
+        "city": "자빌/미래지구",
+        "isTransfer": false,
+        "theme": "미래의 박물관 & 황금빛 두바이 프레임",
+        "morning": "10:30 미래의 박물관 (기둥 없는 7층 도넛형 미래 건축과 무장애 배리어프리 관람)",
+        "rest": "13:30 Logma 카페에서 사프란 카락 티와 따뜻한 루카이마트 도넛으로 당 충전",
+        "evening": "16:30 자빌 파크 두바이 프레임에서 올드 두바이와 뉴 두바이 파노라마 조망",
+        "walk": "낮음 (100% 무장애 설계)",
+        "transport": "우버 XL 전용 차량",
+        "meal": "Bu Qtair - 당일 직송 하무르 생선 구이 & 왕새우 튀김",
+        "events": [
+          "미래의 박물관",
+          "두바이 프레임"
+        ]
+      },
+      {
+        "city": "팜 주메이라",
+        "isTransfer": false,
+        "theme": "더 뷰 앳 더 팜 & 주메이라 비치 휴식",
+        "morning": "10:00 더 뷰 앳 더 팜 52층 전망대에서 야자수 인공섬 팜 주메이라 360도 감상",
+        "rest": "13:00 주메이라 알 카스르 리조트 정원 산책 및 프라이빗 라운지 휴식",
+        "evening": "17:30 팜 주메이라 모노레일 탑승 및 아틀란티스 더 로열 해변 석양 감상",
+        "walk": "낮음 (모노레일/엘리베이터 완비)",
+        "transport": "팜 모노레일 및 우버 블랙",
+        "meal": "Al Nafoorah - 오스만 궁전식 프리미엄 양갈비 구이 & 후무스",
+        "events": [
+          "더 뷰 앳 더 팜",
+          "팜 주메이라 석양"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      },
+      {
+        "city": "미라클 가든/사막",
+        "isTransfer": false,
+        "theme": "1억 5천만 송이 생화 미라클 가든 & 사막 리조트 티타임",
+        "morning": "10:00 두바이 미라클 가든 완만한 꽃길 산책 (버기카 투어 지원)",
+        "rest": "13:00 밥 알 샴스 사막 리조트 라운지에서 여유로운 오아시스 휴식",
+        "evening": "17:00 붉은 모래사막 너머로 지는 황금빛 일몰 감상 및 전통 바비큐",
+        "walk": "낮음 (버기카 지원)",
+        "transport": "사막 전용 4WD VIP 차량",
+        "meal": "Al Hadheerah - 아라비안 나이트 전통 그릴 바비큐",
+        "events": [
+          "미라클 가든",
+          "사막 선셋"
+        ]
+      },
+      {
+        "city": "DXB 공항/귀국",
+        "isTransfer": true,
+        "theme": "두바이 국제공항 면세점 & 안락한 귀국 비행",
+        "morning": "호텔 체크아웃 후 전용 차량으로 DXB 공항 에미레이트 터미널 3 이동",
+        "rest": "공항 VIP 라운지에서 안락한 소파와 온수 샤워 후 탑승 대기",
+        "evening": "인천 국제공항 직항편 탑승 (장거리 비행 숙면)",
+        "walk": "낮음",
+        "transport": "호텔 리무진 샌딩",
+        "meal": "에미레이트 퍼스트/비즈니스 라운지 뷔페",
+        "events": [
+          "인천 귀국"
+        ]
+      }
+    ]
+  };
 
   const LANDMARK_BASE_PRICES = {
-  "타워브리지 & 런던탑 (Tower Bridge)": 24000,
-  "영국 박물관 (대영박물관, British Museum)": 0,
-  "버킹엄 궁전 & 세인트 제임스 공원 (Buckingham Palace)": 0,
-  "빅벤 & 웨스트민스터 사원 (Big Ben & Westminster Abbey)": 51000,
-  "에펠탑 & 샹드마르스 공원 (Eiffel Tower)": 38000,
-  "루브르 박물관 (Musée du Louvre)": 33000,
-  "오르세 미술관 (Musée d'Orsay)": 24000,
-  "콜로세움 & 포로 로마노 (Colosseo & Foro Romano)": 27000,
-  "바티칸 미술관 & 성 베드로 대성당 (Vatican Museums)": 30000,
-  "피렌체 두오모 대성당 (Duomo di Firenze)": 45000,
-  "사그라다 파밀리아 (Sagrada Família)": 39000,
-  "알함브라 궁전 (Alhambra & Generalife)": 28000,
-  "동 루이스 1세 다리 & 도루강": 0,
-  "제로니무스 수도원 & 벨렝탑": 18000,
-  "비엔나 쇤브룬 궁전 & 정원 (Schönbrunn)": 36000,
-  "스위스 융프라우요흐 정상 (Jungfraujoch)": 248000,
-  "프라하 카를교 & 성 비투스 대성당": 27000,
-  "마추픽추 공중도시 (Machu Picchu)": 61000,
-  "테오티우아칸 피라미드 (Teotihuacan)": 7500,
-  "그랜드캐니언 사우스림 (Grand Canyon South Rim)": 47000,
-  "샌프란시스코 금문교 (Golden Gate Bridge)": 0,
-  "뉴욕 센트럴 파크 & 록펠러 센터": 54000,
-  "하와이 와이키키 비치 & 다이아몬드 헤드": 6800
-};
+    "타워브리지 & 런던탑 (Tower Bridge)": 24000,
+    "영국 박물관 (대영박물관, British Museum)": 0,
+    "버킹엄 궁전 & 세인트 제임스 공원 (Buckingham Palace)": 0,
+    "빅벤 & 웨스트민스터 사원 (Big Ben & Westminster Abbey)": 51000,
+    "에펠탑 & 샹드마르스 공원 (Eiffel Tower)": 38000,
+    "루브르 박물관 (Musée du Louvre)": 33000,
+    "오르세 미술관 (Musée d'Orsay)": 24000,
+    "콜로세움 & 포로 로마노 (Colosseo & Foro Romano)": 27000,
+    "바티칸 미술관 & 성 베드로 대성당 (Vatican Museums)": 30000,
+    "피렌체 두오모 대성당 (Duomo di Firenze)": 45000,
+    "사그라다 파밀리아 (Sagrada Família)": 39000,
+    "알함브라 궁전 (Alhambra & Generalife)": 28000,
+    "동 루이스 1세 다리 & 도루강": 0,
+    "제로니무스 수도원 & 벨렝탑": 18000,
+    "비엔나 쇤브룬 궁전 & 정원 (Schönbrunn)": 36000,
+    "스위스 융프라우요흐 정상 (Jungfraujoch)": 248000,
+    "프라하 카를교 & 성 비투스 대성당": 27000,
+    "마추픽추 공중도시 (Machu Picchu)": 61000,
+    "테오티우아칸 피라미드 (Teotihuacan)": 7500,
+    "그랜드캐니언 사우스림 (Grand Canyon South Rim)": 47000,
+    "샌프란시스코 금문교 (Golden Gate Bridge)": 0,
+    "뉴욕 센트럴 파크 & 록펠러 센터": 54000,
+    "하와이 와이키키 비치 & 다이아몬드 헤드": 6800
+  };
   const DINING_BASE_PRICES = {
-  "The Wolseley": 75000,
-  "Poppies Fish & Chips (Soho)": 32000,
-  "Hawksmoor Seven Dials": 68000,
-  "Rules Restaurant (1798년 개업)": 89000,
-  "Dishoom Covent Garden": 36000,
-  "Applebee's Fish (Borough Market)": 45000,
-  "Bistrot Paul Bert": 65000,
-  "Bouillon Chartier": 28000,
-  "Le Comptoir du Relais": 55000,
-  "Angelina Paris (본점)": 32000,
-  "Chez René": 58000,
-  "Chez Pipo (니스)": 24000,
-  "Trattoria Da Enzo al 29": 38000,
-  "Trattoria Zà Zà": 72000,
-  "Roscioli Salumeria con Cucina": 52000,
-  "All'Antico Vinaio": 15000,
-  "Cantina Do Spade": 26000,
-  "Giolitti (1900년 개업)": 9000,
-  "Luini (밀라노 두오모 옆)": 7500,
-  "Restaurante 7 Portes": 58000,
-  "Cervecería Catalana": 42000,
-  "Sobrino de Botín (1725년 개업)": 65000,
-  "Chocolatería San Ginés": 9500,
-  "El Rinconcillo": 35000,
-  "Restaurante Modesto": 42000,
-  "Bar Sport (산세바스티안)": 30000,
-  "El Pimpi": 36000,
-  "Adega São Nicolau": 38000,
-  "Brasão Coliseu": 28000,
-  "Pastéis de Belém": 6000,
-  "Cervejaria Ramiro": 65000,
-  "Restaurante O Polar": 34000,
-  "Dona Amélia (풍샬)": 32000,
-  "Figlmüller Wollzeile": 38000,
-  "Café Central": 22000,
-  "Plachutta Wollzeile": 58000,
-  "Hofbräuhaus München": 35000,
-  "Augustiner-Keller": 29000,
-  "Restaurant Swiss Chuchi": 62000,
-  "Restaurant Taverne (인터라켄)": 45000,
-  "U Parlamentu": 26000,
-  "Café Imperial": 38000,
-  "Gettó Gulyás": 22000,
-  "El Cardenal": 28000,
-  "Taquería Los Cocuyos": 12000,
-  "Casa Oaxaca": 55000,
-  "La Mar Cebichería": 48000,
-  "Cicciolina (쿠스코)": 52000,
-  "Don Julio": 85000,
-  "Andrés Carne de Res": 45000,
-  "Katz's Delicatessen (1888년 개업)": 42000,
-  "Grimaldi's Pizzeria (Brooklyn)": 35000,
-  "Peter Luger Steak House": 145000,
-  "Boudin Bakery Café": 25000,
-  "House of Prime Rib": 98000,
-  "Lou Malnati's Pizzeria": 38000,
-  "Da Poke Shack": 26000,
-  "Grand Central Market / Eggslut": 19000
-};
+    "The Wolseley": 75000,
+    "Poppies Fish & Chips (Soho)": 32000,
+    "Hawksmoor Seven Dials": 68000,
+    "Rules Restaurant (1798년 개업)": 89000,
+    "Dishoom Covent Garden": 36000,
+    "Applebee's Fish (Borough Market)": 45000,
+    "Bistrot Paul Bert": 65000,
+    "Bouillon Chartier": 28000,
+    "Le Comptoir du Relais": 55000,
+    "Angelina Paris (본점)": 32000,
+    "Chez René": 58000,
+    "Chez Pipo (니스)": 24000,
+    "Trattoria Da Enzo al 29": 38000,
+    "Trattoria Zà Zà": 72000,
+    "Roscioli Salumeria con Cucina": 52000,
+    "All'Antico Vinaio": 15000,
+    "Cantina Do Spade": 26000,
+    "Giolitti (1900년 개업)": 9000,
+    "Luini (밀라노 두오모 옆)": 7500,
+    "Restaurante 7 Portes": 58000,
+    "Cervecería Catalana": 42000,
+    "Sobrino de Botín (1725년 개업)": 65000,
+    "Chocolatería San Ginés": 9500,
+    "El Rinconcillo": 35000,
+    "Restaurante Modesto": 42000,
+    "Bar Sport (산세바스티안)": 30000,
+    "El Pimpi": 36000,
+    "Adega São Nicolau": 38000,
+    "Brasão Coliseu": 28000,
+    "Pastéis de Belém": 6000,
+    "Cervejaria Ramiro": 65000,
+    "Restaurante O Polar": 34000,
+    "Dona Amélia (풍샬)": 32000,
+    "Figlmüller Wollzeile": 38000,
+    "Café Central": 22000,
+    "Plachutta Wollzeile": 58000,
+    "Hofbräuhaus München": 35000,
+    "Augustiner-Keller": 29000,
+    "Restaurant Swiss Chuchi": 62000,
+    "Restaurant Taverne (인터라켄)": 45000,
+    "U Parlamentu": 26000,
+    "Café Imperial": 38000,
+    "Gettó Gulyás": 22000,
+    "El Cardenal": 28000,
+    "Taquería Los Cocuyos": 12000,
+    "Casa Oaxaca": 55000,
+    "La Mar Cebichería": 48000,
+    "Cicciolina (쿠스코)": 52000,
+    "Don Julio": 85000,
+    "Andrés Carne de Res": 45000,
+    "Katz's Delicatessen (1888년 개업)": 42000,
+    "Grimaldi's Pizzeria (Brooklyn)": 35000,
+    "Peter Luger Steak House": 145000,
+    "Boudin Bakery Café": 25000,
+    "House of Prime Rib": 98000,
+    "Lou Malnati's Pizzeria": 38000,
+    "Da Poke Shack": 26000,
+    "Grand Central Market / Eggslut": 19000
+  };
 
   // 1. Assign baseKrw to existing landmarks
   if (typeof GLOBAL_LANDMARKS_DATA !== 'undefined') {
@@ -2710,7 +2710,7 @@ let currentPhraseFilter = 'ALL';
   // 5. Append Regional Plans for Dubai
   if (typeof REGIONAL_PLANS !== 'undefined') {
     REGIONAL_PLANS["DUBAI_STOPOVER"] = DUBAI_STOPOVER_PLAN;
-    
+
     // Create Hybrid Plan: IBERIA_DUBAI (30 days)
     const iberiaPlan = REGIONAL_PLANS["IBERIA"];
     const hybridDays = [
@@ -2903,7 +2903,7 @@ function setCurrency(curr, btn) {
   renderGlobalDining();
   renderGlobalLandmarks();
   if (typeof renderHotelsGrid === 'function') renderHotelsGrid();
-  try { localStorage.setItem('travel_user_currency', curr); } catch(e) {}
+  try { localStorage.setItem('travel_user_currency', curr); } catch (e) { }
 }
 
 // 3. 어르신을 위한 글자 크기 조절 시스템
@@ -2933,7 +2933,7 @@ function applyFontScale() {
   } else {
     document.body.classList.remove('senior-enlarged');
   }
-  try { localStorage.setItem('travel_user_fontscale', String(currentFontScale)); } catch(e) {}
+  try { localStorage.setItem('travel_user_fontscale', String(currentFontScale)); } catch (e) { }
 }
 
 // 4. 스크롤 '위로 가기' (Back to Top)
@@ -2995,7 +2995,7 @@ function calculateDynamicBudget(region, durationDays, partySize, tier) {
   const isLuxury = tier === 'luxury' || tier === 'premium';
   const isEconomy = tier === 'economy' || tier === 'budget';
   const tierMultiplier = isLuxury ? 1.48 : (isEconomy ? 0.78 : 1.0);
-  
+
   const flightPerPerson = {
     IBERIA: 1800000,
     IBERIA_DUBAI: 1950000,
@@ -3056,7 +3056,7 @@ function renderCityFilterTabs() {
   if (!container) return;
   const plan = REGIONAL_PLANS[currentActiveRegion] || REGIONAL_PLANS["IBERIA"];
   const cities = ['ALL', ...(plan.cities || [])];
-  
+
   container.innerHTML = cities.map(city => {
     const isAll = city === 'ALL';
     const localizedCity = cleanHangul(city, currentLang);
@@ -3182,7 +3182,7 @@ function renderDiningPresets() {
     const span = document.createElement('span');
     span.className = 'preset-btn';
     span.textContent = p.label;
-    span.onclick = function() {
+    span.onclick = function () {
       quickFilterDining(p.key);
     };
     bar.appendChild(span);
@@ -3198,7 +3198,7 @@ function renderLandmarkFilterTabs() {
     const btn = document.createElement('button');
     btn.className = `tab-chip orange-chip ${idx === 0 ? 'active' : ''}`;
     btn.textContent = t.label;
-    btn.onclick = function() {
+    btn.onclick = function () {
       filterLandmarks(t.key, this);
     };
     bar.appendChild(btn);
@@ -3214,7 +3214,7 @@ function renderPhraseFilterTabs() {
     const btn = document.createElement('button');
     btn.className = `tab-chip blue-chip ${t.key === currentPhraseFilter ? 'active' : ''}`;
     btn.textContent = t.label;
-    btn.onclick = function() {
+    btn.onclick = function () {
       filterPhraseLanguage(t.key, this);
     };
     bar.appendChild(btn);
@@ -3230,7 +3230,7 @@ function renderAiSearchPresets() {
     const span = document.createElement('span');
     span.className = 'preset-btn';
     span.textContent = p;
-    span.onclick = function() {
+    span.onclick = function () {
       fillAndSearch(p.replace('💡 ', ''));
     };
     bar.appendChild(span);
@@ -3425,7 +3425,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
 function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
   window.currentFilteredLandmarksList = list;
   if (currentLandmarkView === "map") renderLandmarksMap();
-  
+
   const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
 
   const createCard = (item) => {
@@ -3594,10 +3594,10 @@ function quickFilterDining(key) {
     const dTitle = (info.dishTitle && info.dishTitle[currentLang]) || item.dishName;
     const rName = (info.displayName && info.displayName[currentLang]) || item.name;
     return item.region.toLowerCase().includes(q) ||
-           item.city.toLowerCase().includes(q) ||
-           item.dishName.toLowerCase().includes(q) ||
-           dTitle.toLowerCase().includes(q) ||
-           rName.toLowerCase().includes(q);
+      item.city.toLowerCase().includes(q) ||
+      item.dishName.toLowerCase().includes(q) ||
+      dTitle.toLowerCase().includes(q) ||
+      rName.toLowerCase().includes(q);
   });
   renderGlobalDining(filtered);
 }
@@ -3617,12 +3617,12 @@ function filterGlobalDining() {
     const rName = (info.displayName && info.displayName[currentLang]) || item.name;
     const sig = (info.signature && info.signature[currentLang]) || item.signature;
     return item.name.toLowerCase().includes(q) ||
-           item.region.toLowerCase().includes(q) ||
-           item.city.toLowerCase().includes(q) ||
-           item.dishName.toLowerCase().includes(q) ||
-           dTitle.toLowerCase().includes(q) ||
-           rName.toLowerCase().includes(q) ||
-           sig.toLowerCase().includes(q);
+      item.region.toLowerCase().includes(q) ||
+      item.city.toLowerCase().includes(q) ||
+      item.dishName.toLowerCase().includes(q) ||
+      dTitle.toLowerCase().includes(q) ||
+      rName.toLowerCase().includes(q) ||
+      sig.toLowerCase().includes(q);
   });
   renderGlobalDining(filtered);
 }
@@ -3657,25 +3657,25 @@ try {
   if (savedReg) currentActiveRegion = savedReg;
   const savedPace = localStorage.getItem('travel_user_pacing');
   if (savedPace) currentPacing = savedPace;
-} catch(e) {}
+} catch (e) { }
 
 function resetToStandardSchedule() {
   const std = (typeof STANDARD_TRIP_SCHEDULE !== 'undefined') ? STANDARD_TRIP_SCHEDULE : { startDate: "2026-11-05", totalDays: 30 };
   currentStartDateStr = std.startDate;
   currentDurationDays = std.totalDays || 30;
-  
+
   const dateEl = document.getElementById('userStartDate');
   if (dateEl) dateEl.value = currentStartDateStr;
   const durEl = document.getElementById('userDurationSelect');
   if (durEl) durEl.value = String(currentDurationDays);
-  
+
   try {
     localStorage.setItem('travel_user_start_date', currentStartDateStr);
     localStorage.setItem('travel_user_duration', String(currentDurationDays));
-  } catch(e) {}
-  
+  } catch (e) { }
+
   applyPlanReconfiguration(false);
-  
+
   const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[currentLang]) || {};
   const msg = dict['toast_dates_reset'] || '🔄 표준 확정 일정(2026.11.05~12.04, 29박 30일)으로 초기화되었습니다.';
   if (typeof showToast === 'function') showToast(msg);
@@ -3757,7 +3757,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     localStorage.setItem('travel_user_party', String(partySize));
     localStorage.setItem('travel_user_tier', tier);
     localStorage.setItem('travel_user_pacing', currentPacing);
-  } catch(e) {}
+  } catch (e) { }
 
   updateAppliedScheduleDisplay();
 
@@ -3889,7 +3889,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     const restTitle = dict['timeline_rest_title'] || '오후: 필수 휴식 (시에스타 충전)';
     const eveningTitle = dict['timeline_evening_title'] || '저녁: 야경 감상 & 가벼운 식사';
 
-        const isInitiallyExpanded = window.allTimelineDaysExpanded || false;
+    const isInitiallyExpanded = window.allTimelineDaysExpanded || false;
     const expandBtnLabel = isInitiallyExpanded
       ? (dict['timeline_collapse_detail'] || '세부 일정 접기 ▲')
       : (dict['timeline_expand_detail'] || '세부 일정 펼치기 ▼');
@@ -4262,7 +4262,7 @@ function switchLanguage(lang, btn) {
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(lang);
   if (typeof renderItalyCityGuide === "function") renderItalyCityGuide(lang);
   if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(lang, window.masterGourmetActiveCountry || 'all');
-  
+
   // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
   const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
   const pageIdx = (typeof window !== "undefined" && window.currentBookPage && window.currentBookPage[actChap]) || 0;
@@ -4310,7 +4310,7 @@ function switchLanguage(lang, btn) {
   initInteractiveChecklist();
 
   // 12) 사용자 언어 저장
-  try { localStorage.setItem('travel_user_lang', lang); } catch(e) {}
+  try { localStorage.setItem('travel_user_lang', lang); } catch (e) { }
   // 13) Chatbot Language Sync
   if (typeof updateChatbotLanguage === 'function') {
     updateChatbotLanguage(lang);
@@ -4370,7 +4370,7 @@ function executeLiveSearch(engine = 'google') {
   const input = document.getElementById('aiDirectSearchInput');
   const rawQ = input ? input.value.trim() : '';
   const q = rawQ || (currentLang === 'en' ? 'Dubai and Europe family travel 2026' : (currentLang === 'ja' ? 'ドバイとヨーロッパ 家族旅行 2026' : (currentLang === 'zh' ? '迪拜与欧洲家庭旅行 2026' : '두바이 및 유럽 시니어 가족 여행 2026')));
-  
+
   const engineTitle = engine === 'perplexity' ? 'Perplexity AI' : 'Google 실시간 검색';
   showToast(`🔍 ${engineTitle} 검색을 시작합니다: <strong>${q.slice(0, 22)}${q.length > 22 ? '...' : ''}</strong>`);
 
@@ -4416,10 +4416,10 @@ function downloadCustomCalendarIcs() {
     const dStr = curD.toISOString().slice(0, 10).replace(/-/g, "");
 
     icsLines.push("BEGIN:VEVENT");
-    icsLines.push(`UID:slowtravel-${currentActiveRegion}-${i+1}-${dStr}@familytravel.com`);
+    icsLines.push(`UID:slowtravel-${currentActiveRegion}-${i + 1}-${dStr}@familytravel.com`);
     icsLines.push(`DTSTAMP:${dStr}T090000Z`);
     icsLines.push(`DTSTART;VALUE=DATE:${dStr}`);
-    icsLines.push(`SUMMARY:[Day ${i+1}] ${dItem.city} - ${dItem.theme}`);
+    icsLines.push(`SUMMARY:[Day ${i + 1}] ${dItem.city} - ${dItem.theme}`);
     icsLines.push(`DESCRIPTION:${dItem.theme}\n오후: ${dItem.rest}\n저녁: ${dItem.evening}\n보행: ${dItem.walk}`);
     icsLines.push("END:VEVENT");
   }
@@ -4434,7 +4434,7 @@ function downloadCustomCalendarIcs() {
   link.click();
   document.body.removeChild(link);
   const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
-  showToast(dict['toast_cal_download'] || '📅 맞춤 캘린더(.ics) 다운로드가 완료되었습니다!');
+  showToast(dict['toast_cal_download'] || '📅 맞춤 캘린더(.ics) 다운로드가 완료되었습니다!'); window.downloadCustomCalendarIcs = downloadCustomCalendarIcs; window.downloadIcsCalendar = downloadCustomCalendarIcs;
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -7110,11 +7110,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  
+
   if (typeof updateChatbotLanguage === 'function') {
     updateChatbotLanguage(typeof currentLang !== 'undefined' ? currentLang : 'ko');
   }
-const form = document.getElementById('chatForm');
+  const form = document.getElementById('chatForm');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -7287,11 +7287,11 @@ function toggleAllTimelineDays() {
   const dict = I18N_DICTIONARY[currentLang] || I18N_DICTIONARY['ko'];
   const details = document.querySelectorAll('.day-detail-collapse');
   const buttons = document.querySelectorAll('.btn-toggle-day-detail');
-  
+
   details.forEach(d => {
     d.style.display = window.allTimelineDaysExpanded ? 'block' : 'none';
   });
-  
+
   buttons.forEach(b => {
     b.setAttribute('aria-expanded', String(window.allTimelineDaysExpanded));
     const txt = b.querySelector('.toggle-text') || b;
@@ -7321,7 +7321,7 @@ let currentFestSeasonFilter = 'ALL';      // 'ALL', 'spring_summer', 'autumn_win
 function switchFestNightSubTab(tab) {
   currentFestNightSubTab = tab;
   document.querySelectorAll('#festNightSubTabs .tab-chip').forEach(btn => btn.classList.remove('active'));
-  
+
   const targetBtn = document.getElementById(
     tab === 'festivals' ? 'tabBtnFestivals' : (tab === 'nightviews' ? 'tabBtnNightviews' : 'tabBtnSavedCandidates')
   );
@@ -7360,7 +7360,7 @@ function getSavedCandidates() {
   try {
     const raw = localStorage.getItem('slowtravel_saved_candidates');
     return raw ? JSON.parse(raw) : [];
-  } catch(e) {
+  } catch (e) {
     return [];
   }
 }
@@ -7407,7 +7407,7 @@ function renderFestivalsAndNightViews() {
   updateSavedCandidatesCount();
 
   const festData = window.FESTIVALS_GUIDE_DATA || [];
-  const nightData = window.NIGHTVIEWS_GUIDE_DATA || [];
+  const nightData = window.NIGHTVIEWS_GUIDE_DATA || []; if (typeof window.renderPracticalCityCandidates === 'function') window.renderPracticalCityCandidates();
   const savedCandidates = getSavedCandidates();
 
   // 사용자 현재 여행 기간 계산 (표준 확정 일정 연계)
@@ -7684,7 +7684,7 @@ function renderFestivalsAndNightViews() {
         if (c.type === 'fest') {
           const item = festData.find(x => x.id === c.id);
           return item ? renderFestCard(item) : '';
-        } else {
+        } else if (c.type === 'practical_candidate' && typeof renderSavedPracticalCandidateCard === 'function') { return renderSavedPracticalCandidateCard(c.id); } else {
           const item = nightData.find(x => x.id === c.id);
           if (!item) return '';
           const i18n = (item.i18n && item.i18n[currentLang]) || {};
@@ -7775,11 +7775,11 @@ const CHAPTER_PAGE_COUNTS = {
 window.CHAPTER_PAGE_COUNTS = CHAPTER_PAGE_COUNTS;
 
 function switchGuidebookChapter(chapterId, shouldScroll = true) {
-  try { localStorage.setItem('slowtravel_last_chapter', chapterId); } catch(e){}
+  try { localStorage.setItem('slowtravel_last_chapter', chapterId); } catch (e) { }
   if (!GUIDEBOOK_CHAPTERS.includes(chapterId)) {
     chapterId = 'chapter-overview';
   }
-  
+
   window.currentActiveChapter = chapterId;
   if (typeof renderMasterGourmetGuide === 'function') { renderMasterGourmetGuide(typeof currentLang !== 'undefined' ? currentLang : 'ko', window.masterGourmetActiveCountry || 'all'); }
 
@@ -7857,7 +7857,7 @@ function switchGuidebookChapter(chapterId, shouldScroll = true) {
       }
       if (typeof renderSeniorDistrictRoutes === 'function') {
         renderSeniorDistrictRoutes();
-  if (typeof renderItalyCityGuide === "function") renderItalyCityGuide();
+        if (typeof renderItalyCityGuide === "function") renderItalyCityGuide();
       }
       setTimeout(() => {
         if (window.landmarksMap && typeof window.landmarksMap.invalidateSize === 'function') {
@@ -7896,11 +7896,11 @@ window.switchGuidebookChapter = switchGuidebookChapter;
 // 해시 기반 챕터 라우팅 (외부 링크, 즐겨찾기, #planner 호환)
 function handleGuidebookHashRouting(scrollIntoElement = false) {
   const hash = (window.location.hash || '').toLowerCase();
-  let targetChapter = (function() {
+  let targetChapter = (function () {
     try {
       const saved = localStorage.getItem('slowtravel_last_chapter');
       if (saved && GUIDEBOOK_CHAPTERS.includes(saved) && !window.location.hash) return saved;
-    } catch(e){}
+    } catch (e) { }
     return 'chapter-overview';
   })();
   let targetElementId = null;
@@ -8261,7 +8261,7 @@ function scrollToLandmarkCard(cardId) {
     switchGuidebookChapter('chapter-guide', false);
   }
   goToBookPage('chapter-guide', 1, false);
-  
+
   setTimeout(() => {
     const el = document.getElementById(cardId);
     if (el) {
@@ -8413,988 +8413,5 @@ function renderSingleDistrictCardHtml(d, lbl) {
           <span class="d-source-label">✓ ${lbl.officialSource || '공식 검증 출처:'}</span>
           <div class="d-source-links">
             ${(d.sources || []).map(s => `
-              <a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name} ↗</a>
-            `).join('')}
-            <span class="d-verify-date">${d.verifyNote || ''}</span>
-          </div>
-        </div>
-      </div>
-    </article>
-  `;
-}
-
-function renderTransitTableCardHtml(t, lbl) {
-  return `
-    <article class="district-route-card transit-comparison-card" id="${t.id || 'district-transit-bcn-svq'}">
-      <div class="district-card-header">
-        <div class="d-badge-row">
-          <span class="d-badge transit-badge">${t.badge}</span>
-          <span class="d-time-badge">${t.timing}</span>
-        </div>
-        <h3 class="district-title">${t.title}</h3>
-        <p class="district-desc">${t.desc}</p>
-      </div>
-      <div class="district-card-body">
-        <div class="transit-unconfirmed-notice">
-          ${t.unconfirmedNotice}
-        </div>
-        <div class="transit-table-wrapper">
-          <table class="transit-compare-table">
-            <thead>
-              <tr>
-                <th>${t.headers[0]}</th>
-                <th class="col-train">${t.headers[1]}</th>
-                <th class="col-flight">${t.headers[2]}</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${t.rows.map(r => `
-                <tr>
-                  <td><strong>${r.label}</strong></td>
-                  <td class="${r.isRec ? 'rec-cell' : ''}">${r.train}</td>
-                  <td>${r.flight}</td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        </div>
-        <div class="district-card-footer" style="margin-top:12px;">
-          <span class="d-source-label">✓ ${lbl.officialSource || '공식 검증 출처:'}</span>
-          <div class="d-source-links">
-            <a href="${t.source.url}" target="_blank" rel="noopener noreferrer">${t.source.name} ↗</a>
-            <span class="d-verify-date">${t.source.verifyNote}</span>
-          </div>
-        </div>
-      </div>
-    </article>
-  `;
-}
-
-function toggleMobileToc(force) {
-  const dropdown = document.getElementById('mobileTocDropdown');
-  const btn = document.getElementById('mobileTocToggleBtn');
-  const arrow = document.getElementById('mobileTocArrow');
-  if (!dropdown) return;
-  const isCurrentlyOpen = dropdown.style.display !== 'none';
-  const shouldOpen = force !== undefined ? force : !isCurrentlyOpen;
-  dropdown.style.display = shouldOpen ? 'block' : 'none';
-  if (btn) btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
-  if (arrow) arrow.textContent = shouldOpen ? '▲' : '▼';
-}
-window.toggleMobileToc = toggleMobileToc;
-
-
-// ==========================================================================
-// 🏛️ 로마 약 10일 체류 섹션 동적 렌더러 (도시 간 타임라인, 대표 사진 카드, 2열 명소 카드)
-// ==========================================================================
-function renderRomeExtensionSectionHtml(rome, lbl) {
-  if (!rome) return '';
-  return '<section class="district-route-card rome-extension-card" id="district-rome-extension">' +
-    '<div class="district-card-header rome-header">' +
-      '<div class="d-badge-row">' +
-        '<span class="d-badge rome-badge">' + (rome.badge || '로마 약 10일 체류') + '</span>' +
-        '<span class="d-time-badge rome-time-badge">' + (rome.statusBadge || '세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요') + '</span>' +
-      '</div>' +
-      '<h3 class="district-title rome-main-title">' + (rome.title || '') + '</h3>' +
-      '<p class="district-desc rome-main-desc">' + (rome.desc || '') + '</p>' +
-    '</div>' +
-    '<div class="district-card-body">' +
-      '<!-- 1. 도시 간 이동 타임라인 -->' +
-      '<div class="rome-transit-box">' +
-        '<div class="r-transit-head">' +
-          '<span class="r-t-icon">🚆</span>' +
-          '<div>' +
-            '<h4 class="r-t-title">' + (rome.transit ? rome.transit.title : '') + '</h4>' +
-            '<span class="r-t-sub">' + (rome.transit ? rome.transit.sub : '') + '</span>' +
-          '</div>' +
-        '</div>' +
-        '<div class="transit-unconfirmed-notice">' +
-          (rome.transit ? rome.transit.notice : '') +
-        '</div>' +
-        '<div class="r-steps-grid">' +
-          ((rome.transit && rome.transit.steps) || []).map((st, idx) => 
-            '<div class="r-step-item">' +
-              '<div class="r-step-badge">' + (idx + 1) + '</div>' +
-              '<div class="r-step-body">' +
-                '<strong class="r-step-h">' + st.title + '</strong>' +
-                '<p class="r-step-p">' + st.desc + '</p>' +
-                (st.tip ? '<div class="r-step-tip">💡 ' + st.tip + '</div>' : '') +
-              '</div>' +
-            '</div>'
-          ).join('') +
-        '</div>' +
-      '</div>' +
-
-      '<!-- 2. 대표 사진 카드 -->' +
-      '<div class="rome-hero-feature-card">' +
-        '<div class="r-hero-img-wrap">' +
-          '<img src="' + rome.hero.photo + '" alt="' + rome.hero.alt + '" loading="lazy" />' +
-          '<span class="r-hero-badge-tag">' + rome.hero.badge + '</span>' +
-        '</div>' +
-        '<div class="r-hero-text-wrap">' +
-          '<h4 class="r-hero-title">' + rome.hero.title + '</h4>' +
-          '<p class="r-hero-desc">' + rome.hero.desc + '</p>' +
-          '<div class="r-badges-row">' +
-            (rome.hero.badges || []).map(b => '<span class="r-pill-badge ' + (b.class || '') + '">' + b.text + '</span>').join('') +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-
-      '<!-- 3. 2열 명소 카드 컬렉션 (4대 핵심 테마 · 모바일 1열 스택) -->' +
-      '<div class="rome-cards-2col-grid">' +
-        (rome.cards || []).map(c => 
-          '<div class="rome-theme-card" id="' + c.id + '">' +
-            '<div class="r-card-img-wrap">' +
-              '<img src="' + c.photo + '" alt="' + c.alt + '" loading="lazy" />' +
-              '<span class="r-card-tag">' + c.themeTag + '</span>' +
-            '</div>' +
-            '<div class="r-card-content">' +
-              '<div class="r-card-pill-row">' +
-                (c.badges || []).map(b => '<span class="r-sub-pill ' + (b.class || '') + '">' + b.text + '</span>').join('') +
-              '</div>' +
-              '<h4 class="r-card-h4">' + c.title + '</h4>' +
-              '<p class="r-card-lead">' + c.desc + '</p>' +
-
-              '<div class="d-row">' +
-                '<span class="d-row-label">🏛️ ' + (lbl.keySpots || '핵심 명소:') + '</span>' +
-                '<span class="d-row-text">' + c.spots + '</span>' +
-              '</div>' +
-              '<div class="d-row">' +
-                '<span class="d-row-label">🚶 ' + (lbl.recSequence || '추천 동선:') + '</span>' +
-                '<span class="d-row-text">' + c.sequence + '</span>' +
-              '</div>' +
-              '<div class="d-row warning">' +
-                '<span class="d-row-label">👟 ' + (lbl.walkingEst || '보행 및 노면:') + '</span>' +
-                '<div class="d-row-text">' + c.walking + '</div>' +
-              '</div>' +
-              '<div class="d-row">' +
-                '<span class="d-row-label">☕ ' + (lbl.restStops || '휴식 안내:') + '</span>' +
-                '<span class="d-row-text">' + c.rest + '</span>' +
-              '</div>' +
-              '<div class="d-row official-check-row">' +
-                '<span class="d-row-label">✓ ' + (lbl.officialSource || '공식 확인:') + '</span>' +
-                '<div class="d-row-text">' + c.officialCheck + '</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>'
-        ).join('') +
-      '</div>' +
-    '</div>' +
-  '</section>';
-}
-window.renderRomeExtensionSectionHtml = renderRomeExtensionSectionHtml;
-
-// 하단 플로팅 북 바 스마트 스크롤 제어: 스크롤 시 선명, 2.5초 유휴 시 은은하게 페이드
-(function() {
-  let floatBarTimer = null;
-  window.addEventListener('scroll', function() {
-    const bar = document.getElementById('floatingBookBar');
-    if (!bar) return;
-    bar.classList.remove('bar-idle');
-    clearTimeout(floatBarTimer);
-    floatBarTimer = setTimeout(function() {
-      if (!bar.matches(':hover')) {
-        bar.classList.add('bar-idle');
-      }
-    }, 2500);
-  }, { passive: true });
-})();
-
-
-// ==========================================================================
-// 🇮🇹 ITALY CITIES GUIDE CONTROLLER & DYNAMIC RENDERER (100% MULTILINGUAL)
-// ==========================================================================
-window.currentItalyCity = window.currentItalyCity || 'rome';
-window.currentItalySubTab = window.currentItalySubTab || 'attractions';
-
-function selectItalyCity(cityId) {
-  window.currentItalyCity = cityId;
-  
-  const navBar = document.getElementById('italyCityNavBar');
-  if (navBar) {
-    navBar.querySelectorAll('.italy-city-tab').forEach(btn => {
-      const match = btn.getAttribute('data-city') === cityId;
-      btn.classList.toggle('active', match);
-      btn.setAttribute('aria-selected', match ? 'true' : 'false');
-    });
-  }
-
-  const subTabBar = document.getElementById('italySubTabBar');
-  if (subTabBar) {
-    subTabBar.style.display = (cityId === 'itinerary' || cityId === 'capri') ? 'none' : 'flex';
-  }
-
-  renderItalyCityGuide();
-}
-window.selectItalyCity = selectItalyCity;
-
-function selectItalySubTab(subTabId) {
-  window.currentItalySubTab = subTabId;
-
-  const subTabBar = document.getElementById('italySubTabBar');
-  if (subTabBar) {
-    subTabBar.querySelectorAll('.italy-subtab').forEach(btn => {
-      const match = btn.getAttribute('data-subtab') === subTabId;
-      btn.classList.toggle('active', match);
-      btn.setAttribute('aria-selected', match ? 'true' : 'false');
-    });
-  }
-
-  renderItalyCityGuide();
-}
-window.selectItalySubTab = selectItalySubTab;
-
-function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
-  const container = document.getElementById('italyCityContentContainer');
-  if (!container) return;
-
-  const data = (typeof ITALY_CITIES_GUIDE_DATA !== 'undefined') ? ITALY_CITIES_GUIDE_DATA : (typeof window !== 'undefined' ? window.ITALY_CITIES_GUIDE_DATA : null);
-  if (!data) return;
-
-  const cityId = window.currentItalyCity || 'rome';
-  const subTabId = window.currentItalySubTab || 'attractions';
-  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
-
-  // Localized UI helper terms
-  const L = {
-    transitLoad: lang === 'en' ? 'Transit Load' : (lang === 'ja' ? '移動負担' : (lang === 'zh' ? '交通负荷' : '이동 부담')),
-    kneeLoad: lang === 'en' ? 'Knee Strain' : (lang === 'ja' ? '膝の負担' : (lang === 'zh' ? '膝盖负荷' : '무릎 부담')),
-    pros: lang === 'en' ? 'Advantages' : (lang === 'ja' ? 'メリット' : (lang === 'zh' ? '优势特点' : '장점')),
-    cons: lang === 'en' ? 'Cautions' : (lang === 'ja' ? '留意点' : (lang === 'zh' ? '注意事项' : '유의점')),
-    trainPrefix: lang === 'en' ? 'Train: ' : (lang === 'ja' ? '列車: ' : (lang === 'zh' ? '列车在途: ' : '기차: ')),
-    d2dPrefix: lang === 'en' ? 'Actual Door-to-Door: ' : (lang === 'ja' ? '実際の宿泊間所要時間: ' : (lang === 'zh' ? '全程门到门实际耗时: ' : '실제 도어투도어: ')),
-    tableType: lang === 'en' ? 'Type' : (lang === 'ja' ? '種類' : (lang === 'zh' ? '车票种类' : '종류')),
-    tableRule: lang === 'en' ? 'Details & Validity' : (lang === 'ja' ? '内容＆有効時間' : (lang === 'zh' ? '规则与有效期' : '내용 및 유효시간')),
-    tableFare: lang === 'en' ? 'Fare' : (lang === 'ja' ? '運賃' : (lang === 'zh' ? '票价' : '요금')),
-    tapAndGoTitle: lang === 'en' ? 'Contactless Tap & Go (Easy Ride)' : (lang === 'ja' ? 'タッチ決済 Tap & Go (簡単乗車)' : (lang === 'zh' ? '非接闪付 Tap & Go (便捷乘车)' : '컨택리스 Tap & Go (간편 승차)')),
-    officialFaresBtn: lang === 'en' ? 'Official Fares & Ticket Portal ➔' : (lang === 'ja' ? '公式運賃＆チケットポータル ➔' : (lang === 'zh' ? '官方票价与购票指南 ➔' : '공식 요금 및 티켓 안내 확인 ➔'))
-  };
-
-  // Case 1: 12-Night Itinerary & Senior Comparison Analysis
-  if (cityId === 'itinerary') {
-    const itData = data.itineraryAnalysis;
-    let html = '<div class="itinerary-analysis-wrapper">';
-    
-    // Header
-    html += '<div class="it-head-card">' +
-      '<div class="it-badge">12 NIGHTS / 13 DAYS PACING GUIDE</div>' +
-      '<h3 class="it-title">' + (itData.title[lang] || itData.title.ko) + '</h3>' +
-      '<p class="it-context">' + (itData.context[lang] || itData.context.ko) + '</p>' +
-    '</div>';
-
-    // 3 Options Comparison Cards Grid
-    html += '<div class="it-options-grid">';
-    (itData.options || []).forEach(opt => {
-      html += '<div class="it-option-card ' + opt.class + '">' +
-        '<div class="opt-head">' +
-          '<span class="opt-badge">' + (opt.badge[lang] || opt.badge.ko) + '</span>' +
-          '<h4 class="opt-name">' + (opt.name[lang] || opt.name.ko) + '</h4>' +
-        '</div>' +
-        '<div class="opt-metrics">' +
-          '<div class="metric-row"><span class="m-label">🚆 ' + L.transitLoad + ':</span> <strong>' + (opt.transitLoad[lang] || opt.transitLoad.ko) + '</strong></div>' +
-          '<div class="metric-row"><span class="m-label">🦵 ' + L.kneeLoad + ':</span> <strong>' + (opt.kneeLoad[lang] || opt.kneeLoad.ko) + '</strong></div>' +
-        '</div>' +
-        '<div class="opt-pros"><span class="check-icon">✓ ' + L.pros + ':</span> ' + (opt.pros[lang] || opt.pros.ko) + '</div>' +
-        '<div class="opt-cons"><span class="warn-icon">⚠️ ' + L.cons + ':</span> ' + (opt.cons[lang] || opt.cons.ko) + '</div>' +
-      '</div>';
-    });
-    html += '</div>';
-
-    // Door-to-Door Transit Comparison
-    const trD = itData.transitDetails;
-    const r2fSteps = (trD.romeToFlorence.steps[lang] || trD.romeToFlorence.steps.ko || []);
-    const r2vSteps = (trD.romeToVenice.steps[lang] || trD.romeToVenice.steps.ko || []);
-
-    html += '<div class="door-to-door-card">' +
-      '<div class="d2d-head">' +
-        '<span class="d2d-icon">🚆</span>' +
-        '<div>' +
-          '<h4>' + (trD.title[lang] || trD.title.ko) + '</h4>' +
-          '<p>' + (trD.desc[lang] || trD.desc.ko) + '</p>' +
-        '</div>' +
-      '</div>' +
-      '<div class="d2d-grid">' +
-        '<div class="d2d-box rec">' +
-          '<div class="d2d-box-title">🟢 ' + (trD.romeToFlorence.title[lang] || trD.romeToFlorence.title.ko) + '</div>' +
-          '<div class="d2d-time">' + L.trainPrefix + (trD.romeToFlorence.trainTime[lang] || trD.romeToFlorence.trainTime.ko) + '</div>' +
-          '<div class="d2d-real"><strong>' + L.d2dPrefix + (trD.romeToFlorence.realTime[lang] || trD.romeToFlorence.realTime.ko) + '</strong></div>' +
-          '<ul class="d2d-steps">' + r2fSteps.map(s => '<li>' + s + '</li>').join('') + '</ul>' +
-          '<a href="' + trD.romeToFlorence.officialLink + '" target="_blank" rel="noopener noreferrer" class="d2d-link-btn">' + (trD.romeToFlorence.linkText[lang] || trD.romeToFlorence.linkText.ko) + '</a>' +
-        '</div>' +
-        '<div class="d2d-box warn">' +
-          '<div class="d2d-box-title">🔴 ' + (trD.romeToVenice.title[lang] || trD.romeToVenice.title.ko) + '</div>' +
-          '<div class="d2d-time">' + L.trainPrefix + (trD.romeToVenice.trainTime[lang] || trD.romeToVenice.trainTime.ko) + '</div>' +
-          '<div class="d2d-real"><strong>' + L.d2dPrefix + (trD.romeToVenice.realTime[lang] || trD.romeToVenice.realTime.ko) + '</strong></div>' +
-          '<ul class="d2d-steps">' + r2vSteps.map(s => '<li>' + s + '</li>').join('') + '</ul>' +
-          '<a href="' + trD.romeToVenice.officialLink + '" target="_blank" rel="noopener noreferrer" class="d2d-link-btn">' + (trD.romeToVenice.linkText[lang] || trD.romeToVenice.linkText.ko) + '</a>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
-
-    // Day-by-Day Timeline
-    const tl = itData.suggestedTimeline;
-    html += '<div class="timeline-card">' +
-      '<div class="tl-head">' +
-        '<h4>' + (tl.title[lang] || tl.title.ko) + '</h4>' +
-        '<p class="tl-note">' + (tl.note[lang] || tl.note.ko) + '</p>' +
-      '</div>' +
-      '<div class="tl-list">' +
-        (tl.days || []).map(d => {
-          const dTitle = (d.title && (d.title[lang] || d.title.ko)) || d.title;
-          const dDesc = (d.desc && (d.desc[lang] || d.desc.ko)) || d.desc;
-          return '<div class="tl-day-item">' +
-            '<div class="tl-day-badge">' + d.day + '</div>' +
-            '<div class="tl-day-body">' +
-              '<strong>' + dTitle + '</strong>' +
-              '<p>' + dDesc + '</p>' +
-            '</div>' +
-          '</div>';
-        }).join('') +
-      '</div>' +
-    '</div>';
-
-    html += '</div>';
-    container.innerHTML = html;
-    return;
-  }
-
-  // Case 1.5: Naples & Capri Optional Weather-Dependent Guide
-  if (cityId === 'capri') {
-    const capri = data.cities.capri;
-    if (!capri) return;
-
-    let html = '<div class="capri-guide-wrapper">';
-
-    // 1. Header Card
-    html += '<div class="capri-header-card">' +
-      '<div class="capri-tag-row">' +
-        '<span class="city-pill-badge">' + (capri.tag[lang] || capri.tag.ko) + '</span>' +
-        '<span class="badge-unverified-official">⚠️ ' + (capri.statusBadge[lang] || capri.statusBadge.ko) + '</span>' +
-      '</div>' +
-      '<h3 class="capri-title">⛵ ' + (capri.name[lang] || capri.name.ko) + '</h3>' +
-      '<p class="capri-intro">' + (capri.intro[lang] || capri.intro.ko) + '</p>' +
-    '</div>';
-
-    // 2. tvN Broadcast Box
-    html += '<div class="capri-tvn-box">' +
-      '<div class="tvn-head-row">' +
-        '<span class="tvn-badge">' + (capri.tvn.badge[lang] || capri.tvn.badge.ko) + '</span>' +
-        '<a href="' + capri.tvn.url + '" target="_blank" rel="noopener noreferrer" class="tvn-link-btn">' +
-          (capri.tvn.linkText[lang] || capri.tvn.linkText.ko) +
-        '</a>' +
-      '</div>' +
-      '<p class="tvn-desc">' + (capri.tvn.desc[lang] || capri.tvn.desc.ko) + '</p>' +
-    '</div>';
-
-    // 3. 4 Overview & Burden Cards Grid
-    html += '<div class="capri-overview-grid">';
-    (capri.overviewItems || []).forEach(item => {
-      html += '<div class="capri-overview-card ' + item.id + '">' +
-        '<h4 class="ov-title">' + (item.title[lang] || item.title.ko) + '</h4>' +
-        '<p class="ov-content">' + (item.content[lang] || item.content.ko) + '</p>' +
-      '</div>';
-    });
-    html += '</div>';
-
-    // 4. Operational Verification Section
-    html += '<div class="capri-verification-box">' +
-      '<div class="verif-head">' +
-        '<h4>🔍 ' + (lang === 'en' ? 'Operational Verification & Official Channels' : (lang === 'ja' ? '運航・開閉の確認と公式窓口' : (lang === 'zh' ? '运营核实与官方查询渠道' : '운영 확인과 공식 창구'))) + '</h4>' +
-        '<p class="verif-sub">' + (lang === 'en' ? 'Ferry transport and Blue Grotto admission are strictly separate verification items. Real-time conditions must be verified directly via official sources.' : (lang === 'ja' ? '船舶の運航と青の洞窟の入場は完全に別個の確認項目です。リアルタイムの運航・開閉は公式案内で直接ご確認ください。' : (lang === 'zh' ? '渡轮交通与蓝洞入内游览属于两个相互独立的核查项。即时状态须通过官方渠道亲自核实。' : '선박 운항과 푸른 동굴 입장은 별개의 확인 항목입니다. 실시간 상황은 공식 안내에서 직접 확인해야 합니다.'))) + '</p>' +
-      '</div>' +
-      '<div class="verif-items-list">';
-    
-    (capri.verificationItems || []).forEach(v => {
-      html += '<div class="verif-item-card">' +
-        '<div class="verif-item-header">' +
-          '<strong class="verif-item-name">' + (v.name[lang] || v.name.ko) + '</strong>' +
-          '<span class="verif-status-tag">⚠️ ' + (v.status[lang] || v.status.ko) + '</span>' +
-        '</div>' +
-        '<p class="verif-note">' + (v.note[lang] || v.note.ko) + '</p>' +
-        '<div class="verif-links-row">' +
-          '<a href="' + v.url + '" target="_blank" rel="noopener noreferrer" class="official-verif-btn">' +
-            '🌐 ' + (v.linkText[lang] || v.linkText.ko) +
-          '</a>';
-      if (v.url2) {
-        html += '<a href="' + v.url2 + '" target="_blank" rel="noopener noreferrer" class="official-verif-btn secondary">' +
-          '🌐 ' + (v.linkText2[lang] || v.linkText2.ko) +
-        '</a>';
-      }
-      html += '</div></div>';
-    });
-    html += '</div></div>';
-
-    // 5. Step-by-Step Verification Checklist
-    const ch = capri.checklist;
-    html += '<div class="capri-checklist-box">' +
-      '<h4 class="checklist-title">' + (ch.title[lang] || ch.title.ko) + '</h4>' +
-      '<div class="checklist-steps-grid">';
-    (ch.steps || []).forEach((st, idx) => {
-      html += '<div class="check-step-item">' +
-        '<div class="step-num">Step ' + (idx + 1) + ' · ' + (st.time[lang] || st.time.ko) + '</div>' +
-        '<div class="step-action">' + (st.action[lang] || st.action.ko) + '</div>' +
-      '</div>';
-    });
-    html += '</div></div>';
-
-    // 6. 3 Weather Scenarios Grid (A, B, C)
-    const sc = capri.scenarios;
-    html += '<div class="capri-scenarios-wrapper">' +
-      '<h4 class="scenarios-main-title">' + (sc.title[lang] || sc.title.ko) + '</h4>' +
-      '<div class="capri-scenarios-grid">';
-    (sc.list || []).forEach(s => {
-      html += '<div class="scenario-card ' + s.id + '">' +
-        '<div class="sc-badge">' + (s.badge[lang] || s.badge.ko) + '</div>' +
-        '<h5 class="sc-title">' + (s.title[lang] || s.title.ko) + '</h5>' +
-        '<p class="sc-desc">' + (s.content[lang] || s.content.ko) + '</p>' +
-      '</div>';
-    });
-    html += '</div></div>';
-
-    // 7. Planner Conflict Check Action Bar
-    html += '<div class="capri-planner-guardrail-bar">' +
-      '<div class="guardrail-info">' +
-        '<strong>🗓️ ' + (lang === 'en' ? 'Planner Schedule Safety Guardrail' : (lang === 'ja' ? 'プランナー日程の安全ガードレール' : (lang === 'zh' ? '行程规划安全防线' : '플래너 일정 안전 가드레일'))) + '</strong>' +
-        '<p>' + (lang === 'en' ? 'Naples/Capri is an optional excursion. It is never auto-inserted into your planner to protect your Rome rest days.' : (lang === 'ja' ? 'ナポリ・カプリは追加の選択肢です。ローマの休息日程を保護するため、プランナー日程へ自動挿入されません。' : (lang === 'zh' ? '那不勒斯与卡普里仅为备选方案，绝不自动插入日程以守护罗马充分休息。' : '나폴리·카프리는 추가 선택지입니다. 로마 휴식 일정을 보존하기 위해 플래너에 자동으로 삽입되지 않습니다.'))) + '</p>' +
-      '</div>' +
-      '<button type="button" class="btn-check-conflict" onclick="checkCapriPlannerConflict()">' +
-        '⚠️ ' + (lang === 'en' ? 'Check Schedule Conflict Alert' : (lang === 'ja' ? '日程衝突の警告を確認' : (lang === 'zh' ? '查看日程冲突预警' : '일정 충돌 여부 확인하기'))) +
-      '</button>' +
-    '</div>';
-
-    html += '</div>';
-    container.innerHTML = html;
-    return;
-  }
-
-  // Case 2: City Guide (Rome, Florence, Venice)
-  const city = data.cities[cityId];
-  if (!city) return;
-
-  let html = '<div class="city-guide-wrapper">';
-
-  // City Intro Header Banner
-  html += '<div class="city-intro-banner">' +
-    '<div class="city-tag-row">' +
-      '<span class="city-pill-badge">' + (city.tag[lang] || city.tag.ko) + '</span>' +
-      '<span class="city-status-badge">' + (city.statusBadge[lang] || city.statusBadge.ko) + '</span>' +
-    '</div>' +
-    '<h3 class="city-title">' + (city.name[lang] || city.name.ko) + '</h3>' +
-    '<p class="city-desc">' + (city.intro[lang] || city.intro.ko) + '</p>' +
-  '</div>';
-
-  // Sub-Tab Content: 1. Attractions (명소)
-  if (subTabId === 'attractions') {
-    html += '<div class="city-attractions-view">';
-
-    if (cityId === 'rome' && city.districts) {
-      city.districts.forEach(dist => {
-        html += '<div class="district-group-block" id="dist-' + dist.id + '">' +
-          '<div class="dist-group-head">' +
-            '<span class="dist-badge">' + (dist.badge[lang] || dist.badge.ko) + '</span>' +
-            '<h4 class="dist-title">' + (dist.name[lang] || dist.name.ko) + '</h4>' +
-          '</div>' +
-          '<div class="italy-cards-grid">';
-        
-        (dist.spots || []).forEach(spot => {
-          html += renderSingleSpotCard(spot, lang, dict);
-        });
-
-        html += '</div></div>';
-      });
-    } else if (city.spots) {
-      html += '<div class="italy-cards-grid">';
-      city.spots.forEach(spot => {
-        html += renderSingleSpotCard(spot, lang, dict);
-      });
-      html += '</div>';
-    }
-
-    html += '</div>';
-  } 
-  // Sub-Tab Content: 2. Dining (대표 미식)
-  else if (subTabId === 'dining') {
-    html += '<div class="city-dining-view">' +
-      '<div class="dining-view-intro">' +
-        '<h4>🍝 ' + (city.name[lang] || city.name.ko) + ' ' + (dict['subtab_dining'] || '대표 미식') + '</h4>' +
-        '<p class="season-disclaimer-note">' + (data.meta.seasonNote[lang] || data.meta.seasonNote.ko) + '</p>' +
-      '</div>' +
-      '<div class="italy-food-grid">';
-
-    (city.dining || []).forEach(dish => {
-      html += '<div class="italy-food-card">' +
-        '<div class="food-img-wrap">' +
-          '<img src="' + dish.photo + '" alt="' + (dish.name[lang] || dish.name.ko) + '" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=800&q=80\';" />' +
-          '<span class="food-it-badge">' + dish.italianName + '</span>' +
-        '</div>' +
-        '<div class="food-body">' +
-          '<h5 class="food-title">' + (dish.name[lang] || dish.name.ko) + '</h5>' +
-          '<div class="food-field">' +
-            '<span class="field-label">🥬 ' + (dict['lbl_ingredients'] || '핵심 재료') + ':</span>' +
-            '<p class="field-val">' + (dish.ingredients[lang] || dish.ingredients.ko) + '</p>' +
-          '</div>' +
-          '<div class="food-field">' +
-            '<span class="field-label">✨ ' + (dict['lbl_taste_profile'] || '맛의 특징') + ':</span>' +
-            '<p class="field-val">' + (dish.taste[lang] || dish.taste.ko) + '</p>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    });
-
-    html += '</div></div>';
-  }
-  // Sub-Tab Content: 3. Transit (대중교통)
-  else if (subTabId === 'transit') {
-    const tr = city.transit;
-    html += '<div class="city-transit-view">';
-
-    if (tr.disclaimer) {
-      html += '<div class="transit-alert-box">' + (tr.disclaimer[lang] || tr.disclaimer.ko) + '</div>';
-    }
-    if (tr.stairsWarning) {
-      html += '<div class="transit-alert-box">' + (tr.stairsWarning[lang] || tr.stairsWarning.ko) + '</div>';
-    }
-    if (tr.tramsAndStation) {
-      html += '<div class="transit-info-card">' + (tr.tramsAndStation[lang] || tr.tramsAndStation.ko) + '</div>';
-    }
-
-    const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
-
-    html += '<div class="transit-fares-card">' +
-      '<div class="fares-head">' +
-        '<h4>🎫 ' + (dict['lbl_fares_summary'] || '대중교통 요금 & 승차권 체계') + ' (' + tr.operator + ')</h4>' +
-        '<div class="verified-tag">✓ ' + verifiedTagText + '</div>' +
-      '</div>' +
-      '<div class="fares-table-wrap">' +
-        '<table class="transit-table">' +
-          '<thead><tr><th>' + L.tableType + '</th><th>' + L.tableRule + '</th><th>' + L.tableFare + '</th></tr></thead>' +
-          '<tbody>' +
-            (tr.fares || []).map(f => {
-              const fName = (f.name && (f.name[lang] || f.name.ko)) || f.name;
-              const fDesc = (f.desc && (f.desc[lang] || f.desc.ko)) || f.desc;
-              return '<tr><td><strong>' + fName + '</strong></td><td>' + fDesc + '</td><td class="price-cell">' + f.price + '</td></tr>';
-            }).join('') +
-          '</tbody>' +
-        '</table>' +
-      '</div>' +
-    '</div>';
-
-    if (tr.tapAndGo) {
-      html += '<div class="tap-and-go-card">' +
-        '<div class="tg-icon">💳</div>' +
-        '<div>' +
-          '<strong>' + L.tapAndGoTitle + '</strong>' +
-          '<p>' + (tr.tapAndGo[lang] || tr.tapAndGo.ko) + '</p>' +
-        '</div>' +
-      '</div>';
-    }
-
-    html += '<div class="transit-official-card">' +
-      '<a href="' + tr.officialUrl + '" target="_blank" rel="noopener noreferrer" class="official-portal-btn">' +
-        '🌐 ' + tr.operator + ' ' + L.officialFaresBtn +
-      '</a>' +
-    '</div>';
-
-    html += '</div>';
-  }
-
-  html += '</div>';
-  container.innerHTML = html;
-}
-window.renderItalyCityGuide = renderItalyCityGuide;
-
-function renderSingleSpotCard(spot, lang, dict) {
-  const pLevel = spot.priorityLevel || 'good';
-  const wLevel = spot.walkingLevel || 'medium';
-
-  const hoursLabel = lang === 'en' ? 'Hours:' : (lang === 'ja' ? '営業時間:' : (lang === 'zh' ? '开放时间:' : '운영시간:'));
-  const admissionLabel = lang === 'en' ? 'Admission:' : (lang === 'ja' ? '入場料:' : (lang === 'zh' ? '门票费用:' : '입장료:'));
-  const bookBtnText = lang === 'en' ? '🎟 Official Site Booking / Details' : (lang === 'ja' ? '🎟 公式サイト予約 / 詳細案内' : (lang === 'zh' ? '🎟 官方网站预订 / 详情指南' : '🎟 공식 사이트 예매 / 상세 안내'));
-  const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
-
-  const spotHours = (spot.hours && (spot.hours[lang] || spot.hours.ko)) || spot.hours;
-  const spotAdmission = (spot.admission && (spot.admission[lang] || spot.admission.ko)) || spot.admission;
-
-  return '<div class="italy-spot-card" id="spot-' + spot.id + '">' +
-    '<div class="spot-img-wrap">' +
-      '<img src="' + spot.photo + '" alt="' + (spot.name[lang] || spot.name.ko) + '" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80\';" />' +
-      '<span class="spot-it-tag">' + spot.italianName + '</span>' +
-    '</div>' +
-    '<div class="spot-content">' +
-      '<div class="spot-badges-row">' +
-        '<span class="spot-badge badge-p-' + pLevel + '">🎟 ' + (spot.priority[lang] || spot.priority.ko) + '</span>' +
-        '<span class="spot-badge badge-w-' + wLevel + '">🚶 ' + (spot.walking[lang] || spot.walking.ko) + '</span>' +
-      '</div>' +
-      '<h4 class="spot-h4">' + (spot.name[lang] || spot.name.ko) + '</h4>' +
-      '<p class="spot-lead">' + (spot.desc[lang] || spot.desc.ko) + '</p>' +
-      '<div class="spot-senior-box">' +
-        '<div class="s-box-head">♿ ' + (dict['lbl_senior_access'] || '부모님 보행 및 접근성 안내') + '</div>' +
-        '<div class="s-box-desc">' + (spot.details[lang] || spot.details.ko) + '</div>' +
-      '</div>' +
-      '<div class="spot-meta-row">' +
-        '<div class="meta-item"><span>⏰ ' + hoursLabel + '</span> <strong>' + spotHours + '</strong></div>' +
-        '<div class="meta-item"><span>💶 ' + admissionLabel + '</span> <strong>' + spotAdmission + '</strong></div>' +
-      '</div>' +
-      '<div class="spot-footer">' +
-        '<a href="' + spot.officialUrl + '" target="_blank" rel="noopener noreferrer" class="spot-btn primary">' +
-          bookBtnText +
-        '</a>' +
-        '<span class="spot-verify-tag">✓ ' + verifiedTagText + '</span>' +
-      '</div>' +
-    '</div>' +
-  '</div>';
-}
-window.renderSingleSpotCard = renderSingleSpotCard;
-
-function checkCapriPlannerConflict() {
-  let msg = '';
-  if (currentLang === 'en') {
-    msg = '⚠️ [Schedule Conflict Alert]\nThe Italy segment (Nov 22 ~ Dec 4, 12 nights) is designed around a relaxed ~10-day Rome stay with parent fatigue care (1.5 spots/day + afternoon siestas).\n\nA same-day round trip from Rome to Naples/Capri entails over 6 hours of high-speed train, taxi, and ferry transfers each way. To preserve the confirmed Rome rest schedule, this optional trip is NOT automatically added to the planner, nor will it alter or delete existing rest days.\n\nPlease choose it flexibly on-site only if real-time weather and sea conditions are fully favorable and family stamina allows.';
-  } else if (currentLang === 'ja') {
-    msg = '⚠️【日程衝突の警告】\nイタリア日程（11月22日〜12月4日、12泊）は、ご両親の疲労ケア（1日1.5スポット＋シエスタ休息）を考慮し、ローマ約10泊のゆったりした滞在を中心に構成されています。\n\nローマからナポリ・カプリ島への日帰りは往復6時間以上の高速鉄道・タクシー・船の乗換が発生します。確定済みのローマ休息日程を損なわないため、プランナー日程へ自動挿入されたり既存の予定が削除・変更されることはありません。\n\n海況・気象が完全に良好で、ご家族全員の体力が十分な場合にのみ現地で柔軟にご判断ください。';
-  } else if (currentLang === 'zh') {
-    msg = '⚠️【行程冲突预警】\n意大利行程（11月22日~12月4日，共12晚）以罗马约10天慢游逗留为核心，充分兼顾长辈体力照护（每日1.5景点＋午休休息）。\n\n从罗马出发往返那不勒斯与卡普里岛单日往返将产生6小时以上的火车、出租车与渡轮连续换乘。为避免打乱已确认的罗马修整节奏，系统不会将此候选自动添加进主日程，亦绝不会自动删改现有日程与休息日。\n\n建议仅在当地海况天象完全平稳良好、全人体力充沛时，再作现场弹性决择。';
-  } else {
-    msg = '⚠️ [일정 충돌 경고 및 안내]\n현재 2026.11.22~12.04 이탈리아 일정은 로마 약 10일 체류를 중심으로 부모님의 피로도(1.5 스팟/일, 시에스타 휴식)를 고려하여 구성되어 있습니다.\n\n로마에서 나폴리·카프리 당일치기는 왕복 6시간 이상의 기차+택시+페리 연속 환승이 수반됩니다. 기존 확정된 로마 10일 휴식 일정을 훼손하지 않기 위해 플래너에 자동 끼워넣지 않으며, 기존 일정을 자동 삭제하거나 변경하지 않습니다.\n\n당일 기상과 파도가 온전히 양호하고 가족 모두의 컨디션이 충분할 때 현지에서 자율적으로 선택하시기 바랍니다.';
-  }
-  
-  if (typeof showToast === 'function') {
-    showToast(msg, 6000);
-  } else {
-    alert(msg);
-  }
-}
-window.checkCapriPlannerConflict = checkCapriPlannerConflict;
-
-window.downloadIcsCalendar = downloadCustomCalendarIcs;
-
-
-
-// ==========================================================================
-// 🍽️ MASTER GOURMET GUIDE (Beyond Paella & Pizza - Senior Tailored)
-// ==========================================================================
-window.masterGourmetActiveCountry = 'all';
-window.masterSurvivalCountry = 'all';
-window.masterSurvivalCategory = 'all';
-
-function buildMasterGourmetGuideHtml(data, l, filterCountry) {
-  if (!data || !data.meta) return '';
-  l = l || 'ko';
-  filterCountry = filterCountry || 'all';
-  const meta = data.meta;
-  const badgeText = (meta.badge && meta.badge[l]) || meta.badge['ko'];
-  const titleText = (meta.title && meta.title[l]) || meta.title['ko'];
-  const introText = (meta.intro && meta.intro[l]) || meta.intro['ko'];
-  const survivalTitle = (meta.survivalTitle && meta.survivalTitle[l]) || meta.survivalTitle['ko'];
-  const survivalDesc = (meta.survivalDesc && meta.survivalDesc[l]) || meta.survivalDesc['ko'];
-
-  const filterLabels = {
-    all: { ko: "🌍 전체 7대 도시", en: "🌍 All 7 Cities", ja: "🌍 全7都市", zh: "🌍 全部7大城市" },
-    spain: { ko: "🇪🇸 스페인 편 (4개 도시)", en: "🇪🇸 Spain Edition (4 Cities)", ja: "🇪🇸 スペイン編 (4都市)", zh: "🇪🇸 西班牙篇 (4城)" },
-    italy: { ko: "🇮🇹 이탈리아 편 (3개 도시)", en: "🇮🇹 Italy Edition (3 Cities)", ja: "🇮🇹 イタリア編 (3都市)", zh: "🇮🇹 意大利篇 (3城)" }
-  };
-
-  const survCountryLabels = {
-    all: { ko: "🌍 전체 24선", en: "🌍 All 24", ja: "🌍 全24選", zh: "🌍 全部24句" },
-    es: { ko: "🇪🇸 스페인어 12선", en: "🇪🇸 Spanish (12)", ja: "🇪🇸 スペイン語 12選", zh: "🇪🇸 西班牙语 12句" },
-    it: { ko: "🇮🇹 이탈리아어 12선", en: "🇮🇹 Italian (12)", ja: "🇮🇹 イタリア語 12選", zh: "🇮🇹 意大利语 12句" }
-  };
-
-  const survCategoryLabels = {
-    all: { ko: "전체 상황", en: "All Scenarios", ja: "すべての場面", zh: "全部情景" },
-    health: { ko: "🧂 간·건강 (소금/설탕)", en: "🧂 Seasoning (Salt/Sugar)", ja: "🧂 味付け（塩・砂糖）", zh: "🧂 口味（少盐/免糖）" },
-    drinks: { ko: "☕ 물·음료 (따뜻한물/생수)", en: "☕ Water (Hot/Still)", ja: "☕ お水（お湯・ナチュラル水）", zh: "☕ 饮水（温水/纯净水）" },
-    billing: { ko: "💶 가격·계산 (얼마에요/영수증)", en: "💶 Price & Bill (How much/Check)", ja: "💶 お会計（いくら/レシート）", zh: "💶 结账（多少钱/买单）" },
-    ordering: { ko: "🍽️ 주문·추천 (이거주세요/추천)", en: "🍽️ Ordering (This one/Picks)", ja: "🍽️ 注文（これ/おすすめ）", zh: "🍽️ 点单（来一份/推荐菜）" },
-    convenience: { ko: "🚻 화장실·포장", en: "🚻 Restroom & Takeout", ja: "🚻 トイレ・お持ち帰り", zh: "🚻 洗手间与打包" },
-    courtesy: { ko: "👏 매너·감사 (여기요/감사합니다)", en: "👏 Courtesy (Excuse me/Thanks)", ja: "👏 マナー（すみません/感謝）", zh: "👏 礼貌（劳驾/谢谢）" }
-  };
-
-  const btnListenText = { ko: "🔊 원어 발음 듣기", en: "🔊 Listen Audio", ja: "🔊 発音を聞く", zh: "🔊 播放原声" };
-  const verifiedPicksLabel = { ko: "⭐ 픽업 맛집 (추천 식당)", en: "⭐ Verified Pick Restaurants", ja: "⭐ 厳選ピックアップ名店", zh: "⭐ 严选精选餐厅" };
-  const mapBtnText = { ko: "🗺️ Google 지도", en: "🗺️ Google Maps", ja: "🗺️ Google マップ", zh: "🗺️ 谷歌地图" };
-
-  // Survival phrases HTML
-  const phrasesHtml = (meta.survivalPhrases || []).map(p => {
-    const cName = (p.countryName && p.countryName[l]) || p.countryName['ko'];
-    const catName = (p.categoryName && p.categoryName[l]) || p.categoryName['ko'];
-    const pron = (p.pronunciation && p.pronunciation[l]) || p.pronunciation['ko'];
-    const mean = (p.meaning && p.meaning[l]) || p.meaning['ko'];
-    const tip = (p.seniorTip && p.seniorTip[l]) || p.seniorTip['ko'];
-
-    return `
-      <div class="mg-phrase-box ${p.country}" data-country="${p.country}" data-category="${p.category}">
-        <div class="mg-phrase-top">
-          <div class="mg-phrase-tags">
-            <span class="mg-phrase-flag">${cName}</span>
-            <span class="mg-phrase-cat-badge">${catName}</span>
-          </div>
-          <button type="button" class="mg-phrase-audio-btn" onclick="playVoice('${p.original.replace(/'/g, "\\'")}', '${p.locale}')" title="${btnListenText[l] || btnListenText['ko']}">
-            ${btnListenText[l] || btnListenText['ko']}
-          </button>
-        </div>
-        <div class="mg-phrase-quote">"${p.original}"</div>
-        <div class="mg-phrase-pronun">🗣️ ${pron}</div>
-        <div class="mg-phrase-meaning">💡 <strong>${mean}</strong></div>
-        <div class="mg-phrase-tip">👴 ${tip}</div>
-      </div>
-    `;
-  }).join('');
-
-  // Filter countries
-  const countriesToRender = (data.countries || []).filter(c => filterCountry === 'all' || c.id === filterCountry);
-
-  const countriesHtml = countriesToRender.map(country => {
-    const cName = (country.name && country.name[l]) || country.name['ko'];
-    const cTheme = (country.theme && country.theme[l]) || country.theme['ko'];
-    const isSpain = country.id === 'spain';
-    const flagSvg = isSpain
-      ? `<svg width="22" height="15" viewBox="0 0 750 500" style="border-radius:3px;vertical-align:middle;box-shadow:0 1px 3px rgba(0,0,0,0.2);"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>`
-      : `<svg width="22" height="15" viewBox="0 0 3 2" style="border-radius:3px;vertical-align:middle;box-shadow:0 1px 3px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>`;
-
-    const citiesHtml = (country.cities || []).map(city => {
-      const cityName = (city.name && city.name[l]) || city.name['ko'];
-
-      const dishesHtml = (city.dishes || []).map(dish => {
-        const dName = (dish.name && dish.name[l]) || dish.name['ko'];
-        const dLabel = (dish.label && dish.label[l]) || dish.label['ko'];
-        const dDesc = (dish.desc && dish.desc[l]) || dish.desc['ko'];
-        const dHighlight = (dish.parentsHighlight && dish.parentsHighlight[l]) || dish.parentsHighlight['ko'];
-
-        return `
-          <div class="mg-dish-card">
-            <div class="mg-dish-photo-wrap">
-              <img src="${dish.photo}" alt="${dName}" class="mg-dish-img" loading="lazy" onerror="if(this.src!=='${dish.fallbackPhoto}') this.src='${dish.fallbackPhoto}';" />
-              <span class="mg-dish-badge">${dLabel}</span>
-            </div>
-            <div class="mg-dish-body">
-              <h5 class="mg-dish-title">${dName}</h5>
-              <p class="mg-dish-desc">${dDesc}</p>
-              <div class="mg-dish-highlight">
-                ${dHighlight}
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      const picksHtml = (city.picks || []).map(pick => {
-        const pName = (pick.name && pick.name[l]) || pick.name['ko'];
-        const pBadge = (pick.badge && pick.badge[l]) || pick.badge['ko'];
-        const pDesc = (pick.desc && pick.desc[l]) || pick.desc['ko'];
-        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pick.mapQuery)}`;
-
-        return `
-          <div class="mg-pick-item">
-            <div class="mg-pick-header">
-              <div class="mg-pick-title-wrap">
-                <span class="mg-pick-star">⭐</span>
-                <strong class="mg-pick-name">${pName}</strong>
-              </div>
-              <span class="mg-pick-badge">${pBadge}</span>
-            </div>
-            <p class="mg-pick-desc">${pDesc}</p>
-            <div class="mg-pick-actions">
-              <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="mg-map-btn" title="${mapBtnText[l] || mapBtnText['ko']}">
-                <span>${mapBtnText[l] || mapBtnText['ko']}</span>
-                <span style="font-size:11px;">↗</span>
-              </a>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      return `
-        <div class="mg-city-block">
-          <div class="mg-city-header">
-            <div class="mg-city-title-group">
-              <span class="mg-city-num">${city.num}</span>
-              <h4 class="mg-city-name">${cityName}</h4>
-            </div>
-            <span class="mg-country-pill ${country.id}">${country.flag} ${cName}</span>
-          </div>
-
-          <div class="mg-dishes-grid">
-            ${dishesHtml}
-          </div>
-
-          <div class="mg-picks-section">
-            <div class="mg-picks-title">
-              <span>🍽️</span> <strong>${verifiedPicksLabel[l] || verifiedPicksLabel['ko']}</strong>
-            </div>
-            <div class="mg-picks-grid">
-              ${picksHtml}
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    return `
-      <div class="mg-country-group ${country.id}">
-        <div class="mg-country-header">
-          <div class="mg-country-title">
-            ${flagSvg}
-            <span>[${cName}]</span>
-            <span class="mg-country-theme">${cTheme}</span>
-          </div>
-        </div>
-        <div class="mg-cities-list">
-          ${citiesHtml}
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  return `
-    <div class="master-gourmet-wrapper">
-      <!-- Master Header -->
-      <div class="mg-hero-box">
-        <div class="mg-hero-badge">${badgeText}</div>
-        <h3 class="mg-hero-title">${titleText}</h3>
-        <p class="mg-hero-intro">${introText}</p>
-
-        <!-- Expanded Survival Phrases Banner (24 Expressions with Filters) -->
-        <div class="mg-survival-container">
-          <div class="mg-survival-lead">
-            <span class="mg-survival-lead-icon">💡</span>
-            <div>
-              <strong class="mg-survival-lead-title">${survivalTitle}</strong>
-              <p class="mg-survival-lead-desc">${survivalDesc}</p>
-            </div>
-          </div>
-
-          <!-- Country Filter Row -->
-          <div class="mg-survival-filter-row">
-            <div class="mg-survival-country-tabs">
-              <button type="button" class="mg-surv-pill active" data-surv-country="all" onclick="filterMasterSurvival('country', 'all', this)">
-                ${survCountryLabels.all[l] || survCountryLabels.all['ko']}
-              </button>
-              <button type="button" class="mg-surv-pill" data-surv-country="es" onclick="filterMasterSurvival('country', 'es', this)">
-                ${survCountryLabels.es[l] || survCountryLabels.es['ko']}
-              </button>
-              <button type="button" class="mg-surv-pill" data-surv-country="it" onclick="filterMasterSurvival('country', 'it', this)">
-                ${survCountryLabels.it[l] || survCountryLabels.it['ko']}
-              </button>
-            </div>
-          </div>
-
-          <!-- Category Filter Chips -->
-          <div class="mg-survival-category-chips">
-            <button type="button" class="mg-surv-chip active" data-surv-cat="all" onclick="filterMasterSurvival('category', 'all', this)">
-              ${survCategoryLabels.all[l] || survCategoryLabels.all['ko']}
-            </button>
-            <button type="button" class="mg-surv-chip" data-surv-cat="health" onclick="filterMasterSurvival('category', 'health', this)">
-              ${survCategoryLabels.health[l] || survCategoryLabels.health['ko']}
-            </button>
-            <button type="button" class="mg-surv-chip" data-surv-cat="drinks" onclick="filterMasterSurvival('category', 'drinks', this)">
-              ${survCategoryLabels.drinks[l] || survCategoryLabels.drinks['ko']}
-            </button>
-            <button type="button" class="mg-surv-chip" data-surv-cat="billing" onclick="filterMasterSurvival('category', 'billing', this)">
-              ${survCategoryLabels.billing[l] || survCategoryLabels.billing['ko']}
-            </button>
-            <button type="button" class="mg-surv-chip" data-surv-cat="ordering" onclick="filterMasterSurvival('category', 'ordering', this)">
-              ${survCategoryLabels.ordering[l] || survCategoryLabels.ordering['ko']}
-            </button>
-            <button type="button" class="mg-surv-chip" data-surv-cat="convenience" onclick="filterMasterSurvival('category', 'convenience', this)">
-              ${survCategoryLabels.convenience[l] || survCategoryLabels.convenience['ko']}
-            </button>
-            <button type="button" class="mg-surv-chip" data-surv-cat="courtesy" onclick="filterMasterSurvival('category', 'courtesy', this)">
-              ${survCategoryLabels.courtesy[l] || survCategoryLabels.courtesy['ko']}
-            </button>
-          </div>
-
-          <!-- 24 Phrase Cards Grid -->
-          <div class="mg-survival-grid">
-            ${phrasesHtml}
-          </div>
-        </div>
-
-        <!-- City Filter Tabs -->
-        <div class="mg-tabs-bar">
-          <button type="button" class="mg-tab-pill ${filterCountry === 'all' ? 'active' : ''}" onclick="switchMasterGourmetFilter('all', this)">
-            ${filterLabels.all[l] || filterLabels.all['ko']}
-          </button>
-          <button type="button" class="mg-tab-pill ${filterCountry === 'spain' ? 'active' : ''}" onclick="switchMasterGourmetFilter('spain', this)">
-            ${filterLabels.spain[l] || filterLabels.spain['ko']}
-          </button>
-          <button type="button" class="mg-tab-pill ${filterCountry === 'italy' ? 'active' : ''}" onclick="switchMasterGourmetFilter('italy', this)">
-            ${filterLabels.italy[l] || filterLabels.italy['ko']}
-          </button>
-        </div>
-      </div>
-
-      <!-- Countries & Cities -->
-      <div class="mg-content-area">
-        ${countriesHtml}
-      </div>
-    </div>
-  `;
-}
-
-function renderMasterGourmetGuide(lang, filterCountry) {
-  if (typeof MASTER_GOURMET_GUIDE_DATA === 'undefined') return;
-  const mounts = document.querySelectorAll('.master-gourmet-mount');
-  if (!mounts.length) return;
-
-  const currentL = lang || (typeof currentLang !== 'undefined' ? currentLang : 'ko');
-  const activeCountry = filterCountry || window.masterGourmetActiveCountry || 'all';
-  window.masterGourmetActiveCountry = activeCountry;
-
-  const html = buildMasterGourmetGuideHtml(MASTER_GOURMET_GUIDE_DATA, currentL, activeCountry);
-  mounts.forEach(mount => {
-    mount.innerHTML = html;
-  });
-
-  // Re-apply survival filters if active
-  if (window.masterSurvivalCountry !== 'all' || window.masterSurvivalCategory !== 'all') {
-    applySurvivalPhrasesFilter();
-  }
-}
-
-function switchMasterGourmetFilter(country, btn) {
-  window.masterGourmetActiveCountry = country;
-  const currentL = typeof currentLang !== 'undefined' ? currentLang : 'ko';
-  renderMasterGourmetGuide(currentL, country);
-}
-
-function filterMasterSurvival(type, value, btn) {
-  if (type === 'country') {
-    window.masterSurvivalCountry = value;
-    document.querySelectorAll('.mg-surv-pill').forEach(p => {
-      p.classList.toggle('active', p.getAttribute('data-surv-country') === value);
-    });
-  } else if (type === 'category') {
-    window.masterSurvivalCategory = value;
-    document.querySelectorAll('.mg-surv-chip').forEach(c => {
-      c.classList.toggle('active', c.getAttribute('data-surv-cat') === value);
-    });
-  }
-  applySurvivalPhrasesFilter();
-}
-
-function applySurvivalPhrasesFilter() {
-  const selectedCountry = window.masterSurvivalCountry || 'all';
-  const selectedCat = window.masterSurvivalCategory || 'all';
-
-  document.querySelectorAll('.mg-phrase-box').forEach(box => {
-    const boxCountry = box.getAttribute('data-country');
-    const boxCat = box.getAttribute('data-category');
-
-    const matchCountry = selectedCountry === 'all' || boxCountry === selectedCountry;
-    const matchCat = selectedCat === 'all' || boxCat === selectedCat;
-
-    if (matchCountry && matchCat) {
-      box.style.display = 'flex';
-    } else {
-      box.style.display = 'none';
-    }
-  });
-}
-
-if (typeof window !== 'undefined') {
-  window.renderMasterGourmetGuide = renderMasterGourmetGuide;
-  window.switchMasterGourmetFilter = switchMasterGourmetFilter;
-  window.filterMasterSurvival = filterMasterSurvival;
-  window.applySurvivalPhrasesFilter = applySurvivalPhrasesFilter;
-}
+              <a href="${s.url}" target="_blank" rel="noopener n
+... [truncated for diff preview]

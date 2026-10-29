@@ -37457,3 +37457,1522 @@ if (typeof window !== 'undefined') {
 if (typeof globalThis !== 'undefined') {
   globalThis.STANDARD_TRIP_SCHEDULE = STANDARD_TRIP_SCHEDULE;
 }
+
+
+// ==========================================================================
+// ✨ PRACTICAL INFO: NON-OVERLAPPING CITY CANDIDATES (7 CITIES · 17 SPOTS)
+// ==========================================================================
+const PRACTICAL_CITY_CANDIDATES_DATA = {
+  verifiedDate: "2026-10-29",
+  deduplicationBaseline: [
+    {
+      cityId: "barcelona",
+      cityName: "바르셀로나",
+      flag: "🇪🇸",
+      stayInfo: "11/5~11/11 (6박)",
+      existingItems: "Ciudad Condal · Restaurante 7 Portes · Puertecillo Sagrada Família · Cervecería Catalana · El Xampanyet · Bar Cañete · 사그라다 파밀리아 호수공원(Plaça de Gaudí) · 산타 카테리나 시장 · 보케리아 시장 (대조군 Vinitus · La Paradeta 포함 중복 제외)",
+      addedSummary: "Time Out Market Barcelona (실내 저녁 푸드홀), Can Culleretes (전통 식당 후보), Mirador Torre Glòries (일몰·초저녁 전망대)"
+    },
+    {
+      cityId: "granada",
+      cityName: "그라나다",
+      flag: "🇪🇸",
+      stayInfo: "11/13~11/15 (2박)",
+      existingItems: "Bar Los Diamantes · 나바스 거리(Calle Navas) · 산 니콜라스 전망대(Mirador de San Nicolás) (대조군 Bodegas Castañeda 포함 중복 제외)",
+      addedSummary: "Mercado de San Agustín (낮 시간 전통 시장), Mirador de San Cristóbal (해질녘 전망대 · 택시 왕복 조건)"
+    },
+    {
+      cityId: "malaga",
+      cityName: "말라가",
+      flag: "🇪🇸",
+      stayInfo: "11/15~11/18 (3박)",
+      existingItems: "El Pimpi · Marisquería Godoy · 라리오스 거리(Calle Larios) (대조군 Los Mellizos 제외 · 2장 요약에 1줄 언급된 Muelle Uno는 실용정보 카드로 운영시간·식당가 상세 보강)",
+      addedSummary: "Muelle Uno (항구 산책+저녁 식사 구역), Lolita Skyview (루프톱 바 · 수영장 투숙객 전용 분리), Mercado Central de Atarazanas (낮 시간 전통 시장)"
+    },
+    {
+      cityId: "seville",
+      cityName: "세비야",
+      flag: "🇪🇸",
+      stayInfo: "11/11~11/12 (1박) & 11/18~11/22 (4박)",
+      existingItems: "El Rinconcillo · La Brunilda · Restaurante Modesto · Eslava · Bodega Santa Cruz · 메트로폴 파라솔(Las Setas) · 스페인 광장(Plaza de España) · 황금의 탑(Torre del Oro)",
+      addedSummary: "Mercado de Triana (낮 시장 매대 + 저녁 식음업장 분리 안내), Puente de Triana & Calle Betis (강 건너 야경 전망 후보)"
+    },
+    {
+      cityId: "naples",
+      cityName: "나폴리",
+      flag: "🇮🇹",
+      stayInfo: "11/22~11/25 (3박)",
+      existingItems: "Gino Sorbillo · Trattoria Da Nennella · Osteria Il Gobbetto · L'Antica Pizzeria da Michele · Gran Caffè Gambrinus · 플레비시토 광장(Piazza del Plebiscito)",
+      addedSummary: "Mercato della Pignasecca (낮 시간 전통 시장 · Pedamentina 계단 코스와 구분), Monte Echia 전망대 승강기 (일요일 저녁 단축 운영 주의)"
+    },
+    {
+      cityId: "florence",
+      cityName: "피렌체",
+      flag: "🇮🇹",
+      stayInfo: "11/25~11/29 (4박)",
+      existingItems: "Trattoria Zà Zà · Trattoria Mario · All’Antico Vinaio · 미켈란젤로 광장(Piazzale Michelangelo) · 베키오 다리(Ponte Vecchio)",
+      addedSummary: "Piazza Santa Croce 크리스마스 마켓 (2026.11.14~12.20 시즌 행사), Mercato Centrale Firenze (2층 저녁 푸드홀), 701 Rooftop Bar (일몰·초저녁 전망 후보)"
+    },
+    {
+      cityId: "rome",
+      cityName: "로마",
+      flag: "🇮🇹",
+      stayInfo: "11/29~12/4 (5박)",
+      existingItems: "Trattoria Luzzi · Cantina e Cucina · Trattoria Da Enzo al 29 · Roscioli · Giolitti · Tazza d'Oro · 트레비 분수(Trevi) · 캄포 디 피오리(Campo de’ Fiori) · 스페인 광장(Spanish Steps)",
+      addedSummary: "Mercato Centrale Roma (테르미니 실내 푸드홀), Ponte Sisto (짧은 야간 산책·강변 전망 후보)"
+    }
+  ],
+  items: [
+    // ==================== 1. 바르셀로나 (3곳) ====================
+    {
+      id: "pc-bcn-timeout-market",
+      cityId: "barcelona",
+      cityName: "바르셀로나",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Time Out Market Barcelona (타임아웃 마켓 바르셀로나)",
+      categoryKey: "foodhall",
+      typeBadge: "🍽️ 저녁까지 운영하는 식당가/푸드홀 (실내 저녁 푸드홀 · 전통 야시장 아님)",
+      typeColor: "foodhall",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (식사+전망 원스톱): 마레마그눔(Maremagnum) 상층 실내에서 포트 벨(Port Vell) 항구·몬주익 전망 테라스와 셰프 저녁 식사를 한 장소에서 해결할 수 있어 밤길 장거리 보행을 줄여줍니다.",
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      highlights: "바르셀로나 유명 셰프·로컬 레스토랑 14곳의 타파스, 해산물 구이, 카탈루냐식 스테이크, 수제 디저트 및 포트 벨 마리나 파노라마 테라스 조망 (야외 노점형 전통 야시장이 아닌 쾌적한 실내 다이닝 푸드홀)",
+      hours: "매일 10:00~24:00 안내 (입점 키친·바별 주문 마감 상이)",
+      verifyNotice: "방문 전 확인 · 당일 운영 및 매장별 마감시간 변경 가능",
+      seniorCaution: "마레마그눔 쇼핑몰 내부 엘리베이터·에스컬레이터로 진입 가능하나, 항구 목조 다리(Rambla de Mar)가 선박 통항 시 개폐될 수 있고 저녁 시간대 실내 좌석이 혼잡할 수 있으므로 18:30 이전 도착 및 택시 하차 후 단거리 이동 권장.",
+      sources: [
+        { label: "Time Out Market Barcelona 공식 안내", url: "https://www.timeout.com/time-out-market-barcelona" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Time Out Market Barcelona Maremagnum Port Vell"
+    },
+    {
+      id: "pc-bcn-can-culleretes",
+      cityId: "barcelona",
+      cityName: "바르셀로나",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Can Culleretes (칸 쿠예레테스 · 1786년 개업)",
+      categoryKey: "restaurant",
+      typeBadge: "🥘 전통 식당 후보 (추가 음식점 후보 · 카탈루냐 최고령 식당)",
+      typeColor: "restaurant",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+      highlights: "1786년 문을 연 바르셀로나 최고령 전통 카탈루냐 레스토랑. 시금치와 건포도·잣을 곁들인 카넬로니(Canelons), 야생 멧돼지 스튜(Civet de senglar), 구운 대구요리, 크레마 카탈라나(Crema Catalana)",
+      hours: "점심 화~일 13:30~16:00 / 저녁 목~토 20:00~22:30 안내 (월요일 휴무, 일·화·수 저녁 미운영)",
+      verifyNotice: "방문 전 확인 · 요일별 저녁 영업 여부 및 사전 예약 조건 당일 변경 가능",
+      seniorCaution: "고딕 지구 좁은 보행자 골목(Carrer d'en Quintana)에 위치해 차량이 식당 문 앞까지 진입하지 못합니다. 람블라스 거리(레이알 광장 인근)나 페란 거리에서 택시 하차 후 돌바닥 골목을 약 3~5분 걸어야 하며, 내부 홀 이동 시 바닥 단차에 주의하세요.",
+      sources: [
+        { label: "Can Culleretes 공식 웹사이트", url: "https://culleretes.com/en/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Restaurant Can Culleretes Carrer d'en Quintana Barcelona"
+    },
+    {
+      id: "pc-bcn-mirador-torre-glories",
+      cityId: "barcelona",
+      cityName: "바르셀로나",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Mirador Torre Glòries (미라도르 토레 글로리에스 전망대)",
+      categoryKey: "viewpoint",
+      typeBadge: "🌇 일몰·초저녁 전망대 (동절기 18:30 마감 · 심야 야경 아님)",
+      typeColor: "viewpoint",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=800&q=80",
+      highlights: "지상 125m(30층) 유리 돔에서 사그라다 파밀리아, 에익샴플레 격자 도심, 지중해 해안선을 360도로 조망하는 실내 전망대. 11월 일몰(17:30경)에 맞춘 일몰~초저녁 매직아워 전망에 적합합니다.",
+      hours: "11~3월(동절기) 수~월 10:00~18:30, 화요일 휴관, 마지막 입장 17:30 안내 (야심 시간대 미운영)",
+      verifyNotice: "방문 전 확인 · 시즌별·요일별 운영시간 및 기상/행사에 따른 당일 변경 가능",
+      seniorCaution: "지하 1층 전시장 관람 후 고속 엘리베이터로 30층 전망대에 오르내리므로 계단 오르막 부담은 적으나, 지하 전시 동선이 다소 길어 피로 시 전망대 층 위주로 관람하고 인접한 Westfield Glòries 쇼핑몰이나 택시 승강장으로 이동하세요.",
+      sources: [
+        { label: "Mirador Torre Glòries 공식 운영시간·교통 안내", url: "https://www.miradortorreglories.com/en/plan-your-visit/opening-times-and-getting-here/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mirador Torre Glories Avinguda Diagonal Barcelona"
+    },
+
+    // ==================== 2. 그라나다 (2곳) ====================
+    {
+      id: "pc-grx-mercado-san-agustin",
+      cityId: "granada",
+      cityName: "그라나다",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Mercado de San Agustín (산 아구스틴 시장)",
+      categoryKey: "daymarket",
+      typeBadge: "☀️ 낮 시간 전통 시장 (야시장 아님 · 오전~낮 방문 전용)",
+      typeColor: "daymarket",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=800&q=80",
+      highlights: "그라나다 대성당 인근의 실내 로컬 식재료·타파스 전통 시장. 신선한 지중해 해산물 구이, 트레베레스산 하몬(Jamón de Trevélez), 올리브 절임, 안달루시아 치즈와 낮 시간 타파스 바 체험 (야간에 열리는 시장이 아닌 낮 시장)",
+      hours: "낮 시장 운영 (통상 월~토 09:00~15:00경, 일요일 휴무 · 시장 내 바/식음 코너는 업장별 상이)",
+      verifyNotice: "방문 전 확인 · 점포별 영업시간 및 공휴일 휴무 당일 변경 가능",
+      seniorCaution: "그란 비아(Gran Vía de Colón) 대로에서 가까우나 주변 골목에 완만한 경사와 돌바닥 구간이 있으며, 점심 피크 시간(13:30~15:00)에는 스탠딩 바 좌석이 부족할 수 있어 오전 11:30~12:30 사이 여유로운 방문을 권장합니다.",
+      sources: [
+        { label: "Granada 공식 관광청 미식 공간 안내", url: "https://turismo.granada.org/en/espacios-gastronomicos" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mercado de San Agustin Granada"
+    },
+    {
+      id: "pc-grx-mirador-san-cristobal",
+      cityId: "granada",
+      cityName: "그라나다",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Mirador de San Cristóbal (산 크리스토발 전망대)",
+      categoryKey: "viewpoint",
+      typeBadge: "🚕 해질녘 전망대 (택시 왕복 조건 · 늦은 밤 방문 비권장)",
+      typeColor: "viewpoint",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1548625361-16800b328a79?auto=format&fit=crop&w=800&q=80",
+      highlights: "기존 산 니콜라스(San Nicolás) 전망대와 다른 각도에서 알함브라 궁전의 서쪽 성곽, 11세기 지리드 성벽(Muralla Zirí), 그라나다 대성당과 시에라 네바다 설산을 조망하는 알바이신 상부 전망대",
+      hours: "야외 개방 공간 (야간 별도 운영·관리 시간 미확인 · 해질 무렵 방문 한정 권장)",
+      verifyNotice: "방문 전 확인 · 야간 운영시간 미확인 · 기상 및 일몰 시각 사전 확인 필수",
+      seniorCaution: "⚠️ 알바이신 지구의 언덕길이 매우 가파르고 자갈돌 계단(Cuesta de Alhacaba 등)이 길게 이어져 부모님 도보 오르내리기는 무릎에 큰 무리가 됩니다. 반드시 해질 무렵 택시로 전망대 광장 바로 옆까지 왕복 이동(하차한 택시 기사님께 10~15분 대기 요청 또는 호출 앱 활용)하시고, 가로등이 어둡고 인적이 드문 늦은 밤 방문은 피하세요.",
+      sources: [
+        { label: "Granada 공식 관광청 산 크리스토발 전망대 안내", url: "https://turismo.granada.org/en/mirador-san-cristobal-viewpoint" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mirador de San Cristobal Granada"
+    },
+
+    // ==================== 3. 말라가 (3곳) ====================
+    {
+      id: "pc-agp-muelle-uno",
+      cityId: "malaga",
+      cityName: "말라가",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Muelle Uno (무에예 우노 · 말라가 항구 다이닝 프롬나드)",
+      categoryKey: "foodhall",
+      typeBadge: "⚓ 항구 산책+저녁 식사 구역 (식당별 운영시간 상이 · 제2장 1줄 요약 상세화)",
+      typeColor: "foodhall",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (식사+전망 원스톱): 지중해 요트 항구·알카사바 야간 조명 전망 산책과 해변 레스토랑 저녁 식사를 한 구역에서 한 번에 해결할 수 있어 이동 피로가 매우 적습니다.",
+      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
+      highlights: "말라가 항구 1부두를 따라 조성된 야외 해안 산책로 겸 레스토랑·카페 구역. 퐁피두 센터 컬러 큐브, 지중해 해산물 파에야·생선구이 레스토랑, 젤라토 카페 및 말라가 대성당·알카사바 해질녘 야경 조망",
+      hours: "보행 산책로 개방 / 상점 통상 월~토 10:00~22:00 / 식음업장·레스토랑은 식당별 운영시간 상이 (통상 12:00~23:30 내외 안내)",
+      verifyNotice: "방문 전 확인 · 식당별 운영시간 및 브레이크 타임 상이 · 당일 변경 가능",
+      seniorCaution: "항구 산책로 보도 폭이 넓고 벤치가 잘 갖춰져 있으나, 입구에서 해변 끝 파롤라(등대)까지 왕복 거리가 꽤 길고 구역 내 지상↔지하/상부 연결 구간에 계단·경사로가 있으므로 엘리베이터 위치를 확인하고 해안 초입 레스토랑 위주로 동선을 짧게 잡으세요.",
+      sources: [
+        { label: "Muelle Uno 공식 운영시간 안내", url: "https://www.muelleuno.com/en/schedule/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Muelle Uno Puerto de Malaga"
+    },
+    {
+      id: "pc-agp-lolita-skyview",
+      cityId: "malaga",
+      cityName: "말라가",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Lolita Skyview Pool & Lounge (Only YOU Hotel Málaga 8층)",
+      categoryKey: "rooftop",
+      typeBadge: "🍹 루프톱 바 · 일몰/야경 전망 (수영장 투숙객 전용 분리 안내)",
+      typeColor: "rooftop",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (음료/스낵+전망 원스톱): 라리오스 거리 초입 호텔 엘리베이터로 바로 올라가 앉아서 알카사바·항구 석양과 음료를 함께 즐길 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80",
+      highlights: "알라메다 프린시팔과 말라가 항구, 알카사바 성곽, 히브랄파로 언덕을 내려다보는 8층 루프톱 라운지 바. 칵테일, 안달루시아 와인, 가벼운 스낵·타파스 이용 가능.\n⚠️ [수영장 vs 바 이용 분리 안내]: 루프톱 인피니티 풀(수영장) 및 선베드 구역은 호텔 투숙객 전용(Hotel Guests Only)이며, 비투숙 외부 방문객은 루프톱 바·테라스 식음 구역만 이용할 수 있습니다.",
+      hours: "루프톱 바 시즌·요일별 상이 (추동절기 통상 낮~초저녁/야간 탄력 운영 · 수영장은 투숙객 전용 주간 운영)",
+      verifyNotice: "방문 전 확인 · 계절·기상(강풍/우천)·대관 행사에 따른 바 운영시간 및 비투숙객 입장 조건 당일 확인 필수",
+      seniorCaution: "호텔 로비에서 엘리베이터로 8층까지 이동 가능하나, 루프톱 내 일부 테라스 데크에 단차가 있고 해질녘 바닷바람이 쌀쌀할 수 있으므로 부모님용 가디건·머플러를 꼭 지참하세요.",
+      sources: [
+        { label: "Only YOU Hotel Málaga – Lolita Skyview 공식 안내", url: "https://www.onlyyouhotels.com/en/hotels/only-you-hotel-malaga/lolita/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Lolita Skyview Only YOU Hotel Malaga Alameda Principal"
+    },
+    {
+      id: "pc-agp-mercado-atarazanas",
+      cityId: "malaga",
+      cityName: "말라가",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Mercado Central de Atarazanas (아타라사나스 중앙시장)",
+      categoryKey: "daymarket",
+      typeBadge: "☀️ 낮 시간 전통 시장 (야시장 아님 · 오전~낮 방문 전용)",
+      typeColor: "daymarket",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
+      highlights: "14세기 나스르 왕조의 옛 조선소 아치 정문과 대형 스테인드글라스가 보존된 말라가 대표 낮 전통 시장. 갓 튀긴 생선·새우 프리투라(Fritura Malagueña), 해산물 꼬치, 제철 과일, 볶은 아몬드 및 시장 입구 타파스 바 (저녁·야간에는 열지 않는 낮 시장)",
+      hours: "월~토 08:00~15:00 안내 (일요일 및 공휴일 휴무 · 시장 내 타파스 바는 15:30~16:00경 마감 상이)",
+      verifyNotice: "방문 전 확인 · 매대별 마감 시간 및 지역 공휴일 휴무 여부 당일 확인",
+      seniorCaution: "출입구 경사로가 있으나 오전 12:30 이후에는 수산 코너 통로가 물기로 미끄럽고 인파로 매우 붐비며 앉을 의자가 적은 편입니다. 부모님 동행 시 비교적 한산한 오전 10:00~11:30 사이에 가볍게 둘러보시는 것을 권장합니다.",
+      sources: [
+        { label: "Málaga 공식 관광청 아타라사나스 중앙시장 안내", url: "https://visita.malaga.eu/en/what-to-see-and-do/culture/historic-monuments/noteworthy-buildings/central-market-of-atarazanas-p107808" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mercado Central de Atarazanas Malaga"
+    },
+
+    // ==================== 4. 세비야 (2곳) ====================
+    {
+      id: "pc-svq-mercado-triana",
+      cityId: "seville",
+      cityName: "세비야",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Mercado de Triana (트리아나 시장 · 매대/식음업장 분리 운영)",
+      categoryKey: "foodhall",
+      typeBadge: "🥘 낮 시장 매대 + 저녁 식음업장 분리 운영 (일요일 저녁 미운영)",
+      typeColor: "foodhall",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (식사+전망 연계): 트리아나 다리 바로 끝자락에 위치해 강변 야경 조망과 저녁 타파스 식사를 짧은 동선 안에서 해결할 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1515443961218-a51367888e4b?auto=format&fit=crop&w=800&q=80",
+      highlights: "트리아나 다리 서쪽 끝 옛 산 호르헤 성(Castillo de San Jorge) 유적 위에 자리한 실내 시장. 낮에는 청과·정육·하몬·치즈 전통 매대가 열리고, 시장 매대가 닫힌 뒤에도 내부 타파스 바·레스토랑·수제맥주 등 식음업장이 저녁에 운영됩니다.",
+      hours: "• 시장 매대(Puestos): 평일·토요일(월~토) 09:00~14:30 안내\n• 식음업장(Restauración): 월~토 18:00~24:00 안내 (낮 영업 병행 업장 상이)\n• ⚠️ 일요일 저녁은 운영하지 않음 (일요일은 일부 식음업장 낮 시간만 제한 운영)",
+      verifyNotice: "방문 전 확인 · 업장별 저녁 오픈/마감 시간 상이 · 일요일 저녁 미운영 주의",
+      seniorCaution: "알토사노 광장(Plaza del Altozano) 쪽 주 출입구로 진입하면 단차 부담이 적으나, 강변 하부 산책로에서 올라오는 계단 코스는 피하세요. 시장 내부 통로가 좁고 저녁 시간대 바 높은 의자(스툴)가 많으므로 등받이 있는 테이블 좌석 보유 매장을 먼저 확인하세요.",
+      sources: [
+        { label: "Mercado de Triana 공식 운영시간 안내", url: "https://mercadodetrianasevilla.com/horarios/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mercado de Triana Plaza del Altozano Seville"
+    },
+    {
+      id: "pc-svq-puente-triana-betis",
+      cityId: "seville",
+      cityName: "세비야",
+      country: "스페인",
+      flag: "🇪🇸",
+      name: "Puente de Triana & Calle Betis (트리아나 다리 & 베티스 강변 거리)",
+      categoryKey: "viewpoint",
+      typeBadge: "🌉 강 건너 야경 전망 후보 (황금의 탑 코스와 다른 서안 파노라마)",
+      typeColor: "viewpoint",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (식사+야경 원스톱): 베티스 강변 레스토랑 테라스에 착석해 저녁 식사를 하며 강 건너 황금의 탑·대성당 히랄다 탑 야경을 동시에 감상할 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1558642084-fd07fae5282e?auto=format&fit=crop&w=800&q=80",
+      highlights: "기존 동안(황금의 탑) 코스와 달리 과달키비르강 서안(트리아나 지구)에서 강 건너로 세비야 대성당·히랄다 탑·투우장·황금의 탑의 수면 반영 야경과 아치형 철교(이사벨 2세 다리) 조명을 정면으로 감상하는 야경 및 강변 다이닝 코스",
+      hours: "야외 교량 및 강변 거리 상시 개방 (야간 경관 조명은 일몰 후 점등 · Calle Betis 식당가 영업시간은 업장별 상이)",
+      verifyNotice: "방문 전 확인 · 계절별 조명 점등 시각 및 강변 레스토랑 영업시간 당일 확인",
+      seniorCaution: "트리아나 다리 위 보도는 완만한 아치형 경사가 있으며, 베티스 거리(Calle Betis) 일부 구간은 돌바닥(코블스톤)이고 강변 낮은 계단으로 내려가는 곳은 난간이 낮아 야간에 내려가지 않는 것이 안전합니다. 알토사노 광장까지 택시로 이동해 강변 상부 보도와 식당 테라스 위주로 즐기세요.",
+      sources: [
+        { label: "Visita Sevilla 공식 – 트리아나 다리 안내", url: "https://visitasevilla.es/en/triana-bridge/" },
+        { label: "Visita Sevilla 공식 – 베티스 거리 안내", url: "https://visitasevilla.es/en/calle-betis/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Puente de Isabel II Puente de Triana Calle Betis Seville"
+    },
+
+    // ==================== 5. 나폴리 (2곳) ====================
+    {
+      id: "pc-nap-pignasecca",
+      cityId: "naples",
+      cityName: "나폴리",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "Mercato della Pignasecca (피냐세카 전통 시장)",
+      categoryKey: "daymarket",
+      typeBadge: "☀️ 낮 시간 전통 시장 (야시장 아님 · Pedamentina 계단 코스와 혼동 주의)",
+      typeColor: "daymarket",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+      highlights: "톨레도 거리(Via Toledo)·몬테산토 역 인근의 활기찬 나폴리 최고령 노천 낮 시장. 고깔 모양 종이에 갓 튀긴 해산물·야채 튀김을 담아주는 쿠오포(Cuoppo), 네 겹으로 접어 들고 먹는 화덕피자 피자 아 포르타폴리오(Pizza a portafoglio), 판자로티(Panzarotti) 등 길거리 미식 후보 (야시장이 아닌 낮 시장)",
+      hours: "낮 시장 운영 (통상 월~토 08:00~19:00경이나 청과·수산 노점은 오후 일찍 마감, 튀김·피자 매장은 매장별 상이 · 일요일 대부분 휴무)",
+      verifyNotice: "방문 전 확인 · 노점 및 개별 튀김·피자 가게별 운영시간 상이",
+      seniorCaution: "⚠️ 산 엘모 성에서 내려오는 414개 급경사 돌계단 코스인 '페다멘티나(Pedamentina a San Martino)'와 절대 혼동하지 마세요! 부모님 동행 시 산 엘모 성에서 계단으로 걸어 내려오지 마시고, 평지에 가까운 톨레도 거리(카리타 광장 방향)나 몬테산토 푸니콜라레·지하철역 출구에서 진입하되, 시장 골목 바닥이 젖어 미끄럽고 오토바이 통행이 있으므로 주의하세요.",
+      sources: [
+        { label: "Visit Naples 공식 – 스페인 지구·피냐세카 안내", url: "https://www.visitnaples.eu/en/neapolitanity/attractions-art-and-culture/what-to-see-in-the-spanish-neighborhood-quartieri-spagnoli" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mercato della Pignasecca Via Pignasecca Naples"
+    },
+    {
+      id: "pc-nap-monte-echia",
+      cityId: "naples",
+      cityName: "나폴리",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "Monte Echia 전망대 & 승강기 (Ascensore Monte Echia)",
+      categoryKey: "viewpoint",
+      typeBadge: "🛗 승강기 전망대 (일요일 14:15 조기 마감 · 11/22 일요일 밤 비추천)",
+      typeColor: "viewpoint",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80",
+      highlights: "산타 루치아 해안(Via Chiatamone / Borgo Marinari 인근)에서 공공 엘리베이터(Ascensore)로 피초팔코네(Pizzofalcone) 언덕 위 테라스에 올라 베수비오 화산, 나폴리만, 카스텔 델 오보, 카프리섬 실루엣을 조망하는 파노라마 전망대",
+      hours: "ANM 승강기 안내: 월~토 07:00~22:00 / 일요일·공휴일 07:00~14:15 안내\n⚠️ [일정 주의]: 확정 일정상 나폴리 입성일인 11월 22일(일요일) 밤에는 승강기가 이미 마감(14:15 종료)되어 맞지 않으므로 일요일 밤 코스로 넣지 마시고, 월·화요일(11/23~11/24) 낮~해질녘 후보로만 고려하세요.",
+      verifyNotice: "방문 전 확인 · ANM 공공 승강기 정기 점검 및 기상에 따른 당일 운행 여부 반드시 사전 확인",
+      seniorCaution: "승강기가 정상 운행할 때는 가파른 언덕 계단을 오르지 않고 전망대에 닿을 수 있으나, 만약 승강기 점검·운행 중단 시 도보 경사로와 계단은 부모님께 무리가 크므로 탑승 전 하부 승강장에서 당일 왕복 운행 여부를 반드시 확인하세요. 상부 전망대 바닥에도 일부 돌길 단차가 있습니다.",
+      sources: [
+        { label: "ANM 나폴리 교통공사 공공 승강기(Ascensori) 공식 시간표", url: "https://www.anm.it/s/ascensori?language=en_US" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Ascensore Monte Echia Via Santa Lucia Naples"
+    },
+
+    // ==================== 6. 피렌체 (3곳) ====================
+    {
+      id: "pc-flr-santa-croce-xmas",
+      cityId: "florence",
+      cityName: "피렌체",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "Piazza Santa Croce 크리스마스 마켓 (산타 크로체 광장 성탄 마켓)",
+      categoryKey: "xmasmarket",
+      typeBadge: "🎄 기간 한정 크리스마스 마켓 (2026.11.14~12.20 시즌 행사 · 여행 기간 중첩)",
+      typeColor: "xmasmarket",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (간식/온음료+야경 원스톱): 성 십자가 대성당 야간 조명 감상과 따뜻한 뱅쇼·독일/토스카나 겨울 먹거리를 한 광장에서 함께 즐길 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=800&q=80",
+      highlights: "피렌체 산타 크로체 대성당 앞 광장에 목조 오두막(Wooden Chalets) 50여 동이 들어서는 대표 겨울 시즌 마켓(Weihnachtsmarkt). 따뜻한 글뤼바인(뱅쇼), 브레첼, 그릴 소시지, 슈톨렌, 굴라쉬 수프, 수제 성탄 오너먼트 및 대성당 파사드 야간 경관",
+      hours: "2026년 11월 14일 ~ 12월 20일 기간 한정 운영 (피렌체 체류 11/25~11/29 일정과 중첩)\n• 월~목 10:00~22:00 / 금~일 10:00~23:00 안내",
+      verifyNotice: "방문 전 확인 · 주최 측 일정·기상 및 개별 부스별 마감시간 당일 변동 가능",
+      seniorCaution: "산타 크로체 광장은 대형 보행자 광장이나 역사적 석재 포장(Pietra Forte)의 이음새와 마켓 목조 부스 주변 전선 보호 덮개 단차가 있으므로 발밑을 주의하세요. 저녁 19시 이후에는 인파가 몰리므로 해질 무렵(16:30~18:00) 방문 후 광장 외곽 카페에서 휴식하거나 택시 승강장으로 이동하는 동선이 편안합니다.",
+      sources: [
+        { label: "FeelFlorence (피렌체 공식 관광포털) 산타 크로체 크리스마스 마켓 안내", url: "https://www.feelflorence.it/en/events/christmas-market-piazza-santa-croce" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Piazza di Santa Croce Florence"
+    },
+    {
+      id: "pc-flr-mercato-centrale",
+      cityId: "florence",
+      cityName: "피렌체",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "Mercato Centrale Firenze (피렌체 중앙시장 2층 실내 푸드홀)",
+      categoryKey: "foodhall",
+      typeBadge: "🍽️ 저녁까지 운영하는 식당가/푸드홀 (2층 실내 푸드홀 · 1층 낮 시장과 분리)",
+      typeColor: "foodhall",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (다양한 저녁 식사 원스톱): 확정 숙소(SMN역 인근) 도보권 실내 난방 공간에서 여러 토스카나 요리를 한 자리에서 따뜻하게 골라 드실 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      highlights: "1874년 주세페 멘고니가 설계한 주철·유리 건축물 2층(Primo Piano)에 조성된 대형 미식 푸드홀. 화덕 피자, 생면 트러플 파스타, 곱창 버거(Lampredotto), 키안티 와인, 토스카나 스테이크·수프, 아란치니, 젤라토 등 20여 개 전문 공방 입점 (1층 전통 식재료 시장은 낮 시간에 마감하며 2층 푸드홀이 저녁까지 운영)",
+      hours: "2층 푸드홀: 일~목 09:00~23:00 / 금~토 09:00~24:00 안내 (1층 전통 시장은 월~금 07:00~15:00, 토 07:00~17:00 낮 운영)",
+      verifyNotice: "방문 전 확인 · 공휴일 및 코너별 주문 마감시간 당일 변경 가능",
+      seniorCaution: "건물 내부 엘리베이터와 에스컬레이터로 2층 푸드홀까지 올라갈 수 있어 계단 부담을 줄일 수 있으나, 저녁 19:30~21:00 피크 타임에는 중앙 공용 좌석 확보가 치열합니다. 부모님과 먼저 테이블 좌석을 확보한 뒤 음식을 주문하거나, 테이블 서비스 구역을 활용하세요.",
+      sources: [
+        { label: "Mercato Centrale Firenze 공식 운영시간·이용 안내", url: "https://www.mercatocentrale.com/florence/info/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mercato Centrale Firenze Piazza del Mercato Centrale Florence"
+    },
+    {
+      id: "pc-flr-701-rooftop",
+      cityId: "florence",
+      cityName: "피렌체",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "701 Rooftop Bar (Gallery Hotel Art · 베키오 다리 인근)",
+      categoryKey: "rooftop",
+      typeBadge: "🌇 루프톱 바 · 일몰/초저녁 전망 후보 (11월 날씨·비투숙객 조건 확인 필수)",
+      typeColor: "rooftop",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (음료+일몰 전망 원스톱): 미켈란젤로 광장 언덕 이동 없이 구시가지 중심 호텔 엘리베이터로 올라가 피렌체 지붕선 노을을 감상할 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1543429776-2782fc8e1acd?auto=format&fit=crop&w=800&q=80",
+      highlights: "베키오 다리 바로 옆 Lungarno Collection 계열 Gallery Hotel Art 상층에 위치한 루프톱 바. 팔라초 베키오(베키오 궁전) 아르놀포 탑, 우피치 미술관, 피렌체 붉은 지붕선 너머로 지는 일몰~초저녁 조망 및 시그니처 칵테일·아페리티보",
+      hours: "일몰·초저녁~야간 라운지 운영 (시즌 및 기상 조건에 따라 운영시간 유동적)",
+      verifyNotice: "방문 전 확인 필수 · 11월 기온·우천 시 야외 테라스 개방 여부 및 비투숙객 입장·사전 예약/최소 주문 조건을 방문 당일 호텔 측에 확인하세요.",
+      seniorCaution: "호텔 엘리베이터로 상층 접근이 가능하나 루프톱 출입구 및 테라스 구간에 일부 계단·단차가 있을 수 있으며, 11월 말 해질녘에는 강바람으로 기온이 빠르게 내려가므로 보온 외투 착용 및 실내 좌석 병행 여부를 미리 확인하세요.",
+      sources: [
+        { label: "Lungarno Collection – 701 Rooftop Bar 공식 안내", url: "https://www.lungarnocollection.com/florence/701-rooftop-bar/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "701 Rooftop Bar Gallery Hotel Art Vicolo dell'Oro Florence"
+    },
+
+    // ==================== 7. 로마 (2곳) ====================
+    {
+      id: "pc-rom-mercato-centrale",
+      cityId: "rome",
+      cityName: "로마",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "Mercato Centrale Roma (로마 테르미니 중앙시장 실내 푸드홀)",
+      categoryKey: "foodhall",
+      typeBadge: "🍽️ 저녁까지 운영하는 식당가/푸드홀 (Termini 근처 실내 푸드홀)",
+      typeColor: "foodhall",
+      isOneStopRecommended: true,
+      oneStopReason: "👑 부모님 동행 우선 추천 (기차 이동일·비 오는 날 저녁 원스톱): 테르미니역 바로 옆 실내 공간에서 계단·악천후 걱정 없이 로마 대표 미식을 한곳에서 해결할 수 있습니다.",
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      highlights: "로마 테르미니역(Via Giolitti 36, Cappa Mazzoniana 대리석 홀)에 위치한 대형 실내 미식 푸드홀. 로마식 바삭한 수플리(Supplì), 아티초크 요리(Carciofi), 트러플 생면 파스타, 정통 카르보나라, 장작 화덕 피자, 트라피치노(Trapizzino), 수제 젤라토와 와인 바",
+      hours: "매일 07:30 ~ 자정(00:00) 안내 (개별 입점 공방·레스토랑별 주문 마감 상이)",
+      verifyNotice: "방문 전 확인 · 입점 매장별 마감시간 및 연말·공휴일 운영 변경 가능",
+      seniorCaution: "테르미니역 남서쪽 지올리띠 거리(Via Giolitti 36) 출입구로 들어가면 1층 메인 푸드홀에 바로 진입할 수 있습니다. 2층 레스토랑 구역 이용 시 내부 엘리베이터·에스컬레이터를 이용하시고, 저녁 시간대 역 주변(Via Giolitti 외곽)에서는 소지품 관리에 유의하며 숙소(몬티 지구) 복귀 시에는 정식 택시 승강장을 이용하세요.",
+      sources: [
+        { label: "Mercato Centrale Roma 공식 안내 (Tasting Rome)", url: "https://www.mercatocentrale.com/rome/tasting-rome/" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Mercato Centrale Roma Via Giolitti 36 Termini Rome"
+    },
+    {
+      id: "pc-rom-ponte-sisto",
+      cityId: "rome",
+      cityName: "로마",
+      country: "이탈리아",
+      flag: "🇮🇹",
+      name: "Ponte Sisto (시스토 다리 · 테베레강 야간 보행교)",
+      categoryKey: "viewpoint",
+      typeBadge: "🌉 짧은 야간 산책·강변 전망 후보 (젖은 돌바닥·귀가 동선 주의)",
+      typeColor: "viewpoint",
+      isOneStopRecommended: false,
+      oneStopReason: "",
+      image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80",
+      highlights: "15세기 식스투스 4세 교황 시대에 건설된 테베레강 위 보행자 전용 석조 아치교. 다리 중앙 원형 개구부(Oculus)와 함께 북서쪽 멀리 성 베드로 대성당 쿠폴라 실루엣, 테베레강 양안의 가로등 반영을 차 없는 교량 위에서 감상하는 짧은 야간 산책 후보",
+      hours: "야외 보행교 상시 개방 (일몰~초저녁 17:00~20:00 사이 15~20분 내외 짧은 산책 권장)",
+      verifyNotice: "방문 전 확인 · 우천·강풍 등 기상 악화 시 야간 방문 자제 권장",
+      seniorCaution: "⚠️ [젖은 돌바닥 & 귀가 동선 주의]: 다리와 접근 광장 바닥이 로마 전통 현무암 돌바닥(삼피에트리니, Sampietrini)으로 되어 있어 비나 밤이슬에 젖으면 매우 미끄럽고 다리 양끝에 완만한 경사·계단 단차가 있습니다. 강 아래 둔치(Lungotevere 하부 계단)로는 절대 내려가지 마시고, 다리 위에서만 10~15분 짧게 조망한 뒤 트라스테베레 깊은 골목으로 장거리 도보 이동하지 말고 다리 동쪽(Via dei Pettinari / Largo Arenula) 또는 서쪽(Piazza Trilussa 인근 대로)에서 공식 택시나 우버를 불러 숙소로 안전하게 귀가하세요.",
+      sources: [
+        { label: "Turismo Roma (로마 공식 관광포털) 시스토 다리 안내", url: "https://www.turismoroma.it/en/places/sixtus-bridge" }
+      ],
+      verifiedDate: "2026-10-29 확인",
+      mapQuery: "Ponte Sisto Rome"
+    }
+  ]
+};
+
+if (typeof window !== 'undefined') {
+  window.PRACTICAL_CITY_CANDIDATES_DATA = PRACTICAL_CITY_CANDIDATES_DATA;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.PRACTICAL_CITY_CANDIDATES_DATA = PRACTICAL_CITY_CANDIDATES_DATA;
+}
+
+
+// ==========================================================================
+// 🌐 MULTILINGUAL I18N FOR PRACTICAL CITY CANDIDATES (ko / en / ja / zh)
+// ==========================================================================
+const PRACTICAL_CANDIDATES_I18N = {
+  ui: {
+    ko: {
+      subnavLabel: "📌 섹션 바로가기:",
+      subnavCandidates: "✨ 도시별 추가 맛집·시장·전망 후보 (17선)",
+      subnavMaster: "🥘 빠에야·피자 외 7대 도시 미식 & 회화 24선",
+      subnavDirectory: "🏪 기존 검증 맛집 디렉토리 (92선 & 지도)",
+      kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
+      mainTitle: "🗂️ 도시별 추가 맛집 · 전통시장 · 푸드홀 · 일몰·야경 후보 17선",
+      mainDesc: "기존 페이지에 수록된 장소와 중복되지 않는 추가 후보만 엄선했습니다. 부모님 동행 시 늦은 밤 장거리 보행보다 <strong>저녁 식사와 전망·산책을 한 장소에서 해결할 수 있는 원스톱 후보</strong>를 우선 추천하며, <strong>‘낮 시간 전통 시장’·‘저녁까지 운영하는 식당가/푸드홀’·‘기간 한정 크리스마스 마켓’·‘일몰·초저녁·야경 전망’</strong>을 명확히 구분해 안내합니다.",
+      policyNoNightMarket: "🚫 전통 야시장 오표기 배제",
+      policySameDayChange: "🔎 방문 당일 운영 변경 가능성 명시",
+      policyVerifiedDate: "📌 공식 출처 · 확인일(2026-10-29) 표기",
+      dedupSummary: "✅ <strong>중복 대조 완료:</strong> 바르셀로나·그라나다·말라가·세비야·나폴리·피렌체·로마 7개 도시 기존 데이터 대조 완료",
+      dedupBtnOpen: "기존 수록 장소 vs 신규 추가 대조표 접기 ▲",
+      dedupBtnClosed: "기존 수록 장소 vs 신규 추가 대조표 보기 ▼",
+      dedupExistingLabel: "기존 수록:",
+      dedupAddedLabel: "신규 추가·보강:",
+      cityFilterLabel: "📍 도시별 바로 찾기 (7개 도시)",
+      typeFilterLabel: "🏷️ 장소 유형별 필터 (낮 시장 · 저녁 푸드홀 · 크리스마스 마켓 · 전망 분리)",
+      cityAll: "🌐 전체 도시",
+      cities: {
+        barcelona: "🇪🇸 바르셀로나",
+        granada: "🇪🇸 그라나다",
+        malaga: "🇪🇸 말라가",
+        seville: "🇪🇸 세비야",
+        naples: "🇮🇹 나폴리",
+        florence: "🇮🇹 피렌체",
+        rome: "🇮🇹 로마"
+      },
+      cityEnMap: {
+        barcelona: "Barcelona",
+        granada: "Granada",
+        malaga: "Málaga",
+        seville: "Seville",
+        naples: "Naples",
+        florence: "Florence",
+        rome: "Rome"
+      },
+      types: {
+        all: "전체 유형",
+        evening_food_hall: "저녁까지 운영하는 식당가/푸드홀·식당",
+        evening_view: "일몰·초저녁·야경 전망 & 루프톱",
+        day_market: "낮 시간 전통 시장 (야시장 아님)",
+        christmas_market: "기간 한정 크리스마스 마켓"
+      },
+      subTypeTags: {
+        foodhall: "실내·항구 저녁 푸드홀/다이닝",
+        restaurant: "전통 식당 추가 후보",
+        viewpoint: "일몰·초저녁·야경 전망",
+        rooftop: "루프톱 바 · 일몰/야경 전망",
+        daymarket: "낮 시간 전통 시장 (야시장 아님)",
+        xmasmarket: "2026 시즌 한정 크리스마스 마켓"
+      },
+      oneStopToggle: "🌟 부모님 동행 원스톱 추천만 보기 (식사+전망·산책 한곳 해결)",
+      savedToggle: "⭐ 저장한 후보만 보기",
+      searchPlaceholder: "장소명, 도시, 먹거리(빠에야·피자·루프톱 등) 검색...",
+      clearFilterBtn: "초기화 ✕",
+      resultCountPrefix: "현재 표시 중:",
+      resultCountMiddle: "개",
+      resultCountSuffix: "/ 전체 17개 후보",
+      resultDisclaimer: "💡 운영시간이 확인됐더라도 방문 당일 현지 사정에 따라 변경될 수 있으므로 반드시 공식 출처를 통해 <strong>방문 전 확인</strong>하세요.",
+      oneStopBannerTitle: "🌟 부모님 동행 우선 추천 (식사+전망·산책 원스톱)",
+      labelHighlights: "🍴 대표 먹거리 · 전망",
+      labelHours: "⏰ 확인된 운영시간",
+      labelHoursCaveat: "(방문 당일 변경 가능성 있음 · 방문 전 확인)",
+      labelSeniorCaution: "🦯 부모님 동행 시 계단·경사·이동 주의",
+      labelOfficialSource: "📌 공식 출처",
+      labelVerifiedDate: "확인일: 2026-10-29",
+      btnMap: "📍 구글 지도 ↗",
+      btnSave: "⭐ 후보 저장",
+      btnSaved: "✓ 후보 저장됨",
+      emptyTitle: "선택하신 필터 조건에 해당하는 후보 장소가 없습니다.",
+      emptyDesc: "도시나 유형 필터를 초기화하면 7개 도시 17개 추가 후보를 모두 확인하실 수 있습니다.",
+      emptyResetBtn: "필터 전체 초기화"
+    },
+    en: {
+      subnavLabel: "📌 Quick Jump:",
+      subnavCandidates: "✨ 17 Added City Dining, Market & View Candidates",
+      subnavMaster: "🥘 24 Must-Try Regional Dishes & Phrases (7 Cities)",
+      subnavDirectory: "🏪 Verified 92-Spot Restaurant Directory & Map",
+      kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
+      mainTitle: "🗂️ 17 Added City Candidates: Restaurants, Day Markets, Food Halls & Sunset/Night Views",
+      mainDesc: "Carefully curated non-duplicate candidates cross-checked against existing guide entries. For traveling with senior parents, we prioritize <strong>one-stop spots combining dinner and scenic views/strolls in one location</strong> over late-night long walks, and strictly distinguish between <strong>Daytime Traditional Markets</strong>, <strong>Evening Dining Areas/Food Halls</strong>, <strong>Seasonal Christmas Markets</strong>, and <strong>Sunset/Early-Evening/Night Viewpoints</strong>.",
+      policyNoNightMarket: "🚫 No False 'Night Market' Labels",
+      policySameDayChange: "🔎 Same-Day Schedule Change Caveat",
+      policyVerifiedDate: "📌 Official Sources · Verified 2026-10-29",
+      dedupSummary: "✅ <strong>Deduplication Complete:</strong> Cross-checked against existing entries across all 7 cities (Barcelona, Granada, Málaga, Seville, Naples, Florence, Rome)",
+      dedupBtnOpen: "Hide Existing vs. Newly Added Comparison ▲",
+      dedupBtnClosed: "Show Existing vs. Newly Added Comparison ▼",
+      dedupExistingLabel: "Existing Entries:",
+      dedupAddedLabel: "Newly Added / Detailed:",
+      cityFilterLabel: "📍 Filter by City (7 Cities)",
+      typeFilterLabel: "🏷️ Filter by Venue Category (Day Market · Evening Food Hall · Christmas Market · Viewpoint)",
+      cityAll: "🌐 All Cities",
+      cities: {
+        barcelona: "🇪🇸 Barcelona",
+        granada: "🇪🇸 Granada",
+        malaga: "🇪🇸 Málaga",
+        seville: "🇪🇸 Seville",
+        naples: "🇮🇹 Naples",
+        florence: "🇮🇹 Florence",
+        rome: "🇮🇹 Rome"
+      },
+      cityEnMap: {
+        barcelona: "Barcelona",
+        granada: "Granada",
+        malaga: "Málaga",
+        seville: "Seville",
+        naples: "Naples",
+        florence: "Florence",
+        rome: "Rome"
+      },
+      types: {
+        all: "All Categories",
+        evening_food_hall: "Evening Food Halls / Dining Zones & Restaurants",
+        evening_view: "Sunset, Early-Evening & Night Views / Rooftops",
+        day_market: "Daytime Traditional Markets (Not Night Markets)",
+        christmas_market: "Seasonal Christmas Market"
+      },
+      subTypeTags: {
+        foodhall: "Evening Food Hall / Waterfront Dining",
+        restaurant: "Traditional Restaurant Candidate",
+        viewpoint: "Sunset / Early-Evening / Night Viewpoint",
+        rooftop: "Rooftop Bar · Sunset/Evening View",
+        daymarket: "Daytime Market Only (Not a Night Market)",
+        xmasmarket: "2026 Seasonal Christmas Market"
+      },
+      oneStopToggle: "🌟 Senior Parent Priority: One-Stop Dinner + View/Stroll Only",
+      savedToggle: "⭐ Saved Candidates Only",
+      searchPlaceholder: "Search venue, city, food (tapas, cuoppo, rooftop, etc.)...",
+      clearFilterBtn: "Reset ✕",
+      resultCountPrefix: "Showing:",
+      resultCountMiddle: "",
+      resultCountSuffix: "of 17 candidates",
+      resultDisclaimer: "💡 Even where hours are verified, schedules may change on the day of visit due to weather, holidays, or vendor rules—always <strong>verify before visiting</strong> via official links.",
+      oneStopBannerTitle: "🌟 Priority Pick for Senior Parents (One-Stop Dinner + View/Stroll)",
+      labelHighlights: "🍴 Signature Food & Scenic Highlights",
+      labelHours: "⏰ Verified Operating Hours",
+      labelHoursCaveat: "(Subject to change on the day of visit · Verify before visiting)",
+      labelSeniorCaution: "🦯 Senior Parent Mobility Caution (Stairs, Slopes & Transfers)",
+      labelOfficialSource: "📌 Official Sources",
+      labelVerifiedDate: "Verified: 2026-10-29",
+      btnMap: "📍 Google Maps ↗",
+      btnSave: "⭐ Save Candidate",
+      btnSaved: "✓ Candidate Saved",
+      emptyTitle: "No candidate venues match your current filters.",
+      emptyDesc: "Reset the city or category filters to view all 17 added candidates across 7 cities.",
+      emptyResetBtn: "Reset All Filters"
+    },
+    ja: {
+      subnavLabel: "📌 セクション移動:",
+      subnavCandidates: "✨ 都市別 追加グルメ・市場・展望候補 (17選)",
+      subnavMaster: "🥘 パエリア・ピザ以外の7大都市名物＆会話24選",
+      subnavDirectory: "🏪 既存検証済みレストラン一覧 (92選＆地図)",
+      kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
+      mainTitle: "🗂️ 都市別 追加グルメ・伝統市場・フードホール・夕景/夜景候補 17選",
+      mainDesc: "既存ページに掲載されているスポットと重複しない追加候補のみを厳選しました。ご両親同伴時は深夜の長距離歩行よりも<strong>夕食と展望・散策を1か所で完結できるワンストップ候補</strong>を優先推奨し、<strong>「昼の伝統市場」「夜まで営業する飲食店街／フードホール」「期間限定クリスマスマーケット」「日没・宵の口・夜景展望」</strong>を明確に区別して案内します。",
+      policyNoNightMarket: "🚫 「夜市」の誤表記を排除",
+      policySameDayChange: "🔎 訪問当日の営業変更可能性を明記",
+      policyVerifiedDate: "📌 公式出典・確認日(2026-10-29)明記",
+      dedupSummary: "✅ <strong>重複照合済み:</strong> バルセロナ・グラナダ・マラガ・セビリア・ナポリ・フィレンツェ・ローマ7都市の既存データと照合完了",
+      dedupBtnOpen: "既存掲載スポット vs 新規追加の対照表を閉じる ▲",
+      dedupBtnClosed: "既存掲載スポット vs 新規追加の対照表を見る ▼",
+      dedupExistingLabel: "既存掲載:",
+      dedupAddedLabel: "新規追加・補強:",
+      cityFilterLabel: "📍 都市別に探す (7都市)",
+      typeFilterLabel: "🏷️ 施設タイプ別フィルター (昼市場・夜フードホール・クリスマス市・展望を分離)",
+      cityAll: "🌐 全都市",
+      cities: {
+        barcelona: "🇪🇸 バルセロナ",
+        granada: "🇪🇸 グラナダ",
+        malaga: "🇪🇸 マラガ",
+        seville: "🇪🇸 セビリア",
+        naples: "🇮🇹 ナポリ",
+        florence: "🇮🇹 フィレンツェ",
+        rome: "🇮🇹 ローマ"
+      },
+      cityEnMap: {
+        barcelona: "Barcelona",
+        granada: "Granada",
+        malaga: "Málaga",
+        seville: "Seville",
+        naples: "Naples",
+        florence: "Florence",
+        rome: "Rome"
+      },
+      types: {
+        all: "すべてのタイプ",
+        evening_food_hall: "夜まで営業する飲食店街／フードホール・老舗食堂",
+        evening_view: "日没・宵の口・夜景展望＆ルーフトップ",
+        day_market: "昼の伝統市場 (夜市ではありません)",
+        christmas_market: "期間限定クリスマスマーケット"
+      },
+      subTypeTags: {
+        foodhall: "屋内・港湾の夜フードホール／ダイニング",
+        restaurant: "伝統レストラン追加候補",
+        viewpoint: "日没・宵の口・夜景展望",
+        rooftop: "ルーフトップバー・日没/夕景展望",
+        daymarket: "昼の伝統市場 (夜市ではありません)",
+        xmasmarket: "2026シーズン限定クリスマスマーケット"
+      },
+      oneStopToggle: "🌟 ご両親同伴ワンストップ推奨のみ表示 (食事＋展望・散策を1か所で解決)",
+      savedToggle: "⭐ 保存した候補のみ表示",
+      searchPlaceholder: "スポット名、都市、名物（タパス・クオッポ・ルーフトップ等）を検索...",
+      clearFilterBtn: "リセット ✕",
+      resultCountPrefix: "現在表示中:",
+      resultCountMiddle: "件",
+      resultCountSuffix: "/ 全17件",
+      resultDisclaimer: "💡 営業時間が確認済みであっても、訪問当日の現地事情や天候により変更される可能性があるため、必ず公式出典にて<strong>訪問前に確認</strong>してください。",
+      oneStopBannerTitle: "🌟 ご両親同伴 優先推奨 (食事＋展望・散策ワンストップ)",
+      labelHighlights: "🍴 代表グルメ・展望の見どころ",
+      labelHours: "⏰ 確認済み営業時間",
+      labelHoursCaveat: "(訪問当日に変更の可能性あり・訪問前に要確認)",
+      labelSeniorCaution: "🦯 ご両親同伴時の階段・勾配・移動に関する注意",
+      labelOfficialSource: "📌 公式出典",
+      labelVerifiedDate: "確認日: 2026-10-29",
+      btnMap: "📍 Googleマップ ↗",
+      btnSave: "⭐ 候補を保存",
+      btnSaved: "✓ 保存済み",
+      emptyTitle: "選択した条件に一致する候補スポットがありません。",
+      emptyDesc: "都市またはタイプフィルターをリセットすると、7都市17件の追加候補をすべて確認できます。",
+      emptyResetBtn: "フィルターをすべてリセット"
+    },
+    zh: {
+      subnavLabel: "📌 章节快速跳转:",
+      subnavCandidates: "✨ 按城市新增美食·市场·夜景候选 (17选)",
+      subnavMaster: "🥘 除海鲜饭·披萨外的7大城市名菜与会话24选",
+      subnavDirectory: "🏪 既有验证餐厅名录 (92选与地图)",
+      kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
+      mainTitle: "🗂️ 7大城市新增美食 · 传统市场 · 美食大厅 · 日落与夜景候选 17选",
+      mainDesc: "严格对照现有页面数据，仅收录不重复的新增候选地点。携父母同行时，相比深夜长距离步行，优先推荐<strong>可在同一地点同时解决晚餐与观景/散步的一站式候选地</strong>，并严格区分<strong>“白天传统市场”、“营业至晚间的餐饮区/室内美食大厅”、“期间限定圣诞集市”与“日落/傍晚/夜景展望台”</strong>。",
+      policyNoNightMarket: "🚫 杜绝误标为“传统夜市”",
+      policySameDayChange: "🔎 注明到访当日营业时间变动可能",
+      policyVerifiedDate: "📌 标注官方来源与核实日(2026-10-29)",
+      dedupSummary: "✅ <strong>查重核对完成:</strong> 已完成巴塞罗那、格拉纳达、马拉加、塞维利亚、那不勒斯、佛罗伦萨、罗马7城既有数据比对",
+      dedupBtnOpen: "收起既有收录地点 vs 新增候选对照表 ▲",
+      dedupBtnClosed: "查看既有收录地点 vs 新增候选对照表 ▼",
+      dedupExistingLabel: "既有收录:",
+      dedupAddedLabel: "新增与补充:",
+      cityFilterLabel: "📍 按城市快速查找 (7座城市)",
+      typeFilterLabel: "🏷️ 按场所类型筛选 (严格区分白天市场 · 晚间美食大厅 · 圣诞集市 · 展望台)",
+      cityAll: "🌐 全部城市",
+      cities: {
+        barcelona: "🇪🇸 巴塞罗那",
+        granada: "🇪🇸 格拉纳达",
+        malaga: "🇪🇸 马拉加",
+        seville: "🇪🇸 塞维利亚",
+        naples: "🇮🇹 那不勒斯",
+        florence: "🇮🇹 佛罗伦萨",
+        rome: "🇮🇹 罗马"
+      },
+      cityEnMap: {
+        barcelona: "Barcelona",
+        granada: "Granada",
+        malaga: "Málaga",
+        seville: "Seville",
+        naples: "Naples",
+        florence: "Florence",
+        rome: "Rome"
+      },
+      types: {
+        all: "全部类型",
+        evening_food_hall: "营业至晚间的餐饮区/美食大厅与老字号餐厅",
+        evening_view: "日落·傍晚·夜景展望与屋顶酒吧",
+        day_market: "白天传统市场 (非夜市)",
+        christmas_market: "期间限定圣诞集市"
+      },
+      subTypeTags: {
+        foodhall: "室内/港口晚间美食大厅与餐饮区",
+        restaurant: "传统老字号餐厅候选",
+        viewpoint: "日落·傍晚·夜景展望",
+        rooftop: "屋顶酒吧 · 日落/夜景展望",
+        daymarket: "白天传统市场 (非夜市)",
+        xmasmarket: "2026季节限定圣诞集市"
+      },
+      oneStopToggle: "🌟 仅看携父母同行优先推荐 (晚餐+观景/散步一站式解决)",
+      savedToggle: "⭐ 仅看已收藏候选",
+      searchPlaceholder: "搜索地点名称、城市、美食（塔帕斯、炸海鲜筒、屋顶吧等）...",
+      clearFilterBtn: "重置 ✕",
+      resultCountPrefix: "当前显示:",
+      resultCountMiddle: "处",
+      resultCountSuffix: "/ 共17处候选",
+      resultDisclaimer: "💡 即便营业时间已核实，到访当日仍可能因天气、节假日或商户安排发生变动，请务必通过官方链接<strong>到访前再次核实</strong>。",
+      oneStopBannerTitle: "🌟 携父母同行优先推荐 (晚餐+观景·散步一站式解决)",
+      labelHighlights: "🍴 代表美食 · 景观亮点",
+      labelHours: "⏰ 已核实营业时间",
+      labelHoursCaveat: "(到访当日可能变动 · 到访前请核实)",
+      labelSeniorCaution: "🦯 携父母同行台阶·坡度·交通注意事项",
+      labelOfficialSource: "📌 官方来源",
+      labelVerifiedDate: "核实日: 2026-10-29",
+      btnMap: "📍 谷歌地图 ↗",
+      btnSave: "⭐ 收藏候选",
+      btnSaved: "✓ 已收藏",
+      emptyTitle: "没有符合当前筛选条件的候选地点。",
+      emptyDesc: "重置城市或类型筛选条件即可查看7座城市全部17处新增候选。",
+      emptyResetBtn: "重置全部筛选"
+    }
+  },
+  dedup: {
+    barcelona: {
+      en: {
+        city: "🇪🇸 Barcelona (11/5–11/11, 6N)",
+        existing: "Ciudad Condal · Restaurante 7 Portes · Puertecillo Sagrada Família · Cervecería Catalana · El Xampanyet · Bar Cañete · Plaça de Gaudí · Santa Caterina & Boqueria Markets (checked against Vinitus · La Paradeta)",
+        added: "Time Out Market Barcelona (indoor evening food hall), Can Culleretes (historic restaurant candidate), Mirador Torre Glòries (sunset/early-evening viewpoint)"
+      },
+      ja: {
+        city: "🇪🇸 バルセロナ (11/5〜11/11・6泊)",
+        existing: "Ciudad Condal・Restaurante 7 Portes・Puertecillo Sagrada Família・Cervecería Catalana・El Xampanyet・Bar Cañete・ガウディ広場・サンタ・カテリーナ市場・ボケリア市場 (Vinitus・La Paradetaも重複除外確認)",
+        added: "Time Out Market Barcelona (屋内夜フードホール)、Can Culleretes (伝統食堂候補)、Mirador Torre Glòries (日没・宵の口展望台)"
+      },
+      zh: {
+        city: "🇪🇸 巴塞罗那 (11/5~11/11，6晚)",
+        existing: "Ciudad Condal · Restaurante 7 Portes · Puertecillo Sagrada Família · Cervecería Catalana · El Xampanyet · Bar Cañete · 高迪广场 · 圣卡特琳娜市场 · 波盖利亚市场 (含对照项 Vinitus · La Paradeta 查重排除)",
+        added: "Time Out Market Barcelona (室内晚间美食大厅)、Can Culleretes (传统餐厅候选)、Mirador Torre Glòries (日落·傍晚展望台)"
+      }
+    },
+    granada: {
+      en: {
+        city: "🇪🇸 Granada (11/13–11/15, 2N)",
+        existing: "Bar Los Diamantes · Calle Navas · Mirador de San Nicolás (checked against Bodegas Castañeda)",
+        added: "Mercado de San Agustín (daytime market only), Mirador de San Cristóbal (dusk viewpoint · round-trip taxi required)"
+      },
+      ja: {
+        city: "🇪🇸 グラナダ (11/13〜11/15・2泊)",
+        existing: "Bar Los Diamantes・ナバス通り(Calle Navas)・サン・ニコラス展望台 (Bodegas Castañedaも重複除外確認)",
+        added: "Mercado de San Agustín (昼の伝統市場)、Mirador de San Cristóbal (夕暮れ展望台・往復タクシー条件)"
+      },
+      zh: {
+        city: "🇪🇸 格拉纳达 (11/13~11/15，2晚)",
+        existing: "Bar Los Diamantes · 纳瓦斯街(Calle Navas) · 圣尼古拉斯展望台 (含对照项 Bodegas Castañeda 查重排除)",
+        added: "Mercado de San Agustín (白天传统市场)、Mirador de San Cristóbal (傍晚展望台·需出租车往返)"
+      }
+    },
+    malaga: {
+      en: {
+        city: "🇪🇸 Málaga (11/15–11/18, 3N)",
+        existing: "El Pimpi · Marisquería Godoy · Calle Larios (checked against Los Mellizos; Muelle Uno expanded from a 1-line summary into a full card with restaurant schedule notes)",
+        added: "Muelle Uno (harbor stroll + dinner zone), Lolita Skyview (rooftop bar · pool separated as hotel-guests-only), Mercado Central de Atarazanas (daytime market)"
+      },
+      ja: {
+        city: "🇪🇸 マラガ (11/15〜11/18・3泊)",
+        existing: "El Pimpi・Marisquería Godoy・ラリオス通り (Los Mellizos除外・第2章で1行言及のMuelle Unoは営業時間・店舗別案内を詳細カード化)",
+        added: "Muelle Uno (港散策＋夕食エリア)、Lolita Skyview (ルーフトップバー・プール宿泊客専用分離)、Mercado Central de Atarazanas (昼の伝統市場)"
+      },
+      zh: {
+        city: "🇪🇸 马拉加 (11/15~11/18，3晚)",
+        existing: "El Pimpi · Marisquería Godoy · 拉里奥斯大街 (排除 Los Mellizos；第2章仅1行提及的 Muelle Uno 补充为含各餐厅营业时间说明的完整卡片)",
+        added: "Muelle Uno (港口散步+晚餐区)、Lolita Skyview (屋顶酒吧·泳池仅限住客区分说明)、Mercado Central de Atarazanas (白天传统市场)"
+      }
+    },
+    seville: {
+      en: {
+        city: "🇪🇸 Seville (11/11–11/12 1N & 11/18–11/22 4N)",
+        existing: "El Rinconcillo · La Brunilda · Restaurante Modesto · Eslava · Bodega Santa Cruz · Las Setas · Plaza de España · Torre del Oro",
+        added: "Mercado de Triana (daytime stalls vs. Mon–Sat evening dining separated; closed Sun evening), Puente de Triana & Calle Betis (west-bank river night view)"
+      },
+      ja: {
+        city: "🇪🇸 セビリア (11/11〜11/12 1泊 ＆ 11/18〜11/22 4泊)",
+        existing: "El Rinconcillo・La Brunilda・Restaurante Modesto・Eslava・Bodega Santa Cruz・ラス・セタス・スペイン広場・黄金の塔",
+        added: "Mercado de Triana (昼の市場売場と夜の飲食店舗を分離案内・日曜夜休業)、Puente de Triana & Calle Betis (対岸からの夜景展望候補)"
+      },
+      zh: {
+        city: "🇪🇸 塞维利亚 (11/11~11/12 1晚 & 11/18~11/22 4晚)",
+        existing: "El Rinconcillo · La Brunilda · Restaurante Modesto · Eslava · Bodega Santa Cruz · 都市阳伞(Las Setas) · 西班牙广场 · 黄金塔",
+        added: "Mercado de Triana (白天市场摊位与晚间餐饮店分离说明·周日晚不营业)、Puente de Triana & Calle Betis (河对岸夜景展望候选)"
+      }
+    },
+    naples: {
+      en: {
+        city: "🇮🇹 Naples (11/22–11/25, 3N)",
+        existing: "Gino Sorbillo · Trattoria Da Nennella · Osteria Il Gobbetto · L'Antica Pizzeria da Michele · Gran Caffè Gambrinus · Piazza del Plebiscito",
+        added: "Mercato della Pignasecca (daytime street-food market · distinct from Pedamentina steps), Monte Echia Elevator Viewpoint (closes 14:15 on Sundays · not for Sun night 11/22)"
+      },
+      ja: {
+        city: "🇮🇹 ナポリ (11/22〜11/25・3泊)",
+        existing: "Gino Sorbillo・Trattoria Da Nennella・Osteria Il Gobbetto・L'Antica Pizzeria da Michele・Gran Caffè Gambrinus・プレビシート広場",
+        added: "Mercato della Pignasecca (昼の伝統市場・階段が多いPedamentinaコースと区別)、Monte Echia展望台エレベーター (日曜14:15終了・11/22日曜夜は非推奨)"
+      },
+      zh: {
+        city: "🇮🇹 那不勒斯 (11/22~11/25，3晚)",
+        existing: "Gino Sorbillo · Trattoria Da Nennella · Osteria Il Gobbetto · L'Antica Pizzeria da Michele · Gran Caffè Gambrinus · 平民表决广场",
+        added: "Mercato della Pignasecca (白天传统市场·切勿与多台阶的Pedamentina混淆)、Monte Echia展望台升降机 (周日14:15早关·不适合11/22周日晚)"
+      }
+    },
+    florence: {
+      en: {
+        city: "🇮🇹 Florence (11/25–11/29, 4N)",
+        existing: "Trattoria Zà Zà · Trattoria Mario · All’Antico Vinaio · Piazzale Michelangelo · Ponte Vecchio",
+        added: "Piazza Santa Croce Christmas Market (seasonal event Nov 14–Dec 20, 2026), Mercato Centrale Firenze (2F evening food hall), 701 Rooftop Bar (sunset/early-evening view)"
+      },
+      ja: {
+        city: "🇮🇹 フィレンツェ (11/25〜11/29・4泊)",
+        existing: "Trattoria Zà Zà・Trattoria Mario・All’Antico Vinaio・ミケランジェロ広場・ヴェッキオ橋",
+        added: "Piazza Santa Croce クリスマスマーケット (2026/11/14〜12/20季節行事)、Mercato Centrale Firenze (2階夜フードホール)、701 Rooftop Bar (日没・宵の口展望)"
+      },
+      zh: {
+        city: "🇮🇹 佛罗伦萨 (11/25~11/29，4晚)",
+        existing: "Trattoria Zà Zà · Trattoria Mario · All’Antico Vinaio · 米开朗基罗广场 · 老桥(Ponte Vecchio)",
+        added: "Piazza Santa Croce 圣诞集市 (2026.11.14~12.20季节活动)、Mercato Centrale Firenze (2楼晚间美食大厅)、701 Rooftop Bar (日落·傍晚展望候选)"
+      }
+    },
+    rome: {
+      en: {
+        city: "🇮🇹 Rome (11/29–12/4, 5N)",
+        existing: "Trattoria Luzzi · Cantina e Cucina · Trattoria Da Enzo al 29 · Roscioli · Giolitti · Tazza d'Oro · Trevi Fountain · Campo de’ Fiori · Spanish Steps",
+        added: "Mercato Centrale Roma (indoor food hall near Termini, open daily until midnight), Ponte Sisto (short evening river walk · wet stone & return taxi caution)"
+      },
+      ja: {
+        city: "🇮🇹 ローマ (11/29〜12/4・5泊)",
+        existing: "Trattoria Luzzi・Cantina e Cucina・Trattoria Da Enzo al 29・Roscioli・Giolitti・Tazza d'Oro・トレヴィの泉・カンポ・デ・フィオーリ・スペイン広場",
+        added: "Mercato Centrale Roma (テルミニ駅近くの屋内フードホール・毎日深夜0時まで)、Ponte Sisto (短時間の夜間散策・濡れた石畳と帰路動線注意)"
+      },
+      zh: {
+        city: "🇮🇹 罗马 (11/29~12/4，5晚)",
+        existing: "Trattoria Luzzi · Cantina e Cucina · Trattoria Da Enzo al 29 · Roscioli · Giolitti · Tazza d'Oro · 特莱维喷泉 · 鲜花广场 · 西班牙阶梯",
+        added: "Mercato Centrale Roma (特米尼车站旁室内美食大厅·每日07:30至午夜)、Ponte Sisto (短途夜间散步与河景候选·注意湿滑石板路与返程路线)"
+      }
+    }
+  },
+  items: {
+    "pc-bcn-timeout-market": {
+      en: {
+        name: "Time Out Market Barcelona (Port Vell Indoor Evening Food Hall)",
+        typeBadge: "🍽️ Evening Dining / Indoor Food Hall (Not a Traditional Night Market)",
+        subTypeTag: "Indoor Evening Food Hall · Waterfront Terrace",
+        verifyBadge: "Verify before visit · Kitchen closing times vary",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Dinner + View in One Spot): Located indoors on the upper floor of Maremagnum, allowing parents to enjoy chef-curated dinners and panoramic Port Vell / Montjuïc terrace views in one place without late-night long walks.",
+        highlights: "Curated indoor dining hall featuring 14 kitchens by acclaimed Barcelona chefs and local restaurants—tapas, grilled seafood, Catalan meats, and artisan desserts—plus outdoor terraces overlooking Port Vell marina (an indoor food hall, not an open-air street night market).",
+        hours: "Guided hours: Daily 10:00–24:00 (last order times vary by individual kitchen and bar).",
+        seniorCaution: "Accessible via elevator and escalator inside the Maremagnum complex. However, the wooden swing bridge (Rambla de Mar) occasionally opens for boats and indoor seating fills up fast at dinner peak—arrive before 18:30 and use a taxi drop-off near Port Vell to minimize walking.",
+        sourceLabels: ["Time Out Market Barcelona Official Guide"]
+      },
+      ja: {
+        name: "Time Out Market Barcelona (タイムアウト・マーケット・バルセロナ)",
+        typeBadge: "🍽️ 夜まで営業する飲食店街／フードホール (屋内夜フードホール・伝統的な夜市ではありません)",
+        subTypeTag: "屋内イブニングフードホール・港湾テラス",
+        verifyBadge: "訪問前に要確認・店舗別ラストオーダー相違",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (食事＋展望ワンストップ): マレマグナム上層階の屋内空間で、ポルト・ヴェルの港夜景テラスと有名シェフの夕食を1か所で完結でき、夜間の長距離歩行を減らせます。",
+        highlights: "バルセロナの名門シェフや地元人気店14店舗が集結した屋内ダイニングホール。タパス、シーフードグリル、カタルーニャ肉料理、特製デザートとポルト・ヴェル港のパノラマテラス眺望（屋外屋台型の伝統的な夜市ではなく快適な屋内フードホール）。",
+        hours: "案内時間: 毎日 10:00〜24:00（入居キッチン・バーごとにラストオーダー時間は異なります）",
+        seniorCaution: "マレマグナム内のエレベーター・エスカレーターでアクセス可能ですが、木造可動橋（Rambla de Mar）が船舶通行時に開閉することがあり、夕食ピーク時は座席が混雑するため18:30前の到着およびタクシー降車後の短距離移動を推奨します。",
+        sourceLabels: ["Time Out Market Barcelona 公式案内"]
+      },
+      zh: {
+        name: "Time Out Market Barcelona (巴塞罗那Time Out室内美食大厅)",
+        typeBadge: "🍽️ 营业至晚间的餐饮区/美食大厅 (室内晚间美食大厅 · 非传统夜市)",
+        subTypeTag: "室内晚间美食大厅 · 港口全景露台",
+        verifyBadge: "到访前请核实 · 各档口截单时间不同",
+        oneStopReason: "👑 携父母同行优先推荐 (晚餐+海景一站式): 位于 Maremagnum 商场上层室内，在同一地点即可享用名厨晚餐并饱览旧港(Port Vell)与蒙锥克山海景露台，避免夜间长距离步行。",
+        highlights: "汇集巴塞罗那14家知名主厨与本地名店的精选塔帕斯、烤海鲜、加泰罗尼亚牛排与手工甜品，设俯瞰旧港游艇码头的全景露台（此为舒适的室内美食大厅，并非露天摊贩式传统夜市）。",
+        hours: "官方指南: 每日 10:00~24:00（各厨房与吧台具体截单时间有所不同）",
+        seniorCaution: "可乘 Maremagnum 商场内部电梯或扶梯直达，但连接港口的木质旋转桥(Rambla de Mar)遇船只通行时会短暂开启，且晚间高峰座位紧张，建议18:30前抵达并乘出租车在港口入口下车短途进入。",
+        sourceLabels: ["Time Out Market Barcelona 官方指南"]
+      }
+    },
+    "pc-bcn-can-culleretes": {
+      en: {
+        name: "Can Culleretes (Historic Catalan Restaurant · Est. 1786)",
+        typeBadge: "🥘 Traditional Restaurant Candidate (Catalonia's Oldest Restaurant)",
+        subTypeTag: "Historic Catalan Dining · Founded 1786",
+        verifyBadge: "Verify before visit · Dinner Thu–Sat only",
+        oneStopReason: "",
+        highlights: "Barcelona's oldest restaurant (founded in 1786) serving classic Catalan home-style dishes: traditional cannelloni (Canelons), wild boar stew (Civet de senglar), baked cod, and Crema Catalana.",
+        hours: "Guided hours: Lunch Tue–Sun 13:30–16:00 / Dinner Thu–Sat 20:00–22:30 (Closed Mondays; no dinner service Sun, Tue, Wed).",
+        seniorCaution: "Located in a narrow pedestrian alley (Carrer d'en Quintana) in the Gothic Quarter where taxis cannot stop right at the door. Expect a 3–5 minute walk over stone paving from La Rambla (near Plaça Reial) or Carrer de Ferran, and watch for slight floor steps between dining rooms.",
+        sourceLabels: ["Can Culleretes Official Website"]
+      },
+      ja: {
+        name: "Can Culleretes (カン・クジェレテス・1786年創業の老舗食堂)",
+        typeBadge: "🥘 伝統レストラン追加候補 (カタルーニャ最古の伝統食堂)",
+        subTypeTag: "1786年創業・伝統カタルーニャ料理",
+        verifyBadge: "訪問前に要確認・夕食は木〜土のみ営業",
+        oneStopReason: "",
+        highlights: "1786年創業のバルセロナ最古の伝統カタルーニャ料理レストラン。ほうれん草と松の実のカネロニ（Canelons）、イノシシの煮込み（Civet de senglar）、タラ料理、クレマ・カタラーナなど。",
+        hours: "案内時間: 昼 火〜日 13:30〜16:00 ／ 夜 木〜土 20:00〜22:30（月曜定休、日・火・水の夜は営業なし）",
+        seniorCaution: "ゴシック地区の狭い歩行者専用路地（Carrer d'en Quintana）にあるため、店舗の目の前まで車は入れません。ランブラス通り（レイアル広場付近）やフェラン通りでタクシーを降りて石畳を約3〜5分歩く必要があり、店内のホール間の段差にもご注意ください。",
+        sourceLabels: ["Can Culleretes 公式ウェブサイト"]
+      },
+      zh: {
+        name: "Can Culleretes (1786年创立 · 加泰罗尼亚最古老传统餐厅)",
+        typeBadge: "🥘 传统餐厅新增候选 (加泰罗尼亚历史最悠久餐厅)",
+        subTypeTag: "1786年创立 · 传统加泰罗尼亚菜",
+        verifyBadge: "到访前请核实 · 晚餐仅周四至周六营业",
+        oneStopReason: "",
+        highlights: "创立于1786年的巴塞罗那最古老传统餐厅。招牌菜包括菠菜松子肉酱酿管面(Canelons)、炖野猪肉(Civet de senglar)、传统鳕鱼料理及焦糖奶冻(Crema Catalana)。",
+        hours: "官方指南: 午餐 周二至周日 13:30~16:00 / 晚餐 周四至周六 20:00~22:30（周一休息，周日、周二、周三晚间不营业）",
+        seniorCaution: "位于哥特区狭窄步行巷(Carrer d'en Quintana)内，车辆无法驶至餐厅正门口。需在兰布拉大街(皇家广场附近)或费兰街下出租车后沿石板路步行约3~5分钟，进入餐厅内部厅堂时请注意地面小台阶。",
+        sourceLabels: ["Can Culleretes 官方网站"]
+      }
+    },
+    "pc-bcn-mirador-torre-glories": {
+      en: {
+        name: "Mirador Torre Glòries (30th-Floor Indoor Sunset Viewpoint)",
+        typeBadge: "🌇 Sunset / Early-Evening Viewpoint (Winter Closing 18:30 · Not Late-Night)",
+        subTypeTag: "Indoor 360° Dome · Sunset / Early Evening",
+        verifyBadge: "Verify before visit · Closed Tuesdays",
+        oneStopReason: "",
+        highlights: "360-degree glass observation dome 125m high (30th floor) overlooking Sagrada Família, the Eixample grid, and the Mediterranean coastline. Ideal for sunset to early-evening magic hour around November dusk (~17:30), rather than late night.",
+        hours: "Nov–Mar (Winter): Wed–Mon 10:00–18:30, Closed Tuesdays, Last admission 17:30 (Not open late at night).",
+        seniorCaution: "A high-speed elevator takes guests to the 30th-floor deck after the basement exhibition level, avoiding stair climbs, though the underground exhibition walk is fairly long. Pace the visit on the observation deck and use the adjacent Westfield Glòries mall or taxi stand afterward.",
+        sourceLabels: ["Mirador Torre Glòries Official Hours & Access"]
+      },
+      ja: {
+        name: "Mirador Torre Glòries (ミラドール・トーレ・グロリエス展望台)",
+        typeBadge: "🌇 日没・宵の口展望台 (冬季18:30閉館・深夜夜景スポットではありません)",
+        subTypeTag: "地上125m屋内展望ドーム・日没〜宵の口",
+        verifyBadge: "訪問前に要確認・火曜休館・最終入場17:30",
+        oneStopReason: "",
+        highlights: "地上125m（30階）のガラスドームからサグラダ・ファミリア、アシャンプラ地区の格子状街並み、地中海を360度一望できる屋内展望台。深夜ではなく11月の日没（17:30頃）に合わせた夕景〜宵の口マジックアワー鑑賞に適しています。",
+        hours: "11〜3月（冬季）: 水〜月 10:00〜18:30、火曜休館、最終入場 17:30案内（深夜時間帯は営業なし）",
+        seniorCaution: "地下1階展示エリアから高速エレベーターで30階展望台へ昇降するため階段の負担は少ないですが、地下展示の歩行導線がやや長いため展望フロア中心に鑑賞し、帰りは隣接するWestfield Glòriesモールまたはタクシー乗り場をご利用ください。",
+        sourceLabels: ["Mirador Torre Glòries 公式営業時間・アクセス案内"]
+      },
+      zh: {
+        name: "Mirador Torre Glòries (荣耀塔30层室内全景展望台)",
+        typeBadge: "🌇 日落·傍晚展望台 (冬季18:30闭馆 · 非深夜夜景)",
+        subTypeTag: "125米高空玻璃穹顶 · 适合日落至初晚",
+        verifyBadge: "到访前请核实 · 周二闭馆 · 最晚入场17:30",
+        oneStopReason: "",
+        highlights: "位于离地125米（30层）玻璃穹顶的360度室内展望台，可俯瞰圣家堂、扩展区八角街区与地中海海岸线。适合契合11月日落（约17:30）的日落至初晚蓝调时刻，而非深夜时段。",
+        hours: "11月至次年3月（冬季）: 周三至周一 10:00~18:30，周二闭馆，最晚入场 17:30（深夜时段不开放）",
+        seniorCaution: "参观地下1层展区后可乘高速电梯直达30层观景台，无爬楼梯负担，但地下展厅步行路线稍长；若父母体力有限，建议以30层观景层为主，结束后前往紧邻的 Westfield Glòries 商场休息或搭乘出租车。",
+        sourceLabels: ["Mirador Torre Glòries 官方开放时间与交通指南"]
+      }
+    },
+    "pc-grx-mercado-san-agustin": {
+      en: {
+        name: "Mercado de San Agustín (Granada Indoor Daytime Market)",
+        typeBadge: "☀️ Daytime Traditional Market (Not a Night Market · Morning–Afternoon Only)",
+        subTypeTag: "Daytime Market Only · Fresh Produce & Tapas Bars",
+        verifyBadge: "Verify before visit · Daytime hours only",
+        oneStopReason: "",
+        highlights: "Indoor traditional municipal market near Granada Cathedral offering fresh Mediterranean seafood, Jamón de Trevélez, olives, Andalusian cheeses, and daytime tapas counters (strictly a daytime market, not an evening or night market).",
+        hours: "Daytime market operation (typically Mon–Sat ~09:00–15:00, closed Sundays; individual tapas bars inside vary by vendor).",
+        seniorCaution: "Close to Gran Vía de Colón, though surrounding lanes have gentle slopes and stone paving. Lunch peak (13:30–15:00) gets crowded with limited bar stools, so a relaxed visit between 11:30 and 12:30 is recommended for seniors.",
+        sourceLabels: ["Granada Official Tourism – Gastronomic Spaces"]
+      },
+      ja: {
+        name: "Mercado de San Agustín (サン・アグスティン市場)",
+        typeBadge: "☀️ 昼の伝統市場 (夜市ではありません・午前〜昼の訪問専用)",
+        subTypeTag: "昼の伝統市場・生鮮食材＆昼タパスバー",
+        verifyBadge: "訪問前に要確認・昼時間帯のみ営業",
+        oneStopReason: "",
+        highlights: "グラナダ大聖堂近くの屋内ローカル伝統市場。新鮮な魚介グリル、トレベレス産生ハム（Jamón de Trevélez）、オリーブ、アンダルシア産チーズと昼のタパスバー体験（夜間に開く夜市ではなく昼の市場です）。",
+        hours: "昼市場営業（通常 月〜土 09:00〜15:00頃、日曜休業・市場内の飲食カウンターは店舗により異なる）",
+        seniorCaution: "グラン・ビア大通りから近いものの周辺路地に緩やかな勾配や石畳があり、昼食ピーク（13:30〜15:00）は立ち飲みや背の高いスツール席が混み合うため、11:30〜12:30頃のゆとりある訪問を推奨します。",
+        sourceLabels: ["グラナダ公式観光局 美食スポット案内"]
+      },
+      zh: {
+        name: "Mercado de San Agustín (圣奥古斯丁传统室内市场)",
+        typeBadge: "☀️ 白天传统市场 (非夜市 · 仅限上午至午间到访)",
+        subTypeTag: "白天传统市场 · 生鲜食材与午间塔帕斯",
+        verifyBadge: "到访前请核实 · 仅白天营业",
+        oneStopReason: "",
+        highlights: "紧邻格拉纳达大教堂的室内传统市场，供应新鲜现烤海鲜、特雷韦莱斯火腿(Jamón de Trevélez)、橄榄、安达卢西亚奶酪及白天塔帕斯吧台体验（此为白天市场，并非夜间开放的夜市）。",
+        hours: "白天市场营业（通常周一至周六 09:00~15:00左右，周日休息；市场内餐饮吧台营业时间因店而异）",
+        seniorCaution: "距离格兰大道(Gran Vía de Colón)较近，但周边巷道略有坡度与石板路面；午餐高峰(13:30~15:00)吧台座位紧张，建议携父母在11:30~12:30之间错峰前往。",
+        sourceLabels: ["格拉纳达官方旅游局 美食空间指南"]
+      }
+    },
+    "pc-grx-mirador-san-cristobal": {
+      en: {
+        name: "Mirador de San Cristóbal (Upper Albaicín Dusk Viewpoint)",
+        typeBadge: "🚕 Dusk Viewpoint (Round-Trip Taxi Condition · Avoid Late Night)",
+        subTypeTag: "Dusk Panorama · Round-Trip Taxi Required",
+        verifyBadge: "Verify before visit · Night hours unverified",
+        oneStopReason: "",
+        highlights: "Upper Albaicín viewpoint offering a different perspective from Mirador de San Nicolás—looking across the western Alhambra walls, 11th-century Zirid ramparts (Muralla Zirí), Granada Cathedral, and the Sierra Nevada peaks.",
+        hours: "Open-air plaza (no verified staffed night hours; recommended strictly around dusk with a round-trip taxi).",
+        seniorCaution: "⚠️ The Albaicín hill climbs and cobbled stairways (such as Cuesta de Alhacaba) are very steep and strenuous on senior knees. Make a round-trip taxi a strict condition (ask the driver to wait 10–15 minutes at the plaza or book via app), and avoid visiting late at night when streets are dim and quiet.",
+        sourceLabels: ["Granada Official Tourism – Mirador de San Cristóbal"]
+      },
+      ja: {
+        name: "Mirador de San Cristóbal (サン・クリストバル展望台)",
+        typeBadge: "🚕 夕暮れ展望台 (往復タクシー条件・深夜の訪問は非推奨)",
+        subTypeTag: "夕暮れパノラマ・往復タクシー必須条件",
+        verifyBadge: "訪問前に要確認・夜間管理時間未確認",
+        oneStopReason: "",
+        highlights: "既存のサン・ニコラス展望台とは異なる角度から、アルハンブラ宮殿の西側城壁、11世紀のズィール朝城壁、グラナダ大聖堂とシエラネバダ山脈を一望するアルバイシン上部の展望台。",
+        hours: "屋外開放広場（夜間の別途管理・営業時間は未確認のため、夕暮れ時の訪問に限定推奨）",
+        seniorCaution: "⚠️ アルバイシン地区の坂道は非常に急で石畳の階段（Cuesta de Alhacaba等）が長く続くため、ご両親の徒歩での昇り降りは膝に大きな負担がかかります。必ず夕暮れ時にタクシーで展望台広場横まで往復移動（ドライバーに10〜15分待機依頼または配車アプリ利用）し、街灯が暗く人通りの少ない深夜の訪問は避けてください。",
+        sourceLabels: ["グラナダ公式観光局 サン・クリストバル展望台案内"]
+      },
+      zh: {
+        name: "Mirador de San Cristóbal (圣克里斯托瓦尔展望台)",
+        typeBadge: "🚕 傍晚展望台 (须以出租车往返为前提 · 不建议深夜前往)",
+        subTypeTag: "日落傍晚全景 · 必须出租车往返",
+        verifyBadge: "到访前请核实 · 夜间管理时间未确认",
+        oneStopReason: "",
+        highlights: "与既有圣尼古拉斯展望台视角不同，可从阿尔拜辛高处眺望阿尔罕布拉宫西侧城墙、11世纪齐里德王朝古墙(Muralla Zirí)、格拉纳达大教堂与内华达山脉。",
+        hours: "露天开放广场（未确认夜间专门管理与开放时间，仅建议在日落傍晚时段前往）",
+        seniorCaution: "⚠️ 阿尔拜辛区的上山坡道极为陡峭且鹅卵石台阶（如 Cuesta de Alhacaba）漫长，父母步行上下山对膝盖负担极大。请务必以日落傍晚乘出租车往返为前提（直达展望台广场旁，可请司机等候10~15分钟或用打车软件），切勿在灯光昏暗、人迹罕至的深夜前往。",
+        sourceLabels: ["格拉纳达官方旅游局 圣克里斯托瓦尔展望台指南"]
+      }
+    },
+    "pc-agp-muelle-uno": {
+      en: {
+        name: "Muelle Uno (Málaga Port Waterfront Promenade & Dining Zone)",
+        typeBadge: "⚓ Harbor Stroll + Dinner Zone (Restaurant Hours Vary · Expanded Details)",
+        subTypeTag: "Waterfront Promenade + Evening Restaurants",
+        verifyBadge: "Verify before visit · Hours vary by restaurant",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Stroll + Dinner in One Spot): Combines a breezy Mediterranean marina walk, illuminated Alcazaba views, and waterfront dinner restaurants in a single zone with minimal transfer fatigue.",
+        highlights: "Open-air waterfront promenade along Pier 1 of Málaga Port featuring the Centre Pompidou glass cube, seafood paella and grilled fish restaurants, gelato cafes, and sunset/evening views toward Málaga Cathedral and the Alcazaba.",
+        hours: "Pedestrian promenade open / Shops typically Mon–Sat 10:00–22:00 / Dining & restaurant operating hours vary by venue (commonly ~12:00–23:30).",
+        seniorCaution: "The waterfront walkway is wide with plenty of benches, but the full round-trip distance to La Farola lighthouse is quite long and multi-level connections have stairs/ramps—locate the elevators and focus on restaurants near the main entrance.",
+        sourceLabels: ["Muelle Uno Official Opening Hours"]
+      },
+      ja: {
+        name: "Muelle Uno (ムエジェ・ウノ・マラガ港ダイニングプロムナード)",
+        typeBadge: "⚓ 港散策＋夕食エリア (店舗ごとに営業時間相違・第2章1行要約の詳細化)",
+        subTypeTag: "港湾プロムナード＋イブニングレストラン街",
+        verifyBadge: "訪問前に要確認・レストランごとに営業時間相違",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (食事＋展望ワンストップ): 地中海ヨットハーバーとアルカサバ夜間ライトアップの散策、海辺レストランでの夕食を1つのエリアで同時に完結でき、移動の負担が非常に少ないスポットです。",
+        highlights: "マラガ港第1埠頭に沿って整備された海辺の散策路兼レストラン・カフェ街。ポンピドゥー・センターのカラーキューブ、地中海シーフードパエリアや焼き魚レストラン、マラガ大聖堂・アルカサバの夕景・夜景眺望。",
+        hours: "遊歩道開放 ／ ショップ通常 月〜土 10:00〜22:00 ／ 飲食店・レストランは店舗により営業時間が異なる（通常12:00〜23:30前後案内）",
+        seniorCaution: "港の遊歩道は幅が広くベンチも充実していますが、入口から先端の灯台（La Farola）まで往復すると距離が長く、地上と地下・上層を結ぶ区間に階段やスロープがあるため、エレベーター位置を確認し入口付近のレストランを中心に短い動線でお楽しみください。",
+        sourceLabels: ["Muelle Uno 公式営業時間案内"]
+      },
+      zh: {
+        name: "Muelle Uno (马拉加一号码头海滨散步与晚餐餐饮区)",
+        typeBadge: "⚓ 港口散步+晚餐区 (各餐厅营业时间不同 · 第2章简述详情补充)",
+        subTypeTag: "海滨步道 + 晚间景观餐厅群",
+        verifyBadge: "到访前请核实 · 各餐厅营业时间不同",
+        oneStopReason: "👑 携父母同行优先推荐 (晚餐+海景散步一站式): 在同一港区即可漫步地中海游艇码头、远眺阿尔卡萨瓦城堡夜景，并在海滨餐厅享用晚餐，大幅减少夜间奔波。",
+        highlights: "沿马拉加港1号码头打造的露天海滨步道与餐饮街区，汇聚蓬皮杜中心彩色玻璃立方体、海鲜饭与烤鱼餐厅、意式冰淇淋店，可饱览马拉加主座教堂与阿尔卡萨瓦城堡夕阳夜景。",
+        hours: "海滨步道开放 / 商铺通常周一至周六 10:00~22:00 / 各餐饮门店与餐厅营业时间因店而异（通常约12:00~23:30）",
+        seniorCaution: "港区步道宽敞且休息长椅充足，但从入口走到尽头灯塔(La Farola)往返距离较长，且上下层连接处有台阶或坡道，请留意电梯位置并优先选择靠近入口处的海景餐厅就餐。",
+        sourceLabels: ["Muelle Uno 官方营业时间指南"]
+      }
+    },
+    "pc-agp-lolita-skyview": {
+      en: {
+        name: "Lolita Skyview Pool & Lounge (Only YOU Hotel Málaga, 8th Floor)",
+        typeBadge: "🍹 Rooftop Bar · Sunset/Night View (Pool Separated as Hotel Guests Only)",
+        subTypeTag: "8F Rooftop Lounge Bar · Pool for Hotel Guests Only",
+        verifyBadge: "Verify before visit · Pool is hotel-guests-only",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Drinks/Snacks + Sunset View in One Spot): Ride the hotel elevator right at the head of Calle Larios to sit comfortably with sunset drinks overlooking the harbor and Alcazaba.",
+        highlights: "8th-floor rooftop lounge bar overlooking Alameda Principal, Málaga Port, the Alcazaba walls, and Gibralfaro Hill, serving cocktails, Andalusian wines, and light snacks.\n⚠️ [Pool vs. Bar Separation Notice]: The rooftop infinity pool and sunbed zone are strictly for registered hotel guests (Hotel Guests Only); non-staying visitors may use only the rooftop bar and dining terrace area.",
+        hours: "Rooftop bar hours vary by season and day of week (autumn/winter typically afternoon through evening; pool is daytime only for hotel guests).",
+        seniorCaution: "Accessible via hotel elevator from the ground lobby to the 8th floor, though there are minor deck step transitions on the terrace and cool sea breezes at dusk—bring a warm cardigan or scarf for parents.",
+        sourceLabels: ["Only YOU Hotel Málaga – Lolita Skyview Official Page"]
+      },
+      ja: {
+        name: "Lolita Skyview Pool & Lounge (Only YOU Hotel Málaga 8階)",
+        typeBadge: "🍹 ルーフトップバー・日没/夜景展望 (プールは宿泊客専用として分離案内)",
+        subTypeTag: "8階ルーフトップバー・プールは宿泊客専用",
+        verifyBadge: "訪問前に要確認・プールは宿泊客専用",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (ドリンク/軽食＋展望ワンストップ): ラリオス通り入口のホテルエレベーターで直行し、着席したままアルカサバと港の夕景とドリンクを一緒に楽しめます。",
+        highlights: "アラメダ・プリンシパルやマラガ港、アルカサバ城壁、ヒブラルファロの丘を見下ろす8階ルーフトップラウンジバー。カクテル、アンダルシアワイン、軽食を提供。\n⚠️【プールとバー利用の分離案内】: ルーフトップのインフィニティプールおよびサンベッド区域はホテル宿泊客専用（Hotel Guests Only）であり、外来ビジターはルーフトップバー・テラス飲食エリアのみ利用可能です。",
+        hours: "ルーフトップバーは季節・曜日により異なる（秋冬期は通常昼〜宵の口/夜間に弾力営業・プールは宿泊客専用の昼間営業）",
+        seniorCaution: "ホテルロビーからエレベーターで8階まで移動可能ですが、ルーフトップ内のテラスデッキに一部段差があり、夕暮れ時は海風が肌寒くなるため、ご両親用のカーディガンやストールをご持参ください。",
+        sourceLabels: ["Only YOU Hotel Málaga – Lolita Skyview 公式案内"]
+      },
+      zh: {
+        name: "Lolita Skyview Pool & Lounge (Only YOU Hotel Málaga 8楼屋顶吧)",
+        typeBadge: "🍹 屋顶酒吧 · 日落/夜景展望 (泳池仅限住客，与酒吧使用严格区分)",
+        subTypeTag: "8层屋顶酒吧 · 泳池仅限住客专用",
+        verifyBadge: "到访前请核实 · 泳池仅限酒店住客",
+        oneStopReason: "👑 携父母同行优先推荐 (饮品简餐+日落全景一站式): 从拉里奥斯大街起点的酒店乘电梯直达8楼，落座即可一边品尝饮品一边俯瞰港口与城堡日落。",
+        highlights: "俯瞰阿拉梅达大道、马拉加港、阿尔卡萨瓦城堡与希布拉尔法罗山的8楼屋顶酒廊，供应鸡尾酒、安达卢西亚葡萄酒及简餐小食。\n⚠️【泳池与酒吧分离说明】: 屋顶无边泳池及躺椅区严格仅限酒店住客使用(Hotel Guests Only)，非住店访客仅可使用屋顶酒吧及餐饮露台区。",
+        hours: "屋顶酒吧营业时间依季节与星期调整（秋冬季通常自午后至晚间弹性营业；泳池仅白天对住客开放）",
+        seniorCaution: "可从酒店大堂乘电梯直达8楼，但屋顶露台甲板局部有小台阶，且11月傍晚海风微凉，请为父母备好保暖开衫或围巾，并提前确认当日非住客入场条件。",
+        sourceLabels: ["Only YOU Hotel Málaga – Lolita Skyview 官方页面"]
+      }
+    },
+    "pc-agp-mercado-atarazanas": {
+      en: {
+        name: "Mercado Central de Atarazanas (Atarazanas Central Market)",
+        typeBadge: "☀️ Daytime Traditional Market (Not a Night Market · Morning–Afternoon Only)",
+        subTypeTag: "Daytime Historic Market · Closes 15:00",
+        verifyBadge: "Verify before visit · Closed Sundays & holidays",
+        oneStopReason: "",
+        highlights: "Málaga's signature daytime market housed in a 14th-century Nasrid shipyard arch with a monumental stained-glass window. Famous for freshly fried fish (Fritura Malagueña), seafood skewers, seasonal fruits, roasted almonds, and daytime tapas stalls (closed in the evening/night).",
+        hours: "Guided hours: Mon–Sat 08:00–15:00 (Closed Sundays and public holidays; market tapas bars close around 15:30–16:00).",
+        seniorCaution: "Entrances have ramps, but after 12:30 the seafood aisles get wet, slippery, and packed with crowds with very few seats. Visit with parents during the calmer mid-morning window (10:00–11:30).",
+        sourceLabels: ["Málaga Official Tourism – Atarazanas Central Market"]
+      },
+      ja: {
+        name: "Mercado Central de Atarazanas (アタラサナス中央市場)",
+        typeBadge: "☀️ 昼の伝統市場 (夜市ではありません・午前〜昼の訪問専用)",
+        subTypeTag: "昼の伝統市場・月〜土15:00閉場",
+        verifyBadge: "訪問前に要確認・日曜および祝日休業",
+        oneStopReason: "",
+        highlights: "14世紀ナスル朝時代の旧造船所アーチ正門と大型ステンドグラスが保存されたマラガ代表の昼の伝統市場。揚げたての小魚フリトゥーラ（Fritura Malagueña）、海鮮串、旬の果物、ローストアーモンドと市場内タパスバー（夕方・夜間は開かない昼市場）。",
+        hours: "案内時間: 月〜土 08:00〜15:00（日曜・祝日休業、市場内タパスバーは15:30〜16:00頃終了）",
+        seniorCaution: "出入口にスロープがありますが、12:30以降は鮮魚コーナーの通路が水気で滑りやすく大変混雑し、座れる椅子も少ないため、ご両親同伴時は比較的落ち着いている午前10:00〜11:30頃の訪問を推奨します。",
+        sourceLabels: ["マラガ公式観光局 アタラサナス中央市場案内"]
+      },
+      zh: {
+        name: "Mercado Central de Atarazanas (阿塔拉萨纳斯中央市场)",
+        typeBadge: "☀️ 白天传统市场 (非夜市 · 仅限上午至午间到访)",
+        subTypeTag: "白天历史传统市场 · 周一至周六15:00闭市",
+        verifyBadge: "到访前请核实 · 周日及节假日休息",
+        oneStopReason: "",
+        highlights: "保留14世纪纳斯里德王朝古造船厂拱门与巨幅彩绘玻璃窗的马拉加代表性白天市场。可品尝现炸小鱼海鲜(Fritura Malagueña)、海鲜串、时令水果、烤杏仁及市场入口塔帕斯吧（晚间及夜间不营业）。",
+        hours: "官方指南: 周一至周六 08:00~15:00（周日及公共节假日休息；市场内塔帕斯吧台约15:30~16:00结束）",
+        seniorCaution: "出入口设有坡道，但中午12:30以后水产区通道地面潮湿易滑、人流拥挤且座椅较少，携父母同行建议在相对宽松的上午10:00~11:30之间前往。",
+        sourceLabels: ["马拉加官方旅游局 阿塔拉萨纳斯中央市场指南"]
+      }
+    },
+    "pc-svq-mercado-triana": {
+      en: {
+        name: "Mercado de Triana (Triana Market · Stalls vs. Evening Dining Separated)",
+        typeBadge: "🥘 Daytime Stalls + Evening Dining Separated (Closed Sunday Evening)",
+        subTypeTag: "Stalls 09:00–14:30 · Dining 18:00–24:00 (Mon–Sat)",
+        verifyBadge: "Verify before visit · Closed Sunday evening",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Dinner + River View Link): Situated right at the western foot of Triana Bridge, combining indoor evening tapas dining with riverfront night views in a very compact walk.",
+        highlights: "Indoor market built over the ruins of historic San Jorge Castle at the western end of Triana Bridge. Daytime produce, meat, jamón, and cheese stalls close in the afternoon, while internal tapas bars, restaurants, and craft beer spots reopen for evening dining.",
+        hours: "• Market Stalls (Puestos): Mon–Sat 09:00–14:30\n• Dining Venues (Restauración): Mon–Sat 18:00–24:00 (some also open midday)\n• ⚠️ Closed Sunday evenings (limited daytime food service only on Sundays).",
+        seniorCaution: "Enter via the Plaza del Altozano main level entrance to avoid the steep riverside lower stairs. Inside aisles can be narrow and many bars use high stools—look for venues offering backed low table seating for parents.",
+        sourceLabels: ["Mercado de Triana Official Schedule (Horarios)"]
+      },
+      ja: {
+        name: "Mercado de Triana (トリアナ市場・市場売場と夜飲食店の分離営業)",
+        typeBadge: "🥘 昼の市場売場＋夜の飲食店分離営業 (日曜夜は営業なし)",
+        subTypeTag: "売場09:00〜14:30・飲食18:00〜24:00(月〜土)",
+        verifyBadge: "訪問前に要確認・日曜夜は営業なし",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (食事＋展望連携): トリアナ橋のすぐ袂に位置し、川沿いの夜景鑑賞と夜のタパス夕食を短い動線内で解決できます。",
+        highlights: "トリアナ橋西端の旧サン・ホルヘ城跡の上に立つ屋内市場。昼間は青果・精肉・生ハム・チーズの伝統売場が開き、売場が閉まった後も館内のタパスバーやレストラン等の飲食店舗（Restauración）が夜間に営業します。",
+        hours: "・市場売場（Puestos）: 月〜土 09:00〜14:30案内\n・飲食店舗（Restauración）: 月〜土 18:00〜24:00案内（昼営業併用は店舗により異なる）\n・⚠️ 日曜の夜は営業しません（日曜は一部飲食店の昼時間帯のみ限定営業）",
+        seniorCaution: "アルトサーノ広場（Plaza del Altozano）側の主出入口から入れば段差負担が少ないですが、川辺の下部遊歩道から上る階段ルートは避けてください。館内通路が狭く夜はハイスツール席が多いため、背もたれ付きのテーブル席がある店舗を優先してください。",
+        sourceLabels: ["Mercado de Triana 公式営業時間案内"]
+      },
+      zh: {
+        name: "Mercado de Triana (特里亚纳市场 · 摊位与晚间餐饮分离运营)",
+        typeBadge: "🥘 白天市场摊位 + 晚间餐饮店分离运营 (周日晚不营业)",
+        subTypeTag: "摊位09:00~14:30 · 餐饮18:00~24:00(周一至周六)",
+        verifyBadge: "到访前请核实 · 周日晚间不营业",
+        oneStopReason: "👑 携父母同行优先推荐 (晚餐+河景联动): 紧邻特里亚纳桥西端桥头，可在极短步行范围内同时解决河畔夜景鉴赏与室内塔帕斯晚餐。",
+        highlights: "坐落于特里亚纳桥西端圣豪尔赫古堡遗址上的室内市场。白天开放蔬果、鲜肉、火腿与奶酪传统摊位；市场摊位午后关闭后，市场内部的塔帕斯吧、餐厅与精酿啤酒屋等餐饮店在晚间继续营业。",
+        hours: "• 市场摊位(Puestos): 周一至周六 09:00~14:30\n• 餐饮门店(Restauración): 周一至周六 18:00~24:00（部分门店兼营午餐）\n• ⚠️ 周日晚间不营业（周日仅部分餐饮店在午间有限开放）",
+        seniorCaution: "从阿尔托萨诺广场(Plaza del Altozano)主入口进入高差最小，请避开从河畔下层步道爬楼梯上来的路线。市场内部通道较窄且高脚凳较多，建议优先为父母挑选带靠背低桌椅的餐饮铺位。",
+        sourceLabels: ["Mercado de Triana 官方营业时间指南"]
+      }
+    },
+    "pc-svq-puente-triana-betis": {
+      en: {
+        name: "Puente de Triana & Calle Betis (West-Bank River Night View & Dining)",
+        typeBadge: "🌉 Across-the-River Night View Candidate (Distinct from Torre del Oro Route)",
+        subTypeTag: "West-Bank Panorama · Riverfront Dining Street",
+        verifyBadge: "Verify before visit · Restaurant hours vary",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Dinner + Night View in One Spot): Sit at a Calle Betis riverfront restaurant terrace to enjoy dinner while looking straight across the Guadalquivir at the illuminated Torre del Oro and Giralda.",
+        highlights: "Unlike the east-bank Torre del Oro route, this west-bank (Triana) vantage point looks across the Guadalquivir River toward the illuminated Seville Cathedral, Giralda Tower, Maestranza bullring, Torre del Oro water reflections, and the arched iron Puente de Isabel II.",
+        hours: "Outdoor bridge and riverfront street open continuously (architectural lighting turns on after sunset; Calle Betis restaurant hours vary by venue).",
+        seniorCaution: "Triana Bridge has a gentle arched gradient and parts of Calle Betis have cobblestone paving; avoid descending the steps to the lower river ledge at night where railings are low. Take a taxi to Plaza del Altozano and stay on the upper sidewalk and restaurant terraces.",
+        sourceLabels: [
+          "Visita Sevilla Official – Triana Bridge",
+          "Visita Sevilla Official – Calle Betis"
+        ]
+      },
+      ja: {
+        name: "Puente de Triana & Calle Betis (トリアナ橋＆ベティス川沿い通り)",
+        typeBadge: "🌉 対岸からの夜景展望候補 (黄金の塔コースとは異なる西岸パノラマ)",
+        subTypeTag: "西岸リバービュー・水辺のダイニング通り",
+        verifyBadge: "訪問前に要確認・店舗別営業時間相違",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (食事＋夜景ワンストップ): ベティス通りの川沿いレストランテラスに着席して夕食をとりながら、対岸の黄金の塔や大聖堂ヒラルダの塔の夜景を同時に鑑賞できます。",
+        highlights: "既存の東岸（黄金の塔）コースとは異なり、グアダルキビル川西岸（トリアナ地区）から対岸のセビリア大聖堂、ヒラルダの塔、闘牛場、黄金の塔の水面反射とアーチ型鉄橋（イサベル2世橋）のライトアップを正面に望む夜景＆ダイニングコース。",
+        hours: "屋外橋梁および川沿い通りは常時開放（夜間ライトアップは日没後点灯・Calle Betisの飲食店営業時間は店舗により異なる）",
+        seniorCaution: "トリアナ橋の上は緩やかなアーチ状の勾配があり、ベティス通り（Calle Betis）の一部区間は石畳です。川辺の下段へ降りる階段は手すりが低いため夜間は降りないでください。アルトサーノ広場までタクシーで移動し、上部の歩道とレストランテラスを中心にお楽しみください。",
+        sourceLabels: [
+          "Visita Sevilla 公式 – トリアナ橋案内",
+          "Visita Sevilla 公式 – ベティス通り案内"
+        ]
+      },
+      zh: {
+        name: "Puente de Triana & Calle Betis (特里亚纳桥与贝蒂斯河畔街)",
+        typeBadge: "🌉 河对岸夜景展望候选 (不同于黄金塔路线的西岸全景)",
+        subTypeTag: "西岸跨河夜景 · 河畔景观餐饮街",
+        verifyBadge: "到访前请核实 · 河畔餐厅营业时间各异",
+        oneStopReason: "👑 携父母同行优先推荐 (晚餐+夜景一站式): 在贝蒂斯街(Calle Betis)河畔餐厅露台落座用餐，即可隔河正对欣赏黄金塔、塞维利亚大教堂与吉拉达塔的倒影夜景。",
+        highlights: "不同于既有东岸（黄金塔）路线，从瓜达尔基维尔河西岸（特里亚纳区）隔河正观塞维利亚大教堂、吉拉达塔、斗牛场、黄金塔的水面倒影，以及伊莎贝尔二世拱形铁桥的夜间灯光。",
+        hours: "户外桥梁与河畔街道全天开放（夜间景观照明于日落后亮起；Calle Betis 各餐厅营业时间因店而异）",
+        seniorCaution: "特里亚纳桥桥面呈缓拱坡度，贝蒂斯街部分路段为鹅卵石路面，且通往下层亲水平台的台阶护栏较低，夜间切勿下到河岸底层。建议乘出租车直达阿尔托萨诺广场，在上层人行道与餐厅露台安心赏景。",
+        sourceLabels: [
+          "Visita Sevilla 官方 – 特里亚纳桥指南",
+          "Visita Sevilla 官方 – 贝蒂斯街指南"
+        ]
+      }
+    },
+    "pc-nap-pignasecca": {
+      en: {
+        name: "Mercato della Pignasecca (Naples Oldest Daytime Street-Food Market)",
+        typeBadge: "☀️ Daytime Traditional Market (Not a Night Market · Do Not Confuse with Pedamentina Steps)",
+        subTypeTag: "Daytime Street-Food Market · Cuoppo & Folded Pizza",
+        verifyBadge: "Verify before visit · Daytime market only",
+        oneStopReason: "",
+        highlights: "Naples' oldest open-air daytime market near Via Toledo and Montesanto Station. Famous for paper cones of freshly fried seafood and vegetables (Cuoppo), folded wallet-style wood-fired pizza (Pizza a portafoglio), and potato croquettes (Panzarotti)—strictly a daytime market, not a night market.",
+        hours: "Daytime market operation (typically Mon–Sat ~08:00–19:00; produce/fish stalls close earlier in the afternoon, fried-food & pizza shops vary by vendor, mostly closed Sundays).",
+        seniorCaution: "⚠️ Never confuse this market with the 414 steep stone steps of the 'Pedamentina a San Martino' descending from Castel Sant'Elmo! With senior parents, do not walk down the stairs from Vomero; enter from nearly level Via Toledo (Piazza Carità side) or Montesanto Station, and watch for wet market paving and passing scooters.",
+        sourceLabels: ["Visit Naples Official – Quartieri Spagnoli & Pignasecca Guide"]
+      },
+      ja: {
+        name: "Mercato della Pignasecca (ピニャセッカ伝統市場)",
+        typeBadge: "☀️ 昼の伝統市場 (夜市ではありません・階段が多いPedamentinaコースと混同注意)",
+        subTypeTag: "昼のストリートフード市場・クオッポ＆折り畳みピザ",
+        verifyBadge: "訪問前に要確認・昼時間帯のみ営業",
+        oneStopReason: "",
+        highlights: "トレド通り（Via Toledo）・モンテサント駅近くの活気あるナポリ最古の青空昼市場。円錐紙に揚げたての魚介や野菜を入れるクオッポ（Cuoppo）、4つ折りの薪窯ピザ（Pizza a portafoglio）、パンツァロッティ等の食べ歩き候補（夜市ではなく昼の市場です）。",
+        hours: "昼市場営業（通常 月〜土 08:00〜19:00頃ですが青果・鮮魚露店は午後早めに終了、揚げ物・ピザ店は店舗により異なる・日曜はほぼ休業）",
+        seniorCaution: "⚠️ サン・テルモ城から下る414段の急勾配石段コース「ペダメンティーナ（Pedamentina a San Martino）」と絶対に混同しないでください！ご両親同伴時は上から階段で歩いて下りず、勾配の少ないトレド通り（カリタ広場側）やモンテサント駅出口からアクセスし、市場内の濡れた石畳やスクーターの通行にご注意ください。",
+        sourceLabels: ["Visit Naples 公式 – スペイン地区・ピニャセッカ案内"]
+      },
+      zh: {
+        name: "Mercato della Pignasecca (皮尼亚塞卡传统露天市场)",
+        typeBadge: "☀️ 白天传统市场 (非夜市 · 切勿与多台阶的Pedamentina路线混淆)",
+        subTypeTag: "白天街头美食市场 · 炸海鲜纸筒与折叠披萨",
+        verifyBadge: "到访前请核实 · 仅白天营业",
+        oneStopReason: "",
+        highlights: "靠近托莱多街(Via Toledo)与蒙特桑托车站的那不勒斯最古老露天白天市场。可品尝现炸海鲜蔬菜纸筒(Cuoppo)、四折手拿柴火披萨(Pizza a portafoglio)与炸土豆球(Panzarotti)等街头小吃（此为白天市场，并非夜市）。",
+        hours: "白天市场营业（通常周一至周六 08:00~19:00左右，果蔬水产摊午后较早收摊，炸物与披萨店依门店而异，周日大多休息）",
+        seniorCaution: "⚠️ 切勿将其与从圣埃莫堡下山的414级陡峭石阶路线“佩达门蒂纳(Pedamentina a San Martino)”混淆！携父母同行时切勿从山上走台阶下来，请从坡度平缓的托莱多街(卡里塔广场方向)或蒙特桑托车站出口进入，并注意市场地面湿滑及穿行的摩托车。",
+        sourceLabels: ["Visit Naples 官方 – 西班牙区与皮尼亚塞卡指南"]
+      }
+    },
+    "pc-nap-monte-echia": {
+      en: {
+        name: "Monte Echia Viewpoint & Public Elevator (Ascensore Monte Echia)",
+        typeBadge: "🛗 Elevator Viewpoint (Closes 14:15 on Sundays · Not for Sun Night Nov 22)",
+        subTypeTag: "Public Elevator Viewpoint · Sun Early Close 14:15",
+        verifyBadge: "Verify before visit · Check same-day lift status",
+        oneStopReason: "",
+        highlights: "Panoramic terrace atop Pizzofalcone Hill reached by public elevator (Ascensore) from the Santa Lucia waterfront (Via Chiatamone / Borgo Marinari area), overlooking Mount Vesuvius, the Bay of Naples, Castel dell'Ovo, and Capri.",
+        hours: "ANM Elevator Schedule: Mon–Sat 07:00–22:00 / Sun & Holidays 07:00–14:15.\n⚠️ [Itinerary Alert]: On your Naples arrival night, Sunday, Nov 22, the elevator closes early at 14:15—do not plan this for Sunday night; consider it only as a daytime/dusk candidate on Mon–Tue (Nov 23–24).",
+        seniorCaution: "When the ANM elevator is running, parents can reach the viewpoint without climbing steep hill stairs. However, if the lift is halted for maintenance or weather, the walking ramps and stairs are far too steep—always verify round-trip lift operation at the lower station before ascending.",
+        sourceLabels: ["ANM Naples Public Transport – Official Elevators (Ascensori) Schedule"]
+      },
+      ja: {
+        name: "Monte Echia 展望台＆公共エレベーター (Ascensore Monte Echia)",
+        typeBadge: "🛗 エレベーター展望台 (日曜14:15早期終了・11/22日曜夜は非推奨)",
+        subTypeTag: "公共エレベーター展望台・日曜14:15終了注意",
+        verifyBadge: "訪問前に要確認・当日エレベーター運行確認必須",
+        oneStopReason: "",
+        highlights: "サンタ・ルチア海岸（Via Chiatamone／Borgo Marinari付近）から公共エレベーターでピッツォファルコーネの丘の上のテラスへ上がり、ヴェスヴィオ火山、ナポリ湾、卵城、カプリ島を一望するパノラマ展望台。",
+        hours: "ANMエレベーター案内: 月〜土 07:00〜22:00 ／ 日曜・祝日 07:00〜14:15案内\n⚠️【日程注意】: 確定日程のナポリ到着日である11月22日（日曜）夜はすでにエレベーターが営業終了（14:15終了）しているため、日曜夜のコースには入れず、月・火曜（11/23〜11/24）の昼〜夕暮れ候補としてご検討ください。",
+        seniorCaution: "エレベーター正常運行時は急な階段を上らずに展望台へ到達できますが、点検や悪天候で運休している場合の徒歩坂道・階段はご両親に大きな負担となるため、乗車前に下部乗り場で当日の往復運行状況を必ず確認してください。",
+        sourceLabels: ["ANMナポリ交通公社 公共エレベーター(Ascensori)公式時刻表"]
+      },
+      zh: {
+        name: "Monte Echia 展望台与公共升降机 (Ascensore Monte Echia)",
+        typeBadge: "🛗 升降机展望台 (周日14:15早关 · 不适合11/22周日晚前往)",
+        subTypeTag: "公共电梯展望台 · 周日14:15提前结束",
+        verifyBadge: "到访前请核实 · 务必确认当日电梯运行状态",
+        oneStopReason: "",
+        highlights: "从圣露西亚海滨(Via Chiatamone / Borgo Marinari 附近)搭乘公共垂直升降机登上皮佐法尔科内山顶露台，全景远眺维苏威火山、那不勒斯湾、蛋堡与卡普里岛轮廓。",
+        hours: "ANM升降机指南: 周一至周六 07:00~22:00 / 周日及节假日 07:00~14:15\n⚠️【行程提醒】: 按既定行程，抵达那不勒斯的11月22日为周日，升降机于14:15即停止运营，切勿安排在11月22日周日晚间，仅建议作为周一、周二(11/23~11/24)白天至傍晚候选。",
+        seniorCaution: "升降机正常运行时无需爬陡坡台阶即可直达观景台；但若遇检修或停运，步行坡道与台阶对父母体力负担极大，请务必在下层入口处先确认当日往返运行正常后再搭乘，山顶露台局部亦有石板高差。",
+        sourceLabels: ["ANM那不勒斯公交公司 公共升降机(Ascensori)官方时刻表"]
+      }
+    },
+    "pc-flr-santa-croce-xmas": {
+      en: {
+        name: "Piazza Santa Croce Christmas Market (Weihnachtsmarkt Seasonal Event)",
+        typeBadge: "🎄 Seasonal Christmas Market (Nov 14–Dec 20, 2026 · Overlaps Florence Stay)",
+        subTypeTag: "Seasonal Event (2026.11.14–12.20)",
+        verifyBadge: "Verify before visit · Seasonal dates & booth hours",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Warm Drinks/Snacks + Illuminated Facade in One Spot): Enjoy the illuminated Basilica of Santa Croce together with hot mulled wine (Glühwein) and seasonal treats in one flat central square.",
+        highlights: "Over 50 wooden chalets set up in front of the Basilica of Santa Croce in the German Weihnachtsmarkt tradition—serving hot Glühwein (mulled wine), pretzels, grilled sausages, strudel, goulash soup, handcrafted Christmas ornaments, and basilica night views.",
+        hours: "Seasonal Operation: November 14 – December 20, 2026 (overlaps your Nov 25–29 Florence stay)\n• Guided hours: Mon–Thu 10:00–22:00 / Fri–Sun 10:00–23:00.",
+        seniorCaution: "Piazza Santa Croce is a pedestrian square, but watch for joints in the historic Pietra Forte stone paving and raised cable ramps between wooden booths. Visit around dusk (16:30–18:00) before peak evening crowds, then rest at a perimeter cafe or take a taxi back.",
+        sourceLabels: ["FeelFlorence Official Tourism – Piazza Santa Croce Christmas Market"]
+      },
+      ja: {
+        name: "Piazza Santa Croce クリスマスマーケット (サンタ・クローチェ広場クリスマス市)",
+        typeBadge: "🎄 期間限定クリスマスマーケット (2026.11.14〜12.20季節行事・滞在期間と重複)",
+        subTypeTag: "期間限定イベント (2026.11.14〜12.20)",
+        verifyBadge: "訪問前に要確認・天候や主催者都合による変更可能性",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (温かい飲み物/軽食＋夜景ワンストップ): サンタ・クローチェ聖堂のライトアップ鑑賞と温かいグリューワイン（ホットワイン）・冬の味覚を1つの広場で同時に楽しめます。",
+        highlights: "サンタ・クローチェ聖堂前の広場に50棟以上の木造シャレーが並ぶ恒例の冬マーケット（Weihnachtsmarkt）。温かいグリューワイン、プレッツェル、グリルソーセージ、シュトレン、グヤーシュ、クリスマス装飾品と聖堂ファサードの夜景。",
+        hours: "2026年11月14日〜12月20日 期間限定開催（フィレンツェ滞在 11/25〜11/29 と重複）\n・案内時間: 月〜木 10:00〜22:00 ／ 金〜日 10:00〜23:00",
+        seniorCaution: "サンタ・クローチェ広場は歩行者広場ですが、歴史的な石畳（Pietra Forte）の継ぎ目や木造ブース周辺の配線カバーの段差に足元をご注意ください。19時以降は混雑するため夕暮れ時（16:30〜18:00）に訪問し、広場周辺のカフェで休憩するかタクシー乗り場へ移動する動線が快適です。",
+        sourceLabels: ["FeelFlorence (フィレンツェ公式観光ポータル) クリスマスマーケット案内"]
+      },
+      zh: {
+        name: "Piazza Santa Croce 圣诞集市 (圣十字广场期间限定圣诞市场)",
+        typeBadge: "🎄 期间限定圣诞集市 (2026.11.14~12.20季节活动 · 与佛罗伦萨行程重叠)",
+        subTypeTag: "2026冬季限定活动 (11.14~12.20)",
+        verifyBadge: "到访前请核实 · 展期与各木屋收摊时间可能变动",
+        oneStopReason: "👑 携父母同行优先推荐 (热饮小食+教堂夜景一站式): 在圣十字大殿前的广场上即可一边品尝热红酒与冬日美食，一边欣赏大教堂立面夜景。",
+        highlights: "佛罗伦萨圣十字大教堂前广场搭建50余座木屋(Wooden Chalets)的传统德式圣诞集市，供应温热香料红酒(Glühwein)、碱水结面包、烤肠、苹果卷、炖牛肉汤、手工圣诞饰品及大教堂夜景。",
+        hours: "2026年11月14日 ~ 12月20日 期间限定举办（与11/25~11/29佛罗伦萨停留期重叠）\n• 官方指南: 周一至周四 10:00~22:00 / 周五至周日 10:00~23:00",
+        seniorCaution: "圣十字广场为步行广场，但古老石板(Pietra Forte)接缝及木屋间的电缆护线槽存在轻微高差，请留意脚下。19点后人流密集，建议在傍晚16:30~18:00前往，随后在广场周边咖啡馆小憩或乘出租车返回。",
+        sourceLabels: ["FeelFlorence (佛罗伦萨官方旅游门户) 圣十字广场圣诞集市指南"]
+      }
+    },
+    "pc-flr-mercato-centrale": {
+      en: {
+        name: "Mercato Centrale Firenze (2nd-Floor Indoor Evening Food Hall)",
+        typeBadge: "🍽️ Evening Dining / Indoor Food Hall (2F Food Hall · Separated from 1F Day Market)",
+        subTypeTag: "2F Heated Indoor Food Hall · Open Until Late",
+        verifyBadge: "Verify before visit · Holidays & stall hours vary",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Warm Indoor Dinner One-Stop): Within walking distance of the SMN station hotel area, offering 20+ Tuscan food stalls under one heated glass-and-iron roof.",
+        highlights: "Spacious gourmet food hall on the upper floor (Primo Piano) of Giuseppe Mengoni's 1874 cast-iron and glass market hall—wood-fired pizza, fresh truffle pasta, Lampredotto sandwiches, Chianti wine, Tuscan steaks/soups, and gelato (1F traditional food market closes in the afternoon; 2F food hall stays open through late evening).",
+        hours: "2F Food Hall: Sun–Thu 09:00–23:00 / Fri–Sat 09:00–24:00 (1F traditional market operates daytime Mon–Fri 07:00–15:00, Sat 07:00–17:00).",
+        seniorCaution: "Internal elevators and escalators connect the ground floor to the 2nd-floor food hall, reducing stair strain, but shared center tables get very crowded during the 19:30–21:00 dinner peak—secure a table for parents first before ordering food.",
+        sourceLabels: ["Mercato Centrale Firenze Official Hours & Visitor Info"]
+      },
+      ja: {
+        name: "Mercato Centrale Firenze (フィレンツェ中央市場 2階屋内フードホール)",
+        typeBadge: "🍽️ 夜まで営業する飲食店街／フードホール (2階屋内フードホール・1階昼市場と分離)",
+        subTypeTag: "2階屋内フードホール・暖房完備・夜営業",
+        verifyBadge: "訪問前に要確認・祝日や店舗別締切時間相違",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (多彩な夕食ワンストップ): 確定宿（SMN駅付近）徒歩圏内の暖かい屋内空間で、様々なトスカーナ料理を1か所で選んで楽しめます。",
+        highlights: "1874年設計の鋳鉄・ガラス建築の2階（Primo Piano）にある大型美食フードホール。薪窯ピザ、生トリュフパスタ、ランプレドット、キャンティワイン、トスカーナステーキやスープ、ジェラートなど約20店舗が入居（1階の伝統食材市場は昼で閉まり、2階フードホールが夜まで営業）。",
+        hours: "2階フードホール: 日〜木 09:00〜23:00 ／ 金〜土 09:00〜24:00案内（1階伝統市場は月〜金 07:00〜15:00、土 07:00〜17:00の昼営業）",
+        seniorCaution: "建物内のエレベーターやエスカレーターで2階フードホールまで上がれるため階段負担を減らせますが、19:30〜21:00のピーク時は中央の共用席が混み合います。先にご両親のテーブル席を確保してから注文するか、テーブルサービスエリアをご活用ください。",
+        sourceLabels: ["Mercato Centrale Firenze 公式営業時間・利用案内"]
+      },
+      zh: {
+        name: "Mercato Centrale Firenze (佛罗伦萨中央市场2楼室内美食大厅)",
+        typeBadge: "🍽️ 营业至晚间的餐饮区/美食大厅 (2楼室内美食大厅 · 与1楼白天市场分离)",
+        subTypeTag: "2楼室内暖气美食大厅 · 营业至深夜",
+        verifyBadge: "到访前请核实 · 节假日及各档口截单时间可能变动",
+        oneStopReason: "👑 携父母同行优先推荐 (丰盛晚餐一站式): 位于SMN火车站住宿区步行圈内，在温暖的室内玻璃铸铁大厅内可一次品尝20余家托斯卡纳地道美食。",
+        highlights: "位于1874年建成的铸铁玻璃建筑二层(Primo Piano)的大型室内美食大厅，汇聚柴火披萨、黑松露手工意面、牛肚包(Lampredotto)、基安蒂红酒、托斯卡纳牛排与热汤、手工冰淇淋等（1楼传统生鲜市场午后闭市，2楼美食大厅营业至深夜）。",
+        hours: "2楼美食大厅: 周日至周四 09:00~23:00 / 周五至周六 09:00~24:00（1楼传统市场为周一至周五 07:00~15:00、周六 07:00~17:00 白天营业）",
+        seniorCaution: "可搭乘建筑内部电梯与扶梯直达2楼，免去爬楼负担；但19:30~21:00晚餐高峰期中央公共座位非常紧俏，建议先为父母找好座位再点餐，或使用提供桌边服务的就餐区。",
+        sourceLabels: ["Mercato Centrale Firenze 官方营业时间与指南"]
+      }
+    },
+    "pc-flr-701-rooftop": {
+      en: {
+        name: "701 Rooftop Bar (Gallery Hotel Art · Near Ponte Vecchio)",
+        typeBadge: "🌇 Rooftop Bar · Sunset/Early-Evening View (Check Nov Weather & Non-Guest Policy)",
+        subTypeTag: "Boutique Hotel Rooftop · Sunset Aperitivo",
+        verifyBadge: "Verify before visit · Check Nov weather & non-guest entry",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Drinks + Sunset View without Hill Climb): Ride a central hotel elevator steps from Ponte Vecchio to admire Florence's terracotta rooftops at sunset without climbing to Piazzale Michelangelo.",
+        highlights: "Upper-floor rooftop bar at Gallery Hotel Art (Lungarno Collection) right next to Ponte Vecchio, offering sunset and early-evening views toward Palazzo Vecchio's Arnolfo Tower, the Uffizi, and Florence's red rooftops with signature cocktails and aperitivo.",
+        hours: "Sunset / early-evening through night lounge operation (hours fluctuate by season and weather conditions).",
+        seniorCaution: "Accessible via hotel elevator to the upper floor, though there may be minor steps at the terrace threshold and chilly river breezes in late November—confirm indoor/heated seating availability, November weather operation, and non-guest reservation rules with the hotel on the day of visit.",
+        sourceLabels: ["Lungarno Collection – 701 Rooftop Bar Official Page"]
+      },
+      ja: {
+        name: "701 Rooftop Bar (Gallery Hotel Art・ヴェッキオ橋近く)",
+        typeBadge: "🌇 ルーフトップバー・日没/宵の口展望候補 (11月の天候・外来客条件の事前確認必須)",
+        subTypeTag: "ホテルルーフトップ・夕景アペリティーボ",
+        verifyBadge: "訪問前に要確認・11月天候および外来入場条件を確認",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (ドリンク＋日没展望ワンストップ): ミケランジェロ広場の丘へ移動せず、旧市街中心部のホテルエレベーターで上がってフィレンツェの赤屋根の夕焼けを鑑賞できます。",
+        highlights: "ヴェッキオ橋すぐ横のLungarno Collection系Gallery Hotel Art上層階にあるルーフトップバー。ヴェッキオ宮殿のアルノルフォの塔、ウフィツィ美術館、フィレンツェの赤い屋根並み越しに沈む夕景〜宵の口眺望とカクテル・アペリティーボ。",
+        hours: "日没・宵の口〜夜間ラウンジ営業（季節および気象条件により営業時間は流動的）",
+        seniorCaution: "ホテルエレベーターで上層階へアクセス可能ですが、テラス出入口付近に一部段差があるほか、11月下旬の夕暮れ時は川風で気温が下がるため、防寒着の着用および雨天・低温時のテラス開放状況、外来客（非宿泊客）の予約・入場条件を訪問当日にホテルへ確認してください。",
+        sourceLabels: ["Lungarno Collection – 701 Rooftop Bar 公式案内"]
+      },
+      zh: {
+        name: "701 Rooftop Bar (老桥旁 Gallery Hotel Art 屋顶酒吧)",
+        typeBadge: "🌇 屋顶酒吧 · 日落/傍晚展望候选 (须提前确认11月天气与非住客入场条件)",
+        subTypeTag: "精品酒店屋顶吧 · 日落开胃酒与红顶全景",
+        verifyBadge: "到访前请核实 · 务必确认11月天气开放与非住客预约条件",
+        oneStopReason: "👑 携父母同行优先推荐 (饮品+日落全景免爬山): 无需奔波攀登米开朗基罗广场山坡，在老桥旁乘酒店电梯上楼即可欣赏佛罗伦萨红瓦屋顶日落。",
+        highlights: "位于老桥旁 Lungarno Collection 旗下 Gallery Hotel Art 顶层的屋顶酒吧，可近距离眺望旧宫阿诺尔福塔、乌菲兹美术馆与佛罗伦萨红顶夕阳，供应招牌鸡尾酒与意式开胃酒(Aperitivo)。",
+        hours: "日落、傍晚至夜间酒廊营业（具体开放时间依季节与天气状况灵活调整）",
+        seniorCaution: "可乘酒店电梯上楼，但露台出入口局部可能有小台阶，且11月底傍晚阿诺河畔气温较低，请于到访当日向酒店核实11月天气下露台是否开放、是否有室内保暖座位以及非住店客人的预约/最低消费要求。",
+        sourceLabels: ["Lungarno Collection – 701 Rooftop Bar 官方指南"]
+      }
+    },
+    "pc-rom-mercato-centrale": {
+      en: {
+        name: "Mercato Centrale Roma (Rome Termini Indoor Food Hall)",
+        typeBadge: "🍽️ Evening Dining / Indoor Food Hall (Near Termini · Open Daily Until Midnight)",
+        subTypeTag: "Termini Indoor Food Hall · Daily 07:30–24:00",
+        verifyBadge: "Verify before visit · Individual stall closing times vary",
+        oneStopReason: "👑 Priority Pick for Senior Parents (Train Day / Rainy Evening One-Stop): Right alongside Termini Station inside a grand marble hall, letting parents enjoy Rome's signature dishes under one roof without stairs or weather worries.",
+        highlights: "Large indoor gourmet food hall inside Rome Termini's historic Cappa Mazzoniana marble hall (Via Giolitti 36)—crispy Roman Supplì, fried artichokes (Carciofi), fresh truffle pasta, classic Carbonara, wood-fired pizza, Trapizzino, artisan gelato, and wine bar.",
+        hours: "Guided hours: Daily 07:30 – Midnight (00:00) (last orders vary by individual artisan stall and restaurant).",
+        seniorCaution: "Entering from Via Giolitti 36 (southwest side of Termini) leads directly onto the ground-floor main food hall. Use internal elevators/escalators for the upstairs restaurant level, stay alert with belongings outside along Via Giolitti at night, and use the official station taxi stand when returning to your Monti hotel.",
+        sourceLabels: ["Mercato Centrale Roma Official Guide (Tasting Rome)"]
+      },
+      ja: {
+        name: "Mercato Centrale Roma (ローマ・テルミニ中央市場 屋内フードホール)",
+        typeBadge: "🍽️ 夜まで営業する飲食店街／フードホール (テルミニ駅近くの屋内フードホール)",
+        subTypeTag: "テルミニ駅隣接屋内フードホール・毎日07:30〜深夜0時",
+        verifyBadge: "訪問前に要確認・店舗別ラストオーダー相違",
+        oneStopReason: "👑 ご両親同伴 優先推奨 (鉄道移動日・雨天の夕食ワンストップ): テルミニ駅すぐ横の屋内空間で、階段や悪天候の心配なくローマ代表グルメを1か所で解決できます。",
+        highlights: "ローマ・テルミニ駅（Via Giolitti 36、Cappa Mazzoniana大理石ホール）にある大型屋内美食フードホール。ローマ名物のライスコロッケ（Supplì）、アーティチョーク料理、トリュフ生パスタ、カルボナーラ、薪窯ピザ、トラピッツィーノ、ジェラートとワインバー。",
+        hours: "案内時間: 毎日 07:30 〜 深夜0時（00:00）（各工房・レストランごとにラストオーダー時間は異なります）",
+        seniorCaution: "テルミニ駅南西側のジョリッティ通り（Via Giolitti 36）出入口から入れば1階メインフードホールへ直接アクセスできます。2階レストラン利用時は館内エレベーター・エスカレーターを利用し、夜間の駅周辺では手荷物管理に留意のうえ、宿（モンティ地区）へ戻る際は正規タクシー乗り場をご利用ください。",
+        sourceLabels: ["Mercato Centrale Roma 公式案内 (Tasting Rome)"]
+      },
+      zh: {
+        name: "Mercato Centrale Roma (罗马特米尼车站室内美食大厅)",
+        typeBadge: "🍽️ 营业至晚间的餐饮区/美食大厅 (特米尼站旁室内美食大厅)",
+        subTypeTag: "特米尼站室内美食大厅 · 每日07:30至午夜",
+        verifyBadge: "到访前请核实 · 各档口截单时间不同",
+        oneStopReason: "👑 携父母同行优先推荐 (火车移动日/雨天晚餐一站式): 紧邻特米尼火车站大理石大厅内，无需担心台阶与风雨即可在同一室内空间尝遍罗马代表美食。",
+        highlights: "位于罗马特米尼车站旁历史大理石大厅(Via Giolitti 36, Cappa Mazzoniana)内的大型室内美食大厅，汇聚罗马炸饭团(Supplì)、炸洋蓟(Carciofi)、黑松露手工意面、正宗培根蛋面、柴火披萨、三角披萨包(Trapizzino)与手工冰淇淋。",
+        hours: "官方指南: 每日 07:30 ~ 午夜(00:00)（各独立档口与餐厅具体截单时间有所不同）",
+        seniorCaution: "从特米尼站西南侧的乔利蒂街(Via Giolitti 36)入口进入即可平步直达1楼美食大厅。前往2楼餐厅区请乘内部电梯或扶梯；晚间在车站外围请注意随身财物安全，返回蒙蒂区住宿时请使用车站正规出租车候客点。",
+        sourceLabels: ["Mercato Centrale Roma 官方指南 (Tasting Rome)"]
+      }
+    },
+    "pc-rom-ponte-sisto": {
+      en: {
+        name: "Ponte Sisto (15th-Century Pedestrian Bridge over the Tiber)",
+        typeBadge: "🌉 Short Evening Walk & River View (Caution: Wet Stone Paving & Return Route)",
+        subTypeTag: "Pedestrian River Bridge · Short 15-Min Dusk Stroll",
+        verifyBadge: "Verify before visit · Avoid in rain or wet conditions",
+        oneStopReason: "",
+        highlights: "15th-century pedestrian stone arch bridge over the Tiber built under Pope Sixtus IV. Features a central round oculus, distant views toward St. Peter's Basilica dome to the northwest, and streetlamp reflections along the Tiber embankments—suited for a brief car-free evening stroll.",
+        hours: "Open-air pedestrian bridge open continuously (recommended for a short 15–20 minute stroll around sunset to early evening, ~17:00–20:00).",
+        seniorCaution: "⚠️ [Wet Cobblestones & Return Route Caution]: The bridge and approaches are paved with traditional Roman basalt cobbles (Sampietrini), which become very slippery when wet from rain or evening dew, and both ends have gentle slopes and steps. Never descend the steep stairs to the lower river embankment (Lungotevere); enjoy the view on the bridge deck for 10–15 minutes, skip long walks deep into Trastevere alleys, and hail an official taxi or Uber at Via dei Pettinari / Largo Arenula (east side) or Piazza Trilussa (west side) to return safely.",
+        sourceLabels: ["Turismo Roma Official Tourism – Ponte Sisto (Sixtus Bridge)"]
+      },
+      ja: {
+        name: "Ponte Sisto (シスト橋・テヴェレ川の歩行者専用石橋)",
+        typeBadge: "🌉 短時間の夜間散策・川辺展望候補 (濡れた石畳と帰路の移動動線に注意)",
+        subTypeTag: "テヴェレ川歩行者橋・15分程度の短時間夕景散策",
+        verifyBadge: "訪問前に要確認・雨天や強風時は夜間訪問自制推奨",
+        oneStopReason: "",
+        highlights: "15世紀ローマ教皇シクストゥス4世時代に建設されたテヴェレ川に架かる歩行者専用アーチ石橋。橋中央の円形開口部（Oculus）や北西遠方のサン・ピエトロ大聖堂クーポラのシルエット、川面の街灯反射を車のない橋上から鑑賞する短時間の夕景・夜間散策候補。",
+        hours: "屋外歩行者橋は常時開放（日没〜宵の口 17:00〜20:00頃の15〜20分程度の短い散策を推奨）",
+        seniorCaution: "⚠️【濡れた石畳＆帰路動線注意】: 橋の上や周辺広場はローマ伝統の玄武岩石畳（サンピエトリーニ）のため、雨や夜露で濡れると非常に滑りやすく、橋の両端に緩やかな勾配や段差があります。川下の河川敷（Lungotevere下部階段）へは絶対に降りず、橋の上で10〜15分ほど眺望を楽しんだ後はトラステヴェレの奥深い路地へ長距離徒歩移動せず、橋の東側（Via dei Pettinari／Largo Arenula）または西側（Piazza Trilussa付近の大通り）から正規タクシーやUberで安全に宿へお戻りください。",
+        sourceLabels: ["Turismo Roma (ローマ公式観光ポータル) シスト橋案内"]
+      },
+      zh: {
+        name: "Ponte Sisto (西斯托桥 · 台伯河夜间步行石桥)",
+        typeBadge: "🌉 短途夜间散步与河景候选 (注意湿滑石板路与返程乘车路线)",
+        subTypeTag: "台伯河步行石桥 · 15分钟短途傍晚漫步",
+        verifyBadge: "到访前请核实 · 雨天或地面湿滑时不建议夜间前往",
+        oneStopReason: "",
+        highlights: "建于15世纪教皇西斯都四世时期的台伯河步行石拱桥。可在无车干扰的桥面上欣赏桥中央圆孔(Oculus)、西北方远处的圣彼得大教堂穹顶剪影以及台伯河两岸路灯倒影，适合短途傍晚散步。",
+        hours: "户外步行桥全天开放（建议在日落至初晚 17:00~20:00 之间进行15~20分钟的简短散步）",
+        seniorCaution: "⚠️【湿滑石板路与返程路线注意】: 桥面及连接广场铺设罗马传统玄武岩小方石(Sampietrini)，遇雨水或夜间露水极易打滑，且桥两端有缓坡与台阶高差。切勿走台阶下到台伯河底层河滩(Lungotevere)；建议仅在桥面停留观赏10~15分钟，不要深入特拉斯提弗列狭窄巷道长距离步行，结束后直接在桥东侧(Via dei Pettinari / Largo Arenula)或西侧(Piazza Trilussa 大道旁)呼叫正规出租车或 Uber 安全返回住宿。",
+        sourceLabels: ["Turismo Roma (罗马官方旅游门户) 西斯托桥指南"]
+      }
+    }
+  }
+};
+
+if (typeof window !== 'undefined') {
+  window.PRACTICAL_CANDIDATES_I18N = PRACTICAL_CANDIDATES_I18N;
+}
+if (typeof globalThis !== 'undefined') {
+  globalThis.PRACTICAL_CANDIDATES_I18N = PRACTICAL_CANDIDATES_I18N;
+}
