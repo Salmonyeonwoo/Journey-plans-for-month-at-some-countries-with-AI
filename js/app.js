@@ -8413,5 +8413,1460 @@ function renderSingleDistrictCardHtml(d, lbl) {
           <span class="d-source-label">✓ ${lbl.officialSource || '공식 검증 출처:'}</span>
           <div class="d-source-links">
             ${(d.sources || []).map(s => `
-              <a href="${s.url}" target="_blank" rel="noopener n
-... [truncated for diff preview]
+              <a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name} ↗</a>
+            `).join('')}
+            <span class="d-verify-date">${d.verifyNote || ''}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderTransitTableCardHtml(t, lbl) {
+  return `
+    <article class="district-route-card transit-comparison-card" id="${t.id || 'district-transit-bcn-svq'}">
+      <div class="district-card-header">
+        <div class="d-badge-row">
+          <span class="d-badge transit-badge">${t.badge}</span>
+          <span class="d-time-badge">${t.timing}</span>
+        </div>
+        <h3 class="district-title">${t.title}</h3>
+        <p class="district-desc">${t.desc}</p>
+      </div>
+      <div class="district-card-body">
+        <div class="transit-unconfirmed-notice">
+          ${t.unconfirmedNotice}
+        </div>
+        <div class="transit-table-wrapper">
+          <table class="transit-compare-table">
+            <thead>
+              <tr>
+                <th>${t.headers[0]}</th>
+                <th class="col-train">${t.headers[1]}</th>
+                <th class="col-flight">${t.headers[2]}</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${t.rows.map(r => `
+                <tr>
+                  <td><strong>${r.label}</strong></td>
+                  <td class="${r.isRec ? 'rec-cell' : ''}">${r.train}</td>
+                  <td>${r.flight}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+        <div class="district-card-footer" style="margin-top:12px;">
+          <span class="d-source-label">✓ ${lbl.officialSource || '공식 검증 출처:'}</span>
+          <div class="d-source-links">
+            <a href="${t.source.url}" target="_blank" rel="noopener noreferrer">${t.source.name} ↗</a>
+            <span class="d-verify-date">${t.source.verifyNote}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function toggleMobileToc(force) {
+  const dropdown = document.getElementById('mobileTocDropdown');
+  const btn = document.getElementById('mobileTocToggleBtn');
+  const arrow = document.getElementById('mobileTocArrow');
+  if (!dropdown) return;
+  const isCurrentlyOpen = dropdown.style.display !== 'none';
+  const shouldOpen = force !== undefined ? force : !isCurrentlyOpen;
+  dropdown.style.display = shouldOpen ? 'block' : 'none';
+  if (btn) btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+  if (arrow) arrow.textContent = shouldOpen ? '▲' : '▼';
+}
+window.toggleMobileToc = toggleMobileToc;
+
+
+// ==========================================================================
+// 🏛️ 로마 약 10일 체류 섹션 동적 렌더러 (도시 간 타임라인, 대표 사진 카드, 2열 명소 카드)
+// ==========================================================================
+function renderRomeExtensionSectionHtml(rome, lbl) {
+  if (!rome) return '';
+  return '<section class="district-route-card rome-extension-card" id="district-rome-extension">' +
+    '<div class="district-card-header rome-header">' +
+      '<div class="d-badge-row">' +
+        '<span class="d-badge rome-badge">' + (rome.badge || '로마 약 10일 체류') + '</span>' +
+        '<span class="d-time-badge rome-time-badge">' + (rome.statusBadge || '세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요') + '</span>' +
+      '</div>' +
+      '<h3 class="district-title rome-main-title">' + (rome.title || '') + '</h3>' +
+      '<p class="district-desc rome-main-desc">' + (rome.desc || '') + '</p>' +
+    '</div>' +
+    '<div class="district-card-body">' +
+      '<!-- 1. 도시 간 이동 타임라인 -->' +
+      '<div class="rome-transit-box">' +
+        '<div class="r-transit-head">' +
+          '<span class="r-t-icon">🚆</span>' +
+          '<div>' +
+            '<h4 class="r-t-title">' + (rome.transit ? rome.transit.title : '') + '</h4>' +
+            '<span class="r-t-sub">' + (rome.transit ? rome.transit.sub : '') + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="transit-unconfirmed-notice">' +
+          (rome.transit ? rome.transit.notice : '') +
+        '</div>' +
+        '<div class="r-steps-grid">' +
+          ((rome.transit && rome.transit.steps) || []).map((st, idx) => 
+            '<div class="r-step-item">' +
+              '<div class="r-step-badge">' + (idx + 1) + '</div>' +
+              '<div class="r-step-body">' +
+                '<strong class="r-step-h">' + st.title + '</strong>' +
+                '<p class="r-step-p">' + st.desc + '</p>' +
+                (st.tip ? '<div class="r-step-tip">💡 ' + st.tip + '</div>' : '') +
+              '</div>' +
+            '</div>'
+          ).join('') +
+        '</div>' +
+      '</div>' +
+
+      '<!-- 2. 대표 사진 카드 -->' +
+      '<div class="rome-hero-feature-card">' +
+        '<div class="r-hero-img-wrap">' +
+          '<img src="' + rome.hero.photo + '" alt="' + rome.hero.alt + '" loading="lazy" />' +
+          '<span class="r-hero-badge-tag">' + rome.hero.badge + '</span>' +
+        '</div>' +
+        '<div class="r-hero-text-wrap">' +
+          '<h4 class="r-hero-title">' + rome.hero.title + '</h4>' +
+          '<p class="r-hero-desc">' + rome.hero.desc + '</p>' +
+          '<div class="r-badges-row">' +
+            (rome.hero.badges || []).map(b => '<span class="r-pill-badge ' + (b.class || '') + '">' + b.text + '</span>').join('') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<!-- 3. 2열 명소 카드 컬렉션 (4대 핵심 테마 · 모바일 1열 스택) -->' +
+      '<div class="rome-cards-2col-grid">' +
+        (rome.cards || []).map(c => 
+          '<div class="rome-theme-card" id="' + c.id + '">' +
+            '<div class="r-card-img-wrap">' +
+              '<img src="' + c.photo + '" alt="' + c.alt + '" loading="lazy" />' +
+              '<span class="r-card-tag">' + c.themeTag + '</span>' +
+            '</div>' +
+            '<div class="r-card-content">' +
+              '<div class="r-card-pill-row">' +
+                (c.badges || []).map(b => '<span class="r-sub-pill ' + (b.class || '') + '">' + b.text + '</span>').join('') +
+              '</div>' +
+              '<h4 class="r-card-h4">' + c.title + '</h4>' +
+              '<p class="r-card-lead">' + c.desc + '</p>' +
+
+              '<div class="d-row">' +
+                '<span class="d-row-label">🏛️ ' + (lbl.keySpots || '핵심 명소:') + '</span>' +
+                '<span class="d-row-text">' + c.spots + '</span>' +
+              '</div>' +
+              '<div class="d-row">' +
+                '<span class="d-row-label">🚶 ' + (lbl.recSequence || '추천 동선:') + '</span>' +
+                '<span class="d-row-text">' + c.sequence + '</span>' +
+              '</div>' +
+              '<div class="d-row warning">' +
+                '<span class="d-row-label">👟 ' + (lbl.walkingEst || '보행 및 노면:') + '</span>' +
+                '<div class="d-row-text">' + c.walking + '</div>' +
+              '</div>' +
+              '<div class="d-row">' +
+                '<span class="d-row-label">☕ ' + (lbl.restStops || '휴식 안내:') + '</span>' +
+                '<span class="d-row-text">' + c.rest + '</span>' +
+              '</div>' +
+              '<div class="d-row official-check-row">' +
+                '<span class="d-row-label">✓ ' + (lbl.officialSource || '공식 확인:') + '</span>' +
+                '<div class="d-row-text">' + c.officialCheck + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>'
+        ).join('') +
+      '</div>' +
+    '</div>' +
+  '</section>';
+}
+window.renderRomeExtensionSectionHtml = renderRomeExtensionSectionHtml;
+
+// 하단 플로팅 북 바 스마트 스크롤 제어: 스크롤 시 선명, 2.5초 유휴 시 은은하게 페이드
+(function() {
+  let floatBarTimer = null;
+  window.addEventListener('scroll', function() {
+    const bar = document.getElementById('floatingBookBar');
+    if (!bar) return;
+    bar.classList.remove('bar-idle');
+    clearTimeout(floatBarTimer);
+    floatBarTimer = setTimeout(function() {
+      if (!bar.matches(':hover')) {
+        bar.classList.add('bar-idle');
+      }
+    }, 2500);
+  }, { passive: true });
+})();
+
+
+// ==========================================================================
+// 🇮🇹 ITALY CITIES GUIDE CONTROLLER & DYNAMIC RENDERER (100% MULTILINGUAL)
+// ==========================================================================
+window.currentItalyCity = window.currentItalyCity || 'rome';
+window.currentItalySubTab = window.currentItalySubTab || 'attractions';
+
+function selectItalyCity(cityId) {
+  window.currentItalyCity = cityId;
+  
+  const navBar = document.getElementById('italyCityNavBar');
+  if (navBar) {
+    navBar.querySelectorAll('.italy-city-tab').forEach(btn => {
+      const match = btn.getAttribute('data-city') === cityId;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+  }
+
+  const subTabBar = document.getElementById('italySubTabBar');
+  if (subTabBar) {
+    subTabBar.style.display = (cityId === 'itinerary' || cityId === 'capri') ? 'none' : 'flex';
+  }
+
+  renderItalyCityGuide();
+}
+window.selectItalyCity = selectItalyCity;
+
+function selectItalySubTab(subTabId) {
+  window.currentItalySubTab = subTabId;
+
+  const subTabBar = document.getElementById('italySubTabBar');
+  if (subTabBar) {
+    subTabBar.querySelectorAll('.italy-subtab').forEach(btn => {
+      const match = btn.getAttribute('data-subtab') === subTabId;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+  }
+
+  renderItalyCityGuide();
+}
+window.selectItalySubTab = selectItalySubTab;
+
+function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
+  const container = document.getElementById('italyCityContentContainer');
+  if (!container) return;
+
+  const data = (typeof ITALY_CITIES_GUIDE_DATA !== 'undefined') ? ITALY_CITIES_GUIDE_DATA : (typeof window !== 'undefined' ? window.ITALY_CITIES_GUIDE_DATA : null);
+  if (!data) return;
+
+  const cityId = window.currentItalyCity || 'rome';
+  const subTabId = window.currentItalySubTab || 'attractions';
+  const dict = (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) || {};
+
+  // Localized UI helper terms
+  const L = {
+    transitLoad: lang === 'en' ? 'Transit Load' : (lang === 'ja' ? '移動負担' : (lang === 'zh' ? '交通负荷' : '이동 부담')),
+    kneeLoad: lang === 'en' ? 'Knee Strain' : (lang === 'ja' ? '膝の負担' : (lang === 'zh' ? '膝盖负荷' : '무릎 부담')),
+    pros: lang === 'en' ? 'Advantages' : (lang === 'ja' ? 'メリット' : (lang === 'zh' ? '优势特点' : '장점')),
+    cons: lang === 'en' ? 'Cautions' : (lang === 'ja' ? '留意点' : (lang === 'zh' ? '注意事项' : '유의점')),
+    trainPrefix: lang === 'en' ? 'Train: ' : (lang === 'ja' ? '列車: ' : (lang === 'zh' ? '列车在途: ' : '기차: ')),
+    d2dPrefix: lang === 'en' ? 'Actual Door-to-Door: ' : (lang === 'ja' ? '実際の宿泊間所要時間: ' : (lang === 'zh' ? '全程门到门实际耗时: ' : '실제 도어투도어: ')),
+    tableType: lang === 'en' ? 'Type' : (lang === 'ja' ? '種類' : (lang === 'zh' ? '车票种类' : '종류')),
+    tableRule: lang === 'en' ? 'Details & Validity' : (lang === 'ja' ? '内容＆有効時間' : (lang === 'zh' ? '规则与有效期' : '내용 및 유효시간')),
+    tableFare: lang === 'en' ? 'Fare' : (lang === 'ja' ? '運賃' : (lang === 'zh' ? '票价' : '요금')),
+    tapAndGoTitle: lang === 'en' ? 'Contactless Tap & Go (Easy Ride)' : (lang === 'ja' ? 'タッチ決済 Tap & Go (簡単乗車)' : (lang === 'zh' ? '非接闪付 Tap & Go (便捷乘车)' : '컨택리스 Tap & Go (간편 승차)')),
+    officialFaresBtn: lang === 'en' ? 'Official Fares & Ticket Portal ➔' : (lang === 'ja' ? '公式運賃＆チケットポータル ➔' : (lang === 'zh' ? '官方票价与购票指南 ➔' : '공식 요금 및 티켓 안내 확인 ➔'))
+  };
+
+  // Case 1: 12-Night Itinerary & Senior Comparison Analysis
+  if (cityId === 'itinerary') {
+    const itData = data.itineraryAnalysis;
+    let html = '<div class="itinerary-analysis-wrapper">';
+    
+    // Header
+    html += '<div class="it-head-card">' +
+      '<div class="it-badge">12 NIGHTS / 13 DAYS PACING GUIDE</div>' +
+      '<h3 class="it-title">' + (itData.title[lang] || itData.title.ko) + '</h3>' +
+      '<p class="it-context">' + (itData.context[lang] || itData.context.ko) + '</p>' +
+    '</div>';
+
+    // 3 Options Comparison Cards Grid
+    html += '<div class="it-options-grid">';
+    (itData.options || []).forEach(opt => {
+      html += '<div class="it-option-card ' + opt.class + '">' +
+        '<div class="opt-head">' +
+          '<span class="opt-badge">' + (opt.badge[lang] || opt.badge.ko) + '</span>' +
+          '<h4 class="opt-name">' + (opt.name[lang] || opt.name.ko) + '</h4>' +
+        '</div>' +
+        '<div class="opt-metrics">' +
+          '<div class="metric-row"><span class="m-label">🚆 ' + L.transitLoad + ':</span> <strong>' + (opt.transitLoad[lang] || opt.transitLoad.ko) + '</strong></div>' +
+          '<div class="metric-row"><span class="m-label">🦵 ' + L.kneeLoad + ':</span> <strong>' + (opt.kneeLoad[lang] || opt.kneeLoad.ko) + '</strong></div>' +
+        '</div>' +
+        '<div class="opt-pros"><span class="check-icon">✓ ' + L.pros + ':</span> ' + (opt.pros[lang] || opt.pros.ko) + '</div>' +
+        '<div class="opt-cons"><span class="warn-icon">⚠️ ' + L.cons + ':</span> ' + (opt.cons[lang] || opt.cons.ko) + '</div>' +
+      '</div>';
+    });
+    html += '</div>';
+
+    // Door-to-Door Transit Comparison
+    const trD = itData.transitDetails;
+    const r2fSteps = (trD.romeToFlorence.steps[lang] || trD.romeToFlorence.steps.ko || []);
+    const r2vSteps = (trD.romeToVenice.steps[lang] || trD.romeToVenice.steps.ko || []);
+
+    html += '<div class="door-to-door-card">' +
+      '<div class="d2d-head">' +
+        '<span class="d2d-icon">🚆</span>' +
+        '<div>' +
+          '<h4>' + (trD.title[lang] || trD.title.ko) + '</h4>' +
+          '<p>' + (trD.desc[lang] || trD.desc.ko) + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div class="d2d-grid">' +
+        '<div class="d2d-box rec">' +
+          '<div class="d2d-box-title">🟢 ' + (trD.romeToFlorence.title[lang] || trD.romeToFlorence.title.ko) + '</div>' +
+          '<div class="d2d-time">' + L.trainPrefix + (trD.romeToFlorence.trainTime[lang] || trD.romeToFlorence.trainTime.ko) + '</div>' +
+          '<div class="d2d-real"><strong>' + L.d2dPrefix + (trD.romeToFlorence.realTime[lang] || trD.romeToFlorence.realTime.ko) + '</strong></div>' +
+          '<ul class="d2d-steps">' + r2fSteps.map(s => '<li>' + s + '</li>').join('') + '</ul>' +
+          '<a href="' + trD.romeToFlorence.officialLink + '" target="_blank" rel="noopener noreferrer" class="d2d-link-btn">' + (trD.romeToFlorence.linkText[lang] || trD.romeToFlorence.linkText.ko) + '</a>' +
+        '</div>' +
+        '<div class="d2d-box warn">' +
+          '<div class="d2d-box-title">🔴 ' + (trD.romeToVenice.title[lang] || trD.romeToVenice.title.ko) + '</div>' +
+          '<div class="d2d-time">' + L.trainPrefix + (trD.romeToVenice.trainTime[lang] || trD.romeToVenice.trainTime.ko) + '</div>' +
+          '<div class="d2d-real"><strong>' + L.d2dPrefix + (trD.romeToVenice.realTime[lang] || trD.romeToVenice.realTime.ko) + '</strong></div>' +
+          '<ul class="d2d-steps">' + r2vSteps.map(s => '<li>' + s + '</li>').join('') + '</ul>' +
+          '<a href="' + trD.romeToVenice.officialLink + '" target="_blank" rel="noopener noreferrer" class="d2d-link-btn">' + (trD.romeToVenice.linkText[lang] || trD.romeToVenice.linkText.ko) + '</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+    // Day-by-Day Timeline
+    const tl = itData.suggestedTimeline;
+    html += '<div class="timeline-card">' +
+      '<div class="tl-head">' +
+        '<h4>' + (tl.title[lang] || tl.title.ko) + '</h4>' +
+        '<p class="tl-note">' + (tl.note[lang] || tl.note.ko) + '</p>' +
+      '</div>' +
+      '<div class="tl-list">' +
+        (tl.days || []).map(d => {
+          const dTitle = (d.title && (d.title[lang] || d.title.ko)) || d.title;
+          const dDesc = (d.desc && (d.desc[lang] || d.desc.ko)) || d.desc;
+          return '<div class="tl-day-item">' +
+            '<div class="tl-day-badge">' + d.day + '</div>' +
+            '<div class="tl-day-body">' +
+              '<strong>' + dTitle + '</strong>' +
+              '<p>' + dDesc + '</p>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+    '</div>';
+
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Case 1.5: Naples & Capri Optional Weather-Dependent Guide
+  if (cityId === 'capri') {
+    const capri = data.cities.capri;
+    if (!capri) return;
+
+    let html = '<div class="capri-guide-wrapper">';
+
+    // 1. Header Card
+    html += '<div class="capri-header-card">' +
+      '<div class="capri-tag-row">' +
+        '<span class="city-pill-badge">' + (capri.tag[lang] || capri.tag.ko) + '</span>' +
+        '<span class="badge-unverified-official">⚠️ ' + (capri.statusBadge[lang] || capri.statusBadge.ko) + '</span>' +
+      '</div>' +
+      '<h3 class="capri-title">⛵ ' + (capri.name[lang] || capri.name.ko) + '</h3>' +
+      '<p class="capri-intro">' + (capri.intro[lang] || capri.intro.ko) + '</p>' +
+    '</div>';
+
+    // 2. tvN Broadcast Box
+    html += '<div class="capri-tvn-box">' +
+      '<div class="tvn-head-row">' +
+        '<span class="tvn-badge">' + (capri.tvn.badge[lang] || capri.tvn.badge.ko) + '</span>' +
+        '<a href="' + capri.tvn.url + '" target="_blank" rel="noopener noreferrer" class="tvn-link-btn">' +
+          (capri.tvn.linkText[lang] || capri.tvn.linkText.ko) +
+        '</a>' +
+      '</div>' +
+      '<p class="tvn-desc">' + (capri.tvn.desc[lang] || capri.tvn.desc.ko) + '</p>' +
+    '</div>';
+
+    // 3. 4 Overview & Burden Cards Grid
+    html += '<div class="capri-overview-grid">';
+    (capri.overviewItems || []).forEach(item => {
+      html += '<div class="capri-overview-card ' + item.id + '">' +
+        '<h4 class="ov-title">' + (item.title[lang] || item.title.ko) + '</h4>' +
+        '<p class="ov-content">' + (item.content[lang] || item.content.ko) + '</p>' +
+      '</div>';
+    });
+    html += '</div>';
+
+    // 4. Operational Verification Section
+    html += '<div class="capri-verification-box">' +
+      '<div class="verif-head">' +
+        '<h4>🔍 ' + (lang === 'en' ? 'Operational Verification & Official Channels' : (lang === 'ja' ? '運航・開閉の確認と公式窓口' : (lang === 'zh' ? '运营核实与官方查询渠道' : '운영 확인과 공식 창구'))) + '</h4>' +
+        '<p class="verif-sub">' + (lang === 'en' ? 'Ferry transport and Blue Grotto admission are strictly separate verification items. Real-time conditions must be verified directly via official sources.' : (lang === 'ja' ? '船舶の運航と青の洞窟の入場は完全に別個の確認項目です。リアルタイムの運航・開閉は公式案内で直接ご確認ください。' : (lang === 'zh' ? '渡轮交通与蓝洞入内游览属于两个相互独立的核查项。即时状态须通过官方渠道亲自核实。' : '선박 운항과 푸른 동굴 입장은 별개의 확인 항목입니다. 실시간 상황은 공식 안내에서 직접 확인해야 합니다.'))) + '</p>' +
+      '</div>' +
+      '<div class="verif-items-list">';
+    
+    (capri.verificationItems || []).forEach(v => {
+      html += '<div class="verif-item-card">' +
+        '<div class="verif-item-header">' +
+          '<strong class="verif-item-name">' + (v.name[lang] || v.name.ko) + '</strong>' +
+          '<span class="verif-status-tag">⚠️ ' + (v.status[lang] || v.status.ko) + '</span>' +
+        '</div>' +
+        '<p class="verif-note">' + (v.note[lang] || v.note.ko) + '</p>' +
+        '<div class="verif-links-row">' +
+          '<a href="' + v.url + '" target="_blank" rel="noopener noreferrer" class="official-verif-btn">' +
+            '🌐 ' + (v.linkText[lang] || v.linkText.ko) +
+          '</a>';
+      if (v.url2) {
+        html += '<a href="' + v.url2 + '" target="_blank" rel="noopener noreferrer" class="official-verif-btn secondary">' +
+          '🌐 ' + (v.linkText2[lang] || v.linkText2.ko) +
+        '</a>';
+      }
+      html += '</div></div>';
+    });
+    html += '</div></div>';
+
+    // 5. Step-by-Step Verification Checklist
+    const ch = capri.checklist;
+    html += '<div class="capri-checklist-box">' +
+      '<h4 class="checklist-title">' + (ch.title[lang] || ch.title.ko) + '</h4>' +
+      '<div class="checklist-steps-grid">';
+    (ch.steps || []).forEach((st, idx) => {
+      html += '<div class="check-step-item">' +
+        '<div class="step-num">Step ' + (idx + 1) + ' · ' + (st.time[lang] || st.time.ko) + '</div>' +
+        '<div class="step-action">' + (st.action[lang] || st.action.ko) + '</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+
+    // 6. 3 Weather Scenarios Grid (A, B, C)
+    const sc = capri.scenarios;
+    html += '<div class="capri-scenarios-wrapper">' +
+      '<h4 class="scenarios-main-title">' + (sc.title[lang] || sc.title.ko) + '</h4>' +
+      '<div class="capri-scenarios-grid">';
+    (sc.list || []).forEach(s => {
+      html += '<div class="scenario-card ' + s.id + '">' +
+        '<div class="sc-badge">' + (s.badge[lang] || s.badge.ko) + '</div>' +
+        '<h5 class="sc-title">' + (s.title[lang] || s.title.ko) + '</h5>' +
+        '<p class="sc-desc">' + (s.content[lang] || s.content.ko) + '</p>' +
+      '</div>';
+    });
+    html += '</div></div>';
+
+    // 7. Planner Conflict Check Action Bar
+    html += '<div class="capri-planner-guardrail-bar">' +
+      '<div class="guardrail-info">' +
+        '<strong>🗓️ ' + (lang === 'en' ? 'Planner Schedule Safety Guardrail' : (lang === 'ja' ? 'プランナー日程の安全ガードレール' : (lang === 'zh' ? '行程规划安全防线' : '플래너 일정 안전 가드레일'))) + '</strong>' +
+        '<p>' + (lang === 'en' ? 'Naples/Capri is an optional excursion. It is never auto-inserted into your planner to protect your Rome rest days.' : (lang === 'ja' ? 'ナポリ・カプリは追加の選択肢です。ローマの休息日程を保護するため、プランナー日程へ自動挿入されません。' : (lang === 'zh' ? '那不勒斯与卡普里仅为备选方案，绝不自动插入日程以守护罗马充分休息。' : '나폴리·카프리는 추가 선택지입니다. 로마 휴식 일정을 보존하기 위해 플래너에 자동으로 삽입되지 않습니다.'))) + '</p>' +
+      '</div>' +
+      '<button type="button" class="btn-check-conflict" onclick="checkCapriPlannerConflict()">' +
+        '⚠️ ' + (lang === 'en' ? 'Check Schedule Conflict Alert' : (lang === 'ja' ? '日程衝突の警告を確認' : (lang === 'zh' ? '查看日程冲突预警' : '일정 충돌 여부 확인하기'))) +
+      '</button>' +
+    '</div>';
+
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }
+
+  // Case 2: City Guide (Rome, Florence, Venice)
+  const city = data.cities[cityId];
+  if (!city) return;
+
+  let html = '<div class="city-guide-wrapper">';
+
+  // City Intro Header Banner
+  html += '<div class="city-intro-banner">' +
+    '<div class="city-tag-row">' +
+      '<span class="city-pill-badge">' + (city.tag[lang] || city.tag.ko) + '</span>' +
+      '<span class="city-status-badge">' + (city.statusBadge[lang] || city.statusBadge.ko) + '</span>' +
+    '</div>' +
+    '<h3 class="city-title">' + (city.name[lang] || city.name.ko) + '</h3>' +
+    '<p class="city-desc">' + (city.intro[lang] || city.intro.ko) + '</p>' +
+  '</div>';
+
+  // Sub-Tab Content: 1. Attractions (명소)
+  if (subTabId === 'attractions') {
+    html += '<div class="city-attractions-view">';
+
+    if (cityId === 'rome' && city.districts) {
+      city.districts.forEach(dist => {
+        html += '<div class="district-group-block" id="dist-' + dist.id + '">' +
+          '<div class="dist-group-head">' +
+            '<span class="dist-badge">' + (dist.badge[lang] || dist.badge.ko) + '</span>' +
+            '<h4 class="dist-title">' + (dist.name[lang] || dist.name.ko) + '</h4>' +
+          '</div>' +
+          '<div class="italy-cards-grid">';
+        
+        (dist.spots || []).forEach(spot => {
+          html += renderSingleSpotCard(spot, lang, dict);
+        });
+
+        html += '</div></div>';
+      });
+    } else if (city.spots) {
+      html += '<div class="italy-cards-grid">';
+      city.spots.forEach(spot => {
+        html += renderSingleSpotCard(spot, lang, dict);
+      });
+      html += '</div>';
+    }
+
+    html += '</div>';
+  } 
+  // Sub-Tab Content: 2. Dining (대표 미식)
+  else if (subTabId === 'dining') {
+    html += '<div class="city-dining-view">' +
+      '<div class="dining-view-intro">' +
+        '<h4>🍝 ' + (city.name[lang] || city.name.ko) + ' ' + (dict['subtab_dining'] || '대표 미식') + '</h4>' +
+        '<p class="season-disclaimer-note">' + (data.meta.seasonNote[lang] || data.meta.seasonNote.ko) + '</p>' +
+      '</div>' +
+      '<div class="italy-food-grid">';
+
+    (city.dining || []).forEach(dish => {
+      html += '<div class="italy-food-card">' +
+        '<div class="food-img-wrap">' +
+          '<img src="' + dish.photo + '" alt="' + (dish.name[lang] || dish.name.ko) + '" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1498579150354-977475b7ea0b?auto=format&fit=crop&w=800&q=80\';" />' +
+          '<span class="food-it-badge">' + dish.italianName + '</span>' +
+        '</div>' +
+        '<div class="food-body">' +
+          '<h5 class="food-title">' + (dish.name[lang] || dish.name.ko) + '</h5>' +
+          '<div class="food-field">' +
+            '<span class="field-label">🥬 ' + (dict['lbl_ingredients'] || '핵심 재료') + ':</span>' +
+            '<p class="field-val">' + (dish.ingredients[lang] || dish.ingredients.ko) + '</p>' +
+          '</div>' +
+          '<div class="food-field">' +
+            '<span class="field-label">✨ ' + (dict['lbl_taste_profile'] || '맛의 특징') + ':</span>' +
+            '<p class="field-val">' + (dish.taste[lang] || dish.taste.ko) + '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    });
+
+    html += '</div></div>';
+  }
+  // Sub-Tab Content: 3. Transit (대중교통)
+  else if (subTabId === 'transit') {
+    const tr = city.transit;
+    html += '<div class="city-transit-view">';
+
+    if (tr.disclaimer) {
+      html += '<div class="transit-alert-box">' + (tr.disclaimer[lang] || tr.disclaimer.ko) + '</div>';
+    }
+    if (tr.stairsWarning) {
+      html += '<div class="transit-alert-box">' + (tr.stairsWarning[lang] || tr.stairsWarning.ko) + '</div>';
+    }
+    if (tr.tramsAndStation) {
+      html += '<div class="transit-info-card">' + (tr.tramsAndStation[lang] || tr.tramsAndStation.ko) + '</div>';
+    }
+
+    const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
+
+    html += '<div class="transit-fares-card">' +
+      '<div class="fares-head">' +
+        '<h4>🎫 ' + (dict['lbl_fares_summary'] || '대중교통 요금 & 승차권 체계') + ' (' + tr.operator + ')</h4>' +
+        '<div class="verified-tag">✓ ' + verifiedTagText + '</div>' +
+      '</div>' +
+      '<div class="fares-table-wrap">' +
+        '<table class="transit-table">' +
+          '<thead><tr><th>' + L.tableType + '</th><th>' + L.tableRule + '</th><th>' + L.tableFare + '</th></tr></thead>' +
+          '<tbody>' +
+            (tr.fares || []).map(f => {
+              const fName = (f.name && (f.name[lang] || f.name.ko)) || f.name;
+              const fDesc = (f.desc && (f.desc[lang] || f.desc.ko)) || f.desc;
+              return '<tr><td><strong>' + fName + '</strong></td><td>' + fDesc + '</td><td class="price-cell">' + f.price + '</td></tr>';
+            }).join('') +
+          '</tbody>' +
+        '</table>' +
+      '</div>' +
+    '</div>';
+
+    if (tr.tapAndGo) {
+      html += '<div class="tap-and-go-card">' +
+        '<div class="tg-icon">💳</div>' +
+        '<div>' +
+          '<strong>' + L.tapAndGoTitle + '</strong>' +
+          '<p>' + (tr.tapAndGo[lang] || tr.tapAndGo.ko) + '</p>' +
+        '</div>' +
+      '</div>';
+    }
+
+    html += '<div class="transit-official-card">' +
+      '<a href="' + tr.officialUrl + '" target="_blank" rel="noopener noreferrer" class="official-portal-btn">' +
+        '🌐 ' + tr.operator + ' ' + L.officialFaresBtn +
+      '</a>' +
+    '</div>';
+
+    html += '</div>';
+  }
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+window.renderItalyCityGuide = renderItalyCityGuide;
+
+function renderSingleSpotCard(spot, lang, dict) {
+  const pLevel = spot.priorityLevel || 'good';
+  const wLevel = spot.walkingLevel || 'medium';
+
+  const hoursLabel = lang === 'en' ? 'Hours:' : (lang === 'ja' ? '営業時間:' : (lang === 'zh' ? '开放时间:' : '운영시간:'));
+  const admissionLabel = lang === 'en' ? 'Admission:' : (lang === 'ja' ? '入場料:' : (lang === 'zh' ? '门票费用:' : '입장료:'));
+  const bookBtnText = lang === 'en' ? '🎟 Official Site Booking / Details' : (lang === 'ja' ? '🎟 公式サイト予約 / 詳細案内' : (lang === 'zh' ? '🎟 官方网站预订 / 详情指南' : '🎟 공식 사이트 예매 / 상세 안내'));
+  const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
+
+  const spotHours = (spot.hours && (spot.hours[lang] || spot.hours.ko)) || spot.hours;
+  const spotAdmission = (spot.admission && (spot.admission[lang] || spot.admission.ko)) || spot.admission;
+
+  return '<div class="italy-spot-card" id="spot-' + spot.id + '">' +
+    '<div class="spot-img-wrap">' +
+      '<img src="' + spot.photo + '" alt="' + (spot.name[lang] || spot.name.ko) + '" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80\';" />' +
+      '<span class="spot-it-tag">' + spot.italianName + '</span>' +
+    '</div>' +
+    '<div class="spot-content">' +
+      '<div class="spot-badges-row">' +
+        '<span class="spot-badge badge-p-' + pLevel + '">🎟 ' + (spot.priority[lang] || spot.priority.ko) + '</span>' +
+        '<span class="spot-badge badge-w-' + wLevel + '">🚶 ' + (spot.walking[lang] || spot.walking.ko) + '</span>' +
+      '</div>' +
+      '<h4 class="spot-h4">' + (spot.name[lang] || spot.name.ko) + '</h4>' +
+      '<p class="spot-lead">' + (spot.desc[lang] || spot.desc.ko) + '</p>' +
+      '<div class="spot-senior-box">' +
+        '<div class="s-box-head">♿ ' + (dict['lbl_senior_access'] || '부모님 보행 및 접근성 안내') + '</div>' +
+        '<div class="s-box-desc">' + (spot.details[lang] || spot.details.ko) + '</div>' +
+      '</div>' +
+      '<div class="spot-meta-row">' +
+        '<div class="meta-item"><span>⏰ ' + hoursLabel + '</span> <strong>' + spotHours + '</strong></div>' +
+        '<div class="meta-item"><span>💶 ' + admissionLabel + '</span> <strong>' + spotAdmission + '</strong></div>' +
+      '</div>' +
+      '<div class="spot-footer">' +
+        '<a href="' + spot.officialUrl + '" target="_blank" rel="noopener noreferrer" class="spot-btn primary">' +
+          bookBtnText +
+        '</a>' +
+        '<span class="spot-verify-tag">✓ ' + verifiedTagText + '</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+window.renderSingleSpotCard = renderSingleSpotCard;
+
+function checkCapriPlannerConflict() {
+  let msg = '';
+  if (currentLang === 'en') {
+    msg = '⚠️ [Schedule Conflict Alert]\nThe Italy segment (Nov 22 ~ Dec 4, 12 nights) is designed around a relaxed ~10-day Rome stay with parent fatigue care (1.5 spots/day + afternoon siestas).\n\nA same-day round trip from Rome to Naples/Capri entails over 6 hours of high-speed train, taxi, and ferry transfers each way. To preserve the confirmed Rome rest schedule, this optional trip is NOT automatically added to the planner, nor will it alter or delete existing rest days.\n\nPlease choose it flexibly on-site only if real-time weather and sea conditions are fully favorable and family stamina allows.';
+  } else if (currentLang === 'ja') {
+    msg = '⚠️【日程衝突の警告】\nイタリア日程（11月22日〜12月4日、12泊）は、ご両親の疲労ケア（1日1.5スポット＋シエスタ休息）を考慮し、ローマ約10泊のゆったりした滞在を中心に構成されています。\n\nローマからナポリ・カプリ島への日帰りは往復6時間以上の高速鉄道・タクシー・船の乗換が発生します。確定済みのローマ休息日程を損なわないため、プランナー日程へ自動挿入されたり既存の予定が削除・変更されることはありません。\n\n海況・気象が完全に良好で、ご家族全員の体力が十分な場合にのみ現地で柔軟にご判断ください。';
+  } else if (currentLang === 'zh') {
+    msg = '⚠️【行程冲突预警】\n意大利行程（11月22日~12月4日，共12晚）以罗马约10天慢游逗留为核心，充分兼顾长辈体力照护（每日1.5景点＋午休休息）。\n\n从罗马出发往返那不勒斯与卡普里岛单日往返将产生6小时以上的火车、出租车与渡轮连续换乘。为避免打乱已确认的罗马修整节奏，系统不会将此候选自动添加进主日程，亦绝不会自动删改现有日程与休息日。\n\n建议仅在当地海况天象完全平稳良好、全人体力充沛时，再作现场弹性决择。';
+  } else {
+    msg = '⚠️ [일정 충돌 경고 및 안내]\n현재 2026.11.22~12.04 이탈리아 일정은 로마 약 10일 체류를 중심으로 부모님의 피로도(1.5 스팟/일, 시에스타 휴식)를 고려하여 구성되어 있습니다.\n\n로마에서 나폴리·카프리 당일치기는 왕복 6시간 이상의 기차+택시+페리 연속 환승이 수반됩니다. 기존 확정된 로마 10일 휴식 일정을 훼손하지 않기 위해 플래너에 자동 끼워넣지 않으며, 기존 일정을 자동 삭제하거나 변경하지 않습니다.\n\n당일 기상과 파도가 온전히 양호하고 가족 모두의 컨디션이 충분할 때 현지에서 자율적으로 선택하시기 바랍니다.';
+  }
+  
+  if (typeof showToast === 'function') {
+    showToast(msg, 6000);
+  } else {
+    alert(msg);
+  }
+}
+window.checkCapriPlannerConflict = checkCapriPlannerConflict;
+
+window.downloadIcsCalendar = downloadCustomCalendarIcs;
+
+
+
+// ==========================================================================
+// 🍽️ MASTER GOURMET GUIDE (Beyond Paella & Pizza - Senior Tailored)
+// ==========================================================================
+window.masterGourmetActiveCountry = 'all';
+window.masterSurvivalCountry = 'all';
+window.masterSurvivalCategory = 'all';
+
+function buildMasterGourmetGuideHtml(data, l, filterCountry) {
+  if (!data || !data.meta) return '';
+  l = l || 'ko';
+  filterCountry = filterCountry || 'all';
+  const meta = data.meta;
+  const badgeText = (meta.badge && meta.badge[l]) || meta.badge['ko'];
+  const titleText = (meta.title && meta.title[l]) || meta.title['ko'];
+  const introText = (meta.intro && meta.intro[l]) || meta.intro['ko'];
+  const survivalTitle = (meta.survivalTitle && meta.survivalTitle[l]) || meta.survivalTitle['ko'];
+  const survivalDesc = (meta.survivalDesc && meta.survivalDesc[l]) || meta.survivalDesc['ko'];
+
+  const filterLabels = {
+    all: { ko: "🌍 전체 7대 도시", en: "🌍 All 7 Cities", ja: "🌍 全7都市", zh: "🌍 全部7大城市" },
+    spain: { ko: "🇪🇸 스페인 편 (4개 도시)", en: "🇪🇸 Spain Edition (4 Cities)", ja: "🇪🇸 スペイン編 (4都市)", zh: "🇪🇸 西班牙篇 (4城)" },
+    italy: { ko: "🇮🇹 이탈리아 편 (3개 도시)", en: "🇮🇹 Italy Edition (3 Cities)", ja: "🇮🇹 イタリア編 (3都市)", zh: "🇮🇹 意大利篇 (3城)" }
+  };
+
+  const survCountryLabels = {
+    all: { ko: "🌍 전체 24선", en: "🌍 All 24", ja: "🌍 全24選", zh: "🌍 全部24句" },
+    es: { ko: "🇪🇸 스페인어 12선", en: "🇪🇸 Spanish (12)", ja: "🇪🇸 スペイン語 12選", zh: "🇪🇸 西班牙语 12句" },
+    it: { ko: "🇮🇹 이탈리아어 12선", en: "🇮🇹 Italian (12)", ja: "🇮🇹 イタリア語 12選", zh: "🇮🇹 意大利语 12句" }
+  };
+
+  const survCategoryLabels = {
+    all: { ko: "전체 상황", en: "All Scenarios", ja: "すべての場面", zh: "全部情景" },
+    health: { ko: "🧂 간·건강 (소금/설탕)", en: "🧂 Seasoning (Salt/Sugar)", ja: "🧂 味付け（塩・砂糖）", zh: "🧂 口味（少盐/免糖）" },
+    drinks: { ko: "☕ 물·음료 (따뜻한물/생수)", en: "☕ Water (Hot/Still)", ja: "☕ お水（お湯・ナチュラル水）", zh: "☕ 饮水（温水/纯净水）" },
+    billing: { ko: "💶 가격·계산 (얼마에요/영수증)", en: "💶 Price & Bill (How much/Check)", ja: "💶 お会計（いくら/レシート）", zh: "💶 结账（多少钱/买单）" },
+    ordering: { ko: "🍽️ 주문·추천 (이거주세요/추천)", en: "🍽️ Ordering (This one/Picks)", ja: "🍽️ 注文（これ/おすすめ）", zh: "🍽️ 点单（来一份/推荐菜）" },
+    convenience: { ko: "🚻 화장실·포장", en: "🚻 Restroom & Takeout", ja: "🚻 トイレ・お持ち帰り", zh: "🚻 洗手间与打包" },
+    courtesy: { ko: "👏 매너·감사 (여기요/감사합니다)", en: "👏 Courtesy (Excuse me/Thanks)", ja: "👏 マナー（すみません/感謝）", zh: "👏 礼貌（劳驾/谢谢）" }
+  };
+
+  const btnListenText = { ko: "🔊 원어 발음 듣기", en: "🔊 Listen Audio", ja: "🔊 発音を聞く", zh: "🔊 播放原声" };
+  const verifiedPicksLabel = { ko: "⭐ 픽업 맛집 (추천 식당)", en: "⭐ Verified Pick Restaurants", ja: "⭐ 厳選ピックアップ名店", zh: "⭐ 严选精选餐厅" };
+  const mapBtnText = { ko: "🗺️ Google 지도", en: "🗺️ Google Maps", ja: "🗺️ Google マップ", zh: "🗺️ 谷歌地图" };
+
+  // Survival phrases HTML
+  const phrasesHtml = (meta.survivalPhrases || []).map(p => {
+    const cName = (p.countryName && p.countryName[l]) || p.countryName['ko'];
+    const catName = (p.categoryName && p.categoryName[l]) || p.categoryName['ko'];
+    const pron = (p.pronunciation && p.pronunciation[l]) || p.pronunciation['ko'];
+    const mean = (p.meaning && p.meaning[l]) || p.meaning['ko'];
+    const tip = (p.seniorTip && p.seniorTip[l]) || p.seniorTip['ko'];
+
+    return `
+      <div class="mg-phrase-box ${p.country}" data-country="${p.country}" data-category="${p.category}">
+        <div class="mg-phrase-top">
+          <div class="mg-phrase-tags">
+            <span class="mg-phrase-flag">${cName}</span>
+            <span class="mg-phrase-cat-badge">${catName}</span>
+          </div>
+          <button type="button" class="mg-phrase-audio-btn" onclick="playVoice('${p.original.replace(/'/g, "\\'")}', '${p.locale}')" title="${btnListenText[l] || btnListenText['ko']}">
+            ${btnListenText[l] || btnListenText['ko']}
+          </button>
+        </div>
+        <div class="mg-phrase-quote">"${p.original}"</div>
+        <div class="mg-phrase-pronun">🗣️ ${pron}</div>
+        <div class="mg-phrase-meaning">💡 <strong>${mean}</strong></div>
+        <div class="mg-phrase-tip">👴 ${tip}</div>
+      </div>
+    `;
+  }).join('');
+
+  // Filter countries
+  const countriesToRender = (data.countries || []).filter(c => filterCountry === 'all' || c.id === filterCountry);
+
+  const countriesHtml = countriesToRender.map(country => {
+    const cName = (country.name && country.name[l]) || country.name['ko'];
+    const cTheme = (country.theme && country.theme[l]) || country.theme['ko'];
+    const isSpain = country.id === 'spain';
+    const flagSvg = isSpain
+      ? `<svg width="22" height="15" viewBox="0 0 750 500" style="border-radius:3px;vertical-align:middle;box-shadow:0 1px 3px rgba(0,0,0,0.2);"><rect width="750" height="500" fill="#c60b1e"/><rect width="750" height="250" y="125" fill="#ffc400"/></svg>`
+      : `<svg width="22" height="15" viewBox="0 0 3 2" style="border-radius:3px;vertical-align:middle;box-shadow:0 1px 3px rgba(0,0,0,0.2);"><rect width="1" height="2" fill="#009246"/><rect width="1" height="2" x="1" fill="#fff"/><rect width="1" height="2" x="2" fill="#ce2b37"/></svg>`;
+
+    const citiesHtml = (country.cities || []).map(city => {
+      const cityName = (city.name && city.name[l]) || city.name['ko'];
+
+      const dishesHtml = (city.dishes || []).map(dish => {
+        const dName = (dish.name && dish.name[l]) || dish.name['ko'];
+        const dLabel = (dish.label && dish.label[l]) || dish.label['ko'];
+        const dDesc = (dish.desc && dish.desc[l]) || dish.desc['ko'];
+        const dHighlight = (dish.parentsHighlight && dish.parentsHighlight[l]) || dish.parentsHighlight['ko'];
+
+        return `
+          <div class="mg-dish-card">
+            <div class="mg-dish-photo-wrap">
+              <img src="${dish.photo}" alt="${dName}" class="mg-dish-img" loading="lazy" onerror="if(this.src!=='${dish.fallbackPhoto}') this.src='${dish.fallbackPhoto}';" />
+              <span class="mg-dish-badge">${dLabel}</span>
+            </div>
+            <div class="mg-dish-body">
+              <h5 class="mg-dish-title">${dName}</h5>
+              <p class="mg-dish-desc">${dDesc}</p>
+              <div class="mg-dish-highlight">
+                ${dHighlight}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const picksHtml = (city.picks || []).map(pick => {
+        const pName = (pick.name && pick.name[l]) || pick.name['ko'];
+        const pBadge = (pick.badge && pick.badge[l]) || pick.badge['ko'];
+        const pDesc = (pick.desc && pick.desc[l]) || pick.desc['ko'];
+        const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pick.mapQuery)}`;
+
+        return `
+          <div class="mg-pick-item">
+            <div class="mg-pick-header">
+              <div class="mg-pick-title-wrap">
+                <span class="mg-pick-star">⭐</span>
+                <strong class="mg-pick-name">${pName}</strong>
+              </div>
+              <span class="mg-pick-badge">${pBadge}</span>
+            </div>
+            <p class="mg-pick-desc">${pDesc}</p>
+            <div class="mg-pick-actions">
+              <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="mg-map-btn" title="${mapBtnText[l] || mapBtnText['ko']}">
+                <span>${mapBtnText[l] || mapBtnText['ko']}</span>
+                <span style="font-size:11px;">↗</span>
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      return `
+        <div class="mg-city-block">
+          <div class="mg-city-header">
+            <div class="mg-city-title-group">
+              <span class="mg-city-num">${city.num}</span>
+              <h4 class="mg-city-name">${cityName}</h4>
+            </div>
+            <span class="mg-country-pill ${country.id}">${country.flag} ${cName}</span>
+          </div>
+
+          <div class="mg-dishes-grid">
+            ${dishesHtml}
+          </div>
+
+          <div class="mg-picks-section">
+            <div class="mg-picks-title">
+              <span>🍽️</span> <strong>${verifiedPicksLabel[l] || verifiedPicksLabel['ko']}</strong>
+            </div>
+            <div class="mg-picks-grid">
+              ${picksHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="mg-country-group ${country.id}">
+        <div class="mg-country-header">
+          <div class="mg-country-title">
+            ${flagSvg}
+            <span>[${cName}]</span>
+            <span class="mg-country-theme">${cTheme}</span>
+          </div>
+        </div>
+        <div class="mg-cities-list">
+          ${citiesHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="master-gourmet-wrapper">
+      <!-- Master Header -->
+      <div class="mg-hero-box">
+        <div class="mg-hero-badge">${badgeText}</div>
+        <h3 class="mg-hero-title">${titleText}</h3>
+        <p class="mg-hero-intro">${introText}</p>
+
+        <!-- Expanded Survival Phrases Banner (24 Expressions with Filters) -->
+        <div class="mg-survival-container">
+          <div class="mg-survival-lead">
+            <span class="mg-survival-lead-icon">💡</span>
+            <div>
+              <strong class="mg-survival-lead-title">${survivalTitle}</strong>
+              <p class="mg-survival-lead-desc">${survivalDesc}</p>
+            </div>
+          </div>
+
+          <!-- Country Filter Row -->
+          <div class="mg-survival-filter-row">
+            <div class="mg-survival-country-tabs">
+              <button type="button" class="mg-surv-pill active" data-surv-country="all" onclick="filterMasterSurvival('country', 'all', this)">
+                ${survCountryLabels.all[l] || survCountryLabels.all['ko']}
+              </button>
+              <button type="button" class="mg-surv-pill" data-surv-country="es" onclick="filterMasterSurvival('country', 'es', this)">
+                ${survCountryLabels.es[l] || survCountryLabels.es['ko']}
+              </button>
+              <button type="button" class="mg-surv-pill" data-surv-country="it" onclick="filterMasterSurvival('country', 'it', this)">
+                ${survCountryLabels.it[l] || survCountryLabels.it['ko']}
+              </button>
+            </div>
+          </div>
+
+          <!-- Category Filter Chips -->
+          <div class="mg-survival-category-chips">
+            <button type="button" class="mg-surv-chip active" data-surv-cat="all" onclick="filterMasterSurvival('category', 'all', this)">
+              ${survCategoryLabels.all[l] || survCategoryLabels.all['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="health" onclick="filterMasterSurvival('category', 'health', this)">
+              ${survCategoryLabels.health[l] || survCategoryLabels.health['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="drinks" onclick="filterMasterSurvival('category', 'drinks', this)">
+              ${survCategoryLabels.drinks[l] || survCategoryLabels.drinks['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="billing" onclick="filterMasterSurvival('category', 'billing', this)">
+              ${survCategoryLabels.billing[l] || survCategoryLabels.billing['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="ordering" onclick="filterMasterSurvival('category', 'ordering', this)">
+              ${survCategoryLabels.ordering[l] || survCategoryLabels.ordering['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="convenience" onclick="filterMasterSurvival('category', 'convenience', this)">
+              ${survCategoryLabels.convenience[l] || survCategoryLabels.convenience['ko']}
+            </button>
+            <button type="button" class="mg-surv-chip" data-surv-cat="courtesy" onclick="filterMasterSurvival('category', 'courtesy', this)">
+              ${survCategoryLabels.courtesy[l] || survCategoryLabels.courtesy['ko']}
+            </button>
+          </div>
+
+          <!-- 24 Phrase Cards Grid -->
+          <div class="mg-survival-grid">
+            ${phrasesHtml}
+          </div>
+        </div>
+
+        <!-- City Filter Tabs -->
+        <div class="mg-tabs-bar">
+          <button type="button" class="mg-tab-pill ${filterCountry === 'all' ? 'active' : ''}" onclick="switchMasterGourmetFilter('all', this)">
+            ${filterLabels.all[l] || filterLabels.all['ko']}
+          </button>
+          <button type="button" class="mg-tab-pill ${filterCountry === 'spain' ? 'active' : ''}" onclick="switchMasterGourmetFilter('spain', this)">
+            ${filterLabels.spain[l] || filterLabels.spain['ko']}
+          </button>
+          <button type="button" class="mg-tab-pill ${filterCountry === 'italy' ? 'active' : ''}" onclick="switchMasterGourmetFilter('italy', this)">
+            ${filterLabels.italy[l] || filterLabels.italy['ko']}
+          </button>
+        </div>
+      </div>
+
+      <!-- Countries & Cities -->
+      <div class="mg-content-area">
+        ${countriesHtml}
+      </div>
+    </div>
+  `;
+}
+
+function renderMasterGourmetGuide(lang, filterCountry) {
+  if (typeof MASTER_GOURMET_GUIDE_DATA === 'undefined') return;
+  const mounts = document.querySelectorAll('.master-gourmet-mount');
+  if (!mounts.length) return;
+
+  const currentL = lang || (typeof currentLang !== 'undefined' ? currentLang : 'ko');
+  const activeCountry = filterCountry || window.masterGourmetActiveCountry || 'all';
+  window.masterGourmetActiveCountry = activeCountry;
+
+  const html = buildMasterGourmetGuideHtml(MASTER_GOURMET_GUIDE_DATA, currentL, activeCountry);
+  mounts.forEach(mount => {
+    mount.innerHTML = html;
+  });
+
+  if (typeof renderPracticalCityCandidates === 'function') renderPracticalCityCandidates(currentL);
+
+  // Re-apply survival filters if active
+  if (window.masterSurvivalCountry !== 'all' || window.masterSurvivalCategory !== 'all') {
+    applySurvivalPhrasesFilter();
+  }
+}
+
+function switchMasterGourmetFilter(country, btn) {
+  window.masterGourmetActiveCountry = country;
+  const currentL = typeof currentLang !== 'undefined' ? currentLang : 'ko';
+  renderMasterGourmetGuide(currentL, country);
+}
+
+function filterMasterSurvival(type, value, btn) {
+  if (type === 'country') {
+    window.masterSurvivalCountry = value;
+    document.querySelectorAll('.mg-surv-pill').forEach(p => {
+      p.classList.toggle('active', p.getAttribute('data-surv-country') === value);
+    });
+  } else if (type === 'category') {
+    window.masterSurvivalCategory = value;
+    document.querySelectorAll('.mg-surv-chip').forEach(c => {
+      c.classList.toggle('active', c.getAttribute('data-surv-cat') === value);
+    });
+  }
+  applySurvivalPhrasesFilter();
+}
+
+function applySurvivalPhrasesFilter() {
+  const selectedCountry = window.masterSurvivalCountry || 'all';
+  const selectedCat = window.masterSurvivalCategory || 'all';
+
+  document.querySelectorAll('.mg-phrase-box').forEach(box => {
+    const boxCountry = box.getAttribute('data-country');
+    const boxCat = box.getAttribute('data-category');
+
+    const matchCountry = selectedCountry === 'all' || boxCountry === selectedCountry;
+    const matchCat = selectedCat === 'all' || boxCat === selectedCat;
+
+    if (matchCountry && matchCat) {
+      box.style.display = 'flex';
+    } else {
+      box.style.display = 'none';
+    }
+  });
+}
+
+if (typeof window !== 'undefined') {
+  window.renderMasterGourmetGuide = renderMasterGourmetGuide;
+  window.switchMasterGourmetFilter = switchMasterGourmetFilter;
+  window.filterMasterSurvival = filterMasterSurvival;
+  window.applySurvivalPhrasesFilter = applySurvivalPhrasesFilter;
+}
+
+
+
+// ==========================================================================
+// 🍽️🌃 PRACTICAL INFO: CITY-BY-CITY DINING, MARKET & EVENING VIEW CANDIDATES (17 ITEMS)
+// ==========================================================================
+window.practicalCandidatesFilterState = window.practicalCandidatesFilterState || {
+  city: 'all',
+  type: 'all',
+  oneStopOnly: false,
+  savedOnly: false,
+  searchQuery: '',
+  dedupOpen: false
+};
+
+function getPracticalCandidateTypeBadgeClass(typeKey) {
+  switch (typeKey) {
+    case 'day_market':
+      return 'pc-badge-day-market';
+    case 'evening_food_hall':
+      return 'pc-badge-food-hall';
+    case 'christmas_market':
+      return 'pc-badge-christmas';
+    case 'evening_view':
+      return 'pc-badge-evening-view';
+    default:
+      return 'pc-badge-default';
+  }
+}
+
+function filterPracticalCandidatesCity(cityId) {
+  window.practicalCandidatesFilterState.city = cityId;
+  renderPracticalCityCandidates();
+}
+
+function filterPracticalCandidatesType(typeKey) {
+  window.practicalCandidatesFilterState.type = typeKey;
+  renderPracticalCityCandidates();
+}
+
+function togglePracticalCandidatesOneStop() {
+  window.practicalCandidatesFilterState.oneStopOnly = !window.practicalCandidatesFilterState.oneStopOnly;
+  renderPracticalCityCandidates();
+}
+
+function togglePracticalCandidatesSavedOnly() {
+  window.practicalCandidatesFilterState.savedOnly = !window.practicalCandidatesFilterState.savedOnly;
+  renderPracticalCityCandidates();
+}
+
+function handlePracticalCandidateSearch(val) {
+  window.practicalCandidatesFilterState.searchQuery = val || '';
+  renderPracticalCityCandidates();
+  const input = document.getElementById('pcSearchInput');
+  if (input) {
+    input.focus();
+    const len = input.value.length;
+    input.setSelectionRange(len, len);
+  }
+}
+
+function resetPracticalCandidatesFilters() {
+  window.practicalCandidatesFilterState.city = 'all';
+  window.practicalCandidatesFilterState.type = 'all';
+  window.practicalCandidatesFilterState.oneStopOnly = false;
+  window.practicalCandidatesFilterState.savedOnly = false;
+  window.practicalCandidatesFilterState.searchQuery = '';
+  renderPracticalCityCandidates();
+}
+
+function togglePracticalDedupBox() {
+  window.practicalCandidatesFilterState.dedupOpen = !window.practicalCandidatesFilterState.dedupOpen;
+  renderPracticalCityCandidates();
+}
+
+// ==========================================================================
+// 🌐 MULTILINGUAL OVERRIDE FOR PRACTICAL CITY CANDIDATES (ko / en / ja / zh)
+// ==========================================================================
+function mapPracticalCategoryToFilterKey(categoryKey, typeKey) {
+  if (typeKey) return typeKey;
+  switch (categoryKey) {
+    case 'daymarket':
+    case 'day_market':
+      return 'day_market';
+    case 'foodhall':
+    case 'restaurant':
+    case 'evening_food_hall':
+      return 'evening_food_hall';
+    case 'xmasmarket':
+    case 'christmas_market':
+      return 'christmas_market';
+    case 'viewpoint':
+    case 'rooftop':
+    case 'evening_view':
+      return 'evening_view';
+    default:
+      return 'evening_food_hall';
+  }
+}
+
+function getPracticalCandidateLocalizedItem(rawItem, lang) {
+  const activeLang = (lang && ['ko', 'en', 'ja', 'zh'].includes(lang)) ? lang : (typeof currentLang !== 'undefined' && ['ko', 'en', 'ja', 'zh'].includes(currentLang) ? currentLang : 'ko');
+  const i18nRoot = window.PRACTICAL_CANDIDATES_I18N || (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' ? PRACTICAL_CANDIDATES_I18N : null);
+  const ui = (i18nRoot && i18nRoot.ui && i18nRoot.ui[activeLang]) ? i18nRoot.ui[activeLang] : (i18nRoot && i18nRoot.ui ? i18nRoot.ui.ko : {});
+  const itemTrans = (activeLang !== 'ko' && i18nRoot && i18nRoot.items && i18nRoot.items[rawItem.id] && i18nRoot.items[rawItem.id][activeLang])
+    ? i18nRoot.items[rawItem.id][activeLang]
+    : null;
+
+  const filterKey = mapPracticalCategoryToFilterKey(rawItem.categoryKey, rawItem.typeKey);
+  const cityLabel = (ui.cities && ui.cities[rawItem.cityId]) ? ui.cities[rawItem.cityId] : `${rawItem.flag || ''} ${rawItem.cityName || rawItem.cityKo || ''}`;
+  const cityEn = (ui.cityEnMap && ui.cityEnMap[rawItem.cityId]) ? ui.cityEnMap[rawItem.cityId] : (rawItem.cityEn || rawItem.cityId || '');
+  const defaultSubTag = (ui.subTypeTags && ui.subTypeTags[rawItem.categoryKey]) ? ui.subTypeTags[rawItem.categoryKey] : (rawItem.subTypeTag || '');
+
+  const rawName = (itemTrans && itemTrans.name) ? itemTrans.name : (rawItem.name || '');
+  let mainTitle = rawName;
+  let subTitle = rawItem.subtitle || '';
+  if (!subTitle && rawName.includes('(') && rawName.endsWith(')')) {
+    const idx = rawName.indexOf('(');
+    mainTitle = rawName.slice(0, idx).trim();
+    subTitle = rawName.slice(idx + 1, -1).trim();
+  }
+
+  const localizedSources = (rawItem.sources || []).map((src, idx) => ({
+    url: src.url,
+    label: (itemTrans && Array.isArray(itemTrans.sourceLabels) && itemTrans.sourceLabels[idx]) ? itemTrans.sourceLabels[idx] : src.label
+  }));
+
+  return {
+    id: rawItem.id,
+    cityId: rawItem.cityId,
+    cityDisplay: cityLabel,
+    cityEn: cityEn,
+    filterKey: filterKey,
+    categoryKey: rawItem.categoryKey,
+    name: mainTitle,
+    subtitle: subTitle,
+    typeLabel: (itemTrans && itemTrans.typeBadge) ? itemTrans.typeBadge : (rawItem.typeBadge || rawItem.typeLabel || ''),
+    subTypeTag: (itemTrans && itemTrans.subTypeTag) ? itemTrans.subTypeTag : defaultSubTag,
+    verifyBadge: (itemTrans && itemTrans.verifyBadge) ? itemTrans.verifyBadge : (rawItem.verifyNotice || rawItem.verifyBadge || ''),
+    oneStopParentRec: Boolean(rawItem.isOneStopRecommended || rawItem.oneStopParentRec),
+    oneStopReason: (itemTrans && typeof itemTrans.oneStopReason === 'string') ? itemTrans.oneStopReason : (rawItem.oneStopReason || ''),
+    highlights: (itemTrans && itemTrans.highlights) ? itemTrans.highlights : (rawItem.highlights || ''),
+    verifiedHours: (itemTrans && itemTrans.hours) ? itemTrans.hours : (rawItem.hours || rawItem.verifiedHours || ''),
+    seniorCaution: (itemTrans && itemTrans.seniorCaution) ? itemTrans.seniorCaution : (rawItem.seniorCaution || ''),
+    sources: localizedSources,
+    mapQuery: rawItem.mapQuery || `${mainTitle} ${cityEn}`,
+    ui: ui
+  };
+}
+
+function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
+  const item = getPracticalCandidateLocalizedItem(rawItem, lang);
+  const ui = item.ui || {};
+  const isSaved = savedIdsSet && savedIdsSet.has(item.id);
+  const badgeClass = getPracticalCandidateTypeBadgeClass(item.filterKey);
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`;
+
+  const sourcesLinksHtml = (item.sources || []).map(src => `
+    <a href="${src.url}" target="_blank" rel="noopener noreferrer" class="pc-source-link">
+      🔗 ${src.label} ↗
+    </a>
+  `).join('');
+
+  const oneStopBannerHtml = (item.oneStopParentRec && item.oneStopReason) ? `
+    <div class="pc-onestop-banner">
+      <div class="pc-onestop-title">${ui.oneStopBannerTitle || '🌟 부모님 동행 우선 추천 (식사+전망·산책 원스톱)'}</div>
+      <div class="pc-onestop-desc">${item.oneStopReason}</div>
+    </div>
+  ` : '';
+
+  const formatMultiline = (txt) => String(txt || '').replace(/\n/g, '<br>');
+
+  return `
+    <article class="pc-card ${item.oneStopParentRec ? 'pc-card-onestop' : ''}" id="pc-card-${item.id}" data-city="${item.cityId}" data-type="${item.filterKey}">
+      <div class="pc-card-top">
+        <div class="pc-card-city-row">
+          <span class="pc-city-pill">${item.cityDisplay} <small>(${item.cityEn})</small></span>
+          <span class="pc-verify-pill">🔎 ${item.verifyBadge}</span>
+        </div>
+        <div class="pc-type-row">
+          <span class="pc-type-badge ${badgeClass}">${item.typeLabel}</span>
+          ${item.subTypeTag ? `<span class="pc-subtype-tag">${item.subTypeTag}</span>` : ''}
+        </div>
+        <h3 class="pc-card-title">${item.name}</h3>
+        ${item.subtitle ? `<p class="pc-card-subtitle">${item.subtitle}</p>` : ''}
+      </div>
+
+      ${oneStopBannerHtml}
+
+      <div class="pc-card-body">
+        <div class="pc-info-block">
+          <div class="pc-info-label">${ui.labelHighlights || '🍴 대표 먹거리 · 전망'}</div>
+          <div class="pc-info-text">${formatMultiline(item.highlights)}</div>
+        </div>
+
+        <div class="pc-info-block pc-info-hours">
+          <div class="pc-info-label">${ui.labelHours || '⏰ 확인된 운영시간'} <span class="pc-hours-caveat">${ui.labelHoursCaveat || '(방문 당일 변경 가능성 있음 · 방문 전 확인)'}</span></div>
+          <div class="pc-info-text">${formatMultiline(item.verifiedHours)}</div>
+        </div>
+
+        <div class="pc-info-block pc-info-caution">
+          <div class="pc-info-label">${ui.labelSeniorCaution || '🦯 부모님 동행 시 계단·경사·이동 주의'}</div>
+          <div class="pc-info-text">${formatMultiline(item.seniorCaution)}</div>
+        </div>
+      </div>
+
+      <div class="pc-card-footer">
+        <div class="pc-sources-box">
+          <div class="pc-sources-meta">
+            <span>${ui.labelOfficialSource || '📌 공식 출처'}</span>
+            <span class="pc-verified-date">${ui.labelVerifiedDate || '확인일: 2026-10-29'}</span>
+          </div>
+          <div class="pc-sources-links">
+            ${sourcesLinksHtml}
+          </div>
+        </div>
+
+        <div class="pc-card-actions">
+          <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="pc-btn-map">
+            ${ui.btnMap || '📍 구글 지도 ↗'}
+          </a>
+          <button type="button" class="btn-candidate-save pc-btn-save ${isSaved ? 'saved' : ''}" onclick="toggleSaveCandidate('practical_candidate', '${item.id}')">
+            ${isSaved ? (ui.btnSaved || '✓ 후보 저장됨') : (ui.btnSave || '⭐ 후보 저장')}
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderSavedPracticalCandidateCard(itemId) {
+  const dataObj = window.PRACTICAL_CITY_CANDIDATES_DATA || (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' ? PRACTICAL_CITY_CANDIDATES_DATA : null);
+  if (!dataObj || !Array.isArray(dataObj.items)) return '';
+  const item = dataObj.items.find(x => x.id === itemId);
+  if (!item) return '';
+  const savedList = typeof getSavedCandidates === 'function' ? getSavedCandidates() : [];
+  const savedIdsSet = new Set(savedList.map(c => c.id));
+  const activeLang = (typeof currentLang !== 'undefined' && ['ko', 'en', 'ja', 'zh'].includes(currentLang)) ? currentLang : 'ko';
+  return renderPracticalCandidateCardHtml(item, savedIdsSet, activeLang);
+}
+
+function updatePracticalSubnavBarI18n(ui) {
+  if (!ui) return;
+  const bars = document.querySelectorAll('.practical-subnav-bar');
+  bars.forEach(bar => {
+    const labelEl = bar.querySelector('.practical-subnav-label');
+    if (labelEl && ui.subnavLabel) labelEl.textContent = ui.subnavLabel;
+    const chips = bar.querySelectorAll('.practical-subnav-chip');
+    if (chips[0] && ui.subnavCandidates) chips[0].textContent = ui.subnavCandidates;
+    if (chips[1] && ui.subnavMaster) chips[1].textContent = ui.subnavMaster;
+    if (chips[2] && ui.subnavDirectory) chips[2].textContent = ui.subnavDirectory;
+  });
+}
+
+function renderPracticalCityCandidates(lang) {
+  const mount = document.getElementById('practical-city-candidates');
+  if (!mount) return;
+
+  const dataObj = window.PRACTICAL_CITY_CANDIDATES_DATA || (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' ? PRACTICAL_CITY_CANDIDATES_DATA : null);
+  if (!dataObj || !Array.isArray(dataObj.items)) return;
+
+  const activeLang = (lang && ['ko', 'en', 'ja', 'zh'].includes(lang))
+    ? lang
+    : ((typeof currentLang !== 'undefined' && ['ko', 'en', 'ja', 'zh'].includes(currentLang)) ? currentLang : 'ko');
+
+  const i18nRoot = window.PRACTICAL_CANDIDATES_I18N || (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' ? PRACTICAL_CANDIDATES_I18N : null);
+  const ui = (i18nRoot && i18nRoot.ui && i18nRoot.ui[activeLang]) ? i18nRoot.ui[activeLang] : (i18nRoot && i18nRoot.ui ? i18nRoot.ui.ko : {});
+
+  updatePracticalSubnavBarI18n(ui);
+
+  window.practicalCandidatesFilterState = window.practicalCandidatesFilterState || {
+    city: 'all',
+    type: 'all',
+    oneStopOnly: false,
+    savedOnly: false,
+    searchQuery: '',
+    dedupOpen: false
+  };
+  const state = window.practicalCandidatesFilterState;
+  const allItems = dataObj.items;
+  const savedList = typeof getSavedCandidates === 'function' ? getSavedCandidates() : [];
+  const savedIdsSet = new Set(savedList.map(c => c.id));
+  const savedPracticalCount = allItems.filter(it => savedIdsSet.has(it.id)).length;
+
+  const cities = [
+    { id: 'all', label: ui.cityAll || '🌐 전체 도시', count: allItems.length },
+    { id: 'barcelona', label: (ui.cities && ui.cities.barcelona) || '🇪🇸 바르셀로나', count: allItems.filter(x => x.cityId === 'barcelona').length },
+    { id: 'granada', label: (ui.cities && ui.cities.granada) || '🇪🇸 그라나다', count: allItems.filter(x => x.cityId === 'granada').length },
+    { id: 'malaga', label: (ui.cities && ui.cities.malaga) || '🇪🇸 말라가', count: allItems.filter(x => x.cityId === 'malaga').length },
+    { id: 'seville', label: (ui.cities && ui.cities.seville) || '🇪🇸 세비야', count: allItems.filter(x => x.cityId === 'seville').length },
+    { id: 'naples', label: (ui.cities && ui.cities.naples) || '🇮🇹 나폴리', count: allItems.filter(x => x.cityId === 'naples').length },
+    { id: 'florence', label: (ui.cities && ui.cities.florence) || '🇮🇹 피렌체', count: allItems.filter(x => x.cityId === 'florence').length },
+    { id: 'rome', label: (ui.cities && ui.cities.rome) || '🇮🇹 로마', count: allItems.filter(x => x.cityId === 'rome').length }
+  ];
+
+  const types = [
+    { key: 'all', label: (ui.types && ui.types.all) || '전체 유형', icon: '🗂️', count: allItems.length },
+    { key: 'evening_food_hall', label: (ui.types && ui.types.evening_food_hall) || '저녁까지 운영하는 식당가/푸드홀·식당', icon: '🍽️', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'evening_food_hall').length },
+    { key: 'evening_view', label: (ui.types && ui.types.evening_view) || '일몰·초저녁·야경 전망 & 루프톱', icon: '🌅', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'evening_view').length },
+    { key: 'day_market', label: (ui.types && ui.types.day_market) || '낮 시간 전통 시장 (야시장 아님)', icon: '☀️', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'day_market').length },
+    { key: 'christmas_market', label: (ui.types && ui.types.christmas_market) || '기간 한정 크리스마스 마켓', icon: '🎄', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'christmas_market').length }
+  ];
+
+  const filteredItems = allItems.filter(rawItem => {
+    const loc = getPracticalCandidateLocalizedItem(rawItem, activeLang);
+    if (state.city !== 'all' && loc.cityId !== state.city) return false;
+    if (state.type !== 'all' && loc.filterKey !== state.type) return false;
+    if (state.oneStopOnly && !loc.oneStopParentRec) return false;
+    if (state.savedOnly && !savedIdsSet.has(loc.id)) return false;
+    if (state.searchQuery && state.searchQuery.trim() !== '') {
+      const q = state.searchQuery.trim().toLowerCase();
+      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.verifiedHours} ${loc.seniorCaution}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  const dedupRowsHtml = (dataObj.deduplicationBaseline || []).map(row => {
+    const cId = row.cityId;
+    const dedupTrans = (activeLang !== 'ko' && i18nRoot && i18nRoot.dedup && i18nRoot.dedup[cId] && i18nRoot.dedup[cId][activeLang])
+      ? i18nRoot.dedup[cId][activeLang]
+      : null;
+    const cityText = dedupTrans ? dedupTrans.city : (row.city || `${row.flag || ''} ${row.cityName || ''} (${row.stayInfo || ''})`);
+    const existingText = dedupTrans ? dedupTrans.existing : (row.existingItems || row.existing || '');
+    const addedText = dedupTrans ? dedupTrans.added : (row.addedSummary || row.added || '');
+
+    return `
+      <div class="pc-dedup-row">
+        <div class="pc-dedup-city">${cityText}</div>
+        <div class="pc-dedup-existing"><strong>${ui.dedupExistingLabel || '기존 수록:'}</strong> ${existingText}</div>
+        <div class="pc-dedup-added"><strong>${ui.dedupAddedLabel || '신규 추가·보강:'}</strong> ${addedText}</div>
+      </div>
+    `;
+  }).join('');
+
+  const cityTabsHtml = cities.map(c => `
+    <button type="button" class="pc-city-tab ${state.city === c.id ? 'active' : ''}" onclick="filterPracticalCandidatesCity('${c.id}')">
+      <span>${c.label}</span>
+      <span class="pc-tab-count">${c.count}</span>
+    </button>
+  `).join('');
+
+  const typeChipsHtml = types.map(t => `
+    <button type="button" class="pc-type-chip ${state.type === t.key ? 'active' : ''}" onclick="filterPracticalCandidatesType('${t.key}')">
+      <span>${t.icon} ${t.label}</span>
+      <span class="pc-chip-count">${t.count}</span>
+    </button>
+  `).join('');
+
+  const cardsHtml = filteredItems.length > 0
+    ? filteredItems.map(item => renderPracticalCandidateCardHtml(item, savedIdsSet, activeLang)).join('')
+    : `
+      <div class="pc-empty-state">
+        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+        <div style="font-weight:700;font-size:16px;color:var(--text);">${ui.emptyTitle || '선택하신 필터 조건에 해당하는 후보 장소가 없습니다.'}</div>
+        <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">${ui.emptyDesc || '도시나 유형 필터를 초기화하면 7개 도시 17개 추가 후보를 모두 확인하실 수 있습니다.'}</p>
+        <button type="button" class="pc-reset-btn" onclick="resetPracticalCandidatesFilters()">${ui.emptyResetBtn || '필터 전체 초기화'}</button>
+      </div>
+    `;
+
+  mount.innerHTML = `
+    <section class="practical-candidates-section" aria-label="${ui.mainTitle || '도시별 추가 맛집·시장·전망 후보 컬렉션'}">
+      <div class="pc-header-banner">
+        <div class="pc-header-top">
+          <div>
+            <span class="pc-kicker">${ui.kicker || '05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)'}</span>
+            <h3 class="pc-main-title">${ui.mainTitle || '🗂️ 도시별 추가 맛집 · 전통시장 · 푸드홀 · 일몰·야경 후보 17선'}</h3>
+            <p class="pc-main-desc">
+              ${ui.mainDesc || ''}
+            </p>
+          </div>
+          <div class="pc-header-badges">
+            <span class="pc-policy-pill">${ui.policyNoNightMarket || '🚫 전통 야시장 오표기 배제'}</span>
+            <span class="pc-policy-pill">${ui.policySameDayChange || '🔎 방문 당일 운영 변경 가능성 명시'}</span>
+            <span class="pc-policy-pill">${ui.policyVerifiedDate || '📌 공식 출처 · 확인일(2026-10-29) 표기'}</span>
+          </div>
+        </div>
+
+        <div class="pc-dedup-toggle-bar">
+          <div class="pc-dedup-summary">
+            <span>${ui.dedupSummary || ''}</span>
+          </div>
+          <button type="button" class="pc-dedup-btn" onclick="togglePracticalDedupBox()">
+            ${state.dedupOpen ? (ui.dedupBtnOpen || '기존 수록 장소 vs 신규 추가 대조표 접기 ▲') : (ui.dedupBtnClosed || '기존 수록 장소 vs 신규 추가 대조표 보기 ▼')}
+          </button>
+        </div>
+
+        <div class="pc-dedup-panel" style="display: ${state.dedupOpen ? 'grid' : 'none'};">
+          ${dedupRowsHtml}
+        </div>
+      </div>
+
+      <div class="pc-controls-panel">
+        <div class="pc-filter-group">
+          <div class="pc-filter-label">${ui.cityFilterLabel || '📍 도시별 바로 찾기 (7개 도시)'}</div>
+          <div class="pc-city-tabs" role="tablist">
+            ${cityTabsHtml}
+          </div>
+        </div>
+
+        <div class="pc-filter-group">
+          <div class="pc-filter-label">${ui.typeFilterLabel || '🏷️ 장소 유형별 필터'}</div>
+          <div class="pc-type-chips">
+            ${typeChipsHtml}
+          </div>
+        </div>
+
+        <div class="pc-toolbar-row">
+          <div class="pc-quick-toggles">
+            <button type="button" class="pc-special-toggle ${state.oneStopOnly ? 'active' : ''}" onclick="togglePracticalCandidatesOneStop()">
+              ${ui.oneStopToggle || '🌟 부모님 동행 원스톱 추천만 보기'}
+            </button>
+            <button type="button" class="pc-special-toggle pc-saved-toggle ${state.savedOnly ? 'active' : ''}" onclick="togglePracticalCandidatesSavedOnly()">
+              ${ui.savedToggle || '⭐ 저장한 후보만 보기'} (${savedPracticalCount})
+            </button>
+          </div>
+
+          <div class="pc-search-box">
+            <input
+              type="search"
+              id="pcSearchInput"
+              class="pc-search-input"
+              placeholder="${(ui.searchPlaceholder || '').replace(/"/g, '&quot;')}"
+              value="${(state.searchQuery || '').replace(/"/g, '&quot;')}"
+              oninput="handlePracticalCandidateSearch(this.value)"
+            />
+            ${(state.city !== 'all' || state.type !== 'all' || state.oneStopOnly || state.savedOnly || state.searchQuery) ? `
+              <button type="button" class="pc-clear-filter-btn" onclick="resetPracticalCandidatesFilters()">${ui.clearFilterBtn || '초기화 ✕'}</button>
+            ` : ''}
+          </div>
+        </div>
+
+        <div class="pc-result-status">
+          <span>${ui.resultCountPrefix || '현재 표시 중:'} <strong>${filteredItems.length}${ui.resultCountMiddle || ''}</strong> ${ui.resultCountSuffix || '/ 17'}</span>
+          <span>${ui.resultDisclaimer || ''}</span>
+        </div>
+      </div>
+
+      <div class="pc-cards-grid">
+        ${cardsHtml}
+      </div>
+    </section>
+  `;
+}
+
+function downloadIcsCalendar() {
+  return downloadCustomCalendarIcs();
+}
+
+if (typeof window !== 'undefined') {
+  window.downloadCustomCalendarIcs = downloadCustomCalendarIcs;
+  window.downloadIcsCalendar = downloadIcsCalendar;
+  window.filterPracticalCandidatesCity = filterPracticalCandidatesCity;
+  window.filterPracticalCandidatesType = filterPracticalCandidatesType;
+  window.togglePracticalCandidatesOneStop = togglePracticalCandidatesOneStop;
+  window.togglePracticalCandidatesSavedOnly = togglePracticalCandidatesSavedOnly;
+  window.handlePracticalCandidateSearch = handlePracticalCandidateSearch;
+  window.resetPracticalCandidatesFilters = resetPracticalCandidatesFilters;
+  window.togglePracticalDedupBox = togglePracticalDedupBox;
+  window.renderPracticalCandidateCardHtml = renderPracticalCandidateCardHtml;
+  window.renderSavedPracticalCandidateCard = renderSavedPracticalCandidateCard;
+  window.renderPracticalCityCandidates = renderPracticalCityCandidates;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPracticalCityCandidates();
+    });
+  } else {
+    renderPracticalCityCandidates();
+  }
+}
