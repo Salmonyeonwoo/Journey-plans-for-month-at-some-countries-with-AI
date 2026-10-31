@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="SlowTravel">
-  <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22SlowTravel%22%2C%22short_name%22%3A%22SlowTravel%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23faf8f5%22%2C%22theme_color%22%3A%22%231b4332%22%7D">
+  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -167,5 +167,18 @@
   <script src="js/practical-place-additions.js?v=20261031_01"></script>
   <script src="js/components.js?v=20261029_06"></script>
   <script src="js/app.js?v=20261031_01"></script>
+
+  <!-- [PWA & Offline] 비행기 모드 및 오프라인 접속을 위한 Service Worker 등록 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then((reg) => {
+          console.log('[SlowTravel] Offline/Airplane mode ServiceWorker active:', reg.scope);
+        }).catch((err) => {
+          console.warn('[SlowTravel] ServiceWorker registration failed:', err);
+        });
+      });
+    }
+  </script>
 </body>
 </html>

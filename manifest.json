@@ -1,0 +1,17 @@
+{
+  "name": "SlowTravel 남유럽 가족 여행 플래너",
+  "short_name": "SlowTravel",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#1b4332",
+  "description": "60대 부모님과 함께하는 30일 남유럽 가족 여행 플래너 (비행기/오프라인 모드 지원)",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231b4332'/%3E%3Ctext x='50' y='65' font-size='50' text-anchor='middle'%3E✈️%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
