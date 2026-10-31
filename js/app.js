@@ -9010,7 +9010,9 @@ function renderSingleSpotCard(spot, lang, dict) {
   const hoursLabel = lang === 'en' ? 'Hours:' : (lang === 'ja' ? '営業時間:' : (lang === 'zh' ? '开放时间:' : '운영시간:'));
   const admissionLabel = lang === 'en' ? 'Admission:' : (lang === 'ja' ? '入場料:' : (lang === 'zh' ? '门票费用:' : '입장료:'));
   const bookBtnText = lang === 'en' ? '🎟 Official Site Booking / Details' : (lang === 'ja' ? '🎟 公式サイト予約 / 詳細案内' : (lang === 'zh' ? '🎟 官方网站预订 / 详情指南' : '🎟 공식 사이트 예매 / 상세 안내'));
-  const verifiedTagText = lang === 'en' ? 'Verified 2026-10-18' : (lang === 'ja' ? '2026-10-18 確認済' : (lang === 'zh' ? '2026-10-18 已核实' : '2026-10-18 확인'));
+  const accessBtnText = lang === 'en' ? '♿ Official Accessibility Details' : (lang === 'ja' ? '♿ 公式アクセシビリティ案内' : (lang === 'zh' ? '♿ 官方无障碍信息' : '♿ 공식 접근성 안내'));
+  const verifiedDate = spot.verifiedDate || '2026-10-18';
+  const verifiedTagText = lang === 'en' ? 'Verified ' + verifiedDate : (lang === 'ja' ? verifiedDate + ' 確認済' : (lang === 'zh' ? verifiedDate + ' 已核实' : verifiedDate + ' 확인'));
 
   const spotHours = (spot.hours && (spot.hours[lang] || spot.hours.ko)) || spot.hours;
   const spotAdmission = (spot.admission && (spot.admission[lang] || spot.admission.ko)) || spot.admission;
@@ -9039,6 +9041,7 @@ function renderSingleSpotCard(spot, lang, dict) {
         '<a href="' + spot.officialUrl + '" target="_blank" rel="noopener noreferrer" class="spot-btn primary">' +
           bookBtnText +
         '</a>' +
+        (spot.accessibilityUrl ? '<a href="' + spot.accessibilityUrl + '" target="_blank" rel="noopener noreferrer" class="spot-btn primary">' + accessBtnText + '</a>' : '') +
         '<span class="spot-verify-tag">✓ ' + verifiedTagText + '</span>' +
       '</div>' +
     '</div>' +
@@ -9423,6 +9426,8 @@ function getPracticalCandidateTypeBadgeClass(typeKey) {
       return 'pc-badge-food-hall';
     case 'christmas_market':
       return 'pc-badge-christmas';
+    case 'cultural_site':
+      return 'pc-badge-cultural-site';
     case 'evening_view':
       return 'pc-badge-evening-view';
     default:
@@ -9495,6 +9500,9 @@ function mapPracticalCategoryToFilterKey(categoryKey, typeKey) {
     case 'rooftop':
     case 'evening_view':
       return 'evening_view';
+    case 'attraction':
+    case 'historic_site':
+      return 'cultural_site';
     default:
       return 'evening_food_hall';
   }
@@ -9544,7 +9552,9 @@ function getPracticalCandidateLocalizedItem(rawItem, lang) {
     highlights: (itemTrans && itemTrans.highlights) ? itemTrans.highlights : (rawItem.highlights || ''),
     verifiedHours: (itemTrans && itemTrans.hours) ? itemTrans.hours : (rawItem.hours || rawItem.verifiedHours || ''),
     seniorCaution: (itemTrans && itemTrans.seniorCaution) ? itemTrans.seniorCaution : (rawItem.seniorCaution || ''),
+    broadcastNote: (itemTrans && itemTrans.broadcastNote) ? itemTrans.broadcastNote : (rawItem.broadcastNote || ''),
     sources: localizedSources,
+    verifiedDate: ((rawItem.verifiedDate || '').match(/\d{4}-\d{2}-\d{2}/) || [])[0] || '',
     mapQuery: rawItem.mapQuery || `${mainTitle} ${cityEn}`,
     ui: ui
   };
@@ -9585,6 +9595,7 @@ function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
         </div>
         <h3 class="pc-card-title">${item.name}</h3>
         ${item.subtitle ? `<p class="pc-card-subtitle">${item.subtitle}</p>` : ''}
+        ${item.broadcastNote ? `<div class="pc-broadcast-note">📺 ${item.broadcastNote}</div>` : ''}
       </div>
 
       ${oneStopBannerHtml}
@@ -9610,7 +9621,7 @@ function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
         <div class="pc-sources-box">
           <div class="pc-sources-meta">
             <span>${ui.labelOfficialSource || '📌 공식 출처'}</span>
-            <span class="pc-verified-date">${ui.labelVerifiedDate || '확인일: 2026-10-29'}</span>
+            <span class="pc-verified-date">${ui.labelVerifiedDate || '공식 출처 확인:'} ${item.verifiedDate}</span>
           </div>
           <div class="pc-sources-links">
             ${sourcesLinksHtml}
@@ -9700,6 +9711,7 @@ function renderPracticalCityCandidates(lang) {
     { key: 'evening_food_hall', label: (ui.types && ui.types.evening_food_hall) || '저녁까지 운영하는 식당가/푸드홀·식당', icon: '🍽️', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'evening_food_hall').length },
     { key: 'evening_view', label: (ui.types && ui.types.evening_view) || '일몰·초저녁·야경 전망 & 루프톱', icon: '🌅', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'evening_view').length },
     { key: 'day_market', label: (ui.types && ui.types.day_market) || '낮 시간 전통 시장 (야시장 아님)', icon: '☀️', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'day_market').length },
+    { key: 'cultural_site', label: (ui.types && ui.types.cultural_site) || '박물관·궁전·정원·문화 명소', icon: '🏛️', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'cultural_site').length },
     { key: 'christmas_market', label: (ui.types && ui.types.christmas_market) || '기간 한정 크리스마스 마켓', icon: '🎄', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'christmas_market').length }
   ];
 
@@ -9711,7 +9723,7 @@ function renderPracticalCityCandidates(lang) {
     if (state.savedOnly && !savedIdsSet.has(loc.id)) return false;
     if (state.searchQuery && state.searchQuery.trim() !== '') {
       const q = state.searchQuery.trim().toLowerCase();
-      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.verifiedHours} ${loc.seniorCaution}`.toLowerCase();
+      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.verifiedHours} ${loc.seniorCaution} ${loc.broadcastNote}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
