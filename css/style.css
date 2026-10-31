@@ -11096,3 +11096,84 @@ h1, h2, h3, h4,
     width: 100%;
   }
 }
+
+/* === Curated Places & Nerja Day Trip Guide Styles === */
+.cur-pill {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.cur-pill:hover,
+.cur-pill.active {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+.cur-pill-sm {
+  background: #f8f6f0;
+  border: 1px solid #e2dbce;
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.cur-pill-sm:hover,
+.cur-pill-sm.active {
+  background: #d8754d;
+  color: #fff;
+  border-color: #d8754d;
+}
+
+.nerja-time-item {
+  display: flex;
+  gap: 12px;
+  background: #fcfbfa;
+  border: 1px solid #e7ded0;
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+.nerja-time-item .time-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 65px;
+}
+.nerja-time-item .time-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--green);
+  background: #e8f4ed;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.nerja-time-item .time-icon {
+  font-size: 18px;
+  margin-top: 4px;
+}
+.nerja-time-item .content-col h4 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1c2e2c;
+}
+.nerja-time-item .content-col p {
+  margin: 0;
+  font-size: 12.5px;
+  color: #556663;
+  line-height: 1.55;
+}
+
+.curated-place-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.07) !important;
+}

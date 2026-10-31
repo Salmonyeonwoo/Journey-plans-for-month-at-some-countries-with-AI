@@ -9350,6 +9350,8 @@ function renderMasterGourmetGuide(lang, filterCountry) {
   });
 
   if (typeof renderPracticalCityCandidates === 'function') renderPracticalCityCandidates(currentL);
+  if (typeof renderNerjaDaytripGuide === 'function') renderNerjaDaytripGuide(currentL);
+  if (typeof renderCuratedHeartPlaces === 'function') renderCuratedHeartPlaces(currentL);
 
   // Re-apply survival filters if active
   if (window.masterSurvivalCountry !== 'all' || window.masterSurvivalCategory !== 'all') {
