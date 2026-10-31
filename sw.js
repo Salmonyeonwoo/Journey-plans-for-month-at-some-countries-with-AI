@@ -1,17 +1,22 @@
-// SlowTravel Offline Service Worker (v20261031_01)
-// Enables full offline and airplane-mode access to the travel guide.
+// SlowTravel Mobile Offline Service Worker (v20261031_02)
+// Optimized for iOS Safari, Android Chrome, and mobile airplane mode.
 
-const CACHE_NAME = 'slowtravel-offline-v20261031_01';
+const CACHE_NAME = 'slowtravel-offline-v20261031_02';
 
 const PRECACHE_URLS = [
   './',
   './index.html',
   './manifest.json',
   './css/style.css',
+  './css/style.css?v=20261031_01',
   './js/data.js',
+  './js/data.js?v=20261029_06',
   './js/practical-place-additions.js',
+  './js/practical-place-additions.js?v=20261031_01',
   './js/components.js',
+  './js/components.js?v=20261029_06',
   './js/app.js',
+  './js/app.js?v=20261031_01',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
@@ -46,7 +51,7 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(req.url);
 
-  // 1. Navigation requests (HTML page): Network-first with Cache fallback
+  // 1. Navigation requests (HTML page): Network-first with Cache fallback for airplane mode
   if (req.mode === 'navigate' || req.headers.get('accept')?.includes('text/html')) {
     event.respondWith(
       fetch(req)
@@ -71,10 +76,21 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 3. Static assets (CSS, JS, Fonts, Leaflet CDN): Stale-While-Revalidate with Cache-first
+  // 3. Static assets: Cache-first with background auto-update (Stale-While-Revalidate)
   event.respondWith(
     caches.match(req, { ignoreSearch: true }).then((cachedRes) => {
-      const fetchPromise = fetch(req)
+      if (cachedRes) {
+        fetch(req)
+          .then((networkRes) => {
+            if (networkRes && networkRes.status === 200) {
+              caches.open(CACHE_NAME).then((cache) => cache.put(req, networkRes));
+            }
+          })
+          .catch(() => {});
+        return cachedRes;
+      }
+
+      return fetch(req)
         .then((networkRes) => {
           if (networkRes && networkRes.status === 200) {
             const resClone = networkRes.clone();
@@ -82,9 +98,11 @@ self.addEventListener('fetch', (event) => {
           }
           return networkRes;
         })
-        .catch(() => cachedRes);
-
-      return cachedRes || fetchPromise;
+        .catch(() => {
+          // If network failed and exact match failed, try matching base URL without query params
+          const cleanUrl = req.url.split('?')[0];
+          return caches.match(cleanUrl);
+        });
     })
   );
 });
