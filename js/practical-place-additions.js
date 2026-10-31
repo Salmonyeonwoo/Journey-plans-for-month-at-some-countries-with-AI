@@ -427,7 +427,14 @@
       resultCountSuffix: '/ 전체 24개 후보',
       labelVerifiedDate: '공식 출처 확인:',
       dedupSummary: '✅ <strong>중복 대조 완료:</strong> 7개 도시의 실용정보·명소·식당·야경을 대조했습니다. 로마교·Gambrinus·Borghese는 기존 안내를 유지하고 새 카드로 반복하지 않았습니다.',
-      types: { cultural_site: '박물관·궁전·정원·문화 명소' }
+      types: {
+        all: '전체 유형',
+        evening_food_hall: '저녁까지 운영하는 식당가/푸드홀·식당',
+        evening_view: '일몰·초저녁·야경 전망 & 루프톱',
+        day_market: '낮 시간 전통 시장 (야시장 아님)',
+        cultural_site: '박물관·궁전·정원·문화 명소',
+        christmas_market: '기간 한정 크리스마스 마켓'
+      }
     },
     en: {
       mainTitle: '🗂️ 24 Additional City Picks: Food, Markets, Views & Cultural Sights',
@@ -438,7 +445,14 @@
       resultCountSuffix: 'of 24 candidates',
       labelVerifiedDate: 'Official source checked:',
       dedupSummary: '✅ <strong>Deduplication checked:</strong> Practical, attraction, dining and night-view content across 7 cities was compared. Puente Romano, Gambrinus and Borghese remain in their existing entries rather than being repeated as cards.',
-      types: { cultural_site: 'Museums, Palaces, Gardens & Cultural Sights' }
+      types: {
+        all: 'All Categories',
+        evening_food_hall: 'Evening Food Halls / Dining Zones & Restaurants',
+        evening_view: 'Sunset, Early-Evening & Night Views / Rooftops',
+        day_market: 'Daytime Traditional Markets (Not Night Markets)',
+        cultural_site: 'Museums, Palaces, Gardens & Cultural Sights',
+        christmas_market: 'Seasonal Christmas Market'
+      }
     },
     ja: {
       mainTitle: '🗂️ 都市別追加候補24選：グルメ・市場・展望・文化名所',
@@ -449,7 +463,14 @@
       resultCountSuffix: '/ 全24候補',
       labelVerifiedDate: '公式出典確認:',
       dedupSummary: '✅ <strong>重複照合済み:</strong> 7都市の実用情報・名所・飲食・夜景情報を照合しました。ローマ橋、Gambrinus、ボルゲーゼ美術館は既存案内を維持し、別カードとして重複掲載していません。',
-      types: { cultural_site: '美術館・宮殿・庭園・文化名所' }
+      types: {
+        all: 'すべてのタイプ',
+        evening_food_hall: '夜まで営業する飲食店街／フードホール・老舗食堂',
+        evening_view: '日没・宵の口・夜景展望＆ルーフトップ',
+        day_market: '昼の伝統市場 (夜市ではありません)',
+        cultural_site: '美術館・宮殿・庭園・文化名所',
+        christmas_market: '期間限定クリスマスマーケット'
+      }
     },
     zh: {
       mainTitle: '🗂️ 7城24处新增建议：美食、市场、观景与文化景点',
@@ -460,12 +481,25 @@
       resultCountSuffix: '/ 共24处候选',
       labelVerifiedDate: '官方来源核实:',
       dedupSummary: '✅ <strong>已完成查重:</strong> 对照了7城的实用信息、景点、餐饮与夜景内容。罗马桥、Gambrinus和博尔盖塞美术馆保留在原有介绍中，不另建重复卡片。',
-      types: { cultural_site: '博物馆、宫殿、花园与文化景点' }
+      types: {
+        all: '全部类型',
+        evening_food_hall: '营业至晚间的餐饮区/美食大厅与老字号餐厅',
+        evening_view: '日落·傍晚·夜景展望与屋顶酒吧',
+        day_market: '白天传统市场 (非夜市)',
+        cultural_site: '博物馆、宫殿、花园与文化景点',
+        christmas_market: '期间限定圣诞集市'
+      }
     }
   };
   for (const lang of locales) {
-    Object.assign(PRACTICAL_CANDIDATES_I18N.ui[lang], uiCopy[lang]);
-    Object.assign(PRACTICAL_CANDIDATES_I18N.ui[lang].types, uiCopy[lang].types);
+    const copy = Object.assign({}, uiCopy[lang]);
+    const typeOverrides = copy.types;
+    delete copy.types;
+    Object.assign(PRACTICAL_CANDIDATES_I18N.ui[lang], copy);
+    if (!PRACTICAL_CANDIDATES_I18N.ui[lang].types) {
+      PRACTICAL_CANDIDATES_I18N.ui[lang].types = {};
+    }
+    Object.assign(PRACTICAL_CANDIDATES_I18N.ui[lang].types, typeOverrides);
   }
 
   const findBaseline = cityId => PRACTICAL_CITY_CANDIDATES_DATA.deduplicationBaseline.find(row => row.cityId === cityId);
