@@ -4690,6 +4690,185 @@ function handleLocalChat(query) {
 
 
   // ====================================================
+  // DIRECT ENTITY SEARCH: CURATED 31 + DINING 92 + LANDMARKS 80 + CANDIDATES 17
+  // ====================================================
+  function findMatchingTravelEntity(query, lang) {
+    const raw = (query || '').trim();
+    if (!raw || raw.length < 2) return null;
+    const lower = raw.toLowerCase();
+
+    // 1. Search in CURATED_HEART_PLACES_DATA (31선 - Anxoita Bodega, Vinitus, etc.)
+    const curatedList = (typeof window !== 'undefined' && window.CURATED_HEART_PLACES_DATA) || [];
+    for (const item of curatedList) {
+      const nameL = (item.name || '').toLowerCase();
+      const titleKoL = ((item.title && item.title.ko) || '').toLowerCase();
+      const titleEnL = ((item.title && item.title.en) || '').toLowerCase();
+      const titleJaL = ((item.title && item.title.ja) || '').toLowerCase();
+      const titleZhL = ((item.title && item.title.zh) || '').toLowerCase();
+      
+      const matchName = nameL.includes(lower) || lower.includes(nameL);
+      const matchTitle = titleKoL.includes(lower) || lower.includes(titleKoL) ||
+                         titleEnL.includes(lower) || lower.includes(titleEnL) ||
+                         titleJaL.includes(lower) || lower.includes(titleJaL) ||
+                         titleZhL.includes(lower) || lower.includes(titleZhL);
+
+      const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
+      const tokenMatch = tokens.length > 0 && tokens.every(t => 
+        nameL.includes(t) || titleKoL.includes(t) || titleEnL.includes(t) || titleJaL.includes(t) || titleZhL.includes(t)
+      );
+
+      if (matchName || matchTitle || tokenMatch) {
+        return {
+          type: 'curated',
+          item: item,
+          name: (item.title && (item.title[lang] || item.title.ko)) || item.name,
+          city: (item.cityBadge && (item.cityBadge[lang] || item.cityBadge.ko)) || item.city,
+          category: (item.catBadge && (item.catBadge[lang] || item.catBadge.ko)) || item.category,
+          desc: (item.desc && (item.desc[lang] || item.desc.ko)) || '',
+          tip: (item.tip && (item.tip[lang] || item.tip.ko)) || '',
+          mapUrl: item.mapUrl
+        };
+      }
+    }
+
+    // 2. Search in GLOBAL_DINING_DATA (92선 - 검증 맛집)
+    const diningList = (typeof GLOBAL_DINING_DATA !== 'undefined' && GLOBAL_DINING_DATA) || [];
+    for (const item of diningList) {
+      const nameL = (item.name || '').toLowerCase();
+      const dInfo = (typeof DINING_I18N_DATA !== 'undefined' && DINING_I18N_DATA[item.name]) || {};
+      const locName = (dInfo.displayName && (dInfo.displayName[lang] || dInfo.displayName.ko)) || item.name;
+      const locNameL = locName.toLowerCase();
+      const dishL = ((dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '').toLowerCase();
+
+      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL);
+      const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
+      const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t));
+
+      if (matchName || tokenMatch) {
+        return {
+          type: 'dining',
+          item: item,
+          name: locName,
+          city: (typeof cleanHangul === 'function') ? cleanHangul(item.city, lang) : item.city,
+          category: (lang === 'ja' ? '厳選グルメ名店' : (lang === 'en' ? 'Verified Dining' : (lang === 'zh' ? '特色精选餐厅' : '검증 대표 맛집'))),
+          desc: (dInfo.dishDesc && (dInfo.dishDesc[lang] || dInfo.dishDesc.ko)) || item.highlight || '',
+          tip: (dInfo.seniorTip && (dInfo.seniorTip[lang] || dInfo.seniorTip.ko)) || item.seniorTip || '',
+          dish: (dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '',
+          photo: item.photo,
+          mapUrl: item.mapUrl || (item.name ? `https://maps.google.com/?q=${encodeURIComponent(item.name + ' ' + (item.city || ''))}` : null)
+        };
+      }
+    }
+
+    // 3. Search in PRACTICAL_CITY_CANDIDATES_DATA (17선 추가 후보 - 시장, 전망대 등)
+    const candList = (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' && PRACTICAL_CITY_CANDIDATES_DATA) || [];
+    for (const item of candList) {
+      const nameL = (item.name || '').toLowerCase();
+      const cInfo = (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' && PRACTICAL_CANDIDATES_I18N[item.id] && PRACTICAL_CANDIDATES_I18N[item.id][lang]) || {};
+      const locName = cInfo.name || item.name;
+      const locNameL = locName.toLowerCase();
+
+      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL);
+      const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
+      const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t));
+
+      if (matchName || tokenMatch) {
+        return {
+          type: 'candidate',
+          item: item,
+          name: locName,
+          city: item.city || '',
+          category: (lang === 'ja' ? '市場・展望台・追加名所' : (lang === 'en' ? 'Market / Viewpoint Pick' : (lang === 'zh' ? '市场·观景台精选' : '시장·전망대 추가 후보'))),
+          desc: cInfo.desc || item.desc || '',
+          tip: cInfo.senior || item.senior || '',
+          hours: cInfo.hours || item.hours || '',
+          mapUrl: item.officialUrl || (item.mapQuery ? `https://maps.google.com/?q=${encodeURIComponent(item.mapQuery)}` : null)
+        };
+      }
+    }
+
+    // 4. Search in GLOBAL_LANDMARKS_DATA (80선+ 랜드마크 명소)
+    const landmarkList = (typeof GLOBAL_LANDMARKS_DATA !== 'undefined' && GLOBAL_LANDMARKS_DATA) || [];
+    for (const item of landmarkList) {
+      const nameL = (item.name || '').toLowerCase();
+      const lInfo = (typeof LANDMARKS_I18N_DATA !== 'undefined' && LANDMARKS_I18N_DATA[item.name]) || {};
+      const locName = (lInfo.displayName && (lInfo.displayName[lang] || lInfo.displayName.ko)) || item.name;
+      const locNameL = locName.toLowerCase();
+
+      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL);
+      const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
+      const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t));
+
+      if (matchName || tokenMatch) {
+        return {
+          type: 'landmark',
+          item: item,
+          name: locName,
+          city: item.city || item.region || '',
+          category: (lang === 'ja' ? '必訪ランドマーク' : (lang === 'en' ? 'Essential Landmark' : (lang === 'zh' ? '必游核心名胜' : '핵심 랜드마크'))),
+          desc: (lInfo.highlight && (lInfo.highlight[lang] || lInfo.highlight.ko)) || item.highlight || '',
+          tip: (lInfo.seniorAccess && (lInfo.seniorAccess[lang] || lInfo.seniorAccess.ko)) || item.seniorAccess || '',
+          hours: item.hours || '',
+          photo: item.photo,
+          officialUrl: item.officialUrl,
+          mapUrl: item.mapQuery ? `https://maps.google.com/?q=${encodeURIComponent(item.mapQuery)}` : null
+        };
+      }
+    }
+
+    return null;
+  }
+
+  // Execute Direct Entity Search first
+  const matchedEntity = findMatchingTravelEntity(q, lang);
+  if (matchedEntity) {
+    const e = matchedEntity;
+    const tipPrefix = lang === 'ja' ? '💡 シニア配慮＆訪問のコツ:' : (lang === 'en' ? '💡 Senior Comfort & Visit Tip:' : (lang === 'zh' ? '💡 长辈贴士与游玩建议:' : '💡 어르신 배려 & 방문 꿀팁:'));
+    const mapLabel = lang === 'ja' ? '💖 Googleマップで見る / 保存 ↗' : (lang === 'en' ? '💖 Open Google Maps / Save Heart ↗' : (lang === 'zh' ? '💖 打开谷歌地图 / 加收藏 ↗' : '💖 구글 지도 열기 / 하트 저장 ↗'));
+    const listLabel = lang === 'ja' ? '📋 全体リストを開く ➔' : (lang === 'en' ? '📋 View Full Guidebook List ➔' : (lang === 'zh' ? '📋 查看完整名录 ➔' : '📋 가이드북 전체 목록 보기 ➔'));
+
+    let jumpChapter = 'chapter-practical';
+    let jumpTargetId = 'curated-family-places';
+    if (e.type === 'landmark') { jumpChapter = 'chapter-guide'; jumpTargetId = 'landmarksSection'; }
+    else if (e.type === 'dining') { jumpChapter = 'chapter-practical'; jumpTargetId = 'globalDiningSearch'; }
+    else if (e.type === 'candidate') { jumpChapter = 'chapter-practical'; jumpTargetId = 'practical-city-candidates'; }
+
+    let cardHtml = `
+      <div style="background:#ffffff;border:1.5px solid #d4e0d7;border-radius:18px;padding:16px 18px;margin-top:8px;box-shadow:0 4px 14px rgba(0,0,0,0.04);">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;flex-wrap:wrap;">
+          <span style="background:#e8f4ed;color:#1a5249;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;">${escapeHtml(e.city)}</span>
+          <span style="background:#fff2eb;color:#d8754d;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;">${escapeHtml(e.category)}</span>
+        </div>
+        <h4 style="margin:0 0 8px;font-size:16px;color:#1c2e2c;font-weight:800;letter-spacing:-0.02em;">${escapeHtml(e.name)}</h4>
+        ${e.photo ? `<div style="width:100%;height:130px;border-radius:12px;background:url('${e.photo}') center/cover no-repeat;margin-bottom:10px;"></div>` : ''}
+        <p style="margin:0 0 10px;font-size:13px;color:#4a5c58;line-height:1.65;">${escapeHtml(e.desc)}</p>
+        ${e.tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:12px;border-left:3px solid #d8754d;line-height:1.55;"><strong>${tipPrefix}</strong> ${escapeHtml(e.tip)}</div>` : ''}
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          ${e.mapUrl ? `<a href="${e.mapUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${mapLabel}</button></a>` : ''}
+          ${e.officialUrl ? `<a href="${e.officialUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">🌐 공식 사이트 ↗</button></a>` : ''}
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('${jumpChapter}'); if(typeof goToBookPage==='function') goToBookPage('${jumpChapter}', 0); setTimeout(() => { const el = document.getElementById('${jumpTargetId}'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${listLabel}</button>
+        </div>
+      </div>
+    `;
+
+    const introText = lang === 'ja'
+      ? `🔍 <strong>「${escapeHtml(e.name)}」の現地情報・おすすめ案内です:</strong>`
+      : (lang === 'en'
+        ? `🔍 <strong>Here are the handpicked details for "${escapeHtml(e.name)}":</strong>`
+        : (lang === 'zh'
+          ? `🔍 <strong>为您查询到“${escapeHtml(e.name)}”的精选推荐信息：</strong>`
+          : `🔍 <strong>'${escapeHtml(e.name)}' 상세 안내 및 추천 정보입니다:</strong>`));
+
+    const chips = [
+      { query: '구글 지도 31선 리스트 보여줘', label: '💖 구글 지도 31선' },
+      { query: '네르하 당일치기 방법 알려줘', label: '🚌 네르하 당일치기' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' }
+    ];
+
+    return introText + cardHtml + renderFollowupChips(chips);
+  }
+
+  // ====================================================
   // 0-A. NEW CURATED: MALAGA -> NERJA & FRIGILIANA DAY TRIP
   // ====================================================
   const isNerjaDaytrip = [
