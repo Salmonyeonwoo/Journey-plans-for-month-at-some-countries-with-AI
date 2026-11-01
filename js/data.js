@@ -24228,7 +24228,21 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       m_nav_practical: "실용정보",
       shortcut_hint: "⌨️ 단축키: [ / ] 또는 숫자 1~5로 장 이동",
       prev_chapter_prefix: "이전 장",
-      next_chapter_prefix: "다음 장"
+      next_chapter_prefix: "다음 장",
+      quick_special_rec: "★ 2026 가족 특별 추천",
+      quick_gmaps_31: "구글 지도 31선",
+      quick_nerja_daytrip: "네르하 당일치기",
+      quick_nerja_guide: "네르하 가이드",
+      nav_curated_maps: "💖 지도 31선",
+      nav_nerja_daytrip: "🚌 네르하 당일치기",
+      hero_curated_maps: "💖 바르셀로나·말라가·세비야 지도 31선",
+      hero_nerja_daytrip: "🚌 말라가 ➔ 네르하 & 프리힐리아나 ALSA 이동",
+      subnav_section_label: "📌 섹션 바로가기:",
+      subnav_chip_curated_maps: "💖 구글지도 하트 맛집·쇼핑·명소 (31선)",
+      subnav_chip_nerja_guide: "🚌 말라가↔네르하·프리힐리아나 당일치기",
+      subnav_chip_city_candidates: "✨ 도시별 추가 맛집·시장·전망 후보 (17선)",
+      subnav_chip_master_gourmet: "🥘 빠에야·피자 외 7대 도시 미식 & 회화 24선",
+      subnav_chip_global_dining: "🏪 기존 검증 맛집 디렉토리 (92선 & 지도)"
     },
     en: {
       guidebook_edition: "2026 DIGITAL EDITION",
@@ -24251,7 +24265,21 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       m_nav_practical: "Practical",
       shortcut_hint: "⌨️ Shortcuts: [ / ] or 1-5 keys to switch chapters",
       prev_chapter_prefix: "Prev Chapter",
-      next_chapter_prefix: "Next Chapter"
+      next_chapter_prefix: "Next Chapter",
+      quick_special_rec: "★ 2026 Special Family Picks",
+      quick_gmaps_31: "Google Maps 31",
+      quick_nerja_daytrip: "Nerja Day Trip",
+      quick_nerja_guide: "Nerja Guide",
+      nav_curated_maps: "💖 Maps 31",
+      nav_nerja_daytrip: "🚌 Nerja Day Trip",
+      hero_curated_maps: "💖 Barcelona · Málaga · Seville Maps 31",
+      hero_nerja_daytrip: "🚌 Málaga ➔ Nerja & Frigiliana ALSA Transit",
+      subnav_section_label: "📌 Quick Sections:",
+      subnav_chip_curated_maps: "💖 Saved Google Maps Spots (31 Picks)",
+      subnav_chip_nerja_guide: "🚌 Málaga ↔ Nerja & Frigiliana Day Trip",
+      subnav_chip_city_candidates: "✨ City Markets & Viewpoints (17 Picks)",
+      subnav_chip_master_gourmet: "🥘 Beyond Paella & Pizza: 7 Cities & 24 Phrases",
+      subnav_chip_global_dining: "🏪 Master Dining Directory (92 Spots & Map)"
     },
     ja: {
       guidebook_edition: "2026 デジタルエディション",
@@ -24274,7 +24302,21 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       m_nav_practical: "実用情報",
       shortcut_hint: "⌨️ ショートカット: [ / ] または 1〜5キーで移動",
       prev_chapter_prefix: "前の章",
-      next_chapter_prefix: "次の章"
+      next_chapter_prefix: "次の章",
+      quick_special_rec: "★ 2026 家族特別おすすめ",
+      quick_gmaps_31: "Googleマップ31選",
+      quick_nerja_daytrip: "ネルハ日帰り",
+      quick_nerja_guide: "ネルハガイド",
+      nav_curated_maps: "💖 地図31選",
+      nav_nerja_daytrip: "🚌 ネルハ日帰り",
+      hero_curated_maps: "💖 バルセロナ・マラガ・セビリア 地図31選",
+      hero_nerja_daytrip: "🚌 マラガ ➔ ネルハ＆フリヒリアナ ALSA移動",
+      subnav_section_label: "📌 セクション案内:",
+      subnav_chip_curated_maps: "💖 Googleマップお気に入り名所＆グルメ (31選)",
+      subnav_chip_nerja_guide: "🚌 マラガ ↔ ネルハ＆フリヒリアナ日帰り",
+      subnav_chip_city_candidates: "✨ 都市別市場・展望台・追加候補 (17選)",
+      subnav_chip_master_gourmet: "🥘 パエリア＆ピザ以外の7都市名物＆会話24選",
+      subnav_chip_global_dining: "🏪 厳選グルメ名店ディレクトリ (92選＆地図)"
     },
     zh: {
       guidebook_edition: "2026 数字典藏版",
@@ -24297,7 +24339,21 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       m_nav_practical: "实用",
       shortcut_hint: "⌨️ 快捷键: [ / ] 或按 1~5 键快速切换章节",
       prev_chapter_prefix: "上一章",
-      next_chapter_prefix: "下一章"
+      next_chapter_prefix: "下一章",
+      quick_special_rec: "★ 2026 家庭特别精选",
+      quick_gmaps_31: "谷歌地图31选",
+      quick_nerja_daytrip: "内尔哈一日游",
+      quick_nerja_guide: "内尔哈指南",
+      nav_curated_maps: "💖 地图31选",
+      nav_nerja_daytrip: "🚌 内尔哈一日游",
+      hero_curated_maps: "💖 巴塞罗那·马拉加·塞维利亚 地图31选",
+      hero_nerja_daytrip: "🚌 马拉加 ➔ 内尔哈与弗里希利亚纳 ALSA出行",
+      subnav_section_label: "📌 章节直达:",
+      subnav_chip_curated_maps: "💖 谷歌地图红心收藏名店·景点 (31选)",
+      subnav_chip_nerja_guide: "🚌 马拉加 ↔ 内尔哈与弗里希利亚纳一日游",
+      subnav_chip_city_candidates: "✨ 各城特色市场·观景台候补 (17选)",
+      subnav_chip_master_gourmet: "🥘 经典特色菜·7大城市招牌＆口语24选",
+      subnav_chip_global_dining: "🏪 精选特色餐厅目录 (92选与地图)"
     }
   };
 

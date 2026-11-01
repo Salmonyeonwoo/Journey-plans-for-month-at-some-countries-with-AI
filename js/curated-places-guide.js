@@ -1171,7 +1171,7 @@
       <div class="nerja-daytrip-card" style="background:#fff;border:1.5px solid #d4e0d7;border-radius:24px;padding:28px;margin-bottom:28px;box-shadow:0 12px 36px rgba(26,82,73,0.06);">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
           <span style="background:#e8f4ed;color:#1a5249;font-size:12px;font-weight:800;padding:6px 14px;border-radius:20px;letter-spacing:0.04em;">${badge}</span>
-          <span style="background:#fff2eb;color:#d8754d;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;">⭐ 11/17 (화) 최적 추천</span>
+          <span style="background:#fff2eb;color:#d8754d;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;">${ui.bestDateBadge}</span>
         </div>
         <h3 style="font-size:clamp(20px, 3.2vw, 26px);color:#1c2e2c;margin:0 0 12px;font-weight:800;letter-spacing:-0.03em;">${title}</h3>
         <p style="font-size:14.5px;color:#4a5c58;line-height:1.75;margin:0 0 22px;">${intro}</p>
@@ -1195,9 +1195,9 @@
               <strong style="font-size:15px;color:#1c2e2c;">${s1.title[currentL] || s1.title.ko}</strong>
             </div>
             <ul style="margin:0;padding-left:18px;font-size:13px;color:#4a5c58;line-height:1.75;">
-              <li><strong>탑승:</strong> ${s1.board[currentL] || s1.board.ko}</li>
-              <li><strong>하차:</strong> ${s1.drop[currentL] || s1.drop.ko}</li>
-              <li><strong>소요/요금:</strong> ${s1.duration} · ${s1.fare}</li>
+              <li><strong>${ui.stepBoard}</strong> ${s1.board[currentL] || s1.board.ko}</li>
+              <li><strong>${ui.stepDrop}</strong> ${s1.drop[currentL] || s1.drop.ko}</li>
+              <li><strong>${ui.stepDuration}</strong> ${s1.duration} · ${s1.fare}</li>
             </ul>
             <div style="margin-top:12px;background:#f3f8f5;border-radius:10px;padding:10px 12px;font-size:12px;color:#1a5249;line-height:1.55;">
               <strong>💡 ${s1.tip[currentL] || s1.tip.ko}</strong>
@@ -1345,8 +1345,8 @@
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:14px;">
           <div>
             <div style="font-size:11px;font-weight:800;color:#d8754d;letter-spacing:0.12em;text-transform:uppercase;">05-B / CURATED GOOGLE MAPS SHORTLIST</div>
-            <h3 style="font-size:clamp(19px, 3vw, 24px);color:#1c2e2c;margin:6px 0 4px;font-weight:800;letter-spacing:-0.03em;">💖 바르셀로나 · 말라가 · 세비야 구글 지도 하트 저장 필수 리스트 (31선)</h3>
-            <p style="font-size:13.5px;color:#6b7c78;margin:0;">아래 링크 타고 가서 구글 지도에 하트(★/❤️) 표시해두고 현지에서 클릭 한 번으로 편안하게 찾아가세요.</p>
+            <h3 style="font-size:clamp(19px, 3vw, 24px);color:#1c2e2c;margin:6px 0 4px;font-weight:800;letter-spacing:-0.03em;">${ui.headerHeartPlaces}</h3>
+            <p style="font-size:13.5px;color:#6b7c78;margin:0;">${ui.descHeartPlaces}</p>
           </div>
           <div style="min-width:240px;flex:1;max-width:340px;">
             <input type="text" id="curatedPlacesSearchInput" value="${state.search}" placeholder="${ui.searchPlaceholder}" oninput="window.setCuratedPlacesSearch(this.value)" style="width:100%;padding:10px 14px;border-radius:12px;border:1px solid #cad8ce;font-size:13px;background:#fff;outline:none;">
@@ -1357,7 +1357,7 @@
         ${catButtons}
 
         <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:16px;">
-          ${cardsHtml.length ? cardsHtml : `<div style="grid-column:1/-1;text-align:center;padding:36px;color:#859692;font-size:14px;">조건에 일치하는 장소가 없습니다.</div>`}
+          ${cardsHtml.length ? cardsHtml : `<div style="grid-column:1/-1;text-align:center;padding:36px;color:#859692;font-size:14px;">${ui.emptyPlaces}</div>`}
         </div>
 
         ${bonusHtml}

@@ -51,8 +51,8 @@
           <div class="m-info"><strong data-i18n="toc_ch5_title">여행 실용정보</strong><span data-i18n="toc_ch5_sub">맛집 · 회화 · 교통 · 숙소</span></div>
         </button>
               <div style="margin: 10px 6px 4px; padding-top: 10px; border-top: 1px dashed #e2e8f0; display: flex; gap: 8px;">
-          <button type="button" onclick="goToCuratedPlaces(); toggleMobileToc(false);" style="flex: 1; padding: 8px 6px; background: #fff7ed; border: 1px solid #fdba74; border-radius: 8px; font-size: 0.8rem; font-weight: 700; color: #c2410c; cursor: pointer;">💖 구글지도 31선</button>
-          <button type="button" onclick="goToNerjaGuide(); toggleMobileToc(false);" style="flex: 1; padding: 8px 6px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; font-size: 0.8rem; font-weight: 700; color: #047857; cursor: pointer;">🚌 네르하 가이드</button>
+          <button type="button" onclick="goToCuratedPlaces(); toggleMobileToc(false);" style="flex: 1; padding: 8px 6px; background: #fff7ed; border: 1px solid #fdba74; border-radius: 8px; font-size: 0.8rem; font-weight: 700; color: #c2410c; cursor: pointer;">💖 <span data-i18n="quick_gmaps_31">구글지도 31선</span></button>
+          <button type="button" onclick="goToNerjaGuide(); toggleMobileToc(false);" style="flex: 1; padding: 8px 6px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; font-size: 0.8rem; font-weight: 700; color: #047857; cursor: pointer;">🚌 <span data-i18n="quick_nerja_guide">네르하 가이드</span></button>
         </div>
       </nav>
     </div>
@@ -112,15 +112,15 @@
         </nav>
         <!-- [PC 데스크톱 전용] 2026 특별 큐레이션 빠른 바로가기 -->
         <div class="sidebar-quick-section" style="margin: 14px 12px 10px; padding: 12px; background: #fffaf5; border: 1.5px solid #fed7aa; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-          <div style="font-size: 0.72rem; font-weight: 800; color: #c2410c; letter-spacing: 0.5px; margin-bottom: 8px;">★ 2026 가족 특별 추천</div>
+          <div style="font-size: 0.72rem; font-weight: 800; color: #c2410c; letter-spacing: 0.5px; margin-bottom: 8px;" data-i18n="quick_special_rec">★ 2026 가족 특별 추천</div>
           <button type="button" onclick="goToCuratedPlaces()" style="display: flex; align-items: center; width: 100%; gap: 8px; padding: 8px 10px; margin-bottom: 6px; background: #ffffff; border: 1px solid #f97316; border-radius: 8px; font-size: 0.82rem; font-weight: 700; color: #c2410c; cursor: pointer; text-align: left;">
             <span style="font-size: 0.95rem;">💖</span>
-            <span>구글 지도 31선</span>
+            <span data-i18n="quick_gmaps_31">구글 지도 31선</span>
             <span style="margin-left: auto; font-size: 0.75rem; color: #fb923c;">➔</span>
           </button>
           <button type="button" onclick="goToNerjaGuide()" style="display: flex; align-items: center; width: 100%; gap: 8px; padding: 8px 10px; background: #ffffff; border: 1px solid #10b981; border-radius: 8px; font-size: 0.82rem; font-weight: 700; color: #047857; cursor: pointer; text-align: left;">
             <span style="font-size: 0.95rem;">🚌</span>
-            <span>네르하 당일치기</span>
+            <span data-i18n="quick_nerja_daytrip">네르하 당일치기</span>
             <span style="margin-left: auto; font-size: 0.75rem; color: #34d399;">➔</span>
           </button>
         </div>
@@ -177,11 +177,11 @@
   </div>
 
   <!-- 모듈화 스크립트 연결: 데이터 -> UI 컴포넌트 마운터 -> 앱 인터랙션 로직 -->
-  <script src="js/data.js?v=20261029_06"></script>
+  <script src="js/data.js?v=20261101_02"></script>
     <script src="js/practical-place-additions.js?v=20261031_01"></script>
-  <script src="js/curated-places-guide.js?v=20261101_01"></script>
-  <script src="js/components.js?v=20261029_06"></script>
-  <script src="js/app.js?v=20261031_01"></script>
+  <script src="js/curated-places-guide.js?v=20261101_02"></script>
+  <script src="js/components.js?v=20261101_02"></script>
+  <script src="js/app.js?v=20261101_02"></script>
 
   <!-- [PWA & Offline] 비행기 모드 및 오프라인 접속을 위한 Service Worker 등록 -->
   <script>

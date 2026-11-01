@@ -252,17 +252,14 @@
                     </div>
                     <div class="hero-curated-shortcuts" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px dashed rgba(27,67,50,0.2);">
                       <button type="button" class="btn-hero-curated" onclick="goToCuratedPlaces()" style="flex: 1; min-width: 220px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; background: #fff3ec; border: 1.5px solid #f97316; border-radius: 12px; color: #c2410c; font-size: 0.92rem; font-weight: 800; cursor: pointer; box-shadow: 0 2px 6px rgba(249,115,22,0.15); transition: all 0.2s ease;">
-                        <span>💖</span>
-                        <span>바르셀로나·말라가·세비야 구글지도 31선</span>
-                        <span>➔</span>
+                        <span data-i18n="hero_curated_maps">💖 바르셀로나·말라가·세비야 지도 31선</span>
+                        <span style="margin-left:auto;">➔</span>
                       </button>
                       <button type="button" class="btn-hero-curated" onclick="goToNerjaGuide()" style="flex: 1; min-width: 220px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; background: #ecfdf5; border: 1.5px solid #10b981; border-radius: 12px; color: #047857; font-size: 0.92rem; font-weight: 800; cursor: pointer; box-shadow: 0 2px 6px rgba(16,185,129,0.15); transition: all 0.2s ease;">
-                        <span>🚌</span>
-                        <span>말라가 ➔ 네르하 &amp; 프리힐리아나 ALSA 가이드</span>
-                        <span>➔</span>
+                        <span data-i18n="hero_nerja_daytrip">🚌 말라가 ➔ 네르하 &amp; 프리힐리아나 ALSA 이동</span>
+                        <span style="margin-left:auto;">➔</span>
                       </button>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1837,7 +1834,7 @@
           <section class="section guide-section" id="dining">
       <div class="wrap">
         <!-- 🍽️ 2026 특별 기획: 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편) -->
-        <div class="practical-subnav-bar" role="navigation" aria-label="실용정보 미식·시장·야경 섹션 바로가기"><span class="practical-subnav-label">📌 섹션 바로가기:</span><button type="button" class="practical-subnav-chip active" onclick="document.getElementById('curated-family-places').scrollIntoView({behavior:'smooth', block:'start'})">💖 구글지도 하트 맛집·쇼핑·명소 (31선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('nerja-daytrip-guide').scrollIntoView({behavior:'smooth', block:'start'})">🚌 말라가↔네르하·프리힐리아나 당일치기</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-city-candidates').scrollIntoView({behavior:'smooth', block:'start'})">✨ 도시별 추가 맛집·시장·전망 후보 (17선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-master-gourmet').scrollIntoView({behavior:'smooth', block:'start'})">🥘 빠에야·피자 외 7대 도시 미식 &amp; 회화 24선</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('globalDiningSearch').scrollIntoView({behavior:'smooth', block:'center'})">🏪 기존 검증 맛집 디렉토리 (92선 &amp; 지도)</button></div><div id="curated-family-places" class="curated-places-mount" style="margin-bottom:32px;"></div><div id="nerja-daytrip-guide" class="nerja-guide-mount" style="margin-bottom:32px;"></div><div id="practical-city-candidates" class="practical-candidates-mount" style="margin-bottom:32px;"></div><div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
+        <div class="practical-subnav-bar" role="navigation" aria-label="실용정보 미식·시장·야경 섹션 바로가기"><span class="practical-subnav-label" data-i18n="subnav_section_label">📌 섹션 바로가기:</span><button type="button" class="practical-subnav-chip active" onclick="document.getElementById('curated-family-places').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_curated_maps">💖 구글지도 하트 맛집·쇼핑·명소 (31선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('nerja-daytrip-guide').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_nerja_guide">🚌 말라가↔네르하·프리힐리아나 당일치기</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-city-candidates').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_city_candidates">✨ 도시별 추가 맛집·시장·전망 후보 (17선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-master-gourmet').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_master_gourmet">🥘 빠에야·피자 외 7대 도시 미식 &amp; 회화 24선</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('globalDiningSearch').scrollIntoView({behavior:'smooth', block:'center'})" data-i18n="subnav_chip_global_dining">🏪 기존 검증 맛집 디렉토리 (92선 &amp; 지도)</button></div><div id="curated-family-places" class="curated-places-mount" style="margin-bottom:32px;"></div><div id="nerja-daytrip-guide" class="nerja-guide-mount" style="margin-bottom:32px;"></div><div id="practical-city-candidates" class="practical-candidates-mount" style="margin-bottom:32px;"></div><div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
 
         <div class="section-head">
           <div>

@@ -4022,12 +4022,15 @@ function updateChatbotLanguage(lang) {
 // Detect language of user query or fall back to active UI language
 function getEffectiveLang(query) {
   const q = (query || '').trim();
-  if (/[\u3040-\u30ff]/.test(q)) return 'ja';
-  if (/[\uac00-\ud7a3]/.test(q)) return 'ko';
-  if (/[\u4e00-\u9fa5]/.test(q) && !/[\u3040-\u30ff]/.test(q)) return 'zh';
-  if (/^[a-zA-Z0-9\s.,?!'"`~@#$%^&*()_\-+=\[\]{}|\\;:\/<>]+$/.test(q) && /[a-zA-Z]{2,}/.test(q)) {
-    return 'en';
-  }
+  // 1) Korean characters
+  if (/[\uac00-\ud7a3\u1100-\u11ff\u3130-\u318f]/.test(q)) return 'ko';
+  // 2) Japanese Hiragana & Katakana
+  if (/[\u3040-\u309f\u30a0-\u30ff]/.test(q)) return 'ja';
+  // 3) Chinese Hanzi (without Japanese Kana)
+  if (/[\u4e00-\u9fff]/.test(q)) return 'zh';
+  // 4) English / Latin alphabet words (e.g. "nerja", "hotel", "bus", "spain", "flamenco")
+  if (/[a-zA-Z\u00C0-\u00FF]{2,}/.test(q)) return 'en';
+  // 5) Fallback to current UI language
   return (window.currentLang || 'ko').toLowerCase();
 }
 
@@ -4262,6 +4265,8 @@ function switchLanguage(lang, btn) {
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(lang);
   if (typeof renderItalyCityGuide === "function") renderItalyCityGuide(lang);
   if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(lang, window.masterGourmetActiveCountry || 'all');
+  if (typeof renderNerjaDaytripGuide === "function") renderNerjaDaytripGuide(lang);
+  if (typeof renderCuratedHeartPlaces === "function") renderCuratedHeartPlaces(lang);
 
   // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
   const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
@@ -4477,16 +4482,53 @@ function handleLocalChat(query) {
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
 
-  // Helper for quick follow-up chips generator
+  // Helper for quick follow-up chips generator with multi-language dictionary mapping
   function renderFollowupChips(chips) {
     if (!chips || !chips.length) return '';
     const label = lang === 'ja' ? '💡 続けてよくある質問:' : (lang === 'en' ? '💡 Popular Follow-up Questions:' : (lang === 'zh' ? '💡 接下来您可以追问：' : '💡 이어지는 추천 질문:'));
+    
+    // Translation dictionary for standard follow-up chips
+    const CHIP_TRANS = {
+      '30일 마스터 플래너 요약해줘': { en: 'Summarize 30-day master planner', ja: '30日マスタープランナー要約', zh: '总结30天大师规划' },
+      '네르하 당일치기 방법 알려줘': { en: 'How to do Nerja day trip from Malaga', ja: 'マラガ発ネルハ日帰り方法', zh: '马拉加去内尔哈一日游方法' },
+      '구글 지도 31선 리스트 보여줘': { en: 'Show 31 Google Maps curated places', ja: 'Googleマップ31選リスト', zh: '查看谷歌地图31精选名录' },
+      '빠에야 피자 말고 다른 음식 추천': { en: 'Recommend signature dishes beyond paella and pizza', ja: 'パエリアやピザ以外の名物料理', zh: '推荐海鲜饭披萨外的特色美食' },
+      '식당과 여행 필수 서바이벌 회화': { en: 'Essential 24 survival phrases', ja: '24選必須サバイバル会話', zh: '24句常用实用口语' },
+      '식당 필수 생존 회화 알려줘': { en: 'Essential dining survival phrases', ja: 'レストラン必須サバイバル会話', zh: '餐厅点餐常用会话' },
+      '이탈리아 기차 예매 팁': { en: 'Italy high-speed train booking tips', ja: 'イタリア高速鉄道予約のコツ', zh: '意大利高铁订票实用指南' },
+      '성당 복장 규정 알려줘': { en: 'Cathedral dress code rules', ja: '大聖堂の服装規定', zh: '大教堂着装规范要求' },
+      '소매치기 예방법 알려줘': { en: 'Pickpocket prevention tips', ja: 'スリ対策と安全ガイド', zh: '防范扒手与安全建议' },
+      '나폴리에서 피렌체 이동법': { en: 'How to travel from Naples to Florence', ja: 'ナポリからフィレンツェへの移動方法', zh: '那不勒斯到佛罗伦萨交通方式' },
+      '세비야 자전거와 플라멩코 팁': { en: 'Seville Sevici bike and flamenco tips', ja: 'セビリアの自転車とフラメンコ案内', zh: '塞维利亚自行车与弗拉门戈贴士' },
+      '두바이 핵심 5대 명소 알려줘': { en: 'Top 5 must-see Dubai landmarks', ja: 'ドバイ必見5大名所ガイド', zh: '迪拜必游5大核心地标' }
+    };
+    const CHIP_LABELS = {
+      '📅 30일 마스터 플래너': { en: '📅 30-Day Master Planner', ja: '📅 30日マスタープランナー', zh: '📅 30天大师规划师' },
+      '📅 30일 플래너 & 숙소': { en: '📅 30-Day Planner & Hotels', ja: '📅 30日プラン＆ホテル', zh: '📅 30天规划与住宿' },
+      '🚌 네르하 당일치기': { en: '🚌 Nerja Day Trip', ja: '🚌 ネルハ日帰り', zh: '🚌 内尔哈一日游' },
+      '💖 구글 지도 31선': { en: '💖 Google Maps 31', ja: '💖 Googleマップ31選', zh: '💖 谷歌地图31选' },
+      '🍽️ 빠에야·피자 외 미식': { en: '🍽️ Beyond Paella & Pizza', ja: '🍽️ パエリア以外の名物', zh: '🍽️ 避开海鲜饭与披萨美食' },
+      '🍽️ 대표 미식 12선': { en: '🍽️ 12 Signature Dishes', ja: '🍽️ 代表名物料理12選', zh: '🍽️ 12大特色招牌菜' },
+      '🗣️ 24선 필수 회화': { en: '🗣️ 24 Survival Phrases', ja: '🗣️ 24選必須サバイバル会話', zh: '🗣️ 24句生存必备口语' },
+      '🗣️ 식당 필수 회화': { en: '🗣️ Dining Phrases', ja: '🗣️ レストラン必須会話', zh: '🗣️ 餐厅点餐口语' },
+      '🚄 이탈리아 기차 팁': { en: '🚄 Italy Train Tips', ja: '🚄 イタリア列車予約', zh: '🚄 意铁高铁技巧' },
+      '⛪ 성당 복장 규정': { en: '⛪ Cathedral Dress Code', ja: '⛪ 大聖堂の服装規定', zh: '⛪ 大教堂着装避坑' },
+      '🚨 소매치기 안전': { en: '🚨 Pickpocket Safety', ja: '🚨 スリ対策と安全', zh: '🚨 防扒防盗安全' },
+      '🚆 나폴리 ➔ 피렌체': { en: '🚆 Naples ➔ Florence', ja: '🚆 ナポリ ➔ フィレンツェ', zh: '🚆 那不勒斯 ➔ 佛罗伦萨' },
+      '🚲 세비야 자전거·플라멩코': { en: '🚲 Seville Bike & Flamenco', ja: '🚲 セビリア自転車＆フラメンコ', zh: '🚲 塞维利亚自行车与歌舞' },
+      '🇦🇪 두바이 5대 명소': { en: '🇦🇪 Top 5 Dubai Highlights', ja: '🇦🇪 ドバイ5大名所', zh: '🇦🇪 迪拜5大名胜' }
+    };
+
     let html = `<div style="margin-top:13px;border-top:1px dashed var(--line);padding-top:8px;">`;
     html += `<div style="font-size:11px;color:var(--muted);font-weight:700;margin-bottom:6px;">${label}</div>`;
     html += `<div style="display:flex;flex-wrap:wrap;gap:5px;">`;
     chips.forEach(c => {
-      const qText = (typeof cleanHangul === 'function') ? cleanHangul(c.query || '', lang) : (c.query || '');
-      const lText = (typeof cleanHangul === 'function') ? cleanHangul(c.label || '', lang) : (c.label || '');
+      let qText = c.query || '';
+      let lText = c.label || '';
+      if (lang !== 'ko') {
+        if (CHIP_TRANS[qText] && CHIP_TRANS[qText][lang]) qText = CHIP_TRANS[qText][lang];
+        if (CHIP_LABELS[lText] && CHIP_LABELS[lText][lang]) lText = CHIP_LABELS[lText][lang];
+      }
       const escaped = qText.replace(/'/g, "\\'");
       html += `<button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('${escaped}')">${lText}</button>`;
     });
@@ -4646,6 +4688,287 @@ function handleLocalChat(query) {
     return '저는 본 가이드북에 내장된 <strong>가족 여행 전담 로컬 AI 가이드</strong>입니다. 외부 API 통신 없이 브라우저 내 엄선된 지식(30일 마스터 플래너, 9대 확정 숙소, 6대 교통 공식, 7대 도시 12대 대체불가 미식, 24선 필수 서바이벌 회화, 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)을 바탕으로 즉각 답변해 드립니다!' + renderFollowupChips(chips);
   }
 
+
+  // ====================================================
+  // 0-A. NEW CURATED: MALAGA -> NERJA & FRIGILIANA DAY TRIP
+  // ====================================================
+  const isNerjaDaytrip = [
+    'nerja', 'frigiliana', '네르하', '프리힐리아나', 'ネルハ', 'フリヒリアナ', '内尔哈', '弗里希利亚纳',
+    '유럽의 발코니', '유럽의발코니', 'balcon de europa', 'balcón de europa', 'ヨーロッパのバルコニー', '欧洲阳台',
+    '말라가 당일치기', '말라가 근교', '네르하 당일치기', '네르하 버스', 'alsa 네르하', 'nerja day trip', 'nerja bus'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isNerjaDaytrip) {
+    const chips = [
+      { query: '구글 지도 31선 리스트 보여줘', label: '💖 구글 지도 31선' },
+      { query: '세비야 자전거와 플라멩코 팁', label: '🚲 세비야 자전거·플라멩코' },
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' }
+    ];
+
+    if (lang === 'ja') {
+      return `
+        🚌 <strong>マラガ発「ネルハ＆フリヒリアナ」日帰り完全ガイド</strong>:<br><br>
+        ご家族イチオシのアンダルシア屈指の絶景リゾート＆白い村の日帰り移動マスター情報です:<br><br>
+        • <strong>おすすめ日程:</strong> 11月17日(火) マラガ滞在3日目（丸一日自由に使える最適日）！<br>
+        • <strong>第1段階 (マラガ ➔ ネルハ):</strong> マラガバスターミナル（または港前）から<strong>ALSA直行便（Directo）</strong>に乗車。所要約1時間〜1時間15分、片道約€5。<br>
+        • <strong>第2段階 (ネルハ ➔ フリヒリアナ):</strong> 路線ミニバスは本数が少なく混雑するため、<strong>停留所横で待機しているタクシー（3人で片道約€15、所要10〜15分）</strong>の利用を強く推奨します！ご両親の膝の負担軽減と時間節約に圧倒的におすすめです。<br>
+        • <strong>見どころゴールデンルート:</strong> 白い村フリヒリアナ散策＆テラスカフェ ➔ タクシーでネルハへ戻る ➔ エメラルドグリーンの海辺でシーフード＆パエリア ➔ 絶景展望台「ヨーロッパのバルコニー(Balcón de Europa)」散策＆本格イタリアンジェラート ➔ ALSAバスで夕方マラガ帰還。<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderNerjaDaytripGuide==='function') renderNerjaDaytripGuide('ja'); setTimeout(() => { const el = document.getElementById('nerja-daytrip-guide'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+            🚌 ネルハ日帰りガイドを開く ➔
+          </button>
+          <a href="https://www.alsa.com/en/web/bus/home" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:#f97316;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              🎟️ ALSAバス公式サイト予約 ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        🚌 <strong>Day Trip from Málaga: Nerja & Frigiliana Master Guide</strong>:<br><br>
+        Here is the senior-friendly, optimal excursion plan for Andalusia’s most charming whitewashed hillside village and Mediterranean coast:<br><br>
+        • <strong>Optimal Timing:</strong> Nov 17 (Tue) · Málaga Day 3 (early morning start is best)!<br>
+        • <strong>Step 1 (Málaga ➔ Nerja):</strong> Take the <strong>ALSA Directo coach</strong> from Málaga Bus Station (~1 hour, ~€5 one-way). Make sure to book express buses with minimal stops.<br>
+        • <strong>Step 2 (Nerja ➔ Frigiliana):</strong> Local minibuses run infrequently. We strongly recommend taking a <strong>waiting taxi right outside Nerja station (~€15 one-way, 10–15 mins for 3 persons)</strong>. The modest €10 price difference saves parents from fatigue, stair-climbing, and hot waits.<br>
+        • <strong>Day Trip Itinerary:</strong> Stroll the whitewashed alleys of Frigiliana with panoramic coffee ➔ Return taxi to Nerja coastal center ➔ Fresh beachfront Mediterranean seafood & paella ➔ Open cliffside promenade at <strong>Balcón de Europa</strong> & artisanal gelato ➔ ALSA coach return to Málaga.<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderNerjaDaytripGuide==='function') renderNerjaDaytripGuide('en'); setTimeout(() => { const el = document.getElementById('nerja-daytrip-guide'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+            🚌 Open Nerja Day Trip Guide ➔
+          </button>
+          <a href="https://www.alsa.com/en/web/bus/home" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:#f97316;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              🎟️ Official ALSA Coach Booking Portal ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      return `
+        🚌 <strong>马拉加出发“内尔哈与弗里希利亚纳”一日游全攻略</strong>:<br><br>
+        家人极力推荐的安达卢西亚纯白山城与地中海蔚蓝海岸一日游最佳出行方案：<br><br>
+        • <strong>最佳出行日期:</strong> 11月17日（周二）马拉加停留第3天（整天充裕，动线体力最完美）！<br>
+        • <strong>第1步 (马拉加 ➔ 内尔哈):</strong> 在马拉加汽车总站搭乘<strong>ALSA直达特快（Directo）城际大巴</strong>（耗时约1小时~1小时15分，单程约5欧元）。<br>
+        • <strong>第2步 (内尔哈 ➔ 弗里希利亚纳):</strong> 当地小巴班次极少且需排队站立，强烈建议在<strong>内尔哈车站旁乘坐常驻出租车（单程约15欧元，10~15分钟直达）</strong>！3人同行相较小巴仅多花约10欧，却能极大保护长辈膝盖健康，免除烈日等车之苦。<br>
+        • <strong>一日游黄金时间线:</strong> 漫步纯白弗里希利亚纳山城小巷与景观咖啡 ➔ 乘出租车返回内尔哈海滨 ➔ 翡翠海边餐厅享用海鲜拼盘与海鲜饭 ➔ 悬崖之巅“欧洲阳台(Balcón de Europa)”海景漫步与意式手工冰淇淋 ➔ 傍晚乘ALSA大巴返回马拉加。<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderNerjaDaytripGuide==='function') renderNerjaDaytripGuide('zh'); setTimeout(() => { const el = document.getElementById('nerja-daytrip-guide'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+            🚌 打开内尔哈一日游详细指南 ➔
+          </button>
+          <a href="https://www.alsa.com/en/web/bus/home" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:#f97316;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              🎟️ 打开ALSA官网购票 ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    } else {
+      return `
+        🚌 <strong>말라가 출발 '네르하 & 프리힐리아나' ALSA 버스 당일치기 완전정복</strong>:<br><br>
+        동생분께서 강력 추천하신 안달루시아 최고의 하얀 산골 마을과 에메랄드빛 지중해 당일치기 코스입니다:<br><br>
+        • <strong>추천 날짜:</strong> 11월 17일(화) 말라가 체류 3일 차 (온전히 하루가 비는 완벽한 타이밍)!<br>
+        • <strong>1단계 (말라가 ➔ 네르하):</strong> 말라가 버스터미널에서 <strong>ALSA 직행(Directo) 버스</strong> 탑승 (약 1시간~1시간 15분, 편도 1인 약 5 EUR). 정차역 적은 직행 표를 끊으세요.<br>
+        • <strong>2단계 (네르하 ➔ 프리힐리아나):</strong> 빨간 로컬 버스는 배차 간격이 길고 서서 가야 하므로, <strong>정류장 옆 상시 대기 택시(편도 3인 기준 약 15 EUR, 10~15분)</strong> 탑승을 강력 추천합니다! (3인 버스비 4 EUR와 10 EUR 차이지만 부모님 무릎과 시간을 지키는 가장 현명한 선택입니다.)<br>
+        • <strong>당일치기 핵심 코스:</strong> 프리힐리아나 하얀 골목 산책 & 사진 ➔ 택시로 네르하 복귀 ➔ 해변 식당 해산물 구이 & 빠에야 점심 ➔ 지중해 절벽 '유럽의 발코니' 산책 & 수제 젤라토 ➔ ALSA 버스로 말라가 복귀.<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderNerjaDaytripGuide==='function') renderNerjaDaytripGuide('ko'); setTimeout(() => { const el = document.getElementById('nerja-daytrip-guide'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+            🚌 네르하 가이드 본문 바로가기 ➔
+          </button>
+          <a href="https://www.alsa.com/en/web/bus/home" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:#f97316;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              🎟️ ALSA 버스 공식 예매 사이트 ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    }
+  }
+
+  // ====================================================
+  // 0-B. NEW CURATED: GOOGLE MAPS 31 HEART-SAVED SHORTLIST
+  // ====================================================
+  const isCuratedHeartPlaces = [
+    '31선', '31 places', '31 picks', '31選', '31选',
+    '구글 지도 31', '구글지도 31', '하트 저장', '하트 리스트', '하트 맛집', '구글 맵 31', '큐레이션 31',
+    'google maps 31', 'heart saved', 'heart places', 'curated 31', 'curated places',
+    'お気に入り31', 'googleマップ31', 'ハート保存', '谷歌地图31', '红心收藏', '精选31'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isCuratedHeartPlaces) {
+    const chips = [
+      { query: '네르하 당일치기 방법 알려줘', label: '🚌 네르하 당일치기' },
+      { query: '세비야 자전거와 플라멩코 팁', label: '🚲 세비야 자전거·플라멩코' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' }
+    ];
+
+    if (lang === 'ja') {
+      return `
+        💖 <strong>バルセロナ・マラガ・セビリア Googleマップ31選（お気に入り保存必須）</strong>:<br><br>
+        現地で迷わずワンタップでアクセスできるよう、厳選された31箇所の名店＆名所リストです:<br><br>
+        • <strong>バルセロナ (15選):</strong> 蜂蜜タラ料理のVinitus、グラシア通りの名所、チュロス名店チュレリア、ランブラス通り散策ルート。<br>
+        • <strong>マラガ＆ネルハ (8選):</strong> アンダルシア伝統のカーサ・アランダ、ピカソ美術館、エル・ピンピ、ネルハのヨーロッパのバルコニー。<br>
+        • <strong>セビリア (8選):</strong> 絶品タパスのラ・ブルニルダ、セビリア大聖堂、スペイン広場、伝統工芸革製品ショップ。<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderCuratedHeartPlaces==='function') renderCuratedHeartPlaces('ja'); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          💖 Googleマップ31選セクションを開く ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        💖 <strong>Curated 31 Google Maps Heart-Saved Spots (Barcelona · Málaga · Seville)</strong>:<br><br>
+        Save these handpicked spots directly to your Google Maps (★/❤️) for instant, one-tap navigation on the go:<br><br>
+        • <strong>Barcelona (15 Spots):</strong> Honey Cod tapas at Vinitus, Passeig de Gràcia boutiques, legendary Churrería, and El Corte Inglés.<br>
+        • <strong>Málaga & Nerja (8 Spots):</strong> Andalusian fried churros at Casa Aranda, Bodega El Pimpi, Picasso Museum, and Balcón de Europa cliffside.<br>
+        • <strong>Seville (8 Spots):</strong> Contemporary tapas at La Brunilda, Seville Cathedral, Plaza de España, and artisan leather workshops.<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderCuratedHeartPlaces==='function') renderCuratedHeartPlaces('en'); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          💖 Open Curated 31 Google Maps Places ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      return `
+        💖 <strong>巴塞罗那·马拉加·塞维利亚 谷歌地图红心收藏必备31选</strong>:<br><br>
+        为您精选31处经久考验的招牌名店与必访景观，建议在手机谷歌地图上一键加红心收藏：<br><br>
+        • <strong>巴塞罗那 (15选):</strong> 蜂蜜鳕鱼名店Vinitus、格拉西亚大道散步道、传统油条店Churrería、英国宫百货。<br>
+        • <strong>马拉加与内尔哈 (8选):</strong> 百年老店Casa Aranda、毕加索博物馆、百年酒庄El Pimpi、欧洲阳台断崖景观。<br>
+        • <strong>塞维利亚 (8选):</strong> 极品Tapas店La Brunilda、塞维利亚大教堂、西班牙广场、手工定制皮具坊。<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderCuratedHeartPlaces==='function') renderCuratedHeartPlaces('zh'); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          💖 查看谷歌地图31精选清单 ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else {
+      return `
+        💖 <strong>바르셀로나 · 말라가 · 세비야 구글 지도 하트 저장 필수 리스트 (31선)</strong>:<br><br>
+        현지에서 주소 검색하느라 헤매지 않도록, 구글 지도에 미리 하트(★/❤️) 저장해두고 바로 찾아갈 수 있는 알짜 명소입니다:<br><br>
+        • <strong>바르셀로나 (15선):</strong> 꿀대구 인생 맛집 비니투스(Vinitus), 그라시아 거리 산책 명소, 수제 츄러스 맛집, 엘 코르테 잉글레스 백화점.<br>
+        • <strong>말라가 & 네르하 (8선):</strong> 안달루시아 전통 츄러스 카사 아란다, 엘 핌피 와인바, 피카소 미술관, 네르하 유럽의 발코니 전망대.<br>
+        • <strong>세비야 (8선):</strong> 감동의 타파스 라 브루닐다(La Brunilda), 세비야 대성당, 스페인 광장, 장인 수제 가죽 공방거리.<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); if(typeof renderCuratedHeartPlaces==='function') renderCuratedHeartPlaces('ko'); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          💖 구글 지도 31선 큐레이션 보러가기 ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    }
+  }
+
+  // ====================================================
+  // 0-C. NEW CURATED: SEVILLE SEVICI BIKE & FLAMENCO TIPS
+  // ====================================================
+  const isSevilleSpecial = [
+    'sevici', '세비시', '세비야 자전거', '자전거 대여', '플라멩코', '플라멩고', '세비야 플라멩코',
+    'flamenco', 'seville bike', 'seville flamenco', 'フラメンコ', 'セビシ', 'セビリア 自転車',
+    '弗拉门戈', '塞维利亚 自行车', '公共自行车'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isSevilleSpecial) {
+    const chips = [
+      { query: '구글 지도 31선 리스트 보여줘', label: '💖 구글 지도 31선' },
+      { query: '네르하 당일치기 방법 알려줘', label: '🚌 네르하 당일치기' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' }
+    ];
+
+    if (lang === 'ja') {
+      return `
+        🚲 <strong>セビリア現地体験: Sevici自転車シェア＆本場フラメンコ鑑賞のコツ</strong>:<br><br>
+        • <strong>Sevici 公共レンタサイクル:</strong> セビリアは完全平坦な街で自転車専用道が整備されています。7日間パス（約€13.33）を購入すると、最初の30分間は何度でも無料で乗り継ぎ可能！グアダルキビール川沿いやスペイン広場のサイクリングは最高です。<br>
+        • <strong>本場フラメンコ鑑賞:</strong> サンタクルス街の「フラメンコ博物館(Museo del Baile Flamenco)」または伝統タブラオ(Los Gallos, Casa de la Memoria)が安心。夜遅い回を避け、夕方19:00前後の第1部を予約すると、ご両親の夜間安全帰宅に最適です。<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🚲 セビリア現地ヒントを見る ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        🚲 <strong>Seville Local Travel Highlights: Sevici Bike Share & Authentic Flamenco</strong>:<br><br>
+        • <strong>Sevici Public Bike Sharing:</strong> Seville is virtually flat with world-class bicycle lanes. A 7-day short-term subscription (~€13.33) gives unlimited free 30-minute rides. Gliding along the Guadalquivir River to Plaza de España is unforgettable.<br>
+        • <strong>Flamenco Show Guidelines:</strong> Book reputable venues such as Museo del Baile Flamenco, Los Gallos, or Casa de la Memoria in advance. Choose the early 19:00 session so parents can dine early and walk back to the hotel safely without fatigue.<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🚲 View Seville Local Tips ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      return `
+        🚲 <strong>塞维利亚独家体验: Sevici共享单车与正宗弗拉门戈观赏贴士</strong>:<br><br>
+        • <strong>Sevici 公共单车:</strong> 塞维利亚全城地势平坦，绿道设施极佳。购买7天短期卡（约13.33欧元），每次骑行前30分钟免费！沿瓜达尔基维尔河畔一路骑向西班牙广场，微风拂面非常舒适。<br>
+        • <strong>弗拉门戈歌舞秀:</strong> 推荐提前预订圣十字区的弗拉门戈舞蹈博物馆（Museo del Baile Flamenco）或传统剧场（Los Gallos、Casa de la Memoria）。建议选择晚上19:00前后的第一场，方便长辈看完后从容晚餐并安全步行回酒店。<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🚲 查看塞维利亚专属贴士 ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else {
+      return `
+        🚲 <strong>세비야 현지 2대 필수 여행 꿀팁: Sevici 공용 자전거 & 플라멩코 명당</strong>:<br><br>
+        • <strong>Sevici 공용 자전거:</strong> 세비야는 언덕이 거의 없는 완벽한 평지 도시입니다. 7일 단기 이용권(약 €13.33)을 등록하면 30분 이내 라이딩이 무제한 무료! 과달키비르 강변과 스페인 광장 주변을 자전거로 달리면 가족 모두에게 최고의 추억이 됩니다.<br>
+        • <strong>플라멩코 공연 꿀팁:</strong> 산타크루스 구시가지 '플라멩코 댄스 박물관(Museo del Baile Flamenco)' 또는 전통 타블라오(Los Gallos, Casa de la Memoria)를 사전 예약하세요. 부모님 체력을 고려해 밤늦은 2부 대신 <strong>저녁 7시 전후 1부 공연</strong>을 관람하시는 것이 야간 귀가 안전상 가장 좋습니다.<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical', 0); setTimeout(() => { const el = document.getElementById('curated-family-places'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🚲 세비야 현지 팁 확인하기 ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    }
+  }
+
+  // ====================================================
+  // 0-D. DUBAI TOP 5 ESSENTIAL LANDMARKS
+  // ====================================================
+  const isDubaiLandmarkSpecific = [
+    '버즈 칼리파', '부르즈 할리파', '미래의 박물관', '두바이 분수', '더 뷰 앳 더 팜', '알 파히디', '알 시프', '아브라',
+    'burj khalifa', 'museum of the future', 'dubai fountain', 'view at the palm', 'al fahidi', 'al seef',
+    'ブルジュハリファ', '未来の博物館', 'ドバイファウンテン', '哈利法塔', '未来博物馆', '迪拜喷泉'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isDubaiLandmarkSpecific) {
+    const chips = [
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '네르하 당일치기 방법 알려줘', label: '🚌 네르하 당일치기' },
+      { query: '구글 지도 31선 리스트 보여줘', label: '💖 구글 지도 31선' }
+    ];
+
+    if (lang === 'ja') {
+      return `
+        🇦🇪 <strong>ドバイ乗り継ぎ必見 5大核心ランドマーク案内</strong>:<br><br>
+        1️⃣ <strong>ブルジュ・ハリファ (Burj Khalifa):</strong> 世界最高峰828m。124・125階展望台「At the Top」のファストトラック指定予約が必須。<br>
+        2️⃣ <strong>未来の博物館 (Museum of the Future):</strong> 世界で最も美しい建築物。柱のない7階建ての未来イノベーション空間（2〜4週間前の予約必須）。<br>
+        3️⃣ <strong>ドバイ・ファウンテン＆ドバイ・モール:</strong> 世界最大級の音楽噴水ショー（夜18:00〜23:00、30分毎無料）。テラスカフェからの観覧がおすすめ。<br>
+        4️⃣ <strong>ザ・ビュー・アット・ザ・パーム:</strong> 人工島パーム・ジュメイラを地上240mから360度見渡す絶景展望台。<br>
+        5️⃣ <strong>アル・ファヒディ＆アル・シーフ歴史地区:</strong> 伝統バールジール（風の塔）の街並みと、1ディルハムで乗れる伝統木造船「アブラ」。<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-guide'); if(typeof goToBookPage==='function') goToBookPage('chapter-guide', 0); setTimeout(() => { const el = document.getElementById('dubaiAdditionsSection'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#0284c7;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🇦🇪 ドバイ名所ガイドを開く ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        🇦🇪 <strong>Top 5 Essential Dubai Landmarks for Stopover & Travel</strong>:<br><br>
+        1️⃣ <strong>Burj Khalifa (At the Top):</strong> World's tallest 828m tower with high-speed elevators and panoramic observation deck (advance booking essential).<br>
+        2️⃣ <strong>Museum of the Future:</strong> Ranked the world's most beautiful building with seamless accessibility and immersive future exhibits (book 2–4 weeks ahead).<br>
+        3️⃣ <strong>The Dubai Fountain & Mall:</strong> Spectacular choreography of water, light, and music soaring 150m (daily 18:00–23:00 every 30 mins, free).<br>
+        4️⃣ <strong>The View at The Palm:</strong> 240m-high 360-degree vantage point overlooking the iconic palm-shaped Palm Jumeirah archipelago.<br>
+        5️⃣ <strong>Al Fahidi & Al Seef Historical District:</strong> Charming wind-tower heritage streets, atmospheric cafes, and historic 1-AED Abra traditional boat rides across Dubai Creek.<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-guide'); if(typeof goToBookPage==='function') goToBookPage('chapter-guide', 0); setTimeout(() => { const el = document.getElementById('dubaiAdditionsSection'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#0284c7;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🇦🇪 View Dubai Landmarks Guide ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      return `
+        🇦🇪 <strong>迪拜转机与自由行必游 5大核心地标全解析</strong>:<br><br>
+        1️⃣ <strong>哈利法塔 (Burj Khalifa - At the Top):</strong> 世界第一高楼（828米），搭乘超高速双层电梯直达124/125层观景台（建议提前订免排队时段票）。<br>
+        2️⃣ <strong>未来博物馆 (Museum of the Future):</strong> 被誉为全球最美建筑，无柱环形7层沉浸空间，全平地无障碍设计（务必提前2~4周官网抢票）。<br>
+        3️⃣ <strong>迪拜音乐喷泉与迪拜商场:</strong> 喷射高达150米的震撼声光水秀（每晚18:00~23:00每30分钟免费展演），推荐在露台餐厅悠闲观赏。<br>
+        4️⃣ <strong>棕榈岛观景台 (The View at The Palm):</strong> 位于240米高空，360度全景俯瞰棕榈人工岛全貌与阿拉伯湾海天一色。<br>
+        5️⃣ <strong>阿法迪与阿尔席夫历史街区:</strong> 19世纪传统风塔泥屋街巷，搭乘仅需1迪拉姆的传统木船阿布拉(Abra)畅游迪拜湾老城。<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-guide'); if(typeof goToBookPage==='function') goToBookPage('chapter-guide', 0); setTimeout(() => { const el = document.getElementById('dubaiAdditionsSection'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#0284c7;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🇦🇪 查看迪拜地标指南 ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    } else {
+      return `
+        🇦🇪 <strong>두바이 경유 & 자유여행 필수 5대 핵심 랜드마크</strong>:<br><br>
+        1️⃣ <strong>버즈 칼리파 전망대 (Burj Khalifa - At the Top):</strong> 세계 최고층 828m 타워. 초고속 엘리베이터로 124·125층 직행 및 360도 파노라마 (사전 시간지정 예약 필수).<br>
+        2️⃣ <strong>미래의 박물관 (Museum of the Future):</strong> 세계에서 가장 아름다운 건축물 1위. 기둥 없는 7층 도넛형 혁신 공간, 100% 무장애 배리어프리 (2~4주 전 사전 티켓팅 필수).<br>
+        3️⃣ <strong>두바이 분수 쇼 & 두바이 몰 (The Dubai Fountain):</strong> 150m 높이로 솟구치는 환상적인 분수 쇼 (매일 18:00~23:00 30분 간격 무료 진행). 실내 완전 평지.<br>
+        4️⃣ <strong>더 뷰 앳 더 팜 (The View at The Palm):</strong> 야자수 모양 팜 주메이라 인공섬을 한눈에 조망하는 240m 높이의 최고 전망대.<br>
+        5️⃣ <strong>알 파히디 & 알 시프 역사 지구:</strong> 전통 바람탑 골목의 고즈넉한 올드 두바이 정취와 1 디르함 동전으로 타는 전통 목선 아브라(Abra) 크릭 건너기.<br><br>
+        <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-guide'); if(typeof goToBookPage==='function') goToBookPage('chapter-guide', 0); setTimeout(() => { const el = document.getElementById('dubaiAdditionsSection'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#0284c7;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+          🇦🇪 두바이 명소 가이드 본문 보기 ➔
+        </button>
+      ` + renderFollowupChips(chips);
+    }
+  }
 
   // ====================================================
   // 1. 30-DAY MASTER PLANNER (9대 확정 숙소 & 6대 교통 공식)
@@ -7053,7 +7376,11 @@ function handleLocalChat(query) {
   // ====================================================
   const fallbackChips = [
     { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+    { query: '네르하 당일치기 방법 알려줘', label: '🚌 네르하 당일치기' },
+    { query: '구글 지도 31선 리스트 보여줘', label: '💖 구글 지도 31선' },
     { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
+    { query: '세비야 자전거와 플라멩코 팁', label: '🚲 세비야 자전거·플라멩코' },
+    { query: '두바이 핵심 5대 명소 알려줘', label: '🇦🇪 두바이 5대 명소' },
     { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
     { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' },
     { query: '성당 복장 규정 알려줘', label: '⛪ 성당 복장 규정' },
@@ -7062,26 +7389,42 @@ function handleLocalChat(query) {
 
   if (lang === 'ja') {
     return `
-      😊 <strong>旅行に関するご質問に何でもお答えいたします！</strong><br><br>
-      30日マスタープランナー（9大確定ホテル＆6大交通公式）、7大都市の代替不可名物料理、24選サバイバル会話、イタリア高速鉄道や大聖堂の服装規定、スリ対策、リアルタイム予算など、何回でも続けてご質問いただけます。<br><br>
+      😊 <strong>旅の計画や現地情報について、何でもお気軽にご質問ください！</strong><br><br>
+      • <strong>30日マスタープランナー:</strong> 9大確定ホテル＆6大黄金交通公式<br>
+      • <strong>マラガ発ネルハ日帰り:</strong> ALSA直行便＆フリヒリアナ快適タクシー<br>
+      • <strong>Googleマップ31選:</strong> バルセロナ・マラガ・セビリアの必訪保存リスト<br>
+      • <strong>名物グルメ＆会話:</strong> パエリア・ピザ以外の名店＆24選サバイバル会話<br>
+      • <strong>交通＆安全:</strong> イタリア高速鉄道、大聖堂の服装規定、ドバイ5大名所、スリ対策<br><br>
       💡 <strong>気になるテーマを下記から選ぶか、自由に質問をご入力ください：</strong>
     ` + renderFollowupChips(fallbackChips);
   } else if (lang === 'en') {
     return `
-      😊 <strong>I am always here to assist your European journey!</strong><br><br>
-      Ask me about the 30-Day Master Planner (9 confirmed accommodations & 6 golden transit formulas), signature dishes beyond paella and pizza, 24 dining & travel survival phrases, Italy high-speed trains, cathedral dress codes, or pickpocket safety.<br><br>
-      💡 <strong>Click a quick topic below or type your question:</strong>
+      😊 <strong>Ask anything about your upcoming European family adventure!</strong><br><br>
+      • <strong>30-Day Master Planner:</strong> 9 confirmed hotels & 6 golden transit formulas<br>
+      • <strong>Nerja & Frigiliana Day Trip:</strong> ALSA coach & recommended waiting taxi routes<br>
+      • <strong>Google Maps 31 Shortlist:</strong> Curated heart-saved dining, shops & sights<br>
+      • <strong>Gourmet & Phrases:</strong> 12 signature dishes beyond paella/pizza & 24 survival phrases<br>
+      • <strong>Transit & Safety:</strong> Italy high-speed trains, cathedral dress codes, Dubai stopovers, and pickpocket safety<br><br>
+      💡 <strong>Click a quick suggestion below or ask any question:</strong>
     ` + renderFollowupChips(fallbackChips);
   } else if (lang === 'zh') {
     return `
-      😊 <strong>随时为您提供欧洲家庭旅行全方位解答！</strong><br><br>
-      您可以向我咨询30天大师规划师（9大确定酒店与6大交通公式）、除海鲜饭和披萨外的特色美食名店、24句常用生存口语、意大利高铁乘车避坑、大教堂着装规定、防盗安全或旅行预算等任何问题。<br><br>
+      😊 <strong>欢迎咨询欧洲家庭旅行全方位攻略！</strong><br><br>
+      • <strong>30天大师规划师:</strong> 9大确定优选酒店与6大城际黄金交通公式<br>
+      • <strong>内尔哈与弗里希利亚纳一日游:</strong> ALSA直达大巴与出租车无缝接驳<br>
+      • <strong>谷歌地图31精选名录:</strong> 巴塞罗那、马拉加、塞维利亚红心收藏必访点<br>
+      • <strong>特色美食与日常口语:</strong> 避开海鲜饭与披萨的特色名菜＆24句实用生存会话<br>
+      • <strong>乘车与防盗安全:</strong> 意铁高铁技巧、大教堂着装规定、迪拜5大地标、防扒安全<br><br>
       💡 <strong>请点击下方推荐话题或直接输入您的问题：</strong>
     ` + renderFollowupChips(fallbackChips);
   } else {
     return `
       😊 <strong>여행에 대해 무엇이든 편하게 물어보세요!</strong><br><br>
-      스페인 &amp; 이탈리아 30일 마스터 플래너(9대 확정 숙소 &amp; 6대 교통 공식), 빠에야·피자 외 12대 대체 불가 미식, 24선 필수 서바이벌 회화, 이탈리아 고속철도 &amp; 성당 복장 규정, 15대 야경 명소, 소매치기 예방법 등 모든 궁금증을 즉시 답변해 드립니다.<br><br>
+      • <strong>30일 마스터 플래너:</strong> 9대 확정 숙소 &amp; 6대 황금 교통 공식<br>
+      • <strong>네르하 &amp; 프리힐리아나 당일치기:</strong> ALSA 직행 버스 &amp; 안심 택시 환승 코스<br>
+      • <strong>구글 지도 31선:</strong> 바르셀로나 · 말라가 · 세비야 하트 저장 맛집 &amp; 명소<br>
+      • <strong>미식 &amp; 필수 회화:</strong> 빠에야·피자 외 12대 대체불가 미식 &amp; 24선 서바이벌 회화<br>
+      • <strong>교통 &amp; 안전:</strong> 이탈리아 고속철도, 성당 복장 규정, 두바이 5대 랜드마크, 소매치기 예방법<br><br>
       💡 <strong>아래 추천 질문을 누르시거나 궁금한 점을 자유롭게 입력해 보세요:</strong>
     ` + renderFollowupChips(fallbackChips);
   }
