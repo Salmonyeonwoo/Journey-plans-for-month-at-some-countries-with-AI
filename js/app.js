@@ -218,68 +218,13 @@ function navigateToHotels() {
 
 // 1. PWA Service Worker Registration
 function registerPWAOfflineWorker() {
-  // Purge old stale caches on start
-  if ('caches' in window) {
-    caches.keys().then(function (keys) {
-      keys.forEach(function (k) {
-        if (k !== 'slow-travel-pwa-v7') {
-          caches.delete(k);
-        }
-      });
-    }).catch(function () { });
-  }
-
-  if ('serviceWorker' in navigator && (window.location.protocol.startsWith('http') || window.location.hostname === 'localhost')) {
-    const swCode = `
-      const CACHE_NAME = 'slow-travel-pwa-v7';
-      const STATIC_ASSETS = [
-        './',
-        'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap',
-        'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-        'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
-      ];
-      self.addEventListener('install', event => {
-        self.skipWaiting();
-        event.waitUntil(
-          caches.open(CACHE_NAME).then(cache => cache.addAll(STATIC_ASSETS)).catch(() => {})
-        );
-      });
-      self.addEventListener('activate', event => {
-        event.waitUntil(
-          caches.keys().then(keys => Promise.all(
-            keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
-          )).then(() => self.clients.claim())
-        );
-      });
-      // Network-First with Cache Fallback for instant updates
-      self.addEventListener('fetch', event => {
-        if (event.request.method !== 'GET') return;
-        event.respondWith(
-          fetch(event.request)
-            .then(response => {
-              if (response && response.status === 200 && (response.type === 'basic' || response.type === 'cors')) {
-                const cloned = response.clone();
-                caches.open(CACHE_NAME).then(cache => cache.put(event.request, cloned)).catch(() => {});
-              }
-              return response;
-            })
-            .catch(() => caches.match(event.request))
-        );
-      });
-    `;
-    try {
-      const blob = new Blob([swCode], { type: 'application/javascript' });
-      const swUrl = URL.createObjectURL(blob);
-      navigator.serviceWorker.register(swUrl).then(function (reg) {
-        if (reg && typeof reg.update === 'function') {
-          reg.update();
-        }
-      }).catch(function (err) {
-        console.log('SW registration note:', err);
-      });
-    } catch (e) {
-      console.warn('PWA SW registration skipped on current origin:', e);
-    }
+  // Unified offline support: ./sw.js handles precaching and airplane mode without cache collision
+  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+    navigator.serviceWorker.ready.then(function (reg) {
+      if (reg && typeof reg.update === 'function') {
+        reg.update().catch(function () {});
+      }
+    }).catch(function () {});
   }
 }
 

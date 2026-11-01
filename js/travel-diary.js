@@ -405,15 +405,16 @@
       const storyPreview = (item['content_' + currentLang] || item.content_ko || item.content || '').slice(0, 95);
 
       let mediaThumb = '';
-      if (item.mediaType === 'video') {
+      const safeMediaUrl = sanitizeMediaUrl(item.mediaUrl);
+      if (item.mediaType === 'video' && safeMediaUrl) {
         mediaThumb = `
           <div class="card-video-wrap">
-            <video src="${item.mediaUrl}" preload="metadata" muted playsinline></video>
+            <video src="${safeMediaUrl}" preload="metadata" muted playsinline></video>
             <span class="video-play-badge">▶ 동영상 (1분)</span>
           </div>
         `;
-      } else if (item.mediaUrl) {
-        mediaThumb = `<div class="card-img-wrap" style="background-image:url('${item.mediaUrl}')"></div>`;
+      } else if (safeMediaUrl) {
+        mediaThumb = `<div class="card-img-wrap" style="background-image:url('${safeMediaUrl}')"></div>`;
       } else {
         mediaThumb = `<div class="card-img-placeholder"><span>📖</span></div>`;
       }
@@ -437,10 +438,26 @@
     }).join('');
   }
 
-  // Helper escape
+  // Helper escape & security sanitation
   function escapeHtml(s) {
     if (!s) return '';
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function sanitizeMediaUrl(url) {
+    if (!url || typeof url !== 'string') return '';
+    const trimmed = url.trim();
+    if (
+      trimmed.startsWith('data:image/') ||
+      trimmed.startsWith('data:video/') ||
+      trimmed.startsWith('blob:') ||
+      trimmed.startsWith('https://') ||
+      trimmed.startsWith('./') ||
+      trimmed.startsWith('/')
+    ) {
+      return trimmed;
+    }
+    return '';
   }
 
   // 7. Handlers for Modal Opening & Editor
@@ -494,6 +511,27 @@
     renderMemoryGallery();
   };
 
+  function renderMediaPreview(type, url) {
+    const safeUrl = sanitizeMediaUrl(url);
+    const prev = document.getElementById('mediaPreviewContainer');
+    const placeholder = document.getElementById('uploadPlaceholder');
+    if (prev && placeholder) {
+      placeholder.style.display = 'none';
+      prev.style.display = 'block';
+      if (type === 'video') {
+        prev.innerHTML = `
+          <video src="${safeUrl}" controls style="max-height:220px;max-width:100%;border-radius:12px;"></video>
+          <button type="button" onclick="window.clearUploadedMedia(event)" class="btn-clear-media">✕ 삭제</button>
+        `;
+      } else {
+        prev.innerHTML = `
+          <img src="${safeUrl}" alt="미리보기" style="max-height:220px;max-width:100%;border-radius:12px;object-fit:cover;" />
+          <button type="button" onclick="window.clearUploadedMedia(event)" class="btn-clear-media">✕ 삭제</button>
+        `;
+      }
+    }
+  }
+
   window.handleMediaFileSelect = function (input) {
     const file = input.files && input.files[0];
     if (!file) return;
@@ -505,30 +543,57 @@
       return;
     }
 
+    // Video size guard for mobile offline storage (recommend <= 50MB)
+    if (isVideo && file.size > 50 * 1024 * 1024) {
+      alert('기내/오프라인 모드 브라우저(IndexedDB) 최적화를 위해 동영상은 약 1분 이내(50MB 이하) 업로드를 권장합니다.');
+      return;
+    }
+
     const reader = new FileReader();
     reader.onload = function (e) {
-      const result = e.target.result;
-      currentUploadedMedia = {
-        type: isVideo ? 'video' : 'image',
-        dataUrl: result
-      };
+      const rawData = e.target.result;
 
-      const prev = document.getElementById('mediaPreviewContainer');
-      const placeholder = document.getElementById('uploadPlaceholder');
-      if (prev && placeholder) {
-        placeholder.style.display = 'none';
-        prev.style.display = 'block';
-        if (isVideo) {
-          prev.innerHTML = `
-            <video src="${result}" controls style="max-height:220px;max-width:100%;border-radius:12px;"></video>
-            <button type="button" onclick="window.clearUploadedMedia(event)" class="btn-clear-media">✕ 삭제</button>
-          `;
-        } else {
-          prev.innerHTML = `
-            <img src="${result}" alt="미리보기" style="max-height:220px;max-width:100%;border-radius:12px;object-fit:cover;" />
-            <button type="button" onclick="window.clearUploadedMedia(event)" class="btn-clear-media">✕ 삭제</button>
-          `;
-        }
+      if (isImage) {
+        // High-resolution mobile photo canvas downscaling to max 1920px for optimal IndexedDB offline performance
+        const img = new Image();
+        img.onload = function () {
+          try {
+            const maxDim = 1920;
+            let width = img.naturalWidth || img.width;
+            let height = img.naturalHeight || img.height;
+            if (width > maxDim || height > maxDim) {
+              if (width > height) {
+                height = Math.round((height * maxDim) / width);
+                width = maxDim;
+              } else {
+                width = Math.round((width * maxDim) / height);
+                height = maxDim;
+              }
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            let optimized = canvas.toDataURL('image/jpeg', 0.85);
+            if (!optimized || optimized.length > rawData.length) {
+              optimized = rawData;
+            }
+            currentUploadedMedia = { type: 'image', dataUrl: optimized };
+            renderMediaPreview('image', optimized);
+          } catch (err) {
+            currentUploadedMedia = { type: 'image', dataUrl: rawData };
+            renderMediaPreview('image', rawData);
+          }
+        };
+        img.onerror = function () {
+          currentUploadedMedia = { type: 'image', dataUrl: rawData };
+          renderMediaPreview('image', rawData);
+        };
+        img.src = rawData;
+      } else {
+        currentUploadedMedia = { type: 'video', dataUrl: rawData };
+        renderMediaPreview('video', rawData);
       }
     };
     reader.readAsDataURL(file);
@@ -654,10 +719,11 @@
     dateEl.textContent = item.date || '';
     titleEl.textContent = item.title;
 
-    if (item.mediaType === 'video') {
-      mediaBox.innerHTML = `<video src="${item.mediaUrl}" controls autoplay playsinline style="max-height:60vh;max-width:100%;border-radius:14px;"></video>`;
-    } else if (item.mediaUrl) {
-      mediaBox.innerHTML = `<img src="${item.mediaUrl}" alt="사진" style="max-height:60vh;max-width:100%;border-radius:14px;object-fit:contain;" />`;
+    const safeLbUrl = sanitizeMediaUrl(item.mediaUrl);
+    if (item.mediaType === 'video' && safeLbUrl) {
+      mediaBox.innerHTML = `<video src="${safeLbUrl}" controls autoplay playsinline style="max-height:60vh;max-width:100%;border-radius:14px;"></video>`;
+    } else if (safeLbUrl) {
+      mediaBox.innerHTML = `<img src="${safeLbUrl}" alt="사진" style="max-height:60vh;max-width:100%;border-radius:14px;object-fit:contain;" />`;
     } else {
       mediaBox.innerHTML = `<div style="padding:40px;color:#94a3b8;font-size:3rem;">📖</div>`;
     }
@@ -761,3 +827,4 @@
   }
 
 })();
+
