@@ -4869,6 +4869,103 @@ function handleLocalChat(query) {
   }
 
   // ====================================================
+  // 0-0. NEW: FAMILY PHOTO ALBUM & AI MULTILINGUAL DIARY & SOCIAL (INSTA/FB)
+  // ====================================================
+  const isPhotoDiary = [
+    '사진첩', '사진', '동영상', '일기', '포토 다이어리', '여행 일기', '인스타', '인스타그램', '페이스북', '기록', '사진 저장', '영상', '앨범',
+    'photo album', 'photo', 'video', 'diary', 'journal', 'travel diary', 'instagram', 'facebook', 'album', 'memories',
+    '写真', 'アルバム', '日記', 'フォト', 'インスタ', 'フェイスブック', '動画', '思い出',
+    '相册', '照片', '视频', '日记', '旅行日记', '短视频'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+
+  if (isPhotoDiary) {
+    const chips = [
+      { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
+      { query: '구글 지도 31선 리스트 보여줘', label: '💖 구글 지도 31선' },
+      { query: '네르하 당일치기 방법 알려줘', label: '🚌 네르하 당일치기' }
+    ];
+
+    if (lang === 'ja') {
+      return `
+        📸 <strong>2026 家族旅行アルバム＆AI多言語日記（オフライン完全対応）</strong>:<br><br>
+        旅先で撮影した思い出の写真や1分以内の短い動画を、機内やオフラインでも安全に保存できます！<br><br>
+        • <strong>都市別スマート整理:</strong> セビリア、バルセロナ、グラナダ、マラガ、ローマ、フィレンツェ、ナポリなど都市ごとにワンタップで分類。<br>
+        • <strong>AI多言語日記生成:</strong> ボタン一つで日本語・韓国語・英語・中国語の情緒あふれる旅行記を自動作成＆編集可能。<br>
+        • <strong>SNSアカウント連携:</strong> 記録官YunwooのInstagram（@yunwoopk）＆Facebookとスマート連携。<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(typeof openTravelMemoryModal==='function') openTravelMemoryModal();" style="background:#047857;color:#fff;font-weight:800;padding:8px 16px;border-radius:20px;border:none;cursor:pointer;">
+            📸 写真첩＆AI日記を開く ➔
+          </button>
+          <a href="https://www.instagram.com/yunwoopk/?next=" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              📷 Instagram @yunwoopk ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'en') {
+      return `
+        📸 <strong>2026 Family Memory Album & AI Multilingual Diary (100% Offline)</strong>:<br><br>
+        Safely store your travel photos and short video clips (~1 min) directly in your browser (IndexedDB)—even on flights and with zero internet!<br><br>
+        • <strong>City Organization:</strong> Filter memories seamlessly across Seville, Barcelona, Granada, Málaga, Rome, Florence, Naples, and Dubai.<br>
+        • <strong>AI Multilingual Story:</strong> Generate touching travel journal entries simultaneously in English, Korean, Japanese, and Chinese with a single tap.<br>
+        • <strong>Social Media Integration:</strong> Connected with author Yunwoo's Instagram (@yunwoopk) and Facebook.<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(typeof openTravelMemoryModal==='function') openTravelMemoryModal();" style="background:#047857;color:#fff;font-weight:800;padding:8px 16px;border-radius:20px;border:none;cursor:pointer;">
+            📸 Open Photo Album &amp; Diary ➔
+          </button>
+          <a href="https://www.instagram.com/yunwoopk/?next=" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              📷 Instagram @yunwoopk ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    } else if (lang === 'zh') {
+      return `
+        📸 <strong>2026 家庭旅行专属相册与AI多语言日记（支持飞行/离线模式）</strong>:<br><br>
+        在旅途中随时随地将珍贵的照片和短视频（1分钟以内）安全保存在本地（IndexedDB），无需网络完全离线可用！<br><br>
+        • <strong>城市分类归档:</strong> 塞维利亚、巴塞罗那、格拉纳达、马拉加、罗马、佛罗伦萨、那不勒斯等一键按城市查看。<br>
+        • <strong>AI多语言日记助手:</strong> 点击即可自动生成中文、韩语、英语、日语四语感性旅行随笔，轻松编辑珍藏。<br>
+        • <strong>社交账号一键互联:</strong> 专属关联旅行记录官Yunwoo的Instagram（@yunwoopk）与Facebook。<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(typeof openTravelMemoryModal==='function') openTravelMemoryModal();" style="background:#047857;color:#fff;font-weight:800;padding:8px 16px;border-radius:20px;border:none;cursor:pointer;">
+            📸 打开旅行相册与日记 ➔
+          </button>
+          <a href="https://www.instagram.com/yunwoopk/?next=" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              📷 Instagram @yunwoopk ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    } else {
+      return `
+        📸 <strong>2026 가족 여행 사진첩 &amp; AI 포토 다이어리 (오프라인/비행기 모드 지원)</strong>:<br><br>
+        여행 중 촬영한 소중한 사진들과 1분 이내 짧은 동영상을 브라우저(IndexedDB)에 안전하게 보관하고, AI로 감성 일기를 기록할 수 있는 기능입니다!<br><br>
+        • <strong>도시별 모아보기:</strong> 세비야, 바르셀로나, 그라나다, 말라가, 마드리드, 로마, 피렌체, 나폴리, 두바이 등 도시별로 깔끔하게 정리.<br>
+        • <strong>AI 4개 국어 일기 자동 생성:</strong> 터치 한 번으로 한국어, 영어, 일본어, 중국어 감성 일기가 자동 완성되어 자유롭게 편집/복사 가능.<br>
+        • <strong>SNS 계정 연동:</strong> 윤우(Yunwoo)님의 인스타그램(@yunwoopk) 및 페이스북 계정과 깔끔하게 연결되어 있습니다.<br><br>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+          <button type="button" class="chat-quick-chip" onclick="if(typeof openTravelMemoryModal==='function') openTravelMemoryModal();" style="background:#047857;color:#fff;font-weight:800;padding:8px 16px;border-radius:20px;border:none;cursor:pointer;">
+            📸 사진첩 &amp; AI 일기 열기 ➔
+          </button>
+          <a href="https://www.instagram.com/yunwoopk/?next=" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              📷 Instagram @yunwoopk ↗
+            </button>
+          </a>
+          <a href="https://www.facebook.com/yunwoopk/?checkpoint_src=any" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <button type="button" class="chat-quick-chip" style="background:#1877f2;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">
+              📘 Facebook yunwoopk ↗
+            </button>
+          </a>
+        </div>
+      ` + renderFollowupChips(chips);
+    }
+  }
+
+  // ====================================================
   // 0-A. NEW CURATED: MALAGA -> NERJA & FRIGILIANA DAY TRIP
   // ====================================================
   const isNerjaDaytrip = [

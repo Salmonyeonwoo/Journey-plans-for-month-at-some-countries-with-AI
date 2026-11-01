@@ -14,7 +14,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <link rel="stylesheet" href="css/style.css?v=20261101_01">
+  <link rel="stylesheet" href="css/style.css?v=20261101_04">
 </head>
 <body>
 
@@ -50,9 +50,10 @@
           <span class="m-num">05</span>
           <div class="m-info"><strong data-i18n="toc_ch5_title">여행 실용정보</strong><span data-i18n="toc_ch5_sub">맛집 · 회화 · 교통 · 숙소</span></div>
         </button>
-              <div style="margin: 10px 6px 4px; padding-top: 10px; border-top: 1px dashed #e2e8f0; display: flex; gap: 8px;">
-          <button type="button" onclick="goToCuratedPlaces(); toggleMobileToc(false);" style="flex: 1; padding: 8px 6px; background: #fff7ed; border: 1px solid #fdba74; border-radius: 8px; font-size: 0.8rem; font-weight: 700; color: #c2410c; cursor: pointer;">💖 <span data-i18n="quick_gmaps_31">구글지도 31선</span></button>
-          <button type="button" onclick="goToNerjaGuide(); toggleMobileToc(false);" style="flex: 1; padding: 8px 6px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; font-size: 0.8rem; font-weight: 700; color: #047857; cursor: pointer;">🚌 <span data-i18n="quick_nerja_guide">네르하 가이드</span></button>
+              <div style="margin: 10px 6px 4px; padding-top: 10px; border-top: 1px dashed #e2e8f0; display: flex; gap: 6px; flex-wrap: wrap;">
+          <button type="button" onclick="goToCuratedPlaces(); toggleMobileToc(false);" style="flex: 1; min-width: 90px; padding: 8px 4px; background: #fff7ed; border: 1px solid #fdba74; border-radius: 8px; font-size: 0.78rem; font-weight: 700; color: #c2410c; cursor: pointer;">💖 <span data-i18n="quick_gmaps_31">구글 31선</span></button>
+          <button type="button" onclick="goToNerjaGuide(); toggleMobileToc(false);" style="flex: 1; min-width: 90px; padding: 8px 4px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; font-size: 0.78rem; font-weight: 700; color: #047857; cursor: pointer;">🚌 <span data-i18n="quick_nerja_guide">네르하</span></button>
+          <button type="button" onclick="window.openTravelMemoryModal(); toggleMobileToc(false);" style="flex: 1; min-width: 90px; padding: 8px 4px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; font-size: 0.78rem; font-weight: 800; color: #15803d; cursor: pointer;">📸 <span data-i18n="quick_photo_diary">사진첩·일기</span></button>
         </div>
       </nav>
     </div>
@@ -118,10 +119,15 @@
             <span data-i18n="quick_gmaps_31">구글 지도 31선</span>
             <span style="margin-left: auto; font-size: 0.75rem; color: #fb923c;">➔</span>
           </button>
-          <button type="button" onclick="goToNerjaGuide()" style="display: flex; align-items: center; width: 100%; gap: 8px; padding: 8px 10px; background: #ffffff; border: 1px solid #10b981; border-radius: 8px; font-size: 0.82rem; font-weight: 700; color: #047857; cursor: pointer; text-align: left;">
+          <button type="button" onclick="goToNerjaGuide()" style="display: flex; align-items: center; width: 100%; gap: 8px; padding: 8px 10px; margin-bottom: 6px; background: #ffffff; border: 1px solid #10b981; border-radius: 8px; font-size: 0.82rem; font-weight: 700; color: #047857; cursor: pointer; text-align: left;">
             <span style="font-size: 0.95rem;">🚌</span>
             <span data-i18n="quick_nerja_daytrip">네르하 당일치기</span>
             <span style="margin-left: auto; font-size: 0.75rem; color: #34d399;">➔</span>
+          </button>
+          <button type="button" onclick="window.openTravelMemoryModal()" style="display: flex; align-items: center; width: 100%; gap: 8px; padding: 8px 10px; background: #f0fdf4; border: 1.5px solid #047857; border-radius: 8px; font-size: 0.82rem; font-weight: 800; color: #047857; cursor: pointer; text-align: left; box-shadow: 0 2px 5px rgba(4,120,87,0.1);">
+            <span style="font-size: 0.95rem;">📸</span>
+            <span data-i18n="quick_photo_diary">사진첩 &amp; AI 일기</span>
+            <span style="margin-left: auto; font-size: 0.75rem; color: #10b981;">➔</span>
           </button>
         </div>
 
@@ -162,6 +168,7 @@
 
   <!-- [컴포넌트 5] 공통 플로팅 도구 & 토스트 알림 컨테이너 -->
   <button id="btnBackToTop" class="back-to-top-btn" onclick="scrollToTop()" title="맨 위로 이동" aria-label="맨 위로 이동">⬆</button>
+  <button id="btnFloatingMemory" class="floating-memory-btn" onclick="window.openTravelMemoryModal()" title="가족 여행 사진첩 &amp; AI 일기" aria-label="가족 여행 사진첩 &amp; AI 일기">📸 <span data-i18n="floating_album_btn">사진첩 &amp; 일기</span></button>
   <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
   <!-- [컴포넌트 6] 중복 내비게이션 제거 및 mobileBottomNav 통합 완료 -->
@@ -180,8 +187,9 @@
   <script src="js/data.js?v=20261101_02"></script>
     <script src="js/practical-place-additions.js?v=20261031_01"></script>
   <script src="js/curated-places-guide.js?v=20261101_02"></script>
+  <script src="js/travel-diary.js?v=20261101_04"></script>
   <script src="js/components.js?v=20261101_02"></script>
-  <script src="js/app.js?v=20261101_03"></script>
+  <script src="js/app.js?v=20261101_04"></script>
 
   <!-- [PWA & Offline] 비행기 모드 및 오프라인 접속을 위한 Service Worker 등록 -->
   <script>

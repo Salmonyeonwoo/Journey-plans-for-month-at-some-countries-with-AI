@@ -24242,7 +24242,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_nerja_guide: "🚌 말라가↔네르하·프리힐리아나 당일치기",
       subnav_chip_city_candidates: "✨ 도시별 추가 맛집·시장·전망 후보 (17선)",
       subnav_chip_master_gourmet: "🥘 빠에야·피자 외 7대 도시 미식 & 회화 24선",
-      subnav_chip_global_dining: "🏪 기존 검증 맛집 디렉토리 (92선 & 지도)"
+      subnav_chip_global_dining: "🏪 기존 검증 맛집 디렉토리 (92선 & 지도)",
+      quick_photo_diary: "사진첩 & AI 일기",
+      nav_photo_diary: "📸 사진첩 & 일기",
+      floating_album_btn: "사진첩 & 일기"
     },
     en: {
       guidebook_edition: "2026 DIGITAL EDITION",
@@ -24279,7 +24282,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_nerja_guide: "🚌 Málaga ↔ Nerja & Frigiliana Day Trip",
       subnav_chip_city_candidates: "✨ City Markets & Viewpoints (17 Picks)",
       subnav_chip_master_gourmet: "🥘 Beyond Paella & Pizza: 7 Cities & 24 Phrases",
-      subnav_chip_global_dining: "🏪 Master Dining Directory (92 Spots & Map)"
+      subnav_chip_global_dining: "🏪 Master Dining Directory (92 Spots & Map)",
+      quick_photo_diary: "Photo Album & AI Diary",
+      nav_photo_diary: "📸 Album & Diary",
+      floating_album_btn: "Album & Diary"
     },
     ja: {
       guidebook_edition: "2026 デジタルエディション",
@@ -24316,7 +24322,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_nerja_guide: "🚌 マラガ ↔ ネルハ＆フリヒリアナ日帰り",
       subnav_chip_city_candidates: "✨ 都市別市場・展望台・追加候補 (17選)",
       subnav_chip_master_gourmet: "🥘 パエリア＆ピザ以外の7都市名物＆会話24選",
-      subnav_chip_global_dining: "🏪 厳選グルメ名店ディレクトリ (92選＆地図)"
+      subnav_chip_global_dining: "🏪 厳選グルメ名店ディレクトリ (92選＆地図)",
+      quick_photo_diary: "アルバム＆AI日記",
+      nav_photo_diary: "📸 アルバム＆日記",
+      floating_album_btn: "アルバム＆日記"
     },
     zh: {
       guidebook_edition: "2026 数字典藏版",
@@ -24353,7 +24362,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_nerja_guide: "🚌 马拉加 ↔ 内尔哈与弗里希利亚纳一日游",
       subnav_chip_city_candidates: "✨ 各城特色市场·观景台候补 (17选)",
       subnav_chip_master_gourmet: "🥘 经典特色菜·7大城市招牌＆口语24选",
-      subnav_chip_global_dining: "🏪 精选特色餐厅目录 (92选与地图)"
+      subnav_chip_global_dining: "🏪 精选特色餐厅目录 (92选与地图)",
+      quick_photo_diary: "相册与AI日记",
+      nav_photo_diary: "📸 相册与日记",
+      floating_album_btn: "相册与日记"
     }
   };
 

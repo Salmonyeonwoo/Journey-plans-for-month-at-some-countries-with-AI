@@ -23,6 +23,7 @@
       <button type="button" class="nav-link" data-chapter="chapter-practical" onclick="switchGuidebookChapter('chapter-practical')" data-i18n="chapter_name_practical">💡 여행 실용정보</button>
       <button type="button" class="nav-link nav-highlight-orange" onclick="goToCuratedPlaces()" style="color:#d8754d;font-weight:800;background:#fff2eb;border-radius:14px;padding:5px 12px;margin-left:6px;border:1px solid #f2cfbf;cursor:pointer;">💖 구글지도 31선</button>
       <button type="button" class="nav-link nav-highlight-green" onclick="goToNerjaGuide()" style="color:#1a5249;font-weight:800;background:#e8f4ed;border-radius:14px;padding:5px 12px;border:1px solid #cce5d6;cursor:pointer;">🚌 네르하 당일치기</button>
+      <button type="button" class="nav-link nav-highlight-green" onclick="window.openTravelMemoryModal()" style="color:#047857;font-weight:800;background:#f0fdf4;border-radius:14px;padding:5px 12px;border:1.5px solid #86efac;cursor:pointer;" data-i18n="nav_photo_diary">📸 사진첩 &amp; 일기</button>
     </nav>
 
     <!-- 우측 헤더 액션: 설정 열기 + 캘린더 다운로드 -->
