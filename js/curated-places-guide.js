@@ -1042,6 +1042,8 @@
     ko: {
       subnavHeartPlaces: '💖 구글지도 하트 맛집·쇼핑·명소 (31선)',
       subnavNerjaGuide: '🚌 말라가↔네르하·프리힐리아나 당일치기',
+      headerHeartPlaces: '구글 지도 엄선 하트 장소 (31선)',
+      descHeartPlaces: '바르셀로나, 말라가·네르하, 세비야 현지에서 직접 검증한 맛집, 디저트, 쇼핑 및 필수 명소 큐레이션',
       cityAll: '🌐 전체 도시',
       cityBcn: '🇪🇸 바르셀로나',
       cityAgp: '🇪🇸 말라가 & 네르하',
@@ -1053,15 +1055,22 @@
       catSight: '🏛️ 꼭 가야하는 곳',
       searchPlaceholder: '식당명, 메뉴, 꿀대구, 뽈뽀, 쇼핑 등 검색...',
       btnOpenMap: '💖 구글 지도 열기 / 하트 저장 ↗',
+      emptyPlaces: '검색 및 필터 조건에 해당하는 장소가 없습니다.',
       nerjaTimelineTitle: '⏰ 추천 당일치기 타임라인 (예시)',
       alsaBookingBtn: '🎟️ ALSA 버스 공식 예매 사이트 열기 (alsa.com) ↗',
       nerjaMapBtn: '📍 네르하 유럽의 발코니 구글 지도 열기 ↗',
+      bestDateBadge: '📅 최적 방문 추천일',
+      stepBoard: '탑승:',
+      stepDrop: '하차:',
+      stepDuration: '소요 및 요금:',
       tipLabel: '💡 동행 배려 팁:',
       bonusTipsHeader: '✨ 세비야 현지 2대 필수 여행 꿀팁'
     },
     en: {
       subnavHeartPlaces: '💖 Curated Google Maps Places (31 Picks)',
       subnavNerjaGuide: '🚌 Málaga ➔ Nerja & Frigiliana Day Trip',
+      headerHeartPlaces: 'Curated Google Maps Saved Places (31 Picks)',
+      descHeartPlaces: 'Carefully curated dining, desserts, shopping, and essential sights across Barcelona, Málaga & Nerja, and Seville.',
       cityAll: '🌐 All Cities',
       cityBcn: '🇪🇸 Barcelona',
       cityAgp: '🇪🇸 Málaga & Nerja',
@@ -1073,15 +1082,22 @@
       catSight: '🏛️ Must-Visit Sights',
       searchPlaceholder: 'Search restaurant, dish, cod, pulpo, leather...',
       btnOpenMap: '💖 Open Google Maps / Save Heart ↗',
+      emptyPlaces: 'No places found matching your filter criteria.',
       nerjaTimelineTitle: '⏰ Recommended Day Trip Timeline (Sample)',
       alsaBookingBtn: '🎟️ Official ALSA Coach Booking Portal (alsa.com) ↗',
       nerjaMapBtn: '📍 Open Balcón de Europa on Google Maps ↗',
+      bestDateBadge: '📅 Best Day Recommendation',
+      stepBoard: 'Boarding:',
+      stepDrop: 'Drop-off:',
+      stepDuration: 'Duration & Fare:',
       tipLabel: '💡 Senior Family Tip:',
       bonusTipsHeader: '✨ Seville Essential Local Travel Highlights'
     },
     ja: {
       subnavHeartPlaces: '💖 Googleマップお気に入り必須リスト (31選)',
       subnavNerjaGuide: '🚌 マラガ発 ネルハ＆フリヒリアナ日帰り',
+      headerHeartPlaces: 'Googleマップ厳選お気に入りスポット (31選)',
+      descHeartPlaces: 'バルセロナ、マラガ・ネルハ、セビリアの現地で厳選したグルメ、スイーツ、ショッピング、必見スポット',
       cityAll: '🌐 すべての都市',
       cityBcn: '🇪🇸 バルセロナ',
       cityAgp: '🇪🇸 マラガ＆ネルハ',
@@ -1093,15 +1109,22 @@
       catSight: '🏛️ 必見スポット',
       searchPlaceholder: '店名、メニュー、ハニーコッド、タコ、革製品など検索...',
       btnOpenMap: '💖 Googleマップを開く / お気に入り保存 ↗',
+      emptyPlaces: '条件に一致するスポットが見つかりません。',
       nerjaTimelineTitle: '⏰ おすすめ日帰りタイムライン (目安)',
       alsaBookingBtn: '🎟️ ALSAバス公式サイトで予約 (alsa.com) ↗',
       nerjaMapBtn: '📍 ネルハ ヨーロッパのバルコニーの地図を開く ↗',
+      bestDateBadge: '📅 おすすめ訪問日',
+      stepBoard: '乗車:',
+      stepDrop: '下車:',
+      stepDuration: '所要時間・料金:',
       tipLabel: '💡 シニア配慮のヒント:',
       bonusTipsHeader: '✨ セビリア現地 2大旅行ワンポイント'
     },
     zh: {
       subnavHeartPlaces: '💖 谷歌地图红心收藏精选清单 (31选)',
       subnavNerjaGuide: '🚌 马拉加至内尔哈·弗里希利亚纳一日游',
+      headerHeartPlaces: '谷歌地图精选红心收藏 (31选)',
+      descHeartPlaces: '巴塞罗那、马拉加与内尔哈、塞维利亚当地精选的美食、甜品、购物及必游景点',
       cityAll: '🌐 全部城市',
       cityBcn: '🇪🇸 巴塞罗那',
       cityAgp: '🇪🇸 马拉加与内尔哈',
@@ -1113,9 +1136,14 @@
       catSight: '🏛️ 必游名胜',
       searchPlaceholder: '搜索餐厅、菜品、蜂蜜鳕鱼、章鱼、皮具...',
       btnOpenMap: '💖 在谷歌地图查看 / 加红心收藏 ↗',
+      emptyPlaces: '未找到符合条件的地点。',
       nerjaTimelineTitle: '⏰ 推荐一日游时间表（参考）',
       alsaBookingBtn: '🎟️ 打开ALSA大巴官方预订网站 (alsa.com) ↗',
       nerjaMapBtn: '📍 在谷歌地图打开内尔哈欧洲阳台 ↗',
+      bestDateBadge: '📅 最佳游览日推荐',
+      stepBoard: '上车:',
+      stepDrop: '下车:',
+      stepDuration: '耗时与票价:',
       tipLabel: '💡 陪同长辈贴士:',
       bonusTipsHeader: '✨ 塞维利亚两大独家本地游锦囊'
     }
@@ -1345,8 +1373,8 @@
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:14px;">
           <div>
             <div style="font-size:11px;font-weight:800;color:#d8754d;letter-spacing:0.12em;text-transform:uppercase;">05-B / CURATED GOOGLE MAPS SHORTLIST</div>
-            <h3 style="font-size:clamp(19px, 3vw, 24px);color:#1c2e2c;margin:6px 0 4px;font-weight:800;letter-spacing:-0.03em;">${ui.headerHeartPlaces}</h3>
-            <p style="font-size:13.5px;color:#6b7c78;margin:0;">${ui.descHeartPlaces}</p>
+            <h3 style="font-size:clamp(19px, 3vw, 24px);color:#1c2e2c;margin:6px 0 4px;font-weight:800;letter-spacing:-0.03em;">${ui.headerHeartPlaces || '구글 지도 엄선 하트 장소 (31선)'}</h3>
+            <p style="font-size:13.5px;color:#6b7c78;margin:0;">${ui.descHeartPlaces || '바르셀로나, 말라가·네르하, 세비야 현지에서 직접 검증한 맛집, 디저트, 쇼핑 및 필수 명소 큐레이션'}</p>
           </div>
           <div style="min-width:240px;flex:1;max-width:340px;">
             <input type="text" id="curatedPlacesSearchInput" value="${state.search}" placeholder="${ui.searchPlaceholder}" oninput="window.setCuratedPlacesSearch(this.value)" style="width:100%;padding:10px 14px;border-radius:12px;border:1px solid #cad8ce;font-size:13px;background:#fff;outline:none;">
