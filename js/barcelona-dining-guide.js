@@ -1,12 +1,32 @@
 (function () {
   const mapLinks = {
-    ciutat: 'https://maps.app.goo.gl/tuiebGJRpZ8979nKP6',
-    vinitus: 'https://maps.app.goo.gl/eGc8jjM635csknmP6',
+    ciutat: 'https://www.google.com/maps/search/?api=1&query=Ciutat+Comtal%2C+Barcelona',
+    vinitus: 'https://www.google.com/maps/search/?api=1&query=Vinitus%2C+Barcelona',
     laFlauta: 'https://maps.app.goo.gl/m1FoxwqeHFDz4k718',
     elGlopGaudi: 'https://maps.app.goo.gl/MZmg9NwvcTJzhBpx9',
     elGlopPlaca: 'https://maps.app.goo.gl/AH9MtQDuzFN5qteG8',
     puertecillo: 'https://maps.app.goo.gl/yh6TcaTz3HjahXnU7'
   };
+
+  const routeOrigin = 'Suites Marina Abapart, Barcelona';
+  const routeDestinations = {
+    'Ciutat Comtal': 'Ciutat Comtal, Barcelona',
+    'Vinitus': 'Vinitus, Barcelona',
+    'La Flauta': 'La Flauta, Barcelona',
+    'El Glop Gaudí': 'El Glop Gaudí, Barcelona',
+    'El Glop Plaça Catalunya': 'El Glop Braseria, Carrer de Casp 21, 08010 Barcelona',
+    'Puertecillo Sagrada Família': 'Puertecillo Sagrada Família, Passatge de Simó 18, 08025 Barcelona'
+  };
+  const mapActionLabels = {
+    ko: { map: '지도', route: '숙소 출발 도보 길찾기' },
+    en: { map: 'Map', route: 'Walk from lodging' },
+    ja: { map: '地図', route: '宿泊先から徒歩' },
+    zh: { map: '地图', route: '从住宿地步行' }
+  };
+
+  function buildWalkingDirections(destination) {
+    return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(routeOrigin)}&destination=${encodeURIComponent(destination)}&travelmode=walking`;
+  }
 
   const sourceLinks = [
     { label: { ko: 'La Flauta Group 공식 브랜드 안내', en: 'La Flauta Group: official brand guide', ja: 'La Flauta Group 公式ブランド案内', zh: 'La Flauta Group 官方品牌介绍' }, url: 'https://www.laflautagroup.com/en' },
@@ -48,6 +68,7 @@
       title: '바르셀로나 맛집·메뉴·마트 참고 안내',
       badge: '여행 아이디어 · 방문/예약 미확정',
       intro: '아래 식당과 날짜는 선택 가능한 후보입니다. 예약되었거나 확정된 방문으로 표시하지 않습니다. 메뉴·운영시간·가격은 바뀔 수 있으니 방문 전 공식 안내와 지도에서 다시 확인하세요.',
+      routeNote: '각 식당의 지도 링크와 함께 숙소 Suites Marina Abapart에서 출발하는 도보 길찾기를 제공합니다. Google 지도에서 현재 경로와 소요 시간을 확인하세요.',
       photoGallery: {
         title: '사용자 제공 메뉴 사진 예시',
         note: '참고용으로 제공된 사진이며 특정 식당에서 촬영했거나 해당 식당의 실제 메뉴·제공 품목을 나타내는 것은 아닙니다.'
@@ -96,6 +117,7 @@
       title: 'Barcelona dining, menus and shopping guide',
       badge: 'Trip ideas · no restaurant visit or booking confirmed',
       intro: 'Restaurants and dates below are optional candidates, not confirmed visits or reservations. Menus, hours and prices can change; check the venue’s current official information and map before going.',
+      routeNote: 'Each restaurant has a map link and a walking route from Suites Marina Abapart. Check the live route and travel time in Google Maps.',
       photoGallery: {
         title: 'User-provided menu photo examples',
         note: 'These are illustrative photos provided by the user; they are not identified as photos taken at, or as dishes actually served by, any particular restaurant.'
@@ -144,6 +166,7 @@
       title: 'バルセロナの食事・メニュー・買い物ガイド',
       badge: '旅行候補 · 飲食店の訪問・予約は未確定',
       intro: '以下の店舗や日付は任意の候補で、訪問や予約が確定したものではありません。メニュー・営業時間・価格は変更されるため、出発前に店舗の最新公式情報と地図を確認してください。',
+      routeNote: '各店の地図リンクに加え、Suites Marina Abapartからの徒歩ルートを開けます。現在のルートと所要時間はGoogleマップで確認してください。',
       photoGallery: {
         title: 'ユーザー提供の料理写真（イメージ）',
         note: '参考用としてユーザーが提供した写真です。特定の飲食店で撮影された写真、またはその店で実際に提供される料理を示すものではありません。'
@@ -192,6 +215,7 @@
       title: '巴塞罗那餐厅、菜单与购物参考',
       badge: '旅行建议 · 餐厅行程/预订尚未确认',
       intro: '以下餐厅和日期仅供选择，并非已确认的行程或预订。菜单、营业时间和价格可能变化，请出发前查看店家最新官方信息和地图。',
+      routeNote: '每家餐厅都提供地图链接，以及从 Suites Marina Abapart 出发的步行路线。请在 Google 地图中查看实时路线和耗时。',
       photoGallery: {
         title: '用户提供的菜品示意照片',
         note: '这些是用户提供的参考照片，不表示照片拍摄于某家特定餐厅，也不代表该餐厅实际供应这些菜品。'
@@ -246,8 +270,13 @@
     return (items || []).map(item => `<a class="${className || 'bcn-link'}" href="${item.url}" target="_blank" rel="noopener noreferrer">${item.label[lang]}</a>`).join('');
   }
 
+  function renderRestaurantLinks(items, lang) {
+    const labels = mapActionLabels[lang] || mapActionLabels.ko;
+    return `<div class="bcn-map-links">${items.map(([name, url]) => `<a class="bcn-link" href="${url}" target="_blank" rel="noopener noreferrer">${name} · ${labels.map} ↗</a><a class="bcn-link" href="${buildWalkingDirections(routeDestinations[name])}" target="_blank" rel="noopener noreferrer">${name} · ${labels.route} ↗</a>`).join('')}</div>`;
+  }
+
   function renderCard(card, lang, extraClass) {
-    return `<article class="bcn-card ${extraClass || ''}"><h3>${card.title}</h3><p>${card.body}</p>${card.label ? `<h4>${card.label}</h4>` : ''}${card.items ? `<ul>${card.items.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}${card.maps ? `<div class="bcn-map-links">${card.maps.map(([name, url]) => `<a class="bcn-link" href="${url}" target="_blank" rel="noopener noreferrer">${name} · ${lang === 'ja' ? '地図' : (lang === 'zh' ? '地图' : (lang === 'en' ? 'Map' : '지도'))} ↗</a>`).join('')}</div>` : ''}</article>`;
+    return `<article class="bcn-card ${extraClass || ''}"><h3>${card.title}</h3><p>${card.body}</p>${card.label ? `<h4>${card.label}</h4>` : ''}${card.items ? `<ul>${card.items.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}${card.maps ? renderRestaurantLinks(card.maps, lang) : ''}</article>`;
   }
 
   function renderFoodPhotoGallery(gallery, lang) {
@@ -263,6 +292,7 @@
       .bcn-guide h2{margin:0 0 8px;font-size:clamp(21px,3vw,28px);line-height:1.25}
       .bcn-guide .bcn-badge{display:inline-flex;margin:0 0 12px;padding:6px 10px;border-radius:999px;background:#fff4de;color:#795519;font-size:12px;font-weight:700}
       .bcn-guide .bcn-intro{margin:0 0 18px;color:var(--muted,#666);line-height:1.65}
+      .bcn-route-note{margin:0 0 16px;color:var(--muted,#666);font-size:13px;line-height:1.6}
       .bcn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
       .bcn-card{padding:16px;border:1px solid var(--line,#e5e5e5);border-radius:14px;background:var(--surface,#fbfbf9);line-height:1.62}
       .bcn-card h3{margin:0 0 8px;font-size:17px;line-height:1.35}
@@ -300,16 +330,17 @@
     const l = normalizeLang(lang || window.currentLang || localStorage.getItem('travel_user_lang'));
     const c = content[l];
     ensureStyles();
-    mount.innerHTML = `<section class="bcn-guide" aria-labelledby="bcn-guide-title"><span class="bcn-badge">${c.badge}</span><h2 id="bcn-guide-title">${c.title}</h2><p class="bcn-intro">${c.intro}</p>${renderFoodPhotoGallery(c.photoGallery, l)}<div class="bcn-grid">${renderCard(c.groupCard, l)}${renderCard(c.glopCard, l)}${renderCard(c.seafoodCard, l)}${renderCard(c.orderCard, l)}</div><div class="bcn-info"><h3>${c.datesTitle}</h3><p>${c.datesText}</p></div><div class="bcn-info"><h3>${c.shoppingTitle}</h3><div class="bcn-shopping">${c.shopping.map(([title, text]) => `<div><strong>${title}</strong><span>${text}</span></div>`).join('')}</div></div><div class="bcn-info bcn-safety"><h3>${c.baggageTitle}</h3><p>${c.baggageText}</p></div><div class="bcn-info"><h3>${c.sourcesTitle}</h3><div class="bcn-sources">${linkList(sourceLinks, l)}</div></div></section>`;
+    mount.innerHTML = `<section class="bcn-guide" aria-labelledby="bcn-guide-title"><span class="bcn-badge">${c.badge}</span><h2 id="bcn-guide-title">${c.title}</h2><p class="bcn-intro">${c.intro}</p><p class="bcn-route-note">${c.routeNote}</p>${renderFoodPhotoGallery(c.photoGallery, l)}<div class="bcn-grid">${renderCard(c.groupCard, l)}${renderCard(c.glopCard, l)}${renderCard(c.seafoodCard, l)}${renderCard(c.orderCard, l)}</div><div class="bcn-info"><h3>${c.datesTitle}</h3><p>${c.datesText}</p></div><div class="bcn-info"><h3>${c.shoppingTitle}</h3><div class="bcn-shopping">${c.shopping.map(([title, text]) => `<div><strong>${title}</strong><span>${text}</span></div>`).join('')}</div></div><div class="bcn-info bcn-safety"><h3>${c.baggageTitle}</h3><p>${c.baggageText}</p></div><div class="bcn-info"><h3>${c.sourcesTitle}</h3><div class="bcn-sources">${linkList(sourceLinks, l)}</div></div></section>`;
   }
 
   function buildBarcelonaDiningChatResponse(lang) {
     const l = normalizeLang(lang);
     const c = content[l];
-    return `<div class="bcn-chat-answer">${c.chat}<div class="bcn-sources">${linkList(sourceLinks.slice(0, 4), l, 'bcn-link')}</div></div>`;
+    const restaurantMaps = [...c.groupCard.maps, ...c.glopCard.maps, ...c.seafoodCard.maps];
+    return `<div class="bcn-chat-answer">${c.chat}<p class="bcn-route-note">${c.routeNote}</p>${renderRestaurantLinks(restaurantMaps, l)}<div class="bcn-sources">${linkList(sourceLinks.slice(0, 4), l, 'bcn-link')}</div></div>`;
   }
 
-  window.BARCELONA_DINING_GUIDE = { content, sourceLinks, mapLinks };
+  window.BARCELONA_DINING_GUIDE = { content, sourceLinks, mapLinks, buildWalkingDirections };
   window.renderBarcelonaDiningGuide = renderBarcelonaDiningGuide;
   window.buildBarcelonaDiningChatResponse = buildBarcelonaDiningChatResponse;
   document.addEventListener('DOMContentLoaded', () => renderBarcelonaDiningGuide(window.currentLang || localStorage.getItem('travel_user_lang') || 'ko'));
