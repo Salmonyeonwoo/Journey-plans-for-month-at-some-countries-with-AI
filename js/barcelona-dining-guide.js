@@ -20,11 +20,38 @@
     { label: { ko: 'TSA: 조리용 스프레이 수하물 안내', en: 'TSA: cooking spray baggage rules', ja: 'TSA：クッキングスプレーの手荷物規則', zh: 'TSA：烹饪喷雾行李规定' }, url: 'https://www.tsa.gov/travel/security-screening/whatcanibring/items/cooking-spray' }
   ];
 
+  const foodPhotoAssets = [
+    {
+      src: 'img/gourmet/barcelona-pan-con-tomate-user.jpg',
+      caption: { ko: 'Pan con tomate · 토마토 빵', en: 'Pan con tomate · tomato bread', ja: 'パン・コン・トマテ · トマトパン', zh: 'Pan con tomate · 番茄面包' },
+      alt: { ko: '토마토를 얹은 구운 빵이 접시에 담겨 있다.', en: 'Toasted bread topped with tomato on a plate.', ja: 'トマトをのせたトーストが皿に盛られている。', zh: '一盘抹有番茄的烤面包。' }
+    },
+    {
+      src: 'img/gourmet/barcelona-prawns-user.jpg',
+      caption: { ko: '새우 요리 예시', en: 'Prawn dish example', ja: 'エビ料理の例', zh: '虾类菜品示例' },
+      alt: { ko: '소스에 담긴 익힌 새우가 접시에 놓여 있다.', en: 'Cooked prawns in sauce on a plate.', ja: 'ソースをまとったエビ料理が皿に盛られている。', zh: '一盘浸在酱汁中的熟虾。' }
+    },
+    {
+      src: 'img/gourmet/barcelona-jamon-user.jpg',
+      caption: { ko: '하몬과 토마토 빵', en: 'Jamón and tomato bread', ja: 'ハモンとトマトパン', zh: '火腿与番茄面包' },
+      alt: { ko: '얇게 썬 하몬과 토마토 빵이 한 접시에 놓여 있다.', en: 'Thinly sliced jamón and tomato bread on a plate.', ja: '薄切りのハモンとトマトパンが一皿に盛られている。', zh: '一盘薄切火腿和番茄面包。' }
+    },
+    {
+      src: 'img/gourmet/barcelona-croquetas-user.jpg',
+      caption: { ko: '크로케타 예시', en: 'Croquettes example', ja: 'コロッケの例', zh: '可乐饼示例' },
+      alt: { ko: '노릇하게 튀긴 크로케타가 접시에 담겨 있고 두 개는 속이 보이게 잘려 있다.', en: 'Golden fried croquettes on a plate, with two cut open to show the filling.', ja: 'きつね色のコロッケが皿に盛られ、2つは中身が見えるように切られている。', zh: '一盘金黄色炸可乐饼，其中两个切开露出馅料。' }
+    }
+  ];
+
   const content = {
     ko: {
       title: '바르셀로나 맛집·메뉴·마트 참고 안내',
       badge: '여행 아이디어 · 방문/예약 미확정',
       intro: '아래 식당과 날짜는 선택 가능한 후보입니다. 예약되었거나 확정된 방문으로 표시하지 않습니다. 메뉴·운영시간·가격은 바뀔 수 있으니 방문 전 공식 안내와 지도에서 다시 확인하세요.',
+      photoGallery: {
+        title: '사용자 제공 메뉴 사진 예시',
+        note: '참고용으로 제공된 사진이며 특정 식당에서 촬영했거나 해당 식당의 실제 메뉴·제공 품목을 나타내는 것은 아닙니다.'
+      },
       groupCard: {
         title: '타파스 후보: Ciutat Comtal · Vinitus · La Flauta',
         body: '세 브랜드는 La Flauta Group의 공식 브랜드 소개에 함께 나오지만 메뉴가 같다는 뜻은 아닙니다. 공식 소개도 Vinitus는 타파스, La Flauta는 전통 요리·타파스·flautas, Ciutat Comtal은 전통 및 창작 타파스로 각각 구분합니다.',
@@ -69,6 +96,10 @@
       title: 'Barcelona dining, menus and shopping guide',
       badge: 'Trip ideas · no restaurant visit or booking confirmed',
       intro: 'Restaurants and dates below are optional candidates, not confirmed visits or reservations. Menus, hours and prices can change; check the venue’s current official information and map before going.',
+      photoGallery: {
+        title: 'User-provided menu photo examples',
+        note: 'These are illustrative photos provided by the user; they are not identified as photos taken at, or as dishes actually served by, any particular restaurant.'
+      },
       groupCard: {
         title: 'Tapas options: Ciutat Comtal · Vinitus · La Flauta',
         body: 'The three brands appear in La Flauta Group’s official portfolio, but that does not mean they share one menu. The group describes Vinitus as tapas, La Flauta as traditional dishes, tapas and flautas, and Ciutat Comtal as traditional and creative tapas.',
@@ -113,6 +144,10 @@
       title: 'バルセロナの食事・メニュー・買い物ガイド',
       badge: '旅行候補 · 飲食店の訪問・予約は未確定',
       intro: '以下の店舗や日付は任意の候補で、訪問や予約が確定したものではありません。メニュー・営業時間・価格は変更されるため、出発前に店舗の最新公式情報と地図を確認してください。',
+      photoGallery: {
+        title: 'ユーザー提供の料理写真（イメージ）',
+        note: '参考用としてユーザーが提供した写真です。特定の飲食店で撮影された写真、またはその店で実際に提供される料理を示すものではありません。'
+      },
       groupCard: {
         title: 'タパス候補：Ciutat Comtal · Vinitus · La Flauta',
         body: '3ブランドはLa Flauta Groupの公式ブランド紹介に掲載されていますが、同じメニューという意味ではありません。公式説明では、Vinitusはタパス、La Flautaは伝統料理・タパス・flautas、Ciutat Comtalは伝統的・創作タパスとしてそれぞれ紹介されています。',
@@ -157,6 +192,10 @@
       title: '巴塞罗那餐厅、菜单与购物参考',
       badge: '旅行建议 · 餐厅行程/预订尚未确认',
       intro: '以下餐厅和日期仅供选择，并非已确认的行程或预订。菜单、营业时间和价格可能变化，请出发前查看店家最新官方信息和地图。',
+      photoGallery: {
+        title: '用户提供的菜品示意照片',
+        note: '这些是用户提供的参考照片，不表示照片拍摄于某家特定餐厅，也不代表该餐厅实际供应这些菜品。'
+      },
       groupCard: {
         title: 'Tapas 备选：Ciutat Comtal · Vinitus · La Flauta',
         body: '这三个品牌都出现在 La Flauta Group 的官方品牌介绍中，但这不代表它们使用同一份菜单。官方分别将 Vinitus 描述为 tapas，La Flauta 描述为传统菜、tapas 和 flautas，Ciutat Comtal 则提供传统及创意 tapas。',
@@ -211,6 +250,10 @@
     return `<article class="bcn-card ${extraClass || ''}"><h3>${card.title}</h3><p>${card.body}</p>${card.label ? `<h4>${card.label}</h4>` : ''}${card.items ? `<ul>${card.items.map(item => `<li>${item}</li>`).join('')}</ul>` : ''}${card.maps ? `<div class="bcn-map-links">${card.maps.map(([name, url]) => `<a class="bcn-link" href="${url}" target="_blank" rel="noopener noreferrer">${name} · ${lang === 'ja' ? '地図' : (lang === 'zh' ? '地图' : (lang === 'en' ? 'Map' : '지도'))} ↗</a>`).join('')}</div>` : ''}</article>`;
   }
 
+  function renderFoodPhotoGallery(gallery, lang) {
+    return `<section class="bcn-photo-gallery" aria-labelledby="bcn-photo-gallery-title"><h3 id="bcn-photo-gallery-title">${gallery.title}</h3><p class="bcn-photo-note">${gallery.note}</p><div class="bcn-photo-grid">${foodPhotoAssets.map(photo => `<figure class="bcn-photo-figure"><img src="${photo.src}" alt="${photo.alt[lang]}" loading="lazy" decoding="async"><figcaption>${photo.caption[lang]}</figcaption></figure>`).join('')}</div></section>`;
+  }
+
   function ensureStyles() {
     if (document.getElementById('bcn-dining-guide-styles')) return;
     const style = document.createElement('style');
@@ -238,7 +281,15 @@
       .bcn-safety{border-left:4px solid #c77b20;background:#fff8ee}
       .bcn-sources{display:flex;flex-wrap:wrap;gap:9px 14px;margin-top:10px}
       .bcn-chat-answer{line-height:1.65}
-      @media(max-width:600px){.bcn-guide{padding:16px;border-radius:15px}.bcn-card{padding:14px}}
+      .bcn-photo-gallery{margin:0 0 18px;padding:14px;border:1px solid var(--line,#e5e5e5);border-radius:14px;background:var(--surface,#fbfbf9)}
+      .bcn-photo-gallery h3{margin:0 0 5px;font-size:16px;line-height:1.4}
+      .bcn-photo-note{margin:0 0 12px;color:var(--muted,#666);font-size:12px;line-height:1.55}
+      .bcn-photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+      .bcn-photo-figure{min-width:0;margin:0;overflow:hidden;border:1px solid var(--line,#e5e5e5);border-radius:11px;background:var(--card,#fff)}
+      .bcn-photo-figure img{display:block;width:100%;height:170px;object-fit:contain;background:#f2efe9}
+      .bcn-photo-figure figcaption{padding:8px 9px;font-size:12px;font-weight:700;line-height:1.4}
+      @media(max-width:760px){.bcn-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bcn-photo-figure img{height:150px}}
+      @media(max-width:600px){.bcn-guide{padding:16px;border-radius:15px}.bcn-card{padding:14px}.bcn-photo-gallery{padding:12px}.bcn-photo-figure img{height:140px}.bcn-photo-figure figcaption{padding:7px;font-size:11px}}
     `;
     document.head.appendChild(style);
   }
@@ -249,7 +300,7 @@
     const l = normalizeLang(lang || window.currentLang || localStorage.getItem('travel_user_lang'));
     const c = content[l];
     ensureStyles();
-    mount.innerHTML = `<section class="bcn-guide" aria-labelledby="bcn-guide-title"><span class="bcn-badge">${c.badge}</span><h2 id="bcn-guide-title">${c.title}</h2><p class="bcn-intro">${c.intro}</p><div class="bcn-grid">${renderCard(c.groupCard, l)}${renderCard(c.glopCard, l)}${renderCard(c.seafoodCard, l)}${renderCard(c.orderCard, l)}</div><div class="bcn-info"><h3>${c.datesTitle}</h3><p>${c.datesText}</p></div><div class="bcn-info"><h3>${c.shoppingTitle}</h3><div class="bcn-shopping">${c.shopping.map(([title, text]) => `<div><strong>${title}</strong><span>${text}</span></div>`).join('')}</div></div><div class="bcn-info bcn-safety"><h3>${c.baggageTitle}</h3><p>${c.baggageText}</p></div><div class="bcn-info"><h3>${c.sourcesTitle}</h3><div class="bcn-sources">${linkList(sourceLinks, l)}</div></div></section>`;
+    mount.innerHTML = `<section class="bcn-guide" aria-labelledby="bcn-guide-title"><span class="bcn-badge">${c.badge}</span><h2 id="bcn-guide-title">${c.title}</h2><p class="bcn-intro">${c.intro}</p>${renderFoodPhotoGallery(c.photoGallery, l)}<div class="bcn-grid">${renderCard(c.groupCard, l)}${renderCard(c.glopCard, l)}${renderCard(c.seafoodCard, l)}${renderCard(c.orderCard, l)}</div><div class="bcn-info"><h3>${c.datesTitle}</h3><p>${c.datesText}</p></div><div class="bcn-info"><h3>${c.shoppingTitle}</h3><div class="bcn-shopping">${c.shopping.map(([title, text]) => `<div><strong>${title}</strong><span>${text}</span></div>`).join('')}</div></div><div class="bcn-info bcn-safety"><h3>${c.baggageTitle}</h3><p>${c.baggageText}</p></div><div class="bcn-info"><h3>${c.sourcesTitle}</h3><div class="bcn-sources">${linkList(sourceLinks, l)}</div></div></section>`;
   }
 
   function buildBarcelonaDiningChatResponse(lang) {
