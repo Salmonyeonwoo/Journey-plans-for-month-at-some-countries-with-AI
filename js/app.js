@@ -4210,6 +4210,7 @@ function switchLanguage(lang, btn) {
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(lang);
   if (typeof renderItalyCityGuide === "function") renderItalyCityGuide(lang);
   if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(lang, window.masterGourmetActiveCountry || 'all');
+  if (typeof window.renderBarcelonaDiningGuide === 'function') window.renderBarcelonaDiningGuide(lang);
   if (typeof renderNerjaDaytripGuide === "function") renderNerjaDaytripGuide(lang);
   if (typeof renderCuratedHeartPlaces === "function") renderCuratedHeartPlaces(lang);
 
@@ -4400,6 +4401,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderGlobalLandmarks();
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(currentLang);
   if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(currentLang, 'all');
+  if (typeof window.renderBarcelonaDiningGuide === 'function') window.renderBarcelonaDiningGuide(currentLang);
   renderLocalPhrases();
   renderTransitGuide();
   renderHotelFilterBar();
@@ -4426,6 +4428,23 @@ function handleLocalChat(query) {
     .replace(/^(じゃあ|ところで|それでは|では|あと|ちなみに|次は|続いて)\s*/g, '')
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
+
+  // Route Barcelona dining/shop questions before generic entity matching.
+  const hasBarcelonaContext = ['barcelona', '바르셀로나', 'バルセロナ', '巴塞罗那'].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasBarcelonaGuideTerm = [
+    'ciutat comtal', 'ciutatcomtal', 'ciudad condal', '시우다드 콘달', '시우다트 콤탈', 'vinitus', '비니투스', 'ビニトゥス', '维尼图斯',
+    'la flauta', '라 플라우타', 'ラ・フラウタ', 'el glop', '엘 그롭', '엘 글롭', 'エル・グロップ', 'puertecillo', '푸에르테시요', '푸에스토시요', 'プエルテシージョ',
+    'tapas', 'タパス', '타파스', 'paella', '빠에야', 'パエリア', 'arroz negro', '메뉴', 'menu', 'menú', 'メニュー', '菜单', '餐厅',
+    'sin sal', 'con poca sal', 'clara', 'tinto de verano', 'inedit', 'manzanilla sabor a miel', 'olive oil', 'olive-oil', 'cooking spray', 'spray olive oil',
+    '소금 없이', '소금 적게', '클라라', '틴토 데 베라노', '이네딧', '올리브 오일 스프레이', '올리브유 스프레이', '꿀맛 카모마일', '항공 수하물',
+    '塩なし', '塩少なめ', 'クララ', 'ティント・デ・ベラーノ', 'イネディット', 'オリーブオイル', 'はちみつ風味カモミール',
+    '无盐', '少放盐', '克拉拉', '夏季红酒', '伊内迪特', '橄榄油', '喷雾橄榄油', '蜂蜜风味甘菊'
+  ].some(w => q.includes(w) || cleanQ.includes(w));
+  const hasBarcelonaDiningIntent = ['restaurant', 'restaurants', 'dining', 'food', 'eat', 'menu', 'menus', 'booking', 'booked', 'reservation', 'confirmed', 'shopping', 'market', 'supermarket', 'grocery', 'restaurant', '맛집', '음식', '식당', '미식', '메뉴', '예약', '확정', '쇼핑', '마트', '시장', '買い物', 'ショッピング', 'レストラン', '予約', 'メニュー', '美食', '餐厅', '预订', '预约', '菜单', '购物', '超市'].some(w => q.includes(w) || cleanQ.includes(w));
+  const asksBookingStatus = ['예약', '확정', 'booked', 'booking', 'reservation', 'confirmed', '予約', '確定', '预订', '预约', '确认'].some(w => q.includes(w) || cleanQ.includes(w));
+  if (((hasBarcelonaContext && (hasBarcelonaDiningIntent || asksBookingStatus)) || hasBarcelonaGuideTerm) && typeof window.buildBarcelonaDiningChatResponse === 'function') {
+    return window.buildBarcelonaDiningChatResponse(lang);
+  }
 
   // Helper for quick follow-up chips generator with multi-language dictionary mapping
   function renderFollowupChips(chips) {
@@ -4706,7 +4725,8 @@ function handleLocalChat(query) {
     }
 
     // 3. Search in PRACTICAL_CITY_CANDIDATES_DATA (17선 추가 후보 - 시장, 전망대 등)
-    const candList = (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' && PRACTICAL_CITY_CANDIDATES_DATA) || [];
+    const candidateData = (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' && PRACTICAL_CITY_CANDIDATES_DATA) || null;
+    const candList = Array.isArray(candidateData) ? candidateData : (candidateData && Array.isArray(candidateData.items) ? candidateData.items : []);
     for (const item of candList) {
       const nameL = (item.name || '').toLowerCase();
       const cInfo = (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' && PRACTICAL_CANDIDATES_I18N[item.id] && PRACTICAL_CANDIDATES_I18N[item.id][lang]) || {};
@@ -5710,7 +5730,7 @@ function handleLocalChat(query) {
 
         <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
           <strong style="color:#b45309;">🧂 塩分＆砂糖控えめ（健康配慮）</strong>:<br>
-          • 🇪🇸 <strong>Sin sal, por favor.</strong>（シン・サル、ポル・ファボール）: 塩抜き・薄味にしてください<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong>（シン・サル、ポル・ファボール）: 塩なしでお願いします。少なめなら「Con poca sal, por favor」と伝えます<br>
           • 🇮🇹 <strong>Poco sale, per favore.</strong>（ポコ・サーレ、ペル・ファヴォーレ）: 塩分控えめにしてください<br>
           • 🇪🇸 <strong>Sin azúcar, por favor.</strong> / 🇮🇹 <strong>Senza zucchero, per favore.</strong>: 砂糖なし・甘さ控えめ
         </div>
@@ -5738,7 +5758,7 @@ function handleLocalChat(query) {
 
         <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
           <strong style="color:#b45309;">🧂 Salt & Sugar Control (Senior Health)</strong>:<br>
-          • 🇪🇸 <strong>Sin sal, por favor.</strong> (Seen sahl, por fah-vor): No salt / less salt, please.<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong> (Seen sahl, por fah-vor): No salt, please. For less salt, say “Con poca sal, por favor.”<br>
           • 🇮🇹 <strong>Poco sale, per favore.</strong> (Poh-koh sah-leh, pehr fah-voh-reh): Light on the salt, please.<br>
           • 🇪🇸 <strong>Sin azúcar, por favor.</strong> / 🇮🇹 <strong>Senza zucchero, per favore.</strong>: No sugar / unsweetened, please.
         </div>
@@ -5766,7 +5786,7 @@ function handleLocalChat(query) {
 
         <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
           <strong style="color:#b45309;">🧂 少盐与控糖（长辈健康贴士）</strong>：<br>
-          • 🇪🇸 <strong>Sin sal, por favor.</strong>：请少放盐 / 做清淡一点<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong>：请不要放盐；若要少放盐，请说“Con poca sal, por favor”<br>
           • 🇮🇹 <strong>Poco sale, per favore.</strong>：少放盐，清淡点<br>
           • 🇪🇸 <strong>Sin azúcar, por favor.</strong> / 🇮🇹 <strong>Senza zucchero, per favore.</strong>：不加糖 / 无糖
         </div>
@@ -5794,7 +5814,7 @@ function handleLocalChat(query) {
 
         <div style="background:#fffcf7;border:1.5px solid #d97706;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
           <strong style="color:#b45309;">🧂 1. 덜 짜게 / 설탕 빼기 (혈압 &amp; 건강 케어)</strong>:<br>
-          • 🇪🇸 <strong>Sin sal, por favor.</strong> (신 살, 포르 파보르): 소금 빼주세요 / 싱겁게 해주세요<br>
+          • 🇪🇸 <strong>Sin sal, por favor.</strong> (신 살, 포르 파보르): 소금 없이 주세요. 덜 짜게 부탁하려면 “Con poca sal, por favor”라고 하세요<br>
           • 🇮🇹 <strong>Poco sale, per favore.</strong> (포코 살레, 페르 파보레): 소금 적게 넣어주세요<br>
           • 🇪🇸 <strong>Sin azúcar, por favor.</strong> (신 아수카르, 포르 파보르) / 🇮🇹 <strong>Senza zucchero, per favore.</strong> (센차 주케로, 페르 파보레): 설탕 빼주세요
         </div>
@@ -7185,7 +7205,7 @@ function handleLocalChat(query) {
         👵 <strong>シニアご両親同伴旅行・安心の心得 TOP 4</strong>:<br><br>
         1️⃣ <strong>石畳と坂道の攻略:</strong> リスボンやローマの石畳は足腰に負担がかかるため、無理に歩かず<strong>Uberやタクシー</strong>を積極的に利用して目的地のエレベーターや玄関前まで直行しましょう。<br>
         2️⃣ <strong>ゆとりのある日程設定:</strong> 午前1箇所、午後1箇所を基本とし、午後にカフェで温かいお茶とスイーツを楽しむ休憩時間を確保してください。<br>
-        3️⃣ <strong>食事の塩分配慮:</strong> レストランでは「塩控えめ（Sin sal / Poco sale）」と伝えると、ご両親のお口に合う優しい味付けで召し上がれます。<br>
+        3️⃣ <strong>食事の塩分配慮:</strong> スペイン語で「Sin sal」は塩なし、「Con poca sal」は塩少なめ、イタリア語の「Poco sale」は塩少なめです。<br>
         4️⃣ <strong>高速鉄道の活用:</strong> 都市間移動は空港手続きの負担がない<strong>高速鉄道（AVE/Italo）のビジネスクラス</strong>を予約するのが最も快適です！
       ` + renderFollowupChips(chips);
     } else if (lang === 'en') {
@@ -7193,7 +7213,7 @@ function handleLocalChat(query) {
         👵 <strong>Top 4 Senior Care & Accessibility Principles for Family Travel</strong>:<br><br>
         1️⃣ <strong>Cobblestones & Hill Navigation:</strong> Never hesitate to take an **Uber/taxi** directly to site entry gates to bypass fatiguing uneven paving.<br>
         2️⃣ <strong>Relaxed Daily Pacing:</strong> Limit schedules to 1 primary sight in the morning and 1 in the afternoon, with a dedicated mid-day café/siesta respite.<br>
-        3️⃣ <strong>Dietary Comfort:</strong> Request *"Sin sal"* (Spain) or *"Poco sale"* (Italy) for gentler seasoning tailored to senior palates.<br>
+        3️⃣ <strong>Dietary Comfort:</strong> In Spain, "Sin sal" means no salt and "Con poca sal" means less salt; in Italy, "Poco sale" means less salt.<br>
         4️⃣ <strong>Door-to-Door High-Speed Rail:</strong> Opt for high-speed train business classes (Italo Prima / AVE) over taxing airport connections.
       ` + renderFollowupChips(chips);
     } else if (lang === 'zh') {
@@ -7201,7 +7221,7 @@ function handleLocalChat(query) {
         👵 <strong>带父母长辈出行 · 舒心无障碍四大准则</strong>:<br><br>
         1️⃣ <strong>告别石板路疲劳：</strong> 老城坡道碎石路极易磨损膝盖，善用<strong>Uber与正规打车</strong>点对点直达景点门口与电梯。<br>
         2️⃣ <strong>张弛有度的松弛节奏：</strong> 严格遵循“上午一处主景点 ➔ 下午酒店午休或景观咖啡馆”，杜绝赶场。<br>
-        3️⃣ <strong>点餐关照健康：</strong> 牢记西语“Sin sal”与意语“Poco sale”少放盐，保护长辈血压肠胃。<br>
+        3️⃣ <strong>点餐关照健康：</strong> 西语“Sin sal”表示不加盐，“Con poca sal”表示少放盐；意语“Poco sale”表示少放盐。<br>
         4️⃣ <strong>首选高铁商务座：</strong> 城际交通首选Italo Prima或AVE高铁，免去反复安检候机劳顿。
       ` + renderFollowupChips(chips);
     } else {
@@ -7209,7 +7229,7 @@ function handleLocalChat(query) {
         👵 <strong>시니어 부모님 동행 가족 여행 · 4대 안심 원칙</strong>:<br><br>
         1️⃣ <strong>돌바닥과 경사로 피하기:</strong> 유럽의 울퉁불퉁한 돌바닥은 무릎에 무리가 가므로, 걷기 힘드실 때는 주저 없이 <strong>우버나 택시</strong>를 타셔서 유적지 입구 바로 앞까지 직행하세요.<br>
         2️⃣ <strong>1일 1핵심 여유로운 페이싱:</strong> 오전 핵심 1곳 ➔ 오후 호텔 휴식/노천카페 ➔ 해질녘 광장 산책의 리듬을 지켜주세요.<br>
-        3️⃣ <strong>식단 건강 배려:</strong> 식당에서 꼭 "신 살(Sin sal)" 또는 "포코 살레(Poco sale)"를 외쳐 덜 짜게 드시도록 챙겨드립니다.<br>
+        3️⃣ <strong>식단 건강 배려:</strong> 스페인어 “Sin sal”은 소금 없이, “Con poca sal”은 소금 적게입니다. 이탈리아어 “Poco sale”도 소금 적게라는 뜻입니다.<br>
         4️⃣ <strong>도심 직결 고속철도 활용:</strong> 공항 대기와 무거운 짐 검사 스트레스가 없는 고속철도 프리마석/1등석으로 쾌적하게 이동합니다!
       ` + renderFollowupChips(chips);
     }

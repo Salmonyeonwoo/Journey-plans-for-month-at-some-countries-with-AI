@@ -2764,7 +2764,7 @@ const REGIONAL_PLANS = {
     "evening": "올림픽 항구 산책로를 가볍게 걷고 노을 감상 후 아파트 복귀",
     "walk": "낮음 (3,600보)",
     "transport": "시티투어 버스 & 택시",
-    "meal": "Puertecillo Sagrada Família: 숙소 도보 2분 신선한 해산물 직접 골라 즉석 철판구이 & 보케리아 시장 최고급 이베리코 하몬 콘 (Jamón Cone)",
+    "meal": "Puertecillo Sagrada Família: 사그라다 파밀리아 인근 셀프서비스 해산물 (숙소 경로·당일 가격 확인) & 보케리아 시장 이베리코 하몬 콘 (재고·가격 확인)",
     "events": [
       "몬주익 파노라마",
       "지중해 항구 뷰",
@@ -2775,18 +2775,18 @@ const REGIONAL_PLANS = {
   {
     "city": "바르셀로나",
     "isTransfer": false,
-    "theme": "그라시아 거리 명품 산책 & 도보 2분 즉석 해산물 구이 (Puertecillo)",
+    "theme": "바르셀로나 산책 & Puertecillo 해산물 후보 (경로·영업시간 확인)",
     "morning": "그라시아 거리(Passeig de Gràcia)의 넓고 평탄한 가로수길 산책 및 올리브 오일, 기념품 쇼핑",
     "rest": "13:30~16:30 숙소 복귀 후 충분한 수면 및 온수 샤워",
-    "evening": "숙소에서 도보 단 2분 거리인 Puertecillo Sagrada Família에서 부모님 이동 부담 없이 신선한 해산물 즉석 구이 만찬",
+    "evening": "선택 방문 후보: Puertecillo Sagrada Família 해산물. 예약된 일정이 아니며 숙소에서의 현재 경로와 운영시간을 먼저 확인하세요.",
     "walk": "낮음 (3,900보)",
     "transport": "도보 & Uber",
-    "meal": "Puertecillo Sagrada Família: 숙소 도보 2분, 신선한 해산물을 직접 골라 즉석 구이로 먹는 가성비 맛집",
+    "meal": "Puertecillo Sagrada Família: 셀프서비스 해산물, 품목별 무게·개수 가격 (당일 메뉴·경로 확인)",
     "events": [
       "그라시아 평지 쇼핑",
       "까탈루냐 광장",
       "Puertecillo 해산물 구이",
-      "숙소 도보 2분 만찬"
+      "선택 가능한 해산물 식사 (예약 미확정)"
     ]
   },
   {
@@ -4712,14 +4712,14 @@ const GLOBAL_DINING_DATA = [
   "region": "스페인",
   "city": "바르셀로나",
   "country": "스페인 (Spain)",
-  "dishName": "꿀대구 구이 & 맛조개 철판구이 (Bacalao al alioli de miel & Navajas)",
+  "dishName": "타파스 메뉴 (당일 메뉴 확인)",
   "photo": "img/gourmet/pulpo-a-la-gallega.jpg",
-  "signature": "달콤한 꿀과 크리미한 아이올리 소스를 얹어 구워낸 부드러운 대구와 싱싱한 맛조개",
-  "seniorTip": "가시가 없고 부드러워 어르신들이 가장 극찬하는 바르셀로나 1등 타파스",
-  "hours": "매일 11:30~01:00",
-  "language": "영어 완벽 · 활기찬 서비스",
-  "phone": "+34 933 63 21 27",
-  "booking": "현장 대기 (브레이크타임 없어 16~17시 방문 시 대기 없음)",
+  "signature": "그룹 공식 소개는 Vinitus를 제철 식재료를 활용한 다양한 타파스로 설명합니다. 개별 메뉴와 당일 제공 여부는 방문 전 확인하세요.",
+  "seniorTip": "접근성·좌석·당일 대기 여부는 현재 지점에 확인하고, 이동 시간은 지도에서 확인하세요.",
+  "hours": "운영시간은 방문 전 공식 지점 안내에서 확인하세요.",
+  "language": "언어 지원 여부는 방문 전 지점에 확인하세요.",
+  "phone": "",
+  "booking": "예약 정책은 공식 채널에서 확인하세요.",
   "mapQuery": "Vinitus Carrer del Consell de Cent Barcelona"
 },
   {
@@ -4727,14 +4727,14 @@ const GLOBAL_DINING_DATA = [
   "region": "스페인",
   "city": "바르셀로나",
   "country": "스페인 (Spain)",
-  "dishName": "꿀대구 타파스 & 이베리코 하몽 바게트 (Montaditos & Bacalao con miel)",
+  "dishName": "전통·창작 타파스 (당일 메뉴 확인)",
   "photo": "img/gourmet/fideua-barcelona.jpg",
-  "signature": "카탈루냐 광장 인근 최고 인기 타파스 바. 꿀대구와 즉석 몬타디토스(미니 샌드위치)",
-  "seniorTip": "카탈루냐 광장 도보 2분 평지 위치. 매장이 넓고 직원이 친절하여 어르신 모시기 편안",
-  "hours": "매일 08:30~01:00",
-  "language": "영어 능통 · 그림 메뉴판 제공",
-  "phone": "+34 933 18 19 97",
-  "booking": "현장 대기",
+  "signature": "그룹 공식 소개는 Ciutat Comtal을 전통·창작 타파스 장소로 설명합니다. 개별 메뉴와 당일 제공 여부는 방문 전 확인하세요.",
+  "seniorTip": "접근성·좌석·당일 대기 여부는 현재 지점에 확인하고, 이동 시간은 지도에서 확인하세요.",
+  "hours": "운영시간은 방문 전 공식 지점 안내에서 확인하세요.",
+  "language": "언어 지원 여부는 방문 전 지점에 확인하세요.",
+  "phone": "",
+  "booking": "예약 정책은 공식 채널에서 확인하세요.",
   "mapQuery": "Ciudad Condal Rambla de Catalunya Barcelona"
 },
   {
@@ -8084,10 +8084,10 @@ const DINING_I18N_DATA = {
     "zh": "Vinitus"
   },
   "dishTitle": {
-    "ko": "꿀대구 구이 & 맛조개 철판구이",
-    "ja": "タラのハチミツアイオリ焼き＆マテ貝の鉄板焼き",
-    "en": "Honey Cod & Grilled Razor Clams",
-    "zh": "蜂蜜焗鳕鱼与铁板竹蛏"
+    "ko": "타파스 메뉴 (당일 확인)",
+    "en": "Tapas menu (check on the day)",
+    "ja": "タパスメニュー（当日確認）",
+    "zh": "Tapas 菜单（当天确认）"
   },
   "badge": {
     "ko": "스페인 · 바르셀로나",
@@ -8096,35 +8096,35 @@ const DINING_I18N_DATA = {
     "zh": "西班牙 · 巴塞罗那"
   },
   "signature": {
-    "ko": "달콤한 꿀과 크리미한 아이올리 소스를 얹어 구워낸 부드러운 대구와 싱싱한 맛조개",
-    "ja": "ハチミツの甘みとアイオリのコクが絶品のタラ料理と新鮮なマテ貝",
-    "en": "Honey-aioli baked tender cod and freshly griddled razor clams",
-    "zh": "蜂蜜与蒜味蛋黄酱烤鳕鱼，搭配极品鲜香铁板竹蛏"
+    "ko": "그룹 공식 소개는 Vinitus를 제철 식재료를 활용한 다양한 타파스로 설명합니다. 개별 메뉴와 당일 제공 여부는 방문 전 확인하세요.",
+    "en": "The group describes Vinitus as offering a wide selection of tapas with fresh, seasonal products. Check specific dishes and same-day availability.",
+    "ja": "グループ公式紹介では、Vinitusは旬の食材を使った多彩なタパスを提供。個別の料理と当日の提供状況は事前に確認してください。",
+    "zh": "集团官方介绍称 Vinitus 提供多种采用新鲜时令食材的 tapas。具体菜品与当天供应情况请提前确认。"
   },
   "seniorTip": {
-    "ko": "가시가 없고 부드러워 어르신들이 가장 극찬하는 바르셀로나 1등 타파스",
-    "ja": "骨がなく口の中でとろける柔らかさでシニアに一番人気のタパス",
-    "en": "Boneless and silky soft—the #1 rated tapas praise by senior parents",
-    "zh": "无骨软嫩入口即化，深受长辈好评的头号人气Tapas"
+    "ko": "접근성·좌석·당일 대기 여부는 현재 지점에 확인하고, 이동 시간은 지도에서 확인하세요.",
+    "en": "Check seating, accessibility and current wait with the branch; verify travel time on a live map.",
+    "ja": "座席・アクセシビリティ・当日の待ち時間は店舗に確認し、移動時間は最新の地図で確認してください。",
+    "zh": "请向门店确认座位、无障碍条件和当天等候情况，并通过实时地图核对路程。"
   },
   "hours": {
-    "ko": "매일 11:30~01:00",
-    "ja": "毎日 11:30〜01:00",
-    "en": "Daily 11:30–01:00",
-    "zh": "每日 11:30~01:00"
+    "ko": "운영시간은 방문 전 공식 지점 안내에서 확인하세요.",
+    "en": "Check current opening hours with the official branch information before visiting.",
+    "ja": "営業時間は訪問前に公式店舗案内で確認してください。",
+    "zh": "到访前请通过官方门店信息确认当前营业时间。"
   },
   "language": {
-    "ko": "영어 완벽 · 활기찬 서비스",
-    "ja": "英語対応・活気ある接客",
-    "en": "Fluent English · Lively service",
-    "zh": "英文流利·热情活力"
+    "ko": "언어 지원 여부는 방문 전 지점에 확인하세요.",
+    "en": "Language support is not verified; check with the branch.",
+    "ja": "対応言語は未確認です。店舗に確認してください。",
+    "zh": "未确认门店的语言服务，请直接向门店确认。"
   },
-  "phone": "+34 933 63 21 27",
+  "phone": "",
   "booking": {
-    "ko": "현장 대기 (16~17시 대기 없음)",
-    "ja": "店頭受付（16〜17時は待ちなし）",
-    "en": "Walk-in (No wait around 16:00-17:00)",
-    "zh": "现场排队（16~17点基本免排队）"
+    "ko": "예약 정책은 공식 채널에서 확인하세요.",
+    "en": "Check the branch’s current reservation policy directly.",
+    "ja": "予約方法は店舗の最新案内で確認してください。",
+    "zh": "请直接确认门店当前的预订政策。"
   }
 },
   "Ciudad Condal": {
@@ -8135,10 +8135,10 @@ const DINING_I18N_DATA = {
     "zh": "Ciudad Condal"
   },
   "dishTitle": {
-    "ko": "꿀대구 타파스 & 이베리코 하몽 바게트",
-    "ja": "タラのハチミツ焼き＆イベリコ生ハムバゲット",
-    "en": "Honey Cod & Jamón Montaditos",
-    "zh": "蜂蜜鳕鱼与伊比利亚火腿法棍"
+    "ko": "전통·창작 타파스 (당일 확인)",
+    "en": "Traditional and creative tapas (check on the day)",
+    "ja": "伝統・創作タパス（当日確認）",
+    "zh": "传统与创意 tapas（当天确认）"
   },
   "badge": {
     "ko": "스페인 · 바르셀로나",
@@ -8147,35 +8147,35 @@ const DINING_I18N_DATA = {
     "zh": "西班牙 · 巴塞罗那"
   },
   "signature": {
-    "ko": "카탈루냐 광장 인근 최고 인기 타파스 바. 꿀대구와 즉석 몬타디토스",
-    "ja": "カタルーニャ広場すぐの超人気バル。絶品タラ料理と出来立てピンチョス",
-    "en": "Premier tapas bar near Placa de Catalunya, famous for honey cod and montaditos",
-    "zh": "加泰罗尼亚广场旁的顶级高分Tapas小馆，招牌蜂蜜鳕鱼"
+    "ko": "그룹 공식 소개는 Ciutat Comtal을 전통·창작 타파스 장소로 설명합니다. 개별 메뉴와 당일 제공 여부는 방문 전 확인하세요.",
+    "en": "The group describes Ciutat Comtal as a destination for traditional and creative tapas. Check specific dishes and same-day availability.",
+    "ja": "グループ公式紹介では、Ciutat Comtalは伝統的・創作タパスの店とされています。個別の料理と当日の提供状況は事前に確認してください。",
+    "zh": "集团官方介绍将 Ciutat Comtal 描述为提供传统与创意 tapas 的餐厅。具体菜品与当天供应情况请提前确认。"
   },
   "seniorTip": {
-    "ko": "카탈루냐 광장 도보 2분 평지 위치. 매장이 넓고 직원이 친절하여 어르신 모시기 편안",
-    "ja": "平坦な道で徒歩2分。広々とした店内で親孝行旅に最適",
-    "en": "Flat 2-min walk from main square. Spacious and senior-friendly",
-    "zh": "平地步行2分钟即达，宽敞整洁适宜长辈休憩就餐"
+    "ko": "접근성·좌석·당일 대기 여부는 현재 지점에 확인하고, 이동 시간은 지도에서 확인하세요.",
+    "en": "Check seating, accessibility and current wait with the branch; verify travel time on a live map.",
+    "ja": "座席・アクセシビリティ・当日の待ち時間は店舗に確認し、移動時間は最新の地図で確認してください。",
+    "zh": "请向门店确认座位、无障碍条件和当天等候情况，并通过实时地图核对路程。"
   },
   "hours": {
-    "ko": "매일 08:30~01:00",
-    "ja": "毎日 08:30〜01:00",
-    "en": "Daily 08:30–01:00",
-    "zh": "每日 08:30~01:00"
+    "ko": "운영시간은 방문 전 공식 지점 안내에서 확인하세요.",
+    "en": "Check current opening hours with the official branch information before visiting.",
+    "ja": "営業時間は訪問前に公式店舗案内で確認してください。",
+    "zh": "到访前请通过官方门店信息确认当前营业时间。"
   },
   "language": {
-    "ko": "영어 능통 · 그림 메뉴판 제공",
-    "ja": "英語可能・写真付きメニューあり",
-    "en": "English friendly · Picture menu",
-    "zh": "提供图片菜单·服务热情"
+    "ko": "언어 지원 여부는 방문 전 지점에 확인하세요.",
+    "en": "Language support is not verified; check with the branch.",
+    "ja": "対応言語は未確認です。店舗に確認してください。",
+    "zh": "未确认门店的语言服务，请直接向门店确认。"
   },
-  "phone": "+34 933 18 19 97",
+  "phone": "",
   "booking": {
-    "ko": "현장 대기",
-    "ja": "店頭受付",
-    "en": "Walk-in queue",
-    "zh": "现场候位"
+    "ko": "예약 정책은 공식 채널에서 확인하세요.",
+    "en": "Check the branch’s current reservation policy directly.",
+    "ja": "予約方法は店舗の最新案内で確認してください。",
+    "zh": "请直接确认门店当前的预订政策。"
   }
 },
   "La Paradeta (Sagrada Família)": {
@@ -9867,10 +9867,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "观光大巴与出租车"
     },
     "meal": {
-      "ko": "Puertecillo Sagrada Família: 숙소 도보 2분 신선한 해산물 직접 골라 즉석 철판구이 & 보케리아 시장 최고급 이베리코 하몬 콘 (Jamón Cone)",
-      "en": "Puertecillo Sagrada Família: 2-min walk market-style fresh griddled seafood & Boqueria Market acorn-fed Ibérico Jamón paper cone",
-      "ja": "Puertecillo Sagrada Família: 宿から徒歩2分の新鮮魚介を選んで焼く鉄板焼き＆ボケリア市場の最高級イベリコ生ハムコーン (Jamón Cone)",
-      "zh": "Puertecillo Sagrada Família：距住所步行2分钟自选现煎海鲜铁板烧，以及波盖利亚市场顶级伊比利亚火腿纸筒 (Jamón Cone)"
+      "ko": "Puertecillo Sagrada Família: 사그라다 파밀리아 인근 셀프서비스 해산물 (숙소 경로·당일 가격 확인) & 보케리아 시장 이베리코 하몬 콘 (재고·가격 확인)",
+      "en": "Puertecillo Sagrada Família: self-service seafood near Sagrada Família (check the accommodation route and current prices) & Ibérico ham cone at Boqueria Market (check availability and price)",
+      "ja": "Puertecillo Sagrada Família: サグラダ・ファミリア近くのセルフサービス式シーフード（宿からの経路・当日価格を確認）＆ボケリア市場のハモン・イベリココーン（在庫・価格を確認）",
+      "zh": "Puertecillo Sagrada Família：圣家堂附近的自助式海鲜（请核对住宿路线和当天价格）及波盖利亚市场伊比利亚火腿小吃（请确认供应和价格）"
     }
   },
   {
@@ -9881,35 +9881,35 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "巴塞罗那"
     },
     "theme": {
-      "ko": "그라시아 거리 명품 산책 & 도보 2분 즉석 해산물 구이 (Puertecillo)",
-      "en": "Passeig de Gràcia Stroll & Fresh Seafood Grill (Puertecillo, 2m from hotel)",
-      "ja": "グラシア通り散策＆宿徒歩2分の極上シーフードグリル (Puertecillo)",
-      "zh": "格拉西亚大道漫步＆距酒店步行2分钟海鲜铁板烧 (Puertecillo)"
+      "ko": "바르셀로나 산책 & Puertecillo 해산물 후보 (경로·영업시간 확인)",
+      "en": "Barcelona stroll & optional Puertecillo seafood (check route and hours)",
+      "ja": "バルセロナ散策＆Puertecilloのシーフード候補（経路・営業時間を確認）",
+      "zh": "巴塞罗那漫步与 Puertecillo 海鲜备选（请核对路线和营业时间）"
     },
     "events": {
       "ko": [
         "그라시아 평지 쇼핑",
         "까탈루냐 광장",
         "Puertecillo 해산물 구이",
-        "숙소 도보 2분 만찬"
+        "선택 가능한 해산물 식사 (예약 미확정)"
       ],
       "en": [
         "Passeig de Gràcia Walk",
         "Plaça Catalunya",
         "Puertecillo Seafood",
-        "2 Min Walk to Bed"
+        "Optional seafood meal (not booked)"
       ],
       "ja": [
         "グラシア通り平坦路",
         "カタルーニャ広場",
         "Puertecillo 海鮮グリル",
-        "宿徒歩2分の至福"
+        "シーフードの食事候補（予約未確定）"
       ],
       "zh": [
         "格拉西亚平坦漫步",
         "加泰罗尼亚广场",
         "Puertecillo现点海鲜",
-        "下楼即达无需奔波"
+        "可选海鲜餐（尚未预订）"
       ]
     },
     "morning": {
@@ -9925,10 +9925,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "13:30~16:30 返回公寓充分午休，享受热水淋浴消除疲劳"
     },
     "evening": {
-      "ko": "숙소에서 도보 단 2분 거리인 Puertecillo Sagrada Família에서 부모님 이동 부담 없이 신선한 해산물 즉석 구이 만찬",
-      "en": "Just a 2-minute flat walk from apartment to Puertecillo Sagrada Família for an easy, fresh grilled seafood feast",
-      "ja": "宿から徒歩わずか2分のPuertecillo Sagrada Famíliaで、移動の負担なく新鮮な魚介の鉄板焼きを満喫",
-      "zh": "距公寓仅步行2分钟的Puertecillo Sagrada Família，长辈无需多走路即可享受现选生猛海鲜铁板烧大餐"
+      "ko": "선택 방문 후보: Puertecillo Sagrada Família 해산물. 예약된 일정이 아니며 숙소에서의 현재 경로와 운영시간을 먼저 확인하세요.",
+      "en": "Optional meal idea: Puertecillo Sagrada Família seafood. Not booked; check the current route from the accommodation and opening hours first.",
+      "ja": "訪問候補：Puertecillo Sagrada Famíliaのシーフード。予約済みではありません。宿からの最新ルートと営業時間を先に確認してください。",
+      "zh": "可选餐饮：Puertecillo Sagrada Família 海鲜，尚未预订。请先核对住宿路线和营业时间。"
     },
     "walk": {
       "ko": "낮음 (3,900보)",
@@ -9943,10 +9943,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "步行与网约车"
     },
     "meal": {
-      "ko": "Puertecillo Sagrada Família: 숙소 도보 2분, 신선한 해산물을 직접 골라 즉석 구이로 먹는 가성비 맛집",
-      "en": "Puertecillo Sagrada Família: 2 min walk from hotel, select fresh razor clams, shrimp & fish grilled to order",
-      "ja": "Puertecillo Sagrada Família: 宿徒歩2分、新鮮なマテ貝・エビ・白身魚を選んでその場で焼き上げる高コスパ名店",
-      "zh": "Puertecillo Sagrada Família：距酒店步行2分钟，自选生猛蛏子、大虾与海鱼现场铁板烧，性价比极高"
+      "ko": "Puertecillo Sagrada Família: 셀프서비스 해산물, 품목별 무게·개수 가격 (당일 메뉴·경로 확인)",
+      "en": "Puertecillo Sagrada Família: self-service seafood with weight- or item-based pricing (check today’s menu and route)",
+      "ja": "Puertecillo Sagrada Família：セルフサービス式シーフード。重量または個数単位の価格（当日のメニューと経路を確認）",
+      "zh": "Puertecillo Sagrada Família：自助式海鲜，按重量或部分按件计价（请核对当天菜单和路线）"
     }
   },
   {
@@ -16500,28 +16500,28 @@ const I18N_DICTIONARY = {
     "master_sum3_title": "🍽️ [요약 3] 도시별 꼭 먹어야 할 맛집·메뉴 & 무료 야경·야시장 총정리",
     "master_sum3_desc": "확정 일정에 맞춰 부모님 입맛과 체력을 완벽히 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 사전 예약 없이 즐기는 무료 야경·야시장 스폿 총정리입니다.",
     "must_bcn_city": "바르셀로나",
-    "must_bcn_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Ciudad Condal</strong>: 꿀대구(Bacalao a la miel), 안심 몬타디토, 레몬맥주 클라라<br>• <strong>7 Portes</strong>: 1836년 전통 해산물 파에야 & 먹물 파에야<br>• <strong>Puertecillo Sagrada Família</strong>: 숙소 도보 2분 즉석 해산물 구이 가성비 맛집",
+    "must_bcn_food": "<strong>식당·메뉴 후보 (방문·예약 미확정):</strong><br>• <strong>Ciutat Comtal · Vinitus · La Flauta</strong>: 그룹 공식 브랜드 소개에 별도 등재된 브랜드입니다. 메뉴가 같다고 볼 수 없으니 각 지점의 당일 메뉴·운영시간·예약 정책을 확인하세요.<br>• <strong>7 Portes</strong>: 현재 메뉴·가격·예약 여부는 공식 안내에서 확인하세요.<br>• <strong>Puertecillo Sagrada Família</strong>: 셀프서비스 해산물입니다. 무게 또는 일부 품목별 요금이 적용되므로 고르기 전에 당일 메뉴·가격과 지도 경로를 확인하세요.",
     "must_bcn_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>사그라다 파밀리아 호수공원(Plaça de Gaudí)</strong>: 성당 정면 호숫가 밤 조명 야경 (무료, 예약 불필요)<br>• <strong>산타 카테리나 로컬 시장</strong>: 물결지붕 아래 신선한 과일과 하몬 구경<br>• <strong>11/10 15:30</strong>: 사그라다 파밀리아 서쪽 스테인드글라스 황금빛 노을 관람",
     "must_svq_city": "세비야 (1차 & 2차)",
-    "must_svq_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>• 정통 타파스 & 시원한 상그리아",
+    "must_svq_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>• 정통 타파스 & 시원한 상그리아",
     "must_svq_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>메트로폴 파라솔 (Las Setas)</strong>: 거대 목조 구조물 야외 광장 무료 산책 & 야간 조명<br>• <strong>스페인 광장 (Plaza de España)</strong>: 밤 조명이 켜진 웅장하고 로맨틱한 광장 야간 산책 (무료)<br>• 과달키비르 강변 황금의 탑 야경",
     "must_odb_city": "코르도바",
-    "must_odb_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Bodegas Mezquita</strong>: 부드럽게 푹 고아낸 소꼬리 찜(Rabo de Toro - 부모님 최애 보양식), 바삭한 가지 튀김(Berenjenas con miel), 살모레호",
+    "must_odb_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Bodegas Mezquita</strong>: 부드럽게 푹 고아낸 소꼬리 찜(Rabo de Toro - 부모님 최애 보양식), 바삭한 가지 튀김(Berenjenas con miel), 살모레호",
     "must_odb_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>로마 다리 (Puente Romano)</strong>: 해 질 녘 다리를 건너며 메스키타와 과달키비르 강변 무료 야경 감상<br>• 유대인 지구(유다리아) 꽃길 골목(Calleja de las Flores) 산책",
     "must_grx_city": "그라나다",
-    "must_grx_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Bar Los Diamantes</strong>: 음료(맥주/와인) 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공!<br>• 나바스 거리(Calle Navas) 활기찬 로컬 타파스 투어",
+    "must_grx_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Bar Los Diamantes</strong>: 음료(맥주/와인) 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공!<br>• 나바스 거리(Calle Navas) 활기찬 로컬 타파스 투어",
     "must_grx_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>산 니콜라스 전망대 (Mirador de San Nicolás)</strong>: 택시로 올라가 알함브라 붉은 성곽 뒤로 물드는 노을과 야경 감상 (최고의 무료 명소)<br>• 11/14 알함브라 궁전 및 나스르 궁전 집중 관람",
     "must_agp_city": "말라가",
-    "must_agp_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>에스페토 (Espeto)</strong>: 해변가에서 대나무 꼬치에 꿰어 숯불에 구워내는 정통 정어리 구이<br>• <strong>El Pimpi</strong>: 안토니오 반데라스 와이너리 전통 와인 & 하몬<br>• <strong>Marisquería Godoy</strong>: 항구 테라스 해산물 구이",
+    "must_agp_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>에스페토 (Espeto)</strong>: 해변가에서 대나무 꼬치에 꿰어 숯불에 구워내는 정통 정어리 구이<br>• <strong>El Pimpi</strong>: 안토니오 반데라스 와이너리 전통 와인 & 하몬<br>• <strong>Marisquería Godoy</strong>: 항구 테라스 해산물 구이",
     "must_agp_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>말라가 항구 무에예 우노 (Muelle Uno)</strong>: 야자수와 지중해가 어우러진 해안 산책로 야경 산책<br>• 라리오스 대리석 쇼핑 거리의 화려한 조명 산책",
     "must_nap_city": "나폴리",
-    "must_nap_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Gino Sorbillo</strong>: 겉바속촉 전설의 화덕 마르게리타 피자<br>• <strong>Gran Caffè Gambrinus</strong>: 1860년 유서 깊은 카페의 정통 에스프레소 & 럼주 빵 '바바(Babà)', 조개 페이스트리 '스폴리아텔라'",
+    "must_nap_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Gino Sorbillo</strong>: 겉바속촉 전설의 화덕 마르게리타 피자<br>• <strong>Gran Caffè Gambrinus</strong>: 1860년 유서 깊은 카페의 정통 에스프레소 & 럼주 빵 '바바(Babà)', 조개 페이스트리 '스폴리아텔라'",
     "must_nap_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>플레비시토 광장 (Piazza del Plebiscito)</strong>: 웅장한 기둥 회랑과 왕궁 야경 산책<br>• 스파카 나폴리 골목 활기 체감 & 폼페이/소렌토/아말피 전용 차량 투어",
     "must_flr_city": "피렌체",
-    "must_flr_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg 두툼한 숯불 티본 스테이크(Bistecca alla Fiorentina) + 트러플 크림 파스타<br>• <strong>All’Antico Vinaio</strong>: 줄서서 먹는 토스카나 포카치아 샌드위치",
+    "must_flr_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg 두툼한 숯불 티본 스테이크(Bistecca alla Fiorentina) + 트러플 크림 파스타<br>• <strong>All’Antico Vinaio</strong>: 줄서서 먹는 토스카나 포카치아 샌드위치",
     "must_flr_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>미켈란젤로 광장 (Piazzale Michelangelo)</strong>: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿<br>• <strong>베키오 다리 (Ponte Vecchio)</strong>: 아르노강 반영 야경",
     "must_rom_city": "로마",
-    "must_rom_food": "<strong>꼭 먹을 맛집 & 메뉴:</strong><br>• <strong>Trattoria Luzzi</strong>: 콜로세움 인접 가성비 파스타 & 화덕 피자<br>• <strong>Giolitti (지올리띠)</strong>: 쌀맛(Riso) & 고소한 피스타치오(Pistacchio) 젤라또 필수 주문<br>• 타차 도로(Tazza d'Oro): 판테온 앞 그라니타 콘 판나",
+    "must_rom_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Trattoria Luzzi</strong>: 콜로세움 인접 가성비 파스타 & 화덕 피자<br>• <strong>Giolitti (지올리띠)</strong>: 쌀맛(Riso) & 고소한 피스타치오(Pistacchio) 젤라또 필수 주문<br>• 타차 도로(Tazza d'Oro): 판테온 앞 그라니타 콘 판나",
     "must_rom_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>트레비 분수 (Fontana di Trevi)</strong>: 밤 10시 이후 야간 산책 (인파 줄어든 로맨틱한 야경 & 동전 던지기, 숙소 도보 12분)<br>• <strong>캄포 디 피오리 (Campo de' Fiori)</strong>: 로컬 야시장 및 야간 광장 정취<br>• 12/4 테르미니역 공항철도 ➔ FCO T3 22:00 출국",
 },
   "en": {
@@ -16816,28 +16816,28 @@ const I18N_DICTIONARY = {
     "master_sum3_title": "🍽️ [Summary 3] Must-Eat Dining Specialties & Free Night Views / Markets",
     "master_sum3_desc": "Carefully selected signature dishes and free romantic night-view spots perfectly matched with your confirmed schedule and senior parents' wellness.",
     "must_bcn_city": "Barcelona",
-    "must_bcn_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Ciudad Condal</strong>: Honey Cod (Bacalao a la miel), Beef Tenderloin Montadito, Clara Lemon Beer<br>• <strong>7 Portes</strong>: Historic 1836 Seafood & Squid-Ink Paella<br>• <strong>Puertecillo Sagrada Família</strong>: 2 min walk from hotel, select fresh seafood grilled to order at great value",
+    "must_bcn_food": "<strong>Dining ideas (visits/bookings not confirmed):</strong><br>• <strong>Ciutat Comtal, Vinitus and La Flauta</strong> appear as distinct brands in the group’s official portfolio; their menus are not necessarily identical, so check each branch’s current menu, hours and booking policy.<br>• <strong>7 Portes</strong>: check official information for the current menu, prices and booking options.<br>• <strong>Puertecillo Sagrada Família</strong>: self-service seafood; pricing is by weight or, for some items, per item. Confirm today’s menu, price and route before choosing.",
     "must_bcn_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Plaça de Gaudí Lake Park</strong>: View the illuminated Sagrada Família reflection over the water (Free, no reservation needed)<br>• <strong>Santa Caterina Market</strong>: Colorful undulating roof and fresh fruit/jamón tasting<br>• <strong>11/10 15:30</strong>: Sagrada Família golden sunset stained-glass interior admission",
     "must_svq_city": "Seville (Leg 1 & 2)",
-    "must_svq_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>El Rinconcillo</strong>: Oldest tapas bar since 1670 - Spinach & Chickpea Stew (Espinacas con garbanzos), Tender Pork Cheek (Carrillada)<br>• Authentic tapas & chilled sangria",
+    "must_svq_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>El Rinconcillo</strong>: Oldest tapas bar since 1670 - Spinach & Chickpea Stew (Espinacas con garbanzos), Tender Pork Cheek (Carrillada)<br>• Authentic tapas & chilled sangria",
     "must_svq_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Metropol Parasol (Las Setas)</strong>: Stroll the giant wooden structure open-air plaza with evening illumination (Free)<br>• <strong>Plaza de España</strong>: Romantic night lighting walk with serene fountains (Free)<br>• Evening river walk by the Golden Tower (Torre del Oro)",
     "must_odb_city": "Córdoba",
-    "must_odb_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Bodegas Mezquita</strong>: Slow-braised tender Ox-tail stew (Rabo de Toro - parents' favorite nourishing meal), Crispy eggplant with honey (Berenjenas con miel), Salmorejo",
+    "must_odb_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Bodegas Mezquita</strong>: Slow-braised tender Ox-tail stew (Rabo de Toro - parents' favorite nourishing meal), Crispy eggplant with honey (Berenjenas con miel), Salmorejo",
     "must_odb_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Roman Bridge (Puente Romano)</strong>: Cross at sunset for stunning free panorama of the Mezquita and riverbank lights<br>• Flower-lined Calleja de las Flores alley stroll",
     "must_grx_city": "Granada",
-    "must_grx_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Bar Los Diamantes</strong>: Complimentary freshly fried seafood tapas platter served free with every drink ordered!<br>• Calle Navas vibrant tapas bar crawl",
+    "must_grx_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Bar Los Diamantes</strong>: Complimentary freshly fried seafood tapas platter served free with every drink ordered!<br>• Calle Navas vibrant tapas bar crawl",
     "must_grx_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Mirador de San Nicolás</strong>: Take taxi up to witness the red walls of the Alhambra illuminated against the sunset (Top free viewpoint)<br>• 11/14 Comprehensive tour of Alhambra & Nasrid Palaces",
     "must_agp_city": "Málaga",
-    "must_agp_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Espeto de Sardinas</strong>: Traditional fresh sardines skewered on bamboo and wood-charcoal roasted on beach chiringuitos<br>• <strong>El Pimpi</strong>: Historic winery run by Antonio Banderas serving sweet wine & jamón<br>• <strong>Marisquería Godoy</strong>: Harbour terrace seafood grill",
+    "must_agp_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Espeto de Sardinas</strong>: Traditional fresh sardines skewered on bamboo and wood-charcoal roasted on beach chiringuitos<br>• <strong>El Pimpi</strong>: Historic winery run by Antonio Banderas serving sweet wine & jamón<br>• <strong>Marisquería Godoy</strong>: Harbour terrace seafood grill",
     "must_agp_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Muelle Uno Waterfront</strong>: Breezy illuminated harbor promenade lined with palms and Mediterranean views<br>• Stroll Calle Larios marble avenue lights",
     "must_nap_city": "Naples",
-    "must_nap_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Gino Sorbillo</strong>: Legendary crispy & chewy wood-fired Neapolitan Margherita pizza<br>• <strong>Gran Caffè Gambrinus</strong>: 1860 historic café serving rich espresso, rum-soaked Babà cake & flaky Sfogliatella pastry",
+    "must_nap_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Gino Sorbillo</strong>: Legendary crispy & chewy wood-fired Neapolitan Margherita pizza<br>• <strong>Gran Caffè Gambrinus</strong>: 1860 historic café serving rich espresso, rum-soaked Babà cake & flaky Sfogliatella pastry",
     "must_nap_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Piazza del Plebiscito</strong>: Grand colonnade night illumination and royal palace stroll<br>• Spaccanapoli vibrant alleyways & private van tour to Pompeii and Amalfi/Positano",
     "must_flr_city": "Florence",
-    "must_flr_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg thick charcoal-grilled Bistecca alla Fiorentina + Truffle Cream Pasta<br>• <strong>All’Antico Vinaio</strong>: World-famous Tuscan focaccia sandwiches overflowing with prosciutto and truffle cream",
+    "must_flr_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg thick charcoal-grilled Bistecca alla Fiorentina + Truffle Cream Pasta<br>• <strong>All’Antico Vinaio</strong>: World-famous Tuscan focaccia sandwiches overflowing with prosciutto and truffle cream",
     "must_flr_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Piazzale Michelangelo</strong>: Unbeatable hilltop panoramic free sunset and night view overlooking Florence Duomo and Arno River<br>• <strong>Ponte Vecchio</strong>: Romantic reflections on the river",
     "must_rom_city": "Rome",
-    "must_rom_food": "<strong>Must-Eat Restaurants & Dishes:</strong><br>• <strong>Trattoria Luzzi</strong>: Great value Roman carbonara & thin-crust pizza 3 min from Colosseum<br>• <strong>Giolitti</strong>: 1900 artisanal gelato - must try Rice (Riso) and rich Pistachio (Pistacchio)<br>• Tazza d'Oro: Granita di caffè con panna near Pantheon",
+    "must_rom_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Trattoria Luzzi</strong>: Great value Roman carbonara & thin-crust pizza 3 min from Colosseum<br>• <strong>Giolitti</strong>: 1900 artisanal gelato - must try Rice (Riso) and rich Pistachio (Pistacchio)<br>• Tazza d'Oro: Granita di caffè con panna near Pantheon",
     "must_rom_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Trevi Fountain (Fontana di Trevi)</strong>: Stroll after 10 PM for minimal crowds, majestic lighting and coin toss (12 min walk from hotel)<br>• <strong>Campo de' Fiori</strong>: Lively local night market and piazza atmosphere<br>• 12/4 Airport express train from Termini ➔ FCO T3 22:00 departure",
 },
   "ja": {
@@ -17139,28 +17139,28 @@ const I18N_DICTIONARY = {
     "master_sum3_title": "🍽️ [要約 3] 都市別 必食グルメ名店＆無料夜景・夜市総まとめ",
     "master_sum3_desc": "確定日程に合わせてご両親の味覚と体力を完璧に考慮した都市別代表グルメ、シグネチャーメニュー、事前予約なしで楽しめる無料夜景・夜市スポットの総まとめです。",
     "must_bcn_city": "バルセロナ",
-    "must_bcn_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Ciudad Condal</strong>: ハチミツタラ(Bacalao a la miel)、牛ヒレ肉のモンタディート、レモンビール クララ<br>• <strong>7 Portes</strong>: 1836年創業の伝統魚介パエリア＆イカスミパエリア<br>• <strong>Puertecillo Sagrada Família</strong>: 宿徒歩2分、新鮮な魚介を自ら選んでその場で焼く高コスパ海鮮",
+    "must_bcn_food": "<strong>飲食店候補（訪問・予約未確定）:</strong><br>• <strong>Ciutat Comtal・Vinitus・La Flauta</strong>はグループ公式紹介に別々のブランドとして掲載されています。メニューが同一とは限らないため、各店舗の当日メニュー・営業時間・予約方法を確認してください。<br>• <strong>7 Portes</strong>は、最新メニュー・価格・予約方法を公式案内で確認してください。<br>• <strong>Puertecillo Sagrada Família</strong>はセルフサービス式シーフードです。重量または一部品目ごとの料金のため、選ぶ前に当日のメニュー・価格と地図の経路を確認してください。",
     "must_bcn_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ガウディ池公園(Plaça de Gaudí)</strong>: 水面に映る夜のサグラダ・ファミリアのライトアップ鑑賞(無料・予約不要)<br>• <strong>サンタ・カテリーナ市場</strong>: 波打つ屋根が美しいローカル市場でフルーツと生ハム散策<br>• <strong>11/10 15:30</strong>: サグラダ・ファミリア西側ステンドグラスの黄金色夕景入場",
     "must_svq_city": "セビリア (第1・2期)",
-    "must_svq_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>El Rinconcillo</strong>: 1670年創業の最古タパスバー - ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の煮込み<br>• 本場タパス＆冷たいサングリア",
+    "must_svq_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>El Rinconcillo</strong>: 1670年創業の最古タパスバー - ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の煮込み<br>• 本場タパス＆冷たいサングリア",
     "must_svq_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>メトロポール・パラソル (Las Setas)</strong>: 巨大木造建築の屋外広場無料散策＆夜間ライトアップ<br>• <strong>スペイン広場 (Plaza de España)</strong>: 夜の明かりが灯る幻想的でロマンチックな広場散歩(無料)<br>• グアダルキビール川沿い黄金の塔の夜景",
     "must_odb_city": "コルドバ",
-    "must_odb_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Bodegas Mezquita</strong>: じっくり煮込んだ柔らかいオックステール煮込み(Rabo de Toro - ご両親絶賛の滋養食)、ナスのハチミツ揚げ、サルモレホ",
+    "must_odb_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Bodegas Mezquita</strong>: じっくり煮込んだ柔らかいオックステール煮込み(Rabo de Toro - ご両親絶賛の滋養食)、ナスのハチミツ揚げ、サルモレホ",
     "must_odb_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ローマ橋 (Puente Romano)</strong>: 夕暮れ時に橋を渡りメスキタと川沿いの無料夜景を一望<br>• ユダヤ人街の花の小道(Calleja de las Flores)散策",
     "must_grx_city": "グラナダ",
-    "must_grx_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Bar Los Diamantes</strong>: ドリンク注文で揚げたて熱々の魚介タパスが1皿無料提供！<br>• ナバス通り(Calle Navas)の活気あるタパス巡り",
+    "must_grx_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Bar Los Diamantes</strong>: ドリンク注文で揚げたて熱々の魚介タパスが1皿無料提供！<br>• ナバス通り(Calle Navas)の活気あるタパス巡り",
     "must_grx_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>サン・ニコラス展望台 (Mirador de San Nicolás)</strong>: タクシーで登り、夕日に染まるアルハンブラ宮殿の赤い城壁と無料夜景を満喫<br>• 11/14 アルハンブラ宮殿＆ナスル朝宮殿集中鑑賞",
     "must_agp_city": "マラガ",
-    "must_agp_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>エスペト (Espeto)</strong>: ビーチ沿いで竹串に刺した新鮮なイワシの炭火焼き<br>• <strong>El Pimpi</strong>: アントニオ・バンデラスが手掛ける老舗ワイナリーの甘口ワイン＆生ハム<br>• <strong>Marisquería Godoy</strong>: 港湾テラスの極上シーフードグリル",
+    "must_agp_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>エスペト (Espeto)</strong>: ビーチ沿いで竹串に刺した新鮮なイワシの炭火焼き<br>• <strong>El Pimpi</strong>: アントニオ・バンデラスが手掛ける老舗ワイナリーの甘口ワイン＆生ハム<br>• <strong>Marisquería Godoy</strong>: 港湾テラスの極上シーフードグリル",
     "must_agp_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>マラガ港ムエジェ・ウノ (Muelle Uno)</strong>: ヤシの木と地中海が広がる海岸プロムナードの夜景散歩<br>• 大理石が輝くラリオス通りのイルミネーション",
     "must_nap_city": "ナポリ",
-    "must_nap_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Gino Sorbillo</strong>: 伝説の薪窯で焼き上げる香ばしい元祖マルゲリータピッツァ<br>• <strong>Gran Caffè Gambrinus</strong>: 1860年創業の歴史的カフェで本格エスプレッソ＆ラム酒風味のババ(Babà)、スフォリアテッラ",
+    "must_nap_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Gino Sorbillo</strong>: 伝説の薪窯で焼き上げる香ばしい元祖マルゲリータピッツァ<br>• <strong>Gran Caffè Gambrinus</strong>: 1860年創業の歴史的カフェで本格エスプレッソ＆ラム酒風味のババ(Babà)、スフォリアテッラ",
     "must_nap_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>プレビシート広場 (Piazza del Plebiscito)</strong>: 壮大な回廊と王宮のライトアップ散歩<br>• スパッカナポリ下町情緒体験＆ポンペイ・アマルフィ専用車ツアー",
     "must_flr_city": "フィレンツェ",
-    "must_flr_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Trattoria Zà Zà</strong>: 炭火焼きビステッカ・アッラ・フィオレンティーナ(Tボーンステーキ1kg)＋トリュフクリームパスタ<br>• <strong>All’Antico Vinaio</strong>: 行列のできるトスカーナ産フォカッチャサンド",
+    "must_flr_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Trattoria Zà Zà</strong>: 炭火焼きビステッカ・アッラ・フィオレンティーナ(Tボーンステーキ1kg)＋トリュフクリームパスタ<br>• <strong>All’Antico Vinaio</strong>: 行列のできるトスカーナ産フォカッチャサンド",
     "must_flr_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ミケランジェロ広場 (Piazzale Michelangelo)</strong>: 丘の上からフィレンツェの赤い屋根とドゥオーモを一望する最高の無料夜景スポット<br>• <strong>ヴェッキオ橋 (Ponte Vecchio)</strong>: アルノ川に映る美しい夜景",
     "must_rom_city": "ローマ",
-    "must_rom_food": "<strong>必食名店＆メニュー:</strong><br>• <strong>Trattoria Luzzi</strong>: コロッセオ徒歩3分、高コスパな本場カルボナーラ＆ピッツァ<br>• <strong>Giolitti</strong>: 1900年創業の老舗ジェラート - お米味(Riso)と香ばしいピスタチオ必須<br>• タッツァ・ドーロ: パンテオン前のグラニータ・ディ・カフェ",
+    "must_rom_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Trattoria Luzzi</strong>: コロッセオ徒歩3分、高コスパな本場カルボナーラ＆ピッツァ<br>• <strong>Giolitti</strong>: 1900年創業の老舗ジェラート - お米味(Riso)と香ばしいピスタチオ必須<br>• タッツァ・ドーロ: パンテオン前のグラニータ・ディ・カフェ",
     "must_rom_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>トレビの泉 (Fontana di Trevi)</strong>: 混雑が引く夜10時以降のライトアップ散策＆コイン投げ(宿から徒歩12分)<br>• <strong>カンポ・デ・フィオーリ (Campo de' Fiori)</strong>: 活気あるナイトマーケット＆広場情緒<br>• 12/4 テルミニ駅から空港鉄道直通 ➔ FCO T3 22:00帰国便",
 },
   "zh": {
@@ -17462,28 +17462,28 @@ const I18N_DICTIONARY = {
     "master_sum3_title": "🍽️ [概要 3] 各城市必吃美食名店与免费夜景·夜市全汇总",
     "master_sum3_desc": "完全贴合确定日程，兼顾长辈胃口与体力的各城市代表美食名店、招牌菜品及无需预约的免费夜景、夜市精选汇总。",
     "must_bcn_city": "巴塞罗那",
-    "must_bcn_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Ciudad Condal</strong>: 蜂蜜鳕鱼(Bacalao a la miel)、牛里脊蒙塔迪托小食、柠檬啤酒(Clara)<br>• <strong>7 Portes</strong>: 始于1836年的传统海鲜饭与墨鱼汁海鲜饭<br>• <strong>Puertecillo Sagrada Família</strong>: 距酒店步行2分钟，自选生猛海鲜现场铁板烧，性价比极高",
+    "must_bcn_food": "<strong>餐厅候选（到访与预订尚未确认）:</strong><br>• <strong>Ciutat Comtal、Vinitus、La Flauta</strong>作为不同品牌列在集团官方介绍中；菜单不一定相同，请分别核对各门店当天菜单、营业时间和预订政策。<br>• <strong>7 Portes</strong>：请通过官方信息确认当前菜单、价格和预订方式。<br>• <strong>Puertecillo Sagrada Família</strong>：海鲜为自助选购，按重量或部分按件计价；挑选前请确认当天菜单、价格和地图路线。",
     "must_bcn_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>圣家堂高迪湖泊公园(Plaça de Gaudí)</strong>: 坐在湖畔欣赏夜晚圣家堂倒影与华丽灯光(免费，无需预约)<br>• <strong>圣卡特琳娜市场</strong>: 欣赏波浪形彩色屋顶，品尝新鲜水果与伊比利亚火腿<br>• <strong>11/10 15:30</strong>: 圣家堂西侧彩色玻璃窗金色夕阳入场观赏",
     "must_svq_city": "塞维利亚 (第一与第二期)",
-    "must_svq_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>El Rinconcillo</strong>: 始于1670年的最古老小吃吧 - 菠菜鹰嘴豆炖菜、慢炖伊比利亚猪面颊肉<br>• 经典安达卢西亚Tapas与冰镇桑格利亚汽酒",
+    "must_svq_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>El Rinconcillo</strong>: 始于1670年的最古老小吃吧 - 菠菜鹰嘴豆炖菜、慢炖伊比利亚猪面颊肉<br>• 经典安达卢西亚Tapas与冰镇桑格利亚汽酒",
     "must_svq_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>都市阳伞 (Las Setas)</strong>: 漫步世界最大木结构室外广场欣赏夜景灯光(免费)<br>• <strong>西班牙广场 (Plaza de España)</strong>: 夜晚灯光亮起时的壮丽浪漫夜景散步(免费)<br>• 漫步瓜达尔基维尔河畔黄金塔夜景",
     "must_odb_city": "科尔多瓦",
-    "must_odb_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Bodegas Mezquita</strong>: 软烂入味的慢炖牛尾(Rabo de Toro - 长辈最爱滋补菜)、蜂蜜炸茄子、萨尔莫霍番茄冷汤",
+    "must_odb_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Bodegas Mezquita</strong>: 软烂入味的慢炖牛尾(Rabo de Toro - 长辈最爱滋补菜)、蜂蜜炸茄子、萨尔莫霍番茄冷汤",
     "must_odb_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>古罗马桥 (Puente Romano)</strong>: 黄昏时分漫步过桥，眺望清真寺大教堂与河畔绝美免费夜景<br>• 漫步百花巷(Calleja de las Flores)",
     "must_grx_city": "格拉纳达",
-    "must_grx_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Bar Los Diamantes</strong>: 每点一杯酒水即免费赠送一盘热气腾腾的现炸海鲜Tapas！<br>• 纳瓦斯街(Calle Navas)地道小吃街品尝巡游",
+    "must_grx_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Bar Los Diamantes</strong>: 每点一杯酒水即免费赠送一盘热气腾腾的现炸海鲜Tapas！<br>• 纳瓦斯街(Calle Navas)地道小吃街品尝巡游",
     "must_grx_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>圣尼古拉斯观景台 (Mirador de San Nicolás)</strong>: 打车登顶，免费饱览红堡在夕阳与夜景映衬下的雄伟壮丽景色(最佳观景点)<br>• 11/14阿尔罕布拉宫及纳斯里德宫深度参观",
     "must_agp_city": "马拉加",
-    "must_agp_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>炭烤沙丁鱼 (Espeto)</strong>: 海滩边用竹签串起用橄榄木炭火现烤的地道传统风味<br>• <strong>El Pimpi</strong>: 安东尼奥·班德拉斯经营的百年老酒窖甜葡萄酒与生火腿<br>• <strong>Marisquería Godoy</strong>: 海港露台海鲜拼盘",
+    "must_agp_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>炭烤沙丁鱼 (Espeto)</strong>: 海滩边用竹签串起用橄榄木炭火现烤的地道传统风味<br>• <strong>El Pimpi</strong>: 安东尼奥·班德拉斯经营的百年老酒窖甜葡萄酒与生火腿<br>• <strong>Marisquería Godoy</strong>: 海港露台海鲜拼盘",
     "must_agp_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>马拉加一号码头 (Muelle Uno)</strong>: 棕榈树与地中海海风相伴的现代化海滨步道夜景散步<br>• 漫步大理石铺就的拉里奥斯商业街璀璨灯火",
     "must_nap_city": "那不勒斯",
-    "must_nap_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Gino Sorbillo</strong>: 外脆内软的正宗传统柴火玛格丽特披萨圣殿<br>• <strong>Gran Caffè Gambrinus</strong>: 始于1860年的历史咖啡厅品尝浓缩咖啡、朗姆蛋糕(Babà)与贝壳酥(Sfogliatella)",
+    "must_nap_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Gino Sorbillo</strong>: 外脆内软的正宗传统柴火玛格丽特披萨圣殿<br>• <strong>Gran Caffè Gambrinus</strong>: 始于1860年的历史咖啡厅品尝浓缩咖啡、朗姆蛋糕(Babà)与贝壳酥(Sfogliatella)",
     "must_nap_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>平民表决广场 (Piazza del Plebiscito)</strong>: 壮观柱廊与皇宫夜景漫步<br>• 感受斯帕卡那波利老街生活气息与庞贝/阿马尔菲包车一日游",
     "must_flr_city": "佛罗伦萨",
-    "must_flr_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1公斤厚切炭烤佛罗伦萨T骨牛排 + 松露奶油意面<br>• <strong>All’Antico Vinaio</strong>: 闻名全球的托斯卡纳佛卡夏大三明治",
+    "must_flr_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1公斤厚切炭烤佛罗伦萨T骨牛排 + 松露奶油意面<br>• <strong>All’Antico Vinaio</strong>: 闻名全球的托斯卡纳佛卡夏大三明治",
     "must_flr_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>米开朗基罗广场 (Piazzale Michelangelo)</strong>: 俯瞰佛罗伦萨红屋顶穹顶与阿诺河全景的顶级免费日落与夜景胜地<br>• <strong>老桥 (Ponte Vecchio)</strong>: 阿诺河水面倒影浪漫夜景",
     "must_rom_city": "罗马",
-    "must_rom_food": "<strong>必尝餐厅与菜品:</strong><br>• <strong>Trattoria Luzzi</strong>: 斗兽场旁性价比极高的经典罗马培根蛋酱面与薄底披萨<br>• <strong>Giolitti</strong>: 始于1900年的国宝级手工冰淇淋 - 必点大米味(Riso)与浓郁开心果味<br>• 金杯咖啡(Tazza d'Oro): 万神殿前意式碎冰咖啡",
+    "must_rom_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Trattoria Luzzi</strong>: 斗兽场旁性价比极高的经典罗马培根蛋酱面与薄底披萨<br>• <strong>Giolitti</strong>: 始于1900年的国宝级手工冰淇淋 - 必点大米味(Riso)与浓郁开心果味<br>• 金杯咖啡(Tazza d'Oro): 万神殿前意式碎冰咖啡",
     "must_rom_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>特雷维喷泉 (Fontana di Trevi)</strong>: 晚10点后夜游（避开白天人潮，灯光梦幻，投币许愿，距酒店步行仅12分钟）<br>• <strong>鲜花广场 (Campo de' Fiori)</strong>: 热闹的本地夜市与广场夜间氛围<br>• 12/4 特米尼机场快线 ➔ FCO T3 22:00 回国航班",
   }
 };
@@ -20450,14 +20450,14 @@ Feel free to ask any travel question!<br>
     "region": "스페인",
     "city": "바르셀로나",
     "country": "스페인",
-    "dishName": "꿀 마요네즈 대구 구이 (Bacalao al Allioli de Miel)",
+    "dishName": "전통·창작 타파스 (당일 메뉴 확인)",
     "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
-    "signature": "카탈루냐 광장 인근 람블라스의 최고 인기 타파스 명가. 달콤한 꿀과 알리올리 소스를 얹어 오븐에 구워낸 부드러운 대구요리의 환상적 조화",
-    "seniorTip": "달콤하고 부드러운 대구살 요리는 어르신과 부모님 입맛에 실패 없는 1등 메뉴. 브레이크 타임 없이 오후 3~5시 방문 시 쾌적",
-    "hours": "매일 08:30~01:00 (브레이크 타임 없음)",
-    "language": "영어 능통 · 사진 메뉴판 및 직관적인 쇼케이스 안내",
-    "phone": "+34 933 18 19 97",
-    "booking": "예약 불가 (도착 즉시 카운터에서 웨이팅 명단 등록)",
+    "signature": "그룹 공식 소개는 Ciutat Comtal을 전통·창작 타파스 장소로 설명합니다. 개별 메뉴와 당일 제공 여부는 방문 전 확인하세요.",
+    "seniorTip": "접근성·좌석·당일 대기 여부는 현재 지점에 확인하고, 이동 시간은 지도에서 확인하세요.",
+    "hours": "운영시간은 방문 전 공식 지점 안내에서 확인하세요.",
+    "language": "언어 지원 여부는 방문 전 지점에 확인하세요.",
+    "phone": "",
+    "booking": "예약 정책은 공식 채널에서 확인하세요.",
     "mapQuery": "Ciudad Condal Barcelona",
     "baseKrw": 35000
   },
@@ -21135,11 +21135,11 @@ Feel free to ask any travel question!<br>
       "zh": "Ciudad Condal"
     },
     "dishTitle": {
-      "ko": "꿀 마요네즈 대구 구이 (Bacalao al Allioli de Miel)",
-      "ja": "ハニーマヨネーズ仕立ての焼きタラ (Bacalao al Allioli de Miel)",
-      "en": "Baked Cod with Honeyed Allioli (Bacalao al Allioli de Miel)",
-      "zh": "蜜汁蒜香蛋黄酱焗嫩鳕鱼 (Bacalao al Allioli de Miel)"
-    },
+    "ko": "전통·창작 타파스 (당일 확인)",
+    "en": "Traditional and creative tapas (check on the day)",
+    "ja": "伝統・創作タパス（当日確認）",
+    "zh": "传统与创意 tapas（当天确认）"
+  },
     "badge": {
       "ko": "스페인 · 바르셀로나",
       "ja": "スペイン・バルセロナ",
@@ -21147,35 +21147,35 @@ Feel free to ask any travel question!<br>
       "zh": "西班牙 · 巴塞罗那"
     },
     "signature": {
-      "ko": "카탈루냐 광장 인근 람블라스의 최고 인기 타파스 명가. 달콤한 꿀과 알리올리 소스를 얹어 오븐에 구워낸 부드러운 대구요리의 환상적 조화",
-      "ja": "カタルーニャ広場至近の行列必至タパス名店。甘いハチミツとアリオリソースを重ねてふっくら焼き上げたタラ料理は絶品。",
-      "en": "Ever-popular tapas hallmark near Plaça de Catalunya. Flaky cod fillets baked under golden honey-infused garlicky allioli.",
-      "zh": "加泰罗尼亚广场附近的超人气经典名店。鲜嫩鳕鱼覆以金黄微甜蜂蜜蒜味蛋黄酱焗烤，咸甜交融细腻化渣。"
-    },
+    "ko": "그룹 공식 소개는 Ciutat Comtal을 전통·창작 타파스 장소로 설명합니다. 개별 메뉴와 당일 제공 여부는 방문 전 확인하세요.",
+    "en": "The group describes Ciutat Comtal as a destination for traditional and creative tapas. Check specific dishes and same-day availability.",
+    "ja": "グループ公式紹介では、Ciutat Comtalは伝統的・創作タパスの店とされています。個別の料理と当日の提供状況は事前に確認してください。",
+    "zh": "集团官方介绍将 Ciutat Comtal 描述为提供传统与创意 tapas 的餐厅。具体菜品与当天供应情况请提前确认。"
+  },
     "seniorTip": {
-      "ko": "달콤하고 부드러운 대구살 요리는 어르신과 부모님 입맛에 실패 없는 1등 메뉴. 브레이크 타임 없이 오후 3~5시 방문 시 쾌적",
-      "ja": "柔らかく甘みのあるタラ料理はシニアの好みにぴったり。ブレイクなし通し営業のため、15:00〜17:00の閑散時間帯が快適です。",
-      "en": "The tender, sweet cod is universally adored by senior family members. Visit during non-peak hours (15:00–17:00) for no wait.",
-      "zh": "口感温润软嫩微甜的鳕鱼极为适口，深受长辈喜爱。全天营业，推荐下午15:00~17:00非高峰时段入座免排队。"
-    },
+    "ko": "접근성·좌석·당일 대기 여부는 현재 지점에 확인하고, 이동 시간은 지도에서 확인하세요.",
+    "en": "Check seating, accessibility and current wait with the branch; verify travel time on a live map.",
+    "ja": "座席・アクセシビリティ・当日の待ち時間は店舗に確認し、移動時間は最新の地図で確認してください。",
+    "zh": "请向门店确认座位、无障碍条件和当天等候情况，并通过实时地图核对路程。"
+  },
     "hours": {
-      "ko": "매일 08:30~01:00 (브레이크 타임 없음)",
-      "ja": "毎日 08:30~01:00 (通し営業)",
-      "en": "Daily 08:30~01:00 (No afternoon break)",
-      "zh": "每日 08:30~01:00 (全天营业无午休)"
-    },
+    "ko": "운영시간은 방문 전 공식 지점 안내에서 확인하세요.",
+    "en": "Check current opening hours with the official branch information before visiting.",
+    "ja": "営業時間は訪問前に公式店舗案内で確認してください。",
+    "zh": "到访前请通过官方门店信息确认当前营业时间。"
+  },
     "language": {
-      "ko": "영어 능통 · 사진 메뉴판 및 직관적인 쇼케이스 안내",
-      "ja": "英語堪能・写真付きメニュー＆見やすいショーケース完備",
-      "en": "Fluent English · Visual showcase display and English menu available",
-      "zh": "英语沟通顺畅 · 提供图文菜单与直观菜品陈列柜"
-    },
+    "ko": "언어 지원 여부는 방문 전 지점에 확인하세요.",
+    "en": "Language support is not verified; check with the branch.",
+    "ja": "対応言語は未確認です。店舗に確認してください。",
+    "zh": "未确认门店的语言服务，请直接向门店确认。"
+  },
     "booking": {
-      "ko": "예약 불가 (도착 즉시 카운터에서 웨이팅 명단 등록)",
-      "ja": "予約不可 (到着後カウンターでウェイティング受付)",
-      "en": "No reservations · Register on the waiting list upon arrival",
-      "zh": "无需预约 (抵达后在前台登记候位)"
-    }
+    "ko": "예약 정책은 공식 채널에서 확인하세요.",
+    "en": "Check the branch’s current reservation policy directly.",
+    "ja": "予約方法は店舗の最新案内で確認してください。",
+    "zh": "请直接确认门店当前的预订政策。"
+  }
   },
   "Eslava": {
     "displayName": {

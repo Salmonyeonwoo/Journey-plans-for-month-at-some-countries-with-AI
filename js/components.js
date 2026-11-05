@@ -1,4 +1,4 @@
-﻿// ==========================================================================
+// ==========================================================================
 // 🏛️ SLOWTRAVEL MODULAR UI COMPONENT TEMPLATES & SYNCHRONOUS DOM MOUNTER
 // ==========================================================================
 (function() {
@@ -875,10 +875,10 @@
                           <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 7 Portes 파에야 &amp; Ciudad Condal 꿀대구</span>
                         </div>
                       <div data-i18n="must_bcn_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
-                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
-                        • <strong>Ciudad Condal</strong>: 꿀대구(Bacalao a la miel), 안심 몬타디토, 레몬맥주 클라라<br>
-                        • <strong>7 Portes</strong>: 1836년 전통 해산물 파에야 & 먹물 파에야<br>
-                        • <strong>Puertecillo Sagrada Família</strong>: 숙소 도보 2분 즉석 해산물 구이 가성비 맛집
+                        <strong>식당·메뉴 후보 (방문·예약 미확정):</strong><br>
+                        • <strong>Ciutat Comtal · Vinitus · La Flauta</strong>: 그룹 공식 브랜드 소개에 별도 등재; 메뉴는 서로 다를 수 있으니 각 지점의 당일 메뉴·영업시간·예약 정책 확인<br>
+                        • <strong>7 Portes</strong>: 현재 메뉴·가격·예약 여부는 공식 안내에서 확인<br>
+                        • <strong>Puertecillo Sagrada Família</strong>: 셀프서비스 해산물; 무게 또는 일부 품목별 요금. 고르기 전에 당일 메뉴·가격과 지도 경로 확인
                       </div>
                       <div data-i18n="must_bcn_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
                         <strong>꼭 해볼 것 & 무료 야경:</strong><br>
@@ -1844,6 +1844,8 @@
           </div>
           <p class="sub" data-i18n="dining_sub">스페인·포르투갈 및 주요 지역의 대표 미식. 운영시간, 부모님 배려 팁, 연락처 및 예약 링크 수록.</p>
         </div>
+
+        <div id="barcelona-dining-guide-mount" style="margin:0 0 24px;"></div>
 
         <div class="search-box-wrap">
           <div class="search-input-row">
