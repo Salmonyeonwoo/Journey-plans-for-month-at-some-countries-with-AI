@@ -4211,6 +4211,7 @@ function switchLanguage(lang, btn) {
   if (typeof renderItalyCityGuide === "function") renderItalyCityGuide(lang);
   if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(lang, window.masterGourmetActiveCountry || 'all');
   if (typeof window.renderBarcelonaDiningGuide === 'function') window.renderBarcelonaDiningGuide(lang);
+  if (typeof window.renderActivityGuide === 'function') window.renderActivityGuide(lang);
   if (typeof renderNerjaDaytripGuide === "function") renderNerjaDaytripGuide(lang);
   if (typeof renderCuratedHeartPlaces === "function") renderCuratedHeartPlaces(lang);
 
@@ -4402,6 +4403,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (typeof renderSeniorDistrictRoutes === "function") renderSeniorDistrictRoutes(currentLang);
   if (typeof renderMasterGourmetGuide === "function") renderMasterGourmetGuide(currentLang, 'all');
   if (typeof window.renderBarcelonaDiningGuide === 'function') window.renderBarcelonaDiningGuide(currentLang);
+  if (typeof window.renderActivityGuide === 'function') window.renderActivityGuide(currentLang);
   renderLocalPhrases();
   renderTransitGuide();
   renderHotelFilterBar();
@@ -4428,6 +4430,12 @@ function handleLocalChat(query) {
     .replace(/^(じゃあ|ところで|それでは|では|あと|ちなみに|次は|続いて)\s*/g, '')
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
+
+  // Activity facts, conditional dates and booking disclaimers share the guide's four-locale data.
+  if (typeof window.buildActivityChatResponse === 'function') {
+    const activityResponse = window.buildActivityChatResponse(rawQ, lang);
+    if (activityResponse) return activityResponse;
+  }
 
   // Route Barcelona dining/shop questions before generic entity matching.
   const hasBarcelonaContext = ['barcelona', '바르셀로나', 'バルセロナ', '巴塞罗那'].some(w => q.includes(w) || cleanQ.includes(w));
@@ -8354,7 +8362,7 @@ const CHAPTER_PAGE_COUNTS = {
   'chapter-planner': 4,
   'chapter-guide': 5,
   'chapter-festivals': 4,
-  'chapter-practical': 5
+  'chapter-practical': 6
 };
 window.CHAPTER_PAGE_COUNTS = CHAPTER_PAGE_COUNTS;
 
@@ -8498,7 +8506,7 @@ function handleGuidebookHashRouting(scrollIntoElement = false) {
   } else if (hash === '#guide' || hash === '#attractions' || hash === '#route' || hash === '#recommend' || hash === '#travel-guide') {
     targetChapter = 'chapter-guide';
     targetElementId = hash.replace('#', '');
-  } else if (hash === '#practical' || hash === '#dining' || hash === '#phrases' || hash === '#transit-hotels' || hash === '#ai-search' || hash === '#travel-tools') {
+  } else if (hash === '#practical' || hash === '#dining' || hash === '#phrases' || hash === '#transit-hotels' || hash === '#ai-search' || hash === '#activities' || hash === '#travel-tools') {
     targetChapter = 'chapter-practical';
     targetElementId = hash.replace('#', '');
   } else if (hash === '#overview' || hash === '#hero' || hash === '#editorial-guide' || hash === '#curated-options' || hash === '#compare') {
@@ -8507,6 +8515,9 @@ function handleGuidebookHashRouting(scrollIntoElement = false) {
   }
 
   switchGuidebookChapter(targetChapter, !targetElementId);
+
+  if (hash === '#activities') goToBookPage('chapter-practical', 4, false);
+  if (hash === '#ai-search') goToBookPage('chapter-practical', 5, false);
 
   if (targetElementId && scrollIntoElement) {
     setTimeout(() => {

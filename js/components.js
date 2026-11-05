@@ -1801,7 +1801,7 @@
         <div class="book-page-bar" id="bookBar-chapter-practical">
           <div class="book-page-meta">
             <span class="book-chapter-badge" data-i18n="chapter_name_practical">💡 제5장. 여행 실용정보</span>
-            <span class="book-page-counter" id="counter-chapter-practical">P. 1 / 5</span>
+            <span class="book-page-counter" id="counter-chapter-practical">P. 1 / 6</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-practical">
             <button type="button" class="bookmark-chip active" onclick="goToBookPage('chapter-practical', 0)">
@@ -1817,7 +1817,10 @@
               <span>🚨</span> <span data-i18n="page_practical_4">4. 소매치기 예방 &amp; 마트 생수</span>
             </button>
             <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-practical', 4)">
-              <span>🤖</span> <span data-i18n="page_practical_5">5. 실시간 AI 검색</span>
+              <span data-i18n="page_practical_5">5. 활동·스파 아이디어</span>
+            </button>
+            <button type="button" class="bookmark-chip" onclick="goToBookPage('chapter-practical', 5)">
+              <span>🤖</span> <span data-i18n="page_practical_6">6. 실시간 AI 검색</span>
             </button>
           </div>
           <div class="book-flip-controls">
@@ -2597,15 +2600,30 @@
                   ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_3">3. 스마트 교통 &amp; 안심 숙소</strong>
                 </button>
                 <button type="button" class="btn-turn-page-bottom next" onclick="turnBookPage('chapter-practical', 1)">
-                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_practical_5">5. 실시간 AI 검색</strong> ▶
+                  <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_practical_5">5. 활동·스파 아이디어</strong> ▶
                 </button>
               </div>
             </div>
           </section>
         </div>
 
-        <!-- Page 4: 실시간 AI & 검색 커넥터 -->
+        <!-- Page 4: Optional source-checked activity ideas; no itinerary mutation -->
         <div class="book-page" id="page-practical-4">
+          <section class="section activity-page-shell" id="activities">
+            <div class="wrap"><div id="activity-guide-mount"></div></div>
+          </section>
+          <div class="page-turner-bar">
+            <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">
+              ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_4">4. 소매치기 예방 &amp; 마트 생수</strong>
+            </button>
+            <button type="button" class="btn-turn-page-bottom next" onclick="turnBookPage('chapter-practical', 1)">
+              <span data-i18n="btn_next_page">다음 쪽</span>: <strong data-i18n="page_practical_6">6. 실시간 AI 검색</strong> ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- Page 5: Existing real-time AI & search connector -->
+        <div class="book-page" id="page-practical-5">
           <section class="section tools-section" id="ai-search" style="background:#eee8dc">
       <div class="wrap">
         <div class="section-head">
@@ -2630,7 +2648,7 @@
     </section>
           <div class="page-turner-bar">
             <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">
-              ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_4">4. 소매치기 예방 &amp; 마트 생수</strong>
+              ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_5">5. 활동·스파 아이디어</strong>
             </button>
             <button type="button" class="btn-turn-page-bottom next" onclick="switchGuidebookChapter('chapter-overview'); goToBookPage('chapter-overview', 0);">
               <span data-i18n="first_chapter_prefix">첫 장으로</span>: <strong data-i18n="chapter_name_overview">01. 여행 개요</strong> ↺
