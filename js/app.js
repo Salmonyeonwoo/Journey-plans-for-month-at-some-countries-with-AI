@@ -4431,8 +4431,10 @@ function handleLocalChat(query) {
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
 
+  const earlyMatchedEntity = findMatchingTravelEntity(q, lang);
+  const isNewBarcelonaCandidateMatch = earlyMatchedEntity?.type === 'candidate' && ['pc-bcn-montjuic-museums', 'pc-bcn-picasso-museum'].includes(earlyMatchedEntity.item?.id);
   // Activity facts, conditional dates and booking disclaimers share the guide's four-locale data.
-  if (typeof window.buildActivityChatResponse === 'function') {
+  if (!isNewBarcelonaCandidateMatch && typeof window.buildActivityChatResponse === 'function') {
     const activityResponse = window.buildActivityChatResponse(rawQ, lang);
     if (activityResponse) return activityResponse;
   }
@@ -4737,7 +4739,8 @@ function handleLocalChat(query) {
     const candList = Array.isArray(candidateData) ? candidateData : (candidateData && Array.isArray(candidateData.items) ? candidateData.items : []);
     for (const item of candList) {
       const nameL = (item.name || '').toLowerCase();
-      const cInfo = (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' && PRACTICAL_CANDIDATES_I18N[item.id] && PRACTICAL_CANDIDATES_I18N[item.id][lang]) || {};
+      const candidateTranslations = (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' && PRACTICAL_CANDIDATES_I18N.items && PRACTICAL_CANDIDATES_I18N.items[item.id]) || {};
+      const cInfo = candidateTranslations[lang] || {};
       const locName = cInfo.name || item.name;
       const locNameL = locName.toLowerCase();
 
@@ -4750,11 +4753,12 @@ function handleLocalChat(query) {
           type: 'candidate',
           item: item,
           name: locName,
-          city: item.city || '',
-          category: (lang === 'ja' ? '市場・展望台・追加名所' : (lang === 'en' ? 'Market / Viewpoint Pick' : (lang === 'zh' ? '市场·观景台精选' : '시장·전망대 추가 후보'))),
-          desc: cInfo.desc || item.desc || '',
-          tip: cInfo.senior || item.senior || '',
-          hours: cInfo.hours || item.hours || '',
+          city: (typeof cleanHangul === 'function') ? cleanHangul(item.cityName || item.city || '', lang) : (item.city || item.cityName || ''),
+          category: cInfo.typeBadge || item.typeBadge || (lang === 'ja' ? '市場・展望台・追加名所' : (lang === 'en' ? 'Market / Viewpoint Pick' : (lang === 'zh' ? '市场·观景台精选' : '시장·전망대 추가 후보'))),
+          desc: cInfo.highlights || cInfo.desc || item.highlights || item.desc || '',
+          tip: cInfo.seniorCaution || cInfo.senior || item.seniorCaution || item.senior || '',
+          hours: cInfo.hours || item.hours || item.verifiedHours || '',
+          officialUrl: item.officialUrl || (item.sources && item.sources[0] && item.sources[0].url) || null,
           mapUrl: item.officialUrl || (item.mapQuery ? `https://maps.google.com/?q=${encodeURIComponent(item.mapQuery)}` : null)
         };
       }
@@ -4793,7 +4797,7 @@ function handleLocalChat(query) {
   }
 
   // Execute Direct Entity Search first
-  const matchedEntity = findMatchingTravelEntity(q, lang);
+  const matchedEntity = earlyMatchedEntity;
   if (matchedEntity) {
     const e = matchedEntity;
     const tipPrefix = lang === 'ja' ? '💡 シニア配慮＆訪問のコツ:' : (lang === 'en' ? '💡 Senior Comfort & Visit Tip:' : (lang === 'zh' ? '💡 长辈贴士与游玩建议:' : '💡 어르신 배려 & 방문 꿀팁:'));

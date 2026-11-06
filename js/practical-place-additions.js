@@ -8,6 +8,15 @@
       ['Sant Pau official free-visit guide', 'https://santpaubarcelona.org/en/visita/visita-lliure/'],
       ['Sant Pau official visit preparation and accessibility', 'https://santpaubarcelona.org/en/prepara-la-teva-visita/']
     ],
+    'pc-bcn-montjuic-museums': [
+      ['MNAC official museum information', 'https://www.museunacional.cat/en/home-en'],
+      ['MNAC visitor guide · route and panoramic terraces', 'https://www.museunacional.cat/sites/default/files/visitors_guide_lf.pdf'],
+      ['Fundació Joan Miró official visit information', 'https://www.fmirobcn.org/en/visit-us/plan-your-visit/']
+    ],
+    'pc-bcn-picasso-museum': [
+      ['Museu Picasso Barcelona official collection', 'https://museupicassobcn.cat/en/picasso-collection'],
+      ['Museu Picasso Barcelona tickets and opening hours', 'https://museupicassobcn.cat/en/plan-your-visit/buy-tickets-and-opening-hours']
+    ],
     'pc-svq-setas-rooftop': [
       ['Setas de Sevilla official FAQ', 'https://setasdesevilla.com/en/preguntas-frecuentes/'],
       ['tvN Joy — The Thrifters on Tour EP.106', 'https://www.youtube.com/watch?v=eWzxTH4PTCE']
@@ -82,6 +91,102 @@
         en: ['Sant Pau official free-visit guide', 'Sant Pau official visit preparation and accessibility'],
         ja: ['サン・パウ公式自由見学案内', 'サン・パウ公式訪問準備・アクセシビリティ案内'],
         zh: ['圣保罗官方自由参观指南', '圣保罗官方参观准备与无障碍信息']
+      }
+    },
+    'pc-bcn-montjuic-museums': {
+      ko: {
+        name: '에스파냐 광장 → MNAC · Fundació Joan Miró',
+        typeBadge: '🏛️ 몬주익 문화 명소 · 서로 다른 미술관 두 곳',
+        subTypeTag: '에스파냐 광장에서 언덕으로 · 두 곳 중 한 곳만 골라도 좋은 선택',
+        verifyBadge: '공식 안내 확인 · 미술관별 운영·입장 조건 확인',
+        highlights: '에스파냐 광장(Plaça d’Espanya)에서 몬주익으로 올라가 MNAC(카탈루냐 국립미술관)를 둘러보는 코스입니다. MNAC는 Palau Nacional에 있으며, 공식 방문자 안내는 전망 테라스에서 바르셀로나와 몬주익 공원을 볼 수 있다고 설명합니다. Fundació Joan Miró(호안 미로 재단)는 같은 언덕에 있지만 별개의 미술관입니다. 관심과 여유에 따라 두 곳을 구분해 선택하세요.',
+        hours: 'MNAC와 Fundació Joan Miró는 서로 다른 시설이며 운영시간·입장권·방문 안내도 각각 다릅니다. 방문 전에 두 기관의 공식 안내를 따로 확인하세요.',
+        seniorCaution: '언덕길과 서로 다른 두 미술관 사이의 이동이 포함될 수 있습니다. 이동 경로·경사·대중교통·휴식 지점을 확인하고, 여유로운 일정이 좋다면 한 곳만 선택해도 충분합니다. 확정 일정이 아닌 방문 후보입니다.',
+        broadcastNote: ''
+      },
+      en: {
+        name: 'Plaça d’Espanya → MNAC · Fundació Joan Miró',
+        typeBadge: '🏛️ Montjuïc culture · two distinct museums',
+        subTypeTag: 'Uphill from Plaça d’Espanya · either museum can be a standalone visit',
+        verifyBadge: 'Official information checked · confirm each museum’s visit terms',
+        highlights: 'From Plaça d’Espanya, head up Montjuïc to MNAC (Museu Nacional d’Art de Catalunya), housed in the Palau Nacional. MNAC’s official visitor guide says its panoramic terraces look over Barcelona and Montjuïc Park. Fundació Joan Miró is also on the hill, but it is a separate museum. Choose one or both according to your interests and available time.',
+        hours: 'MNAC and Fundació Joan Miró are separate institutions with their own opening times, tickets and visitor information. Check each official site before visiting.',
+        seniorCaution: 'This option may involve uphill walking and travel between two separate museums. Check the route, gradients, public transport and places to rest; choosing just one museum can make for a gentler visit. This is an optional idea, not a confirmed itinerary stop.',
+        broadcastNote: ''
+      },
+      ja: {
+        name: 'バルセロナ・エスパーニャ広場 → MNAC・Fundació Joan Miró',
+        typeBadge: '🏛️ モンジュイックの文化スポット・別々の美術館2館',
+        subTypeTag: 'エスパーニャ広場から丘へ・どちらか1館だけでも楽しめる候補',
+        verifyBadge: '公式案内を確認・各館の利用条件を確認してください',
+        highlights: 'エスパーニャ広場（Plaça d’Espanya）からモンジュイックを上り、Palau NacionalにあるMNAC（カタルーニャ美術館）を訪れる案です。MNACの公式ビジターガイドによると、パノラマテラスからバルセロナとモンジュイック公園を望めます。Fundació Joan Miró（ホアン・ミロ財団）も同じ丘にありますが、別の美術館です。興味や時間に合わせて、両館を区別して選んでください。',
+        hours: 'MNACとFundació Joan Miróは別々の施設で、開館時間・チケット・見学案内もそれぞれ異なります。訪問前に各公式サイトを確認してください。',
+        seniorCaution: '坂道や、別々の2館の間の移動が含まれる場合があります。ルート・勾配・公共交通・休憩場所を確認し、ゆったり回るなら1館だけ選ぶ方法もあります。確定日程ではなく、任意の候補です。',
+        broadcastNote: ''
+      },
+      zh: {
+        name: '巴塞罗那西班牙广场 → MNAC · Fundació Joan Miró',
+        typeBadge: '🏛️ 蒙特惠奇文化景点 · 两家不同的博物馆',
+        subTypeTag: '从西班牙广场上山 · 只选其中一家也可成行',
+        verifyBadge: '已查阅官方信息 · 请分别确认两馆的参观条件',
+        highlights: '可从西班牙广场（Plaça d’Espanya）向蒙特惠奇山上行，参观位于国家宫（Palau Nacional）的加泰罗尼亚国家艺术博物馆（MNAC）。MNAC官方访客指南介绍，其全景露台可眺望巴塞罗那和蒙特惠奇公园。胡安·米罗基金会（Fundació Joan Miró）也在这座山上，但它是另一家独立博物馆。请按兴趣和时间分别选择是否参观两馆。',
+        hours: 'MNAC与Fundació Joan Miró是不同机构，各自有开放时间、门票和参观说明。到访前请分别查看两馆官网。',
+        seniorCaution: '行程可能包含上坡步行以及两家博物馆之间的移动。请确认路线、坡度、公共交通和休息地点；若希望轻松些，只参观其中一家也可以。这是可选建议，并未加入已确认行程。',
+        broadcastNote: ''
+      },
+      sourceLabels: {
+        ko: ['MNAC 공식 박물관 안내', 'MNAC 방문자 안내서 · 이동·전망 테라스', 'Fundació Joan Miró 공식 방문 안내'],
+        en: ['MNAC official museum information', 'MNAC visitor guide · route and panoramic terraces', 'Fundació Joan Miró official visit information'],
+        ja: ['MNAC公式案内', 'MNACビジターガイド・ルートと展望テラス', 'Fundació Joan Miró公式訪問案内'],
+        zh: ['MNAC官方博物馆信息', 'MNAC访客指南·路线与全景露台', 'Fundació Joan Miró官方参观信息']
+      }
+    },
+    'pc-bcn-picasso-museum': {
+      ko: {
+        name: '바르셀로나 피카소 미술관 · Museu Picasso',
+        typeBadge: '🎨 미술관 · 말라가의 피카소 미술관과 다른 곳',
+        subTypeTag: '피카소의 형성기 작품을 중심으로 둘러보기',
+        verifyBadge: '공식 컬렉션·관람 안내 확인',
+        highlights: '바르셀로나 피카소 미술관 공식 소개는 약 5,000점의 상설 컬렉션을 통해 피카소의 형성기를 알아볼 수 있는 기관이라고 설명합니다. 시간이 여유롭고 미술에 관심이 있다면 별도 방문 후보로 고려해 보세요. 말라가의 Museo Picasso Málaga와는 다른 미술관입니다.',
+        hours: '개관일·시간·입장권은 바뀔 수 있으므로 방문 전에 공식 티켓·운영시간 안내를 확인하세요.',
+        seniorCaution: '실내 관람 동선과 당일 운영·접근 조건은 공식 방문 안내에서 확인하세요. 여유 시간을 두고 계획할 수 있는 선택형 후보이며 확정 일정은 아닙니다.',
+        broadcastNote: ''
+      },
+      en: {
+        name: 'Museu Picasso Barcelona',
+        typeBadge: '🎨 Museum · distinct from the Picasso museum in Málaga',
+        subTypeTag: 'A collection focused on Picasso’s formative years',
+        verifyBadge: 'Official collection and visitor information checked',
+        highlights: 'The museum’s official collection page describes it as a reference point for Picasso’s formative years, with around 5,000 works in its permanent collection. If you have time and enjoy art, consider it as a separate visit. It is not the Museo Picasso Málaga.',
+        hours: 'Opening days, times and tickets can change; check the official tickets and opening-hours page before visiting.',
+        seniorCaution: 'Check the official visitor information for the current route, operation and access details. This is an optional stop to consider at a relaxed pace, not a confirmed itinerary entry.',
+        broadcastNote: ''
+      },
+      ja: {
+        name: 'バルセロナ・ピカソ美術館（Museu Picasso）',
+        typeBadge: '🎨 美術館・マラガのピカソ美術館とは別施設',
+        subTypeTag: 'ピカソの形成期の作品を中心に鑑賞',
+        verifyBadge: '公式コレクション・来館案内を確認',
+        highlights: 'バルセロナ・ピカソ美術館の公式コレクション案内は、約5,000点の常設コレクションを通してピカソの形成期を知るための拠点と紹介しています。時間に余裕があり美術に関心があれば、別の訪問候補として検討できます。マラガのMuseo Picasso Málagaとは別の美術館です。',
+        hours: '開館日・時間・チケットは変更される場合があります。訪問前に公式のチケット・開館時間案内を確認してください。',
+        seniorCaution: '館内ルート、当日の運営状況、アクセス情報は公式来館案内で確認してください。ゆったりした日程で検討する任意候補であり、確定行程ではありません。',
+        broadcastNote: ''
+      },
+      zh: {
+        name: '巴塞罗那毕加索博物馆（Museu Picasso）',
+        typeBadge: '🎨 博物馆 · 与马拉加的毕加索博物馆不同',
+        subTypeTag: '重点了解毕加索的早年发展阶段作品',
+        verifyBadge: '已查阅官方馆藏与参观信息',
+        highlights: '巴塞罗那毕加索博物馆官网介绍，其常设馆藏约有5,000件作品，是了解毕加索形成时期的重要场馆。若时间充裕且喜欢艺术，可考虑单独前往。它与马拉加的Museo Picasso Málaga是不同的博物馆。',
+        hours: '开放日期、时间和门票可能变化；到访前请查看官方购票与开放时间页面。',
+        seniorCaution: '请通过官方参观指南确认馆内路线、当天运营和通行信息。这是可按轻松节奏考虑的可选景点，并非已确认行程。',
+        broadcastNote: ''
+      },
+      sourceLabels: {
+        ko: ['바르셀로나 피카소 미술관 공식 컬렉션', '바르셀로나 피카소 미술관 공식 티켓·운영시간'],
+        en: ['Museu Picasso Barcelona official collection', 'Museu Picasso Barcelona tickets and opening hours'],
+        ja: ['バルセロナ・ピカソ美術館公式コレクション', 'バルセロナ・ピカソ美術館公式チケット・開館時間'],
+        zh: ['巴塞罗那毕加索博物馆官方馆藏', '巴塞罗那毕加索博物馆官方门票与开放时间']
       }
     },
     'pc-svq-setas-rooftop': {
@@ -376,6 +481,8 @@
 
   const meta = {
     'pc-bcn-sant-pau': { cityId: 'barcelona', cityName: '바르셀로나', country: '스페인', flag: '🇪🇸', categoryKey: 'attraction', typeKey: 'cultural_site', mapQuery: 'Recinte Modernista de Sant Pau Barcelona' },
+    'pc-bcn-montjuic-museums': { cityId: 'barcelona', cityName: '바르셀로나', country: '스페인', flag: '🇪🇸', categoryKey: 'attraction', typeKey: 'cultural_site', mapQuery: 'Museu Nacional d’Art de Catalunya MNAC Barcelona', verifiedDate: '2026-11-06' },
+    'pc-bcn-picasso-museum': { cityId: 'barcelona', cityName: '바르셀로나', country: '스페인', flag: '🇪🇸', categoryKey: 'attraction', typeKey: 'cultural_site', mapQuery: 'Museu Picasso Barcelona', verifiedDate: '2026-11-06' },
     'pc-svq-setas-rooftop': { cityId: 'seville', cityName: '세비야', country: '스페인', flag: '🇪🇸', categoryKey: 'attraction', typeKey: 'cultural_site', mapQuery: 'Setas de Sevilla Metropol Parasol' },
     'pc-svq-duenas': { cityId: 'seville', cityName: '세비야', country: '스페인', flag: '🇪🇸', categoryKey: 'attraction', typeKey: 'cultural_site', mapQuery: 'Palacio de las Dueñas Seville' },
     'pc-grx-chikito': { cityId: 'granada', cityName: '그라나다', country: '스페인', flag: '🇪🇸', categoryKey: 'restaurant', typeKey: 'evening_food_hall', mapQuery: 'Restaurante Chikito Plaza del Campillo Granada' },
@@ -410,8 +517,8 @@
       verifyNotice: ko.verifyBadge,
       seniorCaution: ko.seniorCaution,
       broadcastNote: ko.broadcastNote,
-      sources: sourceById[id].map(([label, url]) => ({ label, url })),
-      verifiedDate: '2026-10-31 확인',
+      sources: sourceById[id].map(([label, url], index) => ({ label: placeCopy[id].sourceLabels.ko[index] || label, url })),
+      verifiedDate: m.verifiedDate ? `${m.verifiedDate} 확인` : '2026-10-31 확인',
       mapQuery: m.mapQuery
     };
   });
@@ -419,14 +526,14 @@
 
   const uiCopy = {
     ko: {
-      mainTitle: '🗂️ 도시별 추가 맛집·시장·전망·문화 명소 후보 24선',
-      subnavCandidates: '✨ 도시별 추가 후보 (24선)',
+      mainTitle: '🗂️ 도시별 추가 맛집·시장·전망·문화 명소 후보 26선',
+      subnavCandidates: '✨ 도시별 추가 후보 (26선)',
       policyVerifiedDate: '📌 카드별 공식 출처 확인일 표시',
       mainDesc: '기존 일정·명소·식당 안내와 대조해 중복 장소를 별도 카드로 반복하지 않고, 새 정보가 있는 후보만 수록했습니다. 60대 부모님과 동행할 때는 늦은 밤 장거리 보행보다 한 곳에서 해결하는 후보를 우선하고, 저녁 명소는 귀가 교통을 미리 계획하세요. 낮 시장·저녁 식당가·전망지·박물관·궁전·정원을 구분합니다. Setas 지붕 산책은 기존 무료 광장 산책과 다른 유료 관람입니다.',
-      emptyDesc: '도시나 유형 필터를 초기화하면 7개 도시의 추가 후보 24곳을 모두 확인할 수 있습니다.',
-      resultCountSuffix: '/ 전체 24개 후보',
+      emptyDesc: '도시나 유형 필터를 초기화하면 7개 도시의 추가 후보 26곳을 모두 확인할 수 있습니다.',
+      resultCountSuffix: '/ 전체 26개 후보',
       labelVerifiedDate: '공식 출처 확인:',
-      dedupSummary: '✅ <strong>중복 대조 완료:</strong> 7개 도시의 실용정보·명소·식당·야경을 대조했습니다. 로마교·Gambrinus·Borghese는 기존 안내를 유지하고 새 카드로 반복하지 않았습니다.',
+      dedupSummary: '✅ <strong>중복 대조 완료:</strong> 7개 도시의 실용정보·명소·식당·야경을 대조했습니다. 바르셀로네타 해변은 기존 바르셀로나 일정에 있어 별도 카드로 반복하지 않았고, MNAC와 Fundació Joan Miró는 서로 다른 미술관으로 안내합니다. 로마교·Gambrinus·Borghese도 기존 안내를 유지합니다.',
       types: {
         all: '전체 유형',
         evening_food_hall: '저녁까지 운영하는 식당가/푸드홀·식당',
@@ -437,14 +544,14 @@
       }
     },
     en: {
-      mainTitle: '🗂️ 24 Additional City Picks: Food, Markets, Views & Cultural Sights',
-      subnavCandidates: '✨ 24 Added City Dining, Market, View & Cultural Candidates',
+      mainTitle: '🗂️ 26 Additional City Picks: Food, Markets, Views & Cultural Sights',
+      subnavCandidates: '✨ 26 Added City Dining, Market, View & Cultural Candidates',
       policyVerifiedDate: '📌 Official sources · verification date shown per card',
       mainDesc: 'Candidates were checked against existing itinerary, attraction, dining and night-view content; duplicates are not repeated as separate cards. For parents in their 60s, we favor manageable one-stop options over long after-dark walks and recommend planning return transport before visiting evening spots. Day markets, evening dining, viewpoints, museums, palaces and gardens are clearly distinguished. The Setas rooftop walk is ticketed and distinct from the free plaza stroll already listed.',
-      emptyDesc: 'Reset the city or category filters to view all 24 additional candidates across 7 cities.',
-      resultCountSuffix: 'of 24 candidates',
+      emptyDesc: 'Reset the city or category filters to view all 26 additional candidates across 7 cities.',
+      resultCountSuffix: 'of 26 candidates',
       labelVerifiedDate: 'Official source checked:',
-      dedupSummary: '✅ <strong>Deduplication checked:</strong> Practical, attraction, dining and night-view content across 7 cities was compared. Puente Romano, Gambrinus and Borghese remain in their existing entries rather than being repeated as cards.',
+      dedupSummary: '✅ <strong>Deduplication checked:</strong> Practical, attraction, dining and night-view content across 7 cities was compared. Barceloneta Beach is already in the Barcelona itinerary, so it is not repeated as a separate card; MNAC and Fundació Joan Miró are identified as distinct museums. Puente Romano, Gambrinus and Borghese also remain in their existing entries.',
       types: {
         all: 'All Categories',
         evening_food_hall: 'Evening Food Halls / Dining Zones & Restaurants',
@@ -455,14 +562,14 @@
       }
     },
     ja: {
-      mainTitle: '🗂️ 都市別追加候補24選：グルメ・市場・展望・文化名所',
-      subnavCandidates: '✨ 都市別追加候補（24件）',
+      mainTitle: '🗂️ 都市別追加候補26選：グルメ・市場・展望・文化名所',
+      subnavCandidates: '✨ 都市別追加候補（26件）',
       policyVerifiedDate: '📌 カードごとに公式出典の確認日を表示',
       mainDesc: '既存の日程・名所・飲食・夜景情報と照合し、重複する場所は別カードとして繰り返さず、新情報のある候補を掲載しました。60代のご両親と同行する場合は、夜間の長距離歩行より負担の少ない候補を優先し、夕方以降の訪問前に帰路の交通手段を計画してください。昼の市場・夜の飲食店・展望地・美術館・宮殿・庭園を区別します。Setasの屋上散策は、既掲載の無料広場散策とは異なる有料見学です。',
-      emptyDesc: '都市またはタイプのフィルターをリセットすると、7都市24件の追加候補をすべて確認できます。',
-      resultCountSuffix: '/ 全24候補',
+      emptyDesc: '都市またはタイプのフィルターをリセットすると、7都市26件の追加候補をすべて確認できます。',
+      resultCountSuffix: '/ 全26候補',
       labelVerifiedDate: '公式出典確認:',
-      dedupSummary: '✅ <strong>重複照合済み:</strong> 7都市の実用情報・名所・飲食・夜景情報を照合しました。ローマ橋、Gambrinus、ボルゲーゼ美術館は既存案内を維持し、別カードとして重複掲載していません。',
+      dedupSummary: '✅ <strong>重複照合済み:</strong> 7都市の実用情報・名所・飲食・夜景情報を照合しました。バルセロネータ海岸は既存の日程に含まれるため別カードを作っていません。MNACとFundació Joan Miróは別々の美術館として案内します。ローマ橋、Gambrinus、ボルゲーゼ美術館も既存案内を維持します。',
       types: {
         all: 'すべてのタイプ',
         evening_food_hall: '夜まで営業する飲食店街／フードホール・老舗食堂',
@@ -473,14 +580,14 @@
       }
     },
     zh: {
-      mainTitle: '🗂️ 7城24处新增建议：美食、市场、观景与文化景点',
-      subnavCandidates: '✨ 按城市新增候选（24处）',
+      mainTitle: '🗂️ 7城26处新增建议：美食、市场、观景与文化景点',
+      subnavCandidates: '✨ 按城市新增候选（26处）',
       policyVerifiedDate: '📌 每张卡片显示官方来源核实日期',
       mainDesc: '已与现有行程、景点、餐饮和夜景信息对照，不为重复地点另建卡片，只收录能补充新信息的建议。陪同60多岁的父母出行时，优先选择轻松的一站式安排，避免深夜长距离步行，并建议提前规划晚间返程交通。白天市场、晚间餐饮、观景点、博物馆、宫殿和花园分别标示。Setas屋顶步道需购票，与已列出的免费广场漫步不同。',
-      emptyDesc: '重置城市或类型筛选即可查看7座城市的全部24处新增建议。',
-      resultCountSuffix: '/ 共24处候选',
+      emptyDesc: '重置城市或类型筛选即可查看7座城市的全部26处新增建议。',
+      resultCountSuffix: '/ 共26处候选',
       labelVerifiedDate: '官方来源核实:',
-      dedupSummary: '✅ <strong>已完成查重:</strong> 对照了7城的实用信息、景点、餐饮与夜景内容。罗马桥、Gambrinus和博尔盖塞美术馆保留在原有介绍中，不另建重复卡片。',
+      dedupSummary: '✅ <strong>已完成查重:</strong> 对照了7城的实用信息、景点、餐饮与夜景内容。巴塞罗内塔海滩已列入巴塞罗那现有行程，因此不另建重复卡片；MNAC与Fundació Joan Miró作为不同博物馆分别介绍。罗马桥、Gambrinus和博尔盖塞美术馆也保留在原有介绍中。',
       types: {
         all: '全部类型',
         evening_food_hall: '营业至晚间的餐饮区/美食大厅与老字号餐厅',
@@ -505,7 +612,7 @@
   const findBaseline = cityId => PRACTICAL_CITY_CANDIDATES_DATA.deduplicationBaseline.find(row => row.cityId === cityId);
   const baselineAdds = {
     barcelona: {
-      ko: ' · Recinte Modernista de Sant Pau', en: ' · Recinte Modernista de Sant Pau', ja: ' · サン・パウ・モダニスタ地区', zh: ' · 圣保罗现代主义建筑群'
+      ko: ' · Recinte Modernista de Sant Pau · MNAC · Fundació Joan Miró (별도 미술관) · 바르셀로나 피카소 미술관', en: ' · Recinte Modernista de Sant Pau · MNAC · Fundació Joan Miró (separate museums) · Museu Picasso Barcelona', ja: ' · サン・パウ・モダニスタ地区 · MNAC・Fundació Joan Miró（別々の美術館） · バルセロナ・ピカソ美術館', zh: ' · 圣保罗现代主义建筑群 · MNAC · Fundació Joan Miró（两家独立博物馆）· 巴塞罗那毕加索博物馆'
     },
     seville: {
       ko: ' · Palacio de las Dueñas · Setas 유료 지붕 산책 (기존 무료 광장 산책과 별도)',
