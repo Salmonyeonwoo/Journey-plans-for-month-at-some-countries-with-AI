@@ -39,7 +39,7 @@
 
   const content = {
     ko: {
-      pageTitle: '5. 활동·스파 아이디어', aiPageTitle: '6. 실시간 AI 검색',
+      pageTitle: '6. 활동·스파 아이디어', aiPageTitle: '7. 실시간 AI 검색',
       kicker: '스페인·이탈리아 / 색다른 휴식과 체험',
       title: '부모님과 함께 고르는 활동·스파 아이디어', badge: '7가지 후보 · 예약 아님',
       intro: '온욕, 와이너리, 강 유람선, 레몬 농장, 쿠킹 클래스, 골프카트까지. 원문 아이디어 중 공식 출처로 확인한 내용만 추려 담았습니다. 이동과 실제 보행 부담을 함께 보고 한 번에 한 가지씩 골라 보세요.',
@@ -62,7 +62,7 @@
       }
     },
     en: {
-      pageTitle: '5. Activity & spa ideas', aiPageTitle: '6. Live AI search',
+      pageTitle: '6. Activity & spa ideas', aiPageTitle: '7. Live AI search',
       kicker: 'SPAIN & ITALY / REST AND EXPERIENCES', title: 'Activity and spa ideas to choose with your parents', badge: '7 ideas · not booked',
       intro: 'Baths, wineries, a river cruise, lemon farms, cooking and golf carts: these are the source-checked parts of the proposed ideas. Compare transfers and the actual walking involved, and choose one experience at a time.',
       statusTitle: 'Confirmed travel and activity ideas are separate', status: 'Every experience below is a suggestion, not a reservation, payment or confirmed schedule. Operation, spaces and prices on your chosen date are unverified. This guide does not change existing bookings or the itinerary.',
@@ -81,7 +81,7 @@
       }
     },
     ja: {
-      pageTitle: '5. 体験・スパの候補', aiPageTitle: '6. リアルタイムAI検索', kicker: 'スペイン・イタリア / 休息と体験', title: 'ご両親と選ぶ体験・スパのアイデア', badge: '7つの候補・未予約',
+      pageTitle: '6. 体験・スパの候補', aiPageTitle: '7. リアルタイムAI検索', kicker: 'スペイン・イタリア / 休息と体験', title: 'ご両親と選ぶ体験・スパのアイデア', badge: '7つの候補・未予約',
       intro: '温浴、ワイナリー、川のクルーズ、レモン農園、料理教室、ゴルフカート。提案のうち公式情報で確認できた内容をまとめました。移動と実際の歩行負担を比べ、一度に一つずつ選んでください。',
       statusTitle: '確定旅程と体験候補は別です', status: '以下はすべて提案であり、予約・決済・確定日程ではありません。希望日の営業・空き・料金は未確認です。このガイドによって既存の予約や旅程は変更されません。',
       anchorsTitle: '変更しない確定条件', anchors: 'バルセロナ 2026年11月5〜11日・セビリア 11月11〜22日・ナポリの宿は11月22日チェックイン〜25日チェックアウト・イタリアは12月4日まで。サグラダ・ファミリア入場は11月10日15:30のままです。',
@@ -98,7 +98,7 @@
       }
     },
     zh: {
-      pageTitle: '5. 活动与水疗备选', aiPageTitle: '6. 实时AI搜索', kicker: '西班牙与意大利 / 休息和体验', title: '与父母一起选择的活动与水疗体验', badge: '7项备选 · 尚未预订',
+      pageTitle: '6. 活动与水疗备选', aiPageTitle: '7. 实时AI搜索', kicker: '西班牙与意大利 / 休息和体验', title: '与父母一起选择的活动与水疗体验', badge: '7项备选 · 尚未预订',
       intro: '温浴、酒庄、河上游船、柠檬农场、烹饪课和高尔夫球车：这里仅保留原提案中有官方依据的内容。请同时比较交通与实际步行负担，一次选择一项体验。',
       statusTitle: '已确认行程与活动备选是两回事', status: '以下全部是建议，不代表预订、付款或确定日程。所选日期的营业、名额与价格尚未核实。本指南不会更改已有预订或行程。',
       anchorsTitle: '保持不变的已确认安排', anchors: '巴塞罗那：2026年11月5–11日；塞维利亚：11月11–22日；那不勒斯住宿：11月22日入住、25日退房；意大利行程至12月4日。圣家堂入场仍为11月10日15:30。',
@@ -186,7 +186,7 @@
 
   function goToActivityGuide() {
     if (typeof switchGuidebookChapter === 'function') switchGuidebookChapter('chapter-practical');
-    if (typeof goToBookPage === 'function') goToBookPage('chapter-practical', 4);
+    if (typeof goToBookPage === 'function') goToBookPage('chapter-practical', 5);
     if (typeof closeChatWindow === 'function') closeChatWindow();
   }
 
@@ -207,7 +207,7 @@
 
   locales.forEach(lang => {
     if (typeof I18N_DICTIONARY !== 'undefined' && I18N_DICTIONARY[lang]) {
-      Object.assign(I18N_DICTIONARY[lang], { page_practical_5: content[lang].pageTitle, page_practical_6: content[lang].aiPageTitle });
+      Object.assign(I18N_DICTIONARY[lang], { page_practical_6: content[lang].pageTitle, page_practical_7: content[lang].aiPageTitle });
     }
     if (typeof CHATBOT_I18N !== 'undefined' && CHATBOT_I18N[lang] && CHATBOT_I18N[lang].chips) {
       CHATBOT_I18N[lang].chips.unshift({ text: content[lang].chatChip, q: content[lang].chatQuery });

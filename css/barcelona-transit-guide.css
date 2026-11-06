@@ -1,0 +1,175 @@
+.bcn-transit-guide {
+  --bcn-ink: #20332b;
+  --bcn-muted: #5b665f;
+  --bcn-line: #e0e4dd;
+  --bcn-paper: #fffdf8;
+  --bcn-green: #1b4332;
+  --bcn-sand: #f4efe4;
+  color: var(--bcn-ink);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(16px, 3vw, 34px);
+  font-family: inherit;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.bcn-transit-guide *,
+.bcn-transit-chat-answer * { box-sizing: border-box; }
+
+.bcn-transit-hero {
+  padding: clamp(22px, 4vw, 44px);
+  border-radius: 22px;
+  background: linear-gradient(135deg, #e6eee6, #f6f0e5 78%);
+  border: 1px solid #dce5da;
+  margin-bottom: 18px;
+}
+
+.bcn-transit-kicker {
+  color: #496754;
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.bcn-transit-hero h1 {
+  margin: 10px 0 12px;
+  font-size: clamp(1.7rem, 3.3vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--bcn-green);
+}
+
+.bcn-transit-hero p,
+.bcn-transit-notice p,
+.bcn-transit-alert p,
+.bcn-transit-card p,
+.bcn-transit-route-section > p { margin: 0; }
+
+.bcn-transit-notice,
+.bcn-transit-alert {
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin: 14px 0;
+  border: 1px solid var(--bcn-line);
+  background: #fff;
+}
+
+.bcn-transit-notice { border-left: 5px solid #647b57; }
+.bcn-transit-alert { border-left: 5px solid #bd8d46; background: #fffaf0; }
+.bcn-transit-notice strong,
+.bcn-transit-alert strong { display: block; margin-bottom: 6px; color: var(--bcn-green); }
+
+.bcn-transit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.bcn-transit-card,
+.bcn-transit-route-section {
+  min-width: 0;
+  background: var(--bcn-paper);
+  border: 1px solid var(--bcn-line);
+  border-radius: 16px;
+  padding: clamp(17px, 2.5vw, 25px);
+  box-shadow: 0 7px 20px rgba(37, 54, 43, .045);
+}
+
+.bcn-transit-guide .bcn-transit-card h2,
+.bcn-transit-guide .bcn-transit-route-section h2 {
+  margin: 0 0 12px;
+  color: var(--bcn-green);
+  font-size: clamp(20px, 2vw, 26px) !important;
+  font-weight: 750 !important;
+  line-height: 1.35;
+}
+
+.bcn-transit-guide .bcn-transit-card h3 {
+  margin: 18px 0 8px;
+  color: #345a45;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  line-height: 1.4;
+}
+
+.bcn-transit-guide .bcn-transit-card h3:first-of-type { margin-top: 0 !important; }
+.bcn-transit-card p + p { margin-top: 10px; }
+
+.bcn-transit-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+.bcn-transit-source {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  max-width: 100%;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #eef3ed;
+  color: #31513d;
+  font-size: .76rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.bcn-transit-source:hover,
+.bcn-transit-source:focus-visible { background: #dfeade; text-decoration: underline; }
+
+.bcn-transit-route-section { margin-top: 18px; }
+.bcn-transit-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.bcn-transit-route {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+  min-height: 84px;
+  padding: 14px 16px;
+  border: 1px solid #d9e2d7;
+  border-radius: 12px;
+  background: #f5f8f3;
+  color: var(--bcn-ink);
+  text-decoration: none;
+}
+
+.bcn-transit-route:hover,
+.bcn-transit-route:focus-visible { border-color: #78947d; background: #edf4ec; }
+.bcn-transit-route span { font-weight: 700; }
+.bcn-transit-route small { color: #45634e; font-weight: 650; }
+.bcn-transit-route-section > p { color: var(--bcn-muted); }
+
+.bcn-transit-chat-answer { line-height: 1.6; }
+.bcn-transit-chat-answer > strong { display: block; margin-bottom: 8px; color: #214331; }
+.bcn-transit-chat-answer p { margin: 7px 0; }
+.bcn-transit-chat-answer .chat-quick-chip { margin-top: 12px; }
+
+body.dark-theme .bcn-transit-guide .bcn-transit-card h2,
+body.dark-theme .bcn-transit-guide .bcn-transit-route-section h2,
+body.dark-theme .bcn-transit-guide .bcn-transit-card h3 { color: var(--bcn-green) !important; }
+
+@media (max-width: 720px) {
+  .bcn-transit-guide { padding: 14px; }
+  .bcn-transit-hero { padding: 22px 18px; border-radius: 16px; }
+  .bcn-transit-grid { grid-template-columns: 1fr; gap: 12px; }
+  .bcn-transit-card, .bcn-transit-route-section { border-radius: 13px; padding: 17px; }
+  .bcn-transit-route-grid { grid-template-columns: 1fr; gap: 8px; }
+  .bcn-transit-route { min-height: 74px; }
+  .bcn-transit-source { font-size: .72rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bcn-transit-guide *, .bcn-transit-chat-answer * { scroll-behavior: auto !important; transition: none !important; }
+}
