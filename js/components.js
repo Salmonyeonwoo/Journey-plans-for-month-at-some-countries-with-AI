@@ -28,6 +28,9 @@
 
     <!-- 우측 헤더 액션: 설정 열기 + 캘린더 다운로드 -->
     <div class="header-action-group">
+      <button type="button" class="header-menu-btn book-menu-toggle" id="btnGuidebookMenu" onclick="toggleGuidebookMenu(this, event)" aria-expanded="false" aria-controls="guidebookMenu" aria-label="전체 목차 열기">
+        <span aria-hidden="true">☰</span> <span class="btn-text" data-guide-menu-label>목차</span>
+      </button>
       <button type="button" class="ctrl-btn header-settings-btn" id="btnSettingsToggle" onclick="toggleSettingsPanel()" title="언어/통화/테마 설정 열기" aria-expanded="false" aria-controls="settingsDropdownPanel">
         ⚙️ <span class="btn-text" data-i18n="btn_settings">설정</span>
       </button>
@@ -101,7 +104,7 @@
 
     'chapter-overview': `<div class="book-page-bar" id="bookBar-chapter-overview">
           <div class="book-page-meta">
-            <span class="book-chapter-badge" data-i18n="chapter_name_overview">📖 제1장. 여행 개요</span>
+            <button type="button" class="book-chapter-badge book-menu-toggle" onclick="toggleGuidebookMenu(this, event)" aria-expanded="false" aria-controls="guidebookMenu"><span data-i18n="chapter_name_overview">📖 제1장. 여행 개요</span><span aria-hidden="true">▾</span></button>
             <span class="book-page-counter" id="counter-chapter-overview">P. 1 / 3</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-overview">
@@ -525,7 +528,7 @@
     'chapter-planner': `<div id="custom-planner"></div>
         <div class="book-page-bar" id="bookBar-chapter-planner">
           <div class="book-page-meta">
-            <span class="book-chapter-badge" data-i18n="chapter_name_planner">📅 제2장. 맞춤 일정 플래너</span>
+            <button type="button" class="book-chapter-badge book-menu-toggle" onclick="toggleGuidebookMenu(this, event)" aria-expanded="false" aria-controls="guidebookMenu"><span data-i18n="chapter_name_planner">📅 제2장. 맞춤 일정 플래너</span><span aria-hidden="true">▾</span></button>
             <span class="book-page-counter" id="counter-chapter-planner">P. 1 / 4</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-planner">
@@ -1359,7 +1362,7 @@
     'chapter-guide': `<div id="travel-guide"></div>
         <div class="book-page-bar" id="bookBar-chapter-guide">
           <div class="book-page-meta">
-            <span class="book-chapter-badge" data-i18n="chapter_name_guide">🗺️ 제3장. 지역별 명소 가이드</span>
+            <button type="button" class="book-chapter-badge book-menu-toggle" onclick="toggleGuidebookMenu(this, event)" aria-expanded="false" aria-controls="guidebookMenu"><span data-i18n="chapter_name_guide">🗺️ 제3장. 지역별 명소 가이드</span><span aria-hidden="true">▾</span></button>
             <span class="book-page-counter" id="counter-chapter-guide">P. 1 / 5</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-guide">
@@ -1623,7 +1626,7 @@
 
     'chapter-festivals': `<div class="book-page-bar" id="bookBar-chapter-festivals">
           <div class="book-page-meta">
-            <span class="book-chapter-badge" data-i18n="chapter_name_festivals">🎪 제4장. 축제 &amp; 야경</span>
+            <button type="button" class="book-chapter-badge book-menu-toggle" onclick="toggleGuidebookMenu(this, event)" aria-expanded="false" aria-controls="guidebookMenu"><span data-i18n="chapter_name_festivals">🎪 제4장. 축제 &amp; 야경</span><span aria-hidden="true">▾</span></button>
             <span class="book-page-counter" id="counter-chapter-festivals">P. 1 / 4</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-festivals">
@@ -1800,7 +1803,7 @@
     'chapter-practical': `<div id="travel-tools"></div>
         <div class="book-page-bar" id="bookBar-chapter-practical">
           <div class="book-page-meta">
-            <span class="book-chapter-badge" data-i18n="chapter_name_practical">💡 제5장. 여행 실용정보</span>
+            <button type="button" class="book-chapter-badge book-menu-toggle" onclick="toggleGuidebookMenu(this, event)" aria-expanded="false" aria-controls="guidebookMenu"><span data-i18n="chapter_name_practical">💡 제5장. 여행 실용정보</span><span aria-hidden="true">▾</span></button>
             <span class="book-page-counter" id="counter-chapter-practical">P. 1 / 7</span>
           </div>
           <div class="book-bookmark-tabs" id="tabs-chapter-practical">
@@ -1856,7 +1859,7 @@
         <div class="search-box-wrap">
           <div class="search-input-row">
             <div class="search-input-wrap">
-              <input type="text" id="globalDiningSearch" class="search-input" placeholder="🔍 국가/도시(바르셀로나, 세비야, 리스본), 메뉴, 키워드 검색..." oninput="handleDiningSearchInput()" />
+              <input type="text" id="globalDiningSearch" class="search-input" placeholder="🔍 국가/도시(바르셀로나, 세비야, 리스본), 메뉴, 키워드 검색..." oninput="handleDiningSearchInput()" onkeydown="if(event.key==='Enter' &amp;&amp; !event.isComposing &amp;&amp; event.keyCode!==229){event.preventDefault();filterGlobalDining();}" />
               <button id="btnDiningClear" class="search-clear-btn" onclick="clearDiningSearch()" title="검색어 초기화">✕</button>
             </div>
             <button onclick="filterGlobalDining()" class="cal-action-btn" style="white-space:nowrap" data-i18n="btn_dining_search">미식 검색</button>
@@ -2654,7 +2657,7 @@
         <div class="panel" style="padding:28px">
           <div class="search-input-row">
             <div class="search-input-wrap">
-              <input type="text" id="aiDirectSearchInput" class="search-input" placeholder="궁금한 사항을 입력하세요..." oninput="handleAiSearchInput()" onkeydown="if(event.key==='Enter') executeAiSearch('google')" />
+              <input type="text" id="aiDirectSearchInput" class="search-input" placeholder="궁금한 사항을 입력하세요..." oninput="handleAiSearchInput()" onkeydown="if(event.key==='Enter' &amp;&amp; !event.isComposing &amp;&amp; event.keyCode!==229){event.preventDefault();executeAiSearch('google');}" />
               <button id="btnAiClear" class="search-clear-btn" onclick="clearAiSearch()" title="검색어 초기화">✕</button>
             </div>
             <button onclick="executeAiSearch('google')" id="btnGoogleSearch" class="cal-action-btn" data-i18n="btn_google_search" style="background:var(--green)">구글 실시간 검색</button>
@@ -2741,8 +2744,8 @@
     </div>
   </div>
   <div class="chat-input-area">
-    <form id="chatForm" onsubmit="event.preventDefault(); sendChatMessage(); return false;" style="display:flex;width:100%;gap:8px;align-items:center;">
-      <input type="text" id="chatInput" class="chat-input-field" placeholder="질문을 입력하세요..." autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();sendChatMessage();}" />
+    <form id="chatForm" style="display:flex;width:100%;gap:8px;align-items:center;">
+      <input type="text" id="chatInput" class="chat-input-field" placeholder="질문을 입력하세요..." autocomplete="off" />
       <button type="button" id="btnChatSend" class="chat-send-btn" onclick="sendChatMessage()" title="전송" aria-label="전송">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
       </button>

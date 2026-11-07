@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SlowTravel Curated Places & Malaga-Nerja Day Trip Guide
  * - Malaga -> Nerja & Frigiliana ALSA Bus & Taxi Day Trip Guide
  * - Curated 31 Google Maps Heart-Saved Places (Barcelona, Malaga, Seville)
@@ -1054,6 +1054,7 @@
       catShopping: '🛍️ 쇼핑 & 가죽',
       catSight: '🏛️ 꼭 가야하는 곳',
       searchPlaceholder: '식당명, 메뉴, 꿀대구, 뽈뽀, 쇼핑 등 검색...',
+      clearSearch: '검색어 지우기',
       btnOpenMap: '💖 구글 지도 열기 / 하트 저장 ↗',
       emptyPlaces: '검색 및 필터 조건에 해당하는 장소가 없습니다.',
       nerjaTimelineTitle: '⏰ 추천 당일치기 타임라인 (예시)',
@@ -1081,6 +1082,7 @@
       catShopping: '🛍️ Shopping & Leather',
       catSight: '🏛️ Must-Visit Sights',
       searchPlaceholder: 'Search restaurant, dish, cod, pulpo, leather...',
+      clearSearch: 'Clear search',
       btnOpenMap: '💖 Open Google Maps / Save Heart ↗',
       emptyPlaces: 'No places found matching your filter criteria.',
       nerjaTimelineTitle: '⏰ Recommended Day Trip Timeline (Sample)',
@@ -1108,6 +1110,7 @@
       catShopping: '🛍️ ショッピング＆革製品',
       catSight: '🏛️ 必見スポット',
       searchPlaceholder: '店名、メニュー、ハニーコッド、タコ、革製品など検索...',
+      clearSearch: '検索語を消去',
       btnOpenMap: '💖 Googleマップを開く / お気に入り保存 ↗',
       emptyPlaces: '条件に一致するスポットが見つかりません。',
       nerjaTimelineTitle: '⏰ おすすめ日帰りタイムライン (目安)',
@@ -1135,6 +1138,7 @@
       catShopping: '🛍️ 精品购物与皮具',
       catSight: '🏛️ 必游名胜',
       searchPlaceholder: '搜索餐厅、菜品、蜂蜜鳕鱼、章鱼、皮具...',
+      clearSearch: '清空搜索词',
       btnOpenMap: '💖 在谷歌地图查看 / 加红心收藏 ↗',
       emptyPlaces: '未找到符合条件的地点。',
       nerjaTimelineTitle: '⏰ 推荐一日游时间表（参考）',
@@ -1270,6 +1274,62 @@
     `;
   }
 
+  function getFilteredCuratedPlaces(currentL, state) {
+    return CURATED_PLACES_DATA.filter(item => {
+      if (state.city !== 'all' && item.city !== state.city) return false;
+      if (state.category !== 'all' && item.category !== state.category) return false;
+      if (state.search && state.search.trim() !== '') {
+        const q = state.search.trim().toLowerCase();
+        const hay = `${item.name} ${item.title[currentL] || ''} ${item.title.ko || ''} ${item.desc[currentL] || ''} ${item.tip[currentL] || ''}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderCuratedPlacesCards(filtered, currentL, ui) {
+    return filtered.map(item => {
+      const cityBadge = item.cityBadge[currentL] || item.cityBadge.ko;
+      const catBadge = item.catBadge[currentL] || item.catBadge.ko;
+      const title = item.title[currentL] || item.title.ko;
+      const desc = item.desc[currentL] || item.desc.ko;
+      const tip = item.tip[currentL] || item.tip.ko;
+      return `
+        <div class="curated-place-card" style="background:#fff;border:1px solid #e2dbce;border-radius:18px;padding:20px;box-shadow:0 4px 16px rgba(0,0,0,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.2s, box-shadow 0.2s;">
+          <div>
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+              <span style="font-size:11px;font-weight:800;color:#1a5249;background:#eef6f2;padding:3px 9px;border-radius:12px;">${cityBadge}</span>
+              <span style="font-size:11.5px;font-weight:700;color:#d8754d;background:#fff3ee;padding:3px 9px;border-radius:12px;">${catBadge}</span>
+            </div>
+            <h4 style="font-size:16.5px;font-weight:800;color:#1c2e2c;margin:0 0 8px;letter-spacing:-0.02em;">${title}</h4>
+            <p style="font-size:13px;color:#556663;line-height:1.65;margin:0 0 12px;">${desc}</p>
+            ${tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:16px;border-left:3px solid #d8754d;"><strong>${ui.tipLabel}</strong> ${tip}</div>` : ''}
+          </div>
+          <div style="margin-top:8px;">
+            <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;background:#fff;color:#d8754d;border:1.5px solid #d8754d;text-decoration:none;font-size:12.5px;font-weight:800;padding:9px 14px;border-radius:12px;transition:all 0.2s;" onmouseover="this.style.background='#d8754d';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#d8754d';">
+              ${ui.btnOpenMap}
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderCuratedPlacesSearchResults() {
+    const grid = document.getElementById('curatedPlacesResultsGrid');
+    if (!grid) return;
+    const currentL = (typeof currentLang !== 'undefined' && ['ko', 'en', 'ja', 'zh'].includes(currentLang)) ? currentLang : 'ko';
+    const ui = UI_TEXTS[currentL] || UI_TEXTS.ko;
+    const state = window.curatedPlacesFilterState;
+    const filtered = getFilteredCuratedPlaces(currentL, state);
+    const cardsHtml = renderCuratedPlacesCards(filtered, currentL, ui);
+    grid.innerHTML = cardsHtml || `<div style="grid-column:1/-1;text-align:center;padding:36px;color:#859692;font-size:14px;">${ui.emptyPlaces}</div>`;
+    const count = document.getElementById('curatedPlacesResultCount');
+    if (count) count.textContent = `${filtered.length} / ${CURATED_PLACES_DATA.length}`;
+    const clearButton = document.getElementById('curatedPlacesClearSearch');
+    if (clearButton) clearButton.hidden = !state.search;
+  }
+
   // 6. 렌더링 함수: 31개 구글 지도 큐레이션 하트 리스트
   function renderCuratedHeartPlaces(lang) {
     const mount = document.getElementById('curated-family-places');
@@ -1282,17 +1342,7 @@
     const ui = UI_TEXTS[currentL] || UI_TEXTS.ko;
     const state = window.curatedPlacesFilterState;
 
-    // Filter items
-    const filtered = CURATED_PLACES_DATA.filter(item => {
-      if (state.city !== 'all' && item.city !== state.city) return false;
-      if (state.category !== 'all' && item.category !== state.category) return false;
-      if (state.search && state.search.trim() !== '') {
-        const q = state.search.trim().toLowerCase();
-        const hay = `${item.name} ${item.title[currentL] || ''} ${item.title.ko || ''} ${item.desc[currentL] || ''} ${item.tip[currentL] || ''}`.toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
-      return true;
-    });
+    const filtered = getFilteredCuratedPlaces(currentL, state);
 
     // Counts
     const cAll = CURATED_PLACES_DATA.length;
@@ -1322,32 +1372,7 @@
     `;
 
     // Cards HTML
-    const cardsHtml = filtered.map(item => {
-      const cityBadge = item.cityBadge[currentL] || item.cityBadge.ko;
-      const catBadge = item.catBadge[currentL] || item.catBadge.ko;
-      const title = item.title[currentL] || item.title.ko;
-      const desc = item.desc[currentL] || item.desc.ko;
-      const tip = item.tip[currentL] || item.tip.ko;
-
-      return `
-        <div class="curated-place-card" style="background:#fff;border:1px solid #e2dbce;border-radius:18px;padding:20px;box-shadow:0 4px 16px rgba(0,0,0,0.04);display:flex;flex-direction:column;justify-content:space-between;transition:transform 0.2s, box-shadow 0.2s;">
-          <div>
-            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-              <span style="font-size:11px;font-weight:800;color:#1a5249;background:#eef6f2;padding:3px 9px;border-radius:12px;">${cityBadge}</span>
-              <span style="font-size:11.5px;font-weight:700;color:#d8754d;background:#fff3ee;padding:3px 9px;border-radius:12px;">${catBadge}</span>
-            </div>
-            <h4 style="font-size:16.5px;font-weight:800;color:#1c2e2c;margin:0 0 8px;letter-spacing:-0.02em;">${title}</h4>
-            <p style="font-size:13px;color:#556663;line-height:1.65;margin:0 0 12px;">${desc}</p>
-            ${tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:16px;border-left:3px solid #d8754d;"><strong>${ui.tipLabel}</strong> ${tip}</div>` : ''}
-          </div>
-          <div style="margin-top:8px;">
-            <a href="${item.mapUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;background:#fff;color:#d8754d;border:1.5px solid #d8754d;text-decoration:none;font-size:12.5px;font-weight:800;padding:9px 14px;border-radius:12px;transition:all 0.2s;" onmouseover="this.style.background='#d8754d';this.style.color='#fff';" onmouseout="this.style.background='#fff';this.style.color='#d8754d';">
-              ${ui.btnOpenMap}
-            </a>
-          </div>
-        </div>
-      `;
-    }).join('');
+    const cardsHtml = renderCuratedPlacesCards(filtered, currentL, ui);
 
     // Seville Bonus Tips Box
     const b1 = SEVILLE_BONUS_TIPS.sevici;
@@ -1377,20 +1402,28 @@
             <p style="font-size:13.5px;color:#6b7c78;margin:0;">${ui.descHeartPlaces || '바르셀로나, 말라가·네르하, 세비야 현지에서 직접 검증한 맛집, 디저트, 쇼핑 및 필수 명소 큐레이션'}</p>
           </div>
           <div style="min-width:240px;flex:1;max-width:340px;">
-            <input type="text" id="curatedPlacesSearchInput" value="${state.search}" placeholder="${ui.searchPlaceholder}" oninput="window.setCuratedPlacesSearch(this.value)" style="width:100%;padding:10px 14px;border-radius:12px;border:1px solid #cad8ce;font-size:13px;background:#fff;outline:none;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <input type="text" id="curatedPlacesSearchInput" aria-label="${ui.searchPlaceholder}" placeholder="${ui.searchPlaceholder}" oninput="window.handleCuratedPlacesSearchInput(this,event)" oncompositionstart="window.handleCuratedPlacesSearchCompositionStart(this)" oncompositionend="window.handleCuratedPlacesSearchCompositionEnd(this)" onkeydown="window.handleCuratedPlacesSearchKeydown(this,event)" style="width:100%;padding:10px 14px;border-radius:12px;border:1px solid #cad8ce;font-size:13px;background:#fff;outline:none;">
+              <button type="button" id="curatedPlacesClearSearch" onclick="window.setCuratedPlacesSearch('');document.getElementById('curatedPlacesSearchInput').focus()" aria-label="${ui.clearSearch}" style="padding:8px 10px;border:1px solid #cad8ce;border-radius:10px;background:#fff;cursor:pointer;">✕</button>
+            </div>
+            <div style="font-size:12px;color:#6b7c78;text-align:right;margin-top:4px;"><span id="curatedPlacesResultCount">${filtered.length} / ${CURATED_PLACES_DATA.length}</span></div>
           </div>
         </div>
 
         ${cityButtons}
         ${catButtons}
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:16px;">
+        <div id="curatedPlacesResultsGrid" style="display:grid;grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));gap:16px;">
           ${cardsHtml.length ? cardsHtml : `<div style="grid-column:1/-1;text-align:center;padding:36px;color:#859692;font-size:14px;">${ui.emptyPlaces}</div>`}
         </div>
 
         ${bonusHtml}
       </div>
     `;
+    const searchInput = document.getElementById('curatedPlacesSearchInput');
+    if (searchInput) searchInput.value = state.search || '';
+    const clearButton = document.getElementById('curatedPlacesClearSearch');
+    if (clearButton) clearButton.hidden = !state.search;
   }
 
   // Filter setters
@@ -1403,8 +1436,27 @@
     renderCuratedHeartPlaces();
   };
   window.setCuratedPlacesSearch = function (q) {
-    window.curatedPlacesFilterState.search = q;
-    renderCuratedHeartPlaces();
+    const search = String(q == null ? '' : q);
+    window.curatedPlacesFilterState.search = search;
+    const input = document.getElementById('curatedPlacesSearchInput');
+    if (input && input.value !== search) input.value = search;
+    renderCuratedPlacesSearchResults();
+  };
+  window.handleCuratedPlacesSearchInput = function (input, event) {
+    if (event && (event.isComposing || input.__curatedSearchComposing || event.keyCode === 229)) return;
+    window.setCuratedPlacesSearch(input.value);
+  };
+  window.handleCuratedPlacesSearchCompositionStart = function (input) {
+    input.__curatedSearchComposing = true;
+  };
+  window.handleCuratedPlacesSearchCompositionEnd = function (input) {
+    input.__curatedSearchComposing = false;
+    window.setCuratedPlacesSearch(input.value);
+  };
+  window.handleCuratedPlacesSearchKeydown = function (input, event) {
+    if (event.key !== 'Enter' || event.isComposing || input.__curatedSearchComposing || event.keyCode === 229) return;
+    event.preventDefault();
+    window.setCuratedPlacesSearch(input.value);
   };
 
   // 7. 일정 플래너 17일차(11/17 화) 내용 강화 반영
@@ -1518,4 +1570,3 @@
   });
 
 })();
-

@@ -7723,17 +7723,19 @@ window.addEventListener('DOMContentLoaded', () => {
     updateChatbotLanguage(typeof currentLang !== 'undefined' ? currentLang : 'ko');
   }
   const form = document.getElementById('chatForm');
+  const input = document.getElementById('chatInput');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      sendChatMessage();
+      if (!input || !input.__chatComposing) sendChatMessage();
       return false;
     });
   }
-  const input = document.getElementById('chatInput');
   if (input) {
+    input.addEventListener('compositionstart', () => { input.__chatComposing = true; });
+    input.addEventListener('compositionend', () => { input.__chatComposing = false; });
     input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && !e.isComposing && !input.__chatComposing && e.keyCode !== 229) {
         e.preventDefault();
         sendChatMessage();
       }
@@ -10069,15 +10071,28 @@ function togglePracticalCandidatesSavedOnly() {
   renderPracticalCityCandidates();
 }
 
-function handlePracticalCandidateSearch(val) {
-  window.practicalCandidatesFilterState.searchQuery = val || '';
-  renderPracticalCityCandidates();
-  const input = document.getElementById('pcSearchInput');
-  if (input) {
-    input.focus();
-    const len = input.value.length;
-    input.setSelectionRange(len, len);
-  }
+function handlePracticalCandidateSearch(inputOrValue, event) {
+  const input = typeof inputOrValue === 'string' ? document.getElementById('pcSearchInput') : inputOrValue;
+  if (event && input && (event.isComposing || input.__pcSearchComposing || event.keyCode === 229)) return;
+  const value = typeof inputOrValue === 'string' ? inputOrValue : (input ? input.value : '');
+  window.practicalCandidatesFilterState.searchQuery = String(value || '');
+  if (input && input.value !== String(value || '')) input.value = String(value || '');
+  renderPracticalCandidateSearchResults();
+}
+
+function handlePracticalCandidateSearchCompositionStart(input) {
+  input.__pcSearchComposing = true;
+}
+
+function handlePracticalCandidateSearchCompositionEnd(input) {
+  input.__pcSearchComposing = false;
+  handlePracticalCandidateSearch(input);
+}
+
+function handlePracticalCandidateSearchKeydown(input, event) {
+  if (event.key !== 'Enter' || event.isComposing || input.__pcSearchComposing || event.keyCode === 229) return;
+  event.preventDefault();
+  handlePracticalCandidateSearch(input);
 }
 
 function resetPracticalCandidatesFilters() {
@@ -10266,6 +10281,58 @@ function renderSavedPracticalCandidateCard(itemId) {
   return renderPracticalCandidateCardHtml(item, savedIdsSet, activeLang);
 }
 
+function getFilteredPracticalCandidateItems(allItems, activeLang, state, savedIdsSet) {
+  return allItems.filter(rawItem => {
+    const loc = getPracticalCandidateLocalizedItem(rawItem, activeLang);
+    if (state.city !== 'all' && loc.cityId !== state.city) return false;
+    if (state.type !== 'all' && loc.filterKey !== state.type) return false;
+    if (state.oneStopOnly && !loc.oneStopParentRec) return false;
+    if (state.savedOnly && !savedIdsSet.has(loc.id)) return false;
+    if (state.searchQuery && state.searchQuery.trim() !== '') {
+      const q = state.searchQuery.trim().toLowerCase();
+      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.verifiedHours} ${loc.seniorCaution} ${loc.broadcastNote}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderPracticalCandidateResultsHtml(filteredItems, savedIdsSet, activeLang, ui) {
+  return filteredItems.length > 0
+    ? filteredItems.map(item => renderPracticalCandidateCardHtml(item, savedIdsSet, activeLang)).join('')
+    : `
+      <div class="pc-empty-state">
+        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+        <div style="font-weight:700;font-size:16px;color:var(--text);">${ui.emptyTitle || '선택하신 필터 조건에 해당하는 후보 장소가 없습니다.'}</div>
+        <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">${ui.emptyDesc || '도시나 유형 필터를 초기화하면 7개 도시 17개 추가 후보를 모두 확인하실 수 있습니다.'}</p>
+        <button type="button" class="pc-reset-btn" onclick="resetPracticalCandidatesFilters()">${ui.emptyResetBtn || '필터 전체 초기화'}</button>
+      </div>
+    `;
+}
+
+function practicalCandidatesHaveActiveFilters(state) {
+  return state.city !== 'all' || state.type !== 'all' || state.oneStopOnly || state.savedOnly || !!state.searchQuery;
+}
+
+function renderPracticalCandidateSearchResults() {
+  const mount = document.getElementById('practical-city-candidates');
+  const dataObj = window.PRACTICAL_CITY_CANDIDATES_DATA || (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' ? PRACTICAL_CITY_CANDIDATES_DATA : null);
+  if (!mount || !dataObj || !Array.isArray(dataObj.items)) return;
+  const activeLang = (typeof currentLang !== 'undefined' && ['ko', 'en', 'ja', 'zh'].includes(currentLang)) ? currentLang : 'ko';
+  const i18nRoot = window.PRACTICAL_CANDIDATES_I18N || (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' ? PRACTICAL_CANDIDATES_I18N : null);
+  const ui = (i18nRoot && i18nRoot.ui && i18nRoot.ui[activeLang]) ? i18nRoot.ui[activeLang] : (i18nRoot && i18nRoot.ui ? i18nRoot.ui.ko : {});
+  const state = window.practicalCandidatesFilterState;
+  const savedList = typeof getSavedCandidates === 'function' ? getSavedCandidates() : [];
+  const savedIdsSet = new Set(savedList.map(c => c.id));
+  const filteredItems = getFilteredPracticalCandidateItems(dataObj.items, activeLang, state, savedIdsSet);
+  const cardsGrid = mount.querySelector('.pc-cards-grid');
+  if (cardsGrid) cardsGrid.innerHTML = renderPracticalCandidateResultsHtml(filteredItems, savedIdsSet, activeLang, ui);
+  const resultCount = mount.querySelector('#pcResultCount');
+  if (resultCount) resultCount.textContent = filteredItems.length;
+  const clearButton = mount.querySelector('#pcClearFilterButton');
+  if (clearButton) clearButton.hidden = !practicalCandidatesHaveActiveFilters(state);
+}
+
 function updatePracticalSubnavBarI18n(ui) {
   if (!ui) return;
   const bars = document.querySelectorAll('.practical-subnav-bar');
@@ -10329,19 +10396,7 @@ function renderPracticalCityCandidates(lang) {
     { key: 'christmas_market', label: (ui.types && ui.types.christmas_market) || '기간 한정 크리스마스 마켓', icon: '🎄', count: allItems.filter(x => mapPracticalCategoryToFilterKey(x.categoryKey, x.typeKey) === 'christmas_market').length }
   ];
 
-  const filteredItems = allItems.filter(rawItem => {
-    const loc = getPracticalCandidateLocalizedItem(rawItem, activeLang);
-    if (state.city !== 'all' && loc.cityId !== state.city) return false;
-    if (state.type !== 'all' && loc.filterKey !== state.type) return false;
-    if (state.oneStopOnly && !loc.oneStopParentRec) return false;
-    if (state.savedOnly && !savedIdsSet.has(loc.id)) return false;
-    if (state.searchQuery && state.searchQuery.trim() !== '') {
-      const q = state.searchQuery.trim().toLowerCase();
-      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.verifiedHours} ${loc.seniorCaution} ${loc.broadcastNote}`.toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  });
+  const filteredItems = getFilteredPracticalCandidateItems(allItems, activeLang, state, savedIdsSet);
 
   const dedupRowsHtml = (dataObj.deduplicationBaseline || []).map(row => {
     const cId = row.cityId;
@@ -10375,16 +10430,7 @@ function renderPracticalCityCandidates(lang) {
     </button>
   `).join('');
 
-  const cardsHtml = filteredItems.length > 0
-    ? filteredItems.map(item => renderPracticalCandidateCardHtml(item, savedIdsSet, activeLang)).join('')
-    : `
-      <div class="pc-empty-state">
-        <div style="font-size:28px;margin-bottom:8px;">🔍</div>
-        <div style="font-weight:700;font-size:16px;color:var(--text);">${ui.emptyTitle || '선택하신 필터 조건에 해당하는 후보 장소가 없습니다.'}</div>
-        <p style="font-size:13.5px;color:var(--muted);margin-top:6px;">${ui.emptyDesc || '도시나 유형 필터를 초기화하면 7개 도시 17개 추가 후보를 모두 확인하실 수 있습니다.'}</p>
-        <button type="button" class="pc-reset-btn" onclick="resetPracticalCandidatesFilters()">${ui.emptyResetBtn || '필터 전체 초기화'}</button>
-      </div>
-    `;
+  const cardsHtml = renderPracticalCandidateResultsHtml(filteredItems, savedIdsSet, activeLang, ui);
 
   mount.innerHTML = `
     <section class="practical-candidates-section" aria-label="${ui.mainTitle || '도시별 추가 맛집·시장·전망 후보 컬렉션'}">
@@ -10449,17 +10495,17 @@ function renderPracticalCityCandidates(lang) {
               id="pcSearchInput"
               class="pc-search-input"
               placeholder="${(ui.searchPlaceholder || '').replace(/"/g, '&quot;')}"
-              value="${(state.searchQuery || '').replace(/"/g, '&quot;')}"
-              oninput="handlePracticalCandidateSearch(this.value)"
+              oninput="handlePracticalCandidateSearch(this,event)"
+              oncompositionstart="handlePracticalCandidateSearchCompositionStart(this)"
+              oncompositionend="handlePracticalCandidateSearchCompositionEnd(this)"
+              onkeydown="handlePracticalCandidateSearchKeydown(this,event)"
             />
-            ${(state.city !== 'all' || state.type !== 'all' || state.oneStopOnly || state.savedOnly || state.searchQuery) ? `
-              <button type="button" class="pc-clear-filter-btn" onclick="resetPracticalCandidatesFilters()">${ui.clearFilterBtn || '초기화 ✕'}</button>
-            ` : ''}
+            <button type="button" id="pcClearFilterButton" class="pc-clear-filter-btn" onclick="resetPracticalCandidatesFilters()" ${practicalCandidatesHaveActiveFilters(state) ? '' : 'hidden'}>${ui.clearFilterBtn || '초기화 ✕'}</button>
           </div>
         </div>
 
         <div class="pc-result-status">
-          <span>${ui.resultCountPrefix || '현재 표시 중:'} <strong>${filteredItems.length}${ui.resultCountMiddle || ''}</strong> ${ui.resultCountSuffix || '/ 17'}</span>
+          <span>${ui.resultCountPrefix || '현재 표시 중:'} <strong id="pcResultCount">${filteredItems.length}</strong>${ui.resultCountMiddle || ''} ${ui.resultCountSuffix || '/ 17'}</span>
           <span>${ui.resultDisclaimer || ''}</span>
         </div>
       </div>
@@ -10469,6 +10515,8 @@ function renderPracticalCityCandidates(lang) {
       </div>
     </section>
   `;
+  const searchInput = document.getElementById('pcSearchInput');
+  if (searchInput) searchInput.value = state.searchQuery || '';
 }
 
 function downloadIcsCalendar() {
@@ -10483,6 +10531,9 @@ if (typeof window !== 'undefined') {
   window.togglePracticalCandidatesOneStop = togglePracticalCandidatesOneStop;
   window.togglePracticalCandidatesSavedOnly = togglePracticalCandidatesSavedOnly;
   window.handlePracticalCandidateSearch = handlePracticalCandidateSearch;
+  window.handlePracticalCandidateSearchCompositionStart = handlePracticalCandidateSearchCompositionStart;
+  window.handlePracticalCandidateSearchCompositionEnd = handlePracticalCandidateSearchCompositionEnd;
+  window.handlePracticalCandidateSearchKeydown = handlePracticalCandidateSearchKeydown;
   window.resetPracticalCandidatesFilters = resetPracticalCandidatesFilters;
   window.togglePracticalDedupBox = togglePracticalDedupBox;
   window.renderPracticalCandidateCardHtml = renderPracticalCandidateCardHtml;
