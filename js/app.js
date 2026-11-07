@@ -3323,7 +3323,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
-          <img src="${item.photo}" alt="${localizedTitle}" class="photo-thumb" loading="lazy" onload="this.classList.add('loaded');this.parentElement.classList.add('loaded');" onerror="this.onerror=null;this.classList.add('loaded');this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';" />
+          ${item.photo ? `<img src="${item.photo}" alt="${localizedTitle}" class="photo-thumb" loading="lazy" onload="this.classList.add('loaded');this.parentElement.classList.add('loaded');" onerror="this.onerror=null;this.classList.add('loaded');this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';" />` : `<div class="photo-thumb" role="img" aria-label="${localizedTitle}" style="display:flex;align-items:center;justify-content:center;font-size:38px;background:#f6efe5;">🍽️</div>`}
           <span class="photo-badge">${cleanHangul(localizedBadge, currentLang)}</span>
         </div>
         <div class="photo-body">
@@ -3336,7 +3336,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
           <div class="dining-meta-list">
             <div class="dining-meta-item">
               <span class="meta-label">💰 ${dict['lbl_price_from'] || (currentLang === 'en' ? 'Est. Price (From)' : (currentLang === 'ja' ? '予想料金 (From)' : (currentLang === 'zh' ? '预计消费 (From)' : '1인 예상 (From)')))}</span>
-              <span style="font-weight:700;color:var(--accent);">${formatCardPrice(item.baseKrw, currentCurrency, true)}</span>
+              <span style="font-weight:700;color:var(--accent);">${item.baseKrw === 0 ? (currentLang === 'en' ? 'Free' : (currentLang === 'ja' ? '無料' : (currentLang === 'zh' ? '免费' : '무료'))) : (item.baseKrw != null ? formatCardPrice(item.baseKrw, currentCurrency, true) : (currentLang === 'en' ? 'Check current prices' : (currentLang === 'ja' ? '価格は店舗に確認' : (currentLang === 'zh' ? '请向门店确认价格' : '가격은 매장 확인'))))}</span>
             </div>
             <div class="dining-meta-item">
               <span class="meta-label">⏰ ${dict['lbl_hours'] || '営業時間'}</span>
@@ -3346,10 +3346,10 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
               <span class="meta-label">🗣 ${dict['lbl_language'] || '外国語対応'}</span>
               <span>${cleanHangul(localizedLanguage, currentLang)}</span>
             </div>
-            <div class="dining-meta-item">
+            ${item.phone ? `<div class="dining-meta-item">
               <span class="meta-label">📞 ${dict['lbl_phone'] || '連絡先'}</span>
               <span>${item.phone}</span>
-            </div>
+            </div>` : ''}
             <div class="dining-meta-item">
               <span class="meta-label">🎫 ${dict['lbl_booking'] || '予約方式'}</span>
               <span>${cleanHangul(localizedBooking, currentLang)}</span>
@@ -3361,6 +3361,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
         <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer" class="map-link-btn">
           📍 ${dict['btn_google_map'] || 'Googleマップで見る'}
         </a>
+        ${item.officialUrl ? `<a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn">${currentLang === 'en' ? 'Official info' : (currentLang === 'ja' ? '公式案内' : (currentLang === 'zh' ? '官方信息' : '공식 안내'))} ↗</a>` : ''}
       </div>
     `;
     grid.appendChild(card);
@@ -4421,6 +4422,7 @@ window.addEventListener('DOMContentLoaded', () => {
 function handleLocalChat(query) {
   const rawQ = (query || '').trim();
   const q = rawQ.toLowerCase();
+  const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
 
   // ----------------------------------------------------
@@ -4433,12 +4435,12 @@ function handleLocalChat(query) {
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
 
-  if (typeof window.buildBarcelonaLocalChatResponse === 'function') {
+  if (!hasAndalusiaCityContext && typeof window.buildBarcelonaLocalChatResponse === 'function') {
     const localGuideResponse = window.buildBarcelonaLocalChatResponse(rawQ, lang);
     if (localGuideResponse) return localGuideResponse;
   }
 
-  if (typeof window.buildBarcelonaTransitChatResponse === 'function') {
+  if (!hasAndalusiaCityContext && typeof window.buildBarcelonaTransitChatResponse === 'function') {
     const transitResponse = window.buildBarcelonaTransitChatResponse(rawQ, lang);
     if (transitResponse) return transitResponse;
   }
@@ -4464,7 +4466,7 @@ function handleLocalChat(query) {
   ].some(w => q.includes(w) || cleanQ.includes(w));
   const hasBarcelonaDiningIntent = ['restaurant', 'restaurants', 'dining', 'food', 'eat', 'menu', 'menus', 'booking', 'booked', 'reservation', 'confirmed', 'shopping', 'market', 'supermarket', 'grocery', 'restaurant', '맛집', '음식', '식당', '미식', '메뉴', '예약', '확정', '쇼핑', '마트', '시장', '買い物', 'ショッピング', 'レストラン', '予約', 'メニュー', '美食', '餐厅', '预订', '预约', '菜单', '购物', '超市'].some(w => q.includes(w) || cleanQ.includes(w));
   const asksBookingStatus = ['예약', '확정', 'booked', 'booking', 'reservation', 'confirmed', '予約', '確定', '预订', '预约', '确认'].some(w => q.includes(w) || cleanQ.includes(w));
-  if (((hasBarcelonaContext && (hasBarcelonaDiningIntent || asksBookingStatus)) || hasBarcelonaGuideTerm) && typeof window.buildBarcelonaDiningChatResponse === 'function') {
+  if (!hasAndalusiaCityContext && (((hasBarcelonaContext && (hasBarcelonaDiningIntent || asksBookingStatus)) || hasBarcelonaGuideTerm) && typeof window.buildBarcelonaDiningChatResponse === 'function')) {
     return window.buildBarcelonaDiningChatResponse(lang);
   }
 
@@ -4494,7 +4496,7 @@ function handleLocalChat(query) {
       '🚌 네르하 당일치기': { en: '🚌 Nerja Day Trip', ja: '🚌 ネルハ日帰り', zh: '🚌 内尔哈一日游' },
       '💖 구글 지도 31선': { en: '💖 Google Maps 31', ja: '💖 Googleマップ31選', zh: '💖 谷歌地图31选' },
       '🍽️ 빠에야·피자 외 미식': { en: '🍽️ Beyond Paella & Pizza', ja: '🍽️ パエリア以外の名物', zh: '🍽️ 避开海鲜饭与披萨美食' },
-      '🍽️ 대표 미식 12선': { en: '🍽️ 12 Signature Dishes', ja: '🍽️ 代表名物料理12選', zh: '🍽️ 12大特色招牌菜' },
+      '🍽️ 8개 도시 음식 후보': { en: '🍽️ Regional Food Ideas (8 Cities)', ja: '🍽️ 8都市の郷土料理候補', zh: '🍽️ 8城地方美食建议' },
       '🗣️ 24선 필수 회화': { en: '🗣️ 24 Survival Phrases', ja: '🗣️ 24選必須サバイバル会話', zh: '🗣️ 24句生存必备口语' },
       '🗣️ 식당 필수 회화': { en: '🗣️ Dining Phrases', ja: '🗣️ レストラン必須会話', zh: '🗣️ 餐厅点餐口语' },
       '🚄 이탈리아 기차 팁': { en: '🚄 Italy Train Tips', ja: '🚄 イタリア列車予約', zh: '🚄 意铁高铁技巧' },
@@ -4546,8 +4548,8 @@ function handleLocalChat(query) {
     else html += `🍽️ <strong>현지 추천 대표 맛집 엄선 리스트:</strong></div>`;
 
     selected.forEach(d => {
-      const price = (typeof formatCardPrice === 'function' && d.baseKrw) ? formatCardPrice(d.baseKrw) : (d.baseKrw ? '₩' + Number(d.baseKrw).toLocaleString() : 'From €25');
-      const tipLabel = lang === 'ja' ? 'シニア安心ポイント' : (lang === 'en' ? 'Senior Comfort Tip' : (lang === 'zh' ? '长辈无障碍贴士' : '어르신 안심 팁'));
+      const price = d.baseKrw === 0 ? (lang === 'en' ? 'Free' : (lang === 'ja' ? '無料' : (lang === 'zh' ? '免费' : '무료'))) : (d.baseKrw != null ? (typeof formatCardPrice === 'function' ? formatCardPrice(d.baseKrw) : '₩' + Number(d.baseKrw).toLocaleString()) : (lang === 'en' ? 'Check current prices' : (lang === 'ja' ? '価格は店舗に確認' : (lang === 'zh' ? '请向门店确认价格' : '가격은 매장 확인'))));
+      const tipLabel = lang === 'ja' ? '訪問前の確認事項' : (lang === 'en' ? 'Visit note' : (lang === 'zh' ? '到访提示' : '방문 전 확인'));
       const mapLabel = lang === 'ja' ? 'Googleマップで見る' : (lang === 'en' ? 'View on Google Maps' : (lang === 'zh' ? '谷歌地图导航' : '구글 지도 길찾기'));
 
       const dInfo = (typeof DINING_I18N_DATA !== 'undefined' && DINING_I18N_DATA[d.name]) || {};
@@ -4568,6 +4570,7 @@ function handleLocalChat(query) {
             <div class="chat-card-footer">
               <span class="chat-card-price">${price}</span>
               ${d.mapUrl ? `<a href="${d.mapUrl}" target="_blank" rel="noopener noreferrer" class="chat-card-btn">${mapLabel} ➔</a>` : ''}
+              ${d.officialUrl ? `<a href="${d.officialUrl}" target="_blank" rel="noopener noreferrer" class="chat-card-btn">${lang === 'en' ? 'Official info' : (lang === 'ja' ? '公式案内' : (lang === 'zh' ? '官方信息' : '공식 안내'))} ↗</a>` : ''}
             </div>
           </div>
         </div>
@@ -4652,7 +4655,7 @@ function handleLocalChat(query) {
   if (isGreeting && q.length < 15) {
     const chips = [
       { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 플래너 & 숙소' },
-      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 대표 미식 12선' },
+      { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 8개 도시 음식 후보' },
       { query: '식당 필수 생존 회화 알려줘', label: '🗣️ 24선 필수 회화' }
     ];
     if (lang === 'ja') return 'こんにちは！✈️ <strong>スペイン・イタリア・ポルトガル・ドバイ家族旅行専属AIコンシェルジュ</strong>です。30日マスタープランナー、名物グルメ、交通公式、大聖堂の服装など何でもご案内します！' + renderFollowupChips(chips);
@@ -4668,10 +4671,10 @@ function handleLocalChat(query) {
       { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
       { query: '이탈리아 기차 예매 팁', label: '🚄 이탈리아 기차 팁' }
     ];
-    if (lang === 'ja') return '私はこのガイドブックに内蔵された<strong>ローカルAI旅行コンシェルジュ</strong>です。外部サーバー通信なしで、30日マスタープランナー、9大確定ホテル、6大黄金交通公式、7都市12大名物料理、24選必須サバイバル会話、大聖堂服装規定など、厳選された現地情報を即座にご案内します！' + renderFollowupChips(chips);
-    if (lang === 'en') return 'I am your private <strong>Local Travel AI Companion</strong> built into this guidebook. Operating 100% offline without external API latency, I provide instant guidance on the 30-Day Master Planner (9 confirmed hotels & 6 transit formulas), 12 signature dishes, 24 survival phrases, and senior safety!' + renderFollowupChips(chips);
-    if (lang === 'zh') return '我是内置于本旅行指南的<strong>专属本地AI旅行助手</strong>。无需连接外部服务器，完全基于离线精选知识库为您提供30天大师规划师、9大确定酒店、6大黄金交通公式、12大特色招牌菜、24句生存日常口语以及大教堂着装避坑贴士！' + renderFollowupChips(chips);
-    return '저는 본 가이드북에 내장된 <strong>가족 여행 전담 로컬 AI 가이드</strong>입니다. 외부 API 통신 없이 브라우저 내 엄선된 지식(30일 마스터 플래너, 9대 확정 숙소, 6대 교통 공식, 7대 도시 12대 대체불가 미식, 24선 필수 서바이벌 회화, 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)을 바탕으로 즉각 답변해 드립니다!' + renderFollowupChips(chips);
+    if (lang === 'ja') return '私はこのガイドブックに内蔵された<strong>ローカルAI旅行コンシェルジュ</strong>です。外部サーバー通信なしで、30日マスタープランナー、9大確定ホテル、6大黄金交通公式、8都市の郷土料理候補、24選必須サバイバル会話、大聖堂服装規定など、厳選された現地情報を即座にご案内します！' + renderFollowupChips(chips);
+    if (lang === 'en') return 'I am your private <strong>Local Travel AI Companion</strong> built into this guidebook. Operating 100% offline without external API latency, I provide instant guidance on the 30-Day Master Planner (9 confirmed hotels & 6 transit formulas), regional food ideas for 8 cities, 24 survival phrases, and senior safety!' + renderFollowupChips(chips);
+    if (lang === 'zh') return '我是内置于本旅行指南的<strong>专属本地AI旅行助手</strong>。无需连接外部服务器，完全基于离线精选知识库为您提供30天大师规划师、9大确定酒店、6大黄金交通公式、8城地方美食建议、24句生存日常口语以及大教堂着装避坑贴士！' + renderFollowupChips(chips);
+    return '저는 본 가이드북에 내장된 <strong>가족 여행 전담 로컬 AI 가이드</strong>입니다. 외부 API 통신 없이 브라우저 내 엄선된 지식(30일 마스터 플래너, 9대 확정 숙소, 6대 교통 공식, 8개 도시 지역 음식 후보, 24선 필수 서바이벌 회화, 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)을 바탕으로 즉각 답변해 드립니다!' + renderFollowupChips(chips);
   }
 
 
@@ -4741,6 +4744,7 @@ function handleLocalChat(query) {
           tip: (dInfo.seniorTip && (dInfo.seniorTip[lang] || dInfo.seniorTip.ko)) || item.seniorTip || '',
           dish: (dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '',
           photo: item.photo,
+          officialUrl: item.officialUrl || null,
           mapUrl: item.mapUrl || (item.name ? `https://maps.google.com/?q=${encodeURIComponent(item.name + ' ' + (item.city || ''))}` : null)
         };
       }
@@ -4810,11 +4814,30 @@ function handleLocalChat(query) {
 
   // Execute Direct Entity Search first
   const matchedEntity = earlyMatchedEntity;
+  const tabernaLuqueAliases = ['taberna luque', '타베르나 루께', '타베르나 루케', 'タベルナ・ルケ', '科尔多瓦 Taberna Luque'];
+  if (tabernaLuqueAliases.some(alias => q.includes(alias.toLowerCase()) || cleanQ.includes(alias.toLowerCase()))) {
+    const retiredNotice = {
+      ko: `⚠️ <strong>Taberna Luque 안내:</strong> 코르도바 현지 보도에 따르면 이곳은 2019년 말 식당 영업을 마쳤습니다. 후속 매장의 현재 상태는 확인되지 않아 현재 식당 추천이나 지도 핀으로 안내하지 않습니다. <a href="https://cadenaser.com/emisora/2019/11/26/radio_cordoba/1574772906_911811.html" target="_blank" rel="noopener noreferrer">Cadena SER 보도 ↗</a> · <a href="https://www.abc.es/gurme/cordoba/sevi-luque-gastrotienda-sustituye-a-la-desaparecida-taberna-luque-202009090136_noticia.html" target="_blank" rel="noopener noreferrer">ABC 보도 ↗</a><br>대안 후보: Bodegas Mezquita의 공식 메뉴에서 현행 메뉴를 확인하세요.`,
+      en: `⚠️ <strong>Taberna Luque:</strong> Local Córdoba reporting says the restaurant closed in late 2019. The successor shop’s current status is unverified, so this guide does not present it as a current restaurant or provide a map pin. <a href="https://cadenaser.com/emisora/2019/11/26/radio_cordoba/1574772906_911811.html" target="_blank" rel="noopener noreferrer">Cadena SER report ↗</a> · <a href="https://www.abc.es/gurme/cordoba/sevi-luque-gastrotienda-sustituye-a-la-desaparecida-taberna-luque-202009090136_noticia.html" target="_blank" rel="noopener noreferrer">ABC report ↗</a><br>Alternative idea: check Bodegas Mezquita’s official menu for current details.`,
+      ja: `⚠️ <strong>Taberna Luque：</strong>コルドバの現地報道によると、レストラン営業は2019年末に終了しました。後継店の現在の営業状況は未確認のため、現行レストランや地図ピンとして案内していません。<a href="https://cadenaser.com/emisora/2019/11/26/radio_cordoba/1574772906_911811.html" target="_blank" rel="noopener noreferrer">Cadena SERの報道 ↗</a> · <a href="https://www.abc.es/gurme/cordoba/sevi-luque-gastrotienda-sustituye-a-la-desaparecida-taberna-luque-202009090136_noticia.html" target="_blank" rel="noopener noreferrer">ABCの報道 ↗</a><br>代わりの候補として、Bodegas Mezquitaの公式メニューで最新情報をご確認ください。`,
+      zh: `⚠️ <strong>Taberna Luque：</strong>科尔多瓦当地报道显示，该餐厅于2019年末停止营业。后续店铺目前是否营业尚未核实，因此本指南不将其列为当前餐厅，也不提供旧地址地图。<a href="https://cadenaser.com/emisora/2019/11/26/radio_cordoba/1574772906_911811.html" target="_blank" rel="noopener noreferrer">Cadena SER报道 ↗</a> · <a href="https://www.abc.es/gurme/cordoba/sevi-luque-gastrotienda-sustituye-a-la-desaparecida-taberna-luque-202009090136_noticia.html" target="_blank" rel="noopener noreferrer">ABC报道 ↗</a><br>替代建议：请查看Bodegas Mezquita官网菜单以确认当前信息。`
+    };
+    const retiredFollowups = {
+      ko: { query: '코르도바 맛집 추천', label: '🍽️ 코르도바 맛집 후보' },
+      en: { query: 'Córdoba restaurant ideas', label: '🍽️ Córdoba dining ideas' },
+      ja: { query: 'コルドバのレストラン候補', label: '🍽️ コルドバの食事候補' },
+      zh: { query: '科尔多瓦餐厅建议', label: '🍽️ 科尔多瓦餐厅建议' }
+    };
+    return retiredNotice[lang] + renderFollowupChips([retiredFollowups[lang]]);
+  }
   if (matchedEntity) {
     const e = matchedEntity;
     const tipPrefix = lang === 'ja' ? '💡 シニア配慮＆訪問のコツ:' : (lang === 'en' ? '💡 Senior Comfort & Visit Tip:' : (lang === 'zh' ? '💡 长辈贴士与游玩建议:' : '💡 어르신 배려 & 방문 꿀팁:'));
     const mapLabel = lang === 'ja' ? '💖 Googleマップで見る / 保存 ↗' : (lang === 'en' ? '💖 Open Google Maps / Save Heart ↗' : (lang === 'zh' ? '💖 打开谷歌地图 / 加收藏 ↗' : '💖 구글 지도 열기 / 하트 저장 ↗'));
     const listLabel = lang === 'ja' ? '📋 全体リストを開く ➔' : (lang === 'en' ? '📋 View Full Guidebook List ➔' : (lang === 'zh' ? '📋 查看完整名录 ➔' : '📋 가이드북 전체 목록 보기 ➔'));
+    const isAndalusiaDiningPick = e.type === 'dining' && ['Bodegas Mezquita', 'Los Diamantes', 'La Auténtica Carmela', 'El Pimpi', 'Los Mellizos'].includes(e.item?.name);
+    const officialSiteLabel = isAndalusiaDiningPick ? (lang === 'ja' ? '🌐 公式サイト ↗' : (lang === 'en' ? '🌐 Official site ↗' : (lang === 'zh' ? '🌐 官方网站 ↗' : '🌐 공식 사이트 ↗'))) : '🌐 공식 사이트 ↗';
+    const menuIdeaLabel = lang === 'ja' ? '🍽️ 料理候補:' : (lang === 'en' ? '🍽️ Menu idea:' : (lang === 'zh' ? '🍽️ 菜品参考：' : '🍽️ 메뉴 후보:'));
 
     let jumpChapter = 'chapter-practical';
     let jumpTargetId = 'curated-family-places';
@@ -4829,12 +4852,13 @@ function handleLocalChat(query) {
           <span style="background:#fff2eb;color:#d8754d;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;">${escapeHtml(e.category)}</span>
         </div>
         <h4 style="margin:0 0 8px;font-size:16px;color:#1c2e2c;font-weight:800;letter-spacing:-0.02em;">${escapeHtml(e.name)}</h4>
+        ${isAndalusiaDiningPick && e.dish ? `<p style="margin:0 0 8px;font-size:12.5px;color:#1a5249;line-height:1.55;"><strong>${menuIdeaLabel}</strong> ${escapeHtml(e.dish)}</p>` : ''}
         ${e.photo ? `<div style="width:100%;height:130px;border-radius:12px;background:url('${e.photo}') center/cover no-repeat;margin-bottom:10px;"></div>` : ''}
         <p style="margin:0 0 10px;font-size:13px;color:#4a5c58;line-height:1.65;">${escapeHtml(e.desc)}</p>
         ${e.tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:12px;border-left:3px solid #d8754d;line-height:1.55;"><strong>${tipPrefix}</strong> ${escapeHtml(e.tip)}</div>` : ''}
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
           ${e.mapUrl ? `<a href="${e.mapUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${mapLabel}</button></a>` : ''}
-          ${e.officialUrl ? `<a href="${e.officialUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">🌐 공식 사이트 ↗</button></a>` : ''}
+          ${e.officialUrl ? `<a href="${e.officialUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${officialSiteLabel}</button></a>` : ''}
           <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('${jumpChapter}'); if(typeof goToBookPage==='function') goToBookPage('${jumpChapter}', 0); setTimeout(() => { const el = document.getElementById('${jumpTargetId}'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${listLabel}</button>
         </div>
       </div>
@@ -5395,132 +5419,28 @@ function handleLocalChat(query) {
 
 
   // ====================================================
-  // 2. SPAIN & ITALY MASTER GOURMET GUIDE (빠에야 & 피자 외 대체 불가 미식 12선 & 15대 검증식당)
+  // 2. SPAIN & ITALY REGIONAL FOOD GUIDE (8 cities; suggestions, not bookings)
   // ====================================================
   const isMasterGourmet = [
-    '빠에야 피자 말고', '피자 말고', '빠에야 말고', '빠에야 외', '피자 외', '빠에야 피자 외', '미식 마스터', '마스터 미식', '대체 불가 미식', '시그니처 요리', '7대 도시 미식', '12대 미식', '검증 식당', '가지 튀김', '소꼬리찜', '피데우아', '비스테카', '라구', '쿠오포', '리볼리타', '살팀보카', '해산물 튀김',
-    'other than paella', 'other than pizza', 'besides paella', 'besides pizza', 'without paella', 'without pizza', 'master gourmet', 'signature dishes', '12 signature dishes', 'verified restaurants', 'fideua', 'carrillada', 'berenjenas con miel', 'bistecca alla fiorentina', 'ragu napoletano', 'saltimbocca',
-    'パエリア以外', 'ピザ以外', 'マスターグルメ', '7大都市グルメ', '12大名物料理', '厳選レストラン', 'フィデウア', '牛テール煮込み', 'ビステッカ', 'ナポリ風ラグー', '郷土料理',
-    '除海鲜饭', '除了海鲜饭', '除披萨', '除了披萨', '不要披萨', '不要海鲜饭', '不吃海鲜饭', '不吃披萨', '除海鲜饭外', '除披萨外', '除西班牙海鲜饭外', '大师美食', '12大招牌美食', '7大城市美食', '精选餐厅', '佛罗伦萨牛排', '那不勒斯肉酱', '炖牛尾', '特色佳肴'
+    '빠에야 피자 말고', '피자 말고', '빠에야 말고', '빠에야 외', '피자 외', '빠에야 피자 외', '미식 마스터', '마스터 미식', '대체 불가 미식', '시그니처 요리', '7대 도시 미식', '8개 도시 음식', '12대 미식', '검증 식당', '가지 튀김', '소꼬리찜', '피데우아', '비스테카', '라구', '쿠오포', '리볼리타', '살팀보카', '해산물 튀김',
+    'other than paella', 'other than pizza', 'besides paella', 'besides pizza', 'without paella', 'without pizza', 'master gourmet', 'signature dishes', '12 signature dishes', 'verified restaurants', 'regional food ideas', 'fideua', 'carrillada', 'berenjenas con miel', 'bistecca alla fiorentina', 'ragu napoletano', 'saltimbocca',
+    'パエリア以外', 'ピザ以外', 'マスターグルメ', '7大都市グルメ', '8都市', '12大名物料理', '厳選レストラン', 'フィデウア', '牛テール煮込み', 'ビステッカ', 'ナポリ風ラグー', '郷土料理',
+    '除海鲜饭', '除了海鲜饭', '除披萨', '除了披萨', '不要披萨', '不要海鲜饭', '不吃海鲜饭', '不吃披萨', '除海鲜饭外', '除披萨外', '除西班牙海鲜饭外', '大师美食', '12大招牌美食', '7大城市美食', '8城美食', '精选餐厅', '佛罗伦萨牛排', '那不勒斯肉酱', '炖牛尾', '特色佳肴'
   ].some(w => q.includes(w) || cleanQ.includes(w));
-
   if (isMasterGourmet) {
     const chips = [
       { query: '식당과 여행 필수 서바이벌 회화', label: '🗣️ 24선 필수 회화' },
       { query: '30일 마스터 플래너 요약해줘', label: '📅 30일 마스터 플래너' },
       { query: '이탈리아어 식당 필수 회화', label: '🇮🇹 이탈리아어 회화' }
     ];
-
-    let res = '';
-    if (lang === 'ja') {
-      res = `
-        🍽️ <strong>スペイン＆イタリア 30日マスターグルメガイド（パエリア＆ピザ以外の絶品12選）</strong>:<br><br>
-        「毎日パエリアとピザばかりでは飽きてしまう…」というご両親のために、<strong>胃に優しく滋味深い7大都市の代替不可名物料理</strong>を厳選しました:<br><br>
-
-        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#92400e;">🇪🇸 スペイン代表の必食名物（パエリア以外）</strong>:<br>
-          • <strong>バルセロナ:</strong> フィデウア（Fideuà - 魚介の旨味を吸わせた極細パスタのパエリア風）<br>
-          • <strong>セビリア:</strong> イベリコ豚の赤ワイン煮込み（Carrillada Ibérica - 歯が弱いご両親でもとろける柔らかさ）<br>
-          • <strong>グラナダ:</strong> 茄子のフリット黒蜜添え（Berenjenas con Miel - 外サク中フワの甘じょっぱい逸品）<br>
-          • <strong>マラガ:</strong> マラガ風ミックスシーフードフリット（Fritura Malagueña）＆白身魚のフライ（Cazón en Adobo）
-        </div>
-
-        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#991b1b;">🇮🇹 イタリア代表の必食名物（ピザ以外）</strong>:<br>
-          • <strong>ナポリ:</strong> 10時間煮込んだナポリ風牛肉ラグー（Ragù Napoletano）＆黒胡椒香るムール貝のワイン蒸し（Impepatata di Cozze）<br>
-          • <strong>フィレンツェ:</strong> ビステッカ・アッラ・フィオレンティーナ（Tボーン炭火ステーキ）＆トスカーナ風豆と野菜の食べるスープ「リボッリータ（Ribollita）」<br>
-          • <strong>ローマ:</strong> ローマ伝統の牛テールトマト煮込み（Coda alla Vaccinara）＆仔牛肉とセージの生ハム巻き「サルティンボッカ（Saltimbocca）」
-        </div>
-
-        <div style="margin-top:10px;">
-          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
-            <span>🍽️</span> <span>[要約 5] 7大都市の厳選レストラン15選＆詳細を見る ➔</span>
-          </button>
-        </div>
-      `;
-    } else if (lang === 'en') {
-      res = `
-        🍽️ <strong>Spain & Italy 30-Day Master Gourmet Guide (12 Signature Dishes Beyond Paella & Pizza)</strong>:<br><br>
-        Tired of daily paella and pizza? Here are <strong>12 senior-friendly, deeply comforting regional culinary masterworks</strong> across 7 historic cities:<br><br>
-
-        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#92400e;">🇪🇸 Spain Signature Dishes (Beyond Paella)</strong>:<br>
-          • <strong>Barcelona:</strong> Fideuà (toasty short angel-hair noodles simmered in rich saffron shellfish broth with allioli)<br>
-          • <strong>Seville:</strong> Carrillada Ibérica (melt-in-your-mouth braised pork/beef cheeks slow-cooked in Pedro Ximénez red wine)<br>
-          • <strong>Granada:</strong> Berenjenas con Miel (crispy tempura-style eggplant batons drizzled with sugarcane molasses)<br>
-          • <strong>Malaga:</strong> Fritura Malagueña (ultralight olive-oil fried baby squids and fish) & Cazón en Adobo (marinated dogfish)
-        </div>
-
-        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#991b1b;">🇮🇹 Italy Signature Dishes (Beyond Pizza)</strong>:<br>
-          • <strong>Naples:</strong> Ragù Napoletano (10-hour slow-simmered rich beef & tomato ragù) & Impepatata di Cozze (steamed black pepper mussels)<br>
-          • <strong>Florence:</strong> Bistecca alla Fiorentina (dry-aged Chianina T-bone steak over wood coals) & Ribollita (warm hearty Tuscan bean & cavolo nero stew)<br>
-          • <strong>Rome:</strong> Coda alla Vaccinara (braised oxtail in savory tomato, celery and pine nut sauce) & Saltimbocca alla Romana (veal cutlet with fresh sage and prosciutto)
-        </div>
-
-        <div style="margin-top:10px;">
-          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
-            <span>🍽️</span> <span>[Summary 5] View 15 Verified Restaurants & Food Photos ➔</span>
-          </button>
-        </div>
-      `;
-    } else if (lang === 'zh') {
-      res = `
-        🍽️ <strong>西班牙与意大利 30天美食大师指南（海鲜饭与披萨外的12大必尝特色）</strong>:<br><br>
-        每天吃海鲜饭和披萨难免单调，为您精选<strong>深受父母喜爱、口感软烂鲜美且温和养胃的7大名城特色料理</strong>：<br><br>
-
-        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#92400e;">🇪🇸 西班牙不可替代特色美馔（海鲜饭之外）</strong>：<br>
-          • <strong>巴塞罗那：</strong> 细面海鲜煲（Fideuà - 浓郁海鲜高汤煨煮短细面，配蒜黄酱）<br>
-          • <strong>塞维利亚：</strong> 红酒炖伊比利亚猪面颊肉（Carrillada Ibérica - 入口即化，老少皆宜）<br>
-          • <strong>格拉纳达：</strong> 甘蔗蜜汁炸茄条（Berenjenas con Miel - 外酥里嫩，咸甜交织绝妙口感）<br>
-          • <strong>马拉加：</strong> 马拉加什锦炸海鲜（Fritura Malagueña）与香料腌炸白身鱼（Cazón en Adobo）
-        </div>
-
-        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#991b1b;">🇮🇹 意大利不可替代特色美馔（披萨之外）</strong>：<br>
-          • <strong>那不勒斯：</strong> 10小时慢火精炖肉酱（Ragù Napoletano）与黑椒白葡萄酒蒸青口贝（Impepatata di Cozze）<br>
-          • <strong>佛罗伦萨：</strong> 托斯卡纳炭烤T骨牛排（Bistecca alla Fiorentina）与暖胃经典白豆蔬菜浓汤（Ribollita）<br>
-          • <strong>罗马：</strong> 屠夫风味番茄炖牛尾（Coda alla Vaccinara）与鼠尾草帕尔玛火腿煎小牛肉（Saltimbocca）
-        </div>
-
-        <div style="margin-top:10px;">
-          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
-            <span>🍽️</span> <span>[总结 5] 查看7大城市15家精选认证餐厅详情 ➔</span>
-          </button>
-        </div>
-      `;
-    } else {
-      res = `
-        🍽️ <strong>스페인 &amp; 이탈리아 30일 미식 마스터 가이드 (빠에야 &amp; 피자 외 12대 시그니처)</strong>:<br><br>
-        매일 빠에야와 피자만 드실 수는 없죠! 부모님의 입맛(한식과 결이 비슷한 따뜻한 국물, 부드러운 고기)을 완벽하게 저격하는 <strong>도시별 대체 불가 시그니처 요리 12선</strong>입니다:<br><br>
-
-        <div style="background:#fffcf7;border:1.5px solid #b45309;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#92400e;">🇪🇸 스페인 4대 도시 대체 불가 미식 (빠에야 외)</strong>:<br>
-          • <strong>바르셀로나:</strong> 피데우아 (Fideuà - 해산물 육수를 듬뿍 머금은 얇은 면 파스타에 알리올리 소스)<br>
-          • <strong>세비야:</strong> 이베리코 볼살/소꼬리찜 (Carrillada - 레드와인에 푹 조려 이가 안 좋으신 부모님도 입에서 살살 녹음)<br>
-          • <strong>그라나다:</strong> 사탕수수 꿀을 곁들인 가지 튀김 (Berenjenas con Miel - 겉바속촉 단짠의 극치)<br>
-          • <strong>말라가:</strong> 모둠 해산물 튀김 (Fritura Malagueña) &amp; 마리네이드 생선튀김 (Cazón en Adobo)
-        </div>
-
-        <div style="background:#fef2f2;border:1.5px solid #b91c1c;padding:12px 14px;border-radius:10px;margin-bottom:8px;">
-          <strong style="color:#991b1b;">🇮🇹 이탈리아 3대 도시 대체 불가 미식 (피자 외)</strong>:<br>
-          • <strong>나폴리:</strong> 10시간 정성 나폴리식 라구 (Ragù Napoletano) &amp; 칼칼한 통후추 홍합찜 (Impepatata di Cozze)<br>
-          • <strong>피렌체:</strong> 티본스테이크 (Bistecca alla Fiorentina) &amp; 토스카나 채소 콩스프 리볼리타 (Ribollita - 속이 확 풀리는 해장감)<br>
-          • <strong>로마:</strong> 로마 전통 소꼬리 토마토 스튜 (Coda alla Vaccinara) &amp; 송아지고기 살팀보카 (Saltimbocca alla Romana)
-        </div>
-
-        <div style="margin-top:10px;">
-          <button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}" style="background:#b45309;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">
-            <span>🍽️</span> <span>[요약 5] 7대 도시 대체 불가 미식 상세 &amp; 검증식당 15선 보기 ➔</span>
-          </button>
-        </div>
-      `;
-    }
-    return res + renderFollowupChips(chips);
+    const responses = {
+      ja: `🥘 <strong>スペイン・イタリア8都市の郷土料理アイデア</strong><br><br><strong>スペイン:</strong> バルセロナ — Fideuà ／ セビリア — Carrillada、Espinacas con garbanzos ／ コルドバ — Salmorejo、Rabo de Toro、Flamenquín ／ グラナダ — 魚介タパス、Berenjenas con miel ／ マラガ — Espeto。<br><strong>イタリア:</strong> ナポリ — Ragù Napoletano ／ フィレンツェ — Bistecca、Ribollita ／ ローマ — Coda alla Vaccinara、Saltimbocca。<br><br>レストラン候補は予約ではありません。現行メニュー・価格・営業時間・予約・座席・アクセシビリティ・スタッフの言語対応を各店に確認してください。グラナダのタパ提供条件は店や注文により異なり、特定料理の無料提供は保証されません。Taberna Luqueは2019年末に飲食店営業を終了したとの報道があり、現在の推薦から除外しています。<br><br><button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}">🍽️ 8都市ガイドを見る ↗</button>`,
+      en: `🥘 <strong>Regional food ideas across 8 Spanish and Italian cities</strong><br><br><strong>Spain:</strong> Barcelona — Fideuà; Seville — Carrillada, spinach and chickpea stew; Córdoba — Salmorejo, rabo de toro, flamenquín; Granada — seafood tapas, berenjenas con miel; Málaga — Espeto.<br><strong>Italy:</strong> Naples — Ragù Napoletano; Florence — Bistecca, Ribollita; Rome — Coda alla Vaccinara, Saltimbocca.<br><br>Restaurant suggestions are not bookings. Verify current menus, prices, hours, reservations, seating, accessibility and staff languages with each venue. Granada tapa policies vary by bar and order; no particular free dish is promised. Taberna Luque was reported to have stopped operating as a restaurant in late 2019 and is excluded as a current pick.<br><br><button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}">🍽️ View the 8-city guide ↗</button>`,
+      zh: `🥘 <strong>西班牙与意大利8城地方菜建议</strong><br><br><strong>西班牙：</strong>巴塞罗那 — Fideuà；塞维利亚 — Carrillada、菠菜鹰嘴豆炖菜；科尔多瓦 — 萨尔莫雷霍、炖牛尾、Flamenquín；格拉纳达 — 海鲜Tapas、甘蔗蜜炸茄子；马拉加 — Espeto。<br><strong>意大利：</strong>那不勒斯 — Ragù Napoletano；佛罗伦萨 — Bistecca、Ribollita；罗马 — Coda alla Vaccinara、Saltimbocca。<br><br>餐厅建议不代表已预订。请向各店核实当前菜单、价格、营业时间、预订、座位、无障碍条件及员工语言支持。格拉纳达各酒吧的Tapas提供方式因店家与订单而异，不保证免费提供特定菜品。当地报道显示Taberna Luque于2019年末停止餐厅营业，因此不列为当前推荐。<br><br><button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}">🍽️ 查看8城指南 ↗</button>`,
+      ko: `🥘 <strong>스페인·이탈리아 8개 도시 지역 음식 아이디어</strong><br><br><strong>스페인:</strong> 바르셀로나 — 피데우아 / 세비야 — 이베리코 볼살 조림, 시금치·병아리콩 스튜 / 코르도바 — 살모레호, 소꼬리 스튜, 플라멘낀 / 그라나다 — 해산물 타파스, 사탕수수 꿀 가지 / 말라가 — 에스페토.<br><strong>이탈리아:</strong> 나폴리 — 나폴리식 라구 / 피렌체 — 티본스테이크, 리볼리타 / 로마 — 꼬다 알라 바치나라, 살팀보카.<br><br>식당은 추천 후보일 뿐 예약이 아닙니다. 현행 메뉴·가격·영업시간·예약·좌석·접근성·직원 언어는 매장에 확인하세요. 그라나다 타파 제공은 매장과 주문마다 다르며 특정 메뉴 무료 제공은 보장되지 않습니다. Taberna Luque는 2019년 말 식당 영업 종료 보도가 있어 현재 추천에서 제외했습니다.<br><br><button type="button" class="chat-quick-chip" onclick="if(window.jumpToMasterGourmet){window.jumpToMasterGourmet('summary-master-gourmet');}else{switchGuidebookChapter('chapter-practical');}">🍽️ 8개 도시 가이드 보기 ↗</button>`
+    };
+    return responses[lang] + renderFollowupChips(chips);
   }
-
-
   // ====================================================
   // 3. MASTER SURVIVAL PHRASES & DINING EXPRESSIONS (24선 서바이벌 회화 / 스페인어·이탈리아어 주문 표현)
   // ====================================================
@@ -6704,7 +6624,7 @@ function handleLocalChat(query) {
   }
 
   // Common Intent Flags
-  const isFood = ['음식', '맛집', '먹거리', '식당', '미식', '푸드', '요리', '맛있는', 'food', 'restaurant', 'dining', 'eat', 'dish', 'cuisine', 'グルメ', 'レストラン', '料理', '美味しい', '名物', '美食', '餐厅', '吃', '菜肴'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isFood = ['음식', '맛집', '먹거리', '식당', '미식', '푸드', '요리', '맛있는', '타파스', 'food', 'restaurant', 'dining', 'eat', 'dish', 'cuisine', 'tapas', 'グルメ', 'レストラン', '料理', '美味しい', '名物', 'タパス', '美食', '餐厅', '吃', '菜肴', '小吃'].some(w => q.includes(w) || cleanQ.includes(w));
   const isSpecificRestaurant = ['추천 식당', '추천 맛집', '식당 추천', '맛집 추천', '유명한 식당', '유명한 맛집', '어디서 먹', '레스토랑', 'restaurant', 'restaurants', 'dining place', 'おすすめレストラン', '名店', '推荐餐厅', '哪家好'].some(w => q.includes(w) || cleanQ.includes(w));
   const isShopping = ['쇼핑', '선물', '기념품', '특산품', '살것', '살만한', '기념', 'shopping', 'souvenir', 'gift', 'souvenirs', 'お土産', 'ショッピング', '買い物', '名産', '购物', '纪念品', '伴手礼', '特产'].some(w => q.includes(w) || cleanQ.includes(w));
   const isSights = ['관광', '명소', '볼거리', '가볼만한', '유적지', '핫플', '관광지', '투어', 'attraction', 'sights', 'sightseeing', 'must visit', 'tourist', '観光', '名所', '見どころ', 'スポット', '景点', '地标', '必去', '游览'].some(w => q.includes(w) || cleanQ.includes(w));
@@ -6807,6 +6727,36 @@ function handleLocalChat(query) {
     }
 
     if (isSpain || (!isItaly && !isPortugal && !isDubai)) {
+      if (hasCordoba || hasGranada || hasMalaga) {
+        const cityKey = hasCordoba ? 'cordoba' : (hasGranada ? 'granada' : 'malaga');
+        const responses = {
+          cordoba: {
+            ko: `🏛️ <strong>코르도바 음식·식당 후보</strong><br>• 살모레호(Salmorejo), 소꼬리 스튜(Rabo de Toro), 플라멘낀(Flamenquín)은 지역 음식 후보입니다.<br>• <strong>Bodegas Mezquita</strong> 공식 온라인 메뉴에는 Rabo de Toro와 Flamenquín이 소개됩니다. 지점과 당일 메뉴는 <a href="https://www.bodegasmezquita.com/en/our-restaurant-menu/" target="_blank" rel="noopener noreferrer">공식 메뉴 ↗</a>에서 확인하세요.<br>• <strong>Taberna Luque</strong>는 2019년 말 식당 영업 종료 보도가 있어 현재 추천에서 제외했습니다. 후속 매장 상태는 확인되지 않았습니다.`,
+            en: `🏛️ <strong>Córdoba food and restaurant ideas</strong><br>• Salmorejo, rabo de toro (oxtail stew) and flamenquín are regional dishes to look for.<br>• <strong>Bodegas Mezquita</strong>’s official online menu lists rabo de toro and flamenquín. Check the chosen location and current menu on its <a href="https://www.bodegasmezquita.com/en/our-restaurant-menu/" target="_blank" rel="noopener noreferrer">official menu ↗</a>.<br>• Local reporting says <strong>Taberna Luque</strong> stopped operating as a restaurant in late 2019; the successor shop’s current status is unverified.`,
+            ja: `🏛️ <strong>コルドバの料理・レストラン候補</strong><br>• サルモレホ、牛テール煮込み（Rabo de Toro）、フラメンキン（Flamenquín）は郷土料理の候補です。<br>• <strong>Bodegas Mezquita</strong>の公式オンラインメニューにはRabo de ToroとFlamenquínが掲載されています。店舗と最新メニューは<a href="https://www.bodegasmezquita.com/en/our-restaurant-menu/" target="_blank" rel="noopener noreferrer">公式メニュー ↗</a>でご確認ください。<br>• <strong>Taberna Luque</strong>は現地報道で2019年末に飲食店営業を終了。後継店の現在の営業状況は未確認です。`,
+            zh: `🏛️ <strong>科尔多瓦菜品与餐厅建议</strong><br>• 萨尔莫雷霍冷汤、炖牛尾（Rabo de Toro）和弗拉门金（Flamenquín）可作为地方菜参考。<br>• <strong>Bodegas Mezquita</strong>官网在线菜单列有炖牛尾和弗拉门金。请在<a href="https://www.bodegasmezquita.com/en/our-restaurant-menu/" target="_blank" rel="noopener noreferrer">官方菜单 ↗</a>确认所选门店与当前供应。<br>• 当地报道显示<strong>Taberna Luque</strong>餐厅于2019年末停止营业；后续店铺目前是否营业尚未核实。`
+          },
+          granada: {
+            ko: `🏰 <strong>그라나다 음식·식당 후보</strong><br>• <strong>Los Diamantes</strong> 공식 사이트는 해산물·생선 타파스와 라시오네스를 안내합니다. 특정 요리와 타파 제공 조건은 매장·주문별로 달라질 수 있습니다. <a href="https://losdiamantes.es/" target="_blank" rel="noopener noreferrer">공식 사이트 ↗</a><br>• <strong>La Auténtica Carmela</strong>는 안달루시아·지중해식 공유 요리를 소개합니다. 튀긴 가지와 사탕수수 꿀, 크로켓은 메뉴 후보이며 당일 제공을 확인하세요. <a href="https://restaurantescarmela.com/la-autentica/" target="_blank" rel="noopener noreferrer">공식 안내 ↗</a><br>• 일부 바에서 음료와 타파가 함께 나올 수 있지만, 모든 식당이나 특정 해산물·빠에야가 무료라고 보장되지는 않습니다.`,
+            en: `🏰 <strong>Granada food and restaurant ideas</strong><br>• <strong>Los Diamantes</strong> describes seafood and fish tapas and raciones on its <a href="https://losdiamantes.es/" target="_blank" rel="noopener noreferrer">official site ↗</a>. Specific dishes and any tapa-with-drink policy vary by venue and order.<br>• <strong>La Auténtica Carmela</strong> describes Andalusian–Mediterranean sharing dishes. Fried eggplant with cane honey and croquettes are menu ideas; confirm current availability on its <a href="https://restaurantescarmela.com/la-autentica/" target="_blank" rel="noopener noreferrer">official page ↗</a>.<br>• Some bars may include a tapa with a drink, but this is not guaranteed at every restaurant or for a specific seafood dish or paella.`,
+            ja: `🏰 <strong>グラナダの料理・レストラン候補</strong><br>• <strong>Los Diamantes</strong>の<a href="https://losdiamantes.es/" target="_blank" rel="noopener noreferrer">公式サイト ↗</a>では魚介・魚のタパスやラシオネスを紹介。具体的な料理やドリンク時のタパ提供条件は店舗・注文により異なります。<br>• <strong>La Auténtica Carmela</strong>はアンダルシア・地中海料理を紹介。ナスのサトウキビ蜜がけやコロッケは候補ですが、当日の提供は<a href="https://restaurantescarmela.com/la-autentica/" target="_blank" rel="noopener noreferrer">公式案内 ↗</a>でご確認ください。<br>• 一部のバルでは飲み物とタパが出る場合がありますが、全店や特定の魚介料理・パエリアの無料提供は保証されません。`,
+            zh: `🏰 <strong>格拉纳达菜品与餐厅建议</strong><br>• <strong>Los Diamantes</strong><a href="https://losdiamantes.es/" target="_blank" rel="noopener noreferrer">官网 ↗</a>介绍海鲜、鱼类Tapas及分量菜；具体菜品及饮品是否附送Tapas因门店和订单而异。<br>• <strong>La Auténtica Carmela</strong>介绍安达卢西亚与地中海分享菜。甘蔗蜜炸茄子和可乐饼可作菜单参考，请通过<a href="https://restaurantescarmela.com/la-autentica/" target="_blank" rel="noopener noreferrer">官方页面 ↗</a>确认当日供应。<br>• 部分酒吧可能随饮品提供Tapas，但不能保证所有餐馆都会提供，更不能保证免费海鲜菜或西班牙海鲜饭。`
+          },
+          malaga: {
+            ko: `🏖️ <strong>말라가 음식·식당 후보</strong><br>• 에스페토(Espeto)는 정어리를 갈대 꼬치에 꿰어 숯불에 굽는 지역 전통 음식입니다. 식당별 메뉴와 가격은 다르니 확인하세요.<br>• <strong>El Pimpi</strong>는 1971년 설립된 보데가 겸 식당이며 공식 메뉴에 Moscatel 와인과 이베리코 하몬이 있습니다. 안토니오 반데라스의 소유·운영이라고 단정하지 않습니다. <a href="https://www.elpimpi.com/en/menus/" target="_blank" rel="noopener noreferrer">공식 메뉴 ↗</a><br>• <strong>Los Mellizos</strong> 말라가 지점은 공식 안내에서 쌀 요리·해산물·튀긴 생선을 소개합니다. 현재 메뉴는 <a href="https://losmellizos.net/en/malaga-restaurant/" target="_blank" rel="noopener noreferrer">공식 지점 안내 ↗</a>에서 확인하세요.`,
+            en: `🏖️ <strong>Málaga food and restaurant ideas</strong><br>• Espeto is a local tradition of sardines skewered on cane and grilled over charcoal; menus and prices vary by restaurant.<br>• <strong>El Pimpi</strong> is a historic bodega and restaurant founded in 1971; its official menu lists Moscatel wine and Iberian ham. No ownership or operating claim is made about Antonio Banderas. Check the <a href="https://www.elpimpi.com/en/menus/" target="_blank" rel="noopener noreferrer">official menu ↗</a>.<br>• The official Málaga location for <strong>Los Mellizos</strong> describes rice dishes, seafood and fried fish. Check its <a href="https://losmellizos.net/en/malaga-restaurant/" target="_blank" rel="noopener noreferrer">official location page ↗</a> for current details.`,
+            ja: `🏖️ <strong>マラガの料理・レストラン候補</strong><br>• エスペトはイワシを葦串に刺して炭火で焼く郷土料理です。メニューや価格は店舗ごとに異なります。<br>• <strong>El Pimpi</strong>は1971年創業の歴史あるボデガ兼レストラン。公式メニューにはモスカテルワインとイベリコハモンがあります。アントニオ・バンデラスの所有・運営とは断定していません。<a href="https://www.elpimpi.com/en/menus/" target="_blank" rel="noopener noreferrer">公式メニュー ↗</a><br>• <strong>Los Mellizos</strong>のマラガ店は米料理、魚介、揚げ魚を公式案内に掲載。最新情報は<a href="https://losmellizos.net/en/malaga-restaurant/" target="_blank" rel="noopener noreferrer">公式店舗案内 ↗</a>でご確認ください。`,
+            zh: `🏖️ <strong>马拉加菜品与餐厅建议</strong><br>• Espeto是将沙丁鱼串在芦苇签上并用炭火烤制的地方传统菜；菜单和价格因餐馆而异。<br>• <strong>El Pimpi</strong>是创立于1971年的传统酒窖式餐厅，官网菜单列有Moscatel甜酒和伊比利亚火腿。本指南不称其由安东尼奥·班德拉斯所有或经营。查看<a href="https://www.elpimpi.com/en/menus/" target="_blank" rel="noopener noreferrer">官方菜单 ↗</a>。<br>• <strong>Los Mellizos</strong>马拉加分店官网介绍米饭料理、海鲜及炸鱼；请查看<a href="https://losmellizos.net/en/malaga-restaurant/" target="_blank" rel="noopener noreferrer">官方分店页面 ↗</a>确认当前信息。`
+          }
+        };
+        const cityChips = {
+          ko: [{ query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' }],
+          en: [{ query: 'Food recommendations beyond paella and pizza', label: '🍽️ Beyond paella & pizza' }],
+          ja: [{ query: 'パエリアやピザ以外のおすすめ料理', label: '🍽️ パエリア・ピザ以外' }],
+          zh: [{ query: '除了海鲜饭和披萨，还有哪些特色菜？', label: '🍽️ 海鲜饭和披萨以外' }]
+        };
+        return responses[cityKey][lang] + renderFollowupChips(cityChips[lang]);
+      }
       let res = '';
       if (lang === 'ja') {
         res = `
@@ -7668,7 +7618,7 @@ function handleLocalChat(query) {
       • <strong>30-Day Master Planner:</strong> 9 confirmed hotels & 6 golden transit formulas<br>
       • <strong>Nerja & Frigiliana Day Trip:</strong> ALSA coach & recommended waiting taxi routes<br>
       • <strong>Google Maps 31 Shortlist:</strong> Curated heart-saved dining, shops & sights<br>
-      • <strong>Gourmet & Phrases:</strong> 12 signature dishes beyond paella/pizza & 24 survival phrases<br>
+      • <strong>Gourmet & Phrases:</strong> regional food ideas for 8 cities & 24 survival phrases<br>
       • <strong>Transit & Safety:</strong> Italy high-speed trains, cathedral dress codes, Dubai stopovers, and pickpocket safety<br><br>
       💡 <strong>Click a quick suggestion below or ask any question:</strong>
     ` + renderFollowupChips(fallbackChips);
@@ -7688,7 +7638,7 @@ function handleLocalChat(query) {
       • <strong>30일 마스터 플래너:</strong> 9대 확정 숙소 &amp; 6대 황금 교통 공식<br>
       • <strong>네르하 &amp; 프리힐리아나 당일치기:</strong> ALSA 직행 버스 &amp; 안심 택시 환승 코스<br>
       • <strong>구글 지도 31선:</strong> 바르셀로나 · 말라가 · 세비야 하트 저장 맛집 &amp; 명소<br>
-      • <strong>미식 &amp; 필수 회화:</strong> 빠에야·피자 외 12대 대체불가 미식 &amp; 24선 서바이벌 회화<br>
+      • <strong>미식 &amp; 필수 회화:</strong> 빠에야·피자 외 8개 도시 지역 음식 후보 &amp; 24선 서바이벌 회화<br>
       • <strong>교통 &amp; 안전:</strong> 이탈리아 고속철도, 성당 복장 규정, 두바이 5대 랜드마크, 소매치기 예방법<br><br>
       💡 <strong>아래 추천 질문을 누르시거나 궁금한 점을 자유롭게 입력해 보세요:</strong>
     ` + renderFollowupChips(fallbackChips);
@@ -9706,8 +9656,8 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
   const survivalDesc = (meta.survivalDesc && meta.survivalDesc[l]) || meta.survivalDesc['ko'];
 
   const filterLabels = {
-    all: { ko: "🌍 전체 7대 도시", en: "🌍 All 7 Cities", ja: "🌍 全7都市", zh: "🌍 全部7大城市" },
-    spain: { ko: "🇪🇸 스페인 편 (4개 도시)", en: "🇪🇸 Spain Edition (4 Cities)", ja: "🇪🇸 スペイン編 (4都市)", zh: "🇪🇸 西班牙篇 (4城)" },
+    all: { ko: "🌍 전체 8개 도시", en: "🌍 All 8 Cities", ja: "🌍 全8都市", zh: "🌍 全部8城" },
+    spain: { ko: "🇪🇸 스페인 편 (5개 도시)", en: "🇪🇸 Spain Edition (5 Cities)", ja: "🇪🇸 スペイン編 (5都市)", zh: "🇪🇸 西班牙篇 (5城)" },
     italy: { ko: "🇮🇹 이탈리아 편 (3개 도시)", en: "🇮🇹 Italy Edition (3 Cities)", ja: "🇮🇹 イタリア編 (3都市)", zh: "🇮🇹 意大利篇 (3城)" }
   };
 
@@ -9728,7 +9678,7 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
   };
 
   const btnListenText = { ko: "🔊 원어 발음 듣기", en: "🔊 Listen Audio", ja: "🔊 発音を聞く", zh: "🔊 播放原声" };
-  const verifiedPicksLabel = { ko: "⭐ 픽업 맛집 (추천 식당)", en: "⭐ Verified Pick Restaurants", ja: "⭐ 厳選ピックアップ名店", zh: "⭐ 严选精选餐厅" };
+  const verifiedPicksLabel = { ko: "⭐ 식당 후보 (현행 정보 확인)", en: "⭐ Restaurant Ideas (Verify Current Details)", ja: "⭐ レストラン候補（最新情報を確認）", zh: "⭐ 餐厅建议（请核实最新信息）" };
   const mapBtnText = { ko: "🗺️ Google 지도", en: "🗺️ Google Maps", ja: "🗺️ Google マップ", zh: "🗺️ 谷歌地图" };
 
   // Survival phrases HTML
@@ -9778,12 +9728,10 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
         const dDesc = (dish.desc && dish.desc[l]) || dish.desc['ko'];
         const dHighlight = (dish.parentsHighlight && dish.parentsHighlight[l]) || dish.parentsHighlight['ko'];
 
+        const dishPhoto = dish.photo ? `<div class="mg-dish-photo-wrap"><img src="${dish.photo}" alt="${dName}" class="mg-dish-img" loading="lazy" onerror="if(this.src!=='${dish.fallbackPhoto}') this.src='${dish.fallbackPhoto}';" /><span class="mg-dish-badge">${dLabel}</span></div>` : '';
         return `
           <div class="mg-dish-card">
-            <div class="mg-dish-photo-wrap">
-              <img src="${dish.photo}" alt="${dName}" class="mg-dish-img" loading="lazy" onerror="if(this.src!=='${dish.fallbackPhoto}') this.src='${dish.fallbackPhoto}';" />
-              <span class="mg-dish-badge">${dLabel}</span>
-            </div>
+            ${dishPhoto}
             <div class="mg-dish-body">
               <h5 class="mg-dish-title">${dName}</h5>
               <p class="mg-dish-desc">${dDesc}</p>
@@ -9795,10 +9743,12 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
         `;
       }).join('');
 
+      const cityNoteText = city.note && (city.note[l] || city.note.ko);
       const picksHtml = (city.picks || []).map(pick => {
         const pName = (pick.name && pick.name[l]) || pick.name['ko'];
         const pBadge = (pick.badge && pick.badge[l]) || pick.badge['ko'];
         const pDesc = (pick.desc && pick.desc[l]) || pick.desc['ko'];
+        const sourceLabel = {ko:'공식 메뉴·안내', en:'Official menu / info', ja:'公式メニュー・案内', zh:'官方菜单/信息'};
         const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(pick.mapQuery)}`;
 
         return `
@@ -9816,6 +9766,7 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
                 <span>${mapBtnText[l] || mapBtnText['ko']}</span>
                 <span style="font-size:11px;">↗</span>
               </a>
+              ${pick.sourceUrl ? `<a href="${pick.sourceUrl}" target="_blank" rel="noopener noreferrer" class="mg-map-btn">${sourceLabel[l] || sourceLabel.ko} ↗</a>` : ''}
             </div>
           </div>
         `;
@@ -9831,6 +9782,7 @@ function buildMasterGourmetGuideHtml(data, l, filterCountry) {
             <span class="mg-country-pill ${country.id}">${country.flag} ${cName}</span>
           </div>
 
+          ${cityNoteText ? `<p class="mg-city-note">${escapeHtml(cityNoteText)}</p>` : ''}
           <div class="mg-dishes-grid">
             ${dishesHtml}
           </div>

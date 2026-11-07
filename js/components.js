@@ -923,13 +923,10 @@
                       </div>
                         <!-- 📸 대표 미식 사진 배너 -->
                         <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
-                          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="🥩 Bodegas Mezquita 부드러운 소꼬리 찜 (Rabo de Toro)" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
-                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥩 Bodegas Mezquita 부드러운 소꼬리 찜 (Rabo de Toro)</span>
+                          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span data-i18n="food_image_illustrative" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 참고용 음식 이미지</span>
                         </div>
-                      <div data-i18n="must_odb_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
-                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
-                        • <strong>Bodegas Mezquita</strong>: 부드럽게 푹 고아낸 소꼬리 찜(Rabo de Toro - 부모님 최애 보양식), 바삭한 가지 튀김(Berenjenas con miel), 살모레호
-                      </div>
+                      <div data-i18n="must_odb_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;"><strong>식당·메뉴 후보 (예약·당일 제공 미확정):</strong><br>• <strong>Taberna Luque</strong>: 2019년 말 식당 영업 종료 보도가 있어 현재 추천에서 제외합니다. 후속 매장의 현재 상태는 확인되지 않았습니다.<br>• <strong>Bodegas Mezquita</strong>: 공식 온라인 메뉴에 Rabo de Toro와 Flamenquín이 소개됩니다. 방문 지점의 현행 메뉴를 확인하세요.</div>
                       <div data-i18n="must_odb_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
                         <strong>꼭 해볼 것 & 무료 야경:</strong><br>
                         • <strong>로마 다리 (Puente Romano)</strong>: 해 질 녘 다리를 건너며 메스키타와 과달키비르 강변 무료 야경 감상<br>
@@ -945,14 +942,10 @@
                       </div>
                         <!-- 📸 대표 미식 사진 배너 -->
                         <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
-                          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="🍤 Bar Los Diamantes 신선 해산물 타파스" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
-                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🍤 Bar Los Diamantes 신선 해산물 타파스</span>
+                          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span data-i18n="food_image_illustrative" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 참고용 음식 이미지</span>
                         </div>
-                      <div data-i18n="must_grx_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
-                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
-                        • <strong>Bar Los Diamantes</strong>: 음료(맥주/와인) 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공!<br>
-                        • 나바스 거리(Calle Navas) 활기찬 로컬 타파스 투어
-                      </div>
+                      <div data-i18n="must_grx_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;"><strong>식당·메뉴 후보 (예약·당일 제공 미확정):</strong><br>• <strong>Los Diamantes</strong>: 공식 사이트는 해산물·생선 타파스를 안내합니다. 특정 메뉴와 음료 주문 시 타파 제공 조건은 매장·주문별로 다를 수 있습니다.<br>• <strong>La Auténtica Carmela</strong>: 튀긴 가지와 사탕수수 꿀 등은 메뉴 후보이며, 당일 제공 여부를 확인하세요.<br>그라나다 일부 바의 타파 제공 방식은 다르므로 특정 메뉴 무료 제공을 전제로 하지 마세요.</div>
                       <div data-i18n="must_grx_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
                         <strong>꼭 해볼 것 & 무료 야경:</strong><br>
                         • <strong>산 니콜라스 전망대 (Mirador de San Nicolás)</strong>: 택시로 올라가 알함브라 붉은 성곽 뒤로 물드는 노을과 야경 감상 (최고의 무료 명소)<br>
@@ -968,15 +961,10 @@
                       </div>
                         <!-- 📸 대표 미식 사진 배너 -->
                         <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:110px;margin-bottom:10px;background:#f3f4f6;">
-                          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="🐟 해변 대나무 꼬치 숯불구이 에스페토 (Espeto)" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
-                          <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🐟 해변 대나무 꼬치 숯불구이 에스페토 (Espeto)</span>
+                          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                          <span data-i18n="food_image_illustrative" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 참고용 음식 이미지</span>
                         </div>
-                      <div data-i18n="must_agp_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;">
-                        <strong>꼭 먹을 맛집 & 메뉴:</strong><br>
-                        • <strong>에스페토 (Espeto)</strong>: 해변가에서 대나무 꼬치에 꿰어 숯불에 구워내는 정통 정어리 구이<br>
-                        • <strong>El Pimpi</strong>: 안토니오 반데라스 와이너리 전통 와인 & 하몬<br>
-                        • <strong>Marisquería Godoy</strong>: 항구 테라스 해산물 구이
-                      </div>
+                      <div data-i18n="must_agp_food" style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fefce8;padding:8px 10px;border-radius:6px;border-left:3px solid #eab308;"><strong>식당·메뉴 후보 (예약·당일 제공 미확정):</strong><br>• <strong>에스페토(Espeto)</strong>: 갈대 꼬치에 정어리를 꿰어 숯불에 굽는 전통 음식. 가격은 매장에 확인하세요.<br>• <strong>El Pimpi</strong>: 1971년 설립된 보데가 겸 식당. 공식 메뉴에 Moscatel 와인과 이베리코 하몬이 소개됩니다.<br>• <strong>Los Mellizos</strong>: 공식 말라가 안내는 쌀 요리, 해산물, 튀긴 생선을 소개합니다. 현행 메뉴를 확인하세요.</div>
                       <div data-i18n="must_agp_night" style="font-size:12.5px;color:#1e3a8a;line-height:1.5;background:#eff6ff;padding:8px 10px;border-radius:6px;border-left:3px solid #3b82f6;">
                         <strong>꼭 해볼 것 & 무료 야경:</strong><br>
                         • <strong>말라가 항구 무에예 우노 (Muelle Uno)</strong>: 야자수와 지중해가 어우러진 해안 산책로 야경 산책<br>
@@ -1117,16 +1105,16 @@
                             <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥩 소꼬리 찜 &amp; 가지튀김 꿀</span>
                           </div>
                           <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.08);height:115px;background:#f3f4f6;">
-                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="🐟 해변 숯불구이 에스페토" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
-                            <span style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:4px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🐟 해변 숯불구이 에스페토</span>
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy" onerror="this.onerror=null;this.parentElement.style.display='none';" />
+                            <span data-i18n="food_image_illustrative" style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent, rgba(0,0,0,0.75));color:#fff;font-size:11.5px;font-weight:700;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🥘 참고용 음식 이미지</span>
                           </div>
                         </div>
                         <div style="font-size:12.5px;color:#333;line-height:1.5;margin-bottom:8px;background:#fffbeb;padding:8px 10px;border-radius:6px;border-left:3px solid #f59e0b;" data-i18n="gourmet_and_sig">
-                          <strong>⭐️ 시그니처 미식 (필수):</strong><br>
-                          • <strong>소꼬리 찜 (Rabo de Toro)</strong>: Bodegas Mezquita 등 전역 명물. 한국의 진한 소갈비찜과 싱크로율 90% 이상으로 부모님 감탄 보장!<br>
-                          • <strong>가지 튀김과 꿀 (Berenjenas con miel)</strong>: 바삭한 가지 튀김 위에 사탕수수 꿀을 뿌린 단짠의 극치 타파스.<br>
-                          • <strong>살모레호 (Salmorejo)</strong>: 가스파초보다 훨씬 진하고 크리미한 코르도바식 토마토 마늘 냉수프 (바삭 하몬 토핑).<br>
-                          • <strong>에스페토 (Espeto, 말라가 해변)</strong>: 대나무 꼬치에 정어리를 꿰어 해변 모래사장 숯불 화로에 즉석으로 구워내는 명물.
+                          <strong>⭐️ 안달루시아 지역 음식 아이디어:</strong><br>
+                          • <strong>코르도바:</strong> Salmorejo, Rabo de Toro, Flamenquín은 찾아볼 만한 지역 음식입니다. 특정 식당에서의 당일 제공은 확인하세요.<br>
+                          • <strong>그라나다:</strong> 해산물·생선 타파스를 파는 곳이 있습니다. 음료와 타파 제공 조건은 매장·주문마다 다릅니다.<br>
+                          • <strong>말라가:</strong> Espeto는 정어리를 갈대 꼬치에 꿰어 숯불에 굽는 전통 음식입니다. 현행 메뉴와 가격은 매장에 확인하세요.<br>
+                          식당별 당일 메뉴·가격을 보장하지 않습니다.
                         </div>
                         <div style="font-size:12.5px;color:#0f766e;line-height:1.5;background:#f0fdfa;padding:8px 10px;border-radius:6px;border-left:3px solid #0d9488;" data-i18n="gourmet_and_snack">
                           <strong>🥐 로컬 시장 간식:</strong><br>
@@ -1844,14 +1832,14 @@
           <section class="section guide-section" id="dining">
       <div class="wrap">
         <!-- 🍽️ 2026 특별 기획: 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편) -->
-        <div class="practical-subnav-bar" role="navigation" aria-label="실용정보 미식·시장·야경 섹션 바로가기"><span class="practical-subnav-label" data-i18n="subnav_section_label">📌 섹션 바로가기:</span><button type="button" class="practical-subnav-chip active" onclick="document.getElementById('curated-family-places').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_curated_maps">💖 구글지도 하트 맛집·쇼핑·명소 (31선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('nerja-daytrip-guide').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_nerja_guide">🚌 말라가↔네르하·프리힐리아나 당일치기</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-city-candidates').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_city_candidates">✨ 도시별 추가 맛집·시장·전망 후보 (17선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-master-gourmet').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_master_gourmet">🥘 빠에야·피자 외 7대 도시 미식 &amp; 회화 24선</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('globalDiningSearch').scrollIntoView({behavior:'smooth', block:'center'})" data-i18n="subnav_chip_global_dining">🏪 기존 검증 맛집 디렉토리 (92선 &amp; 지도)</button></div><div id="curated-family-places" class="curated-places-mount" style="margin-bottom:32px;"></div><div id="nerja-daytrip-guide" class="nerja-guide-mount" style="margin-bottom:32px;"></div><div id="practical-city-candidates" class="practical-candidates-mount" style="margin-bottom:32px;"></div><div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
+        <div class="practical-subnav-bar" role="navigation" aria-label="실용정보 미식·시장·야경 섹션 바로가기"><span class="practical-subnav-label" data-i18n="subnav_section_label">📌 섹션 바로가기:</span><button type="button" class="practical-subnav-chip active" onclick="document.getElementById('curated-family-places').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_curated_maps">💖 구글지도 하트 맛집·쇼핑·명소 (31선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('nerja-daytrip-guide').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_nerja_guide">🚌 말라가↔네르하·프리힐리아나 당일치기</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-city-candidates').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_city_candidates">✨ 도시별 추가 맛집·시장·전망 후보 (17선)</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('practical-master-gourmet').scrollIntoView({behavior:'smooth', block:'start'})" data-i18n="subnav_chip_master_gourmet">🥘 빠에야·피자 외 8개 도시 음식 가이드 &amp; 회화 24선</button><button type="button" class="practical-subnav-chip" onclick="document.getElementById('globalDiningSearch').scrollIntoView({behavior:'smooth', block:'center'})" data-i18n="subnav_chip_global_dining">🏪 기존 검증 맛집 디렉토리 (92선 &amp; 지도)</button></div><div id="curated-family-places" class="curated-places-mount" style="margin-bottom:32px;"></div><div id="nerja-daytrip-guide" class="nerja-guide-mount" style="margin-bottom:32px;"></div><div id="practical-city-candidates" class="practical-candidates-mount" style="margin-bottom:32px;"></div><div id="practical-master-gourmet" class="master-gourmet-mount" style="margin-bottom:28px;"></div>
 
         <div class="section-head">
           <div>
-            <div class="kicker">04 / MUST-EAT DISHES &amp; VERIFIED RESTAURANTS</div>
-            <h2 data-i18n="dining_title">꼭 먹고 가야 할 음식 &amp; 검증 맛집 (사진 포함 92선)</h2>
+            <div class="kicker">04 / REGIONAL FOOD &amp; RESTAURANT IDEAS</div>
+            <h2 data-i18n="dining_title">지역 음식·식당 후보 (92선)</h2>
           </div>
-          <p class="sub" data-i18n="dining_sub">스페인·포르투갈 및 주요 지역의 대표 미식. 운영시간, 부모님 배려 팁, 연락처 및 예약 링크 수록.</p>
+          <p class="sub" data-i18n="dining_sub">선정 음식과 식당 후보입니다. 메뉴·가격·영업시간·직원 언어·연락처·예약 정보는 변동될 수 있으니 방문 전에 매장에 확인하세요.</p>
         </div>
 
         <div id="barcelona-dining-guide-mount" style="margin:0 0 24px;"></div>

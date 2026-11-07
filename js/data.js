@@ -2834,7 +2834,7 @@ const REGIONAL_PLANS = {
     "evening": "코르도바 메스키타와 유대인 지구 꽃길 산책 후, 해 질 녘 로마 다리 (Puente Romano)를 건너며 메스키타와 강변 야경 감상 (무료, 예약 불필요)",
     "walk": "낮음 (4,100보)",
     "transport": "Renfe 초고속열차 + 택시",
-    "meal": "Bodegas Mezquita: 소꼬리 찜 'Rabo de Toro' (갈비찜 싱크로율 90% 이상 부모님 감탄 보양식!), 바삭한 가지 튀김과 사탕수수 꿀(Berenjenas con miel), 크리미한 살모레호",
+    "meal": "Bodegas Mezquita 공식 온라인 메뉴에는 Rabo de Toro와 Flamenquín이 소개됩니다. Salmorejo는 코르도바 지역 음식 후보입니다. 방문 지점의 현행 메뉴·가격을 확인하세요.",
     "events": [
       "Renfe 기차 (12:30~13:11)",
       "Hotel de los Faroles",
@@ -2846,18 +2846,18 @@ const REGIONAL_PLANS = {
   {
     "city": "그라나다",
     "isTransfer": true,
-    "theme": "ALSA 우등버스 그라나다 이동 & 음료 시 무료 타파스 (Bar Los Diamantes)",
+    "theme": "ALSA 우등버스 그라나다 이동 & 나바스 거리 타파스 바 (메뉴·제공 조건 확인)",
     "morning": "코르도바 숙소 체크아웃 후 버스터미널로 이동, 14:15~16:55 ALSA 우등버스 탑승하여 안달루시아 올리브 평원 감상",
     "rest": "17:15 그라나다 터미널 도착 후 택시로 The Central House Granada 이동, 체크인 및 따뜻한 온수 샤워",
-    "evening": "나바스 거리(Calle Navas) 활기찬 타파스 골목을 천천히 산책하고, 음료 주문 시 신선한 튀김 타파스를 무료로 내어주는 그라나다 전통 문화 체험",
+    "evening": "나바스 거리(Calle Navas)의 타파스 바를 둘러보고, 음료 주문에 타파가 포함되는지 각 매장에 확인",
     "walk": "낮음 (3,600보)",
     "transport": "ALSA 우등버스 + 택시",
-    "meal": "Bar Los Diamantes: 음료 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공 & 나바스 거리 정통 안달루시아 타파스 투어",
+    "meal": "Los Diamantes는 해산물·생선 타파스를 안내합니다. 메뉴와 음료 주문 시 타파 제공 여부는 매장에 확인하세요.",
     "events": [
       "코르도바 14:15 버스",
       "그라나다 16:55 도착",
       "The Central House Granada",
-      "Bar Los Diamantes 무료 타파스",
+      "Bar Los Diamantes (메뉴·타파 제공 조건 확인)",
       "나바스 거리 산책"
     ]
   },
@@ -2900,13 +2900,13 @@ const REGIONAL_PLANS = {
   {
     "city": "말라가",
     "isTransfer": false,
-    "theme": "피카소 거리 산책 & 전통 정어리 숯불구이 (에스페토) & 안토니오 반데라스 와이너리 (El Pimpi)",
+    "theme": "말라가 산책 & 전통 정어리구이(Espeto) & El Pimpi 보데가",
     "morning": "숙소 도보권의 피카소 생가 및 라리오스(Calle Larios) 대리석 쇼핑 거리의 평탄하고 우아한 도로 산책",
     "rest": "13:30~16:00 지중해 바닷바람 맞으며 아파트 복귀 낮잠 및 여유로운 티타임",
-    "evening": "배우 안토니오 반데라스가 운영하는 역사 깊은 와이너리 El Pimpi에서 전통 말라가 스위트 와인과 최고급 하몬을 맛보고 라리오스 화려한 야경 감상",
+    "evening": "El Pimpi는 1971년 설립된 보데가 겸 식당입니다. 공식 메뉴에 소개된 Moscatel 와인과 이베리코 하몬을 참고하되, 방문일 메뉴와 영업을 확인하세요.",
     "walk": "낮음 (4,000보)",
     "transport": "도보 & 택시",
-    "meal": "말라가 해변 에스페토 (Espeto): 대나무 꼬치에 꿰어 모래사장 숯불 화로에 구운 정통 정어리 구이 & El Pimpi 안토니오 반데라스 와이너리 전통 하몬과 와인",
+    "meal": "에스페토는 정어리를 갈대 꼬치에 꿰어 숯불에 굽는 지역 음식입니다. El Pimpi의 당일 메뉴·가격은 매장에 확인하세요.",
     "events": [
       "피카소 미술관 산책",
       "라리오스 대리석 거리",
@@ -4231,15 +4231,17 @@ const GLOBAL_DINING_DATA = [
     "region": "스페인",
     "city": "말라가",
     "country": "스페인",
-    "dishName": "정어리 숯불구이 (Espeto) & 달콤한 말라가 와인",
-    "photo": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=800&q=80",
-    "signature": "피카소 생가 옆 역사적 보데가 정원에서 즐기는 신선한 해산물 꼬치와 로컬 와인",
-    "seniorTip": "라리오스 조명쇼 전 17:00경 방문하면 여유로운 정원 테라스 좌석 착석 가능",
-    "hours": "매일 12:00~01:00 (연중무휴)",
-    "language": "영어 완벽 · QR 다국어 메뉴판",
-    "phone": "+34 952 225 403",
-    "booking": "TheFork 또는 공식 사이트",
-    "mapQuery": "El Pimpi Malaga"
+    "dishName": "Moscatel wine and Iberian ham; check current menu",
+    "photo": "",
+    "signature": "Historic bodega and restaurant founded in 1971. Its official menu lists Moscatel wine and Iberian ham; current availability and prices may change.",
+    "seniorTip": "Seating, terrace views, steps and accessibility may vary by area; ask about the specific table.",
+    "hours": "Check current hours on the official site.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check the current reservation policy on the official site.",
+    "mapQuery": "El Pimpi Malaga",
+
+    "baseKrw": null
   },
   {
     "name": "Adega São Nicolau",
@@ -4772,46 +4774,52 @@ const GLOBAL_DINING_DATA = [
   "region": "스페인",
   "city": "그라나다",
   "country": "스페인 (Spain)",
-  "dishName": "그라나다 명물 따블라 콤비나다 플래터 (Tabla Castañeda)",
-  "photo": "img/gourmet/berenjenas-con-miel.jpg",
-  "signature": "음료 주문 시 무료 타파스 제공. 하몬, 로컬 치즈, 파테가 듬뿍 올라간 전통 목판 플래터",
-  "seniorTip": "스페인 남부 안달루시아 전통 정취를 느낄 수 있는 유서 깊은 타파스 명소",
-  "hours": "매일 11:30~00:00",
-  "language": "영어 소통 가능",
-  "phone": "+34 958 21 54 64",
-  "booking": "현장 방문",
-  "mapQuery": "Bodegas Castaneda Calle Almireceros Granada"
-},
+  "dishName": "Tapas and local dishes; current selection varies",
+  "photo": "",
+  "signature": "A Granada tapas bar; current selection and whether a tapa is included with a drink vary by venue and order. Confirm before visiting.",
+  "seniorTip": "Seating, crowding, accessibility and staff language support are not confirmed; ask the venue directly.",
+  "hours": "Check current hours directly.",
+  "language": "Staff language support is not confirmed; check directly.",
+  "phone": "",
+  "booking": "Check the current reservation policy directly.",
+  "mapQuery": "Bodegas Castaneda Calle Almireceros Granada",
+
+    "baseKrw": null
+  },
   {
   "name": "Los Diamantes",
   "region": "스페인",
   "city": "그라나다",
   "country": "스페인 (Spain)",
-  "dishName": "바삭한 모둠 해산물 & 버섯 튀김 (Fritura de Pescado y Champiñones)",
-  "photo": "img/gourmet/berenjenas-con-miel.jpg",
-  "signature": "주문 즉시 고온에서 튀겨내는 신선한 버섯 튀김과 안달루시아식 멸치(보케로네스) 튀김",
-  "seniorTip": "기름기가 쏙 빠져 바삭담백하여 느끼하지 않고 고소해 부모님 음료 안주로 인기 최고",
-  "hours": "매일 12:30~16:30, 20:00~00:00",
-  "language": "기본 영어 가능",
-  "phone": "+34 958 22 70 70",
-  "booking": "현장 방문",
-  "mapQuery": "Los Diamantes Calle Navas Granada"
-},
+  "dishName": "Seafood and fish tapas; current selection varies",
+  "photo": "",
+  "signature": "The official site describes seafood and fish tapas and raciones. Specific dishes and any tapa-with-drink policy vary by venue and order; confirm directly.",
+  "seniorTip": "Seating, noise, accessibility and staff language support are not confirmed; check with the chosen location.",
+  "hours": "Check current hours with the chosen location.",
+  "language": "Staff language support is not confirmed; check directly.",
+  "phone": "",
+  "booking": "Check the current reservation policy directly.",
+  "mapQuery": "Los Diamantes Calle Navas Granada",
+
+    "baseKrw": null
+  },
   {
-  "name": "Los Mellizos Málaga",
+  "name": "Los Mellizos",
   "region": "스페인",
   "city": "말라가",
   "country": "스페인 (Spain)",
-  "dishName": "프리미엄 지중해 모둠 생선구이 & 튀김 (Pescados a la plancha)",
-  "photo": "img/gourmet/fritura-malaguena.jpg",
-  "signature": "말라가 최고급 해산물 레스토랑의 정갈한 농어·도미 소금구이와 모둠 해물 튀김",
-  "seniorTip": "말라가 시내에서 가장 쾌적하고 실내가 넓으며 테이블 간격이 여유로워 부모님 식사에 최적",
-  "hours": "매일 13:00~00:00",
-  "language": "영어 완벽 · 고급 서비스",
-  "phone": "+34 952 22 07 45",
-  "booking": "공식 웹사이트(losmellizos.net) 예약 권장",
-  "mapQuery": "Los Mellizos Calle Sancha de Lara Malaga"
-},
+  "dishName": "Rice dishes, seafood and fried fish; check current menu",
+  "photo": "",
+  "signature": "The official Málaga location describes rice dishes, seafood and pescaíto frito (fried fish). Check current menu and availability.",
+  "seniorTip": "Seating, accessibility and staff language support are not confirmed; ask the chosen location.",
+  "hours": "Check current hours on the official site.",
+  "language": "Staff language support is not confirmed; check directly.",
+  "phone": "",
+  "booking": "Check the current reservation policy on the official site.",
+  "mapQuery": "Los Mellizos Calle Sancha de Lara Malaga",
+
+    "baseKrw": null
+  },
   {
   "name": "Trattoria Da Nennella",
   "region": "이탈리아",
@@ -8300,10 +8308,10 @@ const DINING_I18N_DATA = {
     "zh": "西班牙 · 格拉纳达"
   },
   "signature": {
-    "ko": "음료 주문 시 무료 타파스 제공. 하몬, 로컬 치즈, 파테가 듬뿍 올라간 전통 목판 플래터",
-    "ja": "ドリンクで無料タパス付き。生ハムとチーズ満載の伝統木皿盛り",
-    "en": "Complimentary tapas with drinks plus legendary wooden platters of jamon and cheeses",
-    "zh": "点酒附赠免费小吃，招牌木盘盛满伊比利亚火腿与安达卢西亚芝士"
+    "ko": "타파스와 지역 음식을 파는 바입니다. 메뉴 구성과 음료에 타파가 포함되는지는 매장·주문별로 다르므로 방문 전 확인하세요.",
+    "ja": "タパスや地元料理を扱うバルです。メニュー内容やドリンク注文時のタパ提供は店舗・注文により異なるため、事前にご確認ください。",
+    "en": "A Granada tapas bar; current selection and whether a tapa is included with a drink vary by venue and order. Confirm before visiting.",
+    "zh": "格拉纳达Tapas酒吧；当前菜品及饮品是否附送Tapas因门店和订单而异，请到访前确认。"
   },
   "seniorTip": {
     "ko": "스페인 남부 안달루시아 전통 정취를 느낄 수 있는 유서 깊은 타파스 명소",
@@ -10183,10 +10191,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "Renfe高速列车与出租车"
     },
     "meal": {
-      "ko": "Bodegas Mezquita: 소꼬리 찜 'Rabo de Toro' (갈비찜 싱크로율 90% 이상 부모님 감탄 보양식!), 바삭한 가지 튀김과 사탕수수 꿀(Berenjenas con miel), 크리미한 살모레호",
-      "en": "Bodegas Mezquita: Slow-braised Oxtail Stew (Rabo de Toro - fall-off-the-bone like Korean galbi!), Fried Eggplant with Cane Honey (Berenjenas con miel), Salmorejo",
-      "ja": "Bodegas Mezquita: 牛テール煮込み (Rabo de Toro - カルビ煮込みに似て柔らかくご両親感動!)、ナスのフライ蜂蜜がけ(Berenjenas con miel)、サルモレホ",
-      "zh": "Bodegas Mezquita：慢炖牛尾 (Rabo de Toro - 浓油赤酱软烂如炖牛小排，长辈赞不绝口!)、脆皮炸茄子配天然甘蔗蜜 (Berenjenas con miel)、萨尔莫霍番茄冷汤"
+      "ko": "Bodegas Mezquita 공식 온라인 메뉴에는 Rabo de Toro와 Flamenquín이 소개됩니다. Salmorejo는 코르도바 지역 음식 후보입니다. 방문 지점의 현행 메뉴·가격을 확인하세요.",
+      "en": "Bodegas Mezquita’s official online menu lists rabo de toro and flamenquín. Salmorejo is a Córdoba regional food idea. Check the current menu and prices at your chosen branch.",
+      "ja": "Bodegas Mezquitaの公式オンラインメニューにはRabo de ToroとFlamenquínが掲載されています。Salmorejoはコルドバの郷土料理候補です。訪問店舗の最新メニューと価格をご確認ください。",
+      "zh": "Bodegas Mezquita官网在线菜单列有Rabo de Toro和Flamenquín。Salmorejo可作为科尔多瓦地方菜参考；请确认所选分店的当前菜单和价格。"
     }
   },
   {
@@ -10197,38 +10205,38 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "格拉纳达"
     },
     "theme": {
-      "ko": "ALSA 우등버스 그라나다 이동 & 음료 시 무료 타파스 (Bar Los Diamantes)",
-      "en": "ALSA Bus to Granada & Free Seafood Tapas with Drinks (Bar Los Diamantes)",
-      "ja": "ALSA優等バスでグラナダへ移動＆ドリンクで無料魚介タパス (Bar Los Diamantes)",
-      "zh": "搭乘ALSA优等大巴前往格拉纳达＆点酒赠海鲜Tapas名店 (Bar Los Diamantes)"
+      "ko": "ALSA 우등버스 그라나다 이동 & 나바스 거리 타파스 바 (메뉴·제공 조건 확인)",
+      "en": "ALSA Bus to Granada & Calle Navas Tapas Bars (check menu and serving policy)",
+      "ja": "ALSAバスでグラナダへ移動＆ナバス通りのタパス店（メニュー・提供条件を確認）",
+      "zh": "搭乘ALSA大巴前往格拉纳达＆纳瓦斯街Tapas酒吧（请确认菜单与提供条件）"
     },
     "events": {
       "ko": [
         "코르도바 14:15 버스",
         "그라나다 16:55 도착",
         "The Central House Granada",
-        "Bar Los Diamantes 무료 타파스",
+        "Bar Los Diamantes (메뉴·타파 제공 조건 확인)",
         "나바스 거리 산책"
       ],
       "en": [
         "Córdoba 14:15 Bus",
         "Granada 16:55 Arrival",
         "The Central House Granada",
-        "Bar Los Diamantes Free Tapas",
+        "Bar Los Diamantes (check menu and tapa policy)",
         "Calle Navas Tapas Walk"
       ],
       "ja": [
         "コルドバ 14:15発バス",
         "グラナダ 16:55着",
         "The Central House Granada",
-        "Bar Los Diamantes 無料タパス",
+        "Bar Los Diamantes（メニュー・タパ提供条件を確認）",
         "ナバス通り散策"
       ],
       "zh": [
         "科尔多瓦 14:15大巴",
         "格拉纳达 16:55抵达",
         "The Central House Granada",
-        "Bar Los Diamantes 免费海鲜Tapas",
+        "Bar Los Diamantes（请确认菜单与Tapas提供条件）",
         "纳瓦斯街漫步"
       ]
     },
@@ -10245,10 +10253,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "17:15 抵达后打车直达 The Central House Granada，办理入住并享受热水沐浴"
     },
     "evening": {
-      "ko": "나바스 거리(Calle Navas) 활기찬 타파스 골목을 천천히 산책하고, 음료 주문 시 신선한 튀김 타파스를 무료로 내어주는 그라나다 전통 문화 체험",
-      "en": "Evening walk through vibrant Calle Navas tapas street, experiencing authentic Granada culture with complimentary fresh tapas",
-      "ja": "活気あるナバス通りを散策。ドリンクを頼むと無料の揚げたてタパスが付いてくるグラナダ伝統文化を体験",
-      "zh": "漫步热闹惬意的纳瓦斯街(Calle Navas)，体验格拉纳达点饮品即赠免费现做Tapas的热情地道文化"
+      "ko": "나바스 거리(Calle Navas)의 타파스 바를 둘러보고, 음료 주문에 타파가 포함되는지 각 매장에 확인",
+      "en": "Evening walk along Calle Navas; ask each bar whether a tapa is included with a drink, as policies vary",
+      "ja": "ナバス通りを散策し、ドリンクとタパの提供条件は店ごとに確認",
+      "zh": "漫步纳瓦斯街(Calle Navas)的Tapas酒吧；饮品是否附送Tapas因店而异，请逐店确认"
     },
     "walk": {
       "ko": "낮음 (3,600보)",
@@ -10263,10 +10271,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "ALSA优等大巴与出租车"
     },
     "meal": {
-      "ko": "Bar Los Diamantes: 음료 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공 & 나바스 거리 정통 안달루시아 타파스 투어",
-      "en": "Bar Los Diamantes: Free plate of freshly fried seafood tapas with every drink order & Calle Navas authentic Andalusian tapas crawl",
-      "ja": "Bar Los Diamantes: 飲み物注文で揚げたて海鮮タパス1皿無料サービス＆ナバス通りのアンダルシア郷土タパス巡り",
-      "zh": "Bar Los Diamantes：点任意饮品免费赠送现炸新鲜海鲜拼盘小吃，漫步纳瓦斯街享受地道安达卢西亚小吃巡游"
+      "ko": "Los Diamantes는 해산물·생선 타파스를 안내합니다. 메뉴와 음료 주문 시 타파 제공 여부는 매장에 확인하세요.",
+      "en": "Los Diamantes describes seafood and fish tapas; confirm current dishes and any tapa-with-drink policy with the venue.",
+      "ja": "Los Diamantesは魚介・魚のタパスを案内。最新メニューとドリンク時のタパ提供条件は店舗にご確認ください。",
+      "zh": "Los Diamantes介绍海鲜与鱼类Tapas；请向门店确认当前菜品及饮品是否附送Tapas。"
     }
   },
   {
@@ -10437,10 +10445,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "马拉加"
     },
     "theme": {
-      "ko": "피카소 거리 산책 & 전통 정어리 숯불구이 (에스페토) & 안토니오 반데라스 와이너리 (El Pimpi)",
-      "en": "Picasso Museum Walk & Traditional Sardine Charcoal Skewers (Espeto) & El Pimpi Winery",
-      "ja": "ピカソゆかりの地散策＆伝統イワシ炭火串焼き(エスペト)＆El Pimpi老舗ワイナリー",
-      "zh": "毕加索故居漫步＆传统竹签炭烤沙丁鱼(Espeto)＆班德拉斯百年酒庄(El Pimpi)"
+      "ko": "말라가 산책 & 전통 정어리구이(Espeto) & El Pimpi 보데가",
+      "en": "Málaga Walk & Traditional Sardine Espeto & Historic El Pimpi Bodega",
+      "ja": "マラガ散策＆伝統イワシ焼き（エスペト）＆El Pimpiの歴史あるボデガ",
+      "zh": "马拉加漫步＆传统炭烤沙丁鱼(Espeto)＆El Pimpi历史酒窖"
     },
     "events": {
       "ko": [
@@ -10481,10 +10489,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "13:30~16:00 返回公寓在清凉海风中惬意午休，品茗充能"
     },
     "evening": {
-      "ko": "배우 안토니오 반데라스가 운영하는 역사 깊은 와이너리 El Pimpi에서 전통 말라가 스위트 와인과 최고급 하몬을 맛보고 라리오스 화려한 야경 감상",
-      "en": "Visit historic Bodega El Pimpi run by Antonio Banderas to savor sweet Málaga wine & premium jamón, then enjoy Calle Larios night lights",
-      "ja": "アントニオ・バンデラスが手掛ける老舗El Pimpiで名物の甘口マラガワインと最高級生ハムを味わい、ラリオス通りの夜景散歩",
-      "zh": "在安东尼奥·班德拉斯经营的百年老酒窖El Pimpi品尝地道马拉加甜葡萄酒与特级生火腿，漫步璀璨商业街夜景"
+      "ko": "El Pimpi는 1971년 설립된 보데가 겸 식당입니다. 공식 메뉴에 소개된 Moscatel 와인과 이베리코 하몬을 참고하되, 방문일 메뉴와 영업을 확인하세요.",
+      "en": "El Pimpi is a historic bodega and restaurant founded in 1971. Its official menu includes Moscatel wine and Iberian ham; check current details before visiting.",
+      "ja": "1971年創業のEl Pimpiは歴史あるボデガ兼レストランです。公式メニューにモスカテルとイベリコハモンがあります。最新情報をご確認ください。",
+      "zh": "El Pimpi是创立于1971年的传统酒窖式餐厅，官网菜单列有Moscatel甜酒和伊比利亚火腿。到访前请确认最新信息。"
     },
     "walk": {
       "ko": "낮음 (4,000보)",
@@ -10499,10 +10507,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "步行与出租车"
     },
     "meal": {
-      "ko": "말라가 해변 에스페토 (Espeto): 대나무 꼬치에 꿰어 모래사장 숯불 화로에 구운 정통 정어리 구이 & El Pimpi 안토니오 반데라스 와이너리 전통 하몬과 와인",
-      "en": "Málaga Beach Espeto: Charcoal-grilled bamboo-skewered sardines on the sand & El Pimpi historic Antonio Banderas winery ham & dessert wine",
-      "ja": "マラガ海岸エスペト (Espeto): 竹串に刺した新鮮イワシの炭火舟焼き＆El Pimpiアントニオ・バンデラスゆかりのボデガ生ハムとワイン",
-      "zh": "马拉加海滩烤沙丁鱼 (Espeto)：沙滩炭火舟现烤竹签新鲜沙丁鱼，以及安东尼奥·班德拉斯传统酒庄El Pimpi的火腿与佳酿"
+      "ko": "에스페토는 정어리를 갈대 꼬치에 꿰어 숯불에 굽는 지역 음식입니다. El Pimpi의 당일 메뉴·가격은 매장에 확인하세요.",
+      "en": "Espeto is a regional sardine dish grilled on a cane skewer over charcoal. Check El Pimpi’s current menu and prices with the venue.",
+      "ja": "エスペトはイワシを葦串に刺して炭火で焼く郷土料理です。El Pimpiの最新メニュー・価格は店舗にご確認ください。",
+      "zh": "Espeto是将沙丁鱼串在芦苇签上用炭火烤制的地方菜；El Pimpi的当日菜单、价格和营业情况请向餐厅确认。"
     }
   },
   {
@@ -16332,8 +16340,8 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "부모님 피로도 케어 지수",
     "kpi_senior_val": "1.5 스팟 / 일",
     "kpi_senior_sub": "13:00~15:30 온수 샤워 낮잠 슬롯",
-    "dining_title": "꼭 먹고 가야 할 음식 & 검증 맛집 (92선)",
-    "dining_sub": "영국·프랑스·이탈리아·스페인·포르투갈·중유럽·중남미·미국의 대표 미식. 운영시간, 외국어 가능 여부, 연락처 및 예약 링크 수록.",
+    "dining_title": "지역 음식·식당 후보 (92선)",
+    "dining_sub": "선정 음식과 식당 후보입니다. 메뉴·가격·영업시간·직원 언어·연락처·예약 정보는 변동될 수 있으니 방문 전에 매장에 확인하세요.",
     "dining_search_ph": "🔍 국가/도시(런던, 파리, 로마, 바르셀로나, 뉴욕), 메뉴(피시앤칩스, 스테이크, 타코), 키워드 검색...",
     "btn_dining_search": "미식 검색",
     "lbl_signature": "대표 시그니처:",
@@ -16409,7 +16417,8 @@ const I18N_DICTIONARY = {
     "gourmet_bcn_snack": "<strong>🥐 로컬 시장 & 야시장 간식 (산타 카테리나 / 보케리아):</strong><br>• <strong>생과일 주스 & 과일 컵</strong>: 시장 골목마다 1~2€로 즐기는 생망고·딸기·멜론 믹스 비타민 충전 컵.<br>• <strong>이베리코 하몬 콘 (Jamón Cone)</strong>: 걸어 다니며 맛보는 최고급 생고기 하몬 슬라이스 종이콘.<br>• <strong>츄러스와 쇼콜라테 (Churros con Chocolate)</strong>: 바삭한 츄러스를 걸쭉하고 진한 핫초코에 듬뿍 찍어 먹는 최고의 간식.",
     "gourmet_and_title": "2. 안달루시아 (세비야·코르도바·그라나다·말라가)",
     "badge_andalusia": "남부 정통 향토",
-    "gourmet_and_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>소꼬리 찜 (Rabo de Toro)</strong>: Bodegas Mezquita 등 전역 명물. 한국의 진한 소갈비찜과 싱크로율 90% 이상으로 부모님 감탄 보장!<br>• <strong>가지 튀김과 꿀 (Berenjenas con miel)</strong>: 바삭한 가지 튀김 위에 사탕수수 꿀을 뿌린 단짠의 극치 타파스.<br>• <strong>살모레호 (Salmorejo)</strong>: 가스파초보다 훨씬 진하고 크리미한 코르도바식 토마토 마늘 냉수프 (바삭 하몬 토핑).<br>• <strong>에스페토 (Espeto, 말라가 해변)</strong>: 대나무 꼬치에 정어리를 꿰어 해변 모래사장 숯불 화로에 즉석으로 구워내는 명물.",
+    "gourmet_and_sig": "<strong>⭐️ 안달루시아 지역 음식 아이디어:</strong><br>• <strong>코르도바:</strong> 살모레호(Salmorejo), 소꼬리 스튜(Rabo de Toro), 플라멘낀(Flamenquín)은 지역 음식 후보입니다.<br>• <strong>그라나다:</strong> 해산물·생선 타파스를 파는 곳이 있으며, 음료와 타파 제공 조건은 매장마다 다릅니다.<br>• <strong>말라가:</strong> 에스페토(Espeto)는 갈대 꼬치에 정어리를 꿰어 숯불에 굽는 전통 음식입니다. 메뉴와 가격은 매장에서 확인하세요.<br>식당별 당일 메뉴·가격은 보장되지 않습니다.",
+    "food_image_illustrative": "🥘 참고용 음식 이미지",
     "gourmet_and_snack": "<strong>🥐 로컬 시장 간식:</strong><br>• <strong>안달루시아 추로스 (Churros)</strong>: 바르셀로나보다 훨씬 바삭하고 담백! 아침에 현지인들처럼 바에 서서 갓 튀긴 추러스와 카페 콘 레체 즐기기.",
     "gourmet_part2_title": "🇮🇹 [Part 2] 이탈리아 미식 & 간식 파헤치기",
     "badge_napoli": "피자의 본향",
@@ -16506,13 +16515,13 @@ const I18N_DICTIONARY = {
     "must_svq_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>• 정통 타파스 & 시원한 상그리아",
     "must_svq_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>메트로폴 파라솔 (Las Setas)</strong>: 거대 목조 구조물 야외 광장 무료 산책 & 야간 조명<br>• <strong>스페인 광장 (Plaza de España)</strong>: 밤 조명이 켜진 웅장하고 로맨틱한 광장 야간 산책 (무료)<br>• 과달키비르 강변 황금의 탑 야경",
     "must_odb_city": "코르도바",
-    "must_odb_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Bodegas Mezquita</strong>: 부드럽게 푹 고아낸 소꼬리 찜(Rabo de Toro - 부모님 최애 보양식), 바삭한 가지 튀김(Berenjenas con miel), 살모레호",
+    "must_odb_food": "<strong>식당·메뉴 후보 (예약·당일 제공 미확정):</strong><br>• <strong>Taberna Luque</strong>: 2019년 말 식당 영업 종료 보도가 있어 현재 맛집 추천에서 제외합니다. 후속 매장의 현재 상태는 확인되지 않았습니다.<br>• <strong>Bodegas Mezquita</strong>: 공식 온라인 메뉴에 소꼬리 요리(Rabo de Toro)와 플라멘낀(Flamenquín)이 소개됩니다. 살모레호는 코르도바 지역 음식 후보이며, 방문 지점의 현행 메뉴를 확인하세요.",
     "must_odb_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>로마 다리 (Puente Romano)</strong>: 해 질 녘 다리를 건너며 메스키타와 과달키비르 강변 무료 야경 감상<br>• 유대인 지구(유다리아) 꽃길 골목(Calleja de las Flores) 산책",
     "must_grx_city": "그라나다",
-    "must_grx_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Bar Los Diamantes</strong>: 음료(맥주/와인) 주문 시 갓 튀긴 신선한 해산물 타파스 1접시 무료 제공!<br>• 나바스 거리(Calle Navas) 활기찬 로컬 타파스 투어",
+    "must_grx_food": "<strong>식당·메뉴 후보 (예약·당일 제공 미확정):</strong><br>• <strong>Los Diamantes</strong>: 공식 사이트는 해산물·생선 타파스와 라시오네스를 안내합니다. 특정 메뉴와 타파 제공 조건은 매장·주문별로 다를 수 있습니다.<br>• <strong>La Auténtica Carmela</strong>: 안달루시아·지중해식 공유 요리 식당입니다. 튀긴 가지와 사탕수수 꿀, 크로켓은 메뉴 후보이며 당일 제공을 확인하세요.<br>그라나다 일부 바에서 음료와 타파가 함께 나올 수 있지만, 모든 가게나 특정 음식의 무료 제공을 전제로 하지 마세요.",
     "must_grx_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>산 니콜라스 전망대 (Mirador de San Nicolás)</strong>: 택시로 올라가 알함브라 붉은 성곽 뒤로 물드는 노을과 야경 감상 (최고의 무료 명소)<br>• 11/14 알함브라 궁전 및 나스르 궁전 집중 관람",
     "must_agp_city": "말라가",
-    "must_agp_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>에스페토 (Espeto)</strong>: 해변가에서 대나무 꼬치에 꿰어 숯불에 구워내는 정통 정어리 구이<br>• <strong>El Pimpi</strong>: 안토니오 반데라스 와이너리 전통 와인 & 하몬<br>• <strong>Marisquería Godoy</strong>: 항구 테라스 해산물 구이",
+    "must_agp_food": "<strong>식당·메뉴 후보 (예약·당일 제공 미확정):</strong><br>• <strong>에스페토(Espeto)</strong>: 갈대 꼬치에 정어리를 꿰어 숯불에 굽는 말라가 전통 음식. 가격은 식당·시기에 따라 다릅니다.<br>• <strong>El Pimpi</strong>: 1971년 설립된 전통 보데가·식당. 공식 메뉴에 Moscatel 와인과 이베리코 하몬이 소개됩니다.<br>• <strong>Los Mellizos</strong>: 말라가 도심 지점의 공식 안내는 쌀 요리, 해산물, 튀긴 생선을 소개합니다. 모든 메뉴는 방문 전 확인하세요.",
     "must_agp_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>말라가 항구 무에예 우노 (Muelle Uno)</strong>: 야자수와 지중해가 어우러진 해안 산책로 야경 산책<br>• 라리오스 대리석 쇼핑 거리의 화려한 조명 산책",
     "must_nap_city": "나폴리",
     "must_nap_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Gino Sorbillo</strong>: 겉바속촉 전설의 화덕 마르게리타 피자<br>• <strong>Gran Caffè Gambrinus</strong>: 1860년 유서 깊은 카페의 정통 에스프레소 & 럼주 빵 '바바(Babà)', 조개 페이스트리 '스폴리아텔라'",
@@ -16601,8 +16610,8 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "Senior Fatigue Care",
     "kpi_senior_val": "1.5 Spots / Day",
     "kpi_senior_sub": "13:00–15:30 Hot Shower & Siesta Slot",
-    "dining_title": "Must-Eat Local Dishes & Verified Restaurants (92 Curated Spots)",
-    "dining_sub": "Iconic gastronomy across UK, France, Italy, Spain, Portugal, Central Europe, Latin America, and USA. Includes hours, language support, contacts, and booking links.",
+    "dining_title": "Regional Food & Restaurant Ideas (92 Spots)",
+    "dining_sub": "A curated list of food and restaurant ideas. Menus, prices, hours, staff languages, contact and booking details can change; verify with each venue before visiting.",
     "dining_search_ph": "🔍 Search city (London, Paris, Rome, New York), dish (fish and chips, steak, taco), keyword...",
     "btn_dining_search": "Search Dining",
     "lbl_signature": "Signature Dish:",
@@ -16735,7 +16744,8 @@ const I18N_DICTIONARY = {
     "gourmet_bcn_snack": "<strong>🥐 Local Market & Street Snacks (Santa Caterina / Boqueria):</strong><br>• <strong>Fresh Fruit Juice & Cups</strong>: 1~2€ fresh mango, strawberry, and melon vitamin cups in vibrant market aisles.<br>• <strong>Ibérico Jamón Cone</strong>: Handheld paper cones filled with freshly carved premium acorn-fed ham.<br>• <strong>Churros con Chocolate</strong>: Crispy golden churros dipped into rich, thick hot chocolate.",
     "gourmet_and_title": "2. Andalusia (Seville, Córdoba, Granada, Málaga)",
     "badge_andalusia": "Southern Heritage",
-    "gourmet_and_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Braised Oxtail (Rabo de Toro)</strong>: Specialty at Bodegas Mezquita. Rich, fall-off-the-bone tenderness similar to Korean galbi-jjim, loved by senior travelers!<br>• <strong>Fried Eggplant with Honey (Berenjenas con miel)</strong>: Thin crispy fried eggplant drizzled with cane sugar honey—the ultimate sweet & savory tapas.<br>• <strong>Salmorejo</strong>: Rich, silky cold tomato and garlic soup from Córdoba, topped with crunchy jamón.<br>• <strong>Espeto (Málaga Beach)</strong>: Fresh sardines skewered on bamboo sticks and grilled over charcoal boat fires right on the sand.",
+    "gourmet_and_sig": "<strong>⭐️ Andalusian regional food ideas:</strong><br>• <strong>Córdoba:</strong> Salmorejo, rabo de toro (oxtail stew) and flamenquín are regional dishes to look for.<br>• <strong>Granada:</strong> Some venues serve seafood or fish tapas; any tapa-with-drink policy varies by venue and order.<br>• <strong>Málaga:</strong> Espeto is sardine skewered on cane and grilled over charcoal. Check the restaurant’s current menu and prices.<br>These are regional ideas, not guaranteed daily menu items.",
+    "food_image_illustrative": "🥘 Illustrative food image",
     "gourmet_and_snack": "<strong>🥐 Local Market Snacks:</strong><br>• <strong>Andalusian Churros</strong>: Noticeably crispier and lighter than northern versions! Stand at a morning coffee bar and enjoy with café con leche like a local.",
     "gourmet_part2_title": "🇮🇹 [Part 2] Italy Culinary & Snack Deep Dive",
     "badge_napoli": "Birthplace of Pizza",
@@ -16822,13 +16832,13 @@ const I18N_DICTIONARY = {
     "must_svq_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>El Rinconcillo</strong>: Oldest tapas bar since 1670 - Spinach & Chickpea Stew (Espinacas con garbanzos), Tender Pork Cheek (Carrillada)<br>• Authentic tapas & chilled sangria",
     "must_svq_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Metropol Parasol (Las Setas)</strong>: Stroll the giant wooden structure open-air plaza with evening illumination (Free)<br>• <strong>Plaza de España</strong>: Romantic night lighting walk with serene fountains (Free)<br>• Evening river walk by the Golden Tower (Torre del Oro)",
     "must_odb_city": "Córdoba",
-    "must_odb_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Bodegas Mezquita</strong>: Slow-braised tender Ox-tail stew (Rabo de Toro - parents' favorite nourishing meal), Crispy eggplant with honey (Berenjenas con miel), Salmorejo",
+    "must_odb_food": "<strong>Restaurant and dish ideas (not booked; availability unconfirmed):</strong><br>• <strong>Taberna Luque</strong>: Local reporting says it stopped operating as a restaurant in late 2019; it is not listed as a current dining pick. The successor shop’s current status is unverified.<br>• <strong>Bodegas Mezquita</strong>: Its official online menu lists rabo de toro and flamenquín. Salmorejo is a Córdoba regional dish; check the current menu at your chosen branch.",
     "must_odb_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Roman Bridge (Puente Romano)</strong>: Cross at sunset for stunning free panorama of the Mezquita and riverbank lights<br>• Flower-lined Calleja de las Flores alley stroll",
     "must_grx_city": "Granada",
-    "must_grx_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Bar Los Diamantes</strong>: Complimentary freshly fried seafood tapas platter served free with every drink ordered!<br>• Calle Navas vibrant tapas bar crawl",
+    "must_grx_food": "<strong>Restaurant and dish ideas (not booked; availability unconfirmed):</strong><br>• <strong>Los Diamantes</strong>: Its official site describes seafood and fish tapas and raciones. Specific dishes and any tapa-with-drink policy may vary by venue and order.<br>• <strong>La Auténtica Carmela</strong>: An Andalusian–Mediterranean restaurant. Fried eggplant with cane honey and croquettes are menu ideas; confirm current availability.<br>Some Granada bars may serve a tapa with a drink, but this is not guaranteed at every venue or for any particular dish.",
     "must_grx_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Mirador de San Nicolás</strong>: Take taxi up to witness the red walls of the Alhambra illuminated against the sunset (Top free viewpoint)<br>• 11/14 Comprehensive tour of Alhambra & Nasrid Palaces",
     "must_agp_city": "Málaga",
-    "must_agp_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Espeto de Sardinas</strong>: Traditional fresh sardines skewered on bamboo and wood-charcoal roasted on beach chiringuitos<br>• <strong>El Pimpi</strong>: Historic winery run by Antonio Banderas serving sweet wine & jamón<br>• <strong>Marisquería Godoy</strong>: Harbour terrace seafood grill",
+    "must_agp_food": "<strong>Restaurant and dish ideas (not booked; availability unconfirmed):</strong><br>• <strong>Espeto</strong>: Málaga sardines skewered on cane and grilled over charcoal; prices vary by restaurant and date.<br>• <strong>El Pimpi</strong>: A historic bodega and restaurant founded in 1971. Its official menu includes Moscatel wine and Iberian ham.<br>• <strong>Los Mellizos</strong>: The official Málaga location lists rice dishes, seafood and fried fish. Check current menu details before visiting.",
     "must_agp_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Muelle Uno Waterfront</strong>: Breezy illuminated harbor promenade lined with palms and Mediterranean views<br>• Stroll Calle Larios marble avenue lights",
     "must_nap_city": "Naples",
     "must_nap_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Gino Sorbillo</strong>: Legendary crispy & chewy wood-fired Neapolitan Margherita pizza<br>• <strong>Gran Caffè Gambrinus</strong>: 1860 historic café serving rich espresso, rum-soaked Babà cake & flaky Sfogliatella pastry",
@@ -16981,8 +16991,8 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "シニア疲労ケア指数",
     "kpi_senior_val": "1.5スポット／日",
     "kpi_senior_sub": "13:00〜15:30 温水シャワー＆シエスタ枠",
-    "dining_title": "必ず食べるべき名物料理＆検証済み名店 (厳選92選)",
-    "dining_sub": "イギリス・フランス・イタリア・スペイン・ポルトガル・中欧・中南米・アメリカの代表料理。営業時間、外国語対応、連絡先、予約リンクを完全収録。",
+    "dining_title": "郷土料理・レストラン候補（92件）",
+    "dining_sub": "郷土料理とレストランの候補です。メニュー・価格・営業時間・スタッフの言語対応・連絡先・予約情報は変わるため、訪問前に各店へご確認ください。",
     "dining_search_ph": "🔍 都市（ロンドン、パリ、ローマ、ニューヨーク）、料理（フィッシュ＆チップス、ステーキ、タコス）、キーワード検索...",
     "btn_dining_search": "グルメ検索",
     "lbl_signature": "代表シグネチャー:",
@@ -17058,7 +17068,8 @@ const I18N_DICTIONARY = {
     "gourmet_bcn_snack": "<strong>🥐 市場＆夜市スナック (サンタ・カタリーナ／ボケリア市場):</strong><br>• <strong>生絞りジュース＆カットフルーツカップ</strong>: 市場の露店で1〜2€で買える新鮮マンゴーやイチゴのビタミン補給カップ。<br>• <strong>イベリコ生ハムコーン (Jamón Cone)</strong>: 散策しながら気軽に楽しめる最高級生ハムスライスの紙コーン。<br>• <strong>チュロスとホットチョコレート (Churros con Chocolate)</strong>: 揚げたてサクサクのチュロスを濃厚な温かいチョコにたっぷり浸して味わう至福のスイーツ。",
     "gourmet_and_title": "2. アンダルシア (セビリア・コルドバ・グラナダ・マラガ)",
     "badge_andalusia": "アンダルシア郷土料理",
-    "gourmet_and_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>オックステール煮込み (Rabo de Toro)</strong>: Bodegas Mezquitaなどの南部名物。韓国の牛カルビ煮込みに似て柔らかく、ご両親も大絶賛！<br>• <strong>ナスのフライ蜂蜜がけ (Berenjenas con miel)</strong>: 薄切りナスのサクサク揚げにサトウキビ蜂蜜をかけた絶品甘塩タパス。<br>• <strong>サルモレホ (Salmorejo)</strong>: ガスパチョよりも濃厚でクリーミーなコルドバ風トマトとニンニクの冷製スープ。<br>• <strong>エスペト (Espeto, マラガ海岸)</strong>: 竹串に刺した新鮮なイワシを砂浜の炭火舟で豪快に焼き上げる名物。",
+    "gourmet_and_sig": "<strong>⭐️ アンダルシアの郷土料理アイデア:</strong><br>• <strong>コルドバ:</strong> サルモレホ、牛テール煮込み（Rabo de Toro）、フラメンキンは郷土料理の候補です。<br>• <strong>グラナダ:</strong> 魚介・魚のタパスを出す店があります。ドリンクとタパの提供条件は店や注文により異なります。<br>• <strong>マラガ:</strong> エスペトはイワシを葦串に刺して炭火で焼く伝統料理です。現在のメニューと価格は店舗でご確認ください。<br>各店の当日メニューを保証するものではありません。",
+    "food_image_illustrative": "🥘 料理イメージ（参考）",
     "gourmet_and_snack": "<strong>🥐 ローカル市場スナック:</strong><br>• <strong>アンダルシア風チュロス (Churros)</strong>: 北部より軽やかでサクサク！朝のバルで地元の人々のようにカフェ・コン・レチェと一緒に楽しむのがおすすめ。",
     "gourmet_part2_title": "🇮🇹 [Part 2] イタリア美食＆スナック探訪",
     "badge_napoli": "ピッツァ発祥の地",
@@ -17145,13 +17156,13 @@ const I18N_DICTIONARY = {
     "must_svq_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>El Rinconcillo</strong>: 1670年創業の最古タパスバー - ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の煮込み<br>• 本場タパス＆冷たいサングリア",
     "must_svq_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>メトロポール・パラソル (Las Setas)</strong>: 巨大木造建築の屋外広場無料散策＆夜間ライトアップ<br>• <strong>スペイン広場 (Plaza de España)</strong>: 夜の明かりが灯る幻想的でロマンチックな広場散歩(無料)<br>• グアダルキビール川沿い黄金の塔の夜景",
     "must_odb_city": "コルドバ",
-    "must_odb_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Bodegas Mezquita</strong>: じっくり煮込んだ柔らかいオックステール煮込み(Rabo de Toro - ご両親絶賛の滋養食)、ナスのハチミツ揚げ、サルモレホ",
+    "must_odb_food": "<strong>飲食店・料理候補（予約・当日提供は未確認）:</strong><br>• <strong>Taberna Luque</strong>: 現地報道では2019年末に飲食店営業を終了。後継店の現在の営業状況も未確認のため、現行のレストランとしてはおすすめに含めていません。<br>• <strong>Bodegas Mezquita</strong>: 公式オンラインメニューには牛テール煮込み（Rabo de Toro）とフラメンキンが掲載されています。サルモレホはコルドバの郷土料理候補です。訪問予定店舗の現行メニューをご確認ください。",
     "must_odb_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ローマ橋 (Puente Romano)</strong>: 夕暮れ時に橋を渡りメスキタと川沿いの無料夜景を一望<br>• ユダヤ人街の花の小道(Calleja de las Flores)散策",
     "must_grx_city": "グラナダ",
-    "must_grx_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Bar Los Diamantes</strong>: ドリンク注文で揚げたて熱々の魚介タパスが1皿無料提供！<br>• ナバス通り(Calle Navas)の活気あるタパス巡り",
+    "must_grx_food": "<strong>飲食店・料理候補（予約・当日提供は未確認）:</strong><br>• <strong>Los Diamantes</strong>: 公式サイトでは魚介・魚のタパスやラシオネスを紹介。具体的な料理やドリンク注文時のタパ提供条件は店舗・注文により異なります。<br>• <strong>La Auténtica Carmela</strong>: アンダルシア・地中海料理のレストラン。ナスのサトウキビ蜜がけやコロッケは料理候補ですが、当日の提供は要確認です。<br>グラナダの一部の店では飲み物とタパが出ることがありますが、全店や特定料理の無料提供を保証するものではありません。",
     "must_grx_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>サン・ニコラス展望台 (Mirador de San Nicolás)</strong>: タクシーで登り、夕日に染まるアルハンブラ宮殿の赤い城壁と無料夜景を満喫<br>• 11/14 アルハンブラ宮殿＆ナスル朝宮殿集中鑑賞",
     "must_agp_city": "マラガ",
-    "must_agp_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>エスペト (Espeto)</strong>: ビーチ沿いで竹串に刺した新鮮なイワシの炭火焼き<br>• <strong>El Pimpi</strong>: アントニオ・バンデラスが手掛ける老舗ワイナリーの甘口ワイン＆生ハム<br>• <strong>Marisquería Godoy</strong>: 港湾テラスの極上シーフードグリル",
+    "must_agp_food": "<strong>飲食店・料理候補（予約・当日提供は未確認）:</strong><br>• <strong>エスペト（Espeto）</strong>: イワシを葦串に刺して炭火で焼くマラガの伝統料理。価格は店舗や時期によって異なります。<br>• <strong>El Pimpi</strong>: 1971年創業の歴史あるボデガ兼レストラン。公式メニューにはモスカテルワインとイベリコハモンが掲載されています。<br>• <strong>Los Mellizos</strong>: 公式のマラガ店舗案内では米料理、魚介、揚げ魚を紹介。訪問前に最新メニューをご確認ください。",
     "must_agp_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>マラガ港ムエジェ・ウノ (Muelle Uno)</strong>: ヤシの木と地中海が広がる海岸プロムナードの夜景散歩<br>• 大理石が輝くラリオス通りのイルミネーション",
     "must_nap_city": "ナポリ",
     "must_nap_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Gino Sorbillo</strong>: 伝説の薪窯で焼き上げる香ばしい元祖マルゲリータピッツァ<br>• <strong>Gran Caffè Gambrinus</strong>: 1860年創業の歴史的カフェで本格エスプレッソ＆ラム酒風味のババ(Babà)、スフォリアテッラ",
@@ -17304,8 +17315,8 @@ const I18N_DICTIONARY = {
     "kpi_senior_label": "长辈体力照护指数",
     "kpi_senior_val": "每日1.5个景点",
     "kpi_senior_sub": "13:00~15:30 热水澡与午休时段",
-    "dining_title": "必吃经典美食与验证餐厅 (高质照片 92选)",
-    "dining_sub": "汇集英国、法国、意大利、西班牙、葡萄牙、中欧、中南美及美国的经典美味。收录营业时间、外语沟通、电话及预订链接。",
+    "dining_title": "地方菜与餐厅建议（92处）",
+    "dining_sub": "这里汇集地方菜与餐厅建议。菜单、价格、营业时间、员工语言、联系方式及预订信息可能变化；到访前请向餐厅核实。",
     "dining_search_ph": "🔍 搜索城市（伦敦、巴黎、罗马、纽约）、菜肴（炸鱼薯条、牛排、塔可）、关键词...",
     "btn_dining_search": "搜索美食",
     "lbl_signature": "招牌特色菜:",
@@ -17381,7 +17392,8 @@ const I18N_DICTIONARY = {
     "gourmet_bcn_snack": "<strong>🥐 传统市集与夜市小吃 (圣卡特琳娜／波盖利亚市场):</strong><br>• <strong>鲜榨果汁与混合水果杯</strong>: 市集随处可见1~2欧元的芒果、草莓、哈密瓜切片维他命能量杯。<br>• <strong>伊比利亚火腿纸筒 (Jamón Cone)</strong>: 边走边享用的现切顶级生火腿薄片纸杯。<br>• <strong>吉事果配热巧 (Churros con Chocolate)</strong>: 金黄酥脆的西班牙油条蘸入醇厚浓郁的热巧克力，完美的早餐与下午茶。",
     "gourmet_and_title": "2. 安达卢西亚 (塞维利亚·科尔多瓦·格拉纳达·马拉加)",
     "badge_andalusia": "南部传统风味",
-    "gourmet_and_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>炖牛尾 (Rabo de Toro)</strong>: Bodegas Mezquita等南部名店特色。口感软烂醇厚，非常贴合东方长辈口味！<br>• <strong>炸茄子配甘蔗蜜 (Berenjenas con miel)</strong>: 薄脆多汁的炸茄条淋上天然甘蔗蜜，咸甜适口的招牌小吃。<br>• <strong>萨尔莫雷霍番茄浓汤 (Salmorejo)</strong>: 较冷汤更为浓郁丝滑的科尔多瓦特色蒜香冷番茄羹，配以香脆火腿碎。<br>• <strong>竹签烤沙丁鱼 (Espeto, 马拉加海滩)</strong>: 竹签穿串新鲜沙丁鱼，在海滩沙地炭火舟上现烤，香气四溢。",
+    "gourmet_and_sig": "<strong>⭐️ 安达卢西亚地方美食建议：</strong><br>• <strong>科尔多瓦：</strong>萨尔莫雷霍冷汤、炖牛尾（Rabo de Toro）和弗拉门金（Flamenquín）可作为当地菜品参考。<br>• <strong>格拉纳达：</strong>有些餐馆供应海鲜或鱼类Tapas；点饮品是否附送Tapas因店家和订单而异。<br>• <strong>马拉加：</strong>Espeto是用芦苇签串起沙丁鱼并以炭火烤制的传统菜。请向餐馆确认当前菜单与价格。<br>以上是地方菜建议，不代表当日一定供应。",
+    "food_image_illustrative": "🥘 菜品示意图片",
     "gourmet_and_snack": "<strong>🥐 街头市集小吃:</strong><br>• <strong>安达卢西亚油条 (Churros)</strong>: 比北部更为酥脆清爽！早晨站在街角吧台，伴随一杯热拿铁享受地道西式晨光。",
     "gourmet_part2_title": "🇮🇹 [Part 2] 意大利美食与特色小吃深度解析",
     "badge_napoli": "披萨发源地",
@@ -17468,13 +17480,13 @@ const I18N_DICTIONARY = {
     "must_svq_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>El Rinconcillo</strong>: 始于1670年的最古老小吃吧 - 菠菜鹰嘴豆炖菜、慢炖伊比利亚猪面颊肉<br>• 经典安达卢西亚Tapas与冰镇桑格利亚汽酒",
     "must_svq_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>都市阳伞 (Las Setas)</strong>: 漫步世界最大木结构室外广场欣赏夜景灯光(免费)<br>• <strong>西班牙广场 (Plaza de España)</strong>: 夜晚灯光亮起时的壮丽浪漫夜景散步(免费)<br>• 漫步瓜达尔基维尔河畔黄金塔夜景",
     "must_odb_city": "科尔多瓦",
-    "must_odb_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Bodegas Mezquita</strong>: 软烂入味的慢炖牛尾(Rabo de Toro - 长辈最爱滋补菜)、蜂蜜炸茄子、萨尔莫霍番茄冷汤",
+    "must_odb_food": "<strong>餐厅与菜品建议（尚未预订，是否供应需确认）：</strong><br>• <strong>Taberna Luque</strong>：当地报道显示其餐厅于2019年末停止营业，因此不列为当前餐厅推荐；后续店铺目前是否营业尚未核实。<br>• <strong>Bodegas Mezquita</strong>：其官方在线菜单列有炖牛尾（Rabo de Toro）和弗拉门金（Flamenquín）。萨尔莫雷霍是科尔多瓦地方菜参考；请确认所选分店的当前菜单。",
     "must_odb_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>古罗马桥 (Puente Romano)</strong>: 黄昏时分漫步过桥，眺望清真寺大教堂与河畔绝美免费夜景<br>• 漫步百花巷(Calleja de las Flores)",
     "must_grx_city": "格拉纳达",
-    "must_grx_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Bar Los Diamantes</strong>: 每点一杯酒水即免费赠送一盘热气腾腾的现炸海鲜Tapas！<br>• 纳瓦斯街(Calle Navas)地道小吃街品尝巡游",
+    "must_grx_food": "<strong>餐厅与菜品建议（尚未预订，是否供应需确认）：</strong><br>• <strong>Los Diamantes</strong>：官网介绍海鲜、鱼类Tapas及分量菜（raciones）；具体菜品及饮品是否附送Tapas因门店和订单而异。<br>• <strong>La Auténtica Carmela</strong>：安达卢西亚与地中海风味餐厅。甘蔗蜜炸茄子和可乐饼可作为菜单参考，请确认当日供应。<br>格拉纳达部分酒吧可能会随饮品提供Tapas，但不能假设所有店家或某道菜都免费提供。",
     "must_grx_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>圣尼古拉斯观景台 (Mirador de San Nicolás)</strong>: 打车登顶，免费饱览红堡在夕阳与夜景映衬下的雄伟壮丽景色(最佳观景点)<br>• 11/14阿尔罕布拉宫及纳斯里德宫深度参观",
     "must_agp_city": "马拉加",
-    "must_agp_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>炭烤沙丁鱼 (Espeto)</strong>: 海滩边用竹签串起用橄榄木炭火现烤的地道传统风味<br>• <strong>El Pimpi</strong>: 安东尼奥·班德拉斯经营的百年老酒窖甜葡萄酒与生火腿<br>• <strong>Marisquería Godoy</strong>: 海港露台海鲜拼盘",
+    "must_agp_food": "<strong>餐厅与菜品建议（尚未预订，是否供应需确认）：</strong><br>• <strong>Espeto</strong>：将沙丁鱼串在芦苇签上用炭火烤制的马拉加传统菜；价格因餐馆和时段而异。<br>• <strong>El Pimpi</strong>：创立于1971年的传统酒窖式餐厅；官网菜单列有Moscatel甜酒和伊比利亚火腿。<br>• <strong>Los Mellizos</strong>：其马拉加分店官网介绍米饭料理、海鲜及炸鱼。请在到访前确认当前菜单。",
     "must_agp_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>马拉加一号码头 (Muelle Uno)</strong>: 棕榈树与地中海海风相伴的现代化海滨步道夜景散步<br>• 漫步大理石铺就的拉里奥斯商业街璀璨灯火",
     "must_nap_city": "那不勒斯",
     "must_nap_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Gino Sorbillo</strong>: 外脆内软的正宗传统柴火玛格丽特披萨圣殿<br>• <strong>Gran Caffè Gambrinus</strong>: 始于1860年的历史咖啡厅品尝浓缩咖啡、朗姆蛋糕(Babà)与贝壳酥(Sfogliatella)",
@@ -17495,7 +17507,7 @@ var CHATBOT_I18N = {
     placeholder: "질문을 입력하세요 (예: 30일 마스터 플래너, 이탈리아 기차, 빠에야 외 미식, 성당 복장)...",
     tooltip: "AI 여행 챗봇 열기",
     welcome: `안녕하세요! <strong>스페인 · 이탈리아 · 포르투갈 · 두바이 가족 여행 전담 로컬 AI 가이드</strong>입니다. ✈️<br><br>
-외부 API 호출 없이 브라우저 내 엄선 데이터(<strong>30일 마스터 플래너 9대 확정 숙소 & 6대 교통 공식</strong>, <strong>7대 도시 12대 대체불가 미식</strong>, <strong>24선 필수 서바이벌 회화</strong>, 이탈리아 고속철도 & 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)를 바탕으로 자연스럽고 친절하게 답변해 드립니다.<br><br>
+외부 API 호출 없이 브라우저 내 엄선 데이터(<strong>30일 마스터 플래너 9대 확정 숙소 & 6대 교통 공식</strong>, <strong>8개 도시 지역 음식 후보</strong>, <strong>24선 필수 서바이벌 회화</strong>, 이탈리아 고속철도 & 성당 복장 규정, 15대 야경 명소, 실시간 맞춤 예산)를 바탕으로 자연스럽고 친절하게 답변해 드립니다.<br><br>
 궁금하신 점을 편하게 질문해 보세요!<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
   💡 예: <em>"30일 마스터 플래너 요약해줘", "나폴리에서 피렌체 어떻게 가?", "빠에야 피자 말고 다른 음식 추천", "성당 복장 규정", "소금 빼주세요 스페인어/이탈리아어"</em>
@@ -17504,7 +17516,7 @@ var CHATBOT_I18N = {
       {"text":"🚻 명소 화장실 & 골든 루틴","q":"스페인 이탈리아 명소 화장실 정보와 이용 골든 루틴 알려줘"},
       { text: "📅 30일 마스터 플래너 & 9대 숙소", q: "스페인 이탈리아 30일 마스터 플래너와 9대 확정 숙소 요약해줘" },
       { text: "🚆 6대 황금 교통 공식", q: "도시 간 6대 황금 교통 공식과 이동 시간 알려줘" },
-      { text: "🍽️ 빠에야·피자 외 12대 미식", q: "빠에야 피자 말고 다른 음식 추천해줘" },
+      { text: "🍽️ 8개 도시 음식 후보", q: "빠에야 피자 말고 다른 음식 추천해줘" },
       { text: "🗣️ 24선 필수 생존 회화", q: "식당과 여행에서 꼭 쓰는 24선 필수 생존 회화 알려줘" },
       { text: "🚄 이탈리아 기차 & 펀칭 주의사항", q: "이탈리아 기차 예매 팁과 펀칭(Convalida) 벌금 주의사항" },
       { text: "⛪ 성당 복장 규정 & 카프리 팁", q: "성당 복장 규정과 카프리 섬 페리 푸른 동굴 팁" },
@@ -17523,7 +17535,7 @@ var CHATBOT_I18N = {
     placeholder: "Ask anything (e.g., 30-day master planner, Italy trains, food other than pizza, dress code)...",
     tooltip: "Open AI Travel Assistant",
     welcome: `Hello! I am your <strong>Spain · Italy · Portugal · Dubai Family Travel AI Companion</strong>. ✈️<br><br>
-Instant answers powered 100% by local curated data (<strong>30-Day Master Planner with 9 Confirmed Hotels & 6 Golden Transit Formulas</strong>, <strong>7 Cities 12 Signature Dishes</strong>, <strong>24 Essential Survival Phrases</strong>, Italy High-Speed Rail & Cathedral Dress Protocol, 15 Night Views, and Real-Time Budget) without any external API calls.<br><br>
+Instant answers powered 100% by local curated data (<strong>30-Day Master Planner with 9 Confirmed Hotels & 6 Golden Transit Formulas</strong>, <strong>Regional Food Ideas for 8 Cities</strong>, <strong>24 Essential Survival Phrases</strong>, Italy High-Speed Rail & Cathedral Dress Protocol, 15 Night Views, and Real-Time Budget) without any external API calls.<br><br>
 Feel free to ask any travel question!<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
   💡 e.g.: <em>"Summarize the 30-day master planner", "How to get from Naples to Florence?", "Food recommendations other than paella or pizza", "Cathedral dress code", "How to say less salt in Spanish/Italian"</em>
@@ -17532,7 +17544,7 @@ Feel free to ask any travel question!<br>
       {"text":"🚻 Restroom Guide & Golden Routines","q":"Tell me the restroom guide and 3 golden routines for Spain and Italy"},
       { text: "📅 30-Day Master Planner & 9 Hotels", q: "Summarize the Spain & Italy 30-day master planner and 9 confirmed accommodations" },
       { text: "🚆 6 Golden Transit Formulas", q: "What are the 6 golden intercity transit formulas and travel times?" },
-      { text: "🍽️ 12 Signature Dishes Beyond Paella/Pizza", q: "Food recommendations other than paella and pizza" },
+      { text: "🍽️ Regional Food Ideas (8 Cities)", q: "Food recommendations other than paella and pizza" },
       { text: "🗣️ 24 Essential Survival Phrases", q: "Tell me the 24 essential dining and travel survival phrases in Spanish and Italian" },
       { text: "🚄 Italy High-Speed Trains & Validation", q: "Italy train booking tips, Italo vs Trenitalia, and ticket validation (Convalida) rules" },
       { text: "⛪ Cathedral Dress Code & Capri Ferry", q: "Cathedral dress protocol and Capri island ferry tips" },
@@ -17551,7 +17563,7 @@ Feel free to ask any travel question!<br>
     placeholder: "質問を入力 (例: 30日マスタープランナー, イタリア鉄道, ピザ以外の絶品グルメ, 教会服装)...",
     tooltip: "AI旅行アシスタントを開く",
     welcome: `こんにちは！<strong>スペイン・イタリア・ポルトガル・ドバイ家族旅行専属AIコンシェルジュ</strong>です。✈️<br><br>
-外部APIを使わず、ブラウザ内の厳選データ（<strong>30日マスタープランナー 9大確定ホテル＆6大交通公式</strong>、<strong>7大都市 12大代替不可グルメ</strong>、<strong>24選必須サバイバル会話</strong>、イタリア高速鉄道＆大聖堂ドレスコード、15大パノラマ夜景、リアルタイム予算）に基づいて自然かつ丁寧にお答えします。<br><br>
+外部APIを使わず、ブラウザ内の厳選データ（<strong>30日マスタープランナー 9大確定ホテル＆6大交通公式</strong>、<strong>8都市の郷土料理候補</strong>、<strong>24選必須サバイバル会話</strong>、イタリア高速鉄道＆大聖堂ドレスコード、15大パノラマ夜景、リアルタイム予算）に基づいて自然かつ丁寧にお答えします。<br><br>
 旅の疑問やお悩みをお気軽にご質問ください！<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
   💡 例: <em>「30日マスタープランナーを要約して」「ナポリからフィレンツェへの移動方法」「パエリアやピザ以外のおすすめ名物」「教会の服装規定」「薄味・塩控えめの注文方法」</em>
@@ -17560,7 +17572,7 @@ Feel free to ask any travel question!<br>
       {"text":"🚻 名所トイレ＆ゴールデンルール","q":"スペイン・イタリア主要名所のトイレ情報と利用ルールを教えて"},
       { text: "📅 30日マスタープランナー＆9大ホテル", q: "スペイン・イタリア30日マスタープランナーと9大確定ホテルの要約を教えて" },
       { text: "🚆 6大黄金交通公式（都市間移動）", q: "都市間を結ぶ6大黄金交通公式と所要時間を教えて" },
-      { text: "🍽️ パエリア・ピザ以外の12大名物", q: "パエリアやピザ以外のおすすめ料理を教えて" },
+      { text: "🍽️ 8都市の郷土料理候補", q: "パエリアやピザ以外のおすすめ料理を教えて" },
       { text: "🗣️ 24選 必須サバイバル会話", q: "レストランや旅行で使えるスペイン語・イタリア語の24大必須フレーズ" },
       { text: "🚄 イタリア鉄道＆打刻注意点", q: "イタリア鉄道予約のコツと切符の打刻（Convalida）罰金注意点" },
       { text: "⛪ 教会ドレスコード＆カプリ島", q: "大聖堂の服装規定とカプリ島フェリー・青の洞窟のコツ" },
@@ -17579,7 +17591,7 @@ Feel free to ask any travel question!<br>
     placeholder: "请输入问题 (例: 30天大师规划, 意大利高铁, 披萨外招牌美食, 教堂着装)...",
     tooltip: "打开AI旅行助手",
     welcome: `您好！我是您的<strong>西班牙 · 意大利 · 葡萄牙 · 迪拜家庭旅行AI向导</strong>。✈️<br><br>
-无需调用外部API，完全基于本地精选数据库（<strong>30天大师规划师 9大确定酒店与6大交通公式</strong>、<strong>7大城市 12大特色招牌美食</strong>、<strong>24句用餐与旅行生存口语</strong>、意大利高铁换乘与大教堂着装规范、15大璀璨夜景、实时定制预算）即刻为您智能自然地解答。<br><br>
+无需调用外部API，完全基于本地精选数据库（<strong>30天大师规划师 9大确定酒店与6大交通公式</strong>、<strong>8城地方美食建议</strong>、<strong>24句用餐与旅行生存口语</strong>、意大利高铁换乘与大教堂着装规范、15大璀璨夜景、实时定制预算）即刻为您智能自然地解答。<br><br>
 欢迎随时提问！<br>
 <span style="font-size:11.5px;color:var(--muted);display:block;margin-top:6px;">
   💡 例如：<em>“总结30天大师规划师行程”、“从那不勒斯到佛罗伦萨怎么走”、“除海鲜饭和披萨外的特色美食”、“大教堂着装规定要求”、“少放盐意大利语西语怎么说”</em>
@@ -17588,7 +17600,7 @@ Feel free to ask any travel question!<br>
       {"text":"🚻 景点洗手间与黄金法则","q":"请告诉我西班牙和意大利景点的洗手间指南与3大黄金守则"},
       { text: "📅 30天大师规划与9大确定酒店", q: "总结西班牙与意大利30天大师规划师和9大确定住宿酒店" },
       { text: "🚆 6大黄金交通公式", q: "城市间6大黄金交通出行公式与耗时是怎样的？" },
-      { text: "🍽️ 海鲜饭/披萨外12大招牌美食", q: "除西班牙海鲜饭和披萨外还有什么不可错过的特色美食推荐？" },
+      { text: "🍽️ 8城地方美食建议", q: "除西班牙海鲜饭和披萨外还有什么不可错过的特色美食推荐？" },
       { text: "🗣️ 24句西语意语生存常用语", q: "点餐与旅行必用的24句西语和意大利语生存口语" },
       { text: "🚄 意大利高铁与检票打票避坑", q: "意大利高铁意铁法拉利订票攻略与检票打票（Convalida）罚款防坑" },
       { text: "⛪ 大教堂着装规定与卡普里轮渡", q: "大教堂着装规定要求与卡普里岛轮渡蓝洞游览贴士" },
@@ -20498,16 +20510,16 @@ Feel free to ask any travel question!<br>
     "region": "스페인",
     "city": "그라나다",
     "country": "스페인",
-    "dishName": "전통 콤비네이션 타파스 & 카스타녜다 와인 (Tabla Caliente)",
-    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
-    "signature": "그라나다 무료 타파스 전통의 살아있는 역사. 음료 한 잔 주문 시마다 푸짐한 따뜻한 안주 타파스가 무료로 함께 나오는 안달루시아 인심",
-    "seniorTip": "안쪽 테이블석에 앉아 모둠 온타파스 플래터(Tabla Caliente)를 주문하면 여러 가지 스페인 요리를 한 번에 편안히 시식 가능",
-    "hours": "매일 11:30~16:30, 19:30~24:00",
-    "language": "영어 메뉴판 구비 · 활기차고 푸근한 안달루시아 환대",
-    "phone": "+34 958 21 54 69",
-    "booking": "예약 불가 (식사 시간 20분 전 여유 있게 방문 권장)",
+    "dishName": "Tapas and local dishes; current selection varies",
+    "photo": "",
+    "signature": "A Granada tapas bar; current selection and whether a tapa is included with a drink vary by venue and order. Confirm before visiting.",
+    "seniorTip": "Seating, crowding, accessibility and staff language support are not confirmed; ask the venue directly.",
+    "hours": "Check current hours directly.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check the current reservation policy directly.",
     "mapQuery": "Bodegas Castaneda Granada",
-    "baseKrw": 24000
+    "baseKrw": null
   },
   {
     "name": "Casa Pepe de la Judería",
@@ -21297,16 +21309,16 @@ Feel free to ask any travel question!<br>
       "zh": "西班牙 · 格拉纳达"
     },
     "signature": {
-      "ko": "그라나다 무료 타파스 전통의 살아있는 역사. 음료 한 잔 주문 시마다 푸짐한 따뜻한 안주 타파스가 무료로 함께 나오는 안달루시아 인심",
-      "ja": "ドリンク1杯ごとに温かい無料タパスがサービスされるグラナダ古き良き伝統ボデガ。名物の温製タパス盛り合わせとヴェルモット酒。",
-      "en": "Historic Granada landmark preserving the generous free tapas tradition. Drink orders come with hearty complimentary warm bites, alongside signature hot food platters.",
-      "zh": "恪守格拉纳达每点一杯饮品即赠免费热食塔帕斯传统的百年老店。特色传统热盘拼盘与自调草本苦艾酒。"
+      "ko": "타파스와 지역 음식을 파는 바입니다. 메뉴 구성과 음료에 타파가 포함되는지는 매장·주문별로 다르므로 방문 전 확인하세요.",
+      "ja": "タパスや地元料理を扱うバルです。メニュー内容やドリンク時のタパ提供は店舗・注文により異なるため、事前にご確認ください。",
+      "en": "A Granada tapas bar; current selection and whether a tapa is included with a drink vary by venue and order. Confirm before visiting.",
+      "zh": "格拉纳达Tapas酒吧；当前菜品及饮品是否附送Tapas因门店和订单而异，请到访前确认。"
     },
     "seniorTip": {
-      "ko": "안쪽 테이블석에 앉아 모둠 온타파스 플래터(Tabla Caliente)를 주문하면 여러 가지 스페인 요리를 한 번에 편안히 시식 가능",
-      "ja": "奥のテーブル席に座り温製盛り合わせ（Tabla Caliente）を注文すれば、立ち飲みせずに多彩な料理をゆっくり味わえます。",
-      "en": "Take a table inside and order the hot sampler platter (Tabla Caliente) to comfortably taste diverse Spanish specialties seated.",
-      "zh": "建议选坐店内后方平坦桌位，点一份综合热拼盘，即可免去站立悠闲品尝多种经典佳肴。"
+      "ko": "좌석·혼잡도·접근성·직원 언어는 확인되지 않았습니다. 매장에 문의하세요.",
+      "ja": "座席・混雑・アクセシビリティ・スタッフの言語対応は未確認です。店舗にご確認ください。",
+      "en": "Seating, crowding, accessibility and staff language support are not confirmed; ask the venue directly.",
+      "zh": "座位、拥挤程度、无障碍条件及员工语言支持尚未核实，请直接向餐厅确认。"
     },
     "hours": {
       "ko": "매일 11:30~16:30, 19:30~24:00",
@@ -22806,6 +22818,428 @@ Feel free to ask any travel question!<br>
     Object.assign(DINING_I18N_DATA, _ALL_NEW_DINING_I18N);
   }
 
+  // Andalusia dining updates: recommendations only; avoid unsupported prices, hours, access, language and booking claims.
+  const _ANDALUSIA_DINING_OVERRIDES = [
+  {
+    "name": "Bodegas Mezquita",
+    "region": "Spain",
+    "city": "Córdoba",
+    "country": "Spain",
+    "dishName": "Rabo de Toro & Flamenquín; Salmorejo is a regional dish",
+    "signature": "The official online menu lists rabo de toro and flamenquín as house classics. Check current menu and chosen location before visiting.",
+    "seniorTip": "Seating, step-free access, dietary needs and language support are not confirmed; ask the venue directly.",
+    "hours": "Check current hours on the official site.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check current reservation policy on the official site.",
+    "mapQuery": "Bodegas Mezquita Cordoba",
+    "mapUrl": "https://maps.google.com/?q=Bodegas+Mezquita+Cordoba",
+    "officialUrl": "https://www.bodegasmezquita.com/en/our-restaurant-menu/",
+    "baseKrw": null
+  },
+  {
+    "name": "Los Diamantes",
+    "region": "Spain",
+    "city": "Granada",
+    "country": "Spain",
+    "dishName": "Seafood and fish tapas; current selection varies",
+    "signature": "The official site describes seafood and fish tapas and raciones. Specific dishes and any tapa-with-drink policy vary by venue and order; confirm directly.",
+    "seniorTip": "Seating, noise, accessibility and staff language support are not confirmed; check with the chosen location.",
+    "hours": "Check current hours with the chosen location.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check the current reservation policy directly.",
+    "mapQuery": "Los Diamantes Granada",
+    "mapUrl": "https://maps.google.com/?q=Los+Diamantes+Granada",
+    "officialUrl": "https://losdiamantes.es/",
+    "baseKrw": null,
+
+    "photo": ""
+  },
+  {
+    "name": "La Auténtica Carmela",
+    "region": "Spain",
+    "city": "Granada",
+    "country": "Spain",
+    "dishName": "Andalusian–Mediterranean shared dishes",
+    "signature": "The official site describes Andalusian–Mediterranean cuisine and sharing dishes. Fried eggplant with cane honey and croquettes are menu ideas; confirm current availability.",
+    "seniorTip": "Seating, steps, access and language support are not confirmed; ask the venue directly.",
+    "hours": "Check current hours on the official site.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check current reservation policy on the official site.",
+    "mapQuery": "La Autentica Carmela Granada",
+    "mapUrl": "https://maps.google.com/?q=La+Autentica+Carmela+Granada",
+    "officialUrl": "https://restaurantescarmela.com/la-autentica/",
+    "baseKrw": null
+  },
+  {
+    "name": "El Pimpi",
+    "region": "Spain",
+    "city": "Málaga",
+    "country": "Spain",
+    "dishName": "Moscatel wine and Iberian ham; check current menu",
+    "signature": "Historic bodega and restaurant founded in 1971. Its official menu lists Moscatel wine and Iberian ham; current availability and prices may change.",
+    "seniorTip": "Seating, terrace views, steps and accessibility may vary by area; ask about the specific table.",
+    "hours": "Check current hours on the official site.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check the current reservation policy on the official site.",
+    "mapQuery": "El Pimpi Malaga",
+    "mapUrl": "https://maps.google.com/?q=El+Pimpi+Malaga",
+    "officialUrl": "https://www.elpimpi.com/en/menus/",
+    "baseKrw": null,
+
+    "photo": ""
+  },
+  {
+    "name": "Los Mellizos",
+    "region": "Spain",
+    "city": "Málaga",
+    "country": "Spain",
+    "dishName": "Rice dishes, seafood and fried fish (current menu check)",
+    "signature": "The official Málaga location describes rice dishes, seafood and pescaíto frito. Check the current menu and availability before visiting.",
+    "seniorTip": "Seating, access and language support are not confirmed; ask the chosen location directly.",
+    "hours": "Check current hours on the official site.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check current reservation policy on the official site.",
+    "mapQuery": "Los Mellizos Malaga",
+    "mapUrl": "https://maps.google.com/?q=Los+Mellizos+Malaga",
+    "officialUrl": "https://losmellizos.net/en/malaga-restaurant/",
+    "baseKrw": null
+  },
+  {
+    "name": "Bodegas Castañeda",
+    "region": "Spain",
+    "city": "Granada",
+    "country": "Spain",
+    "dishName": "Tapas and local dishes; current selection varies",
+    "signature": "A Granada tapas bar; current selection and whether a tapa is included with a drink vary by venue and order. Confirm before visiting.",
+    "seniorTip": "Seating, crowding, accessibility and staff language support are not confirmed; ask the venue directly.",
+    "hours": "Check current hours directly.",
+    "language": "Staff language support is not confirmed; check directly.",
+    "phone": "",
+    "booking": "Check the current reservation policy directly.",
+    "mapQuery": "Bodegas Castaneda Granada",
+    "mapUrl": "https://maps.google.com/?q=Bodegas+Castaneda+Granada",
+    "baseKrw": null,
+
+    "photo": ""
+  }
+];
+  _ANDALUSIA_DINING_OVERRIDES.forEach(item => {
+    const existing = GLOBAL_DINING_DATA.find(entry => entry.name === item.name);
+    if (existing) Object.assign(existing, item);
+    else GLOBAL_DINING_DATA.push(item);
+  });
+  ['Los Diamantes', 'Bodegas Castañeda', 'El Pimpi', 'Los Mellizos', 'Bodegas Mezquita', 'La Auténtica Carmela'].forEach(name => {
+    const item = GLOBAL_DINING_DATA.find(entry => entry.name === name);
+    if (item) item.photo = '';
+  });
+  Object.assign(DINING_I18N_DATA, {
+  "Bodegas Mezquita": {
+    "displayName": {
+      "ko": "Bodegas Mezquita",
+      "en": "Bodegas Mezquita",
+      "ja": "Bodegas Mezquita",
+      "zh": "Bodegas Mezquita"
+    },
+    "dishTitle": {
+      "ko": "소꼬리찜(Rabo de Toro)·플라멘낀(Flamenquín) — 현행 메뉴 확인",
+      "en": "Rabo de Toro & Flamenquín — check current menu",
+      "ja": "牛テール煮込み・フラメンキン（最新メニューを確認）",
+      "zh": "炖牛尾与弗拉门金（请确认当前菜单）"
+    },
+    "badge": {
+      "ko": "코르도바 음식 후보",
+      "en": "Córdoba dining idea",
+      "ja": "コルドバの食事候補",
+      "zh": "科尔多瓦餐饮建议"
+    },
+    "signature": {
+      "ko": "공식 온라인 메뉴에 소꼬리 요리와 플라멘낀이 소개됩니다. 방문 전 지점과 현행 메뉴를 확인하세요.",
+      "en": "The official online menu lists rabo de toro and flamenquín. Check the selected location and current menu before visiting.",
+      "ja": "公式オンラインメニューに牛テール料理とフラメンキンを掲載。訪問前に店舗と最新メニューをご確認ください。",
+      "zh": "官网在线菜单列有炖牛尾和弗拉门金；到访前请确认所选门店与当前菜单。"
+    },
+    "seniorTip": {
+      "ko": "좌석·접근성·식이 요청·직원 언어는 확인되지 않았습니다. 매장에 직접 문의하세요.",
+      "en": "Seating, accessibility, dietary requests and staff languages are not confirmed; ask the venue.",
+      "ja": "座席・アクセシビリティ・食事制限・スタッフの言語対応は未確認です。店舗にお問い合わせください。",
+      "zh": "座位、无障碍条件、饮食需求及员工语言支持尚未核实，请直接询问餐厅。"
+    },
+    "hours": {
+      "ko": "공식 사이트에서 현재 영업시간을 확인하세요.",
+      "en": "Check current hours on the official site.",
+      "ja": "公式サイトで最新の営業時間をご確認ください。",
+      "zh": "请在官网确认当前营业时间。"
+    },
+    "language": {
+      "ko": "직원 언어 지원은 확인되지 않았습니다.",
+      "en": "Staff language support is not confirmed.",
+      "ja": "スタッフの言語対応は未確認です。",
+      "zh": "员工语言支持尚未核实。"
+    },
+    "booking": {
+      "ko": "공식 사이트에서 현재 예약 정책을 확인하세요.",
+      "en": "Check the current reservation policy on the official site.",
+      "ja": "公式サイトで最新の予約方針をご確認ください。",
+      "zh": "请在官网确认当前预订政策。"
+    }
+  },
+  "Los Diamantes": {
+    "displayName": {
+      "ko": "Los Diamantes",
+      "en": "Los Diamantes",
+      "ja": "Los Diamantes",
+      "zh": "Los Diamantes"
+    },
+    "dishTitle": {
+      "ko": "해산물·생선 타파스 (당일 메뉴 확인)",
+      "en": "Seafood and fish tapas (check current menu)",
+      "ja": "魚介・魚のタパス（最新メニューを確認）",
+      "zh": "海鲜与鱼类Tapas（请确认当前菜单）"
+    },
+    "badge": {
+      "ko": "그라나다 해산물 타파스",
+      "en": "Granada seafood tapas",
+      "ja": "グラナダの魚介タパス",
+      "zh": "格拉纳达海鲜Tapas"
+    },
+    "signature": {
+      "ko": "공식 사이트는 해산물·생선 타파스와 라시오네스를 안내합니다. 특정 요리와 음료 주문 시 타파 제공 여부는 매장·주문별로 확인하세요.",
+      "en": "The official site describes seafood and fish tapas and raciones. Confirm specific dishes and any tapa-with-drink policy by location and order.",
+      "ja": "公式サイトでは魚介・魚のタパスやラシオネスを紹介。具体的な料理やドリンク時のタパ提供条件は店舗・注文ごとにご確認ください。",
+      "zh": "官网介绍海鲜、鱼类Tapas及分量菜；具体菜品及饮品是否附送Tapas，请按门店和订单确认。"
+    },
+    "seniorTip": {
+      "ko": "좌석·소음·접근성·직원 언어는 확인되지 않았습니다. 방문 지점에 문의하세요.",
+      "en": "Seating, noise, accessibility and staff languages are not confirmed; ask the chosen location.",
+      "ja": "座席・混雑・アクセシビリティ・スタッフの言語対応は未確認です。訪問予定店舗にご確認ください。",
+      "zh": "座位、拥挤程度、无障碍条件及员工语言支持尚未核实，请向所选门店确认。"
+    },
+    "hours": {
+      "ko": "방문 지점에 현재 영업시간을 확인하세요.",
+      "en": "Check current hours with the chosen location.",
+      "ja": "訪問予定店舗に最新の営業時間をご確認ください。",
+      "zh": "请向所选门店确认当前营业时间。"
+    },
+    "language": {
+      "ko": "직원 언어 지원은 확인되지 않았습니다.",
+      "en": "Staff language support is not confirmed.",
+      "ja": "スタッフの言語対応は未確認です。",
+      "zh": "员工语言支持尚未核实。"
+    },
+    "booking": {
+      "ko": "현재 예약 정책은 매장에 확인하세요.",
+      "en": "Check the current reservation policy with the venue.",
+      "ja": "最新の予約方針は店舗にご確認ください。",
+      "zh": "请向餐厅确认当前预订政策。"
+    }
+  },
+  "La Auténtica Carmela": {
+    "displayName": {
+      "ko": "La Auténtica Carmela",
+      "en": "La Auténtica Carmela",
+      "ja": "La Auténtica Carmela",
+      "zh": "La Auténtica Carmela"
+    },
+    "dishTitle": {
+      "ko": "안달루시아·지중해식 공유 요리 (현행 메뉴 확인)",
+      "en": "Andalusian–Mediterranean sharing dishes (check current menu)",
+      "ja": "アンダルシア・地中海料理（最新メニューを確認）",
+      "zh": "安达卢西亚与地中海风味分享菜（请确认当前菜单）"
+    },
+    "badge": {
+      "ko": "그라나다 안달루시아·지중해식",
+      "en": "Granada Andalusian–Mediterranean",
+      "ja": "グラナダのアンダルシア・地中海料理",
+      "zh": "格拉纳达安达卢西亚·地中海风味"
+    },
+    "signature": {
+      "ko": "공식 안내는 공유하기 좋은 안달루시아·지중해식 요리를 소개합니다. 튀긴 가지와 사탕수수 꿀, 크로켓은 메뉴 후보이며 당일 제공을 확인하세요.",
+      "en": "The official site describes Andalusian–Mediterranean food for sharing. Fried eggplant with cane honey and croquettes are menu ideas; confirm current availability.",
+      "ja": "公式サイトではシェア向けのアンダルシア・地中海料理を紹介。ナスのサトウキビ蜜がけやコロッケは候補料理で、当日の提供は要確認です。",
+      "zh": "官网介绍适合分享的安达卢西亚与地中海菜式；甘蔗蜜炸茄子和可乐饼为菜单参考，请确认当日供应。"
+    },
+    "seniorTip": {
+      "ko": "좌석·계단·접근성·직원 언어는 확인되지 않았습니다. 매장에 직접 문의하세요.",
+      "en": "Seating, steps, accessibility and staff languages are not confirmed; ask the venue.",
+      "ja": "座席・階段・アクセシビリティ・スタッフの言語対応は未確認です。店舗にご確認ください。",
+      "zh": "座位、台阶、无障碍条件及员工语言支持尚未核实，请直接询问餐厅。"
+    },
+    "hours": {
+      "ko": "공식 사이트에서 현재 영업시간을 확인하세요.",
+      "en": "Check current hours on the official site.",
+      "ja": "公式サイトで最新の営業時間をご確認ください。",
+      "zh": "请在官网确认当前营业时间。"
+    },
+    "language": {
+      "ko": "직원 언어 지원은 확인되지 않았습니다.",
+      "en": "Staff language support is not confirmed.",
+      "ja": "スタッフの言語対応は未確認です。",
+      "zh": "员工语言支持尚未核实。"
+    },
+    "booking": {
+      "ko": "공식 사이트에서 현재 예약 정책을 확인하세요.",
+      "en": "Check the current reservation policy on the official site.",
+      "ja": "公式サイトで最新の予約方針をご確認ください。",
+      "zh": "请在官网确认当前预订政策。"
+    }
+  },
+  "El Pimpi": {
+    "displayName": {
+      "ko": "El Pimpi",
+      "en": "El Pimpi",
+      "ja": "El Pimpi",
+      "zh": "El Pimpi"
+    },
+    "dishTitle": {
+      "ko": "Moscatel 와인·이베리코 하몬 (현행 메뉴 확인)",
+      "en": "Moscatel wine & Jamón Ibérico (check current menu)",
+      "ja": "モスカテルワイン・イベリコハモン（最新メニューを確認）",
+      "zh": "Moscatel甜酒与伊比利亚火腿（请确认当前菜单）"
+    },
+    "badge": {
+      "ko": "말라가 전통 보데가",
+      "en": "Historic Málaga bodega",
+      "ja": "マラガの歴史あるボデガ",
+      "zh": "马拉加历史酒窖"
+    },
+    "signature": {
+      "ko": "1971년 설립된 보데가 겸 식당입니다. 공식 메뉴에 Moscatel 와인과 이베리코 하몬이 소개되며, 당일 메뉴와 가격은 확인이 필요합니다.",
+      "en": "A historic bodega and restaurant founded in 1971. Its official menu includes Moscatel wine and Iberian ham; current availability and prices may change.",
+      "ja": "1971年創業の歴史あるボデガ兼レストラン。公式メニューにはモスカテルワインとイベリコハモンが掲載されています。提供状況・価格は要確認です。",
+      "zh": "创立于1971年的传统酒窖式餐厅；官网菜单列有Moscatel甜酒和伊比利亚火腿，当前供应与价格可能变化。"
+    },
+    "seniorTip": {
+      "ko": "좌석·테라스 전망·계단·접근성은 구역별로 다를 수 있어 매장에 확인하세요.",
+      "en": "Seating, terrace views, steps and accessibility can vary by area; ask about the specific table.",
+      "ja": "座席・テラスの眺望・階段・アクセシビリティは場所により異なるため、席を指定してご確認ください。",
+      "zh": "座位、露台视野、台阶及无障碍条件可能因区域而异，请询问具体座位。"
+    },
+    "hours": {
+      "ko": "공식 사이트에서 현재 영업시간을 확인하세요.",
+      "en": "Check current hours on the official site.",
+      "ja": "公式サイトで最新の営業時間をご確認ください。",
+      "zh": "请在官网确认当前营业时间。"
+    },
+    "language": {
+      "ko": "직원 언어 지원은 확인되지 않았습니다.",
+      "en": "Staff language support is not confirmed.",
+      "ja": "スタッフの言語対応は未確認です。",
+      "zh": "员工语言支持尚未核实。"
+    },
+    "booking": {
+      "ko": "공식 사이트에서 현재 예약 정책을 확인하세요.",
+      "en": "Check the current reservation policy on the official site.",
+      "ja": "公式サイトで最新の予約方針をご確認ください。",
+      "zh": "请在官网确认当前预订政策。"
+    }
+  },
+  "Los Mellizos": {
+    "displayName": {
+      "ko": "Los Mellizos",
+      "en": "Los Mellizos",
+      "ja": "Los Mellizos",
+      "zh": "Los Mellizos"
+    },
+    "dishTitle": {
+      "ko": "쌀 요리·해산물·튀긴 생선 (현행 메뉴 확인)",
+      "en": "Rice dishes, seafood & fried fish (check current menu)",
+      "ja": "米料理・魚介・揚げ魚（最新メニューを確認）",
+      "zh": "米饭料理、海鲜与炸鱼（请确认当前菜单）"
+    },
+    "badge": {
+      "ko": "말라가 도심 해산물 식당",
+      "en": "Málaga city-centre seafood restaurant",
+      "ja": "マラガ中心部のシーフードレストラン",
+      "zh": "马拉加市中心海鲜餐厅"
+    },
+    "signature": {
+      "ko": "말라가 지점 공식 안내는 쌀 요리, 해산물, pescaíto frito(튀긴 생선)를 소개합니다. 메뉴와 제공 여부를 방문 전에 확인하세요.",
+      "en": "The official Málaga location describes rice dishes, seafood and pescaíto frito (fried fish). Check the current menu and availability before visiting.",
+      "ja": "マラガ店の公式案内では米料理、魚介、ペスカイート・フリート（揚げ魚）を紹介。訪問前に最新メニューと提供状況をご確認ください。",
+      "zh": "马拉加分店官网介绍米饭料理、海鲜及炸鱼（pescaíto frito）；到访前请确认当前菜单与供应情况。"
+    },
+    "seniorTip": {
+      "ko": "좌석·접근성·직원 언어는 확인되지 않았습니다. 방문 지점에 직접 문의하세요.",
+      "en": "Seating, accessibility and staff languages are not confirmed; ask the chosen location.",
+      "ja": "座席・アクセシビリティ・スタッフの言語対応は未確認です。訪問予定店舗にご確認ください。",
+      "zh": "座位、无障碍条件及员工语言支持尚未核实，请向所选门店确认。"
+    },
+    "hours": {
+      "ko": "공식 사이트에서 현재 영업시간을 확인하세요.",
+      "en": "Check current hours on the official site.",
+      "ja": "公式サイトで最新の営業時間をご確認ください。",
+      "zh": "请在官网确认当前营业时间。"
+    },
+    "language": {
+      "ko": "직원 언어 지원은 확인되지 않았습니다.",
+      "en": "Staff language support is not confirmed.",
+      "ja": "スタッフの言語対応は未確認です。",
+      "zh": "员工语言支持尚未核实。"
+    },
+    "booking": {
+      "ko": "공식 사이트에서 현재 예약 정책을 확인하세요.",
+      "en": "Check the current reservation policy on the official site.",
+      "ja": "公式サイトで最新の予約方針をご確認ください。",
+      "zh": "请在官网确认当前预订政策。"
+    }
+  },
+  "Bodegas Castañeda": {
+    "displayName": {
+      "ko": "Bodegas Castañeda",
+      "en": "Bodegas Castañeda",
+      "ja": "Bodegas Castañeda",
+      "zh": "Bodegas Castañeda"
+    },
+    "dishTitle": {
+      "ko": "타파스와 현지 요리 (메뉴 확인)",
+      "en": "Tapas and local dishes (check current menu)",
+      "ja": "タパスと地元料理（最新メニューを確認）",
+      "zh": "Tapas与地方菜（请确认当前菜单）"
+    },
+    "badge": {
+      "ko": "그라나다 타파스 바",
+      "en": "Granada tapas bar",
+      "ja": "グラナダのタパスバー",
+      "zh": "格拉纳达Tapas酒吧"
+    },
+    "signature": {
+      "ko": "타파스와 현지 음식을 파는 바입니다. 메뉴 구성과 음료에 타파가 포함되는지는 매장·주문별로 다르므로 방문 전 확인하세요.",
+      "en": "A Granada tapas bar; current selection and whether a tapa is included with a drink vary by venue and order. Confirm before visiting.",
+      "ja": "タパスや地元料理を扱うバルです。メニュー内容やドリンク時のタパ提供は店舗・注文により異なるため、事前にご確認ください。",
+      "zh": "格拉纳达Tapas酒吧；当前菜品及饮品是否附送Tapas因门店和订单而异，请到访前确认。"
+    },
+    "seniorTip": {
+      "ko": "혼잡도·좌석·접근성·직원 언어는 확인되지 않았습니다. 매장에 문의하세요.",
+      "en": "Crowding, seating, accessibility and staff languages are not confirmed; ask the venue.",
+      "ja": "混雑・座席・アクセシビリティ・スタッフの言語対応は未確認です。店舗にご確認ください。",
+      "zh": "拥挤程度、座位、无障碍条件及员工语言支持尚未核实，请向餐厅确认。"
+    },
+    "hours": {
+      "ko": "현재 영업시간을 매장에 확인하세요.",
+      "en": "Check current hours directly.",
+      "ja": "最新の営業時間は店舗にご確認ください。",
+      "zh": "请直接确认当前营业时间。"
+    },
+    "language": {
+      "ko": "직원 언어 지원은 확인되지 않았습니다.",
+      "en": "Staff language support is not confirmed.",
+      "ja": "スタッフの言語対応は未確認です。",
+      "zh": "员工语言支持尚未核实。"
+    },
+    "booking": {
+      "ko": "현재 예약 정책은 매장에 확인하세요.",
+      "en": "Check the current reservation policy directly.",
+      "ja": "最新の予約方針は店舗にご確認ください。",
+      "zh": "请直接确认当前预订政策。"
+    }
+  }
+});
+
   // 6. Merge city coordinates
   if (typeof CITY_DEFAULT_COORDS !== 'undefined') {
     Object.assign(CITY_DEFAULT_COORDS, _NEW_CITY_COORDS);
@@ -24241,7 +24675,7 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_curated_maps: "💖 구글지도 하트 맛집·쇼핑·명소 (31선)",
       subnav_chip_nerja_guide: "🚌 말라가↔네르하·프리힐리아나 당일치기",
       subnav_chip_city_candidates: "✨ 도시별 추가 맛집·시장·전망 후보 (17선)",
-      subnav_chip_master_gourmet: "🥘 빠에야·피자 외 7대 도시 미식 & 회화 24선",
+      subnav_chip_master_gourmet: "🥘 빠에야·피자 외 8개 도시 음식 가이드 & 회화 24선",
       subnav_chip_global_dining: "🏪 기존 검증 맛집 디렉토리 (92선 & 지도)",
       quick_photo_diary: "사진첩 & AI 일기",
       nav_photo_diary: "📸 사진첩 & 일기",
@@ -24281,7 +24715,7 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_curated_maps: "💖 Saved Google Maps Spots (31 Picks)",
       subnav_chip_nerja_guide: "🚌 Málaga ↔ Nerja & Frigiliana Day Trip",
       subnav_chip_city_candidates: "✨ City Markets & Viewpoints (17 Picks)",
-      subnav_chip_master_gourmet: "🥘 Beyond Paella & Pizza: 7 Cities & 24 Phrases",
+      subnav_chip_master_gourmet: "🥘 Beyond Paella & Pizza: 8 Cities & 24 Phrases",
       subnav_chip_global_dining: "🏪 Master Dining Directory (92 Spots & Map)",
       quick_photo_diary: "Photo Album & AI Diary",
       nav_photo_diary: "📸 Album & Diary",
@@ -24321,7 +24755,7 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_curated_maps: "💖 Googleマップお気に入り名所＆グルメ (31選)",
       subnav_chip_nerja_guide: "🚌 マラガ ↔ ネルハ＆フリヒリアナ日帰り",
       subnav_chip_city_candidates: "✨ 都市別市場・展望台・追加候補 (17選)",
-      subnav_chip_master_gourmet: "🥘 パエリア＆ピザ以外の7都市名物＆会話24選",
+      subnav_chip_master_gourmet: "🥘 パエリア＆ピザ以外の8都市グルメ＆会話24選",
       subnav_chip_global_dining: "🏪 厳選グルメ名店ディレクトリ (92選＆地図)",
       quick_photo_diary: "アルバム＆AI日記",
       nav_photo_diary: "📸 アルバム＆日記",
@@ -24361,7 +24795,7 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       subnav_chip_curated_maps: "💖 谷歌地图红心收藏名店·景点 (31选)",
       subnav_chip_nerja_guide: "🚌 马拉加 ↔ 内尔哈与弗里希利亚纳一日游",
       subnav_chip_city_candidates: "✨ 各城特色市场·观景台候补 (17选)",
-      subnav_chip_master_gourmet: "🥘 经典特色菜·7大城市招牌＆口语24选",
+      subnav_chip_master_gourmet: "🥘 海鲜饭与披萨之外：8城美食与24句会话",
       subnav_chip_global_dining: "🏪 精选特色餐厅目录 (92选与地图)",
       quick_photo_diary: "相册与AI日记",
       nav_photo_diary: "📸 相册与日记",
@@ -27192,10 +27626,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       "theme": "나스르 왕조의 마지막 보석 그라나다 입성",
       "morning": "기차로 그라나다 이동, 시내 호텔 체크인",
       "rest": "호텔 온수 사우나 및 휴식",
-      "evening": "누에바 광장 인근 골목에서 무료 타파스 문화 체험",
+      "evening": "누에바 광장 인근 타파스 바를 둘러보고 매장별 제공 조건 확인",
       "walk": "낮음",
       "transport": "중거리 열차 및 택시",
-      "meal": "무료 타파스가 나오는 그라나다 와인바",
+      "meal": "타파스와 음료 제공 조건을 확인할 그라나다 바",
       "events": [
         "그라나다 이동일"
       ]
@@ -28422,10 +28856,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       "zh": "午后休整：호텔 온수 사우나 및 휴식"
     },
     "evening": {
-      "ko": "누에바 광장 인근 골목에서 무료 타파스 문화 체험",
-      "en": "Evening: 누에바 광장 인근 골목에서 무료 타파스 문화 체험",
-      "ja": "夕方・夜：누에바 광장 인근 골목에서 무료 타파스 문화 체험",
-      "zh": "傍晚夜游：누에바 광장 인근 골목에서 무료 타파스 문화 체험"
+      "ko": "누에바 광장 인근 타파스 바를 둘러보고, 음료에 타파가 포함되는지는 매장별로 확인하세요.",
+      "en": "Explore tapas bars near Plaza Nueva; ask each venue whether a tapa is included with a drink.",
+      "ja": "ヌエバ広場周辺のタパス店を訪ね、飲み物にタパが付くかは店舗ごとに確認してください。",
+      "zh": "逛一逛新广场附近的Tapas酒吧；请逐家确认饮品是否附送Tapas。"
     },
     "walk": {
       "ko": "낮음",
@@ -28440,10 +28874,10 @@ if (typeof I18N_DICTIONARY !== "undefined") { window.I18N_DICTIONARY = I18N_DICT
       "zh": "중거리 열차 및 택시"
     },
     "meal": {
-      "ko": "무료 타파스가 나오는 그라나다 와인바",
-      "en": "무료 타파스가 나오는 그라나다 와인바",
-      "ja": "무료 타파스가 나오는 그라나다 와인바",
-      "zh": "무료 타파스가 나오는 그라나다 와인바"
+      "ko": "그라나다 바(음료 주문 시 타파 제공 여부는 매장에 확인)",
+      "en": "Granada bar; ask whether a tapa is included with a drink.",
+      "ja": "グラナダのバル（飲み物にタパが付くかは店舗に確認）",
+      "zh": "格拉纳达酒吧（饮品是否附送Tapas请向门店确认）"
     },
     "events": {
       "ko": [
@@ -36047,22 +36481,22 @@ const STANDARD_TRIP_SCHEDULE = {
 const MASTER_GOURMET_GUIDE_DATA = {
   meta: {
     badge: {
-      ko: "🌟 2026 특별 기획 · 부모님 맞춤 미식",
-      en: "🌟 2026 Special Curation · Senior-Tailored Gastronomy",
-      ja: "🌟 2026特別企画・シニア向け絶品グルメ",
-      zh: "🌟 2026特别企划·适老养胃定制美馔"
+      ko: "🌟 2026 · 부모님과 함께하는 지역 음식·식당 아이디어",
+      en: "🌟 2026 · Regional food and restaurant ideas for family travel",
+      ja: "🌟 2026年・家族旅行の郷土料理とレストラン候補",
+      zh: "🌟 2026·家庭旅行地方美食与餐厅建议"
     },
     title: {
-      ko: "🍽️ 스페인 & 이탈리아 30일 미식 마스터 가이드 (빠에야 & 피자 외 메뉴 편)",
-      en: "🍽️ Spain & Italy 30-Day Gourmet Master Guide (Beyond Paella & Pizza)",
-      ja: "🍽️ スペイン＆イタリア30日 グルメマスターガイド（パエリア＆ピザ以外の名物編）",
-      zh: "🍽️ 西班牙与意大利30天美食大师指南（海鲜饭与披萨之外的特色篇）"
+      ko: "🍽️ 스페인·이탈리아 8개 도시 음식 가이드 (메뉴 후보·현장 확인)",
+      en: "🍽️ Spain & Italy: Regional Food Ideas for 8 Cities (Check Current Menus)",
+      ja: "🍽️ スペイン・イタリア8都市の郷土料理ガイド（現行メニューを確認）",
+      zh: "🍽️ 西班牙与意大利8城地方美食指南（请确认当前菜单）"
     },
     intro: {
-      ko: "매일 빠에야와 피자만 드실 수는 없죠! 부모님의 입맛(한식과 비슷한 결의 요리, 따뜻한 국물, 부드러운 고기)을 완벽하게 저격하면서도 현지의 특색을 살린 '도시별 대체 불가 미식과 추천 식당'을 총정리했습니다.",
-      en: "You can't eat paella and pizza every single day! Here is a curated master guide to irreplaceable city-by-city specialties and verified restaurants that perfectly satisfy parents' palates (comforting warm broths, tender braised meats, and gentle seasonings) while celebrating authentic local traditions.",
-      ja: "毎日パエリアとピザばかりでは飽きてしまいますよね！ご両親の舌（和食にも通じる優しい出汁、温かいスープ、ホロホロに煮込んだ柔らかい肉料理）を完璧に満たしつつ、現地の魅力が詰まった「都市別・必食名物＆厳選レストラン」を完全網羅しました。",
-      zh: "每天只吃海鲜饭和披萨怎么行！专为长辈口味量身定制（类似中餐的暖胃炖汤、软烂酥嫩的炖肉、温和不腻的口感），精选各城市不可替代的地道风味与口碑餐厅全汇总。"
+      ko: "도시별 지역 음식과 식당 후보를 모았습니다. 식당 추천은 예약이나 확정 일정이 아닙니다. 현행 메뉴·가격·영업시간·예약·좌석·접근성·직원 언어는 방문 전 매장에 확인하세요.",
+      en: "A guide to regional dishes and restaurant ideas by city. These are not bookings or confirmed itinerary changes. Verify current menus, prices, hours, reservations, seating, accessibility and staff languages with each venue.",
+      ja: "都市別の郷土料理とレストラン候補をまとめました。予約や確定した旅程変更ではありません。最新メニュー・価格・営業時間・予約・座席・アクセシビリティ・スタッフの言語対応は各店にご確認ください。",
+      zh: "按城市整理地方菜与餐厅建议；这不是预订或已确认的行程变更。请向各餐厅核实当前菜单、价格、营业时间、预订、座位、无障碍条件及员工语言支持。"
     },
     survivalTitle: {
       ko: "💡 부모님 동행 식당 & 여행 필수 서바이벌 회화 (핵심 24선)",
@@ -37138,122 +37572,367 @@ const MASTER_GOURMET_GUIDE_DATA = {
           ]
         },
         {
-          num: "3",
-          id: "granada",
-          name: { ko: "그라나다", en: "Granada", ja: "グラナダ", zh: "格拉纳达" },
-          dishes: [
+          "num": "3",
+          "id": "cordoba",
+          "name": {
+            "ko": "코르도바",
+            "en": "Córdoba",
+            "ja": "コルドバ",
+            "zh": "科尔多瓦"
+          },
+          "note": {
+            "ko": "Taberna Luque는 2019년 말 식당 영업 종료 보도가 있어 현재 추천에서 제외했습니다. 후속 매장의 현재 상태는 확인되지 않았습니다.",
+            "en": "Local reporting says Taberna Luque stopped operating as a restaurant in late 2019; it is not listed as a current pick. The successor shop’s status is unverified.",
+            "ja": "現地報道ではTaberna Luqueは2019年末に飲食店営業を終了。現行レストランとしては推薦せず、後継店の現在の営業状況は未確認です。",
+            "zh": "当地报道显示Taberna Luque餐厅于2019年末停止营业，因此不列为当前推荐；后续店铺目前是否营业尚未核实。"
+          },
+          "dishes": [
             {
-              id: "berenjenas",
-              label: { ko: "추천 미식", en: "Recommended Dish", ja: "おすすめ名物", zh: "推荐美馔" },
-              name: { ko: "베렌헤나스 꼰 미엘 (Berenjenas con miel)", en: "Berenjenas con miel (Crispy Fried Eggplant with Cane Honey)", ja: "ナスのフリット ハチミツがけ (Berenjenas con miel)", zh: "蜜汁脆皮炸茄盒 (Berenjenas con miel)" },
-              photo: "img/gourmet/berenjenas-con-miel.jpg",
-              fallbackPhoto: "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?auto=format&fit=crop&w=800&q=80",
-              desc: {
-                ko: "가지를 얇게 썰어 바삭하게 튀긴 후 사탕수수 꿀을 뿌린 안달루시아 명물. 달콤바삭해서 호불호가 없습니다.",
-                en: "Thinly sliced eggplant fried crispy and drizzled with dark cane sugar honey (miel de caña). Sweet, crunchy, and loved by travelers of all ages.",
-                ja: "薄切りナスをカリッと香ばしく揚げ、アンダルシア特産のサトウキビ蜜を回しかけた名物。サクサク甘じょっぱい食感で世代を問わず大人気です。",
-                zh: "薄切茄子炸至金黄酥脆，浇上安达卢西亚特产甘蔗蜜糖。外脆里嫩、甜香四溢，老少咸宜毫无踩雷风险。"
+              "id": "salmorejo",
+              "label": {
+                "ko": "지역 음식",
+                "en": "Regional dish",
+                "ja": "郷土料理",
+                "zh": "地方菜"
               },
-              parentsHighlight: {
-                ko: "👴 부모님 취향: 겉은 바삭 속은 촉촉한 고구마 맛탕 느낌! 가지를 안 좋아하시는 분도 반하는 맛",
-                en: "👴 Senior Appeal: Resembles sweet glazed candied treats, converting even non-eggplant eaters",
-                ja: "👴 シニア推奨：大学芋のように外はサクッと中はふんわり。野菜が苦手な方でも箸が進む味",
-                zh: "👴 适老亮点：类似中式拔丝地瓜与风味炸茄盒的绝妙口感，不喜蔬菜的长辈也爱不释口"
+              "name": {
+                "ko": "살모레호 (Salmorejo)",
+                "en": "Salmorejo (Córdoba-style cold tomato soup)",
+                "ja": "サルモレホ（コルドバ風冷製トマトスープ）",
+                "zh": "萨尔莫雷霍（科尔多瓦冷番茄汤）"
+              },
+              "photo": "",
+              "fallbackPhoto": "",
+              "desc": {
+                "ko": "토마토와 빵을 갈아 만드는 코르도바의 대표적인 차가운 수프입니다.",
+                "en": "A Córdoba cold soup traditionally made with tomato and bread.",
+                "ja": "トマトとパンを使ったコルドバの代表的な冷製スープです。",
+                "zh": "以番茄和面包制成的科尔多瓦代表性冷汤。"
+              },
+              "parentsHighlight": {
+                "ko": "지역 음식 안내이며, 특정 식당의 당일 제공 여부는 메뉴에서 확인하세요.",
+                "en": "A regional food idea; confirm whether your chosen restaurant serves it today.",
+                "ja": "郷土料理の候補です。訪問先で当日提供されるかメニューをご確認ください。",
+                "zh": "地方菜参考；请确认所选餐厅当日是否供应。"
+              }
+            },
+            {
+              "id": "rabo-de-toro",
+              "label": {
+                "ko": "지역 음식",
+                "en": "Regional dish",
+                "ja": "郷土料理",
+                "zh": "地方菜"
+              },
+              "name": {
+                "ko": "라보 데 토로 (Rabo de Toro)",
+                "en": "Rabo de Toro (braised oxtail)",
+                "ja": "ラボ・デ・トロ（牛テール煮込み）",
+                "zh": "Rabo de Toro（炖牛尾）"
+              },
+              "photo": "",
+              "fallbackPhoto": "",
+              "desc": {
+                "ko": "소꼬리를 천천히 익혀 만드는 안달루시아식 스튜입니다.",
+                "en": "An Andalusian-style stew made with slowly braised oxtail.",
+                "ja": "牛テールをじっくり煮込むアンダルシア風シチューです。",
+                "zh": "以慢炖牛尾制作的安达卢西亚风味炖菜。"
+              },
+              "parentsHighlight": {
+                "ko": "Bodegas Mezquita 공식 온라인 메뉴에 소개됩니다. 방문 지점의 현행 메뉴를 확인하세요.",
+                "en": "Listed on Bodegas Mezquita’s official online menu; check the current menu at your chosen location.",
+                "ja": "Bodegas Mezquitaの公式オンラインメニューに掲載。訪問店舗の最新メニューをご確認ください。",
+                "zh": "Bodegas Mezquita官网在线菜单列有此菜；请确认所选门店的当前菜单。"
+              }
+            },
+            {
+              "id": "flamenquin",
+              "label": {
+                "ko": "지역 음식",
+                "en": "Regional dish",
+                "ja": "郷土料理",
+                "zh": "地方菜"
+              },
+              "name": {
+                "ko": "플라멘낀 (Flamenquín)",
+                "en": "Flamenquín (rolled and fried pork with ham)",
+                "ja": "フラメンキン（豚肉とハムのロール揚げ）",
+                "zh": "Flamenquín（火腿猪肉卷炸物）"
+              },
+              "photo": "",
+              "fallbackPhoto": "",
+              "desc": {
+                "ko": "하몬을 넣은 돼지고기 롤 튀김으로 소개되는 코르도바 지역 요리입니다.",
+                "en": "A Córdoba regional dish commonly described as a fried pork roll with ham.",
+                "ja": "ハモンを巻いた豚肉の揚げ料理として知られるコルドバの郷土料理です。",
+                "zh": "科尔多瓦地方菜，通常是裹入火腿的猪肉卷后油炸。"
+              },
+              "parentsHighlight": {
+                "ko": "Bodegas Mezquita 공식 온라인 메뉴에 소개됩니다. 방문 지점의 현행 메뉴를 확인하세요.",
+                "en": "Listed on Bodegas Mezquita’s official online menu; check the current menu at your chosen location.",
+                "ja": "Bodegas Mezquitaの公式オンラインメニューに掲載。訪問店舗の最新メニューをご確認ください。",
+                "zh": "Bodegas Mezquita官网在线菜单列有此菜；请确认所选门店的当前菜单。"
               }
             }
           ],
-          picks: [
+          "picks": [
             {
-              name: {
-                ko: "Bodegas Castañeda (보데가스 카스타녜다)",
-                en: "Bodegas Castañeda",
-                ja: "Bodegas Castañeda (ボデガス・カスタニェーダ)",
-                zh: "Bodegas Castañeda"
+              "name": {
+                "ko": "Bodegas Mezquita",
+                "en": "Bodegas Mezquita",
+                "ja": "Bodegas Mezquita",
+                "zh": "Bodegas Mezquita"
               },
-              badge: { ko: "로컬 타블라 플래터", en: "Famous Tabla Platter", ja: "名物タブラ大皿", zh: "传统木盘拼盘" },
-              desc: {
-                ko: "현지인들이 붐비는 곳. 음료를 시키면 무료 타파스를 주며, 고기와 치즈가 듬뿍 올라간 '따블라(Tabla)' 플래터가 유명합니다.",
-                en: "Bustling local icon. Generous complimentary tapas with each drink, and famous for huge charcuterie & cheese 'Tabla' platters.",
-                ja: "地元民で賑わう活気ある酒場。ドリンクで無料タパスが付き、生ハムやチーズが贅沢に乗った大皿「タブラ」が名物。",
-                zh: "当地人络绎不绝的传统老字号。点酒水即可免费附赠丰盛Tapas，其铺满火腿与乳酪的“Tabla木盘拼盘”极具盛名。"
+              "badge": {
+                "ko": "코르도바 음식 후보",
+                "en": "Córdoba dining idea",
+                "ja": "コルドバの食事候補",
+                "zh": "科尔多瓦餐饮建议"
               },
-              mapQuery: "Bodegas Castaneda Calle Almireceros Granada"
-            },
-            {
-              name: {
-                ko: "Los Diamantes (로스 디아만테스)",
-                en: "Los Diamantes (Seafood Tapas King)",
-                ja: "Los Diamantes (ロス・ディアマンテス)",
-                zh: "Los Diamantes (海鲜炸物名家)"
+              "desc": {
+                "ko": "공식 온라인 메뉴에 Rabo de Toro와 Flamenquín이 소개됩니다. 지점·현행 메뉴를 확인하세요. 사진 메뉴, 직원 영어, 예약 필요 여부는 확인되지 않았습니다.",
+                "en": "Its official online menu lists rabo de toro and flamenquín. Check the chosen location and current menu. Photo menus, English service and reservation requirements are not confirmed.",
+                "ja": "公式オンラインメニューにはRabo de ToroとFlamenquínを掲載。訪問店舗と最新メニューをご確認ください。写真付きメニュー、英語対応、予約要否は未確認です。",
+                "zh": "官网在线菜单列有Rabo de Toro和Flamenquín；请确认所选门店与当前菜单。图文菜单、英语服务及是否需要预约尚未核实。"
               },
-              badge: { ko: "튀김 타파스 끝판왕", en: "Fried Tapas Legend", ja: "フリット系タパスの頂点", zh: "炸物Tapas天花板" },
-              desc: {
-                ko: "버섯 튀김, 멸치(보케로네스) 튀김 등 튀김류 타파스의 끝판왕.",
-                en: "Undisputed champion of crispy fried tapas: fresh deep-fried mushrooms, prawns, and anchovies (boquerones fritos).",
-                ja: "キノコのフリットや小イワシ（ボケロネス）揚げなど、揚げたてサクサクのフリット系タパスの頂点。",
-                zh: "格拉纳达油炸海鲜Tapas无可争议的人气天花板，炸鲜蘑菇与香酥炸鳀鱼（Boquerones）香脆诱人。"
-              },
-              mapQuery: "Los Diamantes Calle Navas Granada"
+              "mapQuery": "Bodegas Mezquita Córdoba",
+              "sourceUrl": "https://www.bodegasmezquita.com/en/our-restaurant-menu/"
             }
           ]
         },
         {
-          num: "4",
-          id: "malaga",
-          name: { ko: "말라가", en: "Málaga", ja: "マラガ", zh: "马拉加" },
-          dishes: [
+          "num": "4",
+          "id": "granada",
+          "name": {
+            "ko": "그라나다",
+            "en": "Granada",
+            "ja": "グラナダ",
+            "zh": "格拉纳达"
+          },
+          "note": {
+            "ko": "일부 바에서 음료와 타파가 함께 나올 수 있지만, 제공 여부·양·종류는 매장과 주문에 따라 달라집니다. 무료 특정 메뉴를 전제로 하지 마세요.",
+            "en": "Some bars may include a tapa with a drink, but whether one is served, and its size or type, depends on the venue and order. Do not assume a particular free dish.",
+            "ja": "一部のバルでは飲み物とタパが出る場合がありますが、提供の有無・量・種類は店舗や注文により異なります。特定料理が無料とは限りません。",
+            "zh": "部分酒吧可能随饮品提供Tapas，但是否提供、份量和种类因店家与订单而异；不要假设会免费提供某道菜。"
+          },
+          "dishes": [
             {
-              id: "fritura",
-              label: { ko: "추천 미식", en: "Recommended Dish", ja: "おすすめ名物", zh: "推荐美馔" },
-              name: { ko: "프리투라 말라게냐 (Fritura Malagueña)", en: "Fritura Malagueña (Mediterranean Crispy Mixed Fried Seafood)", ja: "マラガ風シーフードフリット (Fritura Malagueña)", zh: "马拉加地中海综合炸海鲜 (Fritura Malagueña)" },
-              photo: "img/gourmet/fritura-malaguena.jpg",
-              fallbackPhoto: "https://images.unsplash.com/photo-1535400255456-984241443b29?auto=format&fit=crop&w=800&q=80",
-              desc: {
-                ko: "말라가식 모둠 해산물 튀김. 오징어, 새우, 멸치 등을 가볍게 튀겨내어 레몬을 뿌려 먹는 지중해 최고의 요리입니다.",
-                en: "Malaga-style assorted Mediterranean fried seafood. Tender calamari rings, fresh prawns, and whitebait lightly coated in flour and flash-fried, served with fresh lemon wedges.",
-                ja: "マラガ風ミックスシーフードフリット。イカ、エビ、小魚などを極薄の衣でカラッと揚げ、レモンを搾っていただく地中海を代表する名物料理です。",
-                zh: "马拉加式地中海杂锦炸海鲜。精选鱿鱼圈、小河虾、白身小鱼等轻裹薄粉轻炸，淋上新鲜柠檬汁，鲜爽不腻的地中海绝味。"
+              "id": "berenjenas",
+              "label": {
+                "ko": "지역 음식",
+                "en": "Regional dish",
+                "ja": "郷土料理",
+                "zh": "地方菜"
               },
-              parentsHighlight: {
-                ko: "👴 부모님 취향: 기름기가 쏙 빠져 바삭담백! 레몬즙을 듬뿍 뿌리면 전혀 느끼하지 않은 해산물 모둠",
-                en: "👴 Senior Appeal: Light and non-greasy; generous lemon spritzes keep it crisp and refreshing",
-                ja: "👴 シニア推奨：油切れが良く軽やかな食感。たっぷりのレモン果汁でさっぱり楽しめます",
-                zh: "👴 适老亮点：高温急炸控油得当，外皮酥脆不腻口，挤上柠檬汁鲜嫩开胃"
+              "name": {
+                "ko": "베렌헤나스 프리타스 꼰 미엘 (Berenjenas fritas con miel de caña)",
+                "en": "Fried eggplant with cane honey",
+                "ja": "ナスのフリット・サトウキビ蜜がけ",
+                "zh": "甘蔗蜜炸茄子"
+              },
+              "photo": "img/gourmet/berenjenas-con-miel.jpg",
+              "fallbackPhoto": "",
+              "desc": {
+                "ko": "사탕수수 꿀을 곁들인 가지 요리로, 그라나다 지역 식당의 메뉴 후보입니다.",
+                "en": "A regional-style eggplant dish with cane honey; a menu idea to check locally.",
+                "ja": "サトウキビ蜜を添えたナス料理。現地で探せる郷土料理候補です。",
+                "zh": "搭配甘蔗蜜的茄子菜式，可作为格拉纳达地方菜参考。"
+              },
+              "parentsHighlight": {
+                "ko": "La Auténtica Carmela의 2026년 공식 메뉴 파일에 소개됩니다. 당일 제공 여부는 확인하세요.",
+                "en": "Listed in La Auténtica Carmela’s 2026 official menu file; confirm current availability.",
+                "ja": "La Auténtica Carmelaの2026年公式メニューファイルに掲載。現在の提供状況をご確認ください。",
+                "zh": "La Auténtica Carmela的2026年官方菜单文件列有此菜，请确认当前供应情况。"
+              }
+            },
+            {
+              "id": "seafood-tapas",
+              "label": {
+                "ko": "지역 음식",
+                "en": "Regional dish",
+                "ja": "郷土料理",
+                "zh": "地方菜"
+              },
+              "name": {
+                "ko": "해산물·생선 타파스",
+                "en": "Seafood and fish tapas",
+                "ja": "魚介・魚のタパス",
+                "zh": "海鲜与鱼类Tapas"
+              },
+              "photo": "",
+              "fallbackPhoto": "",
+              "desc": {
+                "ko": "Los Diamantes 공식 사이트는 해산물·생선 타파스와 라시오네스를 안내합니다.",
+                "en": "Los Diamantes’ official site describes seafood and fish tapas and raciones.",
+                "ja": "Los Diamantesの公式サイトでは魚介・魚のタパスやラシオネスを紹介しています。",
+                "zh": "Los Diamantes官网介绍海鲜、鱼类Tapas及分量菜。"
+              },
+              "parentsHighlight": {
+                "ko": "특정 메뉴와 음료 주문 시 타파 제공 조건은 매장·주문별로 확인하세요.",
+                "en": "Confirm specific dishes and any tapa-with-drink policy by venue and order.",
+                "ja": "具体的な料理やドリンク時のタパ提供条件は店舗・注文ごとにご確認ください。",
+                "zh": "具体菜品及饮品是否附送Tapas，请按门店和订单确认。"
               }
             }
           ],
-          picks: [
+          "picks": [
             {
-              name: {
-                ko: "El Pimpi (엘 핌피)",
-                en: "El Pimpi Bodega Bar",
-                ja: "El Pimpi (エル・ピンピ)",
-                zh: "El Pimpi 传奇酒窖"
+              "name": {
+                "ko": "Los Diamantes",
+                "en": "Los Diamantes",
+                "ja": "Los Diamantes",
+                "zh": "Los Diamantes"
               },
-              badge: { ko: "피카소 단골 와이너리", en: "Picasso's Favorite", ja: "ピカソゆかりのボデガ", zh: "毕加索挚爱百年酒庄" },
-              desc: {
-                ko: "피카소도 사랑했던 와이너리 식당. 달콤한 말라가 와인과 하몬, 문어 요리 추천.",
-                en: "Historic winery bodega beloved by Picasso. Pair sweet local Malaga wine with bellota jamón and tender octopus.",
-                ja: "ピカソも愛したマラガ屈指の歴史的ボデガ。甘口のマラガワイン、極上ハモン・イベリコ、タコ料理が格別です。",
-                zh: "毕加索生前挚爱的传奇酒窖餐厅。推荐搭配香甜的马拉加甜葡萄酒、顶级伊比利亚火腿与鲜美章鱼料理。"
+              "badge": {
+                "ko": "해산물·생선 타파스",
+                "en": "Seafood and fish tapas",
+                "ja": "魚介・魚のタパス",
+                "zh": "海鲜与鱼类Tapas"
               },
-              mapQuery: "El Pimpi Calle Granada Malaga"
+              "desc": {
+                "ko": "공식 사이트는 해산물·생선 타파스와 라시오네스를 안내합니다. 특정 메뉴와 음료 주문 시 타파 제공 여부는 매장·주문별로 확인하세요.",
+                "en": "The official site describes seafood and fish tapas and raciones. Confirm specific dishes and any tapa-with-drink policy by venue and order.",
+                "ja": "公式サイトでは魚介・魚のタパスやラシオネスを紹介。具体的な料理やドリンク時のタパ提供条件は店舗・注文ごとにご確認ください。",
+                "zh": "官网介绍海鲜、鱼类Tapas及分量菜；具体菜品及饮品是否附送Tapas，请按门店和订单确认。"
+              },
+              "mapQuery": "Los Diamantes Granada",
+              "sourceUrl": "https://losdiamantes.es/"
             },
             {
-              name: {
-                ko: "Los Mellizos (로스 메지소스)",
-                en: "Los Mellizos Málaga",
-                ja: "Los Mellizos (ロス・メジソス)",
-                zh: "Los Mellizos 高级海鲜馆"
+              "name": {
+                "ko": "La Auténtica Carmela",
+                "en": "La Auténtica Carmela",
+                "ja": "La Auténtica Carmela",
+                "zh": "La Auténtica Carmela"
               },
-              badge: { ko: "정갈한 최고급 해산물", en: "Premium Seafood Dining", ja: "最高級シーフード", zh: "高雅地中海海鲜" },
-              desc: {
-                ko: "말라가 시내에서 해산물 요리와 튀김, 생선구이를 가장 깔끔하게 잘하는 고급 레스토랑.",
-                en: "Premier high-end seafood dining room in central Malaga, renowned for pristine grilled fish and delicate seafood fry-ups.",
-                ja: "マラガ中心部で最も清潔感があり、高品質な海鮮料理・フリット・グリル魚を提供する洗練されたシーフード名店。",
-                zh: "马拉加市中心品质出众的高级海鲜餐厅，环境优雅整洁，以极致新鲜的烤鱼、地中海海鲜炸盘见长。"
+              "badge": {
+                "ko": "안달루시아·지중해식",
+                "en": "Andalusian–Mediterranean",
+                "ja": "アンダルシア・地中海料理",
+                "zh": "安达卢西亚·地中海风味"
               },
-              mapQuery: "Los Mellizos Calle Sancha de Lara Malaga"
+              "desc": {
+                "ko": "공식 안내는 공유용 안달루시아·지중해식 요리를 소개합니다. 가지와 사탕수수 꿀, 크로켓은 메뉴 후보이며 당일 제공을 확인하세요.",
+                "en": "The official site describes Andalusian–Mediterranean food for sharing. Fried eggplant with cane honey and croquettes are menu ideas; confirm availability.",
+                "ja": "公式サイトではシェア向けのアンダルシア・地中海料理を紹介。ナスのサトウキビ蜜がけやコロッケは候補料理で、当日の提供は要確認です。",
+                "zh": "官网介绍适合分享的安达卢西亚与地中海菜式；甘蔗蜜炸茄子和可乐饼为菜单参考，请确认当日供应。"
+              },
+              "mapQuery": "La Autentica Carmela Granada",
+              "sourceUrl": "https://restaurantescarmela.com/la-autentica/"
+            },
+            {
+              "name": {
+                "ko": "Bodegas Castañeda",
+                "en": "Bodegas Castañeda",
+                "ja": "Bodegas Castañeda",
+                "zh": "Bodegas Castañeda"
+              },
+              "badge": {
+                "ko": "타파스 바",
+                "en": "Tapas bar",
+                "ja": "タパスバー",
+                "zh": "Tapas酒吧"
+              },
+              "desc": {
+                "ko": "현행 메뉴와 음료에 타파가 포함되는지는 매장·주문별로 다릅니다. 주문 전 확인하세요.",
+                "en": "Current selection and whether a tapa is included with a drink vary by venue and order. Ask before ordering.",
+                "ja": "現在のメニューやドリンク時のタパ提供は店舗・注文により異なります。注文前にご確認ください。",
+                "zh": "当前菜品及饮品是否附送Tapas因门店和订单而异，请点单前确认。"
+              },
+              "mapQuery": "Bodegas Castaneda Granada"
+            }
+          ]
+        },
+        {
+          "num": "5",
+          "id": "malaga",
+          "name": {
+            "ko": "말라가",
+            "en": "Málaga",
+            "ja": "マラガ",
+            "zh": "马拉加"
+          },
+          "note": {
+            "ko": "에스페토 가격과 식당별 제공 여부는 다릅니다. 특정 가격대·좌석·예약·직원 언어를 전제로 하지 말고 매장에 확인하세요.",
+            "en": "Espeto prices and availability vary by restaurant. Confirm prices, seating, reservations and language support directly; none is assumed here.",
+            "ja": "エスペトの価格や提供状況は店舗により異なります。価格帯・座席・予約・言語対応は前提とせず、店舗にご確認ください。",
+            "zh": "Espeto的价格和供应情况因餐馆而异。请直接确认价格、座位、预订与语言支持，本指南不作预设。"
+          },
+          "dishes": [
+            {
+              "id": "espeto",
+              "label": {
+                "ko": "지역 음식",
+                "en": "Regional dish",
+                "ja": "郷土料理",
+                "zh": "地方菜"
+              },
+              "name": {
+                "ko": "에스페토 (Espeto)",
+                "en": "Espeto (charcoal-grilled sardines)",
+                "ja": "エスペト（炭火焼きイワシ）",
+                "zh": "Espeto（炭烤沙丁鱼）"
+              },
+              "photo": "",
+              "fallbackPhoto": "",
+              "desc": {
+                "ko": "정어리를 갈대 꼬치에 꿰어 숯불에 굽는 말라가 전통 음식입니다. 가격과 당일 제공 여부는 식당에 확인하세요.",
+                "en": "A Málaga tradition of sardines skewered on cane and grilled over charcoal. Check the restaurant’s current menu and price.",
+                "ja": "イワシを葦串に刺して炭火で焼くマラガの伝統料理です。現在のメニューと価格は店舗でご確認ください。",
+                "zh": "将沙丁鱼串在芦苇签上并以炭火烤制的马拉加传统菜；请向餐馆确认当前菜单和价格。"
+              },
+              "parentsHighlight": {
+                "ko": "말라가 관광 안내에서 소개하는 지역 음식입니다. 식당별 조리 방식과 가격은 다를 수 있습니다.",
+                "en": "A regional dish highlighted by Málaga tourism sources; preparation and prices vary by restaurant.",
+                "ja": "マラガの観光案内でも紹介される郷土料理です。調理法や価格は店舗により異なります。",
+                "zh": "马拉加旅游资料介绍的地方菜；做法与价格因餐馆而异。"
+              }
+            }
+          ],
+          "picks": [
+            {
+              "name": {
+                "ko": "El Pimpi",
+                "en": "El Pimpi",
+                "ja": "El Pimpi",
+                "zh": "El Pimpi"
+              },
+              "badge": {
+                "ko": "1971년 설립된 보데가",
+                "en": "Historic bodega, founded 1971",
+                "ja": "1971年創業のボデガ",
+                "zh": "创立于1971年的酒窖式餐厅"
+              },
+              "desc": {
+                "ko": "공식 메뉴에는 Moscatel 와인과 이베리코 하몬이 소개됩니다. 당일 메뉴·가격과 좌석별 전망은 확인하세요. 안토니오 반데라스의 소유·운영으로 소개하지 않습니다.",
+                "en": "The official menu includes Moscatel wine and Iberian ham. Check current menu, prices and views from the specific seating area. No ownership claim is made about Antonio Banderas.",
+                "ja": "公式メニューにはモスカテルワインとイベリコハモンを掲載。最新メニュー・価格、席からの眺望はご確認ください。アントニオ・バンデラスの所有・運営とは記載していません。",
+                "zh": "官网菜单列有Moscatel甜酒和伊比利亚火腿；请确认当前菜单、价格及具体座位的视野。本指南不称其由安东尼奥·班德拉斯所有或经营。"
+              },
+              "mapQuery": "El Pimpi Malaga",
+              "sourceUrl": "https://www.elpimpi.com/en/menus/"
+            },
+            {
+              "name": {
+                "ko": "Los Mellizos",
+                "en": "Los Mellizos",
+                "ja": "Los Mellizos",
+                "zh": "Los Mellizos"
+              },
+              "badge": {
+                "ko": "도심 해산물 식당",
+                "en": "City-centre seafood restaurant",
+                "ja": "中心部のシーフードレストラン",
+                "zh": "市中心海鲜餐厅"
+              },
+              "desc": {
+                "ko": "말라가 지점 공식 안내는 쌀 요리, 해산물, pescaíto frito(튀긴 생선)를 소개합니다. 현재 메뉴와 지점을 확인하세요.",
+                "en": "The official Málaga location describes rice dishes, seafood and pescaíto frito (fried fish). Check the current menu and location details.",
+                "ja": "マラガ店の公式案内では米料理、魚介、ペスカイート・フリート（揚げ魚）を紹介。最新メニューと店舗情報をご確認ください。",
+                "zh": "马拉加分店官网介绍米饭料理、海鲜及炸鱼（pescaíto frito）；请确认当前菜单与门店信息。"
+              },
+              "mapQuery": "Los Mellizos Malaga",
+              "sourceUrl": "https://losmellizos.net/en/malaga-restaurant/"
             }
           ]
         }
@@ -38015,7 +38694,7 @@ const PRACTICAL_CANDIDATES_I18N = {
     ko: {
       subnavLabel: "📌 섹션 바로가기:",
       subnavCandidates: "✨ 도시별 추가 맛집·시장·전망 후보 (17선)",
-      subnavMaster: "🥘 빠에야·피자 외 7대 도시 미식 & 회화 24선",
+      subnavMaster: "🥘 빠에야·피자 외 8개 도시 음식 가이드 & 회화 24선",
       subnavDirectory: "🏪 기존 검증 맛집 디렉토리 (92선 & 지도)",
       kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
       mainTitle: "🗂️ 도시별 추가 맛집 · 전통시장 · 푸드홀 · 일몰·야경 후보 17선",
@@ -38089,7 +38768,7 @@ const PRACTICAL_CANDIDATES_I18N = {
     en: {
       subnavLabel: "📌 Quick Jump:",
       subnavCandidates: "✨ 17 Added City Dining, Market & View Candidates",
-      subnavMaster: "🥘 24 Must-Try Regional Dishes & Phrases (7 Cities)",
+      subnavMaster: "🥘 Regional Food Ideas & Phrases (8 Cities)",
       subnavDirectory: "🏪 Verified 92-Spot Restaurant Directory & Map",
       kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
       mainTitle: "🗂️ 17 Added City Candidates: Restaurants, Day Markets, Food Halls & Sunset/Night Views",
@@ -38163,7 +38842,7 @@ const PRACTICAL_CANDIDATES_I18N = {
     ja: {
       subnavLabel: "📌 セクション移動:",
       subnavCandidates: "✨ 都市別 追加グルメ・市場・展望候補 (17選)",
-      subnavMaster: "🥘 パエリア・ピザ以外の7大都市名物＆会話24選",
+      subnavMaster: "🥘 8都市の郷土料理アイデア＆会話24選",
       subnavDirectory: "🏪 既存検証済みレストラン一覧 (92選＆地図)",
       kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
       mainTitle: "🗂️ 都市別 追加グルメ・伝統市場・フードホール・夕景/夜景候補 17選",
@@ -38237,7 +38916,7 @@ const PRACTICAL_CANDIDATES_I18N = {
     zh: {
       subnavLabel: "📌 章节快速跳转:",
       subnavCandidates: "✨ 按城市新增美食·市场·夜景候选 (17选)",
-      subnavMaster: "🥘 除海鲜饭·披萨外的7大城市名菜与会话24选",
+      subnavMaster: "🥘 8城地方美食建议与24句会话",
       subnavDirectory: "🏪 既有验证餐厅名录 (92选与地图)",
       kicker: "05-A / VERIFIED CITY-BY-CITY CANDIDATE DIRECTORY (NON-DUPLICATE)",
       mainTitle: "🗂️ 7大城市新增美食 · 传统市场 · 美食大厅 · 日落与夜景候选 17选",
