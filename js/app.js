@@ -4213,6 +4213,7 @@ function switchLanguage(lang, btn) {
   if (typeof window.renderBarcelonaDiningGuide === 'function') window.renderBarcelonaDiningGuide(lang);
   if (typeof window.renderActivityGuide === 'function') window.renderActivityGuide(lang);
   if (typeof window.renderBarcelonaTransitGuide === 'function') window.renderBarcelonaTransitGuide(lang);
+  if (typeof window.renderBarcelonaLocalGuide === 'function') window.renderBarcelonaLocalGuide(lang);
   if (typeof renderNerjaDaytripGuide === "function") renderNerjaDaytripGuide(lang);
   if (typeof renderCuratedHeartPlaces === "function") renderCuratedHeartPlaces(lang);
 
@@ -4431,6 +4432,11 @@ function handleLocalChat(query) {
     .replace(/^(じゃあ|ところで|それでは|では|あと|ちなみに|次は|続いて)\s*/g, '')
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
+
+  if (typeof window.buildBarcelonaLocalChatResponse === 'function') {
+    const localGuideResponse = window.buildBarcelonaLocalChatResponse(rawQ, lang);
+    if (localGuideResponse) return localGuideResponse;
+  }
 
   if (typeof window.buildBarcelonaTransitChatResponse === 'function') {
     const transitResponse = window.buildBarcelonaTransitChatResponse(rawQ, lang);
