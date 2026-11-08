@@ -4429,6 +4429,11 @@ function handleLocalChat(query) {
     if (flamencoResponse) return flamencoResponse;
   }
 
+  if (typeof window.buildSpainBusDirectionsChatResponse === 'function') {
+    const busDirectionsResponse = window.buildSpainBusDirectionsChatResponse(rawQ, lang);
+    if (busDirectionsResponse) return busDirectionsResponse;
+  }
+
   // ----------------------------------------------------
   // Normalize Conversational Prefixes & Follow-up phrasing
   // ----------------------------------------------------
