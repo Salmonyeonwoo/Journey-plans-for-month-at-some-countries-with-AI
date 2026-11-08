@@ -2620,6 +2620,7 @@
         <div class="book-page" id="page-practical-5">
           <section class="section activity-page-shell" id="activities">
             <div class="wrap"><div id="activity-guide-mount"></div></div>
+            <div class="wrap"><div id="flamenco-guide-mount"></div></div>
           </section>
           <div class="page-turner-bar">
             <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">

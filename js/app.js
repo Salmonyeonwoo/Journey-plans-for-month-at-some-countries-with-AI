@@ -4424,6 +4424,10 @@ function handleLocalChat(query) {
   const q = rawQ.toLowerCase();
   const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
+  if (typeof window.buildFlamencoChatResponse === 'function') {
+    const flamencoResponse = window.buildFlamencoChatResponse(rawQ, lang);
+    if (flamencoResponse) return flamencoResponse;
+  }
 
   // ----------------------------------------------------
   // Normalize Conversational Prefixes & Follow-up phrasing

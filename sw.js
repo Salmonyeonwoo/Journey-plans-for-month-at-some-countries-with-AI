@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261108_02)
+// SlowTravel Mobile Offline Service Worker (v20261108_03)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261108_02';
+const CACHE_NAME = 'slowtravel-offline-v20261108_03';
 
 const PRECACHE_ASSETS = [
   './',
@@ -10,11 +10,13 @@ const PRECACHE_ASSETS = [
   './css/style.css',
   './css/activity-guide.css',
   './css/barcelona-transit-guide.css',
+  './css/flamenco-guide.css',
   './css/mobile-first.css',
   './css/guidebook-navigation.css',
   './js/data.js',
   './js/barcelona-dining-guide.js',
   './js/activity-guide.js',
+  './js/flamenco-guide.js',
   './js/barcelona-transit-guide.js',
   './js/barcelona-local-guide.js',
   './img/gourmet/barcelona-pan-con-tomate-user.jpg',
