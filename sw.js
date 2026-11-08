@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261107_02)
+// SlowTravel Mobile Offline Service Worker (v20261108_02)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261107_02';
+const CACHE_NAME = 'slowtravel-offline-v20261108_02';
 
 const PRECACHE_ASSETS = [
   './',
