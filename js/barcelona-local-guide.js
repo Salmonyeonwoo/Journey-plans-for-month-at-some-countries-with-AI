@@ -455,7 +455,8 @@
     const paragraphs = card.paragraphs.map(text => `<p>${esc(text)}</p>`).join('');
     const links = card.links.map(item => {
       if (item.action) return `<button type="button" class="bcn-local-link" onclick="openBarcelonaLocalTopic('${esc(item.action)}')">${esc(item.label)}</button>`;
-      return `<a class="bcn-local-link" href="${esc(mapUrl(item.query))}" target="_blank" rel="noopener noreferrer">${esc(item.label)} ↗</a>`;
+      const href = item.url || mapUrl(item.query);
+      return `<a class="bcn-local-link" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(item.label)} ↗</a>`;
     }).join('');
     const sourceLinks = card.sources.map(id => `<a href="${esc(sources[id].url)}" target="_blank" rel="noopener noreferrer">${esc(sources[id].names[lang])} ↗</a>`).join('');
     return `<details class="bcn-local-card" id="${esc(card.id)}"><summary><span class="bcn-local-card-icon" aria-hidden="true">${esc(card.icon)}</span><span>${esc(card.title)}</span></summary><div class="bcn-local-card-body">${paragraphs}<p class="bcn-local-note">${esc(card.note)}</p><div class="bcn-local-links">${links}</div><div class="bcn-local-source-list" aria-label="${lang === 'ko' ? '출처' : lang === 'ja' ? '出典' : lang === 'zh' ? '来源' : 'Sources'}">${sourceLinks}</div></div></details>`;
