@@ -2828,15 +2828,15 @@ const REGIONAL_PLANS = {
   {
     "city": "코르도바",
     "isTransfer": true,
-    "theme": "Renfe 초고속열차 코르도바 이동 & 소꼬리찜 (Bodegas Mezquita) & 로마 다리 노을 야경",
-    "morning": "세비야 산타 후스타(Santa Justa)역에서 12:30 Renfe 고속열차 탑승 (41분 쾌속 이동) ➔ 코르도바 13:11 도착, 택시로 Hotel de los Faroles 체크인",
+    "theme": "ALSA 버스로 코르도바 이동 & 소꼬리찜 (Bodegas Mezquita) & 로마 다리 노을 야경",
+    "morning": "11:30 세비야 Plaza de Armas에서 ALSA Normal 버스 출발 ➔ 13:30 코르도바 Estación de Autobuses 도착 (약 2시간), 택시로 Hotel de los Faroles 이동 및 체크인",
     "rest": "13:30~15:30 전통 안달루시안 파티오 호텔에서 침대 낮잠 및 온수 휴식",
     "evening": "코르도바 메스키타와 유대인 지구 꽃길 산책 후, 해 질 녘 로마 다리 (Puente Romano)를 건너며 메스키타와 강변 야경 감상 (무료, 예약 불필요)",
     "walk": "낮음 (4,100보)",
-    "transport": "Renfe 초고속열차 + 택시",
+    "transport": "ALSA Normal 버스 + 택시",
     "meal": "Bodegas Mezquita 공식 온라인 메뉴에는 Rabo de Toro와 Flamenquín이 소개됩니다. Salmorejo는 코르도바 지역 음식 후보입니다. 방문 지점의 현행 메뉴·가격을 확인하세요.",
     "events": [
-      "Renfe 기차 (12:30~13:11)",
+      "ALSA 버스 (11:30~13:30)",
       "Hotel de los Faroles",
       "메스키타 회랑",
       "Bodegas Mezquita 소꼬리찜",
@@ -10125,35 +10125,35 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "科尔多瓦"
     },
     "theme": {
-      "ko": "Renfe 초고속열차 코르도바 이동 & 소꼬리찜 (Bodegas Mezquita) & 로마 다리 노을 야경",
-      "en": "Renfe Train to Córdoba & Tender Ox-tail Stew (Bodegas Mezquita) & Roman Bridge Sunset Night View",
-      "ja": "Renfe高速列車でコルドバへ移動＆オックステール煮込み＆ローマ橋の夕景・夜景",
-      "zh": "搭乘Renfe高铁前往科尔多瓦＆慢炖牛尾(Bodegas Mezquita)＆古罗马桥日落免费夜景"
+      "ko": "ALSA 버스로 코르도바 이동 & 소꼬리찜 (Bodegas Mezquita) & 로마 다리 노을 야경",
+      "en": "ALSA Bus to Córdoba & Tender Ox-tail Stew (Bodegas Mezquita) & Roman Bridge Sunset Night View",
+      "ja": "ALSAバスでコルドバへ移動＆オックステール煮込み＆ローマ橋の夕景・夜景",
+      "zh": "搭乘ALSA大巴前往科尔多瓦＆慢炖牛尾(Bodegas Mezquita)＆古罗马桥日落免费夜景"
     },
     "events": {
       "ko": [
-        "Renfe 기차 (12:30~13:11)",
+        "ALSA 버스 (11:30~13:30)",
         "Hotel de los Faroles",
         "메스키타 회랑",
         "Bodegas Mezquita 소꼬리찜",
         "로마 다리 무료 야경"
       ],
       "en": [
-        "Renfe Train (12:30~13:11)",
+        "ALSA Bus (11:30–13:30)",
         "Hotel de los Faroles",
         "Mezquita Courtyard",
         "Bodegas Mezquita Ox-tail",
         "Roman Bridge Free Sunset Night View"
       ],
       "ja": [
-        "Renfe 列車 (12:30~13:11)",
+        "ALSAバス (11:30〜13:30)",
         "Hotel de los Faroles",
         "メスキタ中庭回廊",
         "Bodegas Mezquita 牛テール煮",
         "ローマ橋の無料夕景夜景"
       ],
       "zh": [
-        "Renfe高铁 (12:30~13:11)",
+        "ALSA大巴 (11:30~13:30)",
         "Hotel de los Faroles",
         "清真寺大教堂回廊",
         "Bodegas Mezquita 慢炖牛尾",
@@ -10161,10 +10161,10 @@ const PLANS_DAYS_I18N_DATA = {
       ]
     },
     "morning": {
-      "ko": "세비야 산타 후스타(Santa Justa)역에서 12:30 Renfe 고속열차 탑승 (41분 쾌속 이동) ➔ 코르도바 13:11 도착, 택시로 Hotel de los Faroles 체크인",
-      "en": "Board 12:30 Renfe high-speed train from Seville Santa Justa (smooth 41 min ride) ➔ Córdoba 13:11, taxi to Hotel de los Faroles",
-      "ja": "セビリアSanta Justa駅から12:30発Renfe高速列車に乗車(41分快適移動) ➔ コルドバ13:11到着、タクシーでHotel de los Farolesへ",
-      "zh": "在塞维利亚Santa Justa站搭乘12:30 Renfe高铁(舒适平稳运行41分钟) ➔ 13:11抵达科尔多瓦，打车前往Hotel de los Faroles办理入住"
+      "ko": "11:30 세비야 Plaza de Armas에서 ALSA Normal 버스 출발 ➔ 13:30 코르도바 Estación de Autobuses 도착 (약 2시간), 택시로 Hotel de los Faroles 이동 및 체크인",
+      "en": "11:30 ALSA Normal bus from Sevilla Plaza de Armas ➔ 13:30 arrival at Córdoba Estación de Autobuses (about 2 hours), then taxi to Hotel de los Faroles for check-in",
+      "ja": "11:30 セビリアのPlaza de Armas発ALSA Normalバス ➔ 13:30 コルドバのEstación de Autobuses着（約2時間）、その後タクシーでHotel de los Farolesへ移動・チェックイン",
+      "zh": "11:30从塞维利亚Plaza de Armas乘坐ALSA Normal大巴 ➔ 13:30抵达科尔多瓦Estación de Autobuses（约2小时），之后乘出租车前往Hotel de los Faroles办理入住"
     },
     "rest": {
       "ko": "13:30~15:30 전통 안달루시안 파티오 호텔에서 침대 낮잠 및 온수 휴식",
@@ -10185,10 +10185,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "较低 (4,100步)"
     },
     "transport": {
-      "ko": "Renfe 초고속열차 + 택시",
-      "en": "Renfe High-Speed Train + Taxi",
-      "ja": "Renfe高速鉄道＋タクシー",
-      "zh": "Renfe高速列车与出租车"
+      "ko": "ALSA Normal 버스 + 택시",
+      "en": "ALSA Normal Bus + Taxi",
+      "ja": "ALSA Normalバス＋タクシー",
+      "zh": "ALSA Normal大巴与出租车"
     },
     "meal": {
       "ko": "Bodegas Mezquita 공식 온라인 메뉴에는 Rabo de Toro와 Flamenquín이 소개됩니다. Salmorejo는 코르도바 지역 음식 후보입니다. 방문 지점의 현행 메뉴·가격을 확인하세요.",

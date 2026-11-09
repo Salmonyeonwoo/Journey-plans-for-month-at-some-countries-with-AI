@@ -4424,6 +4424,19 @@ function handleLocalChat(query) {
   const q = rawQ.toLowerCase();
   const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
+  const hasSevilleForNov12 = ['seville', 'sevilla', '세비야', 'セビリア', '塞维利亚'].some(w => q.includes(w));
+  const hasCordobaForNov12 = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦'].some(w => q.includes(w));
+  const asksIntercityRoute = ['alsa', 'bus', 'buses', 'coach', 'route', 'transport', 'travel from', 'train', 'renfe', 'day trip', 'daytrip', '당일치기', '日帰り', '一日游', '이동', '교통', '버스', '기차', '열차', '렌페', 'バス', '電車', '列車', '鉄道', '移動', '交通', '大巴', '公交', '巴士', '火车', '铁路', '出行'].some(w => q.includes(w));
+  const mentionsNov12 = ['2026-11-12', '2026/11/12', '11/12', 'nov 12', '12 november', '11월 12일', '11월12일', '11月12日'].some(w => q.includes(w));
+  if (hasSevilleForNov12 && hasCordobaForNov12 && (asksIntercityRoute || mentionsNov12)) {
+    const nov12CordobaBusReply = {
+      ko: '🚌 <strong>11월 12일(목) 세비야 → 코르도바 이동</strong><br>• 11:30 세비야 Plaza de Armas 출발 · ALSA Normal 버스<br>• 13:30 코르도바 Estación de Autobuses 도착 (약 2시간)<br>• 표에 확인된 편도 구간만 반영했으며, 귀환편은 이 안내에 추가하지 않았습니다.<br><a href="https://www.alsa.com/en/coach/seville-cordova" target="_blank" rel="noopener noreferrer">ALSA 공식 노선 안내 ↗</a>',
+      en: '🚌 <strong>Seville → Córdoba · Thu 12 November</strong><br>• 11:30 departure from Sevilla Plaza de Armas · ALSA Normal bus<br>• 13:30 arrival at Córdoba Estación de Autobuses (about 2 hours)<br>• This records the confirmed outbound leg only; no return schedule is added here.<br><a href="https://www.alsa.com/en/coach/seville-cordova" target="_blank" rel="noopener noreferrer">ALSA official route ↗</a>',
+      ja: '🚌 <strong>11月12日（木）セビリア → コルドバ</strong><br>• 11:30 セビリア Plaza de Armas発 · ALSA Normalバス<br>• 13:30 コルドバ Estación de Autobuses着（約2時間）<br>• 反映しているのは確認済みの往路のみです。帰路の時刻はこの案内に追加していません。<br><a href="https://www.alsa.com/en/coach/seville-cordova" target="_blank" rel="noopener noreferrer">ALSA公式路線案内 ↗</a>',
+      zh: '🚌 <strong>11月12日（周四）塞维利亚 → 科尔多瓦</strong><br>• 11:30 从塞维利亚 Plaza de Armas 出发 · ALSA Normal大巴<br>• 13:30 抵达科尔多瓦 Estación de Autobuses（约2小时）<br>• 此处仅记录已确认的去程；未添加返程班次。<br><a href="https://www.alsa.com/en/coach/seville-cordova" target="_blank" rel="noopener noreferrer">ALSA官方线路 ↗</a>'
+    };
+    return nov12CordobaBusReply[lang] || nov12CordobaBusReply.ko;
+  }
   // Keep verified candidate questions ahead of broad food/market matching.
   if (!hasAndalusiaCityContext && typeof window.buildBarcelonaCandidateOptionsChatResponse === 'function') {
     const candidateResponse = window.buildBarcelonaCandidateOptionsChatResponse(rawQ, lang);
