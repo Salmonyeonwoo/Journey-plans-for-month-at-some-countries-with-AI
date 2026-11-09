@@ -4433,6 +4433,10 @@ function handleLocalChat(query) {
     const busDirectionsResponse = window.buildSpainBusDirectionsChatResponse(rawQ, lang);
     if (busDirectionsResponse) return busDirectionsResponse;
   }
+  if (typeof window.buildSpanishMarketFoodChatResponse === 'function') {
+    const spanishMarketResponse = window.buildSpanishMarketFoodChatResponse(rawQ, lang);
+    if (spanishMarketResponse) return spanishMarketResponse;
+  }
 
   // ----------------------------------------------------
   // Normalize Conversational Prefixes & Follow-up phrasing
@@ -6769,32 +6773,32 @@ function handleLocalChat(query) {
       let res = '';
       if (lang === 'ja') {
         res = `
-          🥘 <strong>スペインを代表する必食グルメ TOP 4</strong>:<br><br>
-          1️⃣ <strong>イベリコ生ハム（Jamón Ibérico de Bellota）:</strong> どんぐりを食べて育った最高級黒豚の生ハム。<br>
+          🥘 <strong>スペインの料理アイデア（当日のメニューは店舗で確認）</strong>:<br><br>
+          1️⃣ <strong>イベリコハモン（Jamón Ibérico）:</strong> 熟成豚肉の一種で、等級や表示は製品ごとに異なります。韓国へ持ち帰る場合は申告・検疫要件を確認してください。真空包装でも免除とは限りません。<a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">韓国の検疫案内 ↗</a><br>
           2️⃣ <strong>パエリア（Paella）:</strong> バレンシア発祥、サフランの香りと魚介の旨味を吸わせた伝統の米料理。<br>
           3️⃣ <strong>タパス＆ピンチョス（Tapas & Pintxos）:</strong> ガンバス・アル・アヒージョなど小皿料理の食べ歩き。<br>
           4️⃣ <strong>チュロス＆濃厚ホットチョコレート:</strong> 揚げたてサクサクのチュロスをビターチョコにディップ！
         `;
       } else if (lang === 'en') {
         res = `
-          🥘 <strong>Iconic Spanish Culinary Delights TOP 4</strong>:<br><br>
-          1️⃣ <strong>Jamón Ibérico de Bellota:</strong> Melt-in-your-mouth acorn-fed cured cured ham.<br>
+          🥘 <strong>Spanish food ideas (check the venue’s current menu)</strong>:<br><br>
+          1️⃣ <strong>Jamón Ibérico (cured ham):</strong> Product grades and claims vary; check the specific label. If taking it to Korea, declaration and quarantine rules apply—vacuum packaging is not an exemption. <a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">Korean quarantine guidance ↗</a><br>
           2️⃣ <strong>Authentic Paella:</strong> Traditional Valencian saffron rice simmered with rich seafood or rabbit & beans.<br>
           3️⃣ <strong>Tapas & Pintxos:</strong> Vibrant small plates ranging from sizzling garlic prawns (*Gambas al Ajillo*) to Iberian croquettes.<br>
           4️⃣ <strong>Churros con Chocolate:</strong> Crispy piped fritters dipped in thick, velvety dark drinking chocolate.
         `;
       } else if (lang === 'zh') {
         res = `
-          🥘 <strong>西班牙四大地道美食名吃指南</strong>:<br><br>
-          1️⃣ <strong>橡果饲伊比利亚火腿（Jamón Ibérico）：</strong> 油脂如大理石花纹般细腻，入口融化带有坚果香。<br>
+          🥘 <strong>西班牙菜品参考（以餐厅当日菜单为准）</strong>:<br><br>
+          1️⃣ <strong>伊比利亚火腿（Jamón Ibérico）：</strong> 熟成猪肉食品，等级和标签因产品而异。带入韩国须申报并接受检疫；真空包装不代表豁免。<a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">韩国检疫指南 ↗</a><br>
           2️⃣ <strong>西班牙藏红花海鲜饭（Paella）：</strong> 颗粒饱满吸收浓郁高汤，伴有焦香黄金锅巴。<br>
           3️⃣ <strong>经典Tapas小吃：</strong> 蒜香大虾（Gambas al Ajillo）、土豆蛋饼与火腿炸丸子。<br>
           4️⃣ <strong>西班牙吉事果配热巧（Churros）：</strong> 刚出锅外脆里软的吉事果蘸上醇厚浓郁黑巧克力。
         `;
       } else {
         res = `
-          🥘 <strong>스페인 대표 명물 음식 TOP 4</strong>:<br><br>
-          1️⃣ <strong>이베리코 하몽 (Jamón Ibérico de Bellota):</strong> 도토리만 먹고 자란 흑돼지로 만든 풍미 깊은 최고급 생햄입니다.<br>
+          🥘 <strong>스페인 음식 아이디어 (당일 메뉴는 식당에서 확인)</strong>:<br><br>
+          1️⃣ <strong>이베리코 하몽 (Jamón Ibérico):</strong> 돼지고기 숙성 식품으로 제품 등급과 표시가 다릅니다. 한국에 가져갈 경우 신고·검역 요건을 확인하세요. 진공포장도 면제 사유가 아닙니다. <a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">한국 검역 안내 ↗</a><br>
           2️⃣ <strong>정통 빠에야 (Paella):</strong> 사프란 향이 솔솔 나는 쌀에 신선한 해산물과 채소를 넣고 볶아낸 전통 쌀요리입니다.<br>
           3️⃣ <strong>타파스 (Tapas):</strong> 감바스 알 아히요(마늘 새우), 이베리코 크로켓 등 다양한 스페인식 핑거푸드입니다.<br>
           4️⃣ <strong>츄러스 &amp; 핫초콜릿:</strong> 갓 튀겨 바삭한 츄러스를 진한 다크 초콜릿에 푹 찍어 먹는 국민 간식입니다.
@@ -6900,50 +6904,22 @@ function handleLocalChat(query) {
       }
     }
 
-    // Default: Spain Shopping
-    const chips = [
-      { query: '이탈리아 쇼핑 선물 추천', label: '🎁 이탈리아 쇼핑' },
-      { query: '택스리펀 받는 법', label: '🛍️ 택스리펀(DIVA)' }
-    ];
-    if (lang === 'ja') {
-      return `
-        🎁 <strong>スペインで絶対に買うべきおすすめ土産 TOP 5</strong>:<br><br>
-        1️⃣ <strong>最高級イベリコ生ハム（真空パック）:</strong> ハモン・イベリコ・デ・ベジョータ。<br>
-        2️⃣ <strong>エキストラバージンオリーブオイル＆ラ・チナータ（La Chinata）コスメ:</strong> オリーブ由来の高品質オイルと石鹸。<br>
-        3️⃣ <strong>トゥロン（Turrón）:</strong> アーモンドと蜂蜜で作るスペインの伝統銘菓。<br>
-        4️⃣ <strong>エスパドリーユ靴:</strong> 天然ジュート底の履き心地の良いサンダル。<br>
-        5️⃣ <strong>ロエベ（LOEWE）革製品＆ワイン（リオハ・リベラ）:</strong> スペイン王室御用達の高級ラグジュアリー。
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'en') {
-      return `
-        🎁 <strong>Top 5 Authentic Spanish Souvenirs & Gifts</strong>:<br><br>
-        1️⃣ <strong>Vacuum-Sealed Jamón Ibérico de Bellota:</strong> Top-tier cured Iberian ham slices.<br>
-        2️⃣ <strong>Extra-Virgin Olive Oil & La Chinata Cosmetics:</strong> Cold-pressed oils and olive-oil botanical soaps.<br>
-        3️⃣ <strong>Turrón Nougat:</strong> Traditional Spanish almond and honeycomb nougat confection.<br>
-        4️⃣ <strong>Artisanal Espadrilles:</strong> Hand-stitched natural jute-sole canvas shoes (*alpargatas*).<br>
-        5️⃣ <strong>LOEWE Luxury Leather & Rioja Red Wine:</strong> Royal warrant Spanish luxury fashion and vintage reds.
-      ` + renderFollowupChips(chips);
-    } else if (lang === 'zh') {
-      return `
-        🎁 <strong>西班牙必买TOP 5伴手礼与特产精选</strong>:<br><br>
-        1️⃣ <strong>真空包装伊比利亚火腿切片：</strong> 顶级橡果黑猪肉火腿切片。<br>
-        2️⃣ <strong>特级初榨橄榄油与La Chinata天然护肤品：</strong> 纯正橄榄油皂与护手霜。<br>
-        3️⃣ <strong>杜隆杏仁糖（Turrón）：</strong> 西班牙百年传统坚果杏仁牛轧糖。<br>
-        4️⃣ <strong>手工草编帆布鞋（Espadrilles）：</strong> 纯天然轻便透气。<br>
-        5️⃣ <strong>LOEWE罗意威皮具与里奥哈顶级红酒：</strong> 西班牙皇室御用奢侈品与佳酿。
-      ` + renderFollowupChips(chips);
-    } else {
-      return `
-        🎁 <strong>스페인 필수 쇼핑 &amp; 기념품 TOP 5</strong>:<br><br>
-        1️⃣ <strong>진공포장 이베리코 하몽 슬라이스:</strong> 최고 등급 베요타(Bellota) 등급의 깊은 풍미.<br>
-        2️⃣ <strong>엑스트라 버진 올리브유 &amp; 라 치나타(La Chinata) 화장품:</strong> 천연 올리브로 만든 핸드크림과 비누.<br>
-        3️⃣ <strong>뚜론 (Turrón):</strong> 꿀과 아몬드를 듬뿍 넣은 스페인 전통 간식.<br>
-        4️⃣ <strong>에스파드류 (에스파드리유 신발):</strong> 천연 밑창으로 통풍이 잘되고 가벼운 전통 신발.<br>
-        5️⃣ <strong>로에베(LOEWE) 가죽제품 &amp; 리오하 레드 와인:</strong> 스페인 왕실 납품 가죽 브랜드와 명품 와인.
-      ` + renderFollowupChips(chips);
-    }
+    // Default: source-led Spanish market gifts; ham import rules are not waived by packaging.
+    const spanishShoppingCopy = {
+      ko: `🎁 <strong>스페인 시장 선물 아이디어 (재고·반입 규정 확인)</strong><br>• 바르셀로나 Olives Francesc: 공식 판매대 안내에 올리브·절임/보존식품·오일·향신료가 있습니다.<br>• 세비야 Encarnación: 시장 공식 안내에 올리브·향신료·견과류·보존식품이 나옵니다.<br>• 그라나다 El Antiguo Tostadero: 관광청이 커피·차·초콜릿 가게로 소개합니다.<br>• 말라가 Atarazanas: 관광 안내에 올리브유·지역 과자·보존식품이 포함됩니다.<br>품목·가격·포장·재고와 한국 반입 가능 여부는 구매 전에 확인하세요.<br><strong>하몬 등 햄은 귀국 선물로 권하지 않습니다.</strong> 신고·검역 대상이며 진공포장도 면제되지 않습니다. 불명확하면 가져오지 말고, 가져온 축산물은 입국 때 신고해 제시하세요. <a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">인천공항 검역 안내 ↗</a>`,
+      en: `🎁 <strong>Spanish market gift ideas (check stock and import rules)</strong><br>• Barcelona’s Olives Francesc lists olives, preserves, oils and spices.<br>• Seville’s Encarnación market lists olives, spices, nuts and preserved foods.<br>• Granada tourism lists El Antiguo Tostadero as a coffee, tea and chocolate shop.<br>• Málaga tourism lists olive oil, local sweets and preserved foods around Atarazanas.<br>Products, prices, packaging, stock and Korean import eligibility must be checked before purchase.<br><strong>Jamón and other ham are not recommended as take-home gifts.</strong> They are reportable animal products; vacuum packaging is not an exemption. If unsure, leave them behind; declare and present any animal product at arrival. <a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">Incheon Airport quarantine guide ↗</a>`,
+      ja: `🎁 <strong>スペイン市場の土産候補（在庫・持ち込み規則を確認）</strong><br>• バルセロナのOlives Francesc：公式売店案内にオリーブ、保存食品、オイル、スパイスがあります。<br>• セビリアのEncarnación市場：公式案内にオリーブ、スパイス、ナッツ、保存食品があります。<br>• グラナダ観光局はEl Antiguo Tostaderoをコーヒー・茶・チョコレート店として紹介しています。<br>• マラガ観光局はAtarazanas周辺の商品としてオリーブオイル、地元菓子、保存食品を挙げています。<br>商品・価格・包装・在庫と韓国への持ち込み可否は購入前に確認してください。<br><strong>ハモンなどのハムを帰国土産として勧めません。</strong>申告対象の畜産物で、真空包装でも免除されません。不明なら持ち込まず、持っている場合は到着時に申告して提示してください。<a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">仁川空港の検疫案内 ↗</a>`,
+      zh: `🎁 <strong>西班牙市场礼品线索（请核实库存与入境规定）</strong><br>• 巴塞罗那Olives Francesc官网列有橄榄、保存食品、油和香料。<br>• 塞维利亚Encarnación市场官方资料列有橄榄、香料、坚果及保存食品。<br>• 格拉纳达旅游局将El Antiguo Tostadero介绍为咖啡、茶和巧克力店。<br>• 马拉加旅游资料列出Atarazanas周边的橄榄油、本地甜点和保存食品。<br>购买前请核实商品、价格、包装、库存及能否带入韩国。<br><strong>不建议把伊比利亚火腿等肉制品作为回国礼物。</strong>此类产品须申报检疫，真空包装并非豁免。若不确定请勿携带；如已携带，入境时申报并交检疫人员检查。<a href="https://www.airport.kr/ap_ko/916/subview.do" target="_blank" rel="noopener noreferrer">仁川机场检疫指南 ↗</a>`
+    };
+    const marketGuideButton = {
+      ko: '네 도시 시장·저녁 식사 보충 가이드 열기',
+      en: 'Open the four-city market & evening food guide',
+      ja: '4都市の市場・夕食補足ガイドを開く',
+      zh: '打开四城市场与晚餐补充指南'
+    };
+    const jumpToMarketGuide = `<br><button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical',0); setTimeout(()=>{const el=document.getElementById('spanish-market-food-guide');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150);">${marketGuideButton[lang] || marketGuideButton.ko} ↗</button>`;
+    return spanishShoppingCopy[lang] + jumpToMarketGuide;
   }
-
   // 10-3. SIGHTS & ATTRACTIONS INTENT
   if (isSights) {
     if (isItaly) {
@@ -9927,6 +9903,7 @@ function renderMasterGourmetGuide(lang, filterCountry) {
   if (typeof renderPracticalCityCandidates === 'function') renderPracticalCityCandidates(currentL);
   if (typeof renderNerjaDaytripGuide === 'function') renderNerjaDaytripGuide(currentL);
   if (typeof renderCuratedHeartPlaces === 'function') renderCuratedHeartPlaces(currentL);
+  if (typeof window.renderSpanishMarketFoodGuide === 'function') window.renderSpanishMarketFoodGuide(currentL);
 
   // Re-apply survival filters if active
   if (window.masterSurvivalCountry !== 'all' || window.masterSurvivalCategory !== 'all') {

@@ -2727,7 +2727,7 @@ const REGIONAL_PLANS = {
     "theme": "고딕 지구 평지 산책 & 1836년 전통 파에야 (7 Portes) & 산타 카테리나 로컬 시장",
     "morning": "바르셀로나 대성당 광장과 고딕 지구의 넓고 평탄한 보행자 전용 도로를 천천히 산책",
     "rest": "13:30~16:00 Suites Marina Abapart 복귀 후 침대 낮잠 및 발 마사지 (부모님 관절 완벽 보호)",
-    "evening": "산타 카테리나 시장 (Mercat de Santa Caterina) 물결무늬 지붕 구경, 신선한 과일과 하몬 시식 및 저녁 산책",
+    "evening": "산타 카테리나 시장의 지붕과 판매대 둘러보기 (상품·시식은 점포와 당일 상황에 따라 다름)",
     "walk": "낮음 (4,200보)",
     "transport": "도보 & 택시",
     "meal": "Ciudad Condal: 꿀대구(Bacalao a la miel, 달콤한 꿀과 아이올리 소스 부모님 최애 확정!), 소고기 안심 몬타디토, 상큼한 레몬맥주 클라라 & 산타 카테리나 시장 생과일 컵",
@@ -2764,7 +2764,7 @@ const REGIONAL_PLANS = {
     "evening": "올림픽 항구 산책로를 가볍게 걷고 노을 감상 후 아파트 복귀",
     "walk": "낮음 (3,600보)",
     "transport": "시티투어 버스 & 택시",
-    "meal": "Puertecillo Sagrada Família: 사그라다 파밀리아 인근 셀프서비스 해산물 (숙소 경로·당일 가격 확인) & 보케리아 시장 이베리코 하몬 콘 (재고·가격 확인)",
+    "meal": "Puertecillo Sagrada Família: 사그라다 파밀리아 인근 셀프서비스 해산물 (숙소 경로·당일 영업·가격 확인). 보케리아는 시장으로 둘러보고 판매대 상품과 가격을 현장에서 확인하세요.",
     "events": [
       "몬주익 파노라마",
       "지중해 항구 뷰",
@@ -2798,7 +2798,7 @@ const REGIONAL_PLANS = {
     "evening": "15:30 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
     "walk": "낮음 (3,500보)",
     "transport": "도보 3분",
-    "meal": "카탈루냐 로컬 타파스: 하몬 이베리코 데 베요타 & 따뜻한 크로케타",
+    "meal": "카탈루냐 타파스 후보: 이베리코 하몬(제품 표시 확인)과 따뜻한 크로케타",
     "events": [
       "오전 여유 휴식",
       "숙소 도보 3분 진입",
@@ -2870,7 +2870,7 @@ const REGIONAL_PLANS = {
     "evening": "택시 타고 산 니콜라스 전망대 (Mirador de San Nicolás) 올라가기: 알함브라 궁전의 붉은 성곽 뒤로 지는 석양과 시에라 네바다 설산 배경 야경을 무료로 감상 (최고의 명소)",
     "walk": "중간 (5,500보)",
     "transport": "왕복 택시 탑승 (관절 보호)",
-    "meal": "그라나다 정통 타파스: 하몬 이베리코 데 베요타, 따뜻한 안달루시아 토마토 스프",
+    "meal": "그라나다 타파스: 매장 메뉴를 확인하세요. 음료와 타파 제공 여부 및 재료는 업장·주문에 따라 다릅니다.",
     "events": [
       "알함브라 택시 직행",
       "나스르 궁전 집중 관람",
@@ -2940,7 +2940,7 @@ const REGIONAL_PLANS = {
     "evening": "스페인 광장 (Plaza de España) 야간 조명 산책: 밤에 조명이 켜져 낮과는 다른 웅장하고 로맨틱한 분위기를 무료로 감상 (분수 쇼 & 고요한 야경)",
     "walk": "낮음 (4,200보)",
     "transport": "ALSA 버스 + 택시",
-    "meal": "세비야 전통 안달루시안 타파스 & 이베리코 하몬 & 시원한 틴토 데 베라노",
+    "meal": "세비야 저녁 타파스 후보: Coliseo Bar 공식 메뉴의 tortillitas de camarones(새우 튀김전). 당일 메뉴와 갑각류 알레르기를 확인하세요.",
     "events": [
       "말라가 09:00 버스",
       "세비야 11:45 도착",
@@ -9705,10 +9705,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "13:30~16:00 返回Suites Marina Abapart午睡休息，保护长辈膝关节"
     },
     "evening": {
-      "ko": "산타 카테리나 시장 (Mercat de Santa Caterina) 물결무늬 지붕 구경, 신선한 과일과 하몬 시식 및 저녁 산책",
-      "en": "Visit Santa Caterina Market to admire its colorful wavy roof, taste fresh fruits & sliced jamón",
-      "ja": "波打つ屋根が美しいサンタ・カテリーナ市場を訪れ、新鮮な果物と生ハム散策＆穏やかな夕景散歩",
-      "zh": "漫步圣卡特琳娜市场欣赏波浪形彩色屋顶，品尝新鲜水果与伊比利亚火腿"
+      "ko": "산타 카테리나 시장의 지붕과 판매대 둘러보기 (상품·시식은 점포와 당일 상황에 따라 다름)",
+      "en": "Visit Santa Caterina Market to see its roof and stalls; products and tastings vary by vendor and day.",
+      "ja": "サンタ・カテリーナ市場の屋根と売店を見学（商品・試食は売店と当日の状況により異なる）",
+      "zh": "参观圣卡特琳娜市场屋顶与摊位；商品和试吃因摊位及当天情况而异。"
     },
     "walk": {
       "ko": "낮음 (4,200보)",
@@ -9875,10 +9875,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "观光大巴与出租车"
     },
     "meal": {
-      "ko": "Puertecillo Sagrada Família: 사그라다 파밀리아 인근 셀프서비스 해산물 (숙소 경로·당일 가격 확인) & 보케리아 시장 이베리코 하몬 콘 (재고·가격 확인)",
-      "en": "Puertecillo Sagrada Família: self-service seafood near Sagrada Família (check the accommodation route and current prices) & Ibérico ham cone at Boqueria Market (check availability and price)",
-      "ja": "Puertecillo Sagrada Família: サグラダ・ファミリア近くのセルフサービス式シーフード（宿からの経路・当日価格を確認）＆ボケリア市場のハモン・イベリココーン（在庫・価格を確認）",
-      "zh": "Puertecillo Sagrada Família：圣家堂附近的自助式海鲜（请核对住宿路线和当天价格）及波盖利亚市场伊比利亚火腿小吃（请确认供应和价格）"
+      "ko": "Puertecillo Sagrada Família: 사그라다 파밀리아 인근 셀프서비스 해산물 (숙소 경로·당일 영업·가격 확인). 보케리아는 시장으로 둘러보고 판매대 상품과 가격을 현장에서 확인하세요.",
+      "en": "Puertecillo Sagrada Família: self-service seafood near Sagrada Família (check route, current opening and prices). Treat Boqueria as a market visit; check stall products and prices on site.",
+      "ja": "Puertecillo Sagrada Família: サグラダ・ファミリア近くのセルフサービス式シーフード（宿からの経路・当日の営業と価格を確認）。ボケリアは市場見学とし、売店の商品・価格は現地で確認してください。",
+      "zh": "Puertecillo Sagrada Família：圣家堂附近的自助式海鲜（核对路线、当天营业和价格）。将博盖利亚作为市场参观，现场确认摊位商品与价格。"
     }
   },
   {
@@ -10031,10 +10031,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "步行3分钟"
     },
     "meal": {
-      "ko": "카탈루냐 로컬 타파스: 하몬 이베리코 데 베요타 & 따뜻한 크로케타",
-      "en": "Catalan local tapas: 100% Acorn-fed Jamón Ibérico & warm creamy croquetas",
-      "ja": "カタルーニャ料理: 最高級ベジョータ生ハム＆熱々クリーミーなクロケッタ",
-      "zh": "加泰罗尼亚风味小吃：特级橡果饲伊比利亚生火腿与香热炸丸子"
+      "ko": "카탈루냐 타파스 후보: 이베리코 하몬(제품 표시 확인)과 따뜻한 크로케타",
+      "en": "Catalan tapas idea: Iberian ham (check the product label) and croquetas; menu and ham grade vary by venue.",
+      "ja": "カタルーニャ料理候補：イベリコハム（商品表示を確認）とクロケッタ。メニューや等級は店舗ごとに異なります。",
+      "zh": "加泰罗尼亚Tapas参考：伊比利亚火腿（以具体产品标示为准）和炸丸子；菜单与火腿等级因店而异。"
     }
   },
   {
@@ -10351,10 +10351,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "往返全程出租车"
     },
     "meal": {
-      "ko": "그라나다 정통 타파스: 하몬 이베리코 데 베요타, 따뜻한 안달루시아 토마토 스프",
-      "en": "Granada traditional tapas: Bellota acorn-fed Jamón Ibérico & warm Andalusian soup",
-      "ja": "グラナダ伝統タパス: 最高級ベジョータ生ハム＆温かいアンダルシア風スープ",
-      "zh": "格拉纳达地道Tapas：橡果饲伊比利亚生火腿与温热安达卢西亚浓汤"
+      "ko": "그라나다 타파스: 매장 메뉴를 확인하세요. 음료와 타파 제공 여부 및 재료는 업장·주문에 따라 다릅니다.",
+      "en": "Granada tapas: check the current venue menu; ingredients and any tapa-with-drink policy vary by venue and order.",
+      "ja": "グラナダのタパス：当日の店のメニューを確認してください。料理やドリンク付きタパスの条件は店舗・注文により異なります。",
+      "zh": "格拉纳达Tapas：请查看餐厅当日菜单；菜品及饮品是否附Tapas因门店和订单而异。"
     }
   },
   {
@@ -10663,10 +10663,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "ALSA优等大巴与出租车"
     },
     "meal": {
-      "ko": "세비야 전통 안달루시안 타파스 & 이베리코 하몬 & 시원한 틴토 데 베라노",
-      "en": "Seville traditional Andalusian tapas, Jamón Ibérico & chilled Tinto de Verano",
-      "ja": "セビリア伝統アンダルシア料理: イベリコ生ハム＆冷たいティント・デ・ベラーノ",
-      "zh": "塞维利亚地道Tapas小吃、特级伊比利亚火腿与冰爽柠檬红酒饮"
+      "ko": "세비야 저녁 타파스 후보: Coliseo Bar 공식 메뉴의 tortillitas de camarones(새우 튀김전). 당일 메뉴와 갑각류 알레르기를 확인하세요.",
+      "en": "Seville evening tapas idea: tortillitas de camarones (shrimp fritters) listed by Coliseo Bar; check current availability and shellfish allergies.",
+      "ja": "セビリアの夕食候補：Coliseo Bar公式メニューにあるtortillitas de camarones（エビのフリッター）。当日の提供と甲殻類アレルギーを確認してください。",
+      "zh": "塞维利亚晚餐Tapas参考：Coliseo Bar官网菜单列出的tortillitas de camarones（虾饼）；请核实当天供应及甲壳类过敏。"
     }
   },
   {
@@ -16413,13 +16413,13 @@ const I18N_DICTIONARY = {
     "gourmet_part1_title": "🇪🇸 [Part 1] 스페인 미식 & 간식 파헤치기",
     "badge_catalonia": "카탈루냐 미식",
     "gourmet_bcn_title": "1. 바르셀로나 (Barcelona)",
-    "gourmet_bcn_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>꿀대구 (Bacalao a la miel)</strong>: Ciudad Condal 등 타파스 바의 전설. 두툼한 대구 살 위에 달콤한 꿀과 부드러운 아이올리 소스를 얹어 구워낸 요리로 한국인 부모님 최애 메뉴 확정!<br>• <strong>해산물 파에야 & 먹물 파에야 (Paella)</strong>: 7 Portes 등 1836년 전통 명가에서 맛보는 사프란 향 가득한 해산물 쌀요리.",
-    "gourmet_bcn_snack": "<strong>🥐 로컬 시장 & 야시장 간식 (산타 카테리나 / 보케리아):</strong><br>• <strong>생과일 주스 & 과일 컵</strong>: 시장 골목마다 1~2€로 즐기는 생망고·딸기·멜론 믹스 비타민 충전 컵.<br>• <strong>이베리코 하몬 콘 (Jamón Cone)</strong>: 걸어 다니며 맛보는 최고급 생고기 하몬 슬라이스 종이콘.<br>• <strong>츄러스와 쇼콜라테 (Churros con Chocolate)</strong>: 바삭한 츄러스를 걸쭉하고 진한 핫초코에 듬뿍 찍어 먹는 최고의 간식.",
+    "gourmet_bcn_sig": "<strong>🍳 El Quim de la Boqueria — 메뉴 확인:</strong><br>• 공식 메뉴는 작은 오징어를 곁들인 달걀 프라이를 대표 메뉴로 게시하며 표시 가격은 €19.75입니다(당일 가격·제공은 변동 가능).<br>• 예약을 받지 않고, 관광 안내에는 줄이 있을 수 있다고 나옵니다. 대기시간은 확인되지 않았습니다. 메뉴·알레르기·교차접촉을 주문 전에 확인하세요.",
+    "gourmet_bcn_snack": "<strong>🥕 보케리아 시장 사실 확인:</strong><br>• 정기 운영은 월–토 08:00–20:30이며 2026-11-09(월)은 정기 운영 요일입니다. 당일 특별 휴무 여부와 점포 시간은 출발 전 확인하세요.<br>• 주스·과일 가격, 안쪽 매대가 더 저렴하다는 비교, 하몬 콘 판매는 공식 자료로 확인되지 않았습니다. 가격표와 품목을 현장에서 확인하고 시장을 야시장으로 부르지 않습니다.",
     "gourmet_and_title": "2. 안달루시아 (세비야·코르도바·그라나다·말라가)",
     "badge_andalusia": "남부 정통 향토",
     "gourmet_and_sig": "<strong>⭐️ 안달루시아 지역 음식 아이디어:</strong><br>• <strong>코르도바:</strong> 살모레호(Salmorejo), 소꼬리 스튜(Rabo de Toro), 플라멘낀(Flamenquín)은 지역 음식 후보입니다.<br>• <strong>그라나다:</strong> 해산물·생선 타파스를 파는 곳이 있으며, 음료와 타파 제공 조건은 매장마다 다릅니다.<br>• <strong>말라가:</strong> 에스페토(Espeto)는 갈대 꼬치에 정어리를 꿰어 숯불에 굽는 전통 음식입니다. 메뉴와 가격은 매장에서 확인하세요.<br>식당별 당일 메뉴·가격은 보장되지 않습니다.",
     "food_image_illustrative": "🥘 참고용 음식 이미지",
-    "gourmet_and_snack": "<strong>🥐 로컬 시장 간식:</strong><br>• <strong>안달루시아 추로스 (Churros)</strong>: 바르셀로나보다 훨씬 바삭하고 담백! 아침에 현지인들처럼 바에 서서 갓 튀긴 추러스와 카페 콘 레체 즐기기.",
+    "gourmet_and_snack": "<strong>🥕 안달루시아 낮 시장·저녁 식사:</strong><br>엔카르나시온(세비야)·아타라사나스(말라가)는 게시된 낮 운영시간에 맞추세요. 산 아구스틴(그라나다)은 공식 관광 안내가 ‘평일 오전’만 적고 정확한 시각은 공개하지 않습니다. 야시장으로 확인되지 않은 곳은 낮 시장과 저녁 식당을 나눠 계획하세요.<br><a href=\"#\" onclick=\"switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical',0); setTimeout(()=>{const el=document.getElementById('spanish-market-food-guide');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150); return false;\">네 도시 시장·저녁 식사 보충 가이드 보기 ↗</a>",
     "gourmet_part2_title": "🇮🇹 [Part 2] 이탈리아 미식 & 간식 파헤치기",
     "badge_napoli": "피자의 본향",
     "gourmet_nap_title": "1. 나폴리 (Napoli) - [미식의 진짜 고향]",
@@ -16510,7 +16510,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "확정 일정에 맞춰 부모님 입맛과 체력을 완벽히 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 사전 예약 없이 즐기는 무료 야경·야시장 스폿 총정리입니다.",
     "must_bcn_city": "바르셀로나",
     "must_bcn_food": "<strong>식당·메뉴 후보 (방문·예약 미확정):</strong><br>• <strong>Ciutat Comtal · Vinitus · La Flauta</strong>: 그룹 공식 브랜드 소개에 별도 등재된 브랜드입니다. 메뉴가 같다고 볼 수 없으니 각 지점의 당일 메뉴·운영시간·예약 정책을 확인하세요.<br>• <strong>7 Portes</strong>: 현재 메뉴·가격·예약 여부는 공식 안내에서 확인하세요.<br>• <strong>Puertecillo Sagrada Família</strong>: 셀프서비스 해산물입니다. 무게 또는 일부 품목별 요금이 적용되므로 고르기 전에 당일 메뉴·가격과 지도 경로를 확인하세요.",
-    "must_bcn_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>사그라다 파밀리아 호수공원(Plaça de Gaudí)</strong>: 성당 정면 호숫가 밤 조명 야경 (무료, 예약 불필요)<br>• <strong>산타 카테리나 로컬 시장</strong>: 물결지붕 아래 신선한 과일과 하몬 구경<br>• <strong>11/10 15:30</strong>: 사그라다 파밀리아 서쪽 스테인드글라스 황금빛 노을 관람",
+    "must_bcn_night": "<strong>저녁 풍경·시장:</strong><br>• <strong>Plaça de Gaudí</strong>: 사그라다 파밀리아 야경을 볼 수 있는 광장(현장 접근·조명은 확인).<br>• <strong>Santa Caterina Market</strong>: 물결 지붕과 판매대를 둘러보세요. 상품·시식은 판매대와 당일 상황에 따라 다르며, 야시장으로 분류하지 않습니다.<br>• <strong>11/10 15:30</strong>: 사그라다 파밀리아 스테인드글라스 관람 일정(기존 일정 항목).",
     "must_svq_city": "세비야 (1차 & 2차)",
     "must_svq_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>• 정통 타파스 & 시원한 상그리아",
     "must_svq_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>메트로폴 파라솔 (Las Setas)</strong>: 거대 목조 구조물 야외 광장 무료 산책 & 야간 조명<br>• <strong>스페인 광장 (Plaza de España)</strong>: 밤 조명이 켜진 웅장하고 로맨틱한 광장 야간 산책 (무료)<br>• 과달키비르 강변 황금의 탑 야경",
@@ -16740,13 +16740,13 @@ const I18N_DICTIONARY = {
     "gourmet_part1_title": "🇪🇸 [Part 1] Spain Culinary & Snack Deep Dive",
     "badge_catalonia": "Catalan Cuisine",
     "gourmet_bcn_title": "1. Barcelona",
-    "gourmet_bcn_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Honey Cod (Bacalao a la miel)</strong>: Tapas legend at Ciudad Condal. Tender cod fillet topped with sweet honey and savory aioli sauce—an absolute parent favorite!<br>• <strong>Seafood Paella & Black Rice Paella</strong>: Saffron-infused traditional seafood rice dishes at the historic 7 Portes (est. 1836).",
-    "gourmet_bcn_snack": "<strong>🥐 Local Market & Street Snacks (Santa Caterina / Boqueria):</strong><br>• <strong>Fresh Fruit Juice & Cups</strong>: 1~2€ fresh mango, strawberry, and melon vitamin cups in vibrant market aisles.<br>• <strong>Ibérico Jamón Cone</strong>: Handheld paper cones filled with freshly carved premium acorn-fed ham.<br>• <strong>Churros con Chocolate</strong>: Crispy golden churros dipped into rich, thick hot chocolate.",
+    "gourmet_bcn_sig": "<strong>🍳 El Quim de la Boqueria — menu check:</strong><br>• Its official menu lists fried eggs with baby squid as a house speciality, shown at €19.75 (price and availability may change).<br>• It does not take bookings; the tourism page notes queues can occur but gives no wait time. Check the menu, allergies and cross-contact before ordering.",
+    "gourmet_bcn_snack": "<strong>🥕 La Boqueria fact check:</strong><br>• Regular hours are Mon–Sat 08:00–20:30; Monday 9 Nov 2026 is a regular opening day. Recheck same-day notices and individual stalls before leaving.<br>• Official evidence did not confirm fixed juice/fruit prices, cheaper inner stalls, or a jamón cone vendor. Check posted prices and products on site; do not label this a night market.",
     "gourmet_and_title": "2. Andalusia (Seville, Córdoba, Granada, Málaga)",
     "badge_andalusia": "Southern Heritage",
     "gourmet_and_sig": "<strong>⭐️ Andalusian regional food ideas:</strong><br>• <strong>Córdoba:</strong> Salmorejo, rabo de toro (oxtail stew) and flamenquín are regional dishes to look for.<br>• <strong>Granada:</strong> Some venues serve seafood or fish tapas; any tapa-with-drink policy varies by venue and order.<br>• <strong>Málaga:</strong> Espeto is sardine skewered on cane and grilled over charcoal. Check the restaurant’s current menu and prices.<br>These are regional ideas, not guaranteed daily menu items.",
     "food_image_illustrative": "🥘 Illustrative food image",
-    "gourmet_and_snack": "<strong>🥐 Local Market Snacks:</strong><br>• <strong>Andalusian Churros</strong>: Noticeably crispier and lighter than northern versions! Stand at a morning coffee bar and enjoy with café con leche like a local.",
+    "gourmet_and_snack": "<strong>🥕 Andalusia daytime markets & evening dining:</strong><br>Visit Encarnación (Seville) and Atarazanas (Málaga) during their published daytime hours. Granada’s official tourism page lists San Agustín only for weekday mornings and gives no exact time. Separate daytime markets from dinner; the reviewed official sources did not confirm recurring night markets.<br><a href=\"#\" onclick=\"switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical',0); setTimeout(()=>{const el=document.getElementById('spanish-market-food-guide');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150); return false;\">Open the four-city market &amp; evening food guide ↗</a>",
     "gourmet_part2_title": "🇮🇹 [Part 2] Italy Culinary & Snack Deep Dive",
     "badge_napoli": "Birthplace of Pizza",
     "gourmet_nap_title": "1. Naples (Napoli) - The Real Heart of Italian Food",
@@ -16827,7 +16827,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "Carefully selected signature dishes and free romantic night-view spots perfectly matched with your confirmed schedule and senior parents' wellness.",
     "must_bcn_city": "Barcelona",
     "must_bcn_food": "<strong>Dining ideas (visits/bookings not confirmed):</strong><br>• <strong>Ciutat Comtal, Vinitus and La Flauta</strong> appear as distinct brands in the group’s official portfolio; their menus are not necessarily identical, so check each branch’s current menu, hours and booking policy.<br>• <strong>7 Portes</strong>: check official information for the current menu, prices and booking options.<br>• <strong>Puertecillo Sagrada Família</strong>: self-service seafood; pricing is by weight or, for some items, per item. Confirm today’s menu, price and route before choosing.",
-    "must_bcn_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Plaça de Gaudí Lake Park</strong>: View the illuminated Sagrada Família reflection over the water (Free, no reservation needed)<br>• <strong>Santa Caterina Market</strong>: Colorful undulating roof and fresh fruit/jamón tasting<br>• <strong>11/10 15:30</strong>: Sagrada Família golden sunset stained-glass interior admission",
+    "must_bcn_night": "<strong>Evening views &amp; market visit:</strong><br>• <strong>Plaça de Gaudí</strong>: a plaza for viewing the Sagrada Família; check access and lighting on the day.<br>• <strong>Santa Caterina Market</strong>: see the roof and stalls. Products and tastings vary by vendor and day; this is not described as a night market.<br>• <strong>11/10 15:30</strong>: Sagrada Família stained-glass visit (existing itinerary item).",
     "must_svq_city": "Seville (Leg 1 & 2)",
     "must_svq_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>El Rinconcillo</strong>: Oldest tapas bar since 1670 - Spinach & Chickpea Stew (Espinacas con garbanzos), Tender Pork Cheek (Carrillada)<br>• Authentic tapas & chilled sangria",
     "must_svq_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Metropol Parasol (Las Setas)</strong>: Stroll the giant wooden structure open-air plaza with evening illumination (Free)<br>• <strong>Plaza de España</strong>: Romantic night lighting walk with serene fountains (Free)<br>• Evening river walk by the Golden Tower (Torre del Oro)",
@@ -17064,13 +17064,13 @@ const I18N_DICTIONARY = {
     "gourmet_part1_title": "🇪🇸 [Part 1] スペイン美食＆スナック探訪",
     "badge_catalonia": "カタルーニャ美食",
     "gourmet_bcn_title": "1. バルセロナ (Barcelona)",
-    "gourmet_bcn_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>タラの蜂蜜アイオリ焼き (Bacalao a la miel)</strong>: Ciudad Condalなど名店タパスバーの伝説。肉厚なタラに甘い蜂蜜とコクのあるアイオリソースを乗せて焼き上げた、ご両親にも大好評の逸品！<br>• <strong>海鮮パエリア＆イカスミパエリア (Paella)</strong>: 1836年創業の7 Portesで味わうサフラン香る伝統米料理。",
-    "gourmet_bcn_snack": "<strong>🥐 市場＆夜市スナック (サンタ・カタリーナ／ボケリア市場):</strong><br>• <strong>生絞りジュース＆カットフルーツカップ</strong>: 市場の露店で1〜2€で買える新鮮マンゴーやイチゴのビタミン補給カップ。<br>• <strong>イベリコ生ハムコーン (Jamón Cone)</strong>: 散策しながら気軽に楽しめる最高級生ハムスライスの紙コーン。<br>• <strong>チュロスとホットチョコレート (Churros con Chocolate)</strong>: 揚げたてサクサクのチュロスを濃厚な温かいチョコにたっぷり浸して味わう至福のスイーツ。",
+    "gourmet_bcn_sig": "<strong>🍳 El Quim de la Boqueria — メニュー確認:</strong><br>• 公式メニューには小イカを添えた目玉焼きが看板料理として掲載され、表示価格は€19.75です（価格・提供は変更の可能性があります）。<br>• 予約不可と案内され、観光ページには行列の可能性が記載されていますが、待ち時間は示されていません。注文前にメニュー、アレルギー、交差接触を確認してください。",
+    "gourmet_bcn_snack": "<strong>🥕 ボケリア市場の事実確認:</strong><br>• 通常営業は月〜土08:00〜20:30で、2026年11月9日（月）は通常営業曜日です。当日の告知と各売店の時間を出発前に確認してください。<br>• ジュース・果物の固定価格、市場奥の方が安いという比較、ハモンコーン販売は公式資料で確認できませんでした。価格表示と商品を現地で確認し、夜市とは呼びません。",
     "gourmet_and_title": "2. アンダルシア (セビリア・コルドバ・グラナダ・マラガ)",
     "badge_andalusia": "アンダルシア郷土料理",
     "gourmet_and_sig": "<strong>⭐️ アンダルシアの郷土料理アイデア:</strong><br>• <strong>コルドバ:</strong> サルモレホ、牛テール煮込み（Rabo de Toro）、フラメンキンは郷土料理の候補です。<br>• <strong>グラナダ:</strong> 魚介・魚のタパスを出す店があります。ドリンクとタパの提供条件は店や注文により異なります。<br>• <strong>マラガ:</strong> エスペトはイワシを葦串に刺して炭火で焼く伝統料理です。現在のメニューと価格は店舗でご確認ください。<br>各店の当日メニューを保証するものではありません。",
     "food_image_illustrative": "🥘 料理イメージ（参考）",
-    "gourmet_and_snack": "<strong>🥐 ローカル市場スナック:</strong><br>• <strong>アンダルシア風チュロス (Churros)</strong>: 北部より軽やかでサクサク！朝のバルで地元の人々のようにカフェ・コン・レチェと一緒に楽しむのがおすすめ。",
+    "gourmet_and_snack": "<strong>🥕 アンダルシアの昼市場と夕食:</strong><br>セビリアのEncarnaciónとマラガのAtarazanasは掲載された昼の営業時間に合わせてください。グラナダ観光局はSan Agustínを平日午前のみ案内し、正確な時刻は掲載していません。夜市と確認できない場所は、昼市場と夕食を分けて計画してください。<br><a href=\"#\" onclick=\"switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical',0); setTimeout(()=>{const el=document.getElementById('spanish-market-food-guide');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150); return false;\">4都市の市場・夕食ガイドを見る ↗</a>",
     "gourmet_part2_title": "🇮🇹 [Part 2] イタリア美食＆スナック探訪",
     "badge_napoli": "ピッツァ発祥の地",
     "gourmet_nap_title": "1. ナポリ (Napoli) - [美食の真髄]",
@@ -17151,7 +17151,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "確定日程に合わせてご両親の味覚と体力を完璧に考慮した都市別代表グルメ、シグネチャーメニュー、事前予約なしで楽しめる無料夜景・夜市スポットの総まとめです。",
     "must_bcn_city": "バルセロナ",
     "must_bcn_food": "<strong>飲食店候補（訪問・予約未確定）:</strong><br>• <strong>Ciutat Comtal・Vinitus・La Flauta</strong>はグループ公式紹介に別々のブランドとして掲載されています。メニューが同一とは限らないため、各店舗の当日メニュー・営業時間・予約方法を確認してください。<br>• <strong>7 Portes</strong>は、最新メニュー・価格・予約方法を公式案内で確認してください。<br>• <strong>Puertecillo Sagrada Família</strong>はセルフサービス式シーフードです。重量または一部品目ごとの料金のため、選ぶ前に当日のメニュー・価格と地図の経路を確認してください。",
-    "must_bcn_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ガウディ池公園(Plaça de Gaudí)</strong>: 水面に映る夜のサグラダ・ファミリアのライトアップ鑑賞(無料・予約不要)<br>• <strong>サンタ・カテリーナ市場</strong>: 波打つ屋根が美しいローカル市場でフルーツと生ハム散策<br>• <strong>11/10 15:30</strong>: サグラダ・ファミリア西側ステンドグラスの黄金色夕景入場",
+    "must_bcn_night": "<strong>夕景と市場:</strong><br>• <strong>Plaça de Gaudí</strong>: サグラダ・ファミリアを眺める広場（当日のアクセス・照明を確認）。<br>• <strong>Santa Caterina Market</strong>: 屋根と売店を見学。商品・試食は売店や当日の状況により異なり、夜市とは案内しません。<br>• <strong>11/10 15:30</strong>: サグラダ・ファミリアのステンドグラス見学（既存日程項目）。",
     "must_svq_city": "セビリア (第1・2期)",
     "must_svq_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>El Rinconcillo</strong>: 1670年創業の最古タパスバー - ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の煮込み<br>• 本場タパス＆冷たいサングリア",
     "must_svq_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>メトロポール・パラソル (Las Setas)</strong>: 巨大木造建築の屋外広場無料散策＆夜間ライトアップ<br>• <strong>スペイン広場 (Plaza de España)</strong>: 夜の明かりが灯る幻想的でロマンチックな広場散歩(無料)<br>• グアダルキビール川沿い黄金の塔の夜景",
@@ -17388,13 +17388,13 @@ const I18N_DICTIONARY = {
     "gourmet_part1_title": "🇪🇸 [Part 1] 西班牙美食与特色小吃深度解析",
     "badge_catalonia": "加泰罗尼亚美食",
     "gourmet_bcn_title": "1. 巴塞罗那 (Barcelona)",
-    "gourmet_bcn_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>蜂蜜蒜香鳕鱼 (Bacalao a la miel)</strong>: Ciudad Condal等小吃吧的传奇之作。厚切鲜嫩鳕鱼淋上甘甜蜂蜜与浓郁蒜黄酱烘烤，长辈极力赞赏！<br>• <strong>海鲜西班牙烩饭与墨鱼饭 (Paella)</strong>: 1836年老字号 7 Portes 散发藏红花香气的经典海鲜米饭。",
-    "gourmet_bcn_snack": "<strong>🥐 传统市集与夜市小吃 (圣卡特琳娜／波盖利亚市场):</strong><br>• <strong>鲜榨果汁与混合水果杯</strong>: 市集随处可见1~2欧元的芒果、草莓、哈密瓜切片维他命能量杯。<br>• <strong>伊比利亚火腿纸筒 (Jamón Cone)</strong>: 边走边享用的现切顶级生火腿薄片纸杯。<br>• <strong>吉事果配热巧 (Churros con Chocolate)</strong>: 金黄酥脆的西班牙油条蘸入醇厚浓郁的热巧克力，完美的早餐与下午茶。",
+    "gourmet_bcn_sig": "<strong>🍳 El Quim de la Boqueria — 菜单核实：</strong><br>• 官网菜单将煎蛋配小鱿鱼列为招牌菜，标价€19.75（当天价格和供应可能变化）。<br>• 餐厅不接受预订；旅游介绍提到可能排队，但未公布等候时间。下单前请确认菜单、过敏原及交叉接触。",
+    "gourmet_bcn_snack": "<strong>🥕 博盖利亚市场信息核实：</strong><br>• 常规营业时间为周一至周六08:00–20:30；2026年11月9日（周一）是常规营业日。出发前仍应核实当天通知和各摊位时间。<br>• 官方资料未能确认果汁/水果固定价格、里面的摊位更便宜或有火腿纸筒摊位。请现场看价签和商品，不将其称为夜市。",
     "gourmet_and_title": "2. 安达卢西亚 (塞维利亚·科尔多瓦·格拉纳达·马拉加)",
     "badge_andalusia": "南部传统风味",
     "gourmet_and_sig": "<strong>⭐️ 安达卢西亚地方美食建议：</strong><br>• <strong>科尔多瓦：</strong>萨尔莫雷霍冷汤、炖牛尾（Rabo de Toro）和弗拉门金（Flamenquín）可作为当地菜品参考。<br>• <strong>格拉纳达：</strong>有些餐馆供应海鲜或鱼类Tapas；点饮品是否附送Tapas因店家和订单而异。<br>• <strong>马拉加：</strong>Espeto是用芦苇签串起沙丁鱼并以炭火烤制的传统菜。请向餐馆确认当前菜单与价格。<br>以上是地方菜建议，不代表当日一定供应。",
     "food_image_illustrative": "🥘 菜品示意图片",
-    "gourmet_and_snack": "<strong>🥐 街头市集小吃:</strong><br>• <strong>安达卢西亚油条 (Churros)</strong>: 比北部更为酥脆清爽！早晨站在街角吧台，伴随一杯热拿铁享受地道西式晨光。",
+    "gourmet_and_snack": "<strong>🥕 安达卢西亚白天市场与晚餐:</strong><br>塞维利亚Encarnación和马拉加Atarazanas应按公布的白天营业时间前往。格拉纳达旅游局仅将San Agustín列为工作日上午开放，未给出具体时刻。没有确认夜市的城市请将白天市场与晚餐分开安排。<br><a href=\"#\" onclick=\"switchGuidebookChapter('chapter-practical'); if(typeof goToBookPage==='function') goToBookPage('chapter-practical',0); setTimeout(()=>{const el=document.getElementById('spanish-market-food-guide');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},150); return false;\">查看四城市场与晚餐补充指南 ↗</a>",
     "gourmet_part2_title": "🇮🇹 [Part 2] 意大利美食与特色小吃深度解析",
     "badge_napoli": "披萨发源地",
     "gourmet_nap_title": "1. 那不勒斯 (Napoli) - [美食的真正摇篮]",
@@ -17475,7 +17475,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "完全贴合确定日程，兼顾长辈胃口与体力的各城市代表美食名店、招牌菜品及无需预约的免费夜景、夜市精选汇总。",
     "must_bcn_city": "巴塞罗那",
     "must_bcn_food": "<strong>餐厅候选（到访与预订尚未确认）:</strong><br>• <strong>Ciutat Comtal、Vinitus、La Flauta</strong>作为不同品牌列在集团官方介绍中；菜单不一定相同，请分别核对各门店当天菜单、营业时间和预订政策。<br>• <strong>7 Portes</strong>：请通过官方信息确认当前菜单、价格和预订方式。<br>• <strong>Puertecillo Sagrada Família</strong>：海鲜为自助选购，按重量或部分按件计价；挑选前请确认当天菜单、价格和地图路线。",
-    "must_bcn_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>圣家堂高迪湖泊公园(Plaça de Gaudí)</strong>: 坐在湖畔欣赏夜晚圣家堂倒影与华丽灯光(免费，无需预约)<br>• <strong>圣卡特琳娜市场</strong>: 欣赏波浪形彩色屋顶，品尝新鲜水果与伊比利亚火腿<br>• <strong>11/10 15:30</strong>: 圣家堂西侧彩色玻璃窗金色夕阳入场观赏",
+    "must_bcn_night": "<strong>夜景与市场:</strong><br>• <strong>Plaça de Gaudí</strong>: 可眺望圣家堂的广场（当天通行与照明请现场确认）。<br>• <strong>Santa Caterina Market</strong>: 参观屋顶与摊位；商品和试吃因摊位及当天情况而异，不将其称为夜市。<br>• <strong>11/10 15:30</strong>: 圣家堂彩色玻璃参观（原行程项目）。",
     "must_svq_city": "塞维利亚 (第一与第二期)",
     "must_svq_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>El Rinconcillo</strong>: 始于1670年的最古老小吃吧 - 菠菜鹰嘴豆炖菜、慢炖伊比利亚猪面颊肉<br>• 经典安达卢西亚Tapas与冰镇桑格利亚汽酒",
     "must_svq_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>都市阳伞 (Las Setas)</strong>: 漫步世界最大木结构室外广场欣赏夜景灯光(免费)<br>• <strong>西班牙广场 (Plaza de España)</strong>: 夜晚灯光亮起时的壮丽浪漫夜景散步(免费)<br>• 漫步瓜达尔基维尔河畔黄金塔夜景",
@@ -38350,19 +38350,19 @@ const PRACTICAL_CITY_CANDIDATES_DATA = {
       flag: "🇪🇸",
       name: "Mercado de San Agustín (산 아구스틴 시장)",
       categoryKey: "daymarket",
-      typeBadge: "☀️ 낮 시간 전통 시장 (야시장 아님 · 오전~낮 방문 전용)",
+      typeBadge: "☀️ 낮 시간 전통 시장 (공식 안내: 평일 오전 · 야시장 아님)",
       typeColor: "daymarket",
       isOneStopRecommended: false,
       oneStopReason: "",
       image: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=800&q=80",
-      highlights: "그라나다 대성당 인근의 실내 로컬 식재료·타파스 전통 시장. 신선한 지중해 해산물 구이, 트레베레스산 하몬(Jamón de Trevélez), 올리브 절임, 안달루시아 치즈와 낮 시간 타파스 바 체험 (야간에 열리는 시장이 아닌 낮 시장)",
-      hours: "낮 시장 운영 (통상 월~토 09:00~15:00경, 일요일 휴무 · 시장 내 바/식음 코너는 업장별 상이)",
-      verifyNotice: "방문 전 확인 · 점포별 영업시간 및 공휴일 휴무 당일 변경 가능",
-      seniorCaution: "그란 비아(Gran Vía de Colón) 대로에서 가까우나 주변 골목에 완만한 경사와 돌바닥 구간이 있으며, 점심 피크 시간(13:30~15:00)에는 스탠딩 바 좌석이 부족할 수 있어 오전 11:30~12:30 사이 여유로운 방문을 권장합니다.",
+      highlights: "그라나다 대성당 인근의 전통 실내 시장. 공식 관광 안내는 평일 오전 개장만 표시하며, 판매 상품·식음 점포와 당일 운영은 매대별로 확인해야 합니다.",
+      hours: "그라나다 관광청 안내: 월~금 오전 (정확한 시각 미기재). 토요일·오후 영업은 최신 공식 자료에서 확인되지 않음. 방문 전 운영 확인 필요.",
+      verifyNotice: "정확한 시각·토요일 운영 미확인 · 방문 전 시장 관리처와 점포에 확인",
+      seniorCaution: "혼잡도·좌석·무단차 접근 정보는 확인되지 않았습니다. 부모님과는 짧은 낮 방문과 휴식 여지를 두고, 서서 기다리거나 좌석이 있을 것으로 전제하지 마세요.",
       sources: [
-        { label: "Granada 공식 관광청 미식 공간 안내", url: "https://turismo.granada.org/en/espacios-gastronomicos" }
+        { label: "그라나다 공식 관광청 미식 공간 안내", url: "https://turismo.granada.org/es/espacios-gastronomicos" }
       ],
-      verifiedDate: "2026-10-29 확인",
+      verifiedDate: "2026-11-08 공식 페이지 확인",
       mapQuery: "Mercado de San Agustin Granada"
     },
     {
@@ -39218,36 +39218,36 @@ const PRACTICAL_CANDIDATES_I18N = {
     "pc-grx-mercado-san-agustin": {
       en: {
         name: "Mercado de San Agustín (Granada Indoor Daytime Market)",
-        typeBadge: "☀️ Daytime Traditional Market (Not a Night Market · Morning–Afternoon Only)",
-        subTypeTag: "Daytime Market Only · Fresh Produce & Tapas Bars",
-        verifyBadge: "Verify before visit · Daytime hours only",
+        typeBadge: "☀️ Traditional daytime market (officially listed weekday mornings; not a night market)",
+        subTypeTag: "Weekday mornings · exact hours not listed",
+        verifyBadge: "Exact hours unlisted · verify before visit",
         oneStopReason: "",
-        highlights: "Indoor traditional municipal market near Granada Cathedral offering fresh Mediterranean seafood, Jamón de Trevélez, olives, Andalusian cheeses, and daytime tapas counters (strictly a daytime market, not an evening or night market).",
-        hours: "Daytime market operation (typically Mon–Sat ~09:00–15:00, closed Sundays; individual tapas bars inside vary by vendor).",
-        seniorCaution: "Close to Gran Vía de Colón, though surrounding lanes have gentle slopes and stone paving. Lunch peak (13:30–15:00) gets crowded with limited bar stools, so a relaxed visit between 11:30 and 12:30 is recommended for seniors.",
-        sourceLabels: ["Granada Official Tourism – Gastronomic Spaces"]
+        highlights: "Traditional indoor market near Granada Cathedral. The tourism office lists weekday-morning opening only; products, food counters and same-day operation vary by stall and should be checked.",
+        hours: "Granada tourism lists weekday mornings only, with no exact hours. Saturday and afternoon opening were not confirmed in current official material. Verify before going.",
+        seniorCaution: "Crowd levels, seating and step-free access were not verified. Plan a short daytime visit with breaks; do not assume stools or a short wait.",
+        sourceLabels: ["Granada official tourism – Gastronomic spaces"]
       },
       ja: {
         name: "Mercado de San Agustín (サン・アグスティン市場)",
-        typeBadge: "☀️ 昼の伝統市場 (夜市ではありません・午前〜昼の訪問専用)",
-        subTypeTag: "昼の伝統市場・生鮮食材＆昼タパスバー",
-        verifyBadge: "訪問前に要確認・昼時間帯のみ営業",
+        typeBadge: "☀️ 昼の伝統市場（公式案内は平日午前・夜市ではありません）",
+        subTypeTag: "平日午前・正確な営業時間は未掲載",
+        verifyBadge: "正確な時間は未掲載・訪問前に要確認",
         oneStopReason: "",
-        highlights: "グラナダ大聖堂近くの屋内ローカル伝統市場。新鮮な魚介グリル、トレベレス産生ハム（Jamón de Trevélez）、オリーブ、アンダルシア産チーズと昼のタパスバー体験（夜間に開く夜市ではなく昼の市場です）。",
-        hours: "昼市場営業（通常 月〜土 09:00〜15:00頃、日曜休業・市場内の飲食カウンターは店舗により異なる）",
-        seniorCaution: "グラン・ビア大通りから近いものの周辺路地に緩やかな勾配や石畳があり、昼食ピーク（13:30〜15:00）は立ち飲みや背の高いスツール席が混み合うため、11:30〜12:30頃のゆとりある訪問を推奨します。",
-        sourceLabels: ["グラナダ公式観光局 美食スポット案内"]
+        highlights: "グラナダ大聖堂近くの伝統的な屋内市場。観光局は平日午前の営業のみを掲載しています。商品・飲食売店・当日の営業は各売店に確認してください。",
+        hours: "観光局の案内は平日午前のみで、正確な時刻は未記載です。土曜・午後の営業は最新の公式資料で確認できませんでした。訪問前にご確認ください。",
+        seniorCaution: "混雑状況、座席、段差のないアクセスは未確認です。休憩を挟める短い昼の訪問を計画し、立ち待ちや座席を前提にしないでください。",
+        sourceLabels: ["グラナダ公式観光局・食のスポット"]
       },
       zh: {
         name: "Mercado de San Agustín (圣奥古斯丁传统室内市场)",
-        typeBadge: "☀️ 白天传统市场 (非夜市 · 仅限上午至午间到访)",
-        subTypeTag: "白天传统市场 · 生鲜食材与午间塔帕斯",
-        verifyBadge: "到访前请核实 · 仅白天营业",
+        typeBadge: "☀️ 白天传统市场（官方仅列工作日上午；非夜市）",
+        subTypeTag: "工作日上午 · 未列明准确时刻",
+        verifyBadge: "具体时刻未列 · 到访前核实",
         oneStopReason: "",
-        highlights: "紧邻格拉纳达大教堂的室内传统市场，供应新鲜现烤海鲜、特雷韦莱斯火腿(Jamón de Trevélez)、橄榄、安达卢西亚奶酪及白天塔帕斯吧台体验（此为白天市场，并非夜间开放的夜市）。",
-        hours: "白天市场营业（通常周一至周六 09:00~15:00左右，周日休息；市场内餐饮吧台营业时间因店而异）",
-        seniorCaution: "距离格兰大道(Gran Vía de Colón)较近，但周边巷道略有坡度与石板路面；午餐高峰(13:30~15:00)吧台座位紧张，建议携父母在11:30~12:30之间错峰前往。",
-        sourceLabels: ["格拉纳达官方旅游局 美食空间指南"]
+        highlights: "格拉纳达大教堂附近的传统室内市场。旅游局仅列出工作日上午营业；商品、餐饮摊位和当天营业情况请向各摊位确认。",
+        hours: "格拉纳达旅游局只列出工作日上午，没有具体时刻。最新官方资料未确认周六或下午营业；出发前请核实。",
+        seniorCaution: "未核实拥挤程度、座位或无台阶通行信息。请安排可休息的短时白天行程，不要假设有座位或无需排队。",
+        sourceLabels: ["格拉纳达官方旅游局·美食空间"]
       }
     },
     "pc-grx-mirador-san-cristobal": {
