@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261109_spanish_history_v2)
+// SlowTravel Mobile Offline Service Worker (v20261109_landmark_history_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261109_spanish_history_v2';
+const CACHE_NAME = 'slowtravel-offline-v20261109_landmark_history_v1';
 
 const PRECACHE_ASSETS = [
   './',

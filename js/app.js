@@ -4464,17 +4464,15 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
     { type: 'candidate', id: 'pc-bcn-sant-pau', aliases: ['sant pau', 'recinte modernista de sant pau', '산 파우 병원', '산트 파우', '산 파우', 'サン・パウ', 'サンパウ', '圣保罗现代主义建筑群', '圣保罗医院', 'avinguda de gaudí', 'avenida gaudí', 'gaudí avenue', 'gaudi avenue', '가우디 거리', '가우디 대로', 'ガウディ通り', '高迪大道'] }
   ];
   const target = targets.find(item => item.aliases.some(alias => q.includes(alias.toLowerCase())));
-  if (!target) return null;
-
   let name = '';
   let history = '';
   let sources = [];
-  if (target.type === 'landmark') {
+  if (target && target.type === 'landmark') {
     const info = (typeof LANDMARK_I18N_DATA !== 'undefined' && LANDMARK_I18N_DATA[target.key]) || {};
     name = (info.displayName && (info.displayName[lang] || info.displayName.ko)) || target.key;
     history = (info.history && (info.history[lang] || info.history.ko)) || '';
     sources = info.historySources || [];
-  } else {
+  } else if (target && target.type === 'candidate') {
     const candidateData = (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' && PRACTICAL_CITY_CANDIDATES_DATA.items) || [];
     const item = candidateData.find(row => row.id === target.id);
     const info = (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' && PRACTICAL_CANDIDATES_I18N.items && PRACTICAL_CANDIDATES_I18N.items[target.id] && (PRACTICAL_CANDIDATES_I18N.items[target.id][lang] || PRACTICAL_CANDIDATES_I18N.items[target.id].ko)) || {};
@@ -4485,6 +4483,25 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
       url: source.url,
       label: (info.sourceLabels && info.sourceLabels[index]) || source.label
     }));
+  } else if (!target) {
+    const normalize = value => String(value || '').toLowerCase().normalize('NFD').replace(/(?<=[a-z])[\u0300-\u036f]+/g, '').normalize('NFC').replace(/[^a-z0-9\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]+/g, ' ').trim().replace(/\s+/g, ' ');
+    const query = normalize(q);
+    const stopWords = new Set(['the', 'and', 'of', 'de', 'del', 'di', 'da', 'du', 'la', 'le', 'les', 'el', 'los', 'las', 'en', 'to', 'a']);
+    const aliasesMatch = alias => {
+      const candidate = normalize(alias);
+      if (!candidate || candidate.length < 2) return false;
+      if (query.includes(candidate)) return true;
+      const words = candidate.split(' ').filter(word => word.length >= 2 && !stopWords.has(word));
+      return words.length >= 2 && words.every(word => query.includes(word));
+    };
+    const matches = ((typeof window !== 'undefined' && window.LANDMARK_HISTORY_ENTRIES) || []).filter(entry =>
+      entry.history && (entry.history[lang] || entry.history.ko) && (entry.aliases || []).some(aliasesMatch)
+    ).sort((a, b) => Math.max(...(b.aliases || []).map(x => normalize(x).length)) - Math.max(...(a.aliases || []).map(x => normalize(x).length)));
+    const entry = matches[0];
+    if (!entry) return null;
+    name = (entry.name && (entry.name[lang] || entry.name.ko)) || entry.name || '';
+    history = (entry.history && (entry.history[lang] || entry.history.ko)) || '';
+    sources = entry.sources || [];
   }
   if (!history) return null;
   const label = getLandmarkHistoryLabel(lang);
@@ -9654,6 +9671,7 @@ function renderSingleSpotCard(spot, lang, dict) {
         '<div class="s-box-head">♿ ' + (dict['lbl_senior_access'] || '부모님 보행 및 접근성 안내') + '</div>' +
         '<div class="s-box-desc">' + (spot.details[lang] || spot.details.ko) + '</div>' +
       '</div>' +
+      (spot.history && (spot.history[lang] || spot.history.ko) ? '<div class="spot-senior-box spot-history-box"><div class="s-box-head">🏛️ ' + getLandmarkHistoryLabel(lang) + '</div><div class="s-box-desc">' + escapeHtml(spot.history[lang] || spot.history.ko) + '</div>' + renderHistorySourceLinks(spot.historySources, lang) + '</div>' : '') +
       '<div class="spot-meta-row">' +
         '<div class="meta-item"><span>⏰ ' + hoursLabel + '</span> <strong>' + spotHours + '</strong></div>' +
         '<div class="meta-item"><span>💶 ' + admissionLabel + '</span> <strong>' + spotAdmission + '</strong></div>' +
@@ -10247,7 +10265,7 @@ function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
           <div class="pc-info-text">${formatMultiline(item.highlights)}</div>
         </div>
 
-        ${item.history ? `<div class="pc-info-block pc-info-history"><div class="pc-info-label">${ui.labelHistory || '🏛️ 역사와 배경'}</div><div class="pc-info-text">${formatMultiline(item.history)}</div></div>` : ''}
+        ${item.history ? `<div class="pc-info-block pc-info-history"><div class="pc-info-label">${ui.labelHistory || '🏛️ 역사와 배경'}</div><div class="pc-info-text">${formatMultiline(escapeHtml(item.history))}</div></div>` : ''}
 
         <div class="pc-info-block pc-info-hours">
           <div class="pc-info-label">${ui.labelHours || '⏰ 확인된 운영시간'} <span class="pc-hours-caveat">${ui.labelHoursCaveat || '(방문 당일 변경 가능성 있음 · 방문 전 확인)'}</span></div>
