@@ -9098,6 +9098,59 @@ const LANDMARK_I18N_DATA = {
       "en": "World-renowned historic landmark in Spain Barcelona, featuring iconic architecture and panoramic vistas.",
       "zh": "西班牙 巴塞罗那标志性世界文化遗产名胜，壮丽历史建筑与绝美全景视野。"
     },
+    "history": {
+        "ko": "공사는 1882년 3월 19일 프란시스코 데 파울라 델 비야르의 설계로 크립트부터 시작됐고, 가우디는 1883년 31세에 프로젝트를 이어받았습니다. 내부 기둥은 나무처럼 갈라지는 구조이며, 공식 해설은 동쪽 탄생 파사드 쪽의 푸른빛과 서쪽 수난 파사드 쪽의 붉고 따뜻한 색 유리를 설명합니다. 2026년은 가우디 서거 100주기이며 예수 그리스도 탑은 높이 172.5m에 도달했습니다. 탑 외부는 2026년 2월 완성됐지만 내부 공사는 2027~2028년 이어질 예정이며, 이는 성당 전체 완공을 뜻하지 않습니다. UNESCO 등재 요소는 가우디의 탄생 파사드와 크립트입니다.",
+        "en": "Construction began at the crypt on 19 March 1882 to Francisco de Paula del Villar’s design; Gaudí took over the project in 1883, aged 31. The interior columns branch like trees, while the official guide describes cooler blue glazing on the east Nativity side and warmer reds on the west Passion side. 2026 marks the centenary of Gaudí’s death, and the Tower of Jesus has reached 172.5 m. Its exterior was completed in February 2026, but interior work is expected to continue in 2027–28; this does not mean the whole basilica is complete. UNESCO lists Gaudí’s Nativity façade and crypt as the inscribed elements.",
+        "ja": "1882年3月19日、フランシスコ・デ・パウラ・デル・ビジャールの設計で地下聖堂から工事が始まり、ガウディは1883年、31歳で計画を引き継ぎました。内部の柱は木の枝のように分かれ、公式解説では東側の降誕のファサードに青系、西側の受難のファサードに赤・暖色系のステンドグラスを配しています。2026年はガウディ没後100年にあたり、イエスの塔は高さ172.5mに達しました。塔の外部は2026年2月に完成しましたが、内部工事は2027～2028年も続く予定で、聖堂全体の完成を意味しません。UNESCOの登録対象はガウディの降誕のファサードと地下聖堂です。",
+        "zh": "工程于1882年3月19日按弗朗西斯科·德·保拉·德尔·比利亚尔的设计从地下圣堂开始；高迪在1883年、31岁时接手项目。内部柱体如树枝般分叉，官方说明东侧诞生立面一侧采用偏蓝色玻璃，西侧受难立面一侧采用红色和暖色玻璃。2026年是高迪逝世一百周年，耶稣塔已达到172.5米。塔的外部于2026年2月完成，但内部工程预计将持续至2027至2028年；这不代表整座圣殿已完工。UNESCO列入名录的是高迪设计的诞生立面和地下圣堂。"
+      },
+    "historySources": [
+      {
+        "label": {
+          "ko": "사그라다 파밀리아 공식 연혁",
+          "en": "Official temple history",
+          "ja": "聖堂公式沿革",
+          "zh": "圣殿官方历史"
+        },
+        "url": "https://sagradafamilia.org/en/history-of-the-temple"
+      },
+      {
+        "label": {
+          "ko": "UNESCO 세계유산센터",
+          "en": "UNESCO World Heritage Centre",
+          "ja": "UNESCO世界遺産センター",
+          "zh": "UNESCO世界遗产中心"
+        },
+        "url": "https://whc.unesco.org/en/list/320/"
+      },
+      {
+        "label": {
+          "ko": "예수 그리스도 탑 공사 현황",
+          "en": "Tower construction update",
+          "ja": "イエスの塔の工事状況",
+          "zh": "耶稣塔工程进展"
+        },
+        "url": "https://blog.sagradafamilia.org/en/phases-construction-jesus-tower/"
+      },
+      {
+        "label": {
+          "ko": "공식 스테인드글라스 해설",
+          "en": "Official stained-glass guide",
+          "ja": "ステンドグラス公式解説",
+          "zh": "官方彩色玻璃说明"
+        },
+        "url": "https://blog.sagradafamilia.org/en/stained-glass-light-colour-creation/"
+      },
+      {
+        "label": {
+          "ko": "기둥과 구조의 공식 해설",
+          "en": "Official guide to columns and structure",
+          "ja": "柱と構造の公式解説",
+          "zh": "柱体与结构官方说明"
+        },
+        "url": "https://blog.sagradafamilia.org/en/columns-sagrada-familia-geometry-mechanics-materials-stone-forest/"
+      }
+    ],
     "seniorAccess": {
       "ko": "성당 본당은 평탄·경사로 구비되어 이동이 수월합니다. 단, 타워는 하강 시 400여 개 급경사 나선계단을 도보로만 이용해야 하므로 거동 불편자·심장질환자·임산부 탑승이 제한됩니다. 부모님 동행 시 타워 제외 본당 일반 입장권을 권장합니다.",
       "ja": "完全平坦な動線または最新エレベーター完備。階段を登らず無理のないペースで鑑賞可能",
@@ -9136,6 +9189,50 @@ const LANDMARK_I18N_DATA = {
       "en": "World-renowned historic landmark in Spain Granada, featuring iconic architecture and panoramic vistas.",
       "zh": "西班牙 格拉纳达标志性世界文化遗产名胜，壮丽历史建筑与绝美全景视野。"
     },
+    "history": {
+        "ko": "알함브라는 나스르 왕조 시기의 궁전 도시이자 요새로, 궁전·방어 시설·정원이 함께 있는 복합체입니다. 사자의 중정에는 12마리 사자 조각이 받치는 12각 대야 분수가 있고, 헤네랄리페는 정원과 농경지를 갖춘 에미르의 전원 거주지였습니다. 그라나다는 장기간 군사 작전 뒤 1492년 항복했으며, 이를 ‘피 흘리지 않은 항복’으로 단정하지 않습니다.",
+        "en": "The Alhambra is a Nasrid-era palace city and fortress, combining palaces, defensive structures and gardens. In the Court of the Lions, a 12-sided basin rests on twelve lion sculptures; the Generalife was an emir’s country residence with gardens and agricultural land. Granada surrendered in 1492 after a prolonged military campaign, so the surrender should not be described as bloodless.",
+        "ja": "アルハンブラはナスル朝時代の宮殿都市・要塞で、宮殿、防御施設、庭園から成る複合体です。ライオンの中庭では12頭のライオン像が12角形の水盤を支え、ヘネラリフェは庭園と農地を備えた君主の郊外居所でした。グラナダは長期の軍事作戦の末、1492年に降伏しており、「無血降伏」とは断定しません。",
+        "zh": "阿尔罕布拉是纳斯里王朝时期的宫殿城与堡垒，由宫殿、防御设施和花园组成。狮子庭院中，十二角水盆由十二尊狮子雕像支撑；赫内拉利费宫则是拥有花园和农地的埃米尔乡间居所。格拉纳达在长期军事行动后于1492年投降，因此不应称为“未流血的投降”。"
+      },
+    "historySources": [
+      {
+        "label": {
+          "ko": "UNESCO 알함브라 세계유산 소개",
+          "en": "UNESCO Alhambra listing",
+          "ja": "UNESCOアルハンブラ紹介",
+          "zh": "UNESCO阿尔罕布拉遗产介绍"
+        },
+        "url": "https://whc.unesco.org/en/list/314/"
+      },
+      {
+        "label": {
+          "ko": "알함브라 공식 사자의 중정 안내",
+          "en": "Official Court of the Lions guide",
+          "ja": "アルハンブラ公式・ライオンの中庭",
+          "zh": "阿尔罕布拉官方狮子庭院介绍"
+        },
+        "url": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-lions"
+      },
+      {
+        "label": {
+          "ko": "사자 분수의 12마리 사자와 대야",
+          "en": "Twelve lions and basin of the fountain",
+          "ja": "ライオンの噴水・12頭の像と水盤",
+          "zh": "狮子喷泉的十二尊狮像与水盆"
+        },
+        "url": "https://www.alhambra-patronato.es/en/disfrutar/the-spouts-of-the-fountain-of-the-lions"
+      },
+      {
+        "label": {
+          "ko": "그라나다 정복의 역사적 맥락",
+          "en": "Historical context of Granada’s conquest",
+          "ja": "グラナダ征服の歴史的背景",
+          "zh": "格拉纳达征服的历史背景"
+        },
+        "url": "https://www.britannica.com/place/Spain/The-conquest-of-Granada"
+      }
+    ],
     "seniorAccess": {
       "ko": "보행량 약 7,000~8,000보. 중간 벤치마다 휴식 필수. 중심가에서 C30 미니버스로 정문 직행",
       "ja": "完全平坦な動線または最新エレベーター完備。階段を登らず無理のないペースで鑑賞可能",
@@ -18809,11 +18906,55 @@ Feel free to ask any travel question!<br>
       "zh": "西班牙 塞维利亚"
     },
     "highlight": {
-      "ko": "세계에서 3번째로 큰 성당이자 최대 고딕 건축물. 콜럼버스의 관을 멘 4대 왕 조각상과 황금빛 목조 제단",
-      "ja": "世界最大級のゴシック大聖堂。コロンブスの遺骸を担ぐ4人の王の像と、眩い黄金の主祭壇レタブロ。",
-      "en": "The world's largest Gothic cathedral, housing the monumental tomb of Christopher Columbus and the breathtaking golden Main Altarpiece.",
-      "zh": "世界最大的哥特式主教座堂。四位国王雕像抬举的哥伦布灵柩与璀璨夺目的巨型纯金木雕主祭坛。"
+      "ko": "옛 모스크의 히랄다와 고딕 대성당, 네 역사적 왕국을 상징하는 인물이 받치는 콜럼버스 묘, 다색채 목조 주제단화.",
+      "ja": "旧モスクのミナレットだったヒラルダとゴシック大聖堂、歴史上の四王国を象徴する人物が担ぐコロンブスの墓、彩色木彫の主祭壇画。",
+      "en": "The former mosque’s Giralda, a Gothic cathedral, Columbus’s tomb borne by figures personifying four historic kingdoms, and a polychrome wooden main altarpiece.",
+      "zh": "昔日清真寺宣礼塔希拉尔达、哥特式大教堂、由象征四个历史王国的人物承托的哥伦布墓，以及彩绘木雕主祭坛。"
     },
+    "history": {
+        "ko": "옛 대모스크 자리에 세운 대성당은 옛 알모하드 미나레트였던 히랄다를 종탑으로 품고 있으며, 르네상스 상부와 풍향계가 더해졌습니다. 대성당 공식 안내는 히랄다의 경사로가 말도 오를 수 있도록 넓게 설계됐다고 설명합니다. 주제단화는 다색채 목조 작품으로 1482~1564년에 제작됐고, 콜럼버스 묘의 네 인물은 네 역사적 왕국을 상징합니다.",
+        "en": "Built on the site of the former Great Mosque, the cathedral incorporates the Giralda, once its Almohad minaret, later adapted as a bell tower and topped with Renaissance additions. The cathedral says the ramp was wide enough for horses to climb. The polychrome wooden main altarpiece was made between 1482 and 1564; the figures bearing Columbus’s tomb personify four historic kingdoms.",
+        "ja": "旧大モスク跡に建てられた大聖堂は、かつてアルモハド朝のミナレットだったヒラルダを鐘楼として取り込み、後にルネサンス様式の上部と風見像が加えられました。大聖堂の説明では、ヒラルダのスロープは馬も上れる幅に設計されました。彩色木彫の主祭壇画は1482～1564年に制作され、コロンブスの墓を担ぐ人物は歴史上の四王国を象徴しています。",
+        "zh": "塞维利亚大教堂建在原大清真寺遗址上，并将曾是阿尔摩哈德王朝宣礼塔的希拉尔达塔改作钟楼，后来又增建文艺复兴风格的上部结构和风向雕像。大教堂说明塔内坡道宽到足以让马匹登行。主祭坛是彩绘木雕作品，制作于1482至1564年；承托哥伦布墓的形象象征历史上的四个王国。"
+      },
+    "historySources": [
+      {
+        "label": {
+          "ko": "세비야 대성당 공식 세계유산 안내",
+          "en": "Cathedral official heritage guide",
+          "ja": "大聖堂公式・世界遺産案内",
+          "zh": "大教堂官方遗产介绍"
+        },
+        "url": "https://www.catedraldesevilla.es/en/the-cathedral/world-heritage-site/"
+      },
+      {
+        "label": {
+          "ko": "히랄다 공식 건축 안내",
+          "en": "Official Giralda guide",
+          "ja": "ヒラルダ公式案内",
+          "zh": "希拉尔达塔官方介绍"
+        },
+        "url": "https://www.catedraldesevilla.es/la-catedral/edificio/la-giralda/"
+      },
+      {
+        "label": {
+          "ko": "콜럼버스 묘 조각 설명",
+          "en": "Figures on Columbus’s tomb",
+          "ja": "コロンブスの墓の人物像",
+          "zh": "哥伦布墓人物雕像介绍"
+        },
+        "url": "https://www.catedraldesevilla.es/en/historical-figures-who-form-the-soul-of-seville-cathedral/"
+      },
+      {
+        "label": {
+          "ko": "주제단화 공식 안내",
+          "en": "Official main altarpiece guide",
+          "ja": "主祭壇画公式案内",
+          "zh": "主祭坛官方介绍"
+        },
+        "url": "https://www.catedraldesevilla.es/en/the-cathedral/building/the-gothic-cathedral-main-altarpiece-choir-side-chapels-and-doorways/"
+      }
+    ],
     "seniorAccess": {
       "ko": "성당 본당은 평탄하나 단차 주의. 히랄다 탑 경사로는 램프 개수 단정이 불가하며 정상 종탑 직전 마지막 17개의 가파른 계단이 필수적입니다. 심장·호흡기 질환이나 관절이 약한 어르신은 정상 등반을 지양하고 본당 관람에 집중 권장합니다.",
       "ja": "ヒラルダの塔は階段ではなく騎馬用の緩やかなスロープ（34スロープ）設計で、休みながら登れます。大聖堂内は完全フラット。",
@@ -18923,11 +19064,46 @@ Feel free to ask any travel question!<br>
       "zh": "西班牙 科尔多瓦"
     },
     "highlight": {
-      "ko": "856개의 붉은색과 흰색 설화석고 줄무늬 아치가 끝없이 이어지는 기둥의 숲. 이슬람 사원과 가톨릭 대성당이 공존하는 인류 건축의 기적",
-      "ja": "856本もの赤白ストライプの二重アーチが連なる柱の森。イスラム建築とキリスト教カテドラルが融合した奇跡のモスク大聖堂。",
-      "en": "Architectural wonder of the world featuring a hypnotic forest of 856 red-and-white striped bicolored arches, centered by a Renaissance cathedral.",
-      "zh": "由856根红白双色条纹石柱拱券交织而成的无垠柱林。伊斯兰清真寺与天主教大教堂融为一体的人类建筑奇迹。"
+      "ko": "8세기에 시작해 여러 차례 확장된 대모스크와 1236년 이후의 성당이 한 공간에 공존합니다. 석재와 벽돌을 교차한 이중 아치, 알하캄 2세 시대의 모자이크 미흐랍이 대표적입니다.",
+      "ja": "8世紀に始まり段階的に拡張された大モスクと、1236年以降の大聖堂が同じ建物にあります。石材と煉瓦を組み合わせた二重アーチと、アル・ハカム2世時代のモザイクのミフラーブが見どころです。",
+      "en": "An 8th-century Great Mosque expanded over time and a cathedral established after 1236 share the site. Highlights include stone-and-brick double arches and the mosaic mihrab from the era of al-Hakam II.",
+      "zh": "这座建筑保留了8世纪起逐步扩建的大清真寺空间，并在1236年后增设主教座堂。石材与砖砌成的双层拱门，以及哈卡姆二世时期的马赛克米哈拉布，是主要看点。"
     },
+    "history": {
+        "ko": "8세기 대모스크로 시작해 약 3세기 동안 확장됐습니다. 1236년 기독교 성당으로 전환된 뒤, 오늘날의 주요 공간 구성은 1523~1599년 르네상스기 대규모 공사를 거쳐 형성됐습니다. 이중 아치의 석재·벽돌 구조와 알하캄 2세 시대의 모자이크 미흐랍이 대표적입니다. 기둥 수를 하나의 확정 숫자로 단정하지 않고 건축 단계와 구조를 중심으로 설명합니다.",
+        "en": "The site began as a Great Mosque in the 8th century and expanded over roughly three centuries. It was converted into a Christian cathedral in 1236; major Renaissance-era works from 1523 to 1599 shaped much of the space seen today. Notable features include the stone-and-brick double arches and the mosaic mihrab from the era of al-Hakam II. This description avoids presenting a single unverified column count as fact.",
+        "ja": "この場所は8世紀に大モスクとして始まり、約3世紀にわたり拡張されました。1236年にキリスト教の大聖堂へ転換され、1523～1599年のルネサンス期の大工事が現在の空間構成を形づくりました。石材と煉瓦を組み合わせた二重アーチや、アル・ハカム2世時代のモザイクで飾られたミフラーブが見どころです。柱の数は資料により異なるため、確定数として示していません。",
+        "zh": "这里最初是8世纪的大清真寺，约三百年间不断扩建。1236年改为基督教主教座堂；1523至1599年的文艺复兴时期大型工程塑造了今天主要的空间布局。石材与砖砌成的双层拱门，以及哈卡姆二世时期的马赛克米哈拉布，是重要看点。由于柱数在不同资料中不一致，这里不将某个数字当作确定事实。"
+      },
+    "historySources": [
+      {
+        "label": {
+          "ko": "UNESCO 코르도바 역사 지구",
+          "en": "UNESCO Historic Centre of Córdoba",
+          "ja": "UNESCOコルドバ歴史地区",
+          "zh": "UNESCO科尔多瓦历史中心"
+        },
+        "url": "https://whc.unesco.org/en/list/313/"
+      },
+      {
+        "label": {
+          "ko": "메스키타 공식 건축 연혁",
+          "en": "Official building history",
+          "ja": "メスキータ公式建築沿革",
+          "zh": "清真寺主教座堂官方建筑沿革"
+        },
+        "url": "http://mezquita-catedraldecordoba.es/en/descubre-el-monumento/el-edificio/"
+      },
+      {
+        "label": {
+          "ko": "미흐랍 공식 안내",
+          "en": "Official mihrab guide",
+          "ja": "ミフラーブ公式案内",
+          "zh": "米哈拉布官方介绍"
+        },
+        "url": "http://mezquita-catedraldecordoba.es/en/descubre-el-monumento/el-edificio/mihrab/"
+      }
+    ],
     "seniorAccess": {
       "ko": "메스키타 실내는 문턱 없는 단층 평지로 보행 편의성이 우수합니다. 오렌지 중정 자갈 바닥 및 주변 '꽃의 골목'은 폭 1m 내외로 좁고 경사 자갈길이 있어 인파 병목 주의. 세비야-코르도바 'AVE 40분'은 일반 참고값이며 실제 날짜별 편성 확인 필수.",
       "ja": "寺院内は段差が一切ない広大な平坦なワンフロア構造。オレンジの中庭に木陰のベンチが多く歩行の負担が極めて少ないです。",

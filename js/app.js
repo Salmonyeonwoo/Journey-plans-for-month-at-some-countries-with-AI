@@ -3368,6 +3368,19 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
   });
 }
 
+function getLandmarkHistoryLabel(lang) {
+  return ({ ko: '역사와 건축', en: 'History & architecture', ja: '歴史と建築', zh: '历史与建筑' })[lang] || '역사와 건축';
+}
+function renderHistorySourceLinks(sources, lang) {
+  if (!Array.isArray(sources) || !sources.length) return '';
+  const links = sources.map(source => {
+    const label = (source.label && (source.label[lang] || source.label.en)) || source.label || '';
+    if (!source.url || !label) return '';
+    return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer" style="color:#1a5249;text-decoration:underline;font-size:11px;">${escapeHtml(label)} ↗</a>`;
+  }).filter(Boolean).join(' · ');
+  return links ? `<div class="landmark-history-sources" style="margin-top:7px;line-height:1.6;">${links}</div>` : '';
+}
+
 function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
   window.currentFilteredLandmarksList = list;
   if (currentLandmarkView === "map") renderLandmarksMap();
@@ -3388,7 +3401,8 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
     const localizedSeniorAccess = (info.seniorAccess && info.seniorAccess[currentLang]) || item.seniorAccess;
     const localizedHours = (info.hours && info.hours[currentLang]) || item.hours;
     const localizedTicketTip = (info.ticketTip && info.ticketTip[currentLang]) || item.ticketTip;
-
+    const localizedHistory = info.history && info.history[currentLang];
+    const localizedHistorySources = renderHistorySourceLinks(info.historySources, currentLang);
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
@@ -3398,6 +3412,7 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
         <div class="photo-body">
           <div class="photo-title">${cleanHangul(localizedName, currentLang)}</div>
           <div class="photo-desc">${cleanHangul(localizedHighlight, currentLang)}</div>
+          ${localizedHistory ? `<div class="landmark-history-block" style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:10px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(currentLang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${cleanHangul(localizedHistory, currentLang)}</div>${localizedHistorySources}</div>` : ''}
           <div class="senior-access-block">
             <div class="access-head">
               <span class="access-icon">♿</span>
@@ -4419,11 +4434,60 @@ window.addEventListener('DOMContentLoaded', () => {
 // [CHAT ENGINE] Multi-Language Intelligent Knowledge Matcher
 // ========================================================
 
+function buildSpanishAttractionHistoryChatResponse(query, lang) {
+  const q = String(query || '').toLowerCase();
+  const historyTerms = [
+    'history', 'historical', 'story', 'origin', 'origins', 'background', 'heritage', 'architecture', 'tell me about', 'what is', 'details',
+    '역사', '유래', '연혁', '기원', '배경', '역사적', '건축', '설명', '알려줘',
+    '歴史', '由来', '沿革', '起源', '背景', '建築', '説明', '教えて', '紹介',
+    '历史', '来历', '由来', '沿革', '背景', '建筑', '介绍', '讲讲', '历史故事'
+  ];
+  if (!historyTerms.some(term => q.includes(term))) return null;
+
+  const targets = [
+    { type: 'landmark', key: '사그라다 파밀리아 (Sagrada Família)', aliases: ['sagrada família', 'sagrada familia', '사그라다 파밀리아', '사그라다', 'サグラダ・ファミリア', 'サグラダ', '圣家族大教堂', '圣家堂'] },
+    { type: 'landmark', key: '알함브라 궁전 (Alhambra & Generalife)', aliases: ['alhambra', '알함브라', 'アルハンブラ', '阿尔罕布拉'] },
+    { type: 'landmark', key: '세비야 대성당 & 히랄다 탑 (Catedral de Sevilla)', aliases: ['seville cathedral', 'catedral de sevilla', '세비야 대성당', '히랄다', 'giralda', 'セビリア大聖堂', 'ヒラルダ', '塞维利亚大教堂', '希拉尔达'] },
+    { type: 'landmark', key: '코르도바 메스키타-대성당 (Mezquita-Catedral)', aliases: ['mosque-cathedral of córdoba', 'mosque-cathedral of cordoba', 'mezquita-catedral', 'mezquita', '코르도바 메스키타', '메스키타', 'コルドバのメスキータ', 'メスキータ', '科尔多瓦大清真寺', '清真寺主教座堂'] },
+    { type: 'candidate', id: 'pc-agp-malaga-cathedral', aliases: ['málaga cathedral', 'malaga cathedral', 'catedral de málaga', 'catedral de malaga', '말라가 대성당', 'マラガ大聖堂', '马拉加大教堂'] },
+    { type: 'candidate', id: 'pc-agp-picasso-museum', aliases: ['museo picasso málaga', 'museo picasso malaga', 'málaga picasso museum', 'malaga picasso museum', '말라가 피카소 미술관', 'マラガ・ピカソ美術館', '马拉加毕加索博物馆'] },
+    { type: 'candidate', id: 'pc-bcn-sant-pau', aliases: ['sant pau', 'recinte modernista de sant pau', '산 파우 병원', '산트 파우', '산 파우', 'サン・パウ', 'サンパウ', '圣保罗现代主义建筑群', '圣保罗医院', 'avinguda de gaudí', 'avenida gaudí', 'gaudí avenue', 'gaudi avenue', '가우디 거리', '가우디 대로', 'ガウディ通り', '高迪大道'] }
+  ];
+  const target = targets.find(item => item.aliases.some(alias => q.includes(alias.toLowerCase())));
+  if (!target) return null;
+
+  let name = '';
+  let history = '';
+  let sources = [];
+  if (target.type === 'landmark') {
+    const info = (typeof LANDMARK_I18N_DATA !== 'undefined' && LANDMARK_I18N_DATA[target.key]) || {};
+    name = (info.displayName && (info.displayName[lang] || info.displayName.ko)) || target.key;
+    history = (info.history && (info.history[lang] || info.history.ko)) || '';
+    sources = info.historySources || [];
+  } else {
+    const candidateData = (typeof PRACTICAL_CITY_CANDIDATES_DATA !== 'undefined' && PRACTICAL_CITY_CANDIDATES_DATA.items) || [];
+    const item = candidateData.find(row => row.id === target.id);
+    const info = (typeof PRACTICAL_CANDIDATES_I18N !== 'undefined' && PRACTICAL_CANDIDATES_I18N.items && PRACTICAL_CANDIDATES_I18N.items[target.id] && (PRACTICAL_CANDIDATES_I18N.items[target.id][lang] || PRACTICAL_CANDIDATES_I18N.items[target.id].ko)) || {};
+    if (!item) return null;
+    name = info.name || item.name || target.id;
+    history = info.history || item.history || '';
+    sources = (item.sources || []).map((source, index) => ({
+      url: source.url,
+      label: (info.sourceLabels && info.sourceLabels[index]) || source.label
+    }));
+  }
+  if (!history) return null;
+  const label = getLandmarkHistoryLabel(lang);
+  return `<div class="chat-history-answer" style="background:#f2f8f5;border:1px solid #d4e0d7;border-radius:14px;padding:12px 14px;line-height:1.65;"><strong style="color:#1a5249;">🏛️ ${escapeHtml(name)} · ${label}</strong><p style="margin:7px 0;color:#40534e;">${escapeHtml(history)}</p>${renderHistorySourceLinks(sources, lang)}</div>`;
+}
+
 function handleLocalChat(query) {
   const rawQ = (query || '').trim();
   const q = rawQ.toLowerCase();
   const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
+  const historyResponse = buildSpanishAttractionHistoryChatResponse(rawQ, lang);
+  if (historyResponse) return historyResponse;
   const hasSevilleForNov12 = ['seville', 'sevilla', '세비야', 'セビリア', '塞维利亚'].some(w => q.includes(w));
   const hasCordobaForNov12 = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦'].some(w => q.includes(w));
   const asksIntercityRoute = ['alsa', 'bus', 'buses', 'coach', 'route', 'transport', 'travel from', 'train', 'renfe', 'day trip', 'daytrip', '당일치기', '日帰り', '一日游', '이동', '교통', '버스', '기차', '열차', '렌페', 'バス', '電車', '列車', '鉄道', '移動', '交通', '大巴', '公交', '巴士', '火车', '铁路', '出行'].some(w => q.includes(w));
@@ -4803,7 +4867,9 @@ function handleLocalChat(query) {
           city: (typeof cleanHangul === 'function') ? cleanHangul(item.cityName || item.city || '', lang) : (item.city || item.cityName || ''),
           category: cInfo.typeBadge || item.typeBadge || (lang === 'ja' ? '市場・展望台・追加名所' : (lang === 'en' ? 'Market / Viewpoint Pick' : (lang === 'zh' ? '市场·观景台精选' : '시장·전망대 추가 후보'))),
           desc: cInfo.highlights || cInfo.desc || item.highlights || item.desc || '',
-          tip: cInfo.seniorCaution || cInfo.senior || item.seniorCaution || item.senior || '',
+          history: cInfo.history || item.history || '',
+          historySources: (item.sources || []).map((source, index) => ({ url: source.url, label: (cInfo.sourceLabels && cInfo.sourceLabels[index]) || source.label })),
+          tip: cInfo.seniorCaution || cInfo.senior || item.senior || '',
           hours: cInfo.hours || item.hours || item.verifiedHours || '',
           officialUrl: item.officialUrl || (item.sources && item.sources[0] && item.sources[0].url) || null,
           mapUrl: item.officialUrl || (item.mapQuery ? `https://maps.google.com/?q=${encodeURIComponent(item.mapQuery)}` : null)
@@ -4815,7 +4881,7 @@ function handleLocalChat(query) {
     const landmarkList = (typeof GLOBAL_LANDMARKS_DATA !== 'undefined' && GLOBAL_LANDMARKS_DATA) || [];
     for (const item of landmarkList) {
       const nameL = (item.name || '').toLowerCase();
-      const lInfo = (typeof LANDMARKS_I18N_DATA !== 'undefined' && LANDMARKS_I18N_DATA[item.name]) || {};
+      const lInfo = (typeof LANDMARK_I18N_DATA !== 'undefined' && LANDMARK_I18N_DATA[item.name]) || {};
       const locName = (lInfo.displayName && (lInfo.displayName[lang] || lInfo.displayName.ko)) || item.name;
       const locNameL = locName.toLowerCase();
 
@@ -4831,6 +4897,8 @@ function handleLocalChat(query) {
           city: item.city || item.region || '',
           category: (lang === 'ja' ? '必訪ランドマーク' : (lang === 'en' ? 'Essential Landmark' : (lang === 'zh' ? '必游核心名胜' : '핵심 랜드마크'))),
           desc: (lInfo.highlight && (lInfo.highlight[lang] || lInfo.highlight.ko)) || item.highlight || '',
+          history: (lInfo.history && (lInfo.history[lang] || lInfo.history.ko)) || '',
+          historySources: lInfo.historySources || [],
           tip: (lInfo.seniorAccess && (lInfo.seniorAccess[lang] || lInfo.seniorAccess.ko)) || item.seniorAccess || '',
           hours: item.hours || '',
           photo: item.photo,
@@ -4893,6 +4961,7 @@ function handleLocalChat(query) {
         ${isAndalusiaDiningPick && e.dish ? `<p style="margin:0 0 8px;font-size:12.5px;color:#1a5249;line-height:1.55;"><strong>${menuIdeaLabel}</strong> ${escapeHtml(e.dish)}</p>` : ''}
         ${e.photo ? `<div style="width:100%;height:130px;border-radius:12px;background:url('${e.photo}') center/cover no-repeat;margin-bottom:10px;"></div>` : ''}
         <p style="margin:0 0 10px;font-size:13px;color:#4a5c58;line-height:1.65;">${escapeHtml(e.desc)}</p>
+        ${e.history ? `<div style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:8px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(lang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${escapeHtml(e.history)}</div>${renderHistorySourceLinks(e.historySources, lang)}</div>` : ''}
         ${e.tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:12px;border-left:3px solid #d8754d;line-height:1.55;"><strong>${tipPrefix}</strong> ${escapeHtml(e.tip)}</div>` : ''}
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
           ${e.mapUrl ? `<a href="${e.mapUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${mapLabel}</button></a>` : ''}
@@ -10111,6 +10180,7 @@ function getPracticalCandidateLocalizedItem(rawItem, lang) {
     oneStopParentRec: Boolean(rawItem.isOneStopRecommended || rawItem.oneStopParentRec),
     oneStopReason: (itemTrans && typeof itemTrans.oneStopReason === 'string') ? itemTrans.oneStopReason : (rawItem.oneStopReason || ''),
     highlights: (itemTrans && itemTrans.highlights) ? itemTrans.highlights : (rawItem.highlights || ''),
+    history: (itemTrans && itemTrans.history) ? itemTrans.history : (rawItem.history || ''),
     verifiedHours: (itemTrans && itemTrans.hours) ? itemTrans.hours : (rawItem.hours || rawItem.verifiedHours || ''),
     seniorCaution: (itemTrans && itemTrans.seniorCaution) ? itemTrans.seniorCaution : (rawItem.seniorCaution || ''),
     broadcastNote: (itemTrans && itemTrans.broadcastNote) ? itemTrans.broadcastNote : (rawItem.broadcastNote || ''),
@@ -10167,6 +10237,8 @@ function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
           <div class="pc-info-text">${formatMultiline(item.highlights)}</div>
         </div>
 
+        ${item.history ? `<div class="pc-info-block pc-info-history"><div class="pc-info-label">${ui.labelHistory || '🏛️ 역사와 배경'}</div><div class="pc-info-text">${formatMultiline(item.history)}</div></div>` : ''}
+
         <div class="pc-info-block pc-info-hours">
           <div class="pc-info-label">${ui.labelHours || '⏰ 확인된 운영시간'} <span class="pc-hours-caveat">${ui.labelHoursCaveat || '(방문 당일 변경 가능성 있음 · 방문 전 확인)'}</span></div>
           <div class="pc-info-text">${formatMultiline(item.verifiedHours)}</div>
@@ -10222,7 +10294,7 @@ function getFilteredPracticalCandidateItems(allItems, activeLang, state, savedId
     if (state.savedOnly && !savedIdsSet.has(loc.id)) return false;
     if (state.searchQuery && state.searchQuery.trim() !== '') {
       const q = state.searchQuery.trim().toLowerCase();
-      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.verifiedHours} ${loc.seniorCaution} ${loc.broadcastNote}`.toLowerCase();
+      const hay = `${rawItem.cityName || ''} ${loc.cityDisplay} ${loc.cityEn} ${rawItem.name || ''} ${loc.name} ${loc.subtitle} ${loc.typeLabel} ${loc.subTypeTag} ${rawItem.highlights || ''} ${loc.highlights} ${loc.history} ${loc.verifiedHours} ${loc.seniorCaution} ${loc.broadcastNote}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
