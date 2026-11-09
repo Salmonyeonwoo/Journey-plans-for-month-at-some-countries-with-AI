@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261109_review_v2)
+// SlowTravel Mobile Offline Service Worker (v20261109_italy_food_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261109_review_v2';
+const CACHE_NAME = 'slowtravel-offline-v20261109_italy_food_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -13,8 +13,11 @@ const PRECACHE_ASSETS = [
   './css/flamenco-guide.css',
   './css/mobile-first.css',
   './css/guidebook-navigation.css',
+  './css/local-food-guide.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
+  './js/empanada-photo-guide.js',
+  './js/italy-local-food-guide.js',
   './js/barcelona-dining-guide.js',
   './js/activity-guide.js',
   './js/flamenco-guide.js',
@@ -28,6 +31,10 @@ const PRECACHE_ASSETS = [
   './img/gourmet/barcelona-prawns-user.jpg',
   './img/gourmet/barcelona-jamon-user.jpg',
   './img/gourmet/barcelona-croquetas-user.jpg',
+  './img/italy-food/naples-pizza-a-portafoglio.jpg',
+  './img/italy-food/florence-schiacciata.jpg',
+  './img/italy-food/florence-lampredotto.jpg',
+  './img/italy-food/rome-trapizzino.jpg',
   './js/practical-place-additions.js',
   './js/curated-places-guide.js',
   './js/travel-diary.js',

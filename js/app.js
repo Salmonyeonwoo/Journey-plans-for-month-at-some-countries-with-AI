@@ -4848,6 +4848,13 @@ function handleLocalChat(query) {
     };
     return retiredNotice[lang] + renderFollowupChips([retiredFollowups[lang]]);
   }
+  if (matchedEntity && matchedEntity.type === 'dining' && typeof window.buildItalyFoodChatReply === 'function') {
+    const matchedCityText = String(matchedEntity.city || '') + ' ' + String(matchedEntity.item?.city || '');
+    const guideCityTerms = ['rome', 'roma', '로마', 'ローマ', '罗马', 'naples', 'napoli', '나폴리', 'ナポリ', '那不勒斯', 'florence', 'firenze', '피렌체', 'フィレンツェ', '佛罗伦萨'];
+    if (guideCityTerms.some(term => matchedCityText.toLowerCase().includes(term.toLowerCase()))) {
+      return window.buildItalyFoodChatReply(lang, q, matchedEntity);
+    }
+  }
   if (matchedEntity) {
     const e = matchedEntity;
     const tipPrefix = lang === 'ja' ? '💡 シニア配慮＆訪問のコツ:' : (lang === 'en' ? '💡 Senior Comfort & Visit Tip:' : (lang === 'zh' ? '💡 长辈贴士与游玩建议:' : '💡 어르신 배려 & 방문 꿀팁:'));
@@ -6658,47 +6665,14 @@ function handleLocalChat(query) {
   // 10-1. FOOD & DINING INTENT
   if (isFood) {
     if (isItaly) {
-      let res = '';
-      if (lang === 'ja') {
-        res = `
-          🍕 <strong>イタリアを代表する必食グルメ TOP 4</strong>:<br><br>
-          1️⃣ <strong>ナポリ本場の薪窯ピッツァ（Pizza Napoletana）:</strong> 外はサクッ、中はモチモチの生地に水牛モッツァレラとトマトの黄金比。<br>
-          2️⃣ <strong>フィレンツェ風Tボーンステーキ（Bistecca alla Fiorentina）:</strong> キアニーナ牛の赤身肉を炭火で香ばしくレアに焼き上げた極上の肉料理。<br>
-          3️⃣ <strong>ローマ3大パスタ:</strong> 本場カルボナーラ（生クリーム不使用）、アマトリチャーナ、カチョ・エ・ペペ。<br>
-          4️⃣ <strong>インペパータ・ディ・コッツェ:</strong> ナポリ名物の黒胡椒を効かせたムール貝の白ワイン蒸し！
-        `;
-      } else if (lang === 'en') {
-        res = `
-          🍕 <strong>Iconic Italian Culinary Delights TOP 4</strong>:<br><br>
-          1️⃣ <strong>Neapolitan Wood-Fired Pizza:</strong> Fluffy, airy crust charred to perfection with sweet San Marzano tomatoes and creamy buffalo mozzarella.<br>
-          2️⃣ <strong>Bistecca alla Fiorentina:</strong> Florence's legendary thick-cut T-bone steak, grilled rare over wood embers with fragrant olive oil.<br>
-          3️⃣ <strong>Rome's Holy Trinity of Pastas:</strong> Authentic Carbonara (guanciale & pecorino, no cream!), Amatriciana, and Cacio e Pepe.<br>
-          4️⃣ <strong>Impepatata di Cozze:</strong> Neapolitan steamed mussels bursting with cracked black pepper and fresh lemon.
-        `;
-      } else if (lang === 'zh') {
-        res = `
-          🍕 <strong>意大利四大殿堂级必尝美食</strong>:<br><br>
-          1️⃣ <strong>那不勒斯柴火窑烤披萨（Pizza Napoletana）：</strong> 边缘焦香蜂窝气孔，水牛奶酪配圣马扎诺番茄酸甜多汁。<br>
-          2️⃣ <strong>佛罗伦萨T骨牛排（Bistecca alla Fiorentina）：</strong> 托斯卡纳奎宁牛原切厚炙，外焦里嫩，肉香四溢。<br>
-          3️⃣ <strong>罗马三大灵魂意面：</strong> 正宗无奶油培根蛋酱面（Carbonara）、番茄风干猪面颊肉面（Amatriciana）与黑椒绵羊奶酪面（Cacio e Pepe）。<br>
-          4️⃣ <strong>那不勒斯胡椒青口贝（Impepatata di Cozze）：</strong> 鲜美多汁，黑胡椒提味去腥，鲜掉眉毛！
-        `;
-      } else {
-        res = `
-          🍕 <strong>이탈리아 대표 명물 음식 TOP 4</strong>:<br><br>
-          1️⃣ <strong>나폴리 정통 화덕피자:</strong> 겉은 바삭하고 속은 쫄깃한 도우에 신선한 산 마르차노 토마토와 버팔로 모짜렐라 치즈의 완벽한 풍미입니다.<br>
-          2️⃣ <strong>피렌체 티본스테이크 (비스테카):</strong> 숯불에 겉은 바삭하게, 속은 부드러운 레어로 구워낸 토스카나 대표 고기 요리로 부모님 몸보신에 최고입니다.<br>
-          3️⃣ <strong>로마 3대 정통 파스타:</strong> 생크림 없이 관찰레와 달걀노른자, 페코리노 치즈로만 맛을 낸 정통 카르보나라, 아마트리치아나, 카초 에 페페.<br>
-          4️⃣ <strong>나폴리식 홍합찜 (임페파타 디 코체):</strong> 신선한 홍합에 통후추와 레몬즙을 듬뿍 뿌려 쪄낸 시원하고 칼칼한 해산물 요리입니다.
-        `;
-      }
-      if (isSpecificRestaurant) res += renderMatchingDiningCards('italy');
-      const chips = [
-        { query: '이탈리아어 식당 필수 회화', label: '🇮🇹 이탈리아어 회화' },
-        { query: '빠에야 피자 말고 다른 음식 추천', label: '🍽️ 빠에야·피자 외 미식' },
-        { query: '나폴리에서 피렌체 이동법', label: '🚆 나폴리 ➔ 피렌체' }
-      ];
-      return res + renderFollowupChips(chips);
+      if (typeof window.buildItalyFoodChatReply === 'function') return window.buildItalyFoodChatReply(lang);
+      const fallback = {
+        ko: '이탈리아 도시별 식당·간식 후보는 가이드에서 확인해 주세요. 영업시간과 예약은 방문 전에 매장에 재확인해야 합니다.',
+        en: 'Please check the Italy city food guide for restaurant and snack candidates. Reconfirm hours and booking with each venue before visiting.',
+        ja: '都市別の飲食候補はイタリア食ガイドをご確認ください。営業時間と予約は訪問前に店舗へ再確認してください。',
+        zh: '各城市餐厅与小吃候选请查看意大利美食指南。到访前请向店家确认营业时间和预订政策。'
+      };
+      return fallback[lang] || fallback.ko;
     }
 
     if (isPortugal) {
@@ -9204,6 +9178,7 @@ function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? curre
 
   const data = (typeof ITALY_CITIES_GUIDE_DATA !== 'undefined') ? ITALY_CITIES_GUIDE_DATA : (typeof window !== 'undefined' ? window.ITALY_CITIES_GUIDE_DATA : null);
   if (!data) return;
+  if (typeof window.renderItalyLocalFoodGuide === 'function') window.renderItalyLocalFoodGuide(lang);
 
   const cityId = window.currentItalyCity || 'rome';
   const subTabId = window.currentItalySubTab || 'attractions';
@@ -9909,6 +9884,7 @@ function renderMasterGourmetGuide(lang, filterCountry) {
   if (typeof renderNerjaDaytripGuide === 'function') renderNerjaDaytripGuide(currentL);
   if (typeof renderCuratedHeartPlaces === 'function') renderCuratedHeartPlaces(currentL);
   if (typeof window.renderSpanishMarketFoodGuide === 'function') window.renderSpanishMarketFoodGuide(currentL);
+  if (typeof window.renderEmpanadaPhotoGuide === 'function') window.renderEmpanadaPhotoGuide(currentL);
 
   // Re-apply survival filters if active
   if (window.masterSurvivalCountry !== 'all' || window.masterSurvivalCategory !== 'all') {
