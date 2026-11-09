@@ -3381,6 +3381,14 @@ function renderHistorySourceLinks(sources, lang) {
   return links ? `<div class="landmark-history-sources" style="margin-top:7px;line-height:1.6;">${links}</div>` : '';
 }
 
+function renderPhotoCredit(credit, lang) {
+  if (!credit || !credit.author || !credit.sourceUrl || !credit.license || !credit.licenseUrl) return '';
+  const labels = { ko: '사진 출처', en: 'Photo credit', ja: '写真クレジット', zh: '图片署名' };
+  const cropNotes = { ko: '카드에 맞춰 잘라 표시', en: 'cropped to fit card', ja: 'カードに合わせてトリミング', zh: '按卡片比例裁切' };
+  const label = labels[lang] || labels.ko;
+  const cropNote = cropNotes[lang] || cropNotes.ko;
+  return `<div class="photo-credit" style="font-size:10px;line-height:1.45;margin-top:4px;color:#64736e;">${label}: <a href="${escapeHtml(credit.sourceUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">Wikimedia Commons · ${escapeHtml(credit.author)}</a> · <a href="${escapeHtml(credit.licenseUrl)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">${escapeHtml(credit.license)}</a> · ${cropNote}</div>`;
+}
 function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
   window.currentFilteredLandmarksList = list;
   if (currentLandmarkView === "map") renderLandmarksMap();
@@ -3403,6 +3411,7 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
     const localizedTicketTip = (info.ticketTip && info.ticketTip[currentLang]) || item.ticketTip;
     const localizedHistory = info.history && info.history[currentLang];
     const localizedHistorySources = renderHistorySourceLinks(info.historySources, currentLang);
+    const localizedPhotoCredit = renderPhotoCredit(item.photoCredit, currentLang);
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
@@ -3412,6 +3421,7 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
         <div class="photo-body">
           <div class="photo-title">${cleanHangul(localizedName, currentLang)}</div>
           <div class="photo-desc">${cleanHangul(localizedHighlight, currentLang)}</div>
+          ${localizedPhotoCredit}
           ${localizedHistory ? `<div class="landmark-history-block" style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:10px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(currentLang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${cleanHangul(localizedHistory, currentLang)}</div>${localizedHistorySources}</div>` : ''}
           <div class="senior-access-block">
             <div class="access-head">
@@ -4437,10 +4447,10 @@ window.addEventListener('DOMContentLoaded', () => {
 function buildSpanishAttractionHistoryChatResponse(query, lang) {
   const q = String(query || '').toLowerCase();
   const historyTerms = [
-    'history', 'historical', 'story', 'origin', 'origins', 'background', 'heritage', 'architecture', 'tell me about', 'what is', 'details',
-    '역사', '유래', '연혁', '기원', '배경', '역사적', '건축', '설명', '알려줘',
-    '歴史', '由来', '沿革', '起源', '背景', '建築', '説明', '教えて', '紹介',
-    '历史', '来历', '由来', '沿革', '背景', '建筑', '介绍', '讲讲', '历史故事'
+    'history', 'historical', 'story', 'origin', 'origins', 'background', 'heritage', 'architecture', 'tell me about', 'what is', 'details', 'what to see', 'highlights', 'look for',
+    '역사', '유래', '연혁', '기원', '배경', '역사적', '건축', '설명', '알려줘', '관람 포인트', '볼거리', '꼭 볼', '꼭 봐야',
+    '歴史', '由来', '沿革', '起源', '背景', '建築', '説明', '教えて', '紹介', '見どころ', '鑑賞ポイント', '見るべき',
+    '历史', '来历', '由来', '沿革', '背景', '建筑', '介绍', '讲讲', '历史故事', '看点', '必看', '参观重点', '看什么'
   ];
   if (!historyTerms.some(term => q.includes(term))) return null;
 

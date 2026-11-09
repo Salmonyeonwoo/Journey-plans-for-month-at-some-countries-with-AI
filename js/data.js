@@ -5023,7 +5023,8 @@ const GLOBAL_LANDMARKS_DATA = [
     "name": "사그라다 파밀리아 (Sagrada Família)",
     "region": "이베리아",
     "city": "스페인 바르셀로나",
-    "photo": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?auto=format&fit=crop&w=800&q=80",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Sagrada_Fam%C3%ADlia_exterior_Barcelona_2026.jpg/960px-Sagrada_Fam%C3%ADlia_exterior_Barcelona_2026.jpg",
+    "photoCredit": {"author": "Wikipsico43", "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sagrada_Fam%C3%ADlia_exterior_Barcelona_2026.jpg", "license": "CC BY-SA 4.0", "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"},
     "highlight": "가우디 필생의 역작. 숲을 형상화한 기둥과 스테인드글라스를 투과하는 환상적인 자연 채광",
     "slug": "sagrada-familia",
     "seniorAccess": "성당 본당 내부는 평탄한 경사로와 엘리베이터가 있어 휠체어 및 어르신 관람이 수월합니다. 단, 타워(타워 오브 패션/나티비티)는 엘리베이터로 올라가더라도 내려올 때는 400여 개의 좁고 가파른 나선형 계단을 도보로만 내려와야 합니다. 안전 규정상 거동 불편자, 심장/호흡기 질환자, 임산부, 6세 미만은 타워 입장이 제한되므로 부모님 동행 시 타워 제외 본당 일반 입장권을 권장합니다.",
@@ -9099,10 +9100,10 @@ const LANDMARK_I18N_DATA = {
       "zh": "西班牙 巴塞罗那标志性世界文化遗产名胜，壮丽历史建筑与绝美全景视野。"
     },
     "history": {
-        "ko": "공사는 1882년 3월 19일 프란시스코 데 파울라 델 비야르의 설계로 크립트부터 시작됐고, 가우디는 1883년 31세에 프로젝트를 이어받았습니다. 내부 기둥은 나무처럼 갈라지는 구조이며, 공식 해설은 동쪽 탄생 파사드 쪽의 푸른빛과 서쪽 수난 파사드 쪽의 붉고 따뜻한 색 유리를 설명합니다. 2026년은 가우디 서거 100주기이며 예수 그리스도 탑은 높이 172.5m에 도달했습니다. 탑 외부는 2026년 2월 완성됐지만 내부 공사는 2027~2028년 이어질 예정이며, 이는 성당 전체 완공을 뜻하지 않습니다. UNESCO 등재 요소는 가우디의 탄생 파사드와 크립트입니다.",
-        "en": "Construction began at the crypt on 19 March 1882 to Francisco de Paula del Villar’s design; Gaudí took over the project in 1883, aged 31. The interior columns branch like trees, while the official guide describes cooler blue glazing on the east Nativity side and warmer reds on the west Passion side. 2026 marks the centenary of Gaudí’s death, and the Tower of Jesus has reached 172.5 m. Its exterior was completed in February 2026, but interior work is expected to continue in 2027–28; this does not mean the whole basilica is complete. UNESCO lists Gaudí’s Nativity façade and crypt as the inscribed elements.",
-        "ja": "1882年3月19日、フランシスコ・デ・パウラ・デル・ビジャールの設計で地下聖堂から工事が始まり、ガウディは1883年、31歳で計画を引き継ぎました。内部の柱は木の枝のように分かれ、公式解説では東側の降誕のファサードに青系、西側の受難のファサードに赤・暖色系のステンドグラスを配しています。2026年はガウディ没後100年にあたり、イエスの塔は高さ172.5mに達しました。塔の外部は2026年2月に完成しましたが、内部工事は2027～2028年も続く予定で、聖堂全体の完成を意味しません。UNESCOの登録対象はガウディの降誕のファサードと地下聖堂です。",
-        "zh": "工程于1882年3月19日按弗朗西斯科·德·保拉·德尔·比利亚尔的设计从地下圣堂开始；高迪在1883年、31岁时接手项目。内部柱体如树枝般分叉，官方说明东侧诞生立面一侧采用偏蓝色玻璃，西侧受难立面一侧采用红色和暖色玻璃。2026年是高迪逝世一百周年，耶稣塔已达到172.5米。塔的外部于2026年2月完成，但内部工程预计将持续至2027至2028年；这不代表整座圣殿已完工。UNESCO列入名录的是高迪设计的诞生立面和地下圣堂。"
+        "ko": "공사는 1882년 3월 19일 프란시스코 데 파울라 델 비야르의 설계로 크립트부터 시작됐고, 가우디는 1883년 31세에 프로젝트를 이어받았습니다. 내부 기둥은 나무처럼 갈라지는 구조이며, 공식 해설은 동쪽 탄생 파사드 쪽의 푸른빛과 서쪽 수난 파사드 쪽의 붉고 따뜻한 색 유리를 설명합니다. 2026년은 가우디 서거 100주기이며 예수 그리스도 탑은 높이 172.5m에 도달했습니다. 탑 외부는 2026년 2월 완성됐지만 내부 공사는 2027~2028년 이어질 예정이며, 이는 성당 전체 완공을 뜻하지 않습니다. UNESCO 등재 요소는 가우디의 탄생 파사드와 크립트입니다. 탄생 파사드의 성 바르나바 종탑은 1925년에 완성됐으며, 가우디가 생전에 완공을 본 유일한 종탑입니다.",
+        "en": "Construction began at the crypt on 19 March 1882 to Francisco de Paula del Villar’s design; Gaudí took over the project in 1883, aged 31. The interior columns branch like trees, while the official guide describes cooler blue glazing on the east Nativity side and warmer reds on the west Passion side. 2026 marks the centenary of Gaudí’s death, and the Tower of Jesus has reached 172.5 m. Its exterior was completed in February 2026, but interior work is expected to continue in 2027–28; this does not mean the whole basilica is complete. UNESCO lists Gaudí’s Nativity façade and crypt as the inscribed elements. The Nativity façade’s Saint Barnabas bell tower was completed in 1925; it was the only bell tower Gaudí lived to see finished.",
+        "ja": "1882年3月19日、フランシスコ・デ・パウラ・デル・ビジャールの設計で地下聖堂から工事が始まり、ガウディは1883年、31歳で計画を引き継ぎました。内部の柱は木の枝のように分かれ、公式解説では東側の降誕のファサードに青系、西側の受難のファサードに赤・暖色系のステンドグラスを配しています。2026年はガウディ没後100年にあたり、イエスの塔は高さ172.5mに達しました。塔の外部は2026年2月に完成しましたが、内部工事は2027～2028年も続く予定で、聖堂全体の完成を意味しません。UNESCOの登録対象はガウディの降誕のファサードと地下聖堂です。 降誕のファサードの聖バルナバ鐘塔は1925年に完成し、ガウディが生前に完成を見届けた唯一の鐘塔です。",
+        "zh": "工程于1882年3月19日按弗朗西斯科·德·保拉·德尔·比利亚尔的设计从地下圣堂开始；高迪在1883年、31岁时接手项目。内部柱体如树枝般分叉，官方说明东侧诞生立面一侧采用偏蓝色玻璃，西侧受难立面一侧采用红色和暖色玻璃。2026年是高迪逝世一百周年，耶稣塔已达到172.5米。塔的外部于2026年2月完成，但内部工程预计将持续至2027至2028年；这不代表整座圣殿已完工。UNESCO列入名录的是高迪设计的诞生立面和地下圣堂。 诞生立面的圣巴拿巴钟塔于1925年完工，是高迪生前唯一亲眼见到完工的钟塔。"
       },
     "historySources": [
       {
@@ -9149,6 +9150,15 @@ const LANDMARK_I18N_DATA = {
           "zh": "柱体与结构官方说明"
         },
         "url": "https://blog.sagradafamilia.org/en/columns-sagrada-familia-geometry-mechanics-materials-stone-forest/"
+      },
+      {
+        "label": {
+          "ko": "탄생 파사드·성 바르나바 종탑 공식 해설",
+          "en": "Official Nativity façade and Saint Barnabas tower guide",
+          "ja": "降誕のファサードと聖バルナバ鐘塔の公式解説",
+          "zh": "诞生立面与圣巴拿巴钟塔官方说明"
+        },
+        "url": "https://blog.sagradafamilia.org/en/terminals-frontons-cruise-hall-symbolism-and-construction/"
       }
     ],
     "seniorAccess": {
@@ -9190,10 +9200,10 @@ const LANDMARK_I18N_DATA = {
       "zh": "西班牙 格拉纳达标志性世界文化遗产名胜，壮丽历史建筑与绝美全景视野。"
     },
     "history": {
-        "ko": "알함브라는 나스르 왕조 시기의 궁전 도시이자 요새로, 궁전·방어 시설·정원이 함께 있는 복합체입니다. 사자의 중정에는 12마리 사자 조각이 받치는 12각 대야 분수가 있고, 헤네랄리페는 정원과 농경지를 갖춘 에미르의 전원 거주지였습니다. 그라나다는 장기간 군사 작전 뒤 1492년 항복했으며, 이를 ‘피 흘리지 않은 항복’으로 단정하지 않습니다.",
-        "en": "The Alhambra is a Nasrid-era palace city and fortress, combining palaces, defensive structures and gardens. In the Court of the Lions, a 12-sided basin rests on twelve lion sculptures; the Generalife was an emir’s country residence with gardens and agricultural land. Granada surrendered in 1492 after a prolonged military campaign, so the surrender should not be described as bloodless.",
-        "ja": "アルハンブラはナスル朝時代の宮殿都市・要塞で、宮殿、防御施設、庭園から成る複合体です。ライオンの中庭では12頭のライオン像が12角形の水盤を支え、ヘネラリフェは庭園と農地を備えた君主の郊外居所でした。グラナダは長期の軍事作戦の末、1492年に降伏しており、「無血降伏」とは断定しません。",
-        "zh": "阿尔罕布拉是纳斯里王朝时期的宫殿城与堡垒，由宫殿、防御设施和花园组成。狮子庭院中，十二角水盆由十二尊狮子雕像支撑；赫内拉利费宫则是拥有花园和农地的埃米尔乡间居所。格拉纳达在长期军事行动后于1492年投降，因此不应称为“未流血的投降”。"
+        "ko": "알함브라는 나스르 왕조 시기의 궁전 도시이자 요새로, 궁전·방어 시설·정원이 함께 있는 복합체입니다. 사자의 중정에는 12마리 사자 조각이 받치는 12각 대야 분수가 있고, 헤네랄리페는 정원과 농경지를 갖춘 에미르의 전원 거주지였습니다. 그라나다는 장기간 군사 작전 뒤 1492년 항복했으며, 이를 ‘피 흘리지 않은 항복’으로 단정하지 않습니다. 아라야네스 중정은 연못 양옆의 머틀 생울타리에서 이름을 얻었고, 수면에는 주변 건축이 비칩니다. 두 자매의 방에서는 벌집처럼 분절된 무카라베 돔을 올려다보세요.",
+        "en": "The Alhambra is a Nasrid-era palace city and fortress, combining palaces, defensive structures and gardens. In the Court of the Lions, a 12-sided basin rests on twelve lion sculptures; the Generalife was an emir’s country residence with gardens and agricultural land. Granada surrendered in 1492 after a prolonged military campaign, so the surrender should not be described as bloodless. The Court of the Myrtles takes its name from the myrtle hedges beside its pool, whose surface reflects the surrounding architecture. In the Hall of the Two Sisters, look up at the honeycomb-like muqarnas dome.",
+        "ja": "アルハンブラはナスル朝時代の宮殿都市・要塞で、宮殿、防御施設、庭園から成る複合体です。ライオンの中庭では12頭のライオン像が12角形の水盤を支え、ヘネラリフェは庭園と農地を備えた君主の郊外居所でした。グラナダは長期の軍事作戦の末、1492年に降伏しており、「無血降伏」とは断定しません。 アラヤネスの中庭は池の両側にあるギンバイカ（マートル）の生け垣に由来し、水面には周囲の建築が映ります。二姉妹の間では、蜂の巣のように細分化されたムカルナスのドームを見上げてみてください。",
+        "zh": "阿尔罕布拉是纳斯里王朝时期的宫殿城与堡垒，由宫殿、防御设施和花园组成。狮子庭院中，十二角水盆由十二尊狮子雕像支撑；赫内拉利费宫则是拥有花园和农地的埃米尔乡间居所。格拉纳达在长期军事行动后于1492年投降，因此不应称为“未流血的投降”。 桃金娘庭院得名于水池两侧的桃金娘树篱，水面映照着周围建筑。在两姐妹厅，不妨抬头欣赏蜂窝状的穆卡纳斯穹顶。"
       },
     "historySources": [
       {
@@ -9231,6 +9241,24 @@ const LANDMARK_I18N_DATA = {
           "zh": "格拉纳达征服的历史背景"
         },
         "url": "https://www.britannica.com/place/Spain/The-conquest-of-Granada"
+      },
+      {
+        "label": {
+          "ko": "알함브라 공식 아라야네스 중정 안내",
+          "en": "Official Court of the Myrtles guide",
+          "ja": "アルハンブラ公式・アラヤネスの中庭",
+          "zh": "阿尔罕布拉官方桃金娘庭院介绍"
+        },
+        "url": "https://www.alhambra-patronato.es/en/edificios-lugares/the-court-of-the-myrtles"
+      },
+      {
+        "label": {
+          "ko": "알함브라 공식 두 자매의 방 안내",
+          "en": "Official Hall of the Two Sisters guide",
+          "ja": "アルハンブラ公式・二姉妹の間",
+          "zh": "阿尔罕布拉官方两姐妹厅介绍"
+        },
+        "url": "https://www.alhambra-patronato.es/en/edificios-lugares/the-hall-of-the-two-sisters"
       }
     ],
     "seniorAccess": {
@@ -18912,10 +18940,10 @@ Feel free to ask any travel question!<br>
       "zh": "昔日清真寺宣礼塔希拉尔达、哥特式大教堂、由象征四个历史王国的人物承托的哥伦布墓，以及彩绘木雕主祭坛。"
     },
     "history": {
-        "ko": "옛 대모스크 자리에 세운 대성당은 옛 알모하드 미나레트였던 히랄다를 종탑으로 품고 있으며, 르네상스 상부와 풍향계가 더해졌습니다. 대성당 공식 안내는 히랄다의 경사로가 말도 오를 수 있도록 넓게 설계됐다고 설명합니다. 주제단화는 다색채 목조 작품으로 1482~1564년에 제작됐고, 콜럼버스 묘의 네 인물은 네 역사적 왕국을 상징합니다.",
-        "en": "Built on the site of the former Great Mosque, the cathedral incorporates the Giralda, once its Almohad minaret, later adapted as a bell tower and topped with Renaissance additions. The cathedral says the ramp was wide enough for horses to climb. The polychrome wooden main altarpiece was made between 1482 and 1564; the figures bearing Columbus’s tomb personify four historic kingdoms.",
-        "ja": "旧大モスク跡に建てられた大聖堂は、かつてアルモハド朝のミナレットだったヒラルダを鐘楼として取り込み、後にルネサンス様式の上部と風見像が加えられました。大聖堂の説明では、ヒラルダのスロープは馬も上れる幅に設計されました。彩色木彫の主祭壇画は1482～1564年に制作され、コロンブスの墓を担ぐ人物は歴史上の四王国を象徴しています。",
-        "zh": "塞维利亚大教堂建在原大清真寺遗址上，并将曾是阿尔摩哈德王朝宣礼塔的希拉尔达塔改作钟楼，后来又增建文艺复兴风格的上部结构和风向雕像。大教堂说明塔内坡道宽到足以让马匹登行。主祭坛是彩绘木雕作品，制作于1482至1564年；承托哥伦布墓的形象象征历史上的四个王国。"
+        "ko": "옛 대모스크 자리에 세운 대성당은 옛 알모하드 미나레트였던 히랄다를 종탑으로 품고 있으며, 르네상스 상부와 풍향계가 더해졌습니다. 대성당 공식 안내는 히랄다의 경사로가 말도 오를 수 있도록 넓게 설계됐다고 설명합니다. 주제단화는 다색채 목조 작품으로 1482~1564년에 제작됐고, 콜럼버스 묘의 네 인물은 네 역사적 왕국을 상징합니다. 오렌지 나무 안뜰(Patio de los Naranjos)에도 옛 모스크의 흔적이 남아 있어, 고딕 본당과 함께 보면 여러 시대의 건축이 이어진 과정을 읽을 수 있습니다.",
+        "en": "Built on the site of the former Great Mosque, the cathedral incorporates the Giralda, once its Almohad minaret, later adapted as a bell tower and topped with Renaissance additions. The cathedral says the ramp was wide enough for horses to climb. The polychrome wooden main altarpiece was made between 1482 and 1564; the figures bearing Columbus’s tomb personify four historic kingdoms. The Patio de los Naranjos (Orange Tree Courtyard) also preserves traces of the former mosque; compare it with the Gothic nave to see how different periods of architecture meet.",
+        "ja": "旧大モスク跡に建てられた大聖堂は、かつてアルモハド朝のミナレットだったヒラルダを鐘楼として取り込み、後にルネサンス様式の上部と風見像が加えられました。大聖堂の説明では、ヒラルダのスロープは馬も上れる幅に設計されました。彩色木彫の主祭壇画は1482～1564年に制作され、コロンブスの墓を担ぐ人物は歴史上の四王国を象徴しています。 オレンジの中庭（Patio de los Naranjos）にも旧モスクの痕跡が残ります。ゴシック様式の身廊と見比べると、異なる時代の建築が重なる様子を読み取れます。",
+        "zh": "塞维利亚大教堂建在原大清真寺遗址上，并将曾是阿尔摩哈德王朝宣礼塔的希拉尔达塔改作钟楼，后来又增建文艺复兴风格的上部结构和风向雕像。大教堂说明塔内坡道宽到足以让马匹登行。主祭坛是彩绘木雕作品，制作于1482至1564年；承托哥伦布墓的形象象征历史上的四个王国。 橘树庭院（Patio de los Naranjos）也保留着旧清真寺的痕迹；与哥特式中殿对照，可观察不同时代的建筑如何交汇。"
       },
     "historySources": [
       {
@@ -18953,6 +18981,15 @@ Feel free to ask any travel question!<br>
           "zh": "主祭坛官方介绍"
         },
         "url": "https://www.catedraldesevilla.es/en/the-cathedral/building/the-gothic-cathedral-main-altarpiece-choir-side-chapels-and-doorways/"
+      },
+      {
+        "label": {
+          "ko": "UNESCO 세비야 대성당·알카사르·고문서관",
+          "en": "UNESCO Cathedral, Alcázar and Archivo de Indias",
+          "ja": "UNESCOセビリア大聖堂・アルカサル・インディアス古文書館",
+          "zh": "UNESCO塞维利亚大教堂、王宫与西印度群岛档案馆"
+        },
+        "url": "https://whc.unesco.org/en/list/383/"
       }
     ],
     "seniorAccess": {
@@ -19070,10 +19107,10 @@ Feel free to ask any travel question!<br>
       "zh": "这座建筑保留了8世纪起逐步扩建的大清真寺空间，并在1236年后增设主教座堂。石材与砖砌成的双层拱门，以及哈卡姆二世时期的马赛克米哈拉布，是主要看点。"
     },
     "history": {
-        "ko": "8세기 대모스크로 시작해 약 3세기 동안 확장됐습니다. 1236년 기독교 성당으로 전환된 뒤, 오늘날의 주요 공간 구성은 1523~1599년 르네상스기 대규모 공사를 거쳐 형성됐습니다. 이중 아치의 석재·벽돌 구조와 알하캄 2세 시대의 모자이크 미흐랍이 대표적입니다. 기둥 수를 하나의 확정 숫자로 단정하지 않고 건축 단계와 구조를 중심으로 설명합니다.",
-        "en": "The site began as a Great Mosque in the 8th century and expanded over roughly three centuries. It was converted into a Christian cathedral in 1236; major Renaissance-era works from 1523 to 1599 shaped much of the space seen today. Notable features include the stone-and-brick double arches and the mosaic mihrab from the era of al-Hakam II. This description avoids presenting a single unverified column count as fact.",
-        "ja": "この場所は8世紀に大モスクとして始まり、約3世紀にわたり拡張されました。1236年にキリスト教の大聖堂へ転換され、1523～1599年のルネサンス期の大工事が現在の空間構成を形づくりました。石材と煉瓦を組み合わせた二重アーチや、アル・ハカム2世時代のモザイクで飾られたミフラーブが見どころです。柱の数は資料により異なるため、確定数として示していません。",
-        "zh": "这里最初是8世纪的大清真寺，约三百年间不断扩建。1236年改为基督教主教座堂；1523至1599年的文艺复兴时期大型工程塑造了今天主要的空间布局。石材与砖砌成的双层拱门，以及哈卡姆二世时期的马赛克米哈拉布，是重要看点。由于柱数在不同资料中不一致，这里不将某个数字当作确定事实。"
+        "ko": "8세기 대모스크로 시작해 약 3세기 동안 확장됐습니다. 1236년 기독교 성당으로 전환된 뒤, 오늘날의 주요 공간 구성은 1523~1599년 르네상스기 대규모 공사를 거쳐 형성됐습니다. 이중 아치의 석재·벽돌 구조와 알하캄 2세 시대의 모자이크 미흐랍이 대표적입니다. 기둥 수를 하나의 확정 숫자로 단정하지 않고 건축 단계와 구조를 중심으로 설명합니다. 아래쪽 말발굽형 아치와 위쪽 반원형 아치를 비교하면, 기둥 위로 높이를 확보하면서 지붕을 받치는 이중 구조를 읽을 수 있습니다.",
+        "en": "The site began as a Great Mosque in the 8th century and expanded over roughly three centuries. It was converted into a Christian cathedral in 1236; major Renaissance-era works from 1523 to 1599 shaped much of the space seen today. Notable features include the stone-and-brick double arches and the mosaic mihrab from the era of al-Hakam II. This description avoids presenting a single unverified column count as fact. Compare the lower horseshoe arches with the upper semicircular arches to understand how the two-tier structure gains height above the columns while supporting the roof.",
+        "ja": "この場所は8世紀に大モスクとして始まり、約3世紀にわたり拡張されました。1236年にキリスト教の大聖堂へ転換され、1523～1599年のルネサンス期の大工事が現在の空間構成を形づくりました。石材と煉瓦を組み合わせた二重アーチや、アル・ハカム2世時代のモザイクで飾られたミフラーブが見どころです。柱の数は資料により異なるため、確定数として示していません。 下段の馬蹄形アーチと上段の半円形アーチを見比べると、柱の上に高さを確保しながら屋根を支える二重構造を理解できます。",
+        "zh": "这里最初是8世纪的大清真寺，约三百年间不断扩建。1236年改为基督教主教座堂；1523至1599年的文艺复兴时期大型工程塑造了今天主要的空间布局。石材与砖砌成的双层拱门，以及哈卡姆二世时期的马赛克米哈拉布，是重要看点。由于柱数在不同资料中不一致，这里不将某个数字当作确定事实。 对比下层的马蹄形拱与上层的半圆拱，可以理解这种双层结构如何在柱顶上增加高度并支撑屋顶。"
       },
     "historySources": [
       {
@@ -19102,6 +19139,24 @@ Feel free to ask any travel question!<br>
           "zh": "米哈拉布官方介绍"
         },
         "url": "http://mezquita-catedraldecordoba.es/en/descubre-el-monumento/el-edificio/mihrab/"
+      },
+      {
+        "label": {
+          "ko": "CUNY Academic Commons · 기둥과 아치 해설",
+          "en": "CUNY Academic Commons · columns and arches",
+          "ja": "CUNY Academic Commons・柱とアーチ",
+          "zh": "CUNY Academic Commons·柱与拱"
+        },
+        "url": "https://cordobamosque.commons.gc.cuny.edu/columns-and-arches/"
+      },
+      {
+        "label": {
+          "ko": "Smarthistory · 코르도바 대모스크 건축",
+          "en": "Smarthistory · Great Mosque of Córdoba architecture",
+          "ja": "Smarthistory・コルドバの大モスク建築",
+          "zh": "Smarthistory·科尔多瓦大清真寺建筑"
+        },
+        "url": "https://smarthistory.org/the-great-mosque-of-cordoba/"
       }
     ],
     "seniorAccess": {
