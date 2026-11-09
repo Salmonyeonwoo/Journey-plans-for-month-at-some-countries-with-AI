@@ -5,11 +5,17 @@
   const ui = {
     ko: {title:'🍝 이탈리아 맛집 & 한입 간식 후보', intro:'나폴리·피렌체·로마의 식당 후보와 동네 간식을 한눈에 비교하세요. 아직 일정에 식당을 고정하거나 예약하지 않았습니다.', places:'식당 후보', bites:'동네 간식 & 어디서 맛볼지', map:'구글 지도', official:'공식 페이지', sources:'확인 자료', hours:'영업시간', booking:'예약', dishes:'메뉴 참고', imageNote:'사진은 음식 예시이며 특정 식당의 사진이나 당일 판매 재고를 보장하지 않습니다.', timing:'표시된 시간·예약 정책은 공개된 일반 정보입니다. 2026년 여행 날짜의 영업·좌석은 확인되지 않았으며 가격도 현장 확인이 필요합니다. 방문 전 매장에 다시 확인하세요.', access:'부모님 동행에 필요한 계단·좌석·이동 편의는 확인되지 않았으므로 필요 사항을 매장에 직접 문의하세요.', hoursUnknown:'공식 영업시간을 확정하지 못했습니다. 방문 직전 확인하세요.', mapAria:'지도에서 열기', city:{naples:'나폴리',florence:'피렌체',rome:'로마'}},
     en: {title:'🍝 Italy restaurants & small local bites', intro:'Compare restaurant candidates and neighborhood snacks in Naples, Florence and Rome. Nothing has been assigned to a route or booked.', places:'Restaurant candidates', bites:'Local bites & where to try them', map:'Google Maps', official:'Official page', sources:'Sources checked', hours:'Hours', booking:'Booking', dishes:'Menu notes', imageNote:'Photos are illustrative food examples, not verified photos of the named businesses or proof of same-day availability.', timing:'Hours and booking notes are general published information. Opening and table availability for the 2026 trip dates were not checked; prices should be confirmed locally. Recheck with each venue before visiting.', access:'Specific step-free access, seating and mobility needs were not verified; contact venues directly if needed.', hoursUnknown:'Current official hours could not be confirmed; check shortly before visiting.', mapAria:'Open map', city:{naples:'Naples',florence:'Florence',rome:'Rome'}},
-    ja: {title:'🍝 イタリアのレストラン候補と街角グルメ', intro:'ナポリ・フィレンツェ・ローマの食事候補と軽食を比較できます。行程への確定や予約はしていません。', places:'レストラン候補', bites:'街の軽食・おすすめ場所', map:'Google マップ', official:'公式ページ', sources:'確認資料', hours:'営業時間', booking:'予約', dishes:'メニュー情報', imageNote:'写真は料理のイメージで、掲載店の実際の写真や当日の販売を保証するものではありません。', timing:'営業時間・予約情報は公開された一般情報です。2026年の旅行日の営業・空席は未確認で、価格も現地で確認してください。訪問前に店舗へ再確認を。', access:'段差のない入口・座席・移動負担は確認していません。必要があれば店舗へ直接お問い合わせください。', hoursUnknown:'現在の公式営業時間を確認できていません。訪問直前にご確認ください。', mapAria:'地図を開く', city:{naples:'ナポリ',florence:'フィレンツェ',rome:'ローマ'}},
-    zh: {title:'🍝 意大利餐厅候选与街头小吃', intro:'对比那不勒斯、佛罗伦萨、罗马的餐厅与当地小吃。尚未把任何餐厅安排进路线，也没有预订。', places:'餐厅候选', bites:'当地小吃与推荐地点', map:'谷歌地图', official:'官方网站', sources:'核对来源', hours:'营业时间', booking:'预订', dishes:'菜单参考', imageNote:'照片仅作食物示意，不代表所列店家的实拍，也不保证当天有售。', timing:'营业时间和预订信息为公开的一般资料，尚未核实2026年旅行日期的营业或座位情况；价格请现场确认。出发前请再次联系店家。', access:'尚未核实无台阶入口、座位和行动便利情况；如有需要请直接咨询店家。', hoursUnknown:'未能确认最新官方营业时间，请在到访前核实。', mapAria:'打开地图', city:{naples:'那不勒斯',florence:'佛罗伦萨',rome:'罗马'}}
-  };
+	    ja: {title:'🍝 イタリアのレストラン候補と街角グルメ', intro:'ナポリ・フィレンツェ・ローマの食事候補と軽食を比較できます。行程への確定や予約はしていません。', places:'レストラン候補', bites:'街の軽食・おすすめ場所', map:'Google マップ', official:'公式ページ', sources:'確認資料', hours:'営業時間', booking:'予約', dishes:'メニュー情報', imageNote:'写真は料理のイメージで、掲載店の実際の写真や当日の販売を保証するものではありません。', timing:'営業時間・予約情報は公開された一般情報です。2026年の旅行日の営業・空席は未確認で、価格も現地で確認してください。訪問前に店舗へ再確認を。', access:'段差のない入口・座席・移動負担は確認していません。必要があれば店舗へ直接お問い合わせください。', hoursUnknown:'現在の公式営業時間を確認できていません。訪問直前にご確認ください。', mapAria:'地図を開く', city:{naples:'ナポリ',florence:'フィレンツェ',rome:'ローマ'}},
+	    zh: {title:'🍝 意大利餐厅候选与街头小吃', intro:'对比那不勒斯、佛罗伦萨、罗马的餐厅与当地小吃。尚未把任何餐厅安排进路线，也没有预订。', places:'餐厅候选', bites:'当地小吃与推荐地点', map:'谷歌地图', official:'官方网站', sources:'核对来源', hours:'营业时间', booking:'预订', dishes:'菜单参考', imageNote:'照片仅作食物示意，不代表所列店家的实拍，也不保证当天有售。', timing:'营业时间和预订信息为公开的一般资料，尚未核实2026年旅行日期的营业或座位情况；价格请现场确认。出发前请再次联系店家。', access:'尚未核实无台阶入口、座位和行动便利情况；如有需要请直接咨询店家。', hoursUnknown:'未能确认最新官方营业时间，请在到访前核实。', mapAria:'打开地图', city:{naples:'那不勒斯',florence:'佛罗伦萨',rome:'罗马'}}
+	  };
+	  const foodHistoryLabels = {
+	    ko: { title: '지역 음식의 역사와 유래', sources: '음식사 자료', origin: '요리의 배경' },
+	    en: { title: 'Local food history & origins', sources: 'Food-history sources', origin: 'Dish background' },
+	    ja: { title: '郷土料理の歴史と由来', sources: '食文化の資料', origin: '料理の背景' },
+	    zh: { title: '地方饮食历史与起源', sources: '饮食史来源', origin: '菜肴背景' }
+	  };
 
-  const cities = [
+	  const cities = [
     {
       id:'naples',
       summary:{
@@ -91,18 +97,26 @@
   function render(lang, cityId) {
     const l = ui[lang] ? lang : 'ko';
     const current = cities.find(city => city.id === cityId) || cities.find(city => city.id === (window.currentItalyFoodGuideCity || 'naples')) || cities[0];
-    const mount = document.getElementById('italy-local-food-guide');
+	    const mount = document.getElementById('italy-local-food-guide');
     if (!mount) return;
     const c = ui[l];
-    const cityTabs = cities.map(city => `<button type="button" class="local-food-tab ${current.id===city.id?'active':''}" data-food-city="${city.id}" aria-pressed="${current.id===city.id?'true':'false'}">${esc(c.city[city.id])}</button>`).join('');
+    const historyLabel = foodHistoryLabels[l];
+    const researchCity = ((typeof ITALY_CITIES_GUIDE_DATA !== 'undefined' && ITALY_CITIES_GUIDE_DATA.cities) || (window.ITALY_CITIES_GUIDE_DATA && window.ITALY_CITIES_GUIDE_DATA.cities) || {})[current.id] || {};
+    const researchFoodHistory = (window.EUROPE_DETAILED_FOOD_HISTORY || {})[current.id] || {};
+    const foodHistory = current.foodHistory || researchCity.foodHistory || researchFoodHistory.foodHistory;
+    const foodHistorySources = current.foodHistorySources || researchCity.foodHistorySources || researchFoodHistory.foodHistorySources || [];
+    const foodOrigins = current.foodOrigins || researchCity.foodOrigins || researchFoodHistory.foodOrigins || [];
+    const foodHistoryHtml = foodHistory ? `<section class="local-food-history" style="margin:14px 0;padding:14px;background:#f2f8f5;border-left:3px solid #1a5249;border-radius:12px;"><h3 style="margin-top:0;color:#1a5249;">📚 ${esc(historyLabel.title)}</h3><p style="white-space:pre-line;line-height:1.7;">${esc(langText(foodHistory,l))}</p>${foodOrigins.map(origin => `<details style="margin:8px 0;padding:8px 10px;background:#fff;border-radius:8px;"><summary style="cursor:pointer;font-weight:700;">${esc(origin.name || origin.dishName || '')}</summary><p style="white-space:pre-line;line-height:1.65;">${esc(origin[l] || origin.en || '')}</p><details class="local-food-sources"><summary>${esc(historyLabel.sources)}</summary><ul>${sourceLinks(origin.sourceUrls || [],l)}</ul></details></details>`).join('')}<details class="local-food-sources"><summary>${esc(c.sources)}</summary><ul>${sourceLinks(foodHistorySources.map(source => source.url),l)}</ul></details></section>` : '';
+	    const cityTabs = cities.map(city => `<button type="button" class="local-food-tab ${current.id===city.id?'active':''}" data-food-city="${city.id}" aria-pressed="${current.id===city.id?'true':'false'}">${esc(c.city[city.id])}</button>`).join('');
     const photos = (current.photos || []).map(([src, alt]) => `<figure><img class="local-food-photo" src="${esc(src)}" alt="${esc(langText(alt,l))}" loading="lazy"><figcaption class="local-food-photo-caption">${esc(c.imageNote)}</figcaption></figure>`).join('');
     mount.lang = l;
     mount.innerHTML = `<div class="local-food-guide-inner">
       <div class="local-food-guide-head"><span class="local-food-kicker">NAPLES · FLORENCE · ROME</span><h2>${esc(c.title)}</h2><p>${esc(c.intro)}</p></div>
       <div class="local-food-tabs" role="tablist" aria-label="${esc(c.city[current.id])}">${cityTabs}</div>
-      <article class="local-food-city" data-city="${current.id}">
-        <div class="local-food-city-head"><h3>${esc(c.city[current.id])}</h3><p>${esc(langText(current.summary,l))}</p></div>
-        <div class="local-food-photo-grid">${photos}</div>
+	      <article class="local-food-city" data-city="${current.id}">
+	        <div class="local-food-city-head"><h3>${esc(c.city[current.id])}</h3><p>${esc(langText(current.summary,l))}</p></div>
+	        ${foodHistoryHtml}
+	        <div class="local-food-photo-grid">${photos}</div>
         <div class="local-food-city-content"><h3>${esc(c.places)}</h3><div class="local-food-card-grid">${current.restaurants.map(place=>renderRestaurant(place,l)).join('')}</div>
           <h3>${esc(c.bites)}</h3><div class="local-food-card-grid">${current.bites.map(bite=>renderBite(bite,l)).join('')}</div>
         </div>

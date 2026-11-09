@@ -3319,6 +3319,9 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
     const localizedHours = (info.hours && info.hours[currentLang]) || item.hours;
     const localizedLanguage = (info.language && info.language[currentLang]) || item.language;
     const localizedBooking = (info.booking && info.booking[currentLang]) || item.booking;
+    const localizedHistory = (info.history && (info.history[currentLang] || info.history.ko)) || '';
+    const localizedFoodContext = (info.foodContext && (info.foodContext[currentLang] || info.foodContext.ko)) || '';
+    const localizedFoodOrigins = Array.isArray(info.foodOrigins) ? info.foodOrigins : [];
 
     card.innerHTML = `
       <div>
@@ -3355,6 +3358,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
               <span>${cleanHangul(localizedBooking, currentLang)}</span>
             </div>
           </div>
+          ${(localizedHistory || localizedFoodContext || localizedFoodOrigins.length) ? `<details class="dining-history-details" style="margin-top:10px;padding:10px 12px;background:#f2f8f5;border-radius:10px;border-left:3px solid #1a5249;"><summary style="cursor:pointer;color:#1a5249;font-weight:700;">🏛️ ${getDiningHistoryLabel(currentLang)}</summary>${localizedHistory ? `<p style="white-space:pre-line;line-height:1.65;color:#40534e;">${escapeHtml(localizedHistory)}</p>` : ''}${localizedFoodContext ? `<p style="white-space:pre-line;line-height:1.65;color:#40534e;"><strong>${getFoodContextLabel(currentLang)}</strong><br>${escapeHtml(localizedFoodContext)}</p>` : ''}${localizedFoodOrigins.map(origin => `<p style="white-space:pre-line;line-height:1.65;color:#40534e;"><strong>${escapeHtml(origin.name || origin.dishName || '')}</strong><br>${escapeHtml(origin[currentLang] || origin.ko || origin.en || '')}</p>`).join('')}${renderHistorySourceLinks(info.historySources, currentLang)}</details>` : ''}
         </div>
       </div>
       <div class="dining-footer">
@@ -3370,6 +3374,17 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
 
 function getLandmarkHistoryLabel(lang) {
   return ({ ko: '역사와 건축', en: 'History & architecture', ja: '歴史と建築', zh: '历史与建筑' })[lang] || '역사와 건축';
+}
+function getDiningHistoryLabel(lang) {
+  return ({ ko: '식당과 음식의 역사·유래', en: 'Restaurant & food history', ja: '店と料理の歴史・由来', zh: '餐厅与饮食历史' })[lang] || '식당과 음식의 역사·유래';
+}
+function getFoodContextLabel(lang) {
+  return ({ ko: '음식 배경', en: 'Food background', ja: '料理の背景', zh: '饮食背景' })[lang] || '음식 배경';
+}
+function getResearchHistoryLabel(lang, kind) {
+  if (kind === 'dining') return getDiningHistoryLabel(lang);
+  if (kind === 'food_origin') return ({ ko: '지역 음식의 역사와 유래', en: 'Local food history & origins', ja: '郷土料理の歴史と由来', zh: '地方饮食历史与起源' })[lang] || '지역 음식의 역사와 유래';
+  return getLandmarkHistoryLabel(lang);
 }
 function renderHistorySourceLinks(sources, lang) {
   if (!Array.isArray(sources) || !sources.length) return '';
@@ -4242,6 +4257,7 @@ function switchLanguage(lang, btn) {
   if (typeof window.renderBarcelonaLocalGuide === 'function') window.renderBarcelonaLocalGuide(lang);
   if (typeof renderNerjaDaytripGuide === "function") renderNerjaDaytripGuide(lang);
   if (typeof renderCuratedHeartPlaces === "function") renderCuratedHeartPlaces(lang);
+  if (typeof window.renderEuropeElectricityGuide === 'function') window.renderEuropeElectricityGuide(lang);
 
   // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
   const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
@@ -4448,9 +4464,13 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
   const q = String(query || '').toLowerCase();
   const historyTerms = [
     'history', 'historical', 'story', 'origin', 'origins', 'background', 'heritage', 'architecture', 'tell me about', 'what is', 'details', 'what to see', 'highlights', 'look for',
+    'food history', 'culinary history', 'restaurant history', 'dish origin', 'food origin',
     '역사', '유래', '연혁', '기원', '배경', '역사적', '건축', '설명', '알려줘', '관람 포인트', '볼거리', '꼭 볼', '꼭 봐야',
+    '음식 역사', '요리 역사', '맛집 역사', '식당 역사', '음식 유래',
     '歴史', '由来', '沿革', '起源', '背景', '建築', '説明', '教えて', '紹介', '見どころ', '鑑賞ポイント', '見るべき',
-    '历史', '来历', '由来', '沿革', '背景', '建筑', '介绍', '讲讲', '历史故事', '看点', '必看', '参观重点', '看什么'
+    '料理の歴史', '食の歴史', '料理の由来', 'レストランの歴史',
+    '历史', '来历', '由来', '沿革', '背景', '建筑', '介绍', '讲讲', '历史故事', '看点', '必看', '参观重点', '看什么',
+    '饮食史', '餐厅历史', '菜肴起源', '美食历史'
   ];
   if (!historyTerms.some(term => q.includes(term))) return null;
 
@@ -4467,6 +4487,8 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
   let name = '';
   let history = '';
   let sources = [];
+  let historyKind = 'attraction';
+  let foodContext = '';
   if (target && target.type === 'landmark') {
     const info = (typeof LANDMARK_I18N_DATA !== 'undefined' && LANDMARK_I18N_DATA[target.key]) || {};
     name = (info.displayName && (info.displayName[lang] || info.displayName.ko)) || target.key;
@@ -4502,10 +4524,13 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
     name = (entry.name && (entry.name[lang] || entry.name.ko)) || entry.name || '';
     history = (entry.history && (entry.history[lang] || entry.history.ko)) || '';
     sources = entry.sources || [];
+    historyKind = entry.kind || 'attraction';
+    foodContext = (entry.foodContext && (entry.foodContext[lang] || entry.foodContext.ko)) || '';
   }
   if (!history) return null;
-  const label = getLandmarkHistoryLabel(lang);
-  return `<div class="chat-history-answer" style="background:#f2f8f5;border:1px solid #d4e0d7;border-radius:14px;padding:12px 14px;line-height:1.65;"><strong style="color:#1a5249;">🏛️ ${escapeHtml(name)} · ${label}</strong><p style="margin:7px 0;color:#40534e;">${escapeHtml(history)}</p>${renderHistorySourceLinks(sources, lang)}</div>`;
+  const label = getResearchHistoryLabel(lang, historyKind);
+  const foodContextHtml = foodContext ? `<p style="white-space:pre-line;margin:9px 0;color:#40534e;"><strong>${getFoodContextLabel(lang)}</strong><br>${escapeHtml(foodContext)}</p>` : '';
+  return `<div class="chat-history-answer" style="background:#f2f8f5;border:1px solid #d4e0d7;border-radius:14px;padding:12px 14px;line-height:1.65;"><strong style="color:#1a5249;">🏛️ ${escapeHtml(name)} · ${label}</strong><p style="white-space:pre-line;margin:7px 0;color:#40534e;">${escapeHtml(history)}</p>${foodContextHtml}${renderHistorySourceLinks(sources, lang)}</div>`;
 }
 
 function handleLocalChat(query) {
@@ -4515,6 +4540,8 @@ function handleLocalChat(query) {
   const lang = getEffectiveLang(rawQ);
   const historyResponse = buildSpanishAttractionHistoryChatResponse(rawQ, lang);
   if (historyResponse) return historyResponse;
+  const electricityResponse = typeof window.buildEuropeElectricityChatResponse === 'function' ? window.buildEuropeElectricityChatResponse(rawQ, lang) : null;
+  if (electricityResponse) return electricityResponse;
   const hasSevilleForNov12 = ['seville', 'sevilla', '세비야', 'セビリア', '塞维利亚'].some(w => q.includes(w));
   const hasCordobaForNov12 = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦'].some(w => q.includes(w));
   const asksIntercityRoute = ['alsa', 'bus', 'buses', 'coach', 'route', 'transport', 'travel from', 'train', 'renfe', 'day trip', 'daytrip', '당일치기', '日帰り', '一日游', '이동', '교통', '버스', '기차', '열차', '렌페', 'バス', '電車', '列車', '鉄道', '移動', '交通', '大巴', '公交', '巴士', '火车', '铁路', '出行'].some(w => q.includes(w));
@@ -4865,6 +4892,10 @@ function handleLocalChat(query) {
           desc: (dInfo.dishDesc && (dInfo.dishDesc[lang] || dInfo.dishDesc.ko)) || item.highlight || '',
           tip: (dInfo.seniorTip && (dInfo.seniorTip[lang] || dInfo.seniorTip.ko)) || item.seniorTip || '',
           dish: (dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '',
+          history: (dInfo.history && (dInfo.history[lang] || dInfo.history.ko)) || '',
+          foodContext: (dInfo.foodContext && (dInfo.foodContext[lang] || dInfo.foodContext.ko)) || '',
+          foodOrigins: dInfo.foodOrigins || [],
+          historySources: dInfo.historySources || [],
           photo: item.photo,
           officialUrl: item.officialUrl || null,
           mapUrl: item.mapUrl || (item.name ? `https://maps.google.com/?q=${encodeURIComponent(item.name + ' ' + (item.city || ''))}` : null)
@@ -4988,7 +5019,7 @@ function handleLocalChat(query) {
         ${isAndalusiaDiningPick && e.dish ? `<p style="margin:0 0 8px;font-size:12.5px;color:#1a5249;line-height:1.55;"><strong>${menuIdeaLabel}</strong> ${escapeHtml(e.dish)}</p>` : ''}
         ${e.photo ? `<div style="width:100%;height:130px;border-radius:12px;background:url('${e.photo}') center/cover no-repeat;margin-bottom:10px;"></div>` : ''}
         <p style="margin:0 0 10px;font-size:13px;color:#4a5c58;line-height:1.65;">${escapeHtml(e.desc)}</p>
-        ${e.history ? `<div style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:8px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(lang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${escapeHtml(e.history)}</div>${renderHistorySourceLinks(e.historySources, lang)}</div>` : ''}
+        ${e.history ? `<div style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:8px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getResearchHistoryLabel(lang, e.type === 'dining' ? 'dining' : 'attraction')}</strong><div style="white-space:pre-line;font-size:12px;color:#40534e;line-height:1.65;">${escapeHtml(e.history)}</div>${e.foodContext ? `<div style="white-space:pre-line;margin-top:8px;font-size:12px;color:#40534e;line-height:1.65;"><strong>${getFoodContextLabel(lang)}</strong><br>${escapeHtml(e.foodContext)}</div>` : ''}${Array.isArray(e.foodOrigins) ? e.foodOrigins.map(origin => `<div style="white-space:pre-line;margin-top:8px;font-size:12px;color:#40534e;line-height:1.65;"><strong>${escapeHtml(origin.name || origin.dishName || '')}</strong><br>${escapeHtml(origin[lang] || origin.ko || origin.en || '')}</div>`).join('') : ''}${renderHistorySourceLinks(e.historySources, lang)}</div>` : ''}
         ${e.tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:12px;border-left:3px solid #d8754d;line-height:1.55;"><strong>${tipPrefix}</strong> ${escapeHtml(e.tip)}</div>` : ''}
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
           ${e.mapUrl ? `<a href="${e.mapUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${mapLabel}</button></a>` : ''}
