@@ -2792,17 +2792,17 @@ const REGIONAL_PLANS = {
   {
     "city": "바르셀로나",
     "isTransfer": false,
-    "theme": "사그라다 파밀리아 내부 확정 관람 (15:30 황금빛 노을 스테인드글라스)",
+    "theme": "사그라다 파밀리아 내부 확정 관람 (16:45 황금빛 노을 스테인드글라스)",
     "morning": "숙소에서 늦잠 및 여유로운 브런치, 사그라다 파밀리아 외관 조각 천천히 감상",
     "rest": "12:30~14:30 내부 관람 전 침대 누워 체력 100% 비축",
-    "evening": "15:30 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
+    "evening": "16:45 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
     "walk": "낮음 (3,500보)",
     "transport": "도보 3분",
     "meal": "카탈루냐 타파스 후보: 이베리코 하몬(제품 표시 확인)과 따뜻한 크로케타",
     "events": [
       "오전 여유 휴식",
       "숙소 도보 3분 진입",
-      "15:30 사그라다 내부 확정",
+      "16:45 사그라다 내부 확정",
       "황금빛 스테인드글라스",
       "안달루시아 짐정리"
     ]
@@ -9965,37 +9965,37 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "巴塞罗那"
     },
     "theme": {
-      "ko": "사그라다 파밀리아 내부 확정 관람 (15:30 황금빛 노을 스테인드글라스)",
-      "en": "Sagrada Família Confirmed Interior Visit (15:30 Sunset Stained-Glass)",
-      "ja": "サグラダ・ファミリア内部確定鑑賞 (15:30 西側黄金色の夕景ステンドグラス)",
-      "zh": "圣家堂内部确定参观 (15:30 西侧彩色玻璃金色夕阳时段)"
+      "ko": "사그라다 파밀리아 내부 확정 관람 (16:45 황금빛 노을 스테인드글라스)",
+      "en": "Sagrada Família Confirmed Interior Visit (16:45 Sunset Stained-Glass)",
+      "ja": "サグラダ・ファミリア内部確定鑑賞 (16:45 西側黄金色の夕景ステンドグラス)",
+      "zh": "圣家堂内部确定参观 (16:45 西侧彩色玻璃金色夕阳时段)"
     },
     "events": {
       "ko": [
         "오전 여유 휴식",
         "숙소 도보 3분 진입",
-        "15:30 사그라다 내부 확정",
+        "16:45 사그라다 내부 확정",
         "황금빛 스테인드글라스",
         "안달루시아 짐정리"
       ],
       "en": [
         "Relaxed Morning",
         "3 Min Walk to Entry",
-        "15:30 Sagrada Confirmed",
+        "16:45 Sagrada Confirmed",
         "Golden Stained Glass",
         "Pack for Andalusia"
       ],
       "ja": [
         "午前ゆっくり休養",
         "宿から徒歩3分入場",
-        "15:30 聖堂内部確定",
+        "16:45 聖堂内部確定",
         "黄金色ステンドグラス",
         "アンダルシア荷造り"
       ],
       "zh": [
         "上午充裕休息",
         "步行3分钟即达入口",
-        "15:30 圣家堂确定入场",
+        "16:45 圣家堂确定入场",
         "金色夕阳彩色玻璃",
         "整理行装备战安达卢西亚"
       ]
@@ -10013,10 +10013,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "12:30~14:30 进馆前卧床静养，积蓄充沛体力"
     },
     "evening": {
-      "ko": "15:30 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
-      "en": "Walk 3 min for 15:30 confirmed admission. Marvel at breathtaking golden sunset cascading through western stained glass, then pack bags",
-      "ja": "15:30の確定予約時間に合わせて徒歩3分で入場。西側ステンドグラスから降り注ぐ黄金色の夕景の光に包まれ、宿に戻り荷造り",
-      "zh": "按15:30确定预约时间步行3分钟入场。沉浸于西侧彩色玻璃倾泻而下的金色夕阳圣光，返回公寓整理行李"
+      "ko": "16:45 확정 예약 시간에 맞춰 도보 3분 진입. 서쪽 스테인드글라스로 쏟아지는 황금빛 노을 감상 후 숙소 복귀 짐 패킹",
+      "en": "Walk 3 min for 16:45 confirmed admission. Marvel at breathtaking golden sunset cascading through western stained glass, then pack bags",
+      "ja": "16:45の確定予約時間に合わせて徒歩3分で入場。西側ステンドグラスから降り注ぐ黄金色の夕景の光に包まれ、宿に戻り荷造り",
+      "zh": "按16:45确定预约时间步行3分钟入场。沉浸于西侧彩色玻璃倾泻而下的金色夕阳圣光，返回公寓整理行李"
     },
     "walk": {
       "ko": "낮음 (3,500보)",
@@ -16510,7 +16510,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "확정 일정에 맞춰 부모님 입맛과 체력을 완벽히 고려한 도시별 핵심 맛집, 시그니처 메뉴 및 사전 예약 없이 즐기는 무료 야경·야시장 스폿 총정리입니다.",
     "must_bcn_city": "바르셀로나",
     "must_bcn_food": "<strong>식당·메뉴 후보 (방문·예약 미확정):</strong><br>• <strong>Ciutat Comtal · Vinitus · La Flauta</strong>: 그룹 공식 브랜드 소개에 별도 등재된 브랜드입니다. 메뉴가 같다고 볼 수 없으니 각 지점의 당일 메뉴·운영시간·예약 정책을 확인하세요.<br>• <strong>7 Portes</strong>: 현재 메뉴·가격·예약 여부는 공식 안내에서 확인하세요.<br>• <strong>Puertecillo Sagrada Família</strong>: 셀프서비스 해산물입니다. 무게 또는 일부 품목별 요금이 적용되므로 고르기 전에 당일 메뉴·가격과 지도 경로를 확인하세요.",
-    "must_bcn_night": "<strong>저녁 풍경·시장:</strong><br>• <strong>Plaça de Gaudí</strong>: 사그라다 파밀리아 야경을 볼 수 있는 광장(현장 접근·조명은 확인).<br>• <strong>Santa Caterina Market</strong>: 물결 지붕과 판매대를 둘러보세요. 상품·시식은 판매대와 당일 상황에 따라 다르며, 야시장으로 분류하지 않습니다.<br>• <strong>11/10 15:30</strong>: 사그라다 파밀리아 스테인드글라스 관람 일정(기존 일정 항목).",
+    "must_bcn_night": "<strong>저녁 풍경·시장:</strong><br>• <strong>Plaça de Gaudí</strong>: 사그라다 파밀리아 야경을 볼 수 있는 광장(현장 접근·조명은 확인).<br>• <strong>Santa Caterina Market</strong>: 물결 지붕과 판매대를 둘러보세요. 상품·시식은 판매대와 당일 상황에 따라 다르며, 야시장으로 분류하지 않습니다.<br>• <strong>11/10 16:45</strong>: 사그라다 파밀리아 스테인드글라스 관람 일정(기존 일정 항목).",
     "must_svq_city": "세비야 (1차 & 2차)",
     "must_svq_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>El Rinconcillo</strong>: 1670년 최고령 타파스 바 - 시금치 병아리콩 스튜(Espinacas con garbanzos), 이베리코 볼살 조림(Carrillada)<br>• 정통 타파스 & 시원한 상그리아",
     "must_svq_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>메트로폴 파라솔 (Las Setas)</strong>: 거대 목조 구조물 야외 광장 무료 산책 & 야간 조명<br>• <strong>스페인 광장 (Plaza de España)</strong>: 밤 조명이 켜진 웅장하고 로맨틱한 광장 야간 산책 (무료)<br>• 과달키비르 강변 황금의 탑 야경",
@@ -16827,7 +16827,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "Carefully selected signature dishes and free romantic night-view spots perfectly matched with your confirmed schedule and senior parents' wellness.",
     "must_bcn_city": "Barcelona",
     "must_bcn_food": "<strong>Dining ideas (visits/bookings not confirmed):</strong><br>• <strong>Ciutat Comtal, Vinitus and La Flauta</strong> appear as distinct brands in the group’s official portfolio; their menus are not necessarily identical, so check each branch’s current menu, hours and booking policy.<br>• <strong>7 Portes</strong>: check official information for the current menu, prices and booking options.<br>• <strong>Puertecillo Sagrada Família</strong>: self-service seafood; pricing is by weight or, for some items, per item. Confirm today’s menu, price and route before choosing.",
-    "must_bcn_night": "<strong>Evening views &amp; market visit:</strong><br>• <strong>Plaça de Gaudí</strong>: a plaza for viewing the Sagrada Família; check access and lighting on the day.<br>• <strong>Santa Caterina Market</strong>: see the roof and stalls. Products and tastings vary by vendor and day; this is not described as a night market.<br>• <strong>11/10 15:30</strong>: Sagrada Família stained-glass visit (existing itinerary item).",
+    "must_bcn_night": "<strong>Evening views &amp; market visit:</strong><br>• <strong>Plaça de Gaudí</strong>: a plaza for viewing the Sagrada Família; check access and lighting on the day.<br>• <strong>Santa Caterina Market</strong>: see the roof and stalls. Products and tastings vary by vendor and day; this is not described as a night market.<br>• <strong>11/10 16:45</strong>: Sagrada Família stained-glass visit (existing itinerary item).",
     "must_svq_city": "Seville (Leg 1 & 2)",
     "must_svq_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>El Rinconcillo</strong>: Oldest tapas bar since 1670 - Spinach & Chickpea Stew (Espinacas con garbanzos), Tender Pork Cheek (Carrillada)<br>• Authentic tapas & chilled sangria",
     "must_svq_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Metropol Parasol (Las Setas)</strong>: Stroll the giant wooden structure open-air plaza with evening illumination (Free)<br>• <strong>Plaza de España</strong>: Romantic night lighting walk with serene fountains (Free)<br>• Evening river walk by the Golden Tower (Torre del Oro)",
@@ -17151,7 +17151,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "確定日程に合わせてご両親の味覚と体力を完璧に考慮した都市別代表グルメ、シグネチャーメニュー、事前予約なしで楽しめる無料夜景・夜市スポットの総まとめです。",
     "must_bcn_city": "バルセロナ",
     "must_bcn_food": "<strong>飲食店候補（訪問・予約未確定）:</strong><br>• <strong>Ciutat Comtal・Vinitus・La Flauta</strong>はグループ公式紹介に別々のブランドとして掲載されています。メニューが同一とは限らないため、各店舗の当日メニュー・営業時間・予約方法を確認してください。<br>• <strong>7 Portes</strong>は、最新メニュー・価格・予約方法を公式案内で確認してください。<br>• <strong>Puertecillo Sagrada Família</strong>はセルフサービス式シーフードです。重量または一部品目ごとの料金のため、選ぶ前に当日のメニュー・価格と地図の経路を確認してください。",
-    "must_bcn_night": "<strong>夕景と市場:</strong><br>• <strong>Plaça de Gaudí</strong>: サグラダ・ファミリアを眺める広場（当日のアクセス・照明を確認）。<br>• <strong>Santa Caterina Market</strong>: 屋根と売店を見学。商品・試食は売店や当日の状況により異なり、夜市とは案内しません。<br>• <strong>11/10 15:30</strong>: サグラダ・ファミリアのステンドグラス見学（既存日程項目）。",
+    "must_bcn_night": "<strong>夕景と市場:</strong><br>• <strong>Plaça de Gaudí</strong>: サグラダ・ファミリアを眺める広場（当日のアクセス・照明を確認）。<br>• <strong>Santa Caterina Market</strong>: 屋根と売店を見学。商品・試食は売店や当日の状況により異なり、夜市とは案内しません。<br>• <strong>11/10 16:45</strong>: サグラダ・ファミリアのステンドグラス見学（既存日程項目）。",
     "must_svq_city": "セビリア (第1・2期)",
     "must_svq_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>El Rinconcillo</strong>: 1670年創業の最古タパスバー - ホウレン草とひよこ豆の煮込み、イベリコ豚ホホ肉の煮込み<br>• 本場タパス＆冷たいサングリア",
     "must_svq_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>メトロポール・パラソル (Las Setas)</strong>: 巨大木造建築の屋外広場無料散策＆夜間ライトアップ<br>• <strong>スペイン広場 (Plaza de España)</strong>: 夜の明かりが灯る幻想的でロマンチックな広場散歩(無料)<br>• グアダルキビール川沿い黄金の塔の夜景",
@@ -17475,7 +17475,7 @@ const I18N_DICTIONARY = {
     "master_sum3_desc": "完全贴合确定日程，兼顾长辈胃口与体力的各城市代表美食名店、招牌菜品及无需预约的免费夜景、夜市精选汇总。",
     "must_bcn_city": "巴塞罗那",
     "must_bcn_food": "<strong>餐厅候选（到访与预订尚未确认）:</strong><br>• <strong>Ciutat Comtal、Vinitus、La Flauta</strong>作为不同品牌列在集团官方介绍中；菜单不一定相同，请分别核对各门店当天菜单、营业时间和预订政策。<br>• <strong>7 Portes</strong>：请通过官方信息确认当前菜单、价格和预订方式。<br>• <strong>Puertecillo Sagrada Família</strong>：海鲜为自助选购，按重量或部分按件计价；挑选前请确认当天菜单、价格和地图路线。",
-    "must_bcn_night": "<strong>夜景与市场:</strong><br>• <strong>Plaça de Gaudí</strong>: 可眺望圣家堂的广场（当天通行与照明请现场确认）。<br>• <strong>Santa Caterina Market</strong>: 参观屋顶与摊位；商品和试吃因摊位及当天情况而异，不将其称为夜市。<br>• <strong>11/10 15:30</strong>: 圣家堂彩色玻璃参观（原行程项目）。",
+    "must_bcn_night": "<strong>夜景与市场:</strong><br>• <strong>Plaça de Gaudí</strong>: 可眺望圣家堂的广场（当天通行与照明请现场确认）。<br>• <strong>Santa Caterina Market</strong>: 参观屋顶与摊位；商品和试吃因摊位及当天情况而异，不将其称为夜市。<br>• <strong>11/10 16:45</strong>: 圣家堂彩色玻璃参观（原行程项目）。",
     "must_svq_city": "塞维利亚 (第一与第二期)",
     "must_svq_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>El Rinconcillo</strong>: 始于1670年的最古老小吃吧 - 菠菜鹰嘴豆炖菜、慢炖伊比利亚猪面颊肉<br>• 经典安达卢西亚Tapas与冰镇桑格利亚汽酒",
     "must_svq_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>都市阳伞 (Las Setas)</strong>: 漫步世界最大木结构室外广场欣赏夜景灯光(免费)<br>• <strong>西班牙广场 (Plaza de España)</strong>: 夜晚灯光亮起时的壮丽浪漫夜景散步(免费)<br>• 漫步瓜达尔基维尔河畔黄金塔夜景",

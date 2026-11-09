@@ -101,7 +101,7 @@
         items: ['Clara는 맥주와 레몬 탄산음료를 섞은 술이고, tinto de verano는 레드와인에 탄산음료를 섞은 술입니다. 둘 다 알코올 음료이며 저도수·무알코올이라고 단정하지 않습니다.', '원하면 물·탄산수·일반 탄산음료 같은 무알코올 대안을 고르세요. Cava도 스파클링 와인이므로 알코올을 원할 때만 선택하세요.']
       },
       datesTitle: '선택 가능한 방문 후보일',
-      datesText: '11월 6일 또는 7일은 타파스·El Glop, 11월 9일 또는 10일은 Puertecillo를 고려할 수 있습니다. 11월 10일에는 15:30 사그라다 파밀리아 입장 예약이 확정되어 있으므로 관람 종료 시각과 식당 영업시간을 확인하세요. 식당 방문은 제안일 뿐이며 예약·확정된 일정이 아닙니다.',
+      datesText: '11월 6일 또는 7일은 타파스·El Glop, 11월 9일 또는 10일은 Puertecillo를 고려할 수 있습니다. 11월 10일에는 16:45 사그라다 파밀리아 입장 예약이 확정되어 있으므로 관람 종료 시각과 식당 영업시간을 확인하세요. 식당 방문은 제안일 뿐이며 예약·확정된 일정이 아닙니다.',
       shoppingTitle: '마트에서 살펴볼 수 있는 것',
       shopping: [
         ['Estrella Damm Inedit', 'Damm이 Ferran Adrià 및 elBulli 소믈리에 팀과 만든 4.8% 맥주입니다. 샴페인이 아니며 가격·용량은 매장별로 다릅니다.'],
@@ -111,7 +111,7 @@
       baggageTitle: '비행기 수하물 주의',
       baggageText: 'FAA 기준상 비가연성·비에어로졸 식용유는 기내/위탁 수하물에 허용되지만, 미국 TSA 보안검색의 기내 액체는 용기당 100mL 제한을 받습니다. FAA는 가연성 추진제를 쓰는 오일 에어로졸을 기내·위탁 모두 금지하고, TSA는 조리용 스프레이를 두 수하물 모두 허용하지 않는다고 안내합니다. 제품의 추진제·분류를 모르면 허용이라고 가정하지 말고 실제 운항 항공사와 출발 공항의 최신 규정을 확인하세요. 미국 FAA/TSA 기준이 모든 국제선에 자동 적용되는 것은 아닙니다.',
       sourcesTitle: '공식 확인 자료',
-      chat: '🍽️ 바르셀로나 식당은 방문 후보이며 예약/확정된 일정이 아닙니다. Ciutat Comtal·Vinitus·La Flauta는 같은 그룹의 브랜드로 소개되지만 메뉴가 동일하다는 근거는 없습니다. 가이드가 제안한 pan con tomate, gambas al ajillo, 꿀 알리올리 대구, 안심 핀초 등은 현재 메뉴에서 확인하세요. El Glop의 빠에야·숯불 이베리코 갈비도 당일 메뉴에 있는지 물어보세요. Puertecillo는 공식 안내상 셀프서비스이며 품목별 무게 또는 개수 기준 가격입니다. 가격·운영시간·숙소 경로는 방문 전 확인하세요. “Sin sal, por favor”는 무염, “Con poca sal, por favor”는 소금을 적게 넣어 달라는 뜻입니다. Clara와 tinto de verano는 알코올 음료입니다. 11월 6·7·9·10일은 제안 후보일뿐 예약일이 아닙니다. 11월 10일 15:30 사그라다 파밀리아 관람 후 방문한다면 종료 시각과 영업시간을 먼저 확인하세요.'
+      chat: '🍽️ 바르셀로나 식당은 방문 후보이며 예약/확정된 일정이 아닙니다. Ciutat Comtal·Vinitus·La Flauta는 같은 그룹의 브랜드로 소개되지만 메뉴가 동일하다는 근거는 없습니다. 가이드가 제안한 pan con tomate, gambas al ajillo, 꿀 알리올리 대구, 안심 핀초 등은 현재 메뉴에서 확인하세요. El Glop의 빠에야·숯불 이베리코 갈비도 당일 메뉴에 있는지 물어보세요. Puertecillo는 공식 안내상 셀프서비스이며 품목별 무게 또는 개수 기준 가격입니다. 가격·운영시간·숙소 경로는 방문 전 확인하세요. “Sin sal, por favor”는 무염, “Con poca sal, por favor”는 소금을 적게 넣어 달라는 뜻입니다. Clara와 tinto de verano는 알코올 음료입니다. 11월 6·7·9·10일은 제안 후보일뿐 예약일이 아닙니다. 11월 10일 16:45 사그라다 파밀리아 관람 후 방문한다면 종료 시각과 영업시간을 먼저 확인하세요.'
     },
     en: {
       title: 'Barcelona dining, menus and shopping guide',
@@ -150,7 +150,7 @@
         items: ['A clara mixes beer with fizzy lemonade, and tinto de verano mixes red wine with a fizzy soft drink. Both are alcoholic; do not assume they are low-alcohol or non-alcoholic.', 'Choose water, sparkling water or a soft drink if you prefer a non-alcoholic option. Cava is also sparkling wine, so choose it only if you want alcohol.']
       },
       datesTitle: 'Optional date ideas',
-      datesText: 'You could consider tapas or El Glop on November 6 or 7, and Puertecillo on November 9 or 10. Sagrada Família entry is confirmed for November 10 at 15:30, so check the visit end time and restaurant hours first. Restaurant visits are suggestions only; no reservation or restaurant booking is confirmed.',
+      datesText: 'You could consider tapas or El Glop on November 6 or 7, and Puertecillo on November 9 or 10. Sagrada Família entry is confirmed for November 10 at 16:45, so check the visit end time and restaurant hours first. Restaurant visits are suggestions only; no reservation or restaurant booking is confirmed.',
       shoppingTitle: 'Things to look for at a supermarket',
       shopping: [
         ['Estrella Damm Inedit', 'A 4.8% beer made by Damm with Ferran Adrià and the elBulli sommelier team. It is beer, not champagne; price and bottle size vary by store.'],
@@ -160,7 +160,7 @@
       baggageTitle: 'Airline baggage caution',
       baggageText: 'Under FAA guidance, nonflammable, non-aerosol food oil is allowed in carry-on or checked baggage, while TSA limits carry-on liquids to 100 ml per container at its U.S. checkpoint. FAA guidance prohibits oil aerosols using a flammable propellant in both bags, and TSA lists cooking spray as prohibited in both. If the propellant or product classification is unclear, do not assume it is allowed: check your operating airline and departure airport’s current rules. U.S. FAA/TSA guidance is not an automatic guarantee for every international flight.',
       sourcesTitle: 'Official references',
-      chat: '🍽️ Barcelona restaurant visits are suggestions, not confirmed bookings. Ciutat Comtal, Vinitus and La Flauta appear in one group portfolio, but identical menus are not verified. Ask whether the guide’s suggested pan con tomate, garlic prawns, honey-allioli cod or beef-tenderloin pincho is on the current menu. Check for paella or grilled Iberian ribs at El Glop. Puertecillo describes a self-service system with prices by weight or, for some items, by unit. Verify current menu, prices, hours and your route before going. “Sin sal” means no salt; “con poca sal” means less salt. A clara and tinto de verano contain alcohol. November 6, 7, 9 and 10 are candidate dates only, not bookings. If considering Puertecillo after the confirmed 15:30 Sagrada Família entry on November 10, check the end time and opening hours first.'
+      chat: '🍽️ Barcelona restaurant visits are suggestions, not confirmed bookings. Ciutat Comtal, Vinitus and La Flauta appear in one group portfolio, but identical menus are not verified. Ask whether the guide’s suggested pan con tomate, garlic prawns, honey-allioli cod or beef-tenderloin pincho is on the current menu. Check for paella or grilled Iberian ribs at El Glop. Puertecillo describes a self-service system with prices by weight or, for some items, by unit. Verify current menu, prices, hours and your route before going. “Sin sal” means no salt; “con poca sal” means less salt. A clara and tinto de verano contain alcohol. November 6, 7, 9 and 10 are candidate dates only, not bookings. If considering Puertecillo after the confirmed 16:45 Sagrada Família entry on November 10, check the end time and opening hours first.'
     },
     ja: {
       title: 'バルセロナの食事・メニュー・買い物ガイド',
@@ -199,7 +199,7 @@
         items: ['claraはビールと炭酸レモネード、tinto de veranoは赤ワインと炭酸飲料を合わせたお酒です。どちらもアルコール飲料で、低アルコール・ノンアルコールとは限りません。', 'ノンアルコールなら水、炭酸水、ソフトドリンクを選べます。Cavaもスパークリングワインなので、アルコールを希望する場合だけ選んでください。']
       },
       datesTitle: '任意の日程候補',
-      datesText: '11月6日または7日はタパス・El Glop、11月9日または10日はPuertecilloを候補にできます。11月10日15:30のサグラダ・ファミリア入場は確定しているため、見学終了時刻と店舗営業時間を先に確認してください。飲食店訪問は提案のみで、予約・確定した予定ではありません。',
+      datesText: '11月6日または7日はタパス・El Glop、11月9日または10日はPuertecilloを候補にできます。11月10日16:45のサグラダ・ファミリア入場は確定しているため、見学終了時刻と店舗営業時間を先に確認してください。飲食店訪問は提案のみで、予約・確定した予定ではありません。',
       shoppingTitle: 'スーパーで探せる商品',
       shopping: [
         ['Estrella Damm Inedit', 'DammがFerran AdriàとelBulliのソムリエチームと作ったアルコール度数4.8%のビールです。シャンパンではありません。価格・容量は店舗によって異なります。'],
@@ -209,7 +209,7 @@
       baggageTitle: '航空機の手荷物に関する注意',
       baggageText: 'FAAの案内では、非可燃性・非エアゾールの食用油は機内・預け入れ荷物に持ち込めますが、米国TSAの検査では機内液体は容器1個あたり100ml以下です。FAAは可燃性推進剤を使う油のエアゾールを機内・預け入れとも禁止し、TSAはクッキングスプレーをどちらの荷物にも認めていません。推進剤や製品区分が不明なら許可と考えず、実際に利用する航空会社と出発空港の最新規則を確認してください。米国のFAA/TSA案内がすべての国際線に自動適用されるわけではありません。',
       sourcesTitle: '公式情報',
-      chat: '🍽️ バルセロナの飲食店は候補で、予約・確定予定ではありません。Ciutat Comtal・Vinitus・La Flautaは同じグループのブランド紹介に載っていますが、同一メニューとは確認できません。ガイド提案のpan con tomate、エビのガーリックオイル煮、ハニーアイオリのタラ、牛ヒレのピンチョなどは当日メニューで確認してください。El Glopのパエリアやイベリコ豚リブも提供状況を尋ねてください。Puertecilloは公式案内上セルフサービスで、重量または一部個数単位の価格です。メニュー、価格、営業時間、宿からのルートを確認してから訪問しましょう。「Sin sal」は塩なし、「Con poca sal」は塩少なめです。claraとtinto de veranoはアルコール飲料です。11月6・7・9・10日は候補日で、予約日ではありません。11月10日15:30のサグラダ・ファミリア見学後に行くなら、終了時刻と営業時間を先に確認してください。'
+      chat: '🍽️ バルセロナの飲食店は候補で、予約・確定予定ではありません。Ciutat Comtal・Vinitus・La Flautaは同じグループのブランド紹介に載っていますが、同一メニューとは確認できません。ガイド提案のpan con tomate、エビのガーリックオイル煮、ハニーアイオリのタラ、牛ヒレのピンチョなどは当日メニューで確認してください。El Glopのパエリアやイベリコ豚リブも提供状況を尋ねてください。Puertecilloは公式案内上セルフサービスで、重量または一部個数単位の価格です。メニュー、価格、営業時間、宿からのルートを確認してから訪問しましょう。「Sin sal」は塩なし、「Con poca sal」は塩少なめです。claraとtinto de veranoはアルコール飲料です。11月6・7・9・10日は候補日で、予約日ではありません。11月10日16:45のサグラダ・ファミリア見学後に行くなら、終了時刻と営業時間を先に確認してください。'
     },
     zh: {
       title: '巴塞罗那餐厅、菜单与购物参考',
@@ -248,7 +248,7 @@
         items: ['Clara 是啤酒加气泡柠檬饮料，tinto de verano 是红葡萄酒加气泡饮料；两者都含酒精，不应默认它们酒精度低或不含酒精。', '不想饮酒可选择水、气泡水或软饮料。Cava 也是起泡葡萄酒，仅在想喝酒时选择。']
       },
       datesTitle: '可选日期建议',
-      datesText: '可考虑在 11 月 6 日或 7 日吃 tapas 或去 El Glop，11 月 9 日或 10 日考虑 Puertecillo。11 月 10 日 15:30 的圣家堂入场已确认，因此请先核对参观结束时间和餐厅营业时间。餐厅只是建议，并非已确认行程或已预订。',
+      datesText: '可考虑在 11 月 6 日或 7 日吃 tapas 或去 El Glop，11 月 9 日或 10 日考虑 Puertecillo。11 月 10 日 16:45 的圣家堂入场已确认，因此请先核对参观结束时间和餐厅营业时间。餐厅只是建议，并非已确认行程或已预订。',
       shoppingTitle: '超市可留意的商品',
       shopping: [
         ['Estrella Damm Inedit', '由 Damm、Ferran Adrià 和 elBulli 品酒师团队共同打造的 4.8% 啤酒，不是香槟。价格和瓶装规格因商店而异。'],
@@ -258,7 +258,7 @@
       baggageTitle: '航空行李提示',
       baggageText: '按 FAA 指引，非易燃、非气雾式食用油可放在随身或托运行李中；但在美国 TSA 安检处，随身液体每个容器限 100 毫升。FAA 禁止使用易燃推进剂的油类气雾剂放入随身或托运行李，TSA 也将烹饪喷雾列为两类行李都禁止。若不清楚推进剂或产品分类，不要假设可以携带；请核对实际承运航空公司和出发机场的最新规定。美国 FAA/TSA 指引不自动适用于所有国际航班。',
       sourcesTitle: '官方资料',
-      chat: '🍽️ 巴塞罗那餐厅只是备选，并非已确认预订。Ciutat Comtal、Vinitus 和 La Flauta 出现在同一集团的品牌介绍中，但没有证据表明菜单相同。请核对导游建议的番茄面包、蒜香虾、蜂蜜蒜泥蛋黄酱鳕鱼和牛里脊小吃是否在当日菜单上；也可询问 El Glop 是否供应海鲜饭或烤伊比利亚猪肋排。Puertecillo 官方介绍为自助式，价格按重量或部分按件计算。出发前确认菜单、价格、营业时间和住宿路线。“Sin sal”是不要盐，“Con poca sal”是少放盐。Clara 和 tinto de verano 都含酒精。11 月 6、7、9、10 日只是建议日期，并未预订。如计划在 11 月 10 日 15:30 圣家堂参观后去餐厅，请先核对参观结束时间和营业时间。'
+      chat: '🍽️ 巴塞罗那餐厅只是备选，并非已确认预订。Ciutat Comtal、Vinitus 和 La Flauta 出现在同一集团的品牌介绍中，但没有证据表明菜单相同。请核对导游建议的番茄面包、蒜香虾、蜂蜜蒜泥蛋黄酱鳕鱼和牛里脊小吃是否在当日菜单上；也可询问 El Glop 是否供应海鲜饭或烤伊比利亚猪肋排。Puertecillo 官方介绍为自助式，价格按重量或部分按件计算。出发前确认菜单、价格、营业时间和住宿路线。“Sin sal”是不要盐，“Con poca sal”是少放盐。Clara 和 tinto de verano 都含酒精。11 月 6、7、9、10 日只是建议日期，并未预订。如计划在 11 月 10 日 16:45 圣家堂参观后去餐厅，请先核对参观结束时间和营业时间。'
     }
   };
 
