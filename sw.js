@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261109_landmark_history_v1)
+// SlowTravel Mobile Offline Service Worker (v20261112_taxi_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261109_landmark_history_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261112_taxi_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -14,6 +14,7 @@ const PRECACHE_ASSETS = [
   './css/mobile-first.css',
   './css/guidebook-navigation.css',
   './css/local-food-guide.css',
+  './css/europe-taxi-app-guide.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -27,6 +28,7 @@ const PRECACHE_ASSETS = [
   './js/barcelona-day-options.js',
   './js/barcelona-final-day-plan.js',
   './js/barcelona-candidate-options.js',
+  './js/europe-taxi-app-guide.js',
   './img/gourmet/barcelona-pan-con-tomate-user.jpg',
   './img/gourmet/barcelona-prawns-user.jpg',
   './img/gourmet/barcelona-jamon-user.jpg',

@@ -1,0 +1,123 @@
+.europe-taxi-guide {
+  --eta-ink: #26372f;
+  --eta-muted: #59675f;
+  --eta-line: #dfe5df;
+  --eta-paper: #fffefa;
+  --eta-green: #24533c;
+  --eta-soft: #f0f5ef;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1120px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: clamp(14px, 3vw, 30px);
+  color: var(--eta-ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.62;
+  overflow-wrap: anywhere;
+}
+.europe-taxi-guide *,
+.europe-taxi-guide *::before,
+.europe-taxi-guide *::after { box-sizing: border-box; }
+.europe-taxi-guide h2,
+.europe-taxi-guide h3,
+.europe-taxi-guide p { min-width: 0; overflow-wrap: anywhere; }
+.europe-taxi-guide h2 { margin: 0 0 12px; color: var(--eta-green); font-size: clamp(20px, 2.5vw, 26px); line-height: 1.3; }
+.europe-taxi-guide h3 { margin: 0 0 8px; color: #315a43; font-size: 18px; line-height: 1.38; }
+.europe-taxi-guide p { margin: 0 0 10px; font-size: 15px; }
+.europe-taxi-guide .eta-hero {
+  padding: clamp(19px, 4vw, 34px);
+  border: 1px solid #dce6dc;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #eaf1e9, #f7f2e8 85%);
+}
+.europe-taxi-guide .eta-hero h2 { margin: 5px 0 10px; font-size: clamp(23px, 4vw, 34px); }
+.europe-taxi-guide .eta-hero p:last-child { margin-bottom: 0; }
+.europe-taxi-guide .eta-kicker { color: #47624f; font-size: 14px !important; font-weight: 700; letter-spacing: .025em; }
+.europe-taxi-guide .eta-note { padding: 13px 15px; border-left: 4px solid #bd8d46; border-radius: 8px; margin: 12px 0 18px; background: #fff9ee; font-size: 15px; }
+.europe-taxi-guide .eta-note strong { font-weight: 700; }
+.europe-taxi-guide .eta-section { margin: 20px 0 24px; min-width: 0; }
+.europe-taxi-guide .eta-section > h2 { margin-bottom: 10px; }
+.europe-taxi-guide .eta-app-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; min-width: 0; }
+.europe-taxi-guide .eta-app-card,
+.europe-taxi-guide .eta-tip { min-width: 0; padding: 15px; border: 1px solid var(--eta-line); border-radius: 13px; background: var(--eta-paper); box-shadow: 0 4px 14px rgba(34, 55, 40, .035); }
+.europe-taxi-guide .eta-app-card p, .europe-taxi-guide .eta-tip p { margin-bottom: 7px; }
+.europe-taxi-guide .eta-app-card.eta-local-app { background: #f7f9f6; }
+.europe-taxi-guide .eta-sources { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 7px; max-width: 100%; margin-top: 9px; }
+.europe-taxi-guide .eta-source-link, .europe-taxi-guide .eta-city-link, .europe-taxi-guide .eta-guide-anchor {
+  display: inline-block;
+  min-width: 0;
+  max-width: 100%;
+  color: #24533c;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.europe-taxi-guide .eta-source-link { padding: 4px 8px; border: 1px solid #d9e5d8; border-radius: 7px; background: #f1f6f0; }
+.europe-taxi-guide a:hover { color: #143b29; background-color: #e5eee4; }
+.europe-taxi-guide a:focus-visible,
+.europe-taxi-guide summary:focus-visible { outline: 3px solid #6b9d7a; outline-offset: 3px; border-radius: 4px; }
+.europe-taxi-guide .eta-muted { color: var(--eta-muted); font-size: 14px !important; }
+.europe-taxi-guide .eta-region { min-width: 0; margin: 9px 0; border: 1px solid var(--eta-line); border-radius: 11px; background: #fff; }
+.europe-taxi-guide .eta-region summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding: 11px 13px; color: var(--eta-green); cursor: pointer; font-size: 16px; font-weight: 700; list-style-position: inside; overflow-wrap: anywhere; }
+.europe-taxi-guide .eta-region[open] summary { border-bottom: 1px solid var(--eta-line); }
+.europe-taxi-guide .eta-count { flex: 0 0 auto; min-width: 26px; padding: 1px 7px; border-radius: 999px; background: var(--eta-soft); color: #405b49; text-align: center; font-size: 14px; }
+.europe-taxi-guide .eta-table-wrap { width: 100%; min-width: 0; overflow-x: auto; }
+.europe-taxi-guide .eta-country-table { width: 100%; min-width: 0; table-layout: fixed; border-collapse: collapse; }
+.europe-taxi-guide .eta-country-table th, .europe-taxi-guide .eta-country-table td { min-width: 0; padding: 10px 11px; border-bottom: 1px solid #edf0ec; text-align: left; vertical-align: top; font-size: 14px; overflow-wrap: anywhere; }
+.europe-taxi-guide .eta-country-table thead th { color: var(--eta-muted); font-weight: 700; }
+.europe-taxi-guide .eta-country-table thead th:first-child { width: 31%; }
+.europe-taxi-guide .eta-country-table tr:last-child th, .europe-taxi-guide .eta-country-table tr:last-child td { border-bottom: 0; }
+.europe-taxi-guide .eta-country-table tbody th { font-weight: 700; }
+.europe-taxi-guide .eta-country-table td .eta-city-link { margin: 0 5px 4px 0; }
+.europe-taxi-guide .eta-status { font-size: 14px; }
+.europe-taxi-guide .eta-unverified { color: #5c625e; }
+.europe-taxi-guide .eta-tag { display: inline-block; padding: 1px 5px; border-radius: 5px; background: #f2f0e9; color: #5f5849; font-size: 14px; font-weight: 600; }
+.europe-taxi-guide .eta-tip { margin: 10px 0; }
+.europe-taxi-guide .eta-tip h3 { margin-bottom: 7px; }
+.europe-taxi-guide .eta-checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 20px; padding-left: 22px; margin: 8px 0 20px; }
+.europe-taxi-guide .eta-checklist li { min-width: 0; padding-left: 2px; font-size: 15px; overflow-wrap: anywhere; }
+.europe-taxi-guide .eta-chat-answer { padding: 12px 0; font-size: 15px; line-height: 1.6; }
+.europe-taxi-guide .eta-chat-answer > strong { display: block; margin-bottom: 7px; color: var(--eta-green); font-size: 16px; }
+.europe-taxi-guide .eta-chat-answer p { margin: 7px 0; }
+.europe-taxi-guide .eta-chat-apps { display: flex; flex-wrap: wrap; gap: 7px; }
+.europe-taxi-guide .eta-chat-apps .eta-source-link { margin: 2px 0; }
+@media (max-width: 600px) {
+  .europe-taxi-guide { padding: 12px; font-size: 15px; }
+  .europe-taxi-guide .eta-hero { padding: 19px 16px; border-radius: 14px; }
+  .europe-taxi-guide .eta-app-grid { grid-template-columns: minmax(0, 1fr); gap: 9px; }
+  .europe-taxi-guide .eta-app-card, .europe-taxi-guide .eta-tip { padding: 13px; }
+  .europe-taxi-guide .eta-country-table thead th:first-child { width: 29%; }
+  .europe-taxi-guide .eta-country-table th, .europe-taxi-guide .eta-country-table td { padding: 9px 7px; font-size: 14px; }
+  .europe-taxi-guide .eta-checklist { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .europe-taxi-guide .eta-source-link, .europe-taxi-guide .eta-city-link { font-size: 14px; }
+}
+@media (max-width: 370px) {
+  .europe-taxi-guide { padding: 9px; }
+  .europe-taxi-guide .eta-region summary { padding: 10px; font-size: 15px; }
+  .europe-taxi-guide .eta-country-table thead th:first-child { width: 32%; }
+  .europe-taxi-guide .eta-country-table th, .europe-taxi-guide .eta-country-table td { padding: 8px 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .europe-taxi-guide *, .europe-taxi-guide *::before, .europe-taxi-guide *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* Keep this guide's typography and anchor positions independent of the book-wide headings. */
+#europeTaxiAppGuide.europe-taxi-guide { scroll-margin-top: 280px; }
+#europeTaxiAppGuide.europe-taxi-guide .eta-hero h2 { font-size: clamp(23px, 3vw, 34px); line-height: 1.3; }
+#europeTaxiAppGuide.europe-taxi-guide .eta-section > h2 { font-size: clamp(20px, 2.4vw, 26px); line-height: 1.35; }
+.europe-taxi-guide .eta-section { scroll-margin-top: 280px; }
+.europe-taxi-guide .eta-jump-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px; }
+.europe-taxi-guide .eta-jump-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid var(--eta-line); border-radius: 9px; color: var(--eta-green); background: var(--eta-paper); font-size: 14px; font-weight: 700; text-decoration: none; }
+.europe-taxi-guide .eta-region summary::after { content: '+'; flex: 0 0 auto; font-size: 21px; font-weight: 500; }
+.europe-taxi-guide .eta-region[open] summary::after { content: '−'; }
+@media (max-width: 600px) {
+  #europeTaxiAppGuide.europe-taxi-guide, .europe-taxi-guide .eta-section { scroll-margin-top: 85px; }
+  .europe-taxi-guide .eta-jump-links { gap: 6px; }
+}

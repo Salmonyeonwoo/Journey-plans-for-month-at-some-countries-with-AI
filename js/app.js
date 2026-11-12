@@ -731,6 +731,13 @@ function renderItalyTransitGuide() {
   `;
 }
 
+function openEuropeanTaxiGuide() {
+  if (typeof switchGuidebookChapter === 'function') switchGuidebookChapter('chapter-practical');
+  if (typeof goToBookPage === 'function') goToBookPage('chapter-practical', 2, false);
+  switchTransitHotelSubTab('europe');
+  document.getElementById('europeTaxiAppGuide')?.scrollIntoView({ block: 'start' });
+}
+
 function renderEuropeTransitGuide() {
   const panel = document.getElementById('europeTransitGuidePanel');
   const euGuide = (typeof EUROPE_TRANSIT_GUIDE_I18N !== 'undefined') ? EUROPE_TRANSIT_GUIDE_I18N : (typeof window !== 'undefined' ? window.EUROPE_TRANSIT_GUIDE_I18N : null);
@@ -740,6 +747,7 @@ function renderEuropeTransitGuide() {
   const eu = euGuide[lang] || euGuide.ko;
 
   panel.innerHTML = `
+    ${typeof window.renderEuropeanTaxiAppGuide === 'function' ? window.renderEuropeanTaxiAppGuide(lang) : ''}
     <div class="transit-guide-hero-card">
       <div class="transit-hero-badge">${eu.badge}</div>
       <h3 class="transit-hero-title">${eu.title}</h3>
@@ -3984,7 +3992,9 @@ function updateChatbotLanguage(lang) {
   const quickBar = document.querySelector('.chat-quick-bar');
   if (quickBar && dict.chips) {
     let chipsHtml = '';
-    dict.chips.forEach(c => {
+    const taxiChip = window.EUROPE_TAXI_APP_GUIDE?.quickQuestions?.[l];
+    const chips = taxiChip ? [...dict.chips, taxiChip] : dict.chips;
+    chips.forEach(c => {
       chipsHtml += `<button type="button" class="chat-quick-chip" onclick="handleQuickChatChip('${escapeHtml(c.q)}')">${c.text}</button>\n`;
     });
     quickBar.innerHTML = chipsHtml;
@@ -4285,6 +4295,7 @@ function switchLanguage(lang, btn) {
   }
   renderLocalPhrases();
   renderTransitGuide();
+  renderEuropeTransitGuide();
   renderHotelFilterBar();
   renderHotelsGrid();
 
@@ -4450,6 +4461,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (typeof window.renderActivityGuide === 'function') window.renderActivityGuide(currentLang);
   renderLocalPhrases();
   renderTransitGuide();
+  renderEuropeTransitGuide();
   renderHotelFilterBar();
   renderHotelsGrid('ALL');
 });
@@ -4538,6 +4550,10 @@ function handleLocalChat(query) {
   const q = rawQ.toLowerCase();
   const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
+  if (typeof window.buildEuropeanTaxiChatResponse === 'function') {
+    const taxiResponse = window.buildEuropeanTaxiChatResponse(rawQ, lang);
+    if (taxiResponse) return taxiResponse;
+  }
   const historyResponse = buildSpanishAttractionHistoryChatResponse(rawQ, lang);
   if (historyResponse) return historyResponse;
   const electricityResponse = typeof window.buildEuropeElectricityChatResponse === 'function' ? window.buildEuropeElectricityChatResponse(rawQ, lang) : null;
