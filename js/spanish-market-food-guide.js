@@ -79,6 +79,34 @@
       url: 'https://lospatiosdebeatas.com/contacto/',
       label: { ko: 'Los Patios de Beatas 공식 연락처·시간', en: 'Los Patios de Beatas official contact & hours', ja: 'Los Patios de Beatas 公式連絡先・営業時間', zh: 'Los Patios de Beatas 官方联系与营业时间' }
     },
+    spainStars2026: {
+      url: 'https://guide.michelin.com/en/article/michelin-guide-ceremony/all-michelin-star-restaurants-in-spain-2026-the-full-list',
+      label: { ko: 'MICHELIN Guide España 2026 별 식당 전체 목록', en: '2026 MICHELIN Guide España · full starred list', ja: '2026 MICHELIN Guide España 星付き店一覧', zh: '2026《西班牙米其林指南》星级餐厅完整名单' }
+    },
+    spainBib2026: {
+      url: 'https://guide.michelin.com/es/es/articulo/michelin-guide-ceremony/nuevos-bib-gourmand-de-la-guia-michelin-espana-2026',
+      label: { ko: 'MICHELIN Guide España 2026 신규 Bib Gourmand', en: '2026 MICHELIN Guide España · new Bib Gourmand list', ja: '2026 MICHELIN Guide España 新規Bib Gourmand', zh: '2026《西班牙米其林指南》新增必比登推介' }
+    },
+    faralaGuide: {
+      url: 'https://guide.michelin.com/us/en/andalucia/granada/restaurant/farala',
+      label: { ko: 'Faralá · MICHELIN Guide 공식 프로필', en: 'Faralá · official MICHELIN Guide profile', ja: 'Faralá · ミシュランガイド公式プロフィール', zh: 'Faralá · 米其林指南官方资料' }
+    },
+    albidayaGuide: {
+      url: 'https://guide.michelin.com/us/en/andalucia/granada/restaurant/albidaya',
+      label: { ko: 'Albidaya · MICHELIN Guide 공식 프로필', en: 'Albidaya · official MICHELIN Guide profile', ja: 'Albidaya · ミシュランガイド公式プロフィール', zh: 'Albidaya · 米其林指南官方资料' }
+    },
+    kalejaGuide: {
+      url: 'https://guide.michelin.com/us/en/andalucia/malaga/restaurant/kaleja',
+      label: { ko: 'Kaleja · MICHELIN Guide 공식 프로필', en: 'Kaleja · official MICHELIN Guide profile', ja: 'Kaleja · ミシュランガイド公式プロフィール', zh: 'Kaleja · 米其林指南官方资料' }
+    },
+    malagaBib: {
+      url: 'https://guide.michelin.com/kr/en/andalucia/malaga/restaurants/bib-gourmand',
+      label: { ko: 'MICHELIN Guide Málaga Bib Gourmand 공식 목록', en: 'Official MICHELIN Guide Málaga Bib Gourmand list', ja: 'ミシュランガイド公式 マラガBib Gourmand一覧', zh: '米其林指南官方马拉加必比登推介名单' }
+    },
+    laCosmoGuide: {
+      url: 'https://guide.michelin.com/en/andalucia/malaga/restaurant/la-cosmo',
+      label: { ko: 'La Cosmo · MICHELIN Guide 공식 프로필', en: 'La Cosmo · official MICHELIN Guide profile', ja: 'La Cosmo · ミシュランガイド公式プロフィール', zh: 'La Cosmo · 米其林指南官方资料' }
+    },
     koreaApqa: {
       url: 'https://eminwon.qia.go.kr/departure/animal_import_call_info.html',
       label: { ko: '농림축산검역본부 입국 신고 안내', en: 'APQA official arrival declaration leaflet', ja: '韓国検疫本部・入国申告案内', zh: '韩国检疫本部入境申报指南' }
@@ -102,7 +130,7 @@
       title: '스페인 시장·저녁 식사 보충 가이드',
       intro: '시장 운영시간과 개별 점포 영업은 다를 수 있습니다. 아래는 공식 게시 정보를 바탕으로 한 선택지이며, 가격·재고·당일 영업·대기시간을 보장하지 않습니다. 현장 가격표와 재료를 확인하세요.',
       nightNote: '야시장 확인: 확인한 최신 공식 자료에서는 네 도시의 여행일 정기 식품 야시장을 확정하지 못했습니다. 낮 시장과 저녁 식당은 별도 일정으로 보세요. 늦게까지 여는 식당이나 연도 미표기 계절 장터를 야시장으로 부르지 않습니다.',
-      labels: { market: '시장·시간', food: '먹거리·식당', shopping: '쇼핑', night: '야시장 여부', sources: '공식 출처' },
+      labels: { market: '시장·시간', food: '먹거리·식당', michelin: '미슐랭 가이드 등재', shopping: '쇼핑', night: '야시장 여부', sources: '공식 출처' },
       borderTitle: '한국 입국 전 육류·하몽 반입 확인',
       borderText: "햄은 진공포장 여부와 관계없이 신고 대상 축산물입니다. 농림축산식품부의 현행 수입금지지역 고시에서 스페인은 돼지고기 관련 국가 목록에 포함되어 있으므로, 스페인산 하몬이 반입 가능하다고 가정하지 마세요. 국가 목록만으로 개별 여행자 휴대품의 허용 여부를 확정할 수도 없습니다. 구매 전 농림축산검역본부에 제품·가공 방식·검역증명서 요건을 확인하고, 불명확하면 가져오지 마세요. 이미 가지고 있다면 숨기거나 검사를 피하려 이동 중 먹지 말고 입국 때 신고해 검역관에게 제시하세요. 미신고에는 법령상 과태료 등 조치가 있을 수 있지만, 고정 금액이 자동 부과되거나 모든 경우 자동 압수된다고 단정할 수 없습니다. 식물성 선물에도 별도 규정이 적용됩니다.",
       borderShort: '하몬을 귀국 선물로 사기 전 공식 검역 요건을 확인하세요. 진공포장도 신고·검역 요건을 없애지 않습니다.',
@@ -131,7 +159,8 @@
           food: '저녁 식사 후보 Botánico Café의 공식 메뉴에는 채식 메뉴와 변경 옵션이 있습니다. 메뉴에 유제품·견과류·참깨·밀 등이 표시되어 있으므로 알레르기와 교차접촉을 직접 확인하세요. 좌석·예약 가능 여부와 당일 영업은 별도로 확인해야 합니다. 타파스 구역 안내는 특정 식당이나 무료 타파 제공을 보장하지 않습니다.',
           shopping: '관광청은 El Antiguo Tostadero를 San Antón 48/50의 커피·차·초콜릿 가게로 소개하며, 상점 사이트에는 커피·차·인퓨전과 선물 세트가 있습니다. 당일 영업과 재고를 확인하세요.',
           night: '최신 공식 자료에서 정기 식품 야시장을 확인하지 못했습니다. Mercado de San Agustín은 평일 오전 시장으로 안내되어 있으며 야간시장으로 소개하지 않습니다.',
-          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero']
+          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero', 'faralaGuide', 'albidayaGuide', 'spainStars2026', 'spainBib2026'],
+          michelin: 'Faralá — 2026 MICHELIN Guide España 1스타(현대 요리); Albidaya — 2026 Bib Gourmand(시장 요리, 안달루시아·아랍 풍미). 별과 Bib는 서로 다른 구분이며 메뉴·가격·당일 영업 및 좌석은 확인되지 않았습니다.'
         },
         malaga: {
           title: '말라가 · Mercado Central de Atarazanas',
@@ -139,7 +168,8 @@
           food: '저녁 후보 Picas(Plaza de la Merced 지점)는 공식 메뉴에 채식·글루텐프리 표시가 있고, FAQ에서 알레르기 확인과 전화 예약을 안내합니다. 메뉴 표시는 알레르기 안전 보증이 아니므로 교차접촉을 직원에게 물어보세요. 식당은 주말 20:00–21:00를 붐비는 시간으로 안내합니다. 대기시간은 보장되지 않습니다. Los Patios de Beatas는 저녁 식사 대안으로 공식 시간표·예약 정보를 확인하세요.',
           shopping: '말라가 관광청이 안내한 시장·지역 상품 범위에는 올리브유, 양념 올리브, 전통 과자와 보존식품 등이 있습니다. 시장의 당일 재고, 성분·포장 및 한국 반입 규정은 구매 전에 확인하세요.',
           night: '연중 정기 야시장은 확인하지 못했습니다. 관광청의 계절 장터 안내는 연도가 명시되지 않아 2026년 11월 방문일 운영 근거로 쓸 수 없습니다. Atarazanas는 낮 시장으로, 저녁 식당과 분리합니다.',
-          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios']
+          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios', 'kalejaGuide', 'laCosmoGuide', 'spainStars2026', 'malagaBib'],
+          michelin: 'Kaleja — 2026 MICHELIN Guide España 1스타(안달루시아 전통의 현대적 해석); La Cosmo — 2026 Bib Gourmand(안달루시아 요리). 별과 Bib는 다른 구분이며 메뉴·가격·당일 영업 및 좌석은 확인되지 않았습니다.'
         }
       }
     },
@@ -147,7 +177,7 @@
       title: 'Spain markets & evening food: a four-city add-on',
       intro: 'Market schedules and individual stall hours can differ. These are options based on official published information, not guarantees of same-day opening, price, stock or waiting time. Check posted prices and ingredients before ordering.',
       nightNote: 'Night-market check: the current official sources reviewed did not confirm a recurring food night market for the travel dates in these four cities. Treat daytime markets and evening restaurants as separate plans. A late-opening restaurant or an undated seasonal market is not evidence of a regular night market.',
-      labels: { market: 'Market & hours', food: 'Food & dining', shopping: 'Shopping', night: 'Night-market status', sources: 'Official sources' },
+      labels: { market: 'Market & hours', food: 'Food & dining', michelin: 'MICHELIN Guide listings', shopping: 'Shopping', night: 'Night-market status', sources: 'Official sources' },
       borderTitle: 'Before bringing meat or jamón into Korea',
       borderText: "Ham is a reportable animal product whether vacuum-packed or not. Spain appears in the pork-related country listing in the Ministry’s current import-restricted-area notice, so do not assume Spanish jamón is admissible. The listing alone does not determine whether an individual traveller-carried product qualifies. Before buying, ask Korea’s Animal and Plant Quarantine Agency about the product, processing and certificate requirements; if unclear, leave it behind. If already carrying it, do not hide it or eat it en route to avoid inspection—declare it and present it on arrival. Non-declaration can lead to statutory administrative penalties, but the sources do not support describing a fixed fine or automatic confiscation in every case. Plant-based gifts have separate rules.",
       borderShort: 'Before buying jamón as a take-home gift, check the official quarantine rules. Vacuum packaging does not remove declaration or inspection requirements.',
@@ -176,7 +206,8 @@
           food: 'Botánico Café’s official menu includes vegetarian dishes and modification options. It also lists dairy, nuts, sesame and wheat among ingredients, so ask the restaurant about allergies and cross-contact. Confirm same-day hours, seating and reservations; tapas-area descriptions do not promise a particular restaurant or free tapas.',
           shopping: 'Tourism lists El Antiguo Tostadero at San Antón 48/50 as a coffee, tea and chocolate shop; its store site lists coffee, tea/infusions and gift sets. Check current opening and stock.',
           night: 'No current official evidence of a recurring food night market was found. San Agustín is listed as a weekday-morning market, not a night market.',
-          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero']
+          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero', 'faralaGuide', 'albidayaGuide', 'spainStars2026', 'spainBib2026'],
+          michelin: 'Faralá — 1 Star in the 2026 MICHELIN Guide España (Contemporary); Albidaya — 2026 Bib Gourmand (market-led cooking with Andalusian and Arab influences). A star and Bib Gourmand are different distinctions; current menus, prices and date-specific availability were not checked.'
         },
         malaga: {
           title: 'Málaga · Mercado Central de Atarazanas',
@@ -184,7 +215,8 @@
           food: 'Picas (Plaza de la Merced location) shows vegetarian and gluten-free menu markers and directs guests with allergies to check with staff; its FAQ also gives a phone booking option. Menu markers are not an allergy-safety guarantee—ask about cross-contact. The restaurant identifies weekends 20:00–21:00 as busy; actual waits are not stated. Los Patios de Beatas is another evening option; recheck its published hours and booking details.',
           shopping: 'Málaga tourism lists olive oil, seasoned olives, traditional sweets and preserved foods among local market/product options. Check day-of stock, ingredients, packaging and Korean import rules before buying.',
           night: 'No year-round recurring night market was confirmed. The tourism page for seasonal markets does not state a year, so it cannot establish operation for November 2026. Atarazanas is a daytime market; plan dinner separately.',
-          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios']
+          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios', 'kalejaGuide', 'laCosmoGuide', 'spainStars2026', 'malagaBib'],
+          michelin: 'Kaleja — 1 Star in the 2026 MICHELIN Guide España (modern interpretations of Andalusian tradition); La Cosmo — 2026 Bib Gourmand (Andalusian cuisine). A star and Bib Gourmand are different distinctions; current menus, prices and date-specific availability were not checked.'
         }
       }
     },
@@ -192,7 +224,7 @@
       title: 'スペイン市場と夕食：4都市の補足ガイド',
       intro: '市場全体の営業時間と各売店の営業時間は異なる場合があります。以下は公式掲載情報に基づく候補で、当日の営業・価格・在庫・待ち時間を保証するものではありません。注文前に表示価格と原材料を確認してください。',
       nightNote: '夜市の確認：確認した最新の公式資料では、4都市の旅行日に定期開催される食品夜市を確認できませんでした。昼の市場と夕食の店は別々に計画してください。夜遅くまで営業する飲食店や年が記載されていない季節市を、定期夜市と呼びません。',
-      labels: { market: '市場・営業時間', food: '食事・レストラン', shopping: '買い物', night: '夜市について', sources: '公式情報' },
+      labels: { market: '市場・営業時間', food: '食事・レストラン', michelin: 'ミシュランガイド掲載店', shopping: '買い物', night: '夜市について', sources: '公式情報' },
       borderTitle: '韓国へ肉製品・ハモンを持ち帰る前に',
       borderText: "ハムは真空包装の有無にかかわらず申告対象の畜産物です。農林畜産食品部の現行の輸入禁止地域告示では、豚肉関連の国別リストにスペインが含まれているため、スペイン産ハモンを持ち込めると決めつけないでください。このリストだけでは、個別の旅行者携帯品が持ち込み可能かどうかは確定できません。購入前に韓国の農林畜産検疫本部へ、製品・加工方法・検疫証明書の要件を確認し、不明なら持ち込まないでください。すでに携帯している場合は、検査を避けるために隠したり移動中に食べたりせず、到着時に申告して検疫担当者に提示してください。未申告には法令上の行政処分があり得ますが、すべてのケースで一定額の罰金や自動没収があるとは確認できません。植物性の土産には別の規則があります。",
       borderShort: 'ハモンを持ち帰り用に買う前に、公式検疫規則を確認してください。真空包装でも申告・検疫の要件はなくなりません。',
@@ -221,7 +253,8 @@
           food: '夕食候補のBotánico Café公式メニューにはベジタリアン料理や変更オプションがあります。乳製品・ナッツ・ゴマ・小麦などの表示があるため、アレルギーや交差接触を店に直接確認してください。当日の営業時間、座席、予約も別途確認が必要です。タパス地区の案内は特定の店や無料タパスを保証しません。',
           shopping: '観光局はEl Antiguo TostaderoをSan Antón 48/50のコーヒー・紅茶・チョコレート店として掲載し、店舗サイトにはコーヒー、紅茶・インフュージョン、ギフトセットがあります。営業と在庫を確認してください。',
           night: '定期的な食品夜市を示す最新の公式情報は確認できませんでした。San Agustínは平日午前の市場として案内され、夜市とはされていません。',
-          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero']
+          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero', 'faralaGuide', 'albidayaGuide', 'spainStars2026', 'spainBib2026'],
+          michelin: 'Faralá — 2026 MICHELIN Guide España 1つ星（現代料理）；Albidaya — 2026 Bib Gourmand（市場料理、アンダルシアとアラブの影響）。星とBib Gourmandは別の区分です。最新メニュー・価格・旅行日の営業や空席は未確認です。'
         },
         malaga: {
           title: 'マラガ · Mercado Central de Atarazanas',
@@ -229,7 +262,8 @@
           food: '夕食候補のPicas（Plaza de la Merced店）は公式メニューにベジタリアン・グルテンフリー表示があり、FAQでアレルギー確認と電話予約を案内しています。表示はアレルギー安全の保証ではありません。交差接触を店員に確認してください。週末20:00〜21:00は混みやすい時間として案内されていますが、待ち時間は保証されません。Los Patios de Beatasも夕食候補で、営業時間・予約情報を再確認してください。',
           shopping: 'マラガ観光局が案内する市場・地元商品にはオリーブオイル、味付けオリーブ、伝統菓子、保存食品などがあります。当日の在庫、原材料、包装、韓国への持ち込み規則を購入前に確認してください。',
           night: '通年定期の夜市は確認できませんでした。観光局の季節市場ページには年の記載がなく、2026年11月の営業を裏付ける資料にはなりません。Atarazanasは昼市場で、夕食とは別に計画してください。',
-          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios']
+          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios', 'kalejaGuide', 'laCosmoGuide', 'spainStars2026', 'malagaBib'],
+          michelin: 'Kaleja — 2026 MICHELIN Guide España 1つ星（アンダルシア伝統料理の現代的な解釈）；La Cosmo — 2026 Bib Gourmand（アンダルシア料理）。星とBib Gourmandは別の区分です。最新メニュー・価格・旅行日の営業や空席は未確認です。'
         }
       }
     },
@@ -237,7 +271,7 @@
       title: '西班牙市场与晚餐：四城补充指南',
       intro: '市场营业时间与各摊位营业时间可能不同。以下是依据官方发布信息整理的备选项，不保证当天营业、价格、库存或等候时间。下单前请查看标价并询问食材。',
       nightNote: '夜市核查：查阅的最新官方资料未能确认这四座城市在旅行日期有定期食品夜市。白天市场与晚间餐厅应分开安排。营业至较晚的餐馆或未标年份的季节市集，不等于常设夜市。',
-      labels: { market: '市场与时间', food: '食物与餐厅', shopping: '购物', night: '夜市情况', sources: '官方来源' },
+      labels: { market: '市场与时间', food: '食物与餐厅', michelin: '米其林指南收录餐厅', shopping: '购物', night: '夜市情况', sources: '官方来源' },
       borderTitle: '将肉类或伊比利亚火腿带入韩国前',
       borderText: "火腿无论是否真空包装，都属于需要申报的畜产品。韩国农林畜产食品部现行的进口限制地区公告将西班牙列入猪肉相关国家名单，因此不要假设西班牙火腿可以入境。该名单本身不能确定某一件旅客携带产品是否符合入境条件。购买前请向韩国动物植物检疫机构确认产品、加工方式和检疫证明要求；如不明确，请不要携带。若已携带，请勿为逃避检查而藏匿或在途中吃掉；入境时申报并交由检疫人员检查。未申报可能受到法定行政处罚，但现有资料不支持说所有情况都会自动处以固定罚款或自动没收。植物类礼物适用不同规定。",
       borderShort: '购买火腿作为回国礼物前，请先查阅官方检疫规定。真空包装不会免除申报或检疫要求。',
@@ -266,7 +300,8 @@
           food: '晚餐备选Botánico Café官网菜单列有素食菜品和调整选项。菜单同时标注乳制品、坚果、芝麻、小麦等成分，请直接询问过敏和交叉接触。当天营业、座位及预订需另行确认。Tapas区域介绍不保证特定餐厅或免费Tapas。',
           shopping: '旅游局将El Antiguo Tostadero列为San Antón 48/50的咖啡、茶和巧克力店；其商店网站列有咖啡、茶/浸泡饮品及礼盒。请核实当日营业和库存。',
           night: '未找到最新官方资料证明有定期食品夜市。San Agustín被介绍为工作日上午的市场，不是夜市。',
-          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero']
+          sources: ['granadaMarket', 'granadaTapas', 'botanico', 'tostadero', 'faralaGuide', 'albidayaGuide', 'spainStars2026', 'spainBib2026'],
+          michelin: 'Faralá——2026《西班牙米其林指南》一星（现代料理）；Albidaya——2026必比登推介（市场料理，融合安达卢西亚与阿拉伯风味）。星级与必比登是不同类别；未核实最新菜单、价格及旅行日期的营业和座位。'
         },
         malaga: {
           title: '马拉加 · Mercado Central de Atarazanas',
@@ -274,7 +309,8 @@
           food: '晚餐备选Picas（Plaza de la Merced分店）官网菜单标有素食和无麸质选择，FAQ建议过敏者向员工确认，并提供电话预约方式。菜单标识不等于过敏安全保证，请询问交叉接触。餐厅将周末20:00–21:00列为较繁忙时段，但未承诺等候时间。Los Patios de Beatas也是晚餐备选，请重新确认营业和预订信息。',
           shopping: '马拉加旅游局介绍的市场和本地商品包括橄榄油、调味橄榄、传统甜点和保存食品。购买前核实当天库存、成分、包装及韩国入境规定。',
           night: '未确认有全年定期夜市。旅游局的季节市集页面没有标明年份，不能证明2026年11月的营业安排。Atarazanas是白天市场，晚餐应另行安排。',
-          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios']
+          sources: ['atarazanasCity', 'malagaProducts', 'picasMenu', 'picasFaq', 'patios', 'kalejaGuide', 'laCosmoGuide', 'spainStars2026', 'malagaBib'],
+          michelin: 'Kaleja——2026《西班牙米其林指南》一星（以现代方式诠释安达卢西亚传统）；La Cosmo——2026必比登推介（安达卢西亚菜）。星级与必比登是不同类别；未核实最新菜单、价格及旅行日期的营业和座位。'
         }
       }
     }
@@ -318,6 +354,7 @@
       <${headingTag} id="${titleId}" style="margin:0 0 12px;color:#12314a;font-size:1.08rem;line-height:1.35;">${escapeHtml(city.title)}</${headingTag}>
       <p style="margin:0 0 10px;line-height:1.6;color:#1f2937;"><strong>${escapeHtml(copy.labels.market)}:</strong> ${escapeHtml(city.market)}</p>
       <p style="margin:0 0 10px;line-height:1.6;color:#1f2937;"><strong>${escapeHtml(copy.labels.food)}:</strong> ${escapeHtml(city.food)}</p>
+      ${city.michelin ? `<p style="margin:0 0 10px;line-height:1.6;color:#1f2937;"><strong>⭐ ${escapeHtml(copy.labels.michelin)}:</strong> ${escapeHtml(city.michelin)}</p>` : ''}
       <p style="margin:0 0 10px;line-height:1.6;color:#1f2937;"><strong>${escapeHtml(copy.labels.shopping)}:</strong> ${escapeHtml(city.shopping)}</p>
       <p style="margin:0 0 12px;line-height:1.6;color:#334155;"><strong>${escapeHtml(copy.labels.night)}:</strong> ${escapeHtml(city.night)}</p>
       <div style="border-top:1px solid #e2e8f0;padding-top:9px;font-size:.88rem;line-height:1.65;color:#1d4ed8;"><strong style="color:#334155;">${escapeHtml(copy.labels.sources)}:</strong> ${sourceLinks(city.sources, lang)}</div>
@@ -340,7 +377,7 @@
     const cards = ['barcelona', 'seville', 'granada', 'malaga'].map(key => renderCityCard(key, l, 'h3', 'guide')).join('');
     return `<section id="spanish-market-food-guide-content" lang="${l}" aria-labelledby="spanish-market-food-guide-title-${l}" style="margin:18px 0 30px;padding:18px;background:#f8fafc;border:1px solid #dbe3ee;border-radius:16px;">
       <header style="margin-bottom:14px;">
-        <div style="font-size:.78rem;font-weight:800;letter-spacing:.08em;color:#0f766e;text-transform:uppercase;">${l === 'ko' ? '공식 정보 확인 · 2026-11-08 업데이트' : l === 'ja' ? '公式情報を確認 · 2026-11-08更新' : l === 'zh' ? '已核对官方信息 · 更新于2026-11-08' : 'Officially checked · updated 2026-11-08'}</div>
+        <div style="font-size:.78rem;font-weight:800;letter-spacing:.08em;color:#0f766e;text-transform:uppercase;">${l === 'ko' ? '공식 정보 확인 · 2026-11-12 업데이트' : l === 'ja' ? '公式情報を確認 · 2026-11-12更新' : l === 'zh' ? '已核对官方信息 · 更新于2026-11-12' : 'Officially checked · updated 2026-11-12'}</div>
         <h2 id="spanish-market-food-guide-title-${l}" style="margin:6px 0 8px;color:#102a43;font-size:1.35rem;line-height:1.35;">${escapeHtml(copy.title)}</h2>
         <p style="margin:0;color:#334155;line-height:1.6;">${escapeHtml(copy.intro)}</p>
       </header>
@@ -362,8 +399,8 @@
   function detectCity(q) {
     if (/\b(barcelona|boquer[ií]a|el quim)\b|바르셀로나|보케리아|ボケリア|バルセロナ|博盖利亚/i.test(q)) return 'barcelona';
     if (/\b(seville|sevilla|triana|encarnaci[oó]n|coliseo|casa ricardo)\b|세비야|トリアナ|セビリア|塞维利亚/i.test(q)) return 'seville';
-    if (/\b(granada|san agust[ií]n|bot[aá]nico|tostadero)\b|그라나다|グラナダ|格拉纳达/i.test(q)) return 'granada';
-    if (/\b(m[aá]laga|atarazanas|picas|los patios de beatas)\b|말라가|マラガ|马拉加/i.test(q)) return 'malaga';
+    if (/\b(granada|san agust[ií]n|bot[aá]nico|tostadero|albidaya)\b|faral[aá]|그라나다|グラナダ|格拉纳达/i.test(q)) return 'granada';
+    if (/\b(m[aá]laga|atarazanas|picas|los patios de beatas|kaleja|la cosmo)\b|말라가|マラガ|马拉加/i.test(q)) return 'malaga';
     return null;
   }
 
@@ -389,7 +426,7 @@
     const hasSpanishContext = /spain|spanish|espa[nñ]a|espa[nñ]ol|andaluc[ií]a|andalusia|스페인|안달루시아|スペイン|アンダルシア|西班牙|安达卢西亚|바르셀로나|세비야|그라나다|말라가|barcelona|seville|sevilla|granada|m[aá]laga/i.test(q);
     const hasShoppingIntent = /souvenir|gift|shopping|shop|present|regalo|comprar|compras|기념품|선물|쇼핑|お土産|土産|買い物|购物|伴手礼|礼物|纪念品|特产/i.test(q);
     const hasMarketIntent = /market|markets|mercado|mercat|night market|市集|市场|市場|야시장|시장|ボケリア|博盖利亚|boquer[ií]a|encarnaci[oó]n|atarazanas|san agust[ií]n|ham cone|jam[oó]n cone|truffle oil|fruit juice price|올리브|하몬 콘|트러플 오일|주스 가격|夜市|市場|夜市|火腿纸筒|火腿紙筒/i.test(q);
-    const hasDiningIntent = /food|restaurant|dining|eat|menu|hours|opening|tapas|snack|comida|restaurante|horario|cena|menu|営業時間|料理|レストラン|タパス|食事|美食|餐厅|小吃|营业时间|吃饭/i.test(q);
+    const hasDiningIntent = /food|restaurant|dining|eat|menu|hours|opening|tapas|snack|comida|restaurante|horario|cena|menu|michelin|미슐랭|미쉐린|미쉐린.?가이드|맛집|식당|ミシュラン|米其林|faral[aá]|albidaya|kaleja|la cosmo|営業時間|料理|レストラン|タパス|食事|美食|餐厅|小吃|营业时间|吃饭/i.test(q);
     if (hasAnimalFood && hasCrossBorder) return renderBorderNote(l, replyId);
     if (hasShoppingIntent && hasSpanishContext) return shoppingResponse(l, replyId);
     if (city && (hasMarketIntent || hasDiningIntent)) return `<div class="spanish-market-chat-answer" lang="${l}">${renderCityCard(city, l, 'h3', replyId)}${renderBorderNote(l, replyId)}</div>`;

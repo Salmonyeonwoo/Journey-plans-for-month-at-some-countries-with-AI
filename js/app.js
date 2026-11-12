@@ -4571,6 +4571,19 @@ function handleLocalChat(query) {
     };
     return nov12CordobaBusReply[lang] || nov12CordobaBusReply.ko;
   }
+  // Route Michelin questions for the newly covered cities before broad dining matchers.
+  const asksMichelin = /michelin|미슐랭|미쉐린|미쉐린.?가이드|ミシュラン|米其林/i.test(q);
+  const hasMichelinSpanishCity = ['granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'faralá', 'farala', 'albidaya', 'kaleja', 'la cosmo'].some(term => q.includes(term));
+  const hasMichelinItalianCity = ['naples', 'napoli', '나폴리', 'ナポリ', '那不勒斯', 'florence', 'firenze', '피렌체', 'フィレンツェ', '佛罗伦萨', 'rome', 'roma', '로마', 'ローマ', '罗马', 'george restaurant', 'luminist', 'cibrèo', 'cibreo', 'cibrèino', 'cibreino', 'mamma orso'].some(term => q.includes(term));
+  const hasNewSpanishRestaurantName = ['faralá', 'farala', 'albidaya', 'kaleja', 'la cosmo'].some(term => q.includes(term));
+  const hasNewItalianRestaurantName = ['george restaurant', 'george', 'luminist cafè bistrot', 'luminist cafe bistrot', 'luminist', 'trattoria cibrèo', 'trattoria cibreo', 'cibrèo', 'cibreo', 'cibrèino', 'cibreino', 'mamma orso'].some(term => q.includes(term));
+  if (((asksMichelin && hasMichelinSpanishCity) || hasNewSpanishRestaurantName) && typeof window.buildSpanishMarketFoodChatResponse === 'function') {
+    const spanishMichelinResponse = window.buildSpanishMarketFoodChatResponse(rawQ, lang);
+    if (spanishMichelinResponse) return spanishMichelinResponse;
+  }
+  if (((asksMichelin && hasMichelinItalianCity) || hasNewItalianRestaurantName) && typeof window.buildItalyFoodChatReply === 'function') {
+    return window.buildItalyFoodChatReply(lang, rawQ, null);
+  }
   // Keep verified candidate questions ahead of broad food/market matching.
   if (!hasAndalusiaCityContext && typeof window.buildBarcelonaCandidateOptionsChatResponse === 'function') {
     const candidateResponse = window.buildBarcelonaCandidateOptionsChatResponse(rawQ, lang);
@@ -6805,7 +6818,7 @@ function handleLocalChat(query) {
   }
 
   // Common Intent Flags
-  const isFood = ['음식', '맛집', '먹거리', '식당', '미식', '푸드', '요리', '맛있는', '타파스', 'food', 'restaurant', 'dining', 'eat', 'dish', 'cuisine', 'tapas', 'グルメ', 'レストラン', '料理', '美味しい', '名物', 'タパス', '美食', '餐厅', '吃', '菜肴', '小吃'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isFood = ['음식', '맛집', '먹거리', '식당', '미식', '푸드', '요리', '맛있는', '타파스', '미슐랭', '미쉐린', '미쉐린가이드', 'michelin', 'ミシュラン', '米其林', 'food', 'restaurant', 'dining', 'eat', 'dish', 'cuisine', 'tapas', 'グルメ', 'レストラン', '料理', '美味しい', '名物', 'タパス', '美食', '餐厅', '吃', '菜肴', '小吃'].some(w => q.includes(w) || cleanQ.includes(w));
   const isSpecificRestaurant = ['추천 식당', '추천 맛집', '식당 추천', '맛집 추천', '유명한 식당', '유명한 맛집', '어디서 먹', '레스토랑', 'restaurant', 'restaurants', 'dining place', 'おすすめレストラン', '名店', '推荐餐厅', '哪家好'].some(w => q.includes(w) || cleanQ.includes(w));
   const isShopping = ['쇼핑', '선물', '기념품', '특산품', '살것', '살만한', '기념', 'shopping', 'souvenir', 'gift', 'souvenirs', 'お土産', 'ショッピング', '買い物', '名産', '购物', '纪念品', '伴手礼', '特产'].some(w => q.includes(w) || cleanQ.includes(w));
   const isSights = ['관광', '명소', '볼거리', '가볼만한', '유적지', '핫플', '관광지', '투어', 'attraction', 'sights', 'sightseeing', 'must visit', 'tourist', '観光', '名所', '見どころ', 'スポット', '景点', '地标', '必去', '游览'].some(w => q.includes(w) || cleanQ.includes(w));
@@ -6821,7 +6834,7 @@ function handleLocalChat(query) {
   // 10-1. FOOD & DINING INTENT
   if (isFood) {
     if (isItaly) {
-      if (typeof window.buildItalyFoodChatReply === 'function') return window.buildItalyFoodChatReply(lang);
+      if (typeof window.buildItalyFoodChatReply === 'function') return window.buildItalyFoodChatReply(lang, rawQ, earlyMatchedEntity);
       const fallback = {
         ko: '이탈리아 도시별 식당·간식 후보는 가이드에서 확인해 주세요. 영업시간과 예약은 방문 전에 매장에 재확인해야 합니다.',
         en: 'Please check the Italy city food guide for restaurant and snack candidates. Reconfirm hours and booking with each venue before visiting.',
