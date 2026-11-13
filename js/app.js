@@ -4554,6 +4554,10 @@ function handleLocalChat(query) {
     const taxiResponse = window.buildEuropeanTaxiChatResponse(rawQ, lang);
     if (taxiResponse) return taxiResponse;
   }
+  if (typeof window.buildSpainRiceCordobaChatResponse === 'function') {
+    const spainFactsResponse = window.buildSpainRiceCordobaChatResponse(rawQ, lang);
+    if (spainFactsResponse) return spainFactsResponse;
+  }
   const historyResponse = buildSpanishAttractionHistoryChatResponse(rawQ, lang);
   if (historyResponse) return historyResponse;
   const electricityResponse = typeof window.buildEuropeElectricityChatResponse === 'function' ? window.buildEuropeElectricityChatResponse(rawQ, lang) : null;
@@ -10289,6 +10293,9 @@ function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
   const isSaved = savedIdsSet && savedIdsSet.has(item.id);
   const badgeClass = getPracticalCandidateTypeBadgeClass(item.filterKey);
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`;
+  const cardLang = ['ko', 'en', 'ja', 'zh'].includes(lang) ? lang : 'ko';
+  const culturalHighlights = { ko: '🏛️ 볼거리 · 배경', en: '🏛️ Highlights & background', ja: '🏛️ 見どころ・背景', zh: '🏛️ 看点与背景' };
+  const culturalVisiting = { ko: '⏰ 방문 · 운영 안내', en: '⏰ Visiting information', ja: '⏰ 訪問・営業案内', zh: '⏰ 参观信息' };
 
   const sourcesLinksHtml = (item.sources || []).map(src => `
     <a href="${src.url}" target="_blank" rel="noopener noreferrer" class="pc-source-link">
@@ -10325,14 +10332,14 @@ function renderPracticalCandidateCardHtml(rawItem, savedIdsSet, lang) {
 
       <div class="pc-card-body">
         <div class="pc-info-block">
-          <div class="pc-info-label">${ui.labelHighlights || '🍴 대표 먹거리 · 전망'}</div>
+          <div class="pc-info-label">${item.filterKey === 'cultural_site' ? culturalHighlights[cardLang] : (ui.labelHighlights || '🍴 대표 먹거리 · 전망')}</div>
           <div class="pc-info-text">${formatMultiline(item.highlights)}</div>
         </div>
 
         ${item.history ? `<div class="pc-info-block pc-info-history"><div class="pc-info-label">${ui.labelHistory || '🏛️ 역사와 배경'}</div><div class="pc-info-text">${formatMultiline(escapeHtml(item.history))}</div></div>` : ''}
 
         <div class="pc-info-block pc-info-hours">
-          <div class="pc-info-label">${ui.labelHours || '⏰ 확인된 운영시간'} <span class="pc-hours-caveat">${ui.labelHoursCaveat || '(방문 당일 변경 가능성 있음 · 방문 전 확인)'}</span></div>
+          <div class="pc-info-label">${item.filterKey === 'cultural_site' ? culturalVisiting[cardLang] : (ui.labelHours || '⏰ 확인된 운영시간')} <span class="pc-hours-caveat">${ui.labelHoursCaveat || '(방문 당일 변경 가능성 있음 · 방문 전 확인)'}</span></div>
           <div class="pc-info-text">${formatMultiline(item.verifiedHours)}</div>
         </div>
 
@@ -10477,6 +10484,7 @@ function renderPracticalCityCandidates(lang) {
     { id: 'barcelona', label: (ui.cities && ui.cities.barcelona) || '🇪🇸 바르셀로나', count: allItems.filter(x => x.cityId === 'barcelona').length },
     { id: 'granada', label: (ui.cities && ui.cities.granada) || '🇪🇸 그라나다', count: allItems.filter(x => x.cityId === 'granada').length },
     { id: 'ronda', label: (ui.cities && ui.cities.ronda) || '🇪🇸 론다', count: allItems.filter(x => x.cityId === 'ronda').length },
+    { id: 'cordoba', label: (ui.cities && ui.cities.cordoba) || '🇪🇸 코르도바', count: allItems.filter(x => x.cityId === 'cordoba').length },
     { id: 'malaga', label: (ui.cities && ui.cities.malaga) || '🇪🇸 말라가', count: allItems.filter(x => x.cityId === 'malaga').length },
     { id: 'seville', label: (ui.cities && ui.cities.seville) || '🇪🇸 세비야', count: allItems.filter(x => x.cityId === 'seville').length },
     { id: 'naples', label: (ui.cities && ui.cities.naples) || '🇮🇹 나폴리', count: allItems.filter(x => x.cityId === 'naples').length },
@@ -10611,9 +10619,11 @@ function renderPracticalCityCandidates(lang) {
         ${cardsHtml}
       </div>
     </section>
+    <div id="spain-rice-cordoba-guide"></div>
   `;
   const searchInput = document.getElementById('pcSearchInput');
   if (searchInput) searchInput.value = state.searchQuery || '';
+  if (typeof window.renderSpainRiceCordobaGuide === 'function') window.renderSpainRiceCordobaGuide(activeLang);
 }
 
 function downloadIcsCalendar() {

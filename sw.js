@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261113_ronda_v1)
+// SlowTravel Mobile Offline Service Worker (v20261113_spain_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261113_ronda_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261113_spain_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -39,6 +39,10 @@ const PRECACHE_ASSETS = [
   './img/italy-food/rome-trapizzino.jpg',
   './js/practical-place-additions.js',
   './js/ronda-granada-dining-guide.js',
+  './js/spain-rice-cordoba-guide.js',
+  './img/user-cordoba-san-pablo/sign.jpg',
+  './img/user-cordoba-san-pablo/facade.jpg',
+  './img/user-cordoba-san-pablo/direction.jpg',
   './js/curated-places-guide.js',
   './js/travel-diary.js',
   './js/components.js',

@@ -249,7 +249,14 @@
     localized.resultCountSuffix = localized.resultCountSuffix.replace(/35/g, candidateCount);
     localized.cityFilterLabel = localized.cityFilterLabel.replace(/8/g, cityCount);
   }
-  langs.forEach(lang => Object.assign(i18n.ui[lang], ui[lang]));
+  // Keep the existing city translations when extending the Ronda filter.
+  langs.forEach(lang => {
+    const existingCities = i18n.ui[lang].cities || {};
+    const existingCityEnMap = i18n.ui[lang].cityEnMap || {};
+    Object.assign(i18n.ui[lang], ui[lang]);
+    i18n.ui[lang].cities = Object.assign({}, existingCities, ui[lang].cities);
+    i18n.ui[lang].cityEnMap = Object.assign({}, existingCityEnMap, ui[lang].cityEnMap);
+  });
   i18n.ui.ko.cityEnMap.granada = 'Granada';
   i18n.ui.en.cities.ronda = '🇪🇸 Ronda';
   i18n.ui.ja.cities.ronda = '🇪🇸 ロンダ';
