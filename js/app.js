@@ -4548,7 +4548,7 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
 function handleLocalChat(query) {
   const rawQ = (query || '').trim();
   const q = rawQ.toLowerCase();
-  const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加'].some(w => q.includes(w));
+  const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'ronda', '론다', 'ロンダ', '龙达', 'puente nuevo', 'el tajo'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
   if (typeof window.buildEuropeanTaxiChatResponse === 'function') {
     const taxiResponse = window.buildEuropeanTaxiChatResponse(rawQ, lang);
@@ -4570,6 +4570,10 @@ function handleLocalChat(query) {
       zh: '🚌 <strong>11月12日（周四）塞维利亚 → 科尔多瓦</strong><br>• 11:30 从塞维利亚 Plaza de Armas 出发 · ALSA Normal大巴<br>• 13:30 抵达科尔多瓦 Estación de Autobuses（约2小时）<br>• 此处仅记录已确认的去程；未添加返程班次。<br><a href="https://www.alsa.com/en/coach/seville-cordova" target="_blank" rel="noopener noreferrer">ALSA官方线路 ↗</a>'
     };
     return nov12CordobaBusReply[lang] || nov12CordobaBusReply.ko;
+  }
+  if (typeof window.buildRondaGranadaDiningChatResponse === 'function') {
+    const scenicDiningResponse = window.buildRondaGranadaDiningChatResponse(rawQ, lang);
+    if (scenicDiningResponse) return scenicDiningResponse;
   }
   // Route Michelin questions for the newly covered cities before broad dining matchers.
   const asksMichelin = /michelin|미슐랭|미쉐린|미쉐린.?가이드|ミシュラン|米其林/i.test(q);
@@ -10472,6 +10476,7 @@ function renderPracticalCityCandidates(lang) {
     { id: 'all', label: ui.cityAll || '🌐 전체 도시', count: allItems.length },
     { id: 'barcelona', label: (ui.cities && ui.cities.barcelona) || '🇪🇸 바르셀로나', count: allItems.filter(x => x.cityId === 'barcelona').length },
     { id: 'granada', label: (ui.cities && ui.cities.granada) || '🇪🇸 그라나다', count: allItems.filter(x => x.cityId === 'granada').length },
+    { id: 'ronda', label: (ui.cities && ui.cities.ronda) || '🇪🇸 론다', count: allItems.filter(x => x.cityId === 'ronda').length },
     { id: 'malaga', label: (ui.cities && ui.cities.malaga) || '🇪🇸 말라가', count: allItems.filter(x => x.cityId === 'malaga').length },
     { id: 'seville', label: (ui.cities && ui.cities.seville) || '🇪🇸 세비야', count: allItems.filter(x => x.cityId === 'seville').length },
     { id: 'naples', label: (ui.cities && ui.cities.naples) || '🇮🇹 나폴리', count: allItems.filter(x => x.cityId === 'naples').length },
