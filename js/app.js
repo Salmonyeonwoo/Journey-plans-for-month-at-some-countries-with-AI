@@ -4550,6 +4550,14 @@ function handleLocalChat(query) {
   const q = rawQ.toLowerCase();
   const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'ronda', '론다', 'ロンダ', '龙达', 'puente nuevo', 'el tajo'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
+  if (typeof window.buildGranadaCenterReviewChatResponse === 'function') {
+    const centerResponse = window.buildGranadaCenterReviewChatResponse(rawQ, lang);
+    if (centerResponse) return centerResponse;
+  }
+  if (typeof window.buildAlhambraVisitReviewChatResponse === 'function') {
+    const visitResponse = window.buildAlhambraVisitReviewChatResponse(rawQ, lang);
+    if (visitResponse) return visitResponse;
+  }
   if (typeof window.buildEuropeanTaxiChatResponse === 'function') {
     const taxiResponse = window.buildEuropeanTaxiChatResponse(rawQ, lang);
     if (taxiResponse) return taxiResponse;
@@ -5686,21 +5694,21 @@ function handleLocalChat(query) {
       ];
     } else if (lang === 'en') {
       chips = [
-        { query: 'Alhambra & Nasrid Palaces strict restroom rules', label: '⚠️ Nasrid Zero-Toilet Rule' },
+        { query: 'Alhambra & Nasrid Palaces strict restroom rules', label: '🚻 Nasrid restroom information' },
         { query: 'Vatican Sistine Chapel restroom last chance', label: '⚠️ Sistine Chapel Last Chance' },
         { query: '3 golden routines for European restrooms', label: '💡 3 Golden Routines' },
         { query: 'European restroom insider survival tips', label: '🏬 Restroom Survival Hacks' }
       ];
     } else if (lang === 'zh') {
       chips = [
-        { query: '阿尔罕布拉宫与纳斯瑞德宫殿洗手间特级注意', label: '⚠️ 纳斯瑞德宫绝无厕所' },
+        { query: '阿尔罕布拉宫与纳斯瑞德宫殿洗手间特级注意', label: '🚻 纳斯瑞德宫区域洗手间' },
         { query: '梵蒂冈西斯廷礼拜堂洗手间最后关口', label: '⚠️ 西斯廷最后关口' },
         { query: '欧洲旅行如厕3大黄金法则', label: '💡 3大黄金法则' },
         { query: '欧洲如厕求生秘籍（百货与无马桶垫）', label: '🏬 如厕求生秘籍' }
       ];
     } else {
       chips = [
-        { query: '알함브라 나스르 궁전 화장실 주의사항', label: '⚠️ 나스르 궁전 화장실 전무' },
+        { query: '알함브라 나스르 궁전 화장실 주의사항', label: '🚻 나스르 궁전 구역 화장실' },
         { query: '바티칸 시스티나 예배당 직전 화장실 팁', label: '⚠️ 바티칸 마지막 화장실' },
         { query: '사그라다 파밀리아 화장실 위치 알려줘', label: '⛪ 사그라다 파밀리아' },
         { query: '피렌체 우피치 미술관 층별 화장실 위치', label: '🎨 피렌체 우피치 미술관' },
@@ -5711,10 +5719,7 @@ function handleLocalChat(query) {
     if (lang === 'ja') {
       let res = `🚻 <strong>ヨーロッパ主要名所トイレ完全ガイド＆3大ゴールデンルール</strong><br><br>`;
       if (isAlhambra) {
-        res += `⚠️ <strong>グラナダ・アルハンブラ（ナスル朝宮殿）の超厳格警告:</strong><br>
-        • <strong>宮殿内トイレ皆無:</strong> イスラム建築保護のため内部配管が禁止されており、入場から退場まで宮殿内にトイレは一切ありません！<br>
-        • <strong>対策:</strong> 30分刻みの時間指定列に並ぶ前に、すぐ隣にある<strong>【カルロス5世宮殿1階のトイレ】</strong>を必ず利用してください。<br>
-        • 敷地内のチケット売り場、カルロス5世宮殿、ヘネラリフェ庭園入口には清潔な無料トイレがあります。<br><br>`;
+        res += `🚻 <strong>アルハンブラのトイレ：</strong>公式FAQはチケット売り場付近、ヘネラリフェ、ナスル朝宮殿エリアのトイレを案内します。宮殿建物内の正確な場所・見学中の利用可否・料金は未確認です。現地表示や係員にご確認ください。<a href="https://www.alhambra-patronato.es/en/visit/faq" target="_blank" rel="noopener noreferrer">公式FAQ ↗</a><br><br>`;
       }
       if (isVatican) {
         res += `⚠️ <strong>ローマ・バチカン美術館（システィーナ礼拝堂）の注意点:</strong><br>
@@ -5744,10 +5749,7 @@ function handleLocalChat(query) {
     } else if (lang === 'en') {
       let res = `🚻 <strong>Europe Major Sights Restroom Guide & 3 Golden Routines</strong><br><br>`;
       if (isAlhambra) {
-        res += `⚠️ <strong>Granada Alhambra & Nasrid Palaces Strict Rule:</strong><br>
-        • <strong>Zero Toilets Inside:</strong> To preserve delicate Islamic plasterwork, no restrooms exist inside the Nasrid Palaces from entrance to exit!<br>
-        • <strong>Action Plan:</strong> Before queuing for your strict 30-min timeslot, visit the <strong>restrooms inside the Palace of Charles V</strong> without fail.<br>
-        • Free restrooms are placed at the main ticket office, Charles V Palace, and Generalife entrance.<br><br>`;
+        res += `🚻 <strong>Alhambra restrooms:</strong> The official FAQ lists toilets next to the ticket office and in the Generalife and Nasrid Palaces area. Exact locations inside palace buildings, access during the route and any charges are unconfirmed; check signs or ask staff. <a href="https://www.alhambra-patronato.es/en/visit/faq" target="_blank" rel="noopener noreferrer">Official FAQ ↗</a><br><br>`;
       }
       if (isVatican) {
         res += `⚠️ <strong>Rome Vatican Museums (Sistine Chapel) Last Chance:</strong><br>
@@ -5777,10 +5779,7 @@ function handleLocalChat(query) {
     } else if (lang === 'zh') {
       let res = `🚻 <strong>欧洲主要名胜洗手间实地核实指南与3大黄金法则</strong><br><br>`;
       if (isAlhambra) {
-        res += `⚠️ <strong>格拉纳达 阿尔罕布拉宫（纳斯瑞德宫殿）特级警告:</strong><br>
-        • <strong>殿内绝无厕所:</strong> 为保护伊斯兰历史古迹，纳斯瑞德宫内部严禁通水，检票后直至完全离开全程无任何洗手间！<br>
-        • <strong>避坑秘籍:</strong> 纳斯瑞德宫严格30分钟定点检票，在前往排队前，务必先上紧邻的<strong>【卡洛斯五世宫殿内部洗手间】</strong>。<br>
-        • 景区售票处正门、卡洛斯五世宫殿、夏宫花园入口均有免费洗手间。<br><br>`;
+        res += `🚻 <strong>阿尔罕布拉洗手间：</strong>官方FAQ提到售票处旁、赫内拉利费和纳斯瑞德宫殿区域的洗手间。宫殿建筑内的具体位置、参观途中可否使用及费用尚未确认，请查看现场标识或询问工作人员。<a href="https://www.alhambra-patronato.es/en/visit/faq" target="_blank" rel="noopener noreferrer">官方FAQ ↗</a><br><br>`;
       }
       if (isVatican) {
         res += `⚠️ <strong>罗马 梵蒂冈博物馆（西斯廷礼拜堂）最后关口:</strong><br>
@@ -5810,10 +5809,7 @@ function handleLocalChat(query) {
     } else {
       let res = `🚻 <strong>유럽 주요 명소 화장실 완벽 가이드 &amp; 이용 수칙 '골든 루틴'</strong><br><br>`;
       if (isAlhambra) {
-        res += `⚠️ <strong>그라나다 알함브라 궁전 (나스르 궁전) 초특급 주의:</strong><br>
-        • <strong>궁전 내부 화장실 전무:</strong> 이슬람 건축 보존을 위해 배관 설치가 제한되어, <strong>나스르 궁전은 입장 후 관람 종료까지 화장실이 전혀 없습니다!</strong><br>
-        • <strong>골든 팁:</strong> 30분 엄격 입장 대기줄을 서기 전, 바로 인근 <strong>[카를로스 5세 궁전 1층 화장실]</strong>을 반드시 이용하고 입장하셔야 합니다.<br>
-        • 알함브라 전체 부지는 매표소 정문, 카를로스 5세 궁전, 헤네랄리페 정원 입구에 무료 화장실이 완비되어 있습니다.<br><br>`;
+        res += `🚻 <strong>알함브라 화장실:</strong> 공식 FAQ는 매표소 옆과 헤네랄리페·나스르 궁전 구역의 화장실을 안내합니다. 궁전 건물 내부의 정확한 위치와 관람 중 접근 가능성, 요금은 확인되지 않았으니 현장 직원이나 표지판에 문의하세요. <a href="https://www.alhambra-patronato.es/en/visit/faq" target="_blank" rel="noopener noreferrer">공식 FAQ ↗</a><br><br>`;
       }
       if (isVatican) {
         res += `⚠️ <strong>로마 바티칸 미술관 (시스티나 예배당 직전) 라스트 찬스:</strong><br>
@@ -10538,6 +10534,8 @@ function renderPracticalCityCandidates(lang) {
   const cardsHtml = renderPracticalCandidateResultsHtml(filteredItems, savedIdsSet, activeLang, ui);
 
   mount.innerHTML = `
+    <div id="alhambra-visit-review"></div>
+    <div id="granada-center-review"></div>
     <section class="practical-candidates-section" aria-label="${ui.mainTitle || '도시별 추가 맛집·시장·전망 후보 컬렉션'}">
       <div class="pc-header-banner">
         <div class="pc-header-top">
@@ -10623,6 +10621,8 @@ function renderPracticalCityCandidates(lang) {
   `;
   const searchInput = document.getElementById('pcSearchInput');
   if (searchInput) searchInput.value = state.searchQuery || '';
+  if (typeof window.renderAlhambraVisitReview === 'function') window.renderAlhambraVisitReview(activeLang);
+  if (typeof window.renderGranadaCenterReview === 'function') window.renderGranadaCenterReview(activeLang);
   if (typeof window.renderSpainRiceCordobaGuide === 'function') window.renderSpainRiceCordobaGuide(activeLang);
 }
 

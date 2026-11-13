@@ -2494,10 +2494,10 @@
                       </div>
                       <div class="sight-box-body">
                         <div class="sight-desc-chunk" data-i18n="spain_spot2_alhambra">
-                          • <strong>알함브라 궁전 부지 전체:</strong> 화장실 유무: <strong>있음 (무료)</strong><br>부지가 방대하지만, 매표소 정문 인근, 카를로스 5세 궁전 내부, 그리고 헤네랄리페(Generalife) 정원 입구 등 주요 거점마다 깔끔한 무료 화장실이 분산 배치되어 있습니다.
+                          • <strong>알함브라 화장실:</strong> 공식 FAQ는 매표소 옆, 헤네랄리페와 나스르 궁전 <strong>구역</strong>의 화장실을 안내합니다. 정확한 위치와 당일 이용·요금은 현장 표지판이나 직원에게 확인하세요. <a href="https://www.alhambra-patronato.es/en/visit/faq" target="_blank" rel="noopener noreferrer">공식 FAQ ↗</a>
                         </div>
                         <div class="sight-desc-chunk sight-warning-callout" style="margin-top:10px;" data-i18n="spain_spot2_nasrid_warn">
-                          ⚠️ <strong>나스르 궁전(Palacios Nazaríes) 초특급 주의: '궁전 내부 화장실 전무' 철저 적용!</strong><br>이슬람 유적 보존을 위해 내부 배관 설치가 엄격히 제한되어, <strong>입장 후 관람이 끝날 때까지 화장실이 전혀 없습니다.</strong><br>💡 <strong>골든 팁:</strong> 나스르 궁전은 입장 시간이 30분 단위로 엄격히 통제됩니다. 입장 대기줄을 서기 전, 바로 인근에 있는 <strong>[카를로스 5세 궁전 내부 화장실]</strong>을 반드시 다녀오셔야 중간에 낭패를 보지 않습니다.
+                          나스르 궁전 관람 전 화장실 위치를 미리 확인하세요. 공식 안내의 ‘구역’은 궁전 건물 내부의 정확한 위치나 관람 중 접근 가능성을 특정하지 않습니다.
                         </div>
                       </div>
                     </div>

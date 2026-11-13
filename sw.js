@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261113_spain_review_v1)
+// SlowTravel Mobile Offline Service Worker (v20261113_alhambra_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261113_spain_review_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261113_alhambra_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -15,6 +15,7 @@ const PRECACHE_ASSETS = [
   './css/guidebook-navigation.css',
   './css/local-food-guide.css',
   './css/europe-taxi-app-guide.css',
+  './css/alhambra-visit-review.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -40,6 +41,8 @@ const PRECACHE_ASSETS = [
   './js/practical-place-additions.js',
   './js/ronda-granada-dining-guide.js',
   './js/spain-rice-cordoba-guide.js',
+  './js/alhambra-visit-review.js',
+  './js/granada-center-review.js',
   './img/user-cordoba-san-pablo/sign.jpg',
   './img/user-cordoba-san-pablo/facade.jpg',
   './img/user-cordoba-san-pablo/direction.jpg',
