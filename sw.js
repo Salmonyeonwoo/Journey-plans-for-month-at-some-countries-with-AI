@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261112_taxi_v1)
+// SlowTravel Mobile Offline Service Worker (v20261113_ronda_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261112_taxi_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261113_ronda_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -38,6 +38,7 @@ const PRECACHE_ASSETS = [
   './img/italy-food/florence-lampredotto.jpg',
   './img/italy-food/rome-trapizzino.jpg',
   './js/practical-place-additions.js',
+  './js/ronda-granada-dining-guide.js',
   './js/curated-places-guide.js',
   './js/travel-diary.js',
   './js/components.js',
@@ -162,24 +163,28 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 3. Static assets (CSS, JS, manifest, fonts): Stale-While-Revalidate with search query ignored
-  event.respondWith(
-    caches.match(req, { ignoreSearch: true }).then((cachedRes) => {
-      const fetchPromise = fetch(req)
-        .then((networkRes) => {
-          if (networkRes && networkRes.status === 200) {
-            const resClone = networkRes.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(req, resClone));
-          }
-          return networkRes;
-        })
-        .catch(() => {
-          // If network failed and nothing cached, try clean URL without query string
-          const cleanUrl = req.url.split('?')[0];
-          return caches.match(cleanUrl);
-        });
+  // 3. Static assets: stale-while-revalidate, keeping clean and versioned keys in sync.
+  const cleanUrl = req.url.split('?')[0];
+  const cachePromise = caches.open(CACHE_NAME);
+  const fetchPromise = fetch(req, { cache: 'no-cache' })
+    .then(async (networkRes) => {
+      if (networkRes && networkRes.status === 200) {
+        const cache = await cachePromise;
+        await cache.put(cleanUrl, networkRes.clone());
+        if (req.url !== cleanUrl) await cache.put(req, networkRes.clone());
+      }
+      return networkRes;
+    })
+    .catch(async () => {
+      const cache = await cachePromise;
+      return (await cache.match(cleanUrl)) || (await cache.match(req));
+    });
 
-      // Return cached version immediately if available, while refreshing in background
+  // Keep revalidation alive after a cached response has been returned.
+  event.waitUntil(fetchPromise.then(() => undefined).catch(() => undefined));
+  event.respondWith(
+    cachePromise.then(async (cache) => {
+      const cachedRes = (await cache.match(cleanUrl)) || (await cache.match(req));
       return cachedRes || fetchPromise;
     })
   );
