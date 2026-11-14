@@ -1465,6 +1465,7 @@
 
               <!-- [A] 접근성 사실 검증 원칙 배너 (동적 다국어 렌더링) -->
               <div class="verified-principle-banner" id="verifiedPrincipleBanner"></div>
+              <div id="granada-malaga-general-guide"></div>
 
               <!-- [B] 구역별 퀵 점프 내비게이터 바 (동적 다국어 렌더링) -->
               <div class="district-nav-bar" id="districtNavBar"></div>

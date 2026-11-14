@@ -38632,16 +38632,18 @@ const PRACTICAL_CITY_CANDIDATES_DATA = {
       typeBadge: "⚓ 항구 산책+저녁 식사 구역 (식당별 운영시간 상이 · 제2장 1줄 요약 상세화)",
       typeColor: "foodhall",
       isOneStopRecommended: true,
-      oneStopReason: "👑 부모님 동행 우선 추천 (식사+전망 원스톱): 지중해 요트 항구·알카사바 야간 조명 전망 산책과 해변 레스토랑 저녁 식사를 한 구역에서 한 번에 해결할 수 있어 이동 피로가 매우 적습니다.",
+      oneStopReason: "⚓ 항구 야외 산책과 식당을 함께 둘러볼 수 있는 구역입니다. 걷는 거리와 식당 위치는 선택한 동선에 따라 다르므로, 이동·휴식 계획을 미리 확인하세요.",
       image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
-      highlights: "말라가 항구 1부두를 따라 조성된 야외 해안 산책로 겸 레스토랑·카페 구역. 퐁피두 센터 컬러 큐브, 지중해 해산물 파에야·생선구이 레스토랑, 젤라토 카페 및 말라가 대성당·알카사바 해질녘 야경 조망",
-      hours: "보행 산책로 개방 / 상점 통상 월~토 10:00~22:00 / 식음업장·레스토랑은 식당별 운영시간 상이 (통상 12:00~23:30 내외 안내)",
-      verifyNotice: "방문 전 확인 · 식당별 운영시간 및 브레이크 타임 상이 · 당일 변경 가능",
-      seniorCaution: "항구 산책로 보도 폭이 넓고 벤치가 잘 갖춰져 있으나, 입구에서 해변 끝 파롤라(등대)까지 왕복 거리가 꽤 길고 구역 내 지상↔지하/상부 연결 구간에 계단·경사로가 있으므로 엘리베이터 위치를 확인하고 해안 초입 레스토랑 위주로 동선을 짧게 잡으세요.",
+      highlights: "말라가 항구의 야외 산책·식당 구역이며 이곳에서 열리는 Zoco 행사의 시간은 산책로·식당 운영시간과 별도로 확인해야 합니다. 운영자 안내에 따르면 Zoco는 통상 매월 첫 세 일요일에 열리지만 계절·특별 일정은 달라질 수 있으므로 공식 행사표를 확인하세요. 공예·패션·식품 등의 상품 분야가 소개되지만 개별 판매품은 보장되지 않습니다. 야시장 또는 야간 운영은 확인되지 않았습니다.",
+      hours: "현재 운영시간은 Muelle Uno 공식 운영시간 안내와 개별 점포의 공지·영업시간을 확인하세요. 행사 일정은 공식 행사표를 확인하세요.",
+      verifyNotice: "방문 전 공식 운영시간 안내, 개별 점포 공지·영업시간 및 공식 행사표를 확인하세요. Zoco는 통상 매월 첫 세 일요일에 열리지만 계절·특별 일정은 달라질 수 있으며, 야시장·야간 운영은 확인되지 않았습니다.",
+      seniorCaution: "전 구역이 완전 평지이거나 무단차라고 단정할 수 없습니다. 계획한 동선의 걷는 거리와 휴식 지점, 이용할 입구, 경사·계단 유무를 미리 확인하고 무리 없는 거리로 조정하세요.",
       sources: [
-        { label: "Muelle Uno 공식 운영시간 안내", url: "https://www.muelleuno.com/en/schedule/" }
+        { label: "Muelle Uno 공식 운영시간 안내", url: "https://www.muelleuno.com/en/schedule/" },
+        { label: "Muelle Uno 공식 Zoco 안내", url: "https://www.muelleuno.com/el-zoco/" },
+        { label: "Muelle Uno 공식 행사 일정", url: "https://www.muelleuno.com/agenda-malaga/" }
       ],
-      verifiedDate: "2026-10-29 확인",
+      verifiedDate: "2026-11-14",
       mapQuery: "Muelle Uno Puerto de Malaga"
     },
     {
@@ -39521,34 +39523,34 @@ const PRACTICAL_CANDIDATES_I18N = {
         name: "Muelle Uno (Málaga Port Waterfront Promenade & Dining Zone)",
         typeBadge: "⚓ Harbor Stroll + Dinner Zone (Restaurant Hours Vary · Expanded Details)",
         subTypeTag: "Waterfront Promenade + Evening Restaurants",
-        verifyBadge: "Verify before visit · Hours vary by restaurant",
-        oneStopReason: "👑 Priority Pick for Senior Parents (Stroll + Dinner in One Spot): Combines a breezy Mediterranean marina walk, illuminated Alcazaba views, and waterfront dinner restaurants in a single zone with minimal transfer fatigue.",
-        highlights: "Open-air waterfront promenade along Pier 1 of Málaga Port featuring the Centre Pompidou glass cube, seafood paella and grilled fish restaurants, gelato cafes, and sunset/evening views toward Málaga Cathedral and the Alcazaba.",
-        hours: "Pedestrian promenade open / Shops typically Mon–Sat 10:00–22:00 / Dining & restaurant operating hours vary by venue (commonly ~12:00–23:30).",
-        seniorCaution: "The waterfront walkway is wide with plenty of benches, but the full round-trip distance to La Farola lighthouse is quite long and multi-level connections have stairs/ramps—locate the elevators and focus on restaurants near the main entrance.",
-        sourceLabels: ["Muelle Uno Official Opening Hours"]
+        verifyBadge: "Verify before visit · Check official hours, venue times and event calendar",
+        oneStopReason: "⚓ An open-air harbor promenade and dining area. Walking distance and access conditions vary by route; check the route and plan breaks rather than assuming a short or effortless visit.",
+        highlights: "Málaga Port’s open-air waterfront promenade and dining area hosts El Zoco; check market times separately from promenade and restaurant hours. The operator says El Zoco is usually held on the first three Sundays of each month, but seasonal and special schedules may differ; check the official event calendar. It features categories such as crafts, fashion and food, but individual products are not guaranteed. Night-market or nighttime operation has not been confirmed.",
+        hours: "Check Muelle Uno’s official schedule for current operating hours and each venue’s own notices and hours. Check the official event calendar for event dates.",
+        seniorCaution: "Do not assume the entire area is completely flat or step-free. Check the planned walking distance and places to rest, the chosen entrance, and any slopes or stairs; adjust the route to a comfortable distance.",
+        sourceLabels: ["Muelle Uno Official Operating Hours", "Muelle Uno Official El Zoco Guide", "Muelle Uno Official Málaga Events Calendar"]
       },
       ja: {
         name: "Muelle Uno (ムエジェ・ウノ・マラガ港ダイニングプロムナード)",
         typeBadge: "⚓ 港散策＋夕食エリア (店舗ごとに営業時間相違・第2章1行要約の詳細化)",
         subTypeTag: "港湾プロムナード＋イブニングレストラン街",
-        verifyBadge: "訪問前に要確認・レストランごとに営業時間相違",
-        oneStopReason: "👑 ご両親同伴 優先推奨 (食事＋展望ワンストップ): 地中海ヨットハーバーとアルカサバ夜間ライトアップの散策、海辺レストランでの夕食を1つのエリアで同時に完結でき、移動の負担が非常に少ないスポットです。",
-        highlights: "マラガ港第1埠頭に沿って整備された海辺の散策路兼レストラン・カフェ街。ポンピドゥー・センターのカラーキューブ、地中海シーフードパエリアや焼き魚レストラン、マラガ大聖堂・アルカサバの夕景・夜景眺望。",
-        hours: "遊歩道開放 ／ ショップ通常 月〜土 10:00〜22:00 ／ 飲食店・レストランは店舗により営業時間が異なる（通常12:00〜23:30前後案内）",
-        seniorCaution: "港の遊歩道は幅が広くベンチも充実していますが、入口から先端の灯台（La Farola）まで往復すると距離が長く、地上と地下・上層を結ぶ区間に階段やスロープがあるため、エレベーター位置を確認し入口付近のレストランを中心に短い動線でお楽しみください。",
-        sourceLabels: ["Muelle Uno 公式営業時間案内"]
+        verifyBadge: "訪問前に要確認・公式営業時間、各店舗の時間、イベント予定を確認",
+        oneStopReason: "⚓ 港沿いの屋外プロムナードと飲食エリアです。歩く距離やアクセス条件はルートによって異なるため、短距離・負担が少ないと決めつけず、経路と休憩場所を確認してください。",
+        highlights: "マラガ港の屋外散策・飲食エリアで、ここで開かれるEl Zocoの開催時間は遊歩道・店舗の営業時間とは別に確認してください。運営者によるとEl Zocoは通常毎月最初の3日曜日に開催されますが、季節・特別日程は異なる場合があるため公式イベントカレンダーをご確認ください。工芸、ファッション、食品などの分野が紹介されていますが、個別商品の販売は保証されません。夜市・夜間開催は確認されていません。",
+        hours: "現在の営業時間はMuelle Uno公式営業時間案内と各店舗の告知・営業時間をご確認ください。イベント日程は公式イベントカレンダーをご確認ください。",
+        seniorCaution: "全域が完全な平坦地・段差なしとは限りません。予定ルートの歩行距離と休憩場所、利用する入口、勾配や階段の有無を事前に確認し、無理のない距離に調整してください。",
+        sourceLabels: ["Muelle Uno 公式営業時間案内", "Muelle Uno 公式 El Zoco 案内", "Muelle Uno 公式マラガイベントカレンダー"]
       },
       zh: {
         name: "Muelle Uno (马拉加一号码头海滨散步与晚餐餐饮区)",
         typeBadge: "⚓ 港口散步+晚餐区 (各餐厅营业时间不同 · 第2章简述详情补充)",
         subTypeTag: "海滨步道 + 晚间景观餐厅群",
-        verifyBadge: "到访前请核实 · 各餐厅营业时间不同",
-        oneStopReason: "👑 携父母同行优先推荐 (晚餐+海景散步一站式): 在同一港区即可漫步地中海游艇码头、远眺阿尔卡萨瓦城堡夜景，并在海滨餐厅享用晚餐，大幅减少夜间奔波。",
-        highlights: "沿马拉加港1号码头打造的露天海滨步道与餐饮街区，汇聚蓬皮杜中心彩色玻璃立方体、海鲜饭与烤鱼餐厅、意式冰淇淋店，可饱览马拉加主座教堂与阿尔卡萨瓦城堡夕阳夜景。",
-        hours: "海滨步道开放 / 商铺通常周一至周六 10:00~22:00 / 各餐饮门店与餐厅营业时间因店而异（通常约12:00~23:30）",
-        seniorCaution: "港区步道宽敞且休息长椅充足，但从入口走到尽头灯塔(La Farola)往返距离较长，且上下层连接处有台阶或坡道，请留意电梯位置并优先选择靠近入口处的海景餐厅就餐。",
-        sourceLabels: ["Muelle Uno 官方营业时间指南"]
+        verifyBadge: "到访前请核实 · 查看官方开放时间、各店时间及活动日历",
+        oneStopReason: "⚓ 这里是港口露天步道与餐饮区。步行距离和通行条件因路线而异；请先核实路线并安排休息，不要假定行程很短或毫不费力。",
+        highlights: "马拉加港露天海滨步道与餐饮区会举办El Zoco，其活动时间须与步道和餐厅营业时间分别确认。运营方称El Zoco通常在每月前三个星期日举办，但季节和特别安排可能不同，请查看官方活动日历。其介绍的商品类别包括手工艺、时尚和食品等，但不保证有任何特定商品。夜市或夜间开放尚未核实。",
+        hours: "当前开放时间请查看Muelle Uno官方时间表及各店自己的公告和营业时间；活动日期请查看官方活动日历。",
+        seniorCaution: "不要假定整个区域完全平坦或全程无台阶。请提前确认计划路线的步行距离和休息点、所选入口，以及坡道或台阶情况，并调整到舒适的步行距离。",
+        sourceLabels: ["Muelle Uno 官方开放时间", "Muelle Uno 官方 El Zoco 指南", "Muelle Uno 官方马拉加活动日历"]
       }
     },
     "pc-agp-lolita-skyview": {

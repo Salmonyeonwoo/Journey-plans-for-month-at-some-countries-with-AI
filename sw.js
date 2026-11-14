@@ -1,7 +1,7 @@
 // SlowTravel Mobile Offline Service Worker (v20261114_transit_history_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261114_transit_history_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261114_general_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -43,6 +43,7 @@ const PRECACHE_ASSETS = [
   './js/spain-rice-cordoba-guide.js',
   './js/alhambra-visit-review.js',
   './js/granada-center-review.js',
+  './js/granada-malaga-general-guide.js',
   './img/user-cordoba-san-pablo/sign.jpg',
   './img/user-cordoba-san-pablo/facade.jpg',
   './img/user-cordoba-san-pablo/direction.jpg',
