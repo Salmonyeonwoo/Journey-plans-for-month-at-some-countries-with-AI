@@ -1543,6 +1543,7 @@
                   파리·런던·스위스·독일 등 경유지 및 연계 여행지 명소 모음. 시니어 보행 친화도와 필수 예약 정보 수록.
                 </p>
               </div>
+              <div id="europe-cathedral-history-guide" class="europe-cathedral-history-mount"></div>
               <div class="photo-grid" id="landmarksEuropeGrid"></div>
               <div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-guide', 2)">

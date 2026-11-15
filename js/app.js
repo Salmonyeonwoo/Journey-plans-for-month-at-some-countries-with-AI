@@ -9000,6 +9000,7 @@ window.scrollToDistrict = scrollToDistrict;
 // ==========================================================================
 function renderSeniorDistrictRoutes(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
   if (typeof window.renderGranadaMalagaGeneralGuide === 'function') window.renderGranadaMalagaGeneralGuide(lang);
+  if (typeof window.renderEuropeanCathedralHistoryGuide === 'function') window.renderEuropeanCathedralHistoryGuide(lang);
   const allData = (typeof SENIOR_DISTRICTS_I18N !== 'undefined' ? SENIOR_DISTRICTS_I18N : (typeof window !== 'undefined' ? window.SENIOR_DISTRICTS_I18N : null));
   if (!allData) return;
   const data = allData[lang] || allData['ko'];

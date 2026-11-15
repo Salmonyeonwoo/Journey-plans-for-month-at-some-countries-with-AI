@@ -17862,7 +17862,7 @@ Feel free to ask any travel question!<br>
     "region": "스페인",
     "city": "스페인 세비야",
     "photo": "https://images.unsplash.com/photo-1558642084-fd07fae5282e?auto=format&fit=crop&w=800&q=80",
-    "highlight": "세계에서 3번째로 큰 성당이자 최대 고딕 건축물. 콜럼버스의 관을 멘 4대 왕 조각상과 황금빛 목조 제단",
+    "highlight": "옛 모스크의 오렌지 정원과 알모하드 미나렛에서 이어진 히랄다, 거대한 고딕 대성당",
     "seniorAccess": "성당 본당은 대체로 평탄하며 경사로가 갖춰져 있으나 일부 석판 단차가 있습니다. 히랄다 탑은 나귀가 오르던 완만한 경사로로 설계되어 있으나 램프 개수는 자료별로 일치하지 않으며(숫자 단정 불가), 무엇보다 종탑 전망대 직전 마지막 17개의 좁고 가파른 계단이 필수적입니다. 심장·호흡기 질환이나 관절이 약한 어르신은 정상 등반을 지양하고 본당과 오렌지 중정 그늘 쉼터 관람에 집중하시길 권장합니다.",
     "hours": "월-토 10:45~17:00, 일 14:30~18:00 (사전 타임슬롯 예매 필수)",
     "ticketTip": "공식 사이트 시간 지정 예매 필수. 살바도르 성당 통합권 구매 시 더 여유로움",
@@ -18934,62 +18934,35 @@ Feel free to ask any travel question!<br>
       "zh": "西班牙 塞维利亚"
     },
     "highlight": {
-      "ko": "옛 모스크의 히랄다와 고딕 대성당, 네 역사적 왕국을 상징하는 인물이 받치는 콜럼버스 묘, 다색채 목조 주제단화.",
-      "ja": "旧モスクのミナレットだったヒラルダとゴシック大聖堂、歴史上の四王国を象徴する人物が担ぐコロンブスの墓、彩色木彫の主祭壇画。",
-      "en": "The former mosque’s Giralda, a Gothic cathedral, Columbus’s tomb borne by figures personifying four historic kingdoms, and a polychrome wooden main altarpiece.",
-      "zh": "昔日清真寺宣礼塔希拉尔达、哥特式大教堂、由象征四个历史王国的人物承托的哥伦布墓，以及彩绘木雕主祭坛。"
+      "ko": "유럽에서 가장 큰 고딕 건축물로 소개되는 대성당, 옛 모스크의 오렌지 정원, 알모하드 미나렛에서 이어진 히랄다.",
+      "ja": "ヨーロッパ最大のゴシック建築とされる大聖堂、旧モスクの面影を残すオレンジの中庭、アルモハド朝のミナレットに由来するヒラルダ。",
+      "en": "A Gothic cathedral UNESCO describes as Europe’s largest, the former mosque’s Orange Tree Courtyard, and the Giralda, adapted from an Almohad minaret.",
+      "zh": "被联合国教科文组织称为欧洲最大哥特式建筑的大教堂、保留旧清真寺痕迹的橘树庭院，以及由阿尔摩哈德宣礼塔改建的希拉尔达。"
     },
     "history": {
-        "ko": "옛 대모스크 자리에 세운 대성당은 옛 알모하드 미나레트였던 히랄다를 종탑으로 품고 있으며, 르네상스 상부와 풍향계가 더해졌습니다. 대성당 공식 안내는 히랄다의 경사로가 말도 오를 수 있도록 넓게 설계됐다고 설명합니다. 주제단화는 다색채 목조 작품으로 1482~1564년에 제작됐고, 콜럼버스 묘의 네 인물은 네 역사적 왕국을 상징합니다. 오렌지 나무 안뜰(Patio de los Naranjos)에도 옛 모스크의 흔적이 남아 있어, 고딕 본당과 함께 보면 여러 시대의 건축이 이어진 과정을 읽을 수 있습니다.",
-        "en": "Built on the site of the former Great Mosque, the cathedral incorporates the Giralda, once its Almohad minaret, later adapted as a bell tower and topped with Renaissance additions. The cathedral says the ramp was wide enough for horses to climb. The polychrome wooden main altarpiece was made between 1482 and 1564; the figures bearing Columbus’s tomb personify four historic kingdoms. The Patio de los Naranjos (Orange Tree Courtyard) also preserves traces of the former mosque; compare it with the Gothic nave to see how different periods of architecture meet.",
-        "ja": "旧大モスク跡に建てられた大聖堂は、かつてアルモハド朝のミナレットだったヒラルダを鐘楼として取り込み、後にルネサンス様式の上部と風見像が加えられました。大聖堂の説明では、ヒラルダのスロープは馬も上れる幅に設計されました。彩色木彫の主祭壇画は1482～1564年に制作され、コロンブスの墓を担ぐ人物は歴史上の四王国を象徴しています。 オレンジの中庭（Patio de los Naranjos）にも旧モスクの痕跡が残ります。ゴシック様式の身廊と見比べると、異なる時代の建築が重なる様子を読み取れます。",
-        "zh": "塞维利亚大教堂建在原大清真寺遗址上，并将曾是阿尔摩哈德王朝宣礼塔的希拉尔达塔改作钟楼，后来又增建文艺复兴风格的上部结构和风向雕像。大教堂说明塔内坡道宽到足以让马匹登行。主祭坛是彩绘木雕作品，制作于1482至1564年；承托哥伦布墓的形象象征历史上的四个王国。 橘树庭院（Patio de los Naranjos）也保留着旧清真寺的痕迹；与哥特式中殿对照，可观察不同时代的建筑如何交汇。"
-      },
+      "ko": "세비야 대성당은 옛 알모하드 대모스크 터에 세워졌으며, 오렌지 정원과 히랄다에는 이슬람 시대의 흔적이 남아 있습니다. UNESCO는 이 성당을 유럽에서 가장 큰 고딕 건축물로 소개합니다. 옛 미나렛을 바탕으로 한 히랄다는 종탑으로 쓰이게 되었고, 위쪽에는 16세기 르네상스 마감부가 더해졌습니다. 대성당 공식 안내는 히랄다의 넓은 경사로가 말의 통행도 허용했다고 설명합니다. 콜럼버스 묘를 받치는 인물 조각의 고개 방향에 정치적 의미가 있다는 해석은 공식 자료에서 확인되지 않아 여기서는 사실로 제시하지 않습니다.",
+      "en": "Seville Cathedral stands on the site of the former Almohad Great Mosque; the Orange Tree Courtyard and the Giralda preserve traces of that history. UNESCO describes it as the largest Gothic building in Europe. The former minaret was adapted as a bell tower, with a Renaissance upper section added in the 16th century. The cathedral says the Giralda’s broad ramp could accommodate horses. An interpretation that the figures supporting Columbus’s tomb express a political message through the direction of their heads is not established by the official sources cited here.",
+      "ja": "セビリア大聖堂は旧アルモハド朝の大モスク跡に建ち、オレンジの中庭とヒラルダにはイスラム時代の痕跡が残っています。UNESCOは同大聖堂をヨーロッパ最大のゴシック建築と紹介しています。旧ミナレットは鐘楼として再利用され、16世紀にルネサンス様式の上部が加えられました。大聖堂の公式案内によると、ヒラルダの広いスロープは馬も通れるものでした。コロンブスの墓を支える人物像の顔の向きに政治的な意味があるという解釈は、ここで引用する公式資料からは確認できません。",
+      "zh": "塞维利亚大教堂建在阿尔摩哈德王朝大清真寺旧址上；橘树庭院与希拉尔达塔保留着那段历史的痕迹。联合国教科文组织称其为欧洲最大的哥特式建筑。旧宣礼塔后来改作钟楼，16世纪又增建了文艺复兴风格的上部。大教堂官方介绍说，希拉尔达塔内宽阔的坡道可供马匹通行。关于承托哥伦布墓的人像朝向暗含政治立场的解读，本文引用的官方资料并未证实。"
+    },
     "historySources": [
       {
         "label": {
-          "ko": "세비야 대성당 공식 세계유산 안내",
-          "en": "Cathedral official heritage guide",
-          "ja": "大聖堂公式・世界遺産案内",
-          "zh": "大教堂官方遗产介绍"
-        },
-        "url": "https://www.catedraldesevilla.es/en/the-cathedral/world-heritage-site/"
-      },
-      {
-        "label": {
-          "ko": "히랄다 공식 건축 안내",
-          "en": "Official Giralda guide",
-          "ja": "ヒラルダ公式案内",
-          "zh": "希拉尔达塔官方介绍"
-        },
-        "url": "https://www.catedraldesevilla.es/la-catedral/edificio/la-giralda/"
-      },
-      {
-        "label": {
-          "ko": "콜럼버스 묘 조각 설명",
-          "en": "Figures on Columbus’s tomb",
-          "ja": "コロンブスの墓の人物像",
-          "zh": "哥伦布墓人物雕像介绍"
-        },
-        "url": "https://www.catedraldesevilla.es/en/historical-figures-who-form-the-soul-of-seville-cathedral/"
-      },
-      {
-        "label": {
-          "ko": "주제단화 공식 안내",
-          "en": "Official main altarpiece guide",
-          "ja": "主祭壇画公式案内",
-          "zh": "主祭坛官方介绍"
-        },
-        "url": "https://www.catedraldesevilla.es/en/the-cathedral/building/the-gothic-cathedral-main-altarpiece-choir-side-chapels-and-doorways/"
-      },
-      {
-        "label": {
-          "ko": "UNESCO 세비야 대성당·알카사르·고문서관",
-          "en": "UNESCO Cathedral, Alcázar and Archivo de Indias",
-          "ja": "UNESCOセビリア大聖堂・アルカサル・インディアス古文書館",
-          "zh": "UNESCO塞维利亚大教堂、王宫与西印度群岛档案馆"
+          "ko": "UNESCO 세계유산 — 세비야 대성당·알카사르·고문서관",
+          "en": "UNESCO World Heritage — Cathedral, Alcázar and Archivo de Indias",
+          "ja": "UNESCO世界遺産 — セビリア大聖堂・アルカサル・インディアス古文書館",
+          "zh": "联合国教科文组织世界遗产——塞维利亚大教堂、王宫与西印度群岛档案馆"
         },
         "url": "https://whc.unesco.org/en/list/383/"
+      },
+      {
+        "label": {
+          "ko": "세비야 대성당 공식 — 히랄다 건축 안내",
+          "en": "Seville Cathedral official guide — The Giralda",
+          "ja": "セビリア大聖堂公式 — ヒラルダの建築案内",
+          "zh": "塞维利亚大教堂官网——希拉尔达建筑介绍"
+        },
+        "url": "https://www.catedraldesevilla.es/en/the-cathedral/building/the-giralda/"
       }
     ],
     "seniorAccess": {
