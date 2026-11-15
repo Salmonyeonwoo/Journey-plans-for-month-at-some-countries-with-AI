@@ -38634,14 +38634,15 @@ const PRACTICAL_CITY_CANDIDATES_DATA = {
       isOneStopRecommended: true,
       oneStopReason: "⚓ 항구 야외 산책과 식당을 함께 둘러볼 수 있는 구역입니다. 걷는 거리와 식당 위치는 선택한 동선에 따라 다르므로, 이동·휴식 계획을 미리 확인하세요.",
       image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80",
-      highlights: "말라가 항구의 야외 산책·식당 구역이며 이곳에서 열리는 Zoco 행사의 시간은 산책로·식당 운영시간과 별도로 확인해야 합니다. 운영자 안내에 따르면 Zoco는 통상 매월 첫 세 일요일에 열리지만 계절·특별 일정은 달라질 수 있으므로 공식 행사표를 확인하세요. 공예·패션·식품 등의 상품 분야가 소개되지만 개별 판매품은 보장되지 않습니다. 야시장 또는 야간 운영은 확인되지 않았습니다.",
-      hours: "현재 운영시간은 Muelle Uno 공식 운영시간 안내와 개별 점포의 공지·영업시간을 확인하세요. 행사 일정은 공식 행사표를 확인하세요.",
-      verifyNotice: "방문 전 공식 운영시간 안내, 개별 점포 공지·영업시간 및 공식 행사표를 확인하세요. Zoco는 통상 매월 첫 세 일요일에 열리지만 계절·특별 일정은 달라질 수 있으며, 야시장·야간 운영은 확인되지 않았습니다.",
+      highlights: "Muelle Uno는 말라가 항구의 야외 산책로와 식당 구역입니다. El Zoco는 공예·빈티지·패션·지역 식품을 중심으로 한 쇼핑·공예·미식 시장으로, 올리브유와 이베리아 식품 등도 소개됩니다. 예시는 회차마다 달라지며 특정 상품이 항상 판매된다고 보장할 수 없습니다. El Zoco를 길거리 음식 야시장으로 보거나 야간 운영을 전제하지 마세요. 운영자 안내에 따르면 통상 매월 첫 세 일요일에 열리며 일정은 달라질 수 있습니다. 저녁에는 산책로를 걷거나 식당을 이용하는 대안이 될 수 있지만, 점포별 영업시간을 확인하세요. 다채로운 El Cubo는 부두 1·2 사이에 있는 Centre Pompidou Málaga 건물의 눈에 띄는 사진 명소입니다. 전시를 관람한다면 전시 운영시간과 마지막 입장을 별도로 확인하세요.",
+      hours: "매장·식당의 현재 운영시간은 Muelle Uno 공식 시간표와 각 점포 공지에서 확인하세요. Zoco는 통상 매월 첫 세 일요일 열리지만 일정은 달라질 수 있으므로 공식 행사표를 확인하세요. 행사표에 시간이 없으면 해당 행사의 개별 안내를 확인하거나 Muelle Uno에 직접 문의하세요. 일반 시설 시간표로 시장 운영시간을 추정하지 마세요. Centre Pompidou Málaga 전시 관람 시 전시 운영시간과 마지막 입장 시간도 별도로 확인하세요.",
+      verifyNotice: "방문 전 매장·식당의 공식 운영시간과 각 점포 공지를 확인하세요. Zoco 일정은 공식 행사표에서 확인하고, 행사표에 시간이 없으면 해당 행사의 개별 안내를 확인하거나 Muelle Uno에 직접 문의하세요. 일반 시설 시간표로 시장 운영시간을 추정하지 마세요. 전시 관람 시 Centre Pompidou Málaga의 전시 운영시간과 마지막 입장을 확인하세요.",
       seniorCaution: "전 구역이 완전 평지이거나 무단차라고 단정할 수 없습니다. 계획한 동선의 걷는 거리와 휴식 지점, 이용할 입구, 경사·계단 유무를 미리 확인하고 무리 없는 거리로 조정하세요.",
       sources: [
-        { label: "Muelle Uno 공식 운영시간 안내", url: "https://www.muelleuno.com/en/schedule/" },
+        { label: "Muelle Uno 매장·식당 운영시간 안내", url: "https://www.muelleuno.com/en/schedule/" },
         { label: "Muelle Uno 공식 Zoco 안내", url: "https://www.muelleuno.com/el-zoco/" },
-        { label: "Muelle Uno 공식 행사 일정", url: "https://www.muelleuno.com/agenda-malaga/" }
+        { label: "Muelle Uno 공식 행사 일정", url: "https://www.muelleuno.com/agenda-malaga/" },
+        { label: "Centre Pompidou Málaga: El Cubo 및 방문 안내", url: "https://centrepompidou-malaga.eu/plan-your-visit/" }
       ],
       verifiedDate: "2026-11-14",
       mapQuery: "Muelle Uno Puerto de Malaga"
@@ -39525,10 +39526,10 @@ const PRACTICAL_CANDIDATES_I18N = {
         subTypeTag: "Waterfront Promenade + Evening Restaurants",
         verifyBadge: "Verify before visit · Check official hours, venue times and event calendar",
         oneStopReason: "⚓ An open-air harbor promenade and dining area. Walking distance and access conditions vary by route; check the route and plan breaks rather than assuming a short or effortless visit.",
-        highlights: "Málaga Port’s open-air waterfront promenade and dining area hosts El Zoco; check market times separately from promenade and restaurant hours. The operator says El Zoco is usually held on the first three Sundays of each month, but seasonal and special schedules may differ; check the official event calendar. It features categories such as crafts, fashion and food, but individual products are not guaranteed. Night-market or nighttime operation has not been confirmed.",
-        hours: "Check Muelle Uno’s official schedule for current operating hours and each venue’s own notices and hours. Check the official event calendar for event dates.",
+        highlights: "Muelle Uno is Málaga Port’s open-air promenade and dining area. El Zoco is a shopping, craft and gourmet market featuring handmade crafts, vintage, fashion and local foods, including olive oil and Iberian products. Examples vary by edition; no specific products are guaranteed. Do not assume El Zoco is a street-food night market or operates at night. The operator says it is usually held on the first three Sundays of each month, though dates can vary. In the evening, the promenade and restaurants are alternatives, but check each venue’s own hours. The colourful El Cubo, between Docks 1 and 2, is a distinctive photo landmark of Centre Pompidou Málaga. If visiting an exhibition, check exhibition hours and last admission separately.",
+        hours: "Check Muelle Uno’s schedule and each venue’s own notices for shop and restaurant hours. El Zoco is usually held on the first three Sundays of each month, though dates can vary; consult the event agenda. If an event listing has no time, check that event’s specific notice or contact Muelle Uno directly. Never infer market hours from the general venue schedule. For a Centre Pompidou Málaga exhibition visit, check exhibition hours and last admission separately.",
         seniorCaution: "Do not assume the entire area is completely flat or step-free. Check the planned walking distance and places to rest, the chosen entrance, and any slopes or stairs; adjust the route to a comfortable distance.",
-        sourceLabels: ["Muelle Uno Official Operating Hours", "Muelle Uno Official El Zoco Guide", "Muelle Uno Official Málaga Events Calendar"]
+        sourceLabels: ["Muelle Uno Shop and Restaurant Hours", "Muelle Uno Official El Zoco Guide", "Muelle Uno Official Málaga Events Calendar", "Centre Pompidou Málaga: The Cube and Visitor Information"]
       },
       ja: {
         name: "Muelle Uno (ムエジェ・ウノ・マラガ港ダイニングプロムナード)",
@@ -39536,10 +39537,10 @@ const PRACTICAL_CANDIDATES_I18N = {
         subTypeTag: "港湾プロムナード＋イブニングレストラン街",
         verifyBadge: "訪問前に要確認・公式営業時間、各店舗の時間、イベント予定を確認",
         oneStopReason: "⚓ 港沿いの屋外プロムナードと飲食エリアです。歩く距離やアクセス条件はルートによって異なるため、短距離・負担が少ないと決めつけず、経路と休憩場所を確認してください。",
-        highlights: "マラガ港の屋外散策・飲食エリアで、ここで開かれるEl Zocoの開催時間は遊歩道・店舗の営業時間とは別に確認してください。運営者によるとEl Zocoは通常毎月最初の3日曜日に開催されますが、季節・特別日程は異なる場合があるため公式イベントカレンダーをご確認ください。工芸、ファッション、食品などの分野が紹介されていますが、個別商品の販売は保証されません。夜市・夜間開催は確認されていません。",
-        hours: "現在の営業時間はMuelle Uno公式営業時間案内と各店舗の告知・営業時間をご確認ください。イベント日程は公式イベントカレンダーをご確認ください。",
+        highlights: "Muelle Unoはマラガ港の屋外プロムナードと飲食エリアです。El Zocoは手工芸、ヴィンテージ、ファッション、オリーブオイルやイベリコ製品などの地元食品を扱う、買い物・工芸・グルメの市場です。例として挙げた品目は開催ごとに異なり、特定の商品が必ずあるとは限りません。屋台料理のナイトマーケットや夜間営業と決めつけないでください。運営者によると通常は毎月最初の3回の日曜日に開催されますが、日程は変わる場合があります。夕方はプロムナードの散策や飲食店も選択肢になりますが、各店舗の営業時間をご確認ください。ドック1と2の間にあるカラフルなEl Cuboは、Centre Pompidou Málagaを象徴する写真スポットです。展示を鑑賞する場合は、展示時間と最終入場時刻を別途ご確認ください。",
+        hours: "店舗・飲食店の営業時間はMuelle Uno公式スケジュールと各店舗のお知らせでご確認ください。El Zocoは通常毎月最初の3回の日曜日に開催されますが、日程は変わる場合があるため、公式イベント案内をご確認ください。イベント案内に時間がない場合は、そのイベントの個別案内を確認するかMuelle Unoへ直接お問い合わせください。一般施設の時間表から市場の開催時間を推測しないでください。Centre Pompidou Málagaの展示を訪れる場合は、展示時間と最終入場時刻も別途ご確認ください。",
         seniorCaution: "全域が完全な平坦地・段差なしとは限りません。予定ルートの歩行距離と休憩場所、利用する入口、勾配や階段の有無を事前に確認し、無理のない距離に調整してください。",
-        sourceLabels: ["Muelle Uno 公式営業時間案内", "Muelle Uno 公式 El Zoco 案内", "Muelle Uno 公式マラガイベントカレンダー"]
+        sourceLabels: ["Muelle Uno 店舗・飲食店の営業時間案内", "Muelle Uno 公式 El Zoco 案内", "Muelle Uno 公式マラガイベントカレンダー", "Centre Pompidou Málaga：El Cubo・来館案内"]
       },
       zh: {
         name: "Muelle Uno (马拉加一号码头海滨散步与晚餐餐饮区)",
@@ -39547,10 +39548,10 @@ const PRACTICAL_CANDIDATES_I18N = {
         subTypeTag: "海滨步道 + 晚间景观餐厅群",
         verifyBadge: "到访前请核实 · 查看官方开放时间、各店时间及活动日历",
         oneStopReason: "⚓ 这里是港口露天步道与餐饮区。步行距离和通行条件因路线而异；请先核实路线并安排休息，不要假定行程很短或毫不费力。",
-        highlights: "马拉加港露天海滨步道与餐饮区会举办El Zoco，其活动时间须与步道和餐厅营业时间分别确认。运营方称El Zoco通常在每月前三个星期日举办，但季节和特别安排可能不同，请查看官方活动日历。其介绍的商品类别包括手工艺、时尚和食品等，但不保证有任何特定商品。夜市或夜间开放尚未核实。",
-        hours: "当前开放时间请查看Muelle Uno官方时间表及各店自己的公告和营业时间；活动日期请查看官方活动日历。",
+        highlights: "Muelle Uno是马拉加港的露天步道与餐饮区。El Zoco是以购物、手工艺和美食为主的市集，介绍手工艺品、复古商品、时尚及橄榄油、伊比利亚食品等当地食品。各期示例有所不同，不保证有任何特定商品。不要假定El Zoco是街头小吃夜市或夜间营业。运营方称活动通常在每月前三个星期日举行，但日期可能变化。傍晚也可选择在步道散步或到餐厅用餐，但请核实各店自己的营业时间。1号与2号码头之间色彩鲜明的El Cubo是马拉加蓬皮杜中心醒目的拍照地标。如要参观展览，请另行核实展览开放时间及最后入场时间。",
+        hours: "商店和餐厅的当前营业时间请查看Muelle Uno官方时间表及各店公告。El Zoco通常在每月前三个星期日举办，但日期可能变化，请查看官方活动日历。如果活动日历没有标明时间，请查看该场活动的具体通知或直接联系Muelle Uno。切勿根据场地的一般时间表推断市集时间。如计划参观马拉加蓬皮杜中心展览，也请另行核实展览开放时间和最后入场时间。",
         seniorCaution: "不要假定整个区域完全平坦或全程无台阶。请提前确认计划路线的步行距离和休息点、所选入口，以及坡道或台阶情况，并调整到舒适的步行距离。",
-        sourceLabels: ["Muelle Uno 官方开放时间", "Muelle Uno 官方 El Zoco 指南", "Muelle Uno 官方马拉加活动日历"]
+        sourceLabels: ["Muelle Uno 商店与餐厅营业时间", "Muelle Uno 官方 El Zoco 指南", "Muelle Uno 官方马拉加活动日历", "马拉加蓬皮杜中心：El Cubo与参观指南"]
       }
     },
     "pc-agp-lolita-skyview": {
