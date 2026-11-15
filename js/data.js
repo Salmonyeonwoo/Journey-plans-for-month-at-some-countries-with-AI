@@ -38651,19 +38651,17 @@ const PRACTICAL_CITY_CANDIDATES_DATA = {
       flag: "🇪🇸",
       name: "Mercado Central de Atarazanas (아타라사나스 중앙시장)",
       categoryKey: "daymarket",
-      typeBadge: "☀️ 낮 시간 전통 시장 (야시장 아님 · 오전~낮 방문 전용)",
+      typeBadge: "☀️ 낮 시간 공설시장 (야시장 아님 · 시청 안내 월~토 08:00–15:00)",
       typeColor: "daymarket",
       isOneStopRecommended: false,
       oneStopReason: "",
       image: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=800&q=80",
-      highlights: "14세기 나스르 왕조의 옛 조선소 아치 정문과 대형 스테인드글라스가 보존된 말라가 대표 낮 전통 시장. 갓 튀긴 생선·새우 프리투라(Fritura Malagueña), 해산물 꼬치, 제철 과일, 볶은 아몬드 및 시장 입구 타파스 바 (저녁·야간에는 열지 않는 낮 시장)",
-      hours: "월~토 08:00~15:00 안내 (일요일 및 공휴일 휴무 · 시장 내 타파스 바는 15:30~16:00경 마감 상이)",
-      verifyNotice: "방문 전 확인 · 매대별 마감 시간 및 지역 공휴일 휴무 여부 당일 확인",
-      seniorCaution: "출입구 경사로가 있으나 오전 12:30 이후에는 수산 코너 통로가 물기로 미끄럽고 인파로 매우 붐비며 앉을 의자가 적은 편입니다. 부모님 동행 시 비교적 한산한 오전 10:00~11:30 사이에 가볍게 둘러보시는 것을 권장합니다.",
-      sources: [
-        { label: "Málaga 공식 관광청 아타라사나스 중앙시장 안내", url: "https://visita.malaga.eu/en/what-to-see-and-do/culture/historic-monuments/noteworthy-buildings/central-market-of-atarazanas-p107808" }
-      ],
-      verifiedDate: "2026-10-29 확인",
+      highlights: "말라가 시청 안내 기준 260개 점포가 있는 시장입니다. 관광청은 14세기 나스르 왕조 조선소 터에 자리한 19세기 시장 건물(1879년 개장), 정면에 보존된 옛 기념문, 신선식품과 지역 상품 점포를 안내합니다. 개별 품목과 재고는 방문 당일 다를 수 있습니다.",
+      hours: "말라가 시청 안내 기준 월~토 08:00~15:00 (시장 전체 안내이며 개별 매대·식음업장 운영은 다를 수 있음). 일요일·공휴일 운영 여부는 인용한 안내에 기재되어 있지 않으므로 방문 전에 확인하세요.",
+      verifyNotice: "방문 전 확인 · 공휴일·임시 휴장·개별 매대 운영은 당일 공식 안내 또는 현장에서 확인",
+      seniorCaution: "시청 시설 안내에는 이동이 불편한 이용자를 위한 편의시설이 없다고 기재되어 있습니다. 접근 조건·바닥 상태·혼잡·좌석을 보장할 수 없으므로 무장애 접근을 전제하지 말고, 부모님과 방문하기 전 최신 접근 조건과 현장 상황을 확인하세요.",
+      sources: [{"label": "말라가 시청: Atarazanas 시설·운영 안내", "url": "https://www.malaga.eu/la-ciudad/instalaciones-y-espacios/detalle-de-la-instalacion/?id=160"}, {"label": "Visita Málaga 공식 관광청: 시장 연혁·상품 안내", "url": "https://visita.malaga.eu/es/que-ver-y-hacer/visitas/monumentos-historicos/edificios-notables/mercado-central-de-atarazanas-p107808"}],
+      verifiedDate: "2026-11-15 확인",
       mapQuery: "Mercado Central de Atarazanas Malaga"
     },
 
@@ -39565,36 +39563,36 @@ const PRACTICAL_CANDIDATES_I18N = {
     "pc-agp-mercado-atarazanas": {
       en: {
         name: "Mercado Central de Atarazanas (Atarazanas Central Market)",
-        typeBadge: "☀️ Daytime Traditional Market (Not a Night Market · Morning–Afternoon Only)",
-        subTypeTag: "Daytime Historic Market · Closes 15:00",
-        verifyBadge: "Verify before visit · Closed Sundays & holidays",
+        typeBadge: "☀️ Daytime municipal market (not a night market)",
+        subTypeTag: "Market-wide hours: Mon–Sat 08:00–15:00",
+        verifyBadge: "Confirm public-holiday and day-of hours before visiting",
         oneStopReason: "",
-        highlights: "Málaga's signature daytime market housed in a 14th-century Nasrid shipyard arch with a monumental stained-glass window. Famous for freshly fried fish (Fritura Malagueña), seafood skewers, seasonal fruits, roasted almonds, and daytime tapas stalls (closed in the evening/night).",
-        hours: "Guided hours: Mon–Sat 08:00–15:00 (Closed Sundays and public holidays; market tapas bars close around 15:30–16:00).",
-        seniorCaution: "Entrances have ramps, but after 12:30 the seafood aisles get wet, slippery, and packed with crowds with very few seats. Visit with parents during the calmer mid-morning window (10:00–11:30).",
-        sourceLabels: ["Málaga Official Tourism – Atarazanas Central Market"]
+        highlights: "Málaga City lists 260 stalls. The tourism office describes the 19th-century market building (opened in 1879) on the site of a 14th-century Nasrid shipyard, with its historic gate preserved and stalls selling fresh foods and local products. Individual items and stock can vary.",
+        hours: "Málaga City lists Mon–Sat 08:00–15:00 for the market as a whole. Individual stalls and food venues may differ; Sunday and public-holiday opening is not stated on the cited page, so check before visiting.",
+        seniorCaution: "The city page lists no facilities for visitors with reduced mobility. Do not assume step-free access; confirm current access and on-site conditions before planning a visit with older adults.",
+        sourceLabels: ["Málaga City Council – Atarazanas facility and hours", "Visita Málaga – market history and products"]
       },
       ja: {
         name: "Mercado Central de Atarazanas (アタラサナス中央市場)",
-        typeBadge: "☀️ 昼の伝統市場 (夜市ではありません・午前〜昼の訪問専用)",
-        subTypeTag: "昼の伝統市場・月〜土15:00閉場",
-        verifyBadge: "訪問前に要確認・日曜および祝日休業",
+        typeBadge: "☀️ 昼間の公設市場（夜市ではありません）",
+        subTypeTag: "市場全体の案内：月〜土 08:00〜15:00",
+        verifyBadge: "祝日・当日の営業は訪問前に確認",
         oneStopReason: "",
-        highlights: "14世紀ナスル朝時代の旧造船所アーチ正門と大型ステンドグラスが保存されたマラガ代表の昼の伝統市場。揚げたての小魚フリトゥーラ（Fritura Malagueña）、海鮮串、旬の果物、ローストアーモンドと市場内タパスバー（夕方・夜間は開かない昼市場）。",
-        hours: "案内時間: 月〜土 08:00〜15:00（日曜・祝日休業、市場内タパスバーは15:30〜16:00頃終了）",
-        seniorCaution: "出入口にスロープがありますが、12:30以降は鮮魚コーナーの通路が水気で滑りやすく大変混雑し、座れる椅子も少ないため、ご両親同伴時は比較的落ち着いている午前10:00〜11:30頃の訪問を推奨します。",
-        sourceLabels: ["マラガ公式観光局 アタラサナス中央市場案内"]
+        highlights: "マラガ市の案内では260の売店がある市場です。観光局は、14世紀ナスル朝の造船所跡に建つ19世紀の市場建物（1879年開場）、正面に保存された旧記念門、生鮮食品や地元産品の売店を紹介しています。個々の商品や在庫は訪問日により異なります。",
+        hours: "マラガ市の案内は市場全体を月〜土08:00〜15:00としています。各売店・飲食店の営業は異なる場合があります。日曜・祝日の営業は引用したページに記載されていないため、訪問前に確認してください。",
+        seniorCaution: "市のページには、移動に配慮が必要な方のための設備がないと記載されています。段差のないアクセスを前提とせず、ご両親との訪問前に最新のアクセス条件と現地状況を確認してください。",
+        sourceLabels: ["マラガ市：市場施設・営業時間案内", "Visita Málaga：市場の歴史・商品案内"]
       },
       zh: {
         name: "Mercado Central de Atarazanas (阿塔拉萨纳斯中央市场)",
-        typeBadge: "☀️ 白天传统市场 (非夜市 · 仅限上午至午间到访)",
-        subTypeTag: "白天历史传统市场 · 周一至周六15:00闭市",
-        verifyBadge: "到访前请核实 · 周日及节假日休息",
+        typeBadge: "☀️ 白天公营市场（非夜市）",
+        subTypeTag: "市场整体信息：周一至周六 08:00–15:00",
+        verifyBadge: "出行前核实节假日及当天营业情况",
         oneStopReason: "",
-        highlights: "保留14世纪纳斯里德王朝古造船厂拱门与巨幅彩绘玻璃窗的马拉加代表性白天市场。可品尝现炸小鱼海鲜(Fritura Malagueña)、海鲜串、时令水果、烤杏仁及市场入口塔帕斯吧（晚间及夜间不营业）。",
-        hours: "官方指南: 周一至周六 08:00~15:00（周日及公共节假日休息；市场内塔帕斯吧台约15:30~16:00结束）",
-        seniorCaution: "出入口设有坡道，但中午12:30以后水产区通道地面潮湿易滑、人流拥挤且座椅较少，携父母同行建议在相对宽松的上午10:00~11:30之间前往。",
-        sourceLabels: ["马拉加官方旅游局 阿塔拉萨纳斯中央市场指南"]
+        highlights: "马拉加市政府列出该市场共有260个摊位。旅游局介绍，这座19世纪市场建筑（1879年开市）建于14世纪纳斯里德王朝造船厂旧址，正立面保留旧纪念门，摊位经营生鲜及本地商品。具体商品和库存可能随到访日期变化。",
+        hours: "马拉加市政府公布的市场整体时间为周一至周六08:00–15:00。各摊位和餐饮店营业时间可能不同；所引页面未列周日及公共假日营业安排，请出发前核实。",
+        seniorCaution: "市政府页面注明没有为行动不便访客设置相关设施。不要假设全程无台阶；携年长家人前往前，请确认最新通行条件和现场情况。",
+        sourceLabels: ["马拉加市政府：市场设施与营业时间", "Visita Málaga：市场历史与商品"]
       }
     },
     "pc-svq-mercado-triana": {
