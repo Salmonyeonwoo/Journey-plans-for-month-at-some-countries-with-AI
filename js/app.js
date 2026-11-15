@@ -4180,13 +4180,11 @@ function scrollChatToBottom() {
 
 function switchLanguage(lang, btn) {
   currentLang = lang;
-  document.querySelectorAll('.lang-pill').forEach(b => b.classList.remove('active'));
-  if (btn) {
-    btn.classList.add('active');
-  } else {
-    const targetBtn = Array.from(document.querySelectorAll('.lang-pill')).find(b => b.textContent.includes(lang.toUpperCase()) || (lang === 'ko' && (b.textContent.includes('한국어') || b.textContent.includes('韓国語') || b.textContent.includes('Korean') || b.textContent.includes('韩语'))));
-    if (targetBtn) targetBtn.classList.add('active');
-  }
+  window.currentLang = lang;
+  const languageButtons = { ko: 'btnLangKo', en: 'btnLangEn', ja: 'btnLangJa', zh: 'btnLangZh' };
+  Object.entries(languageButtons).forEach(([code, id]) => {
+    document.getElementById(id)?.classList.toggle('active', code === lang);
+  });
 
   document.documentElement.lang = lang;
 
@@ -4550,6 +4548,22 @@ function handleLocalChat(query) {
   const q = rawQ.toLowerCase();
   const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'ronda', '론다', 'ロンダ', '龙达', 'puente nuevo', 'el tajo'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
+  // Navigation-only help: require both a contents/menu topic and an explicit how/where/find cue.
+  const asksNavigationHelp =
+    (/(contents|table of contents|categories|category|pages?|sections?|menu|navigation)/i.test(rawQ) && /(where|how|find|use|navigate|open|access)/i.test(rawQ)) ||
+    (/(목차|콘텐츠|카테고리|페이지|섹션|메뉴)/.test(rawQ) && /(어디|어떻게|찾|사용|이용|열|보려면)/.test(rawQ)) ||
+    (/(目次|コンテンツ|カテゴリ|ページ|セクション|メニュー)/.test(rawQ) && /(どこ|どう|使|探|開|見方|アクセス)/.test(rawQ)) ||
+    (/(目录|内容|分类|类别|页面|章节|菜单)/.test(rawQ) && /(哪里|在哪|如何|怎么|使用|查找|打开|查看)/.test(rawQ));
+  const asksRestaurantMenu = /(restaurant|café|cafe|food|dish|식당|음식|맛집|レストラン|料理|飲食店|餐厅|餐馆|食物|菜品)/i.test(rawQ) && /(menu|메뉴|メニュー|菜单)/i.test(rawQ);
+  if (asksNavigationHelp && !asksRestaurantMenu) {
+    const navigationHelp = {
+      ko: '가이드북의 내용을 찾으려면 상단의 <strong>목차(Contents)</strong>를 누르세요. 표시되는 카테고리 목록에서 원하는 주제를 고른 다음, 해당 페이지 또는 섹션 바로가기를 선택하면 됩니다.',
+      en: 'To browse the guidebook, tap <strong>Contents</strong> in the header. Choose a category from the list, then select the shortcut for the page or section you want.',
+      ja: 'ガイドブックを見るには、ヘッダーの<strong>目次（Contents）</strong>をタップしてください。表示されたカテゴリ一覧からテーマを選び、目的のページまたはセクションへのショートカットを選択します。',
+      zh: '浏览指南时，请点击页眉中的<strong>目录（Contents）</strong>。从显示的分类列表中选择主题，再选择所需页面或章节的快捷入口。'
+    };
+    return navigationHelp[lang] || navigationHelp.ko;
+  }
   if (typeof window.buildGranadaMalagaGeneralChatResponse === 'function') {
     const generalGuideResponse = window.buildGranadaMalagaGeneralChatResponse(rawQ, lang);
     if (generalGuideResponse) return generalGuideResponse;
@@ -8747,8 +8761,8 @@ function goToBookPage(chapterId, pageIndex, shouldScroll = true) {
       floatEl.textContent = '📖 ' + shortName + ' · P. ' + (pageIndex + 1) + ' / ' + maxPages;
     }
 
-    // 5. Chapter 3의 경우 4페이지(index 3) 대형 지도 뷰 활성화
-    if (chapterId === 'chapter-guide' && pageIndex === 3) {
+    // 5. Chapter 3의 대형 지도는 5페이지(index 4)에서 활성화
+    if (chapterId === 'chapter-guide' && pageIndex === 4) {
       setTimeout(() => {
         if (typeof renderBigLandmarksMap === 'function') {
           renderBigLandmarksMap();

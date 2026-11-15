@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261115_malaga_places_v1)
+// SlowTravel Mobile Offline Service Worker (v20261115_toc_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261115_malaga_places_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261115_toc_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -22,6 +22,10 @@ const PRECACHE_ASSETS = [
   './js/italy-local-food-guide.js',
   './js/barcelona-dining-guide.js',
   './js/activity-guide.js',
+  './js/europe-cathedral-history-guide.js',
+  './js/europe-detailed-research-additions.js',
+  './js/europe-electricity-guide.js',
+  './js/landmark-history-additions.js',
   './js/flamenco-guide.js',
   './js/barcelona-transit-guide.js',
   './js/spanish-bus-directions.js',
@@ -93,7 +97,7 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((name) => {
-          if (name !== CACHE_NAME) {
+          if (name.startsWith('slowtravel-offline-') && name !== CACHE_NAME) {
             return caches.delete(name);
           }
         })
