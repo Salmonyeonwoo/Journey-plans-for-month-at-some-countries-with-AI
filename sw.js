@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261115_toc_review_v1)
+// SlowTravel Mobile Offline Service Worker (v20261116_nerja_cave_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261115_toc_review_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261116_nerja_cave_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -53,6 +53,8 @@ const PRECACHE_ASSETS = [
   './img/user-cordoba-san-pablo/facade.jpg',
   './img/user-cordoba-san-pablo/direction.jpg',
   './js/curated-places-guide.js',
+  './js/nerja-dining-guide.js',
+  './js/nerja-cave-guide.js',
   './js/travel-diary.js',
   './js/components.js',
   './js/app.js',

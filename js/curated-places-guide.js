@@ -1272,6 +1272,9 @@
         </div>
       </div>
     `;
+    if (typeof window.renderNerjaDiningRecommendations === 'function') {
+      window.renderNerjaDiningRecommendations(currentL);
+    }
   }
 
   function getFilteredCuratedPlaces(currentL, state) {
