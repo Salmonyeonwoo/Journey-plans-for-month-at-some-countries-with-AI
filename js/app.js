@@ -490,7 +490,7 @@ function renderLandmarksMap() {
 
   landmarksMarkerLayer.clearLayers();
 
-  const items = window.currentFilteredLandmarksList || GLOBAL_LANDMARKS_DATA;
+  const items = (window.currentFilteredLandmarksList || GLOBAL_LANDMARKS_DATA).filter(item => !item.contentOnly);
   const bounds = L.latLngBounds();
 
   items.forEach(item => {
@@ -557,7 +557,7 @@ function renderDiningMap() {
 
   diningMarkerLayer.clearLayers();
 
-  const items = window.currentFilteredDiningList || GLOBAL_DINING_DATA;
+  const items = (window.currentFilteredDiningList || GLOBAL_DINING_DATA).filter(item => !item.contentOnly);
   const bounds = L.latLngBounds();
 
   items.forEach((item, i) => {
@@ -3329,6 +3329,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
     const localizedBooking = (info.booking && info.booking[currentLang]) || item.booking;
     const localizedHistory = (info.history && (info.history[currentLang] || info.history.ko)) || '';
     const localizedFoodContext = (info.foodContext && (info.foodContext[currentLang] || info.foodContext.ko)) || '';
+    const localizedRestaurantRecommendation = (info.restaurantRecommendation && (info.restaurantRecommendation[currentLang] || info.restaurantRecommendation.ko)) || '';
     const localizedFoodOrigins = Array.isArray(info.foodOrigins) ? info.foodOrigins : [];
 
     card.innerHTML = `
@@ -3376,6 +3377,27 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
         ${item.officialUrl ? `<a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn">${currentLang === 'en' ? 'Official info' : (currentLang === 'ja' ? '公式案内' : (currentLang === 'zh' ? '官方信息' : '공식 안내'))} ↗</a>` : ''}
       </div>
     `;
+    if (item.contentOnly) {
+      const isRestaurantRecommendation = item.cardType === 'restaurant_recommendation';
+      const editorialBody = item.cardType === 'food_context' ? localizedFoodContext : (isRestaurantRecommendation ? localizedRestaurantRecommendation : localizedHistory);
+      const editorialNote = (info.editorialNote && (info.editorialNote[currentLang] || info.editorialNote.ko)) || '';
+      card.querySelector('.photo-desc')?.remove();
+      card.querySelector('.photo-thumb-wrap')?.remove();
+      const editorialRegion = card.querySelector('.photo-region');
+      if (editorialRegion) editorialRegion.textContent = cleanHangul(item.cardType === 'restaurant_history' ? `📜 ${localizedName} · ${localizedBadge}` : (isRestaurantRecommendation ? `🍴 ${localizedName} · ${localizedBadge}` : `🍽️ ${localizedBadge}`), currentLang);
+      card.querySelector('.dining-features')?.remove();
+      card.querySelector('.dining-meta-list')?.remove();
+      card.querySelector('.dining-history-details')?.remove();
+      if (!isRestaurantRecommendation) card.querySelector('.dining-footer')?.remove();
+      if (editorialBody || editorialNote || (info.historySources && info.historySources.length)) {
+        const panel = document.createElement('div');
+        panel.className = 'landmark-history-block';
+        panel.style.cssText = 'background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:10px 0 12px;';
+        const panelLabel = isRestaurantRecommendation ? getRestaurantRecommendationLabel(currentLang) : (item.cardType === 'food_context' ? getFoodContextLabel(currentLang) : getDiningHistoryLabel(currentLang));
+        panel.innerHTML = `<strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">${panelLabel}</strong>${editorialBody ? `<p style="white-space:pre-line;line-height:1.65;color:#40534e;">${escapeHtml(editorialBody)}</p>` : ''}${editorialNote ? `<p style="white-space:pre-line;line-height:1.65;color:#40534e;"><em>${escapeHtml(editorialNote)}</em></p>` : ''}${renderHistorySourceLinks(info.historySources, currentLang)}`;
+        card.querySelector('.photo-body')?.appendChild(panel);
+      }
+    }
     grid.appendChild(card);
   });
 }
@@ -3385,6 +3407,9 @@ function getLandmarkHistoryLabel(lang) {
 }
 function getDiningHistoryLabel(lang) {
   return ({ ko: '식당과 음식의 역사·유래', en: 'Restaurant & food history', ja: '店と料理の歴史・由来', zh: '餐厅与饮食历史' })[lang] || '식당과 음식의 역사·유래';
+}
+function getRestaurantRecommendationLabel(lang) {
+  return ({ ko: '출처 확인 식당 추천', en: 'Sourced restaurant recommendation', ja: '出典付きレストラン候補', zh: '有来源依据的餐厅推荐' })[lang] || '출처 확인 식당 추천';
 }
 function getFoodContextLabel(lang) {
   return ({ ko: '음식 배경', en: 'Food background', ja: '料理の背景', zh: '饮食背景' })[lang] || '음식 배경';
@@ -3428,24 +3453,26 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
     const info = LANDMARK_I18N_DATA[item.name] || {};
     const localizedName = (info.displayName && info.displayName[currentLang]) || item.name;
     const localizedBadge = (info.badge && info.badge[currentLang]) || item.city;
-    const localizedHighlight = (info.highlight && info.highlight[currentLang]) || item.highlight;
+    const isContentOnly = item.contentOnly === true;
+    const localizedHighlight = isContentOnly ? '' : ((info.highlight && info.highlight[currentLang]) || item.highlight);
     const localizedSeniorAccess = (info.seniorAccess && info.seniorAccess[currentLang]) || item.seniorAccess;
     const localizedHours = (info.hours && info.hours[currentLang]) || item.hours;
     const localizedTicketTip = (info.ticketTip && info.ticketTip[currentLang]) || item.ticketTip;
-    const localizedHistory = info.history && info.history[currentLang];
+    const localizedHistory = info.history && (info.history[currentLang] || info.history.ko);
+    const localizedHistoryNote = info.historyNote && (info.historyNote[currentLang] || info.historyNote.ko);
     const localizedHistorySources = renderHistorySourceLinks(info.historySources, currentLang);
     const localizedPhotoCredit = renderPhotoCredit(item.photoCredit, currentLang);
     card.innerHTML = `
       <div>
         <div class="photo-thumb-wrap">
-          <img src="${item.photo}" alt="${localizedName}" class="photo-thumb" loading="lazy" onload="this.classList.add('loaded');this.parentElement.classList.add('loaded');" onerror="this.onerror=null;this.classList.add('loaded');this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80';" />
+          ${item.photo ? `<img src="${item.photo}" alt="${localizedName}" class="photo-thumb" loading="lazy" onload="this.classList.add('loaded');this.parentElement.classList.add('loaded');" onerror="this.onerror=null;this.classList.add('loaded');this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80';" />` : `<div class="photo-thumb" role="img" aria-label="${localizedName}" style="display:flex;align-items:center;justify-content:center;font-size:38px;background:#f6efe5;">🏛️</div>`}
           <span class="photo-badge photo-badge-orange">${cleanHangul(localizedBadge, currentLang)}</span>
         </div>
         <div class="photo-body">
           <div class="photo-title">${cleanHangul(localizedName, currentLang)}</div>
           <div class="photo-desc">${cleanHangul(localizedHighlight, currentLang)}</div>
           ${localizedPhotoCredit}
-          ${localizedHistory ? `<div class="landmark-history-block" style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:10px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(currentLang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${cleanHangul(localizedHistory, currentLang)}</div>${localizedHistorySources}</div>` : ''}
+          ${localizedHistory ? `<div class="landmark-history-block" style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:10px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(currentLang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${cleanHangul(localizedHistory, currentLang)}</div>${localizedHistoryNote ? `<p style="font-size:11px;color:#596b66;line-height:1.5;">${escapeHtml(localizedHistoryNote)}</p>` : ''}${localizedHistorySources}</div>` : ''}
           <div class="senior-access-block">
             <div class="access-head">
               <span class="access-icon">♿</span>
@@ -3479,6 +3506,20 @@ function renderGlobalLandmarks(list = GLOBAL_LANDMARKS_DATA) {
         </a>
       </div>
     `;
+    if (isContentOnly) {
+      card.querySelector('.photo-desc')?.remove();
+      card.querySelector('.photo-thumb-wrap')?.remove();
+      const landmarkBody = card.querySelector('.photo-body');
+      if (landmarkBody) {
+        const regionLabel = document.createElement('div');
+        regionLabel.className = 'photo-region';
+        regionLabel.textContent = cleanHangul(`🏛️ ${localizedBadge}`, currentLang);
+        landmarkBody.prepend(regionLabel);
+      }
+      card.querySelector('.senior-access-block')?.remove();
+      card.querySelector('.dining-meta-list')?.remove();
+      card.querySelector('.dining-footer a:first-child')?.remove();
+    }
     return card;
   };
 
@@ -4607,6 +4648,18 @@ function handleLocalChat(query) {
   }
   // Route Michelin questions for the newly covered cities before broad dining matchers.
   const asksMichelin = /michelin|미슐랭|미쉐린|미쉐린.?가이드|ミシュラン|米其林/i.test(q);
+  if (!asksMichelin && typeof findMatchingTravelEntity === 'function') {
+    const restaurantMatch = findMatchingTravelEntity(q, lang);
+    if (restaurantMatch?.type === 'dining' && restaurantMatch.item?.cardType === 'restaurant_recommendation') {
+      const intro = ({
+        ko:'🍽️ 출처로 근거를 확인한 지역 식당 후보입니다:',
+        en:'🍽️ Here is a locally relevant restaurant pick with source links:',
+        ja:'🍽️ 出典で確認できる地域のレストラン候補です:',
+        zh:'🍽️ 这是有来源依据的当地餐厅推荐：'
+      })[lang] || '🍽️';
+      return `${intro}${renderRestaurantRecommendationCard(restaurantMatch.item)}`;
+    }
+  }
   const hasMichelinSpanishCity = ['granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'faralá', 'farala', 'albidaya', 'kaleja', 'la cosmo'].some(term => q.includes(term));
   const hasMichelinItalianCity = ['naples', 'napoli', '나폴리', 'ナポリ', '那不勒斯', 'florence', 'firenze', '피렌체', 'フィレンツェ', '佛罗伦萨', 'rome', 'roma', '로마', 'ローマ', '罗马', 'george restaurant', 'luminist', 'cibrèo', 'cibreo', 'cibrèino', 'cibreino', 'mamma orso'].some(term => q.includes(term));
   const hasNewSpanishRestaurantName = ['faralá', 'farala', 'albidaya', 'kaleja', 'la cosmo'].some(term => q.includes(term));
@@ -4646,6 +4699,67 @@ function handleLocalChat(query) {
     .replace(/^(じゃあ|ところで|それでは|では|あと|ちなみに|次は|続いて)\s*/g, '')
     .replace(/^(那么|那|请问|还有|另外|顺便问下|接下来|请讲讲)\s*/g, '')
     .trim();
+
+  const regionalRestaurantIntentTerms = ['추천 식당', '추천 맛집', '식당 추천', '맛집 추천', '맛집', '식당', '레스토랑', 'restaurant', 'restaurants', 'dining', 'where to eat', 'places to eat', 'おすすめレストラン', 'レストラン', 'どこで食べ', '名店', '推荐餐厅', '餐厅', '餐馆', '去哪吃'];
+  const asksRegionalRestaurant = regionalRestaurantIntentTerms.some(term => q.includes(term) || cleanQ.includes(term));
+  const asksRestaurantRoute = ['how to get', 'directions', 'route', 'transit', 'train', 'bus', '가는 법', '이동', '교통', '기차', '버스', '行き方', 'アクセス', '交通', '路线', '怎么去'].some(term => q.includes(term) || cleanQ.includes(term));
+  if (asksRegionalRestaurant && !asksRestaurantRoute && typeof GLOBAL_DINING_DATA !== 'undefined') {
+    const containsAny = terms => terms.some(term => q.includes(term.toLowerCase()) || cleanQ.includes(term.toLowerCase()));
+    const cityTargets = [
+      {city:'Naples',terms:['naples','napoli','나폴리','ナポリ','那不勒斯']},
+      {city:'Florence',terms:['florence','firenze','피렌체','フィレンツェ','佛罗伦萨']},
+      {city:'Rome',terms:['rome','roma','로마','ローマ','罗马']},
+      {city:'Milan',terms:['milan','milano','밀라노','ミラノ','米兰']},
+      {city:'Venice',terms:['venice','venezia','베네치아','베니스','ヴェネツィア','威尼斯']},
+      {city:'Vers-Pont-du-Gard',terms:['vers-pont-du-gard','pont du gard','퐁 뒤 가르','ポン・デュ・ガール','加尔桥','nîmes','nimes','님','尼姆']},
+      {city:'Munich',terms:['munich','münchen','muenchen','뮌헨','ミュンヘン','慕尼黑']},
+      {city:'Prague',terms:['prague','praha','프라하','プラハ','布拉格']},
+      {city:'Aveiro',terms:['aveiro','아베이루','アヴェイロ','阿威罗']},
+      {city:'Coimbra',terms:['coimbra','코임브라','コインブラ','科英布拉']},
+      {city:'Warsaw',terms:['warsaw','warszawa','바르샤바','ワルシャワ','华沙']},
+      {city:'Budapest',terms:['budapest','부다페스트','ブダペスト','布达佩斯']}
+    ];
+    const countryTargets = [
+      {country:'Italy',terms:['italy','italia','이탈리아','이태리','イタリア','意大利']},
+      {country:'France',terms:['france','français','프랑스','フランス','法国']},
+      {country:'Germany',terms:['germany','deutschland','독일','ドイツ','德国']},
+      {country:'Czechia',terms:['czechia','czech republic','czech','česko','체코','チェコ','捷克']},
+      {country:'Portugal',terms:['portugal','포르투갈','ポルトガル','葡萄牙']},
+      {country:'Poland',terms:['poland','polska','폴란드','ポーランド','波兰']},
+      {country:'Hungary',terms:['hungary','magyarország','헝가리','ハンガリー','匈牙利']}
+    ];
+    const cityTarget = cityTargets.find(target => containsAny(target.terms));
+    const countryTarget = countryTargets.find(target => containsAny(target.terms));
+    const recommendationItems = GLOBAL_DINING_DATA.filter(item => item.cardType === 'restaurant_recommendation');
+    const picks = cityTarget
+      ? recommendationItems.filter(item => item.city === cityTarget.city)
+      : (countryTarget ? recommendationItems.filter(item => item.country === countryTarget.country) : []);
+    if (picks.length) {
+      const intro = ({
+        ko:'🍽️ 출처가 연결된 지역 식당 추천입니다. 현행 운영 정보는 카드의 공식 안내에서 다시 확인해 주세요.',
+        en:'🍽️ These locally relevant restaurant picks include source links. Check the official information for current operating details.',
+        ja:'🍽️ 出典付きの地域レストラン候補です。現在の営業情報はカードの公式案内でご確認ください。',
+        zh:'🍽️ 以下当地餐厅推荐均附有来源链接；当前运营信息请查看卡片中的官方资料。'
+      })[lang] || '🍽️';
+      const asksNimes = containsAny(['nîmes','nimes','님','尼姆']);
+      const scopeNote = asksNimes && cityTarget?.city === 'Vers-Pont-du-Gard'
+        ? ({
+            ko:'<p>님 시내 식당 후보는 확인하지 못했습니다. 아래 식당은 님이 아니라 퐁 뒤 가르 인근 Vers-Pont-du-Gard에 있습니다.</p>',
+            en:'<p>No restaurant candidate in Nîmes itself was verified. The option below is in Vers-Pont-du-Gard, near Pont du Gard, not in Nîmes.</p>',
+            ja:'<p>ニーム市内の候補は確認できませんでした。以下の店はニームではなく、ポン・デュ・ガール近くのVers-Pont-du-Gardにあります。</p>',
+            zh:'<p>未能确认尼姆市内的餐厅候选。以下餐厅位于加尔桥附近的 Vers-Pont-du-Gard，并不在尼姆市内。</p>'
+          })[lang]
+        : (countryTarget?.country === 'Portugal' && !cityTarget
+          ? ({
+              ko:'<p>이번 보충은 아베이루·코임브라의 후보입니다. 리스본·포르투의 기존 식당 안내는 그대로 유지됩니다.</p>',
+              en:'<p>These additions are in Aveiro and Coimbra; the existing Lisbon and Porto restaurant picks remain in the guide.</p>',
+              ja:'<p>今回の追加候補はアヴェイロとコインブラです。リスボンとポルトの既存案内はそのまま残しています。</p>',
+              zh:'<p>本次新增候选位于阿威罗和科英布拉；指南中的里斯本和波尔图原有餐厅推荐保持不变。</p>'
+            })[lang]
+          : '');
+      return `${intro}${scopeNote || ''}${picks.map(renderRestaurantRecommendationCard).join('')}`;
+    }
+  }
 
   if (!hasAndalusiaCityContext && typeof window.buildBarcelonaLocalChatResponse === 'function') {
     const localGuideResponse = window.buildBarcelonaLocalChatResponse(rawQ, lang);
@@ -4739,6 +4853,20 @@ function handleLocalChat(query) {
   // ----------------------------------------------------
   // Helper: Card generator for restaurants
   // ----------------------------------------------------
+  function renderRestaurantRecommendationCard(item) {
+    const info = (typeof DINING_I18N_DATA !== 'undefined' && DINING_I18N_DATA[item.name]) || {};
+    const localizedName = (info.displayName && (info.displayName[lang] || info.displayName.ko)) || item.name;
+    const localizedBadge = (info.badge && (info.badge[lang] || info.badge.ko)) || `${item.city} · ${item.country}`;
+    const recommendation = (info.restaurantRecommendation && (info.restaurantRecommendation[lang] || info.restaurantRecommendation.ko)) || '';
+    const note = (info.editorialNote && (info.editorialNote[lang] || info.editorialNote.ko)) || '';
+    const sources = renderHistorySourceLinks(info.historySources, lang);
+    const mapQuery = item.mapQuery || `${item.name}, ${item.city}, ${item.country}`;
+    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+    const mapLabel = ({ ko:'Google 지도에서 검색 ↗', en:'Search on Google Maps ↗', ja:'Google マップで検索 ↗', zh:'在 Google 地图搜索 ↗' })[lang] || 'Google Maps';
+    const officialLabel = ({ ko:'공식 안내 ↗', en:'Official information ↗', ja:'公式案内 ↗', zh:'官方信息 ↗' })[lang] || '공식 안내';
+    return `<div class="chat-card-recommend" style="background:#fff;border:1.5px solid #d4e0d7;border-radius:16px;padding:14px 16px;margin-top:8px;line-height:1.65;"><span style="display:inline-block;background:#e8f4ed;color:#1a5249;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;">${escapeHtml(localizedBadge)}</span><h4 style="margin:9px 0 6px;color:#1c2e2c;">${escapeHtml(localizedName)}</h4><strong style="display:block;color:#1a5249;font-size:12px;">${getRestaurantRecommendationLabel(lang)}</strong><p style="margin:6px 0;color:#40534e;">${escapeHtml(recommendation)}</p><p style="margin:6px 0;color:#70523d;font-size:12px;">${escapeHtml(note)}</p>${sources}<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;"><a href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${mapLabel}</a>${item.officialUrl ? `<a href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${officialLabel}</a>` : ''}</div></div>`;
+  }
+
   function renderMatchingDiningCards(cityOrCountryKeyword) {
     if (typeof GLOBAL_DINING_DATA === 'undefined' || !GLOBAL_DINING_DATA.length) return '';
     const kw = cityOrCountryKeyword.toLowerCase();
@@ -4760,6 +4888,10 @@ function handleLocalChat(query) {
     else html += `🍽️ <strong>현지 추천 대표 맛집 엄선 리스트:</strong></div>`;
 
     selected.forEach(d => {
+      if (d.cardType === 'restaurant_recommendation') {
+        html += renderRestaurantRecommendationCard(d);
+        return;
+      }
       const price = d.baseKrw === 0 ? (lang === 'en' ? 'Free' : (lang === 'ja' ? '無料' : (lang === 'zh' ? '免费' : '무료'))) : (d.baseKrw != null ? (typeof formatCardPrice === 'function' ? formatCardPrice(d.baseKrw) : '₩' + Number(d.baseKrw).toLocaleString()) : (lang === 'en' ? 'Check current prices' : (lang === 'ja' ? '価格は店舗に確認' : (lang === 'zh' ? '请向门店确认价格' : '가격은 매장 확인'))));
       const tipLabel = lang === 'ja' ? '訪問前の確認事項' : (lang === 'en' ? 'Visit note' : (lang === 'zh' ? '到访提示' : '방문 전 확인'));
       const mapLabel = lang === 'ja' ? 'Googleマップで見る' : (lang === 'en' ? 'View on Google Maps' : (lang === 'zh' ? '谷歌地图导航' : '구글 지도 길찾기'));
@@ -4934,26 +5066,37 @@ function handleLocalChat(query) {
 
     // 2. Search in GLOBAL_DINING_DATA (92선 - 검증 맛집)
     const diningList = (typeof GLOBAL_DINING_DATA !== 'undefined' && GLOBAL_DINING_DATA) || [];
-    for (const item of diningList) {
+    const orderedDiningList = diningList.some(item => item.contentOnly)
+      ? [...diningList.filter(item => item.contentOnly), ...diningList.filter(item => !item.contentOnly)]
+      : diningList;
+    for (const item of orderedDiningList) {
       const nameL = (item.name || '').toLowerCase();
       const dInfo = (typeof DINING_I18N_DATA !== 'undefined' && DINING_I18N_DATA[item.name]) || {};
       const locName = (dInfo.displayName && (dInfo.displayName[lang] || dInfo.displayName.ko)) || item.name;
       const locNameL = locName.toLowerCase();
       const dishL = ((dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '').toLowerCase();
 
-      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL);
+      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL) || dishL.includes(lower) || lower.includes(dishL);
       const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
-      const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t));
+      const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t) || dishL.includes(t));
 
       if (matchName || tokenMatch) {
+        const category = item.cardType === 'food_context'
+          ? ({ ko: '지역 음식문화', en: 'Regional food culture', ja: '郷土の食文化', zh: '地方饮食文化' }[lang])
+          : item.cardType === 'restaurant_history'
+            ? ({ ko: '역사적 식당 기록', en: 'Historic restaurant record', ja: '歴史的な飲食店記録', zh: '历史餐饮商号记录' }[lang])
+            : item.cardType === 'restaurant_recommendation'
+              ? getRestaurantRecommendationLabel(lang)
+              : (lang === 'ja' ? '厳選グルメ名店' : (lang === 'en' ? 'Verified Dining' : (lang === 'zh' ? '特色精选餐厅' : '검증 대표 맛집')));
+        const localizedCity = (dInfo.badge && (dInfo.badge[lang] || dInfo.badge.ko)) || ((typeof cleanHangul === 'function') ? cleanHangul(item.city, lang) : item.city);
         return {
           type: 'dining',
           item: item,
           name: locName,
-          city: (typeof cleanHangul === 'function') ? cleanHangul(item.city, lang) : item.city,
-          category: (lang === 'ja' ? '厳選グルメ名店' : (lang === 'en' ? 'Verified Dining' : (lang === 'zh' ? '特色精选餐厅' : '검증 대표 맛집'))),
-          desc: (dInfo.dishDesc && (dInfo.dishDesc[lang] || dInfo.dishDesc.ko)) || item.highlight || '',
-          tip: (dInfo.seniorTip && (dInfo.seniorTip[lang] || dInfo.seniorTip.ko)) || item.seniorTip || '',
+          city: localizedCity,
+          category: category,
+          desc: (dInfo.restaurantRecommendation && (dInfo.restaurantRecommendation[lang] || dInfo.restaurantRecommendation.ko)) || (dInfo.dishDesc && (dInfo.dishDesc[lang] || dInfo.dishDesc.ko)) || item.highlight || '',
+          tip: (dInfo.editorialNote && (dInfo.editorialNote[lang] || dInfo.editorialNote.ko)) || (dInfo.seniorTip && (dInfo.seniorTip[lang] || dInfo.seniorTip.ko)) || item.seniorTip || '',
           dish: (dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '',
           history: (dInfo.history && (dInfo.history[lang] || dInfo.history.ko)) || '',
           foodContext: (dInfo.foodContext && (dInfo.foodContext[lang] || dInfo.foodContext.ko)) || '',
@@ -4961,7 +5104,9 @@ function handleLocalChat(query) {
           historySources: dInfo.historySources || [],
           photo: item.photo,
           officialUrl: item.officialUrl || null,
-          mapUrl: item.mapUrl || (item.name ? `https://maps.google.com/?q=${encodeURIComponent(item.name + ' ' + (item.city || ''))}` : null)
+          mapUrl: item.cardType === 'restaurant_recommendation' && item.mapQuery
+            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`
+            : (item.contentOnly ? null : (item.mapUrl || (item.name ? `https://maps.google.com/?q=${encodeURIComponent(item.name + ' ' + (item.city || ''))}` : null)))
         };
       }
     }
@@ -5015,16 +5160,46 @@ function handleLocalChat(query) {
           type: 'landmark',
           item: item,
           name: locName,
-          city: item.city || item.region || '',
+          city: (lInfo.badge && (lInfo.badge[lang] || lInfo.badge.ko)) || item.city || item.region || '',
           category: (lang === 'ja' ? '必訪ランドマーク' : (lang === 'en' ? 'Essential Landmark' : (lang === 'zh' ? '必游核心名胜' : '핵심 랜드마크'))),
           desc: (lInfo.highlight && (lInfo.highlight[lang] || lInfo.highlight.ko)) || item.highlight || '',
           history: (lInfo.history && (lInfo.history[lang] || lInfo.history.ko)) || '',
           historySources: lInfo.historySources || [],
-          tip: (lInfo.seniorAccess && (lInfo.seniorAccess[lang] || lInfo.seniorAccess.ko)) || item.seniorAccess || '',
+          tip: (lInfo.historyNote && (lInfo.historyNote[lang] || lInfo.historyNote.ko)) || (lInfo.seniorAccess && (lInfo.seniorAccess[lang] || lInfo.seniorAccess.ko)) || item.seniorAccess || '',
           hours: item.hours || '',
           photo: item.photo,
           officialUrl: item.officialUrl,
           mapUrl: item.mapQuery ? `https://maps.google.com/?q=${encodeURIComponent(item.mapQuery)}` : null
+        };
+      }
+    }
+
+    const nightViewList = (typeof NIGHTVIEWS_GUIDE_DATA !== 'undefined' && NIGHTVIEWS_GUIDE_DATA) || [];
+    for (const item of nightViewList) {
+      const i18n = (item.i18n && (item.i18n[lang] || item.i18n.ko)) || {};
+      const history = i18n.history || '';
+      if (!history) continue;
+      const nameL = (item.spot || '').toLowerCase();
+      const locName = i18n.spot || item.spot || '';
+      const locNameL = locName.toLowerCase();
+      const aliases = item.id === 'nv_budapest_fishermans' ? [
+        'hungarian parliament', 'budapest parliament', 'parliament',
+        '헝가리 국회의사당', '헝가리 의회', '부다페스트 국회의사당', '국회의사당',
+        'ハンガリー国会議事堂', 'ブダペスト国会議事堂', '匈牙利国会大厦', '布达佩斯国会大厦'
+      ] : [];
+      const aliasMatch = aliases.some(alias => lower.includes(alias) || (lower.length >= 5 && alias.includes(lower)));
+      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL);
+      const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
+      const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t) || aliases.some(alias => alias.includes(t)));
+      if (matchName || tokenMatch || aliasMatch) {
+        const city = i18n.city || item.city || '';
+        return {
+          type: 'landmark', item: item, name: locName, city,
+          category: ({ ko: '야경 명소 · 역사 설명', en: 'Night view · historical note', ja: '夜景スポット · 歴史解説', zh: '夜景景点 · 历史介绍' }[lang]),
+          desc: i18n.viewType || item.viewType || '', history,
+          historySources: item.historySources || [], tip: i18n.historyNote || '',
+          hours: '', photo: item.image || null, officialUrl: item.sourceUrl || null,
+          mapUrl: `https://maps.google.com/?q=${encodeURIComponent(locName + ' ' + city)}`
         };
       }
     }
@@ -5049,6 +5224,31 @@ function handleLocalChat(query) {
       zh: { query: '科尔多瓦餐厅建议', label: '🍽️ 科尔多瓦餐厅建议' }
     };
     return retiredNotice[lang] + renderFollowupChips([retiredFollowups[lang]]);
+  }
+  if (matchedEntity && matchedEntity.type === 'dining' && matchedEntity.item?.contentOnly) {
+    const e = matchedEntity;
+    if (e.item.cardType === 'restaurant_recommendation') {
+      const intro = ({
+        ko:'🍽️ 출처로 근거를 확인한 지역 식당 후보입니다:',
+        en:'🍽️ Here is a locally relevant restaurant pick with source links:',
+        ja:'🍽️ 出典で確認できる地域のレストラン候補です:',
+        zh:'🍽️ 这是有来源依据的当地餐厅推荐：'
+      })[lang] || '🍽️';
+      return `${intro}${renderRestaurantRecommendationCard(e.item)}`;
+    }
+    const isRestaurantHistory = e.item.cardType === 'restaurant_history';
+    const contextLabel = isRestaurantHistory
+      ? ({ ko: '역사적 식당 기록', en: 'Historic restaurant record', ja: '歴史的な飲食店記録', zh: '历史餐饮商号记录' }[lang])
+      : getFoodContextLabel(lang);
+    const intro = {
+      ko: '🔎 지역 음식문화·역사 보충정보입니다:',
+      en: '🔎 Regional food-culture / history note:',
+      ja: '🔎 郷土の食文化・歴史に関する補足情報です:',
+      zh: '🔎 地方饮食文化／历史补充信息：'
+    }[lang];
+    const narrative = e.history || e.foodContext || e.desc || '';
+    const sources = renderHistorySourceLinks(e.historySources, lang);
+    return `${intro}<div style="background:#fff;border:1.5px solid #d4e0d7;border-radius:16px;padding:14px 16px;margin-top:8px;line-height:1.65;"><span style="display:inline-block;background:#e8f4ed;color:#1a5249;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;">${escapeHtml(e.city)}</span><span style="display:inline-block;background:#fff2eb;color:#a94f2e;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;margin-left:6px;">${escapeHtml(e.category)}</span><h4 style="margin:10px 0 6px;color:#1c2e2c;">${escapeHtml(e.name)}</h4><p style="margin:0 0 8px;color:#1a5249;font-weight:700;">${escapeHtml(contextLabel)}</p><p style="margin:0 0 8px;white-space:pre-line;color:#40534e;">${escapeHtml(narrative)}</p>${e.history && e.foodContext ? `<p style="margin:0 0 8px;white-space:pre-line;color:#40534e;">${escapeHtml(e.foodContext)}</p>` : ''}${e.tip ? `<p style="margin:8px 0;color:#70523d;">${escapeHtml(e.tip)}</p>` : ''}${sources}</div>`;
   }
   if (matchedEntity && matchedEntity.type === 'dining' && typeof window.buildItalyFoodChatReply === 'function') {
     const matchedCityText = String(matchedEntity.city || '') + ' ' + String(matchedEntity.item?.city || '');
@@ -6841,7 +7041,7 @@ function handleLocalChat(query) {
 
   // Common Intent Flags
   const isFood = ['음식', '맛집', '먹거리', '식당', '미식', '푸드', '요리', '맛있는', '타파스', '미슐랭', '미쉐린', '미쉐린가이드', 'michelin', 'ミシュラン', '米其林', 'food', 'restaurant', 'dining', 'eat', 'dish', 'cuisine', 'tapas', 'グルメ', 'レストラン', '料理', '美味しい', '名物', 'タパス', '美食', '餐厅', '吃', '菜肴', '小吃'].some(w => q.includes(w) || cleanQ.includes(w));
-  const isSpecificRestaurant = ['추천 식당', '추천 맛집', '식당 추천', '맛집 추천', '유명한 식당', '유명한 맛집', '어디서 먹', '레스토랑', 'restaurant', 'restaurants', 'dining place', 'おすすめレストラン', '名店', '推荐餐厅', '哪家好'].some(w => q.includes(w) || cleanQ.includes(w));
+  const isSpecificRestaurant = ['추천 식당', '추천 맛집', '식당 추천', '맛집 추천', '맛집', '유명한 식당', '유명한 맛집', '어디서 먹', '어디에서 먹', '레스토랑', '식당', 'restaurant', 'restaurants', 'dining place', 'where to eat', 'places to eat', 'restaurant recommendation', 'local restaurants', 'おすすめレストラン', 'レストラン', 'どこで食べ', '名店', '推荐餐厅', '餐厅', '餐馆', '去哪吃', '哪家好'].some(w => q.includes(w) || cleanQ.includes(w));
   const isShopping = ['쇼핑', '선물', '기념품', '특산품', '살것', '살만한', '기념', 'shopping', 'souvenir', 'gift', 'souvenirs', 'お土産', 'ショッピング', '買い物', '名産', '购物', '纪念品', '伴手礼', '特产'].some(w => q.includes(w) || cleanQ.includes(w));
   const isSights = ['관광', '명소', '볼거리', '가볼만한', '유적지', '핫플', '관광지', '투어', 'attraction', 'sights', 'sightseeing', 'must visit', 'tourist', '観光', '名所', '見どころ', 'スポット', '景点', '地标', '必去', '游览'].some(w => q.includes(w) || cleanQ.includes(w));
   const isWeather = ['날씨', '기온', '옷차림', '시기', '월', '겨울', '가을', '비', '추워', '따뜻', 'weather', 'climate', 'temperature', 'clothes', 'packing', 'when to visit', 'season', '天気', '気温', '服装', '季節', 'ベストシーズン', '雨', '寒い', '天气', '气温', '穿衣', '季节', '月份', '下雨'].some(w => q.includes(w) || cleanQ.includes(w));
@@ -8310,6 +8510,9 @@ function renderFestivalsAndNightViews() {
       const localizedNightReturn = i18n.nightReturnNotes || item.nightReturnNotes;
       const localizedPrice = (item.priceInfo && item.priceInfo[currentLang]) || (item.priceInfo && item.priceInfo.ko) || localizedTicket;
       const localizedNecessity = (item.bookingNecessity && item.bookingNecessity[currentLang]) || (item.bookingNecessity && item.bookingNecessity.ko) || '예매 불필요';
+      const localizedHistory = i18n.history || '';
+      const localizedHistoryNote = i18n.historyNote || '';
+      const localizedHistorySources = renderHistorySourceLinks(item.historySources, currentLang);
 
       const isSaved = savedCandidates.some(c => c.id === item.id);
       const saveBtnText = isSaved ? (dict['btn_saved_candidate'] || '✓ 저장됨') : (dict['btn_save_candidate'] || '⭐ 후보 저장');
@@ -8331,6 +8534,7 @@ function renderFestivalsAndNightViews() {
           </div>
           <div class="photo-body">
             <h3 class="photo-title">${localizedSpot}</h3>
+            ${localizedHistory ? `<div class="landmark-history-block" style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:10px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getLandmarkHistoryLabel(currentLang)}</strong><div style="font-size:12px;color:#40534e;line-height:1.65;">${escapeHtml(localizedHistory)}</div>${localizedHistoryNote ? `<p style="font-size:11px;color:#596b66;line-height:1.5;">${escapeHtml(localizedHistoryNote)}</p>` : ''}${localizedHistorySources}</div>` : ''}
             <div class="photo-region">🌃 ${dict['lbl_view_type'] || '전망 유형'}: ${localizedViewType}</div>
             <div class="photo-highlight">
               <strong>⏰ ${dict['lbl_best_view_time'] || '추천 조망 시간'}:</strong> ${localizedTime}<br>
