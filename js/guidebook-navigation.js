@@ -24,6 +24,7 @@
       secBarcelonaDining: '바르셀로나 식당 보충 가이드',
       secSpainGuide: '스페인 지역 루트 · 명소 안내', secHotels: '확정 숙소 요약',
       secEuropeTaxi: '유럽 택시 앱 · 호출 팁', secFlamenco: '플라멩코 공연 가이드',
+      secFares: '유럽 도시 간 기차·장거리버스 요금 비교',
       secActivities: '활동 · 스파 가이드', sectionsNote: '이 페이지에는 여러 보충 가이드가 함께 실려 있습니다. 아래 섹션 바로가기를 이용하면 원하는 자료로 곧바로 이동할 수 있습니다.'
     },
     en: {
@@ -42,6 +43,7 @@
       secBarcelonaDining: 'Barcelona dining supplement',
       secSpainGuide: 'Spain regional routes & highlights', secHotels: 'Confirmed-stay summary',
       secEuropeTaxi: 'European taxi apps & booking tips', secFlamenco: 'Flamenco show guide',
+      secFares: 'European intercity train & coach fares',
       secActivities: 'Activities & spa guide', sectionsNote: 'This page brings together several supplementary guides. Use a section shortcut below to jump straight to the material you need.'
     },
     ja: {
@@ -60,6 +62,7 @@
       secBarcelonaDining: 'バルセロナの食事補足ガイド',
       secSpainGuide: 'スペイン各地域のルート・見どころ', secHotels: '確定した宿泊先の概要',
       secEuropeTaxi: '欧州のタクシーアプリ・利用のヒント', secFlamenco: 'フラメンコ公演ガイド',
+      secFares: 'ヨーロッパ都市間の鉄道・長距離バス運賃',
       secActivities: 'アクティビティ・スパガイド', sectionsNote: 'このページには複数の補足ガイドがあります。下のセクションショートカットから目的の情報へ直接移動できます。'
     },
     zh: {
@@ -78,6 +81,7 @@
       secBarcelonaDining: '巴塞罗那餐饮补充指南',
       secSpainGuide: '西班牙分区路线与景点', secHotels: '已确认住宿汇总',
       secEuropeTaxi: '欧洲打车应用与使用提示', secFlamenco: '弗拉门戈演出指南',
+      secFares: '欧洲城市间火车与长途巴士票价',
       secActivities: '活动与水疗指南', sectionsNote: '此页面汇集了多个补充指南。使用下方的分区快捷入口，可直接前往所需内容。'
     }
   };
@@ -105,7 +109,8 @@
     ] },
     { key: 'groupEssentials', icon: '➜', pages: ['chapter-practical:1', 'chapter-practical:2', 'chapter-practical:3', 'chapter-practical:4'], sections: [
       // The Europe transport guide is generated in a hidden subtab; its shortcut first activates that subtab.
-      { route: 'chapter-practical:2', target: 'europeTaxiAppGuide', key: 'secEuropeTaxi', icon: '🚕', activate: activateEuropeTaxiTab }
+      { route: 'chapter-practical:2', target: 'europeTaxiAppGuide', key: 'secEuropeTaxi', icon: '🚕', activate: activateEuropeTaxiTab },
+      { route: 'chapter-practical:2', target: 'europe-intercity-fares-guide', key: 'secFares', icon: '🎟️' }
     ] },
     { key: 'groupTools', icon: '▤', pages: ['chapter-practical:6', 'chapter-festivals:3', 'chapter-guide:4'], sections: [] }
   ];

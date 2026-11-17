@@ -1,0 +1,35 @@
+.eif-guide {
+  margin: 22px 0 36px;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid #e5ddd2;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fffdf9 0%, #f6f2ea 100%);
+  color: #25332d;
+  box-shadow: 0 8px 26px rgba(60, 52, 39, 0.07);
+}
+.eif-kicker { margin: 0 0 8px; color: #766c5e; font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.eif-guide h2 { margin: 0; color: #1b4332; font-size: clamp(1.45rem, 2.5vw, 2rem); line-height: 1.25; }
+.eif-lead { max-width: 900px; margin: 10px 0 20px; color: #526159; line-height: 1.65; }
+.eif-observation { margin: 18px 0 22px; padding: 14px 16px; border-left: 4px solid #d39a52; border-radius: 10px; background: #fff7e8; line-height: 1.6; }
+.eif-observation strong { display: block; margin-bottom: 4px; color: #764b16; }
+.eif-check-title { margin: 24px 0 12px; color: #234a38; font-size: 1.1rem; }
+.eif-checklist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; margin: 0; padding: 0; list-style: none; }
+.eif-checklist li { position: relative; padding: 11px 13px 11px 38px; border: 1px solid #e6e1d8; border-radius: 11px; background: rgba(255,255,255,.78); line-height: 1.5; }
+.eif-checklist li::before { content: "✓"; position: absolute; left: 14px; top: 11px; color: #14805f; font-weight: 900; }
+.eif-case-heading { margin: 28px 0 12px; color: #234a38; font-size: 1.1rem; }
+.eif-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.eif-card { min-width: 0; padding: 17px; border: 1px solid #e5e0d6; border-radius: 14px; background: #fff; }
+.eif-card h3 { margin: 0 0 5px; color: #233f33; font-size: 1rem; line-height: 1.35; }
+.eif-corridor { margin: 0 0 10px; color: #766d60; font-size: .82rem; font-weight: 700; }
+.eif-card p { margin: 8px 0; color: #45564d; line-height: 1.58; }
+.eif-sources { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+.eif-sources a { display: inline-flex; align-items: center; min-height: 34px; padding: 6px 10px; border: 1px solid #cbdacf; border-radius: 999px; background: #f5faf6; color: #1b5b3d; font-size: .78rem; font-weight: 750; text-decoration: none; }
+.eif-sources a:hover, .eif-sources a:focus-visible { background: #e8f5ec; outline: 2px solid #95c8a8; outline-offset: 2px; }
+.eif-bottom-note { margin: 20px 0 0; padding: 13px 15px; border-radius: 10px; background: #edf3ef; color: #3e5047; line-height: 1.55; }
+.eif-disclaimer { margin: 12px 0 0; color: #6e6a61; font-size: .82rem; line-height: 1.5; }
+@media (max-width: 720px) {
+  .eif-guide { margin: 16px 0 28px; padding: 16px 14px; border-radius: 15px; }
+  .eif-checklist, .eif-cards { grid-template-columns: 1fr; }
+  .eif-card { padding: 15px; }
+  .eif-sources a { font-size: .76rem; }
+}

@@ -34315,7 +34315,7 @@ const EUROPE_TRANSIT_GUIDE_I18N = {
     at_sec2_title: "• 세계 최고 수준의 기차, ÖBB 레일젯(Railjet):",
     at_sec2_desc: "빈에서 잘츠부르크, 프라하, 부다페스트로 이동할 때 타는 오스트리아 연방철도입니다. 매우 쾌적하고 조용하며 연착이 적습니다.",
     at_sec3_title: "• 꿀팁 민간 철도 웨스트반 (Westbahn):",
-    at_sec3_desc: "빈 ➔ 잘츠부르크 구간을 가실 때는 ÖBB 외에도 '웨스트반(Westbahn)'이라는 민간 기차 회사가 있습니다. 전 열차가 2층 기차로 시설이 매우 훌륭하고 가격도 저렴할 때가 많으니 비교해 보세요!",
+    at_sec3_desc: "빈–잘츠부르크에는 ÖBB 외에 Westbahn도 운행합니다. 공식 차량 소개에는 2층 KISS/PANDA 편성과 SMILE 고속열차가 함께 있어 Westbahn의 모든 열차가 2층은 아닙니다. 같은 날짜·구간의 최종 요금, 역·시간, 변경·환불 조건을 비교하세요. 확인한 자료만으로는 어느 회사가 늘 더 저렴하다고 단정할 수 없습니다.",
 
     core_summary_title: "💡 [핵심 요약] 국가별 이것만은 꼭!",
     core_summary_uk_nl: "🇬🇧 영국 / 🇳🇱 네덜란드: 표 사지 말고 트래블 카드 찍기! (Tap & Go)",
@@ -34361,7 +34361,7 @@ const EUROPE_TRANSIT_GUIDE_I18N = {
     at_sec2_title: "• World-Class ÖBB Railjet:",
     at_sec2_desc: "The Austrian Federal Railways linking Vienna to Salzburg, Prague, and Budapest offer exceptional cleanliness, quiet cabins, and remarkable punctuality.",
     at_sec3_title: "• Private Rail Alternative: Westbahn:",
-    at_sec3_desc: "Between Vienna and Salzburg, compare private operator 'Westbahn' alongside ÖBB. Their double-decker trains provide stellar amenities often at lower prices.",
+    at_sec3_desc: "Westbahn also operates between Vienna and Salzburg. Its official fleet page lists double-decker KISS/PANDA sets as well as SMILE high-speed trains, so not all Westbahn trains are double-deckers. Compare the final price, stations, times, and change/refund terms for the same date and route; the sources reviewed do not show either operator is consistently cheaper.",
 
     core_summary_title: "💡 [Core Cheat Sheet] Must-Know Country Rules!",
     core_summary_uk_nl: "🇬🇧 UK / 🇳🇱 Netherlands: Skip ticket lines; just Tap & Go with contactless cards!",
@@ -34407,7 +34407,7 @@ const EUROPE_TRANSIT_GUIDE_I18N = {
     at_sec2_title: "• 世界最高水準の列車、ÖBBレイルジェット：",
     at_sec2_desc: "ウィーンからザルツブルク、プラハ、ブダペストを結ぶオーストリア連邦鉄道の看板列車で、極めて清潔・静寂で遅延も少ない快適な列車です。",
     at_sec3_title: "• 民間鉄道ウェストバーン（Westbahn）活用術：",
-    at_sec3_desc: "ウィーン〜ザルツブルク間はÖBBのほかに民間鉄道「Westbahn」も運行しています。全席2階建てで設備が素晴らしく、料金も割安なことが多いため比較をおすすめします。",
+    at_sec3_desc: "ウィーン〜ザルツブルク間ではWestbahnも運行しています。公式の車両紹介には2階建てのKISS/PANDA編成とSMILE高速列車の両方が記載されており、全列車が2階建てではありません。同じ日付・区間で合計金額、駅・時刻、変更・払い戻し条件を比較してください。確認した資料だけでは、どちらかが常に安いとは言えません。",
 
     core_summary_title: "💡 [要点まとめ] 各国のこれだけは厳守！",
     core_summary_uk_nl: "🇬🇧 イギリス / 🇳🇱 オランダ：切符を買わずにタッチ決済！（Tap & Go）",
@@ -34452,8 +34452,8 @@ const EUROPE_TRANSIT_GUIDE_I18N = {
     at_sec1_desc: "与德国相同不设进站闸门。纸质票乘车前必须在蓝色打票机上打卡印上时间。全天游览推荐购买“维也纳24/48小时交通卡”。",
     at_sec2_title: "• 世界顶尖水准铁路，ÖBB Railjet：",
     at_sec2_desc: "连接维也纳与萨尔茨堡、布拉格、布达佩斯的高铁，整洁宁静、准点率极高，乘坐体验极佳。",
-    at_sec3_title: "• 双层私铁 Westbahn 实用技巧：",
-    at_sec3_desc: "在维也纳至萨尔茨堡区间，除了国铁ÖBB外，私营铁路Westbahn全线采用豪华双层列车，设施舒适且常有特价票，非常值得比选！",
+    at_sec3_title: "• 维也纳–萨尔茨堡的铁路选择：Westbahn",
+    at_sec3_desc: "Westbahn也运营维也纳至萨尔茨堡线路。其官方车队介绍同时列出双层KISS/PANDA列车和SMILE高速列车，因此不能说所有Westbahn列车都是双层。请按同一日期和区间比较最终票价、车站、时刻及改签／退款条件；已查资料不足以证明哪家始终更便宜。",
 
     core_summary_title: "💡 [核心速记] 欧洲各国乘车必背口诀！",
     core_summary_uk_nl: "🇬🇧 英国 / 🇳🇱 荷兰：无需排队买票，直接刷卡进站！（Tap & Go）",

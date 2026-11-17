@@ -4307,6 +4307,7 @@ function switchLanguage(lang, btn) {
   if (typeof renderNerjaDaytripGuide === "function") renderNerjaDaytripGuide(lang);
   if (typeof renderCuratedHeartPlaces === "function") renderCuratedHeartPlaces(lang);
   if (typeof window.renderEuropeElectricityGuide === 'function') window.renderEuropeElectricityGuide(lang);
+  if (typeof window.renderEuropeIntercityFaresGuide === 'function') window.renderEuropeIntercityFaresGuide(lang);
 
   // 14-B) Synchronize Floating Book Badge & Mobile TOC with selected language
   const actChap = (typeof window !== "undefined" && window.currentActiveChapter) || 'chapter-overview';
@@ -4502,6 +4503,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderLocalPhrases();
   renderTransitGuide();
   renderEuropeTransitGuide();
+  if (typeof window.renderEuropeIntercityFaresGuide === 'function') window.renderEuropeIntercityFaresGuide(currentLang);
   renderHotelFilterBar();
   renderHotelsGrid('ALL');
 });
@@ -4634,6 +4636,8 @@ function handleLocalChat(query) {
   if (historyResponse) return historyResponse;
   const electricityResponse = typeof window.buildEuropeElectricityChatResponse === 'function' ? window.buildEuropeElectricityChatResponse(rawQ, lang) : null;
   if (electricityResponse) return electricityResponse;
+  const fareResponse = typeof window.buildEuropeFareChatResponse === 'function' ? window.buildEuropeFareChatResponse(rawQ, lang) : null;
+  if (fareResponse) return fareResponse;
   const hasSevilleForNov12 = ['seville', 'sevilla', '세비야', 'セビリア', '塞维利亚'].some(w => q.includes(w));
   const hasCordobaForNov12 = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦'].some(w => q.includes(w));
   const asksIntercityRoute = ['alsa', 'bus', 'buses', 'coach', 'route', 'transport', 'travel from', 'train', 'renfe', 'day trip', 'daytrip', '당일치기', '日帰り', '一日游', '이동', '교통', '버스', '기차', '열차', '렌페', 'バス', '電車', '列車', '鉄道', '移動', '交通', '大巴', '公交', '巴士', '火车', '铁路', '出行'].some(w => q.includes(w));

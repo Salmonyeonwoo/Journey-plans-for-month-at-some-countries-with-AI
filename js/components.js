@@ -1939,6 +1939,9 @@
         </div>
       </div>
     </section>
+    <section class="section europe-intercity-fares-shell" id="europe-intercity-fares-guide">
+      <div class="wrap"><div id="europe-intercity-fares-guide-mount"></div></div>
+    </section>
                     <div class="page-turner-bar">
             <button type="button" class="btn-turn-page-bottom prev" onclick="turnBookPage('chapter-practical', -1)">
               ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_practical_2">2. 필수 회화 &amp; 오디오</strong>
