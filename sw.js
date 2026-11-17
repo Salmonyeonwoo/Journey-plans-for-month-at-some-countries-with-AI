@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261116_europe_country_guide_v1)
+// SlowTravel Mobile Offline Service Worker (v20261117_seville_general_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261116_europe_country_guide_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261117_seville_general_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -17,6 +17,7 @@ const PRECACHE_ASSETS = [
   './css/europe-taxi-app-guide.css',
   './css/alhambra-visit-review.css',
   './css/europe-country-nightlife.css',
+  './css/seville-general-guide.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -51,6 +52,7 @@ const PRECACHE_ASSETS = [
   './js/alhambra-visit-review.js',
   './js/granada-center-review.js',
   './js/granada-malaga-general-guide.js',
+  './js/seville-general-guide.js',
   './js/malaga-place-additions.js',
   './img/user-cordoba-san-pablo/sign.jpg',
   './img/user-cordoba-san-pablo/facade.jpg',

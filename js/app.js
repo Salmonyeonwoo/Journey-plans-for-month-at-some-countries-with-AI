@@ -4610,6 +4610,10 @@ function handleLocalChat(query) {
     const generalGuideResponse = window.buildGranadaMalagaGeneralChatResponse(rawQ, lang);
     if (generalGuideResponse) return generalGuideResponse;
   }
+  if (typeof window.buildSevilleGeneralChatResponse === 'function') {
+    const sevilleGeneralResponse = window.buildSevilleGeneralChatResponse(rawQ, lang);
+    if (sevilleGeneralResponse) return sevilleGeneralResponse;
+  }
   if (typeof window.buildGranadaCenterReviewChatResponse === 'function') {
     const centerResponse = window.buildGranadaCenterReviewChatResponse(rawQ, lang);
     if (centerResponse) return centerResponse;
@@ -9223,6 +9227,7 @@ window.scrollToDistrict = scrollToDistrict;
 // ==========================================================================
 function renderSeniorDistrictRoutes(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
   if (typeof window.renderGranadaMalagaGeneralGuide === 'function') window.renderGranadaMalagaGeneralGuide(lang);
+  if (typeof window.renderSevilleGeneralGuide === 'function') window.renderSevilleGeneralGuide(lang);
   if (typeof window.renderEuropeanCathedralHistoryGuide === 'function') window.renderEuropeanCathedralHistoryGuide(lang);
   const allData = (typeof SENIOR_DISTRICTS_I18N !== 'undefined' ? SENIOR_DISTRICTS_I18N : (typeof window !== 'undefined' ? window.SENIOR_DISTRICTS_I18N : null));
   if (!allData) return;
