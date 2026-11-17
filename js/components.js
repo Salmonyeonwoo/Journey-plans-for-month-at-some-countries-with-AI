@@ -1740,6 +1740,9 @@
               <!-- 야경 명소 카드 그리드 -->
               <div class="photo-grid" id="nightviewsCardsGrid"></div>
 
+              <!-- Searchable, multilingual European country directory -->
+              <div id="europeCountryNightlifeMount"></div>
+
               <div class="page-turner-bar">
                 <button type="button" class="btn-turn-page-bottom prev" onclick="goToBookPage('chapter-festivals', 1)">
                   ◀ <span data-i18n="btn_prev_page">이전 쪽</span>: <strong data-i18n="page_festivals_2">2. 다른 계절 (봄·여름)</strong>

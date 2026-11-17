@@ -4391,6 +4391,7 @@ function switchLanguage(lang, btn) {
   if (btnTop) { btnTop.title = vt.top; btnTop.setAttribute('aria-label', vt.top); }
   if (btnChat) { btnChat.title = vt.chat; btnChat.setAttribute('aria-label', vt.chat); }
   if (btnSend) { btnSend.title = vt.send; btnSend.setAttribute('aria-label', vt.send); }
+  if (typeof window.renderEuropeCountryNightlifeGuide === 'function') window.renderEuropeCountryNightlifeGuide(lang);
 }
 
 if (typeof window !== 'undefined') { window.switchLanguage = switchLanguage; }
@@ -4671,6 +4672,10 @@ function handleLocalChat(query) {
   if (((asksMichelin && hasMichelinItalianCity) || hasNewItalianRestaurantName) && typeof window.buildItalyFoodChatReply === 'function') {
     return window.buildItalyFoodChatReply(lang, rawQ, null);
   }
+  const countryGuideResponse = typeof window.buildEuropeCountryGuideChatResponse === 'function'
+    ? window.buildEuropeCountryGuideChatResponse(rawQ, lang)
+    : null;
+  if (countryGuideResponse) return countryGuideResponse;
   // Keep verified candidate questions ahead of broad food/market matching.
   if (!hasAndalusiaCityContext && typeof window.buildBarcelonaCandidateOptionsChatResponse === 'function') {
     const candidateResponse = window.buildBarcelonaCandidateOptionsChatResponse(rawQ, lang);

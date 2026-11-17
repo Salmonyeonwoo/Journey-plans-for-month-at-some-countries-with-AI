@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261116_nerja_cave_v1)
+// SlowTravel Mobile Offline Service Worker (v20261116_europe_country_guide_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261116_nerja_cave_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261116_europe_country_guide_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -16,6 +16,7 @@ const PRECACHE_ASSETS = [
   './css/local-food-guide.css',
   './css/europe-taxi-app-guide.css',
   './css/alhambra-visit-review.css',
+  './css/europe-country-nightlife.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -24,6 +25,8 @@ const PRECACHE_ASSETS = [
   './js/activity-guide.js',
   './js/europe-cathedral-history-guide.js',
   './js/europe-detailed-research-additions.js',
+  './js/europe-country-nightlife-data.js',
+  './js/europe-country-nightlife-guide.js',
   './js/europe-electricity-guide.js',
   './js/landmark-history-additions.js',
   './js/flamenco-guide.js',
