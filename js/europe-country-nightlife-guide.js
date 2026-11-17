@@ -14,7 +14,9 @@
       filtersLabel: '주제 선택', all: '모두', sights: '명소', food: '먹거리·식당', night: '야경',
       count: (countries, items) => `${countries}개국 · ${items}개 추천 항목`,
       countryCount: n => `${n}개국`, city: '대표 도시', source: '출처', sources: '공식·참고 출처',
-      itemCount: n => `${n}개 항목`, terrain: '보행·접근 참고', dish: '대표 음식', venue: '식당·시장 후보',
+      itemCount: n => `${n}개 항목`, terrain: '보행·접근 참고', dish: '대표 음식', venue: '식당 후보',
+      foodIntroTitle: '지역 미식 안내', foodGuideNote: '지역 음식과 식당은 조사한 후보입니다. 현재 메뉴·영업·예약 가능 여부는 방문 전 공식 채널에서 확인하세요. 어떤 곳도 예약하지 않았습니다.',
+      foodPrompt: '유럽 각 나라와 도시의 대표 음식과 현지 식당 후보를 추천해줘', foodChip: '🍽️ 유럽 현지 음식·식당 후보',
       searchEmpty: '검색어에 맞는 국가가 없습니다.', noData: '아직 표시할 국가별 자료가 없습니다.',
       expand: '모두 펼치기', collapse: '모두 접기', sourceMissing: '이 항목의 출처 링크를 확인할 수 없습니다.',
       chatbotTitle: '유럽 국가별 추천 가이드', chatbotQuery: '유럽 각 나라의 대표 명소, 현지 음식과 야경을 나라별로 추천해줘',
@@ -32,7 +34,9 @@
       filtersLabel: 'Filter by topic', all: 'All', sights: 'Sights', food: 'Food & dining', night: 'Night views',
       count: (countries, items) => `${countries} countries · ${items} picks`,
       countryCount: n => `${n} countries`, city: 'Featured city', source: 'Source', sources: 'Official & reference sources',
-      itemCount: n => `${n} picks`, terrain: 'Walking & access note', dish: 'Local specialty', venue: 'Dining or market idea',
+      itemCount: n => `${n} picks`, terrain: 'Walking & access note', dish: 'Local specialty', venue: 'Dining candidate',
+      foodIntroTitle: 'Local food guide', foodGuideNote: 'Food and restaurant entries are researched candidates. Verify current menus, operations and booking availability with official channels before visiting. Nothing has been booked.',
+      foodPrompt: 'Recommend local dishes and dining candidates across European countries and cities', foodChip: '🍽️ European food & dining candidates',
       searchEmpty: 'No countries match that search.', noData: 'No country data is available yet.',
       expand: 'Expand all', collapse: 'Collapse all', sourceMissing: 'No source link is available for this item.',
       chatbotTitle: 'European country guide', chatbotQuery: 'Recommend representative sights, local food, and night views by European country',
@@ -50,7 +54,9 @@
       filtersLabel: 'テーマで絞り込む', all: 'すべて', sights: '名所', food: '郷土料理・飲食店', night: '夜景',
       count: (countries, items) => `${countries}か国 · ${items}件`,
       countryCount: n => `${n}か国`, city: '代表都市', source: '出典', sources: '公式・参考資料',
-      itemCount: n => `${n}件`, terrain: '徒歩・アクセスの注意', dish: '郷土料理', venue: '飲食店・市場の候補',
+      itemCount: n => `${n}件`, terrain: '徒歩・アクセスの注意', dish: '郷土料理', venue: '飲食店候補',
+      foodIntroTitle: '郷土料理ガイド', foodGuideNote: '料理と飲食店は調査した候補です。訪問前に現行メニュー・営業状況・予約の可否を公式窓口でご確認ください。予約はしていません。',
+      foodPrompt: 'ヨーロッパ各国・各都市の郷土料理と飲食店候補を教えて', foodChip: '🍽️ ヨーロッパ郷土料理・飲食店候補',
       searchEmpty: '検索に一致する国はありません。', noData: '国別データはまだありません。',
       expand: 'すべて展開', collapse: 'すべて閉じる', sourceMissing: 'この項目の出典リンクを確認できません。',
       chatbotTitle: 'ヨーロッパ各国ガイド', chatbotQuery: 'ヨーロッパ各国の代表的な名所、郷土料理、夜景を国別に教えて',
@@ -68,7 +74,9 @@
       filtersLabel: '按主题筛选', all: '全部', sights: '景点', food: '美食与餐饮', night: '夜景',
       count: (countries, items) => `${countries}个国家 · ${items}项推荐`,
       countryCount: n => `${n}个国家`, city: '代表城市', source: '来源', sources: '官方与参考来源',
-      itemCount: n => `${n}项`, terrain: '步行与通行提示', dish: '地方特色菜', venue: '餐厅或市场建议',
+      itemCount: n => `${n}项`, terrain: '步行与通行提示', dish: '地方特色菜', venue: '餐厅候选',
+      foodIntroTitle: '地方美食指南', foodGuideNote: '地方菜和餐厅均为经资料核对的候选建议。到访前请通过官方渠道确认最新菜单、营业状态和预订情况；未替您预订任何餐厅。',
+      foodPrompt: '请推荐欧洲各国和城市的地方菜及当地餐厅候选', foodChip: '🍽️ 欧洲地方菜与餐厅候选',
       searchEmpty: '没有符合搜索条件的国家。', noData: '目前没有国家资料。',
       expand: '全部展开', collapse: '全部收起', sourceMissing: '无法确认此条目的来源链接。',
       chatbotTitle: '欧洲各国指南', chatbotQuery: '请按国家推荐欧洲各国的代表景点、地方美食和夜景',
@@ -92,11 +100,41 @@
   const locale = () => LANGS.includes(root.currentLang) ? root.currentLang : (LANGS.includes(document.documentElement.lang) ? document.documentElement.lang : 'ko');
   const countryItems = country => {
     const items = (country.landmarks || []).map((item, index) => ({ ...item, city: item.city || country.featured_city, id: `${country.country_id}-sight-${index + 1}`, category: 'sight', label: 'catLandmark' }));
-    if (country.local_food && country.local_food.venue) items.push({ ...country.local_food.venue, city: country.local_food.venue.city || country.featured_city, id: `${country.country_id}-food`, category: 'food', label: 'catFood', dish: country.local_food.dish });
+    const foodGuide = country.local_food && country.local_food.food_guide;
+    const guideVenueNames = new Set();
+    if (foodGuide && Array.isArray(foodGuide.cities)) {
+      foodGuide.cities.forEach((cityGuide, cityIndex) => {
+        const city = cityGuide.city || country.featured_city;
+        (cityGuide.dishes || []).forEach((dish, index) => items.push({
+          id: `${country.country_id}-food-dish-${cityIndex + 1}-${index + 1}`, category: 'food', label: 'dish', foodKind: 'dish', city,
+          names: dish.name, description: dish.note,
+          sources: (dish.source_urls || []).map(url => ({ url, title: (() => { try { return new URL(url).hostname.replace(/^www\\./, ''); } catch (_) { return url; } })() }))
+        }));
+        (cityGuide.venues || []).forEach((venue, index) => {
+          const names = { en: venue.name, ko: venue.name, ja: venue.name, zh: venue.name };
+          guideVenueNames.add(normalize(venue.name));
+          const description = Object.fromEntries(LANGS.map(lang => [lang, [venue.area, text(venue.why_candidate, lang), text(venue.focus, lang)].filter(Boolean).join(' · ')]));
+          const urls = [...new Set([venue.official_url, ...(venue.source_urls || [])].filter(Boolean))];
+          items.push({
+            id: `${country.country_id}-food-venue-${cityIndex + 1}-${index + 1}`, category: 'food', label: 'venue', foodKind: 'venue', city,
+            names, description,
+            sources: urls.map(url => ({ url, title: (() => { try { return new URL(url).hostname.replace(/^www\\./, ''); } catch (_) { return url; } })() }))
+          });
+        });
+      });
+    }
+    if (country.local_food && country.local_food.venue && !foodGuideVenueDuplicate(country, guideVenueNames)) {
+      items.push({ ...country.local_food.venue, city: country.local_food.venue.city || country.featured_city, id: `${country.country_id}-food`, category: 'food', label: 'catFood', dish: country.local_food.dish });
+    }
     const nightViews = [...(country.night_view ? [country.night_view] : []), ...(country.additional_night_views || [])];
     nightViews.forEach((item, index) => items.push({ ...item, city: item.city || country.featured_city, id: `${country.country_id}-night-${index + 1}`, category: 'night', label: 'catNight' }));
     return items;
   };
+  function foodGuideVenueDuplicate(country, guideVenueNames) {
+    if (country.country_id === 'vatican-city' && country.local_food && country.local_food.food_guide) return true;
+    const legacyName = normalize(text(country.local_food && country.local_food.venue && country.local_food.venue.names, 'en'));
+    return legacyName && [...guideVenueNames].some(name => name === legacyName || name.startsWith(`${legacyName} `) || legacyName.startsWith(`${name} `));
+  }
   const categories = lang => LABELS[lang];
   function itemSearchText(country, item, lang) {
     const pieces = [country.country_id, ...Object.values(country.country_name || {}), ...Object.values(country.featured_city || {}), ...Object.values(item.city || {}),
@@ -124,14 +162,14 @@
   }
   function renderItem(item, country, lang, label) {
     const heading = item.category === 'food'
-      ? `${esc(text(item.dish, lang, label.dish))} · ${esc(text(item.names, lang))}`
+      ? (item.foodKind ? esc(text(item.names, lang)) : `${esc(text(item.dish, lang, label.dish))} · ${esc(text(item.names, lang))}`)
       : esc(text(item.names, lang));
     const body = esc(text(item.description, lang));
     const note = esc(text(item.mobilityNote, lang));
     const itemCity = text(item.city, lang);
     const featuredCity = text(country.featured_city, lang);
     const cityNote = itemCity && normalize(itemCity) !== normalize(featuredCity) ? `<p class="ecg-item-city">${esc(itemCity)}</p>` : '';
-    return `<article class="ecg-item ecg-item-${esc(item.category)}"><div class="ecg-item-heading"><span class="ecg-category ecg-category-${esc(item.category)}">${esc(label[item.label])}</span><h4>${heading}</h4></div>${cityNote}<p>${body}</p>${note ? `<p class="ecg-mobility"><strong>${esc(label.terrain)}:</strong> ${note}</p>` : ''}${getSourceLinks(item.sources, lang, label)}</article>`;
+    return `<article class="ecg-item ecg-item-${esc(item.category)}${item.foodKind ? ` ecg-item-${esc(item.foodKind)}` : ''}"><div class="ecg-item-heading"><span class="ecg-category ecg-category-${esc(item.foodKind || item.category)}">${esc(label[item.label])}</span><h4>${heading}</h4></div>${cityNote}<p>${body}</p>${note ? `<p class="ecg-mobility"><strong>${esc(label.terrain)}:</strong> ${note}</p>` : ''}${getSourceLinks(item.sources, lang, label)}</article>`;
   }
   function renderCountry(country, lang, label) {
     const allItems = countryItems(country);
@@ -141,7 +179,11 @@
     const countryName = text(country.country_name, lang, country.country_id);
     const cityName = text(country.featured_city, lang);
     const isOpen = state.openIds.has(country.country_id) || (state.query && matches(country, lang));
-    return `<details class="ecg-country" data-country="${esc(country.country_id)}" ${isOpen ? 'open' : ''}><summary><span class="ecg-country-name">${esc(countryName)}</span><span class="ecg-country-city">${esc(label.city)}: ${esc(cityName)}</span><span class="ecg-country-count">${esc(label.itemCount(items.length))}</span></summary><div class="ecg-country-body">${items.map(item => renderItem(item, country, lang, label)).join('')}${country.editorial_note ? `<p class="ecg-editorial-note">${esc(text(country.editorial_note, lang))}</p>` : ''}</div></details>`;
+    const visibleFoodCities = [...new Set(items.filter(item => item.category === 'food').map(item => normalize(text(item.city, lang))))];
+    const foodGuides = country.local_food && country.local_food.food_guide && Array.isArray(country.local_food.food_guide.cities) ? country.local_food.food_guide.cities : [];
+    const intros = state.category !== 'sight' && state.category !== 'night' ? foodGuides.filter(cityGuide => visibleFoodCities.includes(normalize(text(cityGuide.city, lang)))).map(cityGuide => `<div class="ecg-food-intro"><strong>${esc(text(cityGuide.city, lang))} · ${esc(label.foodIntroTitle)}</strong><p>${esc(text(cityGuide.intro, lang))}</p>${getSourceLinks(cityGuide.sources, lang, label)}</div>`).join('') : '';
+    const foodNotice = foodGuides.length && state.category !== 'sight' && state.category !== 'night' ? `<p class="ecg-food-note">${esc(label.foodGuideNote)}</p>` : '';
+    return `<details class="ecg-country" data-country="${esc(country.country_id)}" ${isOpen ? 'open' : ''}><summary><span class="ecg-country-name">${esc(countryName)}</span><span class="ecg-country-city">${esc(label.city)}: ${esc(cityName)}</span><span class="ecg-country-count">${esc(label.itemCount(items.length))}</span></summary><div class="ecg-country-body">${foodNotice}${intros}${items.map(item => renderItem(item, country, lang, label)).join('')}${country.editorial_note ? `<p class="ecg-editorial-note">${esc(text(country.editorial_note, lang))}</p>` : ''}</div></details>`;
   }
   function renderResults(lang) {
     const label = categories(lang);
@@ -210,7 +252,7 @@
     const mentionsEurope = /(europe|european|유럽|유럽의|ヨーロッパ|欧洲|歐洲)/i.test(String(query || ''));
     const transportIntent = /(how to get|travel from|route|train|flight|bus|transport|transfer|가는 법|이동|교통|노선|기차|열차|버스|항공|電車|移動|交通|路線|火车|铁路|大巴|航班|路线)/i.test(String(query || ''));
     if (transportIntent && category === 'all') return null;
-    if (detected && !placeMatch && ['spain', 'italy'].includes(normalize(detected.country_name?.en || detected.country_id))) return null;
+    if (detected && !placeMatch && ['spain', 'italy'].includes(normalize(detected.country_name?.en || detected.country_id)) && !(category === 'food' && normalize(detected.country_id) === 'italy')) return null;
     if (!guideIntent && !placeMatch) return null;
     if (!detected && !mentionsEurope) return null;
     let countries = detected ? [detected] : DATA;
@@ -226,7 +268,30 @@
         return name.length > (cjk ? 1 : 2) && q.includes(name);
       }));
       const candidates = citySpecificItems.length ? citySpecificItems : allItems;
-      const entries = candidates.filter(item => category === 'all' || item.category === category).slice(0, category === 'all' ? 4 : 2);
+      let entries;
+      if (country.country_id === 'italy' && category === 'food') {
+        const foodCities = (country.local_food && country.local_food.food_guide && country.local_food.food_guide.cities) || [];
+        const requestedCities = foodCities.filter(cityGuide => Object.values(cityGuide.city || {}).map(normalize).some(name => {
+          const cjk = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(name);
+          return name.length > (cjk ? 1 : 2) && q.includes(name);
+        }));
+        const explicitFoodItems = allItems.filter(item => item.category === 'food' && Object.values(item.names || {}).map(normalize).some(name => name.length > 3 && q.includes(name)));
+        entries = [];
+        const selectedCities = requestedCities.length || explicitFoodItems.length || citySpecificItems.length ? requestedCities : foodCities;
+        if (explicitFoodItems.length && !requestedCities.length) entries = explicitFoodItems.slice(0, 4);
+        else selectedCities.forEach(cityGuide => {
+          const cityKey = normalize(text(cityGuide.city, lang));
+          const cityFood = allItems.filter(item => item.category === 'food' && normalize(text(item.city, lang)) === cityKey);
+          const dish = cityFood.find(item => item.foodKind === 'dish');
+          const venue = cityFood.find(item => item.foodKind === 'venue');
+          if (dish) entries.push(dish);
+          if (venue) entries.push(venue);
+        });
+        if (!entries.length) entries = candidates.filter(item => item.category === 'food').slice(0, 4);
+      } else {
+        const limit = category === 'all' ? 4 : category === 'food' ? 4 : 2;
+        entries = candidates.filter(item => category === 'all' || item.category === category).slice(0, limit);
+      }
       return { country, entries };
     }).filter(row => row.entries.length).slice(0, detected ? 1 : 5);
     if (!picked.length) return null;
@@ -234,7 +299,7 @@
       const entryCities = [...new Set(entries.map(item => text(item.city, lang)).filter(Boolean))];
       const headerCity = entryCities.length === 1 ? entryCities[0] : text(country.featured_city, lang);
       return `<section class="ecg-chat-country"><strong>${esc(text(country.country_name, lang))} · ${esc(headerCity)}</strong>${entries.map(item => {
-      const heading = item.category === 'food' ? `${text(item.dish, lang, label.dish)} · ${text(item.names, lang)}` : text(item.names, lang);
+      const heading = item.category !== 'food' || item.foodKind ? text(item.names, lang) : `${text(item.dish, lang, label.dish)} · ${text(item.names, lang)}`;
       const itemCity = text(item.city, lang);
       const cityNote = itemCity && normalize(itemCity) !== normalize(headerCity) ? `<small>${esc(itemCity)}</small><br>` : '';
       const kind = label[item.label];
@@ -250,10 +315,10 @@
 
   function registerChatbot() {
     const labels = {
-      ko: { title: '유럽 전역 · 스페인·이탈리아 여행 AI 메이트', chip: '🌍 유럽 51개국 명소·먹거리·야경', tagline: '기존 스페인·이탈리아 가족 여행 정보와 함께 유럽 51개국의 대표 명소·먹거리·야경 가이드도 제공합니다.' },
-      en: { title: 'Spain, Italy & Europe AI Travel Mate', chip: '🌍 51-country Europe guide', tagline: 'Alongside the Spain and Italy family-trip information, the guide includes representative sights, food and night views across 51 European and border-region countries.' },
-      ja: { title: 'スペイン・イタリア・ヨーロッパ AIトラベルメイト', chip: '🌍 ヨーロッパ51か国ガイド', tagline: 'スペイン・イタリアの家族旅行情報に加え、ヨーロッパと周辺地域51か国の代表的な名所・郷土料理・夜景ガイドも収録しています。' },
-      zh: { title: '西班牙、意大利与欧洲 AI旅行助手', chip: '🌍 欧洲51国景点·美食·夜景', tagline: '除西班牙和意大利家庭旅行信息外，指南还收录欧洲及周边地区51个国家的代表景点、地方美食与夜景。' }
+      ko: { title: '유럽 전역 · 스페인·이탈리아 여행 AI 메이트', chip: '🌍 유럽 51개국 명소·먹거리·야경', tagline: '기존 스페인·이탈리아 가족 여행 정보에 더해, 유럽·주변 51개국의 대표 지역 음식과 출처를 확인한 식당 후보, 명소·야경을 안내합니다.' },
+      en: { title: 'Spain, Italy & Europe AI Travel Mate', chip: '🌍 51-country Europe guide', tagline: 'Alongside Spain and Italy family-trip information, the guide adds regional dishes and source-checked dining candidates across 51 European and neighboring countries, plus representative sights and night views.' },
+      ja: { title: 'スペイン・イタリア・ヨーロッパ AIトラベルメイト', chip: '🌍 ヨーロッパ51か国ガイド', tagline: 'スペイン・イタリアの家族旅行情報に加え、ヨーロッパと周辺地域51か国の郷土料理や出典を確認した飲食店候補、名所・夜景も案内します。' },
+      zh: { title: '西班牙、意大利与欧洲 AI旅行助手', chip: '🌍 欧洲51国景点·美食·夜景', tagline: '除西班牙和意大利家庭旅行信息外，指南还新增欧洲及周边51个国家的地方菜和经来源核对的餐厅候选，并介绍代表性景点与夜景。' }
     };
     const prompts = {
       ko: '유럽 각 나라의 대표 명소, 현지 음식과 야경을 나라별로 추천해줘',
@@ -268,6 +333,8 @@
       chatbot.title = copy.title;
       if (!String(chatbot.welcome || '').includes(copy.tagline)) chatbot.welcome = `${chatbot.welcome || ''}<br><br>${esc(copy.tagline)}`;
       if (Array.isArray(chatbot.chips) && !chatbot.chips.some(chip => chip.q === prompts[lang])) chatbot.chips.unshift({ text: copy.chip, q: prompts[lang] });
+      const foodPrompt = LABELS[lang].foodPrompt;
+      if (Array.isArray(chatbot.chips) && !chatbot.chips.some(chip => chip.q === foodPrompt)) chatbot.chips.unshift({ text: LABELS[lang].foodChip, q: foodPrompt });
     });
     const existing = root.LANDMARK_HISTORY_ENTRIES || (root.LANDMARK_HISTORY_ENTRIES = []);
     DATA.forEach(country => countryItems(country).forEach(item => {

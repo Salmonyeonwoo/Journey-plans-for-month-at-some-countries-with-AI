@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261117_intercity_fares_v1)
+// SlowTravel Mobile Offline Service Worker (v20261117_food_guide_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261117_intercity_fares_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261117_food_guide_v1';
 
 const PRECACHE_ASSETS = [
   './',

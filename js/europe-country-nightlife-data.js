@@ -111,6 +111,135 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.tripadvisor.com/Restaurant_Review-g469422-d8007794-Reviews-or90-Antigoni_Restaurant-Berat_Berat_County.html"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id=albania was researched; featured city is Berat. Venue is a candidate, not a reservation. No files or public pages were changed.",
+        "cities": [
+          {
+            "city": {
+              "ko": "베라트",
+              "en": "Berat",
+              "ja": "ベラト",
+              "zh": "培拉特"
+            },
+            "intro": {
+              "ko": "베라트 지역 음식과 전통 알바니아 요리를 간결히 안내합니다. 지역 연관성은 확인된 범위에서만 설명합니다.",
+              "en": "A concise guide to Berat-area food and Albanian cuisine, limiting regional claims to what sources support.",
+              "ja": "ベラト周辺の料理とアルバニア料理を簡潔に紹介します。地域との結び付きは資料で確認できる範囲に限ります。",
+              "zh": "简要介绍培拉特周边及阿尔巴尼亚传统菜肴；地域关联仅按来源能够支持的范围表述。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "닭고기 페르셰시",
+                  "en": "Përshesh with chicken",
+                  "ja": "鶏肉入りプルシェシュ",
+                  "zh": "鸡肉佩尔谢什"
+                },
+                "note": {
+                  "ko": "닭고기와 육수에 부순 쿠라치(kulaçi) 빵을 곁들입니다. 관광청은 남부 음식으로 설명하며, 베라트 인근 디마르에서는 현지 닭고기를 쓰기도 한다고 합니다.",
+                  "en": "Chicken and broth are combined with pieces of kulaçi bread. Albania’s tourism authority describes it as a southern dish and notes that local chicken is often used in Dimal, near Berat.",
+                  "ja": "鶏肉とスープに、クラーチ（kulaçi）というパンをほぐして合わせます。観光当局は南部料理とし、ベラト近郊のディマルでは地元の鶏肉がよく使われるとしています。",
+                  "zh": "以鸡肉、肉汤搭配掰碎的库拉奇（kulaçi）面包。旅游主管机构将其介绍为南部菜肴，并称培拉特附近的迪马尔常使用当地鸡肉。"
+                },
+                "source_urls": [
+                  "https://akt.gov.al/en/culinary/chicken-with-parsley/",
+                  "https://akt.gov.al/en/culinary/chicken-stew-a/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "베라트식 비에네지",
+                  "en": "Vienezi of Berat",
+                  "ja": "ベラト風ヴィエネジ",
+                  "zh": "培拉特维也纳式肉卷"
+                },
+                "note": {
+                  "ko": "베라트 관광 안내 사이트는 소고기 또는 돼지고기에 구운 카슈카발 치즈를 넣고 달걀과 빵가루를 입혀 튀긴 음식으로 설명합니다. 베라트에서만 먹을 수 있다는 주장은 검증되지 않았습니다.",
+                  "en": "Berat’s local tourism guide describes beef or pork rolled around roasted kaçkavall cheese, coated with egg and breadcrumbs, then fried. Its claim of exclusivity to Berat is unverified.",
+                  "ja": "ベラトの観光案内では、牛肉または豚肉で焼いたカシュカヴァルチーズを巻き、卵とパン粉を付けて揚げる料理と説明されています。ベラト限定との主張は未確認です。",
+                  "zh": "培拉特本地旅游指南称，这道菜以牛肉或猪肉卷入烤制的卡什卡瓦尔奶酪，再裹蛋液和面包屑油炸。其仅见于培拉特的说法未获证实。"
+                },
+                "source_urls": [
+                  "https://berat.al/taste"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "피스필리아(베라트 안내에 소개된 형태)",
+                  "en": "Pispilia (version listed for Berat)",
+                  "ja": "ピスピリア（ベラト案内掲載のタイプ）",
+                  "zh": "皮斯皮利亚（培拉特指南所述做法）"
+                },
+                "note": {
+                  "ko": "베라트 안내 사이트는 옥수숫가루와 잎채소로 구우며 민트나 흰 치즈를 더할 수 있다고 합니다. 알바니아 관광청은 코르처 지역 음식으로도 소개하므로 베라트 고유 음식이라 단정하지 않습니다.",
+                  "en": "Berat’s guide describes a corn-flour bake with leafy greens, sometimes mint or white cheese. The national tourism authority also associates pispilia with Korçë, so it is not presented as uniquely Berat’s.",
+                  "ja": "ベラトの案内では、トウモロコシ粉と葉野菜を使って焼き、ミントや白チーズを加える場合もあるとされています。観光当局はコルチャ地方の料理としても紹介しており、ベラト固有とは断定しません。",
+                  "zh": "培拉特指南介绍其以玉米粉和绿叶菜烘烤，有时加入薄荷或白奶酪。国家旅游主管机构也将其与科尔察地区联系起来，因此不称其为培拉特独有菜肴。"
+                },
+                "source_urls": [
+                  "https://berat.al/taste",
+                  "https://akt.gov.al/en/culinary/pee/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Antigoni Restaurant & Bar",
+                "area": "Berat, Albania; exact neighborhood not verified",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "공식 프로필은 2010년부터 알바니아 전통 요리를 제공한다고 밝힙니다. 구체적인 메뉴는 검증하지 않았습니다.",
+                  "en": "Its official profile says it has served traditional Albanian cuisine since 2010; specific dishes and the current menu were not verified.",
+                  "ja": "公式プロフィールは2010年からアルバニア伝統料理を提供していると説明しています。個別料理や現在のメニューは未確認です。",
+                  "zh": "其官方资料称自2010年起供应阿尔巴尼亚传统菜；具体菜品和当前菜单未核实。"
+                },
+                "why_candidate": {
+                  "ko": "베라트 관광 안내의 식당 목록에 있고, 식당 자체 프로필도 전통 알바니아 요리를 밝힙니다. 후보 소개이며 예약이나 현재 영업 정보를 뜻하지 않습니다.",
+                  "en": "Listed on Berat’s tourism page; its own profile states a traditional Albanian cuisine focus. This is a candidate only, not a booking or current-availability claim.",
+                  "ja": "ベラトの観光案内に掲載され、店のプロフィールにもアルバニア伝統料理とあります。候補の提示であり、予約や現在の営業状況を意味しません。",
+                  "zh": "它被列入培拉特旅游页面，餐厅自身资料也说明提供阿尔巴尼亚传统菜。这里只作候选推荐，不代表已预订或目前营业。"
+                },
+                "official_url": "https://www.instagram.com/antigoni_bar_restaurant/?hl=en",
+                "source_urls": [
+                  "https://www.instagram.com/antigoni_bar_restaurant/?hl=en",
+                  "https://berat.al/taste"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "akt.gov.al",
+                "url": "https://akt.gov.al/en/culinary/chicken-with-parsley/"
+              },
+              {
+                "title": "akt.gov.al",
+                "url": "https://akt.gov.al/en/culinary/chicken-stew-a/"
+              },
+              {
+                "title": "berat.al",
+                "url": "https://berat.al/taste"
+              },
+              {
+                "title": "akt.gov.al",
+                "url": "https://akt.gov.al/en/culinary/pee/"
+              },
+              {
+                "title": "instagram.com",
+                "url": "https://www.instagram.com/antigoni_bar_restaurant/?hl=en"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "알바니아 관광청은 tavë kosi를 티라나·중부 알바니아의 특산으로 설명합니다. 베라트 특산이라는 근거를 확인하지 못해 제외했습니다: https://akt.gov.al/en/culinary/2-yogurt-cups/",
+              "베라트 관광 페이지는 지역 음식의 단서이나, 단독으로 기원이나 독점성을 증명하지 않습니다. 특히 피스필리아의 지역 연관성은 공식 관광청의 코르처 설명과 차이가 있어 한정적으로 기술했습니다."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -240,6 +369,166 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://visitandorra.com/en/activities/andorran-gastronomy/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Scope is limited to the declared record: Andorra (country_id: andorra), featured city Andorra la Vella. The supplied trinxat and Can Manel references were treated as leads and checked against official tourism and venue sources. Restaurant candidates are not bookings; source evidence supports cuisine identity but does not establish current dish availability, hours, prices, wait times, or reservation status.",
+        "cities": [
+          {
+            "city": {
+              "ko": "안도라라베야",
+              "en": "Andorra la Vella",
+              "ja": "アンドラ・ラ・ベリャ",
+              "zh": "安道尔城"
+            },
+            "intro": {
+              "ko": "안도라의 산악 음식 문화는 계절 식재료와 주변 카탈루냐·프랑스 요리의 영향을 함께 반영합니다. 대표적인 겨울 음식으로 트린사트와 에스쿠델라가 있으며, 카넬로니도 안도라에서 즐기는 전통 요리입니다.",
+              "en": "Andorran mountain cooking reflects seasonal ingredients as well as Catalan and French influences. Trinxat and escudella are characteristic winter dishes, while cannelloni is also part of the traditional local repertoire.",
+              "ja": "アンドラの山岳料理には、季節の食材とカタルーニャ料理・フランス料理の影響が表れています。冬の料理としてトリンシャットやエスクデーリャが知られ、カネロニも伝統的な料理の一つです。",
+              "zh": "安道尔的山地饮食既体现季节食材，也受到加泰罗尼亚和法国烹饪的影响。特林沙特和埃斯库德利亚是具有代表性的冬季菜肴，烤制奶油汁肉卷也属于当地传统菜式。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "산악식 트린사트",
+                  "en": "Mountain-style trinxat",
+                  "ja": "山岳風トリンシャット",
+                  "zh": "山地风味特林沙特"
+                },
+                "note": {
+                  "ko": "겨울 양배추, 감자, 마늘과 돼지고기 지방 또는 베이컨을 으깨 함께 조리하는 피레네 산악 지방의 겨울 음식입니다.",
+                  "en": "A Pyrenean winter dish of mashed winter cabbage and potatoes with garlic and tocino (pork fat or bacon).",
+                  "ja": "冬キャベツとジャガイモをつぶし、ニンニクとトシーノ（豚の脂身またはベーコン）を合わせるピレネー地方の冬料理です。",
+                  "zh": "这是一道比利牛斯山地冬季菜肴，以冬季卷心菜和土豆捣合，加入大蒜及猪脂或培根（tocino）。"
+                },
+                "source_urls": [
+                  "https://visitandorra.com/en/activities/andorran-gastronomy/",
+                  "https://visitandorra.com/en/gastronomy/andorran-recipes/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "에스쿠델라",
+                  "en": "Escudella",
+                  "ja": "エスクデーリャ",
+                  "zh": "埃斯库德利亚"
+                },
+                "note": {
+                  "ko": "계절 채소를 넣은 돼지고기 스튜·수프입니다. 겨울에 먹으며, 크리스마스에는 전통 파스타를 넣은 형태도 소개됩니다.",
+                  "en": "A pork-based stew or soup with seasonal vegetables, traditionally eaten in winter; a Christmas version uses a traditional pasta called sopa de galets or sopa grossa.",
+                  "ja": "季節の野菜を使った豚肉の煮込みまたはスープで、伝統的に冬に食べられます。クリスマスにはソパ・デ・ガレッツまたはソパ・グロッサという伝統的なパスタを加える形もあります。",
+                  "zh": "以猪肉和时令蔬菜烹制的炖菜或汤，传统上在冬季食用；圣诞节版本会加入一种传统意面，称为 sopa de galets 或 sopa grossa。"
+                },
+                "source_urls": [
+                  "https://visitandorra.com/en/activities/andorran-gastronomy/",
+                  "https://visitandorra.com/en/gastronomy/andorran-recipes/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "안도라식 카넬로니",
+                  "en": "Andorran-style cannelloni",
+                  "ja": "アンドラ風カネロニ",
+                  "zh": "安道尔风味烤制奶油汁肉卷"
+                },
+                "note": {
+                  "ko": "카탈루냐식 요리의 변형으로 소개됩니다. 다진 양고기·돼지고기·닭고기를 파스타 롤에 채우고 베샤멜 소스를 곁들입니다.",
+                  "en": "Presented as an Andorran variant of a Catalan recipe: pasta rolls filled with minced lamb, pork and chicken, served with béchamel sauce.",
+                  "ja": "カタルーニャ料理をアンドラ風にした一品として紹介されています。ラム肉・豚肉・鶏肉のひき肉をパスタの筒に詰め、ベシャメルソースを添えます。",
+                  "zh": "这是加泰罗尼亚菜式的安道尔版本：意面卷中填入羊肉、猪肉和鸡肉末，配以白酱。"
+                },
+                "source_urls": [
+                  "https://visitandorra.com/en/activities/andorran-gastronomy/",
+                  "https://visitandorra.com/en/gastronomy/andorran-recipes/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Can Manel",
+                "area": "Andorra la Vella historic centre",
+                "type": {
+                  "ko": "전통 산악 요리 레스토랑",
+                  "en": "Traditional mountain-cuisine restaurant",
+                  "ja": "伝統的な山岳料理レストラン",
+                  "zh": "传统山地菜餐厅"
+                },
+                "focus": {
+                  "ko": "레스토랑은 전통 산악 요리와 숯불 구이 달팽이(cargols a la llauna)를 대표 특징으로 소개합니다.",
+                  "en": "The restaurant describes its focus as traditional mountain cooking and identifies charcoal-grilled snails (cargols a la llauna) as a house hallmark.",
+                  "ja": "店は伝統的な山岳料理を掲げ、炭火焼きのカタツムリ料理（cargols a la llauna）を看板料理として紹介しています。",
+                  "zh": "餐厅自述专注传统山地烹饪，并将炭烤蜗牛（cargols a la llauna）列为特色菜。"
+                },
+                "why_candidate": {
+                  "ko": "레스토랑 공식 페이지가 산악 요리와 달팽이 요리를 확인하고, 안도라의 관광·문화 홍보 사이트는 안도라 라 베야의 주소와 현지·계절 식재료 및 전통 요리 지향을 소개합니다.",
+                  "en": "Its own page confirms a mountain-cuisine focus and a named snail specialty; Andorra’s tourism/cultural promotion site gives its Andorra la Vella address and describes its traditional cooking and use of local, seasonal products.",
+                  "ja": "公式ページで山岳料理とカタツムリ料理を確認でき、アンドラの観光・文化紹介サイトにはアンドラ・ラ・ベリャの住所、伝統料理、地元の季節食材への取り組みが記載されています。",
+                  "zh": "餐厅官网确认其山地菜定位和蜗牛特色菜；安道尔旅游文化推广网站列出其安道尔城地址，并介绍其传统菜式及当地时令食材取向。"
+                },
+                "official_url": "https://www.restaurantcanmanel.com/en",
+                "source_urls": [
+                  "https://www.restaurantcanmanel.com/en",
+                  "https://andorraselected.com/en/experiences/can-manel-carles-flinch/",
+                  "https://visitandorra.com/en/activities/andorran-gastronomy/"
+                ]
+              },
+              {
+                "name": "Restaurant de L'Isard",
+                "area": "Avinguda Meritxell, central Andorra la Vella",
+                "type": {
+                  "ko": "안도라·카탈루냐 요리 레스토랑",
+                  "en": "Andorran and Catalan cuisine restaurant",
+                  "ja": "アンドラ料理・カタルーニャ料理レストラン",
+                  "zh": "安道尔与加泰罗尼亚风味餐厅"
+                },
+                "focus": {
+                  "ko": "공식 페이지는 메뉴에 안도라 음식 유산의 현지 레시피를 포함하며, 계절 식재료를 활용한 안도라·카탈루냐 요리를 소개합니다.",
+                  "en": "Its official page says its menus include local recipes from Andorra’s gastronomic heritage and describes Andorran and Catalan cooking adapted to seasonal produce.",
+                  "ja": "公式ページによると、メニューにはアンドラの食文化遺産に属する郷土料理が含まれ、季節の食材を生かしたアンドラ料理とカタルーニャ料理を提供しています。",
+                  "zh": "官网称其菜单包含安道尔饮食遗产中的本地食谱，并介绍以时令食材呈现的安道尔和加泰罗尼亚菜。"
+                },
+                "why_candidate": {
+                  "ko": "레스토랑 공식 페이지가 현지 레시피와 요리 전통을 명시하고 중앙 안도라 라 베야 주소를 제시하므로 지역 음식 후보로 포함했습니다. 구체적인 요리가 현재 메뉴에 있는지는 별도 확인이 필요합니다.",
+                  "en": "Included because its own page explicitly cites local recipes and culinary traditions and gives a central Andorra la Vella address. The page does not verify that any particular dish is on the current menu.",
+                  "ja": "公式ページが郷土料理と食文化を明記し、アンドラ・ラ・ベリャ中心部の住所を示しているため候補にしました。特定の料理が現在のメニューにあるかは確認できていません。",
+                  "zh": "其官网明确说明提供本地食谱与烹饪传统，并列出安道尔城中心地址，因此列为候选。该页面不能证明某道菜目前仍在菜单上。"
+                },
+                "official_url": "https://restaurantisard.com/en/restaurant/",
+                "source_urls": [
+                  "https://restaurantisard.com/en/restaurant/",
+                  "https://visitandorra.com/en/activities/andorran-gastronomy/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitandorra.com",
+                "url": "https://visitandorra.com/en/activities/andorran-gastronomy/"
+              },
+              {
+                "title": "visitandorra.com",
+                "url": "https://visitandorra.com/en/gastronomy/andorran-recipes/"
+              },
+              {
+                "title": "restaurantcanmanel.com",
+                "url": "https://www.restaurantcanmanel.com/en"
+              },
+              {
+                "title": "andorraselected.com",
+                "url": "https://andorraselected.com/en/experiences/can-manel-carles-flinch/"
+              },
+              {
+                "title": "restaurantisard.com",
+                "url": "https://restaurantisard.com/en/restaurant/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "官方旅游资料将安道拉式饮食描述为受季节、当地山地食材以及加泰罗尼亚和法国饮食影响；未将任何菜肴说成安道尔独有或断言其起源。",
+              "旅游局对 escudella 的表述包括肉汤/炖菜；描述采用兼容的宽泛译法，没有声称只有一种配方。",
+              "Can Manel 是已核实的候选餐厅，但不能据此推断 trinxat 或 escudella 当前供应。Restaurant de L'Isard 也只被证实提供本地传统菜式选择，没有证据确认某道具体菜当前可点。",
+              "未确认或声称预订、开放时间、价格、等待时间、无障碍条件或语言服务。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -351,6 +640,143 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.yeremyanprojects.com/en/restaurants/lavash"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 정확히 한 도시(예레반)만 조사했습니다. 요리 연관성은 예레반 공식 관광 페이지 및 UNESCO의 라바시 자료에 근거합니다. 라바시는 후보 식당의 공식 운영사 페이지로 확인했습니다.; en: Research covers exactly one city: Yerevan. Dish associations are based on the official Yerevan tourism pages; lavash heritage is additionally supported by UNESCO. The restaurant candidate was checked against its operator’s official page.; ja: 調査対象はエレバンの一都市のみです。料理の関連性はエレバン公式観光ページに基づき、ラヴァシュの文化遺産情報はユネスコ資料でも確認しました。レストラン候補は運営会社の公式ページで確認しました。; zh: 本次仅调查一座城市：埃里温。菜品关联依据埃里温官方旅游页面，拉瓦什文化遗产信息另由联合国教科文组织资料支持。餐厅候选已通过运营方官方网站核实。",
+        "cities": [
+          {
+            "city": {
+              "ko": "예레반",
+              "en": "Yerevan",
+              "ja": "エレバン",
+              "zh": "埃里温"
+            },
+            "intro": {
+              "ko": "예레반 관광청은 아르메니아 요리와 이 도시의 여러 식당에서 접할 수 있는 다양한 요리 전통을 소개합니다. 아래 항목은 현지 관광 출처가 아르메니아 음식 또는 예레반에서 맛볼 음식으로 제시한 요리이며, 예레반에서 시작되었거나 이곳에만 있는 음식이라는 뜻은 아닙니다.",
+              "en": "Yerevan’s tourism authority presents Armenian cuisine and the range of culinary traditions available in the city’s restaurants. The dishes below are presented by local tourism sources as Armenian foods or foods to try in Yerevan; this does not imply that they originated here or are exclusive to the city.",
+              "ja": "エレバンの観光当局は、アルメニア料理と市内の飲食店で楽しめる多様な食文化を紹介しています。以下は、現地の観光情報源がアルメニア料理、またはエレバンで試せる料理として紹介するものです。エレバン発祥、あるいは同市だけの料理という意味ではありません。",
+              "zh": "埃里温旅游部门介绍了亚美尼亚菜，以及在该市餐馆中可以体验的多样饮食传统。以下菜品是当地旅游资料作为亚美尼亚菜或可在埃里温尝试的菜品所介绍的；这并不表示它们起源于埃里温或为该市独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "아르메니아식 바비큐",
+                  "en": "Armenian barbecue",
+                  "ja": "アルメニア風バーベキュー",
+                  "zh": "亚美尼亚烤肉"
+                },
+                "note": {
+                  "ko": "예레반 관광청은 양념한 고기로 만드는 바비큐를 아르메니아 음식으로 소개하고, 예레반의 여러 식당에서 아르메니아 요리를 접할 수 있다고 안내합니다. 이 자료는 요리의 기원을 특정하지 않습니다.",
+                  "en": "Yerevan’s tourism authority describes marinated-meat barbecue as Armenian food and notes that Armenian cuisine can be found in the city’s restaurants. It does not establish a place of origin for the dish.",
+                  "ja": "エレバンの観光当局は、マリネした肉のバーベキューをアルメニア料理として紹介し、市内の飲食店でアルメニア料理を楽しめると案内しています。料理の発祥地を特定する資料ではありません。",
+                  "zh": "埃里温旅游部门将腌制肉类烧烤介绍为亚美尼亚菜，并称该市餐馆可品尝亚美尼亚料理。该资料并未证明这道菜起源于何处。"
+                },
+                "source_urls": [
+                  "https://visityerevan.am/browse/entertainment-cuisine/en/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "포도잎 또는 채소에 속을 채운 돌마",
+                  "en": "Dolma (stuffed grape leaves or vegetables)",
+                  "ja": "ドルマ（ブドウの葉や野菜の詰め物料理）",
+                  "zh": "多尔玛（葡萄叶或蔬菜包馅）"
+                },
+                "note": {
+                  "ko": "예레반 관광청은 포도잎·양배추 잎에 여러 속재료를 넣은 돌마와 채소 돌마를 소개합니다. 같은 출처도 돌마가 여러 민족의 요리에 널리 존재한다고 밝혀, 아르메니아만의 음식으로 단정할 수 없습니다.",
+                  "en": "Yerevan’s tourism authority describes dolma with varied fillings wrapped in grape or cabbage leaves, as well as vegetable dolma. The same source notes that dolma is common in several peoples’ cuisines, so it should not be described as uniquely Armenian.",
+                  "ja": "エレバンの観光当局は、ブドウの葉やキャベツの葉でさまざまな具を包むドルマや、野菜のドルマを紹介しています。同じ資料は複数の民族の料理にドルマが広く見られるとも述べており、アルメニアだけの料理とはいえません。",
+                  "zh": "埃里温旅游部门介绍了用葡萄叶或卷心菜叶包入不同馅料的多尔玛，也介绍了蔬菜多尔玛。同一资料指出，多尔玛常见于多个民族的菜系，因此不应称其为亚美尼亚独有。"
+                },
+                "source_urls": [
+                  "https://visityerevan.am/browse/entertainment-cuisine/en/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "가파마(속을 채운 호박 요리)",
+                  "en": "Ghapama (stuffed pumpkin)",
+                  "ja": "ガパマ（詰め物をしたカボチャ料理）",
+                  "zh": "加帕玛（填馅南瓜）"
+                },
+                "note": {
+                  "ko": "예레반 관광청은 쌀과 말린 과일 등을 채워 구운 전통 아르메니아 요리로 설명하며, 별도의 겨울 음식 기사에서 이를 ‘예레반’ 항목으로 소개합니다. 이는 지역 내 연관성을 뒷받침하지만 기원을 증명하지는 않습니다.",
+                  "en": "Yerevan’s tourism authority describes it as a traditional Armenian dish of stuffed pumpkin, and a separate winter-food article lists it under “Yerevan.” This supports a local association, not a claim of origin.",
+                  "ja": "エレバンの観光当局は、米やドライフルーツなどを詰めたカボチャ料理を伝統的なアルメニア料理として説明し、別の冬の料理記事では「エレバン」の項目に掲載しています。地域との関連は示されますが、発祥地を証明するものではありません。",
+                  "zh": "埃里温旅游部门将其描述为填入米饭和干果等的传统亚美尼亚南瓜菜；另一篇冬季美食文章将其列在“埃里温”条目下。这支持其与当地相关，但不能证明起源地。"
+                },
+                "source_urls": [
+                  "https://visityerevan.am/browse/entertainment-cuisine/en/",
+                  "https://visityerevan.am/blog/details/31/en/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "하쉬",
+                  "en": "Khash",
+                  "ja": "ハシュ",
+                  "zh": "哈什（牛蹄浓汤）"
+                },
+                "note": {
+                  "ko": "예레반 관광청은 소 다리로 밤새 끓여 이른 아침에 먹는 아르메니아 요리로 설명합니다. 겨울 음식 기사에서도 ‘예레반’ 항목으로 소개하므로 지역 연관성은 확인되지만, 기원이나 독점성은 확인되지 않습니다.",
+                  "en": "Yerevan’s tourism authority describes khash as an Armenian dish made by slowly cooking beef legs overnight and traditionally served early in the morning. A winter-food article also lists it under “Yerevan,” supporting a local association but not origin or exclusivity.",
+                  "ja": "エレバンの観光当局は、牛の脚を一晩かけて煮込み、伝統的に早朝に食べるアルメニア料理として説明しています。冬の料理記事でも「エレバン」の項目に掲載されていますが、発祥や独占性を示すものではありません。",
+                  "zh": "埃里温旅游部门将哈什描述为亚美尼亚菜，以牛腿长时间炖煮，传统上在清晨食用。冬季美食文章也将其列在“埃里温”条目下，支持其与当地相关，但不能证明其起源或独有性。"
+                },
+                "source_urls": [
+                  "https://visityerevan.am/browse/entertainment-cuisine/en/",
+                  "https://visityerevan.am/blog/details/31/en/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Lavash",
+                "area": "ko: 투마니안 거리 21번지; en: 21 Tumanyan Street; ja: トゥマニャン通り21番地; zh: 图马尼扬街21号",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "아르메니아 요리; 업소 소개에는 전통 요리와 아침 식사, 라바시 굽기가 언급되어 있습니다.",
+                  "en": "Armenian cuisine; the venue describes traditional dishes, breakfast, and lavash baking.",
+                  "ja": "アルメニア料理。店舗紹介では伝統料理、朝食、ラヴァシュ焼きについて説明されています。",
+                  "zh": "亚美尼亚菜；餐厅介绍提及传统菜肴、早餐和烤制拉瓦什。"
+                },
+                "why_candidate": {
+                  "ko": "운영사 공식 페이지가 예레반의 식당으로서 주소와 아르메니아 요리 정체성을 밝히고, 탄두르에서 라바시를 굽는다고 설명합니다. 조사 후보일 뿐 예약 추천이 아니며, 메뉴 항목의 현재 제공 여부를 보장하지 않습니다.",
+                  "en": "The operator’s official page identifies it as a Yerevan restaurant, gives its address and Armenian-cuisine positioning, and describes baking lavash in a tonir. This is a research candidate, not a booking recommendation, and does not guarantee current availability of any menu item.",
+                  "ja": "運営会社の公式ページは、住所とアルメニア料理を掲げるエレバンのレストランとして紹介し、トニールでラヴァシュを焼くと説明しています。調査候補であり予約の推奨ではなく、個別メニューの現在の提供を保証するものではありません。",
+                  "zh": "运营方的官方网站将其介绍为埃里温的一家亚美尼亚餐厅，列出地址，并说明在陶炉中烤制拉瓦什。这只是研究候选，不构成预订推荐，也不保证任何菜品目前供应。"
+                },
+                "official_url": "https://www.yeremyanprojects.com/en/restaurants/lavash",
+                "source_urls": [
+                  "https://www.yeremyanprojects.com/en/restaurants/lavash"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visityerevan.am",
+                "url": "https://visityerevan.am/browse/entertainment-cuisine/en/"
+              },
+              {
+                "title": "visityerevan.am",
+                "url": "https://visityerevan.am/blog/details/31/en/"
+              },
+              {
+                "title": "yeremyanprojects.com",
+                "url": "https://www.yeremyanprojects.com/en/restaurants/lavash"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 근거는 예레반 관광청이 제시한 도시 내 요리 맥락과 예레반으로 표기된 일부 요리 항목입니다. 이를 예레반에서의 기원이나 독점 음식으로 확대 해석하지 않습니다.; en: Evidence supports a Yerevan tourism presentation of these foods and explicit Yerevan labeling for some items; it does not support claims of Yerevan origin or exclusivity.; ja: 根拠は、エレバン観光当局による紹介と、一部料理に付された「エレバン」の表示です。エレバン発祥または同市独自との主張を裏付けるものではありません。; zh: 证据支持这些菜品在埃里温旅游资料中的介绍，以及部分菜品明确标注“埃里温”；并不支持声称它们起源于埃里温或为该市独有。",
+              "ko: 돌마는 출처 자체가 여러 민족의 요리에 존재한다고 설명하므로 ‘아르메니아에서만 먹는 음식’으로 표현하지 않았습니다.; en: The source itself says dolma is common across different peoples’ cuisines, so it is not presented as exclusive to Armenia.; ja: 出典自体がドルマは複数の民族の料理に見られると説明しているため、アルメニアだけの料理とはしていません。; zh: 来源本身指出多尔玛见于不同民族的菜系，因此未将其描述为亚美尼亚独有。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -452,6 +878,193 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "The classics of Viennese cuisine — Vienna’s official tourism site",
             "url": "https://www.wien.info/en/dine-drink/viennese-cuisine/viennese-cuisine-364190"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Only declared country_id austria and featured city Vienna are covered.",
+        "cities": [
+          {
+            "city": {
+              "ko": "빈",
+              "en": "Vienna",
+              "ja": "ウィーン",
+              "zh": "维也纳"
+            },
+            "intro": {
+              "ko": "빈의 전통 음식에는 송아지 커틀릿과 삶은 소고기 요리, 카페·제과점의 디저트가 있습니다.",
+              "en": "Vienna’s food traditions include veal cutlets, simmered beef and café pastries.",
+              "ja": "ウィーンの食文化には仔牛カツレツ、煮込み牛肉、カフェの菓子があります。",
+              "zh": "维也纳饮食传统包括小牛肉炸排、炖煮牛肉和咖啡馆糕点。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "비너 슈니첼(송아지 커틀릿)",
+                  "en": "Wiener Schnitzel (veal cutlet)",
+                  "ja": "ヴィーナー・シュニッツェル（仔牛カツレツ）",
+                  "zh": "维也纳小牛排"
+                },
+                "note": {
+                  "ko": "밀가루·달걀·빵가루를 입힌 송아지 고기를 버터기름에 튀기듯 굽습니다. 이 명칭은 송아지 고기를 가리킵니다.",
+                  "en": "Veal coated in flour, egg and breadcrumbs, then fried in clarified butter. The name refers to veal.",
+                  "ja": "仔牛肉に小麦粉、卵、パン粉を付け、澄ましバターで揚げ焼きにします。この名称は仔牛肉を指します。",
+                  "zh": "小牛肉裹面粉、鸡蛋和面包屑后用澄清黄油煎炸。该名称指小牛肉版本。"
+                },
+                "source_urls": [
+                  "https://www.austria.info/en-us/recipes/wiener-schnitzel/",
+                  "https://www.figlmueller.at/en/baeckerstrasse/menu/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "타펠슈피츠(빈식 삶은 소고기)",
+                  "en": "Tafelspitz (Viennese boiled beef)",
+                  "ja": "ターフェルシュピッツ（ウィーン風牛肉煮込み）",
+                  "zh": "塔菲尔施皮茨（维也纳水煮牛肉）"
+                },
+                "note": {
+                  "ko": "소고기를 육수와 뿌리채소와 함께 천천히 익힙니다. 플라후타가 소개하는 곁들임에는 감자, 사과 양고추냉이, 차이브 소스가 있습니다.",
+                  "en": "Beef gently simmered with broth and root vegetables. Plachutta describes serving it with potatoes, apple horseradish and chive sauce.",
+                  "ja": "牛肉をスープと根菜とともにゆっくり煮ます。プラフッタの紹介では、じゃがいも、リンゴ入りホースラディッシュ、チャイブソースを添えます。",
+                  "zh": "牛肉与汤和根茎蔬菜慢煮。Plachutta介绍的搭配包括土豆、苹果辣根酱和细香葱酱。"
+                },
+                "source_urls": [
+                  "https://www.plachutta.at/en/the-tafelspitz/",
+                  "https://www.plachutta.at/en/menu-wollzeile/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카이저슈마른(찢은 팬케이크)",
+                  "en": "Kaiserschmarren (shredded pancake)",
+                  "ja": "カイザーシュマーレン（ちぎりパンケーキ）",
+                  "zh": "皇帝煎饼（撕碎煎饼）"
+                },
+                "note": {
+                  "ko": "달걀 반죽을 구워 조각내고 건포도와 슈거파우더를 곁들이는 디저트입니다. 빈 관광청은 빈 요리의 인기 단것으로 소개하며, 황제 관련 유래는 전설로 적습니다.",
+                  "en": "A baked pancake torn into pieces and served with raisins and icing sugar. Vienna’s tourism office calls it a popular Viennese sweet and labels the emperor origin story a legend.",
+                  "ja": "卵の生地を焼いてちぎり、レーズンや粉砂糖を添える菓子です。ウィーン観光局は人気のウィーン菓子として紹介し、皇帝にまつわる由来は伝説としています。",
+                  "zh": "将鸡蛋面糊煎烤后撕成小块，配葡萄干和糖粉。维也纳旅游局称其为受欢迎的维也纳甜点，并将皇帝相关起源说法称为传说。"
+                },
+                "source_urls": [
+                  "https://www.wien.info/en/dine-drink/viennese-cuisine/recipes/sweets-desserts/kaiserschmarren-349538"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "자허토르테(살구잼 초콜릿 케이크)",
+                  "en": "Sachertorte (apricot-jam chocolate cake)",
+                  "ja": "ザッハトルテ（アプリコットジャム入りチョコレートケーキ）",
+                  "zh": "萨赫蛋糕（杏酱巧克力蛋糕）"
+                },
+                "note": {
+                  "ko": "초콜릿 케이크에 살구잼을 넣고 초콜릿 글레이즈를 입힙니다. 빈 관광청은 프란츠 자허의 1832년 유래를 소개하지만, 이를 해당 기관의 역사 서술로 한정합니다.",
+                  "en": "Chocolate cake layered with apricot jam and chocolate glaze. Vienna tourism recounts a 1832 Franz Sacher story; treat it as that source’s historical account.",
+                  "ja": "チョコレートケーキにアプリコットジャムを挟み、チョコレートのグレーズをかけます。ウィーン観光局は1832年のフランツ・ザッハー説を紹介していますが、同局の歴史説明として扱います。",
+                  "zh": "巧克力蛋糕夹杏酱并覆巧克力糖衣。维也纳旅游局介绍了1832年弗朗茨·萨赫的说法；此处仅将其视为该机构所述历史版本。"
+                },
+                "source_urls": [
+                  "https://www.wien.info/en/dine-drink/viennese-cuisine/recipes/sweets-desserts/sachertorte-357042"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Figlmüller Bäckerstraße",
+                "area": "Bäckerstraße 6, 1010 Vienna",
+                "type": {
+                  "ko": "빈 전통 요리 레스토랑",
+                  "en": "Viennese restaurant",
+                  "ja": "ウィーン料理レストラン",
+                  "zh": "维也纳风味餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴에 송아지 비너 슈니첼과 돼지고기 시그니처 슈니첼이 각각 있습니다.",
+                  "en": "Official menu lists veal Wiener Schnitzel and the house pork Figlmüller-Schnitzel.",
+                  "ja": "公式メニューには仔牛のヴィーナー・シュニッツェルと豚肉の看板シュニッツェルがあります。",
+                  "zh": "官方菜单分别列有小牛肉维也纳炸排和猪肉招牌炸排。"
+                },
+                "why_candidate": {
+                  "ko": "공식 소개에서 송아지 슈니첼을 대표 메뉴로 확인할 수 있고 메뉴가 두 종류의 고기를 구별합니다.",
+                  "en": "Its official page identifies veal schnitzel as a mainstay, and the menu distinguishes it from its pork schnitzel.",
+                  "ja": "公式ページで仔牛のシュニッツェルを定番料理と確認でき、メニューは豚肉料理と区別しています。",
+                  "zh": "官网确认其常设小牛肉炸排，菜单也将其与猪肉炸排区分。"
+                },
+                "official_url": "https://www.figlmueller.at/en/baeckerstrasse/",
+                "source_urls": [
+                  "https://www.figlmueller.at/en/baeckerstrasse/",
+                  "https://www.figlmueller.at/en/baeckerstrasse/menu/"
+                ]
+              },
+              {
+                "name": "Plachutta Wollzeile",
+                "area": "Wollzeile 38, 1010 Vienna",
+                "type": {
+                  "ko": "빈 요리 전문점",
+                  "en": "Viennese cuisine restaurant",
+                  "ja": "ウィーン料理店",
+                  "zh": "维也纳风味餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴는 타펠슈피츠 등 삶은 소고기와 비너 슈니첼을 기재합니다.",
+                  "en": "Its official menu lists boiled-beef dishes including Tafelspitz and Wiener Schnitzel.",
+                  "ja": "公式メニューにはターフェルシュピッツなどの牛肉煮込みとヴィーナー・シュニッツェルがあります。",
+                  "zh": "官方菜单列有塔菲尔施皮茨等水煮牛肉菜和维也纳炸小牛排。"
+                },
+                "why_candidate": {
+                  "ko": "공식 지점 소개는 빈 중심부 위치와 타펠슈피츠·빈 전통 요리를 명시하며 메뉴가 이를 뒷받침합니다.",
+                  "en": "Its official page confirms a central Vienna location and identifies Tafelspitz and Viennese classics; the menu corroborates the dishes.",
+                  "ja": "公式ページでウィーン中心部の店舗とターフェルシュピッツ、ウィーン料理を確認でき、メニューも裏付けます。",
+                  "zh": "官网确认其位于维也纳市中心并主打塔菲尔施皮茨及维也纳经典菜，菜单亦有佐证。"
+                },
+                "official_url": "https://www.plachutta.at/en/restaurant/wollzeile/",
+                "source_urls": [
+                  "https://www.plachutta.at/en/restaurant/wollzeile/",
+                  "https://www.plachutta.at/en/menu-wollzeile/",
+                  "https://www.plachutta.at/en/the-tafelspitz/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "austria.info",
+                "url": "https://www.austria.info/en-us/recipes/wiener-schnitzel/"
+              },
+              {
+                "title": "figlmueller.at",
+                "url": "https://www.figlmueller.at/en/baeckerstrasse/menu/"
+              },
+              {
+                "title": "plachutta.at",
+                "url": "https://www.plachutta.at/en/the-tafelspitz/"
+              },
+              {
+                "title": "plachutta.at",
+                "url": "https://www.plachutta.at/en/menu-wollzeile/"
+              },
+              {
+                "title": "wien.info",
+                "url": "https://www.wien.info/en/dine-drink/viennese-cuisine/recipes/sweets-desserts/kaiserschmarren-349538"
+              },
+              {
+                "title": "wien.info",
+                "url": "https://www.wien.info/en/dine-drink/viennese-cuisine/recipes/sweets-desserts/sachertorte-357042"
+              },
+              {
+                "title": "figlmueller.at",
+                "url": "https://www.figlmueller.at/en/baeckerstrasse/"
+              },
+              {
+                "title": "plachutta.at",
+                "url": "https://www.plachutta.at/en/restaurant/wollzeile/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "奥地利旅游局的Wiener Schnitzel食谱明确指出该菜并非发源于维也纳；此处只说明其与维也纳的关联，不宣称其起源于此。‘Wiener Schnitzel’指小牛肉版本。",
+              "维也纳旅游局将皇帝与厨师的Kaiserschmarren起源故事称为传说，并非已证实事实。",
+              "维也纳旅游局介绍的1832年弗朗茨·萨赫故事仅作为其历史叙述保留。餐厅只是候选，不代表已预订或保证供应；菜单可能变动。"
+            ]
           }
         ]
       }
@@ -587,6 +1200,110 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://firuzerestoran.az/en/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Baku only; dishes are not claimed to be unique to Baku.",
+        "cities": [
+          {
+            "city": {
+              "ko": "바쿠",
+              "en": "Baku",
+              "ja": "バクー",
+              "zh": "巴库"
+            },
+            "intro": {
+              "ko": "바쿠에서 접할 수 있는 아제르바이잔 음식 예시입니다. 돌마 전통은 아제르바이잔 전역에 퍼져 있으며 바쿠만의 음식으로 한정하지 않습니다.",
+              "en": "A taste of Azerbaijani food available to explore in Baku. UNESCO describes dolma as a tradition found throughout Azerbaijan, not unique to Baku.",
+              "ja": "バクーで味わえるアゼルバイジャン料理の例です。ユネスコによるとドルマの伝統はアゼルバイジャン全土にあり、バクーだけの料理ではありません。",
+              "zh": "介绍在巴库可了解的阿塞拜疆饮食。联合国教科文组织指出，多尔玛传统遍及阿塞拜疆，并非巴库独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "플로브",
+                  "en": "Plov",
+                  "ja": "プロフ",
+                  "zh": "抓饭"
+                },
+                "note": {
+                  "ko": "사프란 밥과 별도 곁들임 등 지역별 조리법이 있습니다.",
+                  "en": "Regional preparations include saffron rice served with a separate accompaniment.",
+                  "ja": "地域ごとに異なり、サフラン風味の米に別添えを添える例があります。",
+                  "zh": "做法因地而异，例如藏红花米饭另配菜肴。"
+                },
+                "source_urls": [
+                  "https://azerbaijan.travel/azerbaijani-plov"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "돌마(속을 채운 잎·채소 요리)",
+                  "en": "Dolma (stuffed leaves or vegetables)",
+                  "ja": "ドルマ（葉や野菜の詰め物料理）",
+                  "zh": "多尔玛（叶菜或蔬菜包馅）"
+                },
+                "note": {
+                  "ko": "유네스코는 고기·양파·쌀·완두콩·향신료 등의 속을 잎에 싸거나 과일·채소에 채우는 돌마 전통이 아제르바이잔 전역에 퍼져 있다고 설명합니다. 바쿠 고유 음식이나 독점적 기원으로 표현하지 않습니다.",
+                  "en": "UNESCO describes fillings such as meat, onion, rice, peas and spices wrapped in leaves or stuffed into fruit and vegetables, and says the tradition is found throughout Azerbaijan. It is not presented as unique to Baku or as an exclusive-origin claim.",
+                  "ja": "ユネスコは、肉・玉ねぎ・米・豆・香辛料などを葉で包んだり、果物や野菜に詰めたりするドルマの伝統がアゼルバイジャン全土にあると説明しています。バクー固有または独占的な起源とはしていません。",
+                  "zh": "联合国教科文组织介绍，多尔玛可将肉、洋葱、大米、豌豆和香料等馅料包入叶片或填入水果、蔬菜，并指出这一传统遍及阿塞拜疆。这里不称其为巴库独有，也不主张排他性起源。"
+                },
+                "source_urls": [
+                  "https://ich.unesco.org/en/RL/dolma-making-and-sharing-tradition-a-marker-of-cultural-identity-01188",
+                  "https://migration.gov.az/en/page_detail/889"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Dolma Restaurant",
+                "area": "8 M. Rasulzade St., Fountains Square, Baku (official contact page)",
+                "type": {
+                  "ko": "전통 음식점 후보",
+                  "en": "Traditional restaurant candidate",
+                  "ja": "伝統料理店の候補",
+                  "zh": "传统餐厅候选"
+                },
+                "focus": {
+                  "ko": "공식 소개 페이지는 전통 요리를 내세웁니다. 웹 메뉴 페이지는 동적으로 표시되어 방문 시 개별 메뉴를 확인하지 못했습니다.",
+                  "en": "Its official about page describes traditional cuisine. The menu page rendered dynamically, so individual dishes could not be confirmed during review.",
+                  "ja": "公式紹介ページは伝統料理を掲げています。メニューは動的表示のため、確認時に個別料理を確認できませんでした。",
+                  "zh": "其官方介绍页主打传统菜肴。菜单页面为动态显示，因此核查时未能确认具体菜品。"
+                },
+                "why_candidate": {
+                  "ko": "식당 공식 소개는 전통 요리 콘셉트를, 연락처 페이지는 바쿠 분수 광장 인근 주소를 확인해 줍니다. 방문 전 현재 메뉴와 운영 정보를 확인할 후보입니다.",
+                  "en": "The restaurant’s official about page presents its traditional-cuisine concept, and its contact page lists an address by Fountains Square in Baku. Check its current menu and operations before visiting.",
+                  "ja": "公式紹介で伝統料理のコンセプトを確認でき、連絡先ページにはバクーの噴水広場近くの住所が掲載されています。訪問前に現在のメニューと営業状況をご確認ください。",
+                  "zh": "餐厅官网介绍其传统菜肴定位，联系页面列出巴库喷泉广场附近地址。建议到访前确认当前菜单和营业情况。"
+                },
+                "official_url": "https://dolmarestaurant.az/en/about/",
+                "source_urls": [
+                  "https://dolmarestaurant.az/en/about/",
+                  "https://dolmarestaurant.az/en/contact/",
+                  "https://dolmarestaurant.az/en/menu/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "azerbaijan.travel",
+                "url": "https://azerbaijan.travel/azerbaijani-plov"
+              },
+              {
+                "title": "ich.unesco.org",
+                "url": "https://ich.unesco.org/en/RL/dolma-making-and-sharing-tradition-a-marker-of-cultural-identity-01188"
+              },
+              {
+                "title": "migration.gov.az",
+                "url": "https://migration.gov.az/en/page_detail/889"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "UNESCO documents dolma as a living tradition across Azerbaijan; it is not presented as uniquely Bakuvian.",
+              "Dolma Restaurant is a candidate, not a booking. Its official menu page did not expose dish names during review; no specific dish, current availability, hours, prices, or reservation status is claimed."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -690,6 +1407,147 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://minsktourism.by/en/food/kafe/kafe-kamyanitsa/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 대상은 민스크(벨라루스) 한 도시입니다. 관광청의 도시별 음식점·메뉴 소개를 음식의 지역 연관성 근거로 사용했습니다. | en: Scope is one city: Minsk, Belarus. Official tourism coverage of local establishments and their dishes is used as evidence of a dining association. | ja: 対象はベラルーシのミンスク一都市です。地元の飲食店と料理に関する公式観光情報を、地域との関連を示す根拠として用いました。 | zh: 范围仅限白俄罗斯明斯克一座城市。以官方旅游资料对当地餐馆及菜品的介绍作为餐饮关联依据。",
+        "cities": [
+          {
+            "city": {
+              "ko": "민스크",
+              "en": "Minsk",
+              "ja": "ミンスク",
+              "zh": "明斯克"
+            },
+            "intro": {
+              "ko": "벨라루스 관광청은 민스크의 음식점에서 벨라루스 요리를 소개하며, 민스크 식당에서 제공하는 여러 전통 요리를 안내합니다.",
+              "en": "Belarus’s official tourism portal describes Belarusian cuisine at Minsk establishments and names several traditional dishes served there.",
+              "ja": "ベラルーシ政府観光ポータルは、ミンスクの飲食店で提供されるベラルーシ料理と、そこで紹介される伝統料理を掲載しています。",
+              "zh": "白俄罗斯官方旅游门户介绍明斯克餐馆的白俄罗斯菜，并列出当地餐馆提供的若干传统菜肴。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "드라니키(감자전)",
+                  "en": "Draniki (potato pancakes)",
+                  "ja": "ドラニキ（じゃがいものパンケーキ）",
+                  "zh": "德拉尼基（土豆煎饼）"
+                },
+                "note": {
+                  "ko": "벨라루스 관광청은 민스크의 한 음식점에서 다양한 토핑·소스를 곁들인 드라니키를, 다른 식당에서는 돼지고기와 함께 내는 드라니키를 소개합니다. 이는 민스크의 식당 음식으로 확인된 사례이지 기원이나 독점성을 뜻하지 않습니다.",
+                  "en": "Belarus’s tourism portal describes draniki with varied toppings and sauces at a Minsk restaurant, and with pork at another. This supports a dining association in Minsk, not a claim of origin or exclusivity.",
+                  "ja": "ベラルーシ観光ポータルは、ミンスクのレストランでさまざまな具やソースを添えたドラニキ、別の店で豚肉と合わせたドラニキを紹介しています。ミンスクでの提供例を示すもので、発祥地や独占性を示すものではありません。",
+                  "zh": "白俄罗斯旅游门户介绍了明斯克一家餐馆的多种配料和酱汁德拉尼基，以及另一家餐馆搭配猪肉的做法。这说明它与明斯克餐饮有关，并不证明其起源或独有性。"
+                },
+                "source_urls": [
+                  "https://en.belarus.travel/news/where-is-belarusian-cuisine-served"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "베레샤카(진한 고기 소스)",
+                  "en": "Vereshchaka (thick meat sauce)",
+                  "ja": "ヴェレシャカ（濃厚な肉ソース）",
+                  "zh": "韦列沙卡（浓稠肉酱）"
+                },
+                "note": {
+                  "ko": "벨라루스 관광청은 민스크의 쿠흐미스트 식당에서 베레샤카를 팬케이크와 함께 내는 대표 요리로 소개합니다. 음식점의 지역적 메뉴 연관성에 관한 설명입니다.",
+                  "en": "Belarus’s tourism portal names vereshchaka served with pancakes among the signature dishes at Minsk’s Kuhmistr restaurant. This is evidence of a local restaurant association.",
+                  "ja": "ベラルーシ観光ポータルは、ミンスクのレストラン「Kuhmistr」の看板料理の一つとして、パンケーキ添えのヴェレシャカを挙げています。ミンスクの飲食店との関連を示す記述です。",
+                  "zh": "白俄罗斯旅游门户将搭配薄饼的韦列沙卡列为明斯克餐馆 Kuhmistr 的招牌菜之一。这支持其与明斯克餐饮的关联。"
+                },
+                "source_urls": [
+                  "https://en.belarus.travel/news/where-is-belarusian-cuisine-served"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "팜푸시카를 곁들인 빌뉴스식 보르시",
+                  "en": "Vilnius borscht with pampushkas",
+                  "ja": "パンプーシュカ添えヴィリニュス風ボルシチ",
+                  "zh": "搭配帕姆普什卡面包的维尔纽斯风味罗宋汤"
+                },
+                "note": {
+                  "ko": "벨라루스 관광청은 이 요리를 민스크의 쿠흐미스트에서 제공하는 대표 메뉴 중 하나로 열거합니다. 명칭 자체가 빌뉴스를 가리키므로 민스크 고유 요리나 기원으로 해석하지 않았습니다.",
+                  "en": "Belarus’s tourism portal lists this among Kuhmistr’s signature dishes in Minsk. The name itself refers to Vilnius, so it should not be read as uniquely Minskian or as proof of origin.",
+                  "ja": "ベラルーシ観光ポータルは、これをミンスクのKuhmistrの看板料理の一つとして掲載しています。名称はヴィリニュスに言及しているため、ミンスク固有の料理や発祥を示すものとはしていません。",
+                  "zh": "白俄罗斯旅游门户将此菜列为明斯克 Kuhmistr 的招牌菜之一。菜名本身指向维尔纽斯，因此不应理解为明斯克独有或起源于明斯克。"
+                },
+                "source_urls": [
+                  "https://en.belarus.travel/news/where-is-belarusian-cuisine-served"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "감자 바브카",
+                  "en": "Potato babka",
+                  "ja": "ポテト・バブカ",
+                  "zh": "土豆巴布卡"
+                },
+                "note": {
+                  "ko": "벨라루스 관광청은 민스크의 바실키 레스토랑 체인에서 바브카를 소개하며, 간 감자에 볶은 라드·고기·양파를 더해 오븐에 굽는 요리라고 설명합니다. 민스크의 식당 사례이며 기원 주장은 아닙니다.",
+                  "en": "Belarus’s tourism portal lists babka at the Vasilki restaurant chain in Minsk and describes it as grated potato seasoned with fried lard, meat, and onion, then baked. This is a Minsk dining example, not an origin claim.",
+                  "ja": "ベラルーシ観光ポータルは、ミンスクのレストランチェーン「Vasilki」でバブカを紹介し、すりおろしたじゃがいもに炒めたラード、肉、玉ねぎを加えてオーブンで焼く料理と説明しています。ミンスクでの提供例であり、発祥を示すものではありません。",
+                  "zh": "白俄罗斯旅游门户介绍了明斯克 Vasilki 连锁餐馆的巴布卡，并描述为将炒过的猪油、肉和洋葱调入擦碎土豆后烘烤而成。这是明斯克餐饮实例，并非起源证明。"
+                },
+                "source_urls": [
+                  "https://en.belarus.travel/news/where-is-belarusian-cuisine-served"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Kuhmistr (Кухмистр)",
+                "area": "Minsk, Belarus / 민스크, 벨라루스 / ミンスク（ベラルーシ） / 白俄罗斯明斯克",
+                "type": {
+                  "ko": "벨라루스·슬라브 리투아니아 요리 레스토랑",
+                  "en": "Belarusian and Slavic Lithuanian cuisine restaurant",
+                  "ja": "ベラルーシ料理・スラヴ系リトアニア料理のレストラン",
+                  "zh": "白俄罗斯及斯拉夫立陶宛菜餐馆"
+                },
+                "focus": {
+                  "ko": "전통 벨라루스 및 슬라브 리투아니아 요리",
+                  "en": "Traditional Belarusian and Slavic Lithuanian cuisine",
+                  "ja": "伝統的なベラルーシ料理とスラヴ系リトアニア料理",
+                  "zh": "传统白俄罗斯菜与斯拉夫立陶宛菜"
+                },
+                "why_candidate": {
+                  "ko": "벨라루스 관광청은 쿠흐미스트를 민스크 음식점으로 소개하고 베레샤카와 빌뉴스식 보르시 등 대표 요리를 언급합니다. 레스토랑 공식 사이트도 자사를 벨라루스·슬라브 리투아니아 요리 식당으로 설명하고 메뉴 정보를 제공합니다. 연구 후보이며 예약 권유가 아닙니다.",
+                  "en": "Belarus’s tourism portal identifies Kuhmistr as a Minsk restaurant and mentions signature dishes including vereshchaka and Vilnius borscht. The restaurant’s own site describes its Belarusian and Slavic Lithuanian cuisine and provides menu information. This is a research candidate, not a booking recommendation.",
+                  "ja": "ベラルーシ観光ポータルはKuhmistrをミンスクのレストランとして紹介し、ヴェレシャカやヴィリニュス風ボルシチなどの看板料理を挙げています。店の公式サイトもベラルーシ料理・スラヴ系リトアニア料理を掲げ、メニュー情報を掲載しています。調査候補であり、予約の推奨ではありません。",
+                  "zh": "白俄罗斯旅游门户将 Kuhmistr 列为明斯克餐馆，并提及韦列沙卡和维尔纽斯风味罗宋汤等招牌菜。餐馆官网说明其提供白俄罗斯菜和斯拉夫立陶宛菜，并提供菜单信息。此处仅作研究候选，并非预订推荐。"
+                },
+                "official_url": "https://www.kuhmistr.by/menus/",
+                "source_urls": [
+                  "https://www.kuhmistr.by/menus/",
+                  "https://en.belarus.travel/news/where-is-belarusian-cuisine-served",
+                  "https://www.kuhmistr.by/kuhmistr-in-english/",
+                  "https://minsktourism.by/cn/food/natsionalnaya-kukhnya/restoran-belorusskoy-kukhni-kukhmistr/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "en.belarus.travel",
+                "url": "https://en.belarus.travel/news/where-is-belarusian-cuisine-served"
+              },
+              {
+                "title": "kuhmistr.by",
+                "url": "https://www.kuhmistr.by/menus/"
+              },
+              {
+                "title": "kuhmistr.by",
+                "url": "https://www.kuhmistr.by/kuhmistr-in-english/"
+              },
+              {
+                "title": "minsktourism.by",
+                "url": "https://minsktourism.by/cn/food/natsionalnaya-kukhnya/restoran-belorusskoy-kukhni-kukhmistr/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 이 목록은 공식 관광 자료가 민스크 음식점에서 다룬 메뉴 사례를 바탕으로 하며, 요리의 민스크 기원·독점성·대표성 순위를 주장하지 않습니다. 메뉴의 현재 제공 여부는 별도로 확인하지 않았습니다. | en: This list reflects dishes reported at Minsk establishments by official tourism sources; it does not claim Minsk origin, exclusivity, or a ranking of representative dishes. Current menu availability was not independently verified. | ja: 公式観光資料がミンスクの飲食店で紹介した料理の例です。ミンスク発祥・独占性・代表料理としての順位を主張するものではなく、現在の提供状況も独自確認していません。 | zh: 本列表依据官方旅游资料中明斯克餐馆的菜品实例；不主张这些菜起源于明斯克、为其独有或具有代表性排名，也未独立核实当前是否供应。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -768,6 +1626,149 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Beers and fries but not only! — Brussels Network for Business (BNB Brussels)",
             "url": "https://bnb.brussels/en/living-in-brussels/the-restaurants/beers-french-fries-mussels-and-chocolates-the-gastronomic-heritage-of-brussels/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 공식 브뤼셀 관광 자료가 소개하는 지역 연관 음식 4종과 공식 사이트에서 주소·메뉴를 확인한 레스토랑 조사 후보 1곳입니다. 출처가 뒷받침하지 않는 기원·독점성 주장은 피했습니다. | en: Four dishes associated with Brussels in official tourism material and one restaurant research candidate whose address and menu were checked on its official site. Origin and exclusivity claims are avoided unless supported. | ja: 公式観光資料でブリュッセルとの関連が紹介される料理4品と、住所・メニューを公式サイトで確認した調査候補の店1軒です。根拠のない起源・独占性の主張は避けています。 | zh: 收录官方旅游资料中与布鲁塞尔相关的4种菜肴，以及1家已通过官网核对地址和菜单的餐厅研究候选。避免作出缺乏依据的起源或独有性断言。",
+        "cities": [
+          {
+            "city": {
+              "ko": "브뤼셀",
+              "en": "Brussels",
+              "ja": "ブリュッセル",
+              "zh": "布鲁塞尔"
+            },
+            "intro": {
+              "ko": "브뤼셀 관광청이 소개하는 지역 음식에는 브뤼셀 와플과 여러 벨기에·플랑드르 요리가 포함됩니다. 아래 목록은 지역적 연관성을 나타내며, 요리의 기원이나 독점성을 단정하지 않습니다.",
+              "en": "Visit Brussels highlights the Brussels waffle alongside several Belgian and Flemish dishes. The list below reflects local association, not claims of origin or exclusivity.",
+              "ja": "ブリュッセル観光局は、ブリュッセル・ワッフルのほか、ベルギーやフランドルの料理も紹介しています。以下は地域との関連を示すもので、起源や独占性を断定するものではありません。",
+              "zh": "布鲁塞尔旅游局介绍了布鲁塞尔华夫饼及多种比利时和佛兰德菜肴。以下体现的是地方关联，并不表示这些菜肴起源于当地或为当地独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "브뤼셀 와플",
+                  "en": "Brussels waffle",
+                  "ja": "ブリュッセル・ワッフル",
+                  "zh": "布鲁塞尔华夫饼"
+                },
+                "note": {
+                  "ko": "브뤼셀 관광청은 겉은 바삭하고 속은 부드러우며 직사각형이고 달지 않은 와플로 설명합니다. 관광청 설명에 따르면 최초의 브뤼셀 와플은 19세기 겐트에서 브뤼셀 출신 제빵사가 만들었습니다.",
+                  "en": "Visit Brussels describes it as rectangular, crisp outside, soft inside, and unsweetened. Its account says the first Brussels waffle was made in Ghent in the 19th century by a Brussels pastry chef.",
+                  "ja": "ブリュッセル観光局によると、長方形で外はカリッと、中は柔らかく、甘みを付けていないワッフルです。同局の説明では、最初のブリュッセル・ワッフルは19世紀にブリュッセル出身の菓子職人によってヘントで作られました。",
+                  "zh": "布鲁塞尔旅游局将其描述为长方形、外脆内软且本身不甜的华夫饼。该局称，最早的布鲁塞尔华夫饼于19世纪由一位布鲁塞尔糕点师在根特制作。"
+                },
+                "source_urls": [
+                  "https://www.visit.brussels/en/visitors/where-to-eat/brussels-culinary-specialities",
+                  "https://www.visit.brussels/fr/visiteurs/boire-et-manger/bruxelles-et-ses-specialites-culinaires"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "스툼프",
+                  "en": "Stoemp",
+                  "ja": "ストンプ",
+                  "zh": "斯通普（Stoemp）"
+                },
+                "note": {
+                  "ko": "브뤼셀 관광청은 스툼프를 브뤼셀 요리 특선 소개에 포함합니다. 이는 지역적 연관성에 대한 근거이며, 이 요리의 기원이나 브뤼셀만의 음식이라는 주장을 뒷받침하지는 않습니다.",
+                  "en": "Visit Brussels includes stoemp in its Brussels culinary-specialities coverage. This supports a local association, not a claim that the dish originated in Brussels or is exclusive to it.",
+                  "ja": "ブリュッセル観光局は、ブリュッセルの食の特集でストンプを取り上げています。これは地域との関連を示すもので、ブリュッセル発祥または当地だけの料理であることを意味しません。",
+                  "zh": "布鲁塞尔旅游局在其布鲁塞尔美食专题中列有斯通普。这支持其与当地的关联，但不能据此断言它起源于布鲁塞尔或为当地独有。"
+                },
+                "source_urls": [
+                  "https://www.visit.brussels/fr/visiteurs/boire-et-manger/bruxelles-et-ses-specialites-culinaires",
+                  "https://www.visit.brussels/en/visitors/where-to-eat/brussels-culinary-specialities"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "워터주이",
+                  "en": "Waterzooi",
+                  "ja": "ワーテルゾーイ",
+                  "zh": "瓦特佐伊（Waterzooi）"
+                },
+                "note": {
+                  "ko": "브뤼셀 관광청은 워터주이를 요리 특선 소개에 포함하지만, 같은 설명은 이 요리의 기원을 겐트로 돌립니다. 따라서 여기서는 브뤼셀에서 접할 수 있는 지역 음식 목록의 일부로만 제시합니다.",
+                  "en": "Visit Brussels includes waterzooi in its culinary-specialities coverage, while its description identifies Ghent as its place of origin. It is included here only as a dish featured in the Brussels food context.",
+                  "ja": "ブリュッセル観光局はワーテルゾーイを食の特集に含めていますが、同局の説明では発祥地はヘントとされています。ここではブリュッセルの食文化の紹介に登場する料理としてのみ挙げています。",
+                  "zh": "布鲁塞尔旅游局在美食专题中列出瓦特佐伊，但其说明指出该菜起源于根特。此处仅将其作为布鲁塞尔饮食介绍中提及的菜肴列出。"
+                },
+                "source_urls": [
+                  "https://www.visit.brussels/fr/visiteurs/boire-et-manger/bruxelles-et-ses-specialites-culinaires"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "플랑드르식 소고기 스튜",
+                  "en": "Flemish beef stew",
+                  "ja": "フランドル風ビーフシチュー",
+                  "zh": "佛兰德炖牛肉"
+                },
+                "note": {
+                  "ko": "브뤼셀 관광청은 플랑드르식 스튜를 이 지역의 요리 특선으로 소개하고, 소고기에 맥주와 진저브레드를 넣은 소스를 곁들이는 요리로 설명합니다. 플랑드르 요리라는 점을 함께 표시합니다.",
+                  "en": "Visit Brussels includes Flemish stew in its culinary-specialities coverage and describes beef served with a beer-and-gingerbread sauce. The Flemish name signals a broader regional association rather than Brussels exclusivity.",
+                  "ja": "ブリュッセル観光局はフランドル風シチューを食の特集に含め、牛肉にビールとジンジャーブレッドのソースを合わせる料理として説明しています。名称どおり、ブリュッセル固有ではなく、より広いフランドルとの関連を示します。",
+                  "zh": "布鲁塞尔旅游局在美食专题中列有佛兰德炖菜，并描述为搭配啤酒姜饼酱汁的牛肉。佛兰德名称表明其关联范围更广，并非布鲁塞尔独有。"
+                },
+                "source_urls": [
+                  "https://www.visit.brussels/fr/visiteurs/boire-et-manger/bruxelles-et-ses-specialites-culinaires",
+                  "https://www.visit.brussels/en/visitors/where-to-eat/brussels-culinary-specialities"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Chez Léon",
+                "area": "Rue des Bouchers 18, 1000 Brussels",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴에 홍합 요리와 감자튀김 곁들임이 기재되어 있습니다.",
+                  "en": "The official menu lists mussel dishes, including mussels with chips.",
+                  "ja": "公式メニューにはムール貝料理があり、チップス添えも記載されています。",
+                  "zh": "官方菜单列有贻贝菜肴，包括搭配薯条的做法。"
+                },
+                "why_candidate": {
+                  "ko": "레스토랑 공식 사이트는 브뤼셀 Rue des Bouchers 18 주소와 업소 역사를 제시하며, 공식 2026년 영어 메뉴에는 홍합 요리가 기재되어 있습니다. 조사 후보일 뿐이며 메뉴는 변경될 수 있습니다.",
+                  "en": "The restaurant's own site gives its Rue des Bouchers 18 Brussels address and establishment history; its published 2026 English menu lists mussel dishes. This is a research candidate, and menu contents may change.",
+                  "ja": "店の公式サイトにはブリュッセルのRue des Bouchers 18という住所と店の沿革が記載され、公開されている2026年英語メニューにはムール貝料理があります。調査上の候補であり、メニューは変更される場合があります。",
+                  "zh": "餐厅官网列出其布鲁塞尔Rue des Bouchers 18地址及店铺沿革；其发布的2026年英文菜单列有贻贝菜肴。这里只作为研究候选，菜单内容可能变更。"
+                },
+                "official_url": "https://www.chezleon.be/",
+                "source_urls": [
+                  "https://www.chezleon.be/",
+                  "https://chezleon.be/wp-content/uploads/2025/12/Leon-2026-EN.pdf"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visit.brussels",
+                "url": "https://www.visit.brussels/en/visitors/where-to-eat/brussels-culinary-specialities"
+              },
+              {
+                "title": "visit.brussels",
+                "url": "https://www.visit.brussels/fr/visiteurs/boire-et-manger/bruxelles-et-ses-specialites-culinaires"
+              },
+              {
+                "title": "chezleon.be",
+                "url": "https://www.chezleon.be/"
+              },
+              {
+                "title": "chezleon.be",
+                "url": "https://chezleon.be/wp-content/uploads/2025/12/Leon-2026-EN.pdf"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 브뤼셀 관광청의 설명에 따르면 브뤼셀 와플은 19세기 겐트에서 처음 만들어졌다고 합니다. 이를 브뤼셀에서 유래했다고 단정하지 않았습니다. | en: Visit Brussels says the first Brussels waffle was made in Ghent in the 19th century; this entry does not claim it originated in Brussels. | ja: ブリュッセル観光局によると、ブリュッセル・ワッフルは19世紀にヘントで初めて作られたとされています。ブリュッセル発祥とは断定していません。 | zh: 布鲁塞尔旅游局称，最早的布鲁塞尔华夫饼于19世纪在根特制作；此处未断言其起源于布鲁塞尔。",
+              "ko: 워터주이는 브뤼셀 관광청의 지역 음식 소개에 포함되지만, 관광청 설명은 겐트를 기원지로 듭니다. 브뤼셀만의 요리라는 뜻으로 제시하지 않았습니다. | en: Waterzooi appears in Visit Brussels' food coverage, but the tourism authority identifies Ghent as its origin; it is not presented as unique to Brussels. | ja: ワーテルゾーイはブリュッセル観光局の食の特集に含まれますが、同局はヘントを発祥地としています。ブリュッセル独自の料理とはしていません。 | zh: 瓦特佐伊见于布鲁塞尔旅游局的美食介绍，但该局指出其起源地为根特；此处未将其称为布鲁塞尔独有。"
+            ]
           }
         ]
       }
@@ -907,6 +1908,148 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.visitsarajevo.ba/how-to-spend-a-weekend-in-sarajevo/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "This entry covers only Bosnia and Herzegovina and its declared featured city, Sarajevo. The uploaded Korean request contains Italy-focused examples and corrections, but no Bosnia-specific dish or restaurant corrections; those examples were not treated as evidence for this entry.",
+        "cities": [
+          {
+            "city": {
+              "ko": "사라예보",
+              "en": "Sarajevo",
+              "ja": "サラエボ",
+              "zh": "萨拉热窝"
+            },
+            "intro": {
+              "ko": "사라예보 관광 당국은 바슈차르시야의 전통 ćevapi와 파이를 소개하고, 속을 채운 포도잎 요리 japrak, 만두 klepe, 여러 스튜와 디저트도 지역 음식으로 추천합니다.",
+              "en": "Sarajevo’s tourism authority points visitors to Baščaršija for traditional ćevapi and pies, and also names japrak, klepe, stews and desserts among local dishes to try.",
+              "ja": "サラエボの観光当局は、バシュチャルシヤで伝統的なチェヴァピやパイを紹介し、ヤプラク、クレペ、煮込み料理やデザートも地元料理として挙げています。",
+              "zh": "萨拉热窝旅游部门推荐在巴什察尔希亚品尝传统烤肉肠 ćevapi 和馅饼，也列出了 japrak、klepe、炖菜及甜点等当地菜肴。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "사라예보식 체바피",
+                  "en": "Sarajevo-style ćevapi",
+                  "ja": "サラエボ風チェヴァピ",
+                  "zh": "萨拉热窝风味烤肉肠"
+                },
+                "note": {
+                  "ko": "다진 고기를 길쭉하게 빚어 구운 요리입니다. 부드러운 소문(somun) 빵과 함께 내는 형태가 흔하다고 음식 해설 자료는 설명합니다. 사라예보 관광 당국도 바슈차르시야의 전통 음식으로 소개합니다.",
+                  "en": "Minced meat shaped into small elongated pieces and grilled. A food explainer describes them as commonly served with soft somun bread; Sarajevo’s tourism authority identifies ćevapi as a traditional Baščaršija food.",
+                  "ja": "ひき肉を細長く成形して焼いた料理です。料理解説資料によると、柔らかなソムン（somun）パンと一緒に出されることがよくあります。サラエボ観光当局もバシュチャルシヤの伝統料理として紹介しています。",
+                  "zh": "将肉末捏成长条后烤制而成。饮食介绍资料称其常配柔软的 somun 面包；萨拉热窝旅游部门也将 ćevapi 列为巴什察尔希亚的传统食物。"
+                },
+                "source_urls": [
+                  "https://www.visitsarajevo.ba/how-to-spend-a-weekend-in-sarajevo/",
+                  "https://cardamommagazine.com/cevapi-grilled-bosnian-sausages/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "야프라크(포도잎말이)",
+                  "en": "Japrak (stuffed vine leaves)",
+                  "ja": "ヤプラク（ブドウの葉包み）",
+                  "zh": "japrak（葡萄叶包馅）"
+                },
+                "note": {
+                  "ko": "속을 채운 포도잎 요리입니다. 사라예보 관광 당국은 이를 바슈차르시야에서 맛볼 수 있는 전통 점심 요리로 소개하지만, 속 재료는 특정하지 않습니다.",
+                  "en": "A dish of stuffed vine leaves. Sarajevo’s tourism authority includes it among traditional lunches to try in Baščaršija, without specifying the filling.",
+                  "ja": "ブドウの葉で具を包んだ料理です。サラエボ観光当局はバシュチャルシヤで試したい伝統的な昼食の一つとして挙げていますが、具材は特定していません。",
+                  "zh": "以葡萄叶包裹馅料制成。萨拉热窝旅游部门将其列为可在巴什察尔希亚尝试的传统午餐之一，但没有说明具体馅料。"
+                },
+                "source_urls": [
+                  "https://www.visitsarajevo.ba/how-to-spend-a-weekend-in-sarajevo/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "클레페(고기 만두)",
+                  "en": "Klepe (meat dumplings)",
+                  "ja": "クレペ（肉入り餃子風 dumpling）",
+                  "zh": "klepe（肉馅饺子）"
+                },
+                "note": {
+                  "ko": "사라예보 관광 당국은 klepe를 다진 고기 만두로 설명합니다. 보스니아 요리 해설 자료에는 소고기 소를 넣은 밀가루 반죽 만두와 크림 계열 소스의 형태가 실려 있습니다.",
+                  "en": "Sarajevo’s tourism authority describes klepe as minced-meat dumplings. A Bosnian-cuisine explainer gives one common form as flour-dough dumplings filled with beef and served with a cream-based sauce.",
+                  "ja": "サラエボ観光当局は、クレペをひき肉入りの dumpling と説明しています。ボスニア料理の解説資料では、小麦粉生地に牛肉を詰め、クリーム系ソースを添える一例が紹介されています。",
+                  "zh": "萨拉热窝旅游部门将 klepe 描述为肉末馅饺子。波斯尼亚菜肴介绍资料列出一种常见做法：面团包牛肉馅，配奶油类酱汁。"
+                },
+                "source_urls": [
+                  "https://www.visitsarajevo.ba/how-to-spend-a-weekend-in-sarajevo/",
+                  "https://balkanlunchbox.com/klepe-sa-mesom-bosnian-minced-meat-dumplings-recipe-klepe/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "투파히야(속을 채운 사과 디저트)",
+                  "en": "Tufahija (stuffed apple dessert)",
+                  "ja": "トゥファヒヤ（詰め物入りリンゴのデザート）",
+                  "zh": "tufahija（填馅苹果甜点）"
+                },
+                "note": {
+                  "ko": "사과를 익혀 속을 채우는 디저트입니다. 사라예보 관광 당국은 바클라바, 카다이프와 함께 현지에서 맛볼 만한 단것으로 소개합니다.",
+                  "en": "A dessert of poached, stuffed apples. Sarajevo’s tourism authority lists it alongside baklava and kadayif among local sweets to try.",
+                  "ja": "リンゴを煮て中に詰め物をしたデザートです。サラエボ観光当局は、バクラヴァやカダイフと並ぶ地元の甘味として紹介しています。",
+                  "zh": "将苹果煮熟并填入馅料制成的甜点。萨拉热窝旅游部门把它与巴克拉瓦和卡达伊夫一同列为当地值得尝试的甜食。"
+                },
+                "source_urls": [
+                  "https://www.visitsarajevo.ba/how-to-spend-a-weekend-in-sarajevo/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Inat Kuća",
+                "area": "Sarajevo; the official page does not identify a neighborhood",
+                "type": {
+                  "ko": "전통 음식점",
+                  "en": "Traditional restaurant",
+                  "ja": "伝統料理レストラン",
+                  "zh": "传统餐馆"
+                },
+                "focus": {
+                  "ko": "보스니아 전통 요리",
+                  "en": "Traditional Bosnian cuisine",
+                  "ja": "ボスニア伝統料理",
+                  "zh": "波斯尼亚传统菜肴"
+                },
+                "why_candidate": {
+                  "ko": "식당 자체 웹사이트가 사라예보의 전통 음식점이자 보스니아 요리의 공간이라고 소개합니다. 출처가 뒷받침하는 것은 식당의 정체성과 전반적인 요리 방향이며, 특정 메뉴의 현재 제공 여부는 확인되지 않았습니다.",
+                  "en": "The restaurant’s own website describes it as a traditional Sarajevo restaurant and a home of Bosnian cuisine. The source supports its identity and broad cuisine focus, but does not verify current availability of any specific dish.",
+                  "ja": "店の公式サイトは、サラエボの伝統料理店であり、ボスニア料理を提供する場所として紹介しています。確認できるのは店の概要と料理の方向性で、特定料理の現在の提供状況は確認できていません。",
+                  "zh": "餐厅自有网站将其介绍为萨拉热窝的传统餐馆和波斯尼亚菜肴的代表性场所。来源支持其餐馆身份和整体菜系方向，但未核实任何具体菜品目前是否供应。"
+                },
+                "official_url": "https://inat-kuca.com/",
+                "source_urls": [
+                  "https://inat-kuca.com/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitsarajevo.ba",
+                "url": "https://www.visitsarajevo.ba/how-to-spend-a-weekend-in-sarajevo/"
+              },
+              {
+                "title": "cardamommagazine.com",
+                "url": "https://cardamommagazine.com/cevapi-grilled-bosnian-sausages/"
+              },
+              {
+                "title": "balkanlunchbox.com",
+                "url": "https://balkanlunchbox.com/klepe-sa-mesom-bosnian-minced-meat-dumplings-recipe-klepe/"
+              },
+              {
+                "title": "inat-kuca.com",
+                "url": "https://inat-kuca.com/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The Korean request text is about Italy and includes Italian restaurant and dish examples; it does not provide Bosnia-specific evidence or corrections. Its truncated Florence section was not used here.",
+              "Sarajevo’s tourism authority supports the local association and basic descriptions of the listed dishes. More specific fillings or recipes are only stated where an additional cited culinary source supports them; no exclusive origin claim is made.",
+              "Only one restaurant candidate is included because its own site confirms traditional Bosnian cuisine. Its precise neighborhood and current individual dishes, opening hours, prices, availability, wait times, reservations, accessibility and language service were not verified. No reservation is claimed."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -1012,6 +2155,191 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Sofiiska banitsa | Sofia | Order online — Wolt",
             "url": "https://wolt.com/en/bgr/sofia/brand/sofiiska-banitsa"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "KO: 소피아 한 도시만 다룹니다. 요리 4종과 식당 후보 2곳은 공식 관광 안내 및 각 식당의 자체 자료에서 확인한 범위입니다. | EN: Scope is limited to Sofia. Four dishes and two restaurant candidates are included based on official tourism guidance and the venues’ own materials. | JA: 対象はソフィア一都市に限定しています。料理4品と飲食店候補2店は、公式観光案内および各店の公式資料で確認した範囲です。 | ZH: 范围仅限索非亚一座城市。列出4种菜肴和2家餐厅候选，依据为官方旅游指南及餐厅自身资料。",
+        "cities": [
+          {
+            "city": {
+              "ko": "소피아",
+              "en": "Sofia",
+              "ja": "ソフィア",
+              "zh": "索非亚"
+            },
+            "intro": {
+              "ko": "소피아 관광 안내는 여러 불가리아 음식 가운데 쇼프스카 샐러드, 바니차, 메키치, 카바르마 등을 도시에서 맛볼 만한 음식으로 소개합니다. 이는 방문객을 위한 도시 연계 정보이며 소피아에서 비롯되었다는 뜻은 아닙니다.",
+              "en": "Sofia’s tourism guide highlights several Bulgarian dishes—including Shopska salad, banitsa, mekitsi, and kavarma—as specialties to try in the city. This is a visitor-facing city association, not evidence that they originated in Sofia.",
+              "ja": "ソフィアの観光案内は、ショプスカ・サラダ、バニツァ、メキツィ、カヴァルマなど、複数のブルガリア料理を市内で試したい名物として紹介しています。これは旅行者向けの都市との関連付けであり、ソフィア発祥を示すものではありません。",
+              "zh": "索非亚旅游指南将肖普斯卡沙拉、巴尼察、梅基齐、卡瓦尔马等多种保加利亚菜肴列为在该市值得品尝的特色。此处是面向游客的城市关联介绍，并不表示这些菜肴起源于索非亚。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "쇼프스카 샐러드",
+                  "en": "Shopska salad",
+                  "ja": "ショプスカ・サラダ",
+                  "zh": "肖普斯卡沙拉"
+                },
+                "note": {
+                  "ko": "소피아 관광 안내는 이를 도시에서 맛볼 만한 음식으로 꼽습니다. 불가리아 관광 안내는 쇼프스카 샐러드를 불가리아에서 가장 인기 있는 샐러드라고 설명합니다. 이는 소피아와의 관광상 연계를 뒷받침할 뿐, 소피아 기원을 뜻하지 않습니다.",
+                  "en": "Sofia’s tourism guide lists it among specialties to try in the city. Bulgaria’s tourism cuisine guide describes Shopska salad as the country’s most popular salad. This supports a visitor-facing Sofia association, not a claim of Sofia origin.",
+                  "ja": "ソフィアの観光案内は、市内で試したい料理の一つに挙げています。ブルガリアの観光案内は、ショプスカ・サラダを同国で最も人気のあるサラダと説明しています。これは旅行者向けのソフィアとの関連を示すもので、ソフィア発祥を意味しません。",
+                  "zh": "索非亚旅游指南将其列为该市值得品尝的特色之一。保加利亚旅游美食指南称肖普斯卡沙拉是该国最受欢迎的沙拉。这支持其面向游客的索非亚关联，但不意味着它起源于索非亚。"
+                },
+                "source_urls": [
+                  "https://visitsofia.bg/en/item/3549-explore-sofia%E2%80%99s-culinary-scene",
+                  "https://visitbulgaria.com/about-bulgaria/traditional-cuisine/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "바니차",
+                  "en": "Banitsa",
+                  "ja": "バニツァ",
+                  "zh": "巴尼察"
+                },
+                "note": {
+                  "ko": "소피아 관광 안내는 바니차를 도시에서 맛볼 만한 음식으로 소개합니다. 불가리아 관광 안내는 치즈, 시금치, 쌀, 고기 등 다양한 속을 넣는 반죽 음식이자 전국적으로 인기 있는 아침 식사라고 설명합니다. 소피아 기원이나 독점성은 확인되지 않습니다.",
+                  "en": "Sofia’s tourism guide lists banitsa among specialties to try in the city. Bulgaria’s tourism cuisine guide describes it as a dough-based food with fillings such as cheese, spinach, rice, or meat, and a popular breakfast nationally. No Sofia origin or exclusivity is established.",
+                  "ja": "ソフィアの観光案内は、バニツァを市内で試したい料理の一つに挙げています。ブルガリアの観光案内によると、チーズ、ほうれん草、米、肉などを詰めた生地料理で、全国的に人気の朝食です。ソフィア発祥または同地限定とは確認されていません。",
+                  "zh": "索非亚旅游指南将巴尼察列为该市值得品尝的特色之一。保加利亚旅游美食指南称其为一种面食，可加入奶酪、菠菜、米或肉等馅料，也是全国受欢迎的早餐。资料未证明它起源于索非亚或为当地独有。"
+                },
+                "source_urls": [
+                  "https://visitsofia.bg/en/item/3549-explore-sofia%E2%80%99s-culinary-scene",
+                  "https://visitbulgaria.com/about-bulgaria/traditional-cuisine/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "메키치",
+                  "en": "Mekitsi",
+                  "ja": "メキツィ",
+                  "zh": "梅基齐"
+                },
+                "note": {
+                  "ko": "소피아 관광 안내는 메키치를 도시에서 맛볼 만한 음식으로 꼽습니다. 불가리아 관광 안내는 메키차를 튀긴 반죽 조각으로 설명하고, 인기 있는 아침 음식 가운데 하나로 소개합니다. 이는 전국 음식 문화와 소피아 관광 안내의 연계를 보여주며 지역 기원을 뜻하지 않습니다.",
+                  "en": "Sofia’s tourism guide lists mekitsi among specialties to try in the city. Bulgaria’s tourism cuisine guide describes mekitsa as pieces of fried dough and includes them among popular breakfast foods. This links the dish to Bulgarian cuisine and Sofia’s visitor guide, not to a specific local origin.",
+                  "ja": "ソフィアの観光案内は、メキツィを市内で試したい料理の一つに挙げています。ブルガリアの観光案内は、メキツァを揚げた生地の一口大のものと説明し、人気の朝食の一つに数えています。これはブルガリア料理およびソフィアの観光案内との関連であり、特定の地域発祥を示しません。",
+                  "zh": "索非亚旅游指南将梅基齐列为该市值得品尝的特色之一。保加利亚旅游美食指南将其描述为油炸面团块，并列为受欢迎的早餐食品之一。这表明它与保加利亚饮食及索非亚旅游介绍有关，并不证明其源自某一特定地区。"
+                },
+                "source_urls": [
+                  "https://visitsofia.bg/en/item/3549-explore-sofia%E2%80%99s-culinary-scene",
+                  "https://visitbulgaria.com/about-bulgaria/traditional-cuisine/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카바르마",
+                  "en": "Kavarma",
+                  "ja": "カヴァルマ",
+                  "zh": "卡瓦尔马"
+                },
+                "note": {
+                  "ko": "소피아 관광 안내는 카바르마를 도시에서 맛볼 만한 음식으로 소개합니다. 불가리아 관광 안내는 카바르마를 불가리아 요리에서 흔히 볼 수 있는 냄비 요리 가운데 하나로 꼽습니다. 해당 자료는 소피아 기원이나 현지 식당의 현재 메뉴 제공 여부를 입증하지 않습니다.",
+                  "en": "Sofia’s tourism guide lists kavarma among specialties to try in the city. Bulgaria’s tourism cuisine guide includes kavarma among stews and dishes commonly prepared in clay pots in Bulgarian cuisine. These sources do not establish Sofia origin or current availability at any restaurant.",
+                  "ja": "ソフィアの観光案内は、カヴァルマを市内で試したい料理の一つに挙げています。ブルガリアの観光案内は、カヴァルマを同国料理で一般的な土鍋料理・煮込み料理の一つとして紹介しています。ソフィア発祥や、飲食店で現在提供されていることを示す資料ではありません。",
+                  "zh": "索非亚旅游指南将卡瓦尔马列为该市值得品尝的特色之一。保加利亚旅游美食指南将其列为保加利亚饮食中常见的陶锅炖菜之一。这些资料并未证明其起源于索非亚，也未证明任何餐厅目前供应此菜。"
+                },
+                "source_urls": [
+                  "https://visitsofia.bg/en/item/3549-explore-sofia%E2%80%99s-culinary-scene",
+                  "https://visitbulgaria.com/about-bulgaria/traditional-cuisine/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Manastirska Magernitsa (Манастирска Магерница)",
+                "area": "Sofia Center; 67 Khan Asparuh St. / 소피아 중심부, 한 아스파루흐 거리 67번 / ソフィア中心部、ハン・アスパルフ通り67番地 / 索非亚市中心，汉·阿斯帕鲁赫街67号",
+                "type": {
+                  "ko": "불가리아 전통 음식점",
+                  "en": "Bulgarian restaurant",
+                  "ja": "ブルガリア料理店",
+                  "zh": "保加利亚餐厅"
+                },
+                "focus": {
+                  "ko": "식당은 메뉴의 각 요리법이 불가리아 여러 지역 수도원에서 모아졌다고 설명합니다.",
+                  "en": "The restaurant says its menu recipes were collected from monasteries across Bulgaria.",
+                  "ja": "店の説明によると、メニューのレシピはブルガリア各地の修道院から集められています。",
+                  "zh": "餐厅称其菜单食谱收集自保加利亚各地的修道院。"
+                },
+                "why_candidate": {
+                  "ko": "식당 공식 사이트는 소피아 중심부의 주소와 메뉴 설명을 제시하며, 소피아 관광 안내도 전통 불가리아 음식을 제공하는 곳으로 소개합니다. 조사 후보일 뿐 예약이나 현재 메뉴 확인을 뜻하지 않습니다.",
+                  "en": "Its official site provides a Sofia Center address and describes its menu; Sofia’s tourism listing also identifies it as serving traditional Bulgarian dishes. It is a research candidate, not a booking or confirmation of current menu availability.",
+                  "ja": "公式サイトにソフィア中心部の住所とメニューの説明があり、ソフィア観光案内も伝統的なブルガリア料理を提供する店として紹介しています。調査候補であり、予約や現在のメニュー提供の確認ではありません。",
+                  "zh": "其官方网站提供索非亚市中心的地址并介绍菜单；索非亚旅游指南也将其列为供应保加利亚传统菜肴的餐厅。它仅为研究候选，并非预订或当前菜单供应情况的确认。"
+                },
+                "official_url": "https://magernitsa.com/en/english/",
+                "source_urls": [
+                  "https://magernitsa.com/en/english/",
+                  "https://magernitsa.com/en/contacts/",
+                  "https://cn.visitsofia.bg/index.php?option=com_k2&view=item&layout=item&id=2316&Itemid=478&lang=zh"
+                ]
+              },
+              {
+                "name": "Hadjidraganovite Kashti (Хаджидрагановите къщи)",
+                "area": "Sofia Center; 75 Kozloduy St. / 소피아 중심부, 코즐로두이 거리 75번 / ソフィア中心部、コズロドゥイ通り75番地 / 索非亚市中心，科兹洛杜伊街75号",
+                "type": {
+                  "ko": "불가리아 전통 음식점",
+                  "en": "Bulgarian restaurant",
+                  "ja": "ブルガリア料理店",
+                  "zh": "保加利亚餐厅"
+                },
+                "focus": {
+                  "ko": "식당은 전통 조리법을 담은 다양한 메뉴와 불가리아 와인·브랜디를 소개합니다.",
+                  "en": "The restaurant describes a rich menu of traditional recipes, alongside Bulgarian wines and brandies.",
+                  "ja": "店は、伝統的なレシピを取り入れた豊富なメニューとブルガリアワイン、ブランデーを紹介しています。",
+                  "zh": "餐厅介绍了包含传统食谱的丰富菜单，以及保加利亚葡萄酒和白兰地。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트는 소피아 중심부의 식당과 전통 조리법 메뉴를 확인해 주며, 소피아 관광 안내도 이 식당을 전통 불가리아 음식점으로 등재합니다. 조사 후보일 뿐 예약이나 현재 메뉴 확인을 뜻하지 않습니다.",
+                  "en": "Its official site identifies the Sofia restaurant and describes traditional-recipe dishes; Sofia’s tourism listing also presents it as a Bulgarian restaurant. It is a research candidate, not a booking or confirmation of current menu availability.",
+                  "ja": "公式サイトでソフィアの店舗と伝統レシピの料理を確認でき、ソフィア観光案内もブルガリア料理店として掲載しています。調査候補であり、予約や現在のメニュー提供の確認ではありません。",
+                  "zh": "其官方网站确认了这家索非亚餐厅并介绍传统食谱菜肴；索非亚旅游指南也将其列为保加利亚餐厅。它仅为研究候选，并非预订或当前菜单供应情况的确认。"
+                },
+                "official_url": "https://kashtite.com/en/",
+                "source_urls": [
+                  "https://kashtite.com/en/",
+                  "https://kashtite.com/en/contacts",
+                  "https://cn.visitsofia.bg/index.php?option=com_k2&view=item&layout=item&id=2316&Itemid=478&lang=zh"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitsofia.bg",
+                "url": "https://visitsofia.bg/en/item/3549-explore-sofia%E2%80%99s-culinary-scene"
+              },
+              {
+                "title": "visitbulgaria.com",
+                "url": "https://visitbulgaria.com/about-bulgaria/traditional-cuisine/"
+              },
+              {
+                "title": "magernitsa.com",
+                "url": "https://magernitsa.com/en/english/"
+              },
+              {
+                "title": "magernitsa.com",
+                "url": "https://magernitsa.com/en/contacts/"
+              },
+              {
+                "title": "cn.visitsofia.bg",
+                "url": "https://cn.visitsofia.bg/index.php?option=com_k2&view=item&layout=item&id=2316&Itemid=478&lang=zh"
+              },
+              {
+                "title": "kashtite.com",
+                "url": "https://kashtite.com/en/"
+              },
+              {
+                "title": "kashtite.com",
+                "url": "https://kashtite.com/en/contacts"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "KO: 자료는 소피아 관광 안내상 연계와 불가리아 음식 문화만 뒷받침하며, 음식의 소피아 기원·독점성이나 식당의 진정성 순위를 입증하지 않습니다. | EN: The sources support a Sofia tourism association and Bulgarian culinary context, not Sofia origin, exclusivity, or restaurant authenticity rankings. | JA: 資料が裏付けるのはソフィアの観光案内との関連とブルガリア料理としての文脈であり、ソフィア発祥・独占性・店の真正性ランキングではありません。 | ZH: 资料支持的是索非亚旅游介绍中的关联及保加利亚饮食背景，并不证明菜肴起源于索非亚、为当地独有，或餐厅的正宗程度排名。",
+              "KO: 식당은 검증된 조사 후보이지 예약 추천이나 확정 정보가 아닙니다. 영업시간, 가격, 대기시간, 안전·접근성 및 개별 메뉴의 현재 제공 여부는 주장하지 않습니다. | EN: The restaurants are verified research candidates, not booking recommendations or guarantees. No claims are made about hours, prices, waits, safety, accessibility, or current availability of individual dishes. | JA: 店舗は確認済みの調査候補であり、予約の推奨や確約ではありません。営業時間、価格、待ち時間、安全性・アクセシビリティ、個別料理の現在の提供状況は主張していません。 | ZH: 餐厅仅为已核实的研究候选，并非预订推荐或保证。此处不对营业时间、价格、等候时间、安全与无障碍情况或单道菜目前是否供应作出判断。"
+            ]
           }
         ]
       }
@@ -1155,6 +2483,141 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.esculaprestaurants.com/fish-restaurant-proto-dubrovnik/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "KO: 음식 근거는 두브로브니크-네레트바 주 관광청의 지역 미식 안내에 기반하며, 도시 내부에만 한정되지 않습니다. 레스토랑은 조사 후보일 뿐 예약 제안이 아닙니다. JA: 料理情報はドゥブロヴニク＝ネレトヴァ郡観光局の地域ガストロノミー案内に基づき、市内だけに限定されません。レストランは調査候補であり、予約の提案ではありません。 ZH: 菜品依据杜布罗夫尼克-内雷特瓦县旅游部门的区域美食介绍，并不限于市区。餐厅仅为研究候选，并非订位建议。 EN: Dish evidence comes from the Dubrovnik-Neretva County tourism board’s regional gastronomy guide and is not confined to the city. The restaurant is a research candidate, not a booking recommendation.",
+        "cities": [
+          {
+            "city": {
+              "ko": "두브로브니크",
+              "en": "Dubrovnik",
+              "ja": "ドゥブロヴニク",
+              "zh": "杜布罗夫尼克"
+            },
+            "intro": {
+              "ko": "두브로브니크와 그 주변 두브로브니크-네레트바 주의 해안 식문화는 해산물과 지역 재료를 강조합니다. 아래 항목은 관광 당국이 주 전체 또는 특정 만과 연결해 소개한 음식입니다.",
+              "en": "Dubrovnik and the surrounding Dubrovnik-Neretva County have a coastal food tradition featuring seafood and local ingredients. The dishes below are described by tourism authorities as county-wide or associated with a particular bay.",
+              "ja": "ドゥブロヴニクと周辺のドゥブロヴニク＝ネレトヴァ郡では、魚介類や地元の食材を生かした食文化が紹介されています。以下は観光当局が郡全体、または特定の湾と結び付けて紹介する料理です。",
+              "zh": "杜布罗夫尼克及其周边的杜布罗夫尼克-内雷特瓦县拥有以海鲜和当地食材为特色的沿海饮食文化。下列菜品是旅游部门介绍为全县特色或与特定海湾相关的食物。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "먹물 블랙 리소토",
+                  "en": "Black risotto",
+                  "ja": "イカ墨の黒いリゾット",
+                  "zh": "墨鱼汁黑烩饭"
+                },
+                "note": {
+                  "ko": "두브로브니크-네레트바 주 관광청은 갑오징어나 오징어 먹물로 색을 내는 이 요리를 해양 전통 및 신선한 지역 식재료와 연결해 소개합니다. 이는 주 차원의 연관성이지 두브로브니크 시만의 고유 음식이라는 뜻은 아닙니다.",
+                  "en": "The Dubrovnik-Neretva County tourism board links this risotto, colored with cuttlefish or squid ink, to maritime tradition and fresh local ingredients. This is a county-level association, not a claim that it is unique to Dubrovnik city.",
+                  "ja": "ドゥブロヴニク＝ネレトヴァ郡の観光局は、コウイカまたはイカの墨で色付けするこのリゾットを、海の伝統や新鮮な地元食材と結び付けて紹介しています。郡に関する紹介であり、ドゥブロヴニク市だけの料理という意味ではありません。",
+                  "zh": "杜布罗夫尼克-内雷特瓦县旅游部门将这道以墨鱼或鱿鱼墨着色的烩饭与海洋传统及新鲜本地食材联系起来介绍。这是县域层面的关联，并非声称它是杜布罗夫尼克市独有的菜肴。"
+                },
+                "source_urls": [
+                  "https://visitdubrovnik.hr/gastronomy/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "부자라 소스 홍합",
+                  "en": "Mussels buzara-style",
+                  "ja": "ムール貝のブザーラ風",
+                  "zh": "布扎拉风味贻贝"
+                },
+                "note": {
+                  "ko": "관광청은 올리브유, 파슬리, 마늘, 와인과 향신료를 넣는 홍합 부자라를 지중해 전통과 지역 주민의 식탁에 연결합니다. 이는 광역 지역의 설명입니다.",
+                  "en": "The tourism board describes mussels prepared buzara-style with olive oil, parsley, garlic, wine and spices, relating the dish to Mediterranean tradition and local tables. The source describes the wider county region.",
+                  "ja": "観光局は、オリーブ油、パセリ、ニンニク、ワイン、香辛料を使うムール貝のブザーラ風を、地中海の伝統や地元の食卓と結び付けて紹介しています。出典の対象は郡内の広い地域です。",
+                  "zh": "旅游部门介绍了以橄榄油、欧芹、大蒜、葡萄酒和香料烹制的布扎拉风味贻贝，并将其与地中海传统及当地餐桌联系起来。来源描述的是县内较广区域。"
+                },
+                "source_urls": [
+                  "https://visitdubrovnik.hr/gastronomy/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "문어 샐러드",
+                  "en": "Octopus salad",
+                  "ja": "タコのサラダ",
+                  "zh": "章鱼沙拉"
+                },
+                "note": {
+                  "ko": "관광청은 문어 샐러드를 이 지역의 해산물 요리로 소개하며, 보통 감자와 토마토를 곁들인다고 설명합니다. 구체적인 조리법은 달라질 수 있습니다.",
+                  "en": "The tourism board presents octopus salad among the region’s seafood dishes and says it is usually served with potatoes and tomatoes. Preparations may vary.",
+                  "ja": "観光局はタコのサラダをこの地域の魚介料理として紹介し、通常はジャガイモやトマトを添えると説明しています。調理法は異なる場合があります。",
+                  "zh": "旅游部门将章鱼沙拉列为该地区的海鲜菜肴，并称通常搭配土豆和番茄。具体做法可能有所不同。"
+                },
+                "source_urls": [
+                  "https://visitdubrovnik.hr/gastronomy/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "말리 스톤만 굴",
+                  "en": "Oysters from Mali Ston Bay",
+                  "ja": "マリ・ストン湾の牡蠣",
+                  "zh": "马利斯通湾牡蛎"
+                },
+                "note": {
+                  "ko": "관광청은 굴을 두브로브니크-네레트바 주의 유명한 별미로 설명하고, 특히 펠예샤츠반도 말리 스톤만과 연결합니다. 따라서 이는 두브로브니크 시내 음식이 아니라 인근 주의 특정 산지와 관련된 항목입니다.",
+                  "en": "The tourism board describes oysters as a well-known delicacy of Dubrovnik-Neretva County, especially associated with Mali Ston Bay on the Pelješac peninsula. This refers to a specific nearby county area, not Dubrovnik city itself.",
+                  "ja": "観光局は牡蠣をドゥブロヴニク＝ネレトヴァ郡の名物として紹介し、特にペリェシャツ半島のマリ・ストン湾と結び付けています。ドゥブロヴニク市内ではなく、近隣の郡内にある特定地域の料理・食材です。",
+                  "zh": "旅游部门将牡蛎描述为杜布罗夫尼克-内雷特瓦县的知名美食，尤其与佩列沙茨半岛的马利斯通湾相关。这指的是附近县内的特定区域，而非杜布罗夫尼克市本身。"
+                },
+                "source_urls": [
+                  "https://visitdubrovnik.hr/gastronomy/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Restaurant Dubrovnik",
+                "area": "Old Town, Dubrovnik / 두브로브니크 구시가지 / ドゥブロヴニク旧市街 / 杜布罗夫尼克老城",
+                "type": {
+                  "ko": "파인다이닝 레스토랑",
+                  "en": "Fine-dining restaurant",
+                  "ja": "高級レストラン",
+                  "zh": "精致餐厅"
+                },
+                "focus": {
+                  "ko": "레스토랑은 자체 사이트에서 현대적인 달마티아풍 요리와 현지 식재료를 강조한다고 설명합니다.",
+                  "en": "The restaurant describes its approach as modern Dalmatian cuisine with local ingredients.",
+                  "ja": "レストランは自店の料理を、地元食材を生かした現代的なダルマチア料理と説明しています。",
+                  "zh": "餐厅自述其特色为采用当地食材的现代达尔马提亚料理。"
+                },
+                "why_candidate": {
+                  "ko": "자체 사이트에서 두브로브니크 구시가지 중심부의 레스토랑임을 밝히고 현대적인 달마티아풍 요리와 현지 식재료를 설명해, 조사를 이어갈 후보로 삼을 근거가 있습니다. 예약 권고나 특정 전통 요리 제공 여부를 뜻하지 않습니다.",
+                  "en": "Its own site identifies it as a restaurant in the heart of Dubrovnik’s Old Town and describes modern Dalmatian cooking with local ingredients, supporting it as a research candidate. This is not a booking recommendation or a claim that it serves any particular traditional dish.",
+                  "ja": "公式サイトがドゥブロヴニク旧市街中心部のレストランと明記し、地元食材を使う現代的なダルマチア料理を紹介しているため、調査候補とする根拠があります。予約の推奨や特定の伝統料理を提供するとの主張ではありません。",
+                  "zh": "其官网称餐厅位于杜布罗夫尼克老城中心，并介绍现代达尔马提亚风格及当地食材，因此有依据将其列为研究候选。这不是订位建议，也不表示其提供任何特定传统菜肴。"
+                },
+                "official_url": "https://www.restorandubrovnik.com/",
+                "source_urls": [
+                  "https://www.restorandubrovnik.com/",
+                  "https://www.restorandubrovnik.com/menu"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitdubrovnik.hr",
+                "url": "https://visitdubrovnik.hr/gastronomy/"
+              },
+              {
+                "title": "restorandubrovnik.com",
+                "url": "https://www.restorandubrovnik.com/"
+              },
+              {
+                "title": "restorandubrovnik.com",
+                "url": "https://www.restorandubrovnik.com/menu"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "KO: 근거 자료 중 일부는 두브로브니크 시가 아니라 두브로브니크-네레트바 주 전체를 다룹니다. 굴은 특히 말리 스톤만과 연결됩니다. 따라서 이 음식들을 모두 두브로브니크 시 고유 음식이라고 표현하지 않았습니다. EN: Some evidence covers Dubrovnik-Neretva County rather than Dubrovnik city; oysters are specifically associated with Mali Ston Bay. These dishes are not presented as exclusive to the city. JA: 根拠資料の一部はドゥブロヴニク市ではなくドゥブロヴニク＝ネレトヴァ郡全体を対象とし、牡蠣は特にマリ・ストン湾と関連付けられています。市だけの料理とはしていません。 ZH: 部分证据涉及整个杜布罗夫尼克-内雷特瓦县，而非杜布罗夫尼克市；牡蛎尤其与马利斯通湾相关。因此未将这些菜品说成该市独有。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -1260,6 +2723,141 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Our History — Zanettos Traditional Tavern",
             "url": "https://zanettostavern.com/About"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Matched country_id cyprus only; featured city Nicosia. Dishes are Cyprus-wide, not exclusive to Nicosia. Restaurant is a candidate, not a booking.",
+        "cities": [
+          {
+            "city": {
+              "ko": "니코시아",
+              "en": "Nicosia",
+              "ja": "ニコシア",
+              "zh": "尼科西亚"
+            },
+            "intro": {
+              "ko": "니코시아에서 키프로스 섬 전반의 전통 음식과 메제를 살펴보세요. 아래 음식은 키프로스 음식이며 니코시아에만 한정되지는 않습니다.",
+              "en": "Explore traditional foods and meze found across Cyprus in Nicosia; these dishes are Cypriot, not exclusive to this city.",
+              "ja": "ニコシアではキプロス各地の伝統料理やメゼを楽しめます。以下はキプロス料理で、ニコシア限定ではありません。",
+              "zh": "在尼科西亚可品尝塞浦路斯各地的传统菜肴和梅泽拼餐；这些是塞浦路斯饮食，并非尼科西亚独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "할루미",
+                  "en": "Halloumi",
+                  "ja": "ハルーミ",
+                  "zh": "哈罗米奶酪"
+                },
+                "note": {
+                  "ko": "키프로스의 흰 치즈. 전통적으로 양젖이나 염소젖을 쓰지만 우유나 혼합유로도 만듭니다. 차게, 굽거나 튀겨 먹습니다.",
+                  "en": "A white Cypriot cheese traditionally made with sheep or goat milk, but also with cow milk or mixed milks. It is eaten cold, grilled or fried.",
+                  "ja": "キプロスの白いチーズ。伝統的には羊乳や山羊乳を使いますが、牛乳や混合乳でも作られます。冷製、焼き、揚げで食べます。",
+                  "zh": "塞浦路斯白色奶酪，传统上用绵羊奶或山羊奶制作，也可用牛奶或混合奶；可冷食、烧烤或煎炸。"
+                },
+                "source_urls": [
+                  "https://www.visitcyprus.com/discover-cyprus/food-drink/local-produce/halloumi-cheese/",
+                  "https://www.visitcyprus.com/wp-content/uploads/2016/05/Flavours_of_Cyprus_6_2015_new_EN.pdf"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "쿠페피아(속을 채운 포도잎)",
+                  "en": "Koupepia (stuffed vine leaves)",
+                  "ja": "クペピア（ブドウの葉包み）",
+                  "zh": "库佩皮亚（葡萄叶包馅）"
+                },
+                "note": {
+                  "ko": "키프로스식 포도잎말이입니다. 관광청 안내서는 고기와 쌀을 넣어 만드는 형태를 소개합니다.",
+                  "en": "Cypriot stuffed vine leaves; the tourism guide describes a meat-and-rice filling.",
+                  "ja": "キプロス風のブドウの葉包みです。観光当局のガイドでは肉と米の具を紹介しています。",
+                  "zh": "塞浦路斯风味葡萄叶包馅；旅游指南介绍了肉和米饭馅的做法。"
+                },
+                "source_urls": [
+                  "https://www.visitcyprus.com/wp-content/uploads/2016/05/Flavours_of_Cyprus_6_2015_new_EN.pdf"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "수블라",
+                  "en": "Souvla",
+                  "ja": "スブラ",
+                  "zh": "苏夫拉烤肉"
+                },
+                "note": {
+                  "ko": "큰 양고기·돼지고기 또는 닭고기 덩어리를 허브로 양념해 꼬치에 꿰고 숯불에 굽는 요리입니다. 관광청 자료는 축하 식사와 대가족 식사에서 즐긴다고 설명합니다.",
+                  "en": "Large chunks of lamb, pork or chicken seasoned with herbs, skewered and grilled over charcoal. The tourism guide describes it as popular for celebrations and large family meals.",
+                  "ja": "大きめの羊肉、豚肉、鶏肉をハーブで調味し、串に刺して炭火で焼きます。観光当局のガイドは祝い事や大家族の食事で親しまれると説明しています。",
+                  "zh": "大块羊肉、猪肉或鸡肉以香草调味后串起，在炭火上烤制。旅游指南称它常用于庆祝活动和大家庭聚餐。"
+                },
+                "source_urls": [
+                  "https://www.visitcyprus.com/wp-content/uploads/2016/05/Flavours_of_Cyprus_6_2015_new_EN.pdf"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Zanettos Traditional Tavern",
+                "area": "65 Trikoupi Street, Nicosia old city",
+                "type": {
+                  "ko": "전통 키프로스 타베르나",
+                  "en": "Traditional Cypriot taverna",
+                  "ja": "キプロス伝統料理のタベルナ",
+                  "zh": "塞浦路斯传统小酒馆"
+                },
+                "focus": {
+                  "ko": "전통 키프로스 메제",
+                  "en": "Traditional Cypriot meze",
+                  "ja": "キプロス伝統のメゼ",
+                  "zh": "塞浦路斯传统梅泽拼餐"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트는 니코시아 구시가지의 타베르나이며 전통 키프로스 메제를 제공한다고 설명합니다. 메뉴에 개별 음식이 명시되지 않아 특정 음식의 제공을 단정하지 않습니다.",
+                  "en": "The official site places it in Nicosia's old city and describes traditional Cypriot meze. Its published menu does not list individual dishes, so no specific dish is claimed as currently served.",
+                  "ja": "公式サイトはニコシア旧市街にある店として紹介し、キプロス伝統のメゼを提供するとしています。公開メニューに個別料理はなく、現在の提供を断定しません。",
+                  "zh": "官网介绍其位于尼科西亚老城并提供塞浦路斯传统梅泽拼餐。公开菜单未列具体菜品，因此不声称目前供应某道菜。"
+                },
+                "official_url": "https://zanettostavern.com/",
+                "source_urls": [
+                  "https://zanettostavern.com/",
+                  "https://zanettostavern.com/About",
+                  "https://zanettostavern.com/Menu",
+                  "https://zanettostavern.com/Contact"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitcyprus.com",
+                "url": "https://www.visitcyprus.com/discover-cyprus/food-drink/local-produce/halloumi-cheese/"
+              },
+              {
+                "title": "visitcyprus.com",
+                "url": "https://www.visitcyprus.com/wp-content/uploads/2016/05/Flavours_of_Cyprus_6_2015_new_EN.pdf"
+              },
+              {
+                "title": "zanettostavern.com",
+                "url": "https://zanettostavern.com/"
+              },
+              {
+                "title": "zanettostavern.com",
+                "url": "https://zanettostavern.com/About"
+              },
+              {
+                "title": "zanettostavern.com",
+                "url": "https://zanettostavern.com/Menu"
+              },
+              {
+                "title": "zanettostavern.com",
+                "url": "https://zanettostavern.com/Contact"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Visit Cyprus的《Flavours of Cyprus》指南发表于2015年；仅用于菜品定义，不据此推断当前菜单、价格、营业时间或供应情况。",
+              "Zanettos官网确认地点和传统梅泽定位，但未列具体菜品；未声称已预订或保证质量。",
+              "哈罗米的乳源并非唯一配方；旅游局资料提及羊奶、山羊奶、牛奶及混合乳。"
+            ]
           }
         ]
       }
@@ -1369,6 +2967,157 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://ufleku.cz/restaurace/jidelni-listek/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 정확히 한 도시(프라하)만 다룹니다. 관광·운영사 자료로 음식 연관성과 후보 식당을 확인했으며, 예약·현재 메뉴·영업 조건은 검증하거나 보장하지 않습니다. / en: Covers exactly one city, Prague. Tourism and operator sources verify dish associations and a restaurant candidate; this is not a booking, and current menus or operating conditions are not guaranteed. / ja: 対象はプラハの一都市のみです。観光資料と運営会社の資料で料理との関連および候補店を確認しましたが、予約ではなく、現行メニューや営業条件を保証しません。 / zh: 本条目仅涉及布拉格一座城市。旅游机构及运营方资料用于核实菜品关联和候选餐厅；这不是预订，也不保证当前菜单或营业状况。",
+        "cities": [
+          {
+            "city": {
+              "ko": "프라하",
+              "en": "Prague",
+              "ja": "プラハ",
+              "zh": "布拉格"
+            },
+            "intro": {
+              "ko": "프라하에서 체코 요리의 대표 메뉴를 살펴보세요. 아래 요리는 공식 체코 관광 자료에서 체코 음식으로 소개되며, 특정 요리가 프라하에서 유래했다고 단정하지 않습니다.",
+              "en": "Explore Czech cuisine in Prague. The dishes below are presented in official Czech tourism sources as Czech foods; no claim is made that they originated in Prague.",
+              "ja": "プラハでチェコ料理を味わう際の参考にしてください。以下の料理はチェコ政府観光資料でチェコ料理として紹介されており、プラハ発祥とは断定していません。",
+              "zh": "在布拉格探索捷克料理。以下菜品见于捷克官方旅游资料中的捷克饮食介绍；此处不声称它们起源于布拉格。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "덤플링과 양배추를 곁들인 구운 돼지고기",
+                  "en": "Roast pork with dumplings and cabbage",
+                  "ja": "ローストポーク、クネドリーキとキャベツ添え",
+                  "zh": "烤猪肉配捷克面团饺子和卷心菜"
+                },
+                "note": {
+                  "ko": "VisitCzechia는 돼지고기 구이와 덤플링, 양배추를 대표적인 체코 전통 음식 가운데 하나로 소개합니다. 프라하 고유 음식이라는 뜻은 아닙니다.",
+                  "en": "VisitCzechia includes pork roast with dumplings and cabbage among well-known traditional Czech foods. This does not establish it as uniquely Prague cuisine.",
+                  "ja": "VisitCzechiaは、ローストポークにクネドリーキとキャベツを添えた料理を、代表的なチェコの伝統料理の一つとして紹介しています。プラハ固有の料理という意味ではありません。",
+                  "zh": "VisitCzechia将烤猪肉配捷克面团饺子和卷心菜列为著名的捷克传统菜肴之一；这并不表示它是布拉格独有菜式。"
+                },
+                "source_urls": [
+                  "https://www.visitczechia.com/en-us/things-to-do/category-group-pages/cultural-heritage/gastronomy/traditional-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "체코식 감자전",
+                  "en": "Czech potato pancakes",
+                  "ja": "チェコ風ポテトパンケーキ",
+                  "zh": "捷克土豆饼"
+                },
+                "note": {
+                  "ko": "VisitCzechia는 향신료를 넣고 라드에 튀긴 감자전을 전통 체코 음식으로 소개합니다. 자료는 프라하만의 음식으로 한정하지 않습니다.",
+                  "en": "VisitCzechia describes spiced potato pancakes fried in lard as a traditional Czech food; its account does not limit them to Prague.",
+                  "ja": "VisitCzechiaは、スパイスを加えてラードで揚げたポテトパンケーキをチェコの伝統料理として紹介しています。プラハ限定の料理とはしていません。",
+                  "zh": "VisitCzechia将加入香料并用猪油煎炸的土豆饼介绍为捷克传统食物，并未将其限定为布拉格菜式。"
+                },
+                "source_urls": [
+                  "https://www.visitczechia.com/en-us/things-to-do/category-group-pages/cultural-heritage/gastronomy/traditional-cuisine",
+                  "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/czech-cuisine-and-regional-products/g-czech-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "과일을 넣은 체코식 덤플링",
+                  "en": "Fruit-filled Czech dumplings",
+                  "ja": "果物入りチェコ風クネドリーキ",
+                  "zh": "捷克水果馅面团饺子"
+                },
+                "note": {
+                  "ko": "VisitCzechia는 과일을 채운 덤플링을 체코 음식으로 소개하고, 코티지 치즈(쿼크)와 버터 등을 곁들이는 방식도 설명합니다. 프라하 특산이라는 증거로 보지는 않습니다.",
+                  "en": "VisitCzechia describes fruit-filled dumplings as Czech food and mentions serving them with butter and cottage cheese or poppy seeds. This is not evidence of a Prague-specific specialty.",
+                  "ja": "VisitCzechiaは果物入りのクネドリーキをチェコ料理として紹介し、バターやカッテージチーズ、ケシの実を添える食べ方にも触れています。プラハ特有の名物を示すものではありません。",
+                  "zh": "VisitCzechia将水果馅面团饺子列为捷克食物，并提到可配黄油、凝乳奶酪或罂粟籽食用；这不能证明它是布拉格特有菜式。"
+                },
+                "source_urls": [
+                  "https://www.visitczechia.com/en-us/things-to-do/category-group-pages/cultural-heritage/gastronomy/traditional-cuisine",
+                  "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/czech-cuisine-and-regional-products/g-czech-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "크림 소스 쇠고기 구이(스비치코바)와 덤플링",
+                  "en": "Svíčková: beef with cream sauce and dumplings",
+                  "ja": "スヴィーチュコヴァー（牛肉のクリームソース煮、クネドリーキ添え）",
+                  "zh": "奶油酱牛肉配捷克面团饺子（Svíčková）"
+                },
+                "note": {
+                  "ko": "VisitCzechia는 뿌리채소와 크림 소스로 조리한 쇠고기를 덤플링과 곁들이는 요리로 설명합니다. 프라하 관광청은 말라스트라나의 Lokál U Bílé kuželky에서 이 요리를 대표 메뉴로 언급합니다.",
+                  "en": "VisitCzechia describes beef with root vegetables and cream sauce, typically served with dumplings. Prague City Tourism names it as a signature dish at Lokál U Bílé kuželky in Malá Strana.",
+                  "ja": "VisitCzechiaは、根菜とクリームソースで調理した牛肉をクネドリーキと供する料理として説明しています。プラハ市観光局はマラー・ストラナのLokál U Bílé kuželkyの看板料理として挙げています。",
+                  "zh": "VisitCzechia将其描述为以根茎蔬菜和奶油酱烹制的牛肉，通常配捷克面团饺子。布拉格旅游局将其列为小城区 Lokál U Bílé kuželky 的招牌菜。"
+                },
+                "source_urls": [
+                  "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/czech-cuisine-and-regional-products/g-svickova-na-smetane",
+                  "https://prague.eu/en/objevujte/lokal-u-bile-kuzelky/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Lokál U Bílé kuželky",
+                "area": "Malá Strana (Lesser Town), Prague 1 / 말라스트라나(소지구), 프라하 1 / マラー・ストラナ（小地区）、プラハ1区 / 小城区，布拉格1区",
+                "type": {
+                  "ko": "체코식 펍·레스토랑",
+                  "en": "Czech pub and restaurant",
+                  "ja": "チェコ料理のパブ・レストラン",
+                  "zh": "捷克风味酒馆与餐厅"
+                },
+                "focus": {
+                  "ko": "전통 체코 요리와 맥주",
+                  "en": "Traditional Czech cuisine and beer",
+                  "ja": "チェコの伝統料理とビール",
+                  "zh": "捷克传统菜肴与啤酒"
+                },
+                "why_candidate": {
+                  "ko": "프라하 관광청은 이 말라스트라나 지점과 전통 체코 요리를 소개하고 스비치코바를 대표 메뉴로 명시합니다. 운영사 공식 페이지에서 지점과 메뉴 페이지를 확인했습니다. 일일 메뉴는 달라질 수 있으므로 현재 제공 여부를 보장하지 않습니다.",
+                  "en": "Prague City Tourism identifies this Malá Strana location with traditional Czech cuisine and names svíčková as a signature dish. The operator’s official pages confirm the venue and provide its menu page. Daily menus can change, so current availability is not guaranteed.",
+                  "ja": "プラハ市観光局は、マラー・ストラナの同店を伝統的なチェコ料理とともに紹介し、スヴィーチュコヴァーを看板料理として挙げています。運営会社の公式ページで店舗とメニューページを確認しました。日替わりメニューは変更されるため、現在の提供を保証するものではありません。",
+                  "zh": "布拉格旅游局介绍了这家位于小城区、供应传统捷克菜的店，并提到奶油酱牛肉为其招牌菜。运营方官网确认了店铺信息并提供菜单页面。每日菜单可能变化，因此不保证目前仍供应该菜。"
+                },
+                "official_url": "https://lokal-ubilekuzelky.ambi.cz/en/",
+                "source_urls": [
+                  "https://lokal-ubilekuzelky.ambi.cz/en/",
+                  "https://prague.eu/en/objevujte/lokal-u-bile-kuzelky/",
+                  "https://lokal-ubilekuzelky.ambi.cz/en/menu/?id=11886"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitczechia.com",
+                "url": "https://www.visitczechia.com/en-us/things-to-do/category-group-pages/cultural-heritage/gastronomy/traditional-cuisine"
+              },
+              {
+                "title": "visitczechia.com",
+                "url": "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/czech-cuisine-and-regional-products/g-czech-cuisine"
+              },
+              {
+                "title": "visitczechia.com",
+                "url": "https://www.visitczechia.com/en-us/things-to-do/places/gastronomic-tourism/czech-cuisine-and-regional-products/g-svickova-na-smetane"
+              },
+              {
+                "title": "prague.eu",
+                "url": "https://prague.eu/en/objevujte/lokal-u-bile-kuzelky/"
+              },
+              {
+                "title": "lokal-ubilekuzelky.ambi.cz",
+                "url": "https://lokal-ubilekuzelky.ambi.cz/en/"
+              },
+              {
+                "title": "lokal-ubilekuzelky.ambi.cz",
+                "url": "https://lokal-ubilekuzelky.ambi.cz/en/menu/?id=11886"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 공식 자료는 여러 음식을 체코 요리로 소개하지만 프라하에서 기원했거나 프라하에만 있다는 근거는 제시하지 않습니다. / en: Official sources present several items as Czech cuisine but do not establish Prague origin or exclusivity. / ja: 公式資料は複数の料理をチェコ料理として紹介していますが、プラハ発祥またはプラハ限定とは示していません。 / zh: 官方资料将若干菜品列为捷克料理，但没有证明它们起源于布拉格或为布拉格独有。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -1476,6 +3225,189 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.restaurantschonnemann.dk/en/menu/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only declared country_id denmark and featured city Copenhagen are covered. Dishes are described as Danish traditions, not as Copenhagen-specific origins. Restaurants are unbooked candidates.",
+        "cities": [
+          {
+            "city": {
+              "ko": "코펜하겐",
+              "en": "Copenhagen",
+              "ja": "コペンハーゲン",
+              "zh": "哥本哈根"
+            },
+            "intro": {
+              "ko": "코펜하겐에서는 덴마크 전통 음식인 호밀빵 오픈 샌드위치와 생선·고기 요리를 만날 수 있습니다. 음식은 덴마크 전역의 전통이며, 조리법과 토핑은 달라질 수 있습니다.",
+              "en": "Copenhagen offers Danish traditions such as open rye-bread sandwiches and fish and meat dishes. These foods belong to broader Danish cuisine, and recipes and toppings vary.",
+              "ja": "コペンハーゲンでは、ライ麦パンのオープンサンドや魚・肉料理など、デンマークの食文化に触れられます。いずれもデンマーク各地の料理で、調理法や具材はさまざまです。",
+              "zh": "在哥本哈根可以品尝丹麦饮食传统，例如黑麦开放式三明治、鱼肉料理。这些食物属于丹麦整体饮食文化，做法与配料会有差异。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "스뫼레브뢰드(덴마크식 오픈 샌드위치)",
+                  "en": "Smørrebrød (Danish open-faced sandwich)",
+                  "ja": "スモーブロー（デンマーク風オープンサンド）",
+                  "zh": "丹麦开放式三明治"
+                },
+                "note": {
+                  "ko": "호밀빵 한 조각 위에 절인 청어, 로스트비프, 달걀과 새우 등 다양한 재료를 올립니다. 대표적인 덴마크 음식으로 알려져 있으며 토핑 조합은 다양합니다.",
+                  "en": "A slice of rye bread topped in varied ways, for example with pickled herring, roast beef, or egg and shrimp. A Danish classic with many topping combinations.",
+                  "ja": "ライ麦パンに、酢漬けニシン、ローストビーフ、卵とエビなどをのせます。デンマークの定番料理で、具材の組み合わせは多様です。",
+                  "zh": "以一片黑麦面包为底，可配腌鲱鱼、烤牛肉、鸡蛋和虾等多种配料，是丹麦经典食物之一。"
+                },
+                "source_urls": [
+                  "https://www.visitdenmark.com/denmark/things-to-do/eat-drink/traditional-danish-food",
+                  "https://www.visitcopenhagen.com/copenhagen/this-is-copenhagen/reasons-to-go/5-reasons-to-go-to-copenhagen"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "스티에르네스쿠드(별똥별 오픈 샌드위치)",
+                  "en": "Stjerneskud (shooting-star open sandwich)",
+                  "ja": "スティエルネスクー（流れ星のオープンサンド）",
+                  "zh": "流星开放式三明治"
+                },
+                "note": {
+                  "ko": "호밀빵 위에 튀긴 가자미 필레를 올리고 새우, 양상추, 림피오르산 캐비아를 곁들이는 덴마크식 오픈 샌드위치로 소개됩니다.",
+                  "en": "A Danish open sandwich described with fried plaice fillet on rye bread, topped with shrimp, lettuce, and Limfjord caviar.",
+                  "ja": "ライ麦パンに揚げたカレイのフィレをのせ、エビ、レタス、リンフィヨルド産キャビアを添えるデンマーク料理として紹介されています。",
+                  "zh": "丹麦式开放三明治：黑麦面包上放炸鲽鱼柳，再配虾、生菜和林菲厄峡湾鱼子酱。"
+                },
+                "source_urls": [
+                  "https://www.visitdenmark.com/denmark/things-to-do/eat-drink/traditional-danish-food"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "스테그트 플래스크 메드 페르실레소스(파슬리 소스를 곁들인 바삭한 돼지고기)",
+                  "en": "Stegt flæsk med persillesovs (crispy pork with parsley sauce)",
+                  "ja": "ステクト・フレスク・メズ・ペルシレソウス（豚肉のカリカリ焼き、パセリソース添え）",
+                  "zh": "脆煎猪肉配欧芹酱"
+                },
+                "note": {
+                  "ko": "바삭하게 조리한 돼지고기에 파슬리 소스와 감자를 곁들이는 오래된 덴마크 요리입니다. 덴마크 관광청은 이를 전국 투표에서 국가 대표 음식으로 선정된 요리라고 설명합니다.",
+                  "en": "Crispy pork served with parsley sauce and potatoes. Denmark's tourism authority describes it as a long-standing dish selected as the national dish in a public vote; this does not imply a Copenhagen origin.",
+                  "ja": "カリッと調理した豚肉にパセリソースとジャガイモを添えるデンマークの伝統料理です。観光当局は国民投票で国の代表料理に選ばれたと説明していますが、コペンハーゲン発祥という意味ではありません。",
+                  "zh": "脆煎猪肉配欧芹酱和土豆，是丹麦传统菜肴。丹麦旅游局称其在公众投票中被选为国家代表菜；这不表示它起源于哥本哈根。"
+                },
+                "source_urls": [
+                  "https://www.visitdenmark.com/denmark/things-to-do/eat-drink/traditional-danish-food"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "프리카델레(덴마크식 미트볼)",
+                  "en": "Frikadeller (Danish meatballs)",
+                  "ja": "フリカデラ（デンマーク風ミートボール）",
+                  "zh": "丹麦肉丸"
+                },
+                "note": {
+                  "ko": "전통적인 조리법의 한 예는 송아지고기와 돼지고기에 밀가루, 우유, 달걀, 양파와 양념을 넣는 방식입니다. 여러 변형이 있고 식사나 스뫼레브뢰드 토핑으로 먹습니다.",
+                  "en": "One traditional version combines veal and pork with flour, milk, egg, onion, and seasonings. Variations exist; they are eaten as a meal or as a smørrebrød topping.",
+                  "ja": "伝統的な作り方の一例では、仔牛肉と豚肉に小麦粉、牛乳、卵、玉ねぎ、調味料を加えます。さまざまなアレンジがあり、単独料理にもスモーブローの具にもなります。",
+                  "zh": "传统做法之一是将小牛肉和猪肉与面粉、牛奶、鸡蛋、洋葱及调味料混合。做法有多种，可作主菜或开放式三明治配料。"
+                },
+                "source_urls": [
+                  "https://www.visitdenmark.com/denmark/things-to-do/eat-drink/traditional-danish-food"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Restaurant Schønnemann",
+                "area": "Copenhagen K, Hauser Plads 16, 1127 København K",
+                "type": {
+                  "ko": "덴마크식 점심 식당",
+                  "en": "Danish lunch restaurant",
+                  "ja": "デンマーク料理のランチレストラン",
+                  "zh": "丹麦风味午餐餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴는 덴마크식 스뫼레브뢰드, 따뜻한 요리와 특선 음식을 소개합니다.",
+                  "en": "Its official menu describes Danish smørrebrød, warm dishes, and specialties.",
+                  "ja": "公式メニューでは、デンマーク風スモーブロー、温かい料理、各種特選料理を案内しています。",
+                  "zh": "官方菜单介绍丹麦开放式三明治、热菜及特色菜。"
+                },
+                "why_candidate": {
+                  "ko": "식당 자체 연혁은 코펜하겐의 점심 식당으로서 덴마크식 스뫼레브뢰드를 중심으로 한다고 설명합니다. 메뉴는 변동될 수 있어 특정 음식의 당일 제공은 보장하지 않습니다.",
+                  "en": "Its own history describes a Copenhagen lunch restaurant centered on Danish smørrebrød. Menus may change, so availability of any particular dish is not guaranteed.",
+                  "ja": "公式沿革では、コペンハーゲンのランチレストランで、デンマーク風スモーブローを中心にしていると説明しています。メニューは変わるため、特定料理の提供は保証されません。",
+                  "zh": "餐厅自述其为哥本哈根午餐餐厅，以丹麦开放式三明治为主。菜单可能变化，不保证某道菜一定供应。"
+                },
+                "official_url": "https://www.restaurantschonnemann.dk/en/",
+                "source_urls": [
+                  "https://www.restaurantschonnemann.dk/en/",
+                  "https://www.restaurantschonnemann.dk/en/history/",
+                  "https://www.restaurantschonnemann.dk/en/menu/"
+                ]
+              },
+              {
+                "name": "Aamanns 1921",
+                "area": "Central Copenhagen, Niels Hemmingsens Gade 19-21, 1153 København K",
+                "type": {
+                  "ko": "현대 덴마크 요리와 스뫼레브뢰드 식당",
+                  "en": "Modern Danish restaurant and smørrebrød restaurant",
+                  "ja": "現代デンマーク料理とスモーブローのレストラン",
+                  "zh": "现代丹麦料理及开放式三明治餐厅"
+                },
+                "focus": {
+                  "ko": "공식 식당 소개는 고전적인 덴마크식 스뫼레브뢰드 기법과 계절 식재료를 결합한다고 설명합니다.",
+                  "en": "Its official restaurant page describes combining classic Danish smørrebrød craftsmanship with seasonal ingredients.",
+                  "ja": "公式紹介では、伝統的なデンマークのスモーブロー技法と季節の食材を組み合わせるとしています。",
+                  "zh": "官方餐厅介绍称其将经典丹麦开放式三明治技艺与时令食材相结合。"
+                },
+                "why_candidate": {
+                  "ko": "공식 페이지에서 코펜하겐 중심부 주소와 스뫼레브뢰드 전문성을 확인했습니다. 페이지에는 청어, 새우, 가자미 등 토핑 사례가 있지만 메뉴와 공급 여부는 바뀔 수 있습니다.",
+                  "en": "Its official page confirms a central Copenhagen address and smørrebrød focus, with examples including herring, shrimp, and plaice toppings. Menus and availability may change.",
+                  "ja": "公式ページで中心部の住所とスモーブローへの注力を確認しました。ページにはニシン、エビ、カレイなどの具材例がありますが、メニューや提供状況は変わる場合があります。",
+                  "zh": "官方页面确认其位于哥本哈根中心并专注于开放式三明治，列有鲱鱼、虾、鲽鱼等配料示例。菜单与供应情况可能变化。"
+                },
+                "official_url": "https://aamanns.dk/en/restaurant/aamanns-1921/",
+                "source_urls": [
+                  "https://aamanns.dk/en/restaurant/aamanns-1921/",
+                  "https://aamanns.dk/en/information/questions-answers/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitdenmark.com",
+                "url": "https://www.visitdenmark.com/denmark/things-to-do/eat-drink/traditional-danish-food"
+              },
+              {
+                "title": "visitcopenhagen.com",
+                "url": "https://www.visitcopenhagen.com/copenhagen/this-is-copenhagen/reasons-to-go/5-reasons-to-go-to-copenhagen"
+              },
+              {
+                "title": "restaurantschonnemann.dk",
+                "url": "https://www.restaurantschonnemann.dk/en/"
+              },
+              {
+                "title": "restaurantschonnemann.dk",
+                "url": "https://www.restaurantschonnemann.dk/en/history/"
+              },
+              {
+                "title": "restaurantschonnemann.dk",
+                "url": "https://www.restaurantschonnemann.dk/en/menu/"
+              },
+              {
+                "title": "aamanns.dk",
+                "url": "https://aamanns.dk/en/restaurant/aamanns-1921/"
+              },
+              {
+                "title": "aamanns.dk",
+                "url": "https://aamanns.dk/en/information/questions-answers/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "输入中的 Restaurant Schønnemann 已通过其官方菜单和历史页面确认与丹麦式开放三明治相关，故作为候选保留。",
+              "所列食物经核实为丹麦饮食传统；未声称其起源于哥本哈根或存在唯一正宗做法。",
+              "VisitDenmark 指出配料和做法存在变化。餐厅菜单可能随季节和时间改变。",
+              "餐厅仅为候选，并非已预订；不对营业时间、当日菜单、价格、等候时间或质量作保证。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -1581,6 +3513,136 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Kolu Tavern at the Estonian Open Air Museum — Visit Estonia",
             "url": "https://visitestonia.com/en/kolu-tavern-at-the-estonian-open-air-museum"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id estonia is covered; featured city: Tallinn. Mulgi puder is specifically associated with Mulgimaa in southern Estonia, not Tallinn. The listed venue is a candidate, not a booking.",
+        "cities": [
+          {
+            "city": {
+              "ko": "탈린",
+              "en": "Tallinn",
+              "ja": "タリン",
+              "zh": "塔林"
+            },
+            "intro": {
+              "ko": "탈린에서 에스토니아의 대표적인 맛을 만나보세요. 물기푸데르는 남부 물기마 지역 음식이며, 스프라트 샌드위치와 카마는 에스토니아 전역에서 알려져 있습니다.",
+              "en": "Explore Estonian food in Tallinn. Mulgi puder is specifically associated with Mulgimaa in southern Estonia; sprat sandwiches and kama are broader Estonian food traditions.",
+              "ja": "タリンでエストニアの食文化を味わいましょう。ムルギ・プデルは南部のムルギマー地方に結び付いた料理で、スプラットのサンドイッチやカマはより広く親しまれています。",
+              "zh": "在塔林品尝爱沙尼亚风味。穆尔吉土豆大麦泥与爱沙尼亚南部的穆尔吉马地区相关；西鲱三明治和卡马则是更广泛的爱沙尼亚饮食传统。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "물기푸데르(감자·보리 으깬 요리)",
+                  "en": "Mulgi puder (potato-and-barley mash)",
+                  "ja": "ムルギ・プデル（ジャガイモと大麦のマッシュ）",
+                  "zh": "穆尔吉土豆大麦泥"
+                },
+                "note": {
+                  "ko": "에스토니아 남부 물기마와 연관된 음식으로, 감자와 불린 보리를 함께 익혀 으깹니다. 돼지고기나 채소를 곁들이기도 하며 조리법은 집집마다 다릅니다.",
+                  "en": "Associated with Mulgimaa in southern Estonia, it is made by cooking and mashing potatoes and soaked barley. Pork or vegetables may accompany it; recipes vary by household.",
+                  "ja": "エストニア南部のムルギマー地方に結び付く料理です。ジャガイモと水に浸した大麦を煮てつぶし、豚肉や野菜を添えることがあります。家庭ごとに作り方は異なります。",
+                  "zh": "这道菜与爱沙尼亚南部的穆尔吉马地区相关：将土豆和浸泡过的大麦同煮后捣碎，可配猪肉或蔬菜；各家做法有所不同。"
+                },
+                "source_urls": [
+                  "https://ich.unesco.org/en/RL/cooking-and-eating-mulgi-puder-traditional-mashed-potato-with-barley-in-the-mulgimaa-region-estonia-02081",
+                  "https://visitestonia.com/en/what-to-do/five-classic-foods-to-try-in-estonia"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "킬루보일레이브(스프라트 오픈 샌드위치)",
+                  "en": "Kiluvõileib (sprat open sandwich)",
+                  "ja": "キルヴォイレイブ（スプラットのオープンサンド）",
+                  "zh": "基卢三明治（西鲱开放式三明治）"
+                },
+                "note": {
+                  "ko": "스프라트를 얹은 샌드위치입니다. 삶은 달걀을 곁들이거나 생선과 달걀을 스프레드처럼 섞어 내기도 합니다.",
+                  "en": "An open sandwich topped with sprats; it may be served with boiled egg or with the fish and egg mixed into a spread.",
+                  "ja": "スプラットをのせたオープンサンドで、ゆで卵を添えたり、魚と卵をペースト状に混ぜたりすることがあります。",
+                  "zh": "以西鲱为配料的开放式三明治；有时配水煮蛋，也有将鱼和蛋混合作抹酱的做法。"
+                },
+                "source_urls": [
+                  "https://visitestonia.com/en/what-to-do/five-classic-foods-to-try-in-estonia"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카마(곡물·완두 혼합가루)",
+                  "en": "Kama (grain-and-pea flour mix)",
+                  "ja": "カマ（穀物とエンドウ豆の粉のミックス）",
+                  "zh": "卡马（谷物与豌豆粉混合物）"
+                },
+                "note": {
+                  "ko": "보통 보리·호밀·귀리·완두 등을 섞은 가루입니다. 전통적으로 버터밀크나 케피르 같은 발효유와 먹으며, 디저트 재료로도 쓰입니다.",
+                  "en": "A flour mix commonly made from barley, rye, oats and peas. It is traditionally eaten with sour milk such as buttermilk or kefir and is also used in desserts.",
+                  "ja": "一般に大麦、ライ麦、オーツ麦、エンドウ豆などを混ぜた粉です。伝統的にはバターミルクやケフィアなどの発酵乳と合わせ、デザートの材料にも使われます。",
+                  "zh": "通常由大麦、黑麦、燕麦和豌豆等磨粉混合而成。传统吃法是拌入酪乳或开菲尔等酸奶饮品，也可用作甜点配料。"
+                },
+                "source_urls": [
+                  "https://visitestonia.com/en/what-to-do/five-classic-foods-to-try-in-estonia"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Kolu Inn (Kolu Tavern), Estonian Open Air Museum",
+                "area": "Haabersti, Tallinn",
+                "type": {
+                  "ko": "야외박물관 내 전통 여관·식당",
+                  "en": "Museum tavern and restaurant",
+                  "ja": "野外博物館内の伝統的な宿屋・レストラン",
+                  "zh": "露天博物馆内的传统旅馆式餐馆"
+                },
+                "focus": {
+                  "ko": "에스토니아 가정식과 전통 음식. 박물관 메뉴에 물기푸데르와 카마 요리가 기재되어 있습니다.",
+                  "en": "Estonian home-style and traditional food; the museum’s menu lists Mulgi puder and a kama item.",
+                  "ja": "エストニアの家庭料理と伝統料理。博物館のメニューにはムルギ・プデルとカマを使った品があります。",
+                  "zh": "爱沙尼亚家常及传统菜肴；博物馆菜单列有穆尔吉土豆大麦泥和卡马制品。"
+                },
+                "why_candidate": {
+                  "ko": "박물관과 에스토니아 관광청이 이곳을 탈린의 에스토니아 요리 식당으로 소개하고 물기푸데르 등을 연결합니다. 관광청 안내에 따르면 식사는 박물관 입장권이 있어야 가능합니다.",
+                  "en": "The museum and Estonia’s tourism authority identify it as a Tallinn venue serving Estonian cuisine, including Mulgi puder. The tourism page says dining requires a museum ticket.",
+                  "ja": "博物館とエストニア観光局が、エストニア料理を提供しムルギ・プデルなどを扱うタリンの施設として紹介しています。観光局の案内では食事に博物館チケットが必要です。",
+                  "zh": "博物馆及爱沙尼亚旅游局将其介绍为塔林供应爱沙尼亚菜的场所，并提到穆尔吉土豆大麦泥等。旅游局说明用餐需要博物馆门票。"
+                },
+                "official_url": "https://evm.ee/food-and-drink",
+                "source_urls": [
+                  "https://evm.ee/food-and-drink",
+                  "https://evm.ee/food-and-drink/menus/lunch-and-dinner",
+                  "https://visitestonia.com/en/kolu-tavern-at-the-estonian-open-air-museum"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "ich.unesco.org",
+                "url": "https://ich.unesco.org/en/RL/cooking-and-eating-mulgi-puder-traditional-mashed-potato-with-barley-in-the-mulgimaa-region-estonia-02081"
+              },
+              {
+                "title": "visitestonia.com",
+                "url": "https://visitestonia.com/en/what-to-do/five-classic-foods-to-try-in-estonia"
+              },
+              {
+                "title": "evm.ee",
+                "url": "https://evm.ee/food-and-drink"
+              },
+              {
+                "title": "evm.ee",
+                "url": "https://evm.ee/food-and-drink/menus/lunch-and-dinner"
+              },
+              {
+                "title": "visitestonia.com",
+                "url": "https://visitestonia.com/en/kolu-tavern-at-the-estonian-open-air-museum"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Mulgi puder’s Mulgimaa association and 2024 UNESCO inscription are verified; do not present it as originating in Tallinn.",
+              "Kiluvõileib and kama are broader Estonian foods, not exclusive Tallinn specialties; recipes and serving styles vary.",
+              "Kolu Inn is the sole venue candidate because official sources confirm its location and relevant cuisine. No booking, current availability, hours, prices, or guaranteed menu is claimed."
+            ]
           }
         ]
       }
@@ -1716,6 +3778,181 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.myhelsinki.fi/itinerary/visitor/3-day-helsinki-itinerary-first-time/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only the declared country_id finland was used. Helsinki is the featured city; regional dishes are explicitly identified by their Finnish region and are not presented as Helsinki inventions.",
+        "cities": [
+          {
+            "city": {
+              "ko": "헬싱키",
+              "en": "Helsinki",
+              "ja": "ヘルシンキ",
+              "zh": "赫尔辛基"
+            },
+            "intro": {
+              "ko": "헬싱키에서는 핀란드 전역의 편안한 생선 요리와 지역 특산 간식을 맛볼 수 있습니다. 아래 음식은 핀란드 여러 지역의 전통을 대표하며, 특히 칼라쿠코는 사보 지역과 연관됩니다.",
+              "en": "Helsinki offers a window onto Finnish comfort food and regional specialties. The dishes below reflect traditions from across Finland; kalakukko is particularly associated with the Savo region.",
+              "ja": "ヘルシンキでは、フィンランド各地の家庭的な料理や地域の名物を味わえます。以下は全国各地の食文化を示す料理で、特にカラクッコはサヴォ地方に結びついています。",
+              "zh": "在赫尔辛基可以品尝芬兰各地的家常风味与地方特色。以下菜品体现芬兰不同地区的饮食传统，其中卡拉库科尤其与萨沃地区相关。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "로히케이토(핀란드식 연어 수프)",
+                  "en": "Lohikeitto (Finnish salmon soup)",
+                  "ja": "ロヒケイット（フィンランド風サーモンスープ）",
+                  "zh": "Lohikeitto（芬兰三文鱼汤）"
+                },
+                "note": {
+                  "ko": "핀란드 전역의 가정과 식당에서 먹는 수프입니다. 연어, 감자, 양파나 리크, 당근을 넣고 끓이며 크림을 넣는 형태와 넣지 않는 형태가 모두 있습니다. 딜과 차이브로 마무리하기도 합니다.",
+                  "en": "A soup eaten in homes and restaurants across Finland. A common version combines salmon, potatoes, onion or leek, and carrot; it may be made with or without cream and finished with dill and chives.",
+                  "ja": "フィンランド各地の家庭やレストランで親しまれるスープです。一般的な作り方ではサーモン、ジャガイモ、タマネギまたはリーキ、ニンジンを使い、クリーム入り・なしの両方があり、ディルやチャイブを添えることもあります。",
+                  "zh": "这是芬兰各地家庭和餐馆常见的汤。常见做法以三文鱼、土豆、洋葱或韭葱、胡萝卜炖煮；可加或不加奶油，也常以莳萝和细香葱调味。"
+                },
+                "source_urls": [
+                  "https://finland.fi/life-society/delicacies-from-the-top-of-the-world-go-down-well-northern-finnish-recipes/",
+                  "https://www.myhelsinki.fi/visit/neighbourhoods/72-hours-in-downtown-helsinki/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카르얄란피이라카(카렐리야 파이)",
+                  "en": "Karjalanpiirakka (Karelian pie)",
+                  "ja": "カルヤランピーラッカ（カレリアパイ）",
+                  "zh": "Karjalanpiirakka（卡累利阿馅饼）"
+                },
+                "note": {
+                  "ko": "얇고 열린 호밀 또는 밀가루 반죽 안에 쌀·보리 죽이나 으깬 감자 등을 넣어 구운 짭짤한 파이입니다. 카렐리야에서 유래한 전통 양식이며, 헬싱키 관광 안내는 달걀버터를 곁들인 예를 소개합니다. EU의 TSG 등록은 전통 제조법·조성을 보호하는 것이지 특정 지역에서만 생산된다는 뜻은 아닙니다.",
+                  "en": "An open savory pie with a thin rye- or wheat-flour crust and a filling commonly based on rice or barley porridge or mashed potato. It is a Karelian-associated tradition; Helsinki’s visitor guide mentions it served with egg butter. EU TSG registration protects traditional composition and method, not production in one exclusive geographic area.",
+                  "ja": "薄いライ麦または小麦粉の生地を開いたまま折り、米・大麦のおかゆやマッシュポテトなどを詰めて焼く塩味のパイです。カレリアの伝統に結びつき、ヘルシンキの観光案内では卵バター添えも紹介されています。EUのTSG登録は伝統的な材料・製法を保護するもので、特定地域だけでの生産を意味しません。",
+                  "zh": "以薄薄的黑麦或小麦面皮包裹米粥、大麦粥或土豆泥等馅料，边缘折起而顶部敞开的咸派。它与卡累利阿传统相关；赫尔辛基旅游指南提到搭配鸡蛋黄油食用。欧盟TSG注册保护传统配方和制作方法，并不要求只能在某一地理区域生产。"
+                },
+                "source_urls": [
+                  "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52019XC1227(03",
+                  "https://www.ruokavirasto.fi/en/foodstuffs/food-sector/food-ingredients-and-contents/scheme-for-registration-of-names/",
+                  "https://www.myhelsinki.fi/visit/neighbourhoods/72-hours-in-downtown-helsinki/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "칼라쿠코(핀란드식 생선·돼지고기 파이)",
+                  "en": "Kalakukko (Finnish fish-and-pork pie)",
+                  "ja": "カラクッコ（フィンランド風魚と豚肉のパイ）",
+                  "zh": "Kalakukko（芬兰鱼肉猪肉馅饼）"
+                },
+                "note": {
+                  "ko": "동부 핀란드 사보 지역과 관련된 호밀 껍질의 구운 파이로, 속에는 생선과 돼지고기가 들어갑니다. 핀란드 식품 당국은 등록 명칭의 전통 제조법에 맞춘 칼라쿠코를 전통특산품보증(TSG) 품목으로 설명합니다. 헬싱키 고유 음식은 아닙니다.",
+                  "en": "A Savo-associated specialty from eastern Finland: a rye-crusted loaf baked with fish and pork inside. Finland’s Food Authority lists kalakukko as a Traditional Speciality Guaranteed (TSG) product when made to its registered traditional method. It is not a Helsinki-origin dish.",
+                  "ja": "フィンランド東部サヴォ地方に結びつく名物で、ライ麦の生地に魚と豚肉を詰めて焼きます。フィンランド食品庁は登録された伝統製法に従うカラクッコを伝統的特産品保証（TSG）品目として掲載しています。ヘルシンキ発祥の料理ではありません。",
+                  "zh": "这是与芬兰东部萨沃地区相关的特色食品：以黑麦面皮包入鱼和猪肉烘烤。芬兰食品局将按注册传统方法制作的卡拉库科列为传统特色保证（TSG）产品。它并非赫尔辛基本地起源的菜肴。"
+                },
+                "source_urls": [
+                  "https://www.visitfinland.com/en/articles/finlands-traditional-and-iconic-foods/",
+                  "https://www.ruokavirasto.fi/en/foodstuffs/food-sector/food-ingredients-and-contents/scheme-for-registration-of-names/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Sea Horse",
+                "area": "Ullanlinna, Helsinki",
+                "type": {
+                  "ko": "핀란드 전통 요리 식당",
+                  "en": "Finnish-classics restaurant",
+                  "ja": "フィンランドの伝統料理を掲げるレストラン",
+                  "zh": "主打芬兰经典菜的餐厅"
+                },
+                "focus": {
+                  "ko": "공식 안내는 핀란드 요리와 문화를 소개하며 청어 요리와 보르슈마크를 언급합니다. 공식 메뉴 페이지에는 크리미 연어 수프와 발트해 청어 요리가 기재되어 있습니다.",
+                  "en": "Its official site describes Finnish food and culture and highlights herring dishes and vorschmack. Its official menu page lists creamy salmon soup and Baltic herring dishes.",
+                  "ja": "公式案内はフィンランド料理と文化を掲げ、ニシン料理やヴォルシュマックに触れています。公式メニューページにはクリーミーなサーモンスープとバルト海ニシン料理が掲載されています。",
+                  "zh": "官网以芬兰饮食与文化为主题，并提及鲱鱼菜和伏尔施马克。其官方菜单页列有奶油三文鱼汤及波罗的海鲱鱼菜。"
+                },
+                "why_candidate": {
+                  "ko": "식당 소유 공식 페이지가 헬싱키 주소와 핀란드 음식 정체성을 확인하며, 공식 메뉴에서 이 안내의 로히케이토와 관련된 연어 수프를 확인할 수 있어 후보로 적합합니다. 메뉴는 바뀔 수 있으므로 특정 방문일의 제공 여부를 보장하지 않습니다.",
+                  "en": "The restaurant-owned site confirms its Helsinki address and Finnish-food identity, and its official menu provides a direct cuisine match through salmon soup related to lohikeitto. Menus can change; this is not a guarantee of availability on a particular date.",
+                  "ja": "運営元の公式サイトでヘルシンキの住所とフィンランド料理を掲げる店であることが確認でき、公式メニューにはロヒケイットに通じるサーモンスープがあります。メニューは変更されるため、特定日に提供される保証ではありません。",
+                  "zh": "餐厅官网确认其赫尔辛基地址及芬兰菜定位，官方菜单中的三文鱼汤也与本指南的Lohikeitto相符。菜单可能变化，因此不保证某个日期一定供应。"
+                },
+                "official_url": "https://www.seahorse.fi/en/restaurant-sea-horse/",
+                "source_urls": [
+                  "https://www.seahorse.fi/en/restaurant-sea-horse/",
+                  "https://www.seahorse.fi/en/our-menu/"
+                ]
+              },
+              {
+                "name": "Restaurant Savotta",
+                "area": "Senate Square, central Helsinki",
+                "type": {
+                  "ko": "핀란드 전역의 지역 요리를 내세우는 식당",
+                  "en": "Restaurant presenting regional Finnish cuisine",
+                  "ja": "フィンランド各地の料理を掲げるレストラン",
+                  "zh": "主打芬兰各地风味的餐厅"
+                },
+                "focus": {
+                  "ko": "식당은 핀란드 숲과 호수의 식재료와 지역 전통을 내세웁니다. 공식 메뉴 페이지에는 생선 수프와 카렐리야 스튜 등 핀란드 요리가 소개되어 있습니다.",
+                  "en": "The restaurant presents Finnish regional traditions and ingredients from forests and lakes. Its official menu page features Finnish dishes including fish soup and Karelian stew.",
+                  "ja": "フィンランド各地の伝統と森・湖の食材を掲げる店です。公式メニューページには魚のスープやカレリアシチューなどの料理が掲載されています。",
+                  "zh": "餐厅主打芬兰各地传统及森林、湖泊食材。其官方菜单页介绍了鱼汤、卡累利阿炖菜等芬兰菜。"
+                },
+                "why_candidate": {
+                  "ko": "운영자 공식 안내가 상원광장 인근 위치와 핀란드 음식 정체성을 확인하며, 공식 메뉴가 지역 요리와 생선 수프에 대한 후보 근거를 제공합니다. 메뉴 페이지에 표시된 일부 메뉴 기간은 지난 기간이므로 현재 제공 여부는 확인되지 않았습니다.",
+                  "en": "The operator’s official page confirms a location just off Senate Square and a Finnish-food identity; its official menu supports it as a candidate for regional dishes and fish soup. Some menu dates shown on the page have passed, so present availability is unverified.",
+                  "ja": "運営元の公式案内で元老院広場近くの所在地とフィンランド料理を確認でき、公式メニューが地域料理や魚のスープを候補とする根拠になります。ページに記載された一部メニューの期間は終了しており、現在の提供状況は未確認です。",
+                  "zh": "运营方官网确认餐厅位于参议院广场附近并主打芬兰菜；官方菜单可作为其地区菜肴和鱼汤的候选依据。但页面所列部分菜单日期已过，目前是否供应尚未核实。"
+                },
+                "official_url": "https://ravintolasavotta.fi/en/frontpage-english/",
+                "source_urls": [
+                  "https://ravintolasavotta.fi/en/frontpage-english/",
+                  "https://ravintolasavotta.fi/en/menu-english/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "finland.fi",
+                "url": "https://finland.fi/life-society/delicacies-from-the-top-of-the-world-go-down-well-northern-finnish-recipes/"
+              },
+              {
+                "title": "myhelsinki.fi",
+                "url": "https://www.myhelsinki.fi/visit/neighbourhoods/72-hours-in-downtown-helsinki/"
+              },
+              {
+                "title": "eur-lex.europa.eu",
+                "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:52019XC1227(03"
+              },
+              {
+                "title": "ruokavirasto.fi",
+                "url": "https://www.ruokavirasto.fi/en/foodstuffs/food-sector/food-ingredients-and-contents/scheme-for-registration-of-names/"
+              },
+              {
+                "title": "visitfinland.com",
+                "url": "https://www.visitfinland.com/en/articles/finlands-traditional-and-iconic-foods/"
+              },
+              {
+                "title": "seahorse.fi",
+                "url": "https://www.seahorse.fi/en/restaurant-sea-horse/"
+              },
+              {
+                "title": "seahorse.fi",
+                "url": "https://www.seahorse.fi/en/our-menu/"
+              },
+              {
+                "title": "ravintolasavotta.fi",
+                "url": "https://ravintolasavotta.fi/en/frontpage-english/"
+              },
+              {
+                "title": "ravintolasavotta.fi",
+                "url": "https://ravintolasavotta.fi/en/menu-english/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The scope’s Old Market Hall lead is a food hall, not a single restaurant; Helsinki’s official visitor guide mentions lohikeitto there, but no specific stall was verified here, so it is not listed as a restaurant candidate.",
+              "No dish is presented as originating in Helsinki. Karjalanpiirakka’s EU TSG status concerns traditional composition and method, not an exclusive geographic production area.",
+              "Restaurant menus may change; no reservation, current hours, prices, or guaranteed dish availability is asserted."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -1821,6 +4058,152 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "In the news - Au Pied de Cochon - Paris",
             "url": "https://www.pieddecochon.com/en/about-us/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "한국어: 파리 한 도시만 다룹니다. 각 항목의 근거는 연결된 HTTPS 출처를 확인하세요. | English: Covers Paris only. See the HTTPS sources attached to each item. | 日本語: パリの一都市のみを対象としています。各項目に記載したHTTPS出典をご確認ください。 | 中文：仅涵盖巴黎一座城市。请参阅各条目所附的HTTPS来源。",
+        "cities": [
+          {
+            "city": {
+              "ko": "파리",
+              "en": "Paris",
+              "ja": "パリ",
+              "zh": "巴黎"
+            },
+            "intro": {
+              "ko": "공식 관광 자료에서 파리 및 일드프랑스의 음식으로 소개되는 몇 가지 대표적인 음식과, 공식 주소·메뉴를 확인한 식당 후보를 모았습니다. 지역적 연관성은 원산지나 독점성을 뜻하지 않습니다.",
+              "en": "A selection of foods presented by official tourism sources as associated with Paris and Île-de-France, plus a restaurant candidate whose official address and menu were checked. Local association does not imply origin or exclusivity.",
+              "ja": "公式観光資料がパリおよびイル＝ド＝フランスに関連する料理として紹介する食品と、公式住所・メニューを確認したレストラン候補をまとめました。地域との関連は、発祥や独占性を意味しません。",
+              "zh": "汇集了官方旅游资料介绍为与巴黎及法兰西岛相关的几种食物，以及一家具备可核验官网地址与菜单的餐厅候选。地域关联不代表起源或独有性。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "크로크무슈",
+                  "en": "Croque-monsieur",
+                  "ja": "クロックムッシュ",
+                  "zh": "法式火腿奶酪三明治（Croque-monsieur）"
+                },
+                "note": {
+                  "ko": "파리 관광 자료는 햄과 베샤멜을 넣고 치즈를 덮어 구운 샌드위치로 설명하며, 파리 브라스리와 빵집에서 볼 수 있는 음식으로 소개합니다.",
+                  "en": "Paris tourism describes it as a ham-and-béchamel sandwich topped with cheese, and lists it among foods found in Paris brasseries and bakeries.",
+                  "ja": "パリの観光資料では、ハムとベシャメルを挟みチーズをのせたサンドイッチと説明され、パリのブラッスリーやパン店で見られる料理として紹介されています。",
+                  "zh": "巴黎旅游资料将其描述为夹有火腿和白酱、表面覆奶酪的三明治，并称其常见于巴黎的小餐馆和面包店。"
+                },
+                "source_urls": [
+                  "https://parisjetaime.com/eng/article/good-food-paris-in-10-specialities-a682",
+                  "https://www.france.fr/en/article/paris-ile-france-local-food-specialities/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "스테이크 프리트",
+                  "en": "Steak-frites",
+                  "ja": "ステーキ・フリット",
+                  "zh": "牛排配薯条"
+                },
+                "note": {
+                  "ko": "프랑스 관광 자료는 스테이크 프리트를 파리의 전형적인 브라스리 음식으로 꼽습니다. 파리 관광 자료도 라빌레트의 고기 요리와 퐁뇌프 감자에 얽힌 설명을 덧붙입니다.",
+                  "en": "French tourism describes steak-frites as a typical Paris brasserie classic. Paris tourism also recounts an association between La Villette steak and Pont-Neuf potatoes; these sources do not establish an exclusive origin.",
+                  "ja": "フランスの観光資料は、ステーキ・フリットをパリの典型的なブラッスリー料理として挙げています。パリの観光資料はラ・ヴィレットのステーキとポンヌフ風ポテトにまつわる説明も紹介していますが、これらの資料は唯一の起源を証明するものではありません。",
+                  "zh": "法国旅游资料将牛排配薯条列为巴黎小餐馆的典型经典菜。巴黎旅游资料还介绍了拉维莱特牛排与新桥土豆的相关说法；这些资料并不能证明其起源唯一。"
+                },
+                "source_urls": [
+                  "https://www.france.fr/en/article/paris-ile-france-local-food-specialities/",
+                  "https://parisjetaime.com/eng/article/good-food-paris-in-10-specialities-a682"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "양파 수프",
+                  "en": "French onion soup",
+                  "ja": "オニオンスープ",
+                  "zh": "法式洋葱汤"
+                },
+                "note": {
+                  "ko": "파리 관광 자료는 캐러멜라이즈한 양파와 육수에 녹인 치즈와 크루통을 얹는 수프로 설명하고, 과거 시장 식당과 오늘날 브라스리에서 제공되는 음식으로 소개합니다.",
+                  "en": "Paris tourism describes a broth and caramelized-onion soup topped with melted cheese and croutons, noting its former association with eateries in the old market halls and its place on brasserie menus.",
+                  "ja": "パリの観光資料では、炒めた玉ねぎとブイヨンに溶かしたチーズとクルトンをのせるスープと説明されています。かつての市場の食堂との関連や、現在のブラッスリーで見られることも記されています。",
+                  "zh": "巴黎旅游资料将其描述为以高汤和焦糖化洋葱制成、上覆融化奶酪与面包丁的汤，并提到它过去与旧市场食堂有关，如今也见于小餐馆菜单。"
+                },
+                "source_urls": [
+                  "https://parisjetaime.com/eng/article/good-food-paris-in-10-specialities-a682"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "파리식 마카롱",
+                  "en": "Parisian macaron",
+                  "ja": "パリ風マカロン",
+                  "zh": "巴黎马卡龙"
+                },
+                "note": {
+                  "ko": "파리 관광 자료는 아몬드 가루로 만든 두 개의 바삭한 껍질 사이에 달콤한 필링을 넣은 둥근 과자로 설명하며, 파리의 제과점들이 그 명성에 기여했다고 소개합니다.",
+                  "en": "Paris tourism describes a round confection with two crisp ground-almond shells and a sweet filling, and notes that Parisian pastry houses have contributed to its reputation.",
+                  "ja": "パリの観光資料では、アーモンド粉のパリッとした二枚の殻に甘いフィリングを挟んだ丸い菓子と説明され、パリのパティスリーがその知名度に貢献したと紹介されています。",
+                  "zh": "巴黎旅游资料将其描述为圆形甜点，由两片酥脆的杏仁粉外壳夹甜味馅料制成，并提到巴黎糕点店为其知名度作出了贡献。"
+                },
+                "source_urls": [
+                  "https://parisjetaime.com/eng/article/good-food-paris-in-10-specialities-a682"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Benoit",
+                "area": "4th arrondissement, 75004 / 파리 제4구, 75004 / パリ4区、75004 / 巴黎第4区，75004",
+                "type": {
+                  "ko": "파리 비스트로",
+                  "en": "Parisian bistro",
+                  "ja": "パリのビストロ",
+                  "zh": "巴黎小餐馆"
+                },
+                "focus": {
+                  "ko": "전통적인 비스트로 요리; 공식 메뉴 페이지에는 파테 앙 크루트, 달팽이 요리, 밀푀유 등 예시가 소개됩니다.",
+                  "en": "Traditional bistro cuisine; its official menu page gives examples including pâté en croûte, snails, and millefeuille.",
+                  "ja": "伝統的なビストロ料理。公式メニューページには、パテ・アン・クルート、エスカルゴ、ミルフィーユなどの例が掲載されています。",
+                  "zh": "传统小餐馆料理；官网菜单页列出酥皮肉酱派、蜗牛和千层酥等示例。"
+                },
+                "why_candidate": {
+                  "ko": "식당 공식 사이트는 파리 전통 비스트로로 소개하고 주소를 20 rue Saint-Martin, 75004 Paris로 제시합니다. 후보 조사 정보일 뿐 예약을 뜻하지 않으며, 메뉴示例也不保证到访时供应。",
+                  "en": "The restaurant’s official site describes it as a traditional Parisian bistro and gives its address as 20 rue Saint-Martin, 75004 Paris. This is a research candidate, not a booking; menu examples do not guarantee availability at a visit.",
+                  "ja": "公式サイトは伝統的なパリのビストロとして紹介し、住所を20 rue Saint-Martin, 75004 Parisと記載しています。調査上の候補であり、予約を意味しません。メニューの例は訪問時の提供を保証しません。",
+                  "zh": "餐厅官网将其介绍为传统巴黎小餐馆，地址为20 rue Saint-Martin, 75004 Paris。这只是研究候选，并非预订；菜单示例不保证到访时供应。"
+                },
+                "official_url": "https://www.benoit-paris.com/en/",
+                "source_urls": [
+                  "https://www.benoit-paris.com/en/",
+                  "https://www.benoit-paris.com/en/menu/",
+                  "https://www.benoit-paris.com/en/contact/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "parisjetaime.com",
+                "url": "https://parisjetaime.com/eng/article/good-food-paris-in-10-specialities-a682"
+              },
+              {
+                "title": "france.fr",
+                "url": "https://www.france.fr/en/article/paris-ile-france-local-food-specialities/"
+              },
+              {
+                "title": "benoit-paris.com",
+                "url": "https://www.benoit-paris.com/en/"
+              },
+              {
+                "title": "benoit-paris.com",
+                "url": "https://www.benoit-paris.com/en/menu/"
+              },
+              {
+                "title": "benoit-paris.com",
+                "url": "https://www.benoit-paris.com/en/contact/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "한국어: 음식의 파리·일드프랑스 연관성은 관광 자료의 소개를 요약한 것이며, 원산지·독점성·정통성 순위를 주장하지 않습니다. 공식 관광 자료도 오래된 조리법의 기원을 확인하기 어려운 경우가 있다고 명시합니다. | English: The Paris/Île-de-France associations summarize tourism sources and do not claim origin, exclusivity, or authenticity rankings. Official tourism material itself cautions that provenance can be difficult to verify for old recipes. | 日本語: パリ／イル＝ド＝フランスとの関連は観光資料の記述を要約したもので、発祥・独占性・真正性の順位を主張するものではありません。公式観光資料も、古いレシピの由来は確認が難しい場合があると注意しています。 | 中文：巴黎／法兰西岛关联是对旅游资料的概述，不主张起源、独有性或正宗程度排名。官方旅游资料也提醒，古老食谱的出处有时难以核实。"
+            ]
           }
         ]
       }
@@ -1930,6 +4313,167 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://restaurantpasanauri.ge/en.html"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only the declared country_id georgia was used. Featured city: Tbilisi. The dishes include both Tbilisi-associated fare and regional Georgian specialties commonly introduced in the city; regional labels identify association, not exclusivity.",
+        "cities": [
+          {
+            "city": {
+              "ko": "트빌리시",
+              "en": "Tbilisi",
+              "ja": "トビリシ",
+              "zh": "第比利斯"
+            },
+            "intro": {
+              "ko": "조지아 관광청은 트빌리시를 여러 지역의 음식이 모이는 도시로 소개하며, 가지를 중심으로 한 도시 음식 아자프산달리도 다룹니다. 아래에는 트빌리시 음식과 조지아 지역 요리를 함께 골랐습니다.",
+              "en": "Georgia’s tourism authority presents Tbilisi as a city where dishes from across the country meet, and also describes ajapsandali as an urban dish especially associated with the capital. This selection combines that city food with regional Georgian specialties.",
+              "ja": "ジョージア政府観光局は、各地の料理が集まる都市としてトビリシを紹介し、ナスを主役にした都市料理アジャプサンダリも取り上げています。ここではトビリシの料理と各地方の名物を合わせて紹介します。",
+              "zh": "格鲁吉亚旅游局将第比利斯介绍为汇集全国各地菜肴的城市，也把以茄子为主的阿扎普桑达利称作城市风味。以下兼列第比利斯特色与格鲁吉亚地方菜。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "힌칼리(트빌리시식 칼라쿠리 힌칼리)",
+                  "en": "Khinkali (Tbilisi-style kalakuri)",
+                  "ja": "ヒンカリ（トビリシ風カラクリ・ヒンカリ）",
+                  "zh": "格鲁吉亚饺子（第比利斯式卡拉库里）"
+                },
+                "note": {
+                  "ko": "주름 잡은 반죽에 양념한 속을 넣어 삶는 조지아식 만두입니다. 산악 지역인 프샤비와 투셰티가 전통적 연고지로 소개되며, 트빌리시식 칼라쿠리는 보통 돼지고기·소고기 다짐육과 허브를 쓰고 육즙이 생기도록 만듭니다. 속 재료와 조리법에는 변형이 있습니다.",
+                  "en": "Pleated dough parcels are boiled with a seasoned filling. Pshavi and Tusheti in the mountains are identified as traditional homelands; Tbilisi’s kalakuri style commonly uses minced pork and beef with herbs and a juicy filling. Fillings and preparations vary.",
+                  "ja": "ひだを寄せた生地に味付けした具を包んでゆでる料理です。山岳地帯のプシャヴィとトゥシェティが伝統的なゆかりの地とされ、トビリシのカラクリ風は一般に豚・牛のひき肉とハーブを使い、肉汁を含みます。具や作り方には幅があります。",
+                  "zh": "将调味馅料包入褶皱面皮后煮熟。旅游资料将山区的普沙维和图舍蒂列为传统关联地；第比利斯式卡拉库里通常用猪牛混合绞肉和香草，馅中带有汤汁。馅料与做法并不单一。"
+                },
+                "source_urls": [
+                  "https://georgia.travel/khinkali",
+                  "https://georgia.travel/georgian-foods-that-you-should-try-in-tbilisi"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "메그렐리안 하차푸리",
+                  "en": "Megrelian khachapuri",
+                  "ja": "メグレル風ハチャプリ",
+                  "zh": "明格列利亚奶酪面包"
+                },
+                "note": {
+                  "ko": "서부 조지아 사메그렐로(메그렐리아)와 연관된 치즈 빵입니다. 반죽 안에 치즈를 넣고 윗면에도 치즈를 얹으며, 관광청 설명에는 술구니와 신선한 치즈가 언급됩니다. 지역과 현대 조리법에 따라 차이가 있습니다.",
+                  "en": "A cheese-filled bread associated with Samegrelo (Megrelia) in western Georgia. Cheese is also layered on top; the tourism authority describes versions using sulguni and fresh cheese. Details vary by recipe and modern preparation.",
+                  "ja": "ジョージア西部サメグレロ（メグレリア）に結び付くチーズ入りパンです。生地の中にチーズを詰め、上にもチーズをのせます。観光局はスルグニやフレッシュチーズを使う例を紹介していますが、作り方には違いがあります。",
+                  "zh": "与格鲁吉亚西部萨梅格雷洛（明格列利亚）相关的奶酪面包。面团内包奶酪，表面也铺奶酪；旅游局介绍的做法会用苏格鲁尼奶酪和新鲜奶酪。具体配方会有差异。"
+                },
+                "source_urls": [
+                  "https://georgia.travel/megrelian-khachapuri",
+                  "https://georgia.travel/get-a-taste-of-khachapuri",
+                  "https://georgia.travel/georgian-foods-that-you-should-try-in-tbilisi"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "아자프산달리",
+                  "en": "Ajapsandali",
+                  "ja": "アジャプサンダリ",
+                  "zh": "阿扎普桑达利"
+                },
+                "note": {
+                  "ko": "조지아 관광청은 이를 트빌리시에서 특히 흔한 도시 음식으로 설명합니다. 가지가 빠지지 않는 채소 스튜이며, 토마토·고추·허브가 자주 들어갑니다. 고기나 콩 등을 더하는 변형도 있어 한 가지 고정 레시피로 단정하지 않습니다.",
+                  "en": "Georgia’s tourism authority describes it as an urban Georgian dish especially common in Tbilisi. Eggplant is the consistent centerpiece, often cooked with tomatoes, peppers, and herbs. Some versions add meat or beans, so recipes are not uniform.",
+                  "ja": "ジョージア政府観光局は、特にトビリシで親しまれる都市料理として紹介しています。ナスが欠かせない野菜の煮込みで、トマト、ピーマン類、ハーブなどを使います。肉や豆を加えるレシピもあり、決まった一種類の作り方ではありません。",
+                  "zh": "格鲁吉亚旅游局称它是第比利斯尤其常见的城市菜。茄子是不可或缺的主料，常与番茄、甜椒和香草同煮；也有加入肉或豆类的版本，因此并非只有一种固定配方。"
+                },
+                "source_urls": [
+                  "https://georgia.travel/ajapsandali",
+                  "https://georgia.travel/georgian-foods-that-you-should-try-in-tbilisi"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "차카풀리",
+                  "en": "Chakapuli",
+                  "ja": "チャカプリ",
+                  "zh": "恰卡普利炖菜"
+                },
+                "note": {
+                  "ko": "카헤티와 연관된 봄철 조지아 요리입니다. 양고기(또는 송아지고기)를 타라곤 등 신선한 허브, 새콤한 트케말리 자두, 백포도주와 함께 끓이는 방식이 대표적으로 소개됩니다. 재료는 변형될 수 있습니다.",
+                  "en": "A Georgian spring dish associated with Kakheti. A commonly described version simmers lamb (or veal) with tarragon and other fresh herbs, tart tkemali plums, and white wine. Ingredients can vary.",
+                  "ja": "カヘティ地方と結び付くジョージアの春料理です。羊肉（または子牛肉）を、タラゴンなどの生ハーブ、酸味のあるトケマリ・プラム、白ワインと煮込む作り方が代表例として紹介されています。材料には幅があります。",
+                  "zh": "与卡赫季相关的格鲁吉亚春季菜。常见做法是将羊肉（或小牛肉）与龙蒿等新鲜香草、酸味李子酱（tkemali）和白葡萄酒一同炖煮；配料可能有所变化。"
+                },
+                "source_urls": [
+                  "https://georgia.travel/chakapuli",
+                  "https://georgia.travel/georgian-cuisine"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Restaurant Pasanauri",
+                "area": "Tbilisi; the official site lists branches named Dolidze, Leonidze, Kazbegi, Baratashvili, and Gorgasali; exact addresses not verified here.",
+                "type": {
+                  "ko": "조지아 음식점 체인",
+                  "en": "Georgian restaurant chain",
+                  "ja": "ジョージア料理レストランチェーン",
+                  "zh": "格鲁吉亚餐厅连锁"
+                },
+                "focus": {
+                  "ko": "조지아 음식 전반(개별 메뉴는 확인 불가)",
+                  "en": "Georgian cuisine generally (specific dishes not confirmed)",
+                  "ja": "ジョージア料理全般（個別メニューは未確認）",
+                  "zh": "格鲁吉亚菜（具体菜品未核实）"
+                },
+                "why_candidate": {
+                  "ko": "운영사 공식 사이트가 트빌리시 내 여러 지점을 열거합니다. 조지아 관광청은 트빌리시의 식당·힌칼리 전문점에서 힌칼리를 맛볼 수 있다고 안내합니다. 다만 이 조사에서 Pasanauri의 현행 메뉴나 특정 요리는 공식 페이지로 확인하지 못해, 예약·영업정보나 특정 메뉴를 보장하지 않는 후보로만 제시합니다.",
+                  "en": "The operator’s official site lists multiple Tbilisi branches. Georgia’s tourism authority notes that khinkali can be tried at Tbilisi restaurants and chain khinkali shops. However, I could not confirm Pasanauri’s current menu or a specific dish on an accessible official page, so this is a candidate only—not a guarantee of any dish, availability, or booking.",
+                  "ja": "運営元の公式サイトにはトビリシの複数支店が掲載されています。ジョージア政府観光局は、トビリシのレストランやヒンカリ専門チェーンでヒンカリを味わえると案内しています。ただし、閲覧できた公式ページでは同店の現行メニューや個別料理を確認できなかったため、候補としてのみ記載し、料理の提供・予約を保証しません。",
+                  "zh": "经营方官网列出了第比利斯的多个分店。格鲁吉亚旅游局指出，可在第比利斯的餐馆及连锁饺子店品尝格鲁吉亚饺子。不过，本次未能从可访问的官方页面核实 Pasanauri 的现行菜单或具体菜品，因此仅列为候选，不保证供应或预订。"
+                },
+                "official_url": "https://restaurantpasanauri.ge/en.html",
+                "source_urls": [
+                  "https://restaurantpasanauri.ge/en.html",
+                  "https://georgia.travel/georgian-foods-that-you-should-try-in-tbilisi"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/khinkali"
+              },
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/georgian-foods-that-you-should-try-in-tbilisi"
+              },
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/megrelian-khachapuri"
+              },
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/get-a-taste-of-khachapuri"
+              },
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/ajapsandali"
+              },
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/chakapuli"
+              },
+              {
+                "title": "georgia.travel",
+                "url": "https://georgia.travel/georgian-cuisine"
+              },
+              {
+                "title": "restaurantpasanauri.ge",
+                "url": "https://restaurantpasanauri.ge/en.html"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Pasanauri’s official page confirms several named branches but its accessible text did not expose a current menu or specific dishes; no current hours, prices, availability, wait times, or reservation status are asserted.",
+              "Dishes’ regional links describe recognized associations, not exclusive origins or a single universal recipe. Ingredient variations are noted where the sources describe them."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -2031,6 +4575,185 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Curry 36 — visitBerlin",
             "url": "https://www.visitberlin.de/en/curry-36"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Based on Berlin.de and visitBerlin tourism pages and the venues' own websites read on 2026-11-17. Restaurant entries are research candidates only; verify details directly before visiting.",
+        "cities": [
+          {
+            "city": {
+              "ko": "베를린",
+              "en": "Berlin",
+              "ja": "ベルリン",
+              "zh": "柏林"
+            },
+            "intro": {
+              "ko": "베를린의 음식 문화에는 커리부어스트와 전통적인 가정식 요리 등 다양한 지역 연관 음식이 있습니다. 아래 항목은 베를린 공식 관광 자료가 소개하는 음식이며, 이 도시만의 음식이라는 뜻은 아닙니다.",
+              "en": "Berlin's food culture includes a range of locally associated foods, from Currywurst to traditional home-style dishes. The items below are featured by official Berlin tourism sources; this does not mean they are exclusive to the city.",
+              "ja": "ベルリンの食文化には、カリーヴルストや伝統的な家庭料理など、地域にゆかりのあるさまざまな料理があります。以下はベルリンの公式観光情報で紹介されている料理であり、この都市だけの料理という意味ではありません。",
+              "zh": "柏林饮食文化包含多种与当地相关的食物，从咖喱香肠到传统家常菜。以下菜品见于柏林官方旅游资料；这并不表示它们为柏林独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "커리부어스트(카레 소시지)",
+                  "en": "Currywurst (curry sausage)",
+                  "ja": "カリーヴルスト（カレーソーセージ）",
+                  "zh": "咖喱香肠（Currywurst）"
+                },
+                "note": {
+                  "ko": "베를린의 대표적인 간식으로 소개됩니다. 구운 소시지에 매콤한 카레 토마토 소스를 얹는 음식입니다.",
+                  "en": "Featured as a Berlin food staple: a grilled sausage topped with spicy curry-tomato sauce.",
+                  "ja": "ベルリンの定番料理として紹介されています。焼いたソーセージに、スパイシーなカレー風味のトマトソースをかけます。",
+                  "zh": "资料将其列为柏林常见特色食物：烤香肠上浇有辛香咖喱番茄酱。"
+                },
+                "source_urls": [
+                  "https://www.berlin.de/en/tourism/insider-tips/5150899-5766508-berlin-specialties-must-try.en.html",
+                  "https://www.visitberlin.de/en/blog/11-tips-typical-berlin-recipes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "베를린식 잼 도넛(팡쿠헨)",
+                  "en": "Berlin-style filled doughnut (Pfannkuchen)",
+                  "ja": "ベルリン風ジャム入り揚げ菓子（プファンクーヘン）",
+                  "zh": "柏林果酱甜甜圈（Pfannkuchen）"
+                },
+                "note": {
+                  "ko": "베를린에서는 잼을 넣은 둥글고 튀긴 페이스트리를 Pfannkuchen이라 부르는 지역 용법이 소개됩니다. 독일의 다른 지역에서는 Berliner라고 부르기도 합니다.",
+                  "en": "Berlin sources describe Pfannkuchen as a round, deep-fried, often jam-filled pastry; elsewhere in Germany it is also called Berliner.",
+                  "ja": "ベルリンでは、丸く揚げたジャム入りの菓子をPfannkuchenと呼ぶ地域の用法が紹介されています。ドイツの他地域ではBerlinerとも呼ばれます。",
+                  "zh": "柏林资料介绍，当地把圆形油炸、常夹果酱的点心称为Pfannkuchen；德国其他地区也称其为Berliner。"
+                },
+                "source_urls": [
+                  "https://www.berlin.de/en/tourism/insider-tips/5150899-5766508-berlin-specialties-must-try.en.html",
+                  "https://www.visitberlin.de/en/blog/11-tips-typical-berlin-recipes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "완두콩 퓌레를 곁들인 돼지족발 요리(아이스바인)",
+                  "en": "Cured pork knuckle with pea purée (Eisbein)",
+                  "ja": "えんどう豆ピューレ添え塩漬け豚すね肉（アイスバイン）",
+                  "zh": "豌豆泥配腌制猪肘（Eisbein）"
+                },
+                "note": {
+                  "ko": "베를린의 전통 가정식 요리로 소개되며, 완두콩 퓌레와 사우어크라우트를 곁들이는 경우가 많습니다.",
+                  "en": "Featured as part of classic Berlin cuisine; common accompaniments include mushy peas and sauerkraut.",
+                  "ja": "ベルリンの伝統的な家庭料理の一つとして紹介されています。付け合わせには、つぶしたえんどう豆やザワークラウトがよく挙げられます。",
+                  "zh": "资料将其列为柏林经典家常菜之一；常见配菜包括豌豆泥和酸菜。"
+                },
+                "source_urls": [
+                  "https://www.berlin.de/en/tourism/insider-tips/5150899-5766508-berlin-specialties-must-try.en.html",
+                  "https://www.visitberlin.de/en/blog/11-tips-typical-berlin-recipes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "베를린식 고기완자(불레트)",
+                  "en": "Berlin-style meatballs (Boulette/Buletten)",
+                  "ja": "ベルリン風ミートボール（ブレット／ブレッテン）",
+                  "zh": "柏林风味肉丸（Boulette／Buletten）"
+                },
+                "note": {
+                  "ko": "베를린 관광 자료는 Buletten을 베를린 요리의 단골 음식으로, visitBerlin은 Boulette를 전형적인 펍 음식으로 소개합니다.",
+                  "en": "Berlin tourism sources describe Buletten as a staple of Berlin cuisine and Boulette as typical pub food.",
+                  "ja": "ベルリンの観光情報では、Bulettenはベルリン料理の定番、Bouletteは典型的なパブ料理として紹介されています。",
+                  "zh": "柏林旅游资料将Buletten称为柏林饮食中的常见菜，并将Boulette描述为典型酒馆食物。"
+                },
+                "source_urls": [
+                  "https://www.berlin.de/en/tourism/insider-tips/5150899-5766508-berlin-specialties-must-try.en.html",
+                  "https://www.visitberlin.de/en/blog/11-tips-typical-berlin-recipes"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Curry 36",
+                "area": "Mehringdamm, Kreuzberg (and other Berlin locations)",
+                "type": {
+                  "ko": "커리부어스트 간이식당",
+                  "en": "Currywurst snack bar",
+                  "ja": "カリーヴルストの軽食店",
+                  "zh": "咖喱香肠小吃店"
+                },
+                "focus": {
+                  "ko": "커리부어스트와 베를린식 간식",
+                  "en": "Currywurst and Berlin-style snacks",
+                  "ja": "カリーヴルストとベルリン風軽食",
+                  "zh": "咖喱香肠及柏林风味小吃"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트에 커리부어스트와 불레트 등 메뉴가 기재되어 있으며, visitBerlin도 Mehringdamm 지점을 소개합니다. 연구 후보이며 예약이나 추천 순위가 아닙니다.",
+                  "en": "Its official site lists Currywurst and Boulette among its offerings, and visitBerlin identifies its Mehringdamm location. This is a research candidate, not a booking or ranking.",
+                  "ja": "公式サイトにカリーヴルストやブレットなどの提供品が掲載され、visitBerlinはMehringdammの店舗を紹介しています。調査上の候補であり、予約やランキングではありません。",
+                  "zh": "其官网列有咖喱香肠和肉丸等食品，visitBerlin也介绍了其Mehringdamm门店。这只是调研候选，不代表预约或排名推荐。"
+                },
+                "official_url": "https://curry36.de/",
+                "source_urls": [
+                  "https://curry36.de/",
+                  "https://www.visitberlin.de/en/curry-36"
+                ]
+              },
+              {
+                "name": "Curry Baude",
+                "area": "Gesundbrunnen station, Wedding",
+                "type": {
+                  "ko": "커리부어스트 간이식당",
+                  "en": "Currywurst snack bar",
+                  "ja": "カリーヴルストの軽食店",
+                  "zh": "咖喱香肠小吃店"
+                },
+                "focus": {
+                  "ko": "커리부어스트와 자체 레시피 소시지",
+                  "en": "Currywurst and house-recipe sausages",
+                  "ja": "カリーヴルストと独自レシピのソーセージ",
+                  "zh": "咖喱香肠及自家配方香肠"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트는 이곳을 베를린 Gesundbrunnen 지하철역 입구의 간이식당으로 설명하며, visitBerlin도 이 장소를 커리부어스트 가판대로 소개합니다. 연구 후보이지 예약이나 순위 추천은 아닙니다.",
+                  "en": "Its official site identifies it as a snack bar at Berlin's Gesundbrunnen U-Bahn station entrance, and visitBerlin also describes it as a currywurst stand. It is a research candidate, not a booking or ranking.",
+                  "ja": "公式サイトは、ベルリンのGesundbrunnen地下鉄駅入口にある軽食店として紹介し、visitBerlinもカリーヴルストの屋台として掲載しています。調査上の候補であり、予約やランキングではありません。",
+                  "zh": "其官网将其介绍为柏林Gesundbrunnen地铁站入口处的小吃店，visitBerlin也称其为咖喱香肠摊。这只是调研候选，不代表预约或排名推荐。"
+                },
+                "official_url": "https://www.curry-baude.de/",
+                "source_urls": [
+                  "https://www.curry-baude.de/",
+                  "https://www.visitberlin.de/en/curry-baude"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "berlin.de",
+                "url": "https://www.berlin.de/en/tourism/insider-tips/5150899-5766508-berlin-specialties-must-try.en.html"
+              },
+              {
+                "title": "visitberlin.de",
+                "url": "https://www.visitberlin.de/en/blog/11-tips-typical-berlin-recipes"
+              },
+              {
+                "title": "curry36.de",
+                "url": "https://curry36.de/"
+              },
+              {
+                "title": "visitberlin.de",
+                "url": "https://www.visitberlin.de/en/curry-36"
+              },
+              {
+                "title": "curry-baude.de",
+                "url": "https://www.curry-baude.de/"
+              },
+              {
+                "title": "visitberlin.de",
+                "url": "https://www.visitberlin.de/en/curry-baude"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Berlin sources support these dishes as locally associated or part of Berlin cuisine; avoid implying that any is exclusive to Berlin or that the city association alone proves origin. Claims about Currywurst's place of invention are not needed here.",
+              "Pfannkuchen is the Berlin term described by the sources; the name is used differently elsewhere in Germany. These entries do not assert venue rankings, current availability, hours, prices, wait times, safety, or accessibility."
+            ]
           }
         ]
       }
@@ -2138,6 +4861,179 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Cherished Greek Dishes — Visit Greece",
             "url": "https://www.visitgreece.gr/en/experiences/gastronomy/traditional-cuisine/cherished-greek-dishes"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Greece only (country_id: greece), featured city Athens. Foods are verified as available or familiar in Athens; national and regional traditions are not presented as uniquely Athenian.",
+        "cities": [
+          {
+            "city": {
+              "ko": "아테네",
+              "en": "Athens",
+              "ja": "アテネ",
+              "zh": "雅典"
+            },
+            "intro": {
+              "ko": "아테네에서는 전국적으로 사랑받는 그리스 음식과 간편한 빵집 아침 메뉴를 만날 수 있습니다. 아래는 도시에서 접할 수 있는 음식이며, 아테네 고유의 기원이라고 단정하지 않습니다.",
+              "en": "Athens offers popular Greek dishes and quick bakery breakfasts. These are foods to encounter in the city, not claims of uniquely Athenian origin.",
+              "ja": "アテネでは、ギリシャ各地で親しまれる料理や手軽なベーカリーの朝食を楽しめます。以下は街で出会える料理で、アテネ独自の発祥を示すものではありません。",
+              "zh": "在雅典可以品尝希腊各地常见的菜肴和便捷的面包店早餐。以下是城中常见选择，并非宣称它们起源于雅典。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "수블라키(칼라마키·피타 칼라마키)",
+                  "en": "Souvlaki (kalamaki / pita kalamaki)",
+                  "ja": "スブラキ（カラマキ／ピタ・カラマキ）",
+                  "zh": "苏夫拉基（串烤肉／皮塔饼卷）"
+                },
+                "note": {
+                  "ko": "그리스관광청은 칼라마키를 숯불에 구운 고기 꼬치로 설명합니다. 피타 칼라마키는 이를 납작빵에 싸고 양파·토마토·차지키를 곁들입니다. 얇게 깎은 고기를 넣는 자이로스와는 구별됩니다.",
+                  "en": "The Greek tourism authority describes kalamaki as charcoal-grilled meat on skewers. Pita kalamaki wraps it with onion, tomato and tzatziki; it differs from pita gyro, which uses shaved meat.",
+                  "ja": "ギリシャ政府観光局によると、カラマキは炭火焼きの肉串です。ピタ・カラマキは玉ねぎ、トマト、ザジキとともにピタに包みます。薄切り肉を使うピタ・ギロとは異なります。",
+                  "zh": "希腊旅游部门将 kalamaki 描述为炭烤肉串。皮塔版本搭配洋葱、番茄和酸奶黄瓜酱；它不同于使用刨片肉的皮塔陀螺卷。"
+                },
+                "source_urls": [
+                  "https://www.visitgreece.gr/en/experiences/gastronomy/traditional-cuisine/cherished-greek-dishes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "쿨루리(참깨 빵 고리)",
+                  "en": "Koulouri (sesame bread ring)",
+                  "ja": "クルリ（ゴマ付きリングパン）",
+                  "zh": "库卢里（芝麻面包圈）"
+                },
+                "note": {
+                  "ko": "아테네 공식 관광 안내는 갓 구운 쿨루리를 ‘아테네식 간편 아침’으로 소개합니다. 참깨를 입힌 고리 모양 빵입니다. 이 도시의 식사 풍경에 관한 설명이지, 아테네 발상이라는 뜻은 아닙니다.",
+                  "en": "Athens’ official tourism guide presents freshly baked koulouri as a classic Athenian breakfast to-go. It is a sesame-coated bread ring; this association does not establish an Athenian origin.",
+                  "ja": "アテネの公式観光案内は、焼きたてのクルリを定番の持ち帰り朝食として紹介しています。ゴマ付きのリング状パンです。この街で親しまれていることは、アテネ発祥を意味しません。",
+                  "zh": "雅典官方旅游指南将刚出炉的库卢里介绍为典型的雅典外带早餐。它是裹芝麻的环形面包；这种城市饮食关联并不能证明其起源于雅典。"
+                },
+                "source_urls": [
+                  "https://www.thisisathens.org/itineraries/2-day-budget-itinerary",
+                  "https://www.thisisathens.org/activities/tours/food-culture-epiculiar-tour-review"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "티로피타(치즈 파이)",
+                  "en": "Tiropita (cheese pie)",
+                  "ja": "ティロピタ（チーズパイ）",
+                  "zh": "提罗皮塔（奶酪派）"
+                },
+                "note": {
+                  "ko": "아테네 관광 안내는 따뜻한 티로피타를 간편한 아침 메뉴로 소개합니다. 그리스 파이는 지역마다 속재료와 조리법이 달라 하나의 조리법을 전국 공통 또는 아테네 고유라고 할 수 없습니다.",
+                  "en": "Athens’ tourism guide suggests warm tiropita as a quick breakfast. Greek pies vary regionally in fillings and preparation, so no single recipe is universal or uniquely Athenian.",
+                  "ja": "アテネの観光案内は、温かいティロピタを手軽な朝食として紹介しています。ギリシャのパイは地域によって具材や作り方が異なり、単一のレシピが全国共通またはアテネ独自とは言えません。",
+                  "zh": "雅典旅游指南将热乎的提罗皮塔列为便捷早餐。希腊各地派的馅料和做法有所不同，因此不应把某一种做法说成全国统一或雅典独有。"
+                },
+                "source_urls": [
+                  "https://www.thisisathens.org/itineraries/2-day-budget-itinerary",
+                  "https://www.visitgreece.gr/en/experiences/gastronomy/traditional-cuisine/cherished-greek-dishes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "무사카",
+                  "en": "Moussaka",
+                  "ja": "ムサカ",
+                  "zh": "穆萨卡"
+                },
+                "note": {
+                  "ko": "그리스관광청 설명에 따르면 가지와 감자, 토마토·향신료로 조리한 다진 고기를 층층이 놓고 베샤멜 소스와 치즈를 얹어 굽는 그리스 요리입니다. 조리법은 달라질 수 있습니다.",
+                  "en": "The Greek tourism authority describes moussaka as layers of aubergine and potato with minced meat cooked with tomato and spices, topped with béchamel and cheese. Recipes can vary.",
+                  "ja": "ギリシャ政府観光局によると、ナスとジャガイモ、トマトとスパイスで調理したひき肉を重ね、ベシャメルソースとチーズをのせて焼く料理です。作り方には違いがあります。",
+                  "zh": "希腊旅游部门介绍的穆萨卡以茄子、土豆和番茄香料肉末分层，再覆以白酱和奶酪烘烤。具体做法可能不同。"
+                },
+                "source_urls": [
+                  "https://www.visitgreece.gr/en/experiences/gastronomy/traditional-cuisine/cherished-greek-dishes"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "O Thanasis",
+                "area": "Monastiraki, central Athens",
+                "type": {
+                  "ko": "케밥·수블라키 식당",
+                  "en": "Kebab and souvlaki restaurant",
+                  "ja": "ケバブ・スブラキ店",
+                  "zh": "烤肉串与苏夫拉基餐馆"
+                },
+                "focus": {
+                  "ko": "공식 사이트에 케밥, 돼지고기·소고기·닭고기 수블라키, 차지키와 그리스 샐러드가 기재되어 있습니다.",
+                  "en": "Its own site lists kebab, pork, beef and chicken souvlaki, tzatziki and Greek salad.",
+                  "ja": "公式サイトにはケバブ、豚・牛・鶏のスブラキ、ザジキ、ギリシャサラダが掲載されています。",
+                  "zh": "官网列有烤肉串、猪肉／牛肉／鸡肉苏夫拉基、酸奶黄瓜酱和希腊沙拉。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트가 모나스티라키의 중심부 위치와 관련 음식을 확인해 수블라키 후보로 포함했습니다. 방문 시점의 영업·메뉴는 보증하지 않습니다.",
+                  "en": "A souvlaki candidate because its own site identifies a central Monastiraki location and lists relevant dishes. Future opening and menu status are not verified.",
+                  "ja": "公式サイトでモナスティラキ中心部の所在地と関連料理を確認できるため、候補にしています。訪問時の営業やメニューは保証しません。",
+                  "zh": "官网确认其位于蒙纳斯提拉奇中心区并列出相关菜品，因此列为候选；不保证日后到访时的营业或菜单情况。"
+                },
+                "official_url": "https://souvlaki-othanasis.gr/?lang=en",
+                "source_urls": [
+                  "https://souvlaki-othanasis.gr/?lang=en"
+                ]
+              },
+              {
+                "name": "Fanis’ Karamanlidika",
+                "area": "Downtown Athens, near the Central Market; venue locations on Evripidou, Socratous and Ermou streets",
+                "type": {
+                  "ko": "델리 겸 메제 식당",
+                  "en": "Deli and meze restaurant",
+                  "ja": "デリ兼メゼ料理店",
+                  "zh": "熟食店兼希腊小菜餐馆"
+                },
+                "focus": {
+                  "ko": "공식 메뉴에는 송아지 구이, 파스티르마·수주크, 아이발리식 미트볼과 수주크 파이가 있습니다. 식당은 소아시아 지역 음식 전통을 소개합니다.",
+                  "en": "Its menu lists veal roast, pastirma and sujuk, Aivali-style meatballs, and sujuk pie. The restaurant describes an Asia Minor culinary focus.",
+                  "ja": "公式メニューには仔牛のロースト、パストゥルマとスジュク、アイワル風ミートボール、スジュクパイがあります。小アジア地方の食文化をテーマにしています。",
+                  "zh": "官网菜单列有烤小牛肉、帕斯提尔玛和苏朱克、艾瓦勒风味肉丸及苏朱克派；餐馆介绍其小亚细亚饮食主题。"
+                },
+                "why_candidate": {
+                  "ko": "아테네 관광 안내가 중앙시장 인근의 식당으로 소개하며, 공식 사이트가 소아시아 음식 주제와 메뉴 예시를 확인해 줍니다. 개별 음식의 방문 시점 제공은 보장하지 않습니다.",
+                  "en": "Athens’ tourism guide places it by the Central Market, and its own site confirms an Asia Minor focus and menu examples. Individual dishes are not guaranteed for a future visit.",
+                  "ja": "アテネ観光案内が中央市場近くの店として紹介し、公式サイトで小アジア料理のテーマとメニュー例を確認できます。訪問時に個々の料理があるとは限りません。",
+                  "zh": "雅典旅游指南称其位于中央市场附近，官网也确认其小亚细亚饮食主题和菜单示例；不保证日后到访时供应具体菜品。"
+                },
+                "official_url": "https://www.karamanlidika.gr/en/menu/",
+                "source_urls": [
+                  "https://www.karamanlidika.gr/en/menu/",
+                  "https://www.thisisathens.org/itineraries/2-day-budget-itinerary"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitgreece.gr",
+                "url": "https://www.visitgreece.gr/en/experiences/gastronomy/traditional-cuisine/cherished-greek-dishes"
+              },
+              {
+                "title": "thisisathens.org",
+                "url": "https://www.thisisathens.org/itineraries/2-day-budget-itinerary"
+              },
+              {
+                "title": "thisisathens.org",
+                "url": "https://www.thisisathens.org/activities/tours/food-culture-epiculiar-tour-review"
+              },
+              {
+                "title": "souvlaki-othanasis.gr",
+                "url": "https://souvlaki-othanasis.gr/?lang=en"
+              },
+              {
+                "title": "karamanlidika.gr",
+                "url": "https://www.karamanlidika.gr/en/menu/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The supplied O Thanasis lead is verified as a central-Athens venue with related items listed on its own site; promotional claims about fame, demand, quality and daily fullness were not adopted.",
+              "The sources support Greek-wide dishes and foods encountered in Athens, not claims that souvlaki, tiropita or moussaka originated there. Koulouri is described as an Athenian grab-and-go breakfast, not as an Athenian invention.",
+              "Venue suggestions are candidates only, not bookings or guarantees of current hours, menus, prices, availability, wait times, accessibility or language service."
+            ]
           }
         ]
       }
@@ -2273,6 +5169,112 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://gundel.hu/en/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Scope limited to the Hungary record and featured city Budapest. Dishes below are Hungarian-wide, not claimed as Budapest-originating.",
+        "cities": [
+          {
+            "city": {
+              "ko": "부다페스트",
+              "en": "Budapest",
+              "ja": "ブダペスト",
+              "zh": "布达佩斯"
+            },
+            "intro": {
+              "ko": "부다페스트에서 만나는 헝가리 음식입니다. 음식은 헝가리 전반의 전통이며 부다페스트만의 음식이라는 뜻은 아닙니다.",
+              "en": "Hungarian foods encountered in Budapest; these are broader national traditions, not necessarily city-specific.",
+              "ja": "ブダペストで味わえるハンガリー料理です。ハンガリー全般の伝統であり、ブダペスト固有とは限りません。",
+              "zh": "在布达佩斯可尝到的匈牙利饮食；属于更广泛的全国传统，并非布达佩斯独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "굴라시 수프",
+                  "en": "Gulyás soup",
+                  "ja": "グヤーシュスープ",
+                  "zh": "古拉什汤"
+                },
+                "note": {
+                  "ko": "헝가리식 수프로 소개하는 편이 정확합니다. 조리법은 지역마다 다릅니다.",
+                  "en": "More accurately described as a Hungarian soup; recipes vary by region.",
+                  "ja": "ハンガリーのスープとして紹介するのが適切です。地域によって作り方は異なります。",
+                  "zh": "更准确地说是匈牙利汤品；各地做法有所不同。"
+                },
+                "source_urls": [
+                  "https://visithungary.com/documents/3/30/305/305c338a9d05a7fcb1afe03518340acacb58fb2.pdf"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "랑고시",
+                  "en": "Lángos",
+                  "ja": "ラーンゴシュ",
+                  "zh": "兰戈什"
+                },
+                "note": {
+                  "ko": "튀긴 반죽 간식으로, 사워크림·치즈·마늘 등을 곁들이기도 합니다.",
+                  "en": "A fried-dough snack that may be served with sour cream, cheese or garlic.",
+                  "ja": "揚げ生地の軽食で、サワークリーム、チーズ、ニンニクなどを添えることがあります。",
+                  "zh": "一种油炸面食小吃，可搭配酸奶油、奶酪或大蒜等。"
+                },
+                "source_urls": [
+                  "https://www.budapestinfo.hu/en/the-very-best-hungarian-street-food-the-perfect-snacks-for-sightseeing"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Gundel Restaurant",
+                "area": "City Park (Városliget), Budapest",
+                "type": {
+                  "ko": "헝가리 요리 레스토랑",
+                  "en": "Hungarian cuisine restaurant",
+                  "ja": "ハンガリー料理レストラン",
+                  "zh": "匈牙利菜餐厅"
+                },
+                "focus": {
+                  "ko": "헝가리 요리 전통",
+                  "en": "Hungarian culinary traditions",
+                  "ja": "ハンガリー料理",
+                  "zh": "匈牙利饮食传统"
+                },
+                "why_candidate": {
+                  "ko": "공식 홈페이지는 부다페스트 시립공원의 헝가리 요리 레스토랑으로 소개하며 공식 메뉴에는 굴라시 수프와 파프리카 치킨이 기재되어 있습니다. 메뉴는 변동될 수 있습니다.",
+                  "en": "Its official site identifies a Budapest City Park Hungarian restaurant; its official menu lists goulash soup and paprika chicken. Menus may change.",
+                  "ja": "公式サイトはブダペスト市立公園にあるハンガリー料理店として紹介し、公式メニューにはグヤーシュスープとパプリカチキンが掲載されています。メニューは変更される場合があります。",
+                  "zh": "官网将其介绍为布达佩斯城市公园的匈牙利餐厅；官方菜单列有古拉什汤和红椒鸡。菜单可能变更。"
+                },
+                "official_url": "https://gundel.hu/en/",
+                "source_urls": [
+                  "https://gundel.hu/en/",
+                  "https://gundel.hu/en/menus/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visithungary.com",
+                "url": "https://visithungary.com/documents/3/30/305/305c338a9d05a7fcb1afe03518340acacb58fb2.pdf"
+              },
+              {
+                "title": "budapestinfo.hu",
+                "url": "https://www.budapestinfo.hu/en/the-very-best-hungarian-street-food-the-perfect-snacks-for-sightseeing"
+              },
+              {
+                "title": "gundel.hu",
+                "url": "https://gundel.hu/en/"
+              },
+              {
+                "title": "gundel.hu",
+                "url": "https://gundel.hu/en/menus/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Gulyás is described as soup, not assumed to be thick stew; recipes vary regionally.",
+              "Gundel is only a candidate, not a booking. No visit-date menu availability, hours, price, wait time or reservation status was verified."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -2404,6 +5406,129 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Bæjarins Beztu",
             "url": "https://www.visiticeland.com/things-to-do/baejarins-beztu/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "scope iceland",
+        "cities": [
+          {
+            "city": {
+              "ko": "레이캬비크",
+              "en": "Reykjavík",
+              "ja": "レイキャビク",
+              "zh": "雷克雅未克"
+            },
+            "intro": {
+              "ko": "레이캬비크에서 아이슬란드식 양고기 수프와 생선 요리, 호밀빵 등 현지 음식 문화를 살펴볼 수 있습니다. 음식의 기원이나 현재 식당 메뉴는 별도로 단정하지 않습니다.",
+              "en": "Reykjavík offers ways to explore Icelandic food traditions, including lamb soup, fish dishes and rye bread. No dish-origin or current-menu claim is implied.",
+              "ja": "レイキャビクでは、羊肉のスープや魚料理、ライ麦パンなどを通じてアイスランドの食文化に触れられます。料理の発祥や現在の店頭提供を断定するものではありません。",
+              "zh": "在雷克雅未克可以通过羊肉汤、鱼料理和黑麦面包等了解冰岛饮食文化；这里不声称这些菜肴起源于该市，也不保证餐馆当前供应。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "키외트수파(아이슬란드식 양고기 수프)",
+                  "en": "Kjötsúpa (Icelandic lamb soup)",
+                  "ja": "キョートスーパ（アイスランド風ラムスープ）",
+                  "zh": "Kjötsúpa（冰岛羊肉汤）"
+                },
+                "note": {
+                  "ko": "레이캬비크 관광 안내는 양고기와 감자·당근·순무 등을 넣는 전통 수프로 소개합니다.",
+                  "en": "Reykjavík’s tourism guide describes this traditional soup with lamb, potatoes, carrots and turnips.",
+                  "ja": "レイキャビクの観光案内では、羊肉、ジャガイモ、ニンジン、カブなどを使う伝統的なスープと紹介されています。",
+                  "zh": "雷克雅未克旅游指南将其介绍为传统汤品，食材包括羊肉、土豆、胡萝卜和芜菁。"
+                },
+                "source_urls": [
+                  "https://visitreykjavik.is/traditional-icelandic-dishes-try-reykjavik"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "플로크피스쿠르(아이슬란드식 생선 스튜)",
+                  "en": "Plokkfiskur (Icelandic fish stew)",
+                  "ja": "プロックフィスクル（アイスランド風魚の煮込み）",
+                  "zh": "Plokkfiskur（冰岛鱼肉炖菜）"
+                },
+                "note": {
+                  "ko": "관광 안내는 익힌 대구나 해덕과 감자를 섞은 크리미한 생선 요리로 설명하며, 호밀빵과 함께 내는 경우도 소개합니다.",
+                  "en": "The tourism guide describes a creamy fish dish made with cooked cod or haddock and potatoes, sometimes served with rye bread.",
+                  "ja": "観光案内では、火を通したタラまたはハドックとジャガイモを合わせるクリーミーな魚料理とされ、ライ麦パンを添える例も紹介されています。",
+                  "zh": "旅游指南将其描述为用熟鳕鱼或黑线鳕与土豆制成的奶油口感鱼料理，有时搭配黑麦面包。"
+                },
+                "source_urls": [
+                  "https://visitreykjavik.is/traditional-icelandic-dishes-try-reykjavik",
+                  "https://www.visiticeland.com/article/traditional-icelandic-food-guide/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "루그브뢰드(아이슬란드식 호밀빵)",
+                  "en": "Rúgbrauð (Icelandic rye bread)",
+                  "ja": "ルーグブロイス（アイスランドのライ麦パン）",
+                  "zh": "Rúgbrauð（冰岛黑麦面包）"
+                },
+                "note": {
+                  "ko": "아이슬란드 관광 안내는 밀도가 높고 약간 단맛이 나는 호밀빵으로 설명하며, 지열로 천천히 굽는 방식도 소개합니다.",
+                  "en": "Iceland’s tourism guide describes this as dense, slightly sweet rye bread and notes geothermal baking as a traditional method.",
+                  "ja": "アイスランドの観光案内では、密度が高く少し甘みのあるライ麦パンと説明され、地熱で焼く伝統的な方法も紹介されています。",
+                  "zh": "冰岛旅游指南将其描述为质地扎实、略带甜味的黑麦面包，并介绍了利用地热烘烤的传统方式。"
+                },
+                "source_urls": [
+                  "https://www.visiticeland.com/article/traditional-icelandic-food-guide/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Matur og Drykkur",
+                "area": "Reykjavík",
+                "type": {
+                  "ko": "아이슬란드 요리 레스토랑",
+                  "en": "Icelandic cuisine restaurant",
+                  "ja": "アイスランド料理レストラン",
+                  "zh": "冰岛风味餐厅"
+                },
+                "focus": {
+                  "ko": "레스토랑은 아이슬란드 전통 요리에서 영감을 받은 계절별 코스 메뉴를 소개합니다.",
+                  "en": "The restaurant describes a seasonal menu inspired by traditional Icelandic cuisine.",
+                  "ja": "店は、アイスランドの伝統料理に着想を得た季節のコースメニューを案内しています。",
+                  "zh": "餐厅介绍其季节套餐以冰岛传统菜肴为灵感。"
+                },
+                "why_candidate": {
+                  "ko": "공식 소개와 메뉴가 전통 아이슬란드 요리 및 현지 식재료에 대한 지향을 밝힙니다. 특정 요리의 현재 제공 여부나 예약 상태를 뜻하지 않습니다.",
+                  "en": "Its official site describes a focus on Icelandic culinary heritage and seasonal local ingredients. This does not confirm any specific dish’s current availability or a reservation.",
+                  "ja": "公式サイトはアイスランドの食文化と季節の地元食材を重視すると説明しています。特定料理の現在の提供や予約を保証するものではありません。",
+                  "zh": "官网说明其关注冰岛饮食传统与时令本地食材；这并不证明某道菜目前供应，也不代表已预订。"
+                },
+                "official_url": "https://en.maturogdrykkur.is/",
+                "source_urls": [
+                  "https://en.maturogdrykkur.is/",
+                  "https://en.maturogdrykkur.is/matsedill"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitreykjavik.is",
+                "url": "https://visitreykjavik.is/traditional-icelandic-dishes-try-reykjavik"
+              },
+              {
+                "title": "visiticeland.com",
+                "url": "https://www.visiticeland.com/article/traditional-icelandic-food-guide/"
+              },
+              {
+                "title": "en.maturogdrykkur.is",
+                "url": "https://en.maturogdrykkur.is/"
+              },
+              {
+                "title": "en.maturogdrykkur.is",
+                "url": "https://en.maturogdrykkur.is/matsedill"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "레이캬비크 관광 안내를 지역 음식 자료로 사용했으며, 요리의 기원·독점성이나 특정 식당의 현재 메뉴로 확대 해석하지 않았습니다."
+            ]
           }
         ]
       }
@@ -2543,6 +5668,176 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://brazenhead.com/story/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "이 결과는 선언된 범위에서 country_id=ireland에 해당하는 항목만 다루며, 대상 도시는 Dublin입니다. 음식과 식당은 출처가 확인된 내용만 반영했습니다.",
+        "cities": [
+          {
+            "city": {
+              "ko": "더블린",
+              "en": "Dublin",
+              "ja": "ダブリン",
+              "zh": "都柏林"
+            },
+            "intro": {
+              "ko": "더블린의 지역 음식으로는 소시지·베이컨·감자를 넣는 코들(coddle)이 특히 잘 알려져 있습니다. 더블린 베이 프론은 이름과 메뉴상 연관성이 있지만 실제로 더블린 만에서만 잡히는 새우라는 뜻은 아닙니다.",
+              "en": "Coddle, a one-pot dish of sausages, bacon and potatoes, is particularly associated with Dublin. Dublin Bay prawns also feature in local food culture, but the name does not mean they come exclusively from Dublin Bay.",
+              "ja": "ソーセージ、ベーコン、ジャガイモを使う一鍋料理コドルは、ダブリンと特に結び付けられています。「ダブリン湾プラウン」も地元の食文化に登場しますが、ダブリン湾だけで獲れるエビという意味ではありません。",
+              "zh": "用香肠、培根和土豆炖煮的一锅料理科德尔（coddle）与都柏林关系密切。“都柏林湾虾”也见于当地饮食，但名称不表示它只产自都柏林湾。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "더블린 코들",
+                  "en": "Dublin coddle",
+                  "ja": "ダブリン・コドル",
+                  "zh": "都柏林科德尔"
+                },
+                "note": {
+                  "ko": "관광청 자료가 오래된 더블린식 한 냄비 요리로 소개합니다. 일반적으로 감자, 소시지, 베이컨, 양파와 육수를 쓰며, 재료와 조리법에는 차이가 있습니다. 당근이나 허브가 전통 재료라고 단정하지 않습니다.",
+                  "en": "Tourism Ireland describes it as an old-school Dublin one-pot dish. A documented version uses potatoes, sausages, bacon, onion and stock; recipes vary, and carrots or herbs are not universal traditional ingredients.",
+                  "ja": "Tourism Irelandは、昔ながらのダブリンの一鍋料理として紹介しています。紹介されたレシピはジャガイモ、ソーセージ、ベーコン、玉ねぎ、ブイヨンを使います。レシピには幅があり、ニンジンやハーブが必須の伝統食材とは限りません。",
+                  "zh": "爱尔兰旅游局将其介绍为老式都柏林一锅料理。其示例做法使用土豆、香肠、培根、洋葱和高汤；做法会有差异，胡萝卜或香草并非普遍必备的传统配料。"
+                },
+                "source_urls": [
+                  "https://www.ireland.com/en-us/magazine/food-and-drink/traditional-irish-recipes/",
+                  "https://www.visitdublin.com/guides/irish-food"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "더블린 베이 프론(노르웨이바닷가재, 랑구스틴)",
+                  "en": "Dublin Bay prawn (Norway lobster/langoustine)",
+                  "ja": "ダブリン湾プラウン（ヨーロッパアカザエビ／ラングスティーヌ）",
+                  "zh": "都柏林湾虾（挪威海螯虾／海螯虾）"
+                },
+                "note": {
+                  "ko": "이름과 달리 새우가 아니라 노르웨이바닷가재류이며, 더블린 관광 안내는 아일랜드 해역에 서식하고 더블린 만에만 나는 것은 아니라고 명시합니다. 트리니티 칼리지의 자료는 더블린에서 일찍 정기적으로 양륙된 데서 이름이 생겼다고 설명합니다. 해산물 메뉴에 쓰이는 식재료로 소개합니다.",
+                  "en": "Despite the name, this is a Norway lobster/langoustine, not a true prawn. Dublin’s tourism guide says it is native to Irish waters and not specifically from Dublin Bay; Trinity College Dublin’s food-history page links the name to its early regular landings in Dublin. It is best understood here as a local seafood-menu ingredient, not a uniquely Dublin catch.",
+                  "ja": "名前に反して、エビではなくヨーロッパアカザエビ（ラングスティーヌ）の仲間です。ダブリンの観光案内はアイルランド海域に生息し、ダブリン湾に限られないと説明しています。トリニティ・カレッジ・ダブリンの食文化史資料は、ダブリンで早くから定期的に水揚げされたことに名称の由来を結び付けています。ここでは地元の魚介メニューに使われる食材として紹介します。",
+                  "zh": "名称虽如此，它并非真正的虾，而是挪威海螯虾（langoustine）。都柏林旅游指南说明它分布于爱尔兰海域，并非只产自都柏林湾；都柏林圣三一学院的饮食史资料将名称与早期在都柏林经常卸货的历史联系起来。此处将其作为当地海鲜菜单中的食材介绍，而非都柏林独有的渔获。"
+                },
+                "source_urls": [
+                  "https://www.visitdublin.com/guides/dublin-bay-guide",
+                  "https://www.tcd.ie/tceh/projects/foodsmartdublin/recipes/November_Nephrops/HistoryEcology_prawn.php",
+                  "https://www.visitdublin.com/guides/irish-food"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Gallagher's Boxty House",
+                "area": "Temple Bar, Dublin 2",
+                "type": {
+                  "ko": "아일랜드 전통 음식 전문 레스토랑",
+                  "en": "Irish-food restaurant",
+                  "ja": "アイルランド料理店",
+                  "zh": "爱尔兰料理餐厅"
+                },
+                "focus": {
+                  "ko": "보크스티(감자 팬케이크·덤플링·빵 등)와 아일랜드 요리. 공식 메뉴에는 더블린 코들도 기재되어 있습니다.",
+                  "en": "Boxty (including potato pancakes, dumplings and bread) and Irish cooking; its official menu lists Dublin coddle.",
+                  "ja": "ボクスティ（ジャガイモのパンケーキ、団子、パンなど）を中心とするアイルランド料理。公式メニューにはダブリン・コドルも掲載されています。",
+                  "zh": "主打爱尔兰料理和博克斯蒂（土豆煎饼、团子、面包等）；其官网菜单列有都柏林科德尔。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트가 Temple Bar 주소와 레스토랑 위치를 밝히고, 보크스티의 지역별 형태와 더블린 코들을 설명합니다. 보크스티 자체는 더블린 특산이라고 하지 않고 리트림·캐번·퍼매너 지역과 연결해 소개합니다.",
+                  "en": "The restaurant’s official site gives its Temple Bar address, explains regional forms of boxty and lists Dublin coddle. It associates boxty’s regional forms with Leitrim, Cavan and Fermanagh rather than presenting boxty as uniquely Dublin.",
+                  "ja": "公式サイトでTemple Barの住所を確認でき、ボクスティの地域別の形とダブリン・コドルを紹介しています。ボクスティはダブリン固有とはせず、リートリム、キャバン、ファーマナの地域のものとして説明しています。",
+                  "zh": "餐厅官网列出其Temple Bar地址，介绍博克斯蒂的地区类型，并在菜单中列出都柏林科德尔。官网将博克斯蒂与利特里姆、卡文和弗马纳联系起来，并未称其为都柏林独有。"
+                },
+                "official_url": "https://www.boxtyhouse.ie/",
+                "source_urls": [
+                  "https://www.boxtyhouse.ie/",
+                  "https://www.boxtyhouse.ie/contact-us",
+                  "https://www.boxtyhouse.ie/the-family",
+                  "https://www.boxtyhouse.ie/menu?menu=mains",
+                  "https://www.boxtyhouse.ie/%C3%A1-la-carte-menu"
+                ]
+              },
+              {
+                "name": "The Brazen Head",
+                "area": "Bridge Street, Dublin",
+                "type": {
+                  "ko": "전통 아일랜드 펍",
+                  "en": "Traditional Irish pub",
+                  "ja": "伝統的なアイリッシュ・パブ",
+                  "zh": "传统爱尔兰酒吧"
+                },
+                "focus": {
+                  "ko": "공식 소개는 하우스 메뉴의 Brazen Beef Stew와 피시 앤 칩스를 언급합니다. 이를 더블린 고유의 전통 스튜라고 단정하지 않습니다.",
+                  "en": "Its official story mentions its house-named Brazen Beef Stew and fish and chips. This does not establish the stew as uniquely Dublin or as a traditional Dublin dish.",
+                  "ja": "公式紹介では、店の名を冠したBrazen Beef Stewとフィッシュ・アンド・チップスに触れています。これだけで、そのシチューがダブリン固有の伝統料理だとは言えません。",
+                  "zh": "官网介绍提到店名相关的Brazen Beef Stew和炸鱼薯条；这不足以证明该炖菜是都柏林独有的传统菜。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트가 Bridge Street의 펍 위치와 자체 비프 스튜를 확인해 주며, Visit Dublin도 전통 아일랜드 요리를 찾는 장소로 언급합니다. 메뉴·영업 정보는 변동될 수 있습니다.",
+                  "en": "Its official site confirms the Bridge Street pub and its own beef stew; Visit Dublin also identifies it as a place for classic Irish dishes. Menus and service details may change.",
+                  "ja": "公式サイトでBridge Streetにあるパブと店独自のビーフシチューを確認でき、Visit Dublinも伝統的なアイルランド料理を味わう店として紹介しています。メニューや営業情報は変わる場合があります。",
+                  "zh": "官网确认其位于Bridge Street，并介绍自家牛肉炖菜；Visit Dublin也将其列为品尝经典爱尔兰菜的去处。菜单及营业信息可能变化。"
+                },
+                "official_url": "https://brazenhead.com/",
+                "source_urls": [
+                  "https://brazenhead.com/",
+                  "https://brazenhead.com/story/",
+                  "https://www.visitdublin.com/guides/irish-food"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "ireland.com",
+                "url": "https://www.ireland.com/en-us/magazine/food-and-drink/traditional-irish-recipes/"
+              },
+              {
+                "title": "visitdublin.com",
+                "url": "https://www.visitdublin.com/guides/irish-food"
+              },
+              {
+                "title": "visitdublin.com",
+                "url": "https://www.visitdublin.com/guides/dublin-bay-guide"
+              },
+              {
+                "title": "tcd.ie",
+                "url": "https://www.tcd.ie/tceh/projects/foodsmartdublin/recipes/November_Nephrops/HistoryEcology_prawn.php"
+              },
+              {
+                "title": "boxtyhouse.ie",
+                "url": "https://www.boxtyhouse.ie/"
+              },
+              {
+                "title": "boxtyhouse.ie",
+                "url": "https://www.boxtyhouse.ie/contact-us"
+              },
+              {
+                "title": "boxtyhouse.ie",
+                "url": "https://www.boxtyhouse.ie/the-family"
+              },
+              {
+                "title": "boxtyhouse.ie",
+                "url": "https://www.boxtyhouse.ie/menu?menu=mains"
+              },
+              {
+                "title": "boxtyhouse.ie",
+                "url": "https://www.boxtyhouse.ie/%C3%A1-la-carte-menu"
+              },
+              {
+                "title": "brazenhead.com",
+                "url": "https://brazenhead.com/"
+              },
+              {
+                "title": "brazenhead.com",
+                "url": "https://brazenhead.com/story/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "기존 항목의 'Irish beef stew (Brazen Beef Stew)'는 서로 같은 지역 전통 음식으로 확인되지 않았습니다. Brazen Head 공식 소개는 자체 명칭의 Brazen Beef Stew를 언급할 뿐 더블린 고유 음식이나 정형화된 아일랜드 비프 스튜로 입증하지 않습니다.",
+              "더블린 베이 프론은 이름이 실제 산지나 동물 분류를 오해하게 할 수 있어, 종과 명칭의 역사적 맥락을 함께 밝혔습니다. 더블린 만에서만 난다거나 특정 조리법이 정통이라고 주장하지 않았습니다.",
+              "보크스티는 레스토랑 후보의 메뉴 특색으로만 언급했습니다. 해당 레스토랑 공식 설명은 지역 보크스티를 리트림, 캐번, 퍼매너와 연결하므로 더블린 지역 음식 목록에는 넣지 않았습니다.",
+              "식당은 조사된 후보일 뿐이며 예약, 특정 시점의 이용 가능성, 영업시간, 가격, 대기시간 또는 품질을 보장하지 않습니다."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -2648,6 +5943,534 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Menu Napoli | L'Antica Pizzeria da Michele",
             "url": "https://www.damichele.net/menu/sede_napoli/menu%20Napoli.pdf"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Covers the three declared guide cities—Naples, Florence and Rome. Dishes are presented as locally associated specialties, not claims of exclusive origin; venue listings are research-backed candidates only, not bookings or guarantees of current availability.",
+        "cities": [
+          {
+            "city": {
+              "ko": "나폴리",
+              "en": "Naples",
+              "ja": "ナポリ",
+              "zh": "那不勒斯"
+            },
+            "intro": {
+              "ko": "캄파니아의 나폴리에서는 전통 피자와 튀김 길거리 음식, 지역 과자를 만나볼 수 있습니다. 네아폴리탄 피자 장인 기술은 반죽과 화덕 굽기를 포함한 살아 있는 전통으로 소개됩니다.",
+              "en": "Naples, in Campania, is associated with traditional pizza, fried street foods and local pastries. UNESCO describes Neapolitan pizzaiuolo as a living practice involving dough preparation and wood-fired baking.",
+              "ja": "カンパニア州のナポリでは、伝統的なピッツァや揚げ物のストリートフード、菓子が親しまれています。ユネスコは、ナポリのピッツァ職人の技を生地作りと薪窯焼成を含む生きた伝統として紹介しています。",
+              "zh": "坎帕尼亚大区的那不勒斯以传统披萨、油炸街头小吃和地方甜点闻名。联合国教科文组织将那不勒斯披萨师技艺描述为包括和面与柴火烘烤的活态传统。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "마르게리타 피자 / 마리나라 피자",
+                  "en": "Margherita pizza / Marinara pizza",
+                  "ja": "マルゲリータ・ピッツァ／マリナーラ・ピッツァ",
+                  "zh": "玛格丽特披萨／玛丽娜拉披萨"
+                },
+                "note": {
+                  "ko": "나폴리 피자는 장인 기술과 장작 화덕 굽기로 잘 알려져 있습니다. 마르게리타는 토마토와 모차렐라를 얹고, 마리나라에는 치즈 대신 토마토·마늘·오레가노를 씁니다.",
+                  "en": "Neapolitan pizza is associated with pizzaiuolo craft and wood-fired baking. Margherita uses tomato and mozzarella; marinara is a cheese-free tomato pizza seasoned with garlic and oregano.",
+                  "ja": "ナポリのピッツァは、職人技と薪窯焼成で知られます。マルゲリータにはトマトとモッツァレラを使い、マリナーラはチーズを使わず、トマトにニンニクとオレガノを合わせます。",
+                  "zh": "那不勒斯披萨以披萨师技艺和柴火烘烤为特色。玛格丽特披萨使用番茄和马苏里拉；玛丽娜拉不加奶酪，以番茄、蒜和牛至调味。"
+                },
+                "source_urls": [
+                  "https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722",
+                  "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/neapolitan-cuisine-history-of-passion-and-tradition",
+                  "https://www.pizzanapoletana.org/public/pdf/Disciplinare-2024-ENG.pdf"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "피자 프리타(튀긴 피자)",
+                  "en": "Fried pizza",
+                  "ja": "揚げピッツァ",
+                  "zh": "炸披萨"
+                },
+                "note": {
+                  "ko": "반달 모양 반죽을 기름에 튀기는 나폴리식 길거리 음식입니다. 전통적인 속 재료로 리코타, 프로볼라와 살루미 등이 소개되며, 속을 넣지 않은 몬타나라 변형도 있습니다.",
+                  "en": "A Neapolitan street-food variation made by frying folded dough. A traditional filling described by the local tourism guide includes ricotta, provola and cured meat; an unfilled version is also known.",
+                  "ja": "折りたたんだ生地を油で揚げるナポリのストリートフードです。地元観光案内が紹介する伝統的な具にはリコッタ、プロヴォラ、サラミ類などがあり、具なしのタイプもあります。",
+                  "zh": "将折叠的面团油炸而成的那不勒斯街头小吃。当地旅游指南介绍的传统馅料包括里科塔、普罗沃拉和腌肉；也有不包馅的做法。"
+                },
+                "source_urls": [
+                  "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/what-to-eat-in-naples-the-best-neapolitan-street-foods"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "프리타티나 디 파스타(파스타 튀김) / 마카로니 프리타타",
+                  "en": "Fried pasta fritter / Macaroni frittata",
+                  "ja": "パスタのフリッタティーナ／マカロニ・フリッタータ",
+                  "zh": "意式炸面团／通心粉煎蛋饼"
+                },
+                "note": {
+                  "ko": "나폴리식 길거리 간식입니다. 파스타와 달걀을 넣어 팬에 부쳐 조각내거나, 베샤멜·고기·완두콩·모차렐라를 넣어 튀기는 프리타티나 형태가 있습니다.",
+                  "en": "A Neapolitan snack with related preparations: macaroni or other pasta bound with egg and pan-fried, or a breaded, deep-fried frittatina filled with pasta and ingredients such as béchamel, meat, peas and mozzarella.",
+                  "ja": "ナポリの軽食で、パスタを卵でまとめて焼くマカロニ料理や、ベシャメル、肉、豆、モッツァレラなどとパスタを詰めて衣をつけて揚げるフリッタティーナがあります。",
+                  "zh": "那不勒斯小吃的一类做法：意面拌蛋后煎成饼，也可将意面与白酱、肉、豌豆、马苏里拉等包入面糊后裹衣油炸。"
+                },
+                "source_urls": [
+                  "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/what-to-eat-in-naples-the-best-neapolitan-street-foods",
+                  "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/neapolitan-cuisine-history-of-passion-and-tradition"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "스폴리아텔라",
+                  "en": "Sfogliatella",
+                  "ja": "スフォリアテッラ",
+                  "zh": "千层酥角（Sfogliatella）"
+                },
+                "note": {
+                  "ko": "겹겹이 말린 반죽 안에 세몰리나와 리코타를 넣어 굽는 나폴리 과자입니다. 바삭한 리ッチャ와 부드러운 파스타 형태가 있습니다.",
+                  "en": "A Neapolitan pastry filled with semolina and ricotta. The local guide describes both the flaky, layered riccia form and the softer shortcrust frolla form.",
+                  "ja": "セモリナとリコッタを詰めたナポリの菓子です。地元観光案内では、薄い層が重なるリッチャと、やわらかな生地のフロッラの二種類が紹介されています。",
+                  "zh": "那不勒斯酥点，内馅为粗粒小麦粉和里科塔奶酪。当地指南介绍了层次酥脆的 Riccia 和外皮较柔软的 Frolla 两种。"
+                },
+                "source_urls": [
+                  "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/what-to-eat-in-naples-the-best-neapolitan-street-foods"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "L'Antica Pizzeria da Michele (Naples historic location)",
+                "area": "Centro storico, Via Cesare Sersale",
+                "type": {
+                  "ko": "피자 전문점",
+                  "en": "Pizzeria",
+                  "ja": "ピッツェリア",
+                  "zh": "披萨店"
+                },
+                "focus": {
+                  "ko": "나폴리식 피자",
+                  "en": "Neapolitan pizza",
+                  "ja": "ナポリ風ピッツァ",
+                  "zh": "那不勒斯披萨"
+                },
+                "why_candidate": {
+                  "ko": "자체 소개 페이지가 나폴리의 역사적 지점과 주소를 확인하고, 공식 홈페이지는 메뉴에 네 종류의 피자가 있다고 설명합니다. 특정 메뉴의 현재 판매 여부는 확인된 것으로 간주하지 않습니다.",
+                  "en": "The restaurant's own location page confirms its historic Naples site and address; its homepage says the menu has four pizzas. This is a candidate, not a claim that any particular pizza is currently available.",
+                  "ja": "公式の店舗案内でナポリの歴史ある店舗と住所を確認でき、公式サイトはメニューに4種類のピッツァがあると説明しています。個別メニューの現在の提供状況までは保証しません。",
+                  "zh": "餐厅官方门店页确认其那不勒斯历史店址，官网称菜单有四种披萨。本指南仅列为候选，不保证某一披萨目前供应。"
+                },
+                "official_url": "https://www.damichele.net/sede-di-napoli/",
+                "source_urls": [
+                  "https://www.damichele.net/sede-di-napoli/",
+                  "https://www.damichele.net/",
+                  "https://www.damichele.net/menu/sede_napoli/menu%20Napoli.pdf"
+                ]
+              },
+              {
+                "name": "Gino Sorbillo Antica Pizzeria Via dei Tribunali",
+                "area": "Centro storico, Via dei Tribunali 32",
+                "type": {
+                  "ko": "피자 전문점",
+                  "en": "Pizzeria",
+                  "ja": "ピッツェリア",
+                  "zh": "披萨店"
+                },
+                "focus": {
+                  "ko": "나폴리식 피자",
+                  "en": "Neapolitan pizza",
+                  "ja": "ナポリ風ピッツァ",
+                  "zh": "那不勒斯披萨"
+                },
+                "why_candidate": {
+                  "ko": "소르빌로 공식 페이지는 Via dei Tribunali 지점과 나폴리식 피자 제공을 확인합니다. 메뉴는 변경될 수 있습니다.",
+                  "en": "Sorbillo's official page confirms the Via dei Tribunali location and its Neapolitan-pizza focus. Its menu may change.",
+                  "ja": "ソルビッロの公式ページで、Via dei Tribunali 店とナポリ風ピッツァを確認できます。メニューは変更される場合があります。",
+                  "zh": "Sorbillo 官网确认其 Via dei Tribunali 门店及那不勒斯披萨特色。菜单可能变动。"
+                },
+                "official_url": "https://www.sorbillo.it/gino-sorbillo-antica-pizzeria/",
+                "source_urls": [
+                  "https://www.sorbillo.it/gino-sorbillo-antica-pizzeria/",
+                  "https://www.sorbillo.it/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "ich.unesco.org",
+                "url": "https://ich.unesco.org/en/RL/art-of-neapolitan-pizzaiuolo-00722"
+              },
+              {
+                "title": "visitnaples.eu",
+                "url": "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/neapolitan-cuisine-history-of-passion-and-tradition"
+              },
+              {
+                "title": "pizzanapoletana.org",
+                "url": "https://www.pizzanapoletana.org/public/pdf/Disciplinare-2024-ENG.pdf"
+              },
+              {
+                "title": "visitnaples.eu",
+                "url": "https://www.visitnaples.eu/en/neapolitanity/flavours-of-naples/what-to-eat-in-naples-the-best-neapolitan-street-foods"
+              },
+              {
+                "title": "damichele.net",
+                "url": "https://www.damichele.net/sede-di-napoli/"
+              },
+              {
+                "title": "damichele.net",
+                "url": "https://www.damichele.net/"
+              },
+              {
+                "title": "damichele.net",
+                "url": "https://www.damichele.net/menu/sede_napoli/menu%20Napoli.pdf"
+              },
+              {
+                "title": "sorbillo.it",
+                "url": "https://www.sorbillo.it/gino-sorbillo-antica-pizzeria/"
+              },
+              {
+                "title": "sorbillo.it",
+                "url": "https://www.sorbillo.it/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The user-supplied claim that Da Michele's Naples menu has exactly two pizzas is not accurate for the restaurant's own site: it states four pizzas. The official Naples menu PDF is linked above; no prices or current availability are carried into this guide.",
+              "Sorbillo's official site confirms a Naples Via dei Tribunali pizzeria and Neapolitan pizza; claims that it is a particular 'counterpart' or is more trendy are subjective and omitted.",
+              "Antonio & Antonio's own site confirms a restaurant on Naples' seafront opposite Castel dell'Ovo, with pizza and traditional dishes; the supplied specific seafood-pasta/fritto-misto endorsement was not independently established from the retrieved official menu, so it is not presented as fact. Source: https://www.antonioeantonio.it/ ; menu: https://www.antonioeantonio.it/wp-content/uploads/2025/06/MENU-ENG_ANTONIO-E-ANTONIO-Pizzeria2025.pdf.pdf",
+              "No universal origin claim, Italian-flag story, exclusive recipe rule, guaranteed quality, wait-time or reservation claim is made."
+            ]
+          },
+          {
+            "city": {
+              "ko": "피렌체",
+              "en": "Florence",
+              "ja": "フィレンツェ",
+              "zh": "佛罗伦萨"
+            },
+            "intro": {
+              "ko": "피렌체의 음식 문화는 토스카나의 채소·빵 기반 수프와 소고기 요리, 시장의 내장육 간식으로 잘 알려져 있습니다. 아래 음식들은 피렌체와 토스카나에 연결된 대표 사례입니다.",
+              "en": "Florentine food is associated with Tuscan vegetable-and-bread soups, beef dishes and market snacks made with offal. The examples below are specialties linked to Florence and Tuscany.",
+              "ja": "フィレンツェの食文化は、トスカーナの野菜とパンを使ったスープ、牛肉料理、市場の内臓料理と結びついています。以下はフィレンツェやトスカーナにゆかりのある料理です。",
+              "zh": "佛罗伦萨饮食与托斯卡纳的蔬菜面包汤、牛肉菜肴及市场内脏小吃相关。以下列出的是与佛罗伦萨和托斯卡纳有关的代表性食物。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "람프레도토 샌드위치",
+                  "en": "Lampredotto sandwich",
+                  "ja": "ランプレドット・サンドイッチ",
+                  "zh": "牛第四胃三明治（Lampredotto）"
+                },
+                "note": {
+                  "ko": "소의 위 가운데 하나인 람프레도토를 육수에 익혀 빵에 넣어 먹는 피렌체 길거리 음식입니다. 살사 베르데, 칠리 오일 등을 곁들일 수 있습니다.",
+                  "en": "A Florentine street-food sandwich made with lampredotto, a part of a cow's stomach, cooked in broth and served in bread. Tuscany's tourism authority describes salsa verde and chilli oil as possible condiments.",
+                  "ja": "牛の胃の一部であるランプレドットを煮込み、パンにはさんだフィレンツェのストリートフードです。トスカーナ観光当局はサルサ・ヴェルデやチリオイルなどの薬味を紹介しています。",
+                  "zh": "佛罗伦萨街头三明治，以牛胃的一部分 lampredotto 经汤汁烹煮后夹入面包制成。托斯卡纳旅游局介绍了青酱、辣椒油等可选调味。"
+                },
+                "source_urls": [
+                  "https://www.visittuscany.com/en/flavors/tripe-lamprodotto/",
+                  "https://www.italia.it/it/toscana/firenze/guida-storia-curiosita"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "리볼리타",
+                  "en": "Ribollita",
+                  "ja": "リボッリータ",
+                  "zh": "托斯卡纳面包蔬菜汤（Ribollita）"
+                },
+                "note": {
+                  "ko": "토스카나식 걸쭉한 수프로, 남은 빵과 채소를 사용합니다. 피렌체 관광 안내는 채소 수프라고 설명하고, 이탈리아 공식 관광资料는 여러 채소를 재료로 듭니다.",
+                  "en": "A thick Tuscan soup using stale bread and vegetables. Florence's tourism guide describes it as a vegetable soup; Italy's national tourism source lists a range of vegetables rather than a single fixed recipe.",
+                  "ja": "古いパンと野菜を使うトスカーナの濃厚なスープです。フィレンツェの観光案内は野菜スープと説明し、イタリア政府観光サイトは複数の野菜を挙げています。",
+                  "zh": "托斯卡纳浓汤，以陈面包和蔬菜烹制。佛罗伦萨旅游指南将其描述为蔬菜汤；意大利国家旅游资料列出多种蔬菜，并未限定唯一配方。"
+                },
+                "source_urls": [
+                  "https://www.italia.it/it/toscana/firenze/guida-storia-curiosita",
+                  "https://www.italia.it/it/toscana/cosa-fare/prodotti-piatti-tipici-toscani"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "비스테카 알라 피오렌티나(피렌체식 스테이크)",
+                  "en": "Florentine-style steak",
+                  "ja": "ビステッカ・アッラ・フィオレンティーナ",
+                  "zh": "佛罗伦萨丁骨牛排"
+                },
+                "note": {
+                  "ko": "피렌체와 연결된 뼈 있는 등심 스테이크입니다. 이탈리아 공식 관광 안내는 치아니나 품종 소나 암소의 두툼한 뼈 있는 부위를 언급합니다. 특정 굽기는 보편적 규칙으로 단정하지 않습니다.",
+                  "en": "A bone-in loin steak associated with Florence. Italy's national tourism source describes a thick cut with bone, including Chianina beef or heifer; it does not make one doneness level a universal requirement.",
+                  "ja": "フィレンツェゆかりの骨付きロースステーキです。イタリア政府観光サイトは、キアニーナ牛または雌牛の厚い骨付き肉を挙げています。焼き加減を一律の決まりとはしません。",
+                  "zh": "与佛罗伦萨相关的带骨里脊牛排。意大利国家旅游资料提到厚切带骨肉，可用基亚尼娜牛或小母牛肉；并未将某一种熟度说成绝对标准。"
+                },
+                "source_urls": [
+                  "https://www.italia.it/it/toscana/firenze/guida-storia-curiosita",
+                  "https://www.italia.it/it/toscana/cosa-fare/prodotti-piatti-tipici-toscani"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "트리파 알라 피오렌티나(피렌체식 양·위 요리)",
+                  "en": "Florentine-style tripe",
+                  "ja": "トリッパ・アッラ・フィオレンティーナ",
+                  "zh": "佛罗伦萨式牛肚"
+                },
+                "note": {
+                  "ko": "토마토와 채소 등을 곁들인 소 위 요리로, 피렌체의 지역 음식으로 소개됩니다. 조리법은 가게마다 다를 수 있습니다.",
+                  "en": "A Florentine tripe dish, often prepared with tomato and vegetables; Italy's official tourism guide identifies it as a Florence specialty. Preparation can vary.",
+                  "ja": "トマトや野菜などを合わせるフィレンツェの牛胃料理です。イタリア政府観光サイトがフィレンツェの名物として紹介しており、調理法は店によって異なる場合があります。",
+                  "zh": "佛罗伦萨特色牛肚菜，常与番茄和蔬菜同烹；意大利官方旅游指南将其列为当地特色。具体做法因店而异。"
+                },
+                "source_urls": [
+                  "https://www.italia.it/it/toscana/firenze/guida-storia-curiosita"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Trattoria Mario",
+                "area": "San Lorenzo, Via Rosina 2r",
+                "type": {
+                  "ko": "토스카나 전통 트라토리아",
+                  "en": "Traditional Tuscan trattoria",
+                  "ja": "トスカーナ料理のトラットリア",
+                  "zh": "托斯卡纳传统小餐馆"
+                },
+                "focus": {
+                  "ko": "비스테카 알라 피오렌티나, 리볼리타 및 피렌체 전통 요리",
+                  "en": "Bistecca alla fiorentina, ribollita and Florentine traditional cooking",
+                  "ja": "ビステッカ・アッラ・フィオレンティーナ、リボッリータなどフィレンツェの伝統料理",
+                  "zh": "佛罗伦萨丁骨牛排、Ribollita 及佛罗伦萨传统菜肴"
+                },
+                "why_candidate": {
+                  "ko": "식당의 자체 페이지가 위치와 가족 운영 이력을 확인하며, 대표 메뉴로 스테이크·리볼리타를 소개합니다. 일일 메뉴가 바뀐다고 명시하므로 개별 요리의 당일 제공을 보장하지 않습니다.",
+                  "en": "The restaurant's own site confirms the address and family history and identifies the steak and ribollita among its specialties. It says the menu changes daily, so no individual dish's availability is guaranteed.",
+                  "ja": "公式サイトで住所と家族経営の歴史を確認でき、名物としてステーキとリボッリータを紹介しています。日替わりメニューのため、個別料理の提供を保証するものではありません。",
+                  "zh": "餐厅官网确认地址和家族经营历史，并介绍牛排与 Ribollita 等特色菜。官网称菜单每日变化，因此不保证某道菜当日供应。"
+                },
+                "official_url": "",
+                "source_urls": [
+                  "https://www.italia.it/it/toscana/firenze/guida-storia-curiosita",
+                  "https://www.italia.it/it/toscana/cosa-fare/prodotti-piatti-tipici-toscani"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visittuscany.com",
+                "url": "https://www.visittuscany.com/en/flavors/tripe-lamprodotto/"
+              },
+              {
+                "title": "italia.it",
+                "url": "https://www.italia.it/it/toscana/firenze/guida-storia-curiosita"
+              },
+              {
+                "title": "italia.it",
+                "url": "https://www.italia.it/it/toscana/cosa-fare/prodotti-piatti-tipici-toscani"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The supplied Florence text stops mid-sentence. No missing continuation was invented; broad claims about Florence being far from the sea or categorically preferring meat over seafood are omitted.",
+              "Trattoria Mario's first-party page lists a changing menu and notes that bistecca and ribollita are usually part of its offering; that does not establish current daily availability."
+            ]
+          },
+          {
+            "city": {
+              "ko": "로마",
+              "en": "Rome",
+              "ja": "ローマ",
+              "zh": "罗马"
+            },
+            "intro": {
+              "ko": "로마의 라치오 요리에는 페코리노 로마노, 후추, 토마토, 달걀과 돼지고기를 조합한 파스타가 여럿 있습니다. 로마-유대 음식 전통과 튀김 간식도 함께 살펴볼 만합니다.",
+              "en": "Roman and Lazio cooking includes several pasta dishes built around Pecorino Romano, pepper, tomato, eggs and pork. Roman-Jewish food traditions and fried snacks are also part of the city's dining culture.",
+              "ja": "ローマとラツィオの料理には、ペコリーノ・ロマーノ、胡椒、トマト、卵、豚肉を組み合わせたパスタがいくつもあります。ローマ・ユダヤ料理の伝統や揚げ物の軽食も街の食文化の一部です。",
+              "zh": "罗马及拉齐奥菜肴中有多种使用罗马羊奶酪、胡椒、番茄、鸡蛋和猪肉的意面。罗马犹太饮食传统和油炸小吃也构成当地饮食文化的一部分。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "카르보나라",
+                  "en": "Carbonara",
+                  "ja": "カルボナーラ",
+                  "zh": "卡邦尼意面"
+                },
+                "note": {
+                  "ko": "로마 관광 안내는 달걀, 돼지 볼살 지방(관찰레로 알려진 부위), 페코리노 로마노와 후추를 기본 재료로 듭니다. 크림이 필수라는 식의 설명은 하지 않습니다.",
+                  "en": "Rome's tourism guide lists eggs, cured pork jowl, Pecorino Romano and black pepper as the dish's components. This description does not make unsupported claims about absolute recipe rules.",
+                  "ja": "ローマ観光案内は、卵、豚の頬肉の塩漬け、ペコリーノ・ロマーノ、黒胡椒を材料として挙げています。レシピを絶対的な規則として断定しません。",
+                  "zh": "罗马旅游指南列出的食材包括鸡蛋、腌制猪颊肉、罗马羊奶酪和黑胡椒。这里不把某种配方说成绝对规则。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/en/page/rome-eat-traditional-recipes",
+                  "https://www.turismoroma.it/en/page/seven-traditional-dishes-real-roman-lunch",
+                  "https://www.daenzoal29.com/en/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카초 에 페페",
+                  "en": "Cacio e pepe",
+                  "ja": "カチョ・エ・ペペ",
+                  "zh": "奶酪胡椒意面"
+                },
+                "note": {
+                  "ko": "페코리노 로마노와 검은 후추로 맛을 내는 파스타입니다. 로마 관광청은 전분이 든 면수를 치즈와 섞어 소스를 유화하는 방식도 설명합니다.",
+                  "en": "Pasta seasoned with Pecorino Romano and black pepper. Rome's tourism authority also describes emulsifying the cheese with starchy pasta water.",
+                  "ja": "ペコリーノ・ロマーノと黒胡椒で味付けするパスタです。ローマ観光当局は、でんぷんを含むゆで汁とチーズを混ぜてソースを作る方法も説明しています。",
+                  "zh": "以罗马羊奶酪和黑胡椒调味的意面。罗马旅游部门还介绍了用含淀粉的面汤与奶酪混合乳化成酱的做法。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/en/1042013-spaghetti-cacio-e-pepe",
+                  "https://www.turismoroma.it/en/page/rome-eat-traditional-recipes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "수플리",
+                  "en": "Supplì",
+                  "ja": "スップリ",
+                  "zh": "罗马炸饭团（Supplì）"
+                },
+                "note": {
+                  "ko": "길쭉한 로마식 튀김 간식입니다. 로마 관광청 설명에는 고기 소스로 간한 쌀, 달걀옷과 모차렐라가 포함되며, 잘랐을 때 치즈가 늘어나는 모습 때문에 '전화기식'이라는 별칭도 있습니다.",
+                  "en": "An elongated Roman fried snack. Rome's tourism authority describes rice seasoned with meat sauce, egg and mozzarella; the melted cheese strand inspired the nickname supplì al telefono.",
+                  "ja": "細長いローマの揚げ物です。ローマ観光当局の説明では、肉のソースで味付けした米、卵、モッツァレラを使い、チーズが糸を引く様子から「電話」という呼び名も生まれました。",
+                  "zh": "罗马的长形炸饭团。罗马旅游部门介绍的做法包括肉酱调味的米饭、鸡蛋和马苏里拉；掰开后拉丝的奶酪也使其有了“电话”之称。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/en/page/street-food-rome-itinerary-among-best-recipes"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카르초피 알라 주디아(로마 유대식 아티초크)",
+                  "en": "Jewish-style Roman artichokes",
+                  "ja": "カルチョーフィ・アッラ・ジュディーア（ユダヤ風アーティチョーク）",
+                  "zh": "犹太式罗马洋蓟"
+                },
+                "note": {
+                  "ko": "로마 구시가지 유대인 게토와 연결된 로마-유대 요리입니다. 로마 관광청 자료는 아티초크를 뜨거운 기름에 튀겨 꽃처럼 펼치고 바삭하게 만드는 방식으로 설명합니다.",
+                  "en": "A Roman-Jewish dish associated with Rome's historic Jewish Ghetto. The city's tourism source describes frying artichokes in hot oil until they open like flowers and turn crisp.",
+                  "ja": "ローマ旧ユダヤ人街と結びつくローマ・ユダヤ料理です。市の観光資料は、アーティチョークを熱い油で揚げ、花のように開いてカリッとさせる料理と説明しています。",
+                  "zh": "与罗马历史犹太隔都相关的罗马犹太菜。罗马旅游资料描述了将洋蓟放入热油炸至花朵般展开、外层酥脆的做法。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/en/page/typical-products-roman-countryside-romanesco-vegetables",
+                  "https://www.turismoroma.it/en/tradizione-in-tavola-la-cucina-ebraico-romanesca"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Felice a Testaccio",
+                "area": "Testaccio, Via Mastro Giorgio 29",
+                "type": {
+                  "ko": "로마 요리 전문점",
+                  "en": "Roman cuisine restaurant",
+                  "ja": "ローマ料理店",
+                  "zh": "罗马菜餐厅"
+                },
+                "focus": {
+                  "ko": "로마식 파스타, 특히 카초 에 페페",
+                  "en": "Roman cooking, especially cacio e pepe",
+                  "ja": "ローマ料理、とくにカチョ・エ・ペペ",
+                  "zh": "罗马菜，尤其是奶酪胡椒意面"
+                },
+                "why_candidate": {
+                  "ko": "식당 공식 페이지는 로마 Testaccio 지점과 카초 에 페페를 대표 메뉴로 확인하며, 테이블 곁에서 섞는 방식도 자체 설명합니다. 이는 예약 또는 현재 운영 상태를 뜻하지 않습니다.",
+                  "en": "The restaurant's official site confirms its Testaccio location and cacio e pepe as a house specialty; it also describes table-side tossing. This is not a booking or a statement about current operations.",
+                  "ja": "公式サイトでローマのテスタッチョ店と名物のカチョ・エ・ペペを確認できます。テーブル脇で和える演出も公式に説明されています。予約や現在の営業状況を示すものではありません。",
+                  "zh": "餐厅官网确认其位于罗马 Testaccio，并以奶酪胡椒意面为特色；官网还介绍了桌边拌面的做法。这不代表已预订或确认当前营业状态。"
+                },
+                "official_url": "https://feliceatestaccio.com/en/",
+                "source_urls": [
+                  "https://feliceatestaccio.com/en/",
+                  "https://feliceatestaccio.com/en/cacio-e-pepe/",
+                  "https://feliceatestaccio.com/menu-on/menu-roma.pdf"
+                ]
+              },
+              {
+                "name": "Roscioli Salumeria con Cucina",
+                "area": "Rome historic centre",
+                "type": {
+                  "ko": "델리 겸 레스토랑",
+                  "en": "Deli with kitchen",
+                  "ja": "デリ併設レストラン",
+                  "zh": "熟食店兼餐厅"
+                },
+                "focus": {
+                  "ko": "카르보나라, 그리차, 카초 에 페페, 아마트리치아나 등 로마식 파스타",
+                  "en": "Roman pasta dishes including carbonara, gricia, cacio e pepe and amatriciana",
+                  "ja": "カルボナーラ、グリーチャ、カチョ・エ・ペペ、アマトリチャーナなどのローマ風パスタ",
+                  "zh": "罗马风味意面，包括卡邦尼、奶酪培根意面、奶酪胡椒意面和阿马特里恰纳"
+                },
+                "why_candidate": {
+                  "ko": "공식 메뉴 페이지는 레스토랑을 델리 겸 주방으로 소개하고 로마 요리의 대표 메뉴들을 명시합니다. 메뉴 및 제공 상황은 달라질 수 있습니다.",
+                  "en": "Its official menu identifies the venue as a deli with kitchen and names several emblematic Roman pasta dishes. Menus and availability can change.",
+                  "ja": "公式メニューはデリ併設のレストランとして紹介し、ローマを代表する複数のパスタ料理を挙げています。メニューや提供状況は変わる場合があります。",
+                  "zh": "官方菜单将其介绍为熟食店兼餐厅，并列出多种代表性罗马意面。菜单和供应情况可能变化。"
+                },
+                "official_url": "https://salumeriaroscioli.com/en/pages/menu",
+                "source_urls": [
+                  "https://salumeriaroscioli.com/en/pages/menu",
+                  "https://salumeriaroscioli.com/en"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/en/page/rome-eat-traditional-recipes"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/en/page/seven-traditional-dishes-real-roman-lunch"
+              },
+              {
+                "title": "daenzoal29.com",
+                "url": "https://www.daenzoal29.com/en/"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/en/1042013-spaghetti-cacio-e-pepe"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/en/page/street-food-rome-itinerary-among-best-recipes"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/en/page/typical-products-roman-countryside-romanesco-vegetables"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/en/tradizione-in-tavola-la-cucina-ebraico-romanesca"
+              },
+              {
+                "title": "feliceatestaccio.com",
+                "url": "https://feliceatestaccio.com/en/"
+              },
+              {
+                "title": "feliceatestaccio.com",
+                "url": "https://feliceatestaccio.com/en/cacio-e-pepe/"
+              },
+              {
+                "title": "feliceatestaccio.com",
+                "url": "https://feliceatestaccio.com/menu-on/menu-roma.pdf"
+              },
+              {
+                "title": "salumeriaroscioli.com",
+                "url": "https://salumeriaroscioli.com/en/pages/menu"
+              },
+              {
+                "title": "salumeriaroscioli.com",
+                "url": "https://salumeriaroscioli.com/en"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Da Enzo al 29's official page confirms Roman traditional cuisine and lists amatriciana, gricia, carbonara, cacio e pepe and seasonal Jewish-style artichokes. It is a verified additional candidate but is not included in the two-venue shortlist: https://www.daenzoal29.com/en/ . Its exact menu can change.",
+              "Felice a Testaccio's own site confirms cacio e pepe and table-side tossing; this is not an independently verified ranking or quality claim.",
+              "Roscioli's own menu confirms the Roman pasta focus; no reservation claim is made.",
+              "The universal claim that Roman carbonara never contains any cream and is made only with one fixed set of ingredients is not repeated. Regional descriptions and recipes vary; no absolutes are needed for this guide."
+            ]
           }
         ]
       }
@@ -2783,6 +6606,18 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           }
         ]
       }
+    ],
+    "aliases": [
+      "Italian",
+      "Italian food",
+      "Italian cuisine",
+      "Italia",
+      "イタリア料理",
+      "イタリアグルメ",
+      "意大利菜",
+      "意大利美食",
+      "이탈리아 음식",
+      "이탈리아 요리"
     ]
   },
   {
@@ -2861,6 +6696,153 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Beshbarmak, Kazakhstan’s National Dish — Food Perestroika",
             "url": "https://foodperestroika.com/2015/11/09/beshbarmak-kazakhstans-national-dish/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id kazakhstan, featured city Almaty. Kazakh national dishes are not claimed to originate in Almaty; the Italy text is outside scope.",
+        "cities": [
+          {
+            "city": {
+              "ko": "알마티",
+              "en": "Almaty",
+              "ja": "アルマトイ",
+              "zh": "阿拉木图"
+            },
+            "intro": {
+              "ko": "알마티 지정 항목입니다. 아래는 카자흐 전통 음식이며 알마티 기원이라고 단정하지 않습니다.",
+              "en": "Almaty is the featured city. These are Kazakh traditions, not foods claimed as Almaty-origin.",
+              "ja": "アルマトイが指定都市です。以下はカザフの伝統料理で、アルマトイ発祥とは断定しません。",
+              "zh": "指定城市为阿拉木图。以下为哈萨克传统食品，不称其源自阿拉木图。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "베슈바르마크",
+                  "en": "Beshbarmak",
+                  "ja": "ベシュバルマク",
+                  "zh": "别什巴尔马克"
+                },
+                "note": {
+                  "ko": "삶은 고기와 반죽 면을 함께 내는 카자흐 전통 음식입니다. 고기 종류와 조리법은 달라질 수 있습니다.",
+                  "en": "Kazakh traditional dish of boiled meat with dough or noodle pieces; meat and preparation vary.",
+                  "ja": "ゆで肉と生地（麺状）を合わせるカザフの伝統料理です。肉や調理法には幅があります。",
+                  "zh": "哈萨克传统菜肴，以煮肉配面片；肉类和做法可有不同。"
+                },
+                "source_urls": [
+                  "https://www.gov.kz/org/mfa-prague/press/article/details/113248?lang=en"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "바우르삭",
+                  "en": "Bauyrsak",
+                  "ja": "バウルサク",
+                  "zh": "包尔萨克"
+                },
+                "note": {
+                  "ko": "부풀게 튀긴 빵 또는 반죽 간식입니다.",
+                  "en": "Puffy fried bread or dough pieces.",
+                  "ja": "ふっくら揚げたパン／生地菓子です。",
+                  "zh": "蓬松油炸的面食。"
+                },
+                "source_urls": [
+                  "https://www.gov.kz/org/mfa-prague/press/article/details/113248?lang=en"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카지",
+                  "en": "Qazy",
+                  "ja": "カズ",
+                  "zh": "卡兹马肠"
+                },
+                "note": {
+                  "ko": "카자흐 음식에 속하는 말고기 소시지입니다.",
+                  "en": "Horse-meat sausage in Kazakh cuisine.",
+                  "ja": "カザフ料理の馬肉ソーセージです。",
+                  "zh": "哈萨克饮食中的马肉香肠。"
+                },
+                "source_urls": [
+                  "https://www.gov.kz/org/mfa-prague/press/article/details/113248?lang=en"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "이림식",
+                  "en": "Irimshik",
+                  "ja": "イリムシク",
+                  "zh": "伊里姆希克（凝乳奶酪）"
+                },
+                "note": {
+                  "ko": "카자흐 응유 치즈이며 정부 자료는 부슬부슬한 유형으로 설명합니다.",
+                  "en": "Kazakh curd cheese; government material describes a crumbly type.",
+                  "ja": "カザフのカードチーズで、政府資料ではほろほろしたタイプが説明されています。",
+                  "zh": "哈萨克凝乳奶酪；政府资料介绍了松散易碎的一种。"
+                },
+                "source_urls": [
+                  "https://www.gov.kz/org/mfa-prague/press/article/details/113248?lang=en"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Sandyq",
+                "area": "Almaty (exact area unverified)",
+                "type": {
+                  "ko": "카자흐 요리 레스토랑",
+                  "en": "Kazakh-cuisine restaurant",
+                  "ja": "カザフ料理店",
+                  "zh": "哈萨克风味餐厅"
+                },
+                "focus": {
+                  "ko": "공개 메뉴는 베슈바르마크, 카지, 쿠이르닥, 바우르삭을 열거합니다. 현재 제공 여부 미확인.",
+                  "en": "Published menu lists beshbarmak, qazy, kuyrdak, and bauyrsak; current availability unverified.",
+                  "ja": "公開メニューにはベシュバルマク、カズ、クイルダク、バウルサクがあります。現在の提供状況は未確認です。",
+                  "zh": "公开菜单列有别什巴尔马克、卡兹、库尔达克和包尔萨克；目前供应情况未核实。"
+                },
+                "why_candidate": {
+                  "ko": "운영사 웹사이트는 카자흐 요리점으로 소개하고 알마티를 영업 도시로 명시합니다. 지점과 최신 메뉴는 방문 전 확인하세요.",
+                  "en": "The operator site describes Kazakh cuisine and names Almaty among its cities. Confirm branch and current menu before visiting.",
+                  "ja": "運営会社サイトはカザフ料理店と紹介し、展開都市にアルマトイを挙げています。訪問前に店舗と最新メニューをご確認ください。",
+                  "zh": "运营方网站介绍其为哈萨克风味餐厅，并将阿拉木图列为经营城市。到访前请确认门店和最新菜单。"
+                },
+                "official_url": "https://sandyqgroup.com/en/sandyq/",
+                "source_urls": [
+                  "https://sandyqgroup.com/en/sandyq/",
+                  "https://sandyqgroup.com/en/",
+                  "https://sandyqgroup.com/en/menu-sandyq/",
+                  "https://sandyq.kz/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "gov.kz",
+                "url": "https://www.gov.kz/org/mfa-prague/press/article/details/113248?lang=en"
+              },
+              {
+                "title": "sandyqgroup.com",
+                "url": "https://sandyqgroup.com/en/sandyq/"
+              },
+              {
+                "title": "sandyqgroup.com",
+                "url": "https://sandyqgroup.com/en/"
+              },
+              {
+                "title": "sandyqgroup.com",
+                "url": "https://sandyqgroup.com/en/menu-sandyq/"
+              },
+              {
+                "title": "sandyq.kz",
+                "url": "https://sandyq.kz/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Kazakhstan government tourism material identifies the dishes but does not establish Almaty origins.",
+              "Sandyq is a candidate based on operator pages; precise address and current branch menu, hours, prices, bookings, and service conditions were not verified.",
+              "Existing Tripadvisor/blog citations were treated as leads only; Italy is outside this country_id."
+            ]
           }
         ]
       }
@@ -3004,6 +6986,148 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://davidsbeenhere.com/2020/11/30/video-authentic-kosovo-food-in-prizren-shopping-snack-tour-prizren-kosovo/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 조사 범위는 프리즈렌 시와 코소보 음식 관련 자료입니다. 출처의 표현 이상으로 기원이나 고유성을 주장하지 않았습니다. | en: Scope is Prizren and Kosovo food references; claims do not go beyond what the sources state. | ja: 対象はプリズレン市とコソボ料理に関する資料です。出典の記述を超える起源・独自性の主張はしていません。 | zh: 范围为普里兹рен市及科索沃饮食资料；未作超出来源表述的起源或独有性断言。",
+        "cities": [
+          {
+            "city": {
+              "ko": "프리즈렌",
+              "en": "Prizren",
+              "ja": "プリズレン",
+              "zh": "普里兹рен"
+            },
+            "intro": {
+              "ko": "프리즈렌 관련 문화유산 자료는 레케니크 옥수수빵, 타베, 사르마를 도시의 전통 음식 유산으로 언급합니다. 타베 프리즈레니와 플리야도 코소보 음식 자료에서 소개됩니다.",
+              "en": "A cultural-heritage source on Prizren names leqenik cornbread, tavë, and sarma among the city’s traditional food heritage. Tavë Prizreni and flija are also described in sources on Kosovo cuisine.",
+              "ja": "プリズレンの文化遺産資料は、レケニクのコーンブレッド、タヴェ、サルマを街の伝統的な食文化として挙げています。タヴェ・プリズレニとフリヤもコソボ料理の資料で紹介されています。",
+              "zh": "一份关于普里兹рен的文化遗产资料将莱切尼克玉米面包、塔韦和萨尔玛列为当地传统饮食遗产；科索沃饮食资料也介绍了普里兹рен式塔韦和弗利亚。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "레케니크 옥수수빵",
+                  "en": "Leqenik cornbread",
+                  "ja": "レケニク（コーンブレッド）",
+                  "zh": "莱切尼克玉米面包"
+                },
+                "note": {
+                  "ko": "프리즈렌의 전통 음식 유산 가운데 하나로 소개됩니다. 자료는 이 음식을 도시의 기원이나 독점 음식이라고 주장하지 않습니다.",
+                  "en": "Identified as part of Prizren’s traditional food heritage. The source does not claim the dish originated there or is exclusive to the city.",
+                  "ja": "プリズレンの伝統的な食文化遺産の一つとして紹介されています。当地が発祥地、または当地だけの料理だとは資料に記されていません。",
+                  "zh": "资料将其列为普里兹рен传统饮食遗产之一，但没有声称它起源于当地或为当地独有。"
+                },
+                "source_urls": [
+                  "https://webalkans.eu/en/coming-together-and-eating-together-in-prizren-kosovo/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "타베 프리즈레니(프리즈렌식 고기·채소 오븐 요리)",
+                  "en": "Tavë Prizreni (Prizren-style baked casserole)",
+                  "ja": "タヴェ・プリズレニ（プリズレン風のオーブン焼き煮込み）",
+                  "zh": "普里兹рен式塔韦（烤制肉菜砂锅）"
+                },
+                "note": {
+                  "ko": "한 지역 음식 소개는 프리즈렌 지역의 음식으로 설명하며, 다른 자료는 프리즈렌 음식 유산에 타베를 포함합니다. 재료와 조리법은 자료마다 다를 수 있습니다.",
+                  "en": "One regional food guide describes it as typical of the Prizren area, and another source includes tavë in Prizren’s food heritage. Ingredients and preparations may vary across sources.",
+                  "ja": "地域の食ガイドはプリズレン周辺の料理と説明し、別資料もプリズレンの食文化遺産にタヴェを含めています。材料や調理法は資料によって異なる場合があります。",
+                  "zh": "一份地区饮食指南称其为普里兹рен地区常见菜肴，另一资料也将塔韦列入当地饮食遗产。不同资料中的食材和做法可能有所差异。"
+                },
+                "source_urls": [
+                  "https://connectingregion.com/kosovo/kosovos-culinary-tapestry-a-journey-through-rich-flavors-and-hearty-dishes/",
+                  "https://webalkans.eu/en/coming-together-and-eating-together-in-prizren-kosovo/",
+                  "https://www.cntraveler.com/story/kosovo-eat-stay-play"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "사르마(속을 채워 말아 익힌 잎채소)",
+                  "en": "Sarma (stuffed leaf rolls)",
+                  "ja": "サルマ（葉で具を巻いた料理）",
+                  "zh": "萨尔玛（叶菜包馅卷）"
+                },
+                "note": {
+                  "ko": "프리즈렌의 전통 음식 유산 자료에 언급됩니다. 이 지역 연관성은 기록되어 있지만, 도시만의 음식이라는 뜻은 아닙니다.",
+                  "en": "Mentioned in a source on Prizren’s traditional food heritage. This documents a local association, not exclusivity to the city.",
+                  "ja": "プリズレンの伝統的な食文化遺産に関する資料で言及されています。地域との結びつきを示すもので、街だけの料理という意味ではありません。",
+                  "zh": "普里兹рен传统饮食遗产资料提及此菜。这说明它与当地有关，并不表示它为该城独有。"
+                },
+                "source_urls": [
+                  "https://webalkans.eu/en/coming-together-and-eating-together-in-prizren-kosovo/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "플리야(여러 겹으로 구운 팬케이크형 요리)",
+                  "en": "Flija (layered pancake-like dish)",
+                  "ja": "フリヤ（層状のパンケーキ風料理）",
+                  "zh": "弗利亚（层叠煎饼状菜肴）"
+                },
+                "note": {
+                  "ko": "코소보 음식 자료에서 전통 음식으로 소개됩니다. 자료는 플리야를 코소보 전반의 음식으로 다루므로, 프리즈렌 고유 음식이라고 볼 근거는 아닙니다.",
+                  "en": "Described as a traditional Kosovo dish. The cited source treats it as part of Kosovo cuisine generally, not as uniquely associated with Prizren.",
+                  "ja": "コソボの伝統料理として紹介されています。引用資料はコソボ全般の料理として扱っており、プリズレン固有の料理とする根拠ではありません。",
+                  "zh": "资料将其介绍为科索沃传统菜肴；所引资料讨论的是科索沃整体饮食，并不能据此认定它是普里兹рен独有的菜肴。"
+                },
+                "source_urls": [
+                  "https://www.cntraveler.com/story/kosovo-eat-stay-play",
+                  "https://connectingregion.com/kosovo/kosovos-culinary-tapestry-a-journey-through-rich-flavors-and-hearty-dishes/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Restaurant Centrum",
+                "area": "Central Prizren",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "프리즈렌식 플레스카비차와 전통 요리",
+                  "en": "Prizren-style pleskavica and traditional cuisine",
+                  "ja": "プリズレン風プレスカヴィツァと伝統料理",
+                  "zh": "普里兹рен式普莱斯卡维察及传统菜肴"
+                },
+                "why_candidate": {
+                  "ko": "레스토랑 자체 웹사이트는 프리즈렌 중심부에 있다고 밝히고, 메뉴의 대표 음식으로 프리즈렌식 플레스카비차를 소개합니다. 조사 후보일 뿐 예약이나 현재提供 여부를 확인한 것은 아닙니다.",
+                  "en": "Its own website places it in central Prizren and identifies Prizren-style pleskavica as a menu highlight. This is a research candidate, not a booking or confirmation of current availability.",
+                  "ja": "公式サイトによるとプリズレン中心部にあり、メニューの注目料理としてプリズレン風プレスカヴィツァを紹介しています。調査候補であり、予約や現在の提供状況を確認したものではありません。",
+                  "zh": "其官网称餐厅位于普里兹рен中心，并将普里兹рен式普莱斯卡维察列为菜单亮点。这只是研究候选，并非预订，也不代表已确认目前供应。"
+                },
+                "official_url": "https://restaurantcentrum.com/",
+                "source_urls": [
+                  "https://restaurantcentrum.com/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "webalkans.eu",
+                "url": "https://webalkans.eu/en/coming-together-and-eating-together-in-prizren-kosovo/"
+              },
+              {
+                "title": "connectingregion.com",
+                "url": "https://connectingregion.com/kosovo/kosovos-culinary-tapestry-a-journey-through-rich-flavors-and-hearty-dishes/"
+              },
+              {
+                "title": "cntraveler.com",
+                "url": "https://www.cntraveler.com/story/kosovo-eat-stay-play"
+              },
+              {
+                "title": "restaurantcentrum.com",
+                "url": "https://restaurantcentrum.com/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 자료는 음식의 프리즈렌 지역 연관성을 뒷받침하지만, 해당 도시의 기원·독점성을 입증하지 않습니다. 플리야는 코소보 전반의 음식으로 소개됩니다. | en: The sources support local associations, not origins or exclusivity. Flija is described as a Kosovo-wide dish. | ja: 資料が裏付けるのは地域との関連であり、発祥や独占性ではありません。フリヤはコソボ全般の料理として紹介されています。 | zh: 资料支持的是地方关联，并不证明起源或独有性；弗利亚被介绍为科索沃整体饮食的一部分。",
+              "ko: 레스토랑 후보에 대해 공식 웹사이트의 소개만 확인했습니다. 영업시간·价格·当前供应、订位、等候时间、安全或无障碍情况均未据此核实。 | en: For the restaurant candidate, only its own website was checked. Hours, prices, current availability, booking, wait times, safety, and accessibility were not verified. | ja: レストラン候補について確認したのは公式サイトの掲載内容のみです。営業時間、価格、現在の提供状況、予約、待ち時間、安全性、バリアフリー対応は確認していません。 | zh: 餐厅候选仅核对了其官网信息；营业时间、价格、当前供应情况、预订、等候时间、安全及无障碍信息均未核实。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -3109,6 +7233,143 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "History | Riga Central Market",
             "url": "https://centraltirgus.lv/en/about-the-market/history/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 리가라는 도시 한 곳에 대한 조사입니다. 음식은 라트비아 전통과 리가 관광 안내 자료를 근거로 하며, 장소는 출처가 확인된 조사 후보입니다. | en: Research covers Riga only. Foods are sourced to Latvian traditions and Riga tourism material; the venue is a sourced research candidate. | ja: 対象都市はリガのみです。料理はラトビアの伝統およびリガの観光資料に基づき、飲食店は出典を確認した調査候補です。 | zh: 本次仅研究里加一座城市。食物依据拉脱维亚传统及里加旅游资料；餐厅是经来源核实的研究候选。",
+        "cities": [
+          {
+            "city": {
+              "ko": "리가",
+              "en": "Riga",
+              "ja": "リガ",
+              "zh": "里加"
+            },
+            "intro": {
+              "ko": "라트비아의 음식 전통에서 확인되고 리가 관광 자료가 소개하는 음식을 살펴보세요. 아래 음식은 라트비아 음식으로 소개되며, 리가에만 한정된 특산품이라는 뜻은 아닙니다.",
+              "en": "Explore foods documented in Latvian culinary traditions and highlighted by Riga tourism sources. These are presented as Latvian foods, not as specialties exclusive to Riga.",
+              "ja": "ラトビアの食文化に記録され、リガの観光資料でも紹介されている料理を見てみましょう。以下はラトビアの料理として紹介されており、リガだけの名物という意味ではありません。",
+              "zh": "探索拉脱维亚饮食传统中有记载、并由里加旅游资料介绍的食物。以下内容是作为拉脱维亚食物介绍的，并不表示它们是里加独有的特色。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "회색 완두콩과 베이컨 (pelēkie zirņi)",
+                  "en": "Grey peas with bacon (pelēkie zirņi)",
+                  "ja": "灰色エンドウ豆とベーコン（pelēkie zirņi）",
+                  "zh": "灰豌豆配培根（pelēkie zirņi）"
+                },
+                "note": {
+                  "ko": "리가 관광 자료는 베이컨을 곁들인 회색 완두콩을 라트비아 동지 음식으로 소개하며, 리가의 Folkklubs ALA Pagrabs를 전통 음식 장소로 안내합니다. 식당의 공식 메뉴 페이지에도 회색 완두콩과 베이컨·양파 소스 메뉴가 기재되어 있습니다.",
+                  "en": "Riga tourism describes grey peas with bacon as a Latvian winter-solstice food and recommends Folkklubs ALA Pagrabs in Riga for traditional food. The venue's official menu page also lists grey peas with bacon-and-onion sauce.",
+                  "ja": "リガの観光資料は、ベーコン添えの灰色エンドウ豆をラトビアの冬至の料理として紹介し、伝統料理を味わう場所としてリガのFolkklubs ALA Pagrabsを案内しています。同店の公式メニューページにも、ベーコンと玉ねぎのソースを添えた灰色エンドウ豆が記載されています。",
+                  "zh": "里加旅游资料将培根灰豌豆介绍为拉脱维亚冬至食物，并推荐里加的 Folkklubs ALA Pagrabs 作为品尝传统食物的地点。该店官方菜单页面也列有配培根洋葱酱的灰豌豆。"
+                },
+                "source_urls": [
+                  "https://www.liveriga.com/en/15170-eat-like-a-pagan-ancient-flavours-of-latvia",
+                  "https://folkklubs.lv/menu/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "라트비아식 베이컨 번 (pīrāgi)",
+                  "en": "Latvian bacon buns (pīrāgi)",
+                  "ja": "ラトビア風ベーコンパン（pīrāgi）",
+                  "zh": "拉脱维亚培根面包卷（pīrāgi）"
+                },
+                "note": {
+                  "ko": "리가 관광 자료는 피라기를 라트비아 전통 명절 음식으로 소개하며, 동지와 하지 축제 음식 목록에 포함합니다. 지역 고유 음식이나 기원에 대한 주장은 아닙니다.",
+                  "en": "Riga tourism identifies pīrāgi as traditional Latvian bacon buns and includes them among foods for seasonal celebrations. This does not establish a Riga-specific origin or exclusivity.",
+                  "ja": "リガの観光資料は、pīrāgiをラトビア伝統のベーコンパンとして紹介し、季節の祭りの料理に挙げています。リガ起源またはリガ限定という主張ではありません。",
+                  "zh": "里加旅游资料将 pīrāgi 介绍为拉脱维亚传统培根面包卷，并列入季节性节庆食物。这并不证明它起源于里加或仅属于里加。"
+                },
+                "source_urls": [
+                  "https://www.liveriga.com/en/15170-eat-like-a-pagan-ancient-flavours-of-latvia"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "라트비아식 호밀빵 (rupjmaize)",
+                  "en": "Latvian rye bread (rupjmaize)",
+                  "ja": "ラトビアのライ麦パン（rupjmaize）",
+                  "zh": "拉脱维亚黑麦面包（rupjmaize）"
+                },
+                "note": {
+                  "ko": "리가 관광 자료는 rupjmaize를 라트비아 식문화의 대표적인 호밀빵으로 설명하고, 리가 중앙시장을 현지 식재료와 음식을 찾아볼 곳으로 소개합니다.",
+                  "en": "Riga tourism describes rupjmaize as Latvian rye bread and highlights Riga Central Market as a place to find Latvian foods and local ingredients.",
+                  "ja": "リガの観光資料はrupjmaizeをラトビアのライ麦パンとして説明し、ラトビアの食べ物や地元の食材を探す場所としてリガ中央市場を紹介しています。",
+                  "zh": "里加旅游资料将 rupjmaize 介绍为拉脱维亚黑麦面包，并将里加中央市场介绍为寻找拉脱维亚食物和当地食材的地点。"
+                },
+                "source_urls": [
+                  "https://www.liveriga.com/en/15170-eat-like-a-pagan-ancient-flavours-of-latvia"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "층층이 쌓은 호밀빵 디저트 (rupjmaizes kārtojums)",
+                  "en": "Layered rye bread dessert (rupjmaizes kārtojums)",
+                  "ja": "層仕立てのライ麦パンデザート（rupjmaizes kārtojums）",
+                  "zh": "层叠黑麦面包甜点（rupjmaizes kārtojums）"
+                },
+                "note": {
+                  "ko": "리가 관광 자료는 rupjmaizes kārtojums를 전통적인 층층이 쌓은 호밀빵 디저트로 언급합니다. 자료는 리가만의 음식이라고 주장하지 않습니다.",
+                  "en": "Riga tourism names rupjmaizes kārtojums as a traditional layered rye bread dessert; the source does not claim it is specific to Riga.",
+                  "ja": "リガの観光資料は、rupjmaizes kārtojumsを伝統的な層仕立てのライ麦パンデザートとして挙げています。リガ限定の料理とはしていません。",
+                  "zh": "里加旅游资料将 rupjmaizes kārtojums 列为传统层叠黑麦面包甜点；资料没有声称它是里加独有的食物。"
+                },
+                "source_urls": [
+                  "https://www.liveriga.com/en/15170-eat-like-a-pagan-ancient-flavours-of-latvia"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Folkklubs ALA Pagrabs",
+                "area": "Riga Old Town, Peldu Street 19",
+                "type": {
+                  "ko": "전통 라트비아식 펍·레스토랑",
+                  "en": "Traditional Latvian pub and restaurant",
+                  "ja": "ラトビア伝統料理のパブ・レストラン",
+                  "zh": "拉脱维亚传统酒馆与餐厅"
+                },
+                "focus": {
+                  "ko": "전통 라트비아 음식; 공식 메뉴에는 호밀빵에 담아 내는 회색 완두콩 요리와 호밀빵 푸딩이 기재되어 있음",
+                  "en": "Traditional Latvian food; the official menu page lists grey peas served in a rye loaf and rye bread pudding",
+                  "ja": "ラトビア伝統料理。公式メニューページには、ライ麦パンに入れて提供する灰色エンドウ豆料理とライ麦パンプディングが記載されています",
+                  "zh": "拉脱维亚传统食物；官方菜单页面列有盛在黑麦面包中的灰豌豆和黑麦面包布丁"
+                },
+                "why_candidate": {
+                  "ko": "리가 관광 자료가 이곳을 전통 라트비아 음식을 맛볼 장소로 소개하고 주소를 제공합니다. 식당 공식 사이트는 구시가지의 전통 펍이라고 설명하며 메뉴 페이지도 공개합니다. 후보 조사 자료이며 예약이나 현재菜单供应情况的保证不是。",
+                  "en": "Riga tourism recommends it as a place for traditional Latvian food and gives its address. The venue's own site identifies it as a traditional pub in old Riga and publishes a menu page. This is a research candidate, not a booking or a guarantee of present menu availability.",
+                  "ja": "リガの観光資料が伝統的なラトビア料理を味わう場所として紹介し、住所を掲載しています。店の公式サイトは旧市街の伝統的なパブと説明し、メニューページも公開しています。これは調査候補であり、予約や現在の提供状況を保証するものではありません。",
+                  "zh": "里加旅游资料将其介绍为品尝拉脱维亚传统食物的地点并提供地址。该店官网称其为里加老城的传统酒馆，并发布菜单页面。这只是研究候选，并非预订，也不保证目前仍供应所列菜品。"
+                },
+                "official_url": "https://folkklubs.lv/home/",
+                "source_urls": [
+                  "https://folkklubs.lv/home/",
+                  "https://www.liveriga.com/en/15170-eat-like-a-pagan-ancient-flavours-of-latvia",
+                  "https://folkklubs.lv/menu/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "liveriga.com",
+                "url": "https://www.liveriga.com/en/15170-eat-like-a-pagan-ancient-flavours-of-latvia"
+              },
+              {
+                "title": "folkklubs.lv",
+                "url": "https://folkklubs.lv/menu/"
+              },
+              {
+                "title": "folkklubs.lv",
+                "url": "https://folkklubs.lv/home/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 음식의 리가 관련성은 리가 관광 자료에서 소개된다는 뜻이며, 리가에서 유래했거나 리가에만 있다는 근거는 없습니다. 식당 메뉴는 바뀔 수 있습니다. | en: Riga association here means these foods are featured in Riga tourism material; it does not establish Riga origin or exclusivity. Restaurant menus can change. | ja: ここでのリガとの関連は、リガの観光資料で紹介されているという意味であり、リガ起源またはリガ限定を示すものではありません。店のメニューは変更される場合があります。 | zh: 这里所说的里加关联，是指这些食物见于里加旅游资料；这不证明它们起源于里加或为里加独有。餐厅菜单可能变更。"
+            ]
           }
         ]
       }
@@ -3222,6 +7483,125 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.outdoor.tourismus.li/en/places-to-eat-and-drink/liechtenstein/eat-and-drink-in-liechtenstein/225377078/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id liechtenstein; featured city Vaduz.",
+        "cities": [
+          {
+            "city": {
+              "ko": "파두츠",
+              "en": "Vaduz",
+              "ja": "ファドゥーツ",
+              "zh": "瓦杜兹"
+            },
+            "intro": {
+              "ko": "바두츠의 음식 전통은 알프스와 라인 계곡의 경계 지역과 이어져 있습니다.",
+              "en": "Vaduz’s food traditions reflect its Alpine and Rhine Valley border setting.",
+              "ja": "ファドゥーツの食文化は、アルプスとライン渓谷の境界地域を反映しています。",
+              "zh": "瓦杜兹的饮食传统体现了其阿尔卑斯山与莱茵河谷边境地区的特点。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "케스뇌플레",
+                  "en": "Käsknöpfle",
+                  "ja": "ケースクネプフレ",
+                  "zh": "奶酪小面疙瘩"
+                },
+                "note": {
+                  "ko": "밀가루와 달걀 반죽의 작은 면에 치즈를 더하고 볶은 양파를 얹습니다. 리히텐슈타인 가정 사례에서 지역 치즈와 사과소스가 함께 등장했습니다. 주변 독일어권 지역에도 유사한 스패츨레 전통이 있습니다.",
+                  "en": "Small flour-and-egg dough pieces layered with cheese and topped with fried onions. A documented Liechtenstein family version used local cheeses and apple sauce. Related spätzle traditions are found in neighboring German-speaking regions.",
+                  "ja": "小麦粉と卵の生地にチーズを重ね、炒めた玉ねぎをのせます。記録されたリヒテンシュタインの家庭料理では地元のチーズとリンゴソースが使われていました。周辺のドイツ語圏にも関連するシュペッツレ料理があります。",
+                  "zh": "将面粉和鸡蛋制成的小面团与奶酪分层，表面放炒洋葱。有记录的列支敦士登家庭做法使用本地奶酪并配苹果酱。邻近德语地区也有相关的斯佩茨勒传统。"
+                },
+                "source_urls": [
+                  "https://www.nationalgeographic.com/travel/article/traditional-family-meal-liechtenstein"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "리벨(라인 계곡 옥수숫가루 요리)",
+                  "en": "Ribel (Rhine Valley cornmeal dish)",
+                  "ja": "リベル（ライン渓谷のトウモロコシ料理）",
+                  "zh": "Ribel（莱茵河谷玉米料理）"
+                },
+                "note": {
+                  "ko": "옥수숫가루를 우유와 물에 익힌 뒤 볶아 부슬부슬하게 만들며, 사과소스를 곁들이는 조리법도 기록되어 있습니다. 보호 원산지 명칭의 지리적 범위에는 리히텐슈타인과 스위스 라인 계곡 일부가 포함되어 국경을 넘어 공유되는 전통입니다.",
+                  "en": "A crumbly toasted cornmeal dish; one documented recipe cooks the meal with milk and water, then fries it and serves it with apple sauce. The protected-origin Rheintaler Ribelmais region includes Liechtenstein and parts of the Swiss Rhine Valley, making this a cross-border tradition.",
+                  "ja": "トウモロコシ粉を牛乳と水で煮てから炒り、そぼろ状にする料理です。リンゴソースを添えるレシピも記録されています。原産地保護地域はリヒテンシュタインとスイス側のライン渓谷の一部を含み、国境を越えた食文化です。",
+                  "zh": "这是一种炒至松散颗粒状的玉米料理；有记载的做法是用牛奶和水煮玉米粉，再下锅炒，并配苹果酱。受保护原产地名称的范围包括列支敦士登和瑞士莱茵河谷部分地区，因此属于跨境传统。"
+                },
+                "source_urls": [
+                  "https://www.nationalgeographic.com/travel/article/traditional-family-meal-liechtenstein",
+                  "https://swisstastes.ch/en/ribelmais-aop-en/",
+                  "https://www.aop-igp.ch/en/rheintaler-ribelmais-aop"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Hotel-Gasthof Löwen",
+                "area": "Vaduz, Herrengasse 35",
+                "type": {
+                  "ko": "호텔 부속 여관 레스토랑",
+                  "en": "Hotel restaurant / inn",
+                  "ja": "ホテル併設の宿屋レストラン",
+                  "zh": "酒店附设客栈餐厅"
+                },
+                "focus": {
+                  "ko": "자체 메뉴 PDF에 바두츠 리슬링 수프와 리히텐슈타인·스위스 치즈 모둠이 나옵니다.",
+                  "en": "Its own menu PDFs list Vaduz Riesling soup and a Liechtenstein-and-Swiss cheese selection.",
+                  "ja": "店のメニューPDFにはファドゥーツ・リースリングスープとリヒテンシュタイン産・スイス産チーズが記載されています。",
+                  "zh": "餐厅自有菜单 PDF 列有瓦杜兹雷司令汤及列支敦士登、瑞士奶酪拼盘。"
+                },
+                "why_candidate": {
+                  "ko": "운영자 페이지에서 바두츠 주소를 확인했고 자체 메뉴에 지역 음식과 현지 치즈가 기재되어 있습니다. 계절 메뉴이므로 현재 제공 여부는 별도로 확인해야 합니다.",
+                  "en": "The operator’s page confirms its Vaduz address, and its own menu documents regional items and local cheese. The seasonal menu does not guarantee current availability.",
+                  "ja": "運営者ページでファドゥーツの所在地を確認でき、店のメニューに地元料理と地元産チーズが記載されています。季節メニューのため、現在の提供状況は別途確認が必要です。",
+                  "zh": "经营者页面确认其位于瓦杜兹，自有菜单记载了地方菜品和本地奶酪。菜单为季节性菜单，不能据此保证目前供应。"
+                },
+                "official_url": "https://www.hotel-loewen.li/en/restaurant/a-la-carte-restaurant/",
+                "source_urls": [
+                  "https://www.hotel-loewen.li/en/restaurant/a-la-carte-restaurant/",
+                  "https://www.hotel-loewen.li/wp-content/uploads/Restaurant-Herbst-Mittag-26.pdf",
+                  "https://www.hotel-loewen.li/wp-content/uploads/Restaurant-Herbst-Abend-26.pdf"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "nationalgeographic.com",
+                "url": "https://www.nationalgeographic.com/travel/article/traditional-family-meal-liechtenstein"
+              },
+              {
+                "title": "swisstastes.ch",
+                "url": "https://swisstastes.ch/en/ribelmais-aop-en/"
+              },
+              {
+                "title": "aop-igp.ch",
+                "url": "https://www.aop-igp.ch/en/rheintaler-ribelmais-aop"
+              },
+              {
+                "title": "hotel-loewen.li",
+                "url": "https://www.hotel-loewen.li/en/restaurant/a-la-carte-restaurant/"
+              },
+              {
+                "title": "hotel-loewen.li",
+                "url": "https://www.hotel-loewen.li/wp-content/uploads/Restaurant-Herbst-Mittag-26.pdf"
+              },
+              {
+                "title": "hotel-loewen.li",
+                "url": "https://www.hotel-loewen.li/wp-content/uploads/Restaurant-Herbst-Abend-26.pdf"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The scope-file lead Wirtschaft zum Löwen is in Schellenberg, not Vaduz, and is a separate venue; it is omitted. Its tourism profile was blocked when opened.",
+              "The Liechtenstein tourism food page identifies itself as AI-generated and is not used as sole evidence.",
+              "The Hotel-Gasthof Löwen menu PDFs are autumn 2026 editions; they do not establish daily or continuing availability.",
+              "Käsknöpfle and Ribel are documented Liechtenstein foods within a wider Alpine/Rhine Valley region, not proven to originate exclusively in Liechtenstein."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -3331,6 +7711,108 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Menu | Etno Dvaras",
             "url": "https://etnodvaras.lt/en/vaises/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "country_id=lithuania only; featured city Vilnius.",
+        "cities": [
+          {
+            "city": {
+              "ko": "빌뉴스",
+              "en": "Vilnius",
+              "ja": "ヴィリニュス",
+              "zh": "维尔纽斯"
+            },
+            "intro": {
+              "ko": "빌뉴스에서 맛볼 수 있는 리투아니아 대표 음식으로 감자 만두 cepelinai와 차가운 비트 수프 šaltibarščiai를 소개합니다. 이 요리들의 기원을 빌뉴스로 한정하지 않습니다.",
+              "en": "A Vilnius tasting guide to Lithuanian favourites such as potato dumplings (cepelinai) and cold beet soup (šaltibarščiai). Their origins are not attributed to Vilnius.",
+              "ja": "ビリニュスで味わえるリトアニアの代表料理として、ジャガイモ団子のcepelinaiと冷製ビーツスープのšaltibarščiaiを紹介します。いずれもビリニュス発祥とは断定しません。",
+              "zh": "介绍在维尔纽斯可品尝的立陶宛代表菜肴，如土豆馅团子 cepelinai 和冷甜菜汤 šaltibarščiai；不将其起源归于维尔纽斯。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "체펠리나이(감자 만두)",
+                  "en": "Cepelinai (potato dumplings)",
+                  "ja": "ツェペリナイ（ジャガイモ団子）",
+                  "zh": "Cepelinai（土豆团子）"
+                },
+                "note": {
+                  "ko": "리투아니아 공식 관광 안내는 간 감자와 으깬 감자를 섞어 고기·커드 치즈·버섯 등을 채운 만두로 소개하며, 사워크림과 베이컨을 곁들이는 형태도 설명합니다.",
+                  "en": "Lithuania’s tourism site describes grated and riced potato dumplings filled with meat, dry curd cheese or mushrooms, commonly served with sour cream and bacon.",
+                  "ja": "リトアニアの観光案内によると、おろしジャガイモとつぶしたジャガイモを使った生地に肉、カードチーズ、キノコなどを詰めます。サワークリームやベーコンを添える形も一般的です。",
+                  "zh": "立陶宛旅游网站介绍，这种土豆团子以擦碎和捣碎的土豆制皮，内馅可为肉、凝乳奶酪或蘑菇，常配酸奶油和培根。"
+                },
+                "source_urls": [
+                  "https://lithuania.travel/en/what-to-do/food-and-drink/lithuanian-products/cepelinai"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "샬티바르슈차이(차가운 비트 수프)",
+                  "en": "Šaltibarščiai (cold beet soup)",
+                  "ja": "シャルティバルシチェイ（冷製ビーツスープ）",
+                  "zh": "Šaltibarščiai（冷甜菜汤）"
+                },
+                "note": {
+                  "ko": "리투아니아 공식 관광 안내는 분홍빛의 새콤달콤한 차가운 비트 수프로 설명합니다.",
+                  "en": "Lithuania’s tourism site describes it as a pink, sweet-and-sour cold beet soup.",
+                  "ja": "リトアニアの観光案内では、ピンク色で甘酸っぱい冷製ビーツスープとして紹介されています。",
+                  "zh": "立陶宛旅游网站将其介绍为粉红色、酸甜口味的冷甜菜汤。"
+                },
+                "source_urls": [
+                  "https://lithuania.travel/en/what-to-do/food-and-drink"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Etno Dvaras",
+                "area": "Pilies Street, Vilnius Old Town",
+                "type": {
+                  "ko": "리투아니아 전통 요리 레스토랑",
+                  "en": "Lithuanian cuisine restaurant",
+                  "ja": "リトアニア料理レストラン",
+                  "zh": "立陶宛风味餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴가 리투아니아 음식 전통을 내세우며 차가운 비트 수프와 여러 형태의 감자 만두를 기재합니다.",
+                  "en": "Its official menu presents Lithuanian culinary traditions and lists cold beet soup and several potato-dumpling dishes.",
+                  "ja": "公式メニューはリトアニアの食文化を掲げ、冷製ビーツスープや複数のジャガイモ団子料理を掲載しています。",
+                  "zh": "官方菜单介绍立陶宛饮食传统，并列出冷甜菜汤及多种土豆团子菜肴。"
+                },
+                "why_candidate": {
+                  "ko": "식당 공식 메뉴가 리투아니아 음식에 초점을 둔다고 밝히고, 관광청이 소개한 대표 음식과 맞닿은 항목을 메뉴에 기재합니다. 메뉴·영업 정보는 방문 전 재확인해야 합니다.",
+                  "en": "Its own menu states a focus on Lithuanian tastes and lists dishes matching the tourism board’s national-food examples. Check the menu and operations before visiting.",
+                  "ja": "公式メニューはリトアニア料理を掲げ、観光当局が紹介する代表料理に関連する料理を掲載しています。訪問前にメニューや営業状況をご確認ください。",
+                  "zh": "餐厅自有菜单说明其主打立陶宛风味，并列出与旅游部门介绍的代表菜相符的菜品；到访前请再次确认菜单和营业情况。"
+                },
+                "official_url": "https://etnodvaras.lt/en/vaises/",
+                "source_urls": [
+                  "https://etnodvaras.lt/en/vaises/",
+                  "https://lithuania.travel/en/what-to-do/food-and-drink/lithuanian-products/cepelinai",
+                  "https://lithuania.travel/en/what-to-do/food-and-drink"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "lithuania.travel",
+                "url": "https://lithuania.travel/en/what-to-do/food-and-drink/lithuanian-products/cepelinai"
+              },
+              {
+                "title": "lithuania.travel",
+                "url": "https://lithuania.travel/en/what-to-do/food-and-drink"
+              },
+              {
+                "title": "etnodvaras.lt",
+                "url": "https://etnodvaras.lt/en/vaises/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "리투아니아 관광 자료가 국가 음식으로 소개한 요리를 빌뉴스의 기원이나 독점 음식이라고 표현하지 않았습니다. 식당 메뉴는 바뀔 수 있으며 예약이나 현재 제공을 보장하지 않습니다."
+            ]
           }
         ]
       }
@@ -3466,6 +7948,159 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.brasserie-du-cercle.lu/?lang=en&page=carte"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 요리는 룩셈부르크 시 관광 자료의 룩셈부르크 요리 소개를 바탕으로 골랐으며, 특정 음식의 기원·독점성·정통성 순위를 주장하지 않습니다. 식당은 조사 후보이지 예약이나 메뉴 제공 보장이 아닙니다. | en: Dishes were selected from Luxembourg City tourism coverage of Luxembourgish cuisine; no claim is made about origin, exclusivity or authenticity rankings. The restaurant is a research candidate, not a booking or guarantee of menu availability. | ja: 料理はルクセンブルク市の観光資料に基づいて選定しており、起源、独占性、真正性の順位を主張するものではありません。レストランは調査候補であり、予約やメニュー提供を保証するものではありません。 | zh: 菜品依据卢森堡市旅游资料中的卢森堡菜介绍选取；不主张其起源、独有性或正宗程度排名。餐厅仅为研究候选，并非预订，也不保证菜单供应。",
+        "cities": [
+          {
+            "city": {
+              "ko": "룩셈부르크 시",
+              "en": "Luxembourg City",
+              "ja": "ルクセンブルク市",
+              "zh": "卢森堡市"
+            },
+            "intro": {
+              "ko": "룩셈부르크 시 관광 자료는 Gromperekichelcher, Judd mat Gaardebounen, Bouneschlupp, Kniddelen 등을 룩셈부르크 요리의 지역 음식으로 소개합니다.",
+              "en": "Luxembourg City tourism sources present dishes such as Gromperekichelcher, Judd mat Gaardebounen, Bouneschlupp and Kniddelen as part of Luxembourgish cuisine.",
+              "ja": "ルクセンブルク市の観光資料では、Gromperekichelcher、Judd mat Gaardebounen、Bouneschlupp、Kniddelen などがルクセンブルク料理として紹介されています。",
+              "zh": "卢森堡市旅游资料将 Gromperekichelcher、Judd mat Gaardebounen、Bouneschlupp 和 Kniddelen 等介绍为卢森堡菜肴。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "Gromperekichelcher(룩셈부르크식 감자 튀김전)",
+                  "en": "Gromperekichelcher (Luxembourg potato fritters)",
+                  "ja": "Gromperekichelcher（ルクセンブルク風ポテトフリッター）",
+                  "zh": "Gromperekichelcher（卢森堡土豆煎饼）"
+                },
+                "note": {
+                  "ko": "룩셈부르크 시 관광 자료는 양파와 파슬리 등을 넣은 감자 튀김전으로 설명하며, 시장과 축제에서 흔히 볼 수 있다고 소개합니다.",
+                  "en": "Luxembourg City tourism describes these as potato fritters seasoned with onion, parsley and spices, commonly found at markets and festivals.",
+                  "ja": "ルクセンブルク市の観光資料では、玉ねぎ、パセリ、香辛料で味付けしたポテトフリッターで、市場や祭りでよく見られると説明されています。",
+                  "zh": "卢森堡市旅游资料将其描述为加入洋葱、欧芹和香料调味的土豆煎饼，并称其常见于集市和节庆活动。"
+                },
+                "source_urls": [
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/details/gromperekichelcher",
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/luxembourg-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "Judd mat Gaardebounen(훈제 돼지고기 목살과 잠두)",
+                  "en": "Judd mat Gaardebounen (smoked pork collar with broad beans)",
+                  "ja": "Judd mat Gaardebounen（燻製豚首肉とそら豆）",
+                  "zh": "Judd mat Gaardebounen（烟熏猪颈肉配蚕豆）"
+                },
+                "note": {
+                  "ko": "룩셈부르크 시 관광 자료는 훈제 돼지고기 목살을 크리미한 잠두와 감자와 함께 내는 음식으로 소개합니다.",
+                  "en": "Luxembourg City tourism describes it as smoked pork collar served with creamy broad beans and potatoes.",
+                  "ja": "ルクセンブルク市の観光資料では、燻製した豚の首肉をクリーミーなそら豆とジャガイモに添える料理として紹介されています。",
+                  "zh": "卢森堡市旅游资料将其介绍为烟熏猪颈肉搭配奶油蚕豆和土豆的菜肴。"
+                },
+                "source_urls": [
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/luxembourg-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "Bouneschlupp(그린빈 수프)",
+                  "en": "Bouneschlupp (green bean soup)",
+                  "ja": "Bouneschlupp（インゲン豆のスープ）",
+                  "zh": "Bouneschlupp（青豆汤）"
+                },
+                "note": {
+                  "ko": "룩셈부르크 시 관광 자료는 감자와 훈제 베이컨 등을 넣는 푸짐한 룩셈부르크 가정식 수프로 설명합니다.",
+                  "en": "Luxembourg City tourism describes this as a hearty Luxembourgish home-style green bean soup, traditionally made with smoked bacon, potatoes and cream.",
+                  "ja": "ルクセンブルク市の観光資料では、燻製ベーコン、ジャガイモ、生クリームなどを使う、食べ応えのある家庭料理のスープとして説明されています。",
+                  "zh": "卢森堡市旅游资料将其描述为丰盛的卢森堡家常青豆汤，传统做法会加入烟熏培根、土豆和奶油。"
+                },
+                "source_urls": [
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/details/bouneschlupp",
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/luxembourg-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "Kniddelen(룩셈부르크식 밀가루 경단)",
+                  "en": "Kniddelen (Luxembourg flour dumplings)",
+                  "ja": "Kniddelen（ルクセンブルク風小麦粉団子）",
+                  "zh": "Kniddelen（卢森堡面粉团子）"
+                },
+                "note": {
+                  "ko": "룩셈부르크 시 관광 자료는 간단한 밀가루 반죽으로 만든 작은 경단이며, 베이컨 소스나 녹인 버터와 함께 먹는다고 설명합니다.",
+                  "en": "Luxembourg City tourism describes these as small dumplings made from simple flour dough, typically served with bacon sauce or melted butter.",
+                  "ja": "ルクセンブルク市の観光資料では、小麦粉の生地で作る小さな団子で、通常ベーコンソースまたは溶かしバターを添えると説明されています。",
+                  "zh": "卢森堡市旅游资料将其描述为用简单面粉面团制作的小团子，通常搭配培根酱或融化的黄油食用。"
+                },
+                "source_urls": [
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/details/kniddelen",
+                  "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/luxembourg-cuisine"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Um Dierfgen",
+                "area": "Côte d'Eich, Luxembourg City",
+                "type": {
+                  "ko": "레스토랑·브라세리",
+                  "en": "Restaurant-brasserie",
+                  "ja": "レストラン・ブラッスリー",
+                  "zh": "餐厅兼啤酒馆"
+                },
+                "focus": {
+                  "ko": "룩셈부르크 요리 및 지역 특선 요리",
+                  "en": "Luxembourgish cuisine and regional specialties",
+                  "ja": "ルクセンブルク料理と地域の特産料理",
+                  "zh": "卢森堡菜及地区特色菜"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트에 ‘룩셈부르크 특선’ 메뉴가 있으며, Kniddelen mat Speck, Wäinzoossis mat Môschterzooss, Judd mat Gaardebounen 등이 기재되어 있습니다. 방문 전 메뉴와 운영 정보를 직접 확인하세요.",
+                  "en": "Its own site has a section titled “Luxembourgish specialties” listing dishes including Kniddelen mat Speck, Wäinzoossis mat Môschterzooss and Judd mat Gaardebounen. Check the venue's site directly before visiting, as listings may change.",
+                  "ja": "公式サイトの「ルクセンブルクの特産料理」欄には、Kniddelen mat Speck、Wäinzoossis mat Môschterzooss、Judd mat Gaardebounen などが掲載されています。掲載内容は変わる場合があるため、訪問前に公式サイトでご確認ください。",
+                  "zh": "其官网的“卢森堡特色菜”栏目列有 Kniddelen mat Speck、Wäinzoossis mat Môschterzooss 和 Judd mat Gaardebounen 等菜品。菜单信息可能变动，出行前请直接查看店家官网。"
+                },
+                "official_url": "https://umdierfgen.lu/en/",
+                "source_urls": [
+                  "https://umdierfgen.lu/en/",
+                  "https://umdierfgen.lu/specialites/",
+                  "https://www.visitluxembourg.com/gastronomy/restaurant-brasserie-um-dierfgen-luxembourg"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "luxembourg-city.com",
+                "url": "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/details/gromperekichelcher"
+              },
+              {
+                "title": "luxembourg-city.com",
+                "url": "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/luxembourg-cuisine"
+              },
+              {
+                "title": "luxembourg-city.com",
+                "url": "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/details/bouneschlupp"
+              },
+              {
+                "title": "luxembourg-city.com",
+                "url": "https://www.luxembourg-city.com/en/about-luxembourg-city/meng-stad-my-city/details/kniddelen"
+              },
+              {
+                "title": "umdierfgen.lu",
+                "url": "https://umdierfgen.lu/en/"
+              },
+              {
+                "title": "umdierfgen.lu",
+                "url": "https://umdierfgen.lu/specialites/"
+              },
+              {
+                "title": "visitluxembourg.com",
+                "url": "https://www.visitluxembourg.com/gastronomy/restaurant-brasserie-um-dierfgen-luxembourg"
+              }
+            ],
+            "unverified_or_correction_notes": []
+          }
+        ]
       }
     },
     "night_view": {
@@ -3599,6 +8234,149 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://whc.unesco.org/en/list/131/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Covered only the declared country_id malta and featured city Valletta. The supplied Italian examples were outside this item’s scope. Dish recommendations are island-wide Maltese traditions rather than claims of Valletta-only origin.",
+        "cities": [
+          {
+            "city": {
+              "ko": "발레타",
+              "en": "Valletta",
+              "ja": "バレッタ",
+              "zh": "瓦莱塔"
+            },
+            "intro": {
+              "ko": "발레타에서 몰타의 빵 문화와 토끼 요리 전통을 살펴보는 간결한 식사 안내입니다. 음식 설명은 몰타 전역의 전통을 다루며, 레스토랑의 현재 메뉴나 이용 가능 여부를 보장하지 않습니다.",
+              "en": "A concise guide to Malta’s bread culture and rabbit dishes for a Valletta visit. The food notes describe island-wide traditions and do not guarantee any restaurant’s current menu or availability.",
+              "ja": "バレッタでマルタのパン文化やウサギ料理の伝統を知るための簡潔な食案内です。料理の説明はマルタ全島の伝統を扱い、各店の現在のメニューや提供状況を保証するものではありません。",
+              "zh": "这是一份在瓦莱塔了解马耳他面包文化与兔肉料理传统的简要指南。菜品介绍涉及马耳他全岛的饮食传统，不保证餐厅当前菜单或供应情况。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "일프티라(몰타식 납작 사워도우 빵)",
+                  "en": "Il-ftira (Maltese flattened sourdough bread)",
+                  "ja": "イル・フティーラ（マルタの平たいサワードウパン）",
+                  "zh": "Il-ftira（马耳他扁平酸面包）"
+                },
+                "note": {
+                  "ko": "두꺼운 껍질과 구멍이 큰 가벼운 속살이 특징인 빵입니다. 반으로 갈라 올리브유와 토마토, 참치, 케이퍼, 올리브 등을 채울 수 있으며 계절별 변형도 있습니다. 유네스코는 이를 몰타 군도의 무형문화유산으로 등재했습니다.",
+                  "en": "This bread has a thick crust and a light, open crumb. It may be split and filled with olive oil, tomato, tuna, capers and olives, among other seasonal variations. UNESCO inscribed its culinary art and culture on the Maltese archipelago’s intangible heritage list.",
+                  "ja": "厚い皮と大きな気泡のある軽い内層が特徴です。半分に開き、オリーブ油、トマト、ツナ、ケッパー、オリーブなどを挟みます。季節によるアレンジもあり、その食文化はユネスコの無形文化遺産に登録されています。",
+                  "zh": "这种面包外皮较厚，内部轻盈且气孔较大。可剖开后加入橄榄油、番茄、金枪鱼、刺山柑和橄榄等，也有季节性变化。其制作技艺与饮食文化已列入联合国教科文组织非物质文化遗产名录。"
+                },
+                "source_urls": [
+                  "https://ich.unesco.org/en/RL/il-ftira-culinary-art-and-culture-of-flattened-sourdough-bread-in-malta-01580"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "페넥 모일리(몰타식 토끼 고기 요리)",
+                  "en": "Fenek moqli (Maltese-style pan-fried rabbit)",
+                  "ja": "フェネク・モイリ（マルタ風ウサギ肉のフライパン焼き）",
+                  "zh": "Fenek moqli（马耳他式煎兔肉）"
+                },
+                "note": {
+                  "ko": "타 네누가 전통 몰타식 조리법으로 소개하는 토끼 요리입니다. 해당 식당 설명은 마늘과 함께 팬에 익힌 뒤 화이트 와인에 천천히 조리하는 방식이며, 이는 그 식당이 제시한 조리법이지 모든 몰타식 토끼 요리에 적용되는 단일 조리법은 아닙니다.",
+                  "en": "Ta’ Nenu presents this as a traditional Maltese rabbit dish. Its own description specifies pan-frying with garlic, then slow-cooking in white wine; this is that restaurant’s preparation, not a universal recipe for Maltese rabbit dishes.",
+                  "ja": "タ・ネヌが伝統的なマルタ料理として紹介するウサギ肉料理です。同店の説明では、ニンニクとともにフライパンで焼き、白ワインでじっくり煮ます。これは同店の調理法であり、マルタのウサギ料理すべてに共通するレシピではありません。",
+                  "zh": "Ta’ Nenu 将这道兔肉菜介绍为传统马耳他料理。该店说明的做法是与大蒜一起煎，再用白葡萄酒慢煮；这只是该店介绍的做法，并非所有马耳他兔肉菜的统一配方。"
+                },
+                "source_urls": [
+                  "https://tanenu.com/discover-the-real-ftira/",
+                  "https://tanenu.com/wp-content/uploads/2023/11/food_menu_nenu_the_artisan_baker.pdf"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Ta’ Nenu",
+                "area": "Valletta",
+                "type": {
+                  "ko": "몰타 전통 요리 레스토랑",
+                  "en": "Traditional Maltese restaurant",
+                  "ja": "マルタ伝統料理レストラン",
+                  "zh": "马耳他传统菜餐厅"
+                },
+                "focus": {
+                  "ko": "몰타식 프티라와 전통 요리. 레스토랑 자체 설명에는 마늘과 화이트 와인으로 조리한 토끼 요리도 나옵니다.",
+                  "en": "Maltese ftira and traditional cooking. The restaurant’s own description also features rabbit cooked with garlic and white wine.",
+                  "ja": "マルタのフティーラと伝統料理。同店の説明には、ニンニクと白ワインで調理するウサギ料理もあります。",
+                  "zh": "马耳他式 ftira 与传统菜肴。餐厅自述还介绍了用大蒜和白葡萄酒烹制的兔肉。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트가 발레타 소재임을 밝히고 전통 프티라를 핵심으로 소개합니다. 후보 식당으로 제시하며 예약이나 현재 메뉴·공급을 뜻하지 않습니다.",
+                  "en": "Its official site identifies the Valletta location and highlights traditional ftira, making it a well-supported candidate. This is not a booking or a guarantee of the current menu or supply.",
+                  "ja": "公式サイトでバレッタの店舗と伝統的なフティーラを確認できます。根拠のある候補店として挙げていますが、予約済みでも現在の提供保証でもありません。",
+                  "zh": "官网确认其位于瓦莱塔，并重点介绍传统 ftira，因此可作为有依据的候选餐厅。这不代表已预订，也不保证当前菜单或供应。"
+                },
+                "official_url": "https://tanenu.com/",
+                "source_urls": [
+                  "https://tanenu.com/",
+                  "https://tanenu.com/discover-the-real-ftira/",
+                  "https://tanenu.com/wp-content/uploads/2023/11/food_menu_nenu_the_artisan_baker.pdf"
+                ]
+              },
+              {
+                "name": "Rubino",
+                "area": "Valletta",
+                "type": {
+                  "ko": "몰타·이탈리아 요리 레스토랑",
+                  "en": "Maltese and Italian restaurant",
+                  "ja": "マルタ料理・イタリア料理店",
+                  "zh": "马耳他与意大利菜餐厅"
+                },
+                "focus": {
+                  "ko": "공식 샘플 메뉴에는 페넥 모일리와 알요타가 기재되어 있습니다. 샘플 메뉴이므로 실제 방문 시 제공 여부는 확인되지 않았습니다.",
+                  "en": "Its official sample menu lists fenek moqli and aljotta. As this is a sample menu, availability at a future visit is unverified.",
+                  "ja": "公式のサンプルメニューにはフェネク・モイリとアリヨッタが掲載されています。サンプルメニューのため、訪問時の提供は確認できていません。",
+                  "zh": "官网样例菜单列有 fenek moqli 和 aljotta。由于这是样例菜单，不能确认之后到访时是否供应。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트가 발레타 소재와 몰타·이탈리아 요리 구성을 확인하고, 메뉴에는 관련 몰타식 음식명이 있습니다. 후보 식당이며 메뉴의 상시 제공을 의미하지 않습니다.",
+                  "en": "The official site confirms its Valletta location and Maltese-Italian focus, while its menu includes Maltese dish names. It is a candidate only; menu items are not guaranteed to be continuously available.",
+                  "ja": "公式サイトでバレッタの所在地とマルタ料理・イタリア料理の店であることを確認でき、メニューにもマルタ料理名があります。候補店としての提示であり、常時提供を保証するものではありません。",
+                  "zh": "官网确认其位于瓦莱塔并经营马耳他与意大利菜，菜单也列有马耳他菜名。这里只将其列为候选餐厅，不保证菜品持续供应。"
+                },
+                "official_url": "https://www.rubinomalta.com/",
+                "source_urls": [
+                  "https://www.rubinomalta.com/",
+                  "https://www.rubinomalta.com/menu"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "ich.unesco.org",
+                "url": "https://ich.unesco.org/en/RL/il-ftira-culinary-art-and-culture-of-flattened-sourdough-bread-in-malta-01580"
+              },
+              {
+                "title": "tanenu.com",
+                "url": "https://tanenu.com/discover-the-real-ftira/"
+              },
+              {
+                "title": "tanenu.com",
+                "url": "https://tanenu.com/wp-content/uploads/2023/11/food_menu_nenu_the_artisan_baker.pdf"
+              },
+              {
+                "title": "tanenu.com",
+                "url": "https://tanenu.com/"
+              },
+              {
+                "title": "rubinomalta.com",
+                "url": "https://www.rubinomalta.com/"
+              },
+              {
+                "title": "rubinomalta.com",
+                "url": "https://www.rubinomalta.com/menu"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Pastizzi 的馅料说法在检索中多见，但本次未找到足够合适的官方或文化机构来源来核实，因此未列入。",
+              "Rubino 官网将菜单标为样例菜单；其中单道菜当前是否供应未经确认。Ta’ Nenu 官网也注明菜单可能随节庆或特别场合变化。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -3708,6 +8486,151 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Moldova’s Culinary Delights: A Journey through Local Cuisine",
             "url": "https://moldova.travel/en/a/moldovas-gastronomic-delights-a-journey-through-local-cuisine"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 조사 범위는 Chișinău(도시 ID: moldova) 한 곳이며, 음식 근거는 몰도바 국가 관광 자료와 Peace Corps 자료, 식당 근거는 키시너우 공식 관광 사이트와 업체 자체 사이트입니다. | en: Research covers Chișinău only (city ID: moldova). Dish evidence comes from Moldova’s national tourism source and Peace Corps; venue evidence comes from Chișinău’s official tourism site and the venue’s own site. | ja: 調査対象はキシナウのみ（都市ID: moldova）です。料理の根拠はモルドバの全国観光情報とPeace Corps、店舗の根拠はキシナウ公式観光サイトと店舗公式サイトです。 | zh: 研究范围仅为基希讷乌（城市 ID：moldova）。菜肴依据来自摩尔多瓦国家旅游资料及 Peace Corps；餐厅依据来自基希讷乌官方旅游网站和店方网站。",
+        "cities": [
+          {
+            "city": {
+              "ko": "키시너우",
+              "en": "Chișinău",
+              "ja": "キシナウ",
+              "zh": "基希讷乌"
+            },
+            "intro": {
+              "ko": "키시너우 방문객은 몰도바 전역과 연관된 여러 전통 음식과 현지 식당 후보를 살펴볼 수 있습니다. 아래 음식은 몰도바 국가 관광 자료에서 소개된 것으로, 키시너우에서 유래했거나 이 도시만의 음식이라는 뜻은 아닙니다.",
+              "en": "Visitors to Chișinău can explore dishes associated with Moldova more broadly and a locally listed restaurant candidate. The dishes below are featured by Moldova’s national tourism source; this does not establish Chișinău origins or exclusivity.",
+              "ja": "キシナウでは、モルドバ全体に関連づけられる料理や、市の観光情報に掲載されたレストラン候補を調べられます。以下の料理はモルドバの全国観光情報で紹介されていますが、キシナウ発祥またはこの都市に固有であることを示すものではありません。",
+              "zh": "在基希讷乌，游客可以了解与整个摩尔多瓦相关的菜肴，以及市级旅游资料列出的餐厅候选。以下菜肴见于摩尔多瓦国家旅游资料；这并不证明它们起源于基希讷乌或为该市独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "플러친테(속을 채운 페이스트리)",
+                  "en": "Plăcinte (filled pastries)",
+                  "ja": "プラチンテ（具入りペイストリー）",
+                  "zh": "Plăcinte（馅料酥饼）"
+                },
+                "note": {
+                  "ko": "몰도바 국가 관광 자료는 치즈, 감자, 양배추, 고기, 체리 또는 호박 등을 넣는 페이스트리로 소개합니다. 지역·조리법에 따라 형태와 속재료가 달라질 수 있습니다.",
+                  "en": "Moldova’s national tourism source describes pastries filled with ingredients such as cheese, potatoes, cabbage, meat, cherries, or pumpkin. Form and fillings can vary by region and recipe.",
+                  "ja": "モルドバの全国観光情報では、チーズ、じゃがいも、キャベツ、肉、サクランボ、カボチャなどを詰めたペイストリーとして紹介されています。形や具材は地域やレシピによって異なります。",
+                  "zh": "摩尔多瓦国家旅游资料将其描述为馅料可包括奶酪、土豆、卷心菜、肉、樱桃或南瓜的酥饼。形状和馅料会因地区及做法而异。"
+                },
+                "source_urls": [
+                  "https://moldova.travel/en/a/moldovas-gastronomic-delights-a-journey-through-local-cuisine",
+                  "https://www.peacecorps.gov/connect/blog/4-foods-you-must-try-in-moldova/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "머멀리거(옥수수 가루 폴렌타)",
+                  "en": "Mămăligă (cornmeal polenta)",
+                  "ja": "ママリガ（トウモロコシ粉のポレンタ）",
+                  "zh": "Mămăligă（玉米粉玉米糊／波伦塔）"
+                },
+                "note": {
+                  "ko": "몰도바 국가 관광 자료는 이를 옥수수 기반 음식으로 소개하고, 치즈·사워크림·돼지고기 구이 등과 함께 내는 경우를 설명합니다. 이 음식은 주변 지역에서도 알려져 있습니다.",
+                  "en": "Moldova’s national tourism source describes this as a corn-based food, often served with cheese, sour cream, or roast pork. It is also known in neighboring regions.",
+                  "ja": "モルドバの全国観光情報では、トウモロコシを使った料理として紹介され、チーズ、サワークリーム、豚肉のローストなどと合わせることが多いと説明されています。周辺地域でも知られています。",
+                  "zh": "摩尔多瓦国家旅游资料将其描述为玉米制食品，常与奶酪、酸奶油或烤猪肉同食。周边地区也有这种食物。"
+                },
+                "source_urls": [
+                  "https://moldova.travel/en/a/moldovas-gastronomic-delights-a-journey-through-local-cuisine",
+                  "https://www.peacecorps.gov/connect/blog/4-foods-you-must-try-in-moldova/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "제아머(닭고기 수프)",
+                  "en": "Zeamă (chicken soup)",
+                  "ja": "ゼアマ（チキンスープ）",
+                  "zh": "Zeamă（鸡汤）"
+                },
+                "note": {
+                  "ko": "몰도바 국가 관광 자료는 채소와 면을 넣는 전통 가정식 닭고기 수프로 설명하며, 주변 루마니아에서도 인기라고 덧붙입니다. 따라서 몰도바에만 한정된 음식으로 볼 수는 없습니다.",
+                  "en": "Moldova’s national tourism source describes a traditional homemade chicken soup with vegetables and noodles, and notes that it is also popular in Romania. It should not be treated as exclusive to Moldova.",
+                  "ja": "モルドバの全国観光情報では、野菜と麺を加える伝統的な家庭料理の鶏スープと説明され、ルーマニアでも人気があるとされています。モルドバだけの料理とはいえません。",
+                  "zh": "摩尔多瓦国家旅游资料将其描述为加入蔬菜和面条的传统家常鸡汤，并指出它在罗马尼亚也很受欢迎。因此不应视为摩尔多瓦独有。"
+                },
+                "source_urls": [
+                  "https://moldova.travel/en/a/moldovas-gastronomic-delights-a-journey-through-local-cuisine",
+                  "https://www.peacecorps.gov/connect/blog/4-foods-you-must-try-in-moldova/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "사르말레(속을 채운 양배추말이)",
+                  "en": "Sarmale (stuffed cabbage rolls)",
+                  "ja": "サルマーレ（詰め物入りキャベツロール）",
+                  "zh": "Sarmale（包馅卷心菜卷）"
+                },
+                "note": {
+                  "ko": "몰도바 국가 관광 자료는 양배추 잎에 쌀, 채소, 다진 돼지고기 또는 소고기 등을 넣는 음식으로 설명하며 포도잎을 쓰기도 한다고 합니다. 비슷한 음식은 다른 나라에도 있습니다.",
+                  "en": "Moldova’s national tourism source describes cabbage leaves filled with rice, vegetables, and minced pork or beef; grape leaves may also be used. Similar dishes are found in other countries.",
+                  "ja": "モルドバの全国観光情報では、米、野菜、豚または牛のひき肉などをキャベツの葉で包む料理と説明され、ブドウの葉を使う場合もあるとしています。類似料理は他国にもあります。",
+                  "zh": "摩尔多瓦国家旅游资料将其描述为用卷心菜叶包入米、蔬菜及猪肉或牛肉末的菜肴，也可能使用葡萄叶。其他国家也有类似菜肴。"
+                },
+                "source_urls": [
+                  "https://moldova.travel/en/a/moldovas-gastronomic-delights-a-journey-through-local-cuisine",
+                  "https://www.peacecorps.gov/connect/blog/4-foods-you-must-try-in-moldova/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "La Taifas",
+                "area": "ko: 키시너우 시내 중심부(자체 사이트의 표현; 정확한 주소 미확인) | en: Central Chișinău (the venue’s wording; exact address not verified) | ja: キシナウ中心部（店舗サイトの表現。正確な住所は未確認） | zh: 基希讷乌市中心（店方表述；未核实具体地址）",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "몰도바 요리와 전통 음식",
+                  "en": "Moldovan cuisine and traditional food",
+                  "ja": "モルドバ料理と伝統料理",
+                  "zh": "摩尔多瓦料理与传统食物"
+                },
+                "why_candidate": {
+                  "ko": "키시너우 공식 관광 사이트는 이곳을 몰도바 요리와 풍습을 접할 수 있는 레스토랑으로 소개하며, 자체 사이트도 전통적 맛과 분위기를 내세웁니다. 연구 후보일 뿐 예약 추천은 아니며, 특정 음식의 현재 제공 여부는 확인하지 않았습니다.",
+                  "en": "Chișinău’s official tourism site presents it as a restaurant for experiencing Moldovan cuisine and customs, while its own site describes traditional tastes and ambiance. This is a research candidate, not a booking recommendation; current availability of any specific dish was not verified.",
+                  "ja": "キシナウの公式観光サイトは、モルドバ料理や習慣を知ることができるレストランとして紹介し、店舗サイトも伝統的な味と雰囲気を掲げています。調査候補であり予約の推奨ではありません。特定料理の現在の提供状況は確認していません。",
+                  "zh": "基希讷乌官方旅游网站将其介绍为可体验摩尔多瓦菜肴与风俗的餐厅，店方网站也强调传统风味与氛围。这只是研究候选，并非预订推荐；未核实任何具体菜品目前是否供应。"
+                },
+                "official_url": "https://lataifas.md/",
+                "source_urls": [
+                  "https://lataifas.md/",
+                  "https://visit.chisinau.md/en/acctivitati/food/comanda-online/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "moldova.travel",
+                "url": "https://moldova.travel/en/a/moldovas-gastronomic-delights-a-journey-through-local-cuisine"
+              },
+              {
+                "title": "peacecorps.gov",
+                "url": "https://www.peacecorps.gov/connect/blog/4-foods-you-must-try-in-moldova/"
+              },
+              {
+                "title": "lataifas.md",
+                "url": "https://lataifas.md/"
+              },
+              {
+                "title": "visit.chisinau.md",
+                "url": "https://visit.chisinau.md/en/acctivitati/food/comanda-online/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 근거 자료는 몰도바 국가 단위 음식 연관성을 뒷받침하지만, 해당 요리의 키시너우 기원·독점성은 뒷받침하지 않습니다. 식당 후보의 공식 관광 소개와 자체 사이트만으로 특정 요리의 현 메뉴, 운영시간, 가격 또는 예약 가능 여부를 추정하지 않았습니다. | en: The sources support national-level Moldovan associations, not Chișinău origins or exclusivity. The official tourism listing and venue site do not establish a specific dish’s current menu availability, hours, prices, or booking availability.",
+              "ja: 資料が裏付けるのはモルドバ全体との関連であり、キシナウ発祥または独占性ではありません。公式観光案内と店舗サイトから、特定料理の現在の提供、営業時間、価格、予約可否は推定していません。",
+              "zh: 来源支持的是摩尔多瓦国家层面的关联，并不能证明菜肴起源于基希讷乌或为其独有。官方旅游介绍和店方网站不足以确认特定菜品当前供应、营业时间、价格或预订情况。"
+            ]
           }
         ]
       }
@@ -3845,6 +8768,194 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Route from the Place du Palais and Monaco-Ville to Port Hercule — VisitMonaco",
             "url": "https://www.visitmonaco.com/en/explore/trails-walks/visit-monaco-city-walk/route-from-the-place-du-palais-to-port-hercule"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id=monaco was used. Featured city: Monaco. The existing Barbagiuan and Marché de La Condamine entries were treated as leads, not as verified facts; candidates below are not reservations, and no current availability or hours are asserted.",
+        "cities": [
+          {
+            "city": {
+              "ko": "모나코",
+              "en": "Monaco",
+              "ja": "モナコ",
+              "zh": "摩纳哥"
+            },
+            "intro": {
+              "ko": "모나코의 전통 음식은 지중해권의 영향을 받으며, 근대 페이스트리와 생선 요리 등 지역 특선이 공식 관광 자료에 소개되어 있다.",
+              "en": "Monaco’s traditional food reflects Mediterranean influences; official tourism sources highlight local pastries and fish dishes among its specialties.",
+              "ja": "モナコの伝統料理には地中海地域の影響が見られ、公式観光資料では野菜入りのペイストリーや魚料理などが郷土料理として紹介されています。",
+              "zh": "摩纳哥传统饮食受到地中海地区影响；官方旅游资料介绍了蔬菜馅点心和鱼料理等地方特色。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "바르바주앙",
+                  "en": "Barbagiuan",
+                  "ja": "バルバジュアン",
+                  "zh": "巴尔巴朱安"
+                },
+                "note": {
+                  "ko": "바삭한 반달 모양 페이스트리로, 근대·리코타·리크·마늘·허브 등을 넣어 튀기거나 굽는다. 소와 조리법은 달라질 수 있다.",
+                  "en": "A crisp half-moon pastry, baked or fried, with a filling that may include Swiss chard, ricotta, leek, garlic and herbs. Fillings and preparation vary.",
+                  "ja": "半月形のカリッとしたペイストリーで、フダンソウ、リコッタ、リーキ、ニンニク、ハーブなどを詰めて焼くか揚げます。具材や作り方には違いがあります。",
+                  "zh": "一种酥脆的半月形面点，可烘烤或油炸，馅料可包括瑞士甜菜、乳清干酪、韭葱、大蒜和香草；具体做法和馅料会有差异。"
+                },
+                "source_urls": [
+                  "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences",
+                  "https://www.france.fr/en/article/monaco-food-and-drinks-specialties/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "모네가스크 푸가스",
+                  "en": "Monegasque fougasse",
+                  "ja": "モナコ風フーガス",
+                  "zh": "摩纳哥风味福加斯面包"
+                },
+                "note": {
+                  "ko": "모나코의 특산품으로 소개되는 작은 달콤한 빵이다. 오렌지 향을 내고 견과류·건포도·아니스로 장식하는 형태가 알려져 있다.",
+                  "en": "A small sweet bread identified as a Monegasque specialty; one described version is scented with orange and decorated with nuts, raisins and anise.",
+                  "ja": "モナコの名物として紹介される小さな甘いパンです。オレンジで香りをつけ、ナッツ、レーズン、アニスを飾るタイプが紹介されています。",
+                  "zh": "这是被列为摩纳哥特色的小型甜面包；一种常见介绍的做法是以橙子增香，并装饰坚果、葡萄干和茴香。"
+                },
+                "source_urls": [
+                  "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences",
+                  "https://www.france.fr/en/article/monaco-food-and-drinks-specialties/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "모나코식 피살라디에르",
+                  "en": "Monegasque-style pissaladière",
+                  "ja": "モナコ風ピサラディエール",
+                  "zh": "摩纳哥风味洋葱橄榄烤饼"
+                },
+                "note": {
+                  "ko": "니스에서 유래한 음식으로, 모나코식은 양파·토마토·올리브를 얹은 파이 형태로 소개된다. 모나코만의 독점 음식으로 보기는 어렵다.",
+                  "en": "This dish originated in Nice; the version described for Monaco is a pie topped with onions, tomatoes and olives. It is not exclusive to Monaco.",
+                  "ja": "ニース発祥の料理で、モナコ風は玉ねぎ、トマト、オリーブをのせたパイとして紹介されています。モナコだけの料理ではありません。",
+                  "zh": "这道菜起源于尼斯；摩纳哥版本被描述为铺有洋葱、番茄和橄榄的馅饼，并非摩纳哥独有。"
+                },
+                "source_urls": [
+                  "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences",
+                  "https://www.france.fr/en/article/monaco-food-and-drinks-specialties/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "모나코식 스토카피",
+                  "en": "Monegasque stocafi",
+                  "ja": "モナコ風ストカフィ",
+                  "zh": "摩纳哥风味鳕鱼干炖菜"
+                },
+                "note": {
+                  "ko": "말린 대구를 토마토소스에 끓이고 검은 올리브와 작은 채소를 더하는 요리로, 모나코 관광 자료가 모네가스크식 스톡피시로 소개한다.",
+                  "en": "A dish of dried cod stewed in tomato sauce with black olives and small vegetables; Monaco’s tourism authority identifies stocafi as Monegasque-style stockfish.",
+                  "ja": "干しタラをトマトソースで煮込み、黒オリーブや小さな野菜を加える料理です。モナコの観光当局はモナコ風ストックフィッシュとして紹介しています。",
+                  "zh": "将鳕鱼干放入番茄酱中炖煮，并加入黑橄榄和小份蔬菜；摩纳哥旅游部门将其列为摩纳哥风味鳕鱼干料理。"
+                },
+                "source_urls": [
+                  "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences",
+                  "https://www.france.fr/en/article/monaco-food-and-drinks-specialties/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Castelroc",
+                "area": "Monaco-Ville, Place du Palais",
+                "type": {
+                  "ko": "모네가스크 전통 요리 및 지중해 요리",
+                  "en": "Traditional Monegasque and Mediterranean cuisine",
+                  "ja": "モナコ伝統料理・地中海料理",
+                  "zh": "摩纳哥传统料理与地中海料理"
+                },
+                "focus": {
+                  "ko": "바르바주앙, 파니세, 소카 등 모나코 특선; 생선 요리",
+                  "en": "Monaco specialties including barbajuans, panisse and socca; fish dishes",
+                  "ja": "バルバジュアン、パニス、ソッカなどのモナコ名物と魚料理",
+                  "zh": "巴尔巴朱安、鹰嘴豆饼和索卡等摩纳哥特色，以及鱼料理"
+                },
+                "why_candidate": {
+                  "ko": "식당 자체 웹사이트가 모나코 특선 요리를 명시하고, 공식 관광 자료도 이곳을 전통 모네가스크 풍미와 스토카피를 맛볼 수 있는 곳으로 소개한다.",
+                  "en": "The restaurant’s own site identifies Monaco specialties, and official tourism material also recommends it for traditional Monegasque flavours and stocafi.",
+                  "ja": "店の公式サイトがモナコ名物を掲げ、公式観光資料も伝統的なモナコの味やストカフィを楽しめる店として紹介しています。",
+                  "zh": "餐厅官网列有摩纳哥特色菜；官方旅游资料也将其作为品尝摩纳哥传统风味和斯托卡菲的候选地点。"
+                },
+                "official_url": "https://www.castelrocmonaco.com/",
+                "source_urls": [
+                  "https://www.castelrocmonaco.com/",
+                  "https://www.castelrocmonaco.com/la-carte",
+                  "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences",
+                  "https://www.visitmonaco.com/en/enjoy/restaurants/restaurants/castelroc"
+                ]
+              },
+              {
+                "name": "U Cavagnetu",
+                "area": "Monaco-Ville, Rue Comte Félix Gastaldi",
+                "type": {
+                  "ko": "전통 모네가스크 요리",
+                  "en": "Traditional Monegasque cuisine",
+                  "ja": "伝統的なモナコ料理",
+                  "zh": "摩纳哥传统料理"
+                },
+                "focus": {
+                  "ko": "모네가스크 전통 음식과 지역 요리. 식당 자체 소개에는 문어, 다우브 소스 라비올리, 속을 채운 채소, 주키니 튀김 등이 언급된다.",
+                  "en": "Traditional Monegasque and local dishes. The restaurant’s own description mentions octopus, ravioli with daube, stuffed vegetables and zucchini fritters.",
+                  "ja": "モナコの伝統料理や郷土料理。店の紹介では、タコ、ドーブ煮込み入りラビオリ、詰め物野菜、ズッキーニのフリットなどが挙げられています。",
+                  "zh": "摩纳哥传统及地方菜肴。餐厅自述提到章鱼、炖牛肉汁馅意式饺子、酿蔬菜和西葫芦炸物等。"
+                },
+                "why_candidate": {
+                  "ko": "식당 자체 소개가 모네가스크 전통 요리를 표방하고 구체적인 지역 요리 예시를 제시하며, 공식 관광청의 미식 자료도 이곳을 모네가스크 요리 식당으로 확인한다.",
+                  "en": "The venue’s own description presents it as traditional Monegasque cuisine and names local-style dishes; official tourism material also identifies it as serving Monegasque dishes.",
+                  "ja": "店の紹介がモナコ伝統料理を掲げ、具体的な郷土料理を挙げています。公式観光資料もモナコ料理を出す店として紹介しています。",
+                  "zh": "餐厅自述以摩纳哥传统料理为特色，并列出具体地方菜；官方旅游资料也确认其提供摩纳哥菜肴。"
+                },
+                "official_url": "https://restaurantsmonaco.wixsite.com/cavagnetu2",
+                "source_urls": [
+                  "https://restaurantsmonaco.wixsite.com/cavagnetu2",
+                  "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences",
+                  "https://media-trade.visitmonaco.com/ja/content/download/0a885a8244b4cad312fe2b2b6652d0f5/file/Dossier_Gourmet_EN_Summer_2026.pdf?inLanguage=eng-GB&version=36"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "media-trade.visitmonaco.com",
+                "url": "https://media-trade.visitmonaco.com/en/editorial-resources/thematic-files/gourmet/local-experiences"
+              },
+              {
+                "title": "france.fr",
+                "url": "https://www.france.fr/en/article/monaco-food-and-drinks-specialties/"
+              },
+              {
+                "title": "castelrocmonaco.com",
+                "url": "https://www.castelrocmonaco.com/"
+              },
+              {
+                "title": "castelrocmonaco.com",
+                "url": "https://www.castelrocmonaco.com/la-carte"
+              },
+              {
+                "title": "visitmonaco.com",
+                "url": "https://www.visitmonaco.com/en/enjoy/restaurants/restaurants/castelroc"
+              },
+              {
+                "title": "restaurantsmonaco.wixsite.com",
+                "url": "https://restaurantsmonaco.wixsite.com/cavagnetu2"
+              },
+              {
+                "title": "media-trade.visitmonaco.com",
+                "url": "https://media-trade.visitmonaco.com/ja/content/download/0a885a8244b4cad312fe2b2b6652d0f5/file/Dossier_Gourmet_EN_Summer_2026.pdf?inLanguage=eng-GB&version=36"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The scope’s Marché de La Condamine venue lead was not selected as a restaurant candidate: official materials document the market as a place for local specialties, but the 2026 tourism dossier also notes the market hall’s renovation and temporary market arrangement. This guide therefore does not imply a specific stall, current menu, or current market setup.",
+              "Socca is cited by Monaco tourism as a local specialty and by Castelroc as a Monaco specialty, but it is also associated with neighboring regional food traditions; it was omitted to keep this compact list focused on dishes with clearer Monaco-specific framing.",
+              "Barbagiuan fillings vary; the dish note gives examples rather than a single mandatory recipe. Pissaladière is explicitly described as originating in Nice, with a Monaco-style topping variation.",
+              "Restaurant entries are candidates only. No booking, present-day menu availability, hours, prices, wait times, or service quality are asserted."
+            ]
           }
         ]
       }
@@ -3996,6 +9107,153 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.catovica-mlini.com/en/contact/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 음식은 공식 관광 자료가 확인하는 보카만 및 인근 지역의 연관성을 기준으로 선정했습니다. 식당은 자체 공식 사이트에서 정체성과 음식 설명을 확인한 조사 후보이며 예약 추천이 아닙니다. / en: Foods are included based on Boka Bay and nearby-area associations documented by official tourism sources. Venues are research candidates whose identities and food descriptions were checked on their own official sites, not booking recommendations. / ja: 料理は公式観光資料で確認できるボカ湾および近隣地域との関連に基づいています。飲食店は公式サイトで店の情報と料理の説明を確認した調査候補であり、予約の推奨ではありません。 / zh: 所列食物依据官方旅游资料所记录的博卡湾及邻近地区关联。餐厅是通过其官网核实身份与餐饮介绍的研究候选，并非预订推荐。",
+        "cities": [
+          {
+            "city": {
+              "ko": "코토르",
+              "en": "Kotor",
+              "ja": "コトル",
+              "zh": "科托尔"
+            },
+            "intro": {
+              "ko": "코토르는 보카 코토르스카만에 자리한 몬테네그로의 해안 도시입니다. 국가 관광청은 보카만의 굴 양식과 홍합, 그리고 부자라 방식의 조리를 소개합니다. 아래 음식은 만 또는 인근 지역과 관련되며, 코토르 시에만 한정된 음식이라는 뜻은 아닙니다.",
+              "en": "Kotor is a coastal city on Montenegro’s Bay of Kotor. The national tourism authority describes oyster cultivation, mussels, and buzara-style preparation in Boka Bay. The foods below are associated with the bay or a nearby region, not claimed as exclusive to Kotor city.",
+              "ja": "コトルはモンテネグロのボカ・コトルスカ湾に面する沿岸都市です。モンテネグロ政府観光局は、ボカ湾のカキ養殖、ムール貝、ブザーラ風の調理を紹介しています。以下の食品は湾または近隣地域との関連を示すもので、コトル市だけの料理とはしていません。",
+              "zh": "科托尔是黑山博卡科托尔湾畔的海滨城市。黑山国家旅游机构介绍了博卡湾的牡蛎养殖、贻贝及布扎拉式烹调。以下食物与海湾或邻近地区有关，并非声称它们是科托尔市独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "부자라 방식 홍합(레드 또는 화이트)",
+                  "en": "Mussels alla buzara (red or white)",
+                  "ja": "ムール貝のブザーラ（赤または白）",
+                  "zh": "布扎拉风味贻贝（红汁或白汁）"
+                },
+                "note": {
+                  "ko": "몬테네그로 국가 관광청은 보카 코토르스카만에서 홍합을 기르고, 전통적으로 레드 또는 화이트 부자라 방식으로 조리한다고 설명합니다. 이는 만 지역의 연관성이지 코토르 시만의 특산이라는 뜻은 아닙니다.",
+                  "en": "Montenegro’s national tourism authority says mussels are cultivated in Boka Kotorska and traditionally prepared as red or white buzara. This is a Bay-area association, not a claim that the dish is unique to Kotor city.",
+                  "ja": "モンテネグロ政府観光局によると、ボカ・コトルスカ湾ではムール貝が養殖され、伝統的に赤または白のブザーラで調理されます。これは湾地域との関連であり、コトル市独自の料理という意味ではありません。",
+                  "zh": "黑山国家旅游机构称，博卡科托尔湾养殖贻贝，当地传统上以红汁或白汁布扎拉方式烹制。这是海湾地区的关联，并非声称该菜为科托尔市独有。"
+                },
+                "source_urls": [
+                  "https://www.montenegro.travel/en/unique-montenegro/jewels-of-the-adriatic/bay-of-kotor"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "보카만 굴",
+                  "en": "Boka Bay oysters",
+                  "ja": "ボカ湾のカキ",
+                  "zh": "博卡湾牡蛎"
+                },
+                "note": {
+                  "ko": "국가 관광청은 보카만의 리산과 헤르체그노비 주변에서 아드리아해 굴이 양식된다고 안내합니다. 이는 지역 식재료의 연관성에 대한 설명이며, 특정 코토르 식당의 공급이나 메뉴를 확인한 것은 아닙니다.",
+                  "en": "The national tourism authority reports Adriatic oysters cultivated in Boka Bay, including around Risan and Herceg Novi. This supports a regional ingredient association; it does not verify supply or menu availability at any particular Kotor restaurant.",
+                  "ja": "政府観光局は、リサンやヘルツェグ・ノヴィ周辺を含むボカ湾でアドリア海産のカキが養殖されていると紹介しています。地域食材との関連を示す情報であり、特定のコトルの飲食店での仕入れや提供を確認したものではありません。",
+                  "zh": "国家旅游机构介绍，博卡湾（包括里桑和新海尔采格周边）养殖亚得里亚海牡蛎。这支持其作为地区食材的关联，但不能证明科托尔任何特定餐厅的供货或菜单供应情况。"
+                },
+                "source_urls": [
+                  "https://www.montenegro.travel/en/unique-montenegro/jewels-of-the-adriatic/bay-of-kotor"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "녜구시 훈제 햄",
+                  "en": "Njeguši smoked ham",
+                  "ja": "ニェグシの燻製ハム",
+                  "zh": "涅古希烟熏火腿"
+                },
+                "note": {
+                  "ko": "국가 관광청은 녜구시를 이 훈제 돼지고기의 고향으로 소개합니다. 녜구시는 코토르 시내가 아니라 인근 로브첸 지역이므로, 여기서는 코토르 자체 음식이 아닌 주변 지역 특산물로 포함했습니다.",
+                  "en": "The national tourism authority identifies Njeguši as the homeland of this smoked pork. Njeguši is in the nearby Lovćen area, not Kotor city, so this is included as a neighboring regional specialty rather than a dish specific to Kotor.",
+                  "ja": "政府観光局は、ニェグシをこの燻製豚肉の本場として紹介しています。ニェグシはコトル市内ではなく近隣のロヴチェン地域にあるため、コトル固有の料理ではなく周辺地域の名産として掲載しています。",
+                  "zh": "国家旅游机构将涅古希称为这种烟熏猪肉的发源地。涅古希位于邻近的洛夫琴地区，并非科托尔市内，因此这里将其作为周边地区特产，而非科托尔特有菜肴列出。"
+                },
+                "source_urls": [
+                  "https://www.montenegro.travel/en/unique-montenegro/national-parks-of-montenegro/lovcen-national-park"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Restaurant Galion",
+                "area": "Šuranj, Kotor",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "공식 사이트는 지중해 요리와 생선·해산물 중심의 메뉴를 소개합니다.",
+                  "en": "Its official site describes a Mediterranean focus and a fish- and seafood-oriented menu.",
+                  "ja": "公式サイトでは、地中海料理を中心に魚料理やシーフードを扱うと紹介しています。",
+                  "zh": "其官网介绍以地中海菜为主，菜单侧重鱼类和海鲜。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트에서 코토르의 Šuranj bb 주소와 해산물 중심 식당이라는 설명을 확인했습니다. 식당 조사 후보일 뿐 예약이나 특정 음식의当前供应を保証するものではありません。",
+                  "en": "Its official site identifies the venue at Šuranj bb, Kotor, and describes its seafood focus. This is a research candidate, not a booking or a guarantee that a particular dish is currently available.",
+                  "ja": "公式サイトで所在地（Šuranj bb, Kotor）とシーフードを中心とする店の説明を確認しました。調査候補であり、予約を意味せず、特定料理の現在の提供を保証するものでもありません。",
+                  "zh": "其官网确认地址为科托尔Šuranj bb，并介绍其海鲜餐饮特色。这里只是研究候选，并非预订，也不保证某道菜目前供应。"
+                },
+                "official_url": "https://galion.me/",
+                "source_urls": [
+                  "https://galion.me/"
+                ]
+              },
+              {
+                "name": "PRŽUN",
+                "area": "Kotor Old Town",
+                "type": {
+                  "ko": "레스토랑",
+                  "en": "Restaurant",
+                  "ja": "レストラン",
+                  "zh": "餐厅"
+                },
+                "focus": {
+                  "ko": "공식 사이트는 몬테네그로·지중해 음식과 생선 및 해산물을 소개하며, 홍합 요리 등을 자체 특선으로 열거합니다.",
+                  "en": "Its official site describes Montenegrin and Mediterranean food, fish and seafood, and lists mussels among its specialties.",
+                  "ja": "公式サイトではモンテネグロ料理と地中海料理、魚料理やシーフードを紹介し、特長料理としてムール貝料理などを掲載しています。",
+                  "zh": "其官网介绍黑山和地中海菜、鱼类及海鲜，并将贻贝菜品列为特色之一。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트가 코토르 구시가지 소재라고 밝히며 홍합 요리를 포함한 메뉴 항목을 열거해 후보로 선정했습니다. 현재 메뉴·영업 정보나 예약 가능성을 별도로 확인한 것은 아닙니다.",
+                  "en": "Its official site identifies it as being in Kotor Old Town and lists menu items including mussels, making it a research candidate. Current menu, operating details, and booking availability were not independently verified.",
+                  "ja": "公式サイトがコトル旧市街の店と明記し、ムール貝料理を含む品目を掲載しているため、調査候補としました。現在のメニュー、営業状況、予約可否は別途確認していません。",
+                  "zh": "其官网称餐厅位于科托尔老城，并列出包括贻贝菜品在内的项目，因此列为研究候选。未另行核实当前菜单、营业信息或预订情况。"
+                },
+                "official_url": "https://www.przun.me/",
+                "source_urls": [
+                  "https://www.przun.me/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "montenegro.travel",
+                "url": "https://www.montenegro.travel/en/unique-montenegro/jewels-of-the-adriatic/bay-of-kotor"
+              },
+              {
+                "title": "montenegro.travel",
+                "url": "https://www.montenegro.travel/en/unique-montenegro/national-parks-of-montenegro/lovcen-national-park"
+              },
+              {
+                "title": "galion.me",
+                "url": "https://galion.me/"
+              },
+              {
+                "title": "przun.me",
+                "url": "https://www.przun.me/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 공식 자료는 음식의 보카만 또는 인근 녜구시 연관성을 뒷받침하며, 코토르 시 고유 음식이라고 입증하지는 않습니다. / en: Official sources support Boka Bay or nearby Njeguši associations, not a claim that these foods are unique to Kotor city. / ja: 公式資料が裏付けるのはボカ湾または近隣のニェグシとの関連であり、コトル市固有の料理という主張ではありません。 / zh: 官方资料支持其与博卡湾或邻近涅古希的关联，并不能证明这些食物为科托尔市独有。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -4097,6 +9355,114 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Go beyond the crowds at these alternative Amsterdam food spots — I amsterdam",
             "url": "https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/alternative-amsterdam-food-spots"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Amsterdam only; venue suggestions are not reservations.",
+        "cities": [
+          {
+            "city": {
+              "ko": "암스테르담",
+              "en": "Amsterdam",
+              "ja": "アムステルダム",
+              "zh": "阿姆斯特丹"
+            },
+            "intro": {
+              "ko": "네덜란담의 간식과 음식.",
+              "en": "Dutch snacks and foods.",
+              "ja": "オランダの軽食と料理。",
+              "zh": "荷兰小吃与菜肴。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "스트룹와플",
+                  "en": "Syrup waffle",
+                  "ja": "ストロープワッフル",
+                  "zh": "焦糖糖浆华夫饼"
+                },
+                "note": {
+                  "ko": "시럽을 두 장의 얇은 와플 사이에 넣습니다. Rudi’s는 자사 레시피가 하우다에서 유래했다고 설명합니다.",
+                  "en": "Syrup sandwiched between two thin waffles; Rudi’s says its recipe comes from Gouda.",
+                  "ja": "薄いワッフル2枚でシロップを挟みます。Rudi’sはレシピがハウダ由来と説明しています。",
+                  "zh": "两片薄华夫饼中夹糖浆；Rudi’s称其配方源自豪达。"
+                },
+                "source_urls": [
+                  "https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/dutch-foods-to-try",
+                  "https://originalstroopwafels.com/our-product/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "비터발렌",
+                  "en": "Bitterballen",
+                  "ja": "ビターバレン",
+                  "zh": "荷兰炸肉汁丸子"
+                },
+                "note": {
+                  "ko": "바삭하게 튀긴 라구 볼로, 머스터드를 곁들이는 네덜란드 펍 간식입니다. 고기·채식 버전이 모두 확인됩니다.",
+                  "en": "Crisp-fried ragout balls, a Dutch pub snack served with mustard; meat and vegetarian versions are listed.",
+                  "ja": "ラグーを揚げたオランダのパブスナック。マスタードを添え、肉入りとベジタリアンの両方があります。",
+                  "zh": "荷兰酒吧小吃，炸脆的炖馅丸子常配芥末；有肉类和素食版本。"
+                },
+                "source_urls": [
+                  "https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/dutch-foods-to-try",
+                  "https://www.thepantry.nl/en/menu/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Rudi’s Original Stroopwafels",
+                "area": "Albert Cuyp Market, near no. 182",
+                "type": {
+                  "ko": "시장 간식 판매대",
+                  "en": "Market snack stall",
+                  "ja": "市場の軽食店",
+                  "zh": "市集小吃摊"
+                },
+                "focus": {
+                  "ko": "스트룹와플",
+                  "en": "Stroopwafels",
+                  "ja": "ストロープワッフル",
+                  "zh": "焦糖糖浆华夫饼"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트에서 위치와 현장 제조를 확인했습니다. 품질·정통성은 상업적 주장으로 취급합니다.",
+                  "en": "Its official site confirms location and on-site baking; quality and authenticity claims are treated as promotional.",
+                  "ja": "公式サイトで所在地と現地製造を確認。品質・真正性は宣伝上の主張として扱います。",
+                  "zh": "官网确认其位置和现场制作；品质、正宗性表述视为商家宣传。"
+                },
+                "official_url": "https://originalstroopwafels.com/",
+                "source_urls": [
+                  "https://originalstroopwafels.com/",
+                  "https://originalstroopwafels.com/our-product/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "iamsterdam.com",
+                "url": "https://www.iamsterdam.com/en/see-and-do/restaurant-and-bars/dutch-foods-to-try"
+              },
+              {
+                "title": "originalstroopwafels.com",
+                "url": "https://originalstroopwafels.com/our-product/"
+              },
+              {
+                "title": "thepantry.nl",
+                "url": "https://www.thepantry.nl/en/menu/"
+              },
+              {
+                "title": "originalstroopwafels.com",
+                "url": "https://originalstroopwafels.com/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Rudi’s Gouda-origin statement is attributed to the vendor; no Amsterdam-origin claim is made.",
+              "Menus and operations may change; no availability or booking is guaranteed."
+            ]
           }
         ]
       }
@@ -4232,6 +9598,126 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.nationalgeographic.com/travel/article/family-flavours-katerina-nitsou-north-macedonian-cuisine"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id north-macedonia is covered. Skopje is the featured city. The dishes are documented as North Macedonian food traditions, not as unique to Skopje. The Italian examples are out of scope.",
+        "cities": [
+          {
+            "city": {
+              "ko": "스코페",
+              "en": "Skopje",
+              "ja": "スコピエ",
+              "zh": "斯科普里"
+            },
+            "intro": {
+              "ko": "스코페에서는 북마케도니아 전역의 가정식과 간식을 맛볼 수 있습니다. 아래 음식은 국가 음식문화의 일부이며 스코페 고유 음식으로 단정하지 않습니다.",
+              "en": "Skopje offers a chance to explore home-style dishes and snacks from across North Macedonia; these examples are not claimed as unique to the city.",
+              "ja": "スコピエでは北マケドニア各地の家庭料理や軽食に出会えます。以下は同国の食文化の例で、スコピエ固有とは断定しません。",
+              "zh": "在斯科普里可以寻找北马其顿各地的家常菜和小吃；以下是该国饮食文化的例子，并非斯科普里独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "타브체 그라브체(콩 냄비구이)",
+                  "en": "Tavče gravče (baked beans)",
+                  "ja": "タヴチェ・グラヴチェ（豆の土鍋焼き）",
+                  "zh": "塔夫切·格拉夫切（烤豆）"
+                },
+                "note": {
+                  "ko": "북마케도니아의 콩 요리로, 전통적으로 흙냄비에 구워 고기 요리 곁들이나 빵과 함께 먹습니다.",
+                  "en": "A North Macedonian bean dish traditionally baked in a clay pot and served alongside meat or with bread on its own.",
+                  "ja": "北マケドニアの豆料理で、伝統的には土鍋で焼き、肉料理の付け合わせやパンと合わせて食べます。",
+                  "zh": "北马其顿的豆类菜肴，传统上用陶锅烘烤，可搭配肉菜，也可配面包单独食用。"
+                },
+                "source_urls": [
+                  "https://www.nationalgeographic.com/travel/article/family-flavours-katerina-nitsou-north-macedonian-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "아이바르(구운 붉은 피망 스프레드)",
+                  "en": "Ajvar (roasted red-pepper spread)",
+                  "ja": "アイヴァル（赤ピーマンのローストペースト）",
+                  "zh": "艾瓦尔（烤红椒酱）"
+                },
+                "note": {
+                  "ko": "구운 붉은 피망을 주재료로 한 스프레드입니다. 기사에서는 빵·치즈와 곁들이는 음식문화의 한 예로 언급합니다.",
+                  "en": "A spread made mainly from roasted red peppers; the article mentions it served with bread and cheese as one example of local food culture.",
+                  "ja": "主に赤ピーマンを焼いて作るペーストです。記事ではパンやチーズと合わせる食文化の一例として紹介されています。",
+                  "zh": "以烤红椒为主要原料的抹酱；文章提到它可搭配面包和奶酪，作为当地饮食文化的一例。"
+                },
+                "source_urls": [
+                  "https://www.nationalgeographic.com/travel/article/family-flavours-katerina-nitsou-north-macedonian-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "파스트르마일리야(고기 토핑 빵)",
+                  "en": "Pastrmajlija (meat-topped bread pie)",
+                  "ja": "パストルマイリヤ（肉のせパン）",
+                  "zh": "帕斯特马伊利亚（肉馅烤饼）"
+                },
+                "note": {
+                  "ko": "고기와 달걀을 얹기도 하는 피자형 빵입니다. 인터뷰는 이를 북마케도니아의 흔한 늦은 밤 간식으로 소개하며, 토핑은 달라질 수 있습니다.",
+                  "en": "A pizza-like bread topped with meat and sometimes egg. The interview describes it as a common North Macedonian late-night snack; toppings can vary.",
+                  "ja": "肉をのせ、卵を加えることもあるピザ風のパンです。インタビューでは北マケドニアでよく食べられる夜食として紹介され、具は異なる場合があります。",
+                  "zh": "一种类似披萨的烤饼，上面放肉，有时加鸡蛋。访谈称其为北马其顿常见夜宵；配料可能有所不同。"
+                },
+                "source_urls": [
+                  "https://www.nationalgeographic.com/travel/article/family-flavours-katerina-nitsou-north-macedonian-cuisine"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Stara Kuka (Old House; official branding: Old City House)",
+                "area": "Pajko Maalo, central Skopje",
+                "type": {
+                  "ko": "전통 마케도니아 음식점",
+                  "en": "Traditional Macedonian restaurant",
+                  "ja": "マケドニア伝統料理店",
+                  "zh": "马其顿传统菜餐厅"
+                },
+                "focus": {
+                  "ko": "마케도니아 전통 음식 전반. 확인 가능한 공식 최신 메뉴가 없어 특정 요리를 대표 메뉴로 제시하지 않습니다.",
+                  "en": "Macedonian traditional cuisine generally; no specific signature dish is claimed because a current official menu could not be verified.",
+                  "ja": "マケドニア伝統料理全般。最新の公式メニューを確認できないため、特定料理を看板料理とはしていません。",
+                  "zh": "马其顿传统菜为主；未能核实当前官方菜单，因此不声称具体菜品为招牌菜。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트는 Old City House 레스토랑과 1836년 전통 가옥을 확인하며, 관광 안내 페이지는 스코페의 전통 마케도니아 음식점으로 소개합니다. 방문 후보일 뿐 예약이 아니며, 메뉴와 이용 정보는 직접 확인해야 합니다.",
+                  "en": "The official site identifies Old City House as a restaurant in a traditional house dating to 1836; a tourism listing describes it as a traditional Macedonian restaurant in Skopje. Candidate only, not a booking; confirm menu and practical details directly.",
+                  "ja": "公式サイトは1836年築の伝統家屋にあるレストランと案内し、観光案内ページはスコピエのマケドニア伝統料理店と説明しています。候補であり予約済みではありません。メニュー等は直接ご確認ください。",
+                  "zh": "官网确认其为位于1836年传统宅邸内的餐厅，旅游介绍页称其为斯科普里的马其顿传统菜餐厅。仅为候选，并非已预订；菜单等信息请直接核实。"
+                },
+                "official_url": "https://starakuka.mk/",
+                "source_urls": [
+                  "https://starakuka.mk/",
+                  "https://macedoniatourism.com/eat-drink/stara-kuka-old-house/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "nationalgeographic.com",
+                "url": "https://www.nationalgeographic.com/travel/article/family-flavours-katerina-nitsou-north-macedonian-cuisine"
+              },
+              {
+                "title": "starakuka.mk",
+                "url": "https://starakuka.mk/"
+              },
+              {
+                "title": "macedoniatourism.com",
+                "url": "https://macedoniatourism.com/eat-drink/stara-kuka-old-house/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "National Geographic supports these dishes as North Macedonian food culture, but does not establish that they originated in Skopje or are exclusive to North Macedonia.",
+              "The official Stara Kuka site confirms the Old City House identity and traditional-house setting, but no current official menu was verifiable. The tourism listing describes its cuisine; no specific signature dish is claimed.",
+              "Existing names and citations were treated as leads, not proof. No current hours, prices, availability, reservations, or guaranteed quality are claimed."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -4333,6 +9819,179 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Kaffistova — history and Norwegian food",
             "url": "https://www.bondeheimen.no/en/kaffistova/om-kaffistova"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Only the declared country_id norway is covered; featured city: Oslo. Dish and restaurant leads were treated as unverified until checked against official tourism or venue-owned pages. These are guide candidates, not bookings.",
+        "cities": [
+          {
+            "city": {
+              "ko": "오슬로",
+              "en": "Oslo",
+              "ja": "オスロ",
+              "zh": "奥斯陆"
+            },
+            "intro": {
+              "ko": "오슬로에서는 노르웨이 전역의 가정식 전통과 지역별 간식을 맛볼 수 있습니다. 아래 음식은 노르웨이 음식문화의 일부이며 오슬로만의 고유 음식은 아닙니다.",
+              "en": "Oslo offers a chance to sample Norwegian home-cooking traditions and regional snacks. The dishes below belong to broader Norwegian food culture; they are not uniquely Oslo dishes.",
+              "ja": "オスロでは、ノルウェー各地の家庭料理や地域のおやつを味わえます。以下はノルウェー全体の食文化に属する料理で、オスロ固有の料理ではありません。",
+              "zh": "在奥斯陆可以品尝挪威各地的家常菜和地方小吃。以下菜品属于更广泛的挪威饮食文化，并非奥斯陆独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "라스페발레르(감자 경단)",
+                  "en": "Raspeballer (potato dumplings)",
+                  "ja": "ラスペバッレル（じゃがいも団子）",
+                  "zh": "Raspeballer（土豆团子）"
+                },
+                "note": {
+                  "ko": "간 감자와 익힌 감자에 밀가루 등을 섞어 만든 경단으로, 이름과 곁들임은 지역마다 다릅니다. 베르겐에서는 라스페발레르라 부르며 소금에 절인 고기, 보사 소시지, 순무 으깬 것과 함께 먹는 방식이 소개됩니다.",
+                  "en": "Dumplings made from grated and cooked potatoes with flour; names and accompaniments vary by region. In Bergen they are called raspeballer and are described with salted meat, Voss sausage, and mashed rutabaga.",
+                  "ja": "すりおろした生じゃがいもとゆでたじゃがいもに小麦粉などを混ぜて作る団子で、呼び名や付け合わせは地域によって異なります。ベルゲンではラスペバッレルと呼ばれ、塩漬け肉、ヴォスソーセージ、ルタバガのマッシュと合わせる例が紹介されています。",
+                  "zh": "将生土豆和熟土豆捣碎后与面粉等混合制成的团子，各地名称和配菜有所不同。卑尔根称其为 raspeballer，常见搭配介绍包括腌肉、沃斯香肠和芜菁甘蓝泥。"
+                },
+                "source_urls": [
+                  "https://www.visitnorway.com/things-to-do/food-and-drink/the-norwegian-cookbook/recipe-raspeballer-potato-dumplings/",
+                  "https://en.visitbergen.com/food-and-drink/bergen-city-of-gastronomy/secrets-of-raspeballer"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "레프세(노르웨이식 얇은 빵)",
+                  "en": "Lefse (Norwegian flatbread)",
+                  "ja": "レフセ（ノルウェーの薄焼きパン）",
+                  "zh": "Lefse（挪威薄饼）"
+                },
+                "note": {
+                  "ko": "얇게 구운 반죽으로, 식사용은 달지 않게 만들고 간식·디저트용은 설탕과 계피 등을 넣기도 합니다. 속재료와 방식은 지역별로 다양하며, 북부 살텐의 뫼스브룀레프세나 서부의 달콤한 베스트란즈레프세가 예입니다.",
+                  "en": "A thin griddled pastry. Savoury versions are less sweet, while snack or dessert styles may use sugar and cinnamon. Fillings and styles vary regionally; examples include møsbrømlefse from Salten in the north and sweet Vestlandslefse from western Norway.",
+                  "ja": "薄くのばして焼く生地で、食事用は甘くせず、おやつやデザート用には砂糖やシナモンを使うことがあります。具や作り方は地域で異なり、北部サルテンのメースブロムレフセや、西部の甘いヴェストランズレフセが例です。",
+                  "zh": "一种擀薄后烙制的面饼。正餐款通常不甜，零食或甜点款可能加入糖和肉桂。馅料和做法因地区而异，例如北部萨尔滕的 møsbrømlefse，以及挪威西部偏甜的 Vestlandslefse。"
+                },
+                "source_urls": [
+                  "https://www.visitnorway.com/things-to-do/food-and-drink/lefse/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "포리콜(양고기·양배추 스튜)",
+                  "en": "Fårikål (lamb and cabbage stew)",
+                  "ja": "フォーリコール（羊肉とキャベツの煮込み）",
+                  "zh": "Fårikål（羊肉炖卷心菜）"
+                },
+                "note": {
+                  "ko": "노르웨이의 전통 가을 음식이자 국가 요리로 소개됩니다. 전통적인 기본 재료는 양고기 또는 양고기 성체육, 양배추, 소금, 통후추이며, 삶은 감자를 곁들입니다. 당근·양파 등을 더하는 변형도 있습니다.",
+                  "en": "A traditional Norwegian autumn dish also presented as the country's national dish. Its traditional core ingredients are mutton, cabbage, salt, and whole black peppercorns, usually served with boiled potatoes; some versions add carrots or onions.",
+                  "ja": "ノルウェーの伝統的な秋の料理で、国民食としても紹介されています。基本の材料は羊肉、キャベツ、塩、粒黒こしょうで、ゆでじゃがいもを添えるのが一般的です。にんじんや玉ねぎを加える作り方もあります。",
+                  "zh": "这是一道挪威传统秋季菜肴，也常被介绍为挪威国菜。传统基本食材为羊肉、卷心菜、盐和整粒黑胡椒，通常配煮土豆；有些做法也会加入胡萝卜或洋葱。"
+                },
+                "source_urls": [
+                  "https://www.visitnorway.com/things-to-do/food-and-drink/the-norwegian-cookbook/farikal/",
+                  "https://www.visitnorway.com/things-to-do/food-and-drink/cuisine/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Kaffistova",
+                "area": "Oslo city centre (Hotell Bondeheimen)",
+                "type": {
+                  "ko": "노르웨이 전통음식 카페",
+                  "en": "Café serving traditional Norwegian food",
+                  "ja": "ノルウェー伝統料理を出すカフェ",
+                  "zh": "供应挪威传统菜的咖啡馆"
+                },
+                "focus": {
+                  "ko": "공식 메뉴 페이지는 라스페발레르(감자 경단), 미트볼, 찐 연어를 노르웨이 특선으로 안내합니다.",
+                  "en": "Its official menu page lists raspeballer (potato dumplings), meatballs, and steamed salmon as Norwegian specialties.",
+                  "ja": "公式メニューページでは、ラスペバッレル（じゃがいも団子）、ミートボール、蒸しサーモンをノルウェーの名物料理として案内しています。",
+                  "zh": "其官方菜单页列出土豆团子、肉丸和清蒸三文鱼等挪威特色菜。"
+                },
+                "why_candidate": {
+                  "ko": "노르웨이 관광청 자료가 오슬로의 노르웨이 음식 카페로 소개하고, 식당 자체 페이지도 전통 메뉴와 라스페발레르를 확인해 줍니다.",
+                  "en": "Norway's official tourism listing identifies it as an Oslo café for Norwegian food, and the venue's own pages confirm traditional dishes including raspeballer.",
+                  "ja": "ノルウェー政府観光局の掲載でオスロのノルウェー料理カフェと確認でき、店の公式ページでもラスペバッレルを含む伝統料理を確認できます。",
+                  "zh": "挪威官方旅游信息将其列为奥斯陆的挪威菜咖啡馆，店方页面也确认供应包括土豆团子在内的传统菜。"
+                },
+                "official_url": "https://www.bondeheimen.no/en/kaffistova/menyar",
+                "source_urls": [
+                  "https://www.bondeheimen.no/en/kaffistova/menyar",
+                  "https://www.bondeheimen.no/en/kaffistova/om-kaffistova",
+                  "https://www.visitnorway.com/listings/kaffistova/174981/"
+                ]
+              },
+              {
+                "name": "Dovrehallen",
+                "area": "Storgata 22, Oslo",
+                "type": {
+                  "ko": "전통 노르웨이 가정식 레스토랑",
+                  "en": "Traditional Norwegian home-cooking restaurant",
+                  "ja": "ノルウェー伝統家庭料理のレストラン",
+                  "zh": "挪威传统家常菜餐厅"
+                },
+                "focus": {
+                  "ko": "식당 공식 소개는 처음부터 조리하는 계절 음식과 노르웨이산 식재료를 강조합니다. 특정 요리의 현재 제공 여부는 확인하지 않았습니다.",
+                  "en": "The restaurant's own description highlights made-from-scratch seasonal food and Norwegian ingredients. Availability of any particular dish was not verified.",
+                  "ja": "店の公式紹介では、手作りの季節料理とノルウェー産食材を重視しています。特定の料理が現在提供されているかは確認していません。",
+                  "zh": "餐厅官方介绍强调从头制作的时令菜和挪威食材；未核实任何特定菜品目前是否供应。"
+                },
+                "why_candidate": {
+                  "ko": "식당 자체 페이지가 오슬로 주소와 노르웨이식 전통 가정요리를 명시합니다. 메뉴별 세부 추천이 아닌 일반적인 노르웨이 음식 후보입니다.",
+                  "en": "Its own website confirms its Oslo address and traditional Norwegian home cooking. This is a general Norwegian-food candidate, not a claim about specific menu items.",
+                  "ja": "公式サイトでオスロの住所とノルウェー伝統家庭料理を確認できます。特定メニューではなく、ノルウェー料理を探す候補として挙げています。",
+                  "zh": "餐厅官网确认了其奥斯陆地址和挪威传统家常菜定位。这里仅作挪威菜餐厅候选，不代表确认了具体菜单。"
+                },
+                "official_url": "https://www.dovrehallen.no/",
+                "source_urls": [
+                  "https://www.dovrehallen.no/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitnorway.com",
+                "url": "https://www.visitnorway.com/things-to-do/food-and-drink/the-norwegian-cookbook/recipe-raspeballer-potato-dumplings/"
+              },
+              {
+                "title": "en.visitbergen.com",
+                "url": "https://en.visitbergen.com/food-and-drink/bergen-city-of-gastronomy/secrets-of-raspeballer"
+              },
+              {
+                "title": "visitnorway.com",
+                "url": "https://www.visitnorway.com/things-to-do/food-and-drink/lefse/"
+              },
+              {
+                "title": "visitnorway.com",
+                "url": "https://www.visitnorway.com/things-to-do/food-and-drink/the-norwegian-cookbook/farikal/"
+              },
+              {
+                "title": "visitnorway.com",
+                "url": "https://www.visitnorway.com/things-to-do/food-and-drink/cuisine/"
+              },
+              {
+                "title": "bondeheimen.no",
+                "url": "https://www.bondeheimen.no/en/kaffistova/menyar"
+              },
+              {
+                "title": "bondeheimen.no",
+                "url": "https://www.bondeheimen.no/en/kaffistova/om-kaffistova"
+              },
+              {
+                "title": "visitnorway.com",
+                "url": "https://www.visitnorway.com/listings/kaffistova/174981/"
+              },
+              {
+                "title": "dovrehallen.no",
+                "url": "https://www.dovrehallen.no/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The scope's Raspeballer lead is verified as a Norwegian potato-dumpling tradition, but names and accompaniments vary by region; it is not Oslo-specific.",
+              "The menu claims for Kaffistova are based on its official page, but this research does not establish current hours, prices, booking availability, or guarantee that a particular item is available on a given visit.",
+              "Dovrehallen's official site verifies its Norwegian home-cooking positioning and Oslo address, but does not support naming a specific dish as currently on its menu."
+            ]
           }
         ]
       }
@@ -4440,6 +10099,144 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "What to eat in Warsaw? — Go To Warsaw",
             "url": "https://go2warsaw.pl/en/what-to-eat-in-warsaw/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "KO: 바르샤바 한 도시만 조사했습니다. 관광 당국과 식당 자체의 공개资料를 바탕으로 한 조사摘要이며, 운영시간·가격·等待时间·安全或无障碍情况等未作核实。 | EN: Research covers Warsaw only. This is a summary based on publicly available tourism-authority and venue sources; hours, prices, wait times, safety, and accessibility were not verified. | JA: 調査対象はワルシャワのみです。観光当局および店舗自身の公開情報をまとめたもので、営業時間・価格・待ち時間・安全性・アクセシビリティは確認していません。 | ZH: 仅调查华沙一座城市。内容依据旅游机构和场所自身的公开资料整理；营业时间、价格、等候时间、安全性及无障碍情况均未核实。",
+        "cities": [
+          {
+            "city": {
+              "ko": "바르샤바",
+              "en": "Warsaw",
+              "ja": "ワルシャワ",
+              "zh": "华沙"
+            },
+            "intro": {
+              "ko": "바르샤바의 음식 이야기에는 전후 도시의 시장과 생활상에 연결된 음식과 현대적인 지역 디저트가 함께 등장합니다. 아래 음식은 바르샤바 관광청 자료가 도시와 연관 지어 소개하는 사례입니다.",
+              "en": "Warsaw’s food stories include dishes linked to the markets and everyday life of the post-war city, as well as more modern local desserts. The items below are examples the Warsaw tourism authority associates with the city.",
+              "ja": "ワルシャワの食の物語には、戦後の市場や日常生活に結びついた料理と、比較的新しい地元の菓子が登場します。以下は、ワルシャワ観光当局がこの街に関連づけて紹介している例です。",
+              "zh": "华沙的饮食故事既有与战后市场和日常生活相关的菜肴，也有较现代的本地甜点。以下是华沙旅游机构介绍为与这座城市相关的例子。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "바르샤바식 피즈(감자 경단)",
+                  "en": "Warsaw-style pyzy (potato dumplings)",
+                  "ja": "ワルシャワ風ピズィ（じゃがいも団子）",
+                  "zh": "华沙式皮兹（土豆团子）"
+                },
+                "note": {
+                  "ko": "바르샤바 관광청은 익힌 감자와 곱게 간 생감자로 만든 둥근 경단으로 설명하며, 돼지 껍질 튀김과 볶은 양파를 곁들인다고 소개합니다. 전후 로즈이츠키 시장과 밀접하게 연결되었다고 하지만, 지역 발명인지 다른 지역에서 온 음식인지는 확실하지 않다고 명시합니다.",
+                  "en": "The Warsaw tourism authority describes round dumplings made from boiled and finely grated raw potatoes, served with bacon cracklings and fried onion. It links them closely to the post-war Różycki Bazaar, while explicitly noting that it is unclear whether they originated locally or arrived with people from elsewhere.",
+                  "ja": "ワルシャワ観光当局の説明では、ゆでたじゃがいもと細かくすりおろした生じゃがいもで作る丸い団子で、ベーコンのカリカリ揚げと炒め玉ねぎを添えます。戦後のルジツキ・バザールと深く結びついていますが、地元で生まれた料理か、他地域から人々とともに伝わったものかは不明としています。",
+                  "zh": "华沙旅游机构将其描述为用煮熟和细擦的生土豆制成的圆形团子，配培根脆粒和炒洋葱。该机构指出它与战后的罗日茨基集市密切相关，但其究竟是在当地发明还是随外地居民传入，并不确定。"
+                },
+                "source_urls": [
+                  "https://go2warsaw.pl/en/culinary-tales-from-warsaw/",
+                  "https://go2warsaw.pl/en/what-to-eat-in-warsaw/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "바르샤바식 플라키(트라이프 수프)",
+                  "en": "Warsaw-style flaki (tripe soup)",
+                  "ja": "ワルシャワ風フラキ（牛モツのスープ）",
+                  "zh": "华沙式牛肚汤（Flaki）"
+                },
+                "note": {
+                  "ko": "관광청 자료는 육수에 익힌 얇은 트라이프 조각과 채소, 수엣 미트볼을 넣는 바르샤바식 음식으로 설명합니다. 해당 페이지는 이 특선 요리의 첫 기록된 조리법이 1860년 요리책에 실렸다고 전합니다. 이는 바르샤바와의 연관에 관한 설명이지, 이곳에서 유래했다는 증거로 제시된 것은 아닙니다.",
+                  "en": "The tourism authority describes this Warsaw-style dish as thin strips of tripe cooked in stock with vegetables and suet meatballs. Its page says the first written recipe for the speciality appeared in an 1860 cookbook; this supports an association, not a claim that the dish originated in Warsaw.",
+                  "ja": "観光当局は、細切りの牛モツを野菜とともにスープで煮込み、牛脂のミートボールを加えるワルシャワ風料理と説明しています。同ページによれば、この名物の最初の記載レシピは1860年の料理本に掲載されました。これは街との関連を示す説明であり、ワルシャワ発祥を立証するものではありません。",
+                  "zh": "旅游机构将这道华沙风味菜描述为把切成细条的牛肚与蔬菜一同在汤中炖煮，并加入牛脂肉丸。页面称该特色菜最早的书面食谱见于1860年的烹饪书；这说明它与华沙有关，并不能据此断言它起源于华沙。"
+                },
+                "source_urls": [
+                  "https://go2warsaw.pl/en/culinary-tales-from-warsaw/",
+                  "https://go2warsaw.pl/en/what-to-eat-in-warsaw/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "우제트카(W-Z 케이크)",
+                  "en": "Wuzetka (W-Z cake)",
+                  "ja": "ヴゼトカ（W-Zケーキ）",
+                  "zh": "Wuzetka（W-Z蛋糕）"
+                },
+                "note": {
+                  "ko": "바르샤바 관광청은 코코아 페이스트리와 우유 크림 층으로 만든 케이크로 소개하며, 이름을 제2차 세계대전 직후 건설된 W-Z 도로와 연결합니다. 자료에서 바르샤바의 대표적 케이크로 다루지만, 다른 곳에서 먹을 수 없거나 이곳에서 유래했다고 주장하지는 않습니다.",
+                  "en": "The Warsaw tourism authority describes a cake of cocoa pastry and layers of milky cream, and connects its name with the W-Z route built just after World War II. The source presents it as a cake strongly associated with Warsaw, not as exclusive to the city or proof of its origin.",
+                  "ja": "ワルシャワ観光当局は、ココア生地とミルキーなクリームの層からなるケーキと説明し、その名を第二次世界大戦直後に建設されたW-Z通りに結びつけています。資料はワルシャワとの強い関連を紹介していますが、街だけの菓子、あるいは同地発祥と断定してはいません。",
+                  "zh": "华沙旅游机构将其描述为由可可糕体和奶油层组成的蛋糕，并将名称与二战后不久修建的W-Z道路联系起来。资料将它作为与华沙密切相关的蛋糕介绍，但没有称其为华沙独有或据此证明其起源。"
+                },
+                "source_urls": [
+                  "https://go2warsaw.pl/en/what-to-eat-in-warsaw/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "지그문투프카",
+                  "en": "Zygmuntówka",
+                  "ja": "ジグムントゥフカ",
+                  "zh": "齐格蒙特蛋糕（Zygmuntówka）"
+                },
+                "note": {
+                  "ko": "관광청은 이 비교적 현대적인 바르샤바 케이크를 아몬드 페이스트리, 초콜릿 무스, 크랜베리 잼, 휘핑크림, 머랭으로 설명합니다. 이름은 잠코비 광장의 지그문트 3세 바사 왕 기둥에서 왔다고 소개합니다.",
+                  "en": "The tourism authority describes this relatively modern Warsaw cake as combining almond pastry, chocolate mousse, cranberry jam, whipped cream, and meringue. It says the name refers to the column bearing King Sigismund III Vasa’s statue in Castle Square.",
+                  "ja": "観光当局は、この比較的新しいワルシャワの菓子を、アーモンド生地、チョコレートムース、クランベリージャム、ホイップクリーム、メレンゲで作ると説明しています。名称は、城広場にあるジグムント3世ヴァーサ王の像を載せた柱に由来するとしています。",
+                  "zh": "旅游机构将这款较现代的华沙蛋糕描述为由杏仁糕体、巧克力慕斯、蔓越莓果酱、鲜奶油和蛋白霜制成。该机构称其名称来自城堡广场上承载齐格蒙特三世·瓦萨国王雕像的圆柱。"
+                },
+                "source_urls": [
+                  "https://go2warsaw.pl/en/what-to-eat-in-warsaw/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Pyzy, flaki gorące!",
+                "area": "KO: 바르샤바 구시가지(포드발레 5) | EN: Warsaw Old Town (Podwale 5) | JA: ワルシャワ旧市街（ポドヴァレ5） | ZH: 华沙老城（Podwale 5）",
+                "type": {
+                  "ko": "폴란드 가정식 식당",
+                  "en": "Polish cuisine restaurant",
+                  "ja": "ポーランド料理店",
+                  "zh": "波兰菜餐馆"
+                },
+                "focus": {
+                  "ko": "바르샤바식 피즈와 플라키 등 폴란드 전통 요리",
+                  "en": "Traditional Polish dishes, including Warsaw-style pyzy and flaki",
+                  "ja": "ワルシャワ風ピズィやフラキなどの伝統的なポーランド料理",
+                  "zh": "包括华沙式皮兹和牛肚汤在内的波兰传统菜肴"
+                },
+                "why_candidate": {
+                  "ko": "자체 웹사이트가 바르샤바 구시가지 인근 포드발레 5 지점을 밝히고, 바르샤바식 피즈와 미트볼·치즈를 곁들인 바르샤바식 플라키 등 자사 음식에 관해 설명합니다. 조사 후보일 뿐 예약 추천이나 현재 메뉴 제공 여부를 뜻하지 않습니다.",
+                  "en": "Its own website identifies a Podwale 5 location near Warsaw’s Old Town and describes its offerings, including Warsaw-style pyzy and Warsaw-style flaki with meatballs and grated cheese. This is a research candidate, not a booking recommendation or confirmation of current menu availability.",
+                  "ja": "公式サイトはワルシャワ旧市街近くのポドヴァレ5の店舗を掲載し、ワルシャワ風ピズィや、ミートボールと粉チーズを添えるワルシャワ風フラキなどを紹介しています。調査上の候補であり、予約の推奨や現在のメニュー提供を保証するものではありません。",
+                  "zh": "其官方网站列出华沙老城附近Podwale 5的门店，并介绍包括华沙式皮兹、搭配肉丸和奶酪的华沙式牛肚汤等菜品。这只是研究候选，并非订位推荐，也不代表确认目前仍供应这些菜品。"
+                },
+                "official_url": "https://www.pyzyflakigorace.pl/",
+                "source_urls": [
+                  "https://www.pyzyflakigorace.pl/",
+                  "https://go2warsaw.pl/en/culinary-tales-from-warsaw/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "go2warsaw.pl",
+                "url": "https://go2warsaw.pl/en/culinary-tales-from-warsaw/"
+              },
+              {
+                "title": "go2warsaw.pl",
+                "url": "https://go2warsaw.pl/en/what-to-eat-in-warsaw/"
+              },
+              {
+                "title": "pyzyflakigorace.pl",
+                "url": "https://www.pyzyflakigorace.pl/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "KO: 바르샤바식 피즈는 도시와의 연관이 잘 문서화되어 있지만, 관광청 자료 자체가 현지 기원인지 여부는 불확실하다고 합니다. | EN: Warsaw-style pyzy are well documented as associated with the city, but the tourism source itself says their local origin is uncertain. | JA: ワルシャワ風ピズィと街との関連は資料に記されていますが、観光当局の資料も地元発祥かどうかは不明としています。 | ZH: 华沙式皮兹与这座城市的关联有资料记载，但旅游机构本身也指出其是否起源于当地尚不确定。",
+              "KO: 바르샤바와 연관된 음식이라는 설명은 독점성, 진짜 여부의 순위, 또는 현재 특정 식당에서 제공 중임을 뜻하지 않습니다. | EN: Association with Warsaw does not imply exclusivity, an authenticity ranking, or current availability at a particular restaurant. | JA: ワルシャワとの関連は、当地限定、真正性の順位、または特定の店で現在提供中であることを意味しません。 | ZH: 与华沙相关并不表示该菜品为当地独有、存在正宗程度排名，或目前在某家餐馆供应。"
+            ]
           }
         ]
       }
@@ -4575,6 +10372,182 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.visitlisboa.com/en/p/lisbon-flavours/specialties/pastel-de-nata"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Limited to country_id portugal and featured city Lisbon. Existing guide claims were treated as leads and checked against official tourism, municipal-cultural, and restaurant-owned pages.",
+        "cities": [
+          {
+            "city": {
+              "ko": "리스본",
+              "en": "Lisbon",
+              "ja": "リスボン",
+              "zh": "里斯本"
+            },
+            "intro": {
+              "ko": "리스본의 음식 문화에는 포르투갈 대표 음식과 동네 축제의 계절 별미가 함께 있습니다. 아래 음식은 리스본 관광·문화 기관 자료로 확인했습니다.",
+              "en": "Lisbon's food culture includes Portuguese staples and seasonal neighborhood-festival foods. These selections are documented by Lisbon tourism or cultural sources.",
+              "ja": "リスボンの食文化にはポルトガルの定番料理と、地域の祭りで親しまれる季節の味があります。以下は観光・文化機関の資料で確認しました。",
+              "zh": "里斯本饮食兼有葡萄牙经典美食与街区节庆时令风味。以下条目有里斯本旅游或文化机构资料佐证。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "포르투갈식 커스터드 타르트(파스텔 드 나타)",
+                  "en": "Portuguese custard tart (pastel de nata)",
+                  "ja": "ポルトガル風カスタードタルト（パステル・デ・ナタ）",
+                  "zh": "葡式蛋挞（Pastel de nata）"
+                },
+                "note": {
+                  "ko": "리스본 관광청은 이 과자를 리스본을 대표하는 케이크로 소개하고 수도원식 디저트 전통과 연결합니다. 이름과 달리 유크림이 들지 않는 경우도 있다고 설명합니다. 벨렝의 Pastéis de Belém은 제조사가 1837년부터 별도 비법으로 만든다고 밝히는 고유 명칭의 페이스트리입니다.",
+                  "en": "Lisbon's tourism authority calls it the city's best-known cake and links it to convent-style dessert traditions; despite the name, it may not contain dairy cream. Pastéis de Belém is a distinct named pastry that its maker says has been made from a separate recipe since 1837.",
+                  "ja": "リスボン観光当局は市を代表するケーキとして紹介し、修道院菓子の伝統に結びつけています。名前に反して乳脂肪のクリームが入らない場合もあるとのことです。Pastéis de Belémは製造元が1837年から独自レシピで作ると説明する別個の名称の菓子です。",
+                  "zh": "里斯本旅游机构称其为当地代表性糕点，并将其与修道院甜点传统联系起来；名称虽有奶油之意，但有时并不含乳脂奶油。Pastéis de Belém是另一种专名糕点，生产方称自1837年起按独家配方制作。"
+                },
+                "source_urls": [
+                  "https://www.visitlisboa.com/en/p/lisbon-flavours/specialties/pastel-de-nata",
+                  "https://pasteisdebelem.pt/en/history/",
+                  "https://pasteisdebelem.pt/en/production/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "구운 정어리",
+                  "en": "Grilled sardines",
+                  "ja": "焼きイワシ",
+                  "zh": "烤沙丁鱼"
+                },
+                "note": {
+                  "ko": "리스본 관광청은 구운 정어리를 리스본 여름의 대표 음식으로 소개합니다. 빵 위에 올리거나 구운 피망과 삶은 감자를 곁들이기도 하며, 특히 Santos Populares 축제와 연관됩니다.",
+                  "en": "Lisbon's tourism authority describes grilled sardines as an emblematic summer dish. They may be served on bread or with grilled pepper and boiled potatoes, and are especially associated with Santos Populares neighborhood festivities.",
+                  "ja": "リスボン観光当局は焼きイワシを市の夏を象徴する料理として紹介しています。パンにのせたり、焼きピーマンやゆでジャガイモを添えたりし、特にサントス・ポプラレスの地域祭りと結びついています。",
+                  "zh": "里斯本旅游机构将烤沙丁鱼称为当地代表性夏季美食。可放在面包上，或配烤甜椒和水煮土豆；它也尤其与Santos Populares街区节庆相关。"
+                },
+                "source_urls": [
+                  "https://www.visitlisboa.com/en/p/lisbon-flavours/gastronomy/grilled-sardines",
+                  "https://revelar.lisboa.pt/tradicao-popular/festas/santos-populares"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "바칼랴우 아 브라스(감자·달걀 대구 볶음)",
+                  "en": "Bacalhau à Brás (salt cod, potato and egg)",
+                  "ja": "バカリャウ・ア・ブラス（塩ダラ、ジャガイモ、卵）",
+                  "zh": "布拉什鳕鱼（盐鳕鱼、土豆与鸡蛋）"
+                },
+                "note": {
+                  "ko": "잘게 찢은 염장 대구를 양파, 가늘게 썬 튀긴 감자, 푼 달걀과 함께 볶는 포르투갈 요리입니다. 올리브와 파슬리를 곁들이기도 합니다.",
+                  "en": "A Portuguese cod dish of shredded salt cod sautéed with onion, thin fried potato strips and beaten eggs; black olives and parsley are common garnishes.",
+                  "ja": "ほぐした塩ダラを玉ねぎ、細切りの揚げジャガイモ、溶き卵と炒めるポルトガル料理です。黒オリーブやパセリを添えることもあります。",
+                  "zh": "这道葡萄牙鳕鱼料理将撕碎的盐鳕鱼与洋葱、细炸土豆条和鸡蛋同炒，常以黑橄榄和欧芹点缀。"
+                },
+                "source_urls": [
+                  "https://www.visitlisboa.com/en/lisbon-stories/13-the-codfish-route",
+                  "https://www.casadobacalhau.pt/en/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Pastéis de Belém",
+                "area": "Belém, Lisbon",
+                "type": {
+                  "ko": "제과점·카페",
+                  "en": "Pastry shop and café",
+                  "ja": "菓子店・カフェ",
+                  "zh": "糕点店兼咖啡馆"
+                },
+                "focus": {
+                  "ko": "업체가 1837년부터 만든다고 밝히는 Pastéis de Belém 페이스트리.",
+                  "en": "The named Pastéis de Belém pastry, which the maker says it has produced since 1837.",
+                  "ja": "製造元が1837年から作っていると説明するPastéis de Belémの菓子。",
+                  "zh": "该店称自1837年起制作的Pastéis de Belém专名糕点。"
+                },
+                "why_candidate": {
+                  "ko": "업체 공식 역사와 리스본 관광청 안내가 장소와 제조사 측의 수도원 레시피 역사 설명을 뒷받침합니다. 후보 안내이며 예약이나 이용 가능성을 뜻하지 않습니다.",
+                  "en": "The maker's official history and Lisbon tourism listing support the location and the maker's account of the pastry's monastery-linked history. Candidate only; not a reservation or availability guarantee.",
+                  "ja": "製造元の公式沿革とリスボン観光当局の掲載情報で所在地と、修道院のレシピに結びつくという製造元の説明を確認できます。候補であり予約や利用可能性を示しません。",
+                  "zh": "糕点店官方历史及里斯本旅游机构页面可佐证其地点和店方关于修道院配方渊源的说法。此为候选地点，不代表预订或保证可用。"
+                },
+                "official_url": "https://pasteisdebelem.pt/en/",
+                "source_urls": [
+                  "https://pasteisdebelem.pt/en/",
+                  "https://pasteisdebelem.pt/en/history/",
+                  "https://pasteisdebelem.pt/en/production/",
+                  "https://www.visitlisboa.com/en/places/pasteis-de-belem"
+                ]
+              },
+              {
+                "name": "Casa do Bacalhau",
+                "area": "Beato, Lisbon",
+                "type": {
+                  "ko": "포르투갈식 대구 요리 전문 레스토랑",
+                  "en": "Portuguese cod-focused restaurant",
+                  "ja": "ポルトガル風タラ料理を中心とするレストラン",
+                  "zh": "主打葡萄牙鳕鱼料理的餐厅"
+                },
+                "focus": {
+                  "ko": "대구 튀김, Bacalhau à Brás, 옥수수빵을 곁들인 대구 등.",
+                  "en": "Cod dishes including cod fritters, bacalhau à Brás and cod with cornbread.",
+                  "ja": "タラのフリッター、バカリャウ・ア・ブラス、コーンブレッド添えのタラなど。",
+                  "zh": "鳕鱼料理，包括鳕鱼饼、布拉什鳕鱼及配玉米面包的鳕鱼。"
+                },
+                "why_candidate": {
+                  "ko": "레스토랑 공식 페이지가 리스본 베아투 소재와 전통 대구 요리 메뉴를 명시합니다. 특정 음식의 지속 제공은 보장하지 않습니다.",
+                  "en": "The restaurant's own page identifies its Lisbon/Beato location and a traditional cod-focused menu. Continued availability of particular dishes is not guaranteed.",
+                  "ja": "公式ページでリスボンのベアト地区の所在地と、伝統的なタラ料理中心のメニューを確認できます。個別料理の継続提供は保証されません。",
+                  "zh": "餐厅官网注明其位于里斯本贝阿托区，并列出传统鳕鱼料理菜单。不保证具体菜品持续供应。"
+                },
+                "official_url": "https://www.casadobacalhau.pt/en/",
+                "source_urls": [
+                  "https://www.casadobacalhau.pt/en/",
+                  "https://www.visitlisboa.com/en/lisbon-stories/13-the-codfish-route"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitlisboa.com",
+                "url": "https://www.visitlisboa.com/en/p/lisbon-flavours/specialties/pastel-de-nata"
+              },
+              {
+                "title": "pasteisdebelem.pt",
+                "url": "https://pasteisdebelem.pt/en/history/"
+              },
+              {
+                "title": "pasteisdebelem.pt",
+                "url": "https://pasteisdebelem.pt/en/production/"
+              },
+              {
+                "title": "visitlisboa.com",
+                "url": "https://www.visitlisboa.com/en/p/lisbon-flavours/gastronomy/grilled-sardines"
+              },
+              {
+                "title": "revelar.lisboa.pt",
+                "url": "https://revelar.lisboa.pt/tradicao-popular/festas/santos-populares"
+              },
+              {
+                "title": "visitlisboa.com",
+                "url": "https://www.visitlisboa.com/en/lisbon-stories/13-the-codfish-route"
+              },
+              {
+                "title": "casadobacalhau.pt",
+                "url": "https://www.casadobacalhau.pt/en/"
+              },
+              {
+                "title": "pasteisdebelem.pt",
+                "url": "https://pasteisdebelem.pt/en/"
+              },
+              {
+                "title": "visitlisboa.com",
+                "url": "https://www.visitlisboa.com/en/places/pasteis-de-belem"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Pastéis de Belém is a named product and should not be conflated with every pastel de nata; its history and secret-recipe claims are attributed to the maker, not independently established here.",
+              "Ingredients and availability may vary. No claims are made about current hours, prices, waits, safety, rankings, bookings or guaranteed quality."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -4682,6 +10655,169 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.carucubere.ro/en/bucharest-restaurant/traditional-romanian-food/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 이 조사 결과는 도시 1곳(부쿠레슈티), 음식 4종, 연구 후보 식당 1곳만 다룹니다. 최신 영업시간·가격·예약 가능 여부는 확인하거나 주장하지 않습니다. | en: This research covers one city (Bucharest), four dishes, and one restaurant candidate. It does not verify or claim current hours, prices, or booking availability. | ja: 本調査はブカレスト1都市、料理4品、レストラン候補1軒のみを対象とします。現在の営業時間・価格・予約状況は確認・断定していません。 | zh: 本研究仅涉及一座城市（布加勒斯特）、四道菜和一家餐厅候选；未核实或声称其当前营业时间、价格或预订情况。",
+        "cities": [
+          {
+            "city": {
+              "ko": "부쿠레슈티",
+              "en": "Bucharest",
+              "ja": "ブカレスト",
+              "zh": "布加勒斯特"
+            },
+            "intro": {
+              "ko": "부쿠레슈티의 식문화는 루마니아 전역의 음식 전통과 도시의 다양한 외식 문화를 함께 반영합니다. 아래 음식은 부쿠레슈티를 다룬 자료에서 소개된 루마니아 요리이며, 도시 고유의 기원이나 독점성을 뜻하지 않습니다.",
+              "en": "Bucharest’s food scene reflects Romanian food traditions alongside a varied urban dining culture. The dishes below are Romanian foods featured in sources about Bucharest; that does not establish that they originated in or are exclusive to the city.",
+              "ja": "ブカレストの食文化には、ルーマニア各地の食の伝統と多様な都市の外食文化が見られます。以下はブカレストを扱う資料で紹介されているルーマニア料理であり、この街が発祥地または唯一の提供地であることを示すものではありません。",
+              "zh": "布加勒斯特的饮食既体现罗马尼亚的饮食传统，也呈现多样的城市餐饮文化。以下菜品见于介绍布加勒斯特的资料，但这并不表示它们起源于或独属于这座城市。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "미치(미티테이) — 루마니아식 구운 다진 고기 롤",
+                  "en": "Mici (Mititei) — Romanian grilled minced-meat rolls",
+                  "ja": "ミチ（ミティテイ）— ルーマニア風ひき肉のグリルロール",
+                  "zh": "Mici（Mititei）——罗马尼亚烤肉末卷"
+                },
+                "note": {
+                  "ko": "부쿠레슈티의 오보르 시장 음식점과 카루 쿠 베레의 역사적 조리법 자료에서 언급되는 구운 고기 요리입니다. 이 도시에서 소개된다는 사실만으로 기원을 단정할 수는 없습니다.",
+                  "en": "A grilled meat dish described at Bucharest’s Obor market and in Caru’ cu bere’s historical recipe material. Its presence in city-focused sources does not establish its place of origin.",
+                  "ja": "ブカレストのオボル市場の屋台や、Caru’ cu bereの歴史的なレシピ資料で紹介される焼き肉料理です。街の資料に登場することだけで発祥地とは断定できません。",
+                  "zh": "这是一种烤肉菜品，布加勒斯特奥博尔市场的摊点和 Caru’ cu bere 的历史食谱资料均有提及。它出现在城市相关资料中，并不能证明其起源地。"
+                },
+                "source_urls": [
+                  "https://www.nationalgeographic.com/travel/article/best-romanian-food-cuisine",
+                  "https://www.carucubere.ro/en/history/famous-recipe/",
+                  "https://www.inyourpocket.com/romania/bucharest/articles/traditional-romanian-food-8-must-try-dishes-in"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "사르말레 — 양배추 잎에 싼 속재료 요리",
+                  "en": "Sarmale — stuffed cabbage rolls",
+                  "ja": "サルマーレ — キャベツで具を包んだ料理",
+                  "zh": "Sarmale——卷心菜包馅卷"
+                },
+                "note": {
+                  "ko": "루마니아 전통 음식으로 소개되며, 부쿠레슈티 음식 안내 자료에서도 추천됩니다. 보통 다진 고기와 쌀 등을 넣지만 지역과 조리법에 따라 달라집니다.",
+                  "en": "Presented as a Romanian traditional food and recommended in a Bucharest food guide. It is commonly described with minced meat and rice, though fillings and preparation vary.",
+                  "ja": "ルーマニアの伝統料理として紹介され、ブカレストの食ガイドでも取り上げられています。一般にひき肉や米を詰めますが、具材や調理法には幅があります。",
+                  "zh": "它被介绍为罗马尼亚传统菜肴，也见于布加勒斯特美食指南。常见做法是加入肉末和米饭，但馅料与烹调方式会因地而异。"
+                },
+                "source_urls": [
+                  "https://www.inyourpocket.com/romania/bucharest/articles/traditional-romanian-food-8-must-try-dishes-in",
+                  "https://www.romaniatourism.com/romanian-food-wine.html"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "초르버 데 부르터 — 루마니아식 소내장 수프",
+                  "en": "Ciorbă de burtă — Romanian tripe soup",
+                  "ja": "チョルバ・デ・ブルタ — ルーマニア風トリッパスープ",
+                  "zh": "Ciorbă de burtă——罗马尼亚牛肚酸汤"
+                },
+                "note": {
+                  "ko": "루마니아 수프 가운데 하나로, 부쿠레슈티 안내 자료에서 지역 식당 음식의 예로 소개됩니다. 산미와 곁들이는 양념은 조리법에 따라 다를 수 있습니다.",
+                  "en": "A Romanian soup also presented among foods in Bucharest-oriented dining guides. Its sourness and accompaniments can vary by recipe.",
+                  "ja": "ルーマニアのスープの一つで、ブカレストを扱う食ガイドにも登場します。酸味や添え物はレシピによって異なります。",
+                  "zh": "这是罗马尼亚汤品之一，也出现在布加勒斯特饮食指南介绍的菜品中。酸味和配料会因做法而异。"
+                },
+                "source_urls": [
+                  "https://www.inyourpocket.com/romania/bucharest/articles/traditional-romanian-food-8-must-try-dishes-in",
+                  "https://www.romaniatourism.com/romanian-food-wine.html"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "파파나시 — 치즈 도넛형 디저트",
+                  "en": "Papanași — cheese doughnut-style dessert",
+                  "ja": "パパナシ — チーズ入りドーナツ風デザート",
+                  "zh": "Papanași——奶酪甜甜圈式甜点"
+                },
+                "note": {
+                  "ko": "루마니아 디저트로 소개되며, 부쿠레슈티 여행 음식 안내 자료에서도 추천됩니다. 안내 자료는 코티지 치즈 반죽에 크림과 과일 잼을 곁들이는 형태를 설명합니다.",
+                  "en": "A Romanian dessert recommended in a Bucharest food guide. The guide describes a cottage-cheese dough version served with cream and fruit jam.",
+                  "ja": "ルーマニアのデザートとして紹介され、ブカレストの食ガイドでも推奨されています。同ガイドでは、カッテージチーズ入りの生地にクリームと果実ジャムを添えるものと説明されています。",
+                  "zh": "这是一种罗马尼亚甜点，也见于布加勒斯特美食指南的推荐。该指南描述的是用乡村奶酪面团制作，并搭配奶油和水果果酱的版本。"
+                },
+                "source_urls": [
+                  "https://www.inyourpocket.com/romania/bucharest/articles/traditional-romanian-food-8-must-try-dishes-in",
+                  "https://www.romaniatourism.com/romanian-food-wine.html"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Caru’ cu bere",
+                "area": "Old Town, Strada Stavropoleos 5, Bucharest",
+                "type": {
+                  "ko": "루마니아 요리 레스토랑",
+                  "en": "Romanian restaurant",
+                  "ja": "ルーマニア料理レストラン",
+                  "zh": "罗马尼亚餐厅"
+                },
+                "focus": {
+                  "ko": "공식 사이트는 루마니아 전통 음식과 미티테이를 소개하며, 구운 돼지고기 너클 요리도 언급합니다. 이는 사이트의 소개 내용이며 현재 메뉴의 제공 여부를 보장하지 않습니다.",
+                  "en": "Its official site describes Romanian traditional food and mititei, and also discusses a roasted pork-knuckle dish. These are descriptions on the site, not confirmation of current menu availability.",
+                  "ja": "公式サイトではルーマニアの伝統料理やミティテイを紹介し、豚すね肉のロースト料理にも言及しています。これはサイト上の説明であり、現在のメニュー提供を保証するものではありません。",
+                  "zh": "其官网介绍罗马尼亚传统菜和 mititei，也提到烤猪肘菜品。这些是网站上的介绍，并不保证目前菜单仍供应。"
+                },
+                "why_candidate": {
+                  "ko": "공식 연락처 페이지에서 부쿠레슈티 구시가지 주소를 확인했고, 공식 사이트에 음식 소개가 있습니다. 학술 연구도 이곳을 부쿠레슈티의 루마니아 테마 식당 사례로 다룹니다. 조사 후보일 뿐 예약 권유나 인증·순위 평가는 아닙니다.",
+                  "en": "The official contact page confirms its Old Town Bucharest address, and the official site describes its food. A scholarly study also treats it as an example of a Romanian-themed restaurant in Bucharest. This is a research candidate, not a booking recommendation or authenticity/ranking judgment.",
+                  "ja": "公式連絡先ページでブカレスト旧市街の住所を確認でき、公式サイトには料理の紹介があります。学術研究でもブカレストのルーマニア料理をテーマとするレストランの一例として扱われています。調査候補であり、予約の推奨や真正性・順位の評価ではありません。",
+                  "zh": "官网联系页面确认了其布加勒斯特老城区地址，官网也介绍了餐食。学术研究亦将其作为布加勒斯特罗马尼亚主题餐厅的案例之一。它只是调研候选，并非预订推荐，也不代表真实性或排名评价。"
+                },
+                "official_url": "https://www.carucubere.ro/en/",
+                "source_urls": [
+                  "https://www.carucubere.ro/en/",
+                  "https://www.carucubere.ro/en/contact/",
+                  "https://www.carucubere.ro/en/bucharest-restaurant/traditional-romanian-food/",
+                  "https://www.carucubere.ro/en/history/famous-recipe/",
+                  "https://www.mdpi.com/2673-5768/5/2/17"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "nationalgeographic.com",
+                "url": "https://www.nationalgeographic.com/travel/article/best-romanian-food-cuisine"
+              },
+              {
+                "title": "carucubere.ro",
+                "url": "https://www.carucubere.ro/en/history/famous-recipe/"
+              },
+              {
+                "title": "inyourpocket.com",
+                "url": "https://www.inyourpocket.com/romania/bucharest/articles/traditional-romanian-food-8-must-try-dishes-in"
+              },
+              {
+                "title": "romaniatourism.com",
+                "url": "https://www.romaniatourism.com/romanian-food-wine.html"
+              },
+              {
+                "title": "carucubere.ro",
+                "url": "https://www.carucubere.ro/en/"
+              },
+              {
+                "title": "carucubere.ro",
+                "url": "https://www.carucubere.ro/en/contact/"
+              },
+              {
+                "title": "carucubere.ro",
+                "url": "https://www.carucubere.ro/en/bucharest-restaurant/traditional-romanian-food/"
+              },
+              {
+                "title": "mdpi.com",
+                "url": "https://www.mdpi.com/2673-5768/5/2/17"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 이 음식들이 부쿠레슈티에서 소개된다는 근거는 있으나, 부쿠레슈티 기원·독점 음식이라고 볼 근거는 아닙니다. | en: Evidence links these foods with Bucharest dining, but does not establish Bucharest origins or exclusivity. | ja: これらの料理がブカレストの食文化資料に登場する根拠はありますが、ブカレスト発祥または同市限定とは確認できません。 | zh: 资料表明这些菜品与布加勒斯特餐饮有关，但不足以证明它们起源于或独属于布加勒斯特。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -4783,6 +10919,125 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Столовая №57 — GUM (official venue page)",
             "url": "https://gum.ru/cafe/stolovaya-57/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id russia is covered; featured city Moscow. Existing dishes and venue were treated as leads. Sources support cautious Moscow historical associations, not exclusive origins. Venue is a candidate, not a booking.",
+        "cities": [
+          {
+            "city": {
+              "ko": "모스크바",
+              "en": "Moscow",
+              "ja": "モスクワ",
+              "zh": "莫斯科"
+            },
+            "intro": {
+              "ko": "모스크바의 음식문화에는 옛 식당과 거리 음식 전통이 담겨 있습니다. 아래 음식은 모스크바와 관련된 역사적 변형이 기록되어 있지만 러시아 다른 지역에서도 알려져 있고 조리법은 다양합니다.",
+              "en": "Moscow’s food culture reflects historic restaurant and street-food traditions. The dishes below have documented historical associations with the city, but are also known elsewhere in Russia and recipes vary.",
+              "ja": "モスクワの食文化には、昔のレストランや街頭食の伝統が表れています。以下は同地との歴史的な関わりが記録されている料理ですが、ロシア各地でも知られ、レシピはさまざまです。",
+              "zh": "莫斯科饮食文化体现了昔日餐馆与街头食品传统。以下菜品有可查证的当地历史关联，但在俄罗斯其他地区也为人所知，做法并不唯一。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "올리비에 샐러드",
+                  "en": "Olivier salad",
+                  "ja": "オリヴィエ・サラダ",
+                  "zh": "奥利维耶沙拉"
+                },
+                "note": {
+                  "ko": "모스크바 시 정부의 역사 소개는 1860년대 모스크바 에르미타주 식당에서 제공됐다고 설명합니다. 초기의 사냥감 고기·가재 꼬리·트러플 등을 쓴 고급 샐러드는 오늘날의 버전과 크게 달랐고, 현대에도 재료는 다양합니다.",
+                  "en": "A Moscow city-government history says it was served at Moscow’s Hermitage restaurant in the 1860s. The early luxury salad, described with game, crayfish tails and truffles, differed greatly from familiar modern versions; ingredients today vary.",
+                  "ja": "モスクワ市政府の歴史紹介によると、1860年代にモスクワのレストラン「エルミタージュ」で提供されました。ジビエ、ザリガニの尾、トリュフなどを使う初期の豪華なサラダは現代のものとは大きく異なり、現在の材料もさまざまです。",
+                  "zh": "莫斯科市政府的历史介绍称，这道菜于19世纪60年代在莫斯科的“冬宫”餐厅供应。早期版本据称使用野味、螯虾尾和松露，与如今常见版本差异很大；现代做法的食材也不尽相同。"
+                },
+                "source_urls": [
+                  "https://www.mos.ru/news/item/159638073/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "모스크바식 라솔니크(절임 오이 수프)",
+                  "en": "Moscow-style rassolnik",
+                  "ja": "モスクワ風ラソーリニク（塩漬けキュウリのスープ）",
+                  "zh": "莫斯科风味拉索利尼克（腌黄瓜汤）"
+                },
+                "note": {
+                  "ko": "기록된 19세기 모스크바 식당식 변형 하나는 닭 육수에 내장과 신장, 껍질 벗긴 절임 오이, 시금치 또는 소렐을 넣었습니다. 역사적 조리법은 여럿이므로 단일한 정형 레시피가 아닙니다.",
+                  "en": "One documented 19th-century Moscow restaurant version used chicken broth, offal and kidneys, peeled pickled cucumbers, and spinach or sorrel. Historical recipes varied.",
+                  "ja": "記録に残る19世紀のモスクワのレストラン風の一例では、鶏のだしに内臓と腎臓、皮をむいた塩漬けキュウリ、ホウレンソウまたはスイバを加えました。歴史的なレシピには幅があります。",
+                  "zh": "有记载的一种19世纪莫斯科餐馆版本以鸡汤为底，加入内脏和肾脏、去皮腌黄瓜，以及菠菜或酸模。历史做法不止一种。"
+                },
+                "source_urls": [
+                  "https://www.mos.ru/news/item/159638073/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "모스크바식 플류슈카(달콤한 빵)",
+                  "en": "Moscow plyushka (sweet bun)",
+                  "ja": "モスクワ風プリューシカ（甘いパン）",
+                  "zh": "莫斯科风味普柳什卡（甜面包）"
+                },
+                "note": {
+                  "ko": "모스크바와 연결된 달콤한 발효 빵입니다. 시 정부 자료가 인용한 ГОСТ 표준 버전은 밀가루, 우유, 달걀, 효모, 설탕, 버터와 식물성 기름 등을 쓰며, 하트 모양이 알려졌지만 과거에는 형태가 다양했습니다.",
+                  "en": "A sweet yeasted bun associated with Moscow. A GOST-standard version cited by the city source uses flour, milk, eggs, yeast, sugar, butter and vegetable oil; the heart shape is well known, though earlier forms varied.",
+                  "ja": "モスクワに結び付けられる甘い発酵パンです。市の資料が紹介するГОСТ規格の配合には、小麦粉、牛乳、卵、酵母、砂糖、バター、植物油などが含まれます。ハート形が知られていますが、以前は形に幅がありました。",
+                  "zh": "这是一种与莫斯科有关的甜味发酵面包。市政府资料引用的ГОСТ标准配方使用面粉、牛奶、鸡蛋、酵母、糖、黄油和植物油等；心形款式较为知名，但早期形状不一。"
+                },
+                "source_urls": [
+                  "https://www.mos.ru/news/item/148158073/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "ГУМовская Столовая №57 (GUM Stolovaya No. 57)",
+                "area": "GUM, central Moscow",
+                "type": {
+                  "ko": "백화점 내 셀프서비스 식당",
+                  "en": "Department-store self-service canteen",
+                  "ja": "百貨店内のセルフサービス食堂",
+                  "zh": "百货商场内的自助食堂"
+                },
+                "focus": {
+                  "ko": "공식 소개에는 올리비에 샐러드, 보르시, 펠메니, 파이와 절임 음식 등이 열거되어 있습니다.",
+                  "en": "The official description lists Olivier salad, borscht, pelmeni, pies and pickles.",
+                  "ja": "公式紹介では、オリヴィエ・サラダ、ボルシチ、ペリメニ、ピロシキ類、漬物などを挙げています。",
+                  "zh": "官方介绍列有奥利维耶沙拉、罗宋汤、俄式饺子、馅饼和腌菜等。"
+                },
+                "why_candidate": {
+                  "ko": "ГУМ 공식 페이지가 식당과 자체 조리 음식, 관련 메뉴를 설명하므로 러시아식 식사 후보로 포함했습니다. 방문 시 특정 메뉴가 제공되는지는 확인하지 않았습니다.",
+                  "en": "GUM’s official page identifies the canteen and describes its own cooking and relevant dishes, supporting it as a Russian-food candidate. Specific availability on a visit is unverified.",
+                  "ja": "ГУМの公式ページが食堂、自店調理、関連料理を紹介しているため候補に含めました。訪問時に特定の料理があるかは未確認です。",
+                  "zh": "ГУМ官方网站介绍了该食堂、自制餐食及相关菜品，因此将其列为候选。未核实到访时是否供应特定菜品。"
+                },
+                "official_url": "https://gum.ru/cafe/stolovaya-57/",
+                "source_urls": [
+                  "https://gum.ru/cafe/stolovaya-57/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "mos.ru",
+                "url": "https://www.mos.ru/news/item/159638073/"
+              },
+              {
+                "title": "mos.ru",
+                "url": "https://www.mos.ru/news/item/148158073/"
+              },
+              {
+                "title": "gum.ru",
+                "url": "https://gum.ru/cafe/stolovaya-57/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Pelmeni are broadly Russian rather than uniquely Moscow; the GUM page lists them, but they are not presented as a Moscow-origin dish.",
+              "The cited municipal articles summarize historical accounts and support qualified associations, not exclusive origins or fixed recipes.",
+              "Current menu availability, hours, prices, waits, bookings, safety, accessibility and language service are not claimed."
+            ]
           }
         ]
       }
@@ -4920,6 +11175,147 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.ristorantelaterrazza.sm/en"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only the matching country_id san-marino and featured city City of San Marino are covered. Findings use opened official tourism and restaurant-owned pages; no dish is described as exclusive to San Marino.",
+        "cities": [
+          {
+            "city": {
+              "ko": "산마리노 시",
+              "en": "City of San Marino",
+              "ja": "サンマリノ市",
+              "zh": "圣马力诺市"
+            },
+            "intro": {
+              "ko": "산마리노의 식문화는 티타노 산 주변 농촌 전통과 생면 요리에 뿌리를 두며, 인접한 로마냐·마르케와도 맛을 나눕니다.",
+              "en": "San Marino's food traditions draw on rural life around Mount Titano and fresh pasta, while sharing influences with neighboring Romagna and Marche.",
+              "ja": "サンマリノの食文化は、ティターノ山周辺の農村の伝統や生パスタに根ざし、隣接するロマーニャやマルケとも影響を分かち合っています。",
+              "zh": "圣马力诺的饮食传统扎根于蒂塔诺山周边的乡村生活与鲜制意面，也与邻近的罗马涅和马尔凯共享饮食影响。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "병아리콩 파스타",
+                  "en": "Pasta with chickpeas",
+                  "ja": "ひよこ豆入りパスタ",
+                  "zh": "鹰嘴豆意面"
+                },
+                "note": {
+                  "ko": "산마리노 관광청은 파스타와 병아리콩을 쓴 소박한 농촌 요리이자 크리스마스이브 전통 음식으로 소개합니다. 산마리노만의 음식이라고 단정하지 않습니다.",
+                  "en": "San Marino's tourism authority describes this as a simple rural dish of pasta and chickpeas, also traditional on Christmas Eve. It is not claimed to be unique to San Marino.",
+                  "ja": "サンマリノ観光当局は、パスタとひよこ豆を使う素朴な農村料理で、クリスマスイブの伝統料理とも紹介しています。サンマリノ固有とはしていません。",
+                  "zh": "圣马力诺旅游主管机构将其介绍为以意面和鹰嘴豆制作的朴素乡村菜，也提到它是平安夜传统食物；不称其为圣马力诺独有。"
+                },
+                "source_urls": [
+                  "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/About-San-Marino/Gastronomia.html"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "피아디나(얇은 납작빵)",
+                  "en": "Piadina (thin flatbread)",
+                  "ja": "ピアディーナ（薄焼きパン）",
+                  "zh": "皮亚迪纳（薄饼）"
+                },
+                "note": {
+                  "ko": "관광청이 전통 식탁의 음식으로 소개하는 얇은 납작빵입니다. 인접한 로마냐와도 널리 연관되어 있어 산마리노만의 음식으로 보지 않습니다.",
+                  "en": "A thin flatbread included by the tourism authority among traditional Sammarinese fare. It is also associated with neighboring Romagna, not uniquely Sammarinese.",
+                  "ja": "観光当局が伝統的な食卓の一品として挙げる薄焼きパンです。隣接するロマーニャとも結び付くため、サンマリノ固有の料理とはしていません。",
+                  "zh": "旅游主管机构将其列入圣马力诺传统餐食的薄饼。它也与邻近的罗马涅地区相关，并非圣马力诺独有。"
+                },
+                "source_urls": [
+                  "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/About-San-Marino/Gastronomia.html",
+                  "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/Pianifica-il-viaggio/DOVE-MANGIARE.html"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "부스트렝고(전통 케이크)",
+                  "en": "Bustrengo (traditional cake)",
+                  "ja": "ブストレンゴ（伝統菓子）",
+                  "zh": "布斯特伦戈传统蛋糕"
+                },
+                "note": {
+                  "ko": "관광청은 이를 오래된 지역 케이크로 소개하고, 마른 빵과 치즈 제조 후 남은 유제품, 말린 포도 등 남은 재료를 활용한다고 설명합니다. 조리법에는 차이가 있을 수 있습니다.",
+                  "en": "The tourism authority describes this as an old local cake traditionally using leftover ingredients such as dry bread, dairy remnants from cheesemaking, and dried grapes. Recipes may vary.",
+                  "ja": "観光当局は古くからの地元菓子として紹介し、乾いたパン、チーズ作りで残る乳製品、干しブドウなどを活用すると説明しています。レシピには幅があります。",
+                  "zh": "旅游主管机构将其介绍为历史悠久的地方蛋糕，传统上利用干面包、制奶酪后剩余的乳制品和葡萄干等食材。配方可能有所不同。"
+                },
+                "source_urls": [
+                  "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/About-San-Marino/Gastronomia.html"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "토르타 트레 몬티(세 산 케이크)",
+                  "en": "Torta Tre Monti (Three Towers cake)",
+                  "ja": "トルタ・トレ・モンティ（三つの塔のケーキ）",
+                  "zh": "三峰蛋糕（Torta Tre Monti）"
+                },
+                "note": {
+                  "ko": "산마리노 관광청이 소개하는 둥근 웨이퍼 과자로, 코코아 크림과 헤이즐넛을 채웁니다.",
+                  "en": "A sweet described by San Marino's tourism authority as round wafers filled with cocoa cream and hazelnuts.",
+                  "ja": "サンマリノ観光当局によると、丸いウエハースにココアクリームとヘーゼルナッツを挟んだ菓子です。",
+                  "zh": "圣马力诺旅游主管机构介绍的一种甜点，以圆形威化饼夹入可可奶油和榛子。"
+                },
+                "source_urls": [
+                  "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/About-San-Marino/Gastronomia.html"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Ristorante La Terrazza",
+                "area": "Historic centre, Contrada del Collegio, City of San Marino",
+                "type": {
+                  "ko": "지역 요리 레스토랑",
+                  "en": "Regional restaurant",
+                  "ja": "郷土料理レストラン",
+                  "zh": "地方风味餐厅"
+                },
+                "focus": {
+                  "ko": "레스토랑 공식 페이지는 지역 전통에 바탕을 둔 요리와 수제 파스타를 소개하고 여러 파스타와 로마냐식 피아디나를 예로 듭니다. 메뉴는 변경될 수 있습니다.",
+                  "en": "Its own page describes regional cooking and handmade pasta, listing several pasta types and Romagnola piadina as examples. Menus may change.",
+                  "ja": "公式ページでは地域の伝統料理と手作りパスタを紹介し、複数のパスタやロマーニャ風ピアディーナを例示しています。メニューは変更される場合があります。",
+                  "zh": "餐厅官网介绍地方传统菜肴和手工意面，并列出多种意面及罗马涅式皮亚迪纳作为例子。菜单可能变动。"
+                },
+                "why_candidate": {
+                  "ko": "공식 페이지에서 산마리노 구시가지의 주소와 지역 전통, 생면, 피아디나 언급을 확인해 후보로 포함했습니다. 특정 음식의 현재 제공을 보장하지 않습니다.",
+                  "en": "The official page confirms its historic-centre location and mentions regional traditions, fresh pasta, and piadina, supporting it as a candidate. It does not guarantee current availability of any particular dish.",
+                  "ja": "公式ページで旧市街の所在地を確認でき、地域の伝統、生パスタ、ピアディーナへの言及があるため候補としました。特定料理の現在の提供は保証しません。",
+                  "zh": "官网确认餐厅位于历史中心，并提及地方传统、鲜制意面和皮亚迪纳，因此列为候选；不保证某道菜目前供应。"
+                },
+                "official_url": "https://www.ristorantelaterrazza.sm/en/restaurant-san-marino/restaurant-republic-san-marino",
+                "source_urls": [
+                  "https://www.ristorantelaterrazza.sm/en/restaurant-san-marino/restaurant-republic-san-marino",
+                  "https://www.ghsmgroup.sm/en/ristorante-la-terrazza/index"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitsanmarino.com",
+                "url": "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/About-San-Marino/Gastronomia.html"
+              },
+              {
+                "title": "visitsanmarino.com",
+                "url": "https://www.visitsanmarino.com/pub1/VisitSM/en/contenuto/Pianifica-il-viaggio/DOVE-MANGIARE.html"
+              },
+              {
+                "title": "ristorantelaterrazza.sm",
+                "url": "https://www.ristorantelaterrazza.sm/en/restaurant-san-marino/restaurant-republic-san-marino"
+              },
+              {
+                "title": "ghsmgroup.sm",
+                "url": "https://www.ghsmgroup.sm/en/ristorante-la-terrazza/index"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Pasta e ceci and piadina are documented in Sammarinese tradition but are not treated as uniquely Sammarinese; the tourism authority notes culinary ties with Romagna and Marche.",
+              "The restaurant-owned page confirms venue location and cuisine examples, not current hours, prices, dish availability, waits, reservations, or guaranteed quality."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -5031,6 +11427,195 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://trisesira.rs/en/menu/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id=serbia; featured city Belgrade. The dishes are Serbian/regional selections, not claims that all originated in Belgrade. Venues are candidates, not bookings. Menus may change. No files or public pages were modified.",
+        "cities": [
+          {
+            "city": {
+              "ko": "베오그라드",
+              "en": "Belgrade",
+              "ja": "ベオグラード",
+              "zh": "贝尔格莱德"
+            },
+            "intro": {
+              "ko": "베오그라데에서는 세르비아 여러 지역의 음식을 접할 수 있습니다. 아래 음식은 세르비아 요리와 지역 전통을 소개하며, 모두 베오그라데 고유 음식이라는 뜻은 아닙니다.",
+              "en": "Belgrade offers a setting to encounter dishes from across Serbia. These selections reflect Serbian cuisine and regional traditions; they are not all specific to Belgrade.",
+              "ja": "ベオグラードではセルビア各地の料理に出会えます。以下はセルビア料理と地域の伝統を紹介するもので、すべてがベオグラード固有という意味ではありません。",
+              "zh": "在贝尔格莱德可以品尝塞尔维亚各地的菜肴。以下介绍塞尔维亚饮食与地方传统，并非都属于贝尔格莱德特有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "체바피(구운 다진 고기 롤)",
+                  "en": "Ćevapi (grilled minced-meat rolls)",
+                  "ja": "チェヴァピ（ひき肉のグリルロール）",
+                  "zh": "Ćevapi（烤绞肉卷）"
+                },
+                "note": {
+                  "ko": "다진 고기를 구운 요리로, 소고기만 쓰기도 하고 여러 고기를 섞기도 합니다. 발칸 여러 나라와 공유되는 음식이며 세르비아 내에서도 지역별 방식이 다릅니다.",
+                  "en": "Grilled minced-meat rolls, made with beef alone or meat blends. Styles vary across Serbia; the dish is shared across the Balkans.",
+                  "ja": "ひき肉を焼いた料理で、牛肉のみの場合も複数の肉を合わせる場合もあります。セルビア国内で地域差があり、バルカン各地で共有されています。",
+                  "zh": "烤制的绞肉卷，可只用牛肉，也可混合不同肉类。塞尔维亚各地做法不同，也是巴尔干地区共享的菜肴。"
+                },
+                "source_urls": [
+                  "https://www.serbia.travel/en/authentic-from-serbia/",
+                  "https://trisesira.rs/en/menu/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "기바니차(치즈·달걀 파이)",
+                  "en": "Gibanica (cheese-and-egg pastry)",
+                  "ja": "ギバニツァ（チーズと卵のパイ）",
+                  "zh": "Gibanica（奶酪鸡蛋馅饼）"
+                },
+                "note": {
+                  "ko": "얇은 반죽 층 사이에 치즈와 달걀을 넣어 굽는 세르비아식 짭짤한 파이입니다. 지역과 가정에 따라 방식이 달라집니다.",
+                  "en": "A savory Serbian pie of layered pastry, cheese, and eggs; methods vary by region and household.",
+                  "ja": "薄い生地にチーズと卵を重ねて焼くセルビアの塩味パイです。作り方は地域や家庭によって異なります。",
+                  "zh": "塞尔维亚咸派，以层叠面皮夹奶酪和鸡蛋烤制；做法因地区和家庭而异。"
+                },
+                "source_urls": [
+                  "https://www.serbia.travel/en/stories-items/serbia-in-a-baking-tray/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "사르마(양배추잎 고기쌈)",
+                  "en": "Sarma (stuffed cabbage rolls)",
+                  "ja": "サルマ（キャベツ葉の肉詰め）",
+                  "zh": "Sarma（卷心菜叶肉卷）"
+                },
+                "note": {
+                  "ko": "다진 고기·쌀·향신료를 발효 양배추 잎에 싸 조리하는 형태가 소개됩니다. 포도잎을 쓰는 변형도 있으며 발칸 여러 지역에서 먹습니다.",
+                  "en": "A Serbian version wraps minced meat, rice, and seasoning in fermented cabbage leaves. Grape-leaf versions also exist; the dish is shared around the Balkans.",
+                  "ja": "セルビアで紹介される形は、ひき肉・米・香辛料を発酵キャベツの葉で包んで調理します。ブドウの葉を使う形もあり、バルカン各地で食べられます。",
+                  "zh": "塞尔维亚常见做法是用发酵卷心菜叶包绞肉、米和调味料后烹煮；也有葡萄叶版本，这道菜在巴尔干多地流行。"
+                },
+                "source_urls": [
+                  "https://www.serbia.travel/en/authentic-from-serbia/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "레스코바츠식 무치칼리차",
+                  "en": "Leskovac-style mućkalica",
+                  "ja": "レスコヴァツ風ムチュカリツァ",
+                  "zh": "莱斯科瓦茨风味Mućkalica"
+                },
+                "note": {
+                  "ko": "세르비아 남부 레스코바츠 지역과 관련된 요리로, 구운 고기를 토마토·구운 붉은 피망·양파와 함께 끓이고 파프리카로 맛을 냅니다.",
+                  "en": "Associated with Leskovac in southern Serbia, it simmers grilled meat with tomatoes, roasted red peppers, onions, and paprika.",
+                  "ja": "セルビア南部レスコヴァツ地方に結び付いた料理です。焼いた肉をトマト、焼き赤ピーマン、玉ねぎと煮込み、パプリカで味付けします。",
+                  "zh": "这道菜与塞尔维亚南部莱斯科瓦茨地区相关：烤肉与番茄、烤红椒、洋葱同煮，并以红椒粉调味。"
+                },
+                "source_urls": [
+                  "https://www.serbia.travel/en/authentic-from-serbia/",
+                  "https://trisesira.rs/en/menu/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Tri šešira",
+                "area": "Skadarlija, Skadarska 29",
+                "type": {
+                  "ko": "전통 음식점",
+                  "en": "Traditional restaurant",
+                  "ja": "伝統料理店",
+                  "zh": "传统餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴에 체바피, 플레스카비차, 레스코바츠식 무치칼리차가 기재되어 있습니다.",
+                  "en": "Its published menu lists ćevapi, pljeskavica, and Leskovac-style mućkalica.",
+                  "ja": "公開メニューにはチェヴァピ、プレスカヴィツァ、レスコヴァツ風ムチュカリツァが記載されています。",
+                  "zh": "其公开菜单列有Ćevapi、Pljeskavica和莱斯科瓦茨风味Mućkalica。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트에서 위치를, 메뉴에서 세르비아 요리 항목을 확인해 후보로 제시합니다.",
+                  "en": "A candidate because its official site confirms its location and its menu documents Serbian dishes.",
+                  "ja": "公式サイトで所在地を、メニューでセルビア料理を確認できるため候補としました。",
+                  "zh": "官网确认了其所在地，菜单也列有塞尔维亚菜，因此列为候选。"
+                },
+                "official_url": "https://trisesira.rs/en/",
+                "source_urls": [
+                  "https://trisesira.rs/en/",
+                  "https://trisesira.rs/en/menu/",
+                  "https://trisesira.rs/en/contact/"
+                ]
+              },
+              {
+                "name": "Bela Reka",
+                "area": "Novi Beograd, Tošin Bunar 179",
+                "type": {
+                  "ko": "세르비아 요리 전문 레스토랑",
+                  "en": "Serbian national-cuisine restaurant",
+                  "ja": "セルビア郷土料理店",
+                  "zh": "塞尔维亚民族风味餐厅"
+                },
+                "focus": {
+                  "ko": "공식 메뉴에 납작빵·아즈바르·카이막을 곁들인 체바피와 플레스카비차가 기재되어 있습니다.",
+                  "en": "Its published menu lists ćevapi with flatbread, ajvar, and kajmak, as well as pljeskavica.",
+                  "ja": "公開メニューには平焼きパン、アイヴァル、カイマク添えのチェヴァピやプレスカヴィツァが記載されています。",
+                  "zh": "其公开菜单列有搭配扁面包、Ajvar和Kajmak的Ćevapi，以及Pljeskavica。"
+                },
+                "why_candidate": {
+                  "ko": "공식 페이지가 세르비아 요리점으로 소개하며, 메뉴에서 세르비아식 구이와 지역 식재료를 확인할 수 있습니다.",
+                  "en": "A candidate because the restaurant identifies as a Serbian cuisine venue and its menu documents local grilling and regional ingredients.",
+                  "ja": "公式ページでセルビア料理店と紹介され、メニューからセルビア風グリル料理と地域食材を確認できます。",
+                  "zh": "官网将其介绍为塞尔维亚菜餐厅，菜单也展示塞尔维亚烧烤及地方食材，因此列为候选。"
+                },
+                "official_url": "https://restoranbelareka.rs/en/",
+                "source_urls": [
+                  "https://restoranbelareka.rs/en/",
+                  "https://restoranbelareka.rs/en/menu/",
+                  "https://restoranbelareka.rs/en/contact/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "serbia.travel",
+                "url": "https://www.serbia.travel/en/authentic-from-serbia/"
+              },
+              {
+                "title": "trisesira.rs",
+                "url": "https://trisesira.rs/en/menu/"
+              },
+              {
+                "title": "serbia.travel",
+                "url": "https://www.serbia.travel/en/stories-items/serbia-in-a-baking-tray/"
+              },
+              {
+                "title": "trisesira.rs",
+                "url": "https://trisesira.rs/en/"
+              },
+              {
+                "title": "trisesira.rs",
+                "url": "https://trisesira.rs/en/contact/"
+              },
+              {
+                "title": "restoranbelareka.rs",
+                "url": "https://restoranbelareka.rs/en/"
+              },
+              {
+                "title": "restoranbelareka.rs",
+                "url": "https://restoranbelareka.rs/en/menu/"
+              },
+              {
+                "title": "restoranbelareka.rs",
+                "url": "https://restoranbelareka.rs/en/contact/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Ćevapi and sarma are shared Balkan foods; no exclusive Serbian origin is claimed.",
+              "Mućkalica is associated with Leskovac, not claimed as a Belgrade-origin dish.",
+              "Menus may change; published listings are not a guarantee of availability on a particular date.",
+              "Venues are candidates only. No reservations, hours, prices, waits, accessibility, language service, or quality guarantees are asserted."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -5138,6 +11723,153 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://slovakia.travel/en/things-to-see-and-do/gastronomia/tradition-on-a-plate"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "KO: 브라티슬라바 한 도시만 조사했습니다. EN: Research covers Bratislava only. JA: 調査対象はブラチスラヴァのみです。 ZH: 本次仅调查布拉迪斯拉发。",
+        "cities": [
+          {
+            "city": {
+              "ko": "브라티슬라바",
+              "en": "Bratislava",
+              "ja": "ブラチスラヴァ",
+              "zh": "布拉迪斯拉发"
+            },
+            "intro": {
+              "ko": "브라티슬라바 관광청은 현지 겨울 음식으로 슬로바키아식 요리 몇 가지를 소개하며, 브라티슬라바 롤은 EU의 전통 특산품 보증(TSG) 등록 명칭입니다.",
+              "en": "Bratislava’s tourism authority suggests several Slovak dishes for a winter visit; Bratislavský rožok is a name registered by the EU as a Traditional Speciality Guaranteed (TSG).",
+              "ja": "ブラチスラヴァの観光当局は冬の料理としてスロバキア料理をいくつか紹介しています。ブラチスラヴァ・ロールはEUの伝統的特産品保証（TSG）に登録された名称です。",
+              "zh": "布拉迪斯拉发旅游机构将几种斯洛伐克菜列为冬季可尝试的食物；布拉迪斯拉发卷酥这一名称已获欧盟传统特色保证（TSG）注册。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "브라티슬라바 롤 페이스트리",
+                  "en": "Bratislava roll pastry",
+                  "ja": "ブラチスラヴァのロール菓子",
+                  "zh": "布拉迪斯拉发卷酥"
+                },
+                "note": {
+                  "ko": "브라티슬라바 관광청은 양귀비씨 또는 호두를 넣은 전통 페이스트리로 소개합니다. EU는 이 명칭을 TSG로 등록했습니다.",
+                  "en": "Bratislava tourism describes it as a traditional pastry filled with poppy seeds or walnuts. The EU registers the name as a TSG.",
+                  "ja": "ブラチスラヴァ観光局は、ケシの実またはクルミを詰めた伝統菓子として紹介しています。EUはこの名称をTSGとして登録しています。",
+                  "zh": "布拉迪斯拉发旅游机构将其介绍为以罂粟籽或核桃为馅的传统糕点。欧盟将该名称注册为TSG。"
+                },
+                "source_urls": [
+                  "https://www.visitbratislava.com/highlights/top-10-winter-experiences-in-bratislava/",
+                  "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1594"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "브린자 치즈 감자 경단",
+                  "en": "Potato dumplings with bryndza sheep’s cheese",
+                  "ja": "ブリンザ（羊乳チーズ）入りじゃがいも団子",
+                  "zh": "羊奶酪土豆团子"
+                },
+                "note": {
+                  "ko": "관광청은 브린자(양젖 치즈)를 곁들인 감자 경단으로 설명하며, 브라티슬라바 겨울 여행에서 찾아볼 슬로바키아 음식으로 제안합니다. 도시 기원이나 독점성을 뜻하지는 않습니다.",
+                  "en": "The tourism authority describes potato dumplings with sheep’s cheese and suggests them among Slovak foods to look for in Bratislava in winter; this does not establish city origin or exclusivity.",
+                  "ja": "観光当局は羊乳チーズを添えたじゃがいも団子と説明し、冬にブラチスラヴァで探したいスロバキア料理として挙げています。市内発祥や独占性を示すものではありません。",
+                  "zh": "旅游机构将其描述为搭配羊奶酪的土豆团子，并列为冬季在布拉迪斯拉发可寻找的斯洛伐克菜；这并不证明其起源于该市或为当地独有。"
+                },
+                "source_urls": [
+                  "https://www.visitbratislava.com/highlights/top-10-winter-experiences-in-bratislava/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "사우어크라우트 수프",
+                  "en": "Sauerkraut soup",
+                  "ja": "ザワークラウトのスープ",
+                  "zh": "酸菜汤"
+                },
+                "note": {
+                  "ko": "브라티슬라바 관광청은 카푸스트니차를 브라티슬라바에서 겨울에 찾아볼 수 있는 슬로바키아 음식의 예로 듭니다. 지역 기원이나 특정 조리법은 여기서 주장하지 않습니다.",
+                  "en": "Bratislava tourism lists kapustnica as an example of Slovak food to look for in the city during winter; no local origin or particular recipe is asserted here.",
+                  "ja": "ブラチスラヴァ観光局は、冬に市内で探せるスロバキア料理の例としてカプストニツァを挙げています。当地発祥や特定のレシピを主張するものではありません。",
+                  "zh": "布拉迪斯拉发旅游机构将 kapustnica 列为冬季可在该市寻找的斯洛伐克菜之一；此处不主张其起源于当地，也不指定某种做法。"
+                },
+                "source_urls": [
+                  "https://www.visitbratislava.com/highlights/top-10-winter-experiences-in-bratislava/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "감자 플랫브레드",
+                  "en": "Potato flatbreads",
+                  "ja": "じゃがいもの薄焼きパン",
+                  "zh": "土豆薄饼"
+                },
+                "note": {
+                  "ko": "관광청은 로크셰를 브라티슬라바 겨울 여행에서 찾아볼 슬로바키아 음식으로 제안합니다. 이는 브라티슬라바의 독자적 기원이나 독점성을 확인하는 자료는 아닙니다.",
+                  "en": "Bratislava tourism suggests lokše among Slovak dishes to look for during a winter visit; this is not evidence of a distinct Bratislava origin or exclusivity.",
+                  "ja": "ブラチスラヴァ観光局は、冬の訪問時に探したいスロバキア料理としてロクシェを挙げています。ブラチスラヴァ独自の起源や独占性を示す証拠ではありません。",
+                  "zh": "布拉迪斯拉发旅游机构将 lokše 列为冬季到访时可寻找的斯洛伐克菜；这不能证明其源自布拉迪斯拉发或为当地独有。"
+                },
+                "source_urls": [
+                  "https://www.visitbratislava.com/highlights/top-10-winter-experiences-in-bratislava/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Slovak Pub",
+                "area": "Bratislava, Slovakia",
+                "type": {
+                  "ko": "펍·식당",
+                  "en": "Pub and restaurant",
+                  "ja": "パブ・レストラン",
+                  "zh": "酒吧兼餐厅"
+                },
+                "focus": {
+                  "ko": "슬로바키아 전통 요리",
+                  "en": "Traditional Slovak cuisine",
+                  "ja": "スロバキアの伝統料理",
+                  "zh": "斯洛伐克传统菜肴"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트는 이곳에서 슬로바키아 전통 요리를 제공한다고 설명하고, 자체 메뉴에는 할루슈키 항목이 있습니다. 조사 후보로만 제시하며 특정 음식의 현재 판매 여부를 보장하지 않습니다.",
+                  "en": "Its official site describes traditional Slovak cuisine, and its own menu page includes a halušky section. Listed as a research candidate only; this does not verify current availability of any particular dish.",
+                  "ja": "公式サイトはスロバキアの伝統料理を提供すると説明し、公式メニューにはハルシュキの項目があります。調査候補としてのみ記載しており、特定料理の現在の提供を保証するものではありません。",
+                  "zh": "其官方网站介绍了斯洛伐克传统菜肴，自家菜单页面设有 halušky（面团团子）栏目。这里只将其列为研究候选，并不确认任何具体菜品目前供应。"
+                },
+                "official_url": "https://slovakpub.sk/en/domov-english/",
+                "source_urls": [
+                  "https://slovakpub.sk/en/domov-english/",
+                  "https://slovakpub.sk/jedalny-listok/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitbratislava.com",
+                "url": "https://www.visitbratislava.com/highlights/top-10-winter-experiences-in-bratislava/"
+              },
+              {
+                "title": "eur-lex.europa.eu",
+                "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1594"
+              },
+              {
+                "title": "slovakpub.sk",
+                "url": "https://slovakpub.sk/en/domov-english/"
+              },
+              {
+                "title": "slovakpub.sk",
+                "url": "https://slovakpub.sk/jedalny-listok/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "KO: 브라티슬라바 관광청의 겨울 음식 목록은 방문객을 위한 추천이지, 모든 음식이 브라티슬라바에서 유래했거나 이 도시만의 음식이라는 증거는 아닙니다.",
+              "EN: The Bratislava tourism winter-food list is a visitor suggestion, not evidence that every dish originated in or is exclusive to Bratislava.",
+              "JA: ブラチスラヴァ観光局の冬の料理リストは旅行者向けの提案であり、すべての料理が当地発祥または当地限定であることを示すものではありません。",
+              "ZH: 布拉迪斯拉发旅游机构的冬季美食清单是面向游客的建议，并不证明所有菜肴都起源于该市或仅属于该市。",
+              "KO: EU의 TSG 등록은 명칭과 특산품 사양에 관한 것이며, 현지 식당의 현재 메뉴 여부를 확인하지는 않습니다.",
+              "EN: The EU TSG registration concerns the name and product specification; it does not establish current availability at local venues.",
+              "JA: EUのTSG登録は名称と製品仕様に関するもので、地元の飲食店で現在提供されているかを示すものではありません。",
+              "ZH: 欧盟TSG注册涉及名称和产品规范，并不能证明当地餐馆目前供应该产品。"
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -5239,6 +11971,131 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "When trying local and Slovenian food – štruklji are a must — Visit Ljubljana",
             "url": "https://www.visitljubljana.com/en/visitors/in-focus/stories/when-trying-local-and-slovenian-food-struklji-are-a-must"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Dish-city associations follow Ljubljana Tourism’s Taste Ljubljana framing and its published recipe account. Broader Slovenian dishes are not presented as exclusive to Ljubljana; the venue is a research candidate only.",
+        "cities": [
+          {
+            "city": {
+              "ko": "류블랴나",
+              "en": "Ljubljana",
+              "ja": "リュブリャナ",
+              "zh": "卢布尔雅那"
+            },
+            "intro": {
+              "ko": "류블랴나 관광청의 Taste Ljubljana와 관련 공식 자료에서 확인되는 대표 음식 세 가지를 소개합니다. 일부 음식은 더 넓은 슬로베니아 요리 전통과도 연결됩니다.",
+              "en": "Here are three dishes documented by Ljubljana Tourism’s Taste Ljubljana project and related official material. Some are also part of broader Slovenian culinary traditions.",
+              "ja": "リュブリャナ観光局の「Taste Ljubljana」と関連する公式資料で確認できる料理を3品紹介します。より広いスロベニア料理の伝統にも属する料理があります。",
+              "zh": "以下介绍三道见于卢布尔雅那旅游局 Taste Ljubljana 项目及相关官方资料的菜肴。其中一些也属于更广泛的斯洛文尼亚饮食传统。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "류블랴나 굴라시",
+                  "en": "Ljubljana Goulash",
+                  "ja": "リュブリャナ風グヤーシュ",
+                  "zh": "卢布尔雅那炖牛肉（古拉什）"
+                },
+                "note": {
+                  "ko": "류블랴나 관광청은 굴라시를 류블랴나 요리의 든든한 대표 음식 중 하나로 추천합니다. 이는 도시와의 음식 문화상 연관성을 보여주지만, 기원이나 독점성을 입증하는 것은 아닙니다.",
+                  "en": "Ljubljana Tourism recommends it as one hearty dish for a first taste of Ljubljana cuisine. This supports a culinary association with the city, not a claim of origin or exclusivity.",
+                  "ja": "リュブリャナ観光局は、同市の料理を初めて味わう際の食べ応えのある一品として挙げています。これは食文化上の結びつきを示すもので、発祥や独占性を示すものではありません。",
+                  "zh": "卢布尔雅那旅游局将其列为初尝当地菜肴时可选的一道饱腹菜品。这能说明它与当地饮食文化有关，但不能证明其起源或独有性。"
+                },
+                "source_urls": [
+                  "https://www.visitljubljana.com/en/visitors/food-and-drink/taste-ljubljana"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "류블랴나식 슈트루클리 롤",
+                  "en": "Ljubljana Štrukelj Roll",
+                  "ja": "リュブリャナ風シュトゥルクリ",
+                  "zh": "卢布尔雅那式卷糕（Štrukelj）"
+                },
+                "note": {
+                  "ko": "관광청 자료는 이를 류블랴나식 슈트루클리로 지칭하고, 지역 식당에서 맛볼 곳을 안내합니다. 슈트루클리는 속을 넣은 삶거나 구운 반죽 롤의 여러 변형을 아우르는 슬로베니아 음식입니다.",
+                  "en": "Ljubljana Tourism identifies a “Ljubljana štrukelj” and names places in the city to try it. Štruklji more broadly are Slovenian boiled or baked dough rolls with varied fillings.",
+                  "ja": "リュブリャナ観光局は「Ljubljana štrukelj」として紹介し、市内で試せる店も挙げています。シュトゥルクリ全般は、さまざまな具を包んでゆでる、または焼くスロベニアの生地料理です。",
+                  "zh": "卢布尔雅那旅游局提到“Ljubljana štrukelj”，并列出可在市内品尝的地点。更广义的 Štruklji 是一种斯洛文尼亚面食卷，可包入不同馅料后煮或烤。"
+                },
+                "source_urls": [
+                  "https://www.visitljubljana.com/en/visitors/in-focus/stories/when-trying-local-and-slovenian-food-struklji-are-a-must",
+                  "https://www.visitljubljana.com/en/visitors/food-and-drink/slovenian-cuisine"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "플라잉 žganci(레테치 žganci)",
+                  "en": "Flying žganci",
+                  "ja": "フライング・ジュガンツィ",
+                  "zh": "飞翔 žganci（炸鸡块）"
+                },
+                "note": {
+                  "ko": "류블랴나 관광청의 레시피 설명은 17세기 류블랴니차강 항구 노동자들과 이 음식을 연결하며, 이름은 빵가루를 입혀 튀긴 닭 허벅지와 날개를 가리킨다고 설명합니다. 관광청에 실린 역사 설명입니다.",
+                  "en": "Ljubljana Tourism’s recipe account connects the dish with 17th-century workers at the city’s river harbor; it describes the name as referring to fried chicken thighs and wings. This is the tourism authority’s historical account.",
+                  "ja": "リュブリャナ観光局のレシピ紹介は、この料理を17世紀の市内河港の労働者と結び付け、名称は衣を付けて揚げた鶏もも肉と手羽を指すと説明しています。これは観光局による歴史紹介です。",
+                  "zh": "卢布尔雅那旅游局的食谱介绍将这道菜与17世纪城市河港的工人联系起来，并说明其名称指裹粉油炸的鸡腿肉和鸡翅。这是旅游局提供的历史叙述。"
+                },
+                "source_urls": [
+                  "https://www.visitljubljana.com/en/visitors/food-and-drink/recipes/flying-zganci"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Klobasarna",
+                "area": "Ciril-Metodov trg 15, Ljubljana",
+                "type": {
+                  "ko": "캐주얼 식당·소시지 전문점",
+                  "en": "Casual eatery and sausage specialist",
+                  "ja": "カジュアルな飲食店・ソーセージ専門店",
+                  "zh": "休闲餐馆及香肠专门店"
+                },
+                "focus": {
+                  "ko": "공식 웹사이트에 크란스카 클로바사와 슈트루클리 등이 기재되어 있습니다.",
+                  "en": "Its official site lists Carniolan sausage and štruklji, among other items.",
+                  "ja": "公式サイトにはカルニオランソーセージやシュトゥルクリなどが掲載されています。",
+                  "zh": "其官方网站列有卡尼奥兰香肠和 Štruklji 等食品。"
+                },
+                "why_candidate": {
+                  "ko": "공식 사이트에서 류블랴나 주소와 음식 항목을 확인했고, 류블랴나 관광청의 음식 소개에서도 슈트루클리를 맛볼 장소로 언급됩니다. 방문·예약을 보장하는 추천이 아닌 조사 후보입니다.",
+                  "en": "Its official site gives a Ljubljana address and lists relevant dishes; Ljubljana Tourism also mentions it as a place to try štruklji. This is a research candidate, not a booking or guarantee of current availability.",
+                  "ja": "公式サイトでリュブリャナの住所と関連料理を確認でき、リュブリャナ観光局もシュトゥルクリを試せる店として言及しています。予約や現在の提供を保証するものではなく、調査候補です。",
+                  "zh": "其官方网站列出卢布尔雅那地址及相关菜品；卢布尔雅那旅游局也将其列为可品尝 Štruklji 的地点。这只是研究候选，不代表预订或保证当前供应。"
+                },
+                "official_url": "https://www.klobasarna.si/",
+                "source_urls": [
+                  "https://www.klobasarna.si/",
+                  "https://www.visitljubljana.com/en/visitors/in-focus/stories/when-trying-local-and-slovenian-food-struklji-are-a-must"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitljubljana.com",
+                "url": "https://www.visitljubljana.com/en/visitors/food-and-drink/taste-ljubljana"
+              },
+              {
+                "title": "visitljubljana.com",
+                "url": "https://www.visitljubljana.com/en/visitors/in-focus/stories/when-trying-local-and-slovenian-food-struklji-are-a-must"
+              },
+              {
+                "title": "visitljubljana.com",
+                "url": "https://www.visitljubljana.com/en/visitors/food-and-drink/slovenian-cuisine"
+              },
+              {
+                "title": "visitljubljana.com",
+                "url": "https://www.visitljubljana.com/en/visitors/food-and-drink/recipes/flying-zganci"
+              },
+              {
+                "title": "klobasarna.si",
+                "url": "https://www.klobasarna.si/"
+              }
+            ],
+            "unverified_or_correction_notes": []
           }
         ]
       }
@@ -5346,6 +12203,149 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Los platos clásicos de la cocina de Cuaresma y Semana Santa",
             "url": "https://visitasevilla.es/los-platos-clasicos-de-la-cocina-de-cuaresma-y-semana-santa/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 세비야 한 도시만 다룹니다. 음식의 지역 연관성은 인용한 세비야 관광 자료와 업소 페이지에 한정합니다. | en: Covers Seville only. Dish associations are limited to the cited Seville tourism and venue pages. | ja: セビリア一都市のみを扱います。料理との地域的な関連は、引用したセビリア観光資料と店舗ページの範囲に限ります。 | zh: 仅涵盖塞维利亚一座城市。菜肴与当地的关联仅限于所引塞维利亚旅游资料及餐饮场所页面所述。",
+        "cities": [
+          {
+            "city": {
+              "ko": "세비야",
+              "en": "Seville",
+              "ja": "セビリア",
+              "zh": "塞维利亚"
+            },
+            "intro": {
+              "ko": "세비야 관광청이 소개하는 도시의 타파스 가운데 시금치와 병아리콩 요리, 프링가 샌드위치, 소 내장 스튜 등이 있습니다. 아래 음식은 세비야 현지 업소와 관광 자료에서 확인한 사례이며, 기원이나 독점성을 뜻하지 않습니다.",
+              "en": "Among the tapas highlighted by Seville’s tourism authority are spinach with chickpeas, a pringá sandwich, and tripe stew. The dishes below are examples documented at local Seville establishments and in tourism material; this does not establish origin or exclusivity.",
+              "ja": "セビリア観光当局が紹介するタパスには、ほうれん草とひよこ豆の料理、プリンガのサンドイッチ、牛モツ煮込みなどがあります。以下はセビリアの飲食店や観光資料で確認できる例であり、発祥地や独占性を示すものではありません。",
+              "zh": "塞维利亚旅游部门介绍的塔帕斯包括菠菜炖鹰嘴豆、Pringá 小三明治和牛肚炖菜等。以下是塞维利亚当地餐饮场所及旅游资料中记录的例子，并不表示这些菜肴起源于此或为当地独有。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "시금치와 병아리콩 요리",
+                  "en": "Spinach with chickpeas",
+                  "ja": "ほうれん草とひよこ豆の煮込み",
+                  "zh": "菠菜炖鹰嘴豆"
+                },
+                "note": {
+                  "ko": "세비야 관광청은 이 요리를 La Fresquita의 전통 타파스 예로 소개합니다. El Rinconcillo의 공식 사이트에도 이 요리와 조리법이 실려 있습니다. 이는 현지에서 제공되는 사례를 뒷받침할 뿐, 기원이나 세비야에만 있다는 뜻은 아닙니다.",
+                  "en": "Seville’s tourism authority names it among traditional tapas at La Fresquita. El Rinconcillo’s official site also describes the dish and gives a recipe. This documents local examples, not an origin or claim that it is unique to Seville.",
+                  "ja": "セビリア観光当局は、La Fresquitaの昔ながらのタパスの一例として紹介しています。El Rinconcilloの公式サイトにも料理とレシピが掲載されています。これは地元で提供される例を示すもので、発祥地やセビリア限定を示すものではありません。",
+                  "zh": "塞维利亚旅游部门将其列为 La Fresquita 的传统塔帕斯之一；El Rinconcillo 官网也介绍了这道菜并提供食谱。这些资料证明当地有相关实例，但不能据此断言其起源或为塞维利亚独有。"
+                },
+                "source_urls": [
+                  "https://visitasevilla.es/sabores-de-cuaresma-una-ruta-por-los-bares-cofrades-de-la-ciudad/",
+                  "https://www.elrinconcillo.es/gastronomia/receta-de-nuestras-espinacas-con-garbanzos/",
+                  "https://barcoliseo.es/en/tapas-menu-seville/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "프링가 샌드위치",
+                  "en": "Pringá sandwich",
+                  "ja": "プリンガの小さなサンドイッチ",
+                  "zh": "Pringá 小三明治"
+                },
+                "note": {
+                  "ko": "세비야 관광청 자료는 La Fresquita에서 제공하는 전통 타파스 중 하나로 소개합니다. 이 자료만으로 음식의 기원이나 도시 고유 음식이라고 단정할 수는 없습니다.",
+                  "en": "Seville’s tourism authority lists it among the traditional tapas served at La Fresquita. This source does not establish the dish’s origin or that it is exclusive to the city.",
+                  "ja": "セビリア観光当局は、La Fresquitaで提供される昔ながらのタパスの一つとして挙げています。この資料から発祥地やセビリア限定とは判断できません。",
+                  "zh": "塞维利亚旅游部门将其列为 La Fresquita 提供的传统塔帕斯之一。该资料不能证明其起源，也不能证明它为塞维利亚独有。"
+                },
+                "source_urls": [
+                  "https://visitasevilla.es/sabores-de-cuaresma-una-ruta-por-los-bares-cofrades-de-la-ciudad/",
+                  "https://barcoliseo.es/en/tapas-menu-seville/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "소고기 내장 스튜",
+                  "en": "Beef tripe stew",
+                  "ja": "牛モツの煮込み",
+                  "zh": "牛肚炖菜"
+                },
+                "note": {
+                  "ko": "세비야 관광청은 La Fresquita의 전통 타파스 예로 언급합니다. 해당 업소와 연결된 현지 사례이며, 세비야의 기원 음식이라고 단정하지 않습니다.",
+                  "en": "Seville’s tourism authority mentions it as one of the traditional tapas at La Fresquita. This is a local establishment example, not evidence of a Seville origin.",
+                  "ja": "セビリア観光当局は、La Fresquitaの昔ながらのタパスの一例として挙げています。地元の店での提供例であり、セビリア発祥を示す証拠ではありません。",
+                  "zh": "塞维利亚旅游部门将其列为 La Fresquita 的传统塔帕斯之一。这是当地餐饮场所的实例，并非其起源于塞维利亚的证据。"
+                },
+                "source_urls": [
+                  "https://visitasevilla.es/sabores-de-cuaresma-una-ruta-por-los-bares-cofrades-de-la-ciudad/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "토마토를 곁들인 대구 튀김",
+                  "en": "Fried cod with tomato",
+                  "ja": "タラのトマト添えフライ",
+                  "zh": "番茄配炸鳕鱼"
+                },
+                "note": {
+                  "ko": "세비야 관광청은 시내 Matacandela의 추천 음식으로 소개합니다. El Rinconcillo의 공식 사이트도 토마토를 곁들인 대구 요리를 언급합니다. 이는 현지 메뉴 사례이지, 세비야 기원이나 연중 메뉴 제공을 보증하지 않습니다.",
+                  "en": "Seville’s tourism authority recommends it at Matacandela; El Rinconcillo’s official site also mentions cod with tomato. These are local menu references, not evidence of Seville origin or year-round availability.",
+                  "ja": "セビリア観光当局は、市内のMatacandelaでのおすすめ料理として紹介しています。El Rinconcilloの公式サイトもトマト添えのタラ料理に触れています。地元のメニュー例であり、セビリア発祥や通年提供を保証するものではありません。",
+                  "zh": "塞维利亚旅游部门将其列为当地 Matacandela 的推荐菜；El Rinconcillo 官网也提及番茄鳕鱼菜式。这些是当地菜单相关记录，并不能证明其起源于塞维利亚或全年供应。"
+                },
+                "source_urls": [
+                  "https://visitasevilla.es/sabores-de-cuaresma-una-ruta-por-los-bares-cofrades-de-la-ciudad/",
+                  "https://www.elrinconcillo.es/gastronomia/la-cocina-de-cuaresma-en-el-rinconcillo/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Bar Coliseo",
+                "area": "ko: 세비야 구시가지(Casco Antiguo) | en: Casco Antiguo, Seville | ja: セビリア旧市街（Casco Antiguo） | zh: 塞维利亚旧城区（Casco Antiguo）",
+                "type": {
+                  "ko": "타파스 바",
+                  "en": "Tapas bar",
+                  "ja": "タパスバー",
+                  "zh": "塔帕斯酒吧"
+                },
+                "focus": {
+                  "ko": "전통 타파스; 공식 메뉴에 시금치와 병아리콩, 프링가, 살모레호 등이 기재되어 있습니다.",
+                  "en": "Traditional tapas; its official menu lists spinach with chickpeas, pringá, salmorejo, and other dishes.",
+                  "ja": "伝統的なタパス。公式メニューには、ほうれん草とひよこ豆、プリンガ、サルモレホなどが掲載されています。",
+                  "zh": "传统塔帕斯；官网菜单列有菠菜炖鹰嘴豆、Pringá、Salmorejo 等菜品。"
+                },
+                "why_candidate": {
+                  "ko": "공식 메뉴 페이지에서 업소명과 세비야 구시가지 주소를 확인할 수 있고, 지역 타파스와 음식 목록도 확인됩니다. 조사 후보일 뿐 예약이나 현재营业상태에 대한 권고는 아닙니다.",
+                  "en": "Its official menu page identifies the establishment, gives a Casco Antiguo address in Seville, and lists local-style tapas. This is a research candidate, not a booking or a claim about current operating status.",
+                  "ja": "公式メニューページで店名とセビリア旧市街の住所を確認でき、地元風のタパスも掲載されています。あくまで調査候補であり、予約や現在の営業状況を保証するものではありません。",
+                  "zh": "官网菜单页列出店名、塞维利亚旧城区地址及当地风格塔帕斯。这里只是研究候选，并非预订或对目前营业状况的保证。"
+                },
+                "official_url": "https://barcoliseo.es/en/tapas-menu-seville/",
+                "source_urls": [
+                  "https://barcoliseo.es/en/tapas-menu-seville/",
+                  "https://visitasevilla.es/sabores-de-cuaresma-una-ruta-por-los-bares-cofrades-de-la-ciudad/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "visitasevilla.es",
+                "url": "https://visitasevilla.es/sabores-de-cuaresma-una-ruta-por-los-bares-cofrades-de-la-ciudad/"
+              },
+              {
+                "title": "elrinconcillo.es",
+                "url": "https://www.elrinconcillo.es/gastronomia/receta-de-nuestras-espinacas-con-garbanzos/"
+              },
+              {
+                "title": "barcoliseo.es",
+                "url": "https://barcoliseo.es/en/tapas-menu-seville/"
+              },
+              {
+                "title": "elrinconcillo.es",
+                "url": "https://www.elrinconcillo.es/gastronomia/la-cocina-de-cuaresma-en-el-rinconcillo/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 확인한 자료는 현지 업소에서 언급·제공되는 사례만 뒷받침하며, 음식의 기원·세비야 독점성·진정성 순위를 증명하지 않습니다. 메뉴의 구체적 제공 여부나 영업 정보도 별도 확인이 필요합니다. | en: The sources support examples associated with local establishments, not dish origins, Seville exclusivity, or authenticity rankings. Specific menu availability and operating details require separate checking. | ja: 確認できた資料は地元店舗での紹介・提供例を裏付けるにとどまり、料理の発祥、セビリア限定、真正性の順位を示すものではありません。具体的な提供状況や営業情報は別途確認が必要です。 | zh: 资料仅能证明这些菜肴与当地餐饮场所有关联，不能证明其起源、塞维利亚独有性或正宗程度排名。具体菜单供应和营业信息仍需另行核实。"
+            ]
           }
         ]
       }
@@ -5515,6 +12515,128 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://www.kvarnen.com/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Scope is country_id sweden and featured city Stockholm only. Dishes are Swedish classics, not necessarily Stockholm-origin.",
+        "cities": [
+          {
+            "city": {
+              "ko": "스톡홀름",
+              "en": "Stockholm",
+              "ja": "ストックホルム",
+              "zh": "斯德哥尔摩"
+            },
+            "intro": {
+              "ko": "스톡홀름에서 스웨덴 전통 음식을 맛봅니다. 아래 음식이 모두 스톡홀름에서 유래한 것은 아닙니다.",
+              "en": "Explore Swedish traditional food in Stockholm; these dishes are not all of Stockholm origin.",
+              "ja": "ストックホルムでスウェーデンの伝統料理を楽しみます。すべてが同市発祥ではありません。",
+              "zh": "在斯德哥尔摩体验瑞典传统美食；以下食物并非都起源于该市。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "스웨덴 미트볼",
+                  "en": "Swedish meatballs",
+                  "ja": "スウェーデン風ミートボール",
+                  "zh": "瑞典肉丸"
+                },
+                "note": {
+                  "ko": "다진 고기, 우유에 불린 빵가루, 달걀, 양파를 넣는 조리법이 흔하지만 재료는 다양합니다. 링곤베리와 감자를 곁들이기도 합니다.",
+                  "en": "Often made with minced meat, milk-soaked breadcrumbs, egg and onion, though recipes vary; lingonberries and potatoes are common accompaniments.",
+                  "ja": "ひき肉、牛乳で戻したパン粉、卵、玉ねぎを使うことが多いですが、レシピはさまざまです。リンゴンベリーやジャガイモを添えることもあります。",
+                  "zh": "常以肉末、牛奶浸泡的面包屑、鸡蛋和洋葱制作，但配方各异；常配越橘和土豆。"
+                },
+                "source_urls": [
+                  "https://sweden.se/culture/food/swedish-meatballs"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "스카겐 토스트",
+                  "en": "Toast Skagen",
+                  "ja": "トースト・スカーゲン",
+                  "zh": "斯卡根虾吐司"
+                },
+                "note": {
+                  "ko": "스웨덴 전채 요리로, 구운 빵에 크리미한 새우를 얹습니다. 토레 브레트만이 만들었고 이름은 덴마크 어항에서 왔습니다.",
+                  "en": "A Swedish starter of toasted bread with creamy prawns, created by Tore Wretman and named for a Danish fishing port.",
+                  "ja": "トーストにクリーミーなエビをのせたスウェーデンの前菜。トーレ・ヴレートマンが考案し、デンマークの漁港にちなむ名前です。",
+                  "zh": "瑞典前菜，以烤面包搭配奶油虾料；由托雷·韦特曼创制，名称取自丹麦渔港。"
+                },
+                "source_urls": [
+                  "https://sweden.se/culture/food/toast-skagen"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "그라브락스(절인 연어)",
+                  "en": "Gravad lax (cured salmon)",
+                  "ja": "グラブラックス（塩漬けサーモン）",
+                  "zh": "腌渍三文鱼"
+                },
+                "note": {
+                  "ko": "연어를 소금, 설탕, 후추, 딜로 숙성해 얇게 썰며, 겨자딜 소스를 곁들이기도 합니다.",
+                  "en": "Salmon cured with salt, sugar, pepper and dill, sliced thin; sometimes served with mustard-dill sauce.",
+                  "ja": "サーモンを塩、砂糖、コショウ、ディルで漬けて薄切りにし、マスタードとディルのソースを添えることもあります。",
+                  "zh": "三文鱼用盐、糖、胡椒和莳萝腌渍后切薄片，有时搭配芥末莳萝酱。"
+                },
+                "source_urls": [
+                  "https://visitsweden.com/what-to-do/food-drink/recipes/cured-salmon-aka-gravad-lax-recipe/"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Kvarnen",
+                "area": "Sodermalm, Stockholm",
+                "type": {
+                  "ko": "스웨덴 가정요리 식당",
+                  "en": "Swedish home-style restaurant",
+                  "ja": "スウェーデン家庭料理店",
+                  "zh": "瑞典家常菜餐厅"
+                },
+                "focus": {
+                  "ko": "공식 사이트가 미트볼, 절인 청어, 송아지 간을 소개합니다.",
+                  "en": "Official site highlights meatballs, pickled herring and veal liver.",
+                  "ja": "公式サイトはミートボール、ニシンの酢漬け、仔牛レバーを紹介しています。",
+                  "zh": "官网介绍肉丸、腌鲱鱼和小牛肝。"
+                },
+                "why_candidate": {
+                  "ko": "자체 사이트가 스웨덴 가정요리와 전통 음식을 명시합니다.",
+                  "en": "Its own site confirms Swedish home cooking and traditional dishes.",
+                  "ja": "公式サイトがスウェーデン家庭料理と伝統料理を確認しています。",
+                  "zh": "官网确认其提供瑞典家常菜和传统菜肴。"
+                },
+                "official_url": "https://www.kvarnen.com/",
+                "source_urls": [
+                  "https://www.kvarnen.com/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "sweden.se",
+                "url": "https://sweden.se/culture/food/swedish-meatballs"
+              },
+              {
+                "title": "sweden.se",
+                "url": "https://sweden.se/culture/food/toast-skagen"
+              },
+              {
+                "title": "visitsweden.com",
+                "url": "https://visitsweden.com/what-to-do/food-drink/recipes/cured-salmon-aka-gravad-lax-recipe/"
+              },
+              {
+                "title": "kvarnen.com",
+                "url": "https://www.kvarnen.com/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Meatball recipes vary; cream can be in the gravy rather than the meat mixture. These are Swedish classics, not uniquely Stockholm-origin dishes.",
+              "Venue is a candidate, not a reservation. The official page does not guarantee a dish's current availability, hours, prices, waits or booking."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -5624,6 +12746,156 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Zeughauskeller | Zurich Tourism",
             "url": "https://www.zuerich.com/en/visit/restaurants/zeughauskeller"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "Scope: Zurich city only. Local recognition does not imply exclusive origin; the restaurant is a research candidate, not a booking, and current availability is not guaranteed.",
+        "cities": [
+          {
+            "city": {
+              "ko": "취리히",
+              "en": "Zurich",
+              "ja": "チューリヒ",
+              "zh": "苏黎世"
+            },
+            "intro": {
+              "ko": "취리히 관광청은 취리히식 송아지고기 요리, 비르허 뮈슬리, 룩셈부르겔리를 도시의 대표적인 음식으로 소개하며, 별도 자료는 취리히 꿀 과자 티르겔을 설명합니다.",
+              "en": "Zurich Tourism identifies Zurich-style veal, Birchermüesli, and Luxemburgerli as local culinary classics; a separate page describes the Zurich honey biscuit Tirggel.",
+              "ja": "チューリヒ観光局は、チューリヒ風仔牛肉料理、ビルヒャー・ミューズリー、ルクセンブルゲルリを地元の食の定番として紹介し、別ページではチューリヒの蜂蜜菓子ティルゲルを説明しています。",
+              "zh": "苏黎世旅游局将苏黎世风味小牛肉、比尔歇尔什锦麦片和 Luxemburgerli 列为当地经典美食；另一页面介绍了苏黎世蜂蜜饼 Tirggel。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "취리히식 송아지고기 크림 볶음",
+                  "en": "Zurich-style sliced veal (Zürcher Geschnetzeltes)",
+                  "ja": "チューリヒ風仔牛肉のクリーム煮",
+                  "zh": "苏黎世风味奶油小牛肉片"
+                },
+                "note": {
+                  "ko": "취리히 관광청은 얇게 썬 송아지고기를 크림소스에 조리하고 뢰스티와 곁들이는 취리히 전통 요리로 설명합니다. 스위스 관광청도 취리히 지역 요리로 분류합니다.",
+                  "en": "Zurich Tourism describes thinly sliced veal in a creamy sauce, typically served with rösti, as a traditional Zurich dish. Switzerland Tourism also identifies it as a Zurich specialty.",
+                  "ja": "チューリヒ観光局によると、薄切り仔牛肉をクリームソースで調理し、通常レシュティを添えるチューリヒの伝統料理です。スイス観光局もチューリヒの名物として紹介しています。",
+                  "zh": "苏黎世旅游局将其描述为苏黎世传统菜肴：薄切小牛肉配奶油酱，通常佐以瑞士土豆饼（Rösti）。瑞士旅游局也将其列为苏黎世特色菜。"
+                },
+                "source_urls": [
+                  "https://www.zuerich.com/en/zurcher-geschnetzeltes",
+                  "https://www.myswitzerland.com/en/planning/about-switzerland/custom-and-tradition/typical-food/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "비르허 뮈슬리",
+                  "en": "Bircher muesli",
+                  "ja": "ビルヒャー・ミューズリー",
+                  "zh": "比尔歇尔什锦麦片"
+                },
+                "note": {
+                  "ko": "취리히 관광청은 이를 취리히의 대표 음식으로 꼽습니다. 스위스 관광청에 따르면 취리히 의사 막시밀리안 오스카 비르허-베너가 1900년경 건강식으로 개발했으며, 고전적인 조합은 불린 귀리, 간 사과, 레몬즙, 견과류입니다.",
+                  "en": "Zurich Tourism lists it among the city’s culinary classics. Switzerland Tourism says Zurich doctor Maximilian Oskar Bircher-Benner developed it around 1900 as a health food; the classic mix uses soaked oats, grated apple, lemon juice, and nuts.",
+                  "ja": "チューリヒ観光局は同市の食の定番に挙げています。スイス観光局によると、チューリヒの医師マクシミリアン・オスカー・ビルヒャー＝ベンナーが1900年頃に健康食として考案し、伝統的な材料は水で戻したオーツ麦、すりおろしリンゴ、レモン汁、ナッツです。",
+                  "zh": "苏黎世旅游局将其列为当地经典美食。瑞士旅游局称，苏黎世医生马克西米利安·奥斯卡·比尔歇尔-本纳约于1900年将其开发为健康食品；经典配料包括泡软的燕麦、擦碎的苹果、柠檬汁和坚果。"
+                },
+                "source_urls": [
+                  "https://www.zuerich.com/en/eat-drink/typical-and-traditional",
+                  "https://www.myswitzerland.com/en/planning/about-switzerland/custom-and-tradition/typical-food/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "룩셈부르겔리",
+                  "en": "Luxemburgerli",
+                  "ja": "ルクセンブルゲルリ",
+                  "zh": "Luxemburgerli（卢森堡小马卡龙）"
+                },
+                "note": {
+                  "ko": "취리히 관광청은 Luxemburgerli를 취리히의 요리 명물로 소개합니다. Confiserie Sprüngli는 자사 제품을 가볍고 공기감 있는 마카롱으로 설명합니다. 기원이나 취리히에서만 판매된다는 뜻은 아닙니다.",
+                  "en": "Zurich Tourism lists Luxemburgerli among the city’s culinary classics. Confiserie Sprüngli describes its confection as a light, airy macaron. This does not establish an exclusive origin or availability only in Zurich.",
+                  "ja": "チューリヒ観光局はLuxemburgerliを同市の食の定番として紹介しています。Confiserie Sprüngliは軽く空気を含んだマカロンと説明しています。これらの記述は、起源がチューリヒに限定されることや、同市だけで入手できることを示すものではありません。",
+                  "zh": "苏黎世旅游局将 Luxemburgerli 列为当地经典美食。Confiserie Sprüngli 将其描述为轻盈蓬松的马卡龙。这些资料并不能证明它只起源于苏黎世或只在当地供应。"
+                },
+                "source_urls": [
+                  "https://www.zuerich.com/en/eat-drink/typical-and-traditional",
+                  "https://spruengli.ch/en/luxemburgerli"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "취리히 꿀 과자 티르겔",
+                  "en": "Zurich honey Tirggel",
+                  "ja": "チューリヒの蜂蜜菓子「ティルゲル」",
+                  "zh": "苏黎世蜂蜜饼 Tirggel"
+                },
+                "note": {
+                  "ko": "취리히 관광청은 티르겔을 꿀, 생강, 아니스, 고수, 장미수, 밀가루로 만드는 얇고 단단한 과자로 설명하며, 15세기 문헌 기록과 취리히 제빵사의 과자 제조 독점이 1840년까지 이어졌다고 전합니다.",
+                  "en": "Zurich Tourism describes Tirggel as a thin, hard biscuit made with honey, ginger, aniseed, coriander, rosewater, and flour. It reports a written mention in the 15th century and that Zurich’s city bakers held the exclusive right to make it until 1840.",
+                  "ja": "チューリヒ観光局は、蜂蜜、ショウガ、アニス、コリアンダー、ローズウォーター、小麦粉で作る薄くて硬い菓子と説明しています。15世紀の文献記録があり、チューリヒ市内のパン職人だけが製造を許されたのは1840年までだったとしています。",
+                  "zh": "苏黎世旅游局将 Tirggel 描述为以蜂蜜、生姜、茴香、芫荽、玫瑰水和面粉制成的薄而硬的饼干。该局称其见于15世纪文字记载，且直到1840年，只有苏黎世市内的面包师获准制作。"
+                },
+                "source_urls": [
+                  "https://www.zuerich.com/en/zurcher-tirggel"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Zunfthaus zur Waag",
+                "area": "Münsterhof, Old Town (Altstadt), Zürich",
+                "type": {
+                  "ko": "길드하우스 레스토랑",
+                  "en": "Guild-house restaurant",
+                  "ja": "ギルドハウスのレストラン",
+                  "zh": "行会会馆餐厅"
+                },
+                "focus": {
+                  "ko": "취리히 전통 요리와 계절 요리; 취리히식 송아지고기 요리와 버터 뢰스티",
+                  "en": "Zurich classics and seasonal cuisine; Zürcher Geschnetzeltes with butter rösti",
+                  "ja": "チューリヒの伝統料理と季節料理。チューリヒ風仔牛肉料理とバター風味のレシュティ",
+                  "zh": "苏黎世经典菜肴与时令料理；苏黎世风味小牛肉配黄油瑞士土豆饼"
+                },
+                "why_candidate": {
+                  "ko": "자체 레스토랑 페이지는 Münsterhof 소재와 취리히 요리를 제공하는 점, Züri Gschnätzlets가 대표 요리 중 하나임을 밝힙니다. 취리히 관광청도 이 식당을 해당 요리 소개에 포함합니다. 조사 후보이며 예약이나 현재 메뉴 제공을 보장하지 않습니다.",
+                  "en": "Its own restaurant page identifies the Münsterhof venue, its Zurich cuisine, and Züri Gschnätzlets as one of its renowned dishes; Zurich Tourism also includes it in its coverage of the dish. This is a research candidate, not a booking or a guarantee of current menu availability.",
+                  "ja": "公式レストランページは、Münsterhofの店舗、チューリヒ料理、代表料理の一つとしてのZüri Gschnätzletsを紹介しています。チューリヒ観光局も同料理の案内でこの店を挙げています。調査上の候補であり、予約や現在の提供を保証するものではありません。",
+                  "zh": "餐厅官网确认其位于Münsterhof、提供苏黎世菜，并将 Züri Gschnätzlets 列为代表菜之一；苏黎世旅游局介绍该菜时也列出此餐厅。这只是研究候选，并非预订，也不保证目前仍供应。"
+                },
+                "official_url": "https://www.zunfthaus-zur-waag.ch/en/restaurant",
+                "source_urls": [
+                  "https://www.zunfthaus-zur-waag.ch/en/restaurant",
+                  "https://www.zuerich.com/en/zurcher-geschnetzeltes"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "zuerich.com",
+                "url": "https://www.zuerich.com/en/zurcher-geschnetzeltes"
+              },
+              {
+                "title": "myswitzerland.com",
+                "url": "https://www.myswitzerland.com/en/planning/about-switzerland/custom-and-tradition/typical-food/"
+              },
+              {
+                "title": "zuerich.com",
+                "url": "https://www.zuerich.com/en/eat-drink/typical-and-traditional"
+              },
+              {
+                "title": "spruengli.ch",
+                "url": "https://spruengli.ch/en/luxemburgerli"
+              },
+              {
+                "title": "zuerich.com",
+                "url": "https://www.zuerich.com/en/zurcher-tirggel"
+              },
+              {
+                "title": "zunfthaus-zur-waag.ch",
+                "url": "https://www.zunfthaus-zur-waag.ch/en/restaurant"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Zurich association denotes local recognition, not exclusive origin; current restaurant availability is not implied."
+            ]
           }
         ]
       }
@@ -5755,6 +13027,149 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://goturkiye.com/tr/istanbul/eminonu"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id turkiye; featured city İstanbul. Dish sources are the official Türkiye tourism authority. Venue is a candidate, not a reservation.",
+        "cities": [
+          {
+            "city": {
+              "ko": "이스탄불",
+              "en": "İstanbul",
+              "ja": "イスタンブール",
+              "zh": "伊斯坦布尔"
+            },
+            "intro": {
+              "ko": "이스탄불은 생선 샌드위치, 참깨빵, 구운 감자 등 다양한 길거리 음식으로 알려져 있습니다. 아래 음식들은 현지에서 널리 접하거나 특정 동네와 연관된 음식이며, 이스탄불만의 기원이라고 단정하지 않습니다.",
+              "en": "İstanbul is known for varied street foods, including fish sandwiches, sesame bread, and baked potatoes. These items are found in the city or associated with particular neighbourhoods; exclusive origins are not claimed.",
+              "ja": "イスタンブールは魚サンド、ゴマ付きパン、ベイクドポテトなど多彩なストリートフードで知られます。以下は市内で親しまれるか特定の地区と結び付けられる料理で、同市だけが発祥地だとは断定しません。",
+              "zh": "伊斯坦布尔有多种街头美食，包括鱼肉三明治、芝麻面包和烤土豆。以下食物在当地常见或与特定街区相关；不声称它们只起源于伊斯坦布尔。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "발륵 에크멕(생선 샌드위치)",
+                  "en": "Balık ekmek (fish sandwich)",
+                  "ja": "バルック・エキメッキ（魚サンド）",
+                  "zh": "Balık ekmek（烤鱼三明治）"
+                },
+                "note": {
+                  "ko": "구운 생선을 빵에 넣고 채소와 양파를 곁들입니다. 관광 당국은 카라쾨이와 에미뇌뉘 등 이스탄불 해안가와 연결해 소개합니다.",
+                  "en": "Grilled fish in bread, commonly served with greens and onion. The tourism authority associates it with İstanbul waterfront areas such as Karaköy and Eminönü.",
+                  "ja": "焼いた魚をパンにはさみ、青菜や玉ねぎを添えます。観光当局はカラキョイやエミノニュなどイスタンブールの海辺と結び付けています。",
+                  "zh": "将烤鱼夹入面包，常配蔬菜和洋葱。旅游部门将其与伊斯坦布尔海滨相联系，包括卡拉柯伊和埃米诺努。"
+                },
+                "source_urls": [
+                  "https://goturkiye.com/branding/the-10-most-popular-street-foods-of-istanbul",
+                  "https://goturkiye.com/branding/press-releases/iconic-street-food-from-istanbul"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "시미트(참깨 링빵)",
+                  "en": "Simit (sesame ring bread)",
+                  "ja": "シミット（ゴマ付きリングパン）",
+                  "zh": "Simit（土耳其芝麻圈面包）"
+                },
+                "note": {
+                  "ko": "당밀을 입히고 참깨를 묻혀 구운 고리 모양 빵으로, 이스탄불의 노점과 빵집에서 흔히 볼 수 있습니다. 튀르키예 여러 지역에서 먹는 음식입니다.",
+                  "en": "A ring-shaped bread coated with molasses and sesame, widely sold from İstanbul carts and bakeries. It is eaten across Türkiye, not only in this city.",
+                  "ja": "輪形のパンに糖蜜を塗り、ゴマをまぶして焼きます。イスタンブールの屋台やパン店で広く見られますが、同市だけの食べ物ではありません。",
+                  "zh": "圈形面包裹上糖蜜并撒芝麻烘烤，在伊斯坦布尔街头摊车和面包店很常见。土耳其各地都有人食用。"
+                },
+                "source_urls": [
+                  "https://goturkiye.com/branding/the-10-most-popular-street-foods-of-istanbul",
+                  "https://goturkiye.com/branding/press-releases/iconic-street-food-from-istanbul"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "코코레치(내장 구이 샌드위치)",
+                  "en": "Kokoreç (grilled offal sandwich)",
+                  "ja": "ココレチ（内臓焼きサンド）",
+                  "zh": "Kokoreç（烤内脏三明治）"
+                },
+                "note": {
+                  "ko": "양이나 염소의 손질한 내장을 구워 잘게 썰고 향신료로 간해 빵에 넣어 먹습니다. 이스탄불 길거리 음식으로 소개됩니다.",
+                  "en": "Cleaned sheep or goat intestines are grilled, chopped, seasoned, and commonly served in bread. It is described as İstanbul street food.",
+                  "ja": "下処理した羊または山羊の腸を焼き、刻んでスパイスで味付けし、パンにはさんで食べます。イスタンブールのストリートフードとして紹介されています。",
+                  "zh": "将处理过的羊或山羊肠烤制、切碎并以香料调味，通常夹在面包中食用。它被列为伊斯坦布尔街头食品。"
+                },
+                "source_urls": [
+                  "https://goturkiye.com/branding/the-10-most-popular-street-foods-of-istanbul",
+                  "https://goturkiye.com/branding/press-releases/iconic-street-food-from-istanbul"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "쿰피르(토핑을 얹은 구운 감자)",
+                  "en": "Kumpir (loaded baked potato)",
+                  "ja": "クンピル（具だくさんのベイクドポテト）",
+                  "zh": "Kumpir（配料烤土豆）"
+                },
+                "note": {
+                  "ko": "큰 감자를 구워 속을 으깨 버터와 치즈를 섞고 여러 토핑을 더합니다. 이스탄불의 오르타쾨이는 특히 쿰피르와 연관된 동네로 소개됩니다.",
+                  "en": "A large baked potato mashed with butter and cheese, then topped with assorted ingredients. İstanbul’s Ortaköy neighbourhood is particularly associated with it.",
+                  "ja": "大きなジャガイモを焼き、中身をつぶしてバターやチーズを混ぜ、具をのせます。イスタンブールのオルタキョイ地区は特にこの料理と結び付けられています。",
+                  "zh": "将大土豆烤熟后压碎内瓤，与黄油和奶酪拌合，再添加各种配料。伊斯坦布尔奥塔科伊街区尤其与它相关。"
+                },
+                "source_urls": [
+                  "https://goturkiye.com/branding/the-10-most-popular-street-foods-of-istanbul"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Tarihi Eminönü Derya Balıkçısı (Derya Balık Ekmek)",
+                "area": "Eminönü waterfront, İstanbul",
+                "type": {
+                  "ko": "생선 샌드위치 식당",
+                  "en": "Fish-sandwich restaurant",
+                  "ja": "魚サンドイッチ店",
+                  "zh": "鱼肉三明治餐馆"
+                },
+                "focus": {
+                  "ko": "공식 메뉴에 구운 고등어 발륵 에크멕이 기재되어 있으며 채소와 양파를 곁들입니다.",
+                  "en": "Its official menu lists grilled-mackerel balık ekmek served with greens and onion.",
+                  "ja": "公式メニューには、青菜と玉ねぎを添える焼きサバのバルック・エキメッキが記載されています。",
+                  "zh": "官网菜单列有烤鲭鱼 balık ekmek，搭配蔬菜和洋葱。"
+                },
+                "why_candidate": {
+                  "ko": "업체 웹사이트는 에미뇌뉘의 골든 혼 해안가에 있다고 설명하며 자체 메뉴가 해당 음식을 확인합니다. 후보 정보일 뿐 예약이나 현재 제공 여부를 뜻하지 않습니다.",
+                  "en": "Its own site describes its Golden Horn waterfront location in Eminönü, and its menu confirms the dish. This is a candidate listing, not a reservation or claim of current availability.",
+                  "ja": "公式サイトでエミノニュの金角湾沿いの店舗と説明され、公式メニューで料理を確認できます。候補の紹介であり、予約や現在の提供状況を示すものではありません。",
+                  "zh": "官网介绍其位于埃米诺努金角湾岸边，菜单也确认有相关菜品。这里只列为候选，不代表预订或确认目前供应情况。"
+                },
+                "official_url": "https://www.deryabalikekmek.com/",
+                "source_urls": [
+                  "https://www.deryabalikekmek.com/",
+                  "https://www.deryabalikekmek.com/menu/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "goturkiye.com",
+                "url": "https://goturkiye.com/branding/the-10-most-popular-street-foods-of-istanbul"
+              },
+              {
+                "title": "goturkiye.com",
+                "url": "https://goturkiye.com/branding/press-releases/iconic-street-food-from-istanbul"
+              },
+              {
+                "title": "deryabalikekmek.com",
+                "url": "https://www.deryabalikekmek.com/"
+              },
+              {
+                "title": "deryabalikekmek.com",
+                "url": "https://www.deryabalikekmek.com/menu/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The scope’s Eminönü waterfront boats and stalls are a vendor type/location, not an individually verified restaurant. Derya Balıkçısı is listed separately because its own site and menu confirm the venue and dish.",
+              "Official tourism sources support the food descriptions and İstanbul/neighbourhood associations, not exclusive origins. No claims are made about rankings, guaranteed quality, safety, hours, prices, wait times, reservations, accessibility, or language service."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -5884,6 +13299,165 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
             "url": "https://visitkyiv.com/food-and-drinks/puzata-khata/"
           }
         ]
+      },
+      "food_guide": {
+        "scope_note": "Only country_id ukraine and the featured city Kyiv.",
+        "cities": [
+          {
+            "city": {
+              "ko": "키이우",
+              "en": "Kyiv",
+              "ja": "キーウ",
+              "zh": "基辅"
+            },
+            "intro": {
+              "ko": "키이우의 음식은 우크라이나 전역의 전통과 수도의 명물로 이루어집니다.",
+              "en": "Kyiv’s food includes Ukrainian traditions and specialties associated with the capital.",
+              "ja": "キーウには、ウクライナ各地の伝統料理と首都ゆかりの名物があります。",
+              "zh": "基辅的饮食包括乌克兰各地的传统菜肴和与首都相关的特色美食。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "보르시",
+                  "en": "Borshch",
+                  "ja": "ボルシチ",
+                  "zh": "乌克兰红菜汤"
+                },
+                "note": {
+                  "ko": "비트 등을 넣은 우크라이나 전통 수프이며 조리법은 지역과 가정에 따라 다릅니다.",
+                  "en": "A traditional Ukrainian soup with beetroot and other ingredients; recipes vary by region and family.",
+                  "ja": "ビーツなどを使うウクライナの伝統的なスープで、作り方は地域や家庭によって異なります。",
+                  "zh": "乌克兰传统汤品，以甜菜等为食材；做法因地区和家庭而异。"
+                },
+                "source_urls": [
+                  "https://ich.unesco.org/en/USL/culture-of-ukrainian-borscht-cooking-01852"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "키이우식 치킨 커틀릿",
+                  "en": "Chicken Kyiv",
+                  "ja": "キーウ風チキンカツレツ",
+                  "zh": "基辅鸡肉卷"
+                },
+                "note": {
+                  "ko": "통닭가슴살에 허브 버터를 넣고 빵가루를 입혀 익힙니다. 기원에 관한 설은 엇갈립니다.",
+                  "en": "A whole chicken fillet wrapped around herb butter, breaded, and cooked. Its origin is disputed.",
+                  "ja": "鶏フィレでハーブバターを包み、パン粉を付けて調理します。起源には諸説あります。",
+                  "zh": "整块鸡胸肉包入香草黄油，裹面包屑后烹制。其起源说法不一。"
+                },
+                "source_urls": [
+                  "https://authenticukraine.com.ua/en/food/kotleta-po-kiivski"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "바레니키",
+                  "en": "Varenyky",
+                  "ja": "ヴァレーニキ",
+                  "zh": "乌克兰馅饺子"
+                },
+                "note": {
+                  "ko": "감자·양배추 등의 짭짤한 소나 체리 같은 단 소를 넣어 삶거나 찝니다. 지역과 가정에 따라 다양합니다.",
+                  "en": "Boiled or steamed dough dumplings with savory fillings such as potato or cabbage, or sweet fillings such as cherries; variations differ by region and family.",
+                  "ja": "じゃがいもやキャベツなどの食事系、サクランボなどの甘い具を包んでゆでるか蒸す料理です。地域や家庭で異なります。",
+                  "zh": "以面皮包土豆、卷心菜等咸馅或樱桃等甜馅，煮或蒸制；各地和家庭做法不同。"
+                },
+                "source_urls": [
+                  "https://visitkyiv.com/food-and-drinks/ukrainian-varenyky/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "키이우 케이크",
+                  "en": "Kyiv Cake",
+                  "ja": "キーウケーキ",
+                  "zh": "基辅蛋糕"
+                },
+                "note": {
+                  "ko": "키이우와 연관된 머랭·견과류 층 디저트입니다. 로셴은 1956년 키이우 제과 공장에서 만들어졌다고 설명합니다.",
+                  "en": "A meringue-and-nut-layer dessert associated with Kyiv. Roshen says it was created in 1956 at the Kyiv Confectionery Factory.",
+                  "ja": "キーウにゆかりのあるメレンゲとナッツの層の菓子です。ロシェン社によると、1956年にキーウ製菓工場で作られました。",
+                  "zh": "与基辅相关的蛋白霜坚果层甜点。Roshen称它于1956年诞生于基辅糖果厂。"
+                },
+                "source_urls": [
+                  "https://visitkyiv.com/food-and-drinks/guide-to-ukrainian-cuisine/",
+                  "https://www.roshen.com/en/en/about-roshen/about-products/cakes"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Puzata Khata (Пузата Хата)",
+                "area": "Kyiv; branch unspecified",
+                "type": {
+                  "ko": "우크라이나 음식 셀프서비스 레스토랑 체인",
+                  "en": "Self-service Ukrainian restaurant chain",
+                  "ja": "ウクライナ料理のセルフサービス型チェーン",
+                  "zh": "乌克兰菜自助餐厅连锁"
+                },
+                "focus": {
+                  "ko": "우크라이나 가정식과 대표 음식",
+                  "en": "Ukrainian home-style and classic dishes",
+                  "ja": "ウクライナの家庭料理と定番料理",
+                  "zh": "乌克兰家常菜和经典菜肴"
+                },
+                "why_candidate": {
+                  "ko": "키이우 관광 안내는 현지 우크라이나 음식점 체인으로 소개하며, 공식 온라인 메뉴도 보르시·키이우 커틀릿·바레니키를 열거합니다. 방문일별 제공은 확인되지 않았습니다.",
+                  "en": "A Kyiv visitor guide identifies it as a local Ukrainian restaurant chain, and its official online menu lists borshch, Chicken Kyiv, and varenyky. Date-specific availability is unverified.",
+                  "ja": "キーウの観光案内は市内のウクライナ料理チェーンとして紹介し、公式オンラインメニューにはボルシチ、キーウ風チキンカツレツ、ヴァレーニキが掲載されています。訪問日の提供状況は未確認です。",
+                  "zh": "基辅旅游指南将其介绍为当地乌克兰菜连锁餐厅，官网线上菜单列有红菜汤、基辅鸡肉卷和馅饺子。到访日期是否供应尚未核实。"
+                },
+                "official_url": "https://puzatahata.ua/",
+                "source_urls": [
+                  "https://puzatahata.ua/",
+                  "https://visitkyiv.com/food-and-drinks/puzata-khata/",
+                  "https://puzatahata1-delivery.choiceqr.com/online-menu/65cdf43c0a199acb0fa8cfd8/65cdf43d0a199acb0fa8cfdd/indichka-rublena-kapreze"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "ich.unesco.org",
+                "url": "https://ich.unesco.org/en/USL/culture-of-ukrainian-borscht-cooking-01852"
+              },
+              {
+                "title": "authenticukraine.com.ua",
+                "url": "https://authenticukraine.com.ua/en/food/kotleta-po-kiivski"
+              },
+              {
+                "title": "visitkyiv.com",
+                "url": "https://visitkyiv.com/food-and-drinks/ukrainian-varenyky/"
+              },
+              {
+                "title": "visitkyiv.com",
+                "url": "https://visitkyiv.com/food-and-drinks/guide-to-ukrainian-cuisine/"
+              },
+              {
+                "title": "roshen.com",
+                "url": "https://www.roshen.com/en/en/about-roshen/about-products/cakes"
+              },
+              {
+                "title": "puzatahata.ua",
+                "url": "https://puzatahata.ua/"
+              },
+              {
+                "title": "visitkyiv.com",
+                "url": "https://visitkyiv.com/food-and-drinks/puzata-khata/"
+              },
+              {
+                "title": "puzatahata1-delivery.choiceqr.com",
+                "url": "https://puzatahata1-delivery.choiceqr.com/online-menu/65cdf43c0a199acb0fa8cfd8/65cdf43d0a199acb0fa8cfdd/indichka-rublena-kapreze"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "Borshch and varenyky are Ukrainian-wide dishes, not exclusive to Kyiv. Chicken Kyiv is associated with Kyiv, but its origins are disputed.",
+              "The Korean request text was read; its Italy material does not apply to this Ukraine-only item.",
+              "No booking is claimed. Hours, prices, same-day availability, waits, reservations, accessibility, and language service were not verified."
+            ]
+          }
+        ]
       }
     },
     "night_view": {
@@ -5993,6 +13567,192 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "The Golden Hind | Visit London",
             "url": "https://www.visitlondon.com/things-to-do/place/47096910-golden-hind"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "One city only: London, United Kingdom. Dish notes use historical/local associations; venue entries are research candidates, not bookings.",
+        "cities": [
+          {
+            "city": {
+              "ko": "런던",
+              "en": "London",
+              "ja": "ロンドン",
+              "zh": "伦敦"
+            },
+            "intro": {
+              "ko": "런던의 음식 유산에는 이스트런던의 파이 앤드 매시 가게와 장어 요리, 첼시 번처럼 지역과 역사적으로 연결된 음식이 포함됩니다. 아래 항목은 신뢰할 수 있는 박물관·참고 자료로 확인한 지역 연관성에 근거하며, 런던에서만 먹거나 모든 가게에서 같은 방식으로 만든다는 뜻은 아닙니다.",
+              "en": "London’s food heritage includes dishes with documented local associations, such as East London pie-and-mash shops and eel preparations, as well as the Chelsea bun. The selections below are based on reliable museum and reference sources; they are not claims of exclusivity or uniform recipes across London.",
+              "ja": "ロンドンの食文化には、イースト・ロンドンのパイ＆マッシュ店やウナギ料理、チェルシー・バンのように、地域との歴史的な結び付きが確認できる料理があります。以下は信頼できる博物館・参考資料に基づく紹介であり、ロンドンだけの料理、または市内の店で製法が一律という意味ではありません。",
+              "zh": "伦敦的饮食传统包括与当地有文献记录联系的食物，例如东伦敦的派与土豆泥店及鳗鱼料理，还有切尔西面包卷。以下内容依据可信的博物馆和参考资料；这并不表示这些食物只在伦敦才有，或全市各店做法一致。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "派和土豆泥",
+                  "en": "Pie and mash",
+                  "ja": "パイとマッシュポテト",
+                  "zh": "派和土豆泥"
+                },
+                "note": {
+                  "ko": "런던 박물관은 19세기 중반부터 런던에서 파이 앤드 매시 가게가 영업했으며, 보통 소고기 파이와 으깬 감자, 파슬리 소스인 ‘리커’를 함께 낸다고 기록합니다. 가게마다 조리법과 전통은 다릅니다.",
+                  "en": "The Museum of London documents pie-and-mash shops serving London from the mid-19th century, commonly offering beef pie, mashed potato and parsley ‘liquor’ sauce. Recipes and traditions vary by shop.",
+                  "ja": "ロンドン博物館によると、パイ＆マッシュ店は19世紀半ばからロンドンで営業し、一般にビーフパイ、マッシュポテト、パセリソースの「リカー」を提供してきました。店ごとにレシピや伝統は異なります。",
+                  "zh": "伦敦博物馆记载，派与土豆泥店自19世纪中叶起在伦敦营业，常见搭配是牛肉派、土豆泥和欧芹酱“liquor”。各店的做法与传统并不相同。"
+                },
+                "source_urls": [
+                  "https://www.londonmuseum.org.uk/collections/london-stories/london-pie-mash-shops/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "젤리드 일스(젤리 장어)",
+                  "en": "Jellied eels",
+                  "ja": "ゼリード・イール（ウナギのゼリー寄せ）",
+                  "zh": "鱼冻鳗（凝冻鳗鱼）"
+                },
+                "note": {
+                  "ko": "런던 박물관은 젤리드 일스를 특히 이스트런던과 연관된 음식으로 설명합니다. 장어를 삶아 젤라틴이나 조리액으로 굳혀 차게 먹는 방식이며, 과거 시장과 펍 밖에서 팔리기도 했습니다.",
+                  "en": "The Museum of London describes jellied eels as particularly associated with east London. The eels are boiled, set in gelatin or their cooking liquid, and eaten cold; historically they were also sold at markets and outside pubs.",
+                  "ja": "ロンドン博物館は、ゼリード・イールを特にイースト・ロンドンと結び付いた料理として紹介しています。ウナギを煮てゼラチンまたは煮汁で固め、冷やして食べます。かつて市場やパブの外でも売られていました。",
+                  "zh": "伦敦博物馆指出，鱼冻鳗尤其与东伦敦有关。做法是将鳗鱼煮熟后用明胶或原汤凝冻，冷食；过去也曾在市场和酒馆外售卖。"
+                },
+                "source_urls": [
+                  "https://www.londonmuseum.org.uk/collections/london-stories/jellied-eels/"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "일 파이(장어 파이)",
+                  "en": "Eel pie",
+                  "ja": "イールパイ（ウナギのパイ）",
+                  "zh": "鳗鱼派"
+                },
+                "note": {
+                  "ko": "런던 박물관은 16세기에 런던의 노점 상인들이 장어 파이를 팔았다고 기록하며, BBC는 18세기 템스강의 트위크넘 아이트에 장어 파이로 알려진 여관이 있었다고 전합니다. 이는 런던의 역사적 연관성을 보여주지만 현재 흔히 구할 수 있다는 뜻은 아닙니다.",
+                  "en": "The Museum of London records eel pies sold by London street traders in the 16th century; the BBC describes an 18th-century inn on Twickenham Ait known for eel pies. These sources document a historical London connection, not present-day availability.",
+                  "ja": "ロンドン博物館は、16世紀にロンドンの露店商がウナギのパイを売っていたと記録しています。BBCは、18世紀にテムズ川のトゥイッケナム・エイトにイールパイで知られた宿があったと紹介しています。歴史的なロンドンとの結び付きを示す資料であり、現在の一般的な提供状況を示すものではありません。",
+                  "zh": "伦敦博物馆记载，16世纪伦敦街头摊贩曾售卖鳗鱼派；BBC则介绍了18世纪泰晤士河特威克纳姆艾特岛上一家以鳗鱼派闻名的旅店。这些资料证明其历史上的伦敦联系，并不代表如今普遍供应。"
+                },
+                "source_urls": [
+                  "https://www.londonmuseum.org.uk/collections/london-stories/jellied-eels/",
+                  "https://www.bbc.com/travel/article/20230820-the-untold-story-of-londons-original-fast-food"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "첼시 번",
+                  "en": "Chelsea bun",
+                  "ja": "チェルシー・バン",
+                  "zh": "切尔西面包卷"
+                },
+                "note": {
+                  "ko": "브리태니커는 첼시 번이 18세기 런던 서부 첼시 지역의 첼시 번 하우스에서 만들어졌다고 설명합니다. 이는 역사적 지역 연관성에 관한 설명입니다.",
+                  "en": "Britannica describes the Chelsea bun as created in the 18th century at the Chelsea Bun House in the Chelsea area of west London. This is a historical local association.",
+                  "ja": "ブリタニカは、チェルシー・バンが18世紀にロンドン西部チェルシー地区のチェルシー・バン・ハウスで作られたと説明しています。これは歴史的な地域との結び付きを示すものです。",
+                  "zh": "《大英百科全书》称，切尔西面包卷于18世纪在伦敦西部切尔西区的切尔西面包屋制作。这是其历史上的当地关联。"
+                },
+                "source_urls": [
+                  "https://www.britannica.com/topic/Chelsea-bun"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "Goddards at Greenwich",
+                "area": "Greenwich, London",
+                "type": {
+                  "ko": "파이 앤드 매시 전문 식당",
+                  "en": "Pie-and-mash restaurant",
+                  "ja": "パイ＆マッシュ店",
+                  "zh": "派与土豆泥餐馆"
+                },
+                "focus": {
+                  "ko": "다진 소고기 파이와 매시, 리커 또는 그레이비; 메뉴에 뜨거운 장어와 젤리드 일스도 기재되어 있습니다.",
+                  "en": "Minced-beef pie and mash with liquor or gravy; the menu also lists hot and jellied eels.",
+                  "ja": "牛ひき肉のパイとマッシュポテト、リカーまたはグレービー。メニューには温かいウナギとゼリード・イールも記載されています。",
+                  "zh": "碎牛肉派与土豆泥，可配欧芹酱或肉汁；菜单还列有热鳗鱼和鱼冻鳗。"
+                },
+                "why_candidate": {
+                  "ko": "공식 메뉴에서 파이 앤드 매시와 장어 메뉴를 확인했고, 공식 위치 페이지가 그리니치 주소를 명시합니다. 조사 후보일 뿐 예약이나 현재 운영 상황을 보장하지 않습니다.",
+                  "en": "Its official menu lists pie and mash and eel items, and its official location page gives a Greenwich address. This is a research candidate, not a booking or guarantee of current operating status.",
+                  "ja": "公式メニューでパイ＆マッシュとウナギ料理を確認でき、公式所在地ページにグリニッジの住所が記載されています。あくまで調査候補であり、予約や現在の営業状況を保証するものではありません。",
+                  "zh": "其官网菜单列有派与土豆泥及鳗鱼菜品，官网地址页提供格林威治地址。此处仅作研究候选，并非预订或对当前营业情况的保证。"
+                },
+                "official_url": "https://goddardsatgreenwich.co.uk/",
+                "source_urls": [
+                  "https://goddardsatgreenwich.co.uk/",
+                  "https://goddardsatgreenwich.co.uk/our-menu/",
+                  "https://goddardsatgreenwich.co.uk/find-us/"
+                ]
+              },
+              {
+                "name": "M.Manze",
+                "area": "Tower Bridge Road, London",
+                "type": {
+                  "ko": "파이 앤드 매시 가게",
+                  "en": "Pie-and-mash shop",
+                  "ja": "パイ＆マッシュ店",
+                  "zh": "派与土豆泥店"
+                },
+                "focus": {
+                  "ko": "파이, 매시, 파슬리 소스인 리커, 조림 장어와 젤리드 일스.",
+                  "en": "Pies, mash, parsley ‘liquor’ sauce, and stewed and jellied eels.",
+                  "ja": "パイ、マッシュポテト、パセリソースの「リカー」、煮込みウナギとゼリード・イール。",
+                  "zh": "派、土豆泥、欧芹酱“liquor”，以及炖鳗鱼和鱼冻鳗。"
+                },
+                "why_candidate": {
+                  "ko": "가게 공식 사이트는 런던의 타워 브리지 지점과 파이·매시·리커·장어 메뉴를 설명합니다. 런던 박물관도 타워 브리지 로드의 M. Manze를 언급합니다. 연구 후보이지 예약이 아닙니다.",
+                  "en": "The venue’s official site describes its Tower Bridge shop in London and lists pies, mash, liquor and eel dishes; the Museum of London also mentions M. Manze on Tower Bridge Road. This is a research candidate, not a booking.",
+                  "ja": "公式サイトはロンドンのタワー・ブリッジ店を紹介し、パイ、マッシュポテト、リカー、ウナギ料理を掲載しています。ロンドン博物館もタワー・ブリッジ・ロードのM. Manzeに言及しています。調査候補であり、予約ではありません。",
+                  "zh": "该店官网介绍其伦敦塔桥店，并列出派、土豆泥、欧芹酱和鳗鱼菜品；伦敦博物馆也提到塔桥路的 M. Manze。此为研究候选，不是预订。"
+                },
+                "official_url": "https://www.manze.co.uk/",
+                "source_urls": [
+                  "https://www.manze.co.uk/",
+                  "https://www.londonmuseum.org.uk/collections/london-stories/london-pie-mash-shops/"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "londonmuseum.org.uk",
+                "url": "https://www.londonmuseum.org.uk/collections/london-stories/london-pie-mash-shops/"
+              },
+              {
+                "title": "londonmuseum.org.uk",
+                "url": "https://www.londonmuseum.org.uk/collections/london-stories/jellied-eels/"
+              },
+              {
+                "title": "bbc.com",
+                "url": "https://www.bbc.com/travel/article/20230820-the-untold-story-of-londons-original-fast-food"
+              },
+              {
+                "title": "britannica.com",
+                "url": "https://www.britannica.com/topic/Chelsea-bun"
+              },
+              {
+                "title": "goddardsatgreenwich.co.uk",
+                "url": "https://goddardsatgreenwich.co.uk/"
+              },
+              {
+                "title": "goddardsatgreenwich.co.uk",
+                "url": "https://goddardsatgreenwich.co.uk/our-menu/"
+              },
+              {
+                "title": "goddardsatgreenwich.co.uk",
+                "url": "https://goddardsatgreenwich.co.uk/find-us/"
+              },
+              {
+                "title": "manze.co.uk",
+                "url": "https://www.manze.co.uk/"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "The sources document historical and local associations, not exclusive London origins; pie-and-mash recipes and shop traditions vary.",
+              "Restaurant candidates are supported by their official websites, but menu pages do not establish availability at a particular visit, opening hours, prices, wait times, safety, accessibility, or booking status.",
+              "London Museum notes that European eels are critically endangered; the historical association with eel dishes should not be read as an endorsement of consumption or a claim about the source of any venue’s eels."
+            ]
           }
         ]
       }
@@ -6130,6 +13890,181 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Testaccio Restaurant - Rome - Cucina Romana — Velavevodetto",
             "url": "https://www.ristorantevelavevodetto.it/en/restaurants/roma-testaccio/"
+          }
+        ]
+      },
+      "food_guide": {
+        "scope_note": "ko: 바티칸 시국 자체의 요리 전통에 관한 근거는 제한적입니다. 음식 관련 자료는 로마시 관광 당국의 로마 요리 안내에 근거하며, 식당 후보는 바티칸 박물관의 공식 시설 안내에 근거합니다. | en: Evidence for a distinct Vatican City cuisine is limited. Dish references rely on Rome’s municipal tourism material on Roman cuisine; venue candidates rely on the Vatican Museums’ official facility pages. | ja: バチカン市国独自の料理を示す根拠は限られています。料理はローマ市観光当局のローマ料理資料に基づき、施設候補はバチカン美術館の公式案内に基づきます。 | zh: 关于梵蒂冈城国独立饮食传统的证据有限。菜肴依据罗马市旅游资料中有关罗马料理的介绍；餐饮候选依据梵蒂冈博物馆官方设施页面。",
+        "cities": [
+          {
+            "city": {
+              "ko": "바티칸 시국",
+              "en": "Vatican City",
+              "ja": "バチカン市国",
+              "zh": "梵蒂冈城国"
+            },
+            "intro": {
+              "ko": "바티칸 시국을 위한 별도의 음식 전통을 확인할 수 있는 근거는 제한적입니다. 아래 음식은 로마 시 관광 당국이 로마 전통 요리로 소개한 것으로, 바티칸 고유 음식이라고 주장하지 않습니다.",
+              "en": "Evidence for a distinct Vatican City food tradition is limited. The dishes below are identified by Rome’s municipal tourism authority as part of Roman culinary tradition; they are not presented as uniquely Vatican dishes.",
+              "ja": "バチカン市国独自の食文化を裏付ける資料は限られています。以下はローマ市観光当局がローマの伝統料理として紹介する料理であり、バチカン独自の料理とはしていません。",
+              "zh": "关于梵蒂冈城国独立饮食传统的可靠证据有限。以下菜肴由罗马市旅游主管机构作为罗马传统料理介绍；这里不将其称为梵蒂冈独有菜肴。"
+            },
+            "dishes": [
+              {
+                "name": {
+                  "ko": "카르보나라",
+                  "en": "Carbonara",
+                  "ja": "カルボナーラ",
+                  "zh": "卡邦尼意面"
+                },
+                "note": {
+                  "ko": "로마시 관광 당국은 카르보나라를 로마 전통 요리이자 로마 음식 문화의 대표적인 요리로 소개합니다. 기원은 불확실하다고 명시하며, 재료로 구안찰레, 페코리노 로마노, 달걀, 후추 등을 제시합니다.",
+                  "en": "Rome’s municipal tourism authority describes carbonara as a traditional Roman dish and representative of Roman gastronomy. It explicitly notes that its origins are uncertain and lists guanciale, Pecorino Romano, eggs and pepper among the ingredients.",
+                  "ja": "ローマ市観光当局はカルボナーラをローマの伝統料理、ローマ食文化を代表する料理として紹介しています。一方で起源は不確かとし、グアンチャーレ、ペコリーノ・ロマーノ、卵、黒こしょうなどを材料に挙げています。",
+                  "zh": "罗马市旅游主管机构将卡邦尼意面介绍为罗马传统菜肴及罗马饮食文化的代表菜之一；同时指出其起源尚不确定，并列出猪颊肉、罗马羊奶酪、鸡蛋和胡椒等食材。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/it/pagina/spaghetti-alla-carbonara",
+                  "https://www.turismoroma.it/it/page/roma-da-mangiare-le-ricette-della-tradizione"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "아마트리치아나",
+                  "en": "Amatriciana",
+                  "ja": "アマトリチャーナ",
+                  "zh": "阿马特里切纳意面"
+                },
+                "note": {
+                  "ko": "로마시 관광 당국의 로마 음식 전통 소개에 포함되며, 구안찰레·토마토·페코리노 로마노 등을 넣는 요리로 설명됩니다. 이 자료는 로마의 음식 전통과 연결하지만 바티칸 시국에서 유래했다고 말하지 않습니다.",
+                  "en": "Included in Rome’s municipal tourism authority’s account of Roman culinary tradition; its recipe uses ingredients including guanciale, tomato and Pecorino Romano. This documents a connection to Rome’s food tradition, not an origin in Vatican City.",
+                  "ja": "ローマ市観光当局によるローマ料理の伝統紹介に含まれ、グアンチャーレ、トマト、ペコリーノ・ロマーノなどを使う料理として説明されています。これはローマの食文化との関連を示すもので、バチカン市国内で生まれたという根拠ではありません。",
+                  "zh": "该菜被列入罗马市旅游主管机构介绍的罗马饮食传统，食谱包括猪颊肉、番茄和罗马羊奶酪等。这证明其与罗马饮食传统有关，并不表示它起源于梵蒂冈城国。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/it/pagina/una-leggenda-nel-piatto-i-bucatini-allamatriciana",
+                  "https://www.turismoroma.it/it/page/roma-da-mangiare-le-ricette-della-tradizione"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "카초 에 페페",
+                  "en": "Cacio e pepe",
+                  "ja": "カチョ・エ・ペペ",
+                  "zh": "奶酪黑胡椒意面"
+                },
+                "note": {
+                  "ko": "로마시 관광 당국은 이를 로마 전통 파스타 요리로 열거하고 페코리노와 후추를 기본 재료로 설명합니다. 해당 자료는 바티칸 시국과 별개의 로마 음식 맥락을 뒷받침합니다.",
+                  "en": "Rome’s municipal tourism authority lists it among traditional Roman pasta dishes and describes Pecorino and black pepper as its basic ingredients. This supports the Roman culinary context, separate from a specifically Vatican City association.",
+                  "ja": "ローマ市観光当局はローマの伝統的なパスタ料理の一つとして挙げ、ペコリーノと黒こしょうを基本材料として説明しています。裏付けられるのはローマの食文化との関連であり、バチカン市国独自の関連ではありません。",
+                  "zh": "罗马市旅游主管机构将其列为罗马传统面食之一，并称主要食材为羊奶酪和黑胡椒。证据支持的是罗马饮食背景，而非梵蒂冈城国独有的关联。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/it/page/roma-da-mangiare-le-ricette-della-tradizione"
+                ]
+              },
+              {
+                "name": {
+                  "ko": "그리치아",
+                  "en": "Gricia",
+                  "ja": "グリーチャ",
+                  "zh": "格里恰意面"
+                },
+                "note": {
+                  "ko": "로마시 관광 당국은 그리치아를 로마 식탁을 대표하는 파스타 중 하나로 소개하며 구안찰레·페코리노 로마노·후추를 언급합니다. 같은 자료는 기원이 불확실하고 아마트리체 등 여러 가능성이 있다고 밝혀, 특정 기원은 단정하지 않습니다.",
+                  "en": "Rome’s municipal tourism authority describes gricia as one of the pasta dishes representative of Roman tables and names guanciale, Pecorino Romano and pepper. It also says the origins are uncertain, mentioning several possibilities including Amatrice, so no single origin is asserted here.",
+                  "ja": "ローマ市観光当局はグリーチャをローマの食卓を代表するパスタ料理の一つとし、グアンチャーレ、ペコリーノ・ロマーノ、黒こしょうを挙げています。同ページは起源が不確かでアマトリーチェなど複数の可能性があるとしているため、ここでは特定の起源を断定しません。",
+                  "zh": "罗马市旅游主管机构称格里恰是罗马餐桌上具有代表性的面食之一，食材包括猪颊肉、罗马羊奶酪和胡椒。该资料也指出其起源不确定，并提及阿马特里切等不同可能，因此这里不作单一起源判断。"
+                },
+                "source_urls": [
+                  "https://www.turismoroma.it/it/pagina/il-sapore-della-tradizione-la-gricia",
+                  "https://www.turismoroma.it/it/page/roma-da-mangiare-le-ricette-della-tradizione"
+                ]
+              }
+            ],
+            "venues": [
+              {
+                "name": "The Self service (Vatican Museums)",
+                "area": "Vatican Museums, Vatican City / 바티칸 박물관, 바티칸 시국 / バチカン美術館、バチカン市国 / 梵蒂冈博物馆、梵蒂冈城国",
+                "type": {
+                  "ko": "셀프서비스 레스토랑",
+                  "en": "Self-service restaurant",
+                  "ja": "セルフサービスレストラン",
+                  "zh": "自助餐厅"
+                },
+                "focus": {
+                  "ko": "전통 이탈리아식 첫 번째 코스, 고기 및 생선 요리",
+                  "en": "Traditional Italian first courses, meat and fish dishes",
+                  "ja": "イタリアの伝統的なプリモ料理、肉料理、魚料理",
+                  "zh": "意大利传统头盘（意式第一道菜）、肉类和鱼类菜肴"
+                },
+                "why_candidate": {
+                  "ko": "바티칸 박물관 공식 방문자 서비스 페이지가 이 셀프서비스餐厅과 그提供的菜肴类别作为馆内餐饮服务加以介绍。此处仅列为可进一步核实的研究候选，不代表具体菜品当前供应。",
+                  "en": "The Vatican Museums’ official visitor-services page identifies this self-service restaurant and describes its broad food categories as an on-site dining service. It is listed only as a research candidate; no specific dish’s current availability is claimed.",
+                  "ja": "バチカン美術館の公式来館者サービスページが、このセルフサービスレストランと幅広い料理の種類を館内飲食施設として紹介しています。調査候補としてのみ挙げており、個別料理の現在の提供状況は主張していません。",
+                  "zh": "梵蒂冈博物馆官方访客服务页面将这家自助餐厅及其宽泛的菜品类别列为馆内餐饮服务。这里只将其作为研究候选，不表示任何特定菜品目前供应。"
+                },
+                "official_url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/ristorazione/il-ristorante.html",
+                "source_urls": [
+                  "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/ristorazione/il-ristorante.html"
+                ]
+              },
+              {
+                "name": "Bistrot La Pigna",
+                "area": "Courtyard of the Pinecone, Vatican Museums, Vatican City / 바티칸 박물관 솔방울 정원, 바티칸 시국 / バチカン美術館ピーニャの中庭、バチカン市国 / 梵蒂冈博物馆松果庭院、梵蒂冈城国",
+                "type": {
+                  "ko": "비스트로",
+                  "en": "Bistro",
+                  "ja": "ビストロ",
+                  "zh": "小餐馆"
+                },
+                "focus": {
+                  "ko": "이탈리아 요리 전통의 음식",
+                  "en": "Dishes from the Italian culinary tradition",
+                  "ja": "イタリア料理の伝統に基づく料理",
+                  "zh": "意大利传统料理"
+                },
+                "why_candidate": {
+                  "ko": "박물관 공식 안내는 이곳이 솔방울 정원에 있으며 이탈리아 요리 전통의 음식을 제공한다고 설명합니다. 연구 후보로만 제시하며 로마 특선 요리나 특정 메뉴의 현재 제공 여부는 주장하지 않습니다.",
+                  "en": "The museums’ official page places it in the Courtyard of the Pinecone and says visitors may try dishes from the Italian culinary tradition. It is listed only as a research candidate; no Roman specialty or current specific menu availability is asserted.",
+                  "ja": "美術館の公式ページは、ここがピーニャの中庭にあり、イタリア料理の伝統に基づく料理を試せると説明しています。調査候補としてのみ挙げており、ローマ名物や特定料理の現在の提供状況は主張していません。",
+                  "zh": "博物馆官网称该店位于松果庭院，访客可品尝意大利传统料理。这里只列作研究候选；不声称其供应罗马特色菜或目前供应任何特定菜品。"
+                },
+                "official_url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/ristorazione/caffe-la-pigna.html",
+                "source_urls": [
+                  "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/ristorazione/caffe-la-pigna.html"
+                ]
+              }
+            ],
+            "sources": [
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/it/pagina/spaghetti-alla-carbonara"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/it/page/roma-da-mangiare-le-ricette-della-tradizione"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/it/pagina/una-leggenda-nel-piatto-i-bucatini-allamatriciana"
+              },
+              {
+                "title": "turismoroma.it",
+                "url": "https://www.turismoroma.it/it/pagina/il-sapore-della-tradizione-la-gricia"
+              },
+              {
+                "title": "museivaticani.va",
+                "url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/ristorazione/il-ristorante.html"
+              },
+              {
+                "title": "museivaticani.va",
+                "url": "https://www.museivaticani.va/content/museivaticani/en/organizza-visita/servizi-per-i-visitatori/ristorazione/caffe-la-pigna.html"
+              }
+            ],
+            "unverified_or_correction_notes": [
+              "ko: 근거 자료는 로마 요리와 바티칸 시국 고유의 요리를 구분합니다. 나열된 음식은 로마 전통으로 기록된 것이며 바티칸에서 유래했거나 그곳에만 있는 음식이라고 할 수 없습니다. | en: The sources distinguish Roman cuisine from a distinct Vatican City cuisine. The listed dishes are documented as Roman tradition, not as originating in or exclusive to Vatican City. | ja: 資料はローマ料理とバチカン市国独自の料理を区別しています。記載した料理はローマの伝統料理として確認されたもので、バチカン市国発祥または同地限定とはいえません。 | zh: 资料区分了罗马饮食与梵蒂冈城国独立饮食传统。所列菜肴有资料支持其属于罗马传统，但不能说它们起源于或仅见于梵蒂冈城国。"
+            ]
           }
         ]
       }

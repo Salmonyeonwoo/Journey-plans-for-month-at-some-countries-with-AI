@@ -14,6 +14,12 @@
 	    ja: { title: '郷土料理の歴史と由来', sources: '食文化の資料', origin: '料理の背景' },
 	    zh: { title: '地方饮食历史与起源', sources: '饮食史来源', origin: '菜肴背景' }
 	  };
+	  const regionalGuideLabels = {
+	    ko: { title: '출처 확인 지역 음식·식당 후보', dishes: '지역 음식', places: '식당 후보', sources: '확인 자료', notice: '조사한 후보이며 예약하지 않았습니다. 현재 메뉴·영업 여부는 방문 전 공식 채널에서 확인하세요.' },
+	    en: { title: 'Sourced regional dishes & dining candidates', dishes: 'Regional dishes', places: 'Restaurant candidates', sources: 'Sources checked', notice: 'Researched candidates only; nothing is booked. Verify current menus and operations through official channels before visiting.' },
+	    ja: { title: '出典を確認した郷土料理・飲食店候補', dishes: '郷土料理', places: 'レストラン候補', sources: '確認資料', notice: '調査した候補で、予約はしていません。訪問前に公式窓口で現行メニューと営業状況をご確認ください。' },
+	    zh: { title: '经来源核对的地方菜与餐厅候选', dishes: '地方菜', places: '餐厅候选', sources: '核对来源', notice: '仅为资料核对后的候选，并未预订。到访前请通过官方渠道确认最新菜单和营业状态。' }
+	  };
 
 	  const cities = [
     {
@@ -98,6 +104,25 @@
     const c = ui[lang];
     return `<article class="local-food-snack-card"><h4>${esc(bite.name)}</h4><p>${esc(langText(bite.text,lang))}</p><p><strong>📍</strong> ${esc(langText(bite.where,lang))}</p><p><strong>🕒 ${esc(c.hours)}:</strong> ${esc(langText(bite.hours,lang))}</p><div class="local-food-actions"><a href="${esc(bite.map)}" target="_blank" rel="noopener noreferrer">📍 ${esc(c.map)}</a></div><details class="local-food-sources"><summary>${esc(c.sources)}</summary><ul>${sourceLinks(bite.sources,lang)}</ul></details></article>`;
   }
+  function renderResearchFood(cityGuide, lang) {
+    if (!cityGuide) return '';
+    const labels = regionalGuideLabels[lang] || regionalGuideLabels.ko;
+    const guideSources = (cityGuide.sources || []).map(source => source.url).filter(url => /^https:\/\//i.test(url || ''));
+    const dishCards = (cityGuide.dishes || []).map(dish => {
+      const links = sourceLinks(dish.source_urls || [], lang);
+      return `<article class="local-food-researched-card"><h4>${esc(langText(dish.name, lang))}</h4><p>${esc(langText(dish.note, lang))}</p>${links ? `<details class="local-food-sources"><summary>${esc(labels.sources)}</summary><ul>${links}</ul></details>` : ''}</article>`;
+    }).join('');
+    const venueCards = (cityGuide.venues || []).map(venue => {
+      const venueSources = [...new Set([venue.official_url, ...(venue.source_urls || [])].filter(url => /^https:\/\//i.test(url || '')))];
+      const details = [venue.area, langText(venue.type, lang), langText(venue.focus, lang), langText(venue.why_candidate, lang)].filter(Boolean).join(' · ');
+      const officialLink = /^https:\/\//i.test(venue.official_url || '') ? `<div class="local-food-actions"><a href="${esc(venue.official_url)}" target="_blank" rel="noopener noreferrer">${esc(ui[lang].official)} ↗</a></div>` : '';
+      const sources = sourceLinks(venueSources, lang);
+      return `<article class="local-food-researched-card"><h4>${esc(venue.name)}</h4><p>${esc(details)}</p>${officialLink}${sources ? `<details class="local-food-sources"><summary>${esc(labels.sources)}</summary><ul>${sources}</ul></details>` : ''}</article>`;
+    }).join('');
+    if (!dishCards && !venueCards) return '';
+    const introLinks = sourceLinks(guideSources, lang);
+    return `<section class="local-food-researched"><h3>${esc(labels.title)}</h3><p class="local-food-researched-intro">${esc(langText(cityGuide.intro, lang))}</p>${introLinks ? `<details class="local-food-sources"><summary>${esc(labels.sources)}</summary><ul>${introLinks}</ul></details>` : ''}<h4>${esc(labels.dishes)}</h4><div class="local-food-researched-grid">${dishCards}</div><h4>${esc(labels.places)}</h4><div class="local-food-researched-grid">${venueCards}</div><p class="local-food-researched-notice">${esc(labels.notice)}</p></section>`;
+  }
   function render(lang, cityId) {
     const l = ui[lang] ? lang : 'ko';
     const current = cities.find(city => city.id === cityId) || cities.find(city => city.id === (window.currentItalyFoodGuideCity || 'naples')) || cities[0];
@@ -108,9 +133,14 @@
     const researchCity = ((typeof ITALY_CITIES_GUIDE_DATA !== 'undefined' && ITALY_CITIES_GUIDE_DATA.cities) || (window.ITALY_CITIES_GUIDE_DATA && window.ITALY_CITIES_GUIDE_DATA.cities) || {})[current.id] || {};
     const researchFoodHistory = (window.EUROPE_DETAILED_FOOD_HISTORY || {})[current.id] || {};
     const foodHistory = current.foodHistory || researchCity.foodHistory || researchFoodHistory.foodHistory;
-    const foodHistorySources = current.foodHistorySources || researchCity.foodHistorySources || researchFoodHistory.foodHistorySources || [];
-    const foodOrigins = current.foodOrigins || researchCity.foodOrigins || researchFoodHistory.foodOrigins || [];
-    const foodHistoryHtml = foodHistory ? `<section class="local-food-history" style="margin:14px 0;padding:14px;background:#f2f8f5;border-left:3px solid #1a5249;border-radius:12px;"><h3 style="margin-top:0;color:#1a5249;">📚 ${esc(historyLabel.title)}</h3><p style="white-space:pre-line;line-height:1.7;">${esc(langText(foodHistory,l))}</p>${foodOrigins.map(origin => `<details style="margin:8px 0;padding:8px 10px;background:#fff;border-radius:8px;"><summary style="cursor:pointer;font-weight:700;">${esc(origin.name || origin.dishName || '')}</summary><p style="white-space:pre-line;line-height:1.65;">${esc(origin[l] || origin.en || '')}</p><details class="local-food-sources"><summary>${esc(historyLabel.sources)}</summary><ul>${sourceLinks(origin.sourceUrls || [],l)}</ul></details></details>`).join('')}<details class="local-food-sources"><summary>${esc(c.sources)}</summary><ul>${sourceLinks(foodHistorySources.map(source => source.url),l)}</ul></details></section>` : '';
+	    const foodHistorySources = current.foodHistorySources || researchCity.foodHistorySources || researchFoodHistory.foodHistorySources || [];
+	    const foodOrigins = current.foodOrigins || researchCity.foodOrigins || researchFoodHistory.foodOrigins || [];
+	    const foodHistoryHtml = foodHistory ? `<section class="local-food-history" style="margin:14px 0;padding:14px;background:#f2f8f5;border-left:3px solid #1a5249;border-radius:12px;"><h3 style="margin-top:0;color:#1a5249;">📚 ${esc(historyLabel.title)}</h3><p style="white-space:pre-line;line-height:1.7;">${esc(langText(foodHistory,l))}</p>${foodOrigins.map(origin => `<details style="margin:8px 0;padding:8px 10px;background:#fff;border-radius:8px;"><summary style="cursor:pointer;font-weight:700;">${esc(origin.name || origin.dishName || '')}</summary><p style="white-space:pre-line;line-height:1.65;">${esc(origin[l] || origin.en || '')}</p><details class="local-food-sources"><summary>${esc(historyLabel.sources)}</summary><ul>${sourceLinks(origin.sourceUrls || [],l)}</ul></details></details>`).join('')}<details class="local-food-sources"><summary>${esc(c.sources)}</summary><ul>${sourceLinks(foodHistorySources.map(source => source.url),l)}</ul></details></section>` : '';
+	    const normalizeGuideCity = value => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+	    const italyCountryGuide = (window.EUROPE_COUNTRY_GUIDE_DATA || []).find(country => country.country_id === 'italy');
+	    const researchedCity = (((italyCountryGuide || {}).local_food || {}).food_guide || {}).cities || [];
+	    const researchedCityGuide = researchedCity.find(cityGuide => normalizeGuideCity(cityGuide.city && cityGuide.city.en) === current.id);
+	    const researchedFoodHtml = renderResearchFood(researchedCityGuide, l);
 	    const cityTabs = cities.map(city => `<button type="button" class="local-food-tab ${current.id===city.id?'active':''}" data-food-city="${city.id}" aria-pressed="${current.id===city.id?'true':'false'}">${esc(c.city[city.id])}</button>`).join('');
     const photos = (current.photos || []).map(([src, alt]) => `<figure><img class="local-food-photo" src="${esc(src)}" alt="${esc(langText(alt,l))}" loading="lazy"><figcaption class="local-food-photo-caption">${esc(c.imageNote)}</figcaption></figure>`).join('');
     mount.lang = l;
@@ -120,6 +150,7 @@
 	      <article class="local-food-city" data-city="${current.id}">
 	        <div class="local-food-city-head"><h3>${esc(c.city[current.id])}</h3><p>${esc(langText(current.summary,l))}</p></div>
 	        ${foodHistoryHtml}
+	        ${researchedFoodHtml}
 	        <div class="local-food-photo-grid">${photos}</div>
         <div class="local-food-city-content"><h3>${esc(c.places)}</h3><div class="local-food-card-grid">${current.restaurants.map(place=>renderRestaurant(place,l)).join('')}</div>
           <h3>${esc(c.bites)}</h3><div class="local-food-card-grid">${current.bites.map(bite=>renderBite(bite,l)).join('')}</div>
@@ -168,10 +199,10 @@
       return `🍽️ <strong>${esc(place.name)}</strong> · ${esc(labels.city)}: ${esc(ui[l].city[directMatch.city.id])}<br>${esc(langText(place.type,l))}<br>${esc(langText(place.why,l))}<br>🕒 <strong>${esc(labels.hours)}:</strong> ${esc(langText(place.hours,l))}<br>📅 <strong>${esc(labels.booking)}:</strong> ${esc(langText(place.booking,l) || langText(place.hours,l))}<br>🍴 <strong>${esc(labels.dishes)}:</strong> ${esc(langText(place.dishes,l) || langText(place.text,l))}<br>${mapLink} · ${officialLink}<br><a href="#italy-local-food-guide">${esc(labels.more)} ↗</a><details><summary>${esc(ui[l].sources)}</summary><ul>${sourceLinks(place.sources,l)}</ul></details>`;
     }
     const text = {
-      ko:'나폴리에서는 50 Kalò(메르젤리나)·Ciro a Santa Lucia·Di Matteo와 피자 아 포르타폴리오, 프리타티나, 스폴리아텔라를 후보로 정리했어요. 피렌체는 Zà Zà와 역 근처 Pastella, 람프레도토·짭짤한 스키아ッチャ타·칸투치니를, 로마는 나보나 광장 쪽 Da Francesco와 테르미니 근처 Alessio/Gainn(한식), 수플리·마리토초·피자 비앙카·트라피치노를 비교할 수 있어요. 위치·지도·시간·예약 메모와 출처는 <a href="#italy-local-food-guide">이탈리아 음식 가이드</a>에서 확인하세요. 영업시간과 예약 정책은 바뀔 수 있으며 2026년 여행 날짜의 좌석은 확인되지 않았습니다.',
-      en:'Naples: 50 Kalò (Mergellina), Ciro a Santa Lucia and Di Matteo, plus pizza a portafoglio, frittatina and sfogliatella. Florence: Zà Zà or station-area Pastella, with lampredotto, savory schiacciata and cantuccini. Rome: Da Francesco near Piazza Navona; Alessio and GAINN (Korean cuisine) near Termini; plus supplì, maritozzo, pizza bianca and Trapizzino. See the <a href="#italy-local-food-guide">Italy food guide</a> for maps, hours, booking notes and sources. Hours and policies can change; no tables for the 2026 trip dates were checked.',
-      ja:'ナポリはメルジェッリーナの50 Kalò、Ciro a Santa Lucia、Di Matteoと、折りたたみピザ・フリッタティーナ・スフォリアテッラ。フィレンツェは Zà Zà と駅近の Pastella、ランプレドット・塩味スキアッチャータ・カントゥッチーニ。ローマはナヴォーナ広場近くの Da Francesco、テルミニ近くの Alessio/GAINN（韓国料理）、スップリ・マリトッツォ・白いピザ・トラピッツィーノを比較できます。地図・営業時間・予約メモ・出典は<a href="#italy-local-food-guide">イタリア食ガイド</a>へ。時間や方針は変わる可能性があり、2026年旅行日の空席は未確認です。',
-      zh:'那不勒斯：梅尔杰利纳的 50 Kalò、Ciro a Santa Lucia、Di Matteo，以及折叠披萨、炸意面团、酥皮点心。佛罗伦萨：Zà Zà 或车站附近的 Pastella，以及牛胃三明治、咸味薄饼、杏仁饼干。罗马：纳沃纳广场附近的 Da Francesco；特米尼附近的 Alessio 和 GAINN（韩国菜）；另有炸米饭团、奶油面包、白披萨和 Trapizzino。地图、营业时间、预订备注和来源见<a href="#italy-local-food-guide">意大利美食指南</a>。时间和政策可能变化，未核实2026年旅行日期的座位。'
+      ko:'이탈리아의 나폴리·피렌체·로마별 지역 음식과 식당 후보, 근거 출처는 <a href="#italy-local-food-guide">이탈리아 음식 가이드</a>에서 확인하세요. 식당은 조사 후보이며 현재 메뉴·영업·예약 가능 여부는 방문 전 확인해야 합니다. 여행 일정이나 예약은 변경하지 않았습니다.',
+      en:'See the <a href="#italy-local-food-guide">Italy food guide</a> for sourced regional dishes and dining candidates in Naples, Florence and Rome. These are research candidates; check current menus, operations and availability before visiting. No itinerary or booking was changed.',
+      ja:'ナポリ・フィレンツェ・ローマの出典付き郷土料理と飲食店候補は<a href="#italy-local-food-guide">イタリア食ガイド</a>をご覧ください。店舗は調査候補です。訪問前に現行メニュー・営業状況・空席をご確認ください。行程や予約は変更していません。',
+      zh:'那不勒斯、佛罗伦萨和罗马的地方菜与餐厅候选及来源，见<a href="#italy-local-food-guide">意大利美食指南</a>。这些仅为研究候选；到访前请核实最新菜单、营业和空位情况。未更改行程或预订。'
     };
     const michelinQuery = /michelin|미슐랭|미쉐린|미쉐린.?가이드|ミシュラン|米其林/i.test(normalizedQuery);
     if (michelinQuery) {
@@ -182,6 +213,10 @@
         zh:'<strong>新增2027《意大利米其林指南》推荐：</strong>那不勒斯—George Restaurant（二星）、Luminist Cafè Bistrot（必比登）；佛罗伦萨—Trattoria Cibrèo - Il Cibrèino（必比登）；罗马—Mamma Orso（必比登）。必比登是品质与性价比类别，不是星级。请查看<a href="#italy-local-food-guide">餐厅卡片与来源 ↗</a>。未核实价格、旅行日期营业或座位；路线和预订均未更改。'
       };
       return `${text[l] || text.ko}<br>${additions[l] || additions.ko}`;
+    }
+    if (typeof window.buildEuropeCountryGuideChatResponse === 'function') {
+      const countryGuideReply = window.buildEuropeCountryGuideChatResponse(query, l);
+      if (countryGuideReply) return countryGuideReply;
     }
     return text[l] || text.ko;
   };

@@ -40,6 +40,12 @@
 .ecg-sources a{overflow-wrap:anywhere;color:#235d43;text-decoration:underline;text-underline-offset:2px}
 .ecg-source-missing{color:#944b3d!important;font-size:.77rem!important}
 .ecg-editorial-note{grid-column:1/-1;margin:0;padding:9px 11px;border-radius:9px;background:#f4f5f1;color:#687164;font-size:.82rem;line-height:1.55}
+.ecg-food-intro,.ecg-food-note{grid-column:1/-1;margin:0;padding:11px 12px;border:1px solid #ead9b7;border-radius:11px;background:#fff9ed;color:#665234;font-size:.86rem;line-height:1.6}
+.ecg-food-intro strong{display:block;margin-bottom:4px;color:#744b1d}
+.ecg-food-intro p{margin:0;color:#5b554a;font-size:.86rem;line-height:1.6}
+.ecg-food-note{border-style:dashed;background:#fffdf8;color:#746852;font-size:.78rem}
+.ecg-category-dish{background:#fff1db;color:#87551e}
+.ecg-category-venue{background:#e6f3e8;color:#2e6843}
 .ecg-empty{grid-column:1/-1;padding:22px;border:1px dashed #b8cabe;border-radius:13px;background:#fff;color:#617568;text-align:center}
 .ecg-chat-answer{display:grid;gap:8px;line-height:1.6}
 .ecg-chat-answer p{margin:0}
@@ -57,6 +63,10 @@ body.dark-theme .ecg-filter{border-color:#516d59;background:#263a2c;color:#d8e6d
 body.dark-theme .ecg-filter.active{border-color:#3e9362;background:#28704a;color:#fff}
 body.dark-theme .ecg-country-count{background:#314b39;color:#d3e4d8}
 body.dark-theme .ecg-mobility{border-left-color:#b09c61;background:#3a3526;color:#e4d9b7!important}
+body.dark-theme .ecg-food-intro,body.dark-theme .ecg-food-note{border-color:#615238;background:#3b3528;color:#e6d8b8}
+body.dark-theme .ecg-food-intro strong,body.dark-theme .ecg-food-intro p{color:#e8d9b9}
+body.dark-theme .ecg-category-dish{background:#57432a;color:#efd09b}
+body.dark-theme .ecg-category-venue{background:#294a35;color:#bde1c7}
 body.dark-theme .ecg-sources a,body.dark-theme .ecg-chat-country a{color:#98d3af}
 body.dark-theme .ecg-chat-country{border-color:#405b49;background:#22352a}
 @media(max-width:700px){.ecg-guide{margin:18px 0 5px;padding:16px 12px 18px;border-radius:16px}.ecg-controls{top:58px;padding:10px}.ecg-results{grid-template-columns:1fr}.ecg-country[open]{grid-column:auto}.ecg-country summary{grid-template-columns:minmax(90px,.8fr) minmax(0,1.4fr) auto;gap:6px;padding:11px 29px 11px 9px}.ecg-country summary:after{right:9px}.ecg-country-city{font-size:.78rem}.ecg-country-body{grid-template-columns:1fr;padding:0 8px 8px}.ecg-filter-row{gap:6px}.ecg-filter,.ecg-expand{padding:7px 9px;font-size:.78rem}.ecg-expand{margin-left:0}}
