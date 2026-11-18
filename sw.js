@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261118_seville_photo_guide_v1)
+// SlowTravel Mobile Offline Service Worker (v20261118_andalucia_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261118_seville_photo_guide_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261118_andalucia_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -54,6 +54,8 @@ const PRECACHE_ASSETS = [
   './js/granada-center-review.js',
   './js/granada-malaga-general-guide.js',
   './js/seville-general-guide.js',
+  './js/andalucia-streets-drama-guide.js',
+  './img/user-seville-landmarks/avenida-constitucion-20261118.webp',
   './img/user-seville-landmarks/plaza-espana-tower-cropped.webp',
   './img/user-seville-landmarks/casino-exposicion-cropped.webp',
   './img/user-seville-landmarks/palacio-san-telmo.webp',

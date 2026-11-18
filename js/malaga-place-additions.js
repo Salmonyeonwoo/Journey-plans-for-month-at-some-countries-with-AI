@@ -26,8 +26,8 @@
           body: '옛 어촌 해안의 작은 만과 어부의 집이 남은 Pedregalejo에서는 Los Baños del Carmen에서 El Palo까지 이어지는 해변가 chiringuitos에서 espeto를 즐길 수 있습니다. 이는 espeto 일반 안내와 구분되는 해안 지역의 음식 문화입니다. 특정 업소의 영업·메뉴는 방문 당일 확인하세요. 석양은 지점·날짜·날씨와 시야에 따라 달라져 보장할 수 없습니다.'
         },
         romanRoute: {
-          title: 'Roman Theatre–Alcazaba 역사 산책',
-          body: '말라가 도심에서 가까운 Roman Theatre와 알카사바를 하나의 역사 산책 경로로 살펴보세요. 극장은 아우구스투스 시대인 서기 1세기 초에 세워져 3세기에 사용이 끝났으며, 건축 재료 상당 부분이 뒤에 알카사바를 짓는 데 재사용되었습니다. 알카사바는 바디스의 명으로 1057~1063년에 세워졌습니다. 두 유적의 운영시간은 따로 확인하고, 통합 입장권이 있다고 가정하지 마세요. 극장은 폭염 경보 때 임시 폐쇄될 수 있습니다.'
+          title: '알카사비야 거리 (Calle Alcazabilla) · 로마 극장과 알카사바',
+          body: '말라가 구시가지의 Calle Alcazabilla에서는 로마 극장과 그 위쪽의 알카사바를 함께 볼 수 있습니다. 말라가 시 고고학 안내에 따르면 이 거리의 남북 축은 옛 로마 포럼의 중심 도로 카르도와 겹칩니다. 극장은 아우구스투스 시대인 서기 1세기에 세워져 3세기에 사용이 끝났고, 1951년 재발견됐습니다. 돌과 기둥 등 일부 재료는 뒤에 알카사바에 재사용됐습니다. 말라가 관광청은 성채가 바디스의 명으로 1057~1063년에 세워졌다고 설명합니다. 거리에서 바깥 풍경을 즐기고, 시설 내부는 개방·요금·현장 접근 조건을 각각 확인하세요. 통합 입장권을 가정하지 마세요. 알카사바 안에는 오르막이나 계단이 있을 수 있고, 전체 구간의 평탄함이나 무단차는 보장되지 않습니다. 극장은 폭염 경보 때 임시 폐쇄될 수 있습니다.'
         },
         laConcepcion: {
           title: 'Jardín Botánico-Histórico La Concepción',
@@ -55,8 +55,8 @@
           body: 'In Pedregalejo, an old fishing-coast area with small coves and former fishermen’s houses, seaside chiringuitos between Los Baños del Carmen and El Palo are associated with espeto. This adds a place-specific coastal food setting rather than repeating the general espeto note. Check each venue’s current hours and menu. Sunset visibility varies by viewpoint, date, weather and line of sight, so it is not guaranteed.'
         },
         romanRoute: {
-          title: 'Roman Theatre–Alcazaba history walk',
-          body: 'Link Málaga’s nearby Roman Theatre and Alcazaba as one city-centre history walk. The theatre was built in the early 1st century CE under Augustus and fell out of use in the 3rd century; much of its building material was later reused in the Alcazaba. The Alcazaba was built by Badis between 1057 and 1063. Check each site’s hours separately and do not assume a combined ticket. The theatre may close temporarily during heat alerts.'
+          title: 'Calle Alcazabilla · Roman Theatre and Alcazaba',
+          body: 'On Calle Alcazabilla in Málaga’s old town, the Roman Theatre and the Alcazaba fortress above it can be seen together. The city’s archaeological guide says the street’s north–south axis coincides with the cardo, the main road of the ancient Roman forum. The theatre was built in the 1st century CE under Augustus, fell out of use in the 3rd century and was rediscovered in 1951. Some stones and columns were later reused in the Alcazaba. Málaga Tourism dates the fortress to 1057–1063 under Badis. Enjoy the outside views; check opening, fees and access separately for each interior and do not assume a combined ticket. The Alcazaba may involve slopes or steps, and the entire route is not guaranteed level or step-free. The theatre may close temporarily during heat alerts.'
         },
         laConcepcion: {
           title: 'Jardín Botánico-Histórico La Concepción',
@@ -84,8 +84,8 @@
           body: '小さな入り江や昔の漁師の家が残る旧漁村の海岸Pedregalejoでは、Baños del CarmenからEl Paloまでの海辺のチリンギートがエスペトの名所として紹介されています。一般的なエスペト案内を繰り返すのではなく、この海岸地域ならではの食文化を補足します。各店の営業・メニューは当日に確認してください。夕日の見え方は場所・日付・天候・視界によって異なり、保証できません。'
         },
         romanRoute: {
-          title: 'ローマ劇場–アルカサバ歴史散策',
-          body: 'マラガ中心部で近接するローマ劇場とアルカサバを、ひとつの歴史散策ルートとしてご覧ください。劇場はアウグストゥス時代の紀元1世紀初頭に建てられ、3世紀に使われなくなり、建材の多くは後にアルカサバへ再利用されました。アルカサバはバディスの命により1057～1063年に築かれました。営業時間は各施設で確認し、共通チケットがあるとは限りません。高温警報時に劇場が臨時閉鎖される場合があります。'
+          title: 'アルカサビリャ通り（Calle Alcazabilla）· ローマ劇場とアルカサバ',
+          body: 'マラガ旧市街のCalle Alcazabillaでは、ローマ劇場とその上のアルカサバを一緒に眺められます。市の考古学案内によると、通りの南北軸は古代ローマのフォルムの幹線道路カルドと重なります。劇場はアウグストゥス時代の紀元1世紀に建てられ、3世紀に使われなくなり、1951年に再発見されました。石や柱の一部は後にアルカサバへ再利用されました。観光局は城塞がバディスの命で1057～1063年に築かれたと説明しています。通りから外観を楽しみ、内部の開放・料金・アクセスは各施設で確認し、共通券があるとは限りません。アルカサバには坂や階段がある場合があり、全区間が平坦・段差なしとは保証できません。高温警報時に劇場が臨時閉鎖される場合があります。'
         },
         laConcepcion: {
           title: 'Jardín Botánico-Histórico La Concepción',
@@ -113,8 +113,8 @@
           body: '在保留小海湾和昔日渔民住宅的Pedregalejo旧渔村海岸，从Baños del Carmen到El Palo一带的海滨小馆（chiringuito）与品尝espeto的地方相关。这是补充espeto的一处海岸地域体验，而非重复介绍这道菜本身。请当天向各店确认营业和菜单。日落能否看见取决于观景位置、日期、天气和视线，不能保证。'
         },
         romanRoute: {
-          title: '罗马剧场–阿尔卡萨瓦历史路线',
-          body: '可将马拉加市中心相近的罗马剧场与阿尔卡萨瓦安排为一条历史漫步路线。剧场建于奥古斯都时期，即公元1世纪初，并于3世纪停止使用；其大量建筑材料后来被用于阿尔卡萨瓦。阿尔卡萨瓦由巴迪斯下令于1057至1063年间修建。请分别核实两处开放时间，不要假定有联票；高温警报期间剧场可能临时关闭。'
+          title: '阿尔卡萨比亚街（Calle Alcazabilla）· 罗马剧场与阿尔卡萨瓦',
+          body: '在马拉加旧城区的Calle Alcazabilla，可一同看到罗马剧场和上方的阿尔卡萨瓦。市政府考古指南称，街道的南北轴线与古罗马广场的主要道路cardo重合。剧场建于奥古斯都时期的公元1世纪，3世纪停用，1951年重新发现。部分石材和柱子后来用于阿尔卡萨瓦。马拉加旅游局称城堡由巴迪斯下令于1057至1063年修建。可从街上欣赏外景；参观内部请分别确认开放、费用和通行条件，不要假定有联票。阿尔卡萨瓦内可能有坡道或台阶，不能保证全程平坦或无台阶。高温警报期间剧场可能临时关闭。'
         },
         laConcepcion: {
           title: 'Jardín Botánico-Histórico La Concepción植物园',
@@ -143,6 +143,7 @@
       { url: 'https://www.visitacostadelsol.com/malaga-costa-del-sol/the-best-beaches-on-the-costa-del-sol/pedregalejo-las-acacias-beach-p20501', label: { ko: 'Visit Costa del Sol: Pedregalejo 해변', en: 'Visit Costa del Sol: Pedregalejo beach', ja: 'Visit Costa del Sol：Pedregalejo海岸', zh: 'Visit Costa del Sol：Pedregalejo海滩' } }
     ],
     romanRoute: [
+      { url: 'https://rutasarqueologicas.malaga.eu/punto-n-26/', label: { ko: '말라가 시 고고학 코스: 알카사비야 거리', en: 'Málaga archaeological route: Alcazabilla Street', ja: 'マラガ市考古学ルート：アルカサビリャ通り', zh: '马拉加市考古路线：阿尔卡萨比亚街' } },
       { url: 'https://visita.malaga.eu/en/what-to-see-and-do/culture/historic-monuments/monuments/alcazaba-p103303', label: { ko: '말라가 관광청: 알카사바', en: 'Málaga Tourism: Alcazaba', ja: 'マラガ観光局：アルカサバ', zh: '马拉加旅游局：阿尔卡萨瓦' } },
       { url: 'https://visita.malaga.eu/en/what-to-see-and-do/culture/historic-monuments/monuments/teatro-romano-p103562', label: { ko: '말라가 관광청: Roman Theatre', en: 'Málaga Tourism: Roman Theatre', ja: 'マラガ観光局：ローマ劇場', zh: '马拉加旅游局：罗马剧场' } },
       { url: 'https://www.juntadeandalucia.es/aaiicc/enclaves/enclave-arqueologico-teatro-romano-de-malaga', label: { ko: '안달루시아 문화유산 기관: Roman Theatre', en: 'Andalusia heritage authority: Roman Theatre', ja: 'アンダルシア文化遺産機関：ローマ劇場', zh: '安达卢西亚文化遗产机构：罗马剧场' } },
@@ -176,6 +177,7 @@
       'Pedregalejo海滩', 'Pedregalejo海岸', '佩德雷加莱霍', '佩德雷加莱霍espeto'
     ],
     romanRoute: [
+      'calle alcazabilla', 'alcazabilla street', 'alcazabilla', '알카사비야 거리', '알카사비야', 'アルカサビリャ通り', 'アルカサビリャ', '阿尔卡萨比亚街',
       'roman theatre', 'roman theater', 'teatro romano', 'roman theatre alcazaba', 'roman theater alcazaba',
       'alcazaba roman theatre', 'alcazaba roman theater', '로마 극장', '로마극장', '알카사바 로마극장',
       'ローマ劇場', 'ローマ劇場 アルカサバ', 'ローマ劇場とアルカサバ', '罗马剧场', '罗马剧场 阿尔卡萨瓦'
