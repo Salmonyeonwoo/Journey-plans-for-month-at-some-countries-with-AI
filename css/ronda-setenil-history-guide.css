@@ -1,0 +1,180 @@
+#ronda-setenil-history-guide {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1120px;
+  margin: 1.25rem auto 1.5rem;
+  padding: 0 clamp(0.75rem, 2vw, 1.25rem);
+  color: #1d2633;
+  font: inherit;
+  overflow-wrap: anywhere;
+}
+
+#ronda-setenil-history-guide * {
+  box-sizing: border-box;
+}
+
+#ronda-setenil-history-guide .rsh-guide {
+  border: 1px solid #d9dee8;
+  border-radius: 16px;
+  background: #fff;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow: 0 8px 24px rgba(27, 40, 54, 0.06);
+  line-height: 1.68;
+}
+
+#ronda-setenil-history-guide .rsh-header {
+  max-width: 880px;
+  margin: 0 auto 1rem;
+}
+
+#ronda-setenil-history-guide .rsh-kicker {
+  margin-bottom: 0.35rem;
+  color: #9a5b2e;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+#ronda-setenil-history-guide h2 {
+  margin: 0 0 0.45rem;
+  color: #243243;
+  font-size: clamp(20px, 2vw, 25px) !important;
+  line-height: 1.35 !important;
+}
+
+#ronda-setenil-history-guide .rsh-header p {
+  margin: 0;
+  color: #526070;
+}
+
+#ronda-setenil-history-guide .rsh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  gap: 0.9rem;
+  align-items: start;
+}
+
+#ronda-setenil-history-guide .rsh-card {
+  min-width: 0;
+  border: 1px solid #e3e7ed;
+  border-radius: 12px;
+  padding: clamp(0.85rem, 2vw, 1.1rem);
+  background: #fbfcfe;
+}
+
+#ronda-setenil-history-guide .rsh-card-heading > span {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  color: #956039;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+#ronda-setenil-history-guide .rsh-card h3 {
+  margin: 0 0 0.55rem;
+  color: #26384a;
+  font-size: 1.06rem;
+  line-height: 1.4;
+}
+
+#ronda-setenil-history-guide .rsh-card p {
+  margin: 0.65rem 0;
+  color: #394758;
+  line-height: 1.72;
+}
+
+#ronda-setenil-history-guide .rsh-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0.55rem;
+  align-items: stretch;
+  margin: 0.6rem 0;
+}
+
+#ronda-setenil-history-guide .rsh-photos figure {
+  min-width: 0;
+  margin: 0;
+  padding: 0.35rem;
+  border: 1px solid #e6e9ee;
+  border-radius: 9px;
+  background: #fff;
+}
+
+#ronda-setenil-history-guide .rsh-photos img {
+  display: block;
+  width: 100%;
+  height: 270px;
+  border-radius: 6px;
+  background: #f1f3f5;
+  object-fit: contain;
+}
+
+#ronda-setenil-history-guide .rsh-photos figcaption {
+  margin: 0.35rem 0.15rem 0;
+  color: #687485;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+#ronda-setenil-history-guide .rsh-sources {
+  margin-top: 0.65rem;
+  border-top: 1px solid #e7eaf0;
+  padding-top: 0.5rem;
+}
+
+#ronda-setenil-history-guide .rsh-sources summary {
+  color: #245a4d;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+#ronda-setenil-history-guide .rsh-sources summary:focus-visible {
+  outline: 3px solid #2463eb;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+#ronda-setenil-history-guide .rsh-sources ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.2rem;
+}
+
+#ronda-setenil-history-guide .rsh-sources li {
+  margin: 0.28rem 0;
+  line-height: 1.5;
+}
+
+#ronda-setenil-history-guide a {
+  color: #0645ad;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  #ronda-setenil-history-guide {
+    margin: 0.75rem auto 1rem;
+    padding: 0 0.55rem;
+  }
+
+  #ronda-setenil-history-guide .rsh-guide {
+    padding: 0.9rem;
+    border-radius: 12px;
+  }
+
+  #ronda-setenil-history-guide .rsh-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  #ronda-setenil-history-guide .rsh-photos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #ronda-setenil-history-guide .rsh-photos img {
+    height: 250px;
+  }
+}

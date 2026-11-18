@@ -22,7 +22,7 @@
       secCandidates: '도시별 추가 맛집 · 시장 · 전망 후보', secMasterFood: '도시별 미식 마스터 가이드',
       secMarkets: '4개 도시 시장 · 저녁 음식 가이드', secDiningSearch: '검증 맛집 92선 검색',
       secBarcelonaDining: '바르셀로나 식당 보충 가이드',
-      secSpainGuide: '스페인 지역 루트 · 명소 안내', secHotels: '확정 숙소 요약',
+      secSpainGuide: '스페인 지역 루트 · 명소 안내', secRondaSetenil: '론다·세테닐 역사·건축 안내', secHotels: '확정 숙소 요약',
       secEuropeTaxi: '유럽 택시 앱 · 호출 팁', secFlamenco: '플라멩코 공연 가이드',
       secFares: '유럽 도시 간 기차·장거리버스 요금 비교',
       secActivities: '활동 · 스파 가이드', sectionsNote: '이 페이지에는 여러 보충 가이드가 함께 실려 있습니다. 아래 섹션 바로가기를 이용하면 원하는 자료로 곧바로 이동할 수 있습니다.'
@@ -41,7 +41,7 @@
       secCandidates: 'More city food, markets & viewpoints', secMasterFood: 'Regional food master guide',
       secMarkets: 'Markets & evening food · four cities', secDiningSearch: 'Search the 92-place dining directory',
       secBarcelonaDining: 'Barcelona dining supplement',
-      secSpainGuide: 'Spain regional routes & highlights', secHotels: 'Confirmed-stay summary',
+      secSpainGuide: 'Spain regional routes & highlights', secRondaSetenil: 'Ronda & Setenil · history and architecture', secHotels: 'Confirmed-stay summary',
       secEuropeTaxi: 'European taxi apps & booking tips', secFlamenco: 'Flamenco show guide',
       secFares: 'European intercity train & coach fares',
       secActivities: 'Activities & spa guide', sectionsNote: 'This page brings together several supplementary guides. Use a section shortcut below to jump straight to the material you need.'
@@ -60,7 +60,7 @@
       secCandidates: '各都市の追加グルメ・市場・展望候補', secMasterFood: '各都市のグルメ総合ガイド',
       secMarkets: '4都市の市場・夕食ガイド', secDiningSearch: '厳選レストラン92選を検索',
       secBarcelonaDining: 'バルセロナの食事補足ガイド',
-      secSpainGuide: 'スペイン各地域のルート・見どころ', secHotels: '確定した宿泊先の概要',
+      secSpainGuide: 'スペイン各地域のルート・見どころ', secRondaSetenil: 'ロンダ＆セテニルの歴史・建築', secHotels: '確定した宿泊先の概要',
       secEuropeTaxi: '欧州のタクシーアプリ・利用のヒント', secFlamenco: 'フラメンコ公演ガイド',
       secFares: 'ヨーロッパ都市間の鉄道・長距離バス運賃',
       secActivities: 'アクティビティ・スパガイド', sectionsNote: 'このページには複数の補足ガイドがあります。下のセクションショートカットから目的の情報へ直接移動できます。'
@@ -79,7 +79,7 @@
       secCandidates: '各城市补充美食、市场与观景点', secMasterFood: '城市美食综合指南',
       secMarkets: '四座城市的市场与晚餐指南', secDiningSearch: '搜索92家精选餐厅',
       secBarcelonaDining: '巴塞罗那餐饮补充指南',
-      secSpainGuide: '西班牙分区路线与景点', secHotels: '已确认住宿汇总',
+      secSpainGuide: '西班牙分区路线与景点', secRondaSetenil: '龙达与塞特尼尔历史和建筑指南', secHotels: '已确认住宿汇总',
       secEuropeTaxi: '欧洲打车应用与使用提示', secFlamenco: '弗拉门戈演出指南',
       secFares: '欧洲城市间火车与长途巴士票价',
       secActivities: '活动与水疗指南', sectionsNote: '此页面汇集了多个补充指南。使用下方的分区快捷入口，可直接前往所需内容。'
@@ -93,6 +93,7 @@
     { key: 'groupItinerary', icon: '⌁', pages: ['chapter-planner:0', 'chapter-planner:1', 'chapter-planner:2', 'chapter-planner:3'], sections: [] },
     { key: 'groupDestinations', icon: '⌖', pages: ['chapter-guide:0', 'chapter-guide:1', 'chapter-guide:2', 'chapter-guide:3', 'chapter-guide:4'], sections: [
       { route: 'chapter-guide:1', target: 'granada-malaga-general-guide', key: 'secSpainGuide', icon: '🇪🇸' },
+      { route: 'chapter-guide:1', target: 'ronda-setenil-history-guide', key: 'secRondaSetenil', icon: '🏞️' },
       { route: 'chapter-practical:0', target: 'curated-family-places', key: 'secCurated', icon: '💖' },
       { route: 'chapter-practical:0', target: 'practical-city-candidates', key: 'secCandidates', icon: '📍' }
     ] },

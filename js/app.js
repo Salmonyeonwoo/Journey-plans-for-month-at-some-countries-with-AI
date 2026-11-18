@@ -4590,7 +4590,7 @@ function buildSpanishAttractionHistoryChatResponse(query, lang) {
 function handleLocalChat(query) {
   const rawQ = (query || '').trim();
   const q = rawQ.toLowerCase();
-  const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'ronda', '론다', 'ロンダ', '龙达', 'puente nuevo', 'el tajo'].some(w => q.includes(w));
+  const hasAndalusiaCityContext = ['cordoba', 'córdoba', '코르도바', 'コルドバ', '科尔多瓦', 'granada', '그라나다', 'グラナダ', '格拉纳达', 'malaga', 'málaga', '말라가', 'マラガ', '马拉加', 'ronda', '론다', 'ロンダ', '龙达', 'setenil', '세테닐', 'セテニル', '塞特尼尔', 'puente nuevo', 'el tajo'].some(w => q.includes(w));
   const lang = getEffectiveLang(rawQ);
   // Navigation-only help: require both a contents/menu topic and an explicit how/where/find cue.
   const asksNavigationHelp =
@@ -4615,6 +4615,10 @@ function handleLocalChat(query) {
   if (typeof window.buildSevilleGeneralChatResponse === 'function') {
     const sevilleGeneralResponse = window.buildSevilleGeneralChatResponse(rawQ, lang);
     if (sevilleGeneralResponse) return sevilleGeneralResponse;
+  }
+  if (typeof window.buildRondaSetenilHistoryChatResponse === 'function') {
+    const rondaSetenilResponse = window.buildRondaSetenilHistoryChatResponse(rawQ, lang);
+    if (rondaSetenilResponse) return rondaSetenilResponse;
   }
   if (typeof window.buildGranadaCenterReviewChatResponse === 'function') {
     const centerResponse = window.buildGranadaCenterReviewChatResponse(rawQ, lang);
@@ -9232,6 +9236,7 @@ window.scrollToDistrict = scrollToDistrict;
 function renderSeniorDistrictRoutes(lang = (typeof currentLang !== 'undefined' ? currentLang : 'ko')) {
   if (typeof window.renderGranadaMalagaGeneralGuide === 'function') window.renderGranadaMalagaGeneralGuide(lang);
   if (typeof window.renderSevilleGeneralGuide === 'function') window.renderSevilleGeneralGuide(lang);
+  if (typeof window.renderRondaSetenilHistoryGuide === 'function') window.renderRondaSetenilHistoryGuide(lang);
   if (typeof window.renderEuropeanCathedralHistoryGuide === 'function') window.renderEuropeanCathedralHistoryGuide(lang);
   const allData = (typeof SENIOR_DISTRICTS_I18N !== 'undefined' ? SENIOR_DISTRICTS_I18N : (typeof window !== 'undefined' ? window.SENIOR_DISTRICTS_I18N : null));
   if (!allData) return;
