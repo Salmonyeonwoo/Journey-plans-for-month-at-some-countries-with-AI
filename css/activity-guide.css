@@ -62,3 +62,50 @@
   .activity-grid { display: block; }
   .activity-card + .activity-card { margin-top: 14px; }
 }
+
+.europe-activity-directory { margin-top: 32px; padding-top: 27px; border-top: 1px solid var(--line, #e4ded1); }
+.europe-activity-directory > h2 { margin: 0 0 9px !important; font-size: clamp(22px, 2.8vw, 30px) !important; line-height: 1.35 !important; }
+.europe-activity-intro { margin: 0 0 17px; max-width: 850px; color: var(--muted, #637370); font-size: 13px; line-height: 1.75; }
+.europe-activity-controls { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; margin: 16px 0 14px; }
+.europe-activity-filter { width: 100%; min-height: 44px; padding: 10px 13px; border: 1px solid var(--line, #d8d4c9); border-radius: 10px; background: var(--white, #fffdf8); color: var(--ink, #1c2e2c); font: inherit; font-size: 13px; }
+.europe-activity-filter:focus-visible { outline: 3px solid #d8754d; outline-offset: 2px; }
+.europe-activity-count { color: var(--muted, #637370); font-size: 12px; line-height: 1.5; text-align: right; }
+.europe-activity-countries { display: grid; gap: 10px; }
+.europe-activity-country { min-width: 0; overflow: hidden; border: 1px solid var(--line, #e4ded1); border-radius: 14px; background: var(--white, #fffdf8); }
+.europe-activity-country > summary { display: flex; justify-content: space-between; align-items: center; gap: 14px; min-height: 54px; padding: 13px 16px; color: var(--ink, #1c2e2c); cursor: pointer; list-style: none; }
+.europe-activity-country > summary::-webkit-details-marker { display: none; }
+.europe-activity-country > summary::after { content: '+'; flex: 0 0 auto; color: var(--green, #1a5249); font-size: 20px; font-weight: 700; }
+.europe-activity-country[open] > summary::after { content: '−'; }
+.europe-activity-country > summary:focus-visible { outline: 3px solid #d8754d; outline-offset: -3px; }
+.europe-activity-country-name { font-size: 14px; font-weight: 800; }
+.europe-activity-country-meta { color: var(--muted, #637370); font-size: 11px; line-height: 1.5; text-align: right; }
+.europe-activity-country-body { padding: 0 13px 13px; }
+.europe-activity-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.europe-activity-card { padding: 17px; }
+.europe-activity-card h3 { overflow-wrap: anywhere; }
+.europe-activity-card .activity-summary { margin-bottom: 10px; }
+.europe-activity-card .activity-care { margin-top: 9px; }
+.europe-activity-sources { display: flex; flex-wrap: wrap; gap: 8px 13px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line, #e4ded1); }
+.europe-activity-sources a { color: var(--green, #1a5249); font-size: 11px; font-weight: 700; line-height: 1.6; text-underline-offset: 3px; }
+.europe-activity-sources a:focus-visible { outline: 3px solid #d8754d; outline-offset: 3px; }
+.europe-activity-norec { border-color: #dfcfad; background: #fbf7ed; }
+.europe-activity-norec .activity-summary { color: #654f31; }
+.europe-activity-empty { padding: 16px; border: 1px dashed var(--line, #d8d4c9); border-radius: 12px; color: var(--muted, #637370); font-size: 13px; line-height: 1.7; }
+.europe-activity-chat-link { margin-top: 11px; padding: 8px 11px; border: 0; border-radius: 8px; background: var(--green, #1a5249); color: #fff; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+.dark-theme .europe-activity-country { background: #202b2a; border-color: #465250; }
+.dark-theme .europe-activity-country > summary { color: #e7ece7; }
+.dark-theme .europe-activity-filter { background: #202b2a; border-color: #465250; color: #e7ece7; }
+.dark-theme .europe-activity-norec { background: #3b3529; border-color: #665a3d; }
+.dark-theme .europe-activity-norec .activity-summary { color: #f1ddba; }
+@media (max-width: 760px) {
+  .europe-activity-controls { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .europe-activity-count { text-align: left; }
+  .europe-activity-cards { grid-template-columns: minmax(0, 1fr); }
+  .europe-activity-country > summary { align-items: flex-start; }
+}
+@media (max-width: 420px) {
+  .europe-activity-directory { margin-top: 25px; padding-top: 22px; }
+  .europe-activity-country > summary { padding: 12px; }
+  .europe-activity-country-body { padding: 0 8px 8px; }
+  .europe-activity-card { padding: 15px; }
+}
