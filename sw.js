@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261119_seville_itinerary_v1)
+// SlowTravel Mobile Offline Service Worker (v20261119_seville_cathedral_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261119_seville_itinerary_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261119_seville_cathedral_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -18,6 +18,7 @@ const PRECACHE_ASSETS = [
   './css/alhambra-visit-review.css',
   './css/europe-country-nightlife.css',
   './css/seville-general-guide.css',
+  './css/seville-cathedral-photo-guide.css',
   './css/seville-date-itinerary.css',
   './css/europe-intercity-fares.css',
   './js/data.js',
@@ -55,6 +56,7 @@ const PRECACHE_ASSETS = [
   './js/granada-center-review.js',
   './js/granada-malaga-general-guide.js',
   './js/seville-general-guide.js',
+  './js/seville-cathedral-photo-guide.js',
   './js/seville-date-itinerary.js',
   './js/andalucia-streets-drama-guide.js',
   './img/user-seville-landmarks/avenida-constitucion-20261118.webp',
@@ -62,6 +64,23 @@ const PRECACHE_ASSETS = [
   './img/user-seville-landmarks/casino-exposicion-cropped.webp',
   './img/user-seville-landmarks/palacio-san-telmo.webp',
   './img/user-seville-landmarks/real-fabrica-tabacos.webp',
+  './img/user-seville-cathedral-review/cathedral-pier.webp',
+  './img/user-seville-cathedral-review/cathedral-vaults.webp',
+  './img/user-seville-cathedral-review/cathedral-retablo-mayor.webp',
+  './img/user-seville-cathedral-review/cathedral-cervantes-tomb.webp',
+  './img/user-seville-cathedral-review/chapel-marcelo-spinola-tomb.webp',
+  './img/user-seville-cathedral-review/chapel-dolores-altarpiece.webp',
+  './img/user-seville-cathedral-review/sacristia-paintings.webp',
+  './img/user-seville-cathedral-review/antecabilido-apelles-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-jesus-in-temple-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-wisdom-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-pentecost-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-coffered-ceiling-pax-vobis.webp',
+  './img/user-seville-cathedral-review/antecabilido-coffered-ceiling-view.webp',
+  './img/user-seville-cathedral-review/antecabilido-babel-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-babylon-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-moses-aaron-relief.webp',
+  './img/user-seville-cathedral-review/antecabilido-haman-relief.webp',
   './js/europe-intercity-fares-guide.js',
   './js/malaga-place-additions.js',
   './img/user-cordoba-san-pablo/sign.jpg',
