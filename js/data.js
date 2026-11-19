@@ -23130,6 +23130,33 @@ Feel free to ask any travel question!<br>
     "baseKrw": null,
 
     "photo": ""
+  },
+  {
+    "name": "Bodega Góngora",
+    "region": "Spain",
+    "city": "Seville",
+    "country": "Spain",
+    "dishName": "세비야식 볼살찜·소꼬리찜·위스키 소스 안심과 바삭한 대구",
+    "photo": "img/gourmet/bodega-gongora-04.jpg",
+    "photos": [
+      "img/gourmet/bodega-gongora-04.jpg",
+      "img/gourmet/bodega-gongora-05.jpg",
+      "img/gourmet/bodega-gongora-03.jpg",
+      "img/gourmet/bodega-gongora-01.jpg",
+      "img/gourmet/bodega-gongora-02.jpg"
+    ],
+    "signature": "가격 대비 양이 넉넉하다는 추천을 받은 세비야 구시가지 타파스 바. 볼살찜·소꼬리찜·위스키 소스 안심과 바삭한 대구·해산물 메뉴를 나눠 먹기 좋습니다.",
+    "seniorTip": "부모님 포함 3명이라면 테이블에서 Media 또는 Ración으로 3접시 정도 먼저 주문하고 부족하면 추가하세요. 공식 메뉴상 Tapa는 바에서만 제공됩니다.",
+    "hours": "매일 12:30–23:30 (공식 사이트; 방문일 재확인)",
+    "language": "메뉴의 주요 이름은 스페인어. 영어 메뉴 여부는 공식 사이트에 안내되지 않아 현장 확인 권장",
+    "phone": "+34 954 221 119",
+    "booking": "공식 사이트에 예약 정책이 명시되지 않음; 3인 좌석은 방문 전 전화 확인 권장",
+    "baseKrw": null,
+    "mapQuery": "Bodega Góngora, C. Albareda 5, 41001 Sevilla, Spain",
+    "mapUrl": "https://maps.app.goo.gl/M2CGwtxAdGCg4iVq9?g_st=ac",
+    "officialUrl": "https://www.bodegagongora.com/",
+    "menuUrl": "https://www.bodegagongora.com/carta/",
+    "cardType": "restaurant_recommendation"
   }
 ];
   _ANDALUSIA_DINING_OVERRIDES.forEach(item => {
@@ -23441,7 +23468,207 @@ Feel free to ask any travel question!<br>
       "ja": "最新の予約方針は店舗にご確認ください。",
       "zh": "请直接确认当前预订政策。"
     }
-  }
+  },
+  "Bodega Góngora": {
+      "displayName": {
+        "ko": "보데가 공고라 (Bodega Góngora)",
+        "en": "Bodega Góngora",
+        "ja": "ボデガ・ゴンゴラ（Bodega Góngora）",
+        "zh": "Bodega Góngora（塞维利亚戈贡戈拉酒馆）"
+      },
+      "dishTitle": {
+        "ko": "볼살찜·소꼬리찜·위스키 소스 안심 + 바삭한 대구",
+        "en": "Braised cheek, oxtail, whisky pork & crisp cod",
+        "ja": "頬肉煮込み・牛テール・ウイスキー豚ヒレ・タラフライ",
+        "zh": "脸颊肉炖菜、牛尾、威士忌猪里脊与酥炸鳕鱼"
+      },
+      "badge": {
+        "ko": "스페인 · 세비야",
+        "en": "Spain · Seville",
+        "ja": "スペイン・セビリア",
+        "zh": "西班牙 · 塞维利亚"
+      },
+      "signature": {
+        "ko": "가격 대비 양이 넉넉하다는 추천을 받은 세비야 구시가지 타파스 바. 볼살찜·소꼬리찜·위스키 소스 안심과 바삭한 대구·해산물 메뉴를 나눠 먹기 좋습니다.",
+        "en": "A Seville old-town tapas bar recommended for generous, shareable portions at good value. Try its braises, whisky-sauce pork, crisp cod and seafood.",
+        "ja": "量をシェアしやすく、価格に対する満足感も高いとおすすめされたセビリア旧市街のタパス店。煮込み、ウイスキーソースの豚肉、タラや魚介料理を。",
+        "zh": "塞维利亚老城的一家Tapas酒馆，推荐理由是份量适合分享、价格实惠。可尝试炖菜、威士忌酱猪肉、酥炸鳕鱼及海鲜。"
+      },
+      "seniorTip": {
+        "ko": "부모님 포함 3명이라면 테이블에서 Media 또는 Ración으로 3접시 정도 먼저 주문하고 부족하면 추가하세요. 공식 메뉴상 Tapa는 바에서만 제공됩니다.",
+        "en": "For three including parents, start with about three Media (half) or Ración (full) dishes at a table and add more if needed. The official menu says Tapa portions are bar-only.",
+        "ja": "ご両親を含む3人なら、テーブルでMediaまたはRaciónをまず3皿ほど注文し、足りなければ追加。公式メニューではTapaはバーのみです。",
+        "zh": "三人同行（含长辈）可先在桌位点约3道Media（半份）或Ración（整份），不够再加。官网菜单注明Tapa仅在吧台供应。"
+      },
+      "dishDesc": {
+        "ko": "세비야식 찜과 튀김, 해산물을 나눠 먹기 좋은 구시가지 식당입니다. 공식 메뉴에는 하프·전체 접시와 바 전용 타파가 있으며, 당일 메뉴와 가격을 확인하세요.",
+        "en": "A Seville old-town spot for sharing local braises, fried seafood and tapas. The official menu lists half and full portions, with tapas available only at the bar; check current menu and prices.",
+        "ja": "セビリア郷土の煮込みや魚介フライ、タパスをシェアしやすい旧市街の店。公式メニューにはハーフ・フルとバー限定のタパスが記載されています。当日のメニューと価格をご確認ください。",
+        "zh": "适合分享塞维利亚炖菜、炸海鲜与Tapas的老城餐馆。官网菜单列有半份、整份及吧台限定Tapas；请确认当天菜单与价格。"
+      },
+      "hours": {
+        "ko": "매일 12:30–23:30 (공식 사이트; 방문일 재확인)",
+        "en": "Daily 12:30–23:30 (official site; reconfirm on the day)",
+        "ja": "毎日12:30～23:30（公式サイト掲載；訪問日に再確認）",
+        "zh": "每日12:30–23:30（官网信息；到访当天请再确认）"
+      },
+      "language": {
+        "ko": "메뉴의 주요 이름은 스페인어. 영어 메뉴 여부는 공식 사이트에 안내되지 않아 현장 확인 권장",
+        "en": "Menu names are mainly in Spanish. The official site does not confirm an English menu; check at the restaurant.",
+        "ja": "メニュー名は主にスペイン語。公式サイトでは英語メニューの有無を確認できないため、店頭でご確認ください。",
+        "zh": "菜单名称主要为西班牙语。官网未说明是否有英文菜单，请到店确认。"
+      },
+      "booking": {
+        "ko": "공식 사이트에 예약 정책이 명시되지 않음; 3인 좌석은 방문 전 전화 확인 권장",
+        "en": "The official site does not state a booking policy; call ahead to check seating for three.",
+        "ja": "公式サイトに予約方針の記載はありません。3人での席について事前に電話確認を。",
+        "zh": "官网未注明预订政策；三人到访前建议致电确认座位。"
+      },
+      "orderGuideTitle": {
+        "ko": "🍽️ 10초 주문 가이드 (3인 추천)",
+        "en": "🍽️ Quick order guide (for 3)",
+        "ja": "🍽️ かんたん注文ガイド（3人向け）",
+        "zh": "🍽️ 快速点餐指南（三人推荐）"
+      },
+      "orderGuide": {
+        "ko": "🥇 메인 — 1~2개\n• Carrillada en salsa — 부드럽게 푹 익힌 볼살찜. 공식 메뉴 표기는 ‘Carrillada en salsa’이므로 고기 종류는 주문할 때 확인하세요.\n• Cola de toro en salsa con patatas — 감자를 곁들인 안달루시아식 소꼬리찜. 위 메뉴와 모두 진한 찜 요리라 둘 중 하나만 골라도 충분합니다.\n• Solomillo de cerdo al whisky — 마늘 향이 도는 위스키 소스 돼지 안심.\n\n🦐 해산물 — 1~2개\n• Pavías de bacalao 또는 Taquitos de bacalao con alioli — 바삭한 대구 튀김.\n• Chocos, Calamares, Puntillitas 또는 Boquerones — 갑오징어·오징어·작은 오징어·멸치 튀김.\n• Gambas al ajillo — 마늘 올리브오일 새우. 빵을 곁들이기 좋습니다.\n• Chipirones 또는 Variado de pescado a la plancha — 튀김이 부담스러우면 어린 오징어나 생선 구이를 고르세요.\n• Ensaladilla de gambas — 차갑고 부드러운 새우 감자 샐러드.\n\n🌿 세비야 별미·사이드\n• Espinacas con garbanzos — 향신료를 넣어 끓인 따뜻한 시금치·병아리콩 스튜.\n• Croquetas de jamón / Croquetas de huevo con chorizo — 하몽 또는 초리소·달걀 크로켓.\n\n👨‍👩‍👧 3인 주문 팁\n테이블에서는 메뉴에 표시된 Media(하프) 또는 Ración(전체)로 3접시 정도 먼저 주문하고, 부족하면 추가하세요. 예: 볼살찜 1 + 대구튀김 1 + 감바스 또는 구운 오징어 1. 공식 메뉴상 Tapa(작은 접시)는 바에서만 제공됩니다. 바에서 먹는다면 5~6개를 나눠 주문하는 방식이 편합니다.\n\n💶 가성비 참고 — 공식 메뉴에 표시된 가격(변동 가능)\nCarrillada: Media €11 / Ración €16.50 · Cola de toro: €11 / €19.50 · Solomillo al whisky: €11 / €15 · Pavías de bacalao: €12.50 / €16.75 · Gambas al ajillo: €14 / €18 · Espinacas con garbanzos: €10 / €13.50. 일부 메뉴의 Tapa 가격은 €3.95~€5.50이며 바에서만 주문할 수 있습니다. 세 명이 나눠 먹기 좋은 푸짐한 메뉴 구성이라는 추천입니다. 방문 당일 메뉴·가격을 확인하세요.\n\n🥤 음료\nTinto de verano(가볍고 달콤한 와인 에이드), Caña(생맥주), Agua sin gas(일반 생수), Zumo de naranja(오렌지 주스)를 고르면 무난합니다.",
+        "en": "🥇 Mains — choose 1–2\n• Carrillada en salsa — tender, slow-braised cheek in sauce. The official menu uses this name; ask staff which meat is served.\n• Cola de toro en salsa con patatas — Andalusian oxtail stew with potatoes. It is another rich braise, so one of these two is usually enough to start.\n• Solomillo de cerdo al whisky — pork tenderloin in a garlicky whisky sauce.\n\n🦐 Seafood — choose 1–2\n• Pavías de bacalao or Taquitos de bacalao con alioli — crisp battered cod.\n• Chocos, Calamares, Puntillitas or Boquerones — fried cuttlefish, squid, baby squid or anchovies.\n• Gambas al ajillo — prawns sizzling in garlic and olive oil; great with bread.\n• Chipirones or Variado de pescado a la plancha — grilled baby squid or a mixed grilled-fish plate if you would rather skip fried food.\n• Ensaladilla de gambas — a cool, creamy prawn-and-potato salad.\n\n🌿 Sevillian local dishes and sides\n• Espinacas con garbanzos — warm spinach and chickpea stew with traditional spices.\n• Croquetas de jamón / Croquetas de huevo con chorizo — ham or chorizo-and-egg croquettes.\n\n👨‍👩‍👧 Ordering for three\nAt a table, start with about three dishes in the sizes listed as Media (half) or Ración (full), then add more if needed—for example, carrillada + cod + gambas or grilled squid. The official menu says Tapa portions are available only at the bar. If you are eating at the bar, 5–6 tapas make a good sharing start.\n\n💶 Good-value note — prices shown on the official menu (subject to change)\nCarrillada: Media €11 / Ración €16.50 · Cola de toro: €11 / €19.50 · Solomillo al whisky: €11 / €15 · Pavías de bacalao: €12.50 / €16.75 · Gambas al ajillo: €14 / €18 · Espinacas con garbanzos: €10 / €13.50. Tapa portions for some dishes are €3.95–€5.50 and are bar-only. This is a recommended generous, shareable order for three; check the menu and prices on the day.\n\n🥤 Drinks\nTry Tinto de verano (a light, sweet wine-and-soda drink), a Caña (small draft beer), Agua sin gas (still water) or Zumo de naranja (orange juice).",
+        "ja": "🥇 メイン — 1～2品\n• Carrillada en salsa — とろとろに煮込んだ頬肉のソース煮。公式メニューの表記は「Carrillada en salsa」です。肉の種類は注文時に確認してください。\n• Cola de toro en salsa con patatas — じゃがいも添えのアンダルシア風牛テール煮込み。どちらも濃厚な煮込み料理なので、最初はどちらか一品で十分です。\n• Solomillo de cerdo al whisky — にんにくが香るウイスキーソースの豚ヒレ肉。\n\n🦐 魚介 — 1～2品\n• Pavías de bacalao または Taquitos de bacalao con alioli — サクッと揚げたタラ。\n• Chocos、Calamares、Puntillitas、Boquerones — コウイカ、イカ、小さなイカ、カタクチイワシのフライ。\n• Gambas al ajillo — にんにくとオリーブオイルで熱々に仕上げたエビ。パンとよく合います。\n• Chipirones または Variado de pescado a la plancha — 揚げ物を控えたい場合は、小イカや魚の鉄板焼きを。\n• Ensaladilla de gambas — 冷たくクリーミーなエビ入りポテトサラダ。\n\n🌿 セビリアの郷土料理・サイド\n• Espinacas con garbanzos — 伝統的なスパイスで煮込んだ温かいほうれん草とひよこ豆のシチュー。\n• Croquetas de jamón / Croquetas de huevo con chorizo — ハモン、またはチョリソと卵のコロッケ。\n\n👨‍👩‍👧 3人での注文\nテーブルでは、メニューにあるMedia（ハーフ）またはRación（フル）からまず3皿ほど注文し、足りなければ追加しましょう。例：頬肉の煮込み1皿＋タラのフライ1皿＋ガンバスまたはイカの鉄板焼き1皿。公式メニューによると、Tapa（小皿）はバーカウンターのみ。バーで食べる場合はタパス5～6品から始めるとシェアしやすいです。\n\n💶 量に対する価格の目安 — 公式メニュー掲載価格（変更の可能性あり）\nCarrillada：Media €11 / Ración €16.50 · Cola de toro：€11 / €19.50 · Solomillo al whisky：€11 / €15 · Pavías de bacalao：€12.50 / €16.75 · Gambas al ajillo：€14 / €18 · Espinacas con garbanzos：€10 / €13.50。一部のTapaは€3.95～€5.50で、バーのみの提供です。3人で取り分けやすく、量もしっかりしたおすすめの組み合わせです。訪問当日にメニューと価格を確認してください。\n\n🥤 飲み物\n軽く甘いワインソーダのTinto de verano、生ビールのCaña、普通の水（Agua sin gas）、オレンジジュース（Zumo de naranja）がおすすめです。",
+        "zh": "🥇 主菜 — 选1–2道\n• Carrillada en salsa — 慢炖至软嫩的脸颊肉酱汁。官网菜单写作“Carrillada en salsa”，具体肉类可点餐时向店员确认。\n• Cola de toro en salsa con patatas — 配土豆的安达卢西亚牛尾炖菜。它和上一道都是浓郁炖菜，刚开始点其中一道即可。\n• Solomillo de cerdo al whisky — 蒜香威士忌酱猪里脊。\n\n🦐 海鲜 — 选1–2道\n• Pavías de bacalao 或 Taquitos de bacalao con alioli — 酥脆炸鳕鱼。\n• Chocos、Calamares、Puntillitas 或 Boquerones — 炸墨鱼、鱿鱼、小鱿鱼或凤尾鱼。\n• Gambas al ajillo — 蒜香橄榄油热虾，适合配面包。\n• Chipirones 或 Variado de pescado a la plancha — 不想吃油炸时，可选铁板小鱿鱼或混合烤鱼。\n• Ensaladilla de gambas — 冰凉细腻的虾仁土豆沙拉。\n\n🌿 塞维利亚地方菜与配菜\n• Espinacas con garbanzos — 加传统香料慢炖的温热菠菜鹰嘴豆。\n• Croquetas de jamón / Croquetas de huevo con chorizo — 火腿或香肠鸡蛋可乐饼。\n\n👨‍👩‍👧 三人点餐\n坐桌位时，可先按菜单上的Media（半份）或Ración（整份）点约3道，不够再加；例如脸颊肉炖菜1份＋鳕鱼炸物1份＋蒜香虾或铁板小鱿鱼1份。官网菜单注明Tapa（小份）仅在吧台供应；如果坐吧台，可先点5–6份小吃分享。\n\n💶 份量与价格参考 — 官网菜单标价（可能变动）\nCarrillada：Media €11 / Ración €16.50 · Cola de toro：€11 / €19.50 · Solomillo al whisky：€11 / €15 · Pavías de bacalao：€12.50 / €16.75 · Gambas al ajillo：€14 / €18 · Espinacas con garbanzos：€10 / €13.50。部分Tapa价格为€3.95–€5.50，且仅吧台供应。推荐三人分享，份量比较充足；到店当天请再次确认菜单和价格。\n\n🥤 饮品\n可选清爽微甜的Tinto de verano（红酒汽水）、Caña（小杯生啤）、Agua sin gas（普通饮用水）或Zumo de naranja（橙汁）。"
+      },
+      "photoGalleryLabel": {
+        "ko": "방문자 제공 사진",
+        "en": "Guest-provided photos",
+        "ja": "お客様提供写真",
+        "zh": "食客提供的实拍照片"
+      },
+      "searchTerms": {
+        "ko": [
+          "Bodega Góngora",
+          "Bodega Gongora",
+          "보데가 공고라",
+          "보데가 곤고라",
+          "세비야 보데가",
+          "Carrillada",
+          "카리야다",
+          "Cola de toro",
+          "콜라 데 토로",
+          "소꼬리찜",
+          "Solomillo al whisky",
+          "솔로미요 알 위스키",
+          "Pavías de bacalao",
+          "대구 튀김",
+          "Gambas al ajillo",
+          "감바스 알 아히요",
+          "Espinacas con garbanzos",
+          "시금치 병아리콩"
+        ],
+        "en": [
+          "Bodega Góngora",
+          "Bodega Gongora",
+          "Gongora",
+          "Seville tapas",
+          "Carrillada",
+          "pork cheek stew",
+          "Cola de toro",
+          "oxtail stew",
+          "Solomillo de cerdo al whisky",
+          "whisky pork tenderloin",
+          "Pavías de bacalao",
+          "cod fritters",
+          "Chocos",
+          "Calamares",
+          "fried squid",
+          "Gambas al ajillo",
+          "garlic prawns",
+          "Espinacas con garbanzos",
+          "spinach chickpeas",
+          "Ensaladilla de gambas",
+          "prawn potato salad",
+          "croquetas"
+        ],
+        "ja": [
+          "Bodega Góngora",
+          "Bodega Gongora",
+          "ボデガ ゴンゴラ",
+          "ゴンゴラ",
+          "セビリア タパス",
+          "Carrillada",
+          "頬肉煮込み",
+          "Cola de toro",
+          "牛テール煮込み",
+          "Solomillo al whisky",
+          "豚ヒレ ウイスキー",
+          "Pavías de bacalao",
+          "タラフライ",
+          "Gambas al ajillo",
+          "ガンバス アル アヒージョ",
+          "Espinacas con garbanzos",
+          "ほうれん草 ひよこ豆"
+        ],
+        "zh": [
+          "Bodega Góngora",
+          "Bodega Gongora",
+          "戈贡戈拉酒馆",
+          "塞维利亚塔帕斯",
+          "Carrillada",
+          "脸颊肉炖菜",
+          "Cola de toro",
+          "牛尾炖菜",
+          "Solomillo al whisky",
+          "威士忌猪里脊",
+          "Pavías de bacalao",
+          "炸鳕鱼",
+          "Gambas al ajillo",
+          "蒜香虾",
+          "Espinacas con garbanzos",
+          "菠菜鹰嘴豆",
+          "虾仁土豆沙拉",
+          "可乐饼"
+        ]
+      },
+      "restaurantRecommendation": {
+        "ko": "세비야 구시가지 C. Albareda 5의 타파스 바로, 사용자가 강력 추천합니다. 공식 메뉴에는 Carrillada, Cola de toro, Solomillo al whisky, 대구 튀김과 여러 해산물·타파스가 있습니다. 사용자는 양에 비해 가격이 합리적이라고 평가했습니다.",
+        "en": "A tapas bar in Seville Old Town at C. Albareda 5, strongly recommended by the user. Its official menu lists Carrillada, Cola de toro, Solomillo al whisky, cod fritters and a range of seafood and tapas. The user considers the portions good value for the price.",
+        "ja": "セビリア旧市街のC. Albareda 5にあるタパス店で、ユーザーが強くおすすめしています。公式メニューにはCarrillada、Cola de toro、Solomillo al whisky、タラのフライ、各種魚介とタパスがあります。量に対して価格も手頃とのユーザー評価です。",
+        "zh": "位于塞维利亚老城 C. Albareda 5 的Tapas酒馆，用户强烈推荐。官网菜单列有Carrillada、Cola de toro、Solomillo al whisky、炸鳕鱼及多种海鲜和Tapas。用户认为份量与价格相比很划算。"
+      },
+      "editorialNote": {
+        "ko": "양 대비 가성비 평가는 사용자의 개인 방문 추천입니다. 공식 메뉴 가격은 바뀔 수 있으니 방문 당일 확인하세요.",
+        "en": "The value-for-portion assessment is the user’s personal recommendation. Official menu prices can change; check on the day.",
+        "ja": "量に対するお得感はユーザー個人の訪問評価です。公式メニューの価格は変わる場合があるため、訪問日にご確認ください。",
+        "zh": "份量与价格的评价来自用户个人推荐。官网菜单价格可能变动，请在到访当天确认。"
+      },
+      "historySources": [
+        {
+          "url": "https://www.bodegagongora.com/carta/",
+          "label": {
+            "ko": "공식 메뉴·가격",
+            "en": "Official menu and prices",
+            "ja": "公式メニュー・価格",
+            "zh": "官方菜单与价格"
+          }
+        },
+        {
+          "url": "https://www.bodegagongora.com/",
+          "label": {
+            "ko": "공식 홈페이지·주소",
+            "en": "Official site and address",
+            "ja": "公式サイト・所在地",
+            "zh": "官方网站与地址"
+          }
+        },
+        {
+          "url": "https://azahar-sevilla.com/sevilletapas/bodega-gongora/",
+          "label": {
+            "ko": "독립 타파스 안내",
+            "en": "Independent tapas guide",
+            "ja": "独立タパスガイド",
+            "zh": "独立Tapas介绍"
+          }
+        }
+      ]
+    }
 });
 
   // 6. Merge city coordinates

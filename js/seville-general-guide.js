@@ -44,11 +44,13 @@
         },
         tapas: {
           title: '세비야 타파스와 시장 위치 참고',
-          body: '세비야의 전통 음식 예시로 시금치와 병아리콩(Espinacas con garbanzos), 볼살 조림(carrillada), 대구 튀김 파비아스(pavías de bacalao), 생선 튀김(fried fish), 살모레호(salmorejo)가 소개됩니다. 실제 제공 여부는 가게와 시기에 따라 다르며, 음료와 함께 무료로 나온다고 가정하지 마세요. 위치 정정: La Cantina는 트리아나 시장이 아니라 페리아 시장(Mercado de Feria, Calle Feria)에 있습니다.',
+          body: '세비야의 전통 음식 예시로 시금치와 병아리콩(Espinacas con garbanzos), 볼살 조림(carrillada), 대구 튀김 파비아스(pavías de bacalao), 생선 튀김(fried fish), 살모레호(salmorejo)가 소개됩니다. 사용자는 구시가지 C. Albareda 5의 Bodega Góngora를 강력 추천하며, 양에 비해 가격이 합리적이라고 평가했습니다(개인 방문 추천). 방문 전 공식 메뉴와 현행 가격을 확인하세요. 실제 제공 여부는 가게와 시기에 따라 다르며, 음료와 함께 무료로 나온다고 가정하지 마세요. 위치 정정: La Cantina는 트리아나 시장이 아니라 페리아 시장(Mercado de Feria, Calle Feria)에 있습니다.',
           sources: [
             ['세비야 관광청: 타파스', 'https://www.legacy.visitasevilla.es/en/tapas'],
             ['세비야 관광청: 타파스로 세비야 알아보기', 'https://visitasevilla.es/en/discover-seville-through-its-tapas/'],
             ['트리아나 시장 공식 안내', 'https://visitasevilla.es/en/mercado-de-triana/'],
+            ['Bodega Góngora: 공식 메뉴', 'https://www.bodegagongora.com/carta/'],
+            ['Bodega Góngora: 공식 주소·안내', 'https://www.bodegagongora.com/'],
             ['La Cantina: 주소 및 안내', 'https://la-cantina.metro.bar/?lang=en']
           ]
         }
@@ -95,11 +97,13 @@
         },
         tapas: {
           title: 'Seville tapas & a market-location note',
-          body: 'Examples of traditional Seville dishes include spinach with chickpeas (espinacas con garbanzos), braised pork cheek (carrillada), cod pavías, fried fish and salmorejo. Availability varies by venue and time; do not assume a dish is served or included free with a drink. Location correction: La Cantina is at Mercado de Feria on Calle Feria, not Triana Market.',
+          body: 'Examples of traditional Seville dishes include spinach with chickpeas (espinacas con garbanzos), braised pork cheek (carrillada), cod pavías, fried fish and salmorejo. The user also strongly recommends Bodega Góngora at C. Albareda 5 in the Old Town, noting good value for portion size; this is a personal experience. Check its official menu and current prices before visiting. Availability varies by venue and time; do not assume a dish is served or included free with a drink. Location correction: La Cantina is at Mercado de Feria on Calle Feria, not Triana Market.',
           sources: [
             ['Seville Tourism: tapas', 'https://www.legacy.visitasevilla.es/en/tapas'],
             ['Seville Tourism: discover Seville through its tapas', 'https://visitasevilla.es/en/discover-seville-through-its-tapas/'],
             ['Triana Market: official visitor information', 'https://visitasevilla.es/en/mercado-de-triana/'],
+            ['Bodega Góngora: official menu', 'https://www.bodegagongora.com/carta/'],
+            ['Bodega Góngora: official address and information', 'https://www.bodegagongora.com/'],
             ['La Cantina: address and information', 'https://la-cantina.metro.bar/?lang=en']
           ]
         }
@@ -146,11 +150,13 @@
         },
         tapas: {
           title: 'セビリアのタパスと市場の場所について',
-          body: 'セビリアの伝統料理の例として、ほうれん草とひよこ豆（espinacas con garbanzos）、豚ほほ肉の煮込み（carrillada）、タラのフライ（pavías de bacalao）、魚のフライ、サルモレホがあります。提供状況は店や時期によって異なり、飲み物に無料で付くとは限りません。場所の訂正：La Cantinaはトリアナ市場ではなく、Calle Feriaにあるフェリア市場（Mercado de Feria）にあります。',
+          body: 'セビリアの伝統料理の例として、ほうれん草とひよこ豆（espinacas con garbanzos）、豚ほほ肉の煮込み（carrillada）、タラのフライ（pavías de bacalao）、魚のフライ、サルモレホがあります。ユーザーは旧市街C. Albareda 5のBodega Góngoraを強くおすすめし、量に対して価格も手頃との個人的な評価です。訪問前に公式メニューと最新価格をご確認ください。料理の提供状況は店や時期によって異なり、飲み物に無料で付くとは限りません。場所の訂正：La Cantinaはトリアナ市場ではなく、Calle Feriaにあるフェリア市場（Mercado de Feria）にあります。',
           sources: [
             ['セビリア観光局：タパス', 'https://www.legacy.visitasevilla.es/en/tapas'],
             ['セビリア観光局：タパスで知るセビリア', 'https://visitasevilla.es/en/discover-seville-through-its-tapas/'],
             ['トリアナ市場：公式案内', 'https://visitasevilla.es/en/mercado-de-triana/'],
+            ['Bodega Góngora：公式メニュー', 'https://www.bodegagongora.com/carta/'],
+            ['Bodega Góngora：公式所在地・案内', 'https://www.bodegagongora.com/'],
             ['La Cantina：所在地・案内', 'https://la-cantina.metro.bar/?lang=en']
           ]
         }
@@ -197,11 +203,13 @@
         },
         tapas: {
           title: '塞维利亚塔帕斯与市场位置提示',
-          body: '塞维利亚传统菜肴示例包括菠菜鹰嘴豆（espinacas con garbanzos）、炖猪脸颊肉（carrillada）、鳕鱼炸条（pavías de bacalao）、炸鱼和冷汤salmorejo。是否供应因店铺和时间而异；不要假定会供应或随饮料免费赠送。位置更正：La Cantina位于Calle Feria的费里亚市场（Mercado de Feria），不在特里亚纳市场。',
+          body: '塞维利亚传统菜肴示例包括菠菜鹰嘴豆（espinacas con garbanzos）、炖猪脸颊肉（carrillada）、鳕鱼炸条（pavías de bacalao）、炸鱼和冷汤salmorejo。用户强烈推荐位于老城 C. Albareda 5 的 Bodega Góngora，并认为份量与价格相比很划算（个人体验）。到访前请查看官方菜单和当前价格。是否供应因店铺和时间而异；不要假定会供应或随饮料免费赠送。位置更正：La Cantina位于Calle Feria的费里亚市场（Mercado de Feria），不在特里亚纳市场。',
           sources: [
             ['塞维利亚旅游局：塔帕斯', 'https://www.legacy.visitasevilla.es/en/tapas'],
             ['塞维利亚旅游局：通过塔帕斯探索塞维利亚', 'https://visitasevilla.es/en/discover-seville-through-its-tapas/'],
             ['特里亚纳市场：官方信息', 'https://visitasevilla.es/en/mercado-de-triana/'],
+            ['Bodega Góngora：官方菜单', 'https://www.bodegagongora.com/carta/'],
+            ['Bodega Góngora：官方地址与信息', 'https://www.bodegagongora.com/'],
             ['La Cantina：地址与信息', 'https://la-cantina.metro.bar/?lang=en']
           ]
         }
@@ -474,6 +482,7 @@
     if (asksForDirections) return null;
 
     var sevilleContext = /(?:seville|sevilla|세비야|セビリア|塞维利亚)/i.test(normalized);
+    if (/(?:bodega\s*g[óo]?ngora|gongora|공고라|곤고라|戈贡戈拉|ゴンゴラ)/i.test(normalized)) return null;
     var selected = null;
     if (ALIASES.plaza.some(function (alias) { return containsAlias(normalized, alias); })) selected = 'plaza';
     else if (ALIASES.casino.some(function (alias) { return containsAlias(normalized, alias); })) selected = 'casino';

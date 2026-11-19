@@ -561,21 +561,23 @@ function renderDiningMap() {
   const bounds = L.latLngBounds();
 
   items.forEach((item, i) => {
-    let coords = CITY_DEFAULT_COORDS[item.city] || [40.4168, -3.7038];
-    const jitterLat = (coords[0] + (Math.sin(i * 3.7) * 0.008));
-    const jitterLng = (coords[1] + (Math.cos(i * 3.7) * 0.008));
+    // Bodega Góngora, Calle Albareda 5: OpenStreetMap node 4609804500.
+    const isBodegaGongora = item.name === 'Bodega Góngora';
+    let coords = isBodegaGongora ? [37.3894466, -5.9948013] : (CITY_DEFAULT_COORDS[item.city] || [40.4168, -3.7038]);
+    const jitterLat = coords[0] + (isBodegaGongora ? 0 : (Math.sin(i * 3.7) * 0.008));
+    const jitterLng = coords[1] + (isBodegaGongora ? 0 : (Math.cos(i * 3.7) * 0.008));
     const latLng = L.latLng(jitterLat, jitterLng);
     bounds.extend(latLng);
 
-    const priceText = item.baseKrw ? formatCardPrice(item.baseKrw) : '₩30,000';
+    const priceText = isBodegaGongora ? (currentLang === 'en' ? 'Check current prices' : (currentLang === 'ja' ? '価格は店舗に確認' : (currentLang === 'zh' ? '请向门店确认价格' : '가격은 매장 확인'))) : (item.baseKrw ? formatCardPrice(item.baseKrw) : '₩30,000');
     const popupHtml = `
       <div class="map-popup-card">
         <img src="${item.photo}" class="map-popup-img" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1556881286-fc6915169721?w=400'">
         <div class="map-popup-region">${item.region} · ${item.city}</div>
         <div class="map-popup-title">${item.name}</div>
         <div style="font-size:12px;color:#555;">${item.dishName || ''}</div>
-        <div class="map-popup-price">From ${priceText}</div>
-        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ' ' + (item.city || ''))}" target="_blank" rel="noopener" class="map-popup-btn">📍 구글 지도 길찾기</a>
+        <div class="map-popup-price">${isBodegaGongora ? priceText : `From ${priceText}`}</div>
+        <a href="${isBodegaGongora ? item.mapUrl : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.name + ' ' + (item.city || ''))}`}" target="_blank" rel="noopener" class="map-popup-btn">📍 구글 지도 길찾기</a>
       </div>
     `;
 
@@ -3328,6 +3330,10 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
     const localizedLanguage = (info.language && info.language[currentLang]) || item.language;
     const localizedBooking = (info.booking && info.booking[currentLang]) || item.booking;
     const localizedHistory = (info.history && (info.history[currentLang] || info.history.ko)) || '';
+    const localizedOrderGuide = (info.orderGuide && (info.orderGuide[currentLang] || info.orderGuide.ko)) || '';
+    const localizedOrderGuideTitle = (info.orderGuideTitle && (info.orderGuideTitle[currentLang] || info.orderGuideTitle.ko)) || '';
+    const localizedPhotoGalleryLabel = (info.photoGalleryLabel && (info.photoGalleryLabel[currentLang] || info.photoGalleryLabel.ko)) || localizedName;
+    const photoList = Array.isArray(item.photos) && item.photos.length ? item.photos : (item.photo ? [item.photo] : []);
     const localizedFoodContext = (info.foodContext && (info.foodContext[currentLang] || info.foodContext.ko)) || '';
     const localizedRestaurantRecommendation = (info.restaurantRecommendation && (info.restaurantRecommendation[currentLang] || info.restaurantRecommendation.ko)) || '';
     const localizedFoodOrigins = Array.isArray(info.foodOrigins) ? info.foodOrigins : [];
@@ -3338,6 +3344,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
           ${item.photo ? `<img src="${item.photo}" alt="${localizedTitle}" class="photo-thumb" loading="lazy" onload="this.classList.add('loaded');this.parentElement.classList.add('loaded');" onerror="this.onerror=null;this.classList.add('loaded');this.parentElement.classList.add('loaded');this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';" />` : `<div class="photo-thumb" role="img" aria-label="${localizedTitle}" style="display:flex;align-items:center;justify-content:center;font-size:38px;background:#f6efe5;">🍽️</div>`}
           <span class="photo-badge">${cleanHangul(localizedBadge, currentLang)}</span>
         </div>
+        ${photoList.length > 1 ? `<div class="dining-photo-strip" role="group" aria-label="${localizedPhotoGalleryLabel}">${photoList.slice(1).map((src, index) => `<a href="${src}" target="_blank" rel="noopener noreferrer" aria-label="${localizedPhotoGalleryLabel} ${index + 2}"><img src="${src}" alt="${localizedPhotoGalleryLabel} ${index + 2}" loading="lazy" /></a>`).join('')}</div>` : ''}
         <div class="photo-body">
           <div class="photo-region">🏪 ${cleanHangul(localizedName, currentLang)}</div>
           <div class="photo-title">${cleanHangul(localizedTitle, currentLang)}</div>
@@ -3345,6 +3352,7 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
           <div class="dining-features">
             <span class="dining-feature-pill">👴 ${cleanHangul(localizedSeniorTip, currentLang)}</span>
           </div>
+          ${localizedOrderGuide ? `<details class="dining-order-guide"><summary>${localizedOrderGuideTitle}</summary><div class="dining-order-guide-copy">${escapeHtml(localizedOrderGuide)}</div></details>` : ''}
           <div class="dining-meta-list">
             <div class="dining-meta-item">
               <span class="meta-label">💰 ${dict['lbl_price_from'] || (currentLang === 'en' ? 'Est. Price (From)' : (currentLang === 'ja' ? '予想料金 (From)' : (currentLang === 'zh' ? '预计消费 (From)' : '1인 예상 (From)')))}</span>
@@ -3371,10 +3379,11 @@ function renderGlobalDining(list = GLOBAL_DINING_DATA) {
         </div>
       </div>
       <div class="dining-footer">
-        <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}" target="_blank" rel="noopener noreferrer" class="map-link-btn">
+        <a href="${item.name === 'Bodega Góngora' ? item.mapUrl : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`}" target="_blank" rel="noopener noreferrer" class="map-link-btn">
           📍 ${dict['btn_google_map'] || 'Googleマップで見る'}
         </a>
         ${item.officialUrl ? `<a href="${item.officialUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn">${currentLang === 'en' ? 'Official info' : (currentLang === 'ja' ? '公式案内' : (currentLang === 'zh' ? '官方信息' : '공식 안내'))} ↗</a>` : ''}
+        ${item.menuUrl ? `<a href="${item.menuUrl}" target="_blank" rel="noopener noreferrer" class="map-link-btn">${currentLang === 'en' ? 'Official menu' : (currentLang === 'ja' ? '公式メニュー' : (currentLang === 'zh' ? '官方菜单' : '공식 메뉴'))} ↗</a>` : ''}
       </div>
     `;
     if (item.contentOnly) {
@@ -3628,7 +3637,8 @@ function quickFilterDining(key) {
     const info = DINING_I18N_DATA[item.name] || {};
     const dTitle = (info.dishTitle && info.dishTitle[currentLang]) || item.dishName;
     const rName = (info.displayName && info.displayName[currentLang]) || item.name;
-    return item.region.toLowerCase().includes(q) ||
+    const bodegaLocalizedLocation = item.name === 'Bodega Góngora' && Object.values(info.badge || {}).some(value => value.toLowerCase().includes(q));
+    return bodegaLocalizedLocation || item.region.toLowerCase().includes(q) ||
       item.city.toLowerCase().includes(q) ||
       item.dishName.toLowerCase().includes(q) ||
       dTitle.toLowerCase().includes(q) ||
@@ -3651,7 +3661,9 @@ function filterGlobalDining() {
     const dTitle = (info.dishTitle && info.dishTitle[currentLang]) || item.dishName;
     const rName = (info.displayName && info.displayName[currentLang]) || item.name;
     const sig = (info.signature && info.signature[currentLang]) || item.signature;
-    return item.name.toLowerCase().includes(q) ||
+    const bodegaLocalizedLocation = item.name === 'Bodega Góngora' && Object.values(info.badge || {}).some(value => value.toLowerCase().includes(q));
+    const bodegaSearchTerm = item.name === 'Bodega Góngora' && Object.values(info.searchTerms || {}).flat().some(value => value.toLowerCase().includes(q));
+    return bodegaLocalizedLocation || bodegaSearchTerm || item.name.toLowerCase().includes(q) ||
       item.region.toLowerCase().includes(q) ||
       item.city.toLowerCase().includes(q) ||
       item.dishName.toLowerCase().includes(q) ||
@@ -4616,7 +4628,7 @@ function handleLocalChat(query) {
     (/(목차|콘텐츠|카테고리|페이지|섹션|메뉴)/.test(rawQ) && /(어디|어떻게|찾|사용|이용|열|보려면)/.test(rawQ)) ||
     (/(目次|コンテンツ|カテゴリ|ページ|セクション|メニュー)/.test(rawQ) && /(どこ|どう|使|探|開|見方|アクセス)/.test(rawQ)) ||
     (/(目录|内容|分类|类别|页面|章节|菜单)/.test(rawQ) && /(哪里|在哪|如何|怎么|使用|查找|打开|查看)/.test(rawQ));
-  const asksRestaurantMenu = /(restaurant|café|cafe|food|dish|식당|음식|맛집|レストラン|料理|飲食店|餐厅|餐馆|食物|菜品)/i.test(rawQ) && /(menu|메뉴|メニュー|菜单)/i.test(rawQ);
+  const asksRestaurantMenu = /(restaurant|café|cafe|food|dish|식당|음식|맛집|レストラン|料理|飲食店|餐厅|餐馆|食物|菜品|bodega\s*g[óo]ngora|gongora|공고라|곤고라|ゴンゴラ|戈贡戈拉)/i.test(rawQ) && /(menu|메뉴|メニュー|菜单)/i.test(rawQ);
   if (asksNavigationHelp && !asksRestaurantMenu) {
     const navigationHelp = {
       ko: '가이드북의 내용을 찾으려면 상단의 <strong>목차(Contents)</strong>를 누르세요. 표시되는 카테고리 목록에서 원하는 주제를 고른 다음, 해당 페이지 또는 섹션 바로가기를 선택하면 됩니다.',
@@ -4709,7 +4721,15 @@ function handleLocalChat(query) {
   const countryGuideResponse = typeof window.buildEuropeCountryGuideChatResponse === 'function'
     ? window.buildEuropeCountryGuideChatResponse(rawQ, lang)
     : null;
-  if (countryGuideResponse) return countryGuideResponse;
+  if (countryGuideResponse) {
+    const sevilleRestaurantQuestion = /(?:seville|sevilla|세비야|セビリア|塞维利亚)/i.test(rawQ) && /(?:restaurant|restaurants|dining|where to eat|맛집|식당|레스토랑|レストラン|名店|餐厅|餐馆|去哪吃)/i.test(rawQ);
+    const routeQuestion = /(?:directions|route|transport|train|bus|가는 법|이동|교통|버스|기차|行き方|交通|路线|怎么去)/i.test(rawQ);
+    if (sevilleRestaurantQuestion && !routeQuestion && typeof GLOBAL_DINING_DATA !== 'undefined') {
+      const bodega = GLOBAL_DINING_DATA.find(item => item.name === 'Bodega Góngora');
+      if (bodega) return countryGuideResponse + renderRestaurantRecommendationCard(bodega);
+    }
+    return countryGuideResponse;
+  }
   // Keep verified candidate questions ahead of broad food/market matching.
   if (!hasAndalusiaCityContext && typeof window.buildBarcelonaCandidateOptionsChatResponse === 'function') {
     const candidateResponse = window.buildBarcelonaCandidateOptionsChatResponse(rawQ, lang);
@@ -4748,6 +4768,7 @@ function handleLocalChat(query) {
       {city:'Naples',terms:['naples','napoli','나폴리','ナポリ','那不勒斯']},
       {city:'Florence',terms:['florence','firenze','피렌체','フィレンツェ','佛罗伦萨']},
       {city:'Rome',terms:['rome','roma','로마','ローマ','罗马']},
+      {city:'Seville',terms:['seville','sevilla','세비야','セビリア','塞维利亚']},
       {city:'Milan',terms:['milan','milano','밀라노','ミラノ','米兰']},
       {city:'Venice',terms:['venice','venezia','베네치아','베니스','ヴェネツィア','威尼斯']},
       {city:'Vers-Pont-du-Gard',terms:['vers-pont-du-gard','pont du gard','퐁 뒤 가르','ポン・デュ・ガール','加尔桥','nîmes','nimes','님','尼姆']},
@@ -4900,10 +4921,15 @@ function handleLocalChat(query) {
     const note = (info.editorialNote && (info.editorialNote[lang] || info.editorialNote.ko)) || '';
     const sources = renderHistorySourceLinks(info.historySources, lang);
     const mapQuery = item.mapQuery || `${item.name}, ${item.city}, ${item.country}`;
-    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+    const mapUrl = item.name === 'Bodega Góngora' ? item.mapUrl : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+    const orderGuide = info.orderGuide && (info.orderGuide[lang] || info.orderGuide.ko);
+    const orderGuideTitle = info.orderGuideTitle && (info.orderGuideTitle[lang] || info.orderGuideTitle.ko);
+    const photos = Array.isArray(item.photos) ? item.photos : [];
+    const galleryLabel = (info.photoGalleryLabel && (info.photoGalleryLabel[lang] || info.photoGalleryLabel.ko)) || localizedName;
     const mapLabel = ({ ko:'Google 지도에서 검색 ↗', en:'Search on Google Maps ↗', ja:'Google マップで検索 ↗', zh:'在 Google 地图搜索 ↗' })[lang] || 'Google Maps';
     const officialLabel = ({ ko:'공식 안내 ↗', en:'Official information ↗', ja:'公式案内 ↗', zh:'官方信息 ↗' })[lang] || '공식 안내';
-    return `<div class="chat-card-recommend" style="background:#fff;border:1.5px solid #d4e0d7;border-radius:16px;padding:14px 16px;margin-top:8px;line-height:1.65;"><span style="display:inline-block;background:#e8f4ed;color:#1a5249;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;">${escapeHtml(localizedBadge)}</span><h4 style="margin:9px 0 6px;color:#1c2e2c;">${escapeHtml(localizedName)}</h4><strong style="display:block;color:#1a5249;font-size:12px;">${getRestaurantRecommendationLabel(lang)}</strong><p style="margin:6px 0;color:#40534e;">${escapeHtml(recommendation)}</p><p style="margin:6px 0;color:#70523d;font-size:12px;">${escapeHtml(note)}</p>${sources}<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;"><a href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${mapLabel}</a>${item.officialUrl ? `<a href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${officialLabel}</a>` : ''}</div></div>`;
+    const menuLabel = ({ ko:'공식 메뉴 ↗', en:'Official menu ↗', ja:'公式メニュー ↗', zh:'官方菜单 ↗' })[lang] || 'Official menu';
+    return `<div class="chat-card-recommend" style="background:#fff;border:1.5px solid #d4e0d7;border-radius:16px;padding:14px 16px;margin-top:8px;line-height:1.65;"><span style="display:inline-block;background:#e8f4ed;color:#1a5249;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;">${escapeHtml(localizedBadge)}</span><h4 style="margin:9px 0 6px;color:#1c2e2c;">${escapeHtml(localizedName)}</h4>${photos.length ? `<div role="group" aria-label="${escapeHtml(galleryLabel)}" style="display:flex;gap:6px;overflow-x:auto;margin:8px 0;">${photos.map((src, index) => `<a href="${escapeHtml(src)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(galleryLabel)} ${index + 1}" style="flex:0 0 58px;height:58px;border-radius:8px;overflow:hidden;"><img src="${escapeHtml(src)}" alt="${escapeHtml(galleryLabel)} ${index + 1}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></a>`).join('')}</div>` : ''}<strong style="display:block;color:#1a5249;font-size:12px;">${getRestaurantRecommendationLabel(lang)}</strong><p style="margin:6px 0;color:#40534e;">${escapeHtml(recommendation)}</p><p style="margin:6px 0;color:#70523d;font-size:12px;">${escapeHtml(note)}</p>${orderGuide ? `<details style="margin:9px 0;padding:8px 10px;background:#f7faf8;border:1px solid #d9e8df;border-radius:10px;"><summary style="cursor:pointer;color:#1a5249;font-weight:800;font-size:12px;">${escapeHtml(orderGuideTitle)}</summary><div style="white-space:pre-line;margin-top:8px;font-size:12px;color:#344b46;line-height:1.55;">${escapeHtml(orderGuide)}</div></details>` : ''}${sources}<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;"><a href="${escapeHtml(mapUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${mapLabel}</a>${item.officialUrl ? `<a href="${escapeHtml(item.officialUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${officialLabel}</a>` : ''}${item.menuUrl ? `<a href="${escapeHtml(item.menuUrl)}" target="_blank" rel="noopener noreferrer" class="chat-quick-chip">${menuLabel}</a>` : ''}</div></div>`;
   }
 
   function renderMatchingDiningCards(cityOrCountryKeyword) {
@@ -5114,8 +5140,9 @@ function handleLocalChat(query) {
       const locName = (dInfo.displayName && (dInfo.displayName[lang] || dInfo.displayName.ko)) || item.name;
       const locNameL = locName.toLowerCase();
       const dishL = ((dInfo.dishTitle && (dInfo.dishTitle[lang] || dInfo.dishTitle.ko)) || item.dishName || item.signature || '').toLowerCase();
+      const bodegaAliases = item.name === 'Bodega Góngora' ? ['bodega gongora', 'gongora', '보데가 공고라', '보데가 곤고라', '공고라', '곤고라', 'ボデガ ゴンゴラ', 'ゴンゴラ', '戈贡戈拉酒馆', '戈贡戈拉'] : [];
 
-      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL) || dishL.includes(lower) || lower.includes(dishL);
+      const matchName = nameL.includes(lower) || lower.includes(nameL) || locNameL.includes(lower) || lower.includes(locNameL) || dishL.includes(lower) || lower.includes(dishL) || bodegaAliases.some(term => lower.includes(term));
       const tokens = lower.split(/[\s·,/()]+/).filter(t => t.length >= 2);
       const tokenMatch = tokens.length > 0 && tokens.every(t => nameL.includes(t) || locNameL.includes(t) || dishL.includes(t));
 
@@ -5142,9 +5169,14 @@ function handleLocalChat(query) {
           foodOrigins: dInfo.foodOrigins || [],
           historySources: dInfo.historySources || [],
           photo: item.photo,
+          photos: Array.isArray(item.photos) ? item.photos : [],
+          photoGalleryLabel: (dInfo.photoGalleryLabel && (dInfo.photoGalleryLabel[lang] || dInfo.photoGalleryLabel.ko)) || locName,
+          orderGuide: (dInfo.orderGuide && (dInfo.orderGuide[lang] || dInfo.orderGuide.ko)) || null,
+          orderGuideTitle: (dInfo.orderGuideTitle && (dInfo.orderGuideTitle[lang] || dInfo.orderGuideTitle.ko)) || null,
+          menuUrl: item.menuUrl || null,
           officialUrl: item.officialUrl || null,
           mapUrl: item.cardType === 'restaurant_recommendation' && item.mapQuery
-            ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`
+            ? (item.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`)
             : (item.contentOnly ? null : (item.mapUrl || (item.name ? `https://maps.google.com/?q=${encodeURIComponent(item.name + ' ' + (item.city || ''))}` : null)))
         };
       }
@@ -5301,9 +5333,11 @@ function handleLocalChat(query) {
     const tipPrefix = lang === 'ja' ? '💡 シニア配慮＆訪問のコツ:' : (lang === 'en' ? '💡 Senior Comfort & Visit Tip:' : (lang === 'zh' ? '💡 长辈贴士与游玩建议:' : '💡 어르신 배려 & 방문 꿀팁:'));
     const mapLabel = lang === 'ja' ? '💖 Googleマップで見る / 保存 ↗' : (lang === 'en' ? '💖 Open Google Maps / Save Heart ↗' : (lang === 'zh' ? '💖 打开谷歌地图 / 加收藏 ↗' : '💖 구글 지도 열기 / 하트 저장 ↗'));
     const listLabel = lang === 'ja' ? '📋 全体リストを開く ➔' : (lang === 'en' ? '📋 View Full Guidebook List ➔' : (lang === 'zh' ? '📋 查看完整名录 ➔' : '📋 가이드북 전체 목록 보기 ➔'));
-    const isAndalusiaDiningPick = e.type === 'dining' && ['Bodegas Mezquita', 'Los Diamantes', 'La Auténtica Carmela', 'El Pimpi', 'Los Mellizos'].includes(e.item?.name);
+    const isAndalusiaDiningPick = e.type === 'dining' && ['Bodegas Mezquita', 'Los Diamantes', 'La Auténtica Carmela', 'El Pimpi', 'Los Mellizos', 'Bodega Góngora'].includes(e.item?.name);
     const officialSiteLabel = isAndalusiaDiningPick ? (lang === 'ja' ? '🌐 公式サイト ↗' : (lang === 'en' ? '🌐 Official site ↗' : (lang === 'zh' ? '🌐 官方网站 ↗' : '🌐 공식 사이트 ↗'))) : '🌐 공식 사이트 ↗';
     const menuIdeaLabel = lang === 'ja' ? '🍽️ 料理候補:' : (lang === 'en' ? '🍽️ Menu idea:' : (lang === 'zh' ? '🍽️ 菜品参考：' : '🍽️ 메뉴 후보:'));
+    const orderGuideLabel = e.orderGuideTitle || (lang === 'ja' ? '注文ガイド' : (lang === 'en' ? 'Quick order guide' : (lang === 'zh' ? '点餐指南' : '주문 가이드')));
+    const menuLinkLabel = lang === 'ja' ? '📖 公式メニュー ↗' : (lang === 'en' ? '📖 Official menu ↗' : (lang === 'zh' ? '📖 官方菜单 ↗' : '📖 공식 메뉴 ↗'));
 
     let jumpChapter = 'chapter-practical';
     let jumpTargetId = 'curated-family-places';
@@ -5320,12 +5354,15 @@ function handleLocalChat(query) {
         <h4 style="margin:0 0 8px;font-size:16px;color:#1c2e2c;font-weight:800;letter-spacing:-0.02em;">${escapeHtml(e.name)}</h4>
         ${isAndalusiaDiningPick && e.dish ? `<p style="margin:0 0 8px;font-size:12.5px;color:#1a5249;line-height:1.55;"><strong>${menuIdeaLabel}</strong> ${escapeHtml(e.dish)}</p>` : ''}
         ${e.photo ? `<div style="width:100%;height:130px;border-radius:12px;background:url('${e.photo}') center/cover no-repeat;margin-bottom:10px;"></div>` : ''}
+        ${e.photos && e.photos.length > 1 ? `<div role="group" aria-label="${escapeHtml(e.photoGalleryLabel || e.name)}" style="display:flex;gap:6px;overflow-x:auto;margin:0 0 10px;">${e.photos.slice(1).map((src, index) => `<a href="${src}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(e.photoGalleryLabel || e.name)} ${index + 2}" style="flex:0 0 58px;height:58px;border-radius:8px;overflow:hidden;"><img src="${src}" alt="${escapeHtml(e.photoGalleryLabel || e.name)} ${index + 2}" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></a>`).join('')}</div>` : ''}
         <p style="margin:0 0 10px;font-size:13px;color:#4a5c58;line-height:1.65;">${escapeHtml(e.desc)}</p>
+        ${e.orderGuide ? `<details style="margin:0 0 10px;background:#f7faf8;border:1px solid #d9e8df;border-radius:10px;padding:9px 12px;"><summary style="cursor:pointer;font-size:12px;font-weight:800;color:#1a5249;">${escapeHtml(orderGuideLabel)}</summary><div style="white-space:pre-line;margin-top:8px;font-size:12px;color:#344b46;line-height:1.55;">${escapeHtml(e.orderGuide)}</div></details>` : ''}
         ${e.history ? `<div style="background:#f2f8f5;border-left:3px solid #1a5249;border-radius:10px;padding:10px 12px;margin:8px 0 12px;"><strong style="display:block;margin-bottom:5px;color:#1a5249;font-size:12px;">🏛️ ${getResearchHistoryLabel(lang, e.type === 'dining' ? 'dining' : 'attraction')}</strong><div style="white-space:pre-line;font-size:12px;color:#40534e;line-height:1.65;">${escapeHtml(e.history)}</div>${e.foodContext ? `<div style="white-space:pre-line;margin-top:8px;font-size:12px;color:#40534e;line-height:1.65;"><strong>${getFoodContextLabel(lang)}</strong><br>${escapeHtml(e.foodContext)}</div>` : ''}${Array.isArray(e.foodOrigins) ? e.foodOrigins.map(origin => `<div style="white-space:pre-line;margin-top:8px;font-size:12px;color:#40534e;line-height:1.65;"><strong>${escapeHtml(origin.name || origin.dishName || '')}</strong><br>${escapeHtml(origin[lang] || origin.ko || origin.en || '')}</div>`).join('') : ''}${renderHistorySourceLinks(e.historySources, lang)}</div>` : ''}
         ${e.tip ? `<div style="background:#faf8f4;border-radius:10px;padding:9px 12px;font-size:12px;color:#70523d;margin-bottom:12px;border-left:3px solid #d8754d;line-height:1.55;"><strong>${tipPrefix}</strong> ${escapeHtml(e.tip)}</div>` : ''}
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
           ${e.mapUrl ? `<a href="${e.mapUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#d8754d;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${mapLabel}</button></a>` : ''}
           ${e.officialUrl ? `<a href="${e.officialUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#1b4332;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${officialSiteLabel}</button></a>` : ''}
+          ${e.menuUrl ? `<a href="${e.menuUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;"><button type="button" class="chat-quick-chip" style="background:#456b58;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${menuLinkLabel}</button></a>` : ''}
           <button type="button" class="chat-quick-chip" onclick="switchGuidebookChapter('${jumpChapter}'); if(typeof goToBookPage==='function') goToBookPage('${jumpChapter}', 0); setTimeout(() => { const el = document.getElementById('${jumpTargetId}'); if(el) el.scrollIntoView({behavior:'smooth'}); }, 150);" style="background:#1a5249;color:#fff;font-weight:700;padding:8px 14px;border-radius:20px;border:none;cursor:pointer;">${listLabel}</button>
         </div>
       </div>

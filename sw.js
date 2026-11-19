@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261119_divino_salvador_review_v1)
+// SlowTravel Mobile Offline Service Worker (v20261119_bodega_gongora_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261119_divino_salvador_review_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261119_bodega_gongora_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -46,6 +46,11 @@ const PRECACHE_ASSETS = [
   './img/gourmet/barcelona-prawns-user.jpg',
   './img/gourmet/barcelona-jamon-user.jpg',
   './img/gourmet/barcelona-croquetas-user.jpg',
+  './img/gourmet/bodega-gongora-01.jpg',
+  './img/gourmet/bodega-gongora-02.jpg',
+  './img/gourmet/bodega-gongora-03.jpg',
+  './img/gourmet/bodega-gongora-04.jpg',
+  './img/gourmet/bodega-gongora-05.jpg',
   './img/italy-food/naples-pizza-a-portafoglio.jpg',
   './img/italy-food/florence-schiacciata.jpg',
   './img/italy-food/florence-lampredotto.jpg',
