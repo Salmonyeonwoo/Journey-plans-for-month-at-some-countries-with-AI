@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261118_andalucia_review_v1)
+// SlowTravel Mobile Offline Service Worker (v20261119_seville_itinerary_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261118_andalucia_review_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261119_seville_itinerary_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -18,6 +18,7 @@ const PRECACHE_ASSETS = [
   './css/alhambra-visit-review.css',
   './css/europe-country-nightlife.css',
   './css/seville-general-guide.css',
+  './css/seville-date-itinerary.css',
   './css/europe-intercity-fares.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
@@ -54,6 +55,7 @@ const PRECACHE_ASSETS = [
   './js/granada-center-review.js',
   './js/granada-malaga-general-guide.js',
   './js/seville-general-guide.js',
+  './js/seville-date-itinerary.js',
   './js/andalucia-streets-drama-guide.js',
   './img/user-seville-landmarks/avenida-constitucion-20261118.webp',
   './img/user-seville-landmarks/plaza-espana-tower-cropped.webp',

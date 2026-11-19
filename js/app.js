@@ -3885,31 +3885,39 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     const dItem = rawDays[originalDayIndex] || rawDays[slotIdx];
     if (!dItem) continue;
 
-    if (filterCityName !== 'ALL' && !dItem.city.includes(filterCityName)) {
-      continue;
-    }
-
     const curD = new Date(startD);
     curD.setDate(startD.getDate() + slotIdx);
     const dateFormatted = `${curD.getFullYear()}-${String(curD.getMonth() + 1).padStart(2, '0')}-${String(curD.getDate()).padStart(2, '0')}`;
+    const dateOverride = currentActiveRegion === 'IBERIA' && typeof window.getSevilleDateItineraryForDate === 'function'
+      ? window.getSevilleDateItineraryForDate(dateFormatted, currentLang)
+      : null;
+    const cityForFilter = dateOverride ? '세비야' : dItem.city;
+    if (filterCityName !== 'ALL' && !cityForFilter.includes(filterCityName)) {
+      continue;
+    }
     const dow = weekdays[curD.getDay()];
 
     const dayI18n = planI18nList[originalDayIndex] || null;
-    const localizedTheme = dayI18n ? dayI18n.theme[currentLang] : dItem.theme;
-    const localizedMorning = dayI18n ? dayI18n.morning[currentLang] : dItem.morning;
-    const localizedRest = dayI18n ? dayI18n.rest[currentLang] : dItem.rest;
-    const localizedEvening = dayI18n ? dayI18n.evening[currentLang] : dItem.evening;
-    const localizedWalk = dayI18n ? dayI18n.walk[currentLang] : (dItem.walk || '낮음');
-    const localizedTransport = dayI18n ? dayI18n.transport[currentLang] : (dItem.transport || 'Uber XL');
-    const localizedMeal = dayI18n ? dayI18n.meal[currentLang] : (dItem.meal || '현지 미식');
-    const localizedCity = dayI18n ? dayI18n.city[currentLang] : dItem.city;
+    const localizedTheme = dateOverride ? dateOverride.theme : (dayI18n ? dayI18n.theme[currentLang] : dItem.theme);
+    const localizedMorning = dateOverride ? dateOverride.morning : (dayI18n ? dayI18n.morning[currentLang] : dItem.morning);
+    const localizedRest = dateOverride ? dateOverride.rest : (dayI18n ? dayI18n.rest[currentLang] : dItem.rest);
+    const localizedEvening = dateOverride ? dateOverride.evening : (dayI18n ? dayI18n.evening[currentLang] : dItem.evening);
+    const localizedWalk = dateOverride ? dateOverride.walk : (dayI18n ? dayI18n.walk[currentLang] : (dItem.walk || '낮음'));
+    const localizedTransport = dateOverride ? dateOverride.transport : (dayI18n ? dayI18n.transport[currentLang] : (dItem.transport || 'Uber XL'));
+    const localizedMeal = dateOverride ? dateOverride.meal : (dayI18n ? dayI18n.meal[currentLang] : (dItem.meal || '현지 미식'));
+    const localizedCity = dateOverride ? dateOverride.city : (dayI18n ? dayI18n.city[currentLang] : dItem.city);
+    const localizedEvents = dateOverride ? dateOverride.events : (dayI18n && dayI18n.events[currentLang]);
+    const isTransferForCard = dateOverride ? false : dItem.isTransfer;
+    const customItineraryDetails = dateOverride && typeof window.renderSevilleDateItineraryDetails === 'function'
+      ? window.renderSevilleDateItineraryDetails(dateFormatted, currentLang)
+      : '';
 
-    const eventBadges = dayI18n && dayI18n.events[currentLang]
-      ? dayI18n.events[currentLang].map(e => `<span class="event-pill">${cleanHangul(e, currentLang)}</span>`).join(' ')
+    const eventBadges = localizedEvents && localizedEvents.length
+      ? localizedEvents.map(e => `<span class="event-pill">${cleanHangul(e, currentLang)}</span>`).join(' ')
       : '';
 
     const card = document.createElement('div');
-    card.className = `day-card ${dItem.isTransfer ? 'transfer' : ''}`;
+    card.className = `day-card ${isTransferForCard ? 'transfer' : ''}`;
     card.setAttribute('draggable', 'true');
     card.setAttribute('data-card-index', slotIdx);
     card.addEventListener('dragstart', (e) => handleTimelineDragStart(e, slotIdx));
@@ -3920,9 +3928,9 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     card.addEventListener('dragend', (e) => handleTimelineDragEnd(e));
 
     const transferBadgeLabel = dict['lbl_transfer_day'] || '거점이동일';
-    const morningTitle = dict['timeline_morning_title'] || '오전: 핵심 문화 산책 (피로도 낮음)';
-    const restTitle = dict['timeline_rest_title'] || '오후: 필수 휴식 (시에스타 충전)';
-    const eveningTitle = dict['timeline_evening_title'] || '저녁: 야경 감상 & 가벼운 식사';
+    const morningTitle = dateOverride ? dateOverride.labels.morning : (dict['timeline_morning_title'] || '오전: 핵심 문화 산책 (피로도 낮음)');
+    const restTitle = dateOverride ? dateOverride.labels.rest : (dict['timeline_rest_title'] || '오후: 필수 휴식 (시에스타 충전)');
+    const eveningTitle = dateOverride ? dateOverride.labels.evening : (dict['timeline_evening_title'] || '저녁: 야경 감상 & 가벼운 식사');
 
     const isInitiallyExpanded = window.allTimelineDaysExpanded || false;
     const expandBtnLabel = isInitiallyExpanded
@@ -3935,7 +3943,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
         <div class="day-date">${dateFormatted} (${dow})</div>
         <span class="city-tag">${cleanHangul(localizedCity, currentLang)}</span>
         <div class="timeline-drag-handle" title="${currentLang === 'en' ? 'Drag to reorder day schedule' : (currentLang === 'ja' ? 'ドラッグして日程の順序を変更' : (currentLang === 'zh' ? '拖拽调整日程顺序' : '드래그하여 일정 순서 변경'))}">${currentLang === 'en' ? '⋮⋮ Drag to reorder' : (currentLang === 'ja' ? '⋮⋮ ドラッグ移動' : (currentLang === 'zh' ? '⋮⋮ 拖拽排序' : '⋮⋮ 드래그 이동'))}</div>
-        ${dItem.isTransfer ? `<div class="transfer-badge">${transferBadgeLabel}</div>` : ''}
+        ${isTransferForCard ? `<div class="transfer-badge">${transferBadgeLabel}</div>` : ''}
       </div>
       <div class="day-body">
         <div class="day-header-summary">
@@ -3973,6 +3981,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
               <span>${cleanHangul(localizedMeal, currentLang)}</span>
             </div>
           </div>
+          ${customItineraryDetails}
         </div>
       </div>
     `;
@@ -4461,14 +4470,23 @@ function downloadCustomCalendarIcs() {
     const dItem = plan.days[i];
     const curD = new Date(startD);
     curD.setDate(startD.getDate() + i);
-    const dStr = curD.toISOString().slice(0, 10).replace(/-/g, "");
+    const dStr = curD.toISOString().slice(0, 10).replace(/-/g, '');
+    const dateForOverride = `${curD.getFullYear()}-${String(curD.getMonth() + 1).padStart(2, '0')}-${String(curD.getDate()).padStart(2, '0')}`;
+    const dateOverride = currentActiveRegion === 'IBERIA' && typeof window.getSevilleDateItineraryForDate === 'function'
+      ? window.getSevilleDateItineraryForDate(dateForOverride, currentLang)
+      : null;
+    const eventCity = dateOverride ? dateOverride.city : dItem.city;
+    const eventTheme = dateOverride ? dateOverride.theme : dItem.theme;
+    const eventDescription = dateOverride
+      ? `${dateOverride.theme}\\n${dateOverride.labels.morning}: ${dateOverride.morning}\\n${dateOverride.labels.rest}: ${dateOverride.rest}\\n${dateOverride.labels.evening}: ${dateOverride.evening}\\n${dateOverride.walk}`
+      : `${dItem.theme}\\n오후: ${dItem.rest}\\n저녁: ${dItem.evening}\\n보행: ${dItem.walk}`;
 
     icsLines.push("BEGIN:VEVENT");
     icsLines.push(`UID:slowtravel-${currentActiveRegion}-${i + 1}-${dStr}@familytravel.com`);
     icsLines.push(`DTSTAMP:${dStr}T090000Z`);
     icsLines.push(`DTSTART;VALUE=DATE:${dStr}`);
-    icsLines.push(`SUMMARY:[Day ${i + 1}] ${dItem.city} - ${dItem.theme}`);
-    icsLines.push(`DESCRIPTION:${dItem.theme}\n오후: ${dItem.rest}\n저녁: ${dItem.evening}\n보행: ${dItem.walk}`);
+    icsLines.push(`SUMMARY:[Day ${i + 1}] ${eventCity} - ${eventTheme}`);
+    icsLines.push(`DESCRIPTION:${eventDescription}`);
     icsLines.push("END:VEVENT");
   }
 
@@ -4607,6 +4625,10 @@ function handleLocalChat(query) {
       zh: '浏览指南时，请点击页眉中的<strong>目录（Contents）</strong>。从显示的分类列表中选择主题，再选择所需页面或章节的快捷入口。'
     };
     return navigationHelp[lang] || navigationHelp.ko;
+  }
+  if (typeof window.buildSevilleDateItineraryChatResponse === 'function') {
+    const sevilleDateResponse = window.buildSevilleDateItineraryChatResponse(rawQ, lang);
+    if (sevilleDateResponse) return sevilleDateResponse;
   }
   if (typeof window.buildGranadaMalagaGeneralChatResponse === 'function') {
     const generalGuideResponse = window.buildGranadaMalagaGeneralChatResponse(rawQ, lang);
