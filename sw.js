@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261119_seville_cathedral_review_v1)
+// SlowTravel Mobile Offline Service Worker (v20261119_divino_salvador_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261119_seville_cathedral_review_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261119_divino_salvador_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -18,6 +18,7 @@ const PRECACHE_ASSETS = [
   './css/alhambra-visit-review.css',
   './css/europe-country-nightlife.css',
   './css/seville-general-guide.css',
+  './css/seville-divino-salvador-photo-guide.css',
   './css/seville-cathedral-photo-guide.css',
   './css/seville-date-itinerary.css',
   './css/europe-intercity-fares.css',
@@ -56,6 +57,7 @@ const PRECACHE_ASSETS = [
   './js/granada-center-review.js',
   './js/granada-malaga-general-guide.js',
   './js/seville-general-guide.js',
+  './js/seville-divino-salvador-photo-guide.js',
   './js/seville-cathedral-photo-guide.js',
   './js/seville-date-itinerary.js',
   './js/andalucia-streets-drama-guide.js',
@@ -64,6 +66,18 @@ const PRECACHE_ASSETS = [
   './img/user-seville-landmarks/casino-exposicion-cropped.webp',
   './img/user-seville-landmarks/palacio-san-telmo.webp',
   './img/user-seville-landmarks/real-fabrica-tabacos.webp',
+  './img/user-seville-divino-salvador-review/salvador-2388.webp',
+  './img/user-seville-divino-salvador-review/salvador-2390.webp',
+  './img/user-seville-divino-salvador-review/salvador-2391.webp',
+  './img/user-seville-divino-salvador-review/salvador-2392.webp',
+  './img/user-seville-divino-salvador-review/salvador-2393.webp',
+  './img/user-seville-divino-salvador-review/salvador-2394.webp',
+  './img/user-seville-divino-salvador-review/salvador-2400.webp',
+  './img/user-seville-divino-salvador-review/salvador-2401.webp',
+  './img/user-seville-divino-salvador-review/salvador-2402.webp',
+  './img/user-seville-divino-salvador-review/salvador-2406.webp',
+  './img/user-seville-divino-salvador-review/salvador-2407.webp',
+  './img/user-seville-divino-salvador-review/salvador-2410.webp',
   './img/user-seville-cathedral-review/cathedral-pier.webp',
   './img/user-seville-cathedral-review/cathedral-vaults.webp',
   './img/user-seville-cathedral-review/cathedral-retablo-mayor.webp',
