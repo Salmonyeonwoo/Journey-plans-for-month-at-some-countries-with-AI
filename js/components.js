@@ -1421,6 +1421,9 @@
                 <button type="button" class="italy-subtab" data-subtab="dining" onclick="selectItalySubTab('dining')">
                   <span data-i18n="subtab_dining">🍝 대표 미식</span>
                 </button>
+                <button type="button" class="italy-subtab" data-subtab="map-notes" onclick="selectItalySubTab('map-notes')" hidden>
+                  <span data-i18n="subtab_florence_map">🗺️ 지도 메모</span>
+                </button>
                 <button type="button" class="italy-subtab" data-subtab="transit" onclick="selectItalySubTab('transit')">
                   <span data-i18n="subtab_transit">🚆 대중교통</span>
                 </button>

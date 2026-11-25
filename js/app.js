@@ -9622,9 +9622,19 @@ function selectItalyCity(cityId) {
     });
   }
 
+  if (cityId !== 'florence' && window.currentItalySubTab === 'map-notes') {
+    window.currentItalySubTab = 'attractions';
+  }
   const subTabBar = document.getElementById('italySubTabBar');
   if (subTabBar) {
     subTabBar.style.display = (cityId === 'itinerary' || cityId === 'capri') ? 'none' : 'flex';
+    const mapNotesButton = subTabBar.querySelector('[data-subtab="map-notes"]');
+    if (mapNotesButton) mapNotesButton.hidden = cityId !== 'florence';
+    subTabBar.querySelectorAll('.italy-subtab').forEach(btn => {
+      const match = btn.getAttribute('data-subtab') === window.currentItalySubTab;
+      btn.classList.toggle('active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
   }
 
   renderItalyCityGuide();
@@ -9632,6 +9642,7 @@ function selectItalyCity(cityId) {
 window.selectItalyCity = selectItalyCity;
 
 function selectItalySubTab(subTabId) {
+  if (subTabId === 'map-notes' && window.currentItalyCity !== 'florence') return;
   window.currentItalySubTab = subTabId;
 
   const subTabBar = document.getElementById('italySubTabBar');
@@ -9946,6 +9957,10 @@ function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? curre
     });
 
     html += '</div></div>';
+  }
+  else if (subTabId === 'map-notes' && cityId === 'florence') {
+    const mapGuide = window.FLORENCE_HOST_MAP_GUIDE;
+    if (mapGuide && typeof mapGuide.render === 'function') html += mapGuide.render(lang);
   }
   // Sub-Tab Content: 3. Transit (대중교통)
   else if (subTabId === 'transit') {
