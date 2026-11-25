@@ -1,0 +1,188 @@
+.florence-street-art-safety {
+  margin: 1.4rem 0 0;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border: 1px solid #d7e4de;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fbfdfb 0%, #f4f8f5 100%);
+  color: #24352d;
+  box-shadow: 0 8px 24px rgba(28, 59, 43, 0.07);
+  scroll-margin-top: 1.5rem;
+}
+
+.florence-street-art-safety .fsa-heading {
+  max-width: 62rem;
+  margin-bottom: 1.15rem;
+}
+
+.florence-street-art-safety .fsa-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  color: #387253;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.florence-street-art-safety .fsa-heading h3 {
+  margin: 0 0 0.45rem;
+  color: #173c2a;
+  font-size: clamp(1.22rem, 2.6vw, 1.65rem);
+  line-height: 1.3;
+}
+
+.florence-street-art-safety .fsa-heading p {
+  margin: 0;
+  color: #526259;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.florence-street-art-safety .fsa-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+.florence-street-art-safety .fsa-card {
+  min-width: 0;
+  padding: 1rem 1.05rem;
+  border: 1px solid #e0e9e3;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.florence-street-art-safety .fsa-card-wide {
+  grid-column: auto;
+}
+
+.florence-street-art-safety .fsa-card h4 {
+  margin: 0 0 0.7rem;
+  color: #244b36;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.florence-street-art-safety .fsa-copy p {
+  margin: 0.55rem 0 0;
+  color: #38473f;
+  font-size: 0.91rem;
+  line-height: 1.68;
+}
+
+.florence-street-art-safety .fsa-copy p:first-child {
+  margin-top: 0;
+}
+
+.florence-street-art-safety .fsa-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.florence-street-art-safety .fsa-card li {
+  margin: 0.55rem 0 0;
+  color: #38473f;
+  font-size: 0.91rem;
+  line-height: 1.68;
+}
+
+.florence-street-art-safety .fsa-card li:first-child {
+  margin-top: 0;
+}
+
+.florence-street-art-safety .fsa-sources {
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #dfe8e1;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.florence-street-art-safety .fsa-sources summary {
+  color: #315c43;
+  font-size: 0.86rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.florence-street-art-safety .fsa-sources ul,
+.fsa-chat-answer .fsa-chat-sources {
+  margin: 0.65rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.florence-street-art-safety .fsa-sources li,
+.fsa-chat-answer .fsa-chat-sources li {
+  margin: 0.35rem 0;
+  line-height: 1.5;
+}
+
+.florence-street-art-safety .fsa-sources a,
+.fsa-chat-answer .fsa-chat-sources a {
+  color: #1e6842;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.fsa-chat-answer {
+  margin: 0.5rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d7e4de;
+  border-radius: 14px;
+  background: #f7fbf8;
+  color: #293b31;
+  line-height: 1.65;
+}
+
+.fsa-chat-answer > strong {
+  color: #173c2a;
+}
+
+.fsa-chat-answer p {
+  margin: 0.5rem 0;
+}
+
+.fsa-chat-answer .fsa-chat-sources {
+  font-size: 0.82rem;
+}
+
+.fsa-chat-answer .fsa-chat-link {
+  margin-top: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #b9d4c3;
+  border-radius: 999px;
+  background: #eaf5ee;
+  color: #245c3c;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+}
+
+.florence-street-art-safety a:focus-visible,
+.fsa-chat-answer a:focus-visible,
+.fsa-chat-answer button:focus-visible,
+.florence-street-art-safety summary:focus-visible {
+  outline: 3px solid #efaa54;
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .florence-street-art-safety .fsa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .florence-street-art-safety .fsa-card-wide {
+    grid-column: auto;
+  }
+
+  .florence-street-art-safety {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .florence-street-art-safety .fsa-card {
+    padding: 0.9rem;
+  }
+}
