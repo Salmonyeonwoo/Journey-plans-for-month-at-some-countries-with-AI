@@ -6477,10 +6477,10 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
     },
     "night_view": {
       "description": {
-        "en": "Along the seafront from Borgo Santa Lucia toward Mergellina, the promenade looks across the Gulf toward Vesuvius, Capri and Posillipo. Naples tourism describes it as a sunset-viewing spot.",
-        "ja": "ボルゴ・サンタ・ルチアからメルジェッリーナへ続く海辺の遊歩道から、ナポリ湾やヴェスヴィオ山、カプリ島、ポジリポ方面を望めます。ナポリの観光情報では夕景スポットとして紹介されています。",
-        "ko": "보르고 산타 루치아에서 메르젤리나 방향으로 이어지는 해안 산책로에서 나폴리만과 베수비오, 카프리, 포실리포 쪽 전망을 볼 수 있다. 현지 관광 자료는 이곳을 석양 전망 장소로 소개한다.",
-        "zh": "从圣卢西亚村通往梅尔杰利纳的海滨步道可眺望那不勒斯湾、维苏威火山、卡普里岛和波西利波方向。那不勒斯旅游资料将此处介绍为观赏日落的地点。"
+        "en": "From the seafront between Borgo Santa Lucia and Mergellina, the Gulf opens toward Vesuvius, Capri and Posillipo; Naples tourism presents this coast as a sunset-viewing area. As checked on 25 November 2026, the City of Naples lists Castel dell’Ovo as closed to the public until further notice for renovation. Do not plan to enter; recheck the city notice and nearby route access before going.",
+        "ja": "ボルゴ・サンタ・ルチアからメルジェッリーナにかけての海辺から、ヴェスヴィオ山、カプリ島、ポジリポ方面を望めます。ナポリ観光案内はこの海岸を夕景スポットとして紹介しています。2026年11月25日確認時点で、ナポリ市は改修工事のためカステル・デッローヴォを一般公開休止（再開日未定）としています。入城を予定せず、訪問前に市の案内と周辺ルートの利用状況を再確認してください。",
+        "ko": "보르고 산타 루치아에서 메르젤리나 방향의 해안에서 베수비오산·카프리·포실리포 쪽을 바라볼 수 있으며, 나폴리 관광 안내는 이 해안을 석양 전망 구간으로 소개한다. 2026년 11월 25일 확인 당시 나폴리 시는 보수 공사로 카스텔 델로보를 ‘추후 공지일까지’ 폐쇄한다고 안내했다. 내부 입장을 계획하지 말고 방문 전에 시 공지와 주변 이동 경로의 이용 가능 여부를 다시 확인하세요.",
+        "zh": "从圣卢西亚村至梅尔杰利纳一带的海滨可眺望维苏威火山、卡普里岛和波西利波方向；那不勒斯旅游资料将这段海岸列为观赏日落的地点。截至2026年11月25日查询，那不勒斯市政府列明蛋堡因翻修工程暂停对公众开放，恢复日期另行通知。请勿安排入内参观；出行前重新查看市政府公告及周边路线通行情况。"
       },
       "mobilityNote": {
         "en": "This is a long, roughly 3-km waterfront promenade. Pavement and crossings can vary by section, so do not assume the entire route is flat or step-free, or that lighting is guaranteed throughout at night.",
@@ -6489,17 +6489,39 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
         "zh": "这是一段沿海约3公里的长步道。不同路段的人行道和过街点可能不同，不应假定全程平坦或无台阶，也不要默认夜间照明全程有保障。"
       },
       "names": {
-        "en": "Lungomare Caracciolo and the Borgo Marinari waterfront",
-        "ja": "ルンゴマーレ・カラッチョロとボルゴ・マリナーリの海辺",
-        "ko": "룽고마레 카라촐로와 보르고 마리나리 해안 산책로",
-        "zh": "卡拉乔洛海滨大道与马里纳里村海滨"
+        "en": "Lungomare Caracciolo, Via Partenope and the Borgo Marinari waterfront",
+        "ja": "ルンゴマーレ・カラッチョロ、パルテノペ通り、ボルゴ・マリナーリの海辺",
+        "ko": "룽고마레 카라촐로·비아 파르테노페·보르고 마리나리 해안 산책로",
+        "zh": "卡拉乔洛海滨大道、帕特诺佩街与马里纳里村海滨"
       },
       "sources": [
         {
           "title": "Five spots where enjoying the Sunset in Naples | Visit Naples",
           "url": "https://www.visitnaples.eu/en/neapolitanity/discover-naples/where-see-the-sunset-in-naples"
+        },
+        {
+          "title": "Castel dell’Ovo — City of Naples (closure status checked 25 Nov 2026)",
+          "url": "https://www.comune.napoli.it/vivere-il-comune/luoghi/castel-dellovo/"
         }
-      ]
+      ],
+      "image": "img/naples-florence-review/castel-dell-ovo-night.webp",
+      "image_alt": {
+        "en": "Castel dell’Ovo illuminated at night on Naples’s seafront",
+        "ja": "夜のナポリ海岸に立つ、ライトアップされたカステル・デッローヴォ",
+        "ko": "밤의 나폴리 해안에 선 카스텔 델로보의 야경",
+        "zh": "夜间灯光下的那不勒斯海滨蛋堡"
+      },
+      "image_caption": {
+        "en": "Night photograph of Castel dell’Ovo; it documents the castle’s appearance, not current access or lighting conditions.",
+        "ja": "カステル・デッローヴォの夜景写真です。現在の入場可否や照明状況を示すものではありません。",
+        "ko": "카스텔 델로보의 야간 사진입니다. 현재 입장 가능 여부나 조명 상태를 보증하는 사진은 아닙니다.",
+        "zh": "蛋堡夜景照片；仅展示城堡外观，不代表当前开放或灯光状况。"
+      },
+      "image_title": "Castel dell’Ovo 350.jpg — Wikimedia Commons",
+      "image_credit": "Peppelama (English Wikipedia)",
+      "image_source_url": "https://commons.wikimedia.org/wiki/File:Castel_dell%27Ovo_350.jpg",
+      "image_license": "Public domain (released by the author)",
+      "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing#Public_domain"
     },
     "additional_night_views": [
       {
@@ -6535,6 +6557,144 @@ window.EUROPE_COUNTRY_GUIDE_DATA = [
           {
             "title": "Naples’ parks and public gardens — Comune di Napoli",
             "url": "https://napoliforme.comune.napoli.it/en/itinerari/-/itinerario/Tematico/Natura/I-parchi-e-i-giardini-pubblici-di-Napoli"
+          }
+        ]
+      },
+      {
+        "city": {
+          "en": "Naples",
+          "ja": "ナポリ",
+          "ko": "나폴리",
+          "zh": "那不勒斯"
+        },
+        "names": {
+          "en": "San Martino hill panorama",
+          "ja": "サン・マルティーノの丘の眺望",
+          "ko": "산 마르티노 언덕 전망",
+          "zh": "圣马蒂诺山丘全景"
+        },
+        "description": {
+          "en": "The panorama near Certosa di San Martino looks across Naples’s historic centre toward Vesuvius. This is a viewpoint suggestion, not a promise of after-dark access. The museum’s official notice says it closes at 17:00, with last ticket entry at 16:00, from 24 March 2025; that notice does not establish evening access to the outdoor viewpoint. The Central Funicular has its city-side station at Piazza Augusteo; the Naples information page also identifies Montesanto as a funicular route for the museum. Check the route, service and access on the day. The accompanying archive photo is a daylight image, not a night scene.",
+          "ja": "サン・マルティーノ修道院近くの眺望地点から、ナポリ旧市街越しにヴェスヴィオ山を望めます。夜間の立ち入りを保証する案内ではありません。博物館の公式告知では2025年3月24日以降、閉館17時・最終入館16時とされていますが、屋外の眺望地点の夕方以降の利用可否までは示していません。中央フニコラーレの市街側駅はピアッツァ・アウグステーオにあり、ナポリ案内は博物館への路線としてモンテサント線も挙げています。経路・運行・アクセスは当日に確認してください。写真は昼間の記録で、夜景ではありません。",
+          "ko": "산 마르티노 수도원 근처 전망 지점에서 나폴리 구시가지 너머 베수비오산을 바라볼 수 있다. 야간 접근을 보장하는 안내는 아니다. 박물관 공식 공지는 2025년 3월 24일부터 17시 폐관, 매표소 마지막 입장 16시라고 알리지만, 야외 전망 지점의 저녁 이후 이용 가능 여부까지 확인해 주지는 않는다. 중앙 푸니쿨라레의 도심 쪽 역은 피아차 아우구스테오이며, 나폴리 안내는 박물관 방향 노선으로 몬테산토 푸니쿨라레도 소개한다. 당일 경로·운행·접근 가능 여부를 확인하세요. 함께 실은 기록 사진은 낮 사진이며 야경이 아니다.",
+          "zh": "圣马蒂诺修道院附近的观景点可越过那不勒斯老城眺望维苏威火山。这只是观景建议，并不代表夜间可以进入。博物馆官方通知称自2025年3月24日起17:00闭馆、售票处最后入场为16:00；该通知并未确认户外观景点傍晚后的通行情况。中央缆车在市区一侧的站点为奥古斯泰奥广场；那不勒斯信息页也列出通往博物馆方向的蒙特桑托缆车。请在当天核实路线、运营和通行状况。配图为白天拍摄的资料照片，不是夜景。"
+        },
+        "mobilityNote": {
+          "en": "The hill approach may involve gradients, steps or uneven paving; cited pages do not establish a step-free route. Verify access and the return journey before setting out.",
+          "ja": "丘への道には坂、階段、不整地が含まれる場合があります。引用資料では段差のない経路を確認できません。出発前にアクセスと帰路を確認してください。",
+          "ko": "언덕 접근로에는 경사·계단·고르지 않은 포장이 있을 수 있고, 인용 자료는 무단차 경로를 확인하지 않는다. 출발 전 접근 방법과 귀가 경로를 확인하세요.",
+          "zh": "上山路线可能有坡道、台阶或不平整路面；所引资料未确认无台阶路线。出发前请核实通行条件和返程安排。"
+        },
+        "sources": [
+          {
+            "title": "Funiculars — Infopoint Napoli",
+            "url": "https://www.infopoint.napoli.it/en/funicolare/"
+          },
+          {
+            "title": "Certosa di San Martino — public opening-time notice (20 Mar 2025)",
+            "url": "https://museicampania.cultura.gov.it/certosa-di-san-martino-variazione-orari-di-apertura-al-pubblico/"
+          }
+        ],
+        "image": "img/naples-florence-review/san-martino-daylight-panorama.webp",
+        "image_alt": {
+          "en": "Daytime panorama of Naples’s historic centre and Vesuvius from near Certosa di San Martino",
+          "ja": "サン・マルティーノ修道院近くから見たナポリ旧市街とヴェスヴィオ山の日中の眺望",
+          "ko": "산 마르티노 수도원 근처에서 바라본 나폴리 구시가지와 베수비오산의 낮 파노라마",
+          "zh": "从圣马蒂诺修道院附近眺望那不勒斯老城和维苏威火山的白天全景"
+        },
+        "image_caption": {
+          "en": "Daylight archive panorama from near Certosa di San Martino; this is not a night photograph.",
+          "ja": "サン・マルティーノ修道院近くから撮影した昼間の記録写真です。夜景写真ではありません。",
+          "ko": "산 마르티노 수도원 근처에서 촬영한 낮 파노라마 기록 사진이며 야간 사진이 아니다.",
+          "zh": "从圣马蒂诺修道院附近拍摄的白天全景资料照片，并非夜景。"
+        },
+        "image_title": "NapoliPanoramaDaSanMartino.jpg — Wikimedia Commons",
+        "image_credit": "MM",
+        "image_source_url": "https://commons.wikimedia.org/wiki/File:NapoliPanoramaDaSanMartino.jpg",
+        "image_license": "Public domain (released by the author)",
+        "image_license_url": "https://commons.wikimedia.org/wiki/Commons:Licensing#Public_domain"
+      },
+      {
+        "city": {
+          "en": "Naples",
+          "ja": "ナポリ",
+          "ko": "나폴리",
+          "zh": "那不勒斯"
+        },
+        "names": {
+          "en": "Via Toledo → Galleria Umberto I → Piazza del Plebiscito → Castel Nuovo",
+          "ja": "トレド通り → ウンベルト1世のガッレリア → プレビシート広場 → ヌオーヴォ城",
+          "ko": "톨레도 거리 → 움베르토 1세 갤러리아 → 플레비시토 광장 → 카스텔 누오보",
+          "zh": "托莱多街 → 翁贝托一世长廊 → 普雷比席特广场 → 新堡"
+        },
+        "description": {
+          "en": "A central-Naples evening stroll can link these landmarks: begin on Via Toledo, pass through Galleria Umberto I, continue toward Piazza del Plebiscito and finish near Castel Nuovo. This is a suggested urban sequence, not a guaranteed flat or pedestrian-only route; crossings, paving, temporary works and access can vary. The Galleria information page says free entry and daily opening but does not specify evening hours. Treat the castle as an exterior stop and check current access notices.",
+          "ja": "ナポリ中心部の夕方の散策案として、トレド通りからウンベルト1世のガッレリアを通り、プレビシート広場を経てヌオーヴォ城付近へ進む順路があります。平坦または歩行者専用のルートを保証するものではなく、横断箇所・路面・工事・通行条件は変わります。ガッレリア案内は無料・毎日開館としていますが、夜間の利用時間は明記していません。城は外観のみを候補とし、最新の通行情報を確認してください。",
+          "ko": "나폴리 중심부에서 톨레도 거리에서 시작해 움베르토 1세 갤러리아를 지나 플레비시토 광장으로 이어지고 카스텔 누오보 주변에서 마치는 저녁 산책 순서를 생각해 볼 수 있다. 전 구간이 평탄하거나 보행자 전용이라고 보장하지 않으며, 횡단보도·노면·공사·접근 여건은 달라질 수 있다. 갤러리아 안내는 무료·매일 개방으로 표시하지만 야간 운영 시간은 명시하지 않는다. 성은 외관 감상만 계획하고 최신 통행 공지를 확인하세요.",
+          "zh": "可将托莱多街、翁贝托一世长廊、普雷比席特广场和新堡串成一段市中心傍晚步行路线。这只是建议路线，不保证全程平坦或仅供步行；过街、路面、临时施工和通行状况都可能变化。长廊信息页标注免费且每日开放，但未注明晚间开放时间。新堡建议仅作外观停留，并请查看最新通行公告。"
+        },
+        "mobilityNote": {
+          "en": "Urban streets and crossings are involved; do not assume a level, step-free or pedestrian-only route. Check local works and access conditions.",
+          "ja": "市街道路や横断箇所を通ります。平坦・段差なし・歩行者専用とは限らないため、工事や通行状況をご確認ください。",
+          "ko": "도심 도로와 횡단 지점이 포함된다. 평탄·무단차·보행자 전용 경로라고 가정하지 말고 공사와 통행 상태를 확인하세요.",
+          "zh": "路线涉及城市道路和过街点；不要假定路线平坦、无台阶或仅供行人通行。请查看当地施工和通行情况。"
+        },
+        "sources": [
+          {
+            "title": "Galleria Umberto I — Infopoint Napoli",
+            "url": "https://www.infopoint.napoli.it/en/galleria-umberto-i/"
+          },
+          {
+            "title": "Castel Nuovo (Maschio Angioino) — City of Naples",
+            "url": "https://www.comune.napoli.it/vivere-il-comune/luoghi/castel-nuovo-maschio-angioino/"
+          },
+          {
+            "title": "Castel dell’Ovo — City of Naples (status checked 25 Nov 2026)",
+            "url": "https://www.comune.napoli.it/vivere-il-comune/luoghi/castel-dellovo/"
+          }
+        ]
+      },
+      {
+        "city": {
+          "en": "Naples",
+          "ja": "ナポリ",
+          "ko": "나폴리",
+          "zh": "那不勒斯"
+        },
+        "names": {
+          "en": "Toledo → Duomo: Line 1 art-station ride",
+          "ja": "トレド → ドゥオーモ：地下鉄1号線「アート駅」",
+          "ko": "톨레도 → 두오모: 1호선 아트 스테이션 구간",
+          "zh": "托莱多 → 主教座堂：1号线艺术车站之旅"
+        },
+        "description": {
+          "en": "For an evening city outing, Line 1 links Toledo and Duomo via Municipio and Università: two intermediate stations and three station-to-station legs toward Centro Direzionale. ANM highlights installations at both Toledo and Duomo. This is a transit-and-art suggestion, not a promise that stations or trains operate late; check the current ANM timetable and service notices on the day.",
+          "ja": "夕方の市内移動には、地下鉄1号線でトレドからミュニチピオ、ウニヴェルシタ、ドゥオーモの順に進めます。チェントロ・ディレツィオナーレ方面へ中間2駅、3区間です。ANMはトレド駅とドゥオーモ駅の芸術作品を紹介しています。深夜まで駅や列車が運行する保証ではありません。運行時刻とお知らせは当日にANMで確認してください。",
+          "ko": "저녁 시내 이동으로 1호선을 타면 톨레도에서 뮤니치피오와 우니베르시타를 거쳐 두오모까지 갈 수 있다. 첸트로 디레치오날레 방향으로 중간역 2곳, 역간 3구간이다. ANM은 톨레도역과 두오모역의 예술 작품을 소개한다. 늦은 시간까지 역이나 열차가 운행한다고 보장하지 않으므로 당일 ANM 시간표와 운행 공지를 확인하세요.",
+          "zh": "傍晚在市内乘坐1号线，可从托莱多经市政厅站、大学站到主教座堂站，朝中央商务区方向经过2个中间站，共3段站间行程。ANM介绍了托莱多站和主教座堂站的艺术装置。这不代表车站或列车会运营至深夜；请在当天查看ANM最新时刻表和服务通知。"
+        },
+        "mobilityNote": {
+          "en": "Station access, lifts, escalators and step-free routing may change; confirm current station facilities as well as train service.",
+          "ja": "駅のアクセス、エレベーター、エスカレーター、段差のない経路は変わる場合があります。運行情報とあわせて駅設備も確認してください。",
+          "ko": "역 접근·승강기·에스컬레이터·무단차 동선은 달라질 수 있다. 열차 운행과 함께 역 시설도 확인하세요.",
+          "zh": "车站通行、电梯、自动扶梯和无台阶路线可能变化；请同时核实车站设施和列车运营情况。"
+        },
+        "sources": [
+          {
+            "title": "Toledo station — Metro Art ANM",
+            "url": "https://metroart.anm.it/stazioni-arte/linea-1/toledo"
+          },
+          {
+            "title": "Duomo station — Metro Art ANM",
+            "url": "https://metroart.anm.it/stazioni-arte/linea-1/duomo"
+          },
+          {
+            "title": "Line 1 Stations of Art — ANM",
+            "url": "https://metroart.anm.it/stazioni-arte/linea-1/stazioni-dell-arte"
+          },
+          {
+            "title": "ANM Line 1 service and timetable (check current notices)",
+            "url": "https://www.anm.it/s/linea-anm/a0YR200000TerNTMAZ/l1?language=it"
           }
         ]
       },

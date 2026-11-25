@@ -1,0 +1,133 @@
+/* Florence photo supplement: scoped to its own gallery, no shared selectors. */
+.florence-photo-review {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 22px 0 8px;
+  padding: clamp(15px, 2.4vw, 24px);
+  border: 1px solid #e6dfd3;
+  border-radius: 18px;
+  background: #fffdf9;
+  box-shadow: 0 5px 18px rgba(50, 39, 24, 0.07);
+  color: #28251f;
+}
+.florence-photo-review * {
+  box-sizing: border-box;
+}
+.fpr-gallery-heading {
+  margin-bottom: 15px;
+}
+.fpr-gallery-heading h3 {
+  margin: 0 0 5px;
+  color: #4d3424;
+  font-size: clamp(1.08rem, 2.4vw, 1.35rem);
+  line-height: 1.35;
+}
+.fpr-gallery-heading p {
+  margin: 0;
+  color: #675f55;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.fpr-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+.fpr-photo-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #e9e3da;
+  border-radius: 13px;
+  background: #fff;
+}
+.fpr-photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #eee9e2;
+}
+.fpr-photo-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 11px 12px 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.fpr-photo-caption {
+  color: #30291f;
+  font-size: 0.94rem;
+}
+.fpr-photo-credit {
+  color: #675f55;
+  font-size: 0.76rem;
+}
+.fpr-photo-links {
+  color: #675f55;
+  font-size: 0.76rem;
+}
+.fpr-photo-links a {
+  color: #135e57;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.fpr-photo-links a:focus-visible {
+  outline: 3px solid #d88c54;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+body.dark-theme .florence-photo-review {
+  border-color: #50483e;
+  background: #252421;
+  color: #f2eee7;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+}
+body.dark-theme .fpr-gallery-heading h3,
+body.dark-theme .fpr-photo-caption {
+  color: #f2e8d9;
+}
+body.dark-theme .fpr-gallery-heading p,
+body.dark-theme .fpr-photo-credit,
+body.dark-theme .fpr-photo-links {
+  color: #c7bfb3;
+}
+body.dark-theme .fpr-photo-card {
+  border-color: #4b463e;
+  background: #2d2b27;
+}
+body.dark-theme .fpr-photo-links a {
+  color: #8bd4c7;
+}
+@media (max-width: 720px) {
+  .fpr-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .fpr-photo-card:last-child {
+    grid-column: 1 / -1;
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+}
+@media (max-width: 460px) {
+  .florence-photo-review {
+    padding: 13px;
+  }
+  .fpr-photo-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 11px;
+  }
+  .fpr-photo-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+  .fpr-photo-card img {
+    aspect-ratio: 3 / 2;
+  }
+  .fpr-photo-card figcaption {
+    padding: 10px;
+  }
+}

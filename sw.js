@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261119_bodega_gongora_review_v1)
+// SlowTravel Mobile Offline Service Worker (v20261125_naples_florence_review_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261119_bodega_gongora_review_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261125_naples_florence_review_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -22,6 +22,8 @@ const PRECACHE_ASSETS = [
   './css/seville-cathedral-photo-guide.css',
   './css/seville-date-itinerary.css',
   './css/europe-intercity-fares.css',
+  './css/naples-practical-review.css',
+  './css/florence-photo-review.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -32,6 +34,8 @@ const PRECACHE_ASSETS = [
   './js/europe-detailed-research-additions.js',
   './js/europe-country-nightlife-data.js',
   './js/europe-country-nightlife-guide.js',
+  './js/naples-practical-review.js',
+  './js/florence-photo-review.js',
   './js/europe-electricity-guide.js',
   './js/landmark-history-additions.js',
   './js/flamenco-guide.js',
@@ -55,6 +59,11 @@ const PRECACHE_ASSETS = [
   './img/italy-food/florence-schiacciata.jpg',
   './img/italy-food/florence-lampredotto.jpg',
   './img/italy-food/rome-trapizzino.jpg',
+  './img/naples-florence-review/castel-dell-ovo-night.webp',
+  './img/naples-florence-review/san-martino-daylight-panorama.webp',
+  './img/florence-review/uffizi-exterior.webp',
+  './img/florence-review/ponte-vecchio-night.webp',
+  './img/florence-review/duomo-from-piazzale-michelangelo-night.webp',
   './js/practical-place-additions.js',
   './js/ronda-granada-dining-guide.js',
   './js/spain-rice-cordoba-guide.js',

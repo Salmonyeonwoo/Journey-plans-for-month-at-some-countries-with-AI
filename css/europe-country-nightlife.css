@@ -44,6 +44,11 @@
 .ecg-food-intro strong{display:block;margin-bottom:4px;color:#744b1d}
 .ecg-food-intro p{margin:0;color:#5b554a;font-size:.86rem;line-height:1.6}
 .ecg-food-note{border-style:dashed;background:#fffdf8;color:#746852;font-size:.78rem}
+.ecg-photo,.ecg-chat-photo{margin:10px 0 8px;min-width:0}
+.ecg-photo img,.ecg-chat-photo img{display:block;width:100%;max-height:270px;object-fit:cover;border-radius:9px;background:#e9eee9}
+.ecg-photo figcaption,.ecg-chat-photo figcaption{margin-top:5px;color:#65756a;font-size:.73rem;line-height:1.5;overflow-wrap:anywhere}
+.ecg-photo a,.ecg-chat-photo a{color:#235d43;text-decoration:underline;text-underline-offset:2px}
+.ecg-chat-photo{max-width:460px}
 .ecg-category-dish{background:#fff1db;color:#87551e}
 .ecg-category-venue{background:#e6f3e8;color:#2e6843}
 .ecg-empty{grid-column:1/-1;padding:22px;border:1px dashed #b8cabe;border-radius:13px;background:#fff;color:#617568;text-align:center}
@@ -65,6 +70,8 @@ body.dark-theme .ecg-country-count{background:#314b39;color:#d3e4d8}
 body.dark-theme .ecg-mobility{border-left-color:#b09c61;background:#3a3526;color:#e4d9b7!important}
 body.dark-theme .ecg-food-intro,body.dark-theme .ecg-food-note{border-color:#615238;background:#3b3528;color:#e6d8b8}
 body.dark-theme .ecg-food-intro strong,body.dark-theme .ecg-food-intro p{color:#e8d9b9}
+body.dark-theme .ecg-photo figcaption,body.dark-theme .ecg-chat-photo figcaption{color:#c1d1c6}
+body.dark-theme .ecg-photo a,body.dark-theme .ecg-chat-photo a{color:#98d3af}
 body.dark-theme .ecg-category-dish{background:#57432a;color:#efd09b}
 body.dark-theme .ecg-category-venue{background:#294a35;color:#bde1c7}
 body.dark-theme .ecg-sources a,body.dark-theme .ecg-chat-country a{color:#98d3af}

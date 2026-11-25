@@ -17,6 +17,7 @@
       itemCount: n => `${n}개 항목`, terrain: '보행·접근 참고', dish: '대표 음식', venue: '식당 후보',
       foodIntroTitle: '지역 미식 안내', foodGuideNote: '지역 음식과 식당은 조사한 후보입니다. 현재 메뉴·영업·예약 가능 여부는 방문 전 공식 채널에서 확인하세요. 어떤 곳도 예약하지 않았습니다.',
       foodPrompt: '유럽 각 나라와 도시의 대표 음식과 현지 식당 후보를 추천해줘', foodChip: '🍽️ 유럽 현지 음식·식당 후보',
+      nightWalkChip: '🌙 나폴리 밤 산책·야경',
       searchEmpty: '검색어에 맞는 국가가 없습니다.', noData: '아직 표시할 국가별 자료가 없습니다.',
       expand: '모두 펼치기', collapse: '모두 접기', sourceMissing: '이 항목의 출처 링크를 확인할 수 없습니다.',
       chatbotTitle: '유럽 국가별 추천 가이드', chatbotQuery: '유럽 각 나라의 대표 명소, 현지 음식과 야경을 나라별로 추천해줘',
@@ -37,6 +38,7 @@
       itemCount: n => `${n} picks`, terrain: 'Walking & access note', dish: 'Local specialty', venue: 'Dining candidate',
       foodIntroTitle: 'Local food guide', foodGuideNote: 'Food and restaurant entries are researched candidates. Verify current menus, operations and booking availability with official channels before visiting. Nothing has been booked.',
       foodPrompt: 'Recommend local dishes and dining candidates across European countries and cities', foodChip: '🍽️ European food & dining candidates',
+      nightWalkChip: '🌙 Naples evening walk & night views',
       searchEmpty: 'No countries match that search.', noData: 'No country data is available yet.',
       expand: 'Expand all', collapse: 'Collapse all', sourceMissing: 'No source link is available for this item.',
       chatbotTitle: 'European country guide', chatbotQuery: 'Recommend representative sights, local food, and night views by European country',
@@ -57,6 +59,7 @@
       itemCount: n => `${n}件`, terrain: '徒歩・アクセスの注意', dish: '郷土料理', venue: '飲食店候補',
       foodIntroTitle: '郷土料理ガイド', foodGuideNote: '料理と飲食店は調査した候補です。訪問前に現行メニュー・営業状況・予約の可否を公式窓口でご確認ください。予約はしていません。',
       foodPrompt: 'ヨーロッパ各国・各都市の郷土料理と飲食店候補を教えて', foodChip: '🍽️ ヨーロッパ郷土料理・飲食店候補',
+      nightWalkChip: '🌙 ナポリの夜散歩・夜景',
       searchEmpty: '検索に一致する国はありません。', noData: '国別データはまだありません。',
       expand: 'すべて展開', collapse: 'すべて閉じる', sourceMissing: 'この項目の出典リンクを確認できません。',
       chatbotTitle: 'ヨーロッパ各国ガイド', chatbotQuery: 'ヨーロッパ各国の代表的な名所、郷土料理、夜景を国別に教えて',
@@ -77,6 +80,7 @@
       itemCount: n => `${n}项`, terrain: '步行与通行提示', dish: '地方特色菜', venue: '餐厅候选',
       foodIntroTitle: '地方美食指南', foodGuideNote: '地方菜和餐厅均为经资料核对的候选建议。到访前请通过官方渠道确认最新菜单、营业状态和预订情况；未替您预订任何餐厅。',
       foodPrompt: '请推荐欧洲各国和城市的地方菜及当地餐厅候选', foodChip: '🍽️ 欧洲地方菜与餐厅候选',
+      nightWalkChip: '🌙 那不勒斯夜间漫步与夜景',
       searchEmpty: '没有符合搜索条件的国家。', noData: '目前没有国家资料。',
       expand: '全部展开', collapse: '全部收起', sourceMissing: '无法确认此条目的来源链接。',
       chatbotTitle: '欧洲各国指南', chatbotQuery: '请按国家推荐欧洲各国的代表景点、地方美食和夜景',
@@ -160,6 +164,17 @@
     if (!links.length) return `<p class="ecg-source-missing">${esc(label.sourceMissing)}</p>`;
     return `<div class="ecg-sources"><span>${esc(label.sources)}:</span>${links.map(source => `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || label.source)} ↗</a>`).join('')}</div>`;
   }
+  function renderPhoto(item, className = 'ecg-photo', langValue) {
+    if (!item.image) return '';
+    const sourceUrl = /^https:\/\//i.test(item.image_source_url || '') ? item.image_source_url : '';
+    const licenseUrl = /^https:\/\//i.test(item.image_license_url || '') ? item.image_license_url : '';
+    const lang = LANGS.includes(langValue) ? langValue : locale();
+    const caption = esc(text(item.image_caption, lang));
+    const title = esc(item.image_title || 'Image source');
+    const credit = esc(item.image_credit || 'Image credit');
+    const license = esc(item.image_license || 'License');
+    return `<figure class="${esc(className)}"><img loading="lazy" decoding="async" src="${esc(item.image)}" alt="${esc(text(item.image_alt, lang))}"><figcaption>${caption}<br>${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">${title}</a>` : title} · ${sourceUrl ? `<a href="${esc(sourceUrl)}" target="_blank" rel="noopener noreferrer">Credit: ${credit}</a>` : `Credit: ${credit}`} · ${licenseUrl ? `<a href="${esc(licenseUrl)}" target="_blank" rel="noopener noreferrer">${license}</a>` : license}</figcaption></figure>`;
+  }
   function renderItem(item, country, lang, label) {
     const heading = item.category === 'food'
       ? (item.foodKind ? esc(text(item.names, lang)) : `${esc(text(item.dish, lang, label.dish))} · ${esc(text(item.names, lang))}`)
@@ -169,7 +184,7 @@
     const itemCity = text(item.city, lang);
     const featuredCity = text(country.featured_city, lang);
     const cityNote = itemCity && normalize(itemCity) !== normalize(featuredCity) ? `<p class="ecg-item-city">${esc(itemCity)}</p>` : '';
-    return `<article class="ecg-item ecg-item-${esc(item.category)}${item.foodKind ? ` ecg-item-${esc(item.foodKind)}` : ''}"><div class="ecg-item-heading"><span class="ecg-category ecg-category-${esc(item.foodKind || item.category)}">${esc(label[item.label])}</span><h4>${heading}</h4></div>${cityNote}<p>${body}</p>${note ? `<p class="ecg-mobility"><strong>${esc(label.terrain)}:</strong> ${note}</p>` : ''}${getSourceLinks(item.sources, lang, label)}</article>`;
+    return `<article class="ecg-item ecg-item-${esc(item.category)}${item.foodKind ? ` ecg-item-${esc(item.foodKind)}` : ''}"><div class="ecg-item-heading"><span class="ecg-category ecg-category-${esc(item.foodKind || item.category)}">${esc(label[item.label])}</span><h4>${heading}</h4></div>${renderPhoto(item, 'ecg-photo', lang)}${cityNote}<p>${body}</p>${note ? `<p class="ecg-mobility"><strong>${esc(label.terrain)}:</strong> ${note}</p>` : ''}${getSourceLinks(item.sources, lang, label)}</article>`;
   }
   function renderCountry(country, lang, label) {
     const allItems = countryItems(country);
@@ -229,7 +244,7 @@
 
   function categoryFromQuery(query) {
     const q = String(query || '').toLowerCase();
-    if (/(night ?view|nightscape|skyline|야경|전망|노을|뷰포인트|夜景|夜景スポット|展望|夜の景色|夜晚|观景|夜色)/i.test(q)) return 'night';
+    if (/(night ?view|nightscape|night ?walk|night ?guide|evening walk|after dark|skyline|야경|밤 ?산책|야간 ?산책|전망|노을|뷰포인트|夜景|夜景スポット|夜の景色|夜の散歩|夜晚|夜间漫步|夜间散步|观景|夜色)/i.test(q)) return 'night';
     if (/(restaurant|dining|food|dish|cuisine|맛집|음식|식당|먹거리|먹을|美食|餐厅|餐館|食物|菜品|郷土料理|料理|グルメ|レストラン|食事)/i.test(q)) return 'food';
     if (/(landmark|attraction|sight|what to see|명소|관광지|볼거리|유적|景点|景區|名所|観光|見どころ)/i.test(q)) return 'sight';
     return 'all';
@@ -238,7 +253,10 @@
     const lang = LANGS.includes(langValue) ? langValue : locale();
     const label = categories(lang);
     const q = normalize(query);
-    const category = categoryFromQuery(query);
+    const naplesNightPlaceIntent = /(castel dell ovo|egg castle|lungomare|via partenope|san martino|certosa|산 마르티노|카스텔 델로보|나폴리.*산책|サン マルティーノ|卵城|圣马蒂诺|蛋堡|海滨大道)/i.test(q);
+    const naplesArtTransitIntent = /(toledo.*duomo|duomo.*toledo|톨레도.*두오모|두오모.*톨레도|トレド.*ドゥオーモ|ドゥオーモ.*トレド|托莱多.*主教座堂|主教座堂.*托莱多|metro art|art station|地下鉄.*芸術|지하철.*아트|地铁.*艺术)/i.test(q);
+    const requestedCategory = categoryFromQuery(query);
+    const category = requestedCategory === 'all' && naplesNightPlaceIntent ? 'night' : requestedCategory;
     const countryMatch = DATA.find(country => {
       const names = [...Object.values(country.country_name || {}), ...Object.values(country.featured_city || {}), ...(country.aliases || []), ...countryItems(country).flatMap(item => Object.values(item.city || {}))].map(normalize).filter(v => v.length > 2);
       return names.some(name => q.includes(name));
@@ -247,13 +265,15 @@
       const cjk = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(name);
       return name.length > (cjk ? 1 : 3) && q.includes(name);
     })));
-    const detected = countryMatch || placeMatch;
+    const naplesCityNightQuery = category === 'night' && countryMatch && countryMatch.country_id === 'italy' && Object.values(countryMatch.featured_city || {}).map(normalize).some(name => name && q.includes(name));
+    const naplesTargetedGuideIntent = naplesNightPlaceIntent || naplesArtTransitIntent || naplesCityNightQuery;
+    const detected = countryMatch || placeMatch || (naplesTargetedGuideIntent ? DATA.find(country => country.country_id === 'italy') : null);
     const guideIntent = category !== 'all' || /(recommend|suggest|best|top|famous|popular|where to eat|what to see|guide|추천|추천해|유명|대표|알려줘|볼거리|가이드|おすすめ|有名|教えて|見どころ|ガイド|推荐|著名|有哪些|指南)/i.test(String(query || ''));
     const mentionsEurope = /(europe|european|유럽|유럽의|ヨーロッパ|欧洲|歐洲)/i.test(String(query || ''));
     const transportIntent = /(how to get|travel from|route|train|flight|bus|transport|transfer|가는 법|이동|교통|노선|기차|열차|버스|항공|電車|移動|交通|路線|火车|铁路|大巴|航班|路线)/i.test(String(query || ''));
-    if (transportIntent && category === 'all') return null;
-    if (detected && !placeMatch && ['spain', 'italy'].includes(normalize(detected.country_name?.en || detected.country_id)) && !(category === 'food' && normalize(detected.country_id) === 'italy')) return null;
-    if (!guideIntent && !placeMatch) return null;
+    if (transportIntent && category === 'all' && !naplesArtTransitIntent) return null;
+    if (detected && !placeMatch && ['spain', 'italy'].includes(normalize(detected.country_name?.en || detected.country_id)) && !(category === 'food' && normalize(detected.country_id) === 'italy') && !naplesTargetedGuideIntent) return null;
+    if (!guideIntent && !placeMatch && !naplesArtTransitIntent) return null;
     if (!detected && !mentionsEurope) return null;
     let countries = detected ? [detected] : DATA;
     if (!detected) {
@@ -263,13 +283,19 @@
     }
     const picked = countries.map(country => {
       const allItems = countryItems(country);
+      const nightTerms = q.split(' ').filter(term => term.length > 2 && !/^(at|the|and|night|nightscape|nightview|views|view|guide|walk|evening|after|dark|best|recommend|naples|city)$/.test(term));
+      const explicitNightItems = allItems.filter(item => item.category === 'night' && nightTerms.length > 0 && nightTerms.every(term => itemSearchText(country, item, lang).includes(term)));
       const citySpecificItems = allItems.filter(item => Object.values(item.city || {}).map(normalize).some(name => {
         const cjk = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(name);
         return name.length > (cjk ? 1 : 2) && q.includes(name);
       }));
-      const candidates = citySpecificItems.length ? citySpecificItems : allItems;
+      const candidates = naplesArtTransitIntent && country.country_id === 'italy'
+        ? allItems.filter(item => item.category === 'night' && /toledo/i.test(text(item.names, 'en')) && /duomo/i.test(text(item.names, 'en')))
+        : explicitNightItems.length ? explicitNightItems : citySpecificItems.length ? citySpecificItems : allItems;
       let entries;
-      if (country.country_id === 'italy' && category === 'food') {
+      if (naplesArtTransitIntent && country.country_id === 'italy') {
+        entries = candidates.slice(0, 1);
+      } else if (country.country_id === 'italy' && category === 'food') {
         const foodCities = (country.local_food && country.local_food.food_guide && country.local_food.food_guide.cities) || [];
         const requestedCities = foodCities.filter(cityGuide => Object.values(cityGuide.city || {}).map(normalize).some(name => {
           const cjk = /[\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(name);
@@ -289,7 +315,8 @@
         });
         if (!entries.length) entries = candidates.filter(item => item.category === 'food').slice(0, 4);
       } else {
-        const limit = category === 'all' ? 4 : category === 'food' ? 4 : 2;
+        const naplesCityMention = Object.values(country.featured_city || {}).map(normalize).some(name => name && q.includes(name));
+        const limit = category === 'night' && country.country_id === 'italy' && (naplesCityMention || naplesNightPlaceIntent) ? 8 : category === 'all' ? 4 : category === 'food' ? 4 : 2;
         entries = candidates.filter(item => category === 'all' || item.category === category).slice(0, limit);
       }
       return { country, entries };
@@ -304,7 +331,7 @@
       const cityNote = itemCity && normalize(itemCity) !== normalize(headerCity) ? `<small>${esc(itemCity)}</small><br>` : '';
       const kind = label[item.label];
       const links = (item.sources || []).filter(source => /^https:\/\//i.test(source.url || '')).map(source => `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title || label.source)} ↗</a>`).join(' ');
-      return `<p>${cityNote}<b>${esc(kind)}: ${esc(heading)}</b><br>${esc(text(item.description, lang))}${item.mobilityNote ? `<br><i>${esc(text(item.mobilityNote, lang))}</i>` : ''}${links ? `<br>${links}` : ''}</p>`;
+      return `<p>${cityNote}<b>${esc(kind)}: ${esc(heading)}</b><br>${esc(text(item.description, lang))}${item.mobilityNote ? `<br><i>${esc(text(item.mobilityNote, lang))}</i>` : ''}${links ? `<br>${links}` : ''}</p>${renderPhoto(item, 'ecg-chat-photo', lang)}`;
       }).join('')}</section>`;
     }).join('');
     const ui = label.chatbotIntro;
@@ -326,6 +353,12 @@
       ja: 'ヨーロッパ各国の代表的な名所、郷土料理、夜景を国別に教えて',
       zh: '请按国家推荐欧洲各国的代表景点、地方美食和夜景'
     };
+    const nightWalkPrompts = {
+      ko: '나폴리 밤 산책과 야경을 추천해줘',
+      en: 'Naples evening walk and night views',
+      ja: 'ナポリの夜散歩と夜景を教えて',
+      zh: '请推荐那不勒斯夜间漫步和夜景'
+    };
     if (typeof root.CHATBOT_I18N === 'object') LANGS.forEach(lang => {
       const chatbot = root.CHATBOT_I18N[lang];
       if (!chatbot) return;
@@ -333,6 +366,7 @@
       chatbot.title = copy.title;
       if (!String(chatbot.welcome || '').includes(copy.tagline)) chatbot.welcome = `${chatbot.welcome || ''}<br><br>${esc(copy.tagline)}`;
       if (Array.isArray(chatbot.chips) && !chatbot.chips.some(chip => chip.q === prompts[lang])) chatbot.chips.unshift({ text: copy.chip, q: prompts[lang] });
+      if (Array.isArray(chatbot.chips) && !chatbot.chips.some(chip => chip.q === nightWalkPrompts[lang])) chatbot.chips.unshift({ text: LABELS[lang].nightWalkChip, q: nightWalkPrompts[lang] });
       const foodPrompt = LABELS[lang].foodPrompt;
       if (Array.isArray(chatbot.chips) && !chatbot.chips.some(chip => chip.q === foodPrompt)) chatbot.chips.unshift({ text: LABELS[lang].foodChip, q: foodPrompt });
     });

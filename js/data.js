@@ -191,10 +191,10 @@ const FULL_HOTELS_DATA = [
   "busStop": "두오모 대성당 방향 도보 7분",
   "elevator": "엘리베이터 완비, 고풍스러운 토스카나 감성 인테리어",
   "features": {
-    "ko": "⭐ [확정 11/25~11/29, 4박] 산타마리아노벨라역 도보 8분! 두오모 대성당·우피치 미술관 평지 도보 관광, 자자(Zà Zà) 티본 스테이크 인접",
-    "en": "Confirmed: 8 mins walk from SMN station, walk to Duomo & Uffizi",
-    "ja": "フィレンツェ確定宿：SMN駅徒歩8分、ドゥオモやウフィツィ美術館へ完全徒歩圏内",
-    "zh": "佛罗伦萨确定住宿：距SMN火车站步行8分钟，圣母百花大教堂轻松平步抵达"
+    "ko": "피렌체 숙박 후보 날짜는 사용자 고정 제안 2026-11-25~29입니다(예약 미확인, 카드 동적 날짜와 별개). 주소 Via della Fortezza 6 (피렌체 관광 안내 확인). 예약 날짜와 체크인·체크아웃 정책은 숙소에 확인하세요.",
+    "en": "Proposed Florence stay dates are fixed in the user proposal for 2026-11-25–29 (reservation unverified; separate from the dynamic card date). Address Via della Fortezza 6 per the city tourism listing. Confirm booking dates and check-in/out arrangements with the property.",
+    "ja": "フィレンツェの宿泊候補日程は利用者の固定提案 2026-11-25〜29です（予約未確認、カードの動的表示日とは別）。市観光案内に掲載された住所は Via della Fortezza 6。予約日程とチェックイン・チェックアウト条件を宿に確認してください。",
+    "zh": "佛罗伦萨住宿候选日期为用户固定提案 2026-11-25至29（预订尚未核实，与卡片动态显示日期无关）。市旅游指南所列地址为 Via della Fortezza 6。请向住宿方确认预订日期及入住、退房安排。"
   },
   "mapQuery": "Artemente Florence B&B"
 },
@@ -3059,14 +3059,14 @@ const REGIONAL_PLANS = {
     "city": "피렌체",
     "isTransfer": true,
     "theme": "Italo 고속기차 피렌체 이동 & 명품 포카치아 샌드위치 (All’Antico Vinaio) & 베키오 다리 야경",
-    "morning": "나폴리 숙소 체크아웃 후 중앙역 이동, 13:20 Italo 프리마(1등석) 고속열차 탑승하여 피렌체로 쾌속 이동",
-    "rest": "16:17 피렌체 SMN역 도착 후 도보 단 8분 거리 Artemente Florence B&B 체크인 및 온수 샤워",
+    "morning": "사용자 제공 일정(고정 제안 2026-11-25~29, 카드 동적 날짜 아님): Italo 9940편 13:20~16:17 피렌체행(독립 확인 안 됨, 예약 확인서에서 편명·시간·좌석 확인). 나폴리 숙소 체크아웃 시각은 숙소에 확인하세요.",
+    "rest": "고정 제안 2026-11-25~29의 16:17 도착 예정(카드 동적 날짜와 별개, 열차표 확인 필요). Artemente Florence B&B 안내 주소는 Via della Fortezza 6 (시 관광 안내); 예약 및 체크인 시각은 미확인으로 숙소에 직접 확인하세요.",
     "evening": "베키오 다리 (Ponte Vecchio): 아르노강 물빛에 비치는 피렌체의 로맨틱한 반영 야경을 무료로 감상하며 강변 산책",
     "walk": "낮음 (3,800보)",
     "transport": "Italo 초고속열차 + 도보",
     "meal": "All’Antico Vinaio: 겉바속촉 토스카나 포카치아 사이에 프로슈토와 트러플 크림, 신선 치즈를 산더미처럼 넣은 포카치아 샌드위치 (Schiacciata)",
     "events": [
-      "Italo 기차 (13:20~16:17)",
+ "사용자 제안의 고정 기간 2026-11-25~29 내 일정(카드 동적 날짜와 별개): Italo 9940 13:20~16:17 · 예약 확인 필요",
       "Artemente Florence B&B",
       "All’Antico Vinaio",
       "베키오 다리 야경 산책"
@@ -3078,10 +3078,10 @@ const REGIONAL_PLANS = {
     "theme": "두오모 광장 평지 산책 & 택시로 미켈란젤로 광장 (Piazzale Michelangelo) 최고의 무료 야경",
     "morning": "숙소에서 두오모 광장까지 완전 평지 도보 7분. 붉은 돔 외관과 조토의 종탑을 계단 등반 없이 광장에서 여유롭게 감상",
     "rest": "13:30~16:00 카페 질리(Gilli)에서 티라미수 맛본 후 숙소 복귀 침대 낮잠",
-    "evening": "택시 타고 미켈란젤로 광장 (Piazzale Michelangelo) 올라가기: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿 (노을~조명 야경)",
+    "evening": "사용자 고정 제안(2026-11-25~29)에 관한 내용이며 카드의 동적 날짜와 별개입니다. 택시로 미켈란젤로 광장(Piazzale Michelangelo)에 올라 두오모·아르노강 전망을 감상하세요. 11월 말 일몰은 약 16:40~16:41. 버스 12/13번은 대안 후보입니다. 공식 시내권 승차권 페이지는 €2·90분 유효로 표기하지만 당일 운행·요금은 재확인하세요(https://www.at-bus.it/it/ticket/biglietti-urbani/biglietto-urbano-capoluogo). 일몰 참고: https://www.timeanddate.com/sun/italy/firenze?month=11. 선택형 제안인 11/26 우피치는 현재 두오모·광장 계획과 충돌하므로 동시에 하지 말고 교체안으로만 검토하세요.",
     "walk": "낮음 (3,900보)",
     "transport": "도보 & 택시 (언덕)",
-    "meal": "Trattoria Zà Zà: 참나무 숯불에 구운 두툼한 1kg 티본 스테이크(Bistecca alla Fiorentina) + 풍미 가득한 트러플 크림 파스타",
+    "meal": "Trattoria Zà Zà는 기존 저녁 후보(예약 미확인). 비스테카 알라 피오렌티나나 트러플 파스타는 현행 메뉴 확인 후 선택하며, 1kg 중량·조리법·당일 제공은 미확인입니다.",
     "events": [
       "두오모 광장 평지 산책",
       "시뇨리아 광장",
@@ -3094,9 +3094,9 @@ const REGIONAL_PLANS = {
     "city": "피렌체",
     "isTransfer": false,
     "theme": "우피치 미술관 르네상스 걸작 관람 & 1kg 티본 스테이크 보양 만찬 (Trattoria Zà Zà)",
-    "morning": "우피치 미술관 사전 예약 입장, 전용 엘리베이터로 이동하여 보티첼리 '비너스의 탄생', 라파엘로 명작 집중 관람",
-    "rest": "13:30~16:30 관람 후 숙소 복귀, 침대에 누워 다리 올리고 3시간 충분한 낮잠",
-    "evening": "Trattoria Zà Zà: 숯불에 구워낸 1kg 두툼한 티본 스테이크(Bistecca alla Fiorentina)와 진한 트러플 크림 파스타로 부모님 보양 만찬",
+    "morning": "기존 일정 순서에서 우피치 관람일은 사용자 제안의 고정 일정 2026-11-25~29 중 11/27이며 카드의 동적 날짜와 별개입니다. 일반 안내는 화~일 08:15~18:30, 월요일 휴관. 예약·입장권은 미확인, 날짜별 정보: https://www.uffizi.it/en/the-uffizi.",
+    "rest": "다음 날짜는 사용자 제안의 고정 일정 2026-11-25~29를 가리키며 카드의 동적 표시일이 아닙니다. 13:30~16:30 휴식. 선택형 대안 제안(미확정): 우피치를 11/26으로 옮기고 11/27에 아카데미아·대성당·산타 크로체 방문. 현재 11/27 우피치 계획과 충돌하므로 기존 순서를 대체하는 안이지 동시 일정이 아닙니다. 아카데미아 화~일 08:15~18:50(마지막 입장 시각은 공식 안내가 상충하므로 확인, 예약 강력 권장); 대성당 월~토 10:15~15:45 무료·일요일 관광객 입장 휴무(돔은 별도 유료 입장권); 산타 크로체 월~토 09:30~17:30, 일요일 14:00~17:30, 마지막 입장 17:00. 여행일 운영 재확인. 예약·재예약은 하지 않았습니다. 공식 안내: 아카데미아 https://www.galleriaaccademiafirenze.it/en/visit/ · 대성당 https://duomo.firenze.it/en/discover/cathedral · 산타 크로체 https://www.santacroceopera.it/en/organise-your-visit/",
+    "evening": "Trattoria Zà Zà는 기존 저녁 후보(예약 미확인). 비스테카나 트러플 파스타는 현행 메뉴를 확인하세요. 1kg 중량·숯불 조리·당일 제공은 확인되지 않았습니다.",
     "walk": "낮음 (4,200보)",
     "transport": "도보 & 택시",
     "meal": "토스카나 전통 디저트: 바삭한 아몬드 비스킷을 달콤한 디저트 와인에 찍어 먹는 칸투치니와 빈 산토 (Cantuccini e Vin Santo) & 리보리타 채소 수프",
@@ -3112,7 +3112,7 @@ const REGIONAL_PLANS = {
     "city": "피렌체",
     "isTransfer": false,
     "theme": "산 로렌초 가죽 시장 & 산타 마리아 노벨라 약국 & 로마 이동 짐 정리",
-    "morning": "산 로렌초 실내 중앙 시장과 가죽 노점 거리 산책, 800년 전통 산타 마리아 노벨라 약국에서 천연 장미수 쇼핑",
+    "morning": "사용자 고정 제안 2026-11-25~29 기준(카드 동적 날짜 아님): 11/28 토요일: 1층 전통 시장은 09:00~17:00, 상층 푸드홀은 일반 안내상 매일 08:00~24:00. 11/29 일요일 1층 시장은 휴무이며 상층은 일반적으로 운영합니다. 공휴일·개별 점포 시간은 현지 재확인하세요. 산타 마리아 노벨라 약국 방문 계획도 유지해 장미수를 살펴보세요(당일 판매 여부는 미확인).",
     "rest": "13:00~16:30 숙소 복귀 후 충분한 낮잠 및 발 피로 해소 온수 족욕",
     "evening": "피렌체 마지막 밤 평화로운 아르노 강변 야간 산책 후, 내일 로마 이동을 위한 짐 정리",
     "walk": "낮음 (3,600보)",
@@ -3129,14 +3129,14 @@ const REGIONAL_PLANS = {
     "city": "로마",
     "isTransfer": true,
     "theme": "Italo 고속기차 로마 이동 & 트레비 분수 (Fontana di Trevi) 밤 10시 심야 무료 야경 산책",
-    "morning": "피렌체 숙소 체크아웃 후 SMN역 이동, 13:28 Italo 고속열차 탑승 ➔ 15:10 로마 테르미니(Roma Termini)역 도착",
+    "morning": "고정 제안 2026-11-25~29 내 13:28 출발 일정(카드 동적 날짜와 별개): 독립 확인 안 됨, 예약 확인서에서 열차·시간·도착지를 확인). 숙소 체크아웃 시각과 짐 보관은 숙소에 직접 확인하세요. 체크아웃 시각을 가정하지 않습니다.",
     "rest": "15:30~18:30 Salotto Monti 체크인 후 온수 샤워 및 부모님 침대 휴식",
     "evening": "트레비 분수 (Fontana di Trevi) 야간 산책: 숙소에서 도보 12분 거리. 밤 10시 이후 방문 시 낮의 혼잡이 줄어들어 가장 아름답고 신비로운 조명과 물빛을 무료로 감상하며 동전 던지기 체험",
     "walk": "낮음 (3,800보)",
     "transport": "Italo 초고속열차 + 택시",
     "meal": "몬티 지구 트라토리아: 로마식 뇨끼 알라 로마나 & 부드러운 하우스 와인",
     "events": [
-      "Italo 기차 (13:28~15:10)",
+ "사용자 제안의 고정 기간 2026-11-25~29 내 11/29 일정(카드 동적 날짜와 별개): 11/29 13:28 · 예약 확인 필요",
       "Salotto Monti 호텔",
       "몬티 지구 산책",
       "트레비 분수 밤 10시 산책",
@@ -11281,41 +11281,41 @@ const PLANS_DAYS_I18N_DATA = {
     },
     "events": {
       "ko": [
-        "Italo 기차 (13:20~16:17)",
+ "사용자 제안의 고정 기간 2026-11-25~29 내 일정(카드 동적 날짜와 별개): Italo 9940 13:20~16:17 · 예약 확인 필요",
         "Artemente Florence B&B",
         "All’Antico Vinaio",
         "베키오 다리 야경 산책"
       ],
       "en": [
-        "Italo Train (13:20~16:17)",
+ "User-provided schedule for the fixed 2026-11-25–29 proposal, not this card’s dynamic date: Italo 9940 (13:20–16:17) · verify booking confirmation",
         "Artemente Florence B&B",
         "All’Antico Vinaio",
         "Ponte Vecchio Night Stroll"
       ],
       "ja": [
-        "Italo 列車 (13:20~16:17)",
+ "利用者の固定提案 2026-11-25〜29内の予定（カードの動的表示日とは別）: Italo 9940予定 (13:20〜16:17)・予約確認書で要確認",
         "Artemente Florence B&B",
         "All’Antico Vinaio",
         "ヴェッキオ橋の夜景散歩"
       ],
       "zh": [
-        "Italo高铁 (13:20~16:17)",
+ "用户固定提案 2026-11-25至29内的行程（与卡片动态日期无关）：Italo 9940 行程 (13:20~16:17) · 请核对预订确认",
         "Artemente Florence B&B",
         "All’Antico Vinaio",
         "老桥夜景水面倒影漫步"
       ]
     },
     "morning": {
-      "ko": "나폴리 숙소 체크아웃 후 중앙역 이동, 13:20 Italo 프리마(1등석) 고속열차 탑승하여 피렌체로 쾌속 이동",
-      "en": "Check out from Naples, board 13:20 Italo high-speed train in comfortable Prima class to Florence SMN",
-      "ja": "ナポリを出発し13:20発Italo特快列車（1等席）に乗車、フィレンツェSMN駅へ快適移動",
-      "zh": "退房前往那不勒斯火车站，搭乘13:20 Italo高铁一等座舒适平稳前往佛罗伦萨SMN站"
+      "ko": "사용자 제공 일정(고정 제안 2026-11-25~29, 카드 동적 날짜 아님): Italo 9940편 13:20~16:17 피렌체행(독립 확인 안 됨, 예약 확인서에서 열차·시간·좌석 확인). 나폴리 숙소 체크아웃 시각은 직접 확인하세요.",
+      "en": "User-provided schedule for the fixed 2026-11-25–29 proposal (not this card’s dynamic date): Italo 9940, 13:20–16:17 toward Florence (not independently verified; confirm train/time/class on the booking). Ask the Naples property about checkout time.",
+      "ja": "利用者提供予定（固定提案 2026-11-25〜29、カードの動的表示日ではありません）: Italo 9940、13:20〜16:17 フィレンツェ方面（独立確認なし。予約確認書で列車・時刻・座席を確認）。ナポリの宿にチェックアウト時刻を確認してください。",
+      "zh": "用户提供行程（固定提案 2026-11-25至29，并非卡片动态日期）：Italo 9940，13:20~16:17 前往佛罗伦萨（未独立核实，请以预订确认书核对车次、时间与座席）。请向那不勒斯住宿方确认退房时间。"
     },
     "rest": {
-      "ko": "16:17 피렌체 SMN역 도착 후 도보 단 8분 거리 Artemente Florence B&B 체크인 및 온수 샤워",
-      "en": "16:17 Florence arrival, easy 8-minute flat walk to Artemente Florence B&B for check-in & shower",
-      "ja": "16:17 フィレンツェ到着後、駅から徒歩わずか8分のArtemente Florence B&Bへチェックイン",
-      "zh": "16:17 抵达佛罗伦萨，平缓步行仅8分钟入驻Artemente Florence B&B并热水沐浴"
+      "ko": "고정 제안 2026-11-25~29의 사용자 제공 16:17 도착 예정(카드 동적 날짜와 별개): 16:17 도착 예정(열차표에서 확인). 피렌체 관광 안내에 Artemente Florence B&B 주소는 Via della Fortezza 6로 기재되어 있습니다. 예약·체크인 시각은 미확인으로 숙소에 직접 확인하세요.",
+      "en": "User-provided 16:17 arrival estimate for the fixed 2026-11-25–29 proposal, not this card’s dynamic date: Estimated arrival 16:17; verify the ticket. The city tourism listing gives Artemente Florence B&B’s address as Via della Fortezza 6; reservation and check-in time are unverified—confirm directly with the property.",
+      "ja": "固定提案 2026-11-25〜29の利用者提供16:17到着予定（カードの動的表示日とは別）: 16:17到着予定は乗車券で確認してください。市観光案内に掲載のArtemente Florence B&B住所は Via della Fortezza 6。予約・チェックイン時刻は未確認のため宿に直接ご確認ください。",
+      "zh": "用户固定提案 2026-11-25至29中的16:17抵达时间（与卡片动态日期无关）：预计16:17抵达，请核对车票。市旅游指南列出的Artemente Florence B&B地址为 Via della Fortezza 6；预订及入住时间尚未核实，请直接向住宿方确认。"
     },
     "evening": {
       "ko": "베키오 다리 (Ponte Vecchio): 아르노강 물빛에 비치는 피렌체의 로맨틱한 반영 야경을 무료로 감상하며 강변 산책",
@@ -11398,10 +11398,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "13:30~16:00 在百年老店吉利咖啡馆品尝经典提拉米苏，返回旅舍午休充能"
     },
     "evening": {
-      "ko": "택시 타고 미켈란젤로 광장 (Piazzale Michelangelo) 올라가기: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿 (노을~조명 야경)",
-      "en": "Take taxi up to Piazzale Michelangelo: Best free viewpoint overlooking Florence red roofs, Duomo and Arno River at sunset & twilight",
-      "ja": "タクシーでミケランジェロ広場(Piazzale Michelangelo)へ: 丘の上からフィレンツェの赤い屋根、ドゥオーモ、アルノ川を一望する最高峰の無料夜景スポット",
-      "zh": "打车直登米开朗基罗广场(Piazzale Michelangelo)：在山顶俯瞰夕阳与华灯初上时的佛罗伦萨全城红屋顶、百花穹顶与阿诺河（顶级免费观景台）"
+      "ko": "사용자 고정 제안(2026-11-25~29)에 관한 내용이며 카드의 동적 날짜와 별개입니다. 택시로 미켈란젤로 광장(Piazzale Michelangelo)에 올라 두오모·아르노강 전망을 감상하세요. 11월 말 일몰은 약 16:40~16:41. 버스 12/13번은 대안 후보입니다. 공식 시내권 승차권 페이지는 €2·90분 유효로 표기하지만 당일 운행·요금은 재확인하세요(https://www.at-bus.it/it/ticket/biglietti-urbani/biglietto-urbano-capoluogo). 일몰 참고: https://www.timeanddate.com/sun/italy/firenze?month=11. 선택형 제안인 11/26 우피치는 현재 두오모·광장 계획과 충돌하므로 동시에 하지 말고 교체안으로만 검토하세요.",
+      "en": "This refers to the fixed user proposal for 2026-11-25–29, not this card’s dynamically calculated date. Keep the current Duomo and Piazzale Michelangelo plan: taxi up for views over the Duomo and Arno. Late-November sunset is about 16:40–16:41. Buses 12/13 are alternatives. The official urban-ticket page currently lists €2 for 90 minutes; recheck date-specific service/fare (https://www.at-bus.it/it/ticket/biglietti-urbani/biglietto-urbano-capoluogo). Sunset reference: https://www.timeanddate.com/sun/italy/firenze?month=11. Uffizi on Nov 26 is an optional proposal that conflicts with this plan and would replace it, not happen alongside it.",
+      "ja": "利用者の固定提案 2026-11-25〜29についての記載で、カードの動的表示日とは別です。現在のドゥオーモ・ミケランジェロ広場の順序を維持し、タクシーで広場へ上って眺望を楽しみます。11月末の日没は約16:40〜16:41。バス12/13番は代替候補です。公式市内券案内は€2・90分有効と表示しますが、当日の運行・運賃は再確認してください（https://www.at-bus.it/it/ticket/biglietti-urbani/biglietto-urbano-capoluogo）。日没参考: https://www.timeanddate.com/sun/italy/firenze?month=11。11/26ウフィツィは選択制の提案で、現在の計画と競合するため同時実施ではなく置き換え案です。",
+      "zh": "以下内容指用户固定提案 2026-11-25至29，并非此卡片动态计算的日期。保留现有大教堂与米开朗基罗广场安排：可乘出租车上山欣赏大教堂与阿诺河景色。11月底日落约16:40~16:41；12/13路公交可作备选。官方市区票页面目前列出€2/90分钟，但请核实当天班次和票价（https://www.at-bus.it/it/ticket/biglietti-urbani/biglietto-urbano-capoluogo）。日落参考：https://www.timeanddate.com/sun/italy/firenze?month=11。11/26乌菲兹仅是备选提议，与现有安排冲突，应替换而非同时游览。"
     },
     "walk": {
       "ko": "낮음 (3,900보)",
@@ -11416,10 +11416,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "平路步行与上下山出租车"
     },
     "meal": {
-      "ko": "Trattoria Zà Zà: 참나무 숯불에 구운 두툼한 1kg 티본 스테이크(Bistecca alla Fiorentina) + 풍미 가득한 트러플 크림 파스타",
-      "en": "Trattoria Zà Zà: 1kg oak charcoal-seared Fiorentina T-Bone Steak with juicy pink center + rich aromatic Truffle Cream Pasta",
-      "ja": "Trattoria Zà Zà: オーク薪で香ばしく焼き上げた1kgの極上Tボーンステーキ (Bistecca alla Fiorentina)＋芳醇黒トリュフクリームパスタ",
-      "zh": "Trattoria Zà Zà：橡木炭火烤制的外焦里嫩1公斤经典丁骨大牛排 (Bistecca alla Fiorentina) 与浓郁黑松露奶油意面"
+      "ko": "Trattoria Zà Zà는 기존 저녁 후보(예약 미확인). 비스테카 알라 피오렌티나나 트러플 파스타는 현행 메뉴 확인 후 선택하며, 1kg 중량·조리법·당일 제공은 미확인입니다.",
+      "en": "Trattoria Zà Zà is an existing dinner candidate; consider bistecca alla Fiorentina or truffle pasta only if listed on the current menu. Portion size, cooking method and date-specific availability are unverified; booking status is unverified.",
+      "ja": "Trattoria Zà Zàは既存の夕食候補（予約未確認）。ビステッカやトリュフパスタは現行メニューを確認して選択してください。1kgの重量・調理法・当日の提供は未確認です。",
+      "zh": "Trattoria Zà Zà为现有晚餐候选（未预订）。佛罗伦萨牛排或松露意面须以最新菜单为准；1公斤份量、烹调方式及当日供应均未核实。"
     }
   },
   {
@@ -11466,22 +11466,22 @@ const PLANS_DAYS_I18N_DATA = {
       ]
     },
     "morning": {
-      "ko": "우피치 미술관 사전 예약 입장, 전용 엘리베이터로 이동하여 보티첼리 '비너스의 탄생', 라파엘로 명작 집중 관람",
-      "en": "Timed entry to Uffizi Gallery, using priority elevator to comfortably enjoy Botticelli's 'Birth of Venus' and Raphael",
-      "ja": "予約入場したウフィツィ美術館で専用エレベーターを利用し、ボッティチェリの名作などを無理なく鑑賞",
-      "zh": "按时段入场乌菲兹美术馆，搭乘无障碍电梯，轻松深度欣赏波提切利《维纳斯的诞生》与拉斐尔名作"
+      "ko": "기존 일정 순서에서 우피치 관람일은 사용자 제안의 고정 일정 2026-11-25~29 중 11/27이며 카드의 동적 날짜와 별개입니다. 일반 안내는 화~일 08:15~18:30, 월요일 휴관. 예약·입장권은 미확인, 날짜별 정보: https://www.uffizi.it/en/the-uffizi.",
+      "en": "In the existing order of the fixed 2026-11-25–29 proposal, Uffizi is on Nov 27 (not this card’s dynamic date). General Tue–Sun hours 08:15–18:30; closed Monday). Ticket/booking status is unknown; verify date-specific details at https://www.uffizi.it/en/the-uffizi.",
+      "ja": "既存の旅程順では、利用者の固定提案 2026-11-25〜29における11/27がウフィツィ観覧日です（カードの動的表示日とは別）。一般案内は火〜日08:15〜18:30、月曜休館）。予約・入場券は未確認。日付別情報: https://www.uffizi.it/en/the-uffizi",
+      "zh": "现有行程顺序在用户固定提案 2026-11-25至29中将乌菲兹安排在11/27（并非此卡片动态日期）。一般开放时间为周二至周日08:15~18:30，周一闭馆）。门票/预订尚未核实，请在 https://www.uffizi.it/en/the-uffizi 确认日期信息。"
     },
     "rest": {
-      "ko": "13:30~16:30 관람 후 숙소 복귀, 침대에 누워 다리 올리고 3시간 충분한 낮잠",
-      "en": "13:30~16:30 Post-gallery rest, elevating legs on bed for 3 hours of restorative siesta",
-      "ja": "13:30~16:30 見学後アパートに戻り足を高くして3時間の深い休息",
-      "zh": "13:30~16:30 观展后返回旅舍垫高双腿，卧床享受3小时充分午睡"
+      "ko": "다음 날짜는 사용자 제안의 고정 일정 2026-11-25~29를 가리키며 카드의 동적 표시일이 아닙니다. 13:30~16:30 휴식. 선택형 대안 제안(미확정): 우피치를 11/26으로 옮기고 11/27에 아카데미아·대성당·산타 크로체 방문. 현재 11/27 우피치 계획과 충돌하므로 기존 순서를 대체하는 안이지 동시 일정이 아닙니다. 아카데미아 화~일 08:15~18:50(마지막 입장 시각은 공식 안내가 상충하므로 확인, 예약 강력 권장); 대성당 월~토 10:15~15:45 무료·일요일 관광객 입장 휴무(돔은 별도 유료 입장권); 산타 크로체 월~토 09:30~17:30, 일요일 14:00~17:30, 마지막 입장 17:00. 여행일 운영 재확인. 예약·재예약은 하지 않았습니다. 공식 안내: 아카데미아 https://www.galleriaaccademiafirenze.it/en/visit/ · 대성당 https://duomo.firenze.it/en/discover/cathedral · 산타 크로체 https://www.santacroceopera.it/en/organise-your-visit/",
+      "en": "The dates below refer to the fixed user proposal for 2026-11-25–29, not this card’s dynamically calculated date. 13:30–16:30 rest. Optional proposal only (not selected): move Uffizi to Nov 26 and use Nov 27 for Accademia, the Cathedral and Santa Croce. This conflicts with the current Nov 27 Uffizi plan; it replaces that order rather than adding simultaneous visits. Accademia Tue–Sun 08:15–18:50 (official last-entry details conflict; confirm with the gallery; reservation strongly recommended); Cathedral Mon–Sat 10:15–15:45, free, closed to tourist visits Sunday (the dome requires a separate paid ticket); Santa Croce Mon–Sat 09:30–17:30, Sunday 14:00–17:30, last entry 17:00. Recheck trip-date hours. No booking/rebooking was made. Official information: Accademia https://www.galleriaaccademiafirenze.it/en/visit/ · Cathedral https://duomo.firenze.it/en/discover/cathedral · Santa Croce https://www.santacroceopera.it/en/organise-your-visit/",
+      "ja": "以下の日付は利用者の固定提案 2026-11-25〜29を指し、カードの動的表示日ではありません。13:30〜16:30休憩。選択制の未確定提案: ウフィツィを11/26に移し、11/27にアカデミア・大聖堂・サンタ・クローチェを訪問。現在の11/27ウフィツィ計画と競合するため、同時追加ではなく順序の置き換え案です。アカデミア火〜日08:15〜18:50（公式案内の最終入場時刻に相違があるため要確認、予約を強く推奨）；大聖堂月〜土10:15〜15:45無料、日曜は観光客入場休止（クーポラは別途有料チケット）；サンタ・クローチェ月〜土09:30〜17:30、日曜14:00〜17:30、最終入場17:00。旅行日の時間を再確認。予約・変更はしていません。公式案内: アカデミア https://www.galleriaaccademiafirenze.it/en/visit/ · 大聖堂 https://duomo.firenze.it/en/discover/cathedral · サンタ・クローチェ https://www.santacroceopera.it/en/organise-your-visit/",
+      "zh": "以下日期指用户固定提案 2026-11-25至29，并非此卡片动态计算的日期。13:30~16:30休息。仅供选择的未确定提议：将乌菲兹移至11/26，11/27参观学院美术馆、大教堂和圣十字圣殿。这与现有11/27乌菲兹安排冲突，是替换方案而非同时增加。学院美术馆周二至周日08:15~18:50（官网最后入场时间信息不一致，请向馆方确认；强烈建议预约）；大教堂周一至周六10:15~15:45免费，周日不接待游客（穹顶需另购付费门票）；圣十字周一至周六09:30~17:30、周日14:00~17:30，17:00停止入场。请复核旅行日时间。没有预订或改订。官方信息：学院美术馆 https://www.galleriaaccademiafirenze.it/en/visit/ · 大教堂 https://duomo.firenze.it/en/discover/cathedral · 圣十字 https://www.santacroceopera.it/en/organise-your-visit。"
     },
     "evening": {
-      "ko": "Trattoria Zà Zà: 숯불에 구워낸 1kg 두툼한 티본 스테이크(Bistecca alla Fiorentina)와 진한 트러플 크림 파스타로 부모님 보양 만찬",
-      "en": "Trattoria Zà Zà: Savor thick 1kg charcoal-grilled Bistecca alla Fiorentina and rich truffle cream pasta to recharge stamina",
-      "ja": "Trattoria Zà Zà: 炭火で豪快に焼いた極厚1kgのTボーンステーキと芳醇トリュフクリームパスタで最高の滋養ディナー",
-      "zh": "Trattoria Zà Zà：品尝用橄榄木炭火现烤的1公斤厚切经典佛罗伦萨T骨牛排与浓郁松露奶油面，为长辈深度补充满满活力"
+      "ko": "Trattoria Zà Zà는 기존 저녁 후보(예약 미확인). 비스테카나 트러플 파스타는 현행 메뉴를 확인하세요. 1kg 중량·숯불 조리·당일 제공은 확인되지 않았습니다.",
+      "en": "Trattoria Zà Zà is an existing dinner candidate (booking unverified). Check the current menu for bistecca or truffle pasta; a 1kg portion, charcoal cooking and date-specific availability are unverified.",
+      "ja": "Trattoria Zà Zàは既存の夕食候補（予約未確認）。ビステッカやトリュフパスタは現行メニューを確認してください。1kgの重量・炭火調理・当日の提供は未確認です。",
+      "zh": "Trattoria Zà Zà是现有晚餐候选（未预订）。牛排或松露意面请以最新菜单为准；1公斤份量、炭火烹调及当日供应尚未核实。"
     },
     "walk": {
       "ko": "낮음 (4,200보)",
@@ -11542,10 +11542,10 @@ const PLANS_DAYS_I18N_DATA = {
       ]
     },
     "morning": {
-      "ko": "산 로렌초 실내 중앙 시장과 가죽 노점 거리 산책, 800년 전통 산타 마리아 노벨라 약국에서 천연 장미수 쇼핑",
-      "en": "Explore flat indoor Central Market and San Lorenzo leather stalls; pick up rose water at 800-year-old Santa Maria Novella pharmacy",
-      "ja": "平坦な中央市場とサン・ロレンツォ革市場を散策し、800年の歴史を誇る薬局で名物のローズウォーターをお土産に購入",
-      "zh": "漫步平坦整洁的中央市场与圣洛伦佐皮具街，前往拥有800年历史的新圣母修道院药妆店选购经典天然玫瑰水"
+      "ko": "사용자 고정 제안 2026-11-25~29 기준(카드 동적 날짜 아님): 11/28 토요일: 1층 전통 시장은 09:00~17:00, 상층 푸드홀은 일반 안내상 매일 08:00~24:00. 11/29 일요일 1층 시장은 휴무이며 상층은 일반적으로 운영합니다. 공휴일·개별 점포 시간은 현지 재확인하세요. 산타 마리아 노벨라 약국 방문 계획도 유지해 장미수를 살펴보세요(당일 판매 여부는 미확인).",
+      "en": "For the fixed user proposal dated 2026-11-25–29 (not this card’s dynamic date): On Sat Nov 28, the ground-floor traditional market is listed 09:00–17:00; the upper food hall is generally 08:00–24:00 daily. The ground-floor market is closed Sunday Nov 29; the upper hall is generally open. Verify holidays and stall hours locally. Also keep the planned stop at Santa Maria Novella Pharmacy to look for rose water; current availability is unverified.",
+      "ja": "利用者の固定提案 2026-11-25〜29について（カードの動的表示日ではありません）: 11/28土曜: 1階の伝統市場は09:00〜17:00、上階フードホールは一般案内で毎日08:00〜24:00。11/29日曜は1階市場が休業、上階は通常営業です。祝日・各店舗の時間を現地で再確認してください。サンタ・マリア・ノヴェッラ薬局にも立ち寄り、ローズウォーターを探す予定を維持します（当日の販売状況は未確認）。",
+      "zh": "以下为用户固定提案 2026-11-25至29 的信息（并非此卡片动态日期）：11/28周六：一层传统市场一般为09:00~17:00，上层美食大厅一般每日08:00~24:00。11/29周日一层市场关闭，上层通常营业。请现场核实节假日和各档口时间。同时保留参观新圣母药妆店寻找玫瑰水的原定安排；当日是否有售尚未核实。"
     },
     "rest": {
       "ko": "13:00~16:30 숙소 복귀 후 충분한 낮잠 및 발 피로 해소 온수 족욕",
@@ -11593,28 +11593,28 @@ const PLANS_DAYS_I18N_DATA = {
     },
     "events": {
       "ko": [
-        "Italo 기차 (13:28~15:10)",
+ "사용자 제안의 고정 기간 2026-11-25~29 내 11/29 일정(카드 동적 날짜와 별개): 11/29 13:28 · 예약 확인 필요",
         "Salotto Monti 호텔",
         "몬티 지구 산책",
         "트레비 분수 밤 10시 산책",
         "동전 던지기"
       ],
       "en": [
-        "Italo Train (13:28~15:10)",
+ "User-provided Nov 29 13:28 schedule for the fixed 2026-11-25–29 proposal, not this card’s dynamic date: Nov 29 13:28 · verify booking",
         "Salotto Monti Boutique",
         "Monti District Walk",
         "Trevi Fountain at 10 PM",
         "Coin Toss Moment"
       ],
       "ja": [
-        "Italo 列車 (13:28~15:10)",
+ "利用者の固定提案 2026-11-25〜29内の11/29予定（カードの動的表示日とは別）: 11/29 13:28予定・予約確認要",
         "Salotto Monti",
         "モンティ地区散策",
         "トレビの泉 夜10時散歩",
         "コイン投げ"
       ],
       "zh": [
-        "Italo高铁 (13:28~15:10)",
+ "用户固定提案 2026-11-25至29中的11/29行程（与卡片动态日期无关）：11/29 13:28行程 · 请核对预订",
         "Salotto Monti精品酒店",
         "蒙蒂文艺街区漫步",
         "晚10点后特雷维喷泉",
@@ -11622,10 +11622,10 @@ const PLANS_DAYS_I18N_DATA = {
       ]
     },
     "morning": {
-      "ko": "피렌체 숙소 체크아웃 후 SMN역 이동, 13:28 Italo 고속열차 탑승 ➔ 15:10 로마 테르미니(Roma Termini)역 도착",
-      "en": "Board 13:28 Italo train from Florence SMN ➔ arrive at Roma Termini 15:10, smooth taxi to Salotto Monti",
-      "ja": "フィレンツェSMN駅から13:28発Italo特快に乗車 ➔ 15:10 ローマ・テルミニ駅到着、タクシーでSalotto Montiへ直行",
-      "zh": "从佛罗伦萨搭乘13:28 Italo高铁 ➔ 15:10 抵达罗马特米尼站，打车直达Salotto Monti精品酒店办理入住"
+      "ko": "고정 제안 2026-11-25~29 내 13:28 출발 일정(카드 동적 날짜와 별개): 독립 확인 안 됨, 예약 확인서에서 열차·시간·도착지를 확인). 숙소 체크아웃 시각과 짐 보관은 숙소에 직접 확인하세요. 체크아웃 시각을 가정하지 않습니다.",
+      "en": "13:28 departure plan for the fixed user proposal dated 2026-11-25–29, not this card’s dynamic date (not independently verified; check booking confirmation for train/time and destination). Confirm checkout time and luggage storage directly with the Florence property; no checkout time is assumed.",
+      "ja": "固定提案 2026-11-25〜29内の13:28出発予定（カードの動的表示日とは別）（独立確認なし。予約確認書で列車・時刻・行先を確認）。フィレンツェの宿にチェックアウト時刻と荷物預かりを直接確認してください。時刻は仮定していません。",
+      "zh": "用户固定提案 2026-11-25至29中的13:28出发计划（与卡片动态日期无关）（未独立核实，请核对预订确认中的车次、时间和目的地）。请直接向佛罗伦萨住宿方确认退房时间和行李寄存；不假定具体退房时间。"
     },
     "rest": {
       "ko": "15:30~18:30 Salotto Monti 체크인 후 온수 샤워 및 부모님 침대 휴식",
@@ -16552,7 +16552,7 @@ const I18N_DICTIONARY = {
     "gourmet_nap_snack": "<strong>🥐 조식 & 디저트 간식:</strong><br>• <strong>바바 (Babà al Rum)</strong>: 버섯 모양 폭신한 스펀지케이크에 독한 럼 시럽을 듬뿍 적신 전통 디저트 (어른들의 깊은 풍미!).<br>• <strong>카페 노촐라 (Caffè Nocciola)</strong>: 진한 에스프레소 바닥에 부드러운 헤이즐넛 크림을 깔아준 달콤한 나폴리식 커피.",
     "badge_tuscany": "토스카나 육류",
     "gourmet_flr_title": "2. 피렌체 (Firenze)",
-    "gourmet_flr_sig": "<strong>⭐️ 시그니처 미식 (필수):</strong><br>• <strong>비스테카 알라 피오렌티나 (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zà 등. 두툼한 티본 스테이크를 참나무 숯불에 구워 겉바속촉 육즙을 즐기는 토스카나 최고 요리.<br>• <strong>트러플 크림 파스타 (Truffle Pasta)</strong>: 향긋한 송로버섯 오일과 크림이 어우러져 입안 가득 풍미가 퍼지는 명물 파스타.<br>• <strong>포카치아 샌드위치 (Schiacciata)</strong>: All’Antico Vinaio. 겉바속촉 포카치아 사이에 프로슈토와 트러플 크림, 신선 치즈를 산더미처럼 넣은 세계 최고 샌드위치.",
+    "gourmet_flr_sig": "<strong>⭐️ 시그니처 미식 (후보):</strong><br>• <strong>비스테카 알라 피오렌티나</strong>: Trattoria Zà Zà 등에서 메뉴 후보로 확인할 수 있습니다. 해당 식당의 여행일 제공, 부위·중량·조리법은 방문 전 확인하세요.<br>• <strong>트러플 크림 파스타</strong>: 토스카나 요리 후보(당일 메뉴 확인).<br>• <strong>포카치아 샌드위치 (Schiacciata)</strong>: All’Antico Vinaio 후보(당일 메뉴·공급 확인).",
     "gourmet_flr_snack": "<strong>🥐 조식 & 간식:</strong><br>• <strong>칸투치니와 빈 산토 (Cantuccini e Vin Santo)</strong>: 고소한 아몬드 비스킷을 달콤한 디저트 와인(빈 산토)에 콕 찍어 먹는 토스카나 전통 디저트.",
     "badge_rome": "고대 수도 전통",
     "gourmet_rom_title": "3. 로마 (Roma)",
@@ -16613,7 +16613,7 @@ const I18N_DICTIONARY = {
     "hotel_flr_title": "피렌체 (4박)",
     "hotel_flr_dates": "11/25 ~ 11/29",
     "hotel_flr_name": "Artemente Florence B&B",
-    "hotel_flr_desc": "Italo 13:20 탑승(2h57m) · SMN역 도보 8분 · 전 일정 평지 도보 & 미켈란젤로 광장 야경",
+    "hotel_flr_desc": "사용자 제공 Italo 일정 13:20 출발·16:17 도착(미확인, 예약 확인 필요) · 숙소 주소 Via della Fortezza 6(시 관광 안내) · 예약·체크인/아웃 정책은 숙소 확인 https://www.destinationflorence.com/it/organizza-il-tuo-viaggio/dove-dormire/artemente-florence",
     "hotel_rom_title": "로마 (5박 & 귀국)",
     "hotel_rom_dates": "11/29 ~ 12/4",
     "hotel_rom_name": "Salotto Monti",
@@ -16652,7 +16652,7 @@ const I18N_DICTIONARY = {
     "must_nap_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Gino Sorbillo</strong>: 겉바속촉 전설의 화덕 마르게리타 피자<br>• <strong>Gran Caffè Gambrinus</strong>: 1860년 유서 깊은 카페의 정통 에스프레소 & 럼주 빵 '바바(Babà)', 조개 페이스트리 '스폴리아텔라'",
     "must_nap_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>플레비시토 광장 (Piazza del Plebiscito)</strong>: 웅장한 기둥 회랑과 왕궁 야경 산책<br>• 스파카 나폴리 골목 활기 체감 & 폼페이/소렌토/아말피 전용 차량 투어",
     "must_flr_city": "피렌체",
-    "must_flr_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg 두툼한 숯불 티본 스테이크(Bistecca alla Fiorentina) + 트러플 크림 파스타<br>• <strong>All’Antico Vinaio</strong>: 줄서서 먹는 토스카나 포카치아 샌드위치",
+    "must_flr_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Trattoria Zà Zà</strong>: 비스테카·트러플 파스타는 현행 메뉴 확인 후 선택하세요. 특정 중량·조리법·여행일 제공은 미확인입니다.<br>• <strong>All’Antico Vinaio</strong>: 스키아차타 샌드위치 후보(당일 메뉴·공급 확인 필요).",
     "must_flr_night": "<strong>꼭 해볼 것 & 무료 야경:</strong><br>• <strong>미켈란젤로 광장 (Piazzale Michelangelo)</strong>: 언덕 위에서 피렌체 두오모와 아르노강 전경을 한눈에 담는 최고의 무료 야경 스폿<br>• <strong>베키오 다리 (Ponte Vecchio)</strong>: 아르노강 반영 야경",
     "must_rom_city": "로마",
     "must_rom_food": "<strong>맛집·메뉴 후보 (예약 미확정):</strong><br>• <strong>Trattoria Luzzi</strong>: 콜로세움 인접 가성비 파스타 & 화덕 피자<br>• <strong>Giolitti (지올리띠)</strong>: 쌀맛(Riso) & 고소한 피스타치오(Pistacchio) 젤라또 필수 주문<br>• 타차 도로(Tazza d'Oro): 판테온 앞 그라니타 콘 판나",
@@ -16879,7 +16879,7 @@ const I18N_DICTIONARY = {
     "gourmet_nap_snack": "<strong>🥐 Breakfast & Dessert Treats:</strong><br>• <strong>Babà al Rum</strong>: Fluffy mushroom-shaped sponge cake soaked in fragrant rum syrup—an authentic classic.<br>• <strong>Caffè Nocciola</strong>: Velvety espresso layered over rich hazelnut cream, Naples' signature morning perk.",
     "badge_tuscany": "Tuscan Meats",
     "gourmet_flr_title": "2. Florence (Firenze)",
-    "gourmet_flr_sig": "<strong>⭐️ Signature Gourmet (Must-Try):</strong><br>• <strong>Bistecca alla Fiorentina</strong>: Trattoria Zà Zà. Thick 1kg T-bone steak seared over oak charcoal with tender pink center, simply seasoned with sea salt.<br>• <strong>Truffle Cream Pasta</strong>: Silky pasta loaded with aromatic Tuscan black truffles and rich cream.<br>• <strong>Focaccia Sandwich (Schiacciata)</strong>: All’Antico Vinaio. World-famous crispy warm focaccia stacked high with prosciutto, creamy cheeses, and truffle spread.",
+    "gourmet_flr_sig": "<strong>⭐️ Local food ideas (verify current menu):</strong><br>• <strong>Bistecca alla Fiorentina</strong>: A Florence dish to look for at places such as Trattoria Zà Zà; trip-date availability, cut, portion and preparation are unverified.<br>• <strong>Truffle pasta</strong>: Check current menus.<br>• <strong>Schiacciata sandwich</strong>: All’Antico Vinaio is an option; check menu and supply.",
     "gourmet_flr_snack": "<strong>🥐 Breakfast & Snacks:</strong><br>• <strong>Cantuccini e Vin Santo</strong>: Crunchy Tuscan almond biscotti dipped into sweet amber dessert wine.",
     "badge_rome": "Ancient Capital Heritage",
     "gourmet_rom_title": "3. Rome (Roma)",
@@ -16930,7 +16930,7 @@ const I18N_DICTIONARY = {
     "hotel_flr_title": "Florence (4 Nights)",
     "hotel_flr_dates": "11/25 ~ 11/29",
     "hotel_flr_name": "Artemente Florence B&B",
-    "hotel_flr_desc": "Italo 13:20 train (2h57m) · 8 min walk from SMN Station · Flat-ground strolls & Piazzale Michelangelo sunset",
+    "hotel_flr_desc": "User-provided Italo schedule: 13:20 departure / 16:17 arrival (unverified; confirm booking) · lodging address Via della Fortezza 6 per city tourism listing · confirm booking and check-in/out with property https://www.destinationflorence.com/it/organizza-il-tuo-viaggio/dove-dormire/artemente-florence",
     "hotel_rom_title": "Rome (5 Nights & Departure)",
     "hotel_rom_dates": "11/29 ~ 12/4",
     "hotel_rom_name": "Salotto Monti",
@@ -16969,7 +16969,7 @@ const I18N_DICTIONARY = {
     "must_nap_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Gino Sorbillo</strong>: Legendary crispy & chewy wood-fired Neapolitan Margherita pizza<br>• <strong>Gran Caffè Gambrinus</strong>: 1860 historic café serving rich espresso, rum-soaked Babà cake & flaky Sfogliatella pastry",
     "must_nap_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Piazza del Plebiscito</strong>: Grand colonnade night illumination and royal palace stroll<br>• Spaccanapoli vibrant alleyways & private van tour to Pompeii and Amalfi/Positano",
     "must_flr_city": "Florence",
-    "must_flr_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Trattoria Zà Zà</strong>: 1kg thick charcoal-grilled Bistecca alla Fiorentina + Truffle Cream Pasta<br>• <strong>All’Antico Vinaio</strong>: World-famous Tuscan focaccia sandwiches overflowing with prosciutto and truffle cream",
+    "must_flr_food": "<strong>Restaurant and dish ideas (booking unverified):</strong><br>• <strong>Trattoria Zà Zà</strong>: Bistecca or truffle pasta only if listed on the current menu; portion, cooking method and trip-date availability are unverified.<br>• <strong>All’Antico Vinaio</strong>: Schiacciata sandwich candidate; check the current menu and supply.",
     "must_flr_night": "<strong>Must-Do Experiences & Free Night Views:</strong><br>• <strong>Piazzale Michelangelo</strong>: Unbeatable hilltop panoramic free sunset and night view overlooking Florence Duomo and Arno River<br>• <strong>Ponte Vecchio</strong>: Romantic reflections on the river",
     "must_rom_city": "Rome",
     "must_rom_food": "<strong>Restaurant and dish ideas (not booked):</strong><br>• <strong>Trattoria Luzzi</strong>: Great value Roman carbonara & thin-crust pizza 3 min from Colosseum<br>• <strong>Giolitti</strong>: 1900 artisanal gelato - must try Rice (Riso) and rich Pistachio (Pistacchio)<br>• Tazza d'Oro: Granita di caffè con panna near Pantheon",
@@ -17203,7 +17203,7 @@ const I18N_DICTIONARY = {
     "gourmet_nap_snack": "<strong>🥐 朝食＆デザートスナック:</strong><br>• <strong>ババ (Babà al Rum)</strong>: キノコ型のスポンジに香り高いラム酒シロップを染み込ませた伝統菓子（大人の贅沢な風味）。<br>• <strong>カフェ・ノッチョーラ (Caffè Nocciola)</strong>: 濃厚なエスプレッソの下に滑らかなヘーゼルナッツクリームを敷いた甘美なナポリ風コーヒー。",
     "badge_tuscany": "トスカーナ肉料理",
     "gourmet_flr_title": "2. フィレンツェ (Firenze)",
-    "gourmet_flr_sig": "<strong>⭐️ 名物グルメ (必食):</strong><br>• <strong>ビステッカ・アッラ・フィオレンティーナ (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zàなど。オーク薪で表面を香ばしく中はジューシーに焼き上げる1kg超の絶品Tボーンステーキ。<br>• <strong>トリュフクリームパスタ (Truffle Pasta)</strong>: 芳醇な黒トリュフの香りと濃厚なクリームが口いっぱいに広がるパスタ。<br>• <strong>フォカッチャサンド (Schiacciata)</strong>: All’Antico Vinaio。焼き立てフォカッチャに生ハム、トリュフクリーム、チーズを山盛りに挟んだ世界的人気サンド。",
+    "gourmet_flr_sig": "<strong>⭐️ フィレンツェ料理候補（現行メニューを要確認）:</strong><br>• <strong>ビステッカ・アッラ・フィオレンティーナ</strong>: Trattoria Zà Zàなどで探せる名物候補。旅行日の提供、部位・量・調理法は未確認です。<br>• <strong>トリュフパスタ</strong>: 現行メニューをご確認ください。<br>• <strong>スキアッチャータサンド</strong>: All’Antico Vinaioも候補。メニューと在庫をご確認ください。",
     "gourmet_flr_snack": "<strong>🥐 朝食＆スナック:</strong><br>• <strong>カントゥッチーニとヴィン・サント (Cantuccini e Vin Santo)</strong>: 堅焼きのアーモンドビスケットを甘口デザートワインに浸して楽しむトスカーナの伝統スタイル。",
     "badge_rome": "古代都市の味",
     "gourmet_rom_title": "3. ローマ (Roma)",
@@ -17254,7 +17254,7 @@ const I18N_DICTIONARY = {
     "hotel_flr_title": "フィレンツェ (4泊)",
     "hotel_flr_dates": "11/25 ~ 11/29",
     "hotel_flr_name": "Artemente Florence B&B",
-    "hotel_flr_desc": "Italo 13:20乗車(2h57m) · SMN駅徒歩8分 · 全日程平坦路徒歩＆ミケランジェロ広場の夜景",
+    "hotel_flr_desc": "利用者提供Italo予定: 13:20発・16:17着（未確認、予約確認が必要） · 市観光案内の宿住所 Via della Fortezza 6 · 予約・チェックイン/アウト条件を宿に確認 https://www.destinationflorence.com/it/organizza-il-tuo-viaggio/dove-dormire/artemente-florence",
     "hotel_rom_title": "ローマ (5泊＆帰国)",
     "hotel_rom_dates": "11/29 ~ 12/4",
     "hotel_rom_name": "Salotto Monti",
@@ -17293,7 +17293,7 @@ const I18N_DICTIONARY = {
     "must_nap_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Gino Sorbillo</strong>: 伝説の薪窯で焼き上げる香ばしい元祖マルゲリータピッツァ<br>• <strong>Gran Caffè Gambrinus</strong>: 1860年創業の歴史的カフェで本格エスプレッソ＆ラム酒風味のババ(Babà)、スフォリアテッラ",
     "must_nap_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>プレビシート広場 (Piazza del Plebiscito)</strong>: 壮大な回廊と王宮のライトアップ散歩<br>• スパッカナポリ下町情緒体験＆ポンペイ・アマルフィ専用車ツアー",
     "must_flr_city": "フィレンツェ",
-    "must_flr_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Trattoria Zà Zà</strong>: 炭火焼きビステッカ・アッラ・フィオレンティーナ(Tボーンステーキ1kg)＋トリュフクリームパスタ<br>• <strong>All’Antico Vinaio</strong>: 行列のできるトスカーナ産フォカッチャサンド",
+    "must_flr_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Trattoria Zà Zà</strong>: ビステッカやトリュフパスタは現行メニューにあれば候補。量・調理法・旅行日の提供は未確認です。<br>• <strong>All’Antico Vinaio</strong>: スキアッチャータサンド候補。現行メニューと在庫をご確認ください。",
     "must_flr_night": "<strong>必見スポット＆無料夜景:</strong><br>• <strong>ミケランジェロ広場 (Piazzale Michelangelo)</strong>: 丘の上からフィレンツェの赤い屋根とドゥオーモを一望する最高の無料夜景スポット<br>• <strong>ヴェッキオ橋 (Ponte Vecchio)</strong>: アルノ川に映る美しい夜景",
     "must_rom_city": "ローマ",
     "must_rom_food": "<strong>飲食店・料理候補（予約未確定）:</strong><br>• <strong>Trattoria Luzzi</strong>: コロッセオ徒歩3分、高コスパな本場カルボナーラ＆ピッツァ<br>• <strong>Giolitti</strong>: 1900年創業の老舗ジェラート - お米味(Riso)と香ばしいピスタチオ必須<br>• タッツァ・ドーロ: パンテオン前のグラニータ・ディ・カフェ",
@@ -17527,7 +17527,7 @@ const I18N_DICTIONARY = {
     "gourmet_nap_snack": "<strong>🥐 早餐与传统甜点:</strong><br>• <strong>朗姆酒蛋糕 (Babà al Rum)</strong>: 蘑菇形状的松软海绵蛋糕浸润着醇正朗姆酒糖浆，回味悠长。<br>• <strong>榛子奶油浓缩咖啡 (Caffè Nocciola)</strong>: 浓烈意式浓缩底衬丝滑榛果酱，那不勒斯独特的甜蜜晨曲。",
     "badge_tuscany": "托斯卡纳肉食",
     "gourmet_flr_title": "2. 佛罗伦萨 (Firenze)",
-    "gourmet_flr_sig": "<strong>⭐️ 招牌美食 (必吃):</strong><br>• <strong>佛罗伦萨丁骨大牛排 (Bistecca alla Fiorentina)</strong>: Trattoria Zà Zà等。橡木炭火烤制的外焦里嫩1公斤厚切T骨牛排，仅撒海盐即显纯粹肉香。<br>• <strong>黑松露奶油意面 (Truffle Pasta)</strong>: 弥漫着托斯卡纳黑松露诱人香气与丝滑乳酪的经典意面。<br>• <strong>意式佛卡夏三明治 (Schiacciata)</strong>: All’Antico Vinaio。香脆佛卡夏面包夹入丰厚帕尔马火腿、松露酱与新鲜奶酪的全球知名三明治。",
+    "gourmet_flr_sig": "<strong>⭐️ 佛罗伦萨美食候选（请核对最新菜单）:</strong><br>• <strong>佛罗伦萨牛排</strong>：可在 Trattoria Zà Zà 等店查看是否供应；旅行日期供应、部位、份量和做法尚未核实。<br>• <strong>松露意面</strong>：请查看最新菜单。<br>• <strong>斯基亚恰塔三明治</strong>：可考虑 All’Antico Vinaio；请确认当日菜单和供应。",
     "gourmet_flr_snack": "<strong>🥐 早餐与小食:</strong><br>• <strong>意式杏仁脆饼配圣酒 (Cantuccini e Vin Santo)</strong>: 坚硬香脆的杏仁饼干蘸入甜白葡萄酒享用的托斯卡纳经典传统。",
     "badge_rome": "古罗马传统",
     "gourmet_rom_title": "3. 罗马 (Roma)",
@@ -17578,7 +17578,7 @@ const I18N_DICTIONARY = {
     "hotel_flr_title": "佛罗伦萨 (4晚)",
     "hotel_flr_dates": "11/25 ~ 11/29",
     "hotel_flr_name": "Artemente Florence B&B",
-    "hotel_flr_desc": "搭乘Italo 13:20(2小时57分) · 步行8分钟至SMN火车站 · 全平路漫步与米开朗基罗广场夜景",
+    "hotel_flr_desc": "用户提供Italo计划：13:20出发、16:17抵达（未核实，需核对预订）· 市旅游指南所列住宿地址 Via della Fortezza 6 · 请向住宿方确认预订及入住/退房安排 https://www.destinationflorence.com/it/organizza-il-tuo-viaggio/dove-dormire/artemente-florence",
     "hotel_rom_title": "罗马 (5晚及回程)",
     "hotel_rom_dates": "11/29 ~ 12/4",
     "hotel_rom_name": "Salotto Monti",
@@ -17617,7 +17617,7 @@ const I18N_DICTIONARY = {
     "must_nap_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Gino Sorbillo</strong>: 外脆内软的正宗传统柴火玛格丽特披萨圣殿<br>• <strong>Gran Caffè Gambrinus</strong>: 始于1860年的历史咖啡厅品尝浓缩咖啡、朗姆蛋糕(Babà)与贝壳酥(Sfogliatella)",
     "must_nap_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>平民表决广场 (Piazza del Plebiscito)</strong>: 壮观柱廊与皇宫夜景漫步<br>• 感受斯帕卡那波利老街生活气息与庞贝/阿马尔菲包车一日游",
     "must_flr_city": "佛罗伦萨",
-    "must_flr_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Trattoria Zà Zà</strong>: 1公斤厚切炭烤佛罗伦萨T骨牛排 + 松露奶油意面<br>• <strong>All’Antico Vinaio</strong>: 闻名全球的托斯卡纳佛卡夏大三明治",
+    "must_flr_food": "<strong>餐厅与菜品候选（尚未预订）:</strong><br>• <strong>Trattoria Zà Zà</strong>: 佛罗伦萨牛排或松露意面须以最新菜单为准；份量、烹调方式及旅行日期供应均未核实。<br>• <strong>All’Antico Vinaio</strong>: 可考虑斯基亚恰塔三明治；请核对当日菜单和供应。",
     "must_flr_night": "<strong>必玩体验与免费夜景:</strong><br>• <strong>米开朗基罗广场 (Piazzale Michelangelo)</strong>: 俯瞰佛罗伦萨红屋顶穹顶与阿诺河全景的顶级免费日落与夜景胜地<br>• <strong>老桥 (Ponte Vecchio)</strong>: 阿诺河水面倒影浪漫夜景",
     "must_rom_city": "罗马",
     "must_rom_food": "<strong>餐厅与菜品建议（尚未预订）:</strong><br>• <strong>Trattoria Luzzi</strong>: 斗兽场旁性价比极高的经典罗马培根蛋酱面与薄底披萨<br>• <strong>Giolitti</strong>: 始于1900年的国宝级手工冰淇淋 - 必点大米味(Riso)与浓郁开心果味<br>• 金杯咖啡(Tazza d'Oro): 万神殿前意式碎冰咖啡",
@@ -39024,14 +39024,14 @@ const PRACTICAL_CITY_CANDIDATES_DATA = {
       typeBadge: "🍽️ 저녁까지 운영하는 식당가/푸드홀 (2층 실내 푸드홀 · 1층 낮 시장과 분리)",
       typeColor: "foodhall",
       isOneStopRecommended: true,
-      oneStopReason: "👑 부모님 동행 우선 추천 (다양한 저녁 식사 원스톱): 확정 숙소(SMN역 인근) 도보권 실내 난방 공간에서 여러 토스카나 요리를 한 자리에서 따뜻하게 골라 드실 수 있습니다.",
+      oneStopReason: "👑 부모님 동행 식사 후보: 따뜻한 실내에서 여러 음식을 고를 수 있습니다. 숙소 주소 Via della Fortezza 6에서의 경로·거리와 예약 여부는 확인하세요.",
       image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
       highlights: "1874년 주세페 멘고니가 설계한 주철·유리 건축물 2층(Primo Piano)에 조성된 대형 미식 푸드홀. 화덕 피자, 생면 트러플 파스타, 곱창 버거(Lampredotto), 키안티 와인, 토스카나 스테이크·수프, 아란치니, 젤라토 등 20여 개 전문 공방 입점 (1층 전통 식재료 시장은 낮 시간에 마감하며 2층 푸드홀이 저녁까지 운영)",
-      hours: "2층 푸드홀: 일~목 09:00~23:00 / 금~토 09:00~24:00 안내 (1층 전통 시장은 월~금 07:00~15:00, 토 07:00~17:00 낮 운영)",
+      hours: "피렌체 관광 안내: 1층 전통 시장은 월~금 09:00~15:00, 토 09:00~17:00, 일요일·공휴일 휴무. 상층 푸드홀은 매일 08:00~24:00 안내. 공휴일 및 점포별 운영은 현장 재확인하세요.",
       verifyNotice: "방문 전 확인 · 공휴일 및 코너별 주문 마감시간 당일 변경 가능",
       seniorCaution: "건물 내부 엘리베이터와 에스컬레이터로 2층 푸드홀까지 올라갈 수 있어 계단 부담을 줄일 수 있으나, 저녁 19:30~21:00 피크 타임에는 중앙 공용 좌석 확보가 치열합니다. 부모님과 먼저 테이블 좌석을 확보한 뒤 음식을 주문하거나, 테이블 서비스 구역을 활용하세요.",
       sources: [
-        { label: "Mercato Centrale Firenze 공식 운영시간·이용 안내", url: "https://www.mercatocentrale.com/florence/info/" }
+        { label: "Mercato Centrale Firenze 공식 운영시간·이용 안내", url: "https://www.feelflorence.it/en/points-interest/san-lorenzo-market-mercato-centrale" }
       ],
       verifiedDate: "2026-10-29 확인",
       mapQuery: "Mercato Centrale Firenze Piazza del Mercato Centrale Florence"
@@ -40012,9 +40012,9 @@ const PRACTICAL_CANDIDATES_I18N = {
         typeBadge: "🍽️ Evening Dining / Indoor Food Hall (2F Food Hall · Separated from 1F Day Market)",
         subTypeTag: "2F Heated Indoor Food Hall · Open Until Late",
         verifyBadge: "Verify before visit · Holidays & stall hours vary",
-        oneStopReason: "👑 Priority Pick for Senior Parents (Warm Indoor Dinner One-Stop): Within walking distance of the SMN station hotel area, offering 20+ Tuscan food stalls under one heated glass-and-iron roof.",
+        oneStopReason: "👑 Indoor dining candidate with Tuscan options. Check the route from Via della Fortezza 6 on a map; lodging reservation, distance and accessibility have not been verified.",
         highlights: "Spacious gourmet food hall on the upper floor (Primo Piano) of Giuseppe Mengoni's 1874 cast-iron and glass market hall—wood-fired pizza, fresh truffle pasta, Lampredotto sandwiches, Chianti wine, Tuscan steaks/soups, and gelato (1F traditional food market closes in the afternoon; 2F food hall stays open through late evening).",
-        hours: "2F Food Hall: Sun–Thu 09:00–23:00 / Fri–Sat 09:00–24:00 (1F traditional market operates daytime Mon–Fri 07:00–15:00, Sat 07:00–17:00).",
+        hours: "FeelFlorence lists the ground-floor market Mon–Fri 09:00–15:00, Sat 09:00–17:00, closed Sundays and holidays; the upper food hall Mon–Sun 08:00–24:00. Recheck holidays and individual stalls locally.",
         seniorCaution: "Internal elevators and escalators connect the ground floor to the 2nd-floor food hall, reducing stair strain, but shared center tables get very crowded during the 19:30–21:00 dinner peak—secure a table for parents first before ordering food.",
         sourceLabels: ["Mercato Centrale Firenze Official Hours & Visitor Info"]
       },
@@ -40023,9 +40023,9 @@ const PRACTICAL_CANDIDATES_I18N = {
         typeBadge: "🍽️ 夜まで営業する飲食店街／フードホール (2階屋内フードホール・1階昼市場と分離)",
         subTypeTag: "2階屋内フードホール・暖房完備・夜営業",
         verifyBadge: "訪問前に要確認・祝日や店舗別締切時間相違",
-        oneStopReason: "👑 ご両親同伴 優先推奨 (多彩な夕食ワンストップ): 確定宿（SMN駅付近）徒歩圏内の暖かい屋内空間で、様々なトスカーナ料理を1か所で選んで楽しめます。",
+        oneStopReason: "👑 トスカーナ料理を選べる屋内飲食候補。Via della Fortezza 6からの経路は地図で確認してください（宿泊予約・距離・アクセシビリティは未確認）。",
         highlights: "1874年設計の鋳鉄・ガラス建築の2階（Primo Piano）にある大型美食フードホール。薪窯ピザ、生トリュフパスタ、ランプレドット、キャンティワイン、トスカーナステーキやスープ、ジェラートなど約20店舗が入居（1階の伝統食材市場は昼で閉まり、2階フードホールが夜まで営業）。",
-        hours: "2階フードホール: 日〜木 09:00〜23:00 ／ 金〜土 09:00〜24:00案内（1階伝統市場は月〜金 07:00〜15:00、土 07:00〜17:00の昼営業）",
+        hours: "フィレンツェ観光案内: 1階市場は月〜金09:00〜15:00、土09:00〜17:00、日曜・祝日休業。上階フードホールは毎日08:00〜24:00。祝日と各店舗の時間を現地で再確認してください。",
         seniorCaution: "建物内のエレベーターやエスカレーターで2階フードホールまで上がれるため階段負担を減らせますが、19:30〜21:00のピーク時は中央の共用席が混み合います。先にご両親のテーブル席を確保してから注文するか、テーブルサービスエリアをご活用ください。",
         sourceLabels: ["Mercato Centrale Firenze 公式営業時間・利用案内"]
       },
@@ -40034,9 +40034,9 @@ const PRACTICAL_CANDIDATES_I18N = {
         typeBadge: "🍽️ 营业至晚间的餐饮区/美食大厅 (2楼室内美食大厅 · 与1楼白天市场分离)",
         subTypeTag: "2楼室内暖气美食大厅 · 营业至深夜",
         verifyBadge: "到访前请核实 · 节假日及各档口截单时间可能变动",
-        oneStopReason: "👑 携父母同行优先推荐 (丰盛晚餐一站式): 位于SMN火车站住宿区步行圈内，在温暖的室内玻璃铸铁大厅内可一次品尝20余家托斯卡纳地道美食。",
+        oneStopReason: "👑 可选择多种托斯卡纳菜的室内餐饮候选。请在地图上确认从 Via della Fortezza 6 出发的路线（住宿预订、距离和无障碍情况均未核实）。",
         highlights: "位于1874年建成的铸铁玻璃建筑二层(Primo Piano)的大型室内美食大厅，汇聚柴火披萨、黑松露手工意面、牛肚包(Lampredotto)、基安蒂红酒、托斯卡纳牛排与热汤、手工冰淇淋等（1楼传统生鲜市场午后闭市，2楼美食大厅营业至深夜）。",
-        hours: "2楼美食大厅: 周日至周四 09:00~23:00 / 周五至周六 09:00~24:00（1楼传统市场为周一至周五 07:00~15:00、周六 07:00~17:00 白天营业）",
+        hours: "佛罗伦萨旅游指南列出：一层市场周一至周五09:00~15:00、周六09:00~17:00，周日及节假日关闭；上层美食大厅每日08:00~24:00。请现场核实节假日和各档口时间。",
         seniorCaution: "可搭乘建筑内部电梯与扶梯直达2楼，免去爬楼负担；但19:30~21:00晚餐高峰期中央公共座位非常紧俏，建议先为父母找好座位再点餐，或使用提供桌边服务的就餐区。",
         sourceLabels: ["Mercato Centrale Firenze 官方营业时间与指南"]
       }
