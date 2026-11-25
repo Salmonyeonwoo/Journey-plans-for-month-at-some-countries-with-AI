@@ -1,0 +1,189 @@
+.florence-duomo-visit-guide {
+  --fdvg-ink: #213128;
+  --fdvg-muted: #56645b;
+  --fdvg-green: #1b4332;
+  margin: 28px 0 18px;
+  padding: clamp(18px, 3vw, 30px);
+  color: var(--fdvg-ink);
+  background: linear-gradient(145deg, #f5faf6 0%, #fffdf9 70%);
+  border: 1px solid #d7e5dc;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(27, 67, 50, 0.08);
+  scroll-margin-top: 100px;
+}
+
+.florence-duomo-visit-guide .fdvg-header {
+  max-width: 920px;
+  margin: 0 auto 20px;
+}
+
+.florence-duomo-visit-guide .fdvg-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #47745c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.florence-duomo-visit-guide h3 {
+  margin: 0 0 8px;
+  color: var(--fdvg-green);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.florence-duomo-visit-guide .fdvg-header > p {
+  margin: 0 0 14px;
+  color: var(--fdvg-muted);
+  line-height: 1.6;
+}
+
+.florence-duomo-visit-guide .fdvg-date-note {
+  padding: 12px 14px;
+  color: #694b18;
+  background: #fff7e8;
+  border: 1px solid #f0d8a8;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.florence-duomo-visit-guide .fdvg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.florence-duomo-visit-guide .fdvg-card {
+  min-width: 0;
+  padding: 17px 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e9e3;
+  border-radius: 15px;
+}
+
+.florence-duomo-visit-guide .fdvg-card h4 {
+  margin: 0 0 10px;
+  color: #244c37;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.florence-duomo-visit-guide .fdvg-card p {
+  margin: 0 0 9px;
+  color: #44524a;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.florence-duomo-visit-guide .fdvg-card p:last-child {
+  margin-bottom: 0;
+}
+
+.florence-duomo-visit-guide .fdvg-actions {
+  margin-top: 16px;
+}
+
+.florence-duomo-visit-guide .fdvg-plan-link,
+.florence-duomo-visit-guide .fdvg-chat-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 9px 14px;
+  color: #fff;
+  background: var(--fdvg-green);
+  border: 1px solid var(--fdvg-green);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.florence-duomo-visit-guide .fdvg-plan-link:hover,
+.florence-duomo-visit-guide .fdvg-chat-link:hover {
+  background: #285c44;
+}
+
+.florence-duomo-visit-guide .fdvg-sources {
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid #dfe8e1;
+}
+
+.florence-duomo-visit-guide .fdvg-sources summary {
+  color: #315b43;
+  font-size: 0.9rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.florence-duomo-visit-guide .fdvg-sources ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 18px;
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.florence-duomo-visit-guide .fdvg-sources li {
+  color: #52705e;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.florence-duomo-visit-guide .fdvg-sources a,
+.fdvg-chat-answer a {
+  color: #1a6340;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fdvg-chat-answer {
+  margin: 10px 0;
+  padding: 13px 14px;
+  color: #273c31;
+  background: #f2faf4;
+  border: 1px solid #cfe4d5;
+  border-radius: 13px;
+  line-height: 1.6;
+}
+
+.fdvg-chat-answer strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #1b4332;
+}
+
+.fdvg-chat-answer p {
+  margin: 0 0 8px;
+}
+
+.fdvg-chat-answer .fdvg-chat-link {
+  margin-top: 10px;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 700px) {
+  .florence-duomo-visit-guide {
+    margin: 20px 0 14px;
+    padding: 17px 14px;
+    border-radius: 16px;
+  }
+
+  .florence-duomo-visit-guide .fdvg-grid,
+  .florence-duomo-visit-guide .fdvg-sources ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .florence-duomo-visit-guide .fdvg-card {
+    padding: 15px;
+  }
+}
