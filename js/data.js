@@ -3078,7 +3078,7 @@ const REGIONAL_PLANS = {
     "theme": "두오모 광장 평지 산책 & 택시로 미켈란젤로 광장 (Piazzale Michelangelo) 최고의 무료 야경",
     "morning": "숙소에서 두오모 광장까지 완전 평지 도보 7분. 붉은 돔 외관과 조토의 종탑을 계단 등반 없이 광장에서 여유롭게 감상",
     "rest": "13:30~16:00 카페 질리(Gilli)에서 티라미수 맛본 후 숙소 복귀 침대 낮잠",
-    "evening": "사용자 고정 제안(2026-11-25~29)에 관한 내용이며 카드의 동적 날짜와 별개입니다. 택시로 미켈란젤로 광장(Piazzale Michelangelo)에 올라 두오모·아르노강 전망을 감상하세요. 11월 말 일몰은 약 16:40~16:41. 버스 12/13번은 대안 후보입니다. 2026 공식 요금표 기준 Firenze 시내권은 €1.70·90분 유효입니다. 당일 운행·요금은 공식 안내에서 다시 확인하세요(https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf). 일몰 참고: https://www.timeanddate.com/sun/italy/firenze?month=11. 선택형 제안인 11/26 우피치는 현재 두오모·광장 계획과 충돌하므로 동시에 하지 말고 교체안으로만 검토하세요.",
+    "evening": "사용자 고정 제안(2026-11-25~29)에 관한 내용이며 카드의 동적 날짜와 별개입니다. 택시로 미켈란젤로 광장(Piazzale Michelangelo)에 올라 두오모·아르노강 전망을 감상하세요. 11월 말 일몰은 약 16:40~16:41. 버스 12/13번은 대안 후보입니다. 2026년 8월 1일부터 Firenze 시내권 90분권은 €2.00입니다. 당일 운행·요금은 공식 안내에서 다시 확인하세요(https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf). 일몰 참고: https://www.timeanddate.com/sun/italy/firenze?month=11. 선택형 제안인 11/26 우피치는 현재 두오모·광장 계획과 충돌하므로 동시에 하지 말고 교체안으로만 검토하세요.",
     "walk": "낮음 (3,900보)",
     "transport": "도보 & 택시 (언덕)",
     "meal": "Trattoria Zà Zà는 기존 저녁 후보(예약 미확인). 비스테카 알라 피오렌티나나 트러플 파스타는 현행 메뉴 확인 후 선택하며, 1kg 중량·조리법·당일 제공은 미확인입니다.",
@@ -11398,10 +11398,10 @@ const PLANS_DAYS_I18N_DATA = {
       "zh": "13:30~16:00 在百年老店吉利咖啡馆品尝经典提拉米苏，返回旅舍午休充能"
     },
     "evening": {
-      "ko": "사용자 고정 제안(2026-11-25~29)에 관한 내용이며 카드의 동적 날짜와 별개입니다. 택시로 미켈란젤로 광장(Piazzale Michelangelo)에 올라 두오모·아르노강 전망을 감상하세요. 11월 말 일몰은 약 16:40~16:41. 버스 12/13번은 대안 후보입니다. 2026 공식 요금표 기준 Firenze 시내권은 €1.70·90분 유효입니다. 당일 운행·요금은 공식 안내에서 다시 확인하세요(https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf). 일몰 참고: https://www.timeanddate.com/sun/italy/firenze?month=11. 선택형 제안인 11/26 우피치는 현재 두오모·광장 계획과 충돌하므로 동시에 하지 말고 교체안으로만 검토하세요.",
-      "en": "This refers to the fixed user proposal for 2026-11-25–29, not this card’s dynamically calculated date. Keep the current Duomo and Piazzale Michelangelo plan: taxi up for views over the Duomo and Arno. Late-November sunset is about 16:40–16:41. Buses 12/13 are alternatives. The 2026 official fare table lists Florence’s urban ticket at €1.70 for 90 minutes; recheck date-specific service and fare (https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf). Sunset reference: https://www.timeanddate.com/sun/italy/firenze?month=11. Uffizi on Nov 26 is an optional proposal that conflicts with this plan and would replace it, not happen alongside it.",
-      "ja": "利用者の固定提案 2026-11-25〜29についての記載で、カードの動的表示日とは別です。現在のドゥオーモ・ミケランジェロ広場の順序を維持し、タクシーで広場へ上って眺望を楽しみます。11月末の日没は約16:40〜16:41。バス12/13番は代替候補です。2026年の公式運賃表ではフィレンツェ市内券は€1.70・90分有効です。訪問当日の運行・運賃を公式案内で再確認してください（https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf）。日没参考: https://www.timeanddate.com/sun/italy/firenze?month=11。11/26ウフィツィは選択制の提案で、現在の計画と競合するため同時実施ではなく置き換え案です。",
-      "zh": "以下内容指用户固定提案 2026-11-25至29，并非此卡片动态计算的日期。保留现有大教堂与米开朗基罗广场安排：可乘出租车上山欣赏大教堂与阿诺河景色。11月底日落约16:40~16:41；12/13路公交可作备选。2026年官方票价表显示，佛罗伦萨市区票为€1.70、有效90分钟；请通过官方信息核实当天班次与票价（https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf）。日落参考：https://www.timeanddate.com/sun/italy/firenze?month=11。11/26乌菲兹仅是备选提议，与现有安排冲突，应替换而非同时游览。"
+      "ko": "사용자 고정 제안(2026-11-25~29)에 관한 내용이며 카드의 동적 날짜와 별개입니다. 택시로 미켈란젤로 광장(Piazzale Michelangelo)에 올라 두오모·아르노강 전망을 감상하세요. 11월 말 일몰은 약 16:40~16:41. 버스 12/13번은 대안 후보입니다. 2026년 8월 1일부터 Firenze 시내권 90분권은 €2.00입니다. 당일 운행·요금은 공식 안내에서 다시 확인하세요(https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf). 일몰 참고: https://www.timeanddate.com/sun/italy/firenze?month=11. 선택형 제안인 11/26 우피치는 현재 두오모·광장 계획과 충돌하므로 동시에 하지 말고 교체안으로만 검토하세요.",
+      "en": "This refers to the fixed user proposal for 2026-11-25–29, not this card’s dynamically calculated date. Keep the current Duomo and Piazzale Michelangelo plan: taxi up for views over the Duomo and Arno. Late-November sunset is about 16:40–16:41. Buses 12/13 are alternatives. From 1 August 2026, the Florence urban 90-minute ticket is €2.00 according to the official fare table; recheck date-specific service and fare (https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf). Sunset reference: https://www.timeanddate.com/sun/italy/firenze?month=11. Uffizi on Nov 26 is an optional proposal that conflicts with this plan and would replace it, not happen alongside it.",
+      "ja": "利用者の固定提案 2026-11-25〜29についての記載で、カードの動的表示日とは別です。現在のドゥオーモ・ミケランジェロ広場の順序を維持し、タクシーで広場へ上って眺望を楽しみます。11月末の日没は約16:40〜16:41。バス12/13番は代替候補です。2026年8月1日から、公式運賃表のフィレンツェ市内90分券は€2.00です。訪問当日の運行・運賃を公式案内で再確認してください（https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf）。日没参考: https://www.timeanddate.com/sun/italy/firenze?month=11。11/26ウフィツィは選択制の提案で、現在の計画と競合するため同時実施ではなく置き換え案です。",
+      "zh": "以下内容指用户固定提案 2026-11-25至29，并非此卡片动态计算的日期。保留现有大教堂与米开朗基罗广场安排：可乘出租车上山欣赏大教堂与阿诺河景色。11月底日落约16:40~16:41；12/13路公交可作备选。根据官方票价表，自2026年8月1日起佛罗伦萨市区90分钟票为€2.00；请通过官方信息核实当天班次与票价（https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf）。日落参考：https://www.timeanddate.com/sun/italy/firenze?month=11。11/26乌菲兹仅是备选提议，与现有安排冲突，应替换而非同时游览。"
     },
     "walk": {
       "ko": "낮음 (3,900보)",
@@ -35738,7 +35738,7 @@ const ITALY_CITIES_GUIDE_DATA = {
               ja: "打刻後90分有効（フィレンツェ市バスおよびT1・T2トラム乗換自由）",
               zh: "打票后90分钟内有效（佛罗伦萨市区公交车及T1/T2有轨电车无限次换乘）"
             },
-            price: "€1.70"
+            price: "€2.00"
           },
           {
             name: { ko: "10회 다회권 (Carnet 10)", en: "10-Ride Carnet", ja: "10回数券 (Carnet 10)", zh: "10次套票 (Carnet 10)" },
@@ -35758,10 +35758,10 @@ const ITALY_CITIES_GUIDE_DATA = {
           zh: "电车及公交车厢内均配有Tap&Tap读卡器，直接刷非接银行卡或手机即可乘车，无需费力寻找烟草店购票。"
         },
         tramsAndStation: {
-          ko: "🚆 <strong>트램비아 노선 & SMN 중앙역 팁:</strong><br>• <strong>T2 노선:</strong> 피렌체 페레톨라 공항(Peretola) ↔ 피렌체 산타 마리아 노벨라(SMN) 중앙역을 단 20분에 직통 연결 (€1.70). 100% 저상 트램으로 계단 없이 캐리어 이동이 매우 편합니다.<br>• <strong>산타 마리아 노벨라(SMN) 역:</strong> 로마에서 고속열차(Frecciarossa/Italo 1시간 30분)로 도착하는 종착역으로, 열차 플랫폼과 대합실, 택시 승강장이 계단 없이 완전 평지(지상)로 연결되어 짐 이동이 편리합니다.",
-          en: "🚆 <strong>Tramway & SMN Station Notes:</strong><br>• <strong>Line T2:</strong> Connects Florence Airport directly to SMN Central Station in 20 minutes (€1.70). Fully low-floor step-free trams.<br>• <strong>Santa Maria Novella (SMN) Station:</strong> Central terminal where high-speed trains from Rome arrive. All platforms are level ground-floor terminals with step-free taxi and luggage access.",
-          ja: "🚆 <strong>トラム路線＆SMN駅情報:</strong><br>• <strong>T2路線:</strong> フィレンツェ空港とSMN中央駅をわずか20分で直通（€1.70）。完全ノンステップでスーツケースの移動が極めて容易。<br>• <strong>SMN中央駅:</strong> ローマからの高速列車（約1時間30分）が到着する終着駅構造。ホームから駅前広場・タクシー乗り場まで段差のない完全フラット構造です。",
-          zh: "🚆 <strong>有轨电车与SMN中央火车站长辈实战指南:</strong><br>• <strong>T2号线:</strong> 连接佛罗伦萨佩雷托拉机场与SMN中央火车站仅需20分钟（票价€1.70）。全程无障碍低地板车厢，提大行李毫不费力。<br>• <strong>SMN中央火车站:</strong> 罗马高铁（1.5小时）抵达的终点站。采用尽端式站台，从下火车到出站大厅、出租车站全程为平整地面无任何台阶，推行李极为轻松。"
+          ko: "🚆 <strong>트램비아 노선 & SMN 중앙역 팁:</strong><br>• <strong>T2 노선:</strong> 피렌체 페레톨라 공항(Peretola) ↔ 피렌체 산타 마리아 노벨라(SMN) 중앙역을 단 20분에 직통 연결 (€2.00). 100% 저상 트램으로 계단 없이 캐리어 이동이 매우 편합니다.<br>• <strong>산타 마리아 노벨라(SMN) 역:</strong> 로마에서 고속열차(Frecciarossa/Italo 1시간 30분)로 도착하는 종착역으로, 열차 플랫폼과 대합실, 택시 승강장이 계단 없이 완전 평지(지상)로 연결되어 짐 이동이 편리합니다.",
+          en: "🚆 <strong>Tramway & SMN Station Notes:</strong><br>• <strong>Line T2:</strong> Connects Florence Airport directly to SMN Central Station in 20 minutes (€2.00). Fully low-floor step-free trams.<br>• <strong>Santa Maria Novella (SMN) Station:</strong> Central terminal where high-speed trains from Rome arrive. All platforms are level ground-floor terminals with step-free taxi and luggage access.",
+          ja: "🚆 <strong>トラム路線＆SMN駅情報:</strong><br>• <strong>T2路線:</strong> フィレンツェ空港とSMN中央駅をわずか20分で直通（€2.00）。完全ノンステップでスーツケースの移動が極めて容易。<br>• <strong>SMN中央駅:</strong> ローマからの高速列車（約1時間30分）が到着する終着駅構造。ホームから駅前広場・タクシー乗り場まで段差のない完全フラット構造です。",
+          zh: "🚆 <strong>有轨电车与SMN中央火车站长辈实战指南:</strong><br>• <strong>T2号线:</strong> 连接佛罗伦萨佩雷托拉机场与SMN中央火车站仅需20分钟（票价€2.00）。全程无障碍低地板车厢，提大行李毫不费力。<br>• <strong>SMN中央火车站:</strong> 罗马高铁（1.5小时）抵达的终点站。采用尽端式站台，从下火车到出站大厅、出租车站全程为平整地面无任何台阶，推行李极为轻松。"
         },
         officialUrl: "https://www.at-bus.it/en/ticket"
       }

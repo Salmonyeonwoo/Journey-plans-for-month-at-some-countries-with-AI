@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261125_florence_street_safety_v1)
+// SlowTravel Mobile Offline Service Worker (v20261126_florence_guides_v2)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261125_florence_street_safety_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261126_florence_guides_v2';
 
 const PRECACHE_ASSETS = [
   './',
@@ -25,6 +25,7 @@ const PRECACHE_ASSETS = [
   './css/naples-practical-review.css',
   './css/florence-photo-review.css',
   './css/florence-street-art-safety.css',
+  './css/florence-guide-library.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -38,6 +39,9 @@ const PRECACHE_ASSETS = [
   './js/naples-practical-review.js',
   './js/florence-photo-review.js',
   './js/florence-street-art-safety.js',
+  './js/florence-guide-content.js',
+  './js/florence-guide-savings-copy.js',
+  './js/florence-guide-library.js',
   './js/europe-electricity-guide.js',
   './js/landmark-history-additions.js',
   './js/flamenco-guide.js',

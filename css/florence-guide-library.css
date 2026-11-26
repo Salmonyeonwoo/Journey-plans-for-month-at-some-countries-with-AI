@@ -1,0 +1,277 @@
+.florence-guide-library {
+  margin: 22px auto 28px;
+  padding: 24px;
+  color: #273c31;
+  background: #fffdf8;
+  border: 1px solid #e5ddcb;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(47, 62, 50, .07);
+  line-height: 1.65;
+}
+.florence-guide-library .fgl-header {
+  margin-bottom: 18px;
+}
+.florence-guide-library .fgl-eyebrow {
+  color: #926a2c;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.florence-guide-library .fgl-header h3 {
+  margin: 5px 0 8px;
+  color: #213e30;
+  font-size: clamp(1.35rem, 2.7vw, 1.8rem);
+  line-height: 1.25;
+}
+.florence-guide-library .fgl-header > p {
+  margin: 0 0 12px;
+}
+.florence-guide-library .fgl-date-note {
+  padding: 11px 13px;
+  color: #624e24;
+  background: #fff5d9;
+  border: 1px solid #efd99d;
+  border-radius: 12px;
+  font-size: .91rem;
+}
+.florence-guide-library .fgl-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.florence-guide-library .fgl-shortcuts button,
+.fgl-chat-answer button {
+  min-height: 38px;
+  padding: 8px 12px;
+  color: #28563d;
+  background: #f2f8f2;
+  border: 1px solid #cfe0d1;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.florence-guide-library .fgl-shortcuts button:hover,
+.fgl-chat-answer button:hover {
+  background: #e4f1e5;
+}
+.florence-guide-library .fgl-list {
+  display: grid;
+  gap: 11px;
+}
+.florence-guide-library .fgl-guide {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #dce3db;
+  border-radius: 14px;
+}
+.florence-guide-library .fgl-guide > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 17px;
+  color: #254b36;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.florence-guide-library .fgl-guide > summary::-webkit-details-marker {
+  display: none;
+}
+.florence-guide-library .fgl-guide > summary::after {
+  flex: 0 0 auto;
+  content: '＋';
+  color: #52765f;
+  font-size: 1.1rem;
+}
+.florence-guide-library .fgl-guide[open] > summary::after {
+  content: '−';
+}
+.florence-guide-library .fgl-guide > summary small {
+  margin-left: auto;
+  color: #6b7b6f;
+  font-size: .78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.florence-guide-library .fgl-guide-body {
+  padding: 0 17px 18px;
+}
+.florence-guide-library .fgl-notice {
+  margin: 0 0 18px;
+  padding: 15px 16px;
+  color: #544326;
+  background: #fff8e7;
+  border: 1px solid #eddaa7;
+  border-left: 4px solid #c99131;
+  border-radius: 12px;
+}
+.florence-guide-library .fgl-notice h4 {
+  margin: 0 0 4px;
+  color: #604a20;
+  font-size: 1rem;
+}
+.florence-guide-library .fgl-notice > p {
+  margin: 0 0 8px;
+  font-size: .88rem;
+}
+.florence-guide-library .fgl-notice ul {
+  margin: 8px 0 0;
+  padding-left: 21px;
+}
+.florence-guide-library .fgl-notice li {
+  margin: 0 0 8px;
+  font-size: .9rem;
+}
+.florence-guide-library .fgl-sources {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #ead9ac;
+}
+.florence-guide-library .fgl-sources > summary {
+  color: #654e21;
+  font-size: .88rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.florence-guide-library .fgl-sources ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 9px 0 0;
+  padding-left: 18px;
+}
+.florence-guide-library .fgl-sources a {
+  color: #246342;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.florence-guide-library .fgl-original-label {
+  margin: 3px 0 12px;
+  color: #6b7b6f;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.florence-guide-library .fgl-original {
+  overflow-wrap: anywhere;
+  color: #2f3832;
+}
+.florence-guide-library .fgl-original h2 {
+  margin: 1.35em 0 .5em;
+  padding-bottom: .25em;
+  color: #294b37;
+  border-bottom: 1px solid #e8e8df;
+  font-size: 1.23rem;
+  line-height: 1.35;
+}
+.florence-guide-library .fgl-original h3 {
+  margin: 1.25em 0 .42em;
+  color: #345842;
+  font-size: 1.06rem;
+  line-height: 1.4;
+}
+.florence-guide-library .fgl-original h4 {
+  margin: 1.1em 0 .4em;
+  color: #40594a;
+  font-size: .98rem;
+}
+.florence-guide-library .fgl-original p {
+  margin: .58em 0;
+}
+.florence-guide-library .fgl-original ul,
+.florence-guide-library .fgl-original ol {
+  padding-left: 1.55em;
+}
+.florence-guide-library .fgl-original li {
+  margin: .28em 0;
+}
+.florence-guide-library .fgl-original table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: .9rem;
+  -webkit-overflow-scrolling: touch;
+}
+.florence-guide-library .fgl-original th,
+.florence-guide-library .fgl-original td {
+  min-width: 100px;
+  padding: 8px 10px;
+  border: 1px solid #dfe5dc;
+  text-align: left;
+  vertical-align: top;
+}
+.florence-guide-library .fgl-original th {
+  color: #294b37;
+  background: #f0f5ef;
+}
+.florence-guide-library .fgl-original blockquote {
+  margin: 1em 0;
+  padding: 8px 14px;
+  color: #53645a;
+  border-left: 3px solid #9bb6a2;
+  background: #f6f8f5;
+}
+.florence-guide-library .fgl-original hr {
+  margin: 1.4em 0;
+  border: 0;
+  border-top: 1px solid #e4e6df;
+}
+.florence-guide-library .fgl-original a {
+  color: #286346;
+  text-underline-offset: 2px;
+}
+.florence-guide-library .fgl-original code {
+  padding: .08em .3em;
+  color: #3d4b41;
+  background: #f2f4f0;
+  border-radius: 4px;
+  font-size: .91em;
+}
+.fgl-chat-answer {
+  margin: 10px 0;
+  padding: 13px 14px;
+  color: #273c31;
+  background: #fffaf0;
+  border: 1px solid #eadbb8;
+  border-radius: 13px;
+  line-height: 1.6;
+}
+.fgl-chat-answer strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #1b4332;
+}
+.fgl-chat-answer p {
+  margin: 0 0 8px;
+}
+@media (max-width: 700px) {
+  .florence-guide-library {
+    margin: 18px 0 14px;
+    padding: 16px 13px;
+    border-radius: 16px;
+  }
+  .florence-guide-library .fgl-guide > summary {
+    align-items: flex-start;
+    padding: 13px 12px;
+    font-size: .94rem;
+  }
+  .florence-guide-library .fgl-guide-body {
+    padding: 0 12px 14px;
+  }
+  .florence-guide-library .fgl-notice {
+    padding: 12px;
+  }
+  .florence-guide-library .fgl-original table {
+    font-size: .82rem;
+  }
+  .florence-guide-library .fgl-shortcuts button {
+    font-size: .82rem;
+  }
+}

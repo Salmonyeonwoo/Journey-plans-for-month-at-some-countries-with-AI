@@ -10,9 +10,11 @@ const source = fs.readFileSync(modulePath, 'utf8');
 const itinerarySource = fs.readFileSync(path.join(__dirname, '..', 'js', 'data.js'), 'utf8');
 const farePdf = 'https://files.at-bus.it/s3fs-public/documents/AT_Carta_Servizi_2026.pdf';
 assert.equal((itinerarySource.match(new RegExp(farePdf.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')) || []).length, 5, 'the 2026 fare correction appears in the base itinerary and all four language versions');
-for (const staleFare of ['€2·90분 유효로 표기', '€2 for 90 minutes', '€2・90分有効', '€2/90分钟']) {
+for (const staleFare of ['€1.70', '€1,70', '1.70 euro', '1.70ユーロ', '1.70欧元']) {
   assert.ok(!itinerarySource.includes(staleFare), `the itinerary no longer states the obsolete fare: ${staleFare}`);
 }
+assert.ok(!source.includes('€1.70'), 'the guide and localized chatbot no longer contain the obsolete fare');
+assert.ok(source.includes('€2.00') && source.includes('1 August 2026'), 'the guide states the €2.00 fare effective 1 August 2026');
 const locales = ['ko', 'en', 'zh', 'ja'];
 const chatI18n = Object.fromEntries(locales.map((lang) => [lang, { chips: [] }]));
 let activeLocale = 'ko';
@@ -121,10 +123,10 @@ assert.equal(insertionAnchor, safetyGuide, 'the supplement follows the existing 
 assert.equal((guideElement.html.match(/class="fdvg-card"/g) || []).length, 5, 'the initial Korean module has five topic cards');
 
 const expected = {
-  ko: ['Brunelleschi Pass €30', '463계단', '€1.70', '2026년 11월 26–29일'],
-  en: ['Brunelleschi Pass €30', '463 steps', '€1.70', '26–29 November 2026'],
-  zh: ['Brunelleschi Pass €30', '463级台阶', '€1.70', '2026年11月26日至29日'],
-  ja: ['Brunelleschi Pass €30', '463段', '€1.70', '2026年11月26〜29日']
+  ko: ['Brunelleschi Pass €30', '463계단', '€2.00', '2026년 11월 26–29일'],
+  en: ['Brunelleschi Pass €30', '463 steps', '€2.00', '26–29 November 2026'],
+  zh: ['Brunelleschi Pass €30', '463级台阶', '€2.00', '2026年11月26日至29日'],
+  ja: ['Brunelleschi Pass €30', '463段', '€2.00', '2026年11月26〜29日']
 };
 const prompts = {
   ko: '피렌체 두오모 패스·돔 입장 안내',
@@ -163,12 +165,12 @@ for (const locale of locales) {
   assert.ok(!/(?:Italo|Frecciarossa)/.test(rendered), `${locale}: train details are not repeated`);
   const answer = window.handleLocalChat.call(fallbackThis, queries[locale], 'forwarded argument');
   assert.ok(answer.includes('fdvg-chat-answer'), `${locale}: relevant chatbot query returns the localized guide answer`);
-  assert.ok(answer.includes('€1.70'), `${locale}: the chatbot states the official urban-ticket fare`);
+  assert.ok(answer.includes('€2.00'), `${locale}: the chatbot states the official urban-ticket fare`);
   assert.ok(answer.includes(farePdf), `${locale}: the chatbot links the official 2026 fare table`);
   assert.ok(answer.includes('openFlorenceDuomoVisitPlan'), `${locale}: chatbot answer links to the full supplement`);
   const fareAnswer = window.handleLocalChat.call(fallbackThis, fareQueries[locale], 'forwarded argument');
   assert.ok(fareAnswer.includes('fdvg-chat-answer'), `${locale}: a localized city-bus fare query is recognized`);
-  assert.ok(fareAnswer.includes('€1.70'), `${locale}: the fare query returns the corrected amount`);
+  assert.ok(fareAnswer.includes('€2.00'), `${locale}: the fare query returns the corrected amount`);
 }
 
 window.switchLanguage('en');

@@ -41,12 +41,12 @@
             '일몰 계산 시각(현지): 11/26 16:41, 11/27 16:40, 11/28 16:40, 11/29 16:39. 이는 이 날짜에만 해당합니다.'
           ]
         },
-        {
-          title: '버스·요금 · 11월 26–29일 한정',
-          lines: [
-            'Autolinee Toscane 공지는 Ponte Vespucci 공사로 12·13·39번이 2026년 11월 5일부터 다리를 통과하지 못한다고 안내합니다. 세부 우회경로와 종료일은 확인되지 않았으므로 출발 직전 공식 공지와 at bus 앱의 정류장별 도착정보를 확인하세요.',
-            '공식 정류장 목록에는 13번의 Fortezza T1 Strozzi·임시 Piazza Piave·Piazzale Il David, 12번의 Indipendenza Nazionale가 표시됩니다. 노선과 방향에 따라 달라지므로 정류장을 서로 바꿔 안내하지 않습니다.',
-            'Autolinee Toscane 2026 요금표 기준 Firenze 시내권은 90분 €1.70이며, Tip Tap contactless는 추가요금이 없습니다. 버스에 탈 때 태그하고 기기 하나는 승객 한 명이 사용합니다. 요금은 구매 전 공식 페이지에서 재확인하세요.'
+      {
+        title: '버스·요금 · 11월 26–29일 한정',
+        lines: [
+          'Autolinee Toscane 공지는 Ponte Vespucci 공사로 12·13·39번이 2026년 11월 5일부터 다리를 통과하지 못한다고 안내합니다. 세부 우회경로와 종료일은 확인되지 않았으므로 출발 직전 공식 공지와 at bus 앱의 정류장별 도착정보를 확인하세요.',
+          '공식 정류장 목록에는 13번의 Fortezza T1 Strozzi·임시 Piazza Piave·Piazzale Il David, 12번의 Indipendenza Nazionale가 표시됩니다. 노선과 방향에 따라 달라지므로 정류장을 서로 바꿔 안내하지 않습니다.',
+          'Autolinee Toscane 공식 요금표 기준 2026년 8월 1일부터 Firenze 시내권은 90분 €2.00입니다. Tip Tap contactless는 추가요금이 없으며, 버스에 탈 때 태그하고 기기 하나는 승객 한 명이 사용합니다. 구매 전 공식 페이지에서 재확인하세요.'
           ]
         }
       ],
@@ -61,7 +61,7 @@
       chatbotQuestion: '피렌체 두오모 패스·돔 입장 안내',
       chatbotChip: '🏛️ 두오모 패스·입장',
       chatbotTitle: '피렌체 두오모 방문 안내',
-      chatbotAnswer: '성인 표시 가격은 Brunelleschi €30, Giotto €20, Ghiberti €15이며, 돔 등반에는 Brunelleschi Pass가 포함됩니다. 돔은 463계단이고 엘리베이터는 없습니다. Firenze 시내권 버스표는 €1.70·90분 유효하며, Tip Tap 비접촉 결제는 추가요금이 없습니다. 2026년 11월 26–29일 운영시간과 교통 공지는 방문 직전 공식 정보를 확인하세요.',
+      chatbotAnswer: '성인 표시 가격은 Brunelleschi €30, Giotto €20, Ghiberti €15이며, 돔 등반에는 Brunelleschi Pass가 포함됩니다. 돔은 463계단이고 엘리베이터는 없습니다. Firenze 시내권 버스표는 2026년 8월 1일부터 €2.00·90분 유효하며, Tip Tap 비접촉 결제는 추가요금이 없습니다. 2026년 11월 26–29일 운영시간과 교통 공지는 방문 직전 공식 정보를 확인하세요.',
       chatbotButton: '두오모 확인 메모 열기',
       chatSource: '공식 티켓·운영 안내',
       chatTransitSource: '2026 공식 버스 요금표'
@@ -102,12 +102,12 @@
             'Calculated local sunset: 16:41 on Nov 26, 16:40 on Nov 27, 16:40 on Nov 28 and 16:39 on Nov 29. These times apply only to those dates.'
           ]
         },
-        {
-          title: 'Buses and fares · 26–29 Nov only',
-          lines: [
-            'Autolinee Toscane says routes 12, 13 and 39 have been unable to cross Ponte Vespucci because of works since 5 November 2026. The detailed diversion and end date were not confirmed; check the latest notice and stop-by-stop arrivals in the at bus app before setting out.',
-            'The published stop lists show Fortezza T1 Strozzi, temporary Piazza Piave and Piazzale Il David on route 13, and Indipendenza Nazionale on route 12. Stops depend on the route and direction; do not treat the lists as interchangeable.',
-            'The 2026 Autolinee Toscane fare table lists a €1.70, 90-minute urban ticket for Florence. Tip Tap contactless has no surcharge: tap when boarding, with one device per passenger. Recheck the official fare page before buying.'
+      {
+        title: 'Buses and fares · 26–29 Nov only',
+        lines: [
+          'Autolinee Toscane says routes 12, 13 and 39 have been unable to cross Ponte Vespucci because of works since 5 November 2026. The detailed diversion and end date were not confirmed; check the latest notice and stop-by-stop arrivals in the at bus app before setting out.',
+          'The published stop lists show Fortezza T1 Strozzi, temporary Piazza Piave and Piazzale Il David on route 13, and Indipendenza Nazionale on route 12. Stops depend on the route and direction; do not treat the lists as interchangeable.',
+          'The official Autolinee Toscane fare table sets the Florence urban ticket at €2.00 for 90 minutes from 1 August 2026. Tip Tap contactless has no surcharge: tap when boarding, with one device per passenger. Recheck the official fare page before buying.'
           ]
         }
       ],
@@ -122,7 +122,7 @@
       chatbotQuestion: 'Florence Duomo passes and Dome entry',
       chatbotChip: '🏛️ Duomo passes & entry',
       chatbotTitle: 'Florence Duomo visit notes',
-      chatbotAnswer: 'The displayed adult prices are €30 for Brunelleschi, €20 for Giotto and €15 for Ghiberti; the Dome climb is included in Brunelleschi. The Dome has 463 steps and no lift. Florence’s urban bus ticket is €1.70 for 90 minutes; Tip Tap contactless has no surcharge. Check official hours and the 26–29 Nov 2026 transit notices before visiting.',
+      chatbotAnswer: 'The displayed adult prices are €30 for Brunelleschi, €20 for Giotto and €15 for Ghiberti; the Dome climb is included in Brunelleschi. The Dome has 463 steps and no lift. Florence’s urban bus ticket is €2.00 for 90 minutes from 1 August 2026; Tip Tap contactless has no surcharge. Check official hours and the 26–29 Nov 2026 transit notices before visiting.',
       chatbotButton: 'Open Duomo visit notes',
       chatSource: 'Official ticket and visit information',
       chatTransitSource: '2026 official bus fare table'
@@ -163,12 +163,12 @@
             '计算的当地日落时间：11月26日16:41、27日16:40、28日16:40、29日16:39。仅适用于这些日期。'
           ]
         },
-        {
-          title: '公交与票价 · 仅限11月26–29日',
-          lines: [
-            'Autolinee Toscane公告称，因施工，12、13、39路自2026年11月5日起不能经过Ponte Vespucci。公告未确认详细绕行路线和结束日期；出发前请查看最新通知及at bus应用中的站点到站信息。',
-            '官方站点列表显示，13路包括Fortezza T1 Strozzi、临时站Piazza Piave和Piazzale Il David；12路包括Indipendenza Nazionale。站点随线路与方向而异，不能互相替代。',
-            'Autolinee Toscane 2026票价表列出的佛罗伦萨市区票为€1.70、有效90分钟。Tip Tap非接触支付不加收费用：上车时刷卡，每位乘客需使用一台设备。购买前请重新核对官网票价。'
+      {
+        title: '公交与票价 · 仅限11月26–29日',
+        lines: [
+          'Autolinee Toscane公告称，因施工，12、13、39路自2026年11月5日起不能经过Ponte Vespucci。公告未确认详细绕行路线和结束日期；出发前请查看最新通知及at bus应用中的站点到站信息。',
+          '官方站点列表显示，13路包括Fortezza T1 Strozzi、临时站Piazza Piave和Piazzale Il David；12路包括Indipendenza Nazionale。站点随线路与方向而异，不能互相替代。',
+          'Autolinee Toscane官方票价表显示，自2026年8月1日起佛罗伦萨市区票为€2.00、有效90分钟。Tip Tap非接触支付不加收费用：上车时刷卡，每位乘客需使用一台设备。购买前请重新核对官网票价。'
           ]
         }
       ],
@@ -183,7 +183,7 @@
       chatbotQuestion: '佛罗伦萨大教堂通票与穹顶入场',
       chatbotChip: '🏛️ 通票与入场',
       chatbotTitle: '佛罗伦萨大教堂参观备注',
-      chatbotAnswer: '官网显示的成人票价为Brunelleschi €30、Giotto €20、Ghiberti €15；穹顶攀登包含在Brunelleschi Pass中。穹顶有463级台阶且没有电梯。佛罗伦萨市区公交票为€1.70、有效90分钟，Tip Tap非接触支付不加收费用。请在到访前核对官方开放时间及2026年11月26–29日的交通公告。',
+      chatbotAnswer: '官网显示的成人票价为Brunelleschi €30、Giotto €20、Ghiberti €15；穹顶攀登包含在Brunelleschi Pass中。穹顶有463级台阶且没有电梯。自2026年8月1日起，佛罗伦萨市区公交票为€2.00、有效90分钟，Tip Tap非接触支付不加收费用。请在到访前核对官方开放时间及2026年11月26–29日的交通公告。',
       chatbotButton: '打开大教堂参观备注',
       chatSource: '官方门票与参观信息',
       chatTransitSource: '2026年官方公交票价表'
@@ -224,12 +224,12 @@
             '現地の日没計算時刻：11月26日16:41、27日16:40、28日16:40、29日16:39。この日付のみに適用されます。'
           ]
         },
-        {
-          title: 'バスと運賃 · 11月26〜29日限定',
-          lines: [
-            'Autolinee Toscaneの告知によると、工事のため12・13・39番は2026年11月5日からPonte Vespucciを通行できません。迂回経路の詳細と終了日は確認できていないため、出発直前に公式告知とat busアプリの停留所別到着情報をご確認ください。',
-            '公式停留所一覧では、13番にFortezza T1 Strozzi・臨時Piazza Piave・Piazzale Il David、12番にIndipendenza Nazionaleが掲載されています。停留所は路線・方向によって異なり、相互に置き換えられません。',
-            'Autolinee Toscaneの2026年運賃表では、フィレンツェ市内券は€1.70・90分有効です。Tip Tapのタッチ決済に追加料金はありません。乗車時にタッチし、1台の端末につき乗客1人が利用します。購入前に公式運賃をご確認ください。'
+      {
+        title: 'バスと運賃 · 11月26〜29日限定',
+        lines: [
+          'Autolinee Toscaneの告知によると、工事のため12・13・39番は2026年11月5日からPonte Vespucciを通行できません。迂回経路の詳細と終了日は確認できていないため、出発直前に公式告知とat busアプリの停留所別到着情報をご確認ください。',
+          '公式停留所一覧では、13番にFortezza T1 Strozzi・臨時Piazza Piave・Piazzale Il David、12番にIndipendenza Nazionaleが掲載されています。停留所は路線・方向によって異なり、相互に置き換えられません。',
+          'Autolinee Toscane公式運賃表では、2026年8月1日からフィレンツェ市内券は€2.00・90分有効です。Tip Tapのタッチ決済に追加料金はありません。乗車時にタッチし、1台の端末につき乗客1人が利用します。購入前に公式運賃をご確認ください。'
           ]
         }
       ],
@@ -244,7 +244,7 @@
       chatbotQuestion: 'フィレンツェのドゥオーモパスとドーム入場',
       chatbotChip: '🏛️ パス・入場案内',
       chatbotTitle: 'フィレンツェ・ドゥオーモ訪問メモ',
-      chatbotAnswer: '公式案内の大人料金はBrunelleschi €30、Giotto €20、Ghiberti €15で、ドーム登頂はBrunelleschi Passに含まれます。ドームは463段でエレベーターはありません。フィレンツェ市内バス券は€1.70・90分有効で、Tip Tapのタッチ決済に追加料金はありません。訪問前に営業時間と2026年11月26〜29日の交通告知をご確認ください。',
+      chatbotAnswer: '公式案内の大人料金はBrunelleschi €30、Giotto €20、Ghiberti €15で、ドーム登頂はBrunelleschi Passに含まれます。ドームは463段でエレベーターはありません。2026年8月1日から、フィレンツェ市内バス券は€2.00・90分有効で、Tip Tapのタッチ決済に追加料金はありません。訪問前に営業時間と2026年11月26〜29日の交通告知をご確認ください。',
       chatbotButton: 'ドゥオーモ訪問メモを開く',
       chatSource: '公式チケット・訪問案内',
       chatTransitSource: '2026年公式バス運賃表'
