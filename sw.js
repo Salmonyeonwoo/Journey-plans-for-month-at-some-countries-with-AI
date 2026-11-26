@@ -2,7 +2,6 @@
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
 const CACHE_NAME = 'slowtravel-offline-v20261127_florence_plan_v1';
-
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -27,6 +26,7 @@ const PRECACHE_ASSETS = [
   './css/florence-nov27-plan.css',
   './css/florence-street-art-safety.css',
   './css/florence-guide-library.css',
+  './css/florence-black-friday-shopping.css',
   './js/data.js',
   './js/spanish-market-food-guide.js',
   './js/empanada-photo-guide.js',
@@ -57,6 +57,8 @@ const PRECACHE_ASSETS = [
   './img/florence-user-photos/odeon-source-photo2-1000344789.webp',
   './img/florence-user-photos/odeon-fountain-user-1000344792.webp',
   './img/florence-user-photos/odeon-unassigned-1000344787.webp',
+  './js/florence-black-friday-original.js',
+  './js/florence-black-friday-shopping.js',
   './js/europe-electricity-guide.js',
   './js/landmark-history-additions.js',
   './js/flamenco-guide.js',
@@ -85,6 +87,14 @@ const PRECACHE_ASSETS = [
   './img/florence-review/uffizi-exterior.webp',
   './img/florence-review/ponte-vecchio-night.webp',
   './img/florence-review/duomo-from-piazzale-michelangelo-night.webp',
+  './assets/florence-black-friday/furla.jpg',
+  './assets/florence-black-friday/michael-kors.jpg',
+  './assets/florence-black-friday/ferragamo.jpg',
+  './assets/florence-black-friday/gucci.jpg',
+  './assets/florence-black-friday/bottega.jpg',
+  './assets/florence-black-friday/ralph-lauren.jpg',
+  './assets/florence-black-friday/north-face.jpg',
+  './assets/florence-black-friday/nike.jpg',
   './js/practical-place-additions.js',
   './js/ronda-granada-dining-guide.js',
   './js/spain-rice-cordoba-guide.js',
