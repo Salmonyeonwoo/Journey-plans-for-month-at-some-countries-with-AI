@@ -3926,6 +3926,12 @@ function applyPlanReconfiguration(isUserTriggered = false) {
     const customItineraryDetails = dateOverride && typeof window.renderSevilleDateItineraryDetails === 'function'
       ? window.renderSevilleDateItineraryDetails(dateFormatted, currentLang)
       : '';
+    const florencePlanCardDetails = typeof window.renderFlorenceNov27PlanCard === 'function'
+      ? window.renderFlorenceNov27PlanCard(dateFormatted, localizedCity, currentLang)
+      : '';
+    const florenceConflictBadge = typeof window.renderFlorenceNov27ConflictBadge === 'function'
+      ? window.renderFlorenceNov27ConflictBadge(dateFormatted, localizedCity, currentLang)
+      : '';
 
     const eventBadges = localizedEvents && localizedEvents.length
       ? localizedEvents.map(e => `<span class="event-pill">${cleanHangul(e, currentLang)}</span>`).join(' ')
@@ -3967,6 +3973,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
             <span class="toggle-text">${expandBtnLabel}</span>
           </button>
         </div>
+        ${florenceConflictBadge}
         <div class="day-detail-collapse" id="dayDetail-${slotIdx}" style="display:${isInitiallyExpanded ? 'block' : 'none'};">
           <div class="routine-grid">
             <div class="routine-cell cell-morning">
@@ -3997,6 +4004,7 @@ function applyPlanReconfiguration(isUserTriggered = false) {
             </div>
           </div>
           ${customItineraryDetails}
+          ${florencePlanCardDetails}
         </div>
       </div>
     `;
@@ -10022,6 +10030,9 @@ function renderItalyCityGuide(lang = (typeof currentLang !== 'undefined' ? curre
 
   html += '</div>';
   container.innerHTML = html;
+  if (cityId === 'florence' && subTabId === 'attractions' && typeof window.renderFlorencePlanBAttractions === 'function') {
+    container.insertAdjacentHTML('beforeend', window.renderFlorencePlanBAttractions(lang));
+  }
 }
 window.renderItalyCityGuide = renderItalyCityGuide;
 

@@ -124,7 +124,7 @@ assert.ok(odeonKo.includes('fgh-user-photo'), 'new photos use non-cropping full-
 assert.ok(odeonKo.includes('파일명') && odeonKo.includes('확인되지'), 'photo/source filename uncertainty is explicit');
 assert.ok(serviceWorkerSource.includes("'./img/florence-user-photos/odeon-fountain-user-1000344792.webp'"), 'the user-provided fountain image is cached offline');
 assert.ok(serviceWorkerSource.includes("'./img/florence-user-photos/odeon-unassigned-1000344787.webp'"), 'the unassigned user image is cached offline');
-assert.ok(serviceWorkerSource.includes('slowtravel-offline-v20261126_uffizi_catalog_v1'), 'service worker cache version is incremented');
+assert.ok(serviceWorkerSource.includes('slowtravel-offline-v20261127_florence_plan_v1'), 'service worker cache version is incremented');
 assert.ok(window.FLORENCE_GUIDE_CONTENT['smn-history'].ko.html.includes('santa-maria-novella-basilica.webp'), 'confirmed Basilica image is attached to the correct guide');
 assert.ok(window.FLORENCE_GUIDE_CONTENT['smn-history'].ko.html.includes('odeon-interior-books-3.webp'), 'unattributed interiors are shown only with an explicit caveat');
 assert.ok(window.FLORENCE_GUIDE_CONTENT['fortezza-history'].ko.html.includes('fgh-no-photo'), 'Fortezza guide explicitly reports its missing photos');

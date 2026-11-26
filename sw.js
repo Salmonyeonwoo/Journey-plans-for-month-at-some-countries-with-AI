@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261126_uffizi_catalog_v1)
+// SlowTravel Mobile Offline Service Worker (v20261127_florence_plan_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261126_uffizi_catalog_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261127_florence_plan_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -24,6 +24,7 @@ const PRECACHE_ASSETS = [
   './css/europe-intercity-fares.css',
   './css/naples-practical-review.css',
   './css/florence-photo-review.css',
+  './css/florence-nov27-plan.css',
   './css/florence-street-art-safety.css',
   './css/florence-guide-library.css',
   './js/data.js',
@@ -38,6 +39,7 @@ const PRECACHE_ASSETS = [
   './js/europe-country-nightlife-guide.js',
   './js/naples-practical-review.js',
   './js/florence-photo-review.js',
+  './js/florence-nov27-plan.js',
   './js/florence-street-art-safety.js',
   './js/florence-guide-content.js',
   './js/florence-history-content.js',

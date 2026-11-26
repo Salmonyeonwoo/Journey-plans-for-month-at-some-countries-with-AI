@@ -1,0 +1,23 @@
+.florence-nov27-plan,.florence-plan-b-attractions,.florence-chat-plan{margin:1rem 0;padding:clamp(14px,3vw,22px);border:1px solid #c7d9ce;border-radius:16px;background:#fffefa;color:#24352d;line-height:1.65;overflow-wrap:anywhere}
+.florence-nov27-plan h4,.florence-plan-b-attractions h3,.florence-chat-plan h3{margin:.4rem 0 .65rem;color:#1b4332;line-height:1.35}
+.florence-nov27-plan h5,.florence-chat-plan h4{margin:1rem 0 .35rem;color:#264b3a;line-height:1.4}
+.florence-conflict-callout,.florence-caution{margin:.75rem 0;padding:12px 14px;border-radius:12px;background:#fff3db;border:1px solid #efc47b;color:#54390e}
+.florence-conflict-callout p,.florence-caution p{margin:.35rem 0 0}
+.florence-verification-note{margin:1rem 0 .4rem;color:#4c5e54;font-size:.93rem}
+.florence-plan-section,.florence-attraction-detail,.florence-weather-detail,.florence-day-plan,.florence-chat-plan details{margin:.55rem 0;border:1px solid #d9e2dc;border-radius:11px;background:#fff}
+.florence-plan-section summary,.florence-attraction-detail summary,.florence-weather-detail summary,.florence-day-plan summary,.florence-chat-plan details summary{padding:12px 14px;cursor:pointer;font-weight:750;color:#1b4332;line-height:1.45}
+.florence-plan-section p,.florence-attraction-detail p,.florence-weather-detail>p,.florence-day-plan>p{padding:0 14px 12px;margin:.2rem 0;line-height:1.7}
+.florence-weather-detail h5,.florence-weather-detail>p{margin-left:14px;margin-right:14px}
+.florence-table-scroll{width:100%;overflow-x:auto;margin:.7rem 0;overscroll-behavior-inline:contain}
+.florence-table-scroll table{border-collapse:collapse;min-width:680px;width:100%;font-size:.9rem}
+.florence-table-scroll th,.florence-table-scroll td{border:1px solid #dbe4dd;padding:8px;text-align:left;vertical-align:top}
+.florence-table-scroll th{background:#edf5ef}
+.florence-official-links{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:.6rem 0;list-style:none}
+.florence-official-links a{display:inline-block;padding:8px 11px;background:#edf5ef;border-radius:9px;color:#18543b;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.florence-nov27-plan a,.florence-plan-b-attractions a,.florence-chat-plan a{color:#175c40;text-underline-offset:2px}
+.florence-chat-plan details p{padding:0 14px 12px;margin:.2rem 0;line-height:1.65}
+@media(max-width:600px){.florence-nov27-plan,.florence-plan-b-attractions,.florence-chat-plan{padding:13px;border-radius:13px;font-size:.96rem}.florence-conflict-callout,.florence-caution{padding:11px}.florence-official-links{display:grid;grid-template-columns:1fr}.florence-official-links a{display:block}.florence-plan-section summary,.florence-attraction-detail summary,.florence-weather-detail summary,.florence-day-plan summary{padding:11px 12px}.florence-table-scroll table{font-size:.82rem}}
+
+.florence-jump-to-attractions{display:inline-block;margin:.5rem 0;padding:10px 14px;border:0;border-radius:10px;background:#1b4332;color:#fff!important;font:inherit;font-weight:750;cursor:pointer}.florence-jump-to-attractions:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+
+.florence-day-conflict-badge{margin:8px 0;padding:9px 12px;border-radius:10px;background:#fff1d5;border:1px solid #e4ae48;color:#6b4300;line-height:1.45;font-size:.94rem}
