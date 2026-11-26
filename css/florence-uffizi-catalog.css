@@ -1,0 +1,275 @@
+.florence-uffizi-catalog {
+  --fuc-ink: #253a30;
+  --fuc-green: #315b43;
+  --fuc-line: #dfe5dc;
+  margin: 22px auto 28px;
+  padding: 24px;
+  color: var(--fuc-ink);
+  background: #fffdf8;
+  border: 1px solid #e5ddcb;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(47, 62, 50, .07);
+  line-height: 1.62;
+}
+.florence-uffizi-catalog * { box-sizing: border-box; }
+.florence-uffizi-catalog .fuc-header { margin-bottom: 18px; }
+.florence-uffizi-catalog .fuc-eyebrow {
+  color: #916b35;
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.florence-uffizi-catalog .fuc-header h3 {
+  margin: 6px 0 8px;
+  color: #213e30;
+  font-size: clamp(1.42rem, 3vw, 1.9rem);
+  line-height: 1.24;
+}
+.florence-uffizi-catalog .fuc-header > p { margin: 0 0 12px; }
+.florence-uffizi-catalog .fuc-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0;
+}
+.florence-uffizi-catalog .fuc-stats span {
+  min-width: 0;
+  padding: 9px 8px;
+  color: #526256;
+  background: #f3f6f1;
+  border: 1px solid #dfe8df;
+  border-radius: 11px;
+  font-size: .78rem;
+  text-align: center;
+}
+.florence-uffizi-catalog .fuc-stats strong {
+  display: block;
+  color: #254b36;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+.florence-uffizi-catalog .fuc-search-label {
+  display: block;
+  margin: 12px 0 5px;
+  color: #425749;
+  font-size: .84rem;
+  font-weight: 800;
+}
+.florence-uffizi-catalog .fuc-search {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 13px;
+  color: #24382c;
+  background: #fff;
+  border: 1px solid #bdcbbf;
+  border-radius: 11px;
+  font: inherit;
+  font-size: .96rem;
+}
+.florence-uffizi-catalog .fuc-search:focus {
+  outline: 3px solid rgba(67, 122, 83, .18);
+  border-color: #527d5d;
+}
+.florence-uffizi-catalog .fuc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0;
+}
+.florence-uffizi-catalog .fuc-filters button {
+  min-height: 36px;
+  padding: 7px 12px;
+  color: #365944;
+  background: #f2f6f2;
+  border: 1px solid #d3e1d4;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.florence-uffizi-catalog .fuc-filters button.is-active {
+  color: #fff;
+  background: #315b43;
+  border-color: #315b43;
+}
+.florence-uffizi-catalog .fuc-source-help {
+  margin: 8px 0 0 !important;
+  color: #657267;
+  font-size: .82rem;
+}
+.florence-uffizi-catalog .fuc-record-list { display: grid; gap: 10px; }
+.florence-uffizi-catalog .fuc-record {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--fuc-line);
+  border-radius: 14px;
+}
+.florence-uffizi-catalog .fuc-record[hidden] { display: none; }
+.florence-uffizi-catalog .fuc-record > summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 15px;
+  color: #244a35;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.florence-uffizi-catalog .fuc-record > summary::-webkit-details-marker { display: none; }
+.florence-uffizi-catalog .fuc-record > summary::after {
+  flex: 0 0 auto;
+  content: '＋';
+  color: #63806a;
+  font-size: 1.05rem;
+}
+.florence-uffizi-catalog .fuc-record[open] > summary::after { content: '−'; }
+.florence-uffizi-catalog .fuc-status {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: .68rem;
+  font-weight: 750;
+}
+.florence-uffizi-catalog .fuc-status.is-identified { color: #28543a; background: #eaf4e9; }
+.florence-uffizi-catalog .fuc-status.is-pending { color: #74541d; background: #fff2d4; }
+.florence-uffizi-catalog .fuc-record-body { padding: 0 15px 15px; }
+.florence-uffizi-catalog .fuc-artist { margin: 0 0 10px; color: #57685b; font-size: .86rem; }
+.florence-uffizi-catalog .fuc-artist span { font-weight: 800; }
+.florence-uffizi-catalog .fuc-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 11px;
+}
+.florence-uffizi-catalog .fuc-photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #f4f1e9;
+  border: 1px solid #e2ded3;
+  border-radius: 10px;
+}
+.florence-uffizi-catalog .fuc-photo img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f0eee8;
+}
+.florence-uffizi-catalog .fuc-photo figcaption {
+  padding: 6px 8px;
+  color: #58665b;
+  font-size: .72rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.florence-uffizi-catalog .fuc-photo figcaption span { color: #755619; font-weight: 700; }
+.florence-uffizi-catalog .fuc-description { margin: 9px 0 11px; }
+.florence-uffizi-catalog .fuc-photo-context {
+  margin: 6px 0 10px;
+  padding: 9px 11px;
+  color: #485b4b;
+  background: #f2f6f1;
+  border-left: 3px solid #7c9b80;
+  border-radius: 7px;
+  font-size: .83rem;
+}
+.florence-uffizi-catalog .fuc-uncertainty {
+  margin: 10px 0;
+  padding: 11px 12px;
+  color: #604b27;
+  background: #fff8e8;
+  border: 1px solid #ead9ad;
+  border-left: 4px solid #c49136;
+  border-radius: 10px;
+}
+.florence-uffizi-catalog .fuc-uncertainty strong { display: block; margin-bottom: 3px; }
+.florence-uffizi-catalog .fuc-uncertainty p { margin: 0; font-size: .86rem; }
+.florence-uffizi-catalog .fuc-sources {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: #fbfcfa;
+  border: 1px solid #e1e8e0;
+  border-radius: 10px;
+}
+.florence-uffizi-catalog .fuc-sources > summary {
+  color: #315c42;
+  font-size: .84rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.florence-uffizi-catalog .fuc-sources ul { margin: 8px 0 0; padding-left: 19px; }
+.florence-uffizi-catalog .fuc-sources li { margin: 5px 0; font-size: .84rem; }
+.florence-uffizi-catalog .fuc-sources a { color: #286246; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.florence-uffizi-catalog .fuc-no-results { margin: 12px 0; padding: 13px; color: #5e6e61; background: #f5f7f4; border-radius: 10px; }
+.florence-uffizi-catalog .fuc-context {
+  margin-top: 18px;
+  padding: 13px;
+  background: #f7f8f4;
+  border: 1px solid #dfe5dc;
+  border-radius: 13px;
+}
+.florence-uffizi-catalog .fuc-context > summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #345641;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.florence-uffizi-catalog .fuc-context > summary::-webkit-details-marker { display: none; }
+.florence-uffizi-catalog .fuc-context > summary small { color: #68786a; }
+.florence-uffizi-catalog .fuc-context > p { margin: 8px 0 12px; color: #617065; font-size: .86rem; }
+.florence-uffizi-catalog .fuc-context-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.florence-uffizi-catalog .fuc-context-photo { min-width: 0; margin: 0; overflow: hidden; background: #fff; border: 1px solid #e1e3da; border-radius: 9px; }
+.florence-uffizi-catalog .fuc-context-photo img { display: block; width: 100%; height: 160px; object-fit: contain; background: #eeece6; }
+.florence-uffizi-catalog .fuc-context-photo figcaption { padding: 7px; font-size: .75rem; }
+.florence-uffizi-catalog .fuc-context-photo figcaption strong,
+.florence-uffizi-catalog .fuc-context-photo figcaption span { display: block; }
+.florence-uffizi-catalog .fuc-context-photo figcaption span { margin-top: 3px; color: #6c786d; font-size: .68rem; overflow-wrap: anywhere; }
+.florence-uffizi-catalog .fuc-context-photo figcaption p { margin: 5px 0 0; color: #526055; }
+.fuc-chat-answer {
+  margin: 10px 0;
+  padding: 13px 14px;
+  color: #273c31;
+  background: #f6faf5;
+  border: 1px solid #dce8db;
+  border-radius: 13px;
+  line-height: 1.55;
+}
+.fuc-chat-answer strong { display: block; margin-bottom: 4px; color: #244c35; }
+.fuc-chat-answer small { color: #695321; font-size: .75rem; font-weight: 750; }
+.fuc-chat-answer p { margin: 7px 0; }
+.fuc-chat-answer .fuc-chat-sources { margin: 7px 0; font-size: .8rem; }
+.fuc-chat-answer .fuc-chat-sources a { color: #286246; }
+.fuc-chat-answer button {
+  min-height: 38px;
+  padding: 8px 12px;
+  color: #28563d;
+  background: #f2f8f2;
+  border: 1px solid #cfe0d1;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .84rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .florence-uffizi-catalog { margin: 16px 0 20px; padding: 15px 12px; border-radius: 16px; }
+  .florence-uffizi-catalog .fuc-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .florence-uffizi-catalog .fuc-stats span { font-size: .75rem; }
+  .florence-uffizi-catalog .fuc-record > summary { padding: 12px 10px; font-size: .91rem; }
+  .florence-uffizi-catalog .fuc-status { max-width: 44%; white-space: normal; text-align: center; }
+  .florence-uffizi-catalog .fuc-record-body { padding: 0 10px 12px; }
+  .florence-uffizi-catalog .fuc-photos { grid-template-columns: 1fr; }
+  .florence-uffizi-catalog .fuc-photo img { max-height: 420px; }
+  .florence-uffizi-catalog .fuc-context-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .florence-uffizi-catalog .fuc-context-photo img { height: 105px; }
+  .florence-uffizi-catalog .fuc-context-photo figcaption { padding: 5px; font-size: .69rem; }
+}

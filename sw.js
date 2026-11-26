@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261126_florence_history_photo_v2)
+// SlowTravel Mobile Offline Service Worker (v20261126_uffizi_catalog_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261126_florence_history_photo_v2';
+const CACHE_NAME = 'slowtravel-offline-v20261126_uffizi_catalog_v1';
 
 const PRECACHE_ASSETS = [
   './',
@@ -143,6 +143,13 @@ const PRECACHE_ASSETS = [
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
 ];
+PRECACHE_ASSETS.push(
+  './css/florence-uffizi-catalog.css',
+  './js/florence-uffizi-catalog-data.js',
+  './js/florence-uffizi-catalog.js',
+  ...[4823,4824,4825,4826,4827,4828,4829,4830,4831,4832,4833,4834,4835,4836,4837,4842,4843,4844,4845,4847,4850,4851,4852,4853,4854,4855,4856,4860,4861,4862,4863,4864,4865,4866,4867,4868,4869,4870,4874,4875,4876,4877,4878,4879,4880,4881,4884,4885,4886,4887,4889,4890,4891,4892,4893,4894,4923,4924,4925,4926,4929,4930,4934,4935,4936,4937,4938,4942,4943,4947,4948,4949,4952,4953,4954,4955,4956,4957,4958,4959,4960,4961,4964,4965,5008,5009,5011,5012,5013,5014,5015,5016,5017,5018,5020,5021,5022,5023,5024,5025,5026,5027,5028,5031,5032,5033,5034,5035,5037,5038,5039,5040,5041,5042,5043,5044,5045,5046]
+    .map(id => `./img/uffizi-upload/100034${id}.webp`)
+);
 
 self.addEventListener('install', (event) => {
   // Pre-cache all core assets individually so a failure on one external asset never aborts caching
