@@ -275,3 +275,162 @@
     font-size: .82rem;
   }
 }
+
+
+/* Added Florence history/photo guides */
+.florence-guide-library .fgh-photo-review {
+  margin: 0 0 16px;
+  padding: 14px;
+  background: #f8faf7;
+  border: 1px solid #dce7dc;
+  border-radius: 13px;
+}
+.florence-guide-library .fgh-photo-review h3 {
+  margin: 0 0 10px;
+  color: #244c35;
+  font-size: 1.12rem;
+}
+.florence-guide-library .fgh-photo-review h4 {
+  margin: 12px 0 5px;
+  color: #355942;
+  font-size: .96rem;
+}
+.florence-guide-library .fgh-photo-review p {
+  margin: 5px 0 10px;
+  font-size: .9rem;
+}
+.florence-guide-library .fgh-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0 14px;
+}
+.florence-guide-library .fgh-figure {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #f3f1eb;
+  border: 1px solid #e2e0d7;
+  border-radius: 10px;
+}
+.florence-guide-library .fgh-figure img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #eeece5;
+}
+.florence-guide-library .fgh-figure figcaption {
+  padding: 7px 9px;
+  color: #435449;
+  font-size: .82rem;
+  line-height: 1.4;
+}
+.florence-guide-library .fgh-unmatched {
+  margin-top: 14px;
+  padding-top: 5px;
+  border-top: 1px solid #dfe6dd;
+}
+.florence-guide-library .fgh-gallery-unmatched .fgh-figure img {
+  height: 160px;
+  object-fit: contain;
+}
+.florence-guide-library .fgh-figure.fgh-user-photo img {
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+}
+.florence-guide-library .fgh-missing,
+.florence-guide-library .fgh-no-photo {
+  padding: 10px 12px;
+  color: #5d4a2d;
+  background: #fff6e2;
+  border: 1px solid #ecd9aa;
+  border-radius: 10px;
+}
+.florence-guide-library .fgh-no-photo h3 {
+  margin-top: 0;
+}
+.florence-guide-library .fgh-source-text {
+  margin: 12px 0 0;
+  border: 1px solid #dce3db;
+  border-radius: 11px;
+  background: #fff;
+}
+.florence-guide-library .fgh-source-text > summary {
+  padding: 11px 13px;
+  color: #28563d;
+  font-size: .9rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+.florence-guide-library .fgh-source-body {
+  padding: 0 13px 14px;
+}
+.florence-guide-library .fgh-source-body > h1 {
+  margin: 8px 0 14px;
+  color: #244c35;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+.florence-guide-library .fgh-source-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  -webkit-overflow-scrolling: touch;
+}
+.florence-guide-library .fgh-source-body th,
+.florence-guide-library .fgh-source-body td {
+  min-width: 105px;
+  padding: 7px 9px;
+  border: 1px solid #dfe5dc;
+  text-align: left;
+  vertical-align: top;
+}
+.florence-guide-library .fgh-source-body th {
+  color: #294b37;
+  background: #f0f5ef;
+}
+.florence-guide-library .fgh-source-body blockquote {
+  margin: 1em 0;
+  padding: 8px 14px;
+  color: #53645a;
+  border-left: 3px solid #9bb6a2;
+  background: #f6f8f5;
+}
+@media (max-width: 700px) {
+  .florence-guide-library .fgh-photo-review {
+    padding: 11px;
+  }
+  .florence-guide-library .fgh-gallery {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+  .florence-guide-library .fgh-figure img {
+    height: 230px;
+  }
+  .florence-guide-library .fgh-figure.fgh-user-photo img {
+    height: auto;
+    max-height: 360px;
+  }
+  .florence-guide-library .fgh-gallery-unmatched {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .florence-guide-library .fgh-gallery-unmatched .fgh-figure img {
+    height: 92px;
+  }
+  .florence-guide-library .fgh-gallery-unmatched .fgh-figure figcaption {
+    padding: 5px;
+    font-size: .68rem;
+  }
+  .florence-guide-library .fgh-source-body {
+    padding: 0 10px 12px;
+  }
+  .florence-guide-library .fgh-source-body th,
+  .florence-guide-library .fgh-source-body td {
+    min-width: 90px;
+    padding: 6px 7px;
+  }
+}

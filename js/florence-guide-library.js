@@ -4,18 +4,21 @@
 
   const LANGS = ['ko', 'en', 'zh', 'ja'];
   const ID = 'florence-guide-library';
-  const ORDER = ['pass-comparison', 'dome-sunset-route', 'rainy-day-shopping', 'uffizi-masterpieces', 'duomo-savings'];
+  const ORDER = ['pass-comparison', 'dome-sunset-route', 'rainy-day-shopping', 'uffizi-masterpieces', 'duomo-savings', 'smn-history', 'fortezza-history', 'odeon-pinocchio'];
   const GUIDE_META = {
     'pass-comparison': { anchor: 'fg-pass-comparison' },
     'dome-sunset-route': { anchor: 'fg-dome-sunset-route' },
     'rainy-day-shopping': { anchor: 'fg-rainy-day-shopping' },
     'uffizi-masterpieces': { anchor: 'fg-uffizi-masterpieces' },
-    'duomo-savings': { anchor: 'fg-duomo-savings' }
+    'duomo-savings': { anchor: 'fg-duomo-savings' },
+    'smn-history': { anchor: 'fg-smn-history' },
+    'fortezza-history': { anchor: 'fg-fortezza-history' },
+    'odeon-pinocchio': { anchor: 'fg-odeon-pinocchio' }
   };
 
   const COPY = {
     ko: {
-      eyebrow: '피렌체 · 첨부 가이드 4종', title: '피렌체 방문 가이드 모음',
+      eyebrow: '피렌체 · 가이드 7종', title: '피렌체 방문 가이드 모음',
       intro: '첨부된 한국어 원문과 번역의 본문은 유지했습니다. 공식 안내와 다른 주장과 최신 확인이 필요한 정보는 각 가이드의 별도 주의문에서 확인하세요.',
       dateNote: '기준일이 적힌 날씨·영업시간·운행·예약 정보는 실시간 자료가 아닙니다. 방문 직전에 공식 채널에서 확인하고, 해당 날짜가 지난 정보는 과거 자료로 취급하세요.',
       noteTitle: '공식 안내와의 차이 · 확인이 필요한 점', noteLead: '아래 내용은 원문을 고치지 않고 별도로 덧붙인 검증 메모입니다.',
@@ -61,7 +64,7 @@
       }
     },
     en: {
-      eyebrow: 'FLORENCE · FOUR ATTACHED GUIDES', title: 'Florence visit guide collection',
+      eyebrow: 'FLORENCE · SEVEN GUIDES', title: 'Florence visit guide collection',
       intro: 'The attached Korean originals and translations are preserved. Separate notes under each guide flag statements that differ from official guidance and details that need a fresh check.',
       dateNote: 'Dated weather, opening hours, service and booking details are not live data. Check official channels just before visiting; treat information for past dates as historical.',
       noteTitle: 'Differences from official guidance · items to check', noteLead: 'These fact-check notes are separate from the original wording, which has not been rewritten.',
@@ -107,7 +110,7 @@
       }
     },
     zh: {
-      eyebrow: '佛罗伦萨 · 四份附件指南', title: '佛罗伦萨参观指南汇编',
+      eyebrow: '佛罗伦萨 · 七份指南', title: '佛罗伦萨参观指南汇编',
       intro: '保留附件中的韩文原文及其译文。各指南下方另列注意事项，标出与官方指引不同或需要重新核实的内容。',
       dateNote: '带日期的天气、开放时间、交通和预约信息并非实时数据。出发前请查看官方渠道；已过日期的信息应视为历史资料。',
       noteTitle: '与官方指引的差异 · 请核对', noteLead: '以下是单独附加的核查说明，不会改写原文。',
@@ -153,7 +156,7 @@
       }
     },
     ja: {
-      eyebrow: 'フィレンツェ · 添付ガイド4件', title: 'フィレンツェ訪問ガイド集',
+      eyebrow: 'フィレンツェ · ガイド7件', title: 'フィレンツェ訪問ガイド集',
       intro: '添付された韓国語原文と翻訳本文はそのまま掲載しています。公式案内との差や、改めて確認が必要な情報は各ガイドの別枠で示します。',
       dateNote: '日付付きの天気・営業時間・運行・予約情報はリアルタイム情報ではありません。訪問直前に公式情報を確認し、過去の日付の情報は参考記録として扱ってください。',
       noteTitle: '公式案内との差 · 要確認事項', noteLead: '以下は原文を書き換えず、別途追加した確認メモです。',
@@ -215,6 +218,241 @@
     locale.notice['duomo-savings'] = addition.notice;
   });
 
+  const HISTORY_SOURCE_NAMES = [
+    'Comune di Firenze · Santa Maria Novella brochure',
+    'Opera per Santa Maria Novella · The Facade',
+    'Opera per Santa Maria Novella · Masaccio’s Holy Trinity',
+    'Opera per Santa Maria Novella · The Tornabuoni Chapel',
+    'National Gallery · Michelangelo biography',
+    'Santa Maria Novella · Eight Centuries of History',
+    'Santa Maria Novella · EU About Us',
+    'Santa Maria Novella · Via della Scala 16',
+    'Museo Galileo / IMSS · Historic Pharmacy',
+    'FeelFlorence · Museum of the Old Pharmacy',
+    'Santa Maria Novella · The Cocchi Coaches Race',
+    'Repertorio Architetture · Obelisks of the Cocchi Race',
+    'Repertorio Architetture · Piazza Santa Maria Novella',
+    'Comune di Firenze · Museo Novecento',
+    'Museo Galileo / IMSS · Ex Ospedale di San Paolo',
+    'Museum of Fine Arts Budapest · San Paolo terracotta',
+    'Museo Novecento · Visitor information',
+    'Comune di Firenze · Teatro Cinema Savoia',
+    'Giunti Odeon · Official website',
+    'Treccani · Canzona di Bacco',
+    'Treccani · Lorenzo de’ Medici',
+    'Visit Tuscany · Fortezza da Basso',
+    'Museo Galileo / IMSS · Fortezza da Basso',
+    'Comune di Firenze · Fortezza visits',
+    'Comune di Firenze · Viale Filippo Strozzi record',
+    'Treccani · Filippo Strozzi',
+    'Firenze Fiera · Fortezza da Basso',
+    'Pitti Uomo · Visitor information',
+    'Opificio delle Pietre Dure · Institute',
+    'SIMG · 43rd National Congress notice',
+    'Treccani · Pier Francesco Florenzuoli'
+  ];
+  const HISTORY_SOURCE_URLS = [
+    'https://cultura.comune.fi.it/system/files/2018-12/SMN_ESEC__Depliant_it%20%281%29_0.pdf',
+    'https://www.smn.it/en/artworks/the-facade/',
+    'https://www.smn.it/en/artworks/masaccios-holy-trinity/',
+    'https://www.smn.it/en/artworks/the-tornabuoni-chapel-maggiore-chapel/',
+    'https://www.nationalgallery.org.uk/artists/michelangelo',
+    'https://us.smnovella.com/pages/our-story',
+    'https://eu.smnovella.com/pages/about-us',
+    'https://us.smnovella.com/pages/via-della-scala-16',
+    'https://brunelleschi.imss.fi.it/itineraries/place/OfficinaProfumoFarmaceuticaSantaMariaNovella.html',
+    'https://www.feelflorence.it/en/points-interest/museum-old-pharmacy-santa-maria-novella',
+    'https://www.smn.it/en/magazine/the-cocchi-coaches-race-in-florence/',
+    'http://www.palazzospinelli.org/architetture/scheda.asp?offset=1980&ID=2084',
+    'http://www.palazzospinelli.org/architetture/scheda.asp?offset=2250&ID=2564',
+    'https://cultura.comune.fi.it/pagina/musei-civici-fiorentini/museo-novecento',
+    'https://brunelleschi.imss.fi.it/itinerari/luogo/ExOspedaleSanPaolo.html',
+    'https://gipszek.szepmuveszeti.hu/en/object/18708',
+    'https://www.museonovecento.it/it/visita/',
+    'https://cultura.comune.fi.it/dalle-redazioni/visite-deco-al-cinema-savoia',
+    'https://www.giuntiodeon.com/en',
+    'https://www.treccani.it/magazine/strumenti/una_poesia_al_giorno/07_22_Medici_Lorenzo_de.html',
+    'https://www.treccani.it/enciclopedia/medici-lorenzo-de-detto-il-magnifico/',
+    'https://www.visittuscany.com/en/attractions/fortezza-da-basso/',
+    'https://brunelleschi.imss.fi.it/itineraries/place/FortezzaBasso.html',
+    'https://cultura.comune.fi.it/dalle-redazioni/visite-alla-scoperta-della-fortezza',
+    'https://linkedopendata.comune.fi.it/data/toponym/D61200017080',
+    'https://www.treccani.it/enciclopedia/filippo-strozzi/',
+    'https://www.firenzefiera.it/en/visit/fortezza-da-basso',
+    'https://uomo.pittimmagine.com/en/infovisitors',
+    'https://opificiodellepietredure.cultura.gov.it/istituto/',
+    'https://www.simg.it/simg-la-comunita-dei-medici-di-famiglia-si-riunisce-a-firenze-in-3mila-per-il-43-congresso-simg-la-nuova-generazione-punta-su-ricerca-e-tecnologia-nellitalia-che-invecchia/',
+    'https://www.treccani.it/enciclopedia/pier-francesco-florenzuoli_(Dizionario-Biografico)/'
+  ];
+  const ODEON_SOURCE_URLS = [
+    'https://www.treccani.it/enciclopedia/carlo-lorenzini_(Dizionario-Biografico)/',
+    'https://www.britannica.com/biography/C-Collodi',
+    'https://cultura.gov.it/comunicato/28856',
+    'https://www.fondazionecollodi.it/it/bicentenario-collodiano',
+    'https://www.bolognachildrensbookfair.com/en/about/special-projects/italian-excellence-pinocchios-new-clothes/16037.html',
+    'https://www.bolognachildrensbookfair.com/about/progetti-speciali/eccellenze-italiane-i-vestiti-nuovi-di-pinocchio/16037.html',
+    'https://www.giuntiodeon.com/eventi/892',
+    'https://www.giuntiodeon.com/en/eventi/893',
+    'https://corrierefiorentino.corriere.it/notizie/cronaca/26_novembre_23/carlo-collodi-cento-anni-dopo-giunti-oden-festeggia-lo-scrittore-di-pinocchio-con-un-calendario-di-eventi-2dbe009f-13be-44ff-8b6c-f54b7ebecxlk_amp.shtml',
+    'https://fondazionecerruti.org/opere/le-avventure-di-pinocchio',
+    'https://giunti.it/pages/storia',
+    'https://www.bibliotechebologna.it/objects/le-avventure-di-pinocchio-963e5b',
+    'https://bolognafiere.it/fiere-eventi/1826-2026-bologna-childrens-book-fair-nel-bicentenario-di-collodi/',
+    'https://www.fondazionemondadori.it/evento/mostra-eccellenze-italiane-i-vestiti-nuovi-di-pinocchio-al-laboratorio-faam/',
+    'https://giunti.it/products/eccellenze-italiane-i-vestiti-nuovi-di-pinocchio-9791223275344',
+    'https://www.bolognachildrensbookfair.com/about/progetti-speciali/eccellenze-italiane-i-vestiti-nuovi-di-pinocchio/pinocchio%E2%80%99s-new-clothes-the-illustrators/16507.html',
+    'https://www.edizionilapis.it/libro/9788878747463-pinocchio',
+    'https://www.edizionilapis.it/libro/9788878749542-pinocchio',
+    'https://almabooks.com/product/pinocchio/',
+    'https://collections.vam.ac.uk/item/O1594403/pinocchio-book-fanelli-sara/',
+    'https://minalima.com/about/',
+    'https://www.darkhorse.com/newsfeed/sdcc-2018-dark-horse-celebrates-25th-anniversary-h/',
+    'https://www.festival-cannes.com/en/2019/la-famosa-invasione-degli-orsi-in-sicilia-the-bears-famous-invasion-of-sicily-as-seen-by-lorenzo-mattotti/',
+    'https://tarabooks.com/shop/the-patua-pinocchio/',
+    'https://english.lithuanianculture.lt/news/2016/06/13/kestutis-kasparavicius-a-conductor-of-the-worlds-imagination/',
+    'https://www.oscars.org/oscars/ceremonies/1974',
+    'https://www.palazzomedicirriccardi.it/visite-deco-al-teatro-cinema-savoia-oggi-giunti-odeon/',
+    'https://www.treccani.it/enciclopedia/giuseppe-gronchi_(Dizionario-Biografico)/',
+    'https://studiobenaim.com/en/portfolio/theatre-odeon-florence-restoration-renovation-cinema-interior-design/',
+    'http://www.palazzospinelli.org/architetture/scheda.asp?offset=120&ID=1486',
+    'https://dialnet.unirioja.es/descarga/articulo/5362320.pdf',
+    'http://www.palazzospinelli.org/architetture/scheda.asp?offset=2250&ID=1507'
+  ];
+  const HISTORY_COPY = {
+    ko: {
+      chipText: ['⛪ 산타 마리아 노벨라·오데온', '🏰 포르테차 다 바소'],
+      prompts: ['산타 마리아 노벨라 성당·약국·오데온 역사와 사진', '포르테차 다 바소 역사와 사진 자료'],
+      chatTitle: ['산타 마리아 노벨라·오데온 가이드', '포르테차 다 바소 역사 가이드'],
+      chatAnswer: [
+        '성당·약국·광장·오데온 자료와 사진을 확인할 수 있습니다. 장소가 확인된 외관 사진 3장과 귀속이 확인되지 않은 실내 사진 3장을 분리했고, 산 파올로 회랑 사진은 첨부에 없습니다. 연도 차이와 미확인 주장은 별도 주의문에 표시했습니다.',
+        '요새 원문과 사실 확인 메모를 열었습니다. 포르테차·마스티오 외관이나 SIMG 배너 사진은 첨부에 없어 관련 사진을 연결하지 않았습니다.'
+      ],
+      smnNotice: [
+        '1279년은 피렌체 시 안내의 첫 초석 축복 연도이며, 공사는 그보다 앞서 시작됐을 수 있습니다. 1420년 봉헌은 확인됩니다. Alberti 파사드의 정확한 착수 시점은 자료가 다르고, 1470년은 Rucellai 명문에 적힌 완공 연도입니다.',
+        'Masaccio의 《성 삼위일체》 제작 시기는 약 1425~1427년으로 자료마다 조금 다릅니다. Tornabuoni 예배당의 주요 프레스코 연작은 Ghirlandaio가 1485년에 시작했습니다. 미켈란젤로의 이 연작 직접 참여는 성당 안내가 매우 제한적이었다고 하므로 확정 사실처럼 쓰지 않았습니다.',
+        '약국의 1221년은 수도원·약초·치료 전통의 기원입니다. IMSS와 기업 상세 연혁은 1612년 공식 약국 성립을 지지하지만, 다른 기업 공식 페이지는 1542년 대중 개방을 적어 불일치가 남습니다. “세계에서 가장 오래된 약국”이라는 절대 순위는 독립적으로 확인되지 않았습니다.',
+        '기업 자료는 1381년 Acqua di Rose 기록을 들지만, 흑사병 때 방 소독·음용 치료제로 팔았다는 설명과 현재 제품까지의 연속성은 별도로 확인되지 않았습니다. Acqua della Regina의 1533년 이야기는 기업의 전승으로 분류하며, “최초 현대 향수”나 오 드 콜로뉴의 뿌리라고 단정하지 않습니다.',
+        'Palio dei Cocchi는 1563년부터 6월 23일 열렸고 전문 목록은 마지막 경주를 1852년으로 기록합니다. 청동 거북이의 작가 귀속은 자료 간 다르며, 경주 중단 원인도 확정되지 않았습니다.',
+        '산 파올로 회랑은 15세기 후반 건축물입니다. 1489~1496년은 관련 테라코타 부조 제작 기간이지 회랑 건립 연도가 아닙니다. 시청 자료는 Savoia 극장의 개관일을 1922년 12월 13일로 제시해 원문의 12월 14일과 다릅니다. 시구의 작가·작품은 확인되지만 오데온 건물 안의 실제 각인 여부와 위치는 미확인입니다.',
+        '사진 분류: 성당 정면·광장·Odeon 외관 3장은 장소를 확인했습니다. 실내 사진 3장은 식별 표지가 없어 Odeon 내부로 귀속하지 않았습니다. 산 파올로 회랑과 무대 문구를 식별할 사진은 업로드에 없습니다. 원문의 다른 세부사항은 충실한 원문으로 보존했으며, 링크가 각 주장을 모두 입증한다는 뜻은 아닙니다.'
+      ],
+      fortNotice: [
+        '1534년은 계획·설계가 의뢰된 시점입니다. 확인된 초석 의식은 1535년 7월 15일이며, 준공 연도는 IMSS의 1535년과 Visit Tuscany 등의 1537년 표기가 다릅니다. 건축가들의 역할도 자료마다 구분이 있어 단독 설계자로 단정하지 않았습니다.',
+        'Visit Tuscany는 불규칙한 오각형과 약 80,000㎡를 제시합니다. 100,000㎡ 및 “피렌체 구시가지 최대”는 확인되지 않았습니다. da Basso의 명칭 설명은 출처마다 강조점이 다르고, Via della Fortezza가 “요새로 향하는 길”이라는 해석도 별도로 확인되지 않았습니다.',
+        '메디치 시대의 도시 통제라는 맥락은 있지만, “외적 방어가 아니라 시민 감시만을 위한 요새”라는 이분법과 Mastio가 피렌체 시내를 정면으로 겨냥했다는 설명은 이 요새에서 확인되지 않았습니다. Volterra·Arezzo의 다른 메디치 요새 설명을 옮기지 않았습니다.',
+        '피렌체 시 기록은 Filippo Strozzi가 건설비 일부를 부담했다고 합니다. 그는 요새에 수감된 뒤 1538년 사망했고, Treccani는 자살을 거의 확실하다고 평가합니다. 고문이나 암살을 확정 사실로 뒷받침하는 자료는 확인되지 않았습니다.',
+        'Porta a Faenza는 중세 성벽의 문으로 후대 요새에 편입됐습니다. 시청은 붙어 있는 Mastio를 팔각형으로 설명합니다. “둥근 탑/사각 탑 안에 문 전체가 보존됐다”는 주장은 확인되지 않았고, 정확한 성문 축조 세기도 출처 간 표현이 다릅니다.',
+        'Fortezza는 현재 Firenze Fiera의 전시·회의 공간이자 Pitti Uomo 개최지입니다. 상시 관광 개방은 확인되지 않았고, 특정 날짜의 투어·행사 참가와 일반 입장은 구분해야 합니다. OPD 작업장·실험실 일부가 부지에 있지만 기관 전체가 있는 것은 아닙니다. 1967년 개조와 “세계 최대 남성복 박람회”라는 표현은 검토한 자료에서 확인하지 못했습니다.',
+        'SIMG 공식 공지는 2026년 11월 26~28일 행사를 예고했고 “3천 명”은 주최자의 등록자 수 표현입니다. 행사 전체가 끝난 뒤의 실제 참석자 수는 확인되지 않았습니다. 첨부에는 요새 사진이나 파란 현수막 사진이 없습니다. 돌무늬를 메디치 선전으로 해석한 주장도 사진·출처로 확인되지 않았습니다.'
+      ]
+    },
+    en: {
+      chipText: ['⛪ Santa Maria Novella & Odeon', '🏰 Fortezza da Basso'],
+      prompts: ['Santa Maria Novella Basilica, pharmacy, piazza and Odeon history', 'Fortezza da Basso history and available photos'],
+      chatTitle: ['Santa Maria Novella & Odeon guide', 'Fortezza da Basso history guide'],
+      chatAnswer: [
+        'Open the Basilica, pharmacy, piazza and Odeon guide with its photo matches. Three exterior photos have identified locations; three interiors remain unattributed, and no Loggia di San Paolo photo was supplied. Date differences and unverified claims are flagged separately.',
+        'Open the fortress source and fact-check notes. No photo of Fortezza/Mastio or the SIMG banner was supplied, so no unrelated photo is attached.'
+      ],
+      smnNotice: [
+        '1279 is the year the Comune guide gives for the foundation-stone blessing; construction may already have begun. The 1420 consecration is confirmed. Sources differ on when Alberti’s façade work began; 1470 is the completion date shown in the Rucellai inscription.',
+        'Masaccio’s Holy Trinity is dated to about 1425–1427, with slight differences among sources. Ghirlandaio began the main Tornabuoni Chapel fresco cycle in 1485. The basilica says Michelangelo’s direct role in that cycle was very limited, so it is not presented as a confirmed authorship claim.',
+        '1221 marks the monastery, herb-garden and medical tradition, not necessarily the public pharmacy. IMSS and the company’s detailed history support 1612 as the formal pharmacy date, while another company page says it opened to the public in 1542. The discrepancy remains; an absolute “world’s oldest pharmacy” ranking is not independently established.',
+        'Company materials cite a 1381 record for Acqua di Rose, but the claims about plague-era room disinfection, drinking it as treatment and uninterrupted continuity with today’s product were not independently confirmed. The 1533 Acqua della Regina account is presented as company tradition, not as the first modern perfume or the proven origin of Eau de Cologne.',
+        'The Palio dei Cocchi began in 1563 and was held on June 23; a specialist inventory records 1852 as the last race. Sources disagree on the bronze tortoises’ attribution, and the reason the race stopped is not established.',
+        'The San Paolo Loggia dates to the late 15th century. 1489–1496 refers to a group of terracotta reliefs, not the building date. The Comune gives December 13, 1922 as the Savoia theatre’s opening, not the source’s December 14. The poem and author are verified; whether or where it is physically inscribed inside Odeon is not.',
+        'Photo match: the Basilica façade, piazza and Odeon exterior are identified. The three interior photos lack an identifiable marker and are not attributed to Odeon. No photo of the San Paolo Loggia or the stage inscription was supplied. Other details remain faithful source text; the links do not imply that every source claim has been independently confirmed.'
+      ],
+      fortNotice: [
+        '1534 marks the planning/commissioning phase. The confirmed foundation-stone ceremony was July 15, 1535. Completion is given as 1535 by IMSS and 1537 by Visit Tuscany and other sources. Sources also distinguish the architects’ roles, so this guide avoids a single-architect claim.',
+        'Visit Tuscany describes an irregular pentagon of about 80,000 m². The 100,000 m² and “largest historic building in Florence’s old town” claims were not confirmed. Sources emphasize different explanations for da Basso, and the claim that Via della Fortezza means “the road leading to the fort” was not independently verified.',
+        'The Medici-era context includes control of the city, but the binary claim that the fortress was built only to watch citizens rather than defend against outsiders, and the claim that the Mastio faced the city, were not verified for this fortress. Descriptions of other Medici fortresses in Volterra or Arezzo should not be transferred here.',
+        'A Comune record says Filippo Strozzi contributed to part of the construction cost. He was imprisoned in the fortress and died in 1538; Treccani considers suicide almost certain. The reviewed sources do not establish torture or assassination as fact.',
+        'Porta a Faenza was a medieval wall gate later incorporated into the fortress. The Comune describes the attached Mastio as octagonal. The claim that the whole gate was preserved inside a round or square tower is unverified, and sources differ on the gate’s exact medieval date.',
+        'Fortezza is now a Firenze Fiera exhibition and conference venue and hosts Pitti Uomo. Permanent tourist access was not confirmed; scheduled tours, event entry and general access are different. Some OPD workshops/labs are on the site, not the entire institute. The reviewed sources did not confirm a 1967 renovation or “the world’s largest menswear fair.”',
+        'SIMG announced its congress for November 26–28, 2026. “3,000” is the organizer’s stated registration figure, not a verified final attendance count; the event had not finished as of the guide date. No fortress or blue banner photo was supplied. The claim that the stone pattern is Medici propaganda was also not verified from the available photo or reviewed sources.'
+      ]
+    },
+    zh: {
+      chipText: ['⛪ 新圣母大殿与Odeon', '🏰 巴索要塞'],
+      prompts: ['新圣母大殿、药房、广场与Odeon的历史', '巴索要塞历史及现有照片'],
+      chatTitle: ['新圣母大殿与Odeon指南', '巴索要塞历史指南'],
+      chatAnswer: [
+        '已打开大殿、药房、广场与Odeon指南及照片对应说明。三张外观照片的地点已识别；三张室内照片未归属任何场所，且没有提供圣保罗凉廊照片。年份差异和未确认说法另列注意事项。',
+        '已打开要塞原文与事实核查说明。附件中没有巴索要塞／Mastio或SIMG横幅照片，因此未附上无关图片。'
+      ],
+      smnNotice: [
+        '1279年是佛罗伦萨市指南所列的奠基仪式年份；工程可能更早已开始。1420年祝圣有资料支持。各来源对Alberti何时开始处理立面说法不同；1470年是Rucellai铭文记载的完成年份。',
+        'Masaccio的《圣三位一体》约作于1425—1427年，各来源略有差异。Ghirlandaio于1485年开始Tornabuoni礼拜堂的主要壁画组。圣堂说明称Michelangelo在该组壁画中的直接作用非常有限，因此不把他写成确定作者。',
+        '1221年代表修道院、药草园和医疗传统的起源，不一定是对公众开放药房的日期。IMSS与企业详细年表支持1612年为药房正式成立年份，但另一企业页面称1542年向公众开放。矛盾尚未解决；“世界最古老药房”的绝对排名也未获独立证实。',
+        '企业资料引用了1381年Acqua di Rose的记录，但有关黑死病时期用于房间消毒、饮用治疗以及与今天产品连续传承的说法未获独立确认。1533年Acqua della Regina的故事应作为企业传说介绍，不应断言它是“第一款现代香水”或Eau de Cologne的已证实起源。',
+        'Palio dei Cocchi始于1563年，每年6月23日举行；专业建筑名录将1852年记为最后一场比赛。青铜龟的作者归属在资料间有分歧，比赛停止的原因也未确定。',
+        '圣保罗凉廊建于15世纪后期。1489—1496年指一组陶土浮雕的制作时间，而非建筑建成年份。市政府资料将Savoia剧院开幕日列为1922年12月13日，而非原文所说的14日。诗句和作者可核实，但其是否、以及位于Odeon内部何处实际刻写，尚无证据。',
+        '照片对应：已识别大殿正面、广场和Odeon外观。三张室内照片没有可识别标志，因此不归为Odeon内部。未提供圣保罗凉廊或舞台铭文照片。其他细节保留为忠实原文；链接并不表示每项原文说法都已独立证实。'
+      ],
+      fortNotice: [
+        '1534年是规划／委托设计阶段。可确认的奠基仪式日期为1535年7月15日。IMSS记为1535年竣工，Visit Tuscany等资料记为1537年；来源对建筑师分工也有不同描述，因此不写成由单一建筑师完成。',
+        'Visit Tuscany将其描述为约80,000平方米的不规则五边形。100,000平方米以及“佛罗伦萨老城最大历史建筑”未获证实。不同来源对da Basso名称的解释侧重点不同，“Via della Fortezza就是通往要塞的道路”也未独立核实。',
+        '美第奇时期的背景包含控制城市，但“该要塞只为监视市民而建、不是防御外敌”这一二分说法，以及Mastio朝向城市的说法，均未在这座要塞得到核实。不能把Volterra或Arezzo其他美第奇要塞的描述移用到此处。',
+        '佛罗伦萨市记录称Filippo Strozzi承担了部分建造费用。他曾被关押在要塞内并于1538年去世；Treccani认为自杀几乎可以确定。核查资料不足以将酷刑或暗杀作为事实。',
+        'Porta a Faenza是中世纪城墙的城门，后来并入要塞。市政府将与其连接的Mastio描述为八角形。“整座城门保存在圆塔或方塔里面”的说法未获证实，各来源对城门的具体中世纪年代也有差异。',
+        'Fortezza目前是Firenze Fiera展览与会议场地，也是Pitti Uomo举办地。未证实可长期作为普通旅游景点入内；预约参观、活动入场和一般开放应加以区分。场地内有Opificio delle Pietre Dure的部分工作室／实验室，并非整个机构都在那里。核查资料未证实1967年改建或“世界最大男装展会”的说法。',
+        'SIMG公告称大会计划于2026年11月26日至28日举行。“3,000人”是主办方公布的注册人数，不是已核实的最终出席人数；截至指南日期，活动尚未全部结束。附件没有要塞或蓝色横幅照片。石墙图案是美第奇宣传这一解读，也未通过现有照片或已查资料核实。'
+      ]
+    },
+    ja: {
+      chipText: ['⛪ サンタ・マリア・ノヴェッラ／オデオン', '🏰 フォルテッツァ・ダ・バッソ'],
+      prompts: ['サンタ・マリア・ノヴェッラ聖堂・薬局・広場・オデオンの歴史', 'フォルテッツァ・ダ・バッソの歴史と写真資料'],
+      chatTitle: ['サンタ・マリア・ノヴェッラ／オデオン案内', 'フォルテッツァ・ダ・バッソ歴史案内'],
+      chatAnswer: [
+        '聖堂・薬局・広場・オデオンの資料と写真対応を開きました。場所を確認できた外観写真は3枚、屋内写真3枚は場所未確認として分けています。サン・パオロ回廊の写真は添付されていません。年代の差や未確認の記述は別枠に記載しています。',
+        '要塞の原文と事実確認メモを開きました。フォルテッツァ／マスティオやSIMG横断幕の写真は添付にないため、無関係な写真は結び付けていません。'
+      ],
+      smnNotice: [
+        '1279年はフィレンツェ市の案内が示す礎石祝福の年で、工事はそれ以前に始まっていた可能性があります。1420年の献堂は確認できます。アルベルティのファサード着手時期は資料に差があり、1470年はルチェッライ家の銘文にある完成年です。',
+        'マザッチョの《聖三位一体》は約1425〜1427年と資料により少し異なります。トルナブオーニ礼拝堂の主要フレスコ画群はギルランダイオが1485年に着手しました。ミケランジェロの直接参加は聖堂案内がごく限定的だったとするため、確定事項として扱っていません。',
+        '1221年は修道院・薬草園・医療の伝統の起源で、一般向け薬局の開業日とは限りません。IMSSと企業の詳細な沿革は1612年を薬局の正式な成立年としていますが、別の企業ページは1542年に一般公開と記載しています。差は解消されておらず、「世界最古」という絶対的順位も独立に確認されていません。',
+        '企業資料は1381年のAcqua di Roseの記録を挙げていますが、ペスト期の室内消毒・飲用治療薬としての販売や、現在の商品まで途切れず続いたという説明は独立に確認されていません。Acqua della Reginaの1533年の話は企業の伝承として示し、「最初の近代香水」やオー・デ・コロンの確立した起源とは断定しません。',
+        'Palio dei Cocchiは1563年に始まり、6月23日に開催されました。専門目録は最終開催を1852年と記録しています。青銅の亀の作者帰属は資料で異なり、競走が終わった理由も確定していません。',
+        'サン・パオロ回廊は15世紀後半の建築です。1489〜1496年は関連するテラコッタ浮彫群の制作期間で、回廊自体の建築年ではありません。市の資料はSavoia劇場の開館日を1922年12月13日としており、原文の12月14日とは異なります。詩と作者は確認できますが、オデオン建物内に実際に刻まれているか、場所は未確認です。',
+        '写真の対応：聖堂正面・広場・Odeon外観の3枚は場所を確認しました。屋内写真3枚は識別表示がなく、Odeon内部とはしていません。サン・パオロ回廊や舞台の銘文が写った写真は添付されていません。他の詳細は忠実な原文として残しており、リンク先がすべての主張を独立に裏付ける意味ではありません。'
+      ],
+      fortNotice: [
+        '1534年は計画・設計依頼の時期です。確認できる礎石の儀式は1535年7月15日です。完成年はIMSSが1535年、Visit Tuscanyなどが1537年としており、建築家の役割の説明も異なるため、単独の設計者とは断定していません。',
+        'Visit Tuscanyは不規則な五角形で約80,000平方メートルと説明しています。100,000平方メートルや「フィレンツェ旧市街最大の歴史建築」は確認できませんでした。da Bassoの由来は資料で説明の重点が異なり、Via della Fortezzaが「要塞へ向かう道」という解釈も独立に確認されていません。',
+        'メディチ時代には都市支配の文脈がありますが、「外敵防御ではなく市民監視だけが目的」という二分法や、マスティオが市街地を正面に向いていたという説明は、この要塞では確認できません。VolterraやArezzoの別のメディチ要塞の説明を転用しないでください。',
+        'フィレンツェ市の記録はフィリッポ・ストロッツィが建設費の一部を負担したとしています。彼は要塞に収監された後、1538年に死亡し、Treccaniは自殺がほぼ確実と評価しています。拷問や暗殺を事実とする根拠は確認できません。',
+        'Porta a Faenzaは中世の城壁門で、後に要塞に組み込まれました。市の案内は接続するマスティオを八角形と説明します。「門全体が円塔または四角い塔の中に保存された」という説は未確認で、門の正確な中世の年代も資料によって表現が異なります。',
+        '現在のFortezzaはFirenze Fieraの展示・会議場で、Pitti Uomoの会場です。常時観光客が入れるとは確認されていません。予約制ツアー、催事参加、一般入場は区別が必要です。OPDの工房・実験室の一部が敷地にありますが、機関全体が移転したわけではありません。1967年の改修や「世界最大のメンズウェア見本市」は確認資料で裏付けられませんでした。',
+        'SIMGの公式告知は2026年11月26〜28日の開催を予告しています。「3,000人」は主催者が示した登録人数で、最終的な実参加者数の確認ではありません。ガイドの日付時点で全日程は終了していません。要塞や青い横断幕の写真は添付されていません。石の模様をメディチ家の宣伝とする説明も、提供写真や確認した出典からは裏付けられません。'
+      ]
+    }
+  };
+  LANGS.forEach(lang => {
+    const history = HISTORY_COPY[lang];
+    const locale = COPY[lang];
+    locale.chipText.push(...history.chipText);
+    locale.prompts.push(...history.prompts);
+    locale.chatTitle.push(...history.chatTitle);
+    locale.chatAnswer.push(...history.chatAnswer);
+    locale.sourceNames.push(...HISTORY_SOURCE_NAMES);
+    locale.notice['smn-history'] = history.smnNotice;
+    locale.notice['fortezza-history'] = history.fortNotice;
+  });
+
+  const odeonCopy = root.FLORENCE_GUIDE_ODEON_COPY || {};
+  LANGS.forEach(lang => {
+    const addition = odeonCopy[lang];
+    if (!addition) return;
+    const locale = COPY[lang];
+    locale.chipText.push(addition.chipText);
+    locale.prompts.push(addition.prompt);
+    locale.chatTitle.push(addition.chatTitle);
+    locale.chatAnswer.push(addition.chatAnswer);
+    locale.sourceNames.push(...addition.sourceNames);
+    locale.notice['odeon-pinocchio'] = addition.notice;
+  });
+
   const SOURCE_URLS = [
     'https://duomo.firenze.it/en/visit/plan-your-visit',
     'https://duomo.firenze.it/en/720/brunelleschi-pass',
@@ -238,12 +476,18 @@
     'https://duomo.firenze.it/en/news/8991/from-1-august-2023-to-visit-santa-reparata-ghiberti-pass-holders-must-access-the-time-slot-chosen-at-the-time-of-purchase',
     'https://duomo.firenze.it/en/home'
   ];
+  SOURCE_URLS.push(...HISTORY_SOURCE_URLS);
+  const ODEON_SOURCE_START = SOURCE_URLS.length;
+  SOURCE_URLS.push(...ODEON_SOURCE_URLS);
   const SOURCES_BY_GUIDE = {
     'pass-comparison': [0, 1, 2],
     'dome-sunset-route': [0, 1, 2, 3],
     'rainy-day-shopping': [4, 5, 6, 7, 8],
     'uffizi-masterpieces': [8],
-    'duomo-savings': [0, 1, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    'duomo-savings': [0, 1, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    'smn-history': [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41],
+    'fortezza-history': [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    'odeon-pinocchio': ODEON_SOURCE_URLS.map((_, i) => ODEON_SOURCE_START + i)
   };
 
   function esc(value) {
@@ -292,6 +536,9 @@
     const q = String(query || '').toLocaleLowerCase();
     const otherCity = /\b(?:naples|napoli|rome|roma|venice|venezia|milan|milano)\b|나폴리|로마|베네치아|밀라노|ナポリ|ローマ|ベネチア|ミラノ|那不勒斯|罗马|威尼斯|米兰/.test(q);
     if (otherCity) return -1;
+    if (/fortezza|fortress|san giovanni battista|포르테차|포르테자|바소 요새|피렌체 요새|산 조반니 바티스타|巴索要塞|巴索堡垒|圣若翰洗者要塞|フォルテッツァ|ダ・バッソ要塞|サン・ジョヴァンニ・バッティスタ/.test(q)) return 6;
+    if (/pinocchio|collodi|fontana|fountain|피노키오|콜로디|분수|皮诺曹|科洛迪|喷泉|ピノキオ|コッローディ|噴水/.test(q)) return 7;
+    if (/santa\s*maria\s*novella|officina profumo|palio dei cocchi|san paolo|odeon|산타\s*마리아\s*노벨라|산타마리아노벨라|노벨라 약국|오데온|팔리오 데이 코키|산 파올로 회랑|圣玛利亚诺韦拉|圣玛利亚诺维拉|新圣母|巴科斯之歌|奥德翁|圣保罗凉廊|サンタ・?マリア・?ノヴェッラ|サンタマリアノヴェッラ|ノヴェッラ薬局|オデオン|コッキ競走|サン・パオロ回廊/.test(q)) return 5;
     if (/uffizi|우피치|ウフィツィ|乌菲兹|乌菲茲/.test(q)) return 3;
     if (/duomo.{0,24}(?:saving|save|discount|cheap|price|fee|free)|(?:saving|save|discount|cheap|price|fee|free).{0,24}duomo|두오모.{0,12}(?:절약|할인|저렴|입장료|요금|무료)|(?:절약|할인|저렴|입장료|요금).{0,12}두오모|大教堂.{0,12}(?:省钱|优惠|折扣|便宜|票价|免费)|(?:省钱|优惠|折扣|便宜|票价).{0,12}大教堂|ドゥオーモ.{0,12}(?:節約|割引|安く|料金|無料)|(?:節約|割引|安く|料金).{0,12}ドゥオーモ/i.test(q)) return 4;
     if (/rain|shopping|shop|market|pharmacy|tax.?free|discount|coupon|비\s*오는\s*날|쇼핑|시장|약국|면세|할인|雨|购物|購物|市场|市場|药妆|免税|買い物|ショッピング|市場|薬局|免税|割引/.test(q)) return 2;

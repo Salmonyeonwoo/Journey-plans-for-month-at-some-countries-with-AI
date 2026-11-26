@@ -1,7 +1,7 @@
-// SlowTravel Mobile Offline Service Worker (v20261126_florence_guides_v2)
+// SlowTravel Mobile Offline Service Worker (v20261126_florence_history_photo_v2)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261126_florence_guides_v2';
+const CACHE_NAME = 'slowtravel-offline-v20261126_florence_history_photo_v2';
 
 const PRECACHE_ASSETS = [
   './',
@@ -40,8 +40,21 @@ const PRECACHE_ASSETS = [
   './js/florence-photo-review.js',
   './js/florence-street-art-safety.js',
   './js/florence-guide-content.js',
+  './js/florence-history-content.js',
+  './js/florence-odeon-content.js',
   './js/florence-guide-savings-copy.js',
+  './js/florence-guide-odeon-copy.js',
   './js/florence-guide-library.js',
+  './img/florence-user-photos/santa-maria-novella-basilica.webp',
+  './img/florence-user-photos/santa-maria-novella-square.webp',
+  './img/florence-user-photos/odeon-exterior.webp',
+  './img/florence-user-photos/odeon-interior-books-1.webp',
+  './img/florence-user-photos/odeon-interior-books-2.webp',
+  './img/florence-user-photos/odeon-interior-books-3.webp',
+  './img/florence-user-photos/odeon-source-photo1-1000344788.webp',
+  './img/florence-user-photos/odeon-source-photo2-1000344789.webp',
+  './img/florence-user-photos/odeon-fountain-user-1000344792.webp',
+  './img/florence-user-photos/odeon-unassigned-1000344787.webp',
   './js/europe-electricity-guide.js',
   './js/landmark-history-additions.js',
   './js/flamenco-guide.js',
