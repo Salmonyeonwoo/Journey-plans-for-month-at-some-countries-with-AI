@@ -30,7 +30,7 @@ let currentBigMapFilter = 'ALL';
 
 function filterBigLandmarksMap(category) {
   currentBigMapFilter = category;
-  ['btnBigMapAll', 'btnBigMapIberia', 'btnBigMapEurope', 'btnBigMapLatin', 'btnBigMapDubai'].forEach(id => {
+  ['btnBigMapAll', 'btnBigMapIberia', 'btnBigMapEurope', 'btnBigMapMilan', 'btnBigMapLatin', 'btnBigMapDubai'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.classList.remove('active');
   });
@@ -39,6 +39,7 @@ function filterBigLandmarksMap(category) {
     'ALL': 'btnBigMapAll',
     'IBERIA': 'btnBigMapIberia',
     'EUROPE': 'btnBigMapEurope',
+    'MILAN': 'btnBigMapMilan',
     'LATIN': 'btnBigMapLatin',
     'DUBAI': 'btnBigMapDubai'
   }[category] || 'btnBigMapAll';
@@ -106,6 +107,8 @@ function renderBigLandmarksMap() {
       !x.city.includes('두바이') && !x.city.includes('Dubai') &&
       !x.city.includes('페루') && !x.city.includes('브라질') && !x.city.includes('아르헨티나') && !x.city.includes('멕시코')
     );
+  } else if (currentBigMapFilter === 'MILAN') {
+    filteredItems = allItems.filter(x => /milan|milano|밀라노/i.test(`${x.name} ${x.city} ${x.mapQuery || ''}`));
   } else if (currentBigMapFilter === 'LATIN') {
     filteredItems = allItems.filter(x =>
       x.region === '중남미' || x.region === '페루' || x.region === '볼리비아' ||

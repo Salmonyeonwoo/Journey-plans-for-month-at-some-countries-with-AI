@@ -94,6 +94,12 @@
 
   const state = { query: '', category: 'all', openIds: new Set() };
   const DATA = Array.isArray(root.EUROPE_COUNTRY_GUIDE_DATA) ? root.EUROPE_COUNTRY_GUIDE_DATA : [];
+  const HOME_SHORTCUT_LABELS = {
+    ko: { kicker: 'EUROPE · QUICK ACCESS', title: '기존 유럽 가이드 바로가기', intro: '새 목적지 내용을 만들지 않고, 플래너에 이미 있는 가이드로 이동합니다.', cities: '도시 바로가기', regions: '지역 가이드', countries: n => `🌍 국가·인접 지역 가이드 전체 보기 (${n})`, countryNote: '국가별 추천 자료가 있는 기존 디렉터리로 이동합니다.', rome: '🇮🇹 로마 · 도시 가이드', florence: '🇮🇹 피렌체 · 도시 가이드', venice: '🇮🇹 베네치아 · 도시 가이드', naples: '🇮🇹 나폴리·카프리 · 도시 가이드', milan: '🇮🇹 밀라노 · 두오모 지도', spain: '🇪🇸 스페인 · 지역 가이드', portugal: '🇵🇹 포르투갈 · 명소 가이드', europeMap: '🗺️ 기타 유럽 · 명소 지도' },
+    en: { kicker: 'EUROPE · QUICK ACCESS', title: 'Existing Europe guides', intro: 'These shortcuts open guides already in the planner; no destination content has been invented.', cities: 'City guides', regions: 'Regional guides', countries: n => `🌍 All country & neighboring-region guides (${n})`, countryNote: 'Opens the existing country-by-country recommendation directory.', rome: '🇮🇹 Rome · city guide', florence: '🇮🇹 Florence · city guide', venice: '🇮🇹 Venice · city guide', naples: '🇮🇹 Naples & Capri · city guide', milan: '🇮🇹 Milan · Duomo map', spain: '🇪🇸 Spain · regional guide', portugal: '🇵🇹 Portugal · sights guide', europeMap: '🗺️ Other Europe · sights map' },
+    ja: { kicker: 'EUROPE · QUICK ACCESS', title: '既存のヨーロッパガイド', intro: '新しい目的地情報は追加せず、プランナー内にあるガイドへ移動します。', cities: '都市ガイド', regions: '地域ガイド', countries: n => `🌍 国・周辺地域ガイドをすべて表示（${n}）`, countryNote: '既存の国別おすすめディレクトリを開きます。', rome: '🇮🇹 ローマ · 都市ガイド', florence: '🇮🇹 フィレンツェ · 都市ガイド', venice: '🇮🇹 ベネチア · 都市ガイド', naples: '🇮🇹 ナポリ・カプリ · 都市ガイド', milan: '🇮🇹 ミラノ · ドゥオーモ地図', spain: '🇪🇸 スペイン · 地域ガイド', portugal: '🇵🇹 ポルトガル · 名所ガイド', europeMap: '🗺️ その他のヨーロッパ · 名所地図' },
+    zh: { kicker: 'EUROPE · QUICK ACCESS', title: '现有欧洲指南快捷入口', intro: '不编写新的目的地内容，直接打开规划器中已有的指南。', cities: '城市指南', regions: '区域指南', countries: n => `🌍 查看全部国家与周边地区指南（${n}）`, countryNote: '打开现有的逐国推荐目录。', rome: '🇮🇹 罗马 · 城市指南', florence: '🇮🇹 佛罗伦萨 · 城市指南', venice: '🇮🇹 威尼斯 · 城市指南', naples: '🇮🇹 那不勒斯与卡普里 · 城市指南', milan: '🇮🇹 米兰 · 大教堂地图', spain: '🇪🇸 西班牙 · 区域指南', portugal: '🇵🇹 葡萄牙 · 景点指南', europeMap: '🗺️ 欧洲其他地区 · 景点地图' }
+  };
   const text = (value, lang, fallback = '') => {
     if (value && typeof value === 'object') return String(value[lang] || value.ko || value.en || fallback || '');
     return String(value == null ? fallback : value);
@@ -102,6 +108,81 @@
   const normalize = value => String(value || '').toLowerCase().normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '').normalize('NFC').replace(/[^a-z0-9\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]+/g, ' ').trim().replace(/\s+/g, ' ');
   const locale = () => LANGS.includes(root.currentLang) ? root.currentLang : (LANGS.includes(document.documentElement.lang) ? document.documentElement.lang : 'ko');
+  function openItalyShortcut(cityId) {
+    if (!['rome', 'florence', 'venice', 'capri'].includes(cityId)) return;
+    root.switchGuidebookChapter?.('chapter-guide', false);
+    root.goToBookPage?.('chapter-guide', 0, false);
+    window.setTimeout(() => {
+      root.selectItalyCity?.(cityId);
+      document.getElementById('italyCityNavBar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 160);
+  }
+  function openRegionShortcut(regionId) {
+    const pages = { spain: 1, portugal: 2 };
+    if (!(regionId in pages)) return;
+    root.switchGuidebookChapter?.('chapter-guide', false);
+    root.goToBookPage?.('chapter-guide', pages[regionId], false);
+    window.setTimeout(() => {
+      const targetId = regionId === 'spain' ? 'landmarksSpainGrid' : 'landmarksPortugalGrid';
+      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 160);
+  }
+  function openEuropeMapShortcut(filter) {
+    if (!['EUROPE', 'MILAN'].includes(filter)) return;
+    root.switchGuidebookChapter?.('chapter-guide', false);
+    root.goToBookPage?.('chapter-guide', 4, false);
+    window.setTimeout(() => {
+      root.filterBigLandmarksMap?.(filter);
+      document.getElementById('landmarksBigMapContainer')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 260);
+  }
+  function openEuropeanCountryShortcut(countryId) {
+    if (!DATA.some(country => country.country_id === countryId)) return;
+    state.query = '';
+    state.category = 'all';
+    state.openIds = new Set([countryId]);
+    render(locale());
+    root.switchGuidebookChapter?.('chapter-festivals', false);
+    root.goToBookPage?.('chapter-festivals', 2, false);
+    window.setTimeout(() => {
+      const country = document.querySelector(`#ecgResults [data-country="${countryId}"]`);
+      if (country) {
+        country.open = true;
+        country.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 180);
+  }
+  function renderHomeShortcuts(langValue) {
+    const lang = LANGS.includes(langValue) ? langValue : locale();
+    const label = HOME_SHORTCUT_LABELS[lang] || HOME_SHORTCUT_LABELS.ko;
+    const mount = document.getElementById('homeEuropeGuideShortcutsMount');
+    if (!mount) return;
+    const countries = DATA.filter(country => country.country_id && /^[a-z0-9-]+$/.test(country.country_id));
+    const countryButtons = countries.map(country => `<button type="button" class="egh-chip egh-country-chip" data-home-action="country" data-target="${esc(country.country_id)}">${esc(text(country.country_name, lang, country.country_id))}</button>`).join('');
+    mount.innerHTML = `<section class="egh-card" aria-labelledby="eghTitle">
+      <div class="egh-heading"><p class="egh-kicker">${esc(label.kicker)}</p><h2 id="eghTitle">${esc(label.title)}</h2><p>${esc(label.intro)}</p></div>
+      <div class="egh-group"><h3>${esc(label.cities)}</h3><div class="egh-chip-row">
+        <button type="button" class="egh-chip" data-home-action="italy" data-target="rome">${esc(label.rome)}</button>
+        <button type="button" class="egh-chip" data-home-action="italy" data-target="florence">${esc(label.florence)}</button>
+        <button type="button" class="egh-chip" data-home-action="italy" data-target="venice">${esc(label.venice)}</button>
+        <button type="button" class="egh-chip" data-home-action="italy" data-target="capri">${esc(label.naples)}</button>
+        <button type="button" class="egh-chip" data-home-action="map" data-target="MILAN">${esc(label.milan)}</button>
+      </div></div>
+      <div class="egh-group"><h3>${esc(label.regions)}</h3><div class="egh-chip-row">
+        <button type="button" class="egh-chip egh-chip-region" data-home-action="region" data-target="spain">${esc(label.spain)}</button>
+        <button type="button" class="egh-chip egh-chip-region" data-home-action="region" data-target="portugal">${esc(label.portugal)}</button>
+        <button type="button" class="egh-chip egh-chip-map" data-home-action="map" data-target="EUROPE">${esc(label.europeMap)}</button>
+      </div></div>
+      <details class="egh-countries"><summary>${esc(label.countries(countries.length))}</summary><p>${esc(label.countryNote)}</p><div class="egh-country-grid">${countryButtons}</div></details>
+    </section>`;
+    mount.querySelectorAll('[data-home-action]').forEach(button => button.addEventListener('click', () => {
+      const { homeAction, target } = button.dataset;
+      if (homeAction === 'country') openEuropeanCountryShortcut(target);
+      else if (homeAction === 'italy') openItalyShortcut(target);
+      else if (homeAction === 'region') openRegionShortcut(target);
+      else if (homeAction === 'map') openEuropeMapShortcut(target);
+    }));
+  }
   const countryItems = country => {
     const items = (country.landmarks || []).map((item, index) => ({ ...item, city: item.city || country.featured_city, id: `${country.country_id}-sight-${index + 1}`, category: 'sight', label: 'catLandmark' }));
     const foodGuide = country.local_food && country.local_food.food_guide;
@@ -240,6 +321,7 @@
       expand.textContent = shouldExpand ? label.collapse : label.expand;
     });
     renderResults(lang);
+    renderHomeShortcuts(lang);
   }
 
   function categoryFromQuery(query) {
@@ -385,6 +467,9 @@
   }
 
   root.renderEuropeCountryNightlifeGuide = render;
+  root.openEuropeanCountryShortcut = openEuropeanCountryShortcut;
+  root.openEuropeMapShortcut = openEuropeMapShortcut;
+  root.renderEuropeHomeShortcuts = renderHomeShortcuts;
   root.buildEuropeCountryGuideChatResponse = createChatResponse;
   registerChatbot();
   const initialize = () => render(locale());

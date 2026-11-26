@@ -151,6 +151,7 @@
                   <span class="r-step unconfirmed" data-i18n="hero_ctx_rome_date">🇮🇹 로마 (세비야 이후 · 약 10일 체류 · 날짜/항공편 확인 필요)</span>
                 </div>
               </div>
+              <div id="homeEuropeGuideShortcutsMount"></div>
               <!-- 📢 [신규 탑재 알림] 30일 마스터 플래너 & 미식 총정리 다이렉트 점프 배너 -->
               <div class="banner-master-planner-jump" style="background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%); color: #fff; padding: 20px 24px; border-radius: 16px; margin: 20px 0; box-shadow: 0 4px 16px rgba(27,67,50,0.22); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border: 1.5px solid #52b788;">
                 <div style="flex: 1; min-width: 280px;">
@@ -1589,6 +1590,9 @@
               </button>
               <button type="button" class="bookmark-chip" id="btnBigMapEurope" onclick="filterBigLandmarksMap('EUROPE')">
                 <span>🇪🇺</span> <span data-i18n="map_filter_europe">서·중부 유럽</span>
+              </button>
+              <button type="button" class="bookmark-chip" id="btnBigMapMilan" onclick="filterBigLandmarksMap('MILAN')">
+                <span>🇮🇹</span> Milan · Duomo
               </button>
               <button type="button" class="bookmark-chip" id="btnBigMapLatin" onclick="filterBigLandmarksMap('LATIN')">
                 <span>🌎</span> <span data-i18n="map_filter_latin">중남미 대륙</span>
