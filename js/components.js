@@ -1312,6 +1312,14 @@
         <div class="book-page" id="page-planner-3">
           <section class="section timeline-section" style="background:#ffffff;padding:24px 0 36px;">
             <div class="wrap">
+              <a class="rome-itinerary-launch" href="./rome-itinerary.html">
+                <span class="rome-itinerary-launch-icon" aria-hidden="true">🏛️</span>
+                <span class="rome-itinerary-launch-copy">
+                  <strong data-i18n="rome_itinerary_link_title">로마 5박 6일 상세 일정 보기</strong>
+                  <small data-i18n="rome_itinerary_link_desc">11/29–12/4 Salotto Monti · 11/30 콜로세움 · 12/4 OZ562 22:50 · 파업 대응 가이드</small>
+                </span>
+                <span class="rome-itinerary-launch-arrow" aria-hidden="true">→</span>
+              </a>
               <div class="section-head">
                 <div>
                   <div class="kicker">02-3 / DAYS 21 - 30 · FLORENCE &amp; ROME GRAND FINALE</div>

@@ -1,0 +1,176 @@
+/* Rome itinerary page and its entry card inside the main planner. */
+.rome-itinerary-launch {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  margin: 18px 0 22px;
+  color: #173d32;
+  text-decoration: none;
+  background: linear-gradient(135deg, #f1f7f2, #fff9ee);
+  border: 1px solid #c7d9cc;
+  border-radius: 16px;
+  box-shadow: 0 5px 16px rgba(23, 61, 50, .08);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.rome-itinerary-launch:hover,
+.rome-itinerary-launch:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(23, 61, 50, .13);
+  outline: 2px solid #56806d;
+  outline-offset: 2px;
+}
+.rome-itinerary-launch-icon {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  font-size: 23px;
+  background: #e2eee4;
+  border-radius: 13px;
+}
+.rome-itinerary-launch-copy { display: grid; gap: 4px; min-width: 0; }
+.rome-itinerary-launch-copy strong { font-size: 1rem; line-height: 1.35; }
+.rome-itinerary-launch-copy small { color: #4d6258; font-size: .82rem; line-height: 1.5; }
+.rome-itinerary-launch-arrow { margin-left: auto; color: #276047; font-size: 1.4rem; font-weight: 800; }
+
+.rome-itinerary-page {
+  --rome-ink: #24342d;
+  --rome-green: #173d32;
+  --rome-green-soft: #e8f1e9;
+  --rome-muted: #64736b;
+  --rome-paper: #fffefa;
+  --rome-line: #e3e6dd;
+  margin: 0;
+  color: var(--rome-ink);
+  background: #f4f2eb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.rome-itinerary-page * { box-sizing: border-box; }
+.rome-topbar {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 64px;
+  padding: 8px max(18px, calc((100vw - 1040px) / 2));
+  background: rgba(255, 254, 250, .96);
+  border-bottom: 1px solid var(--rome-line);
+  backdrop-filter: blur(12px);
+}
+.rome-brand { display: flex; flex-direction: column; color: var(--rome-green); text-decoration: none; white-space: nowrap; }
+.rome-brand-main { font-size: 14px; font-weight: 900; letter-spacing: .08em; }
+.rome-brand-main span { color: #b57c3b; }
+.rome-brand-sub { margin-top: 1px; color: var(--rome-muted); font-size: 9px; letter-spacing: .16em; }
+.rome-back-link { color: #405c4d; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.rome-back-link:hover { text-decoration: underline; }
+.rome-language-control { display: flex; align-items: center; gap: 8px; margin-left: auto; color: var(--rome-muted); font-size: 12px; }
+.rome-language-control select {
+  max-width: 156px;
+  padding: 8px 10px;
+  color: var(--rome-ink);
+  background: #fff;
+  border: 1px solid #cbd5cc;
+  border-radius: 9px;
+  font: inherit;
+}
+.rome-page-shell { width: min(100% - 36px, 920px); margin: 28px auto 72px; }
+.rome-hero {
+  padding: clamp(24px, 5vw, 42px);
+  color: #f7f6ed;
+  background: linear-gradient(130deg, #173d32, #2d5a49);
+  border-radius: 22px;
+  box-shadow: 0 12px 28px rgba(23, 61, 50, .15);
+}
+.rome-eyebrow { margin: 0 0 9px; color: #d9c299; font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+.rome-hero h1 { margin: 0; font-size: clamp(25px, 4.4vw, 38px); line-height: 1.22; letter-spacing: -.025em; }
+.rome-intro { max-width: 720px; margin: 13px 0 0; color: #e6eee7; font-size: 15px; line-height: 1.7; }
+.rome-source-note { margin: 16px 0 0; padding-top: 12px; color: #d7e2d9; border-top: 1px solid rgba(255,255,255,.22); font-size: 12px; line-height: 1.65; }
+.rome-document-tabs { display: flex; gap: 8px; margin: 20px 0 12px; overflow-x: auto; padding: 2px 1px 8px; scrollbar-width: thin; }
+.rome-document-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  min-height: 45px;
+  padding: 10px 15px;
+  color: #53645a;
+  background: #fffefa;
+  border: 1px solid #d8dfd7;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+}
+.rome-document-tab.is-active { color: #fff; background: #285843; border-color: #285843; box-shadow: 0 4px 10px rgba(40,88,67,.17); }
+.rome-document-tab:focus-visible { outline: 3px solid #b57c3b; outline-offset: 2px; }
+.rome-tab-icon { font-size: 17px; }
+.rome-document-content {
+  padding: clamp(18px, 4vw, 38px);
+  background: var(--rome-paper);
+  border: 1px solid var(--rome-line);
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(42, 52, 46, .055);
+  overflow-wrap: anywhere;
+}
+.rome-document-content h1 { margin: 0 0 22px; color: var(--rome-green); font-size: clamp(24px, 4vw, 34px); line-height: 1.25; }
+.rome-document-content h2 { margin: 35px 0 15px; padding-bottom: 10px; color: #214936; border-bottom: 1px solid var(--rome-line); font-size: clamp(19px, 3vw, 25px); line-height: 1.35; scroll-margin-top: 86px; }
+.rome-document-content h3 { margin: 26px 0 12px; color: #345542; font-size: clamp(17px, 2.5vw, 21px); line-height: 1.4; scroll-margin-top: 86px; }
+.rome-document-content h4 { margin: 22px 0 9px; font-size: 16px; scroll-margin-top: 86px; }
+.rome-document-content p,
+.rome-document-content li { font-size: 15px; line-height: 1.8; }
+.rome-document-content p { margin: 11px 0; }
+.rome-document-content ul,
+.rome-document-content ol { padding-left: 1.45rem; margin: 10px 0 16px; }
+.rome-document-content li + li { margin-top: 5px; }
+.rome-document-content strong { color: #183e30; }
+.rome-document-content a { color: #1d6b52; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.rome-document-content hr { height: 1px; margin: 26px 0; background: #e3e6dd; border: 0; }
+.rome-document-content blockquote { margin: 16px 0; padding: 10px 16px; color: #526258; background: #f5f7f1; border-left: 4px solid #84a38b; }
+.rome-table-scroll { width: 100%; margin: 16px 0 22px; overflow-x: auto; border: 1px solid #e0e5dd; border-radius: 10px; -webkit-overflow-scrolling: touch; }
+.rome-document-content table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 13px; line-height: 1.6; }
+.rome-document-content th,
+.rome-document-content td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid #e3e6dd; }
+.rome-document-content thead th { color: #f7f6ed; background: #315a46; }
+.rome-document-content tbody tr:nth-child(even) { background: #f7f8f3; }
+.rome-document-content tbody tr:last-child td { border-bottom: 0; }
+.rome-document-content code { padding: 1px 4px; background: #f1f2ec; border-radius: 4px; font-size: .9em; }
+.rome-document-content pre { max-width: 100%; padding: 14px; overflow-x: auto; background: #f1f2ec; border-radius: 10px; }
+.rome-document-content img { max-width: 100%; height: auto; }
+
+@media (max-width: 640px) {
+  .rome-itinerary-launch { align-items: flex-start; gap: 10px; padding: 14px 12px; }
+  .rome-itinerary-launch-icon { flex-basis: 38px; width: 38px; height: 38px; font-size: 20px; }
+  .rome-itinerary-launch-copy strong { font-size: .91rem; }
+  .rome-itinerary-launch-copy small { font-size: .75rem; }
+  .rome-topbar { min-height: 58px; gap: 12px; padding: 7px 13px; }
+  .rome-brand-main { font-size: 12px; }
+  .rome-brand-sub { font-size: 8px; }
+  .rome-back-link { font-size: 11px; }
+  .rome-language-control { gap: 0; }
+  .rome-language-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .rome-language-control select { max-width: 116px; padding: 8px 7px; font-size: 12px; }
+  .rome-page-shell { width: min(100% - 22px, 920px); margin: 15px auto 44px; }
+  .rome-hero { padding: 23px 19px; border-radius: 17px; }
+  .rome-intro { font-size: 14px; }
+  .rome-source-note { font-size: 11px; }
+  .rome-document-tabs { gap: 7px; margin: 14px 0 9px; }
+  .rome-document-tab { min-height: 42px; padding: 9px 11px; font-size: 12px; }
+  .rome-document-content { padding: 18px 15px 24px; border-radius: 14px; }
+  .rome-document-content p,
+  .rome-document-content li { font-size: 14px; line-height: 1.75; }
+  .rome-document-content h2 { margin-top: 29px; }
+  .rome-document-content h3 { margin-top: 22px; }
+  .rome-document-content table { min-width: 580px; font-size: 12px; }
+  .rome-document-content th,
+  .rome-document-content td { padding: 8px 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rome-itinerary-launch { transition: none; }
+}

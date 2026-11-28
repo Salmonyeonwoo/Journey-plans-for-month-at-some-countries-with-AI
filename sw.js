@@ -1,10 +1,16 @@
-// SlowTravel Mobile Offline Service Worker (v20261127_florence_plan_v1)
+// SlowTravel Mobile Offline Service Worker (v20261128_rome_itinerary_v1)
 // Guaranteed Offline & Airplane Mode Support for iOS Safari & Android Chrome.
 
-const CACHE_NAME = 'slowtravel-offline-v20261127_florence_plan_v1';
+const CACHE_NAME = 'slowtravel-offline-v20261128_rome_itinerary_v1';
+
 const PRECACHE_ASSETS = [
   './',
   './index.html',
+  './rome-itinerary.html',
+  './css/rome-itinerary.css',
+  './js/rome-itinerary-content.js',
+  './js/rome-itinerary-page.js',
+  './js/rome-itinerary-ui.js',
   './manifest.json',
   './css/style.css',
   './css/activity-guide.css',
